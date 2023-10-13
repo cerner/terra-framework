@@ -632,7 +632,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -801,7 +801,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -980,7 +980,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -2972,7 +2972,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -3141,7 +3141,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -3320,7 +3320,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -5390,7 +5390,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -5559,7 +5559,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -5738,7 +5738,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             onMouseEnter={[Function]}
                             onMouseLeave={[Function]}
                             onMouseUp={[Function]}
-                            role={false}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",

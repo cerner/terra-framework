@@ -95,7 +95,7 @@ exports[`ColumnResizeHandle renders a default column resize handle when isActive
       onMouseEnter={[Function]}
       onMouseLeave={[Function]}
       onMouseUp={[Function]}
-      role="divider"
+      role={null}
       style={
         Object {
           "height": "200px",
