@@ -102,7 +102,7 @@ exports[`FlowsheetDataGrid replaces non-header blank, null, or undefined cell co
 <div
   className="flowsheet-data-grid-container"
 >
-  <InjectIntl(DataGrid)
+  <ForwardRef
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
