@@ -110,9 +110,9 @@ function FlowsheetDataGrid(props) {
       </>
     );
 
-    const newRows = rows;
+    const newRows = [...rows];
     newRows.forEach((row, rowIndex) => {
-      const newCells = row.cells;
+      const newCells = [...row.cells];
       newCells.forEach((cell, cellIndex) => {
         // Cell has no content and is not a row header (first column), set content to "No result".
         if (!cell.content && cellIndex !== 0) {
