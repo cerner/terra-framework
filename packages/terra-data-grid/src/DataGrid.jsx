@@ -17,6 +17,7 @@ import ColumnContext from './utils/ColumnContext';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import ERRORS from './utils/constants';
+import './_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -354,6 +355,9 @@ const DataGrid = injectIntl((props) => {
     const focusableElements = [...document.body.querySelectorAll(`${focusableElementSelector}`)].filter(
       element => !element.hasAttribute('disabled')
       && !element.getAttribute('aria-hidden')
+      && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
+      && window.getComputedStyle(element).visibility !== 'hidden'
+      && element.closest('[inert]') === null
       && (element.id === id || !grid.current.contains(element)),
     );
 
@@ -362,7 +366,15 @@ const DataGrid = injectIntl((props) => {
     if (index > -1) {
       // Move focus outside data grid
       const indexOffset = moveForward ? 1 : -1;
-      const newFocusElement = focusableElements[index + indexOffset];
+      let newFocusElement;
+
+      if (index + indexOffset < focusableElements.length) {
+        newFocusElement = focusableElements[index + indexOffset];
+      } else if (focusableElements[0].id !== id) {
+        // eslint-disable-next-line prefer-destructuring
+        newFocusElement = focusableElements[0];
+      }
+
       if (newFocusElement) {
         newFocusElement.focus();
       }
