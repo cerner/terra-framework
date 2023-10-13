@@ -55,7 +55,7 @@ describe('FlowsheetDataGrid', () => {
       />,
     );
 
-    const dataGrid = wrapper.find('#test-terra-flowsheet-data-grid');
+    const dataGrid = wrapper.find('ForwardRef');
     const pinnedColumns = dataGrid.prop('pinnedColumns');
     expect(pinnedColumns).toEqual(
       [

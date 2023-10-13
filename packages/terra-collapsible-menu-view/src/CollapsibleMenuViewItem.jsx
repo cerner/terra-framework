@@ -64,6 +64,12 @@ const propTypes = {
    * 160, 240, 320, 640, 960, 1280, 1760, or auto
    */
   menuWidth: PropTypes.oneOf(['160', '240', '320', '640', '960', '1280', '1760', 'auto']),
+
+  /**
+   * @private
+   * Renders the item as just text.
+   */
+  isTextOnly: PropTypes.bool,
 };
 
 const contextTypes = {
@@ -76,6 +82,7 @@ const defaultProps = {
   isReversed: false,
   shouldCloseOnClick: true,
   isIconOnly: false,
+  isTextOnly: false,
 };
 
 class CollapsibleMenuViewItem extends React.Component {
@@ -105,6 +112,7 @@ class CollapsibleMenuViewItem extends React.Component {
       shouldCloseOnClick,
       boundingRef,
       menuWidth,
+      isTextOnly,
       ...customProps
     } = this.props;
 
@@ -150,6 +158,12 @@ class CollapsibleMenuViewItem extends React.Component {
         >
           {subMenuItems}
         </Menu>
+      );
+    } else if (isTextOnly) {
+      item = (
+        <div className={cx('face-up-item')}>
+          {text}
+        </div>
       );
     } else {
       item = (
