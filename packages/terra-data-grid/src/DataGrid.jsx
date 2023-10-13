@@ -17,6 +17,7 @@ import ColumnContext from './utils/ColumnContext';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import ERRORS from './utils/constants';
+import './_elementPolyfill';
 
 const cx = classNames.bind(styles);
 

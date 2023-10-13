@@ -3,7 +3,8 @@ import { Badge } from 'terra-file-path/package.json?dev-site-package';
 
 import FilePathPropsTable from 'terra-file-path/src/FilePath?dev-site-props-table';
 
-import FilePath from './Examples.2/DefaultFilePath?dev-site-example';
+import DefaultFilePath from './Examples.2/DefaultFilePath?dev-site-example';
+import OnClickFilePath from './Examples.2/OnClickFilePath?dev-site-example';
 
 <Badge />
 
@@ -13,6 +14,13 @@ import FilePath from './Examples.2/DefaultFilePath?dev-site-example';
 Terra File Path is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
 </Notice>
 
+The `terra-file-path` component displays the current location within a hierarchy. The last item is considered the current location and is not interactable.
+
+Each location is rendered as a [`terra-hyperlink`](https://engineering.cerner.com/terra-ui/components/cerner-terra-core-docs/hyperlink/about).
+
+The component is fully responsive -- links will be displayed face-up and flex based on the space available. Any items that can not fit in the available space will be rolled into an ellipsis menu.
+
+Consumers are responsible for maintaining the state of the component.
 
 ## Getting Started
 
@@ -41,6 +49,8 @@ This component requires the following peer dependencies be installed in your app
 
 ## Examples
 <DefaultFilePath />
+
+<OnClickFilePath />
 
 ## FilePath props table
 <FilePathPropsTable />
