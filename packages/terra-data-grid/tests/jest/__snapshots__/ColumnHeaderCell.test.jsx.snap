@@ -512,7 +512,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             onMouseEnter={[Function]}
             onMouseLeave={[Function]}
             onMouseUp={[Function]}
+<<<<<<< HEAD
             role="divider"
+=======
+            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
             style={
               Object {
                 "height": "undefinedpx",

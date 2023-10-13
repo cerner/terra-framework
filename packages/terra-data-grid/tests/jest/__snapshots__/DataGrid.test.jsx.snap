@@ -786,7 +786,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -1090,7 +1097,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -1423,7 +1437,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -3662,7 +3683,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -3966,7 +3994,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -4299,7 +4334,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -6688,7 +6730,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -6992,7 +7041,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
@@ -7287,7 +7343,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             onBlur={[Function]}
                             onFocus={[Function]}
                             onMouseDown={[Function]}
+<<<<<<< HEAD
                             role="slider"
+=======
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
+>>>>>>> c4b58f1ad (fixed jest tests)
                             style={
                               Object {
                                 "height": "0px",
