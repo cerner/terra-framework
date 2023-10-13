@@ -381,6 +381,22 @@ const DataGrid = injectIntl((props) => {
     }
   };
 
+  /**
+   *
+   * @param {HTMLElement} element - The element to check if it is a text input
+   * @returns True if the element is a text input.  Otherwise, false.
+   */
+  const isTextInput = (element) => {
+    const { tagName } = element;
+    if (tagName.toLowerCase() === 'input') {
+      const validTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
+      const inputType = element.type;
+      return validTypes.indexOf(inputType) >= 0;
+    }
+
+    return false;
+  };
+
   const handleKeyDown = (event) => {
     const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
@@ -390,8 +406,9 @@ const DataGrid = injectIntl((props) => {
 
     // Allow default behavior if the event target is an editable field
     if (event.keyCode !== KeyCode.KEY_TAB
-        && (['input', 'textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
-        || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
+        && (isTextInput(targetElement)
+            || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
+            || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
       return;
     }
 
