@@ -110,6 +110,7 @@ const CollapsibleMenuViewHyperlink = ({
   return (
     <div className={cx(['face-up-item'])}>
       <Hyperlink
+        {...customProps}
         text={text}
         title={title}
         href={href}
