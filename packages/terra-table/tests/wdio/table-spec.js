@@ -1,14 +1,14 @@
 Terra.describeViewports('Table', ['medium', 'large'], () => {
   describe('Default Table', () => {
     it('Validates the default table', () => {
-      browser.url('/raw/tests/cerner-terra-core-docs/table/default-table');
+      browser.url('/raw/tests/cerner-table-framework-docs/table/default-table');
       Terra.validates.element('default-table', '#default-terra-table');
     });
   });
 
   describe('No Interaction Table', () => {
     it('Validates the default table is not interactable', () => {
-      browser.url('/raw/tests/cerner-terra-core-docs/table/no-interaction-table');
+      browser.url('/raw/tests/cerner-table-framework-docs/table/no-interaction-table');
       browser.keys(['Tab']);
       $('#focused-button').isFocused();
       Terra.validates.element('no-interaction-table', '#no-interaction-test-container');
@@ -17,7 +17,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
   describe('Empty Table', () => {
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-core-docs/table/table-with-no-rows');
+      browser.url('/raw/tests/cerner-table-framework-docs/table/table-with-no-rows');
     });
 
     it('verifies that a table renders with no rows', () => {
@@ -28,7 +28,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
   describe('Pinned Columns Table', () => {
     const pinnedColumnsSelector = '#table-pinned-columns';
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-core-docs/table/table-pinned-columns');
+      browser.url('/raw/tests/cerner-table-framework-docs/table/table-pinned-columns');
     });
 
     it('adds pinned columns', () => {
@@ -46,7 +46,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     const stickyHeaderSelector = '#table-sticky-header';
 
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-core-docs/table/table-sticky-header');
+      browser.url('/raw/tests/cerner-table-framework-docs/table/table-sticky-header');
     });
 
     it('verifies un-scrolled sticky header table', () => {
@@ -64,7 +64,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
   describe('Sortable Table', () => {
     const sortableTableSelector = '#sortable-table';
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-core-docs/table/sortable-table');
+      browser.url('/raw/tests/cerner-table-framework-docs/table/sortable-table');
     });
 
     it('Validates the selectable column header is focusable', () => {
@@ -82,7 +82,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     const tableWithGridContextSelector = '#terra-table-grid-context';
 
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-core-docs/table/table-with-grid-context');
+      browser.url('/raw/tests/cerner-table-framework-docs/table/table-with-grid-context');
     });
 
     it('Validates a cell is selectable and focused when clicked', () => {
