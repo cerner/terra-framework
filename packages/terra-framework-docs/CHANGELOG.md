@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
+
 ## 1.40.0 - (October 11, 2023)
 
 * Added
@@ -15,7 +18,6 @@
 
 * Updated
   * Updated examples for `terra-collapsible-menu-view` to use more meaningful controls and control labels.
-  * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
   * Updated examples and tests to add support for content scrolling within the iframe.
   * Updated examples and tests for `terra-embedded-content-consumer` to show the preferred way to set the title.
 

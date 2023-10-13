@@ -3,6 +3,8 @@
 ## Unreleased
 * Fixed
   * Fixed issue where WorklistDataGrid loses focus when Row Selection Mode is turned off from a Row Selection Cell.
+  * Fixed tab focus management when next element is in a hidden container.
+  * Fixed tab focus management to wrap to the first focusable element when the data grid is the last focusable element.
 
 ## 0.8.0 - (October 11, 2023)
 
@@ -12,8 +14,6 @@
 ## 0.7.0 - (October 3, 2023)
 
 * Fixed
-  * Fixed tab focus management when next element is in a hidden container.
-  * Fixed tab focus management to wrap to the first focusable element when the data grid is the last focusable element.
   * Fixed the screen reader messages to count header row as the first row.
 
 ## 0.6.0 - (September 14, 2023)
