@@ -238,7 +238,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['ArrowRight', 'ArrowLeft']);
 
       Terra.validates.element('data-grid-focusable-input-retains-focus', { columnResizeSelector });
-      expect(browser.$('#input-cell').isFocused());
+      expect(browser.$('#input-cell').isFocused()).toBe(true);
     });
 
     it('validates that keyboard inputs will not move focus from a textarea', () => {
@@ -249,7 +249,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['ArrowRight', 'ArrowLeft']);
 
       Terra.validates.element('data-grid-focusable-textarea-retains-focus', { columnResizeSelector });
-      expect(browser.$('#textarea-cell').isFocused());
+      expect(browser.$('#textarea-cell').isFocused()).toBe(true);
     });
 
     it('validates that keyboard inputs will not move focus from a select element', () => {
@@ -258,7 +258,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['ArrowRight', 'ArrowLeft']);
 
       Terra.validates.element('data-grid-focusable-select-retains-focus', { columnResizeSelector });
-      expect(browser.$('#specialties').isFocused());
+      expect(browser.$('#specialties').isFocused()).toBe(true);
     });
   });
 
