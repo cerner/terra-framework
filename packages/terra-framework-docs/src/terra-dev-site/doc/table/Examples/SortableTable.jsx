@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import Table from 'terra-table';
 
 const tableData = {
@@ -58,7 +58,7 @@ const tableData = {
 const SortableTable = () => {
   const [tableColumns, setTableColumns] = useState(tableData.cols);
   const [tableRows, setTableRows] = useState(tableData.rows);
-  const handleColumnSelect = (columnId) => {
+  const handleColumnSelect = useCallback((columnId) => {
     const newColumns = [...tableColumns].map((col) => {
       const newCol = { ...col };
       if (columnId === col.id) {
@@ -87,7 +87,7 @@ const SortableTable = () => {
 
     setTableColumns(newColumns);
     setTableRows(newRows);
-  };
+  }, [tableColumns, tableRows]);
 
   return (
     <Table
