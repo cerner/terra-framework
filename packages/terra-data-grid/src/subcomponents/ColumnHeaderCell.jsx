@@ -159,6 +159,7 @@ const ColumnHeaderCell = (props) => {
 
   const columnContext = useContext(ColumnContext);
   const columnHeaderCellRef = useRef();
+  const columnHeaderCellButtonRef = useRef();
 
   const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
@@ -180,7 +181,7 @@ const ColumnHeaderCell = (props) => {
 
   // Restore focus to column header after resize action is completed.
   const onResizeHandleMouseUp = useCallback(() => {
-    columnHeaderCellRef.current.focus();
+    columnHeaderCellButtonRef.current.focus();
     setResizeHandleActive(false);
   }, []);
 
@@ -204,7 +205,7 @@ const ColumnHeaderCell = (props) => {
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive) {
-          columnHeaderCellRef.current.focus();
+          columnHeaderCellButtonRef.current.focus();
           setResizeHandleActive(false);
 
           event.stopPropagation();
@@ -219,6 +220,12 @@ const ColumnHeaderCell = (props) => {
         }
         break;
       default:
+    }
+  };
+
+  const handleFocus = () => {
+    if (isResizable && !isResizeHandleActive) {
+      columnHeaderCellButtonRef.current?.focus();
     }
   };
 
@@ -259,9 +266,10 @@ const ColumnHeaderCell = (props) => {
       aria-sort={sortIndicator}
       onMouseDown={onColumnSelect ? handleMouseDown : null}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : null}
+      onFocus={handleFocus}
       style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
-      <div className={cx('header-container')} role={displayName && 'button'}>
+      <div ref={columnHeaderCellButtonRef} tabIndex="-1" className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}
         <span>{displayName}</span>
         {sortIndicatorIcon}

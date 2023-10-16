@@ -23,6 +23,11 @@
       height: 100%;
       padding: var(--terra-data-grid-header-cell-padding, 5px);
       width: 100%;
+
+      &:focus {
+        outline: var(--terra-data-grid-cell-focus-outline, 3px dashed #000);
+        outline-offset: var(--terra-data-grid-cell-focus-outline-offset, -2px);
+      }
     }
 
     // Add right margin for error icon

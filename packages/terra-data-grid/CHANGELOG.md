@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+* Added
+  * Added additional screen reader support to announce that column headers are interactable upon selection.
+
 * Fixed
   * Fixed issue where WorklistDataGrid loses focus when Row Selection Mode is turned off from a Row Selection Cell.
   * Fixed tab focus management when next element is in a hidden container.
