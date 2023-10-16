@@ -66,7 +66,7 @@ const propTypes = {
   columnHeaderHeight: PropTypes.string,
 
   /**
-   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
 

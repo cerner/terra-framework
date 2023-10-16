@@ -23,11 +23,11 @@ const propTypes = {
    */
   activeColumnIndex: PropTypes.number,
   /**
-   * Specifies if resize handle should be active
+   * Specifies if resize handle should be active.
    */
   activeColumnResizing: PropTypes.bool,
   /**
-   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
   /**
@@ -40,7 +40,7 @@ const propTypes = {
    */
   onResizeMouseDown: PropTypes.func,
   /**
-   * Function that is called when the the keyboard is used to adjust the column size
+   * Function that is called when the the keyboard is used to adjust the column size.
    */
   onResizeHandleChange: PropTypes.func,
 };
