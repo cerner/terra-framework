@@ -274,6 +274,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
         isIconOnly={false}
         isReversed={false}
         isSelected={false}
+        isTextOnly={false}
         shouldCloseOnClick={true}
         text="Menu Item"
       />,
@@ -665,6 +666,7 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
     isIconOnly={false}
     isReversed={false}
     isSelected={false}
+    isTextOnly={false}
     key="1"
     shouldCloseOnClick={true}
     text="Menu Item"

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.71.1 - (October 11, 2023)
+
 * Fixed
   * Fixed popup click events propagating to elements underneath it.
 

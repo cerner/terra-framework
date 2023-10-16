@@ -1,5 +1,5 @@
 import React, {
-  useState, useContext, useRef, useCallback, useEffect, useMemo,
+  useState, useContext, useRef, useCallback, useEffect, useMemo, forwardRef, useImperativeHandle,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -17,6 +17,7 @@ import ColumnContext from './utils/ColumnContext';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import ERRORS from './utils/constants';
+import './_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -121,9 +122,10 @@ const defaultProps = {
   rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
+  rows: [],
 };
 
-function DataGrid(props) {
+const DataGrid = injectIntl((props) => {
   const {
     id,
     ariaLabelledBy,
@@ -175,7 +177,6 @@ function DataGrid(props) {
   const grid = useRef();
   const gridContainerRef = useRef();
 
-  const hasReceivedFocus = useRef(false);
   const handleFocus = useRef(true);
 
   const [focusedRow, setFocusedRow] = useState(0);
@@ -208,6 +209,20 @@ function DataGrid(props) {
     }
   };
 
+  // The focus is handled by the DataGrid. However, there are times
+  // when the other components may want to change the currently focus
+  // cells. In order to do so, these datagrid methods will be exposed to
+  // allow those components to request focus change.
+  useImperativeHandle(
+    props.focusFuncRef,
+    () => ({
+      setFocusedRowCol,
+      getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
+    }),
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+    [focusedCol, focusedRow],
+  );
+
   // -------------------------------------
   // callback Hooks
 
@@ -232,20 +247,6 @@ function DataGrid(props) {
 
   // useEffect for row selection
   useEffect(() => {
-    // When row selection mode is turned on or off a row selection column is added or removed.
-    // Therefore, shift the focused cell to the left or right.
-    let newFocusCell = { row: focusedRow, col: focusedCol };
-
-    if (!hasSelectableRows && focusedCol === 0) {
-      // When row selection is turned off, if a cell in the row selection had focus, then
-      // refocus on the first cell in that row.
-      newFocusCell = { row: focusedRow, col: 0 };
-    } else if (hasReceivedFocus.current) {
-      newFocusCell = { row: focusedRow, col: (focusedCol + (hasSelectableRows ? 1 : -1)) };
-    }
-
-    setFocusedRowCol(newFocusCell.row, newFocusCell.col, false);
-
     setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
@@ -354,6 +355,9 @@ function DataGrid(props) {
     const focusableElements = [...document.body.querySelectorAll(`${focusableElementSelector}`)].filter(
       element => !element.hasAttribute('disabled')
       && !element.getAttribute('aria-hidden')
+      && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
+      && window.getComputedStyle(element).visibility !== 'hidden'
+      && element.closest('[inert]') === null
       && (element.id === id || !grid.current.contains(element)),
     );
 
@@ -362,7 +366,15 @@ function DataGrid(props) {
     if (index > -1) {
       // Move focus outside data grid
       const indexOffset = moveForward ? 1 : -1;
-      const newFocusElement = focusableElements[index + indexOffset];
+      let newFocusElement;
+
+      if (index + indexOffset < focusableElements.length) {
+        newFocusElement = focusableElements[index + indexOffset];
+      } else if (focusableElements[0].id !== id) {
+        // eslint-disable-next-line prefer-destructuring
+        newFocusElement = focusableElements[0];
+      }
+
       if (newFocusElement) {
         newFocusElement.focus();
       }
@@ -507,8 +519,6 @@ function DataGrid(props) {
       if (handleFocus.current) {
         setFocusedRowCol(focusedRow, focusedCol, true);
       }
-
-      hasReceivedFocus.current = true;
     }
 
     handleFocus.current = true;
@@ -563,9 +573,9 @@ function DataGrid(props) {
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );
-}
+});
 
 DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
-export default injectIntl(DataGrid);
+export default forwardRef((props, ref) => <DataGrid {...props} focusFuncRef={ref} />);

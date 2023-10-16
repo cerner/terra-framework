@@ -5,7 +5,13 @@
 * Changed
   * Updated `terra-menu` examples with focus highlight styles for terra-button on closing menu with selection of menu-item.
 
+* Updated
+  * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
+
+## 1.40.0 - (October 11, 2023)
+
 * Added
+  * Added documentation for the new `terra-file-path` component.
   * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
 
 ## 1.39.0 - (October 3, 2023)
