@@ -15,7 +15,7 @@
     "Table",
     "UI"
   ],
-  "author": "Oracle Corporation",
+  "author": "Cerner Corporation",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/table-framework/issues"
