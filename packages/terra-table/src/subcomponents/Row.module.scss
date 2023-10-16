@@ -4,17 +4,15 @@
 
 :local {
   .row {
+    background-color: var(--terra-table-row-background-color, #fff);
+
     &.selectable:hover {
       background-color: var(--terra-table-row-hover-background-color, #e2f2fc);
       cursor: pointer;
     }
 
-    &:nth-child(even) {
-      background-color: var(--terra-table-row-striped-even-background-color, #f0f0f0);
-    }
-
-    &:nth-child(odd) {
-      background-color: var(--terra-table-row-striped-odd-background-color, #fff);
+    &.striped-table-row:nth-child(even) {
+      background-color: var(--terra-table-row-striped-background-color, #f0f0f0);
     }
 
     &.selected {
@@ -40,3 +38,4 @@
   }
   /* stylelint-enable selector-max-compound-selectors */
 }
+

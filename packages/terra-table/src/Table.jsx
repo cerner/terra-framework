@@ -100,6 +100,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether or not the table should have zebra striping for rows.
+   */
+  isStriped: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -130,6 +135,7 @@ function Table(props) {
     onColumnSelect,
     onCellSelect,
     hasSelectableRows,
+    isStriped,
     rowHeaderIndex,
   } = props;
 
@@ -311,6 +317,7 @@ function Table(props) {
                 rowHeaderIndex={rowHeaderIndex}
                 onCellSelect={isGridContext ? handleCellSelection : undefined}
                 isSelected={row.isSelected}
+                isTableStriped={isStriped}
               />
             ))}
           </tbody>

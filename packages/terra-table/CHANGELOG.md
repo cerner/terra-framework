@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added the ability to toggle zebra striping for table rows.
+
 * Breaking Change
   * Redesigned the table component to meet accessibility guidelines. See Docs for details of the new API.
 

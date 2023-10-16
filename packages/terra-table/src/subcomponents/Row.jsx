@@ -39,6 +39,11 @@ const propTypes = {
   isSelected: PropTypes.bool,
 
   /**
+   * Boolean indicating whether zebra striping is enabled
+   */
+  isTableStriped: PropTypes.bool,
+
+  /**
    * A string identifier used to describe the row contents. This value will be used to construct additional labels
    * for internal controls (e.g. row selection cells).
    */
@@ -81,6 +86,7 @@ function Row(props) {
     hasRowSelection,
     id,
     isSelected,
+    isTableStriped,
     cells,
     ariaLabel,
     displayedColumns,
@@ -99,6 +105,7 @@ function Row(props) {
       className={cx('row', {
         selected: isSelected,
         selectable: hasRowSelection,
+        'striped-table-row': isTableStriped,
       }, theme.className)} // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
       onMouseEnter={hasRowSelection ? () => { setHovered(true); } : undefined}
