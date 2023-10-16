@@ -54,7 +54,7 @@ const propTypes = {
    */
   onResizeMouseUp: PropTypes.func.isRequired,
   /**
-   * Function that is called when the the keyboard is used to adjust the column size
+   * Function that is called when the the keyboard is used to adjust the column size.
    */
   onResizeHandleChange: PropTypes.func,
   /**
