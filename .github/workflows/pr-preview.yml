@@ -2,7 +2,7 @@ name: pr-preview
 
 on:
   pull_request:
-    branches: ['main']
+    branches: ['wdg_column_resizing']
 jobs:
   deploy:
     runs-on: ubuntu-latest

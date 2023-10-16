@@ -3,9 +3,9 @@ name: CI and CD
 
 on:
   push:
-    branches: ['main']
+    branches: ['wdg_column_resizing']
   pull_request:
-    branches: ['main']
+    branches: ['wdg_column_resizing']
   schedule:
     - cron: '0 1 * * SUN'
   workflow_dispatch:
