@@ -30,7 +30,7 @@ const propTypes = {
     */
   height: PropTypes.number.isRequired,
   /**
-   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
   /**
@@ -50,7 +50,7 @@ const propTypes = {
    */
   onResizeMouseDown: PropTypes.func.isRequired,
   /**
-   * Function that is called when onMouseDown event is triggered for the resize handle
+   * Function that is called when onMouseDown event is triggered for the resize handle.
    */
   onResizeMouseUp: PropTypes.func.isRequired,
   /**
