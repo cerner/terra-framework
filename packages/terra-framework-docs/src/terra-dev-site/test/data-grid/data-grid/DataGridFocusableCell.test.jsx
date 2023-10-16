@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 import React, { useState } from 'react';
 import DataGrid from 'terra-data-grid/lib/DataGrid';
 import NotificationDialog from 'terra-notification-dialog';
@@ -80,7 +81,15 @@ const DataGridFocusableCell = () => {
       />
       )}
       <button id="previous-focus-button" type="button" aria-label="Previous Element">Test Previous</button>
-      {/* eslint-disable-next-line react/forbid-dom-props */}
+      <div style={{ display: 'none' }}>
+        <button id="hidden-button" type="button">Hidden</button>
+      </div>
+      <div style={{ visibility: 'hidden' }}>
+        <button id="hidden-button2" type="button">Hidden2</button>
+      </div>
+      <div inert="">
+        <button id="inert-child-button" type="button">Inert Child</button>
+      </div>
       <div style={{ margin: '10px' }}>
         <DataGrid
           id="default-terra-data-grid-focusable-cell"

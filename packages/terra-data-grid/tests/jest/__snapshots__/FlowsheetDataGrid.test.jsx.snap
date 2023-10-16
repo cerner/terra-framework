@@ -4,7 +4,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
 <div
   className="flowsheet-data-grid-container"
 >
-  <InjectIntl(DataGrid)
+  <ForwardRef
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}

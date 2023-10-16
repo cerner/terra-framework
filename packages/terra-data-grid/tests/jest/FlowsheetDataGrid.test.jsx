@@ -55,7 +55,7 @@ describe('FlowsheetDataGrid', () => {
       />,
     );
 
-    const dataGrid = wrapper.find('InjectIntl(DataGrid)');
+    const dataGrid = wrapper.find('ForwardRef');
     const pinnedColumns = dataGrid.prop('pinnedColumns');
     expect(pinnedColumns).toEqual(
       [
