@@ -2,7 +2,13 @@
 
 ## Unreleased
 
+* Updated
+  * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
+
+## 1.40.0 - (October 11, 2023)
+
 * Added
+  * Added documentation for the new `terra-file-path` component.
   * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
   * Added additional documentation and implementation guide in adherence to the newly established documentation template for the examples of Worklist Data Grid in `terra-data-grid`.
 

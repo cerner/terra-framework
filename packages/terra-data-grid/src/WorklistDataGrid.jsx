@@ -140,6 +140,7 @@ const defaultProps = {
   rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
+  rows: [],
 };
 
 function WorklistDataGrid(props) {
@@ -173,6 +174,9 @@ function WorklistDataGrid(props) {
   const [rowSelectionModeAriaLiveMessage, setRowSelectionModeAriaLiveMessage] = useState(null);
   const inShiftUpDownMode = useRef(false);
   const multiSelectRange = useRef({ start: null, end: null });
+  const dataGridFuncRef = useRef();
+  const gridReceivedFocus = useRef(false);
+  const gridHasFocus = document.getElementById(`${id}-worklist-data-grid-container`)?.contains(document.activeElement);
 
   // -------------------------------------
   // useEffect Hooks
@@ -192,6 +196,11 @@ function WorklistDataGrid(props) {
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklistDataGrid.row-selection-mode-enabled' : 'Terra.worklistDataGrid.row-selection-mode-disabled' }));
 
+    if (gridReceivedFocus.current) {
+      let newFocusCell = dataGridFuncRef.current.getFocusedCell();
+      newFocusCell = { row: newFocusCell.row, col: Math.max(newFocusCell.col + (hasSelectableRows ? 1 : -1), 0) };
+      dataGridFuncRef.current.setFocusedRowCol(newFocusCell.row, newFocusCell.col, gridHasFocus);
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
 
@@ -392,9 +401,19 @@ function WorklistDataGrid(props) {
     }
   };
 
+  const onFocus = () => {
+    gridReceivedFocus.current = true;
+  };
+
   // -------------------------------------
   return (
-    <div onKeyDown={handleKeyDown} onKeyUp={handleKeyUp} className={cx('worklist-data-grid-container')}>
+    <div
+      id={`${id}-worklist-data-grid-container`}
+      onKeyDown={handleKeyDown}
+      onKeyUp={handleKeyUp}
+      className={cx('worklist-data-grid-container')}
+      onFocus={!gridReceivedFocus.current && onFocus}
+    >
       <DataGrid
         id={id}
         ariaLabel={ariaLabel}
@@ -412,6 +431,7 @@ function WorklistDataGrid(props) {
         onClearSelection={handleClearSelection}
         onRangeSelection={onRangeSelection}
         hasSelectableRows={hasSelectableRows}
+        ref={dataGridFuncRef}
       />
       <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
