@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.41.0 - (October 17, 2023)
+
 * Added
   * Added documentation for the new `terra-table` component.
   
