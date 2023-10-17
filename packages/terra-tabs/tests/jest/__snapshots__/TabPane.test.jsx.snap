@@ -2,6 +2,7 @@
 
 exports[`TabPane correctly applies the theme context className 1`] = `
 <div
+  aria-describedby={null}
   aria-disabled={false}
   aria-label="Default"
   aria-selected={false}
@@ -40,6 +41,7 @@ exports[`TabPane correctly applies the theme context className 1`] = `
 
 exports[`TabPane should render a default component with label 1`] = `
 <div
+  aria-describedby={null}
   aria-disabled={false}
   aria-label="Default"
   aria-selected={false}
@@ -78,6 +80,7 @@ exports[`TabPane should render a default component with label 1`] = `
 
 exports[`TabPane should render with a custom display when provided 1`] = `
 <div
+  aria-describedby={null}
   aria-disabled={false}
   aria-label="Label"
   aria-selected={false}
@@ -114,6 +117,7 @@ exports[`TabPane should render with a custom display when provided 1`] = `
 
 exports[`TabPane should render with icon and label 1`] = `
 <div
+  aria-describedby={null}
   aria-disabled={false}
   aria-label="Label"
   aria-selected={false}
@@ -155,6 +159,7 @@ exports[`TabPane should render with icon and label 1`] = `
 
 exports[`TabPane should render with icon only when indicated 1`] = `
 <div
+  aria-describedby={null}
   aria-disabled={false}
   aria-label="Label"
   aria-selected={false}

@@ -229,6 +229,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     >
                       <div
                         aria-controls="terra-common-tabs-default-panel"
+                        aria-describedby={null}
                         aria-disabled={false}
                         aria-label="Default"
                         aria-selected={true}
@@ -768,6 +769,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -1546,6 +1548,7 @@ exports[`Tabs should render with add icon 1`] = `
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -2162,6 +2165,7 @@ exports[`Tabs should render with add icon 2`] = `
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -2772,6 +2776,7 @@ exports[`Tabs should render with close icon 1`] = `
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
