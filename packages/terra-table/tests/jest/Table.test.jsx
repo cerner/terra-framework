@@ -204,6 +204,44 @@ describe('Table', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('verifies that the hasColumnHeaders prop hides the table column headers', () => {
+    const wrapper = shallowWithIntl(
+      <IntlProvider locale="en">
+        <Table
+          id="test-terra-table"
+          overflowColumns={tableData.cols}
+          rows={tableData.rows}
+          hasColumnHeaders={false}
+        />
+      </IntlProvider>,
+    ).dive().dive();
+
+    // Verify that column headers are not present
+    const columnHeader = wrapper.find(ColumnHeader);
+    expect(columnHeader).toHaveLength(0);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies that the hasColumnHeaders prop hides the table column headers', () => {
+    const wrapper = shallowWithIntl(
+      <IntlProvider locale="en">
+        <Table
+          id="test-terra-table"
+          overflowColumns={tableData.cols}
+          rows={tableData.rows}
+          defaultColumnWidth={150}
+        />
+      </IntlProvider>,
+    ).dive().dive();
+
+    // Verify that column headers are not present
+    const column = wrapper.find('col').get(0);
+    expect(column.props.style.width).toBe('150px');
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 
 describe('with pinned columns', () => {

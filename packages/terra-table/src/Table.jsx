@@ -100,6 +100,12 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
+   * rendered to allow for row selection to occur.
+   */
+  hasColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -110,6 +116,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  hasColumnHeaders: true,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -131,6 +138,7 @@ function Table(props) {
     onCellSelect,
     hasSelectableRows,
     rowHeaderIndex,
+    hasColumnHeaders,
   } = props;
 
   if (pinnedColumns.length === 0) {
@@ -284,12 +292,20 @@ function Table(props) {
         role={gridContext.role}
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
-        className={cx('table', theme.className)}
+        className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
           value={columnContextValue}
         >
+          <colgroup>
+            {tableColumns.map((column) => (
+              // eslint-disable-next-line react/forbid-dom-props
+              <col style={{ width: `${column.width}px` }} />
+            ))}
+          </colgroup>
+
+          {hasColumnHeaders && (
           <ColumnHeader
             columns={tableColumns}
             headerHeight={columnHeaderHeight}
@@ -297,6 +313,7 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
           />
+          )}
           <tbody>
             {rows.map((row, index) => (
               <Row

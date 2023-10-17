@@ -91,4 +91,16 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('table-grid-context', { selector: tableWithGridContextSelector });
     });
   });
+
+  describe('Table Without Header', () => {
+    const tableWithoutHeadersSelector = '#table-without-headers';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-without-headers');
+    });
+
+    it('Renders a table without column headers', () => {
+      Terra.validates.element('table-without-column-headers', { selector: tableWithoutHeadersSelector });
+    });
+  });
 });
