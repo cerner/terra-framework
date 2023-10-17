@@ -9,11 +9,7 @@
       cursor: pointer;
     }
 
-    &:nth-child(even) {
-      background-color: var(--terra-data-grid-row-striped-even-background-color, #f0f0f0);
-    }
-
-    &:nth-child(odd) {
+    &:nth-child(n) {
       background-color: var(--terra-data-grid-row-striped-odd-background-color, #fff);
     }
 
@@ -26,6 +22,12 @@
       th {
         border-bottom: var(--terra-data-grid-row-highlight-border-bottom, 1px solid #0092e0);
       }
+    }
+  }
+
+  .zebra {
+    &:nth-child(even) {
+      background-color: var(--terra-data-grid-row-striped-even-background-color, #f0f0f0);
     }
   }
 

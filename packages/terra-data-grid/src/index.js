@@ -1,4 +1,5 @@
 import WorklistDataGrid from './WorklistDataGrid';
 import FlowsheetDataGrid from './FlowsheetDataGrid';
+import CompactInteractiveList from './CompactInteractiveList';
 
-export { WorklistDataGrid, FlowsheetDataGrid };
+export { WorklistDataGrid, FlowsheetDataGrid, CompactInteractiveList };

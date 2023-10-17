@@ -14,6 +14,7 @@ import ColumnContext from '../utils/ColumnContext';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  position: PropTypes.string,
   /**
    * String identifier of the row in which the Cell will be rendered.
    */
@@ -84,6 +85,7 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  fitContentRowHight: PropTypes.boolean,
 };
 
 const defaultProps = {
@@ -91,12 +93,14 @@ const defaultProps = {
   isSelected: false,
   isSelectable: true,
   isMasked: false,
+  fitContentRowHight: false,
 };
 
 function Cell(props) {
   const {
     rowId,
     columnId,
+    position,
     rowIndex,
     columnIndex,
     ariaLabel,
@@ -108,6 +112,7 @@ function Cell(props) {
     children,
     onCellSelect,
     height,
+    fitContentRowHight,
     intl,
   } = props;
 
@@ -211,6 +216,7 @@ function Cell(props) {
   }
 
   const className = cx('cell', {
+    inner: position,
     masked: isMasked,
     pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
     selectable: isSelectable && !isMasked,
@@ -222,6 +228,9 @@ function Cell(props) {
   const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
 
   const CellTag = isRowHeader ? 'th' : 'td';
+
+  console.log('isSelectable: ', isSelectable);
+
   return (
     <CellTag
       ref={cellRef}
@@ -242,7 +251,7 @@ function Cell(props) {
         }}
       >
         {/* eslint-disable-next-line react/forbid-dom-props */}
-        <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
+        <div className={cx('cell-content', theme.className)} style={!fitContentRowHight ? { height } : null}>{cellContent}</div>
       </FocusTrap>
       {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.dataGrid.cell-interactable' })} />}
     </CellTag>

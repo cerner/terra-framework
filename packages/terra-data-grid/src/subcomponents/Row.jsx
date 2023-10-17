@@ -64,18 +64,22 @@ const propTypes = {
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
+  fitContentRowHight: PropTypes.bool,
+  zebraPatternOn: PropTypes.bool,
 };
 
 const defaultProps = {
   hasRowSelection: false,
   rowHeaderIndex: 0,
   isSelected: false,
+  fitContentRowHight: false,
 };
 
 function Row(props) {
   const {
     rowIndex,
     height,
+    fitContentRowHight,
     hasRowSelection,
     id,
     isSelected,
@@ -84,6 +88,7 @@ function Row(props) {
     displayedColumns,
     rowHeaderIndex,
     onCellSelect,
+    zebraPatternOn,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -98,6 +103,7 @@ function Row(props) {
 
     return (
       <Cell
+        position={cellData.position}
         rowId={rowId}
         columnId={columnId}
         rowIndex={cellRowIndex}
@@ -110,6 +116,7 @@ function Row(props) {
         isHighlighted={isHovered || isSelected}
         onCellSelect={onCellSelect}
         height={height}
+        fitContentRowHight={fitContentRowHight}
       >
         {cellData.content}
       </Cell>
@@ -130,17 +137,17 @@ function Row(props) {
 
   return (
     <tr
-      className={cx('row', {
+      className={cx('row', zebraPatternOn && 'zebra', {
         selected: isSelected,
         selectable: hasRowSelection,
       }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{ height }}
+      style={fitContentRowHight ? null : { height }}
       onMouseEnter={hasRowSelection ? () => { setHovered(true); } : null}
       onMouseLeave={hasRowSelection ? () => { setHovered(false); } : null}
     >
       {rowSelectionCell}
-      {cells.map((cellData, cellColumnIndex) => (
+      {cells && cells.map((cellData, cellColumnIndex) => (
         getCellData(rowIndex, cellColumnIndex + columnIndexOffSet, cellData, id)
       ))}
     </tr>

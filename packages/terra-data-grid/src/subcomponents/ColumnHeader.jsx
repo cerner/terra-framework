@@ -30,6 +30,7 @@ const propTypes = {
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
+  hideColumnHeader: PropTypes.bool,
 };
 
 const ColumnHeader = (props) => {
@@ -39,6 +40,7 @@ const ColumnHeader = (props) => {
     tableHeight,
     onColumnSelect,
     onResizeMouseDown,
+    hideColumnHeader,
   } = props;
 
   // Create ColumnHeaderCell component for each column
@@ -53,6 +55,7 @@ const ColumnHeader = (props) => {
       minimumWidth={column.minimumWidth}
       maximumWidth={column.maximumWidth}
       headerHeight={headerHeight}
+      hideColumnHeader={hideColumnHeader}
       isResizable={column.isResizable}
       isSelectable={column.isSelectable}
       tableHeight={tableHeight}
@@ -65,7 +68,7 @@ const ColumnHeader = (props) => {
 
   return (
     <thead>
-      <tr className="column-header-row" height={headerHeight}>
+      <tr className="column-header-row">
         {columns.map((column, columnIndex) => (buildColumn(column, columnIndex)))}
       </tr>
     </thead>

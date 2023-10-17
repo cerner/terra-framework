@@ -100,7 +100,8 @@ const propTypes = {
   onClearSelection: PropTypes.func,
 
   /**
-   * Callback function that is called when a range selection occurs. Parameters:
+   * Callback function thaeibcccttcienrhlirbjncbtlnnecurkhdhjftkvndukr
+   * t is called when a range selection occurs. Parameters:
    * @param {number} rowIndex RowIndex of the cell from which the range selection was triggered.
    * @param {number} columnIndex ColumnIndex of the cell from which the range selection was triggered.
    * @param {number} direction Direction keycode representing the direction of the selection.
@@ -112,6 +113,9 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+  fitContentRowHight: PropTypes.bool,
+  hideColumnHeader: PropTypes.bool,
+  zebraPatternOn: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -121,6 +125,9 @@ const defaultProps = {
   rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
+  fitContentRowHight: false,
+  hideColumnHeader: false,
+  zebraPatternOn: true,
 };
 
 function DataGrid(props) {
@@ -135,12 +142,15 @@ function DataGrid(props) {
     defaultColumnWidth,
     columnHeaderHeight,
     rowHeight,
+    fitContentRowHight,
     onColumnSelect,
     onCellSelect,
     onClearSelection,
     onRangeSelection,
     hasSelectableRows,
     rowHeaderIndex,
+    hideColumnHeader,
+    zebraPatternOn,
   } = props;
 
   if (pinnedColumns.length === 0) {
@@ -194,7 +204,11 @@ function DataGrid(props) {
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   );
 
-  const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
+  const setFocusedRowCol = (newRowIndex1, newColIndex, makeActiveElement) => {
+    let newRowIndex = newRowIndex1;
+    if (hideColumnHeader && newRowIndex === 0) {
+      newRowIndex = 1;
+    }
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
@@ -540,6 +554,7 @@ function DataGrid(props) {
             tableHeight={tableHeight}
             onColumnSelect={handleColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
+            hideColumnHeader={hideColumnHeader}
           />
           <tbody>
             {rows.map((row, index) => (
@@ -547,6 +562,7 @@ function DataGrid(props) {
                 rowIndex={index + 1}
                 key={row.id}
                 height={rowHeight}
+                fitContentRowHight={fitContentRowHight}
                 id={row.id}
                 isSelected={row.isSelected}
                 cells={row.cells}
@@ -555,6 +571,7 @@ function DataGrid(props) {
                 displayedColumns={displayedColumns}
                 rowHeaderIndex={rowHeaderIndex}
                 onCellSelect={handleCellSelection}
+                zebraPatternOn={zebraPatternOn}
               />
             ))}
           </tbody>

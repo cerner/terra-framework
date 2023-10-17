@@ -15,6 +15,27 @@
     }
   }
 
+  /*
+  .compact-intercative-list-container {
+    .cell {
+      border-bottom: none !important;
+      border-right: none !important;
+  
+      &:first-child {
+        border-left: none !important;
+      }
+    }
+  } */
+
+  .inner{
+    border-right: none !important;
+
+    /*
+    &:first-child {
+      border-left: none !important;
+    }*/
+  }
+
   .selected {
     background-color: var(--terra-data-grid-cell-selected-background-color, #cbe7fa);
   }

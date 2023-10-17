@@ -100,12 +100,14 @@ const propTypes = {
    * Object containing intl APIs
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+  hideColumnHeader: PropTypes.bool,
 };
 
 const defaultProps = {
   hasError: false,
   isSelectable: true,
   isResizable: true,
+  hideColumnHeader: false,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -121,6 +123,7 @@ const ColumnHeaderCell = (props) => {
     minimumWidth,
     maximumWidth,
     headerHeight,
+    hideColumnHeader,
     onColumnSelect,
     intl,
     rowIndex,
@@ -186,26 +189,30 @@ const ColumnHeaderCell = (props) => {
     )
     : null;
 
+  const height = hideColumnHeader ? '1px' : headerHeight;
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
       ref={(columnHeaderCellRef)}
       key={id}
-      className={cx('column-header', theme.className, { selectable: isSelectable, pinned: columnIndex < columnContext.pinnedColumnOffsets.length })}
-      tabIndex={-1}
+      className={hideColumnHeader ? cx('hidden-column-header', theme.className) : cx('column-header', theme.className, { selectable: isSelectable, pinned: columnIndex < columnContext.pinnedColumnOffsets.length })}
+      tabIndex={hideColumnHeader ? null : -1}
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
-      onMouseDown={(isSelectable && onColumnSelect) ? handleMouseDown : undefined}
-      onKeyDown={(isSelectable && onColumnSelect) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
+      onMouseDown={(isSelectable && onColumnSelect && !hideColumnHeader) ? handleMouseDown : undefined}
+      onKeyDown={(isSelectable && onColumnSelect && !hideColumnHeader) ? handleKeyDown : undefined}
+      style={{ width: `${width}px`, height, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
+      {!hideColumnHeader && (
       <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}
         <span>{displayName}</span>
         {sortIndicatorIcon}
       </div>
-      { isResizable && (
+      )}
+      { isResizable && !hideColumnHeader && (
       <ColumnResizeHandle
         columnIndex={columnIndex}
         columnText={displayName}
@@ -216,7 +223,7 @@ const ColumnHeaderCell = (props) => {
         onResizeMouseDown={onResizeHandleMouseDown}
       />
       )}
-      {pinnedColumnsDivider}
+      {!hideColumnHeader && pinnedColumnsDivider}
     </th>
   );
 };

@@ -44,6 +44,10 @@
     }
   }
 
+  .hidden-column-header {
+    border-bottom: var(--terra-data-grid-cell-border-bottom, 1px solid #dedfe0);
+  }
+
   // Hover state for selectable elements
   .selectable:hover {
     background-color: var(--terra-data-grid-header-hover-background-color, #daecf6);
