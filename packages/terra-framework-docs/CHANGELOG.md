@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 1.41.0 - (October 17, 2023)
-
 * Changed
   * Updated `terra-menu` examples with focus highlight styles for terra-button on closing menu with selection of menu-item.
 
