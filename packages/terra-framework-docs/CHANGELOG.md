@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for the new `terra-table` component.
+  
 * Changed
   * Updated `terra-menu` examples with focus highlight styles for terra-button on closing menu with selection of menu-item.
 

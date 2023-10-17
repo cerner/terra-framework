@@ -34,6 +34,7 @@
     "@cerner/terra-docs": "^1.7.0",
     "@cerner/terra-pills": "^1.14.0",
     "classnames": "^2.2.5",
+    "legacy-terra-table": "npm:terra-table@^4.36.0",
     "prop-types": "^15.5.8",
     "terra-action-header": "^2.0.0",
     "terra-aggregator": "^4.75.0",
