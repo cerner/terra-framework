@@ -1,4 +1,6 @@
-import React, { useMemo } from 'react';
+import React, {
+  useCallback, useEffect, useMemo, useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
@@ -98,6 +100,10 @@ function FlowsheetDataGrid(props) {
     intl,
   } = props;
 
+  const currentSelectedCell = useRef(Array(2).fill(null));
+  const targetCell = useRef(Array(2).fill(null));
+  const selectedCells = useRef([]);
+
   const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
   const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
   const overflowColumns = flowsheetColumns.length > 1 ? flowsheetColumns.slice(1) : [];
@@ -128,6 +134,37 @@ function FlowsheetDataGrid(props) {
     return newRows;
   }, [intl, rows]);
 
+  useEffect(() => {
+    const previousSelectedCells = [...selectedCells.current];
+    const newSelectedCells = [];
+    rows.forEach((row) => {
+      row.cells.forEach((cell, cellIndex) => {
+        if (cell.isSelected) {
+          newSelectedCells.push([row.id, columns[cellIndex].id]);
+        }
+      });
+    });
+    selectedCells.current = newSelectedCells;
+    console.log(selectedCells.current);
+  }, [rows, columns]);
+
+  const clearSelectedCells = useCallback(() => {
+    if (onClearSelectedCells) {
+      onClearSelectedCells();
+    }
+  }, [onClearSelectedCells]);
+
+  const selectCell = useCallback((selectionDetails) => {
+    currentSelectedCell.current = [selectionDetails.rowId, selectionDetails.columnId];
+  }, []);
+
+  const handleCellSelection = useCallback((selectionDetails) => {
+    if (selectionDetails.isCellSelectable && onCellSelect) {
+      selectCell(selectionDetails);
+      onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
+    }
+  }, [onCellSelect, selectCell]);
+
   return (
     <div className={cx('flowsheet-data-grid-container')}>
       <DataGrid
@@ -141,7 +178,7 @@ function FlowsheetDataGrid(props) {
         overflowColumns={overflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
-        onCellSelect={onCellSelect}
+        onCellSelect={handleCellSelection}
         onClearSelectedCells={onClearSelectedCells}
       />
     </div>

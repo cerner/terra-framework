@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
 const DefaultFlowsheetDataGrid = () => {
@@ -59,13 +59,50 @@ const DefaultFlowsheetDataGrid = () => {
   };
 
   const { cols, rows } = gridDataJSON;
+  const [rowData, setRowData] = useState(rows);
+
+  const onCellSelect = useCallback((rowId, columnId) => {
+    if (rowId && columnId) {
+      const rowIndex = rowData.findIndex(e => e.id === rowId);
+      const columnIndex = cols.findIndex(e => e.id === columnId);
+
+      // Remove current selections
+      const newRowData = [...rowData];
+      for (let row = 0; row < rowData.length; row += 1) {
+        for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
+          const currentCell = rowData[row].cells[cell];
+          if (currentCell.isSelected && !(row === rowIndex && cell === columnIndex)) {
+            currentCell.isSelected = false;
+          }
+        }
+      }
+
+      // Toggle selection state of selected cell
+      newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected;
+      setRowData(newRowData);
+    }
+  }, [cols, rowData]);
+
+  const onClearSelectedCells = useCallback(() => {
+    // Remove current selections
+    const newRowData = [...rowData];
+    for (let row = 0; row < rowData.length; row += 1) {
+      for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
+        newRowData[row].cells[cell].isSelected = false;
+      }
+    }
+
+    setRowData(newRowData);
+  }, [rowData]);
 
   return (
     <FlowsheetDataGrid
       id="default-terra-flowsheet-data-grid"
       columns={cols}
-      rows={rows}
+      rows={rowData}
       ariaLabel="Flowsheet Data Grid"
+      onCellSelect={onCellSelect}
+      onClearSelectedCells={onClearSelectedCells}
     />
   );
 };
