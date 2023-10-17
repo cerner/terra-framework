@@ -619,7 +619,7 @@ const DataGrid = injectIntl((props) => {
             columnResizeIncrement={columnResizeIncrement}
             onColumnSelect={handleColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
-            onResizeHandleChange={onResizeHandleChange}
+            onResizeHandleChange={onColumnResize ? onResizeHandleChange: null}
           />
           <tbody>
             {rows.map((row, index) => (
