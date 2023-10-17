@@ -1,9 +1,6 @@
 # Changelog
 
 ## Unreleased
-
-## 0.8.1 - (October 17, 2023)
-
 * Fixed
   * Fixed issue where WorklistDataGrid loses focus when Row Selection Mode is turned off from a Row Selection Cell.
   * Fixed issue where focus was moved from editable fields when using key events from data grid components.
