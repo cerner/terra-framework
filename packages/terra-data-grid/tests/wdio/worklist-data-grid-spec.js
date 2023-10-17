@@ -174,7 +174,15 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       rowSelectionNavigateToCell(4, 1);
       browser.keys(['Escape']); // clears row selection mode
 
-      Terra.validates.element('row-selection-mode-off-cell-4-1-focused', { selector: defaultSelector });
+      Terra.validates.element('row-selection-mode-off-cell-4-0-focused', { selector: defaultSelector });
+    });
+
+    it('focus remains on the grid when row selection mode is turned off from a row selection cell', () => {
+      rowSelectionNavigateToCell(4, 0);
+      browser.keys(['Escape']); // clears row selection mode
+
+      Terra.validates.element('row-selection-mode-off-cell-4-0-focused', { selector: defaultSelector });
+      expect(browser.$('[role="grid"] tbody tr:nth-of-type(4) th:nth-of-type(1)').isFocused()).toBe(true);
     });
 
     it('selects a row by clicking inside that row', () => {

@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 import React, { useState } from 'react';
 import DataGrid from 'terra-data-grid/lib/DataGrid';
 import NotificationDialog from 'terra-notification-dialog';
@@ -17,9 +18,10 @@ const DataGridFocusableCell = () => {
 
   const buttonCell = <button type="button" aria-label="Alert" onClick={handleButtonOpenModal}>Alert</button>;
   // eslint-disable-next-line react/forbid-dom-props
-  const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
+  const inputCell = <input id="input-cell" type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
+  const inputCell2 = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
   const anchorCell = <a href="https://www.oracle.com/" aria-label="Visit Oracle">Visit Oracle</a>;
-  const textAreaCell = <textarea name="textArea" aria-label="Text Area" rows="1" cols="15" value="Text Area" />;
+  const textAreaCell = <textarea id="textarea-cell" name="textArea" aria-label="Text Area" rows="1" cols="15" value="Text Area" />;
   const selectCell = (
     <select name="specialties" id="specialties" aria-label="Select Specialty">
       <option value="ambulatory">Ambulatory</option>
@@ -53,7 +55,7 @@ const DataGridFocusableCell = () => {
           {
             content: (<div>
               {buttonCell}
-              {inputCell}
+              {inputCell2}
               {/* eslint-disable-next-line react/jsx-closing-tag-location */}
             </div>),
           },
@@ -80,7 +82,15 @@ const DataGridFocusableCell = () => {
       />
       )}
       <button id="previous-focus-button" type="button" aria-label="Previous Element">Test Previous</button>
-      {/* eslint-disable-next-line react/forbid-dom-props */}
+      <div style={{ display: 'none' }}>
+        <button id="hidden-button" type="button">Hidden</button>
+      </div>
+      <div style={{ visibility: 'hidden' }}>
+        <button id="hidden-button2" type="button">Hidden2</button>
+      </div>
+      <div inert="">
+        <button id="inert-child-button" type="button">Inert Child</button>
+      </div>
       <div style={{ margin: '10px' }}>
         <DataGrid
           id="default-terra-data-grid-focusable-cell"

@@ -2,7 +2,17 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-menu` examples with focus highlight styles for terra-button on closing menu with selection of menu-item.
+
+* Updated
+  * Updates examples for `terra-data-grid` to cover scenarios for focusable elements prevented from receiving focus.
+  * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
+
+## 1.40.0 - (October 11, 2023)
+
 * Added
+  * Added documentation for the new `terra-file-path` component.
   * Added documentation for FlowsheetDataGrid in `terra-data-grid`.
   * Added additional documentation and implementation guide in adherence to the newly established documentation template for the examples of Worklist Data Grid in `terra-data-grid`.
 
@@ -14,6 +24,7 @@
 
 * Updated
   * Updated examples for `terra-collapsible-menu-view` to use more meaningful controls and control labels.
+  * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
   * Updated examples and tests to add support for content scrolling within the iframe.
   * Updated examples and tests for `terra-embedded-content-consumer` to show the preferred way to set the title.
 

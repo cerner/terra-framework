@@ -132,7 +132,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
   });
 
   describe('Focusable Cell Navigation : ', () => {
-    const columnResizeSelector = '#terra-data-grid-focusable-cell';
+    const columnResizeSelector = 'body';
 
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-focusable-cell');
@@ -150,6 +150,18 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('data-grid-skip-focusable-elements-next', { columnResizeSelector });
       expect(browser.$('#next-focus-button').isFocused());
+    });
+
+    it('validates that a Tab key press inside the grid as last focusable element wraps', () => {
+      const testScript = 'document.getElementById("next-focus-button").style.display="none"';
+      browser.execute(testScript);
+
+      browser.pause(250);
+
+      browser.keys(['Tab', 'Tab', 'Tab']);
+
+      Terra.validates.element('data-grid-focusable-elements-wrap', { columnResizeSelector });
+      expect(browser.$('#previous-focus-button').isFocused());
     });
 
     it('validates that a Shift+Tab key press while inside the grid will skip to the previous focusable element outside the grid', () => {
@@ -218,6 +230,35 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('focusable-textarea-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('textarea:focus')).toBeElementsArrayOfSize(1);
+    });
+
+    it('validates that keyboard inputs will not move focus from an input field', () => {
+      browser.$('#input-cell').click();
+
+      browser.keys(['ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('data-grid-focusable-input-retains-focus', { columnResizeSelector });
+      expect(browser.$('#input-cell').isFocused()).toBe(true);
+    });
+
+    it('validates that keyboard inputs will not move focus from a textarea', () => {
+      browser.$('#textarea-cell').click();
+
+      browser.pause(250);
+
+      browser.keys(['ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('data-grid-focusable-textarea-retains-focus', { columnResizeSelector });
+      expect(browser.$('#textarea-cell').isFocused()).toBe(true);
+    });
+
+    it('validates that keyboard inputs will not move focus from a select element', () => {
+      browser.$('#specialties').click();
+
+      browser.keys(['ArrowRight', 'ArrowLeft']);
+
+      Terra.validates.element('data-grid-focusable-select-retains-focus', { columnResizeSelector });
+      expect(browser.$('#specialties').isFocused()).toBe(true);
     });
   });
 

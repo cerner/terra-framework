@@ -76,7 +76,7 @@ describe('DataGrid', () => {
         overflowColumns={dataFile.cols.slice(2)}
         rows={dataFile.rows}
       />,
-    ).dive();
+    ).dive().dive();
 
     // One row used for the header.
     const columnHeader = wrapper.find(ColumnHeader);
@@ -104,7 +104,7 @@ describe('DataGrid', () => {
         overflowColumns={dataFile.cols}
         rows={dataFile.rows}
       />,
-    ).dive();
+    ).dive().dive();
 
     const rows = wrapper.find(Row);
     expect(rows).toHaveLength(dataFile.rows.length);

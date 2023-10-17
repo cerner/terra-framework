@@ -1,7 +1,243 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`placeholder placeholder 1`] = `
-<div>
-  test
-</div>
+exports[`Default File Path should have the right href per hyperlink 1`] = `
+<InjectIntl(CollapsibleMenuView)
+  iconText="Terra.file-path.icon.text"
+  isReversedChildrenOrder={true}
+  isStartAligned={true}
+  useHorizontalIcon={true}
+>
+  <CollapsibleMenuViewHyperlink
+    href="https://oracle.com"
+    key="oracle"
+    text="Oracle"
+    variant="default"
+  />
+  <CollapsibleMenuViewDivider
+    key="divider-oracle"
+    useChevronRightIcon={true}
+  />
+  <CollapsibleMenuViewHyperlink
+    href="https://cerner.com"
+    key="cerner"
+    text="Cerner"
+    variant="default"
+  />
+  <CollapsibleMenuViewDivider
+    key="divider-cerner"
+    useChevronRightIcon={true}
+  />
+  <CollapsibleMenuViewItem
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    isTextOnly={true}
+    key="google"
+    shouldCloseOnClick={true}
+    text="Google"
+  />
+</InjectIntl(CollapsibleMenuView)>
+`;
+
+exports[`Default File Path should not render the last item as a hyperlink 1`] = `
+<InjectIntl(CollapsibleMenuView)
+  iconText="Terra.file-path.icon.text"
+  isReversedChildrenOrder={true}
+  isStartAligned={true}
+  useHorizontalIcon={true}
+>
+  <CollapsibleMenuViewHyperlink
+    href="https://oracle.com"
+    key="oracle"
+    text="Oracle"
+    variant="default"
+  />
+  <CollapsibleMenuViewDivider
+    key="divider-oracle"
+    useChevronRightIcon={true}
+  />
+  <CollapsibleMenuViewHyperlink
+    href="https://cerner.com"
+    key="cerner"
+    text="Cerner"
+    variant="default"
+  />
+  <CollapsibleMenuViewDivider
+    key="divider-cerner"
+    useChevronRightIcon={true}
+  />
+  <CollapsibleMenuViewItem
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    isTextOnly={true}
+    key="google"
+    shouldCloseOnClick={true}
+    text="Google"
+  />
+</InjectIntl(CollapsibleMenuView)>
+`;
+
+exports[`Default File Path should render a default component 1`] = `
+<FilePath
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  items={
+    Array [
+      Object {
+        "href": "https://oracle.com",
+        "key": "oracle",
+        "text": "Oracle",
+      },
+      Object {
+        "href": "https://cerner.com",
+        "key": "cerner",
+        "text": "Cerner",
+      },
+      Object {
+        "href": "https://google.com",
+        "key": "google",
+        "text": "Google",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`On Click File Path should render a component with on clickable items 1`] = `
+<FilePath
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  items={
+    Array [
+      Object {
+        "key": "oracle",
+        "onClick": [MockFunction],
+        "text": "Oracle",
+      },
+      Object {
+        "key": "cerner",
+        "onClick": [MockFunction],
+        "text": "Cerner",
+      },
+      Object {
+        "key": "google",
+        "text": "Google",
+      },
+    ]
+  }
+/>
+`;
+
+exports[`On Click File Path should trigger the correct on click per item 1`] = `
+<InjectIntl(CollapsibleMenuView)
+  iconText="Terra.file-path.icon.text"
+  isReversedChildrenOrder={true}
+  isStartAligned={true}
+  useHorizontalIcon={true}
+>
+  <CollapsibleMenuViewHyperlink
+    key="oracle"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    text="Oracle"
+    variant="default"
+  />
+  <CollapsibleMenuViewDivider
+    key="divider-oracle"
+    useChevronRightIcon={true}
+  />
+  <CollapsibleMenuViewHyperlink
+    key="cerner"
+    onClick={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
+    text="Cerner"
+    variant="default"
+  />
+  <CollapsibleMenuViewDivider
+    key="divider-cerner"
+    useChevronRightIcon={true}
+  />
+  <CollapsibleMenuViewItem
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={false}
+    isTextOnly={true}
+    key="google"
+    shouldCloseOnClick={true}
+    text="Google"
+  />
+</InjectIntl(CollapsibleMenuView)>
 `;
