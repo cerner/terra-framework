@@ -62,6 +62,133 @@ exports[`Cell renders a pinned cell 1`] = `
         }
       }
     >
+      <div
+        className="cell-content"
+        style={
+          Object {
+            "height": "50px",
+          }
+        }
+      >
+        Pinned cell data
+      </div>
+    </th>
+  </Cell>
+</InjectIntl(Cell)>
+`;
+
+exports[`Cell verifies mask takes precedence when cell is masked, selectable and selected 1`] = `
+<td
+  aria-label="Some Label Here"
+  aria-selected={true}
+  className="cell masked"
+  style={
+    Object {
+      "left": null,
+    }
+  }
+>
+  <div
+    className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
+  >
+    <span
+      className="no-data-cell"
+    >
+      Terra.table.maskedCell
+    </span>
+  </div>
+</td>
+`;
+
+exports[`Cell verifies that a cell has the correct styles and no content when isMasked prop is true 1`] = `
+<td
+  aria-label="Some Label Here"
+  className="cell masked"
+  style={
+    Object {
+      "left": null,
+    }
+  }
+>
+  <div
+    className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
+  >
+    <span
+      className="no-data-cell"
+    >
+      Terra.table.maskedCell
+    </span>
+  </div>
+</td>
+`;
+
+exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
+<InjectIntl(Cell)
+  ariaLabel="Some Label Here"
+  columnId="ColumnId"
+  columnIndex={0}
+  key="key"
+  rowId="RowID"
+  rowIndex={1}
+>
+  <Cell
+    ariaLabel="Some Label Here"
+    columnId="ColumnId"
+    columnIndex={0}
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isMasked={false}
+    isRowHeader={false}
+    isSelectable={false}
+    rowId="RowID"
+    rowIndex={1}
+  >
+    <td
+      aria-label="Some Label Here"
+      className="cell"
+      onKeyDown={[Function]}
+      style={
+        Object {
+          "left": null,
+        }
+      }
+      tabIndex={-1}
+    >
       <FocusTrap
         _createFocusTrap={[Function]}
         active={false}
@@ -79,99 +206,115 @@ exports[`Cell renders a pinned cell 1`] = `
           className="cell-content"
           style={
             Object {
-              "height": "50px",
+              "height": undefined,
             }
           }
         >
-          Pinned cell data
+          <button
+            type="button"
+          >
+            Button
+          </button>
         </div>
       </FocusTrap>
-    </th>
+      <VisuallyHiddenText
+        text="Terra.table.cell-interactable"
+      >
+        <span
+          className="visually-hidden-text"
+        >
+          Terra.table.cell-interactable
+        </span>
+      </VisuallyHiddenText>
+    </td>
   </Cell>
 </InjectIntl(Cell)>
 `;
 
-exports[`Cell verifies mask takes precedence when cell is masked, selectable and selected 1`] = `
-<td
-  aria-label="Some Label Here"
-  aria-selected={true}
-  className="cell masked"
-  style={
-    Object {
-      "left": null,
-    }
-  }
+exports[`Cell verifies that a grid cell without a focusale element does not have visually hidden text 1`] = `
+<InjectIntl(Cell)
+  ariaLabel="Some Label Here"
+  columnId="ColumnId"
+  columnIndex={0}
+  key="key"
+  rowId="RowID"
+  rowIndex={1}
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={false}
-    focusTrapOptions={
+  <Cell
+    ariaLabel="Some Label Here"
+    columnId="ColumnId"
+    columnIndex={0}
+    intl={
       Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "onDeactivate": [Function],
-        "returnFocusOnDeactivate": true,
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
       }
     }
-    paused={false}
+    isMasked={false}
+    isRowHeader={false}
+    isSelectable={false}
+    rowId="RowID"
+    rowIndex={1}
   >
-    <div
-      className="cell-content"
+    <td
+      aria-label="Some Label Here"
+      className="cell"
+      onKeyDown={[Function]}
       style={
         Object {
-          "height": undefined,
+          "left": null,
         }
       }
+      tabIndex={-1}
     >
-      <span
-        className="no-data-cell"
-      >
-        Terra.table.maskedCell
-      </span>
-    </div>
-  </FocusTrap>
-</td>
-`;
-
-exports[`Cell verifies that a cell has the correct styles and no content when isMasked prop is true 1`] = `
-<td
-  aria-label="Some Label Here"
-  className="cell masked"
-  style={
-    Object {
-      "left": null,
-    }
-  }
->
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={false}
-    focusTrapOptions={
-      Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "onDeactivate": [Function],
-        "returnFocusOnDeactivate": true,
-      }
-    }
-    paused={false}
-  >
-    <div
-      className="cell-content"
-      style={
-        Object {
-          "height": undefined,
+      <FocusTrap
+        _createFocusTrap={[Function]}
+        active={false}
+        focusTrapOptions={
+          Object {
+            "clickOutsideDeactivates": true,
+            "escapeDeactivates": false,
+            "onDeactivate": [Function],
+            "returnFocusOnDeactivate": true,
+          }
         }
-      }
-    >
-      <span
-        className="no-data-cell"
+        paused={false}
       >
-        Terra.table.maskedCell
-      </span>
-    </div>
-  </FocusTrap>
-</td>
+        <div
+          className="cell-content"
+          style={
+            Object {
+              "height": undefined,
+            }
+          }
+        >
+          Data in cell
+        </div>
+      </FocusTrap>
+    </td>
+  </Cell>
+</InjectIntl(Cell)>
 `;
 
 exports[`Cell verifies that a selected cell has the correct styles when isSelected prop is true 1`] = `
@@ -185,30 +328,39 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
     }
   }
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={false}
-    focusTrapOptions={
+  <div
+    className="cell-content"
+    style={
       Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "onDeactivate": [Function],
-        "returnFocusOnDeactivate": true,
+        "height": undefined,
       }
     }
-    paused={false}
   >
-    <div
-      className="cell-content"
-      style={
-        Object {
-          "height": undefined,
-        }
+    Data in cell
+  </div>
+</td>
+`;
+
+exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] = `
+<td
+  aria-label="Some Label Here"
+  className="cell"
+  style={
+    Object {
+      "left": null,
+    }
+  }
+>
+  <div
+    className="cell-content"
+    style={
+      Object {
+        "height": undefined,
       }
-    >
-      Data in cell
-    </div>
-  </FocusTrap>
+    }
+  >
+    Data in cell
+  </div>
 </td>
 `;
 
@@ -222,30 +374,16 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
     }
   }
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={false}
-    focusTrapOptions={
+  <div
+    className="cell-content"
+    style={
       Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "onDeactivate": [Function],
-        "returnFocusOnDeactivate": true,
+        "height": undefined,
       }
     }
-    paused={false}
   >
-    <div
-      className="cell-content"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      Data in cell
-    </div>
-  </FocusTrap>
+    Data in cell
+  </div>
 </td>
 `;
 
@@ -261,30 +399,16 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
     }
   }
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={false}
-    focusTrapOptions={
+  <div
+    className="cell-content"
+    style={
       Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "onDeactivate": [Function],
-        "returnFocusOnDeactivate": true,
+        "height": "50px",
       }
     }
-    paused={false}
   >
-    <div
-      className="cell-content"
-      style={
-        Object {
-          "height": "50px",
-        }
-      }
-    >
-      Data in cell
-    </div>
-  </FocusTrap>
+    Data in cell
+  </div>
 </th>
 `;
 
@@ -297,34 +421,20 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
     }
   }
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={false}
-    focusTrapOptions={
+  <div
+    className="cell-content"
+    style={
       Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "onDeactivate": [Function],
-        "returnFocusOnDeactivate": true,
+        "height": undefined,
       }
     }
-    paused={false}
   >
-    <div
-      className="cell-content"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
+    <span
+      className="no-data-cell"
     >
-      <span
-        className="no-data-cell"
-      >
-        Terra.table.blank
-      </span>
-    </div>
-  </FocusTrap>
+      Terra.table.blank
+    </span>
+  </div>
 </td>
 `;
 
@@ -337,29 +447,15 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
     }
   }
 >
-  <FocusTrap
-    _createFocusTrap={[Function]}
-    active={false}
-    focusTrapOptions={
+  <div
+    className="cell-content"
+    style={
       Object {
-        "clickOutsideDeactivates": true,
-        "escapeDeactivates": false,
-        "onDeactivate": [Function],
-        "returnFocusOnDeactivate": true,
+        "height": undefined,
       }
     }
-    paused={false}
   >
-    <div
-      className="cell-content"
-      style={
-        Object {
-          "height": undefined,
-        }
-      }
-    >
-      Data in cell
-    </div>
-  </FocusTrap>
+    Data in cell
+  </div>
 </td>
 `;
