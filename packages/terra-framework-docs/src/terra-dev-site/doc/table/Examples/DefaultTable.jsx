@@ -3,7 +3,7 @@ import Table from 'terra-table';
 
 const tableData = {
   cols: [
-    { id: 'Column-0', displayName: 'Patient' },
+    { id: 'Column-0', displayName: 'Patient', isResizable: true },
     { id: 'Column-1', displayName: 'Location' },
     { id: 'Column-2', displayName: 'Illness Severity' },
     { id: 'Column-3', displayName: 'Visit' },
@@ -48,13 +48,12 @@ const tableData = {
   ],
 };
 
-const PinnedColumnsTable = () => (
+const DefaultTable = () => (
   <Table
     id="my-table-id"
-    pinnedColumns={tableData.cols.slice(0, 2)}
-    overflowColumns={tableData.cols.slice(2)}
+    overflowColumns={tableData.cols}
     rows={tableData.rows}
   />
 );
 
-export default PinnedColumnsTable;
+export default DefaultTable;
