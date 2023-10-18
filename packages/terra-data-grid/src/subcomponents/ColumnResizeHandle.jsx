@@ -38,7 +38,7 @@ const propTypes = {
    */
   isActive: PropTypes.bool,
     /**
-   * Callback to update isActive for parent.
+   * Handler function to update isActive for parent.
    */
   setIsActive: PropTypes.func,
   /**
@@ -61,12 +61,6 @@ const propTypes = {
    * Function that is called when the the keyboard is used to adjust the column size.
    */
   onResizeHandleChange: PropTypes.func,
-
-  /**
-   * Function that is called when the the keyboard is used to adjust the column size.
-   */
-  onResizeHandleBlur: PropTypes.func,
-
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
@@ -89,7 +83,6 @@ const ColumnResizeHandle = (props) => {
     isActive,
     maximumWidth,
     minimumWidth,
-    onResizeHandleBlur,
     onResizeHandleChange,
     onResizeMouseDown,
     onResizeMouseUp,
