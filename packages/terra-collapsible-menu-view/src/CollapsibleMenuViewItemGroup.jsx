@@ -26,10 +26,6 @@ const propTypes = {
    * A list of keys of the CollapsibleMenuView.Items that should be selected.
    */
   selectedKeys: PropTypes.arrayOf(PropTypes.string),
-  /**
-   * String that labels the group for accessibility.
-   */
-  ariaLabel: PropTypes.string,
 };
 
 const defaultProps = {
@@ -74,7 +70,6 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       onChange,
       isMultiSelect,
       selectedKeys,
-      ariaLabel,
       ...customProps
     } = this.props;
 
@@ -99,7 +94,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       if (onChange) {
         return (
           <li role="none">
-            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange} aria-label={ariaLabel}>
+            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange}>
               {children}
             </Menu.ItemGroup>
           </li>
@@ -120,7 +115,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     ]);
 
     return (
-      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys} aria-label={ariaLabel}>
+      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys}>
         {children}
       </ButtonGroup>
     );

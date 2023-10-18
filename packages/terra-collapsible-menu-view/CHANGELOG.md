@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Removed
+  * Removed ariaLabel first class prop because Consumer can still pass in aria-label through custom props.
+
 ## 6.83.0 - (October 25, 2023)
 
 * Changed
@@ -23,7 +26,7 @@
   * Added the ability to add hyperlinks.
   * Added `isMultiSelect` prop to support multiselect group items.
   * Added aria-label prop for `collapsible-menu-view` to announce group information.
-  
+
 * Fixed
   * Fixed responsive menu icon not being vertical in the lowlight and fusion themes.
 
@@ -105,7 +108,7 @@
 * Added
   * Added `isStartAligned` prop
   * Added new Jest test and snapshots
-  
+
 ## 6.65.0 - (March 29, 2023)
 
 * Changed

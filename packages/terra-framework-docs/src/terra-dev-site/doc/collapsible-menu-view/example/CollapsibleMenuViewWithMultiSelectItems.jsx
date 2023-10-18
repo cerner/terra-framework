@@ -77,11 +77,12 @@ class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
           ]}
         />
         <CollapsibleMenuView.Divider key="Divider2" />
-        <CollapsibleMenuView.ItemGroup ariaLabel="View Type Multi Selection" key="ViewTypeSelection" isMultiSelect selectedKeys={this.state.selectedKeys} onChange={this.handleDisplayTypeChange}>
+        <CollapsibleMenuView.ItemGroup aria-label="View Type Multi Selection" id="view-type-multi-select" key="ViewTypeSelection" isMultiSelect selectedKeys={this.state.selectedKeys} onChange={this.handleDisplayTypeChange}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"
             key="tableView"
+            ariaDescribedBy="view-type-multi-select"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.selectedKeys.includes('tableView')}
@@ -90,6 +91,7 @@ class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
             icon={<IconFlowsheet />}
             text="Expanded View"
             key="expandedView"
+            ariaDescribedBy="view-type-multi-select"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.selectedKeys.includes('expandedView')}
@@ -98,6 +100,7 @@ class CollapsibleMenuViewWithMultiSelectItems extends React.Component {
             icon={<IconVisualization />}
             text="Trending View"
             key="trendingView"
+            ariaDescribedBy="view-type-multi-select"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.selectedKeys.includes('trendingView')}

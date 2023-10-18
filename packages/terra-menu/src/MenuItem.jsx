@@ -123,6 +123,11 @@ const propTypes = {
    * The intl object to be injected for translations. Provided by the injectIntl function.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * If additional visible information text is used, provide a string containing the IDs for html elements that
+   * help describe the intent of the group of menu.
+   */
+  ariaDescribedBy: PropTypes.string,
 };
 
 const defaultProps = {
@@ -246,6 +251,7 @@ class MenuItem extends React.Component {
       isInstructionsForUse,
       isSelectable,
       isToggleable,
+      ariaDescribedBy,
       subMenuItems,
       isActive,
       icon,
@@ -378,6 +384,7 @@ class MenuItem extends React.Component {
             aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
+            aria-describedby={ariaDescribedBy}
           >
             {content}
           </li>
