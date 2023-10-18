@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Added
-  * Added Vertical orientation functionality for `terra-tabs`.
+  * Added Vertical orientation for `terra-tabs`.
+  
 ## 7.10.0 - (October 11, 2023)
 
 * Changed
