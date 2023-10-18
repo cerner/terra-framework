@@ -8,7 +8,7 @@ const rowShape = PropTypes.shape({
   id: PropTypes.string.isRequired,
 
   /**
-   * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
+   * An array of cell objects that define the content to be rendered in the row. Cells will be rendered in the order given and are expected to be in the same order as the columns.
    */
   cells: PropTypes.arrayOf(cellShape),
   /**
@@ -16,11 +16,9 @@ const rowShape = PropTypes.shape({
    */
   isSelected: PropTypes.bool,
   /**
-   * A string identifier used to describe the row contents. This value will be used to construct additional labels
-   * for internal controls (e.g. row selection cells).
+   * A string identifier used to describe the row contents. This value will be used by screen readers when announcing row selection and unselection.
    */
   ariaLabel: PropTypes.string,
-
 });
 
 export default rowShape;

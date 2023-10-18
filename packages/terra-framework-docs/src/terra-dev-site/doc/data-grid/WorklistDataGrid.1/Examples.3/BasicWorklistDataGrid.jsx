@@ -51,7 +51,7 @@ const gridDataJSON = {
   ],
 };
 
-const DefaultWorklistDataGrid = () => {
+const BasicWorklistDataGrid = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
 
@@ -66,4 +66,4 @@ const DefaultWorklistDataGrid = () => {
   );
 };
 
-export default DefaultWorklistDataGrid;
+export default BasicWorklistDataGrid;
