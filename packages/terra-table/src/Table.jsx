@@ -8,6 +8,7 @@ import ResizeObserver from 'resize-observer-polyfill';
 
 import ThemeContext from 'terra-theme-context';
 
+import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
 import { columnShape } from './proptypes/columnShape';
@@ -18,6 +19,7 @@ import RowSelectionUtils from './utils/rowSelectionUtils';
 import rowShape from './proptypes/rowShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './Table.module.scss';
+import sectionShape from './proptypes/sectionShape';
 
 const cx = classNames.bind(styles);
 
@@ -32,6 +34,11 @@ const propTypes = {
   * Data for content in the body of the table. Rows will be rendered in the order given.
   */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Rows will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * String that identifies the element (or elements) that labels the table.
@@ -96,6 +103,11 @@ const propTypes = {
   onColumnSelect: PropTypes.func,
 
   /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
+
+  /**
    * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
    */
@@ -110,6 +122,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  sections: [],
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -121,6 +134,7 @@ function Table(props) {
     ariaLabelledBy,
     ariaLabel,
     rows,
+    sections,
     pinnedColumns,
     overflowColumns,
     onColumnResize,
@@ -129,6 +143,7 @@ function Table(props) {
     rowHeight,
     onColumnSelect,
     onCellSelect,
+    onSectionSelect,
     hasSelectableRows,
     rowHeaderIndex,
   } = props;
@@ -297,23 +312,48 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
           />
-          <tbody>
-            {rows.map((row, index) => (
-              <Row
-                rowIndex={index + 1}
-                key={row.id}
-                height={rowHeight}
-                id={row.id}
-                cells={row.cells}
-                ariaLabel={row.ariaLabel}
-                hasRowSelection={hasSelectableRows}
-                displayedColumns={displayedColumns}
-                rowHeaderIndex={rowHeaderIndex}
-                onCellSelect={isGridContext ? handleCellSelection : undefined}
-                isSelected={row.isSelected}
-              />
-            ))}
-          </tbody>
+          {sections.map((section) => (
+            <Section
+              id={section.id}
+              key={section.id}
+              isCollapsible={section.isCollapsible}
+              isCollapsed={section.isCollapsed}
+              text={section.text}
+              rows={section.rows}
+              rowHeight={rowHeight}
+              hasRowSelection={hasSelectableRows}
+              displayedColumns={displayedColumns}
+              rowHeaderIndex={rowHeaderIndex}
+              onCellSelect={isGridContext ? handleCellSelection : undefined}
+              onSectionSelect={onSectionSelect}
+            />
+          ))}
+          {/* <Section
+            id="section-0"
+            key="section-0"
+            isCollapsible
+            text="Test Section"
+            rows={rows}
+            rowHeight={rowHeight}
+            hasRowSelection={hasSelectableRows}
+            displayedColumns={displayedColumns}
+            rowHeaderIndex={rowHeaderIndex}
+            onCellSelect={isGridContext ? handleCellSelection : undefined}
+            onSectionSelect={() => {}}
+          />
+          <Section
+            id="section-1"
+            key="section-1"
+            isCollapsible
+            text="Test Section #2"
+            rows={rows}
+            rowHeight={rowHeight}
+            hasRowSelection={hasSelectableRows}
+            displayedColumns={displayedColumns}
+            rowHeaderIndex={rowHeaderIndex}
+            onCellSelect={isGridContext ? handleCellSelection : undefined}
+            onSectionSelect={() => {}}
+          /> */}
         </ColumnContext.Provider>
       </table>
     </div>
