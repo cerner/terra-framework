@@ -37,6 +37,10 @@ const propTypes = {
    * Control is the active element
    */
   isActive: PropTypes.bool,
+    /**
+   * Callback to update isActive for parent.
+   */
+  setIsActive: PropTypes.func,
   /**
    * Number that specifies the minimum column width in pixels.
    */
@@ -57,6 +61,12 @@ const propTypes = {
    * Function that is called when the the keyboard is used to adjust the column size.
    */
   onResizeHandleChange: PropTypes.func,
+
+  /**
+   * Function that is called when the the keyboard is used to adjust the column size.
+   */
+  onResizeHandleBlur: PropTypes.func,
+
   /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
@@ -71,17 +81,19 @@ const defaultProps = {
 const ColumnResizeHandle = (props) => {
   const {
     columnIndex,
+    columnResizeIncrement,
     columnText,
     columnWidth,
     height,
-    columnResizeIncrement,
+    intl,
     isActive,
-    minimumWidth,
     maximumWidth,
+    minimumWidth,
+    onResizeHandleBlur,
+    onResizeHandleChange,
     onResizeMouseDown,
     onResizeMouseUp,
-    onResizeHandleChange,
-    intl,
+    setIsActive
   } = props;
 
   // Retrieve current theme from context
@@ -187,6 +199,7 @@ const ColumnResizeHandle = (props) => {
   const onBlur = () => {
     setNavigationEnabled(true);
     setIsAriaLabel(false);
+    setIsActive(false);
   };
 
   return (
