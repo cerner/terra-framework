@@ -503,8 +503,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
 
       browser.keys(['Tab', 'ArrowRight']); // Focus is on (0,0)
-      expect(browser.$('tr.column-header-row th:nth-child(1) div[draggable=true]').isFocused()).toBe(true);
-      expect(browser.$('tr.column-header-row th:nth-child(1) div[role=button]').isFocused()).toBe(false);
+      expect(browser.$('tr.column-header-row th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-0-resize-handle-focused', { selector: defaultSelector });
     });
@@ -516,7 +515,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
 
       browser.keys(['ArrowLeft']);
-      expect(browser.$('tr.column-header-row th:nth-child(1) div[draggable=true]').isFocused()).toBe(true);
+      expect(browser.$('tr.column-header-row th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-0-resize-handle-focused', { selector: defaultSelector });
     });
@@ -525,7 +524,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
       browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus on resize handle in (0,1)
 
-      expect(browser.$('tr.column-header-row th:nth-child(2) div[draggable=true]').isFocused()).toBe(true);
+      expect(browser.$('tr.column-header-row th:nth-child(2) div[class*=resize-handle]').isFocused()).toBe(true);
 
       browser.keys(['ArrowLeft']);
       expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
@@ -537,7 +536,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
 
       browser.keys(['Tab', 'ArrowRight']); // Focus is on the (0,0) resize handle
-      expect(browser.$('tr.column-header-row th:nth-child(1) div[draggable=true]').isFocused()).toBe(true);
+      expect(browser.$('tr.column-header-row th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
 
       browser.keys(['ArrowRight']);
       expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
