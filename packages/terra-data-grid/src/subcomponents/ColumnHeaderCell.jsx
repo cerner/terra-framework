@@ -163,10 +163,8 @@ const ColumnHeaderCell = (props) => {
   const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
   useEffect(() => {
-    if (isActive) {
-      if (isResizeActive) {
+    if (isActive && isResizeActive) {
         setResizeHandleActive(true);
-      }
     } else {
       setResizeHandleActive(false);
     }
@@ -206,7 +204,6 @@ const ColumnHeaderCell = (props) => {
         if (isResizable && isResizeHandleActive) {
           columnHeaderCellRef.current.focus();
           setResizeHandleActive(false);
-
           event.stopPropagation();
           event.preventDefault();
         }
@@ -273,6 +270,7 @@ const ColumnHeaderCell = (props) => {
         columnWidth={width}
         columnResizeIncrement={columnResizeIncrement}
         isActive={isResizeHandleActive}
+        setIsActive={setResizeHandleActive}
         height={tableHeight}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
