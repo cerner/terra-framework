@@ -1,3 +1,25 @@
 import WorklistDataGridFocusableCell from './WorklistDataGridFocusableCell?dev-site-example';
 
-<WorklistDataGridFocusableCell title= 'Focusable elements within cells' />
+# Single Cell Navigation (Dive-In)
+
+### Description
+
+The content of a cell in the [Worklist Data Grid](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about) may be empty, text, numerical, or any combination of widgets.
+Since the [grid pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) mandates only one tab stop and arrow keys for navigation, these keys are not available by default to navigate focusable elements inside a cell.
+To make these keys available for cell navigation as part of its basic functionality, the Worklist Data Grid supports single cell navigation (dive-in mode).
+Enabling single cell navigation will disable grid navigation and disabling single cell navigation will restore grid navigation.
+
+<span style={{color: 'blue'}}>
+<em>Single Cell navigation is built-in and does not require any additional setup or implementation.</em>
+</span>
+
+
+#### Keyboard Interactions
+
+|Key Interaction|Description|
+|-|-|
+|*Enter*|Enable Single Cell Navigation and disable grid navigation.|
+|*Escape*|Disable Single Cell Navigation and restore grid navigation.|
+
+
+<WorklistDataGridFocusableCell title= 'Single Cell Navigation' />

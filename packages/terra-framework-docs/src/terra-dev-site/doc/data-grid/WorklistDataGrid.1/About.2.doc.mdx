@@ -1,27 +1,119 @@
 import { Notice } from "@cerner/terra-docs";
-import { Badge } from 'terra-grid/package.json?dev-site-package';
+import { Badge } from 'terra-data-grid/package.json?dev-site-package';
 
 import WorklistDataGridPropsTable from 'terra-data-grid/src/WorklistDataGrid?dev-site-props-table';
-
-import DefaultWorklistDataGrid from './Examples.3/DefaultWorklistDataGrid?dev-site-example';
-import WorklistDataGridColumnStates from './Examples.3/WorklistDataGridColumnStates?dev-site-example';
+import BasicWorklistDataGrid from './Examples.3/BasicWorklistDataGrid?dev-site-example';
 
 <Badge />
 
-# Terra WorklistDataGrid
+# Terra Worklist Data Grid
 
 <Notice variant="caution" ariaLevel="2">
-Terra Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
+Terra Worklist Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
 </Notice>
 
+## Table of Contents
+* [Overview](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#overview)
+* [Design Decisions](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#design-decisions)
+* [Examples](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#examples)
+* [Accessibility](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#accessibility)
+* [Implementation](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#implementation)
+* [Terra Standards](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#terra-standards)
+* [Properties](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#properties)
 
-## Getting Started
+## Overview
+The Worklist Data Grid is an [accessible grid](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) component that allows the user to display data in a table-like structure of rows and columns.
 
+The Worklist Data Grid displays a header row and one or more rows of data.
+The component contains only one tab stop with the arrow keys used for primary navigation.
+See [keyboard interactions](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#keyboard-interactions) for all supported keys.
+Other key features of the component are listed in the [Features](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#features) section.
+
+<BasicWorklistDataGrid title='Basic Worklist Data Grid' />
+
+  ### Features
+
+  * [Navigation](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/default-worklist-data-grid)
+  * [Masked Cells](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/default-worklist-data-grid)
+  * [Cell selection](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/cell-selection)
+  * [Row selection](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/row-selection)
+  * [Pinned columns](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/pinned-columns)
+  * [Column Sorting](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/worklist-data-grid-column-states)
+  * [Column Error States](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/worklist-data-grid-column-states)
+  * [Single Cell Navigation (Dive-In)](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/worklist-data-grid-focusable-cell)
+
+Refer to the [examples](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#examples) section for detailed demonstration of the features supported by the Worklist Data Grid.
+
+## Design Decisions
+The Worklist Data Grid supports the [grid pattern](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) as documented by the ARIA Authoring Practices Guide.
+
+The Worklist Data Grid:
+  * Supports only one tab stop. When tabbing into the Worklist Data Grid, focus will either go to the last visited cell, or the first cell upon initial entry.
+  While on the Worklist Data Grid, `Tab` or `Shift+Tab` will exit the Worklist Data Grid.
+  * Does not maintain consumer data state. The state must be maintained by the consumer.
+  * Uses callbacks to communicate the actions taken by the user.
+  The callbacks are provided by the consumer and therefore the implementation is consumer specific.
+  It is up to the consumer to determine if and what actions should be taken.
+  For example, the user may click on a selectable cell in the Worklist Data Grid which calls the _onCellSelect_ callback.
+  For business reasons, the consumer may decide not to honor that cell selection and instead does nothing resulting in the the cell not getting selected in the Worklist Data Grid.
+  * Supports single column sorting with the ability to specify multiple columns as sortable.
+  * Does not support multi-cell selection.
+  * Supports multi-row selection.
+
+
+## Examples
+|Link to Example| Description|
+|-|-|
+|[BasicWorklistDataGrid](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/basic-worklist-data-grid)|An example of the Worklist Data Grid with basic keyboard interactions.|
+|[CellSelection](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/cell-selection)|An example demonstrating the ability to select a cell.|
+|[RowSelection](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/row-selection)|An example demonstrating row centric interactions.|
+|[WorklistDataGridColumnStates](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/worklist-data-grid-column-states)|An example demonstrating column state and interactions.|
+|[PinnedColumns](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/pinned-columns)|An example demonstrating _pinned_ columns (stickied leftmost columns) and _overflow_ columns.|
+|[PinnedColumnsWithRowSelection](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/pinned-columns-with-row-selection)|An example demonstrating row centric interactions when some columns are pinned.|
+|[WorklistDataGridFocusableCell](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/worklist-data-grid-focusable-cell)|An example demonstrating focus trapped within a cell (_dive in mode_).|
+
+## Accessibility
+### Keyboard Interactions
+
+List of keyboard interactions supported by Worklist Data Grid is similar to the [keyboard interactions for data grids](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) as outlined by the ARIA Authoring Practices Guide (APG).
+
+|Key interactions|Description|
+|---|---|
+|Up Arrow       | Moves focus one cell up. If focus is on the top cell in the column, focus does not move.|
+|Down Arrow     | Moves focus one cell down. If focus is on the bottom cell in the column, focus does not move.|
+|Right Arrow    | Moves focus one cell to the right. If focus is on the right-most cell in the row, focus does not move.|
+|Left Arrow     | Moves focus one cell to the left. If focus is on the left-most cell in the row, focus does not move.|
+|Home           | Moves focus to the first cell in the row that contains focus.|
+|End            | Moves focus to the last cell in the row that contains focus.|
+|Control + Home (Windows) <br/> or <br/> Ctrl + Command + Left Arrow (Mac) | Moves focus to the first cell in the first non header row.|
+|Control + End (Windows) <br/> or <br/> Ctrl + Command + Right Arrow (Mac) | Moves focus to the last cell in the last row.|
+|Tab            | Moves focus out of the grid to the next focusable element in the tab sequence. If grid navigation is disabled thereby trapping focusing within a single grid cell, tab moves focus circularly amongst the focusable elements within the grid cell where focus is trapped.|
+|Shift + Tab    | Moves focus out of the grid to the previous focusable element in the tab sequence. If grid navigation is disabled thereby trapping focusing within a single grid cell, tab moves focus circularly amongst the focusable elements within the grid cell where focus is trapped.|
+|Space| Selects the focused cell when row selection mode is off or Selects the focused row when row selection mode is on.|
+|Enter| Disables grid navigation and allows navigation within the focused cell. If the cell contains focusable content, focus will move to the first focusable element in the cell. Pressing Escape will restore grid navigation.|
+|Escape| When grid navigation is on, escape removes the cell selection.<br/> When grid navigation is off, escape restores the grid navigation.<br/> When row selection is on, and there are rows selected, escape unselects all selected rows.<br/> When row selection is on, and there are no rows selected, escape turns off row selection mode. |
+|Control + A|Selects all Rows.|
+|Shift + Up|Extends selection one row up. The selection does not extend beyond the first non-header row. If Row Selection Mode is off, it will be turned on.|
+|Shift + Down|Extends selection one row down. The selection does not extend beyond the last row. If Row Selection Mode is off, it will be turned on.|
+|Shift + Space|Shift + Space: Extends row selection to the currently focus row or selects the focused row. Row selection will be extended from the last individually selected row or the starting row of the previously selected range. If neither exists, the focused row will be selected. If Row Selection Mode is off, it will be turned on.|
+
+### Assistive Technology Support
+#### WAI ARIA Roles and States
+* [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+  * **Worklist Data Grid**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-data-grid-props-table) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+  * **Row**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#row) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) to announce interactions with the row.
+* [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
+  * **Worklist Data Grid**: When the [_ariaLabelledBy_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-data-grid-props-table) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+
+## Implementation
+
+### Installation
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-data-grid`
 
-<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
-## Peer Dependencies
+### Dependencies
+
+#### Peer Dependencies
 
 This component requires the following peer dependencies be installed in your app for the component to properly function.
 
@@ -31,49 +123,50 @@ This component requires the following peer dependencies be installed in your app
 | react-dom | ^16.8.5 |
 | react-intl | ^2.8.0 |
 
-<!-- AUTO-GENERATED-CONTENT:END -->
 
-## Usage
-```jsx
-import { WorklistDataGrid } from 'terra-data-grid';
-```
+## Properties
 
-## Component Features
-
- * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
- * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
- * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
- * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
-
-## Examples
-<DefaultWorklistDataGrid title= 'Default Worklist Data Grid' />
-
-## Grid props table
+### Worklist Data Grid Props Table
 <WorklistDataGridPropsTable />
 
-### Rows
-Rows define the cells rendered within the row as well as the row's selection properties.
-The order in which the rows are provided will be the order in which they are rendered.
+### Column
+A column specifies the data to render a cell in the header row of the Worklist Data Grid.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|required|none|An identifier for the row. This identifier should be unique across the set of rows provided to the Grid.|
-|**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used for accessibilty when announcing the row that is selected or deselected.|
-|**isSelectable**|bool|optional|none|A boolean indicating whether or not the row is selectable.|
-|**isSelected**|bool|optional|none|A boolean indicating whether or not the row should render as selected.|
-|**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. The order in which the cells are rendered is determined by the order in which they are provided.|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
+|**displayName**|string|optional|none|String of text to render within the column header cell.|
+|**hasError**|bool|optional|none|Boolean value indicating whether or not the column has an error in the data.|
+|**isResizable**|bool|optional|none|Boolean value indicating whether or not the column header is resizable.|
+|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the column header is selectable.|
+|**minimumWidth**|number|optional|none|Number that specifies the minimum column width in pixels.|
+|**maximumWidth**|number|optional|none|Number that specifies the maximum column width in pixels.|
+|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
+|**sortIndicator**|custom|optional|none|A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered. One of `ascending`, `descending`.
 
-### Cells
-Cells define the content rendered in a given row, and column. Cells will be rendered in the order given and are expected to be in the same order as the column.
+### Row
+A row defines the cells rendered within the row.
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the row within the grid.|
+|**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. Cells will be rendered in the order given and are expected to be in the same order as the columns.|
+|**isSelected**|bool|optional|none|A boolean indicating whether or not the row should render as selected.|
+|**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used for accessibility when announcing the row (un)selection.|
+
+### Cell
+A cell defines the content rendered at the intersection of a row and a column.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**content**|content|optional|none|The content to render within the cell.|
-|**isMasked**|bool|optional|none|A boolean indicating whether or not the cell is masked.|
-|**isSelectable**|bool|optional|none|A boolean indicating whether or not the cell is selectable.|
-|**isSelected**|bool|optional|none|A boolean indicating whether or not the cell is selected.|
-
-## Testing
+|**isMasked**|bool|optional|none|A boolean indicating if the cell content is masked.|
+|**isSelectable**|bool|optional|none|A boolean indicating if the cell is selectable.|
+|**isSelected**|bool|optional|none|A boolean indicating if the cell is selected.|
 
 
-
+## Terra Standards
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)

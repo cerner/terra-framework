@@ -3,7 +3,8 @@ import { IntlProvider } from 'react-intl';
 
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
-
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import Cell from '../../src/subcomponents/Cell';
 import ColumnContext from '../../src/utils/ColumnContext';
 
@@ -143,6 +144,84 @@ describe('Cell', () => {
     expect(cellContent.text()).toEqual('Data in cell');
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies that a table cell does not have a FocusTrap element', () => {
+    const wrapper = shallowWithIntl(
+      <IntlProvider locale="en">
+        <Cell
+          rowId="RowID"
+          columnId="ColumnId"
+          ariaLabel="Some Label Here"
+          rowIndex={1}
+          columnIndex={2}
+          key="key"
+        >
+          Data in cell
+        </Cell>
+      </IntlProvider>,
+    ).dive().dive();
+
+    const focusTrapComponent = wrapper.find('FocusTrap');
+    expect(focusTrapComponent).toHaveLength(0);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies that a grid cell has a FocusTrap element', () => {
+    jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
+
+    const wrapper = mountWithIntl(
+      <GridContext.Provider value={{ role: GridConstants.GRID }}>
+        <Cell
+          rowId="RowID"
+          columnId="ColumnId"
+          ariaLabel="Some Label Here"
+          rowIndex={1}
+          columnIndex={0}
+          key="key"
+        >
+          <button type="button">Button</button>
+        </Cell>
+      </GridContext.Provider>,
+    );
+
+    const focusTrapComponent = wrapper.find('FocusTrap');
+    expect(focusTrapComponent).toHaveLength(1);
+
+    const visuallyHiddenText = wrapper.find(VisuallyHiddenText);
+    expect(visuallyHiddenText).toHaveLength(1);
+    expect(wrapper).toMatchSnapshot();
+
+    console.error.mockRestore(); // eslint-disable-line no-console
+  });
+
+  it('verifies that a grid cell without a focusale element does not have visually hidden text', () => {
+    jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
+
+    const wrapper = mountWithIntl(
+      <GridContext.Provider value={{ role: GridConstants.GRID }}>
+        <Cell
+          rowId="RowID"
+          columnId="ColumnId"
+          ariaLabel="Some Label Here"
+          rowIndex={1}
+          columnIndex={0}
+          key="key"
+        >
+          Data in cell
+        </Cell>
+      </GridContext.Provider>,
+    );
+
+    const focusTrapComponent = wrapper.find('FocusTrap');
+    expect(focusTrapComponent).toHaveLength(1);
+
+    const visuallyHiddenText = wrapper.find(VisuallyHiddenText);
+    expect(visuallyHiddenText).toHaveLength(0);
+    expect(wrapper).toMatchSnapshot();
+
+    console.error.mockRestore(); // eslint-disable-line no-console
   });
 
   it('verifies that a cell has the correct styles and no content when isMasked prop is true', () => {

@@ -5,6 +5,9 @@
 * Added
   * Added the ability to toggle zebra striping for table rows.
   
+* Changed
+  * Updated the table component so that the cell dive-in logic would not execute when not in the grid context.
+
 ## 5.0.0-alpha.0 - (October 17, 2023)
 
 * Breaking Change
