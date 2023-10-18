@@ -30,7 +30,7 @@ const propTypes = {
    * String that labels the group for accessibility.
    */
   ariaLabel: PropTypes.string,
-   /**
+  /**
    * String that used in menu item for aria-describedby that labels the group for accessibility.
    */
   GroupId: PropTypes.string,
