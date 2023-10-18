@@ -108,7 +108,34 @@
       opacity: var(--terra-tabs-structural-disabled-label-opacity, 0.3);
     }
   }
-
+  @media screen and (max-width: 250px) {
+    .hidden {
+      align-items: center;
+      background-color: var(--terra-tabs-workspace-hidden-tab-hidden-background-color, #fff);
+      color: var(--terra-tabs-workspace-hidden-tab-hidden-color, #222a2e);
+      cursor: pointer;
+      display: flex;
+      font-size: 0.8rem;
+      font-weight: normal;
+      line-height: var(--terra-tabs-workspace-hidden-tab-hidden-line-height, 1.4);
+      margin-left: 0;
+      outline: none;
+      padding: 0.3rem 0.5rem;
+      position: relative;
+  
+      .label {
+        flex: 1 1 auto;
+        overflow: hidden;
+        text-align: start;
+        word-break: break-word;
+      }
+  
+      .with-icon {
+        margin-left: var(--terra-tabs-label-next-to-icon-margin-left, 0.357rem);
+      }
+    }
+  }
+  
   .checkbox {
     color: var(--terra-tabs-workspace-hidden-tab-checkbox-color, #007cc3);
     flex: 0 0 auto;

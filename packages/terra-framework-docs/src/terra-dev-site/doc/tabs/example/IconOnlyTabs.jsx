@@ -3,14 +3,17 @@ import classNames from 'classnames/bind';
 import IconBriefcase from 'terra-icon/lib/icon/IconBriefcase';
 import IconSearch from 'terra-icon/lib/icon/IconSearch';
 import IconBookmark from 'terra-icon/lib/icon/IconBookmark';
+import PropTypes from 'prop-types';
 import IconCalendar from 'terra-icon/lib/icon/IconCalendar';
 import Tabs from 'terra-tabs';
 import TabContent from './TabContentTemplate';
 import styles from './common/TabExample.module.scss';
 
 const cx = classNames.bind(styles);
-
-const IconOnlyTabs = () => {
+const propTypes = {
+  id: PropTypes.string,
+};
+const IconOnlyTabs = (props) => {
   const searchTab = (
     <Tabs.Pane label="Search" icon={<IconSearch />} isIconOnly key="Search">
       <TabContent label="Search" />
@@ -37,7 +40,7 @@ const IconOnlyTabs = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs setFocusOnContent>
+      <Tabs setFocusOnContent id={props.id}>
         {searchTab}
         {briefcaseTab}
         {bookmarkTab}
@@ -46,5 +49,5 @@ const IconOnlyTabs = () => {
     </div>
   );
 };
-
+IconOnlyTabs.propTypes = propTypes;
 export default IconOnlyTabs;
