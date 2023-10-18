@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added the ability to toggle zebra striping for table rows.
+  
 * Changed
   * Updated the table component so that the cell dive-in logic would not execute when not in the grid context.
 
