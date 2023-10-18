@@ -84,6 +84,7 @@ const propTypes = {
 
   /**
    * Callback function that is called when a selectable cell is selected. Parameters:
+   * @private
    * @param {string} rowId rowId
    * @param {string} columnId columnId
    */

@@ -4,6 +4,8 @@
 
 * Added
   * Added the ability to toggle zebra striping for table rows.
+  
+## 5.0.0-alpha.0 - (October 17, 2023)
 
 * Breaking Change
   * Redesigned the table component to meet accessibility guidelines. See Docs for details of the new API.
