@@ -84,6 +84,7 @@ const propTypes = {
 
   /**
    * Callback function that is called when a selectable cell is selected. Parameters:
+   * @private
    * @param {string} rowId rowId
    * @param {string} columnId columnId
    */
@@ -106,6 +107,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasColumnHeaders: PropTypes.bool,
+
+  /*
+   * Boolean specifying whether or not the table should have zebra striping for rows.
+   */
+  isStriped: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -137,8 +143,9 @@ function Table(props) {
     onColumnSelect,
     onCellSelect,
     hasSelectableRows,
-    rowHeaderIndex,
     hasColumnHeaders,
+    isStriped,
+    rowHeaderIndex,
   } = props;
 
   if (pinnedColumns.length === 0) {
@@ -328,6 +335,7 @@ function Table(props) {
                 rowHeaderIndex={rowHeaderIndex}
                 onCellSelect={isGridContext ? handleCellSelection : undefined}
                 isSelected={row.isSelected}
+                isTableStriped={isStriped}
               />
             ))}
           </tbody>

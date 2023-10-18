@@ -103,4 +103,16 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('table-without-column-headers', { selector: tableWithoutHeadersSelector });
     });
   });
+  
+  describe('Zebra Striped Table', () => {
+    const zebraStripeTableSelector = '#zebra-striped-table';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/zebra-striped-table');
+    });
+
+    it('Validates a table has zebra striping when specified via props', () => {
+      Terra.validates.element('zebra-striped-table', { selector: zebraStripeTableSelector });
+    });
+  });
 });

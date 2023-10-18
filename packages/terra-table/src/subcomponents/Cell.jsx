@@ -140,8 +140,10 @@ function Cell(props) {
   };
 
   useEffect(() => {
-    setIsInteractable(hasFocusableElements());
-  }, []);
+    if (isGridContext) {
+      setIsInteractable(hasFocusableElements());
+    }
+  }, [isGridContext]);
 
   /**
    * Handles the onDeactivate callback for FocusTrap component
@@ -229,9 +231,25 @@ function Cell(props) {
 
   const CellTag = isRowHeader ? 'th' : 'td';
 
+  // eslint-disable-next-line react/forbid-dom-props
+  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>;
+  // Render FocusTrap container when within a grid context
+  if (isGridContext) {
+    cellContentComponent = (
+      <FocusTrap
+        active={isFocusTrapEnabled}
+        focusTrapOptions={{
+          returnFocusOnDeactivate: true, clickOutsideDeactivates: true, escapeDeactivates: false, onDeactivate: deactivateFocusTrap,
+        }}
+      >
+        {cellContentComponent}
+      </FocusTrap>
+    );
+  }
+
   return (
     <CellTag
-      ref={cellRef}
+      ref={isGridContext ? cellRef : undefined}
       aria-selected={isSelected}
       aria-label={ariaLabel}
       tabIndex={isGridContext ? -1 : undefined}
@@ -242,15 +260,7 @@ function Cell(props) {
       // eslint-disable-next-line react/forbid-component-props
       style={{ left: cellLeftEdge }}
     >
-      <FocusTrap
-        active={isFocusTrapEnabled}
-        focusTrapOptions={{
-          returnFocusOnDeactivate: true, clickOutsideDeactivates: true, escapeDeactivates: false, onDeactivate: deactivateFocusTrap,
-        }}
-      >
-        {/* eslint-disable-next-line react/forbid-dom-props */}
-        <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>
-      </FocusTrap>
+      {cellContentComponent}
       {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.table.cell-interactable' })} />}
     </CellTag>
   );
