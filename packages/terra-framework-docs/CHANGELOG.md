@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added aria-label custom prop and ariaDescribedBy first class prop for `terra-collapsible-menu-view` and `terra-menu` to help describe the intent of the group information.
+  * Added `aria-label`  and `ariaDescribedBy` for `terra-collapsible-menu-view` and `terra-menu` to help describe the intent of the group information.
 
 ## 1.43.0 - (October 25, 2023)
 

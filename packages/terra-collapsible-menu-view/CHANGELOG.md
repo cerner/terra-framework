@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Removed
-  * Removed ariaLabel first class prop because Consumer can still pass in aria-label through custom props.
+* Added
+  * Added `GroupId` prop that used in menu item for `aria-describedby` that labels the group for accessibility.
 
 ## 6.83.0 - (October 25, 2023)
 

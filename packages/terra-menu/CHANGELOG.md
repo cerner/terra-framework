@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added ariaDescribedBy first class prop to announce group information.
+  * Added `ariaDescribedBy` prop for `menu-item` to announce group information.
 
 ## 6.79.0 - (October 25, 2023)
 
