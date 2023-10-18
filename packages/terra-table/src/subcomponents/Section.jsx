@@ -1,10 +1,7 @@
 import React, { useContext } from 'react';
-import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
-import IconCaretRight from 'terra-icon/lib/icon/IconCaretRight';
-import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 import SectionHeader from 'terra-section-header';
 
 import ThemeContext from 'terra-theme-context';
@@ -119,6 +116,7 @@ function Section(props) {
         className={cx('header', { visible: text || isCollapsible })}
       >
         <th
+          align="left"
           colSpan={displayedColumns.length}
           role="columnheader"
           scope="col"

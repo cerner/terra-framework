@@ -17,6 +17,8 @@ const tableData = {
   ],
   sections: [{
     id: 'section-0',
+    isCollapsible: true,
+    isCollapsed: false,
     text: 'Test Section',
     rows: [
       {
@@ -45,6 +47,8 @@ const tableData = {
   },
   {
     id: 'section-1',
+    isCollapsible: true,
+    isCollapsed: false,
     text: 'Test Section #2',
     rows: [
       {
@@ -73,7 +77,7 @@ const tableData = {
   }],
 };
 
-const TableWithSections = () => {
+const TableWithCollapsibleSections = () => {
   const [tableSections, setTableSections] = useState(tableData.sections);
 
   const handleSectionSelect = (sectionId) => {
@@ -97,4 +101,4 @@ const TableWithSections = () => {
   );
 };
 
-export default TableWithSections;
+export default TableWithCollapsibleSections;

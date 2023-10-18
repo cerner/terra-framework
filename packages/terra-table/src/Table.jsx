@@ -14,7 +14,6 @@ import ColumnContext from './utils/ColumnContext';
 import { columnShape } from './proptypes/columnShape';
 import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
-import Row from './subcomponents/Row';
 import RowSelectionUtils from './utils/rowSelectionUtils';
 import rowShape from './proptypes/rowShape';
 import validateRowHeaderIndex from './proptypes/validators';
@@ -122,7 +121,6 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
-  sections: [],
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -182,6 +180,9 @@ function Table(props) {
 
   const displayedColumns = (hasSelectableRows ? [RowSelectionUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
+
+  const tableSections = sections || [{ id: 'section-0', rows }];
+
   // -------------------------------------
   // functions
 
@@ -312,7 +313,7 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
           />
-          {sections.map((section) => (
+          {tableSections.map((section) => (
             <Section
               id={section.id}
               key={section.id}
@@ -328,32 +329,6 @@ function Table(props) {
               onSectionSelect={onSectionSelect}
             />
           ))}
-          {/* <Section
-            id="section-0"
-            key="section-0"
-            isCollapsible
-            text="Test Section"
-            rows={rows}
-            rowHeight={rowHeight}
-            hasRowSelection={hasSelectableRows}
-            displayedColumns={displayedColumns}
-            rowHeaderIndex={rowHeaderIndex}
-            onCellSelect={isGridContext ? handleCellSelection : undefined}
-            onSectionSelect={() => {}}
-          />
-          <Section
-            id="section-1"
-            key="section-1"
-            isCollapsible
-            text="Test Section #2"
-            rows={rows}
-            rowHeight={rowHeight}
-            hasRowSelection={hasSelectableRows}
-            displayedColumns={displayedColumns}
-            rowHeaderIndex={rowHeaderIndex}
-            onCellSelect={isGridContext ? handleCellSelection : undefined}
-            onSectionSelect={() => {}}
-          /> */}
         </ColumnContext.Provider>
       </table>
     </div>
