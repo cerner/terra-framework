@@ -39,7 +39,7 @@ const propTypes = {
   isSelected: PropTypes.bool,
 
   /**
-   * Boolean indicating whether zebra striping is enabled
+   * Boolean indicating whether zebra striping is enabled.
    */
   isTableStriped: PropTypes.bool,
 
