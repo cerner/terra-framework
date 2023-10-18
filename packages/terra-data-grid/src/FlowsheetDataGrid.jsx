@@ -71,6 +71,13 @@ const propTypes = {
   onClearSelectedCells: PropTypes.func,
 
   /**
+   * Callback function that is called when a selectable cell is selected. Parameters:
+   * @param {string} rowId rowId
+   * @param {string} columnId columnId
+   */
+  onCellRangeSelect: PropTypes.func,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -97,11 +104,11 @@ function FlowsheetDataGrid(props) {
     rowHeight,
     onCellSelect,
     onClearSelectedCells,
+    onCellRangeSelect,
     intl,
   } = props;
 
-  const currentSelectedCell = useRef(Array(2).fill(null));
-  const targetCell = useRef(Array(2).fill(null));
+  const anchorCell = useRef(null);
   const selectedCells = useRef([]);
 
   const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
@@ -135,35 +142,67 @@ function FlowsheetDataGrid(props) {
   }, [intl, rows]);
 
   useEffect(() => {
-    const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
     rows.forEach((row) => {
       row.cells.forEach((cell, cellIndex) => {
         if (cell.isSelected) {
-          newSelectedCells.push([row.id, columns[cellIndex].id]);
+          newSelectedCells.push({ rowId: row.id, columnId: columns[cellIndex].id });
         }
       });
     });
-    selectedCells.current = newSelectedCells;
-    console.log(selectedCells.current);
+    selectedCells.current = [...newSelectedCells];
+
+    if (selectedCells.current.length === 1) {
+      anchorCell.current = { rowId: selectedCells.current[0].rowId, columnId: selectedCells.current[0].columnId };
+    } else if (!selectedCells.current.length) {
+      anchorCell.current = null;
+    }
   }, [rows, columns]);
 
-  const clearSelectedCells = useCallback(() => {
+  const handleClearSelectedCells = useCallback(() => {
     if (onClearSelectedCells) {
       onClearSelectedCells();
     }
   }, [onClearSelectedCells]);
 
-  const selectCell = useCallback((selectionDetails) => {
-    currentSelectedCell.current = [selectionDetails.rowId, selectionDetails.columnId];
-  }, []);
+  const selectCellRange = useCallback((selectionDetails) => {
+    if (!anchorCell.current) {
+      anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
+    }
+
+    const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
+    const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
+
+    const rowIndexTopBound = Math.min(anchorRowIndex, selectionDetails.rowIndex - 1);
+    const rowIndexBottomBound = Math.max(anchorRowIndex, selectionDetails.rowIndex - 1);
+    const colIndexLeftBound = Math.min(anchorColumnIndex, selectionDetails.columnIndex);
+    const colIndexRightBound = Math.max(anchorColumnIndex, selectionDetails.columnIndex);
+
+    const cellsToSelect = [];
+    for (let row = rowIndexTopBound; row <= rowIndexBottomBound; row += 1) {
+      const rowId = rows[row].id;
+      for (let cell = colIndexLeftBound; cell <= colIndexRightBound; cell += 1) {
+        const columnId = columns[cell].id;
+        cellsToSelect.push({ rowId, columnId });
+      }
+    }
+
+    if (onCellRangeSelect) {
+      onCellRangeSelect(cellsToSelect);
+    }
+  }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    if (selectionDetails.isCellSelectable && onCellSelect) {
-      selectCell(selectionDetails);
+    if (!selectionDetails.isCellSelectable) {
+      return;
+    }
+
+    if (selectionDetails.isShiftPressed) {
+      selectCellRange(selectionDetails);
+    } else if (onCellSelect) {
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
     }
-  }, [onCellSelect, selectCell]);
+  }, [onCellSelect, selectCellRange]);
 
   return (
     <div className={cx('flowsheet-data-grid-container')}>
@@ -179,7 +218,7 @@ function FlowsheetDataGrid(props) {
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={handleCellSelection}
-        onClearSelectedCells={onClearSelectedCells}
+        onClearSelectedCells={handleClearSelectedCells}
       />
     </div>
   );

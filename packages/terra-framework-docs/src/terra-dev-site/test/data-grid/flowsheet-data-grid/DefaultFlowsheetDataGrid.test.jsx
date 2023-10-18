@@ -23,9 +23,9 @@ const DefaultFlowsheetDataGrid = () => {
         id: '2',
         cells: [
           { content: 'Temperature Oral (degC)' },
-          { content: '36.7', isMasked: true },
-          { content: '36.9', isMasked: true },
-          { content: '37', isMasked: true },
+          { content: '36.7' },
+          { content: '36.9' },
+          { content: '37' },
         ],
       },
       {
@@ -95,6 +95,26 @@ const DefaultFlowsheetDataGrid = () => {
     setRowData(newRowData);
   }, [rowData]);
 
+  const onCellRangeSelect = useCallback((cells) => {
+    const newRowData = [...rowData];
+
+    // Remove current selections
+    for (let row = 0; row < rowData.length; row += 1) {
+      for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
+        newRowData[row].cells[cell].isSelected = false;
+      }
+    }
+
+    cells.forEach((cell) => {
+      const rowIndex = rowData.findIndex(e => e.id === cell.rowId);
+      const columnIndex = cols.findIndex(e => e.id === cell.columnId);
+
+      newRowData[rowIndex].cells[columnIndex].isSelected = true;
+    });
+
+    setRowData(newRowData);
+  }, [cols, rowData]);
+
   return (
     <FlowsheetDataGrid
       id="default-terra-flowsheet-data-grid"
@@ -103,6 +123,7 @@ const DefaultFlowsheetDataGrid = () => {
       ariaLabel="Flowsheet Data Grid"
       onCellSelect={onCellSelect}
       onClearSelectedCells={onClearSelectedCells}
+      onCellRangeSelect={onCellRangeSelect}
     />
   );
 };
