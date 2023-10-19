@@ -114,6 +114,14 @@ const propTypes = {
   onRangeSelection: PropTypes.func,
 
   /**
+   * Callback function that is called when a cell range selection occurs. Parameters:
+   * @param {number} rowIndex RowIndex of the cell from which the range selection was triggered.
+   * @param {number} columnIndex ColumnIndex of the cell from which the range selection was triggered.
+   * @param {number} direction Direction keycode representing the direction of the selection.
+   */
+  onCellRangeSelection: PropTypes.func,
+
+  /**
    * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
    */
@@ -147,6 +155,7 @@ const DataGrid = injectIntl((props) => {
     onCellSelect,
     onClearSelection,
     onRangeSelection,
+    onCellRangeSelection,
     hasSelectableRows,
     rowHeaderIndex,
   } = props;
@@ -497,6 +506,14 @@ const DataGrid = injectIntl((props) => {
 
     if (onRangeSelection && event.shiftKey && (event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN)) {
       onRangeSelection(cellCoordinates.row, cellCoordinates.col, event.keyCode);
+    }
+    if (onCellRangeSelection && event.shiftKey && (
+      event.keyCode === KeyCode.KEY_UP
+      || event.keyCode === KeyCode.KEY_DOWN
+      || event.keyCode === KeyCode.KEY_LEFT
+      || event.keyCode === KeyCode.KEY_RIGHT
+    )) {
+      onCellRangeSelection(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
 
     if (nextRow > rows.length || nextCol >= displayedColumns.length) {

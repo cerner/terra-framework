@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
+import * as KeyCode from 'keycode-js';
 
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 
@@ -110,6 +111,7 @@ function FlowsheetDataGrid(props) {
 
   const anchorCell = useRef(null);
   const selectedCells = useRef([]);
+  const inShiftDirectionalMode = useRef(false);
 
   const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
   const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
@@ -157,6 +159,8 @@ function FlowsheetDataGrid(props) {
     } else if (!selectedCells.current.length) {
       anchorCell.current = null;
     }
+
+    console.log(selectedCells.current.length);
   }, [rows, columns]);
 
   const handleClearSelectedCells = useCallback(() => {
@@ -165,23 +169,20 @@ function FlowsheetDataGrid(props) {
     }
   }, [onClearSelectedCells]);
 
-  const selectCellRange = useCallback((selectionDetails) => {
-    if (!anchorCell.current) {
-      anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
-    }
-
+  const selectCellRange = useCallback((rowIndex, columnIndex) => {
     const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
 
-    const rowIndexTopBound = Math.min(anchorRowIndex, selectionDetails.rowIndex - 1);
-    const rowIndexBottomBound = Math.max(anchorRowIndex, selectionDetails.rowIndex - 1);
-    const colIndexLeftBound = Math.min(anchorColumnIndex, selectionDetails.columnIndex);
-    const colIndexRightBound = Math.max(anchorColumnIndex, selectionDetails.columnIndex);
+    // Determine the boundaries of selected region.
+    const rowIndexTopBound = Math.min(anchorRowIndex, rowIndex - 1);
+    const rowIndexBottomBound = Math.max(anchorRowIndex, rowIndex - 1);
+    const columnIndexLeftBound = Math.min(anchorColumnIndex, columnIndex);
+    const columnIndexRightBound = Math.max(anchorColumnIndex, columnIndex);
 
     const cellsToSelect = [];
     for (let row = rowIndexTopBound; row <= rowIndexBottomBound; row += 1) {
       const rowId = rows[row].id;
-      for (let cell = colIndexLeftBound; cell <= colIndexRightBound; cell += 1) {
+      for (let cell = columnIndexLeftBound; cell <= columnIndexRightBound; cell += 1) {
         const columnId = columns[cell].id;
         cellsToSelect.push({ rowId, columnId });
       }
@@ -193,16 +194,71 @@ function FlowsheetDataGrid(props) {
   }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    if (!selectionDetails.isCellSelectable) {
+    // Exclude the row header column.
+    if (!selectionDetails.isCellSelectable || selectionDetails.columnIndex === 0) {
       return;
     }
 
+    // New cell selection made, not in Shift+Up/Down/Left/Right mode.
+    inShiftDirectionalMode.current = false;
+
     if (selectionDetails.isShiftPressed) {
-      selectCellRange(selectionDetails);
+      if (!anchorCell.current) {
+        anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
+      }
+      selectCellRange(selectionDetails.rowIndex, selectionDetails.columnInde);
     } else if (onCellSelect) {
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
     }
   }, [onCellSelect, selectCellRange]);
+
+  const handleCellRangeSelection = useCallback((rowIndex, columnIndex, direction) => {
+    // Exclude the row header column as an eligible anchor/start cell.
+    if (columnIndex <= 0 && !anchorCell.current) {
+      return;
+    }
+
+    let nextRowIndex = rowIndex;
+    let nextColumnIndex = columnIndex;
+
+    switch (direction) {
+      case KeyCode.KEY_UP:
+        nextRowIndex -= 1;
+        break;
+      case KeyCode.KEY_DOWN:
+        nextRowIndex += 1;
+        break;
+      case KeyCode.KEY_LEFT:
+        nextColumnIndex -= 1;
+        break;
+      case KeyCode.KEY_RIGHT:
+        nextColumnIndex += 1;
+        break;
+      default:
+        break;
+    }
+
+    // Reset to valid selectable index if outer bounds reached.
+    if (nextRowIndex <= 0) {
+      nextRowIndex = 1;
+    } else if (nextRowIndex > rows.length) {
+      nextRowIndex = rows.length;
+    }
+
+    if (nextColumnIndex <= 0) {
+      nextColumnIndex = 1;
+    } else if (nextColumnIndex >= columns.length) {
+      nextColumnIndex = columns.length - 1;
+    }
+
+    if (!inShiftDirectionalMode.current) {
+      // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range.
+      inShiftDirectionalMode.current = true;
+      anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
+    }
+
+    selectCellRange(nextRowIndex, nextColumnIndex);
+  }, [rows, columns, selectCellRange]);
 
   return (
     <div className={cx('flowsheet-data-grid-container')}>
@@ -219,6 +275,7 @@ function FlowsheetDataGrid(props) {
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={handleCellSelection}
         onClearSelectedCells={handleClearSelectedCells}
+        onCellRangeSelection={handleCellRangeSelection}
       />
     </div>
   );
