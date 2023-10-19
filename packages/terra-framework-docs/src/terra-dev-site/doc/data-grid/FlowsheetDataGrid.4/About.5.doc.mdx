@@ -3,7 +3,8 @@ import { Badge } from 'terra-grid/package.json?dev-site-package';
 
 import FlowsheetDataGridPropsTable from 'terra-data-grid/src/FlowsheetDataGrid?dev-site-props-table';
 
-import DefaultFlowsheetDataGrid from './Examples.6/DefaultFlowsheetDataGrid?dev-site-example';
+import BasicFlowsheetDataGrid from './Examples.6/BasicFlowsheetDataGrid?dev-site-example';
+import FlowsheetDataGridResultsMissing from './Examples.6/FlowsheetDataGridResultsMissing?dev-site-example';
 
 <Badge />
 
@@ -45,7 +46,11 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
  * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
 
 ## Examples
-<DefaultFlowsheetDataGrid title= 'Default Flowsheet Data Grid' />
+<BasicFlowsheetDataGrid title= 'Basic Flowsheet Data Grid' />
+<FlowsheetDataGridResultsMissing
+  title= 'Flowsheet Data Grid with Results Missing'
+  description= 'If the content of a cell is empty or missing, it will be represented by a dash. This is interpreted by assistive technology as "No result."'
+/>
 
 ## Grid props table
 <FlowsheetDataGridPropsTable />
