@@ -54,6 +54,7 @@ const PinnedColumnsTable = () => (
     pinnedColumns={tableData.cols.slice(0, 2)}
     overflowColumns={tableData.cols.slice(2)}
     rows={tableData.rows}
+    ariaLabel="Table"
   />
 );
 
