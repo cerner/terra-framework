@@ -4,6 +4,7 @@
 
 * Added
   * Added test to cover enabling zebra striping for the `terra-table` component.
+  * Added test for tab focus for scrollable tables for the `terra-table` component.
 
 ## 1.41.0 - (October 17, 2023)
 
