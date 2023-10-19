@@ -149,9 +149,10 @@ function Table(props) {
   const activeColumnPageX = useRef(0);
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
-  const tableRef = useRef();
 
-  // const sortedColumn = useRef();
+  const tableContainerRef = useRef();
+  const tableRef = useRef();
+  const [isTableScrollable, setTableScrollable] = useState(false);
 
   const gridContext = useContext(GridContext);
   const theme = useContext(ThemeContext);
@@ -226,6 +227,10 @@ function Table(props) {
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
       setTableHeight(tableRef.current.offsetHeight - 1);
+
+      const tableContainer = tableContainerRef.current;
+      setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
+                        || tableContainer.scrollHeight > tableContainer.clientHeight);
     });
 
     resizeObserver.observe(tableRef.current);
@@ -286,7 +291,12 @@ function Table(props) {
   // -------------------------------------
 
   return (
-    <div className={cx('table-container')}>
+    <div
+      ref={tableContainerRef}
+      className={cx('table-container')}
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
+    >
       <table
         ref={tableRef}
         id={id}
