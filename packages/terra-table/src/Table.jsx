@@ -103,7 +103,7 @@ const propTypes = {
   hasSelectableRows: PropTypes.bool,
 
   /**
-   * Boolean indicating whether or not the table should have zebra striping for rows.
+   * Boolean specifying whether or not the table should have zebra striping for rows.
    */
   isStriped: PropTypes.bool,
 };
