@@ -5,6 +5,9 @@
 * Added
   * Added test to cover enabling zebra striping for the `terra-table` component.
 
+* Updated
+  * Removed columnHeaderHeight from tests using the default implementation for `terra-data-grid`.
+
 ## 1.41.0 - (October 17, 2023)
 
 * Added

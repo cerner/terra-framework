@@ -68,8 +68,6 @@ const DefaultDataGrid = () => {
         overflowColumns={cols}
         rows={rows}
         rowHeaderIndex={0}
-        // TODO: Remove columnHeaderHeight from example
-        columnHeaderHeight="50px"
         ariaLabel="Data Grid"
       />
     </React.Fragment>
