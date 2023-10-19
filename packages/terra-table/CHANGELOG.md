@@ -7,6 +7,7 @@
   
 * Changed
   * Updated the table component so that the cell dive-in logic would not execute when not in the grid context.
+  * Updated the table component to allow consumers to control the visibility of column headers in the table.
 
 ## 5.0.0-alpha.0 - (October 17, 2023)
 
