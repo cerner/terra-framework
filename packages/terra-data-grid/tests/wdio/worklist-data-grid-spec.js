@@ -457,13 +457,13 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
-  describe.only('column resizing', () => {
+  describe('column resizing', () => {
     it('focuses on the column resize handle', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
       navigateToCell(0, 0);
       browser.keys(['ArrowRight']);
 
-      expect($('tr.column-header-row').$('//div[2]').isFocused()).toBe(true);
+      expect($('tr.column-header-row').$('//th[1]/div[2]').isFocused()).toBe(true);
       Terra.validates.element('column-resize-handle-focused', { selector: defaultSelector });
     });
 
@@ -497,6 +497,21 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
       expect($('tr.column-header-row').$('//th[1]').getCSSProperty('width').parsed.value).toBe(180);
       Terra.validates.element('column-resize-decrease-keyboard', options);
+    });
+
+    it('returns focus to the header cell if resize handle is selected and tabbed out and back into the table', () => {
+      // disabling the 'aria-input-field-name' rule as it is dynamically removed
+      // for the keyboard resize workflow and this causes an accessibility failure
+
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
+      navigateToCell(0, 0);
+      browser.keys(['ArrowRight', 'ArrowRight']); // navigate to column-header-2
+      browser.keys(['Shift', 'Tab', 'Shift', 'Tab']); // tab back out and back into the grid
+    
+      expect($('tr.column-header-row').$('//th[2]').isFocused()).toBe(true);
+
+      browser.keys(['ArrowRight']); // navigate to column-header-2's resize handle
+      expect($('tr.column-header-row').$('//th[2]/div[2]').isFocused()).toBe(true);
     });
   });
 });
