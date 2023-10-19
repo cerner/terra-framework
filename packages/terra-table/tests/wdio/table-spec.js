@@ -103,7 +103,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('table-without-column-headers', { selector: tableWithoutHeadersSelector });
     });
   });
-  
+
   describe('Zebra Striped Table', () => {
     const zebraStripeTableSelector = '#zebra-striped-table';
 
