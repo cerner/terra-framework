@@ -59,6 +59,7 @@
     flex: 0 1 auto;
     min-width: 8.357rem;
     text-align: center;
+
     @media (max-width: 768px) {
       min-width: 5rem; /* Reduce the minimum width of the tabs */
       padding: 0.643rem 0.5rem; /* Adjust padding for smaller screens */
@@ -74,6 +75,10 @@
       flex: 0 0 auto;
       min-width: 2.571rem;
       padding: 0.643rem 1.071rem;
+
+      .is-vertical {
+        padding: 0;
+      }
     }
 
     &.is-text-only {

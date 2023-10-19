@@ -80,6 +80,10 @@ const propTypes = {
    */
   ariaLabelAddTab: PropTypes.string,
   /**
+   * By Default Orientation will be Horizontal and Orientation will be Vertical When verticalOrientation set to `true`.
+   */
+  verticalOrientation: PropTypes.bool,
+  /**
    * Sets focus on content when set to `true`.
    */
   setFocusOnContent: PropTypes.bool,
@@ -91,6 +95,7 @@ const defaultProps = {
   isDraggable: false,
   isClosable: false,
   setFocusOnContent: false,
+  verticalOrientation: false,
 };
 
 class Tabs extends React.Component {
@@ -132,6 +137,7 @@ class Tabs extends React.Component {
       isDraggable,
       onTabOrderChange,
       isClosable,
+      verticalOrientation,
       setFocusOnContent,
       ...customProps
     } = this.props;
@@ -158,6 +164,7 @@ class Tabs extends React.Component {
       }
       commonTabItems.push(
         <CommonTabItem
+          key={child.key}
           itemKey={child.key}
           label={child.props.label}
           icon={child.props.icon}
@@ -200,6 +207,7 @@ class Tabs extends React.Component {
         variant="framework"
         isDraggable={isDraggable}
         onTabOrderChange={onTabOrderChange}
+        verticalOrientation={verticalOrientation}
         {...customProps}
       >
         {commonTabItems}

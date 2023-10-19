@@ -123,6 +123,23 @@ describe('Table', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('verifies the rows receive the correct props when table is zebra striped', () => {
+    const wrapper = shallowWithIntl(
+      <IntlProvider locale="en">
+        <Table
+          id="test-terra-table"
+          overflowColumns={tableData.cols}
+          rows={tableData.rows}
+          isStriped
+        />
+      </IntlProvider>,
+    ).dive().dive();
+
+    const testRow = wrapper.find(Row).get(0);
+    expect(testRow.props.isTableStriped).toBe(true);
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('verifies row selection column header selection', () => {
     const mockColumnSelect = jest.fn();
 

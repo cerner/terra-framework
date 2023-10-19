@@ -29,10 +29,10 @@ const gridDataJSON = {
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
-        { isMasked: true },
+        { isMasked: true }, // This cell's content will be masked
         { isMasked: true },
         { content: 'Admitting Physician' },
-        { content: '', isSelectable: false },
+        { content: '', isSelectable: false }, // This cell cannot be selected via click but can receive focus when navigating through keyboard
       ],
     },
     {
@@ -54,6 +54,7 @@ const gridDataJSON = {
     },
   ],
 };
+
 const CellSelection = () => {
   const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
@@ -66,7 +67,7 @@ const CellSelection = () => {
       const rowIndex = rowData.findIndex(e => e.id === rowId);
       const columnIndex = cols.findIndex(e => e.id === columnId);
 
-      // Remove current selections
+      // Remove current selections as the Worklist Data Grid can have only one selected cell at any instance.
       const newRowData = [...rowData];
       for (let row = 0; row < rowData.length; row += 1) {
         for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
@@ -81,6 +82,7 @@ const CellSelection = () => {
       newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected;
       setRowData(newRowData);
 
+      // Example illustrates implementation of a Disclosure Manager on selection of a cell.
       disclosureManager.disclose({
         preferredType: 'panel',
         size: 'tiny',
@@ -113,15 +115,15 @@ const CellSelection = () => {
   return (
     <WorklistDataGrid
       id="worklist-data-grid-row-selection"
-      overflowColumns={cols}
-      rows={rowData}
+      overflowColumns={cols} // Column Headers
+      rows={rowData} // Rows with cell data
       rowHeaderIndex={rowHeaderIndex}
       rowHeight="50px"
       defaultColumnWidth={100}
       columnHeaderHeight="100px"
       ariaLabel="Worklist Data Grid With Cell Selection"
-      onCellSelect={onCellSelect}
-      onClearSelectedCells={onClearSelectedCells}
+      onCellSelect={onCellSelect} // For cell selection, a callback function must be provided so that the Worklist Data Grid can invoke it when a cell is selective.
+      onClearSelectedCells={onClearSelectedCells} // To clear the selection of a cell, a callback function must be provided so that the Worklist Data Grid can execute it to clear the selection.
     />
   );
 };

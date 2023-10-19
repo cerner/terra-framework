@@ -51,6 +51,7 @@
   .body {
     border-bottom-left-radius: var(--terra-tabs-workspace-body-border-bottom-left-radius, 3px);
     border-bottom-right-radius: var(--terra-tabs-workspace-body-border-bottom-right-radius, 3px);
+    border-left: 0;
     border-top: 1px solid #868a8c;
     flex: 1 1 auto;
     height: 100%;
@@ -59,8 +60,15 @@
   }
 
   .body-padding {
+    flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
+    z-index: 10;
+  }
+
+  .is-vertical {
+    border-left: 1px solid #868a8c;
+    border-top: 0;
   }
 
   .is-overlay .body {

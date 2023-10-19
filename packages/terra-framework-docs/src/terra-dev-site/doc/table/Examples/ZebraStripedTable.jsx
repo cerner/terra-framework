@@ -1,7 +1,7 @@
 import React from 'react';
-import { WorklistDataGrid } from 'terra-data-grid';
+import Table from 'terra-table';
 
-const gridDataJSON = {
+const tableDataJSON = {
   cols: [
     { id: 'Column-0', displayName: 'Patient' },
     { id: 'Column-1', displayName: 'Location' },
@@ -48,22 +48,52 @@ const gridDataJSON = {
         { content: '', isSelectable: false },
       ],
     },
+    {
+      id: '3',
+      cells: [
+        { content: 'McDonald, Ronald' },
+        { content: '1007-MTN-RN' },
+        { content: 'Critical' },
+        { content: 'Inpatient, 2 days' },
+        { content: 'Phytochemicals' },
+        { content: 'Smith, Melissa' },
+        { content: '' },
+        { content: '' },
+        { isMasked: true },
+        { content: 'Family Physician' },
+        { content: '', isSelectable: false },
+      ],
+    },
+    {
+      id: '4',
+      cells: [
+        { content: 'Wayne, Bruce' },
+        { content: '1018-MTN-DR' },
+        { content: 'Stable' },
+        { content: 'Outpatient, 2 days' },
+        { content: 'Aspirin' },
+        { content: 'Jones, Gary' },
+        { content: '' },
+        { content: '' },
+        { isMasked: true },
+        { content: 'Primary Care Physician' },
+        { content: '', isSelectable: false },
+      ],
+    },
   ],
 };
 
-const DefaultWorklistDataGrid = () => {
-  const rowHeaderIndex = 0;
-  const { cols, rows } = gridDataJSON;
+const ZebraStripedTable = () => {
+  const { cols, rows } = tableDataJSON;
 
   return (
-    <WorklistDataGrid
-      id="default-terra-worklist-data-grid"
+    <Table
+      id="zebra-striped-table"
       overflowColumns={cols}
       rows={rows}
-      rowHeaderIndex={rowHeaderIndex}
-      ariaLabel="Worklist Data Grid"
+      isStriped
     />
   );
 };
 
-export default DefaultWorklistDataGrid;
+export default ZebraStripedTable;
