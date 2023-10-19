@@ -266,6 +266,7 @@ Array [
         >
           <colgroup>
             <col
+              key="Column-0"
               style={
                 Object {
                   "width": "200px",
@@ -273,6 +274,7 @@ Array [
               }
             />
             <col
+              key="Column-1"
               style={
                 Object {
                   "width": "200px",
@@ -280,6 +282,7 @@ Array [
               }
             />
             <col
+              key="Column-2"
               style={
                 Object {
                   "width": "200px",
@@ -2137,6 +2140,7 @@ Array [
         >
           <colgroup>
             <col
+              key="Column-0"
               style={
                 Object {
                   "width": "200px",
@@ -2144,6 +2148,7 @@ Array [
               }
             />
             <col
+              key="Column-1"
               style={
                 Object {
                   "width": "200px",
@@ -2151,6 +2156,7 @@ Array [
               }
             />
             <col
+              key="Column-2"
               style={
                 Object {
                   "width": "200px",
@@ -4022,6 +4028,7 @@ exports[`Table verifies row selection column header selection 1`] = `
       >
         <colgroup>
           <col
+            key="table-rowSelectionColumn"
             style={
               Object {
                 "width": "40px",
@@ -4029,6 +4036,7 @@ exports[`Table verifies row selection column header selection 1`] = `
             }
           />
           <col
+            key="Column-0"
             style={
               Object {
                 "width": "200px",
@@ -4036,6 +4044,7 @@ exports[`Table verifies row selection column header selection 1`] = `
             }
           />
           <col
+            key="Column-1"
             style={
               Object {
                 "width": "200px",
@@ -4043,6 +4052,7 @@ exports[`Table verifies row selection column header selection 1`] = `
             }
           />
           <col
+            key="Column-2"
             style={
               Object {
                 "width": "200px",
@@ -6045,6 +6055,7 @@ exports[`Table verifies that the hasColumnHeaders prop hides the table column he
     >
       <colgroup>
         <col
+          key="Column-0"
           style={
             Object {
               "width": "200px",
@@ -6052,6 +6063,7 @@ exports[`Table verifies that the hasColumnHeaders prop hides the table column he
           }
         />
         <col
+          key="Column-1"
           style={
             Object {
               "width": "200px",
@@ -6059,6 +6071,7 @@ exports[`Table verifies that the hasColumnHeaders prop hides the table column he
           }
         />
         <col
+          key="Column-2"
           style={
             Object {
               "width": "200px",
@@ -6246,6 +6259,7 @@ exports[`Table verifies that the hasColumnHeaders prop hides the table column he
     >
       <colgroup>
         <col
+          key="Column-0"
           style={
             Object {
               "width": "150px",
@@ -6253,6 +6267,7 @@ exports[`Table verifies that the hasColumnHeaders prop hides the table column he
           }
         />
         <col
+          key="Column-1"
           style={
             Object {
               "width": "150px",
@@ -6260,6 +6275,7 @@ exports[`Table verifies that the hasColumnHeaders prop hides the table column he
           }
         />
         <col
+          key="Column-2"
           style={
             Object {
               "width": "150px",
@@ -6479,6 +6495,7 @@ exports[`Table verifies that the table created is consistent with the rows and o
     >
       <colgroup>
         <col
+          key="Column-0"
           style={
             Object {
               "width": "200px",
@@ -6486,6 +6503,7 @@ exports[`Table verifies that the table created is consistent with the rows and o
           }
         />
         <col
+          key="Column-1"
           style={
             Object {
               "width": "200px",
@@ -6493,6 +6511,7 @@ exports[`Table verifies that the table created is consistent with the rows and o
           }
         />
         <col
+          key="Column-2"
           style={
             Object {
               "width": "200px",
@@ -6712,6 +6731,7 @@ exports[`Table verifies the rows are created with the right props 1`] = `
     >
       <colgroup>
         <col
+          key="Column-0"
           style={
             Object {
               "width": "200px",
@@ -6719,6 +6739,7 @@ exports[`Table verifies the rows are created with the right props 1`] = `
           }
         />
         <col
+          key="Column-1"
           style={
             Object {
               "width": "200px",
@@ -6726,6 +6747,7 @@ exports[`Table verifies the rows are created with the right props 1`] = `
           }
         />
         <col
+          key="Column-2"
           style={
             Object {
               "width": "200px",
@@ -6945,6 +6967,7 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
     >
       <colgroup>
         <col
+          key="Column-0"
           style={
             Object {
               "width": "200px",
@@ -6952,6 +6975,7 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
           }
         />
         <col
+          key="Column-1"
           style={
             Object {
               "width": "200px",
@@ -6959,6 +6983,7 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
           }
         />
         <col
+          key="Column-2"
           style={
             Object {
               "width": "200px",

@@ -308,7 +308,7 @@ function Table(props) {
           <colgroup>
             {tableColumns.map((column) => (
               // eslint-disable-next-line react/forbid-dom-props
-              <col style={{ width: `${column.width}px` }} />
+              <col key={column.id} style={{ width: `${column.width}px` }} />
             ))}
           </colgroup>
 
