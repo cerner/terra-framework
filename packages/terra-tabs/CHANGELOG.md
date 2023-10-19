@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added Vertical orientation for `terra-tabs`.
+  
 * Changed
   * Removed additional screen reader phrase and fixed delete tab hint.
 

@@ -17,6 +17,9 @@
   * Updates examples for `terra-data-grid` to cover scenarios for focusable elements prevented from receiving focus.
   * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
 
+* Added
+ * Added example for vertical orientation functionality for `terra-tabs`.
+
 ## 1.40.0 - (October 11, 2023)
 
 * Added

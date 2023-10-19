@@ -117,4 +117,16 @@ describe('Tabs', () => {
     );
     expect(defaultRender).toMatchSnapshot();
   });
+
+  it('should render vertical tab', () => {
+    const defaultRender = <Tabs isDraggable fill verticalOrientation setFocusOnContent><Tabs.Pane label="Default" key="default" /></Tabs>;
+    const wrapper = shallowWithIntl(defaultRender).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('should render horizontal tab if verticalorientation is passed as null', () => {
+    const defaultRender = <Tabs isDraggable setFocusOnContent><Tabs.Pane label="Default" key="default" /></Tabs>;
+    const wrapper = shallowWithIntl(defaultRender).dive();
+    expect(wrapper).toMatchSnapshot();
+  });
 });
