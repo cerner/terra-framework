@@ -2,19 +2,19 @@ import PropTypes from 'prop-types';
 
 const cellShape = PropTypes.shape({
   /**
-   * Content that will be rendered within the Cell.
+   * The content to render within the cell.
    */
   content: PropTypes.node,
   /**
-   *  Boolean indicating if cell contents are masked.
+   *  A boolean indicating if the cell content is masked.
    */
   isMasked: PropTypes.bool,
   /**
-   * Boolean value indicating whether or not the column header is selectable.
+   * A boolean indicating if the cell is selectable.
    */
   isSelectable: PropTypes.bool,
   /**
-   * Boolean value indicating whether or not the cell should render as selected.
+   * A boolean indicating if the cell is selected.
    */
   isSelected: PropTypes.bool,
 });

@@ -1,7 +1,7 @@
 import React from 'react';
-import { WorklistDataGrid } from 'terra-data-grid';
+import Table from 'terra-table';
 
-const gridDataJSON = {
+const tableData = {
   cols: [
     { id: 'Column-0', displayName: 'Patient' },
     { id: 'Column-1', displayName: 'Location' },
@@ -13,7 +13,6 @@ const gridDataJSON = {
     { id: 'Column-7', displayName: 'Patient Age' },
     { id: 'Column-8', displayName: 'Medication History' },
     { id: 'Column-9', displayName: 'My Relationship' },
-    { id: 'Column-10', displayName: 'Not Selectable', isSelectable: false },
   ],
   rows: [
     {
@@ -29,7 +28,6 @@ const gridDataJSON = {
         { isMasked: true },
         { isMasked: true },
         { content: 'Admitting Physician' },
-        { content: '', isSelectable: false },
       ],
     },
     {
@@ -45,25 +43,18 @@ const gridDataJSON = {
         { content: '' },
         { isMasked: true },
         { content: 'Admitting Physician' },
-        { content: '', isSelectable: false },
       ],
     },
   ],
 };
 
-const DefaultWorklistDataGrid = () => {
-  const rowHeaderIndex = 0;
-  const { cols, rows } = gridDataJSON;
+const PinnedColumnsTable = () => (
+  <Table
+    id="my-table-id"
+    pinnedColumns={tableData.cols.slice(0, 2)}
+    overflowColumns={tableData.cols.slice(2)}
+    rows={tableData.rows}
+  />
+);
 
-  return (
-    <WorklistDataGrid
-      id="default-terra-worklist-data-grid"
-      overflowColumns={cols}
-      rows={rows}
-      rowHeaderIndex={rowHeaderIndex}
-      ariaLabel="Worklist Data Grid"
-    />
-  );
-};
-
-export default DefaultWorklistDataGrid;
+export default PinnedColumnsTable;

@@ -235,6 +235,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     >
                       <div
                         aria-controls="terra-common-tabs-default-panel"
+                        aria-describedby={null}
                         aria-disabled={false}
                         aria-label="Default"
                         aria-selected={true}
@@ -258,6 +259,19 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                         <div
                           className="inner"
                         >
+                          <VisuallyHiddenText
+                            aria-hidden={true}
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                            text="Terra.tabs.hint.removable"
+                          >
+                            <span
+                              aria-hidden={true}
+                              className="visually-hidden-text"
+                              id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                            >
+                              Terra.tabs.hint.removable
+                            </span>
+                          </VisuallyHiddenText>
                           <span
                             className="label"
                           >
@@ -767,6 +781,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -790,6 +805,19 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >
@@ -1669,6 +1697,7 @@ exports[`Tabs should render with add icon 1`] = `
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -1692,6 +1721,19 @@ exports[`Tabs should render with add icon 1`] = `
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >
@@ -2278,6 +2320,7 @@ exports[`Tabs should render with add icon 2`] = `
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -2301,6 +2344,19 @@ exports[`Tabs should render with add icon 2`] = `
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >
@@ -2881,6 +2937,7 @@ exports[`Tabs should render with close icon 1`] = `
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -2904,6 +2961,19 @@ exports[`Tabs should render with close icon 1`] = `
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >

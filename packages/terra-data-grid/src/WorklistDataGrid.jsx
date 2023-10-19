@@ -40,13 +40,13 @@ const propTypes = {
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
-   * Columns will be presented in the order given.
+   * Columns are rendered in the order in which they are provided.
    */
   pinnedColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * Data for overflow columns. Overflow columns are rendered in the Worklist Data Grid's horizontal overflow.
-   * Columns will be presented in the order given.
+   * Columns are rendered in the order in which they are provided.
    */
   overflowColumns: PropTypes.arrayOf(columnShape),
 
@@ -121,7 +121,7 @@ const propTypes = {
    */
   onEnableRowSelection: PropTypes.func,
   /**
-   * Boolean indicating whether or not the DataGrid should allow entire rows to be selectable. An additional column will be
+   * Boolean indicating whether or not the Worklist Data Grid should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,

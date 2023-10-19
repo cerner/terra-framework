@@ -1,5 +1,5 @@
 import React from 'react';
-import Table from 'terra-table';
+import Table from 'legacy-terra-table';
 import Menu from 'terra-menu';
 import Button from 'terra-button';
 

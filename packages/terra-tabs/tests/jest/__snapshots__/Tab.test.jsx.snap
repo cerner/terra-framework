@@ -2,6 +2,7 @@
 
 exports[`Tab correctly applies the theme context className 1`] = `
 <div
+  aria-describedby={null}
   aria-disabled={false}
   aria-label="Default"
   aria-selected={false}
@@ -24,6 +25,11 @@ exports[`Tab correctly applies the theme context className 1`] = `
   <div
     className="inner"
   >
+    <VisuallyHiddenText
+      aria-hidden={true}
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+      text="Terra.tabs.hint.removable"
+    />
     <span
       className="label"
     >
@@ -33,41 +39,9 @@ exports[`Tab correctly applies the theme context className 1`] = `
 </div>
 `;
 
-exports[`Tab should render a common tab as disabled when indicated 1`] = `
+exports[`Tab should render a closable tab 1`] = `
 <div
-  aria-disabled={true}
-  aria-label="Label"
-  aria-selected={false}
-  className="tab is-disabled is-text-only"
-  data-focus-styles-enabled={false}
-  data-terra-tabs-show-focus-styles={true}
-  onBlur={[Function]}
-  onClick={[Function]}
-  onKeyDown={[Function]}
-  onMouseDown={[Function]}
-  role="tab"
-  style={
-    Object {
-      "zIndex": undefined,
-    }
-  }
-  tabIndex={-1}
-  title="Label"
->
-  <div
-    className="inner"
-  >
-    <span
-      className="label"
-    >
-      Label
-    </span>
-  </div>
-</div>
-`;
-
-exports[`Tab should render a common tab with custom props 1`] = `
-<div
+  aria-describedby="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
   aria-disabled={false}
   aria-label="Default"
   aria-selected={false}
@@ -90,6 +64,99 @@ exports[`Tab should render a common tab with custom props 1`] = `
   <div
     className="inner"
   >
+    <VisuallyHiddenText
+      aria-hidden={true}
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+      text="Terra.tabs.hint.removable"
+    />
+    <span
+      className="label"
+    >
+      Default
+    </span>
+  </div>
+  <div
+    className="tabs-remove-button"
+    onClick={[Function]}
+  >
+    <IconClose
+      data-name="Layer 1"
+      viewBox="0 0 48 48"
+      xmlns="http://www.w3.org/2000/svg"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tab should render a common tab as disabled when indicated 1`] = `
+<div
+  aria-describedby={null}
+  aria-disabled={true}
+  aria-label="Label"
+  aria-selected={false}
+  className="tab is-disabled is-text-only"
+  data-focus-styles-enabled={false}
+  data-terra-tabs-show-focus-styles={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  style={
+    Object {
+      "zIndex": undefined,
+    }
+  }
+  tabIndex={-1}
+  title="Label"
+>
+  <div
+    className="inner"
+  >
+    <VisuallyHiddenText
+      aria-hidden={true}
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+      text="Terra.tabs.hint.removable"
+    />
+    <span
+      className="label"
+    >
+      Label
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Tab should render a common tab with custom props 1`] = `
+<div
+  aria-describedby={null}
+  aria-disabled={false}
+  aria-label="Default"
+  aria-selected={false}
+  className="tab is-text-only"
+  data-focus-styles-enabled={true}
+  data-terra-tabs-show-focus-styles={true}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
+  role="tab"
+  style={
+    Object {
+      "zIndex": undefined,
+    }
+  }
+  tabIndex={-1}
+  title="Default"
+>
+  <div
+    className="inner"
+  >
+    <VisuallyHiddenText
+      aria-hidden={true}
+      id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+      text="Terra.tabs.hint.removable"
+    />
     <span
       className="label"
     >
