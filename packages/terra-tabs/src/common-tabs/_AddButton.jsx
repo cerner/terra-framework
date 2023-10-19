@@ -77,7 +77,7 @@ const AddButton = ({
       icon={AddTabIcon}
       isIconOnly
       id={id}
-      tabindex="-1"
+      tabIndex="-1"
       index={index}
       text={addAriaLabel}
       variant="de-emphasis"

@@ -5,6 +5,10 @@
 * Added
   * Added documentation for the new `terra-table` component.
   * Added test to cover enabling zebra striping for the `terra-table` component.
+  * Added test for tab focus for scrollable tables for the `terra-table` component.
+
+* Updated
+  * Removed columnHeaderHeight from tests using the default implementation for `terra-data-grid`.
 
 ## 1.41.0 - (October 17, 2023)
 
@@ -17,6 +21,9 @@
 * Updated
   * Updates examples for `terra-data-grid` to cover scenarios for focusable elements prevented from receiving focus.
   * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
+
+* Added
+ * Added example for vertical orientation functionality for `terra-tabs`.
 
 ## 1.40.0 - (October 11, 2023)
 

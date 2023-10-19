@@ -9,10 +9,13 @@ const propTypes = {
   isLabelHidden: PropTypes.bool,
   label: PropTypes.string,
   children: PropTypes.node,
+  id: PropTypes.string,
 };
 
-const TabContentTemplate = ({ isLabelHidden, label, children }) => (
-  <div className={cx('tab-content-template')}>
+const TabContentTemplate = ({
+  isLabelHidden, label, id, children,
+}) => (
+  <div className={cx('tab-content-template')} id={id}>
     {isLabelHidden ? <h3>{label}</h3> : null}
     {children || (
       <div>

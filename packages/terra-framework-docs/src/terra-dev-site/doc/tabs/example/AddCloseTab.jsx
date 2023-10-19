@@ -100,7 +100,7 @@ const AddCloseTab = () => {
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs onChange={handleSelection} activeKey={activeKey} setFocusOnContent isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
+      <Tabs id="Addclose" onChange={handleSelection} activeKey={activeKey} setFocusOnContent isClosable onSelectAddButton={addMoreTabPanes} ariaLabelAddTab="Add Tab" onTabClose={handleTabClose}>
         { tabs.map((tab) => (
           <Tabs.Pane label={tab.label} isIconOnly={tab.isIconOnly} customDisplay={tab.customDisplay} isDisabled={tab.isDisabled} icon={tab.icon} key={tab.key} id={tab.key}>
             <TabContentTemplate label={tab.content} />

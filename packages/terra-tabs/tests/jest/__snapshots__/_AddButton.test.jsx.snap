@@ -107,7 +107,7 @@ exports[`MoreButton should render a add button with provided props and selection
         isIconOnly={true}
         isReversed={false}
         onKeyDown={[Function]}
-        tabindex="-1"
+        tabIndex="-1"
         text="add tab"
         type="button"
         variant="de-emphasis"
@@ -127,7 +127,7 @@ exports[`MoreButton should render a add button with provided props and selection
           onKeyDown={[Function]}
           onKeyUp={[Function]}
           onMouseDown={[Function]}
-          tabindex="-1"
+          tabIndex="-1"
           title="add tab Terra.tabs.addbutton.focus"
           type="button"
         >
