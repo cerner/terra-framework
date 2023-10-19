@@ -16,6 +16,9 @@
 * Updated
   * Removed columnHeaderHeight from tests using the default implementation for `terra-data-grid`.
 
+* Changed
+  * Updated test for FlowsheetDataGrid in `terra-data-grid`.
+
 ## 1.41.0 - (October 17, 2023)
 
 * Added
