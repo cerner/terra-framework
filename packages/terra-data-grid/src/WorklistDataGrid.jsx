@@ -418,11 +418,25 @@ function WorklistDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        rows={rows}
+        rows={rows.map((row) => ({
+          ...row,
+          cells: row.cells.map(cell => ({
+            ...cell,
+            isSelectable: cell.isSelectable !== false,
+          })),
+        }))}
         rowHeight={rowHeight}
         rowHeaderIndex={rowHeaderIndex}
-        pinnedColumns={pinnedColumns}
-        overflowColumns={overflowColumns}
+        pinnedColumns={pinnedColumns.map((columns) => ({
+          ...columns,
+          isSelectable: columns.isSelectable !== false,
+          isResizable: columns.isResizable !== false,
+        }))}
+        overflowColumns={overflowColumns.map((columns) => ({
+          ...columns,
+          isSelectable: columns.isSelectable !== false,
+          isResizable: columns.isResizable !== false,
+        }))}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onColumnSelect={onColumnSelect}
