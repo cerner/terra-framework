@@ -21,6 +21,7 @@
   "Terra.worklist-data-grid.cell-focus-trapped": "Focus contained in cell. Press Escape to resume grid navigation.",
   "Terra.worklist-data-grid.resume-navigation": "Grid navigation resumed.",
 
+  "Terra.flowsheetDataGrid.no-cells-selected": "No cells selected",
   "Terra.flowsheetDataGrid.no-result": "No result",
   "Terra.flowsheetDataGrid.no-result-display": "--"
 }

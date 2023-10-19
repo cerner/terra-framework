@@ -1,5 +1,5 @@
 import React, {
-  useCallback, useEffect, useMemo, useRef,
+  useState, useCallback, useEffect, useMemo, useRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -111,6 +111,7 @@ function FlowsheetDataGrid(props) {
 
   const anchorCell = useRef(null);
   const selectedCells = useRef([]);
+  const [cellSelectionAriaLiveMessage, setCellSelectionAriaLiveMessage] = useState(null);
   const inShiftDirectionalMode = useRef(false);
 
   const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
@@ -144,6 +145,7 @@ function FlowsheetDataGrid(props) {
   }, [intl, rows]);
 
   useEffect(() => {
+    const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
     rows.forEach((row) => {
       row.cells.forEach((cell, cellIndex) => {
@@ -160,8 +162,10 @@ function FlowsheetDataGrid(props) {
       anchorCell.current = null;
     }
 
-    console.log(selectedCells.current.length);
-  }, [rows, columns]);
+    if (previousSelectedCells.length > 0 && selectedCells.current.length === 0) {
+      setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-cells-selected' }));
+    }
+  }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
 
   const handleClearSelectedCells = useCallback(() => {
     if (onClearSelectedCells) {
@@ -277,6 +281,7 @@ function FlowsheetDataGrid(props) {
         onClearSelectedCells={handleClearSelectedCells}
         onCellRangeSelection={handleCellRangeSelection}
       />
+      <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>
   );
 }
