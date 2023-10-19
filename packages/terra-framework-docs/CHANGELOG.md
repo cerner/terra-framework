@@ -4,6 +4,7 @@
 
 * Added
   * Added test to cover enabling zebra striping for the `terra-table` component.
+  * Added test for tab focus for scrollable tables for the `terra-table` component.
 
 * Updated
   * Removed columnHeaderHeight from tests using the default implementation for `terra-data-grid`.

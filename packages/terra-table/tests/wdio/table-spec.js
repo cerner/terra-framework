@@ -103,4 +103,34 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('zebra-striped-table', { selector: zebraStripeTableSelector });
     });
   });
+
+  describe('Scrollable Table', () => {
+    const scrollableTableSelector = '#scroll-test-container';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/scrollable-table');
+    });
+
+    it('Validates first scrollable table receives focus', () => {
+      browser.keys(['Tab']);
+      expect($('#scroll-test-1')).toBeFocused();
+      Terra.validates.element('scrollable-table-first-focus', { selector: scrollableTableSelector });
+    });
+
+    it('Validates second scrollable table receives focus', () => {
+      browser.keys(['Tab', 'Tab']);
+      expect($('#scroll-test-3')).toBeFocused();
+      Terra.validates.element('scrollable-table-second-focus', { selector: scrollableTableSelector });
+    });
+
+    it('Validates a table has zebra striping when specified via props', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown']);
+      Terra.validates.element('scrollable-table-first-scroll', { selector: scrollableTableSelector });
+    });
+
+    it('Validates second scrollable table receives focus', () => {
+      browser.keys(['Tab', 'Tab', 'ArrowRight', 'ArrowRight']);
+      Terra.validates.element('scrollable-table-second-scroll', { selector: scrollableTableSelector });
+    });
+  });
 });
