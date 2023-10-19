@@ -9,6 +9,6 @@
   "Terra.tabs.drag": "Du har flyttat fliken från platsen {startPosition} till platsen {endPosition}",
   "Terra.tabs.cancelDrag": "Förflyttning avbröts. Fliken har återgått till startplatsen {startPosition}",
   "Terra.tabs.drop": "Du har tappat fliken. Den har flyttats från platsen {startPosition} till {endPosition}",
-  "Terra.tabs.focus": "Tryck på Retur-tangenten för att aktivera en flik eller tryck på blankstegstangenten för att börja dra. Säkerställ att din skärmläsare är i fokusläge eller formulärläge",
+  "Terra.tabs.focus": "Tryck på Retur-tangenten för att aktivera en flik eller tryck på blankstegstangenten för att börja dra.",
   "Terra.tabs.addbutton.focus": "tryck på Retur-tangenten eller blankstegstangenten för att lägga till en ny flik"
 }
