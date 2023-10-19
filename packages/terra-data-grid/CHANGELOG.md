@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Changed
-  * Removed the custom column header height from WDIO tests using default implementations.
-
 ## 0.8.1 - (October 17, 2023)
 
 * Fixed
