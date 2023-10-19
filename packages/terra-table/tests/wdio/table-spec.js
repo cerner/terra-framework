@@ -103,4 +103,26 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('zebra-striped-table', { selector: zebraStripeTableSelector });
     });
   });
+
+  describe('Focusable Cell Element Navigation : ', () => {
+    const focusElementSelector = 'body';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-focusable-cell');
+    });
+
+    it('validates that the proper grid element is selected when Tab is used to give initial focus to the grid', () => {
+      browser.keys(['Tab']);
+
+      expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('table-focus-first-button', { columnResizeSelector: focusElementSelector });
+    });
+
+    it('validates that the proper grid element is selected when Tab is used to give initial focus to the grid', () => {
+      browser.keys(['Tab', 'Tab']);
+
+      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('table-focus-input', { columnResizeSelector: focusElementSelector });
+    });
+  });
 });
