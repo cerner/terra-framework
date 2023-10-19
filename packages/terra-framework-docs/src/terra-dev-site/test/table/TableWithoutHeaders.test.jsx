@@ -1,7 +1,7 @@
 import React from 'react';
 import Table from 'terra-table';
 
-const gridDataJSON = {
+const tableDataJSON = {
   cols: [
     { id: 'Column-0', displayName: 'Patient' },
     { id: 'Column-1', displayName: 'Location' },
@@ -69,7 +69,7 @@ const gridDataJSON = {
 };
 
 const TableWithoutHeaders = () => {
-  const { cols, rows } = gridDataJSON;
+  const { cols, rows } = tableDataJSON;
 
   return (
     <Table
