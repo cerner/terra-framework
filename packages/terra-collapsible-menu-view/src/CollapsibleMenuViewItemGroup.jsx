@@ -33,7 +33,7 @@ const propTypes = {
   /**
    * String that used in menu item for aria-describedby that labels the group for accessibility.
    */
-  GroupId: PropTypes.string,
+  groupId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -79,7 +79,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       isMultiSelect,
       selectedKeys,
       ariaLabel,
-      GroupId,
+      groupId,
       ...customProps
     } = this.props;
 
@@ -95,7 +95,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
         });
         return (
           <li role="none">
-            <div {...customProps} role="group" id={GroupId}>
+            <div {...customProps} role="group" id={groupId} aria-label={ariaLabel}>
               {cloneChildren}
             </div>
           </li>
@@ -104,7 +104,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       if (onChange) {
         return (
           <li role="none">
-            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange} id={GroupId}>
+            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange} id={groupId} aria-label={ariaLabel}>
               {children}
             </Menu.ItemGroup>
           </li>
@@ -125,7 +125,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
     ]);
 
     return (
-      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys}>
+      <ButtonGroup {...customProps} isMultiSelect={isMultiSelect} onChange={onChange} className={buttonGroupClassNames} selectedKeys={selectedKeys} aria-label={ariaLabel}>
         {children}
       </ButtonGroup>
     );
