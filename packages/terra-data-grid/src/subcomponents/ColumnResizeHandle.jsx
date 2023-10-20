@@ -7,7 +7,6 @@ import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ColumnContext from '../utils/ColumnContext';
-import '../_elementPolyfill';
 import styles from './ColumnResizeHandle.module.scss';
 
 const cx = classNames.bind(styles);
