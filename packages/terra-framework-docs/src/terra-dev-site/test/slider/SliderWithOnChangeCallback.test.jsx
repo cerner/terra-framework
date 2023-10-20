@@ -10,7 +10,7 @@ const SliderWithOnChangeCallback = () => {
   const message = value ? `Updated Slider value is: ${value}` : 'Change the value of Slider to trigger callback';
 
   return (
-    <>
+    <div>
       <Slider
         minimumValue={0}
         maximumValue={100}
@@ -19,7 +19,7 @@ const SliderWithOnChangeCallback = () => {
         onChange={handleChange}
       />
       <p>{message}</p>
-    </>
+    </div>
   );
 };
 
