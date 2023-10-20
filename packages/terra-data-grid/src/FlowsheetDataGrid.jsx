@@ -164,6 +164,8 @@ function FlowsheetDataGrid(props) {
 
     if (previousSelectedCells.length > 0 && selectedCells.current.length === 0) {
       setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-cells-selected' }));
+    } else if (selectedCells.current.length) {
+      setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.cells-selected' }, { cellCount: selectedCells.current.length }));
     }
   }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
 
