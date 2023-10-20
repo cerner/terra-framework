@@ -49,8 +49,6 @@ const DefaultWorklistDataGrid = () => {
         overflowColumns={cols}
         rows={rows}
         rowHeaderIndex={rowHeaderIndex}
-        // TODO: Remove columnHeaderHeight from example
-        columnHeaderHeight="50px"
         onCellSelect={onCellSelect}
         onClearSelectedCells={onClearSelectedCells}
         ariaLabel="Worklist Data Grid"

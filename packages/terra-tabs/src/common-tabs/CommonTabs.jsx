@@ -72,6 +72,10 @@ const propTypes = {
    * Callback function triggered when tab is drag and dropped .
    */
   onTabOrderChange: PropTypes.func,
+  /**
+   * Whether tab is vertical or horizontal orientation.
+   */
+  verticalOrientation: PropTypes.bool,
 };
 
 const getTabId = (id, itemKey) => `${id || 'terra-common-tabs'}-${itemKey}`;
@@ -91,6 +95,7 @@ const CommonTabs = ({
   onClosingTab,
   isDraggable,
   onTabOrderChange,
+  verticalOrientation,
   ...customProps
 }) => {
   const theme = React.useContext(ThemeContext);
@@ -120,6 +125,12 @@ const CommonTabs = ({
     theme.className,
   ),
   customProps.className);
+  const contentTabClassNames = classNames(cx(
+    'body',
+    { 'is-vertical': verticalOrientation },
+    { 'body-padding': variant === 'workspace' },
+    theme.className,
+  ));
 
   const handleCommonTabsStateChange = (value, itemKey, event) => {
     onClosingTab(value, itemKey, event);
@@ -134,9 +145,9 @@ const CommonTabs = ({
         <div className={variant === 'framework' ? undefined : cx('body-shadow')} />
       </div>
       <div role="none" className={cx('tab-header')}>
-        <Tabs isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />
+        <Tabs verticalOrientation={verticalOrientation} isDraggable={isDraggable} onTabOrderChange={onTabOrderChange} variant={variant} tabData={tabData} onChange={onChange} onSelectAddButton={onSelectAddButton} ariaLabelAddTab={ariaLabelAddTab} onTabStateChange={handleCommonTabsStateChange} />
       </div>
-      <div role="none" className={cx('body', { 'body-padding': variant === 'workspace' })} ref={commonTabsContainerRef}>
+      <div role="none" className={contentTabClassNames} ref={commonTabsContainerRef}>
         {React.Children.map(children, child => {
           let portalElement = commonTabsPortalsRef.current[child.props.itemKey]?.element;
           if (!portalElement) {
