@@ -221,6 +221,10 @@ const Tab = ({
         onChange(event, itemKey);
       }
     }
+    // Fix for keyboard navigation after mouse click which was failing due to draggable props.
+    if (isDraggable) {
+      event.currentTarget.focus();
+    }
   }
   attributes.tabIndex = isSelected ? 0 : -1;
   attributes.onClick = onClick;

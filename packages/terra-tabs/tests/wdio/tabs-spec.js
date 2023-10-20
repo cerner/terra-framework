@@ -164,6 +164,11 @@ Terra.describeViewports('Tabs - Drag and Drop', ['medium'], () => {
     browser.keys(['Tab', 'Tab', 'Space', 'ArrowRight', 'Space']);
     Terra.validates.element('After Drag and Drop', { selector: '#root' });
   });
+  it('should navigate with keyboard after mouse click', () => {
+    $('#controlledTabs-Radiology').click();
+    browser.keys(['ArrowRight']);
+    expect($('#controlledTabs-Cardiology')).toBeFocused();
+  });
 });
 
 Terra.describeViewports('Tabs - Add and Close', ['medium'], () => {
