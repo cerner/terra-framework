@@ -5,7 +5,7 @@ const CustomMinMaxLabelSlider = () => (
   <Slider
     minimumValue={0}
     maximumValue={100}
-    labelText="Field Label"
+    label="Field Label"
     minimumLabel="label"
     maximumLabel="label"
     value={20}

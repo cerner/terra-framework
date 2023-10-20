@@ -10,9 +10,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-  * Slider label value.
+  * The label for the slider.
   */
-  labelText: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
 
   /**
   * Minimum value in the range.
@@ -87,7 +87,7 @@ class Slider extends React.Component {
       isDisabled,
       minimumValue,
       maximumValue,
-      labelText,
+      label,
       minimumLabel,
       maximumLabel,
     } = this.props;
@@ -110,12 +110,12 @@ class Slider extends React.Component {
       /* eslint-disable-next-line react/forbid-dom-props */
       <div style={{ '--terra-slider-progress-status': `${this.state.value}%` }} className={sliderClassNames}>
         <span className={cx('label')} aria-hidden="true">
-          {labelText}
+          {label}
         </span>
         <span className={cx('slider-label', 'slider-min-label')} aria-hidden="true">
           {minLabel}
         </span>
-        <input className={cx('input-range')} type="range" ref={this.sliderRef} aria-label={labelText} aria-describedby={descriptionId} value={this.state.value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={this.handleOnChange} />
+        <input className={cx('input-range')} type="range" ref={this.sliderRef} aria-label={label} aria-describedby={descriptionId} value={this.state.value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={this.handleOnChange} />
         <span className={cx('slider-label', 'slider-max-label')} aria-hidden="true">
           {maxLabel}
         </span>

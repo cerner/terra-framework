@@ -3,7 +3,7 @@
 [![NPM version](https://badgen.net/npm/v/terra-slider)](https://www.npmjs.com/package/terra-slider)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-Terra Slider component provides users a way to select a value from a given range by sliding a thumb along a bar to track the value.
+Terra Slider provides a way to select a value from a given range by sliding a thumb along a bar to track the value.
 
 - [Terra Slider](#terra-slider)
   - [Getting Started](#getting-started)

@@ -6,7 +6,7 @@ const DisabledSlider = () => (
     isDisabled
     minimumValue={0}
     maximumValue={100}
-    labelText="Label"
+    label="Label"
     value={50}
   />
 );

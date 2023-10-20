@@ -14,7 +14,7 @@ afterAll(() => {
 describe('Slider', () => {
   it('should render a default slider with proper required props', () => {
     const wrapper = shallow(
-      <Slider minimumValue={0} maximumValue={100} labelText="testLabel" value={30} />,
+      <Slider minimumValue={0} maximumValue={100} label="testLabel" value={30} />,
     );
     expect(wrapper).toMatchSnapshot();
     expect(wrapper.find('.label').text()).toEqual('testLabel');
@@ -25,7 +25,7 @@ describe('Slider', () => {
 
   it('should render a disabled slider', () => {
     const wrapper = shallow(
-      <Slider isDisabled minimumValue={0} maximumValue={100} labelText="testLabel" value={50} />,
+      <Slider isDisabled minimumValue={0} maximumValue={100} label="testLabel" value={50} />,
     );
     expect(wrapper.find('input').prop('disabled')).toEqual(true);
     expect(wrapper).toMatchSnapshot();
@@ -33,7 +33,7 @@ describe('Slider', () => {
 
   it('should render a slider with custom min and max labels', () => {
     const wrapper = shallow(
-      <Slider minimumValue={0} maximumValue={100} labelText="testLabel" minimumLabel="testMinimumLabel" maximumLabel="testMaximumLabel" value={50} />,
+      <Slider minimumValue={0} maximumValue={100} label="testLabel" minimumLabel="testMinimumLabel" maximumLabel="testMaximumLabel" value={50} />,
     );
     expect(wrapper.find('.slider-label').at(0).text()).toEqual('testMinimumLabel');
     expect(wrapper.find('.slider-max-label').text()).toEqual('testMaximumLabel');
@@ -42,7 +42,7 @@ describe('Slider', () => {
 
   it('should update slider value correctly ', () => {
     const wrapper = shallow(
-      <Slider isDisabled minimumValue={0} maximumValue={100} labelText="testLabel" value={50} />,
+      <Slider isDisabled minimumValue={0} maximumValue={100} label="testLabel" value={50} />,
     );
     expect(wrapper.find('input').prop('value')).toEqual(50);
     wrapper.setProps({ value: 30 });
