@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import styles from './Slider.module.scss';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { v4 as uuidv4 } from 'uuid';
+import styles from './Slider.module.scss';
 
 const cx = classNames.bind(styles);
 
@@ -100,10 +100,9 @@ class Slider extends React.Component {
 
     const minLabel = minimumLabel || minimumValue;
     const maxLabel = maximumLabel || maximumValue;
-    let VisuallyHiddenTextValue = 
-      (minimumLabel || maximumLabel) ? 
-      `Adjust slider to select a value between ${minimumLabel} (${minimumValue}) and ${maximumLabel} (${maximumValue})`:
-      `Adjust slider to select a value between ${minimumValue} and ${maximumValue}`;
+    const VisuallyHiddenTextValue = (minimumLabel || maximumLabel)
+      ? `Adjust slider to select a value between ${minimumLabel} (${minimumValue}) and ${maximumLabel} (${maximumValue})`
+      : `Adjust slider to select a value between ${minimumValue} and ${maximumValue}`;
     const descriptionId = uuidv4();
 
     return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import Slider from '../../src/Slider';
 import { v4 as uuidv4 } from 'uuid';
+import Slider from '../../src/Slider';
 
 let mockSpyUuid;
 beforeAll(() => {
