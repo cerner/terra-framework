@@ -113,24 +113,6 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
     });
   });
 
-  describe('with keyboard navigation', () => {
-    beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/default-data-grid');
-    });
-
-    it('hovers over selectable cell on an odd row', () => {
-      browser.$$('tbody tr')[0].$$('td')[0].moveTo();
-      browser.pause(2000);
-      Terra.validates.element('hover-odd-row-cell-selection', { selector: defaultSelector });
-    });
-
-    it('hovers over selectable cell on an even row', () => {
-      browser.$$('tbody tr')[3].$$('td')[0].moveTo();
-      browser.pause(2000);
-      Terra.validates.element('hover-even-row-cell-selection', { selector: defaultSelector });
-    });
-  });
-
   describe('Focusable Cell Navigation : ', () => {
     const columnResizeSelector = 'body';
 

@@ -327,7 +327,7 @@ const DataGrid = injectIntl((props) => {
             || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
       return;
     }
-
+    const columns = tableRef.current.tHead.rows[0].cells;
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:
@@ -356,7 +356,7 @@ const DataGrid = injectIntl((props) => {
         if (event.metaKey) {
           // Mac: Cmd + Right
           // Win: End
-          nextCol = tableRef.current.rows[0].cells.length - 1;
+          nextCol = columns.length - 1;
 
           if (event.ctrlKey) {
             // Mac: Ctrl + Cmd + Right
@@ -365,7 +365,7 @@ const DataGrid = injectIntl((props) => {
           }
         } else {
           // Right key
-          nextCol = Math.min(nextCol + 1, tableRef.current.rows[0].cells.length - 1);
+          nextCol = Math.min(nextCol + 1, columns.length - 1);
         }
         break;
       case KeyCode.KEY_HOME:
@@ -375,7 +375,7 @@ const DataGrid = injectIntl((props) => {
         }
         break;
       case KeyCode.KEY_END:
-        nextCol = tableRef.current.rows[0].length - 1; // Col are zero based.
+        nextCol = columns.length - 1; // Col are zero based.
         if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
