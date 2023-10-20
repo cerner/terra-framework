@@ -736,6 +736,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -773,6 +774,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -1047,6 +1053,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -1084,6 +1091,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -1387,6 +1399,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -1424,6 +1437,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -3633,6 +3651,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -3670,6 +3689,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -3944,6 +3968,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -3981,6 +4006,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -4284,6 +4314,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -4321,6 +4352,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -6680,6 +6716,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -6717,6 +6754,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -6991,6 +7033,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
 >>>>>>> f0c547b77 (Copy the Jest updates)
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
 <<<<<<< HEAD
                         <ColumnResizeHandle
@@ -7028,6 +7071,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
@@ -7294,6 +7342,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         maximumWidth={300}
                         minimumWidth={60}
                         onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                       >
                         <ColumnResizeHandle
                           columnIndex={3}
@@ -7330,6 +7383,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           maximumWidth={300}
                           minimumWidth={60}
                           onResizeMouseDown={[Function]}
+<<<<<<< HEAD
+=======
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
+>>>>>>> b81bf7514 (updated snapshots)
                         >
                           <div
                             aria-hidden={true}
