@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+*Fixed
+  *Fixed the `terra-tabs` icononly examples keyboard navigation issue.
+
 ## 1.41.0 - (October 17, 2023)
 
 * Added

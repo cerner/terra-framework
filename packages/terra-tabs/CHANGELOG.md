@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+*Fixed
+  *Fixed the dropdown options are being cut off.
+
 ## 7.10.0 - (October 11, 2023)
 
 * Changed
