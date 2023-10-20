@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.11.0 - (October 20, 2023)
+
 * Added
   * Added Vertical orientation for `terra-tabs`.
   

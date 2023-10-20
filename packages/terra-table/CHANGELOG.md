@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.1.0-alpha.0 - (October 20, 2023)
+
 * Added
   * Added the ability to toggle zebra striping for table rows.
   
