@@ -5,6 +5,9 @@
 * Fixed
   * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
 
+* Added
+  * Added example for Flowsheet Data Grid containing missing results.
+
 ## 1.42.0 - (October 20, 2023)
 
 * Added
@@ -12,7 +15,6 @@
   * Added test to cover enabling zebra striping for the `terra-table` component.
   * Added test for tab focus for scrollable tables for the `terra-table` component.
   * Added examples and tests to cover the behavior of interactive elements within a table for `terra-table`.
-  * Added example for Flowsheet Data Grid containing missing results.
 
 * Updated
   * Removed columnHeaderHeight from tests using the default implementation for `terra-data-grid`.
