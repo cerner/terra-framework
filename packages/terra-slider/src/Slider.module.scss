@@ -21,8 +21,8 @@
   }
 
   .slider-label {
-    color: #6f7477;
-    font-size: var(--terra-slider-range-label-font-size, 0.857rem);
+    color: var(--terra-slider-sub-label-color, #6f7477);
+    font-size: var(--terra-slider-sub-label-font-size, 0.857rem);
     font-weight: var(--terra-slider-sub-label-font-weight, 400);
     margin-right: var(--terra-slider-sub-label-margin-right, 0.5rem);
     text-align: left;
