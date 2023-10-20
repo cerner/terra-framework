@@ -205,9 +205,6 @@ function FlowsheetDataGrid(props) {
       return;
     }
 
-    // New cell selection made, not in Shift+Up/Down/Left/Right mode.
-    inShiftDirectionalMode.current = false;
-
     if (selectionDetails.isShiftPressed) {
       if (!anchorCell.current) {
         anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
@@ -220,8 +217,14 @@ function FlowsheetDataGrid(props) {
 
   const handleCellRangeSelection = useCallback((rowIndex, columnIndex, direction) => {
     // Exclude the row header column as an eligible anchor/start cell.
-    if (columnIndex <= 0 && !anchorCell.current) {
+    if (columnIndex <= 0 && !inShiftDirectionalMode.current) {
       return;
+    }
+
+    if (!inShiftDirectionalMode.current) {
+      // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range.
+      inShiftDirectionalMode.current = true;
+      anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
     }
 
     let nextRowIndex = rowIndex;
@@ -257,17 +260,22 @@ function FlowsheetDataGrid(props) {
       nextColumnIndex = columns.length - 1;
     }
 
-    if (!inShiftDirectionalMode.current) {
-      // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range.
-      inShiftDirectionalMode.current = true;
-      anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
-    }
-
     selectCellRange(nextRowIndex, nextColumnIndex);
   }, [rows, columns, selectCellRange]);
 
+  const handleKeyUp = (event) => {
+    const key = event.keyCode;
+    switch (key) {
+      case KeyCode.KEY_SHIFT:
+        inShiftDirectionalMode.current = false;
+        break;
+      default:
+    }
+  };
+
   return (
-    <div className={cx('flowsheet-data-grid-container')}>
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div className={cx('flowsheet-data-grid-container')} onKeyUp={handleKeyUp}>
       <DataGrid
         id={id}
         ariaLabel={ariaLabel}
