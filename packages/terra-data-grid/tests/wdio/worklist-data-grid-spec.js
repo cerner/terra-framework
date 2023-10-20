@@ -456,5 +456,4 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('pinned-columns-with-row-selection-select', { selector: pinnedColumnsWithRowSelectionSelector });
     });
   });
-
 });

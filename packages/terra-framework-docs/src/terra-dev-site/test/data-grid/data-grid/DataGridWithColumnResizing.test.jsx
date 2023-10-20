@@ -4,8 +4,8 @@ import DataGrid from 'terra-data-grid/lib/DataGrid';
 const gridDataJSON = {
   cols: [
     { id: 'Column-0', displayName: 'Vitals' },
-    { id: 'Column-1', displayName: 'Fixed'  },
-    { id: 'Column-2', displayName: 'March 17', isResizable: false  },
+    { id: 'Column-1', displayName: 'Fixed' },
+    { id: 'Column-2', displayName: 'March 17', isResizable: false },
     { id: 'Column-3', displayName: 'March 18' },
   ],
   rows: [
