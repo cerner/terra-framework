@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
+import classNames from 'classnames/bind';
 
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import Table, { GridContext } from 'terra-table';
@@ -11,6 +12,9 @@ import rowShape from './proptypes/rowShape';
 import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import './_elementPolyfill';
+import styles from './DataGrid.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -192,44 +196,45 @@ const DataGrid = injectIntl((props) => {
   // -------------------------------------
 
   const handleMoveCellFocus = (fromCell, toCell) => {
-    // Obtain coordinate rectangles for grid container, column header, and new cell selection
+    // Obtain coordinate rectangles for scrollable container, column header, and new cell selection
+    // TODO: Implementation is not easy to understand, get suggestions on how to clean this logic up.
     const tableRows = tableRef.current.rows;
     const tableContainer = gridContainerRef.current.firstChild;
     const tableContainerRect = tableContainer.getBoundingClientRect();
-    const columnHeaderRect = tableRows[0].cells[toCell.col].getBoundingClientRect();
     const nextCellRect = tableRows[toCell.row].cells[toCell.col].getBoundingClientRect();
 
-    // Calculate horizontal scroll offset for right boundary
     if (nextCellRect.right > tableContainerRect.right) {
+      // Calculate scroll when next cell overlaps container's right border.
       tableContainer.scrollBy(nextCellRect.right - tableContainerRect.right, 0);
-    } else {
-      // Calculate horizontal scroll offset for left boundary
-      // let scrollOffsetX = 0;
-      // if (pinnedColumnOffsets.length > 0) {
-      //   if (toCell.col > pinnedColumnOffsets.length - 1) {
-      //     const lastPinnedColumnRect = tableRows[toCell.row].cells[pinnedColumnOffsets.length - 1].getBoundingClientRect();
-      //     scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
-      //   }
-      // } else {
-      //   scrollOffsetX = nextCellRect.left - gridContainerRect.left;
-      // }
+    } else if (hasSelectableRows || pinnedColumns.length) {
+      // Calculate scroll when pinned columns exist. Row selection always has at least 1 pinned column.
+      const selectableRowsOffset = hasSelectableRows ? 1 : 0;
+      const lastPinnedColumnIndex = pinnedColumns.length - 1 + selectableRowsOffset;
+      const lastPinnedColumnRect = tableRows[0].cells[lastPinnedColumnIndex].getBoundingClientRect();
 
-      // if (scrollOffsetX < 0) {
-      //   gridContainerRef.current.scrollBy(scrollOffsetX, 0);
-      // }
+      if (toCell.col > lastPinnedColumnIndex && nextCellRect.left < lastPinnedColumnRect.right) {
+        // Calculate scroll when in overflow region and the next cell is overlapping the last pinned column to the right.
+        tableContainer.scrollBy(nextCellRect.left - lastPinnedColumnRect.right, 0);
+      } else if (toCell.col > lastPinnedColumnIndex && nextCellRect.right < lastPinnedColumnRect.left) {
+        // Calculate scroll when in overflow region and the next cell is overlpping the last pinned column to the left.
+        tableContainer.scrollBy(nextCellRect.right - lastPinnedColumnRect.left, 0);
+      }
+    } else if (nextCellRect.left < tableContainerRect.left) {
+      // Calculate scroll when next cell overlaps container's left border.
+      tableContainer.scrollBy(nextCellRect.left - tableContainerRect.left, 0);
     }
 
     // Calculate vertical scroll offset
+    const columnHeaderRect = tableRows[0].cells[toCell.col].getBoundingClientRect();
     const scrollOffsetY = nextCellRect.top - columnHeaderRect.bottom;
     if (scrollOffsetY < 0) {
       tableContainer.scrollBy(0, scrollOffsetY);
     }
-
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
   const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
-    focusedRow.current = cellCoordinates.row;
+    focusedRow.current = 0;
     focusedCol.current = cellCoordinates.col;
 
     if (onColumnSelect) {
@@ -421,12 +426,15 @@ const DataGrid = injectIntl((props) => {
   // -------------------------------------
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
       ref={gridContainerRef}
       onKeyDown={handleKeyDown}
       onMouseDown={onMouseDown}
       onFocus={onFocus}
+      className={cx('data-grid-container')}
     >
       <GridContext.Provider value={{ role: 'grid' }}>
         <Table
