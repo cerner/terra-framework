@@ -34,6 +34,11 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * Boolean specifying whether or not the component should have zebra striping for rows.
+   */
+  isStriped: PropTypes.bool,
+
+  /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(rowShape),
@@ -137,6 +142,7 @@ const defaultProps = {
   rowHeaderIndex: 0,
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
+  isStriped: false,
   rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
@@ -154,6 +160,7 @@ function WorklistDataGrid(props) {
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
+    isStriped,
     rowHeight,
     onColumnSelect,
     onCellSelect,
@@ -418,6 +425,7 @@ function WorklistDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
+        isStriped={isStriped}
         rows={rows.map((row) => ({
           ...row,
           cells: row.cells.map(cell => ({

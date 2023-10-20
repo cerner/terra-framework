@@ -34,6 +34,11 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * Boolean specifying whether or not the component should have zebra striping for rows.
+   */
+  isStriped: PropTypes.bool,
+
+  /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(rowShape),
@@ -455,48 +460,6 @@ const DataGrid = injectIntl((props) => {
           table
         />
       </GridContext.Provider>
-      {/* <table
-        ref={gridRef}
-        id={id}
-        role="grid"
-        aria-labelledby={ariaLabelledBy}
-        aria-label={ariaLabel}
-        className={cx('data-grid', theme.className)}
-        onKeyDown={handleKeyDown}
-        onFocus={onFocus}
-        onMouseDown={onMouseDown}
-        tabIndex={0}
-        {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
-      >
-        <ColumnContext.Provider
-          value={columnContextValue}
-        >
-          <ColumnHeader
-            columns={dataGridColumns}
-            headerHeight={columnHeaderHeight}
-            tableHeight={tableHeight}
-            onColumnSelect={handleColumnSelect}
-            onResizeMouseDown={onResizeMouseDown}
-          />
-          <tbody>
-            {rows.map((row, index) => (
-              <Row
-                rowIndex={index + 1}
-                key={row.id}
-                height={rowHeight}
-                id={row.id}
-                isSelected={row.isSelected}
-                cells={row.cells}
-                ariaLabel={row.ariaLabel}
-                hasRowSelection={hasSelectableRows}
-                displayedColumns={displayedColumns}
-                rowHeaderIndex={rowHeaderIndex}
-                onCellSelect={handleCellSelection}
-              />
-            ))}
-          </tbody>
-        </ColumnContext.Provider>
-      </table> */}
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );
