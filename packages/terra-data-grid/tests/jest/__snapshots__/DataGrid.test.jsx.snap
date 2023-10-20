@@ -574,6 +574,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={0}
@@ -614,6 +615,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -743,6 +745,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={1}
@@ -783,6 +786,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -922,6 +926,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={2}
@@ -962,6 +967,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -2914,6 +2920,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={0}
@@ -2954,6 +2961,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -3083,6 +3091,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={1}
@@ -3123,6 +3132,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -3262,6 +3272,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={2}
@@ -3302,6 +3313,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -5332,6 +5344,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={1}
@@ -5372,6 +5385,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -5501,6 +5515,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={2}
@@ -5541,6 +5556,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
@@ -5680,6 +5696,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
                         onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={3}
@@ -5720,6 +5737,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
                           onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
