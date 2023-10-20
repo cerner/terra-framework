@@ -163,13 +163,28 @@ const ColumnHeaderCell = (props) => {
 
   const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
+  const columnHeaderFocusArea = useCallback(() => (columnHeaderCellButtonRef.current ? columnHeaderCellButtonRef.current : columnHeaderCellRef.current), []);
+
+  // useEffect(() => {
+  //   if (isActive && isResizeActive) {
+  //     setResizeHandleActive(true);
+  //   } else {
+  //     setResizeHandleActive(false);
+  //   }
+  // }, [isActive, isResizeActive]);
+
   useEffect(() => {
-    if (isActive && isResizeActive) {
-      setResizeHandleActive(true);
+    if (isActive) {
+      if (isResizeActive) {
+        setResizeHandleActive(true);
+      } else {
+        columnHeaderFocusArea().focus();
+        setResizeHandleActive(false);
+      }
     } else {
       setResizeHandleActive(false);
     }
-  }, [isActive, isResizeActive]);
+  }, [columnHeaderFocusArea, isActive, isResizeActive]);
 
   const onResizeHandleMouseDown = useCallback((event) => {
     if (onResizeMouseDown) {
@@ -179,9 +194,9 @@ const ColumnHeaderCell = (props) => {
 
   // Restore focus to column header after resize action is completed.
   const onResizeHandleMouseUp = useCallback(() => {
-    columnHeaderCellButtonRef.current.focus();
+    columnHeaderFocusArea().focus();
     setResizeHandleActive(false);
-  }, []);
+  }, [columnHeaderFocusArea]);
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
@@ -203,7 +218,7 @@ const ColumnHeaderCell = (props) => {
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive) {
-          columnHeaderCellButtonRef.current.focus();
+          columnHeaderFocusArea().focus();
           setResizeHandleActive(false);
           event.stopPropagation();
           event.preventDefault();
@@ -220,11 +235,11 @@ const ColumnHeaderCell = (props) => {
     }
   };
 
-  const handleFocus = () => {
-    if (isResizable && !isResizeHandleActive) {
-      columnHeaderCellButtonRef.current?.focus();
-    }
-  };
+  // const handleFocus = () => {
+  //   if (isResizable && !isResizeHandleActive) {
+  //     columnHeaderCellButtonRef.current?.focus();
+  //   }
+  // };
 
   let sortIndicatorIcon;
   const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.dataGrid.columnError' })} className={cx('error-icon')} />;
@@ -263,10 +278,13 @@ const ColumnHeaderCell = (props) => {
       aria-sort={sortIndicator}
       onMouseDown={onColumnSelect ? handleMouseDown : null}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : null}
-      onFocus={handleFocus}
+      // onFocus={handleFocus}
       style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
-      <div ref={columnHeaderCellButtonRef} tabIndex="-1" className={cx('header-container')} role={displayName && 'button'}>
+      <div
+        className={cx('header-container')}
+        {...isSelectable && displayName && { ref: columnHeaderCellButtonRef, tabIndex: '-1', role: 'button' }}
+      >
         {errorIcon}
         <span>{displayName}</span>
         {sortIndicatorIcon}

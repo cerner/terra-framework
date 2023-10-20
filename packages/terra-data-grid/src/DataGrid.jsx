@@ -590,6 +590,8 @@ const DataGrid = injectIntl((props) => {
     handleFocus.current = true;
   };
 
+  const isFocusOnGrid = () => !!gridContainerRef.current?.contains(document.activeElement);
+
   // -------------------------------------
 
   return (
@@ -614,7 +616,7 @@ const DataGrid = injectIntl((props) => {
             columns={dataGridColumns}
             headerHeight={columnHeaderHeight}
             tableHeight={tableHeight}
-            activeColumnIndex={focusedRow === 0 ? focusedCol : undefined}
+            activeColumnIndex={(isFocusOnGrid() && focusedRow === 0) ? focusedCol : undefined}
             activeColumnResizing={focusedRow === 0 && checkResizable}
             columnResizeIncrement={columnResizeIncrement}
             onColumnSelect={handleColumnSelect}
