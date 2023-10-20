@@ -1,8 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-
+import classNames from 'classnames/bind';
 import ColumnHeaderCell from './ColumnHeaderCell';
 import { columnShape } from '../proptypes/columnShape';
+import styles from './ColumnHeader.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -30,6 +33,15 @@ const propTypes = {
    * Function that is called when the mouse down event is triggered on the column resize handle.
    */
   onResizeMouseDown: PropTypes.func,
+
+  /**
+   * Boolean indicating whether or not the table columns should be displayed.
+   */
+  hasColumnHeaders: PropTypes.bool,
+};
+
+const defaultProps = {
+  hasColumnHeaders: true,
 };
 
 const ColumnHeader = (props) => {
@@ -39,11 +51,15 @@ const ColumnHeader = (props) => {
     tableHeight,
     onColumnSelect,
     onResizeMouseDown,
+    hasColumnHeaders,
   } = props;
 
   return (
     <thead>
-      <tr className="column-header-row" height={headerHeight}>
+      <tr
+        className={cx('column-header-row', { hidden: !hasColumnHeaders })}
+        height={hasColumnHeaders ? headerHeight : undefined}
+      >
         {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
             key={column.id}
@@ -70,4 +86,5 @@ const ColumnHeader = (props) => {
 };
 
 ColumnHeader.propTypes = propTypes;
+ColumnHeader.defaultProps = defaultProps;
 export default React.memo(ColumnHeader);

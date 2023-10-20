@@ -103,8 +103,8 @@ const propTypes = {
   hasSelectableRows: PropTypes.bool,
 
   /**
-   * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
-   * rendered to allow for row selection to occur.
+   * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
+   * but the voice reader will use the column header values for a11y.
    */
   hasColumnHeaders: PropTypes.bool,
 
@@ -322,15 +322,14 @@ function Table(props) {
             ))}
           </colgroup>
 
-          {hasColumnHeaders && (
           <ColumnHeader
             columns={tableColumns}
+            hasColumnHeaders={hasColumnHeaders}
             headerHeight={columnHeaderHeight}
             tableHeight={tableHeight}
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
           />
-          )}
           <tbody>
             {rows.map((row, index) => (
               <Row

@@ -222,26 +222,7 @@ describe('Table', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('verifies that the hasColumnHeaders prop hides the table column headers', () => {
-    const wrapper = shallowWithIntl(
-      <IntlProvider locale="en">
-        <Table
-          id="test-terra-table"
-          overflowColumns={tableData.cols}
-          rows={tableData.rows}
-          hasColumnHeaders={false}
-        />
-      </IntlProvider>,
-    ).dive().dive();
-
-    // Verify that column headers are not present
-    const columnHeader = wrapper.find(ColumnHeader);
-    expect(columnHeader).toHaveLength(0);
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('verifies that the hasColumnHeaders prop hides the table column headers', () => {
+  it('verifies that the column widths are set properly in the colgroup', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <Table

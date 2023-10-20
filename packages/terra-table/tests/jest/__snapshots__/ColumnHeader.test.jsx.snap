@@ -113,3 +113,54 @@ exports[`ColumnHeader renders a default column header 1`] = `
   </tr>
 </thead>
 `;
+
+exports[`ColumnHeader verifies that the column headers are not hidden when the hasColumnHeader is true 1`] = `
+<thead>
+  <tr
+    className="column-header-row"
+    height="3rem"
+  >
+    <Memo(InjectIntl(ColumnHeaderCell))
+      columnIndex={0}
+      displayName=" Vitals"
+      headerHeight="3rem"
+      id="Column-0"
+      key="Column-0"
+      rowIndex={0}
+    />
+    <Memo(InjectIntl(ColumnHeaderCell))
+      columnIndex={1}
+      displayName=" Patient"
+      headerHeight="3rem"
+      id="Column-1"
+      key="Column-1"
+      rowIndex={0}
+    />
+  </tr>
+</thead>
+`;
+
+exports[`ColumnHeader verifies that the hasColumnHeaders prop hides the table column headers when set to false 1`] = `
+<thead>
+  <tr
+    className="column-header-row hidden"
+  >
+    <Memo(InjectIntl(ColumnHeaderCell))
+      columnIndex={0}
+      displayName=" Vitals"
+      headerHeight="3rem"
+      id="Column-0"
+      key="Column-0"
+      rowIndex={0}
+    />
+    <Memo(InjectIntl(ColumnHeaderCell))
+      columnIndex={1}
+      displayName=" Patient"
+      headerHeight="3rem"
+      id="Column-1"
+      key="Column-1"
+      rowIndex={0}
+    />
+  </tr>
+</thead>
+`;
