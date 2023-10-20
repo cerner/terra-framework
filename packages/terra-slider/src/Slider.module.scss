@@ -30,8 +30,8 @@
   }
 
   .slider-max-label {
-    margin-right: var(--terra-slider-max-label-margin-right, 0rem);
     margin-left: var(--terra-slider-max-label-margin-left, 0.5rem);
+    margin-right: var(--terra-slider-max-label-margin-right, 0rem);
   }
 
   .input-range {
@@ -52,7 +52,7 @@
     /* Hides the slider so that custom slider can be made */
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: linear-gradient(to right, var(--terra-slider-track-selected-range, #007cc3) 0%, var(--terra-slider-track-selected-range, #007cc3) var(--terra-slider-progress-status, 50%), var(--terra-slider-track-unselected-range, #d3d4d5) var(--terra-slider-progress-status, 50%), var(--terra-slider-track-unselected-range, #d3d4d5) 100%);
-    border-radius: var(--terra-slider-track-border-radius, 0.214rem); 
+    border-radius: var(--terra-slider-track-border-radius, 0.214rem);
     height: var(--terra-slider-track-height, 0.43rem);
   }
 
@@ -103,7 +103,7 @@
   .input-range::-ms-track {
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: linear-gradient(to right, var(--terra-slider-track-selected-range, #007cc3) 0%, var(--terra-slider-track-selected-range, #007cc3) var(--terra-slider-progress-status, 50%), var(--terra-slider-track-unselected-range, #d3d4d5) var(--terra-slider-progress-status, 50%), var(--terra-slider-track-unselected-range, #d3d4d5) 100%);
-    border-radius: var(--terra-slider-track-border-radius, 0.214rem); 
+    border-radius: var(--terra-slider-track-border-radius, 0.214rem);
     height: var(--terra-slider-track-height, 0.43rem);
   }
 
@@ -153,7 +153,7 @@
   .input-range::-moz-range-track {
     -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: linear-gradient(to right, var(--terra-slider-track-selected-range, #007cc3) 0%, var(--terra-slider-track-selected-range, #007cc3) var(--terra-slider-progress-status, 50%), var(--terra-slider-track-unselected-range, #d3d4d5) var(--terra-slider-progress-status, 50%), var(--terra-slider-track-unselected-range, #d3d4d5) 100%);
-    border-radius: var(--terra-slider-track-border-radius, 0.214rem); 
+    border-radius: var(--terra-slider-track-border-radius, 0.214rem);
     height: var(--terra-slider-track-height, 0.43rem);
   }
 

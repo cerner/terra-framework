@@ -1,8 +1,6 @@
 import React from 'react';
 import Slider from '../../src/Slider';
 
-const mockOnChange = jest.fn();
-
 describe('Slider', () => {
   it('should render a default slider with proper required props', () => {
     const wrapper = shallow(
@@ -37,7 +35,7 @@ describe('Slider', () => {
       <Slider isDisabled minimumValue={0} maximumValue={100} labelText="testLabel" value={50} />,
     );
     expect(wrapper.find('input').prop('value')).toEqual(50);
-    wrapper.setProps({value: 30});
+    wrapper.setProps({ value: 30 });
     wrapper.update();
     expect(wrapper.find('input').prop('value')).toEqual(30);
   });
