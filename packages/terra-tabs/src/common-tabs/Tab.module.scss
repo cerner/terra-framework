@@ -103,6 +103,26 @@
       }
     }
 
+
+    &.is-active-vertical {
+      background-color: var(--terra-tabs-workspace-tab-is-active-background-color, #fff);
+      background-image: var(--terra-tabs-workspace-tab-is-active-background-image, none);
+      height: var(--terra-tabs-workspace-tab-is-active-height, 34px);
+
+      .icon,
+      .label {
+        margin-top: var(--terra-tabs-workspace-tab-is-active-icon-label-margin-top, -1px);
+      }
+
+      .icon {
+        color: var(--terra-tabs-workspace-tab-is-active-icon-color, #64696c);
+      }
+
+      .label {
+        color: var(--terra-tabs-workspace-tab-is-active-label-color, #434a4d);
+      }
+    }
+
     &.is-disabled {
       background-color: var(--terra-tabs-structural-disabled-background-color, #fff);
       background-size: 0 0;

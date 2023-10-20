@@ -52,7 +52,7 @@ const propTypes = {
   maximumWidth: PropTypes.number,
 
   /**
-   * Boolean value indictating whether or not the header cell is focused
+   * Boolean value indicating whether or not the header cell is focused.
    */
   isActive: PropTypes.bool,
 
@@ -77,7 +77,7 @@ const propTypes = {
   isResizeActive: PropTypes.bool,
 
   /**
-   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
 
@@ -114,7 +114,7 @@ const propTypes = {
   onResizeMouseDown: PropTypes.func,
 
   /**
-   * Function that is called when the the keyboard is used to adjust the column size
+   * Function that is called when the the keyboard is used to adjust the column size.
    */
   onResizeHandleChange: PropTypes.func,
 
@@ -164,10 +164,8 @@ const ColumnHeaderCell = (props) => {
   const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
   useEffect(() => {
-    if (isActive) {
-      if (isResizeActive) {
-        setResizeHandleActive(true);
-      }
+    if (isActive && isResizeActive) {
+      setResizeHandleActive(true);
     } else {
       setResizeHandleActive(false);
     }
@@ -207,7 +205,6 @@ const ColumnHeaderCell = (props) => {
         if (isResizable && isResizeHandleActive) {
           columnHeaderCellButtonRef.current.focus();
           setResizeHandleActive(false);
-
           event.stopPropagation();
           event.preventDefault();
         }
@@ -281,6 +278,7 @@ const ColumnHeaderCell = (props) => {
         columnWidth={width}
         columnResizeIncrement={columnResizeIncrement}
         isActive={isResizeHandleActive}
+        setIsActive={setResizeHandleActive}
         height={tableHeight}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}

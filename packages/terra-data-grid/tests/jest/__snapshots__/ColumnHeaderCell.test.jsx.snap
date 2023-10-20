@@ -40,6 +40,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
     isActive={false}
     onResizeMouseDown={[Function]}
     onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -90,6 +91,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
     isActive={false}
     onResizeMouseDown={[Function]}
     onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -134,6 +136,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
     isActive={false}
     onResizeMouseDown={[Function]}
     onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -178,6 +181,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
     isActive={false}
     onResizeMouseDown={[Function]}
     onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -228,6 +232,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     isActive={false}
     onResizeMouseDown={[Function]}
     onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -278,6 +283,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     isActive={false}
     onResizeMouseDown={[Function]}
     onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -316,6 +322,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
     isActive={false}
     onResizeMouseDown={[Function]}
     onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -474,6 +481,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         isActive={false}
         onResizeMouseDown={[Function]}
         onResizeMouseUp={[Function]}
+        setIsActive={[Function]}
       >
         <ColumnResizeHandle
           columnIndex={0}
@@ -510,6 +518,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
           isActive={false}
           onResizeMouseDown={[Function]}
           onResizeMouseUp={[Function]}
+          setIsActive={[Function]}
         >
           <div
             aria-hidden={true}
