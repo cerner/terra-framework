@@ -164,7 +164,7 @@ const ColumnHeaderCell = (props) => {
 
   useEffect(() => {
     if (isActive && isResizeActive) {
-        setResizeHandleActive(true);
+      setResizeHandleActive(true);
     } else {
       setResizeHandleActive(false);
     }
