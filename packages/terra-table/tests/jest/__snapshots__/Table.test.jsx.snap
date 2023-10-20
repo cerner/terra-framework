@@ -6038,7 +6038,7 @@ exports[`Table verifies row selection column header selection 1`] = `
 </InjectIntl(Table)>
 `;
 
-exports[`Table verifies that the column widths a set properly in the colgroup 1`] = `
+exports[`Table verifies that the column widths are set properly in the colgroup 1`] = `
 <div
   className="table-container"
 >
