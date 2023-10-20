@@ -105,7 +105,7 @@ class Slider extends React.Component {
         <span className={cx('label')}>
           {labelText}
         </span>
-        <span className={cx('slider-label')}>
+        <span className={cx('slider-label', 'slider-min-label')}>
           {minLabel}
         </span>
         <input className={cx('input-range')} type="range" ref={this.sliderRef} aria-label={labelText} value={this.state.value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={this.handleOnChange} />
