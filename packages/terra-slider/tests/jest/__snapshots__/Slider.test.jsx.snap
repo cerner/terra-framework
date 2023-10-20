@@ -15,7 +15,7 @@ exports[`Slider should render a default slider with proper required props 1`] = 
     testLabel
   </span>
   <span
-    className="slider-label"
+    className="slider-label slider-min-label"
   >
     0
   </span>
@@ -52,7 +52,7 @@ exports[`Slider should render a disabled slider 1`] = `
     testLabel
   </span>
   <span
-    className="slider-label"
+    className="slider-label slider-min-label"
   >
     0
   </span>
@@ -89,7 +89,7 @@ exports[`Slider should render a slider with custom min and max labels 1`] = `
     testLabel
   </span>
   <span
-    className="slider-label"
+    className="slider-label slider-min-label"
   >
     testMinimumLabel
   </span>
@@ -107,43 +107,6 @@ exports[`Slider should render a slider with custom min and max labels 1`] = `
     className="slider-label slider-max-label"
   >
     testMaximumLabel
-  </span>
-</div>
-`;
-
-exports[`Slider should trigger onChange callback on click 1`] = `
-<div
-  className="slider"
-  style={
-    Object {
-      "--terra-slider-progress-status": "50%",
-    }
-  }
->
-  <span
-    className="label"
-  >
-    testLabel
-  </span>
-  <span
-    className="slider-label"
-  >
-    0
-  </span>
-  <input
-    aria-label="testLabel"
-    className="input-range"
-    disabled={true}
-    max={100}
-    min={0}
-    onChange={[Function]}
-    type="range"
-    value={50}
-  />
-  <span
-    className="slider-label slider-max-label"
-  >
-    100
   </span>
 </div>
 `;
