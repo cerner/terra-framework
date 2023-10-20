@@ -3,5 +3,9 @@
     height: 100%;
     overflow: auto;
     width: 100%;
+
+    table {
+      user-select: none;
+    }
   }
 }
