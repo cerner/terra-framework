@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+*Fixed
+  *Fixed the dropdown options are being cut off.
+
 * Added
   * Added Vertical orientation for `terra-tabs`.
   

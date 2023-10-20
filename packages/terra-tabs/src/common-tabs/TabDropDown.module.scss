@@ -25,10 +25,32 @@
     height: auto;
     margin: 0;
     margin-top: -15px;
+    margin-left: 50px;
     opacity: 1;
     overflow: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: var(--terra-tabs-workspace-tab-drop-down-padding-bottom, 5px);
     padding-top: var(--terra-tabs-workspace-tab-drop-down-padding-top, 5px);
+  }
+  @media (min-width: 276px) and (max-width: 380px) {
+    .is-open {
+      left: -10px !important;
+      margin: 10px;
+      min-height: auto;
+    }
+  }
+  @media (max-width: 275px) {
+    .is-open {
+      left: -10px !important;
+      max-height: 100px !important;
+      max-width: 80px;
+      min-height: auto;
+    }
+  }
+  @media (max-width: 275px) {
+    .drop-down {
+      max-width: 130px;
+      min-width: 100px;
+    }
   }
 }
