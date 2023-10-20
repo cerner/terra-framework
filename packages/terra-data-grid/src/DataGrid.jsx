@@ -417,7 +417,7 @@ const DataGrid = injectIntl((props) => {
     const targetElement = event.target;
 
     // Allow default behavior if the event target is an editable field
-    
+
     if (event.keyCode !== KeyCode.KEY_TAB
         && (isTextInput(targetElement)
             || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0

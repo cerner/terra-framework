@@ -460,8 +460,8 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
   describe('column resizing', () => {
     it('focuses on the column resize handle', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
-      browser.keys(['Tab']); //navigate to first column
-      browser.keys(['ArrowRight']); //navigate to first column resize handle
+      browser.keys(['Tab']); // navigate to first column
+      browser.keys(['ArrowRight']); // navigate to first column resize handle
 
       expect($('tr.column-header-row').$('//th[1]/div[2]').isFocused()).toBe(true);
       Terra.validates.element('column-resize-handle-focused', { selector: defaultSelector });
@@ -502,13 +502,10 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     it('returns to navigation mode from resize mode with the escape key', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/default-worklist-data-grid');
       browser.keys(['Tab']);
-      const x = Array(4).fill('ArrowRight')
-      console.log(x)
-      browser.keys(Array(5).fill('ArrowRight')); //navigate to 3rd column resize handle
+      browser.keys(Array(5).fill('ArrowRight')); // navigate to 3rd column resize handle
       browser.keys(['Enter', 'ArrowLeft', 'ArrowLeft']);
       browser.keys(['Escape']);
       browser.keys(['ArrowLeft']);
-
 
       expect($('tr.column-header-row').$('//th[3]').isFocused()).toBe(true);
       expect($('tr.column-header-row').$('//th[3]').getCSSProperty('width').parsed.value).toBe(180);
@@ -519,7 +516,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab']);
       browser.keys(['ArrowRight', 'ArrowRight']); // navigate to column-header-2
       browser.keys(['Shift', 'Tab', 'Shift', 'Tab']); // tab back out and back into the grid
-    
+
       expect($('tr.column-header-row').$('//th[2]').isFocused()).toBe(true);
     });
 

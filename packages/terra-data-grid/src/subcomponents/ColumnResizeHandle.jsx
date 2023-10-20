@@ -37,7 +37,7 @@ const propTypes = {
    * Control is the active element
    */
   isActive: PropTypes.bool,
-    /**
+  /**
    * Handler function to update isActive for parent.
    */
   setIsActive: PropTypes.func,
@@ -86,7 +86,7 @@ const ColumnResizeHandle = (props) => {
     onResizeHandleChange,
     onResizeMouseDown,
     onResizeMouseUp,
-    setIsActive
+    setIsActive,
   } = props;
 
   // Retrieve current theme from context
