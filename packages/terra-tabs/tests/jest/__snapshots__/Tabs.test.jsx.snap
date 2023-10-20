@@ -42,6 +42,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
     setFocusOnContent={false}
     tabFill={false}
     variant="modular-left-aligned"
+    verticalOrientation={false}
   >
     <CommonTabs
       activeItemKey="default"
@@ -49,6 +50,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
       onClosingTab={[Function]}
       onRequestActivate={[Function]}
       variant="modular-left-aligned"
+      verticalOrientation={false}
     >
       <div
         className="workspace"
@@ -89,6 +91,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
               ]
             }
             variant="modular-left-aligned"
+            verticalOrientation={false}
           >
             <Tabs
               intl={
@@ -140,6 +143,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                 ]
               }
               variant="modular-left-aligned"
+              verticalOrientation={false}
             >
               <div
                 className="container orion-fusion-theme"
@@ -174,6 +178,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                       ]
                     }
                     variant="modular-left-aligned"
+                    verticalOrientation={false}
                     zIndex={1}
                   >
                     <Tab
@@ -225,10 +230,12 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                         ]
                       }
                       variant="modular-left-aligned"
+                      verticalOrientation={false}
                       zIndex={1}
                     >
                       <div
                         aria-controls="terra-common-tabs-default-panel"
+                        aria-describedby={null}
                         aria-disabled={false}
                         aria-label="Default"
                         aria-selected={true}
@@ -252,6 +259,19 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                         <div
                           className="inner"
                         >
+                          <VisuallyHiddenText
+                            aria-hidden={true}
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                            text="Terra.tabs.hint.removable"
+                          >
+                            <span
+                              aria-hidden={true}
+                              className="visually-hidden-text"
+                              id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                            >
+                              Terra.tabs.hint.removable
+                            </span>
+                          </VisuallyHiddenText>
                           <span
                             className="label"
                           >
@@ -358,7 +378,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           </InjectIntl(Tabs)>
         </div>
         <div
-          className="body"
+          className="body orion-fusion-theme"
           role="none"
         >
           <CommonTabItem
@@ -369,7 +389,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
             isDisabled={false}
             isIconOnly={false}
             itemKey="default"
-            key="default/.0"
+            key=".$default"
             label="Default"
             portalElement={
               <div
@@ -543,6 +563,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
   isDraggable={false}
   setFocusOnContent={false}
   tabFill={false}
+  verticalOrientation={false}
 >
   <CommonTabs
     activeItemKey="default"
@@ -578,6 +599,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
     onClosingTab={[Function]}
     onRequestActivate={[Function]}
     variant="framework"
+    verticalOrientation={false}
   >
     <div
       className="structural"
@@ -615,6 +637,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
             ]
           }
           variant="framework"
+          verticalOrientation={false}
         >
           <Tabs
             intl={
@@ -666,6 +689,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
               ]
             }
             variant="framework"
+            verticalOrientation={false}
           >
             <div
               className="container"
@@ -700,6 +724,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                     ]
                   }
                   variant="framework"
+                  verticalOrientation={false}
                   zIndex={1}
                 >
                   <Tab
@@ -751,10 +776,12 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                       ]
                     }
                     variant="framework"
+                    verticalOrientation={false}
                     zIndex={1}
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -778,6 +805,19 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >
@@ -895,7 +935,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
           isDisabled={false}
           isIconOnly={false}
           itemKey="default"
-          key="default/.0"
+          key=".$default"
           label="Default"
           portalElement={null}
           render={[Function]}
@@ -989,6 +1029,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
         ]
       }
       variant="framework"
+      verticalOrientation={false}
     />
   </div>
   <div
@@ -1003,7 +1044,7 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
-      key="default/.0"
+      key=".$default"
       label="Default"
       portalElement={null}
       render={[Function]}
@@ -1051,6 +1092,7 @@ exports[`Tabs should render a default component 1`] = `
         ]
       }
       variant="framework"
+      verticalOrientation={false}
     />
   </div>
   <div
@@ -1065,7 +1107,7 @@ exports[`Tabs should render a default component 1`] = `
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
-      key="default/.0"
+      key=".$default"
       label="Default"
       portalElement={null}
       render={[Function]}
@@ -1114,6 +1156,7 @@ exports[`Tabs should render a draggable tabs component 1`] = `
         ]
       }
       variant="framework"
+      verticalOrientation={false}
     />
   </div>
   <div
@@ -1128,7 +1171,7 @@ exports[`Tabs should render a draggable tabs component 1`] = `
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
-      key="default/.0"
+      key=".$default"
       label="Default"
       portalElement={null}
       render={[Function]}
@@ -1176,6 +1219,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
         ]
       }
       variant="framework"
+      verticalOrientation={false}
     />
   </div>
   <div
@@ -1190,7 +1234,7 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
-      key="default/.0"
+      key=".$default"
       label="Default"
       portalElement={null}
       render={[Function]}
@@ -1238,6 +1282,7 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
         ]
       }
       variant="framework"
+      verticalOrientation={false}
     />
   </div>
   <div
@@ -1252,7 +1297,133 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
-      key="default/.0"
+      key=".$default"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs should render horizontal tab if verticalorientation is passed as null 1`] = `
+<div
+  className="structural"
+  role="none"
+>
+  <div
+    aria-hidden={true}
+  >
+    <div />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <InjectIntl(Tabs)
+      isDraggable={true}
+      onTabStateChange={[Function]}
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isClosable": false,
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+      verticalOrientation={false}
+    />
+  </div>
+  <div
+    className="body"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isClosable={false}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key=".$default"
+      label="Default"
+      portalElement={null}
+      render={[Function]}
+      showIcon={false}
+      variant="framework"
+    />
+  </div>
+</div>
+`;
+
+exports[`Tabs should render vertical tab 1`] = `
+<div
+  className="structural"
+  role="none"
+>
+  <div
+    aria-hidden={true}
+  >
+    <div />
+  </div>
+  <div
+    className="tab-header"
+    role="none"
+  >
+    <InjectIntl(Tabs)
+      isDraggable={true}
+      onTabStateChange={[Function]}
+      tabData={
+        Array [
+          Object {
+            "associatedPanelId": "terra-common-tabs-default-panel",
+            "customDisplay": undefined,
+            "icon": undefined,
+            "id": "terra-common-tabs-default",
+            "isClosable": false,
+            "isDisabled": false,
+            "isIconOnly": false,
+            "isSelected": true,
+            "itemKey": "default",
+            "label": "Default",
+            "metaData": undefined,
+            "onSelect": [Function],
+            "showIcon": false,
+          },
+        ]
+      }
+      variant="framework"
+      verticalOrientation={true}
+    />
+  </div>
+  <div
+    className="body is-vertical"
+    role="none"
+  >
+    <CommonTabItem
+      associatedPanelId="terra-common-tabs-default-panel"
+      id="terra-common-tabs-default"
+      isActive={true}
+      isClosable={false}
+      isDisabled={false}
+      isIconOnly={false}
+      itemKey="default"
+      key=".$default"
       label="Default"
       portalElement={null}
       render={[Function]}
@@ -1300,6 +1471,7 @@ exports[`Tabs should render with add icon 1`] = `
   onSelectAddButton={[MockFunction]}
   setFocusOnContent={false}
   tabFill={false}
+  verticalOrientation={false}
 >
   <CommonTabs
     activeItemKey="default"
@@ -1337,6 +1509,7 @@ exports[`Tabs should render with add icon 1`] = `
     onRequestActivate={[Function]}
     onSelectAddButton={[MockFunction]}
     variant="framework"
+    verticalOrientation={false}
   >
     <div
       className="structural"
@@ -1376,6 +1549,7 @@ exports[`Tabs should render with add icon 1`] = `
             ]
           }
           variant="framework"
+          verticalOrientation={false}
         >
           <Tabs
             ariaLabelAddTab="Add Tab"
@@ -1429,6 +1603,7 @@ exports[`Tabs should render with add icon 1`] = `
               ]
             }
             variant="framework"
+            verticalOrientation={false}
           >
             <div
               className="container"
@@ -1464,6 +1639,7 @@ exports[`Tabs should render with add icon 1`] = `
                     ]
                   }
                   variant="framework"
+                  verticalOrientation={false}
                   zIndex={1}
                 >
                   <Tab
@@ -1516,10 +1692,12 @@ exports[`Tabs should render with add icon 1`] = `
                       ]
                     }
                     variant="framework"
+                    verticalOrientation={false}
                     zIndex={1}
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -1543,6 +1721,19 @@ exports[`Tabs should render with add icon 1`] = `
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >
@@ -1720,7 +1911,7 @@ exports[`Tabs should render with add icon 1`] = `
                       isReversed={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
-                      tabindex="-1"
+                      tabIndex="-1"
                       text="Add Tab"
                       type="button"
                       variant="de-emphasis"
@@ -1740,7 +1931,7 @@ exports[`Tabs should render with add icon 1`] = `
                         onKeyDown={[Function]}
                         onKeyUp={[Function]}
                         onMouseDown={[Function]}
-                        tabindex="-1"
+                        tabIndex="-1"
                         title="Add Tab Terra.tabs.addbutton.focus"
                         type="button"
                       >
@@ -1810,7 +2001,7 @@ exports[`Tabs should render with add icon 1`] = `
           isDisabled={false}
           isIconOnly={false}
           itemKey="default"
-          key="default/.0"
+          key=".$default"
           label="Default"
           portalElement={null}
           render={[Function]}
@@ -1903,6 +2094,7 @@ exports[`Tabs should render with add icon 2`] = `
   onSelectAddButton={[Function]}
   setFocusOnContent={false}
   tabFill={false}
+  verticalOrientation={false}
 >
   <CommonTabs
     activeItemKey="default"
@@ -1940,6 +2132,7 @@ exports[`Tabs should render with add icon 2`] = `
     onRequestActivate={[Function]}
     onSelectAddButton={[Function]}
     variant="framework"
+    verticalOrientation={false}
   >
     <div
       className="structural"
@@ -1979,6 +2172,7 @@ exports[`Tabs should render with add icon 2`] = `
             ]
           }
           variant="framework"
+          verticalOrientation={false}
         >
           <Tabs
             ariaLabelAddTab="Add Tab"
@@ -2032,6 +2226,7 @@ exports[`Tabs should render with add icon 2`] = `
               ]
             }
             variant="framework"
+            verticalOrientation={false}
           >
             <div
               className="container"
@@ -2067,6 +2262,7 @@ exports[`Tabs should render with add icon 2`] = `
                     ]
                   }
                   variant="framework"
+                  verticalOrientation={false}
                   zIndex={1}
                 >
                   <Tab
@@ -2119,10 +2315,12 @@ exports[`Tabs should render with add icon 2`] = `
                       ]
                     }
                     variant="framework"
+                    verticalOrientation={false}
                     zIndex={1}
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -2146,6 +2344,19 @@ exports[`Tabs should render with add icon 2`] = `
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >
@@ -2323,7 +2534,7 @@ exports[`Tabs should render with add icon 2`] = `
                       isReversed={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
-                      tabindex="-1"
+                      tabIndex="-1"
                       text="Add Tab"
                       type="button"
                       variant="de-emphasis"
@@ -2343,7 +2554,7 @@ exports[`Tabs should render with add icon 2`] = `
                         onKeyDown={[Function]}
                         onKeyUp={[Function]}
                         onMouseDown={[Function]}
-                        tabindex="-1"
+                        tabIndex="-1"
                         title="Add Tab Terra.tabs.addbutton.focus"
                         type="button"
                       >
@@ -2413,7 +2624,7 @@ exports[`Tabs should render with add icon 2`] = `
           isDisabled={false}
           isIconOnly={false}
           itemKey="default"
-          key="default/.0"
+          key=".$default"
           label="Default"
           portalElement={null}
           render={[Function]}
@@ -2506,6 +2717,7 @@ exports[`Tabs should render with close icon 1`] = `
   onTabClose={[MockFunction]}
   setFocusOnContent={false}
   tabFill={false}
+  verticalOrientation={false}
 >
   <CommonTabs
     activeItemKey="default"
@@ -2543,6 +2755,7 @@ exports[`Tabs should render with close icon 1`] = `
     onRequestActivate={[Function]}
     onTabClose={[MockFunction]}
     variant="framework"
+    verticalOrientation={false}
   >
     <div
       className="structural"
@@ -2580,6 +2793,7 @@ exports[`Tabs should render with close icon 1`] = `
             ]
           }
           variant="framework"
+          verticalOrientation={false}
         >
           <Tabs
             intl={
@@ -2631,6 +2845,7 @@ exports[`Tabs should render with close icon 1`] = `
               ]
             }
             variant="framework"
+            verticalOrientation={false}
           >
             <div
               className="container"
@@ -2665,6 +2880,7 @@ exports[`Tabs should render with close icon 1`] = `
                     ]
                   }
                   variant="framework"
+                  verticalOrientation={false}
                   zIndex={1}
                 >
                   <Tab
@@ -2716,10 +2932,12 @@ exports[`Tabs should render with close icon 1`] = `
                       ]
                     }
                     variant="framework"
+                    verticalOrientation={false}
                     zIndex={1}
                   >
                     <div
                       aria-controls="application-id-default-panel"
+                      aria-describedby={null}
                       aria-disabled={false}
                       aria-label="Default"
                       aria-selected={true}
@@ -2743,6 +2961,19 @@ exports[`Tabs should render with close icon 1`] = `
                       <div
                         className="inner"
                       >
+                        <VisuallyHiddenText
+                          aria-hidden={true}
+                          id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          text="Terra.tabs.hint.removable"
+                        >
+                          <span
+                            aria-hidden={true}
+                            className="visually-hidden-text"
+                            id="terra-tab-delete-pane-response-00000000-0000-0000-0000-000000000000"
+                          >
+                            Terra.tabs.hint.removable
+                          </span>
+                        </VisuallyHiddenText>
                         <span
                           className="label"
                         >
@@ -2860,7 +3091,7 @@ exports[`Tabs should render with close icon 1`] = `
           isDisabled={false}
           isIconOnly={false}
           itemKey="default"
-          key="default/.0"
+          key=".$default"
           label="Default"
           portalElement={null}
           render={[Function]}
@@ -2950,12 +3181,14 @@ exports[`Tabs should render with content filled when indicated 1`] = `
   onClosingTab={[Function]}
   onRequestActivate={[Function]}
   variant="framework"
+  verticalOrientation={false}
 >
   <CommonTabItem
     isClosable={false}
     isDisabled={false}
     isIconOnly={false}
     itemKey="default"
+    key="default"
     label="Default"
     render={[Function]}
     showIcon={false}
@@ -2998,12 +3231,14 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
   onClosingTab={[Function]}
   onRequestActivate={[Function]}
   variant="framework"
+  verticalOrientation={false}
 >
   <CommonTabItem
     isClosable={false}
     isDisabled={false}
     isIconOnly={false}
     itemKey="default"
+    key="default"
     label="Default"
     render={[Function]}
     showIcon={false}
@@ -3047,12 +3282,14 @@ exports[`Tabs should set custom props 1`] = `
   onClosingTab={[Function]}
   onRequestActivate={[Function]}
   variant="framework"
+  verticalOrientation={false}
 >
   <CommonTabItem
     isClosable={false}
     isDisabled={false}
     isIconOnly={false}
     itemKey="default"
+    key="default"
     label="Default"
     render={[Function]}
     showIcon={false}
@@ -3098,6 +3335,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
         ]
       }
       variant="framework"
+      verticalOrientation={false}
     />
   </div>
   <div
@@ -3112,7 +3350,7 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
       isDisabled={false}
       isIconOnly={false}
       itemKey="default"
-      key="default/.0"
+      key=".$default"
       label="Default"
       portalElement={null}
       render={[Function]}

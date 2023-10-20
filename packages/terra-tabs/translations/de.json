@@ -9,6 +9,6 @@
   "Terra.tabs.drag": "Sie haben die Registerkarte von Position {startPosition} nach Position {endPosition} verschoben.",
   "Terra.tabs.cancelDrag": "Verschiebung abgebrochen. Die Registerkarte wurde zurück an ihre Ausgangsposition {startPosition} verschoben.",
   "Terra.tabs.drop": "Sie haben die Registerkarte abgelegt. Sie wurde von Position {startPosition} nach {endPosition} verschoben.",
-  "Terra.tabs.focus": "Eingabetaste drücken, um eine Registerkarte zu aktivieren oder Leertaste, um einen Ziehvorgang zu beginnen. Stellen Sie sicher, dass Ihre Sprachausgabe im Fokus- oder Formularmodus ist.",
+  "Terra.tabs.focus": "Eingabetaste drücken, um eine Registerkarte zu aktivieren oder Leertaste, um einen Ziehvorgang zu beginnen.",
   "Terra.tabs.addbutton.focus": "Drücken Sie die Eingabe- oder Leertaste, um eine neue Registerkarte hinzuzufügen."
 }

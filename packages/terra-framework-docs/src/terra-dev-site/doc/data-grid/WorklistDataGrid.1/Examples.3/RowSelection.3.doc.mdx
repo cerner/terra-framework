@@ -1,3 +1,39 @@
 import RowSelection from './RowSelection?dev-site-example';
 
+# Row Selection
+
+### Description
+The [Worklist Data Grid](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about) is built to operate in either of two selection modes:
+* Cell Selection (_default_)
+* **Row Selection**
+
+Row Selection Mode is controlled via a prop and is off by default.
+When creating a Worklist Data Grid that supports Row Selection, the prop has to be explicitly set by the consumer.
+This example demonstrates a Worklist Data Grid with full support for row selection and can be referenced for [row centric functionalities](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/examples/row-selection#implemented-functionality).
+
+### Properties required
+This example demonstrates a Worklist Data Grid with full support for row selection by utilizing the following [Worklist Data Grid properties](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#properties):
+* hasSelectableRows
+* onRowSelect
+* onRowSelectAll
+* onClearSelectedRows
+* onDisableSelectableRows
+* onEnableRowSelection
+
+## Row Selection Interactions
+When using this example, the following row centric outcomes may be achieved by using the respective actions.
+
+|Outcome|Action|
+|---|---|
+|Select a row|When Row Selection is on, click or press Spacebar anywhere on an _unselected_ row.<br/> Shift+Click or press Shift+Spacebar anywhere on an _unselected_ row.|
+|Unselect a row|Click or press Spacebar anywhere on an _selected_ row.|
+|Select all rows|Press Control+A from anywhere on the grid.|
+|Unselect all selected rows|Press Escape from anywhere on the grid.|
+|Select a range of rows|From any row, hold Shift key and press up arrow or down arrow. Continue to press Up and Down arrow to expand or contract the range of rows.<br/>Select any unselected row then Shift+Click or Shift+Space on another row.|
+|Turn Row Selection mode On|In addition to their default grid behavior, Shift+Click, Shift+Space, Shift+Up and Shift+Down will turn Row Selection Mode on if Row Selection Mode is off.|
+|Turn Row Selection mode Off|Press Escape when no rows are selected.|
+
+[All Worklist Data Grid Keyboard Interactions](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#keyboard-interactions)
+
+
 <RowSelection title='Worklist Data Grid With Row Selection' />

@@ -219,3 +219,12 @@ Terra.describeViewports('Tabs - Keyboard Focus with interactive element', ['medi
     Terra.validates.element('Keyboard Focus on First Interactive Element', { selector: '#root' });
   });
 });
+
+Terra.describeViewports('Tabs - Vertical Tabs', ['medium'], () => {
+  it('displays vertical tab', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/tabs/tabs/vertical-tab');
+    browser.keys('Tab');
+    browser.keys('Tab');
+    Terra.validates.element('Keyboard Focus on First Tab', { selector: '#root' });
+  });
+});

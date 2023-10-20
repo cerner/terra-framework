@@ -23,9 +23,38 @@
     }
   }
 
+  .tab-container-vertical {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    float: left;
+    height: fit-content;
+    justify-content: flex-start;
+    margin-bottom: var(--terra-tabs-workspace-tab-container-margin-bottom, 0);
+    max-width: 25%;
+    padding: 0;
+    position: relative;
+    width: fit-content;
+
+    &:focus {
+      outline: none;
+    }
+
+    &[data-tab-is-calculating='true'] {
+      visibility: hidden;
+    }
+  }
+
   .container {
     // while using the Flex the style of addIcon getting align to all right to the tabs
     display: -webkit-box; // stylelint-disable value-no-vendor-prefix
+  }
+
+  .container-vertical {
+    flex: 1 1 auto;
+    flex-flow: row nowrap;
+    flex-direction: row;
   }
 
   .divcontainer {
