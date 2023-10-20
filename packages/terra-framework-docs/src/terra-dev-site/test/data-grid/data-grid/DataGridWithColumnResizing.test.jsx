@@ -4,8 +4,8 @@ import DataGrid from 'terra-data-grid/lib/DataGrid';
 const gridDataJSON = {
   cols: [
     { id: 'Column-0', displayName: 'Vitals' },
-    { id: 'Column-1', displayName: 'Fixed', isResizable: false },
-    { id: 'Column-2', displayName: 'March 17' },
+    { id: 'Column-1', displayName: 'Fixed'  },
+    { id: 'Column-2', displayName: 'March 17', isResizable: false  },
     { id: 'Column-3', displayName: 'March 18' },
   ],
   rows: [
@@ -64,13 +64,13 @@ const DataGridWithColumnResizing = () => {
 
   return (
     <DataGrid
-      id="terra-worklist-data-grid-with-column-resizing"
-      columns={cols}
+      id="terra-data-grid-with-column-resizing"
+      overflowColumns={cols}
       rows={rows}
       rowHeaderIndex={rowHeaderIndex}
       rowHeight="50px"
       columnHeaderHeight="50px"
-      ariaLabel="Worklist Data Grid With Column Resizing"
+      ariaLabel="Data Grid With Column Resizing"
     />
   );
 };
