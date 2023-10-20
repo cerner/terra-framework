@@ -117,4 +117,13 @@ Terra.describeViewports('Slider', ['medium', 'large'], () => {
       Terra.validates.element('no-keyboard-focus');
     });
   });
+
+  describe('Slider With On Change Callback', () => {
+    it('displays a slider with initial value', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slider/slider-with-on-change-callback');
+      Terra.validates.element('on-change-callback-initial');
+      $('input').setValue(80);
+      Terra.validates.element('on-change-callback-update');
+    });
+  });
 });

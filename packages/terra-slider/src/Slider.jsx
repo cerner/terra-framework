@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -10,7 +10,7 @@ const propTypes = {
   /**
   * Slider label value.
   */
-  labelName: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
 
   /**
   * Minimum value in the range.
@@ -25,7 +25,7 @@ const propTypes = {
   /**
   * Default or initial value for the slider.
   */
-  defaultValue: PropTypes.number.isRequired,
+  value: PropTypes.number.isRequired,
 
   /**
   * When true, will disable the field.
@@ -50,61 +50,75 @@ const propTypes = {
 
 const defaultProps = {
   isDisabled: false,
+  onChange: null,
 };
 
-const Slider = (props) => {
-  const {
-    isDisabled,
-    minimumValue,
-    maximumValue,
-    defaultValue,
-    labelName,
-    minimumLabel,
-    maximumLabel,
-    onChange,
-  } = props;
+class Slider extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      value: this.props.value,
+    };
+    this.handleOnChange = this.handleOnChange.bind(this);
+    this.sliderRef = React.createRef();
+  }
 
-  const sliderRef = useRef();
+  componentDidUpdate(prevProps) {
+    if (this.props.value === prevProps.value) {
+      return;
+    }
+    // eslint-disable-next-line react/no-did-update-set-state
+    this.setState({
+      value: this.props.value,
+    });
+  }
 
-  useEffect(() => {
-    sliderRef.current.style.setProperty('--terra-slider-progress-status', `${sliderRef.current.value}%`);
-  }, []);
-
-  function handleValueChange(event) {
-    event.currentTarget.style.setProperty('--terra-slider-progress-status', `${event.currentTarget.value}%`);
-    event.currentTarget.setAttribute('aria-valuenow', `${event.currentTarget.value}`);
-
-    if (onChange) {
-      onChange(event);
+  handleOnChange(event) {
+    this.setState({ value: event.currentTarget.value });
+    if (this.props.onChange) {
+      this.props.onChange(event);
     }
   }
-  const theme = React.useContext(ThemeContext);
 
-  const sliderClassNames = cx([
-    'slider',
-    theme.className,
-  ]);
+  render() {
+    const {
+      isDisabled,
+      minimumValue,
+      maximumValue,
+      labelText,
+      minimumLabel,
+      maximumLabel,
+    } = this.props;
 
-  const minLabel = minimumLabel || minimumValue;
-  const maxLabel = maximumLabel || maximumValue;
+    const theme = this.context;
+    const sliderClassNames = cx([
+      'slider',
+      theme.className,
+    ]);
 
-  return (
-    <div className={sliderClassNames}>
-      <label className={cx('label')} id="sliderLabel">
-        {labelName}
-      </label>
-      <span className={cx('min-label')}>
-        {minLabel}
-      </span>
-      <input className={cx('input-range')} type="range" ref={sliderRef} aria-labelledby="sliderLabel" aria-valuemin={minimumValue} aria-valuemax={maximumValue} aria-valuenow={defaultValue} defaultValue={defaultValue} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={handleValueChange} />
-      <span className={cx('max-label')}>
-        {maxLabel}
-      </span>
-    </div>
-  );
-};
+    const minLabel = minimumLabel || minimumValue;
+    const maxLabel = maximumLabel || maximumValue;
+
+    return (
+      /* eslint-disable-next-line react/forbid-dom-props */
+      <div style={{ '--terra-slider-progress-status': `${this.state.value}%` }} className={sliderClassNames}>
+        <span className={cx('label')}>
+          {labelText}
+        </span>
+        <span className={cx('slider-label')}>
+          {minLabel}
+        </span>
+        <input className={cx('input-range')} type="range" ref={this.sliderRef} aria-label={labelText} value={this.state.value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={this.handleOnChange} />
+        <span className={cx('slider-label', 'slider-max-label')}>
+          {maxLabel}
+        </span>
+      </div>
+    );
+  }
+}
 
 Slider.propTypes = propTypes;
 Slider.defaultProps = defaultProps;
+Slider.contextType = ThemeContext;
 
 export default Slider;

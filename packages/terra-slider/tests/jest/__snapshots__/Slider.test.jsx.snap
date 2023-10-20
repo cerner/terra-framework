@@ -1,35 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Slider should render a default slider 1`] = `
+exports[`Slider should render a default slider with proper required props 1`] = `
 <div
   className="slider"
+  style={
+    Object {
+      "--terra-slider-progress-status": "30%",
+    }
+  }
 >
-  <label
+  <span
     className="label"
-    id="sliderLabel"
   >
     testLabel
-  </label>
+  </span>
   <span
-    className="min-label"
+    className="slider-label"
   >
     0
   </span>
   <input
-    aria-labelledby="sliderLabel"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={50}
+    aria-label="testLabel"
     className="input-range"
-    defaultValue={50}
     disabled={false}
     max={100}
     min={0}
     onChange={[Function]}
     type="range"
+    value={30}
   />
   <span
-    className="max-label"
+    className="slider-label slider-max-label"
   >
     100
   </span>
@@ -39,33 +40,34 @@ exports[`Slider should render a default slider 1`] = `
 exports[`Slider should render a disabled slider 1`] = `
 <div
   className="slider"
+  style={
+    Object {
+      "--terra-slider-progress-status": "50%",
+    }
+  }
 >
-  <label
+  <span
     className="label"
-    id="sliderLabel"
   >
     testLabel
-  </label>
+  </span>
   <span
-    className="min-label"
+    className="slider-label"
   >
     0
   </span>
   <input
-    aria-labelledby="sliderLabel"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={50}
+    aria-label="testLabel"
     className="input-range"
-    defaultValue={50}
     disabled={true}
     max={100}
     min={0}
     onChange={[Function]}
     type="range"
+    value={50}
   />
   <span
-    className="max-label"
+    className="slider-label slider-max-label"
   >
     100
   </span>
@@ -75,35 +77,73 @@ exports[`Slider should render a disabled slider 1`] = `
 exports[`Slider should render a slider with custom min and max labels 1`] = `
 <div
   className="slider"
+  style={
+    Object {
+      "--terra-slider-progress-status": "50%",
+    }
+  }
 >
-  <label
+  <span
     className="label"
-    id="sliderLabel"
   >
     testLabel
-  </label>
+  </span>
   <span
-    className="min-label"
+    className="slider-label"
   >
     testMinimumLabel
   </span>
   <input
-    aria-labelledby="sliderLabel"
-    aria-valuemax={100}
-    aria-valuemin={0}
-    aria-valuenow={50}
+    aria-label="testLabel"
     className="input-range"
-    defaultValue={50}
     disabled={false}
     max={100}
     min={0}
     onChange={[Function]}
     type="range"
+    value={50}
   />
   <span
-    className="max-label"
+    className="slider-label slider-max-label"
   >
     testMaximumLabel
+  </span>
+</div>
+`;
+
+exports[`Slider should trigger onChange callback on click 1`] = `
+<div
+  className="slider"
+  style={
+    Object {
+      "--terra-slider-progress-status": "50%",
+    }
+  }
+>
+  <span
+    className="label"
+  >
+    testLabel
+  </span>
+  <span
+    className="slider-label"
+  >
+    0
+  </span>
+  <input
+    aria-label="testLabel"
+    className="input-range"
+    disabled={true}
+    max={100}
+    min={0}
+    onChange={[Function]}
+    type="range"
+    value={50}
+  />
+  <span
+    className="slider-label slider-max-label"
+  >
+    100
   </span>
 </div>
 `;

@@ -1,15 +1,14 @@
 :local {
   .clinical-lowlight-theme {
     --terra-slider-label-color: #b3b5b6;
-    --terra-slider-track-selected-range: #005887;
+    --terra-slider-track-selected-range: #004c76;
     --terra-slider-track-unselected-range: #6f7477;
-    --terra-slider-track-selected-range-hover: #00476e;
+    --terra-slider-track-selected-range-hover: #003f61;
     --terra-slider-track-unselected-range-hover: #595f62;
     --terra-slider-thumb-background: #004c76;
     --terra-slider-thumb-border-color: #003f61;
     --terra-slider-thumb-hover-background: #003f61;
     --terra-slider-thumb-active-background: #013a5a;
-    --terra-slider-thumb-focus-border-color: #003f61;
-    --terra-slider-thumb-focus-outline: 2px dashed #fff;
+    --terra-slider-thumb-focus-outline: 0.143rem dashed #fff;
   }
 }
