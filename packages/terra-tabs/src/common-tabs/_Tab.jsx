@@ -192,7 +192,7 @@ const Tab = ({
       if (index === 0) {
         element = document.getElementById(tabIds[index + 1]);
       }
-      const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+      const ariaLabel = label ? `${label} ${deleteTabLabel}. ${element.title}` : '';
       if (element) {
         element.setAttribute('aria-label', ariaLabel);
         element.focus();
