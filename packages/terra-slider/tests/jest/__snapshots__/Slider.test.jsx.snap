@@ -10,16 +10,19 @@ exports[`Slider should render a default slider with proper required props 1`] = 
   }
 >
   <span
+    aria-hidden="true"
     className="label"
   >
     testLabel
   </span>
   <span
+    aria-hidden="true"
     className="slider-label slider-min-label"
   >
     0
   </span>
   <input
+    aria-describedby="00000000-0000-0000-0000-000000000000"
     aria-label="testLabel"
     className="input-range"
     disabled={false}
@@ -30,10 +33,15 @@ exports[`Slider should render a default slider with proper required props 1`] = 
     value={30}
   />
   <span
+    aria-hidden="true"
     className="slider-label slider-max-label"
   >
     100
   </span>
+  <VisuallyHiddenText
+    id="00000000-0000-0000-0000-000000000000"
+    text="Adjust slider to select a value between 0 and 100"
+  />
 </div>
 `;
 
@@ -47,16 +55,19 @@ exports[`Slider should render a disabled slider 1`] = `
   }
 >
   <span
+    aria-hidden="true"
     className="label"
   >
     testLabel
   </span>
   <span
+    aria-hidden="true"
     className="slider-label slider-min-label"
   >
     0
   </span>
   <input
+    aria-describedby="00000000-0000-0000-0000-000000000000"
     aria-label="testLabel"
     className="input-range"
     disabled={true}
@@ -67,10 +78,15 @@ exports[`Slider should render a disabled slider 1`] = `
     value={50}
   />
   <span
+    aria-hidden="true"
     className="slider-label slider-max-label"
   >
     100
   </span>
+  <VisuallyHiddenText
+    id="00000000-0000-0000-0000-000000000000"
+    text="Adjust slider to select a value between 0 and 100"
+  />
 </div>
 `;
 
@@ -84,16 +100,19 @@ exports[`Slider should render a slider with custom min and max labels 1`] = `
   }
 >
   <span
+    aria-hidden="true"
     className="label"
   >
     testLabel
   </span>
   <span
+    aria-hidden="true"
     className="slider-label slider-min-label"
   >
     testMinimumLabel
   </span>
   <input
+    aria-describedby="00000000-0000-0000-0000-000000000000"
     aria-label="testLabel"
     className="input-range"
     disabled={false}
@@ -104,9 +123,14 @@ exports[`Slider should render a slider with custom min and max labels 1`] = `
     value={50}
   />
   <span
+    aria-hidden="true"
     className="slider-label slider-max-label"
   >
     testMaximumLabel
   </span>
+  <VisuallyHiddenText
+    id="00000000-0000-0000-0000-000000000000"
+    text="Adjust slider to select a value between testMinimumLabel (0) and testMaximumLabel (100)"
+  />
 </div>
 `;

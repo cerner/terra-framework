@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './Slider.module.scss';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { v4 as uuidv4 } from 'uuid';
 
 const cx = classNames.bind(styles);
 
@@ -98,20 +100,26 @@ class Slider extends React.Component {
 
     const minLabel = minimumLabel || minimumValue;
     const maxLabel = maximumLabel || maximumValue;
+    let VisuallyHiddenTextValue = 
+      (minimumLabel || maximumLabel) ? 
+      `Adjust slider to select a value between ${minimumLabel} (${minimumValue}) and ${maximumLabel} (${maximumValue})`:
+      `Adjust slider to select a value between ${minimumValue} and ${maximumValue}`;
+    const descriptionId = uuidv4();
 
     return (
       /* eslint-disable-next-line react/forbid-dom-props */
       <div style={{ '--terra-slider-progress-status': `${this.state.value}%` }} className={sliderClassNames}>
-        <span className={cx('label')}>
+        <span className={cx('label')} aria-hidden="true">
           {labelText}
         </span>
-        <span className={cx('slider-label', 'slider-min-label')}>
+        <span className={cx('slider-label', 'slider-min-label')} aria-hidden="true">
           {minLabel}
         </span>
-        <input className={cx('input-range')} type="range" ref={this.sliderRef} aria-label={labelText} value={this.state.value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={this.handleOnChange} />
-        <span className={cx('slider-label', 'slider-max-label')}>
+        <input className={cx('input-range')} type="range" ref={this.sliderRef} aria-label={labelText} aria-describedby={descriptionId} value={this.state.value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={this.handleOnChange} />
+        <span className={cx('slider-label', 'slider-max-label')} aria-hidden="true">
           {maxLabel}
         </span>
+        <VisuallyHiddenText id={descriptionId} text={VisuallyHiddenTextValue} />
       </div>
     );
   }

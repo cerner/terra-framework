@@ -1,5 +1,15 @@
 import React from 'react';
 import Slider from '../../src/Slider';
+import { v4 as uuidv4 } from 'uuid';
+
+let mockSpyUuid;
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+});
+
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
 
 describe('Slider', () => {
   it('should render a default slider with proper required props', () => {
