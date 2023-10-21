@@ -108,7 +108,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     const focusElementSelector = 'body';
 
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-focusable-cell');
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-focusable-cell');
     });
 
     it('validates that the proper grid element is selected when Tab is used to give initial focus to the grid', () => {
@@ -123,6 +123,36 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
       expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
       Terra.validates.element('table-focus-input', { columnResizeSelector: focusElementSelector });
+    });
+  });
+
+  describe('Scrollable Table', () => {
+    const scrollableTableSelector = '#scroll-test-container';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/scrollable-table');
+    });
+
+    it('Validates first scrollable table receives focus', () => {
+      browser.keys(['Tab']);
+      expect($('#scroll-test-1')).toBeFocused();
+      Terra.validates.element('scrollable-table-first-focus', { selector: scrollableTableSelector });
+    });
+
+    it('Validates second scrollable table receives focus', () => {
+      browser.keys(['Tab', 'Tab']);
+      expect($('#scroll-test-3')).toBeFocused();
+      Terra.validates.element('scrollable-table-second-focus', { selector: scrollableTableSelector });
+    });
+
+    it('Validates a table has zebra striping when specified via props', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown']);
+      Terra.validates.element('scrollable-table-first-scroll', { selector: scrollableTableSelector });
+    });
+
+    it('Validates second scrollable table receives focus', () => {
+      browser.keys(['Tab', 'Tab', 'ArrowRight', 'ArrowRight']);
+      Terra.validates.element('scrollable-table-second-scroll', { selector: scrollableTableSelector });
     });
   });
 });
