@@ -70,6 +70,11 @@ const propTypes = {
   rowHeaderIndex: PropTypes.number,
 
   /**
+   * Boolean specifying whether zebra striping is enabled.
+   */
+  isTableStriped: PropTypes.bool,
+
+  /**
    * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
    */
   onSectionSelect: PropTypes.func,
@@ -93,6 +98,7 @@ function Section(props) {
     rowHeight,
     rowHeaderIndex,
     rows,
+    isTableStriped,
     onSectionSelect,
   } = props;
 
@@ -141,6 +147,7 @@ function Section(props) {
           rowHeaderIndex={rowHeaderIndex}
           onCellSelect={isGridContext ? onCellSelect : undefined}
           isSelected={row.isSelected}
+          isTableStriped={isTableStriped}
         />
       ))}
     </tbody>

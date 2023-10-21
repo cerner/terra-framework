@@ -118,6 +118,10 @@ const propTypes = {
    * Parameters: 1. label of the closing tab 2. Selected pane's key 3. Event
    */
   onClosingTab: PropTypes.func,
+  /**
+   * By Default Orientation will be Horizontal and Orientation will be Vertical When verticalOrientation prop is passed.
+   */
+  verticalOrientation: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -126,6 +130,7 @@ const defaultProps = {
   isDisabled: false,
   showIcon: false,
   isDraggable: false,
+  verticalOrientation: false,
 };
 
 const Tab = ({
@@ -149,16 +154,18 @@ const Tab = ({
   onClosingTab,
   intl,
   isDraggable,
+  verticalOrientation,
 }) => {
   const tabDeleteLabel = intl.formatMessage({ id: 'Terra.tabs.hint.removable' });
   const attributes = {};
   const theme = React.useContext(ThemeContext);
   const tabClassNames = cx(
     'tab',
-    { 'is-active': isSelected },
+    { 'is-active': !verticalOrientation && isSelected },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
     { 'is-disabled': isDisabled },
+    { 'is-active-vertical': verticalOrientation && isSelected },
     theme.className,
   );
   const paneClassNames = classNames(cy(
@@ -166,7 +173,9 @@ const Tab = ({
     { 'is-disabled': isDisabled },
     { 'is-icon-only': isIconOnly },
     { 'is-text-only': !icon },
-    { 'is-active': isSelected },
+    { 'is-active': !verticalOrientation && isSelected },
+    { 'is-active-vertical': verticalOrientation && isSelected },
+    { 'is-vertical': verticalOrientation },
     theme.className,
   ));
 
@@ -232,7 +241,9 @@ const Tab = ({
   attributes.style = { zIndex };
 
   const onFocusResponse = intl.formatMessage({ id: 'Terra.tabs.focus' });
-  const responseId = `terra-tab-pane-response=${uuidv4()}`;
+  const responseId = `terra-tab-pane-response-${uuidv4()}`;
+  const deleteResponseId = `terra-tab-delete-pane-response-${uuidv4()}`;
+  const ariaDescribedBy = isClosable ? [responseId, deleteResponseId] : responseId;
 
   if (isDraggable) {
     return (
@@ -248,8 +259,8 @@ const Tab = ({
             role="tab"
             className={variant === 'framework' ? paneClassNames : tabClassNames}
             title={label}
-            aria-label={isClosable ? `${label}. ${tabDeleteLabel}` : label}
-            aria-describedby={responseId}
+            aria-label={label}
+            aria-describedby={ariaDescribedBy}
             tabIndex={isSelected ? 0 : -1}
             data-terra-tabs-show-focus-styles
             data-terra-tab-draggable
@@ -257,6 +268,7 @@ const Tab = ({
             <div className={variant === 'framework' ? cy('inner', 'draggable-inner') : cx('inner')}>
               <IconKnurling />
               <VisuallyHiddenText aria-hidden id={responseId} text={onFocusResponse} />
+              <VisuallyHiddenText aria-hidden id={deleteResponseId} text={tabDeleteLabel} />
               <div className={cy('draggable-icon')}>{customDisplay || icon}</div>
               {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
             </div>
@@ -283,11 +295,13 @@ const Tab = ({
       aria-disabled={isDisabled}
       className={variant === 'framework' ? paneClassNames : tabClassNames}
       title={label}
-      aria-label={isClosable ? `${label}. ${tabDeleteLabel}` : label}
+      aria-label={label}
+      aria-describedby={isClosable ? deleteResponseId : null}
       tabIndex={isSelected ? 0 : -1}
       data-terra-tabs-show-focus-styles
     >
       <div className={variant === 'framework' ? cy('inner') : cx('inner')}>
+        <VisuallyHiddenText aria-hidden id={deleteResponseId} text={tabDeleteLabel} />
         {customDisplay || icon}
         {(!customDisplay && !isIconOnly) && <span className={variant === 'framework' ? cy('label') : cx('label')}>{label}</span>}
       </div>

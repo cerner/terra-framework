@@ -9,6 +9,6 @@
   "Terra.tabs.drag": "Você moveu a guia da posição {startPosition} para a posição {endPosition}",
   "Terra.tabs.cancelDrag": "Movimento cancelado. A guia retornou para sua posição inicial de {startPosition}",
   "Terra.tabs.drop": "Você desceu a guia. Ela foi movida da posição {startPosition} para {endPosition}",
-  "Terra.tabs.focus": "Pressione Enter para ativar uma guia, ou pressione a barra de espaço para selecioná-la. Certifique-se de que seu leitor de tela esteja no modo foco ou formas",
+  "Terra.tabs.focus": "Pressione Enter para ativar uma guia, ou pressione a barra de espaço para selecioná-la.",
   "Terra.tabs.addbutton.focus": "pressione ENTER ou a barra de espaço para adicionar uma nova guia"
 }

@@ -8,6 +8,7 @@
 :local {
   .structural {
     background-color: var(--terra-tabs-structural-container-background-color, #fff);
+    flex-direction: row;
 
     // Content div of content container component
     > :nth-child(2) {

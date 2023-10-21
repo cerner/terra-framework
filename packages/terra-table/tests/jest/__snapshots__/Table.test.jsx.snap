@@ -4511,6 +4511,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
+<<<<<<< HEAD
                         <FocusTrap
                           _createFocusTrap={[Function]}
                           active={false}
@@ -4542,6 +4543,25 @@ exports[`Table verifies row selection column header selection 1`] = `
                             />
                           </div>
                         </FocusTrap>
+=======
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={false}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={-1}
+                            type="checkbox"
+                          />
+                        </div>
+>>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -4609,6 +4629,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -4633,6 +4654,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Heart Rate Monitored (bpm)
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Heart Rate Monitored (bpm)
+                    </div>
+>>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -4695,6 +4728,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -4723,6 +4757,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                         </span>
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.blank
+                      </span>
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -4786,6 +4836,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -4814,6 +4865,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                         </span>
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.maskedCell
+                      </span>
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -4969,6 +5036,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
+<<<<<<< HEAD
                         <FocusTrap
                           _createFocusTrap={[Function]}
                           active={false}
@@ -5000,6 +5068,25 @@ exports[`Table verifies row selection column header selection 1`] = `
                             />
                           </div>
                         </FocusTrap>
+=======
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={false}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={-1}
+                            type="checkbox"
+                          />
+                        </div>
+>>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -5066,6 +5153,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -5090,6 +5178,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Temperature Oral (degC)
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Temperature Oral (degC)
+                    </div>
+>>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5152,6 +5252,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -5176,6 +5277,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         36.7
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      36.7
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5239,6 +5352,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -5267,6 +5381,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                         </span>
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.maskedCell
+                      </span>
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5422,6 +5552,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
+<<<<<<< HEAD
                         <FocusTrap
                           _createFocusTrap={[Function]}
                           active={false}
@@ -5453,6 +5584,25 @@ exports[`Table verifies row selection column header selection 1`] = `
                             />
                           </div>
                         </FocusTrap>
+=======
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={false}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={-1}
+                            type="checkbox"
+                          />
+                        </div>
+>>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -5519,6 +5669,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -5543,6 +5694,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Cardiac Index (L/min/m2)
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Cardiac Index (L/min/m2)
+                    </div>
+>>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5605,6 +5768,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -5629,6 +5793,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         2.25
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      2.25
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5692,6 +5868,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -5720,6 +5897,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                         </span>
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.maskedCell
+                      </span>
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5875,6 +6068,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
+<<<<<<< HEAD
                         <FocusTrap
                           _createFocusTrap={[Function]}
                           active={false}
@@ -5906,6 +6100,25 @@ exports[`Table verifies row selection column header selection 1`] = `
                             />
                           </div>
                         </FocusTrap>
+=======
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={true}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={-1}
+                            type="checkbox"
+                          />
+                        </div>
+>>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -5972,6 +6185,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -5996,6 +6210,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Oxygen Flow Rate (L/min)
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Oxygen Flow Rate (L/min)
+                    </div>
+>>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -6058,6 +6284,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -6082,6 +6309,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         63
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      63
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -6144,6 +6383,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
+<<<<<<< HEAD
                     <FocusTrap
                       _createFocusTrap={[Function]}
                       active={false}
@@ -6168,6 +6408,18 @@ exports[`Table verifies row selection column header selection 1`] = `
                         47
                       </div>
                     </FocusTrap>
+=======
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      47
+                    </div>
+>>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -6599,3 +6851,220 @@ exports[`Table verifies the rows are created with the right props 1`] = `
   </table>
 </div>
 `;
+<<<<<<< HEAD
+=======
+
+exports[`Table verifies the rows receive the correct props when table is zebra striped 1`] = `
+<div
+  className="table-container"
+>
+  <table
+    className="table"
+    id="test-terra-table"
+    role="table"
+  >
+    <ContextProvider
+      value={
+        Object {
+          "pinnedColumnOffsets": Array [
+            0,
+          ],
+        }
+      }
+    >
+      <Memo(ColumnHeader)
+        columns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 200,
+            },
+          ]
+        }
+        headerHeight="2.5rem"
+        onColumnSelect={[Function]}
+        onResizeMouseDown={[Function]}
+        tableHeight={0}
+      />
+      <tbody>
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Heart Rate Monitored (bpm)",
+                "isSelectable": false,
+              },
+              Object {
+                "content": "",
+              },
+              Object {
+                "content": "66",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="1"
+          isTableStriped={true}
+          key="1"
+          rowHeaderIndex={0}
+          rowIndex={1}
+        />
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Temperature Oral (degC)",
+              },
+              Object {
+                "content": "36.7",
+              },
+              Object {
+                "content": "36.9",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="2"
+          isTableStriped={true}
+          key="2"
+          rowHeaderIndex={0}
+          rowIndex={2}
+        />
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Cardiac Index (L/min/m2)",
+              },
+              Object {
+                "content": "2.25",
+              },
+              Object {
+                "content": "2.28",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="3"
+          isTableStriped={true}
+          key="3"
+          rowHeaderIndex={0}
+          rowIndex={3}
+        />
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Oxygen Flow Rate (L/min)",
+              },
+              Object {
+                "content": "63",
+              },
+              Object {
+                "content": "47",
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="4"
+          isSelected={true}
+          isTableStriped={true}
+          key="4"
+          rowHeaderIndex={0}
+          rowIndex={4}
+        />
+      </tbody>
+    </ContextProvider>
+  </table>
+</div>
+`;
+>>>>>>> origin

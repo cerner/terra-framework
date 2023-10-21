@@ -15,14 +15,14 @@ const propTypes = {
 
 const TabsTemplate = (props) => {
   const labelTab = (
-    <Tabs.Pane label="Tab with label" key="LabelTab">
-      <TabContentTemplate label="Tab with label" />
+    <Tabs.Pane label="Tab with label" key="ExpandedLabelTab">
+      <TabContentTemplate label="Tab with label" id="ExpandedLabelTab" />
     </Tabs.Pane>
   );
 
   const iconTab = (
-    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="IconTab">
-      <TabContentTemplate label="Tab with icon" />
+    <Tabs.Pane label="Tab with icon" icon={<IconBriefcase />} key="ExpandedIconTab">
+      <TabContentTemplate label="Tab with icon" id="ExpandedIconTabContent" />
     </Tabs.Pane>
   );
 
@@ -34,34 +34,34 @@ const TabsTemplate = (props) => {
         </div>
       )}
       label="Custom display"
-      key="CustomTab"
+      key="ExpandedCustomTab"
     >
-      <TabContentTemplate label="Custom display" />
+      <TabContentTemplate id="ExpandedCustomTabContent" label="Custom display" />
     </Tabs.Pane>
   );
 
   const longLabel = (
     <Tabs.Pane
       label="Longer text tab name with label for application"
-      key="longLabel"
+      key="ExpandedlongLabel"
     >
-      <TabContentTemplate label="Longer text tab name with label for application" />
+      <TabContentTemplate id="ExpandedlongLabelContent" label="Longer text tab name with label for application" />
     </Tabs.Pane>
   );
 
   const lastTab = (
-    <Tabs.Pane label="Last Tab" key="lastTab">
-      <TabContentTemplate label="Last Tab" />
+    <Tabs.Pane label="Last Tab" key="ExpandedlastTab">
+      <TabContentTemplate id="ExpandedlastTabContent" label="Last Tab" />
     </Tabs.Pane>
   );
 
   const disabledTab = (
-    <Tabs.Pane label="Disabled Tab" icon={<IconSearch />} isDisabled key="DisabledTab" />
+    <Tabs.Pane label="Disabled Tab" icon={<IconSearch />} isDisabled key="ExpandedDisabledTab" />
   );
 
   return (
     <div className={cx('content-wrapper')}>
-      <Tabs setFocusOnContent defaultActiveKey="LabelTab" tabFill={props.tabFill} id="icon-in-menu">
+      <Tabs setFocusOnContent defaultActiveKey="ExpandedLabelTab" tabFill={props.tabFill} id="icon-in-menu">
         {labelTab}
         {iconTab}
         {customTab}
@@ -76,6 +76,6 @@ const TabsTemplate = (props) => {
 TabsTemplate.propTypes = propTypes;
 
 const TabExpanded = () => (
-  <TabsTemplate tabFill />
+  <TabsTemplate tabFill id="expanded" />
 );
 export default TabExpanded;
