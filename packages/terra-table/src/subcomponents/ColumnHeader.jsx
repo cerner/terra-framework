@@ -71,8 +71,8 @@ const ColumnHeader = (props) => {
             minimumWidth={column.minimumWidth}
             maximumWidth={column.maximumWidth}
             headerHeight={headerHeight}
-            isResizable={column.isResizable}
-            isSelectable={column.isSelectable}
+            isResizable={hasColumnHeaders && column.isResizable}
+            isSelectable={hasColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
             hasError={column.hasError}
             sortIndicator={column.sortIndicator}
