@@ -400,7 +400,7 @@ const DataGrid = injectIntl((props) => {
       onRangeSelection(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
 
-    if (nextRow > rows.length || nextCol >= tableRef.current.rows[0].cells.length) {
+    if (nextRow > rows.length || nextCol >= columns.length) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }

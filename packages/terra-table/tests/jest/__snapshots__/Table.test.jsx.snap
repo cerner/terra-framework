@@ -3736,6 +3736,10 @@ exports[`Table verifies row selection column header selection 1`] = `
       "calls": Array [
         Array [
           "table-rowSelectionColumn",
+          Object {
+            "col": 0,
+            "row": 0,
+          },
         ],
       ],
       "results": Array [
@@ -3870,6 +3874,10 @@ exports[`Table verifies row selection column header selection 1`] = `
         "calls": Array [
           Array [
             "table-rowSelectionColumn",
+            Object {
+              "col": 0,
+              "row": 0,
+            },
           ],
         ],
         "results": Array [
