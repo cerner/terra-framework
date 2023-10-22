@@ -4511,39 +4511,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
-<<<<<<< HEAD
-                        <FocusTrap
-                          _createFocusTrap={[Function]}
-                          active={false}
-                          focusTrapOptions={
-                            Object {
-                              "clickOutsideDeactivates": true,
-                              "escapeDeactivates": false,
-                              "onDeactivate": [Function],
-                              "returnFocusOnDeactivate": true,
-                            }
-                          }
-                          paused={false}
-                        >
-                          <div
-                            className="cell-content"
-                            style={
-                              Object {
-                                "height": undefined,
-                              }
-                            }
-                          >
-                            <input
-                              aria-label="Terra.table.row-index"
-                              checked={false}
-                              className="input"
-                              readOnly={true}
-                              tabIndex={-1}
-                              type="checkbox"
-                            />
-                          </div>
-                        </FocusTrap>
-=======
                         <div
                           className="cell-content"
                           style={
@@ -4561,7 +4528,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                             type="checkbox"
                           />
                         </div>
->>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -4629,32 +4595,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        Heart Rate Monitored (bpm)
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -4665,7 +4605,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       Heart Rate Monitored (bpm)
                     </div>
->>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -4728,36 +4667,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        <span
-                          className="no-data-cell"
-                        >
-                          Terra.table.blank
-                        </span>
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -4772,7 +4681,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Terra.table.blank
                       </span>
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -4836,36 +4744,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        <span
-                          className="no-data-cell"
-                        >
-                          Terra.table.maskedCell
-                        </span>
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -4880,7 +4758,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Terra.table.maskedCell
                       </span>
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5036,39 +4913,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
-<<<<<<< HEAD
-                        <FocusTrap
-                          _createFocusTrap={[Function]}
-                          active={false}
-                          focusTrapOptions={
-                            Object {
-                              "clickOutsideDeactivates": true,
-                              "escapeDeactivates": false,
-                              "onDeactivate": [Function],
-                              "returnFocusOnDeactivate": true,
-                            }
-                          }
-                          paused={false}
-                        >
-                          <div
-                            className="cell-content"
-                            style={
-                              Object {
-                                "height": undefined,
-                              }
-                            }
-                          >
-                            <input
-                              aria-label="Terra.table.row-index"
-                              checked={false}
-                              className="input"
-                              readOnly={true}
-                              tabIndex={-1}
-                              type="checkbox"
-                            />
-                          </div>
-                        </FocusTrap>
-=======
                         <div
                           className="cell-content"
                           style={
@@ -5086,7 +4930,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                             type="checkbox"
                           />
                         </div>
->>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -5153,32 +4996,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        Temperature Oral (degC)
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -5189,7 +5006,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       Temperature Oral (degC)
                     </div>
->>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5252,32 +5068,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        36.7
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -5288,7 +5078,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       36.7
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5352,36 +5141,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        <span
-                          className="no-data-cell"
-                        >
-                          Terra.table.maskedCell
-                        </span>
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -5396,7 +5155,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Terra.table.maskedCell
                       </span>
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5552,39 +5310,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
-<<<<<<< HEAD
-                        <FocusTrap
-                          _createFocusTrap={[Function]}
-                          active={false}
-                          focusTrapOptions={
-                            Object {
-                              "clickOutsideDeactivates": true,
-                              "escapeDeactivates": false,
-                              "onDeactivate": [Function],
-                              "returnFocusOnDeactivate": true,
-                            }
-                          }
-                          paused={false}
-                        >
-                          <div
-                            className="cell-content"
-                            style={
-                              Object {
-                                "height": undefined,
-                              }
-                            }
-                          >
-                            <input
-                              aria-label="Terra.table.row-index"
-                              checked={false}
-                              className="input"
-                              readOnly={true}
-                              tabIndex={-1}
-                              type="checkbox"
-                            />
-                          </div>
-                        </FocusTrap>
-=======
                         <div
                           className="cell-content"
                           style={
@@ -5602,7 +5327,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                             type="checkbox"
                           />
                         </div>
->>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -5669,32 +5393,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        Cardiac Index (L/min/m2)
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -5705,7 +5403,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       Cardiac Index (L/min/m2)
                     </div>
->>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5768,32 +5465,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        2.25
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -5804,7 +5475,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       2.25
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -5868,36 +5538,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        <span
-                          className="no-data-cell"
-                        >
-                          Terra.table.maskedCell
-                        </span>
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -5912,7 +5552,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Terra.table.maskedCell
                       </span>
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -6068,39 +5707,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                           }
                         }
                       >
-<<<<<<< HEAD
-                        <FocusTrap
-                          _createFocusTrap={[Function]}
-                          active={false}
-                          focusTrapOptions={
-                            Object {
-                              "clickOutsideDeactivates": true,
-                              "escapeDeactivates": false,
-                              "onDeactivate": [Function],
-                              "returnFocusOnDeactivate": true,
-                            }
-                          }
-                          paused={false}
-                        >
-                          <div
-                            className="cell-content"
-                            style={
-                              Object {
-                                "height": undefined,
-                              }
-                            }
-                          >
-                            <input
-                              aria-label="Terra.table.row-index"
-                              checked={true}
-                              className="input"
-                              readOnly={true}
-                              tabIndex={-1}
-                              type="checkbox"
-                            />
-                          </div>
-                        </FocusTrap>
-=======
                         <div
                           className="cell-content"
                           style={
@@ -6118,7 +5724,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                             type="checkbox"
                           />
                         </div>
->>>>>>> origin
                       </td>
                     </Cell>
                   </InjectIntl(Cell)>
@@ -6185,32 +5790,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        Oxygen Flow Rate (L/min)
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -6221,7 +5800,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       Oxygen Flow Rate (L/min)
                     </div>
->>>>>>> origin
                   </th>
                 </Cell>
               </InjectIntl(Cell)>
@@ -6284,32 +5862,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        63
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -6320,7 +5872,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       63
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -6383,32 +5934,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       }
                     }
                   >
-<<<<<<< HEAD
-                    <FocusTrap
-                      _createFocusTrap={[Function]}
-                      active={false}
-                      focusTrapOptions={
-                        Object {
-                          "clickOutsideDeactivates": true,
-                          "escapeDeactivates": false,
-                          "onDeactivate": [Function],
-                          "returnFocusOnDeactivate": true,
-                        }
-                      }
-                      paused={false}
-                    >
-                      <div
-                        className="cell-content"
-                        style={
-                          Object {
-                            "height": "2.5rem",
-                          }
-                        }
-                      >
-                        47
-                      </div>
-                    </FocusTrap>
-=======
                     <div
                       className="cell-content"
                       style={
@@ -6419,7 +5944,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                     >
                       47
                     </div>
->>>>>>> origin
                   </td>
                 </Cell>
               </InjectIntl(Cell)>
@@ -6851,8 +6375,6 @@ exports[`Table verifies the rows are created with the right props 1`] = `
   </table>
 </div>
 `;
-<<<<<<< HEAD
-=======
 
 exports[`Table verifies the rows receive the correct props when table is zebra striped 1`] = `
 <div
@@ -7067,4 +6589,3 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
   </table>
 </div>
 `;
->>>>>>> origin
