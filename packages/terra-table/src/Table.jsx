@@ -7,7 +7,7 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 
 import ThemeContext from 'terra-theme-context';
-
+import Row from './subcomponents/Row';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
@@ -189,8 +189,6 @@ function Table(props) {
   const displayedColumns = (hasSelectableRows ? [RowSelectionUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
-  const tableSections = sections || [{ id: 'section-0', rows }];
-
   // -------------------------------------
   // functions
 
@@ -330,12 +328,14 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
           />
-          {tableSections.map((section) => (
+          {sections ? sections.map((section, sectionIndex) => (
             <Section
               id={section.id}
               key={section.id}
+              sectionIndex={sectionIndex + 1}
               isCollapsible={section.isCollapsible}
               isCollapsed={section.isCollapsed}
+              isTableStriped={isStriped}
               text={section.text}
               rows={section.rows}
               rowHeight={rowHeight}
@@ -345,7 +345,26 @@ function Table(props) {
               onCellSelect={isGridContext ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
             />
-          ))}
+          )) : (
+            <tbody>
+              {rows.map((row, rowIndex) => (
+                <Row
+                  rowIndex={rowIndex + 1}
+                  key={row.id}
+                  height={rowHeight}
+                  id={row.id}
+                  cells={row.cells}
+                  ariaLabel={row.ariaLabel}
+                  hasRowSelection={hasSelectableRows}
+                  displayedColumns={displayedColumns}
+                  rowHeaderIndex={rowHeaderIndex}
+                  onCellSelect={isGridContext ? handleCellSelection : undefined}
+                  isSelected={row.isSelected}
+                  isTableStriped={isStriped}
+                />
+              ))}
+            </tbody>
+          )}
         </ColumnContext.Provider>
       </table>
     </div>

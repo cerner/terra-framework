@@ -21,6 +21,11 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * The row's position in the table. This is zero based.
+   */
+  sectionIndex: PropTypes.number,
+
+  /**
    * A boolean indicating whether or not the the section is collapsible. If true, the DataGrid's `onRequestSectionCollapse`
    * function will be called upon selection of the section header, and an icon indicating collapsibility will be rendered within the seaction header.
    */
@@ -89,8 +94,10 @@ const defaultProps = {
 function Section(props) {
   const {
     id,
+    sectionIndex,
     isCollapsible,
     isCollapsed,
+    isTableStriped,
     text,
     hasRowSelection,
     displayedColumns,
@@ -98,7 +105,6 @@ function Section(props) {
     rowHeight,
     rowHeaderIndex,
     rows,
-    isTableStriped,
     onSectionSelect,
   } = props;
 
@@ -134,9 +140,9 @@ function Section(props) {
           />
         </th>
       </tr>
-      {rows.map((row, index) => (
+      {rows.map((row, rowIndex) => (
         <Row
-          rowIndex={index + 1}
+          rowIndex={sectionIndex + (rowIndex + 1)}
           key={row.id}
           height={rowHeight}
           id={row.id}
