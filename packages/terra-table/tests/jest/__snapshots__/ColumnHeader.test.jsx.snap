@@ -150,6 +150,8 @@ exports[`ColumnHeader verifies that the hasColumnHeaders prop hides the table co
       displayName=" Vitals"
       headerHeight="3rem"
       id="Column-0"
+      isResizable={false}
+      isSelectable={false}
       key="Column-0"
       rowIndex={0}
     />
@@ -158,6 +160,8 @@ exports[`ColumnHeader verifies that the hasColumnHeaders prop hides the table co
       displayName=" Patient"
       headerHeight="3rem"
       id="Column-1"
+      isResizable={false}
+      isSelectable={false}
       key="Column-1"
       rowIndex={0}
     />
