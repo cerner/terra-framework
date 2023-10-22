@@ -133,4 +133,16 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('scrollable-table-second-scroll', { selector: scrollableTableSelector });
     });
   });
+
+  describe('Table with Sections', () => {
+    const tableWithSectionsSelector = '#table-with-sections';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-sections');
+    });
+
+    it('Validates a table has zebra striping when specified via props', () => {
+      Terra.validates.element('table-with-sectinos', { selector: tableWithSectionsSelector });
+    });
+  });
 });
