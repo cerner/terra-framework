@@ -153,7 +153,7 @@ describe('FlowsheetDataGrid', () => {
           id: '3',
           cells: [
             { content: 'Cardiac Index (L/min/m2)' },
-            { content: undefined },
+            { content: '' },
             { content: '2.28' },
           ],
         },
@@ -162,7 +162,7 @@ describe('FlowsheetDataGrid', () => {
           cells: [
             { content: '' },
             { content: null },
-            { content: undefined },
+            { content: '--' },
           ],
         },
       ],

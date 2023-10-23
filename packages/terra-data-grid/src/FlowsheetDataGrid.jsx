@@ -102,6 +102,8 @@ function FlowsheetDataGrid(props) {
   const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
   const overflowColumns = flowsheetColumns.length > 1 ? flowsheetColumns.slice(1) : [];
 
+  const contentHasNoResult = (content) => (content === null || content === '' || content === '--');
+
   const flowsheetRows = useMemo(() => {
     const noResultCellContent = (
       <>
@@ -114,8 +116,8 @@ function FlowsheetDataGrid(props) {
     newRows.forEach((row, rowIndex) => {
       const newCells = [...row.cells];
       newCells.forEach((cell, cellIndex) => {
-        // Cell has no content and is not a row header (first column), set content to "No result".
-        if (!cell.content && cellIndex !== 0) {
+        // Cell content has no result and is not a row header (first column), set content to "No result".
+        if (contentHasNoResult(cell.content) && cellIndex !== 0) {
           newCells[cellIndex].content = noResultCellContent;
         }
       });
