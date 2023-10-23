@@ -156,9 +156,7 @@ function FlowsheetDataGrid(props) {
     });
     selectedCells.current = [...newSelectedCells];
 
-    if (selectedCells.current.length === 1) {
-      anchorCell.current = { rowId: selectedCells.current[0].rowId, columnId: selectedCells.current[0].columnId };
-    } else if (!selectedCells.current.length) {
+    if (!selectedCells.current.length) {
       anchorCell.current = null;
     }
 
@@ -211,6 +209,7 @@ function FlowsheetDataGrid(props) {
       }
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
+      anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
     }
   }, [onCellSelect, selectCellRange]);
@@ -289,7 +288,7 @@ function FlowsheetDataGrid(props) {
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={handleCellSelection}
         onClearSelectedCells={handleClearSelectedCells}
-        onCellRangeSelection={handleCellRangeSelection}
+        onCellRangeSelect={handleCellRangeSelection}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>

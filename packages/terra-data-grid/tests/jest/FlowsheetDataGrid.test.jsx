@@ -430,4 +430,90 @@ describe('Single cell selection', () => {
     expect(mockOnCellSelect).not.toHaveBeenCalled();
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
+
+  it('verifies a ranged cell selection when a anchor cell is clicked and Shift+Arrow keys are pressed', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+        onCellRangeSelect={mockOnCellRangeSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
+    selectableCell.simulate('mouseDown');
+    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1');
+
+    // Shift + Down Arrow
+    selectableCell.simulate('keydown', { shiftKey: true, keyCode: 40 });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{ rowId: '3', columnId: 'Column-1' }, { rowId: '4', columnId: 'Column-1' }]);
+
+    // Shift + Right Arrow
+    selectableCell.simulate('keydown', { shiftKey: true, keyCode: 39 });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+      { rowId: '3', columnId: 'Column-1' },
+      { rowId: '3', columnId: 'Column-2' },
+      { rowId: '4', columnId: 'Column-1' },
+      { rowId: '4', columnId: 'Column-2' },
+    ]);
+  });
+
+  it('verifies a ranged cell selection when a anchor cell is selected with Space and then Shift+Arrow keys are pressed', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+        onCellRangeSelect={mockOnCellRangeSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
+    selectableCell.simulate('keydown', { keyCode: 32 });
+    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1');
+
+    // Shift + Down Arrow
+    selectableCell.simulate('keydown', { shiftKey: true, keyCode: 40 });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{ rowId: '3', columnId: 'Column-1' }, { rowId: '4', columnId: 'Column-1' }]);
+
+    // Shift + Right Arrow
+    selectableCell.simulate('keydown', { shiftKey: true, keyCode: 39 });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+      { rowId: '3', columnId: 'Column-1' },
+      { rowId: '3', columnId: 'Column-2' },
+      { rowId: '4', columnId: 'Column-1' },
+      { rowId: '4', columnId: 'Column-2' },
+    ]);
+  });
+
+  it('verifies a ranged cell selection when a anchor cell is clicked and then another cell is clicked while using Shift', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+        onCellRangeSelect={mockOnCellRangeSelect}
+      />,
+    );
+
+    let selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
+    selectableCell.simulate('mouseDown');
+    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1');
+
+    selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
+    selectableCell.simulate('mouseDown', { shiftKey: true });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+      { rowId: '3', columnId: 'Column-1' },
+      { rowId: '3', columnId: 'Column-2' },
+      { rowId: '4', columnId: 'Column-1' },
+      { rowId: '4', columnId: 'Column-2' },
+    ]);
+  });
 });

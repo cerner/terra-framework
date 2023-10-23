@@ -10,7 +10,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     id="test-terra-flowsheet-data-grid"
-    onCellRangeSelection={[Function]}
+    onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
     onClearSelectedCells={[Function]}
     overflowColumns={
@@ -116,7 +116,7 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     id="test-terra-flowsheet-data-grid"
-    onCellRangeSelection={[Function]}
+    onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
     onClearSelectedCells={[Function]}
     overflowColumns={
