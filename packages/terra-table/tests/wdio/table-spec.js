@@ -92,6 +92,18 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
+  describe('Table Without Header', () => {
+    const tableWithoutHeadersSelector = '#table-without-headers';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-without-headers');
+    });
+
+    it('Renders a table without column headers', () => {
+      Terra.validates.element('table-without-column-headers', { selector: tableWithoutHeadersSelector });
+    });
+  });
+
   describe('Zebra Striped Table', () => {
     const zebraStripeTableSelector = '#zebra-striped-table';
 
