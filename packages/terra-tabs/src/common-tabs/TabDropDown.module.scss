@@ -35,8 +35,8 @@
   @media (min-width: 276px) and (max-width: 380px) {
     .is-open {
       left: -10px !important;
-      margin: 10px;
       min-height: auto;
+      margin-left: 0;
     }
   }
   @media (max-width: 275px) {
@@ -44,6 +44,7 @@
       left: -10px !important;
       max-height: 100px !important;
       max-width: 80px;
+      margin-left: 0;
       min-height: auto;
     }
   }

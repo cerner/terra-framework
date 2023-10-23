@@ -110,17 +110,9 @@
   }
   @media screen and (max-width: 250px) {
     .hidden {
-      background-color: var(--terra-tabs-workspace-hidden-tab-hidden-background-color, #fff);
-      color: var(--terra-tabs-workspace-hidden-tab-hidden-color, #222a2e);
-      cursor: pointer;
-      display: flex;
       font-size: 0.8rem;
-      font-weight: normal;
       line-height: var(--terra-tabs-workspace-hidden-tab-hidden-line-height, 1.4);
-      margin-left: 0;
-      outline: none;
       padding: 0.3rem 0.5rem;
-      position: relative;
     }
   }
   
