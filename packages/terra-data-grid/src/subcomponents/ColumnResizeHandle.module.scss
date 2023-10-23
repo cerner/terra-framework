@@ -21,7 +21,7 @@
 
     &:focus {
       border-color: var(--terra-data-grid-resize-handle-hover-border-color, rgba(34, 42, 46, 0.6));
-      // outline: 0 !important;
+      outline: 0 !important;
     }
 
     &:hover {
