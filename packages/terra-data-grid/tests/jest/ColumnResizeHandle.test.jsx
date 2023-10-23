@@ -41,7 +41,7 @@ describe('ColumnResizeHandle', () => {
     expect(resizeHandle.props()['aria-valuenow']).toBe(null);
     expect(resizeHandle.props()['aria-valuemin']).toBe(null);
     expect(resizeHandle.props()['aria-valuemax']).toBe(null);
-    expect(wrapper.find('.resize-handle').props().role).toBe('divider');
+    expect(wrapper.find('.resize-handle').props().role).toBe(null);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -152,7 +152,7 @@ describe('ColumnResizeHandle', () => {
 
     expect(wrapper.find('.resize-handle').props()['aria-label']).toBe(null);
     expect(wrapper.find('.resize-handle').props()['aria-valuetext']).toBe(null);
-    expect(wrapper.find('.resize-handle').props().role).toBe('divider');
+    expect(wrapper.find('.resize-handle').props().role).toBe(null);
   });
 
   it('increases column width with right arrow', () => {

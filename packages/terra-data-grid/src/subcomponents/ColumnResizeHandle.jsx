@@ -150,7 +150,7 @@ const ColumnResizeHandle = (props) => {
         setNavigationEnabled(false);
         // Lock focus into component
         resizeHandleRef.current.focus();
-        
+
         // set styles for keyboard
         setResizeHandleStyles(['resize-handle', 'resize-handle-selected']);
 
