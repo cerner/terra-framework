@@ -1,6 +1,6 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import FlowsheetDataGrid from '../../src/FlowsheetDataGrid';
 
@@ -251,5 +251,183 @@ describe('FlowsheetDataGrid', () => {
     expect(dataGrid.prop('rows')).toEqual(expectedRows);
 
     expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe('Single cell selection', () => {
+  let mockOnCellSelect = null;
+  let mockOnCellRangeSelect = null;
+
+  beforeEach(() => {
+    mockOnCellSelect = jest.fn();
+    mockOnCellRangeSelect = jest.fn();
+  });
+
+  it('verifies single cell selection when an unselected cell is clicked', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
+    selectableCell.simulate('mouseDown');
+
+    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1');
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
+  });
+
+  it('verifies single cell selection when Space is used on an unselected cell', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
+    selectableCell.simulate('keydown', { keyCode: 32 });
+
+    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1');
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
+  });
+
+  it('verifies single cell de-selection when a selected cell is clicked', () => {
+    const updatedDataFile = {
+      ...dataFile,
+      rows: [
+        ...dataFile.rows.slice(0, 3),
+        {
+          id: '4',
+          cells: [
+            { content: 'Oxygen Flow Rate (L/min)' },
+            { content: '63', isSelected: true },
+            { content: '47' },
+          ],
+        },
+      ],
+    };
+
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={updatedDataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(0);
+    selectableCell.simulate('mouseDown');
+
+    expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-1');
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
+  });
+
+  it('verifies single cell de-selection when Space is used on a selected cell', () => {
+    const updatedDataFile = {
+      ...dataFile,
+      rows: [
+        ...dataFile.rows.slice(0, 3),
+        {
+          id: '4',
+          cells: [
+            { content: 'Oxygen Flow Rate (L/min)' },
+            { content: '63', isSelected: true },
+            { content: '47' },
+          ],
+        },
+      ],
+    };
+
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={updatedDataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(0);
+    selectableCell.simulate('keydown', { keyCode: 32 });
+
+    expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-1');
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
+  });
+
+  it('verifies single cell selection does not occur when an unselectable cell is clicked', () => {
+    const updatedDataFile = {
+      ...dataFile,
+      rows: [
+        ...dataFile.rows.slice(0, 3),
+        {
+          id: '4',
+          cells: [
+            { content: 'Oxygen Flow Rate (L/min)' },
+            { content: '63', isSelectable: false },
+            { content: '47' },
+          ],
+        },
+      ],
+    };
+
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={updatedDataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(3).find('td:not(.selectable)').at(0);
+    selectableCell.simulate('mouseDown');
+
+    expect(mockOnCellSelect).not.toHaveBeenCalled();
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
+  });
+
+  it('verifies single cell selection does not occur when Space is used on an unselectable cell', () => {
+    const updatedDataFile = {
+      ...dataFile,
+      rows: [
+        ...dataFile.rows.slice(0, 3),
+        {
+          id: '4',
+          cells: [
+            { content: 'Oxygen Flow Rate (L/min)' },
+            { content: '63', isSelectable: false },
+            { content: '47' },
+          ],
+        },
+      ],
+    };
+
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={updatedDataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(3).find('td:not(.selectable)').at(0);
+    selectableCell.simulate('keydown', { keyCode: 32 });
+
+    expect(mockOnCellSelect).not.toHaveBeenCalled();
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 });
