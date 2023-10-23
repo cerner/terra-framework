@@ -2,8 +2,10 @@
 
 ## Unreleased
 
-*Fixed
-  *Fixed the `terra-tabs` icononly examples keyboard navigation issue.
+* Fixed
+  * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
+
+## 1.42.0 - (October 20, 2023)
 
 * Added
   * Added test to cover enabling zebra striping for the `terra-table` component.

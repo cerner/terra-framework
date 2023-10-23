@@ -2,8 +2,12 @@
 
 ## Unreleased
 
-*Fixed
-  *Fixed the dropdown options are being cut off.
+* Fixed
+  * Fixed the dropdown options are being cut off.
+  * Fixed keyboard navigation after mouse click for draggable tabs.
+  * Fixed screen reader response when active tabs are closed.
+
+## 7.11.0 - (October 20, 2023)
 
 * Added
   * Added Vertical orientation for `terra-tabs`.
