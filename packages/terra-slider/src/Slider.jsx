@@ -52,7 +52,7 @@ const propTypes = {
 
 const defaultProps = {
   isDisabled: false,
-  onChange: null,
+  onChange: undefined,
 };
 
 class Slider extends React.Component {
@@ -100,7 +100,7 @@ class Slider extends React.Component {
 
     const minLabel = minimumLabel || minimumValue;
     const maxLabel = maximumLabel || maximumValue;
-    const VisuallyHiddenTextValue = (minimumLabel || maximumLabel)
+    const visuallyHiddenTextValue = (minimumLabel || maximumLabel)
       ? `Adjust slider to select a value between ${minimumLabel} (${minimumValue}) and ${maximumLabel} (${maximumValue})`
       : `Adjust slider to select a value between ${minimumValue} and ${maximumValue}`;
     const descriptionId = uuidv4();
@@ -118,7 +118,7 @@ class Slider extends React.Component {
         <span className={cx('slider-label', 'slider-max-label')} aria-hidden="true">
           {maxLabel}
         </span>
-        <VisuallyHiddenText id={descriptionId} text={VisuallyHiddenTextValue} />
+        <VisuallyHiddenText id={descriptionId} text={visuallyHiddenTextValue} />
       </div>
     );
   }

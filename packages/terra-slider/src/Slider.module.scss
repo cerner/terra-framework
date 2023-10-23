@@ -39,14 +39,20 @@
   .input-range {
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background-color: transparent;
+    cursor: pointer;
     margin-left: var(--terra-slider-input-range-margin-left, 0.5rem);
     margin-right: var(--terra-slider-input-range-margin-right, 0.5rem);
-    min-height: 3.143rem;
-    min-width: 17.143rem;
-    width: 70%;
+    min-height: var(--terra-slider-input-range-min-height, 3.143rem);
+    min-width: var(--terra-slider-input-range-min-width, 17.143rem);
+    width: var(--terra-slider-input-range-width, 70%);
 
     &:disabled {
-      opacity: 30%;
+      cursor: default;
+      opacity: var(--terra-slider-input-range-disabled-opacity, 30%);
+    }
+    
+    &:focus {
+      outline: none;
     }
   }
 
@@ -66,7 +72,6 @@
     border-style: solid;
     border-width: var(--terra-slider-thumb-border-width, 0.071rem);
     box-shadow: var(--terra-slider-thumb-box-shadow, 0 0 0.286rem 0 rgba(0, 0, 0, 0.25));
-    cursor: pointer;
     height: var(--terra-slider-thumb-height, 1.715rem);
     margin-top: -0.57rem;
     width: var(--terra-slider-thumb-width, 1.715rem);
@@ -74,7 +79,7 @@
 
   .input-range:focus::-webkit-slider-thumb {
     outline: var(--terra-slider-thumb-focus-outline, 0.143rem dashed #000);
-    outline-offset: 0.072rem;
+    outline-offset: var(--terra-slider-thumb-focus-outline-offset, 0.071rem);
   }
 
   .input-range:hover::-webkit-slider-thumb {
@@ -98,7 +103,6 @@
   .input-range:disabled::-webkit-slider-thumb {
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: var(--terra-slider-thumb-disabled-background, #007cc3);
-    cursor: default;
   }
 
   /* For IE/Edge */
@@ -117,7 +121,6 @@
     border-style: solid;
     border-width: var(--terra-slider-thumb-border-width, 0.071rem);
     box-shadow: var(--terra-slider-thumb-box-shadow, 0 0 0.286rem 0 rgba(0, 0, 0, 0.25));
-    cursor: pointer;
     height: var(--terra-slider-thumb-height, 1.715rem);
     margin-top: -0.57rem;
     width: var(--terra-slider-thumb-width, 1.715rem);
@@ -125,7 +128,7 @@
 
   .input-range:focus::-ms-thumb {
     outline: var(--terra-slider-thumb-focus-outline, 0.143rem dashed #000);
-    outline-offset: 0.071rem;
+    outline-offset: var(--terra-slider-thumb-focus-outline-offset, 0.071rem);
   }
 
   .input-range:hover::-ms-thumb {
@@ -148,7 +151,6 @@
   .input-range:disabled::-ms-thumb {
     -webkit-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: var(--terra-slider-thumb-disabled-background, #007cc3);
-    cursor: default;
   }
 
   /* For Firefox */
@@ -167,7 +169,6 @@
     border-style: solid;
     border-width: var(--terra-slider-thumb-border-width, 0.071rem);
     box-shadow: var(--terra-slider-thumb-box-shadow, 0 0 0.286rem 0 rgba(0, 0, 0, 0.25));
-    cursor: pointer;
     height: var(--terra-slider-thumb-height, 1.715rem);
     margin-top: -0.57rem;
     width: var(--terra-slider-thumb-width, 1.715rem);
@@ -175,7 +176,7 @@
 
   .input-range:focus::-moz-range-thumb {
     outline: var(--terra-slider-thumb-focus-outline, 0.143rem dashed #000);
-    outline-offset: 0.071rem;
+    outline-offset: var(--terra-slider-thumb-focus-outline-offset, 0.071rem);
   }
 
   .input-range:hover::-moz-range-thumb {
@@ -198,6 +199,5 @@
   .input-range:disabled::-moz-range-thumb {
     -moz-appearance: none; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
     background: var(--terra-slider-thumb-disabled-background, #007cc3);
-    cursor: default;
   }
 }
