@@ -35,16 +35,16 @@
   @media (min-width: 276px) and (max-width: 380px) {
     .is-open {
       left: -10px !important;
-      min-height: auto;
       margin-left: 0;
+      min-height: auto;
     }
   }
   @media (max-width: 275px) {
     .is-open {
       left: -10px !important;
+      margin-left: 0;
       max-height: 100px !important;
       max-width: 80px;
-      margin-left: 0;
       min-height: auto;
     }
   }
