@@ -167,7 +167,7 @@ const ColumnHeaderCell = (props) => {
 
   useEffect(() => {
     if (isActive) {
-      if (isResizeActive) {
+      if (isResizable && isResizeActive) {
         setResizeHandleActive(true);
       } else {
         columnHeaderFocusArea().focus();
@@ -176,7 +176,7 @@ const ColumnHeaderCell = (props) => {
     } else {
       setResizeHandleActive(false);
     }
-  }, [columnHeaderFocusArea, isActive, isResizeActive]);
+  }, [columnHeaderFocusArea, isActive, isResizable, isResizeActive]);
 
   const onResizeHandleMouseDown = useCallback((event) => {
     if (onResizeMouseDown) {

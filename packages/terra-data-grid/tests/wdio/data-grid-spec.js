@@ -428,5 +428,41 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('column-header-0-1-focused', { selector: defaultSelector });
     });
+
+    it('focuses on the column header when navigating from the resize handle to a non-resizable column header', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-column-resizing');
+
+      browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus is on the (0,1) resize handle
+      expect(browser.$('tr.column-header-row th:nth-child(2) div[class*=resize-handle]').isFocused()).toBe(true);
+
+      browser.keys(['ArrowRight']);
+      expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
+
+      Terra.validates.element('column-header-0-2-focused', { selector: '#terra-data-grid-with-column-resizing' });
+    });
+
+    it('focuses on the column header when navigating right from a non-resizable column header', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-column-resizing');
+
+      browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus is on (0,3)
+      expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
+
+      browser.keys(['ArrowRight']);
+      expect(browser.$('tr.column-header-row th:nth-child(4) div[role=button]').isFocused()).toBe(true);
+
+      Terra.validates.element('column-header-0-3-focused', { selector: '#terra-data-grid-with-column-resizing' });
+    });
+
+    it('focuses on the column header when navigating left to a non-resizable column header from resizable column header', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-column-resizing');
+
+      browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus is on (0,4)
+      expect(browser.$('tr.column-header-row th:nth-child(4) div[role=button]').isFocused()).toBe(true);
+
+      browser.keys(['ArrowLeft']);
+      expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
+
+      Terra.validates.element('column-header-0-2-focused', { selector: '#terra-data-grid-with-column-resizing' });
+    });
   });
 });
