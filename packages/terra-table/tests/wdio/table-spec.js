@@ -116,6 +116,28 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
+  describe('Focusable Cell Element Navigation : ', () => {
+    const focusElementSelector = 'body';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-focusable-cell');
+    });
+
+    it('validates that the first interactive element in the table is given focus on tab', () => {
+      browser.keys(['Tab']);
+
+      expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('table-focus-first-button', { columnResizeSelector: focusElementSelector });
+    });
+
+    it('validates that the second interactive element in the table is given focus with two tabs', () => {
+      browser.keys(['Tab', 'Tab']);
+
+      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('table-focus-input', { columnResizeSelector: focusElementSelector });
+    });
+  });
+
   describe('Scrollable Table', () => {
     const scrollableTableSelector = '#scroll-test-container';
 
