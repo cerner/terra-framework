@@ -269,7 +269,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    const headerContainer = columnHeader.find('.header-container');
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);

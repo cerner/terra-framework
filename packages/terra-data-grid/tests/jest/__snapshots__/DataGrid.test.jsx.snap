@@ -431,6 +431,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <table
           className="data-grid"
           id="test-terra-data-grid"
+          onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
@@ -542,7 +543,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header selectable pinned"
                       key="Column-0"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -715,7 +715,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header selectable pinned"
                       key="Column-1"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -898,7 +897,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header"
                       key="Column-2"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -914,8 +912,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     >
                       <div
                         className="header-container"
-                        role="button"
-                        tabIndex="-1"
                       >
                         <span>
                           March 17
@@ -2783,6 +2779,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <table
           className="data-grid"
           id="test-terra-data-grid"
+          onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
@@ -2894,7 +2891,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header selectable pinned"
                       key="Column-0"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -3067,7 +3063,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header selectable pinned"
                       key="Column-1"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -3250,7 +3245,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header"
                       key="Column-2"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -3266,8 +3260,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     >
                       <div
                         className="header-container"
-                        role="button"
-                        tabIndex="-1"
                       >
                         <span>
                           March 17
@@ -5117,6 +5109,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         <table
           className="data-grid"
           id="test-terra-data-grid"
+          onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
@@ -5124,7 +5117,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           tabIndex={0}
         >
           <Memo(ColumnHeader)
-            activeColumnIndex={0}
             activeColumnResizing={false}
             columns={
               Array [
@@ -5175,7 +5167,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   columnIndex={0}
                   headerHeight="2.5rem"
                   id="WorklistDataGrid-rowSelectionColumn"
-                  isActive={true}
+                  isActive={false}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={true}
@@ -5221,7 +5213,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "timeZone": null,
                       }
                     }
-                    isActive={true}
+                    isActive={false}
                     isResizable={false}
                     isResizeActive={false}
                     isSelectable={true}
@@ -5237,7 +5229,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <th
                       className="column-header selectable pinned"
                       key="WorklistDataGrid-rowSelectionColumn"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -5253,7 +5244,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     >
                       <div
                         className="header-container"
-                        tabIndex="-1"
                       >
                         <span />
                       </div>
@@ -5326,7 +5316,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <th
                       className="column-header selectable pinned"
                       key="Column-0"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -5499,7 +5488,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <th
                       className="column-header selectable pinned"
                       key="Column-1"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -5682,7 +5670,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <th
                       className="column-header"
                       key="Column-2"
-                      onFocus={[Function]}
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       role="columnheader"
@@ -5698,8 +5685,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     >
                       <div
                         className="header-container"
-                        role="button"
-                        tabIndex="-1"
                       >
                         <span>
                           March 17
@@ -7735,6 +7720,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
   <table
     className="data-grid"
     id="test-terra-data-grid"
+    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -7753,7 +7739,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       }
     >
       <Memo(ColumnHeader)
-        activeColumnIndex={0}
         activeColumnResizing={false}
         columns={
           Array [
@@ -7968,6 +7953,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
   <table
     className="data-grid"
     id="test-terra-data-grid"
+    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -7986,7 +7972,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       }
     >
       <Memo(ColumnHeader)
-        activeColumnIndex={0}
         activeColumnResizing={false}
         columns={
           Array [
