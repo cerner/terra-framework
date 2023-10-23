@@ -9,5 +9,5 @@
   "Terra.tabs.drag": "Vous avez déplacé l'onglet de la position {startPosition} à {endPosition}",
   "Terra.tabs.cancelDrag": "Déplacement annulé. L'onglet est revenu à sa position initiale ({startPosition})",
   "Terra.tabs.drop": "Vous avez abandonné l'onglet. Il est passé de la position {startPosition} à {endPosition}",
-  "Terra.tabs.focus": "Appuyez sur la touche Entrée pour activer un onglet, ou sur la barre d'espace pour commencer un glissement. Assurez-vous que votre lecteur d'écran est en mode Focus ou en mode Formulaires"
+  "Terra.tabs.focus": "Appuyez sur la touche Entrée pour activer un onglet, ou sur la barre d'espace pour commencer un glissement."
 }

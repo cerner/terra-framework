@@ -9,6 +9,6 @@
   "Terra.tabs.drag": "U heeft het tabblad van positie {startPosition} naar positie {endPosition} verplaatst",
   "Terra.tabs.cancelDrag": "Verplaatsing geannuleerd. Het tabblad is teruggezet naar startpositie {startPosition}",
   "Terra.tabs.drop": "U heeft het tabblad neergezet. Het tabblad is verplaatst van positie {startPosition} naar {endPosition}.",
-  "Terra.tabs.focus": "Druk op Enter om een tabblad te activeren of druk op de spatiebalk om een sleepactie te starten. Zorg dat de schermlezer in de focus- of formulierenmodus is.",
+  "Terra.tabs.focus": "Druk op Enter om een tabblad te activeren of druk op de spatiebalk om een sleepactie te starten.",
   "Terra.tabs.addbutton.focus": "Druk op Enter of de spatiebalk om een nieuw tabblad toe te voegen"
 }

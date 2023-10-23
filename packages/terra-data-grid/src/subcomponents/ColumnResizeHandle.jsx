@@ -7,7 +7,6 @@ import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import ColumnContext from '../utils/ColumnContext';
-import '../_elementPolyfill';
 import styles from './ColumnResizeHandle.module.scss';
 
 const cx = classNames.bind(styles);
@@ -30,13 +29,17 @@ const propTypes = {
     */
   height: PropTypes.number.isRequired,
   /**
-   * Numeric increment in pixels to adjust column width when resizing via the keyboard
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
   /**
    * Control is the active element
    */
   isActive: PropTypes.bool,
+  /**
+   * Handler function to update isActive for parent.
+   */
+  setIsActive: PropTypes.func,
   /**
    * Number that specifies the minimum column width in pixels.
    */
@@ -50,11 +53,11 @@ const propTypes = {
    */
   onResizeMouseDown: PropTypes.func.isRequired,
   /**
-   * Function that is called when onMouseDown event is triggered for the resize handle
+   * Function that is called when onMouseDown event is triggered for the resize handle.
    */
   onResizeMouseUp: PropTypes.func.isRequired,
   /**
-   * Function that is called when the the keyboard is used to adjust the column size
+   * Function that is called when the the keyboard is used to adjust the column size.
    */
   onResizeHandleChange: PropTypes.func,
   /**
@@ -71,17 +74,18 @@ const defaultProps = {
 const ColumnResizeHandle = (props) => {
   const {
     columnIndex,
+    columnResizeIncrement,
     columnText,
     columnWidth,
     height,
-    columnResizeIncrement,
+    intl,
     isActive,
-    minimumWidth,
     maximumWidth,
+    minimumWidth,
+    onResizeHandleChange,
     onResizeMouseDown,
     onResizeMouseUp,
-    onResizeHandleChange,
-    intl,
+    setIsActive,
   } = props;
 
   // Retrieve current theme from context
@@ -187,6 +191,7 @@ const ColumnResizeHandle = (props) => {
   const onBlur = () => {
     setNavigationEnabled(true);
     setIsAriaLabel(false);
+    setIsActive(false);
   };
 
   return (
