@@ -5,6 +5,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed screen reader response when active tabs are closed.
+
 ## 7.11.0 - (October 20, 2023)
 
 * Added
