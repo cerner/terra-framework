@@ -189,6 +189,7 @@ const DataGrid = injectIntl((props) => {
   const [checkResizable, setCheckResizable] = useState(false);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
+  const [gridHasFocus, setGridHasFocus] = useState(false);
 
   // Aria live region message management
   const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
@@ -584,13 +585,18 @@ const DataGrid = injectIntl((props) => {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
         setFocusedRowCol(focusedRow, focusedCol, true);
+        setGridHasFocus(true);
       }
     }
 
     handleFocus.current = true;
   };
 
-  const isFocusOnGrid = () => !!gridContainerRef.current?.contains(document.activeElement);
+  const onBlur = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      setGridHasFocus(false);
+    }
+  };
 
   // -------------------------------------
 
@@ -605,6 +611,7 @@ const DataGrid = injectIntl((props) => {
         className={cx('data-grid', theme.className)}
         onKeyDown={handleKeyDown}
         onFocus={onFocus}
+        onBlur={onBlur}
         onMouseDown={onMouseDown}
         tabIndex={0}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
@@ -616,7 +623,7 @@ const DataGrid = injectIntl((props) => {
             columns={dataGridColumns}
             headerHeight={columnHeaderHeight}
             tableHeight={tableHeight}
-            activeColumnIndex={(isFocusOnGrid() && focusedRow === 0) ? focusedCol : undefined}
+            activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
             activeColumnResizing={focusedRow === 0 && checkResizable}
             columnResizeIncrement={columnResizeIncrement}
             onColumnSelect={handleColumnSelect}
