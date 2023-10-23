@@ -81,7 +81,7 @@ jobs:
         env:
           SITE: build/${{ matrix.theme }}
           FORM_FACTOR: ${{ matrix.form-factor }}
-        run: npm run wdio-${{ matrix.theme }}
+        run: npm run wdio:${{ matrix.theme }}
 
   release-and-deploy:
     runs-on: ubuntu-latest
