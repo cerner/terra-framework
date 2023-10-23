@@ -98,7 +98,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
 </div>
 `;
 
-exports[`FlowsheetDataGrid replaces non-header blank, null, or undefined cell contents with a "No results" visual indicator and hidden text 1`] = `
+exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell contents with a "No results" visual indicator and hidden text 1`] = `
 <div
   className="flowsheet-data-grid-container"
 >

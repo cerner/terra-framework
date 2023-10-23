@@ -129,7 +129,7 @@ describe('FlowsheetDataGrid', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('replaces non-header blank, null, or undefined cell contents with a "No results" visual indicator and hidden text', () => {
+  it('replaces non-header empty, null, or "--" cell contents with a "No results" visual indicator and hidden text', () => {
     const updatedDataFile = {
       ...dataFile,
       rows: [
