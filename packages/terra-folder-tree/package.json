@@ -1,7 +1,7 @@
 {
   "name": "terra-folder-tree",
   "main": "lib/FolderTree.js",
-  "version": "0.3.0",
+  "version": "0.1.0",
   "description": "Terra Folder Tree is a vertical menu that displays files and folders in a hierarchical tree structure.",
   "repository": {
     "type": "git",
@@ -30,8 +30,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
-    "prop-types": "^15.5.8",
-    "terra-collapsible-menu-view": "^6.82.0"
+    "prop-types": "^15.5.8"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",
