@@ -5,8 +5,10 @@
 ## 1.42.0 - (October 20, 2023)
 
 * Added
+  * Added documentation for the new `terra-table` component.
   * Added test to cover enabling zebra striping for the `terra-table` component.
   * Added test for tab focus for scrollable tables for the `terra-table` component.
+  * Added examples and tests to cover the behavior of interactive elements within a table for `terra-table`.
 
 * Updated
   * Removed columnHeaderHeight from tests using the default implementation for `terra-data-grid`.

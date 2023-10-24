@@ -103,6 +103,12 @@ const propTypes = {
   hasSelectableRows: PropTypes.bool,
 
   /**
+   * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
+   * but the voice reader will use the column header values for a11y.
+   */
+  hasColumnHeaders: PropTypes.bool,
+
+  /*
    * Boolean specifying whether or not the table should have zebra striping for rows.
    */
   isStriped: PropTypes.bool,
@@ -116,6 +122,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  hasColumnHeaders: true,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -136,6 +143,7 @@ function Table(props) {
     onColumnSelect,
     onCellSelect,
     hasSelectableRows,
+    hasColumnHeaders,
     isStriped,
     rowHeaderIndex,
   } = props;
@@ -303,14 +311,22 @@ function Table(props) {
         role={gridContext.role}
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
-        className={cx('table', theme.className)}
+        className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
           value={columnContextValue}
         >
+          <colgroup>
+            {tableColumns.map((column) => (
+              // eslint-disable-next-line react/forbid-dom-props
+              <col key={column.id} style={{ width: `${column.width}px` }} />
+            ))}
+          </colgroup>
+
           <ColumnHeader
             columns={tableColumns}
+            hasColumnHeaders={hasColumnHeaders}
             headerHeight={columnHeaderHeight}
             tableHeight={tableHeight}
             onResizeMouseDown={onResizeMouseDown}
