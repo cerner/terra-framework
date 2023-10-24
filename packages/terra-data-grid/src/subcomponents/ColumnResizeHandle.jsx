@@ -217,7 +217,7 @@ const ColumnResizeHandle = (props) => {
       onClick={onClick}
       onFocus={fitToTable}
       onBlur={onBlur}
-      className={cx('resize-handle', theme.className, {'resize-handle-selected': !isNavigationEnabled})}
+      className={cx('resize-handle', theme.className, { 'resize-handle-selected': !isNavigationEnabled })}
     />
   );
 };
