@@ -27,9 +27,9 @@
     &:hover {
       border-color: var(--terra-data-grid-resize-handle-hover-border-color, rgba(34, 42, 46, 0.6));
     }
-  }
 
-  .resize-handle-selected {
-    border-color: var(--terra-data-grid-resize-handle-active-border-color, rgba(34, 42, 46, 1)) !important;
+    &-selected {
+      border-color: var(--terra-data-grid-resize-handle-active-border-color, rgba(34, 42, 46, 1)) !important;
+    }
   }
 }
