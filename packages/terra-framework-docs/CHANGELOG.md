@@ -5,6 +5,9 @@
 * Fixed
   * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
 
+* Added
+  * Added example for Flowsheet Data Grid containing "No Result" cells.
+
 ## 1.42.0 - (October 20, 2023)
 
 * Added
