@@ -8,7 +8,7 @@ const mapDataGridRows = (row) => ({
 
 const mapDataGridColumns = (column) => ({
   ...column,
-  isResizable: column.isResizeable !== false,
+  isResizable: column.isResizable !== false,
   isSelectable: column.isSelectable !== false,
 });
 

@@ -1,20 +1,18 @@
 import React, {
-  useState, useRef, useCallback, forwardRef, useImperativeHandle, useEffect,
+  useState, useRef, useCallback, useEffect, forwardRef, useImperativeHandle,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
-import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
-
-import VisuallyHiddenText from 'terra-visually-hidden-text';
+import * as KeyCode from 'keycode-js';
 import Table, { GridContext } from 'terra-table';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import rowShape from './proptypes/rowShape';
 import { columnShape } from './proptypes/columnShape';
-import validateRowHeaderIndex from './proptypes/validators';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
-
-import './_elementPolyfill';
+import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
+import './_elementPolyfill';
 
 const cx = classNames.bind(styles);
 
@@ -142,6 +140,8 @@ const DataGrid = injectIntl((props) => {
     rowHeaderIndex,
   } = props;
 
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
+
   const grid = useRef();
   const gridContainerRef = useRef();
 
@@ -150,10 +150,6 @@ const DataGrid = injectIntl((props) => {
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
-
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
-  const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
-
   // -------------------------------------
   // functions
 
@@ -194,10 +190,9 @@ const DataGrid = injectIntl((props) => {
 
   useEffect(() => {
     // We have to search the dom for the table ref because react-intl v2 does not support forwardRef.
-    if (gridContainerRef) {
-      const table = gridContainerRef.current.getElementsByTagName('table')[0];
-      grid.current = table;
-    }
+
+    const [table] = gridContainerRef.current.getElementsByTagName('table');
+    grid.current = table;
   }, [gridContainerRef]);
 
   // -------------------------------------
@@ -216,6 +211,7 @@ const DataGrid = injectIntl((props) => {
       // Calculate horizontal scroll offset for left boundary
       let scrollOffsetX = 0;
       if (pinnedColumns.length > 0 || hasSelectableRows) {
+        const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
         const lastPinnedColumnIndex = pinnedColumns.length - 1 + pinnedColumnOffset;
         if (toCell.col > lastPinnedColumnIndex) {
           const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[lastPinnedColumnIndex].getBoundingClientRect();
@@ -242,12 +238,12 @@ const DataGrid = injectIntl((props) => {
   const handleColumnSelect = useCallback((columnId) => {
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
     setFocusedRow(0);
-    setFocusedCol(columnIndex + pinnedColumnOffset);
+    setFocusedCol(columnIndex);
 
     if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect, pinnedColumnOffset, displayedColumns]);
+  }, [onColumnSelect, displayedColumns]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     setFocusedRow(selectionDetails.rowIndex);
@@ -280,7 +276,6 @@ const DataGrid = injectIntl((props) => {
 
     // Identify index of the active element in the DOM excluding data grid children
     const index = focusableElements.indexOf(gridContainerRef.current);
-
     if (index > -1) {
       // Move focus outside data grid
       const indexOffset = moveForward ? 1 : -1;
@@ -329,6 +324,7 @@ const DataGrid = injectIntl((props) => {
             || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
       return;
     }
+
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:

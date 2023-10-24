@@ -413,7 +413,7 @@ function WorklistDataGrid(props) {
       onKeyDown={handleKeyDown}
       onKeyUp={handleKeyUp}
       className={cx('worklist-data-grid-container')}
-      onFocus={!gridReceivedFocus.current && onFocus}
+      onFocus={!gridReceivedFocus.current ? onFocus : undefined}
     >
       <DataGrid
         id={id}
