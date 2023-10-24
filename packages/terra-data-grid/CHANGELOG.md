@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Added
-  * Added ability to resize columns via keyboard.
+  * Added keyboard support for column resizing.
+  * Added translations.
 
 ## 0.8.1 - (October 17, 2023)
 
@@ -42,7 +43,7 @@
   * Updated the `terra-worklist-data-grid` component to set initial focus to the row selection header when row selection mode is enabled.
 
 ___
-All release notes below apply to the `terra-worklist-data-grid` package (renamed to `terra-data-grid` the 0.6 release above).
+All release notes below apply to the `terra-worklist-data-grid` package (renamed to `terra-data-grid` with the 0.6 release above).
 
 ## 0.5.0 - (August 31, 2023)
 

@@ -1,0 +1,22 @@
+{
+  "Terra.dataGrid.maskedCell": "Datos enmascarados",
+  "Terra.dataGrid.columnError": "Errores asociados a la columna",
+  "Terra.dataGrid.blank": "En blanco",
+  "Terra.dataGrid.row-index": "Fila {fila}",
+  "Terra.dataGrid.resizeHandleValueText": "{columnWidth} píxeles de ancho de columna",
+  "Terra.dataGrid.cell-focus-trapped": "Foco contenido en la celda. Presione Esc para reanudar la navegación por la cuadrícula.",
+  "Terra.dataGrid.cell-interactable": "La celda contiene elementos interaccionables. Presione Entrar para mover el foco dentro de la celda.",
+  "Terra.dataGrid.resume-navigation": "Se ha reanudado la navegación por la cuadrícula.",
+  "Terra.worklistDataGrid.row-selection-template": "Fila {fila} seleccionada. ",
+  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} filas seleccionadas. ",
+  "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} filas no seleccionadas. ",
+  "Terra.worklistDataGrid.row-selection-cleared-template": "Fila {fila} no seleccionada. ",
+  "Terra.worklistDataGrid.row-selection-mode-enabled": "Modo Selección de filas habilitado.",
+  "Terra.worklistDataGrid.row-selection-mode-disabled": "Modo Selección de filas deshabilitado",
+  "Terra.worklistDataGrid.all-rows-selected": "Todas las filas seleccionadas",
+  "Terra.worklistDataGrid.all-rows-unselected": "Ninguna fila seleccionada",
+  "Terra.worklist-data-grid.resize-handle-template": "Control de ajuste de tamaño de columna para {columnText}. Presione Entrar para que se use.",
+  "Terra.worklist-data-grid.resize-handle-value-text": "{columnWidth} píxeles",
+  "Terra.worklist-data-grid.cell-focus-trapped": "Foco contenido en la celda. Presione Esc para reanudar la navegación por la cuadrícula.",
+  "Terra.worklist-data-grid.resume-navigation": "Se ha reanudado la navegación por la cuadrícula."
+}
