@@ -5,6 +5,9 @@
 * Added
   * Added test for data grid column resizing.
 
+* Fixed
+  * Fixed broken links in the Worklist Data Grid documentation in `terra-data-grid` component.
+
 ## 1.42.0 - (October 20, 2023)
 
 * Added
@@ -18,7 +21,7 @@
 
 * Added
   * Added documentation for the new `terra-table` component.
-  
+
 * Changed
   * Updated `terra-menu` examples with focus highlight styles for terra-button on closing menu with selection of menu-item.
   * Updates examples for `terra-data-grid` to cover scenarios for focusable elements prevented from receiving focus.
