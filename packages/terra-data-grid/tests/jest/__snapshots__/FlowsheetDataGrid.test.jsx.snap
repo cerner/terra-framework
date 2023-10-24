@@ -12,7 +12,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
     id="test-terra-flowsheet-data-grid"
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
-    onClearSelectedCells={[Function]}
+    onClearSelection={[Function]}
     overflowColumns={
       Array [
         Object {
@@ -118,7 +118,7 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
     id="test-terra-flowsheet-data-grid"
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
-    onClearSelectedCells={[Function]}
+    onClearSelection={[Function]}
     overflowColumns={
       Array [
         Object {
