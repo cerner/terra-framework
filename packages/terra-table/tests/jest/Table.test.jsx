@@ -317,13 +317,13 @@ describe('Row Selection', () => {
     );
 
     const newRows = [...tableData.rows];
-    newRows[0] = {...tableData.rows[0]};
+    newRows[0] = { ...tableData.rows[0] };
     newRows[0].isSelected = true;
 
     wrapper.setProps({ rows: newRows });
 
     const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
-    expect(hiddenText.props().text).toBe("Terra.table.row-selection-template");
+    expect(hiddenText.props().text).toBe('Terra.table.row-selection-template');
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -331,9 +331,9 @@ describe('Row Selection', () => {
   it('verifies row selection row unselected update', () => {
     // Start with two selected rows
     const initialRows = [...tableData.rows];
-    initialRows[0] = {...tableData.rows[0]};
+    initialRows[0] = { ...tableData.rows[0] };
     initialRows[0].isSelected = true;
-    
+
     const wrapper = mountWithIntl(
       <Table
         id="test-terra-table"
@@ -341,27 +341,27 @@ describe('Row Selection', () => {
         rows={initialRows}
         hasSelectableRows
         isStriped
-      />
+      />,
     );
 
     // Unselect the fourth row
     const newRows = [...initialRows];
-    newRows[3] = {...initialRows[3]};
+    newRows[3] = { ...initialRows[3] };
     newRows[3].isSelected = false;
 
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
     const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
-    expect(hiddenText.props().text).toBe("Terra.table.row-selection-cleared-template");
+    expect(hiddenText.props().text).toBe('Terra.table.row-selection-cleared-template');
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection all row selection single selction', () => {
     // Start with two selected rows
-    const initialRows = [...tableData.rows.slice(0,1)];
-    initialRows[0] = {...initialRows[0]};
+    const initialRows = [...tableData.rows.slice(0, 1)];
+    initialRows[0] = { ...initialRows[0] };
 
     const wrapper = mountWithIntl(
       <Table
@@ -370,63 +370,63 @@ describe('Row Selection', () => {
         rows={initialRows}
         hasSelectableRows
         isStriped
-      />
+      />,
     );
 
     // Select the one table row, which would be all rows in this scenario
     const newRows = [...initialRows];
-    newRows[0] = {...initialRows[0]};
+    newRows[0] = { ...initialRows[0] };
     newRows[0].isSelected = true;
 
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
     const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
-    expect(hiddenText.props().text).toBe("Terra.table.all-rows-selected");
+    expect(hiddenText.props().text).toBe('Terra.table.all-rows-selected');
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection all rows unselected update', () => {
     const wrapper = mountWithIntl(
-        <Table
-          id="test-terra-table"
-          overflowColumns={tableData.cols}
-          rows={tableData.rows}
-          hasSelectableRows
-          isStriped
-        />
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={tableData.rows}
+        hasSelectableRows
+        isStriped
+      />,
     );
 
     wrapper.setProps({ rows: [] });
     wrapper.update();
 
     const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
-    expect(hiddenText.props().text).toBe("Terra.table.all-rows-unselected");
+    expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
 
     expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection all rows unselected single unselect', () => {
     const newRows = [...tableData.rows];
-    newRows[3] = {...tableData.rows[3]};
+    newRows[3] = { ...tableData.rows[3] };
     newRows[3].isSelected = false;
 
     const wrapper = mountWithIntl(
-        <Table
-          id="test-terra-table"
-          overflowColumns={tableData.cols}
-          rows={tableData.rows}
-          hasSelectableRows
-          isStriped
-        />
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={tableData.rows}
+        hasSelectableRows
+        isStriped
+      />,
     );
 
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
     const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
-    expect(hiddenText.props().text).toBe("Terra.table.all-rows-unselected");
+    expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
 
     expect(wrapper).toMatchSnapshot();
   });
