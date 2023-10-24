@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed an issue with row selection integrating with table zebra stripes.
+
 ## 5.1.0-alpha.0 - (October 20, 2023)
 
 * Added
