@@ -287,7 +287,7 @@ function FlowsheetDataGrid(props) {
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={handleCellSelection}
-        onClearSelectedCells={handleClearSelectedCells}
+        onClearSelection={handleClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
