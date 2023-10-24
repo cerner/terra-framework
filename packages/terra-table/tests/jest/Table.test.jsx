@@ -221,6 +221,25 @@ describe('Table', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('verifies that the column widths are set properly in the colgroup', () => {
+    const wrapper = shallowWithIntl(
+      <IntlProvider locale="en">
+        <Table
+          id="test-terra-table"
+          overflowColumns={tableData.cols}
+          rows={tableData.rows}
+          defaultColumnWidth={150}
+        />
+      </IntlProvider>,
+    ).dive().dive();
+
+    // Verify that column headers are not present
+    const column = wrapper.find('col').get(0);
+    expect(column.props.style.width).toBe('150px');
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });
 
 describe('with pinned columns', () => {

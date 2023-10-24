@@ -19,5 +19,8 @@
   "Terra.worklist-data-grid.resize-handle-template": "Column resize handle for {columnText}. Press Enter to use.",
   "Terra.worklist-data-grid.resize-handle-value-text": "{columnWidth} pixels",
   "Terra.worklist-data-grid.cell-focus-trapped": "Focus contained in cell. Press Escape to resume grid navigation.",
-  "Terra.worklist-data-grid.resume-navigation": "Grid navigation resumed."
+  "Terra.worklist-data-grid.resume-navigation": "Grid navigation resumed.",
+
+  "Terra.flowsheetDataGrid.no-result": "No result",
+  "Terra.flowsheetDataGrid.no-result-display": "--"
 }

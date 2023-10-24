@@ -624,7 +624,7 @@ const DataGrid = injectIntl((props) => {
             headerHeight={columnHeaderHeight}
             tableHeight={tableHeight}
             activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
-            activeColumnResizing={focusedRow === 0 && checkResizable}
+            isActiveColumnResizing={focusedRow === 0 && checkResizable}
             columnResizeIncrement={columnResizeIncrement}
             onColumnSelect={handleColumnSelect}
             onResizeMouseDown={onResizeMouseDown}

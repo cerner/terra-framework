@@ -83,6 +83,7 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       isResizeActive={false}
       key="Column-0"
       rowIndex={0}
+      tableHeight={500}
     />
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
@@ -93,6 +94,7 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       isResizeActive={false}
       key="Column-1"
       rowIndex={0}
+      tableHeight={500}
     />
   </tr>
 </thead>

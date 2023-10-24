@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
+import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
+
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import DataGrid from './DataGrid';
 import rowShape from './proptypes/rowShape';
@@ -64,6 +67,12 @@ const propTypes = {
    * Callback function that is called when all selected cells need to be unselected. Parameters: none.
    */
   onClearSelectedCells: PropTypes.func,
+
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -86,7 +95,38 @@ function FlowsheetDataGrid(props) {
     rowHeight,
     onCellSelect,
     onClearSelectedCells,
+    intl,
   } = props;
+
+  const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
+  const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
+  const overflowColumns = flowsheetColumns.length > 1 ? flowsheetColumns.slice(1) : [];
+
+  const contentHasNoResult = (content) => (content === null || content === '' || content === '--');
+
+  const flowsheetRows = useMemo(() => {
+    const noResultCellContent = (
+      <>
+        <span aria-hidden>{intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result-display' })}</span>
+        <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result' })} />
+      </>
+    );
+
+    const newRows = [...rows];
+    newRows.forEach((row, rowIndex) => {
+      const newCells = [...row.cells];
+      newCells.forEach((cell, cellIndex) => {
+        // Cell content has no result and is not a row header (first column), set content to "No result".
+        if (contentHasNoResult(cell.content) && cellIndex !== 0) {
+          newCells[cellIndex].content = noResultCellContent;
+        }
+      });
+
+      newRows[rowIndex].cells = newCells;
+    });
+
+    return newRows;
+  }, [intl, rows]);
 
   return (
     <div className={cx('flowsheet-data-grid-container')}>
@@ -94,11 +134,11 @@ function FlowsheetDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        rows={rows}
+        rows={flowsheetRows}
         rowHeight={rowHeight}
         rowHeaderIndex={0}
-        pinnedColumns={columns.length ? [{ ...columns[0], isResizable: false }] : []}
-        overflowColumns={columns.length > 1 ? columns.slice(1).map(column => ({ ...column, isResizable: false })) : []}
+        pinnedColumns={pinnedColumns}
+        overflowColumns={overflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={onCellSelect}
@@ -111,4 +151,4 @@ function FlowsheetDataGrid(props) {
 FlowsheetDataGrid.propTypes = propTypes;
 FlowsheetDataGrid.defaultProps = defaultProps;
 
-export default FlowsheetDataGrid;
+export default injectIntl(FlowsheetDataGrid);

@@ -8,6 +8,7 @@
 * Added
   * Added keyboard support for column resizing.
   * Added translations.
+  * Added "No Result" cells to FlowsheetDataGrid.
 
 ## 0.8.1 - (October 17, 2023)
 
