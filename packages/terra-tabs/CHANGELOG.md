@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Fixed the dropdown options are being cut off.
+  * Fixed the dropdown options are being cut off on smaller viewports.
   * Fixed keyboard navigation after mouse click for draggable tabs.
   * Fixed screen reader response when active tabs are closed.
 

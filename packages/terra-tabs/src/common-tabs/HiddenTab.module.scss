@@ -108,14 +108,7 @@
       opacity: var(--terra-tabs-structural-disabled-label-opacity, 0.3);
     }
   }
-  @media screen and (max-width: 250px) {
-    .hidden {
-      font-size: 0.8rem;
-      line-height: var(--terra-tabs-workspace-hidden-tab-hidden-line-height, 1.4);
-      padding: 0.3rem 0.5rem;
-    }
-  }
-  
+
   .checkbox {
     color: var(--terra-tabs-workspace-hidden-tab-checkbox-color, #007cc3);
     flex: 0 0 auto;
