@@ -404,7 +404,7 @@ class Tabs extends React.Component {
 
     this.dropdownRef.current.style.left = `${offset}px`;
     // Dropdown menu gets truncated when the left edge is less than or equal to zero. setting min-width will help to fix this issue.
-    if (leftEdge <= 0) {
+    if (!leftEdge) {
       this.dropdownRef.current.style.minWidth = `${moreRect.width}px`;
     }
   }
