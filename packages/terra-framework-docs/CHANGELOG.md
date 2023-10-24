@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples and test to `terra-table` for row selection mode.
+
 * Fixed
   * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
 
