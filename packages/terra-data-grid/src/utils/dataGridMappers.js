@@ -1,4 +1,4 @@
-const mapDataGridRows = (row) => ({
+const mapDataGridRow = (row) => ({
   ...row,
   cells: row.cells.map((cell) => ({
     ...cell,
@@ -6,10 +6,10 @@ const mapDataGridRows = (row) => ({
   })),
 });
 
-const mapDataGridColumns = (column) => ({
+const mapDataGridColumn = (column) => ({
   ...column,
   isResizable: column.isResizable !== false,
   isSelectable: column.isSelectable !== false,
 });
 
-export { mapDataGridColumns, mapDataGridRows };
+export { mapDataGridColumn, mapDataGridRow };

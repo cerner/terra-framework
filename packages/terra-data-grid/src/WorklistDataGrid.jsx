@@ -13,7 +13,7 @@ import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
-import { mapDataGridColumns, mapDataGridRows } from './utils/dataGridMappers';
+import { mapDataGridColumn, mapDataGridRow } from './utils/dataGridMappers';
 
 const cx = classNames.bind(styles);
 
@@ -419,11 +419,11 @@ function WorklistDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        rows={rows.map(row => mapDataGridRows(row))}
+        rows={rows.map(row => mapDataGridRow(row))}
         rowHeight={rowHeight}
         rowHeaderIndex={rowHeaderIndex}
-        pinnedColumns={pinnedColumns.map(column => mapDataGridColumns(column))}
-        overflowColumns={overflowColumns.map(column => mapDataGridColumns(column))}
+        pinnedColumns={pinnedColumns.map(column => mapDataGridColumn(column))}
+        overflowColumns={overflowColumns.map(column => mapDataGridColumn(column))}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onColumnSelect={onColumnSelect}

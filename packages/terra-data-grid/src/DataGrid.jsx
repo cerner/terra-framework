@@ -13,6 +13,7 @@ import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
+import { mapDataGridColumn, mapDataGridRow } from './utils/dataGridMappers';
 
 const cx = classNames.bind(styles);
 
@@ -147,8 +148,8 @@ const DataGrid = injectIntl((props) => {
 
   const handleFocus = useRef(true);
 
-  const [focusedRow, setFocusedRow] = useState(0);
-  const [focusedCol, setFocusedCol] = useState(0);
+  const focusedRow = useRef(0);
+  const focusedCol = useRef(0);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
   // -------------------------------------
   // functions
@@ -159,8 +160,8 @@ const DataGrid = injectIntl((props) => {
 
   const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
-    setFocusedRow(newRowIndex);
-    setFocusedCol(newColIndex);
+    focusedRow.current = newRowIndex;
+    focusedCol.current = newColIndex;
     let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
     if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
       [focusedCell] = focusedCell.getElementsByTagName('input');
@@ -179,7 +180,7 @@ const DataGrid = injectIntl((props) => {
     props.focusFuncRef,
     () => ({
       setFocusedRowCol,
-      getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
+      getFocusedCell() { return { row: focusedRow.current, col: focusedCol.current }; },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [focusedCol, focusedRow],
@@ -237,8 +238,8 @@ const DataGrid = injectIntl((props) => {
 
   const handleColumnSelect = useCallback((columnId) => {
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
-    setFocusedRow(0);
-    setFocusedCol(columnIndex);
+    focusedRow.current = 0;
+    focusedCol.current = columnIndex;
 
     if (onColumnSelect) {
       onColumnSelect(columnId);
@@ -246,8 +247,8 @@ const DataGrid = injectIntl((props) => {
   }, [onColumnSelect, displayedColumns]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    setFocusedRow(selectionDetails.rowIndex);
-    setFocusedCol(selectionDetails.columnIndex);
+    focusedRow.current = selectionDetails.rowIndex;
+    focusedCol.current = selectionDetails.columnIndex;
     if (onCellSelect) {
       onCellSelect(selectionDetails);
     }
@@ -311,7 +312,7 @@ const DataGrid = injectIntl((props) => {
   };
 
   const handleKeyDown = (event) => {
-    const cellCoordinates = { row: focusedRow, col: focusedCol };
+    const cellCoordinates = { row: focusedRow.current, col: focusedCol.current };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
 
@@ -418,7 +419,7 @@ const DataGrid = injectIntl((props) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
-        setFocusedRowCol(focusedRow, focusedCol, true);
+        setFocusedRowCol(focusedRow.current, focusedCol.current, true);
       }
     }
 
@@ -441,11 +442,11 @@ const DataGrid = injectIntl((props) => {
       <GridContext.Provider value={{ role: 'grid', setCellAriaLiveMessage }}>
         <Table
           id={id}
-          rows={rows}
+          rows={rows.map(row => mapDataGridRow(row))}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
-          pinnedColumns={pinnedColumns}
-          overflowColumns={overflowColumns}
+          pinnedColumns={pinnedColumns.map(column => mapDataGridColumn(column))}
+          overflowColumns={overflowColumns.map(column => mapDataGridColumn(column))}
           defaultColumnWidth={defaultColumnWidth}
           columnHeaderHeight={columnHeaderHeight}
           rowHeight={rowHeight}
