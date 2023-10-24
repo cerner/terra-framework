@@ -57,7 +57,7 @@ const gridDataJSON = {
   ],
 };
 
-const FlowsheetDataGridResultsMissing = () => {
+const NoResultCells = () => {
   const { cols, rows } = gridDataJSON;
 
   return (
@@ -70,4 +70,4 @@ const FlowsheetDataGridResultsMissing = () => {
   );
 };
 
-export default FlowsheetDataGridResultsMissing;
+export default NoResultCells;

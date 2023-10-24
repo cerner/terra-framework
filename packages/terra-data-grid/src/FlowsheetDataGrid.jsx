@@ -72,9 +72,8 @@ const propTypes = {
   onClearSelectedCells: PropTypes.func,
 
   /**
-   * Callback function that is called when a selectable cell is selected. Parameters:
-   * @param {string} rowId rowId
-   * @param {string} columnId columnId
+   * Callback function that is called when a range of selectable cells is selected. Parameters:
+   * @param {array} cells - Array of cells each containing a rowId and columnId, both as strings.
    */
   onCellRangeSelect: PropTypes.func,
 
