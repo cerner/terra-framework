@@ -5165,6 +5165,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   id="WorklistDataGrid-rowSelectionColumn"
                   isActive={true}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
                   key="WorklistDataGrid-rowSelectionColumn"
                   maximumWidth={300}
