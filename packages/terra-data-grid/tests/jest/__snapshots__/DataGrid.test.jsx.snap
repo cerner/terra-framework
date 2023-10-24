@@ -5117,7 +5117,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           tabIndex={0}
         >
           <Memo(ColumnHeader)
-            activeColumnResizing={false}
             columns={
               Array [
                 Object {
@@ -5170,6 +5169,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   id="WorklistDataGrid-rowSelectionColumn"
                   isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
                   key="WorklistDataGrid-rowSelectionColumn"
                   maximumWidth={300}
@@ -7739,7 +7739,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       }
     >
       <Memo(ColumnHeader)
-        activeColumnResizing={false}
         columns={
           Array [
             Object {
@@ -7973,7 +7972,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       }
     >
       <Memo(ColumnHeader)
-        activeColumnResizing={false}
         columns={
           Array [
             Object {
