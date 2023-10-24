@@ -1,5 +1,5 @@
 import Table from './Table';
-import GridContext, { GridConstants } from './utils/GridContext';
+import GridContext from './utils/GridContext';
 
 export default Table;
-export { GridContext, GridConstants };
+export { GridContext };

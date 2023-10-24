@@ -148,6 +148,11 @@ function Table(props) {
     rowHeaderIndex,
   } = props;
 
+  if (pinnedColumns.length === 0) {
+    // eslint-disable-next-line no-console
+    console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
+  }
+
   // Manage column resize
   const [tableHeight, setTableHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -189,13 +194,6 @@ function Table(props) {
 
   // -------------------------------------
   // useEffect Hooks
-
-  useEffect(() => {
-    if (pinnedColumns.length === 0) {
-      // eslint-disable-next-line no-console
-      console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
-    }
-  }, [pinnedColumns.length]);
 
   // useEffect for row displayed columns
   useEffect(() => {
