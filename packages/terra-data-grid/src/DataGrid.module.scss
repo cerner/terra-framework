@@ -1,11 +1,21 @@
+// Themes
+@import './orion-fusion-theme/DataGrid.module';
+@import './clinical-lowlight-theme/DataGrid.module';
+
 :local {
   .data-grid-container {
     height: 100%;
     overflow: auto;
     width: 100%;
+  }
 
-    table {
-      user-select: none;
+  table {
+    // Style for the grid itself
+    user-select: none;
+
+    :focus {
+      outline: var(--terra-data-grid-cell-focus-outline, 3px dashed #000);
+      outline-offset: var(--terra-data-grid-cell-focus-outline-offset, -2px);
     }
   }
 }

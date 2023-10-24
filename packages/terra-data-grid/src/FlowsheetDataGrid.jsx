@@ -49,11 +49,6 @@ const propTypes = {
   columnHeaderHeight: PropTypes.string,
 
   /**
-   * Boolean specifying whether or not the component should have zebra striping for rows.
-   */
-  isStriped: PropTypes.bool,
-
-  /**
    * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
    */
   rowHeight: PropTypes.string,
@@ -74,7 +69,6 @@ const propTypes = {
 const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  isStriped: false,
   rowHeight: '2.5rem',
   rows: [],
   columns: [],
@@ -85,7 +79,6 @@ function FlowsheetDataGrid(props) {
     id,
     ariaLabelledBy,
     ariaLabel,
-    isStriped,
     rows,
     columns,
     defaultColumnWidth,
@@ -101,7 +94,6 @@ function FlowsheetDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        isStriped={isStriped}
         rows={rows}
         rowHeight={rowHeight}
         rowHeaderIndex={0}

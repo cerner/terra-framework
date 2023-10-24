@@ -245,9 +245,9 @@ function Table(props) {
   // -------------------------------------
   // event handlers
 
-  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
+  const handleColumnSelect = useCallback((columnId) => {
     if (onColumnSelect) {
-      onColumnSelect(columnId, cellCoordinates);
+      onColumnSelect(columnId);
     }
   }, [onColumnSelect]);
 

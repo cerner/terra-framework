@@ -182,7 +182,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={
       [MockFunction] {
@@ -317,7 +316,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -438,7 +436,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
             }
           }
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -586,7 +583,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -706,6 +702,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 columnHeaderHeight="2.5rem"
                 defaultColumnWidth={200}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -812,7 +809,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -845,6 +841,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -951,7 +948,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -3033,7 +3029,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -3177,7 +3172,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -3299,7 +3293,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -3448,7 +3441,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -3569,6 +3561,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -3675,7 +3668,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -3709,6 +3701,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -3815,7 +3808,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -6610,7 +6602,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -6754,7 +6745,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -6876,7 +6866,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -7025,7 +7014,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -7146,6 +7134,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -7252,7 +7241,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -7286,6 +7274,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -7392,7 +7381,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -10177,7 +10165,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={
       [MockFunction] {
@@ -10312,7 +10299,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -10433,7 +10419,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
             }
           }
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -10581,7 +10566,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -10701,6 +10685,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 columnHeaderHeight="2.5rem"
                 defaultColumnWidth={200}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -10807,7 +10792,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -10840,6 +10824,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -10946,7 +10931,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -13028,7 +13012,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -13172,7 +13155,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -13294,7 +13276,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -13443,7 +13424,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -13564,6 +13544,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -13670,7 +13651,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -13704,6 +13684,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -13810,7 +13791,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -16605,7 +16585,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -16749,7 +16728,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -16871,7 +16849,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -17020,7 +16997,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -17141,6 +17117,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -17247,7 +17224,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -17281,6 +17257,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -17387,7 +17364,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -20206,7 +20182,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -20374,7 +20349,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -20496,7 +20470,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -20645,7 +20618,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -20766,6 +20738,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -20872,7 +20845,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -20906,6 +20878,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -21012,7 +20985,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -23791,7 +23763,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -23919,7 +23890,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -24041,7 +24011,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -24190,7 +24159,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -24311,6 +24279,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -24417,7 +24386,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -24451,6 +24419,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -24557,7 +24526,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -27361,7 +27329,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={
       [MockFunction] {
         "calls": Array [
@@ -27515,7 +27482,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -27636,7 +27602,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
             }
           }
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -27784,7 +27749,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -27904,6 +27868,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 columnHeaderHeight="2.5rem"
                 defaultColumnWidth={200}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -28010,7 +27975,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -28043,6 +28007,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -28149,7 +28114,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -30235,7 +30199,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -30383,7 +30346,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -30505,7 +30467,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -30654,7 +30615,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -30775,6 +30735,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -30881,7 +30842,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -30915,6 +30875,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -31021,7 +30982,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -33816,7 +33776,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -33960,7 +33919,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -34082,7 +34040,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -34231,7 +34188,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -34352,6 +34308,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -34458,7 +34415,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -34492,6 +34448,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -34598,7 +34555,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -37373,7 +37329,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -37497,7 +37452,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -37619,7 +37573,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -37768,7 +37721,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -37889,6 +37841,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -37995,7 +37948,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -38029,6 +37981,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -38135,7 +38088,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -40910,7 +40862,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -41034,7 +40985,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -41156,7 +41106,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -41305,7 +41254,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -41426,6 +41374,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -41532,7 +41481,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -41566,6 +41514,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -41672,7 +41621,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -44447,7 +44395,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -44571,7 +44518,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -44693,7 +44639,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -44842,7 +44787,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -44963,6 +44907,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -45069,7 +45014,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -45103,6 +45047,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -45209,7 +45154,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -47984,7 +47928,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     onEnableRowSelection={[MockFunction]}
     onRowSelect={
@@ -48108,7 +48051,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -48230,7 +48172,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -48379,7 +48320,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -48500,6 +48440,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -48606,7 +48547,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -48640,6 +48580,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -48746,7 +48687,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -51519,7 +51459,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
         "timeZone": null,
       }
     }
-    isStriped={false}
     onRowSelect={
       [MockFunction] {
         "calls": Array [
@@ -51641,7 +51580,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -51763,7 +51701,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -51912,7 +51849,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -52033,6 +51969,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -52139,7 +52076,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -52173,6 +52109,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -52279,7 +52216,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -55052,7 +54988,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
         "timeZone": null,
       }
     }
-    isStriped={false}
     onRowSelect={
       [MockFunction] {
         "calls": Array [
@@ -55174,7 +55109,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
         defaultColumnWidth={200}
         hasSelectableRows={true}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -55296,7 +55230,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
           }
           hasSelectableRows={true}
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -55445,7 +55378,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -55566,6 +55498,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 defaultColumnWidth={200}
                 hasSelectableRows={true}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -55672,7 +55605,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -55706,6 +55638,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -55812,7 +55745,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -58564,7 +58496,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     overflowColumns={
       Array [
@@ -58666,7 +58597,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -58787,7 +58717,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
             }
           }
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -58935,7 +58864,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -59055,6 +58983,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 columnHeaderHeight="2.5rem"
                 defaultColumnWidth={200}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -59161,7 +59090,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -59194,6 +59122,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -59300,7 +59229,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"
@@ -61339,7 +61267,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         "timeZone": null,
       }
     }
-    isStriped={false}
     onCellSelect={[MockFunction]}
     overflowColumns={
       Array [
@@ -61441,7 +61368,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         id="test-terra-worklist-data-grid"
-        isStriped={false}
         onCellSelect={[Function]}
         onClearSelection={[Function]}
         onRangeSelection={[Function]}
@@ -61562,7 +61488,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
             }
           }
           id="test-terra-worklist-data-grid"
-          isStriped={false}
           onCellSelect={[Function]}
           onClearSelection={[Function]}
           onRangeSelection={[Function]}
@@ -61710,7 +61635,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 "timeZone": null,
               }
             }
-            isStriped={false}
             onCellSelect={[Function]}
             onClearSelection={[Function]}
             onRangeSelection={[Function]}
@@ -61830,6 +61754,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 columnHeaderHeight="2.5rem"
                 defaultColumnWidth={200}
                 id="test-terra-worklist-data-grid"
+                isStriped={true}
                 onCellSelect={[Function]}
                 onColumnSelect={[Function]}
                 overflowColumns={
@@ -61936,7 +61861,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     },
                   ]
                 }
-                table={true}
               >
                 <Table
                   columnHeaderHeight="2.5rem"
@@ -61969,6 +61893,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       "timeZone": null,
                     }
                   }
+                  isStriped={true}
                   onCellSelect={[Function]}
                   onColumnSelect={[Function]}
                   overflowColumns={
@@ -62075,7 +62000,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  table={true}
                 >
                   <div
                     className="table-container"

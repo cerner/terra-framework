@@ -161,7 +161,7 @@ describe('Table', () => {
     columnHeader.at(0).simulate('mouseDown');
 
     // Validate mock function was called from simulated click event
-    expect(mockColumnSelect).toHaveBeenCalledWith(RowSelectionUtils.ROW_SELECTION_COLUMN.id, { col: 0, row: 0 });
+    expect(mockColumnSelect).toHaveBeenCalledWith(RowSelectionUtils.ROW_SELECTION_COLUMN.id);
 
     expect(wrapper).toMatchSnapshot();
   });

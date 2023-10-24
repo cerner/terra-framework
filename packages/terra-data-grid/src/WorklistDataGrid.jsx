@@ -13,6 +13,7 @@ import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
+import { mapDataGridColumns, mapDataGridRows } from './utils/dataGridMappers';
 
 const cx = classNames.bind(styles);
 
@@ -32,11 +33,6 @@ const propTypes = {
    * a unique id.
    */
   id: PropTypes.string.isRequired,
-
-  /**
-   * Boolean specifying whether or not the component should have zebra striping for rows.
-   */
-  isStriped: PropTypes.bool,
 
   /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
@@ -142,7 +138,6 @@ const defaultProps = {
   rowHeaderIndex: 0,
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  isStriped: false,
   rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
@@ -160,7 +155,6 @@ function WorklistDataGrid(props) {
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
-    isStriped,
     rowHeight,
     onColumnSelect,
     onCellSelect,
@@ -425,26 +419,11 @@ function WorklistDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        isStriped={isStriped}
-        rows={rows.map((row) => ({
-          ...row,
-          cells: row.cells.map(cell => ({
-            ...cell,
-            isSelectable: cell.isSelectable !== false,
-          })),
-        }))}
+        rows={rows.map(row => mapDataGridRows(row))}
         rowHeight={rowHeight}
         rowHeaderIndex={rowHeaderIndex}
-        pinnedColumns={pinnedColumns.map((columns) => ({
-          ...columns,
-          isSelectable: columns.isSelectable !== false,
-          isResizable: columns.isResizable !== false,
-        }))}
-        overflowColumns={overflowColumns.map((columns) => ({
-          ...columns,
-          isSelectable: columns.isSelectable !== false,
-          isResizable: columns.isResizable !== false,
-        }))}
+        pinnedColumns={pinnedColumns.map(column => mapDataGridColumns(column))}
+        overflowColumns={overflowColumns.map(column => mapDataGridColumns(column))}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onColumnSelect={onColumnSelect}

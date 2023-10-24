@@ -11,6 +11,8 @@ import Table, { GridContext } from 'terra-table';
 import rowShape from './proptypes/rowShape';
 import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
+import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+
 import './_elementPolyfill';
 import styles from './DataGrid.module.scss';
 
@@ -32,11 +34,6 @@ const propTypes = {
    * a unique id.
    */
   id: PropTypes.string.isRequired,
-
-  /**
-   * Boolean specifying whether or not the component should have zebra striping for rows.
-   */
-  isStriped: PropTypes.bool,
 
   /**
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
@@ -145,24 +142,31 @@ const DataGrid = injectIntl((props) => {
     rowHeaderIndex,
   } = props;
 
-  const tableRef = useRef();
+  const grid = useRef();
   const gridContainerRef = useRef();
 
   const handleFocus = useRef(true);
 
-  const focusedRow = useRef(0);
-  const focusedCol = useRef(0);
+  const [focusedRow, setFocusedRow] = useState(0);
+  const [focusedCol, setFocusedCol] = useState(0);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
+
+  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
+  const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
 
   // -------------------------------------
   // functions
 
+  const isRowSelectionCell = (columnIndex) => (
+    hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
+  );
+
   const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
-    focusedRow.current = newRowIndex;
-    focusedCol.current = newColIndex;
-    let focusedCell = tableRef.current.rows[newRowIndex].cells[newColIndex];
-    if (hasSelectableRows && newColIndex === 0 && focusedCell.getElementsByTagName('input').length > 0) {
+    setFocusedRow(newRowIndex);
+    setFocusedCol(newColIndex);
+    let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
       [focusedCell] = focusedCell.getElementsByTagName('input');
     }
 
@@ -179,77 +183,75 @@ const DataGrid = injectIntl((props) => {
     props.focusFuncRef,
     () => ({
       setFocusedRowCol,
-      getFocusedCell() { return { row: focusedRow.current, col: focusedCol.current }; },
+      getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [focusedCol.current, focusedRow.current],
+    [focusedCol, focusedRow],
   );
-
-  // -------------------------------------
-  // callback Hooks
 
   // -------------------------------------
   // useEffect Hooks
 
   useEffect(() => {
+    // We have to search the dom for the table ref because react-intl v2 does not support forwardRef.
     if (gridContainerRef) {
       const table = gridContainerRef.current.getElementsByTagName('table')[0];
-      tableRef.current = table;
+      grid.current = table;
     }
   }, [gridContainerRef]);
 
   // -------------------------------------
 
   const handleMoveCellFocus = (fromCell, toCell) => {
-    // Obtain coordinate rectangles for scrollable container, column header, and new cell selection
-    // TODO: Implementation is not easy to understand, get suggestions on how to clean this logic up.
-    const tableRows = tableRef.current.rows;
+    // Obtain coordinate rectangles for grid container, column header, and new cell selection
     const tableContainer = gridContainerRef.current.firstChild;
-    const tableContainerRect = tableContainer.getBoundingClientRect();
-    const nextCellRect = tableRows[toCell.row].cells[toCell.col].getBoundingClientRect();
+    const gridContainerRect = tableContainer.getBoundingClientRect();
+    const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
+    const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
 
-    if (nextCellRect.right > tableContainerRect.right) {
-      // Calculate scroll when next cell overlaps container's right border.
-      tableContainer.scrollBy(nextCellRect.right - tableContainerRect.right, 0);
-    } else if (hasSelectableRows || pinnedColumns.length) {
-      // Calculate scroll when pinned columns exist. Row selection always has at least 1 pinned column.
-      const selectableRowsOffset = hasSelectableRows ? 1 : 0;
-      const lastPinnedColumnIndex = pinnedColumns.length - 1 + selectableRowsOffset;
-      const lastPinnedColumnRect = tableRows[0].cells[lastPinnedColumnIndex].getBoundingClientRect();
-
-      if (toCell.col > lastPinnedColumnIndex && nextCellRect.left < lastPinnedColumnRect.right) {
-        // Calculate scroll when in overflow region and the next cell is overlapping the last pinned column to the right.
-        tableContainer.scrollBy(nextCellRect.left - lastPinnedColumnRect.right, 0);
-      } else if (toCell.col > lastPinnedColumnIndex && nextCellRect.right < lastPinnedColumnRect.left) {
-        // Calculate scroll when in overflow region and the next cell is overlpping the last pinned column to the left.
-        tableContainer.scrollBy(nextCellRect.right - lastPinnedColumnRect.left, 0);
+    // Calculate horizontal scroll offset for right boundary
+    if (nextCellRect.right > gridContainerRect.right) {
+      tableContainer.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
+    } else {
+      // Calculate horizontal scroll offset for left boundary
+      let scrollOffsetX = 0;
+      if (pinnedColumns.length > 0 || hasSelectableRows) {
+        const lastPinnedColumnIndex = pinnedColumns.length - 1 + pinnedColumnOffset;
+        if (toCell.col > lastPinnedColumnIndex) {
+          const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[lastPinnedColumnIndex].getBoundingClientRect();
+          scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
+        }
+      } else {
+        scrollOffsetX = nextCellRect.left - gridContainerRect.left;
       }
-    } else if (nextCellRect.left < tableContainerRect.left) {
-      // Calculate scroll when next cell overlaps container's left border.
-      tableContainer.scrollBy(nextCellRect.left - tableContainerRect.left, 0);
+
+      if (scrollOffsetX < 0) {
+        tableContainer.scrollBy(scrollOffsetX, 0);
+      }
     }
 
     // Calculate vertical scroll offset
-    const columnHeaderRect = tableRows[0].cells[toCell.col].getBoundingClientRect();
     const scrollOffsetY = nextCellRect.top - columnHeaderRect.bottom;
     if (scrollOffsetY < 0) {
       tableContainer.scrollBy(0, scrollOffsetY);
     }
+
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
-  const handleColumnSelect = useCallback((columnId, cellCoordinates) => {
-    focusedRow.current = 0;
-    focusedCol.current = cellCoordinates.col;
+  const handleColumnSelect = useCallback((columnId) => {
+    const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
+    setFocusedRow(0);
+    setFocusedCol(columnIndex + pinnedColumnOffset);
 
     if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect]);
+  }, [onColumnSelect, pinnedColumnOffset, displayedColumns]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    focusedRow.current = selectionDetails.rowIndex;
-    focusedCol.current = selectionDetails.columnIndex;
+    setFocusedRow(selectionDetails.rowIndex);
+    setFocusedCol(selectionDetails.columnIndex);
     if (onCellSelect) {
       onCellSelect(selectionDetails);
     }
@@ -273,7 +275,7 @@ const DataGrid = injectIntl((props) => {
       && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
       && window.getComputedStyle(element).visibility !== 'hidden'
       && element.closest('[inert]') === null
-      && (element.id === id || !tableRef.current.contains(element)),
+      && (element.id === id || !grid.current.contains(element)),
     );
 
     // Identify index of the active element in the DOM excluding data grid children
@@ -314,7 +316,7 @@ const DataGrid = injectIntl((props) => {
   };
 
   const handleKeyDown = (event) => {
-    const cellCoordinates = { row: focusedRow.current, col: focusedCol.current };
+    const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
 
@@ -327,7 +329,6 @@ const DataGrid = injectIntl((props) => {
             || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
       return;
     }
-    const columns = tableRef.current.tHead.rows[0].cells;
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:
@@ -356,7 +357,7 @@ const DataGrid = injectIntl((props) => {
         if (event.metaKey) {
           // Mac: Cmd + Right
           // Win: End
-          nextCol = columns.length - 1;
+          nextCol = displayedColumns.length - 1;
 
           if (event.ctrlKey) {
             // Mac: Ctrl + Cmd + Right
@@ -365,7 +366,7 @@ const DataGrid = injectIntl((props) => {
           }
         } else {
           // Right key
-          nextCol = Math.min(nextCol + 1, columns.length - 1);
+          nextCol += 1;
         }
         break;
       case KeyCode.KEY_HOME:
@@ -375,7 +376,7 @@ const DataGrid = injectIntl((props) => {
         }
         break;
       case KeyCode.KEY_END:
-        nextCol = columns.length - 1; // Col are zero based.
+        nextCol = displayedColumns.length - 1; // Col are zero based.
         if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
@@ -400,7 +401,7 @@ const DataGrid = injectIntl((props) => {
       onRangeSelection(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
 
-    if (nextRow > rows.length || nextCol >= columns.length) {
+    if (nextRow > rows.length || nextCol >= displayedColumns.length) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -421,7 +422,7 @@ const DataGrid = injectIntl((props) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
-        setFocusedRowCol(focusedRow.current, focusedCol.current, true);
+        setFocusedRowCol(focusedRow, focusedCol, true);
       }
     }
 
@@ -441,7 +442,7 @@ const DataGrid = injectIntl((props) => {
       onFocus={onFocus}
       className={cx('data-grid-container')}
     >
-      <GridContext.Provider value={{ role: 'grid' }}>
+      <GridContext.Provider value={{ role: 'grid', setCellAriaLiveMessage }}>
         <Table
           id={id}
           rows={rows}
@@ -457,7 +458,7 @@ const DataGrid = injectIntl((props) => {
           onColumnSelect={handleColumnSelect}
           onCellSelect={handleCellSelection}
           hasSelectableRows={hasSelectableRows}
-          table
+          isStriped
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
