@@ -178,7 +178,7 @@ function Cell(props) {
       switch (key) {
         case KeyCode.KEY_RETURN:
           // Lock focus into component
-          if (hasFocusableElements()) {
+          if (isGridContext && hasFocusableElements()) {
             setIsFocusTrapEnabled(true);
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
@@ -255,8 +255,8 @@ function Cell(props) {
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onMouseDown={isGridContext && onCellSelect ? onMouseDown : undefined}
-      onKeyDown={isGridContext ? handleKeyDown : undefined}
+      onMouseDown={onCellSelect ? onMouseDown : undefined}
+      onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props
       style={{ left: cellLeftEdge }}
     >
