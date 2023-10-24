@@ -40,7 +40,7 @@ exports[`Slider should render a default slider with proper required props 1`] = 
   </span>
   <VisuallyHiddenText
     id="00000000-0000-0000-0000-000000000000"
-    text="Adjust slider to select a value between 0 and 100"
+    text="Terra.slider.ariaDescribedByTextWithoutLabels"
   />
 </div>
 `;
@@ -85,7 +85,7 @@ exports[`Slider should render a disabled slider 1`] = `
   </span>
   <VisuallyHiddenText
     id="00000000-0000-0000-0000-000000000000"
-    text="Adjust slider to select a value between 0 and 100"
+    text="Terra.slider.ariaDescribedByTextWithoutLabels"
   />
 </div>
 `;
@@ -130,7 +130,7 @@ exports[`Slider should render a slider with custom min and max labels 1`] = `
   </span>
   <VisuallyHiddenText
     id="00000000-0000-0000-0000-000000000000"
-    text="Adjust slider to select a value between testMinimumLabel (0) and testMaximumLabel (100)"
+    text="Terra.slider.ariaDescribedByTextWithLabels"
   />
 </div>
 `;

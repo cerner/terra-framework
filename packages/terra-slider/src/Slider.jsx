@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {
+  useContext, useState, useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { injectIntl } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
 import styles from './Slider.module.scss';
 
@@ -48,6 +51,12 @@ const propTypes = {
   * Function to trigger when user changes the input value. Sends parameter {Event} event.
   */
   onChange: PropTypes.func,
+
+  /**
+  * @private
+  * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+  */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }),
 };
 
 const defaultProps = {
@@ -55,77 +64,59 @@ const defaultProps = {
   onChange: undefined,
 };
 
-class Slider extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      value: this.props.value,
-    };
-    this.handleOnChange = this.handleOnChange.bind(this);
-    this.sliderRef = React.createRef();
-  }
+const Slider = props => {
+  const {
+    isDisabled,
+    intl,
+    minimumValue,
+    maximumValue,
+    label,
+    minimumLabel,
+    maximumLabel,
+  } = props;
 
-  componentDidUpdate(prevProps) {
-    if (this.props.value === prevProps.value) {
-      return;
+  const theme = useContext(ThemeContext);
+  const sliderClassNames = cx([
+    'slider',
+    theme.className,
+  ]);
+  const sliderRef = useRef();
+  const minLabel = minimumLabel || minimumValue;
+  const maxLabel = maximumLabel || maximumValue;
+  const visuallyHiddenTextValue = (minimumLabel && maximumLabel)
+    ? intl.formatMessage({ id: 'Terra.slider.ariaDescribedByTextWithLabels' }, {
+      minimumLabel, maximumLabel, minimumValue, maximumValue,
+    })
+    : intl.formatMessage({ id: 'Terra.slider.ariaDescribedByTextWithoutLabels' }, { minimumValue, maximumValue });
+  const descriptionId = uuidv4();
+  const [value, setValue] = useState(props.value);
+
+  const handleOnChange = (event) => {
+    setValue(event.currentTarget.value);
+    if (props.onChange) {
+      props.onChange(event);
     }
-    // eslint-disable-next-line react/no-did-update-set-state
-    this.setState({
-      value: this.props.value,
-    });
-  }
+  };
 
-  handleOnChange(event) {
-    this.setState({ value: event.currentTarget.value });
-    if (this.props.onChange) {
-      this.props.onChange(event);
-    }
-  }
-
-  render() {
-    const {
-      isDisabled,
-      minimumValue,
-      maximumValue,
-      label,
-      minimumLabel,
-      maximumLabel,
-    } = this.props;
-
-    const theme = this.context;
-    const sliderClassNames = cx([
-      'slider',
-      theme.className,
-    ]);
-
-    const minLabel = minimumLabel || minimumValue;
-    const maxLabel = maximumLabel || maximumValue;
-    const visuallyHiddenTextValue = (minimumLabel || maximumLabel)
-      ? `Adjust slider to select a value between ${minimumLabel} (${minimumValue}) and ${maximumLabel} (${maximumValue})`
-      : `Adjust slider to select a value between ${minimumValue} and ${maximumValue}`;
-    const descriptionId = uuidv4();
-
-    return (
-      /* eslint-disable-next-line react/forbid-dom-props */
-      <div style={{ '--terra-slider-progress-status': `${this.state.value}%` }} className={sliderClassNames}>
-        <span className={cx('label')} aria-hidden="true">
-          {label}
-        </span>
-        <span className={cx('slider-label', 'slider-min-label')} aria-hidden="true">
-          {minLabel}
-        </span>
-        <input className={cx('input-range')} type="range" ref={this.sliderRef} aria-label={label} aria-describedby={descriptionId} value={this.state.value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={this.handleOnChange} />
-        <span className={cx('slider-label', 'slider-max-label')} aria-hidden="true">
-          {maxLabel}
-        </span>
-        <VisuallyHiddenText id={descriptionId} text={visuallyHiddenTextValue} />
-      </div>
-    );
-  }
-}
+  return (
+  /* eslint-disable-next-line react/forbid-dom-props */
+    <div style={{ '--terra-slider-progress-status': `${value}%` }} className={sliderClassNames}>
+      <span className={cx('label')} aria-hidden="true">
+        {label}
+      </span>
+      <span className={cx('slider-label', 'slider-min-label')} aria-hidden="true">
+        {minLabel}
+      </span>
+      <input className={cx('input-range')} type="range" ref={sliderRef} aria-label={label} aria-describedby={descriptionId} value={value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={handleOnChange} />
+      <span className={cx('slider-label', 'slider-max-label')} aria-hidden="true">
+        {maxLabel}
+      </span>
+      <VisuallyHiddenText id={descriptionId} text={visuallyHiddenTextValue} />
+    </div>
+  );
+};
 
 Slider.propTypes = propTypes;
 Slider.defaultProps = defaultProps;
-Slider.contextType = ThemeContext;
 
-export default Slider;
+export default injectIntl(Slider);
