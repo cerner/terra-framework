@@ -656,7 +656,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -684,6 +683,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -3264,7 +3264,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -3300,6 +3299,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -6559,7 +6559,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -6595,6 +6594,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -9833,7 +9833,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -9861,6 +9860,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -12441,7 +12441,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -12477,6 +12476,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -15736,7 +15736,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -15772,6 +15771,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -19079,7 +19079,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -19115,6 +19114,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -22342,7 +22342,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -22378,6 +22377,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -25654,7 +25654,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -25682,6 +25681,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -28270,7 +28270,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -28306,6 +28305,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -31565,7 +31565,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -31601,6 +31600,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -34820,7 +34820,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -34856,6 +34855,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -38075,7 +38075,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -38111,6 +38110,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -41330,7 +41330,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -41366,6 +41365,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -44585,7 +44585,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -44621,6 +44620,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -47836,7 +47836,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -47872,6 +47871,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -51087,7 +51087,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -51123,6 +51122,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -54295,7 +54295,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -54323,6 +54322,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
@@ -56816,7 +56816,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 tabIndex={0}
               >
                 <Memo(ColumnHeader)
-                  activeColumnResizing={false}
                   columns={
                     Array [
                       Object {
@@ -56844,6 +56843,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     ]
                   }
                   headerHeight="2.5rem"
+                  isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}

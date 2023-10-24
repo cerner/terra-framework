@@ -7,6 +7,7 @@
   "Terra.dataGrid.cell-focus-trapped": "Foco contenido en la celda. Presione Esc para reanudar la navegación por la cuadrícula.",
   "Terra.dataGrid.cell-interactable": "La celda contiene elementos interaccionables. Presione Entrar para mover el foco dentro de la celda.",
   "Terra.dataGrid.resume-navigation": "Se ha reanudado la navegación por la cuadrícula.",
+  
   "Terra.worklistDataGrid.row-selection-template": "Fila {fila} seleccionada. ",
   "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} filas seleccionadas. ",
   "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} filas no seleccionadas. ",

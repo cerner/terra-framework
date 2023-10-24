@@ -438,7 +438,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           tabIndex={0}
         >
           <Memo(ColumnHeader)
-            activeColumnResizing={false}
             columns={
               Array [
                 Object {
@@ -466,6 +465,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               ]
             }
             headerHeight="2.5rem"
+            isActiveColumnResizing={false}
             onColumnSelect={[Function]}
             onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
@@ -2784,7 +2784,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           tabIndex={0}
         >
           <Memo(ColumnHeader)
-            activeColumnResizing={false}
             columns={
               Array [
                 Object {
@@ -2812,6 +2811,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               ]
             }
             headerHeight="2.5rem"
+            isActiveColumnResizing={false}
             onColumnSelect={[Function]}
             onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
@@ -5113,7 +5113,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         >
           <Memo(ColumnHeader)
             activeColumnIndex={0}
-            activeColumnResizing={false}
             columns={
               Array [
                 Object {
@@ -5149,6 +5148,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               ]
             }
             headerHeight="2.5rem"
+            isActiveColumnResizing={false}
             onColumnSelect={[Function]}
             onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
@@ -5165,7 +5165,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   id="WorklistDataGrid-rowSelectionColumn"
                   isActive={true}
                   isResizable={false}
-                  isResizeActive={false}
                   isSelectable={true}
                   key="WorklistDataGrid-rowSelectionColumn"
                   maximumWidth={300}
@@ -7734,7 +7733,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     >
       <Memo(ColumnHeader)
         activeColumnIndex={0}
-        activeColumnResizing={false}
         columns={
           Array [
             Object {
@@ -7762,6 +7760,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
           ]
         }
         headerHeight="2.5rem"
+        isActiveColumnResizing={false}
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
@@ -7967,7 +7966,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
     >
       <Memo(ColumnHeader)
         activeColumnIndex={0}
-        activeColumnResizing={false}
         columns={
           Array [
             Object {
@@ -7995,6 +7993,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
           ]
         }
         headerHeight="2.5rem"
+        isActiveColumnResizing={false}
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
