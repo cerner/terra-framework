@@ -1,11 +1,10 @@
 # Changelog
 
-* Fixed
-  * Fixed keyboard navigation after mouse click for draggable tabs.
-
 ## Unreleased
 
 * Fixed
+  * Fixed the dropdown options are being cut off on smaller viewports.
+  * Fixed keyboard navigation after mouse click for draggable tabs.
   * Fixed screen reader response when active tabs are closed.
 
 ## 7.11.0 - (October 20, 2023)

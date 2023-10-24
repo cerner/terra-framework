@@ -10,13 +10,12 @@
 
 ---
 
-The terra-data-grid package contains the following components:
-
-**Worklist Data Grid** is a container that enables users to navigate the grid information using directional navigation keys.
+The terra-data-grid package contains the **Worklist Data Grid** and **Flowsheet Data Grid** components that allow users to navigate grid information using directional navigation keys.
 
 - [Getting Started](#getting-started)
 - Documentation
   - [Worklist Data Grid](https://engineering.cerner.com/terra-framework/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about)
+  - [Flowsheet Data Grid](https://engineering.cerner.com/terra-framework/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about)
 - [LICENSE](#license)
 
 ## Getting Started

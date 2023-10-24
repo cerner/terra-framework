@@ -57,7 +57,7 @@ const gridDataJSON = {
   ],
 };
 
-const DefaultFlowsheetDataGrid = () => {
+const BasicFlowsheetDataGrid = () => {
   const { cols, rows } = gridDataJSON;
 
   return (
@@ -70,4 +70,4 @@ const DefaultFlowsheetDataGrid = () => {
   );
 };
 
-export default DefaultFlowsheetDataGrid;
+export default BasicFlowsheetDataGrid;

@@ -2,7 +2,7 @@
   "name": "terra-data-grid",
   "main": "lib/index.js",
   "version": "0.8.1",
-  "description": "Package containing Terra WorklistDataGrid: A container that enables users to navigate the grid information using directional navigation keys.",
+  "description": "Package containing data grid container components that enable users to navigate the grid information using directional navigation keys.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",

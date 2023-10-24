@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added "No Result" cells to FlowsheetDataGrid.
+
 ## 0.8.1 - (October 17, 2023)
 
 * Fixed
