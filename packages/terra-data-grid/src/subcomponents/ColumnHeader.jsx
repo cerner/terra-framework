@@ -25,7 +25,7 @@ const propTypes = {
   /**
    * Specifies if resize handle should be active.
    */
-  activeColumnResizing: PropTypes.bool,
+  isActiveColumnResizing: PropTypes.bool,
   /**
    * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
@@ -51,7 +51,7 @@ const ColumnHeader = (props) => {
     headerHeight,
     tableHeight,
     activeColumnIndex,
-    activeColumnResizing,
+    isActiveColumnResizing,
     columnResizeIncrement,
     onColumnSelect,
     onResizeMouseDown,
@@ -74,7 +74,7 @@ const ColumnHeader = (props) => {
       isSelectable={column.isSelectable}
       tableHeight={tableHeight}
       isActive={activeColumnIndex === columnIndex}
-      isResizeActive={activeColumnIndex === columnIndex && activeColumnResizing}
+      isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
       columnResizeIncrement={columnResizeIncrement}
       hasError={column.hasError}
       sortIndicator={column.sortIndicator}
