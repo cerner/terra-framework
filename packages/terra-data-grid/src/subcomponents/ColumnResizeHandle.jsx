@@ -98,7 +98,6 @@ const ColumnResizeHandle = (props) => {
   const [isAriaLabel, setIsAriaLabel] = useState(false);
   const [isAriaValueText, setIsAriaValueText] = useState(false);
   const [isNavigationEnabled, setNavigationEnabled] = useState(true);
-  const [resizeHandleStyles, setResizeHandleStyles] = useState(['resize-handle']);
 
   useEffect(() => {
     if (isActive) {
@@ -111,8 +110,6 @@ const ColumnResizeHandle = (props) => {
     // Set focus to resize handle DOM element
     resizeHandleRef.current.focus();
 
-    // setResizeHandleStyles(['resize-handle', 'resize-handle-selected'])
-
     // Execute callback function to notify consumer of mouse down event
     onResizeMouseDown(event);
 
@@ -124,7 +121,6 @@ const ColumnResizeHandle = (props) => {
 
   const onMouseUp = () => {
     onResizeMouseUp();
-    // setResizeHandleStyles(['resize-handle'])
   };
 
   const fitToTable = () => {
@@ -151,9 +147,6 @@ const ColumnResizeHandle = (props) => {
         // Lock focus into component
         resizeHandleRef.current.focus();
 
-        // set styles for keyboard
-        setResizeHandleStyles(['resize-handle', 'resize-handle-selected']);
-
         // Assistive technologies should avoid announcing aria-label while focus locked, but announce aria-valueText instead
         setIsAriaLabel(false);
         setIsAriaValueText(true);
@@ -167,9 +160,6 @@ const ColumnResizeHandle = (props) => {
         setIsAriaValueText(false);
         // Release focus lock
         columnContext.setColumnHeaderAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklist-data-grid.resume-navigation' }));
-
-        // reset styles for keyboard
-        setResizeHandleStyles(['resize-handle']);
         setNavigationEnabled(true);
         break;
       case KeyCode.KEY_RIGHT:
@@ -227,7 +217,7 @@ const ColumnResizeHandle = (props) => {
       onClick={onClick}
       onFocus={fitToTable}
       onBlur={onBlur}
-      className={cx(resizeHandleStyles, theme.className)}
+      className={cx('resize-handle', theme.className, { 'resize-handle-selected': !isNavigationEnabled })}
     />
   );
 };
