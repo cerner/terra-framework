@@ -86,7 +86,6 @@ describe('ColumnHeader', () => {
 
     // Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
-    // console.log(columnHeaderCells.first().props())
     expect(columnHeaderCells.first().props().tableHeight).toBe(500);
 
     expect(wrapper).toMatchSnapshot();
