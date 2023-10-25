@@ -3,16 +3,15 @@ import rowShape from './rowShape';
 
 const sectionShape = PropTypes.shape({
   /**
-   * An identifier for the section. This identifier should be unique across the set of sections provided to the DataGrid.
+   * An identifier for the section. This identifier should be unique across the set of sections provided.
    */
   id: PropTypes.string.isRequired,
   /**
-   * A boolean indicating whether or not the the section is collapsible. If true, the DataGrid's `onRequestSectionCollapse`
-   * function will be called upon selection of the section header, and an icon indicating collapsibility will be rendered within the seaction header.
+   * A boolean indicating whether or not the the section is collapsible.
    */
   isCollapsible: PropTypes.bool,
   /**
-   * A boolean indicating whether or not the section is collapsed. If true, the DataGrid will not render the contents of the section.
+   * A boolean indicating whether or not the section is collapsed. If true, contents of the section will not be displayed.
    */
   isCollapsed: PropTypes.bool,
   /**

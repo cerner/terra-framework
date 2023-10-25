@@ -38,6 +38,16 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
+   * An identifier for the section.
+   */
+  sectionId: PropTypes.string,
+
+  /**
+   * The section's position in the table. This is zero based.
+   */
+  sectionIndex: PropTypes.number,
+
+  /**
    * Boolean indicating whether the cell is currently selected.
    */
   isSelected: PropTypes.bool,
@@ -59,6 +69,8 @@ function RowSelectionCell(props) {
     columnId,
     rowIndex,
     columnIndex,
+    sectionId,
+    sectionIndex,
     isSelected,
     ariaLabel,
     onCellSelect,
@@ -86,6 +98,8 @@ function RowSelectionCell(props) {
       key={`${rowId}_${columnId}`}
       rowIndex={rowIndex}
       columnIndex={columnIndex}
+      sectionId={sectionId}
+      sectionIndex={sectionIndex}
       isSelected={false}
       onCellSelect={onCellSelect}
     >

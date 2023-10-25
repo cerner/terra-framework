@@ -47,6 +47,16 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
+   * An identifier for the section.
+   */
+  sectionId: PropTypes.string,
+
+  /**
+   * The section's position in the table. This is zero based.
+   */
+  sectionIndex: PropTypes.number,
+
+  /**
    * Content that will be rendered within the Cell.
    */
   children: PropTypes.node,
@@ -96,6 +106,7 @@ const defaultProps = {
   isRowHeader: false,
   isSelectable: false,
   isMasked: false,
+  sectionId: '',
 };
 
 function Cell(props) {
@@ -104,6 +115,8 @@ function Cell(props) {
     columnId,
     rowIndex,
     columnIndex,
+    sectionId,
+    sectionIndex,
     ariaLabel,
     isMasked,
     isRowHeader,
@@ -158,7 +171,7 @@ function Cell(props) {
   const onMouseDown = ((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+        sectionId, sectionIndex, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
       });
     }
   });
@@ -190,7 +203,7 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
             onCellSelect({
-              rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+              sectionId, sectionIndex, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
             });
           }
           event.preventDefault(); // prevent the default scrolling
