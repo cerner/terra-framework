@@ -3,9 +3,6 @@
 ## Unreleased
 * Added
   * Added additional screen reader support to announce that column headers are interactable upon selection.
-
-
-* Added
   * Added keyboard support for column resizing.
   * Added translations.
   * Added "No Result" cells to FlowsheetDataGrid.
@@ -21,7 +18,6 @@
 ## 0.8.0 - (October 11, 2023)
 
 * Added
-  * Added ability to resize columns via keyboard.
   * Added base FlowsheetDataGrid component.
 
 * Changed
