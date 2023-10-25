@@ -5,7 +5,6 @@
 * Added
   * Added test for data grid column resizing.
   * Added example for Flowsheet Data Grid containing "No Result" cells.
-  * Added example for Flowsheet Data Grid containing "No Result" cells.
 
 * Fixed
   * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
