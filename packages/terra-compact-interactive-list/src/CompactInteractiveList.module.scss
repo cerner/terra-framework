@@ -1,0 +1,28 @@
+@import './clinical-lowlight-theme/CompactInteractiveList.module';
+@import './orion-fusion-theme/CompactInteractiveList.module';
+
+:local {
+  .compact-interactive-list-container {
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+  }
+
+  .compact-interactive-list {
+    :focus {
+      outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
+      outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);
+    }
+  }
+
+  /* stylelint-disable selector-max-compound-selectors */
+  // TODO - this needs to be adjusted to new div structure rather than td and tr 
+  .headerless {
+    tr:first-child {
+      td,
+      th {
+        border-top: var(--terra-compact-interactive-list-headerless-first-row-border-top, 1px solid #dedfe0);
+      }
+    }
+  }
+}
