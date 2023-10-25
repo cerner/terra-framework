@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 0.9.0 - (October 25, 2023)
+
 * Added
   * Added additional screen reader support to announce that column headers are interactable upon selection.
   * Added keyboard support for column resizing.

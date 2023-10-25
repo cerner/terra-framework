@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.1.1-alpha.0 - (October 25, 2023)
+
+* Changed
+  * Minor dependency version bump
+
 ## 5.1.0-alpha.0 - (October 20, 2023)
 
 * Added
