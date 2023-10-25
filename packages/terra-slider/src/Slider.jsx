@@ -48,7 +48,7 @@ const propTypes = {
   maximumLabel: PropTypes.string,
 
   /**
-  * Function to trigger when user changes the input value. Sends parameter {Event} event.
+  * Function to trigger when user changes the input value - function(value).
   */
   onChange: PropTypes.func,
 
@@ -56,12 +56,11 @@ const propTypes = {
   * @private
   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func, locale: PropTypes.string }),
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
   isDisabled: false,
-  onChange: undefined,
 };
 
 const Slider = props => {
@@ -73,6 +72,7 @@ const Slider = props => {
     label,
     minimumLabel,
     maximumLabel,
+    onChange
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -93,8 +93,8 @@ const Slider = props => {
 
   const handleOnChange = (event) => {
     setValue(event.currentTarget.value);
-    if (props.onChange) {
-      props.onChange(event);
+    if (onChange) {
+      onChange(event.currentTarget.value);
     }
   };
 

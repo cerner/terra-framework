@@ -4,8 +4,8 @@ import Slider from 'terra-slider';
 const SliderWithOnChangeCallback = () => {
   const [value, setValue] = useState('');
 
-  const handleChange = (event) => {
-    setValue(event.target.value);
+  const handleChange = (value) => {
+    setValue(value);
   };
   const message = value ? `Updated Slider value is: ${value}` : 'Change the value of Slider to trigger callback';
 
