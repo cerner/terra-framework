@@ -8,6 +8,16 @@ import { IntlProvider } from 'react-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import ColumnContext from '../../src/utils/ColumnContext';
 
+beforeAll(() => {
+  jest.spyOn(console, 'error').mockImplementation();
+  jest.spyOn(console, 'warn').mockImplementation();
+});
+
+afterAll(() => {
+  console.error.mockRestore(); // eslint-disable-line no-console
+  console.warn.mockRestore(); // eslint-disable-line no-console
+});
+
 describe('ColumnHeaderCell', () => {
   it('renders a default column header cell', () => {
     const column = {
@@ -255,11 +265,11 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(-1);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
-    expect(columnHeader.props().onMouseDown).toBeUndefined();
+    expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    const headerContainer = columnHeader.find('.header-container');
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
@@ -268,8 +278,6 @@ describe('ColumnHeaderCell', () => {
   });
 
   it('renders a pinned column header cell', () => {
-    jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
-
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -290,7 +298,18 @@ describe('ColumnHeaderCell', () => {
 
     expect(wrapper.find('.pinned')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
+  });
 
-    console.error.mockRestore(); // eslint-disable-line no-console
+  it('calls a custom column select callback function on mouse down', () => {
+    const mockOnColumnSelect = jest.fn();
+    const wrapper = mountWithIntl(
+      <ColumnHeaderCell
+        onColumnSelect={mockOnColumnSelect}
+      />,
+    );
+    wrapper.find('.column-header').simulate('mousedown');
+
+    // Validate mock function was called from simulated onMouseDown event
+    expect(mockOnColumnSelect).toHaveBeenCalled();
   });
 });
