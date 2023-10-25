@@ -3,6 +3,12 @@
 ## Unreleased
 
 * Added
+  * New Terra Slider component documentation, examples and tests.
+
+* Fixed
+  * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
+
+* Added
   * Added test for data grid column resizing.
   * Added example for Flowsheet Data Grid containing "No Result" cells.
 
