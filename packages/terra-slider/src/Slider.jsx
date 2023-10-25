@@ -1,5 +1,5 @@
 import React, {
-  useContext, useState, useRef,
+  useContext, useState, useRef, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -72,7 +72,8 @@ const Slider = props => {
     label,
     minimumLabel,
     maximumLabel,
-    onChange
+    onChange,
+    value,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -89,10 +90,14 @@ const Slider = props => {
     })
     : intl.formatMessage({ id: 'Terra.slider.ariaDescribedByTextWithoutLabels' }, { minimumValue, maximumValue });
   const descriptionId = uuidv4();
-  const [value, setValue] = useState(props.value);
+  const [slidervalue, setSliderValue] = useState(value);
+
+  useEffect(() => {
+    setSliderValue(value);
+  }, [value]);
 
   const handleOnChange = (event) => {
-    setValue(event.currentTarget.value);
+    setSliderValue(event.currentTarget.value);
     if (onChange) {
       onChange(event.currentTarget.value);
     }
@@ -100,14 +105,14 @@ const Slider = props => {
 
   return (
   /* eslint-disable-next-line react/forbid-dom-props */
-    <div style={{ '--terra-slider-progress-status': `${value}%` }} className={sliderClassNames}>
+    <div style={{ '--terra-slider-progress-status': `${slidervalue}%` }} className={sliderClassNames}>
       <span className={cx('label')} aria-hidden="true">
         {label}
       </span>
       <span className={cx('slider-label', 'slider-min-label')} aria-hidden="true">
         {minLabel}
       </span>
-      <input className={cx('input-range')} type="range" ref={sliderRef} aria-label={label} aria-describedby={descriptionId} value={value} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={handleOnChange} />
+      <input className={cx('input-range')} type="range" ref={sliderRef} aria-label={label} aria-describedby={descriptionId} value={slidervalue} disabled={isDisabled} min={minimumValue} max={maximumValue} onChange={handleOnChange} />
       <span className={cx('slider-label', 'slider-max-label')} aria-hidden="true">
         {maxLabel}
       </span>

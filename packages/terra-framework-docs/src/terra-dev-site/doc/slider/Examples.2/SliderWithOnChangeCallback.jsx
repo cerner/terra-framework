@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 import Slider from 'terra-slider';
 
 const SliderWithOnChangeCallback = () => {
-  const [value, setValue] = useState('');
+  const [value, setValue] = useState('20');
 
   const handleChange = (v) => {
     setValue(v);
   };
-  const message = value ? `Updated Slider value is: ${value}` : 'Change the value of Slider to trigger callback';
+  const message = `Slider value is: ${value}`;
 
   return (
     <>
@@ -15,7 +15,7 @@ const SliderWithOnChangeCallback = () => {
         minimumValue={0}
         maximumValue={100}
         label="Zoom"
-        value={20}
+        value={value}
         onChange={handleChange}
       />
       <p>{message}</p>

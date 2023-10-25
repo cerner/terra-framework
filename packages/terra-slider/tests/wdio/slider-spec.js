@@ -126,4 +126,14 @@ Terra.describeViewports('Slider', ['medium', 'large'], () => {
       Terra.validates.element('on-change-callback-update');
     });
   });
+
+  describe('Slider With Value Update', () => {
+    it('displays a slider with value update', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slider/slider-with-value-update');
+      Terra.validates.element('initial-update');
+      $('#slider-set-value-button').waitForDisplayed();
+      $('#slider-set-value-button').click();
+      Terra.validates.element('after-update');
+    });
+  });
 });
