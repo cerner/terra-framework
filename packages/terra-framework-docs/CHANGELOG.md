@@ -5,14 +5,10 @@
 * Added
   * Added test for data grid column resizing.
   * Added example for Flowsheet Data Grid containing "No Result" cells.
-
-* Fixed
-  * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
-
-* Added
   * Added example for Flowsheet Data Grid containing "No Result" cells.
 
 * Fixed
+  * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
   * Fixed broken links in the Worklist Data Grid documentation in `terra-data-grid` component.
 
 ## 1.42.0 - (October 20, 2023)
