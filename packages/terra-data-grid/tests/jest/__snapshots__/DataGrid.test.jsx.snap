@@ -431,6 +431,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <table
           className="data-grid"
           id="test-terra-data-grid"
+          onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
@@ -465,7 +466,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               ]
             }
             headerHeight="2.5rem"
+            isActiveColumnResizing={false}
             onColumnSelect={[Function]}
+            onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
             tableHeight={0}
           >
@@ -479,10 +482,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -521,11 +527,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={true}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -550,6 +559,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <div
                         className="header-container"
                         role="button"
+                        tabIndex="-1"
                       >
                         <span>
                            Vitals
@@ -560,12 +570,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnText=" Vitals"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={0}
+                          columnResizeIncrement={10}
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
@@ -596,23 +611,32 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label=" Vitals"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -630,10 +654,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -672,11 +699,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={true}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -701,6 +731,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <div
                         className="header-container"
                         role="button"
+                        tabIndex="-1"
                       >
                         <span>
                           March 16
@@ -711,12 +742,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnText="March 16"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={1}
+                          columnResizeIncrement={10}
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
@@ -747,23 +783,32 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label="March 16"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -790,11 +835,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+                  isActive={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -833,11 +881,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -846,6 +897,8 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header"
                       key="Column-2"
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -859,7 +912,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 17
@@ -870,12 +922,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnText="March 17"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={2}
+                          columnResizeIncrement={10}
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
@@ -906,23 +963,32 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label="March 17"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -2254,6 +2320,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             </Row>
           </tbody>
         </table>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="polite"
+          text={null}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            className="visually-hidden-text"
+          />
+        </VisuallyHiddenText>
         <VisuallyHiddenText
           aria-atomic="true"
           aria-live="polite"
@@ -2702,6 +2779,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <table
           className="data-grid"
           id="test-terra-data-grid"
+          onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
@@ -2736,7 +2814,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               ]
             }
             headerHeight="2.5rem"
+            isActiveColumnResizing={false}
             onColumnSelect={[Function]}
+            onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
             tableHeight={0}
           >
@@ -2750,10 +2830,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -2792,11 +2875,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={true}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -2821,6 +2907,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <div
                         className="header-container"
                         role="button"
+                        tabIndex="-1"
                       >
                         <span>
                            Vitals
@@ -2831,12 +2918,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnText=" Vitals"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={0}
+                          columnResizeIncrement={10}
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
@@ -2867,23 +2959,32 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label=" Vitals"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -2901,10 +3002,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -2943,11 +3047,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={true}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -2972,6 +3079,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <div
                         className="header-container"
                         role="button"
+                        tabIndex="-1"
                       >
                         <span>
                           March 16
@@ -2982,12 +3090,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnText="March 16"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={1}
+                          columnResizeIncrement={10}
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
@@ -3018,23 +3131,32 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label="March 16"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -3061,11 +3183,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+                  isActive={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -3104,11 +3229,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -3117,6 +3245,8 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <th
                       className="column-header"
                       key="Column-2"
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -3130,7 +3260,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 17
@@ -3141,12 +3270,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         columnText="March 17"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={2}
+                          columnResizeIncrement={10}
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
@@ -3177,23 +3311,32 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label="March 17"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -4536,6 +4679,17 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             className="visually-hidden-text"
           />
         </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="polite"
+          text={null}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            className="visually-hidden-text"
+          />
+        </VisuallyHiddenText>
       </div>
     </Component>
   </InjectIntl(Component)>
@@ -4955,6 +5109,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         <table
           className="data-grid"
           id="test-terra-data-grid"
+          onBlur={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
           onMouseDown={[Function]}
@@ -4997,7 +5152,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               ]
             }
             headerHeight="2.5rem"
+            isActiveColumnResizing={false}
             onColumnSelect={[Function]}
+            onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
             tableHeight={0}
           >
@@ -5010,12 +5167,15 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   columnIndex={0}
                   headerHeight="2.5rem"
                   id="WorklistDataGrid-rowSelectionColumn"
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
                   key="WorklistDataGrid-rowSelectionColumn"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -5053,11 +5213,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={true}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -5092,10 +5255,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -5134,11 +5300,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={true}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -5163,6 +5332,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <div
                         className="header-container"
                         role="button"
+                        tabIndex="-1"
                       >
                         <span>
                            Vitals
@@ -5173,12 +5343,17 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         columnText=" Vitals"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={1}
+                          columnResizeIncrement={10}
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
@@ -5209,23 +5384,32 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label=" Vitals"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -5243,10 +5427,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -5285,11 +5472,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={true}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -5314,6 +5504,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <div
                         className="header-container"
                         role="button"
+                        tabIndex="-1"
                       >
                         <span>
                           March 16
@@ -5324,12 +5515,17 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         columnText="March 16"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={2}
+                          columnResizeIncrement={10}
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
@@ -5360,23 +5556,32 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label="March 16"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -5403,11 +5608,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+                  isActive={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -5446,11 +5654,14 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={true}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -5459,6 +5670,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <th
                       className="column-header"
                       key="Column-2"
+                      onKeyDown={[Function]}
+                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -5472,7 +5685,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 17
@@ -5483,12 +5695,17 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         columnText="March 17"
                         columnWidth={200}
                         height={0}
+                        isActive={false}
                         maximumWidth={300}
                         minimumWidth={60}
+                        onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
+                        onResizeMouseUp={[Function]}
+                        setIsActive={[Function]}
                       >
                         <ColumnResizeHandle
                           columnIndex={3}
+                          columnResizeIncrement={10}
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
@@ -5519,23 +5736,32 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               "timeZone": null,
                             }
                           }
+                          isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
+                          onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
+                          onResizeMouseUp={[Function]}
+                          setIsActive={[Function]}
                         >
                           <div
                             aria-hidden={true}
-                            aria-label="March 17"
-                            aria-valuemax={300}
-                            aria-valuemin={60}
-                            aria-valuenow={200}
-                            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+                            aria-label={null}
+                            aria-valuemax={null}
+                            aria-valuemin={null}
+                            aria-valuenow={null}
+                            aria-valuetext={null}
                             className="resize-handle"
                             draggable={true}
                             onBlur={[Function]}
+                            onClick={[Function]}
                             onFocus={[Function]}
+                            onKeyDown={[Function]}
                             onMouseDown={[Function]}
-                            role="slider"
+                            onMouseEnter={[Function]}
+                            onMouseLeave={[Function]}
+                            onMouseUp={[Function]}
+                            role={null}
                             style={
                               Object {
                                 "height": "0px",
@@ -7470,6 +7696,17 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
             className="visually-hidden-text"
           />
         </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="polite"
+          text={null}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            className="visually-hidden-text"
+          />
+        </VisuallyHiddenText>
       </div>
     </Component>
   </InjectIntl(Component)>
@@ -7483,6 +7720,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
   <table
     className="data-grid"
     id="test-terra-data-grid"
+    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -7496,6 +7734,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
             0,
           ],
           "setCellAriaLiveMessage": [Function],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -7527,7 +7766,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
           ]
         }
         headerHeight="2.5rem"
+        isActiveColumnResizing={false}
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
         tableHeight={0}
       />
@@ -7697,6 +7938,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     aria-live="polite"
     text={null}
   />
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
+  />
 </div>
 `;
 
@@ -7707,6 +7953,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
   <table
     className="data-grid"
     id="test-terra-data-grid"
+    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -7720,6 +7967,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
             0,
           ],
           "setCellAriaLiveMessage": [Function],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -7751,7 +7999,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
           ]
         }
         headerHeight="2.5rem"
+        isActiveColumnResizing={false}
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
         tableHeight={0}
       />
@@ -7916,6 +8166,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       </tbody>
     </ContextProvider>
   </table>
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="polite"
+    text={null}
+  />
   <VisuallyHiddenText
     aria-atomic="true"
     aria-live="polite"
