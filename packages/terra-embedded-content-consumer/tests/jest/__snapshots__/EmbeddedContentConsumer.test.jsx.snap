@@ -67,33 +67,27 @@ exports[`InjectIntl should render the embedded content consumer container 1`] = 
       src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
       title="basic provider"
     >
-      <div
-        className="embedded-content-container"
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
       >
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.beginEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-        <div
-          className="embedded-content-wrapper"
-        />
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.endEmbeddedContent"
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.endEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-      </div>
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
     </EmbeddedContentConsumer>
   </InjectIntl(EmbeddedContentConsumer)>
 </div>
@@ -168,33 +162,29 @@ exports[`InjectIntl should render the embedded content consumer with custom clas
       src="https://www.cdc.gov/"
       title="custom class name"
     >
-      <div
-        className="embedded-content-container"
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
       >
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.beginEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-        <div
-          className="embedded-content-wrapper"
-        />
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.endEmbeddedContent"
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div
+        className="container"
+      />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.endEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-      </div>
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
     </EmbeddedContentConsumer>
   </InjectIntl(EmbeddedContentConsumer)>
 </div>
@@ -287,33 +277,27 @@ exports[`InjectIntl should render the embedded content consumer with options att
       src=""
       title="inline html content"
     >
-      <div
-        className="embedded-content-container"
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
       >
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.beginEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-        <div
-          className="embedded-content-wrapper"
-        />
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.endEmbeddedContent"
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.endEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-      </div>
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
     </EmbeddedContentConsumer>
   </InjectIntl(EmbeddedContentConsumer)>
 </div>
@@ -386,33 +370,27 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       src="https://www.cdc.gov/"
       title="title for the frame content"
     >
-      <div
-        className="embedded-content-container"
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
       >
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.beginEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-        <div
-          className="embedded-content-wrapper"
-        />
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.endEmbeddedContent"
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.endEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-      </div>
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
     </EmbeddedContentConsumer>
   </InjectIntl(EmbeddedContentConsumer)>
 </div>
@@ -499,33 +477,27 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       src="https://www.cdc.gov/"
       title="title that will be used for the frame content"
     >
-      <div
-        className="embedded-content-container"
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
       >
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.beginEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-        <div
-          className="embedded-content-wrapper"
-        />
-        <VisuallyHiddenText
-          className="visually-hidden-text"
-          text="Terra.embeddedContentConsumer.endEmbeddedContent"
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
         >
-          <span
-            className="visually-hidden-text visually-hidden-text"
-          >
-            Terra.embeddedContentConsumer.endEmbeddedContent
-          </span>
-        </VisuallyHiddenText>
-      </div>
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
     </EmbeddedContentConsumer>
   </InjectIntl(EmbeddedContentConsumer)>
 </div>
@@ -594,33 +566,27 @@ exports[`InjectIntl should render visually hidden text before and after the embe
     src="https://www.google.com/"
     title="frame content title"
   >
-    <div
-      className="embedded-content-container"
+    <VisuallyHiddenText
+      className="visually-hidden-text"
+      text="Terra.embeddedContentConsumer.beginEmbeddedContent"
     >
-      <VisuallyHiddenText
-        className="visually-hidden-text"
-        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+      <span
+        className="visually-hidden-text visually-hidden-text"
       >
-        <span
-          className="visually-hidden-text visually-hidden-text"
-        >
-          Terra.embeddedContentConsumer.beginEmbeddedContent
-        </span>
-      </VisuallyHiddenText>
-      <div
-        className="embedded-content-wrapper"
-      />
-      <VisuallyHiddenText
-        className="visually-hidden-text"
-        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+        Terra.embeddedContentConsumer.beginEmbeddedContent
+      </span>
+    </VisuallyHiddenText>
+    <div />
+    <VisuallyHiddenText
+      className="visually-hidden-text"
+      text="Terra.embeddedContentConsumer.endEmbeddedContent"
+    >
+      <span
+        className="visually-hidden-text visually-hidden-text"
       >
-        <span
-          className="visually-hidden-text visually-hidden-text"
-        >
-          Terra.embeddedContentConsumer.endEmbeddedContent
-        </span>
-      </VisuallyHiddenText>
-    </div>
+        Terra.embeddedContentConsumer.endEmbeddedContent
+      </span>
+    </VisuallyHiddenText>
   </EmbeddedContentConsumer>
 </InjectIntl(EmbeddedContentConsumer)>
 `;

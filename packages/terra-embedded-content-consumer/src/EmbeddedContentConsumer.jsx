@@ -147,7 +147,7 @@ class EmbeddedContentConsumer extends React.Component {
     } = this.props;
 
     return (
-      <div className={cx('embedded-content-container')}>
+      <>
         <VisuallyHiddenText
           className={cx('visually-hidden-text')}
           text={intl.formatMessage(
@@ -157,7 +157,6 @@ class EmbeddedContentConsumer extends React.Component {
         />
         <div
           {...customProps}
-          className={cx('embedded-content-wrapper')}
           ref={(element) => { this.embeddedContentWrapper = element; }}
         />
         <VisuallyHiddenText
@@ -167,7 +166,7 @@ class EmbeddedContentConsumer extends React.Component {
             { name: title },
           )}
         />
-      </div>
+      </>
     );
   }
 }
