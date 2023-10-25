@@ -8,6 +8,9 @@
 * Added
   * Added example for Flowsheet Data Grid containing "No Result" cells.
 
+* Updated
+  * Updates `terra-table` example to show providing custom masked cell message label.
+
 ## 1.42.0 - (October 20, 2023)
 
 * Added
