@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.43.0 - (October 25, 2023)
+
 * Added
   * New Terra Slider component documentation, examples and tests.
 
