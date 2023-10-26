@@ -1,0 +1,22 @@
+{
+  "Terra.dataGrid.maskedCell": "Données masquées",
+  "Terra.dataGrid.columnError": "Erreurs associées à la colonne",
+  "Terra.dataGrid.blank": "Vide",
+  "Terra.dataGrid.row-index": "Ligne {row}",
+  "Terra.dataGrid.resizeHandleValueText": "Largeur de la colonne : {columnWidth} pixels",
+  "Terra.dataGrid.cell-focus-trapped": "Focus contenu dans la cellule. Pour reprendre la navigation de la grille, appuyez sur la touche Échappement.",
+  "Terra.dataGrid.cell-interactable": "La cellule contient des éléments avec lesquels il est possible d'interagir. Pour déplacer le focus dans la cellule, appuyez sur la touche Entrée.",
+  "Terra.dataGrid.resume-navigation": "Navigation de la grille reprise.",
+  "Terra.worklistDataGrid.row-selection-template": "Ligne {row} sélectionnée. ",
+  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} lignes sélectionnées. ",
+  "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} lignes non sélectionnées. ",
+  "Terra.worklistDataGrid.row-selection-cleared-template": "Ligne {row} non sélectionnée. ",
+  "Terra.worklistDataGrid.row-selection-mode-enabled": "Mode Sélection de ligne activé.",
+  "Terra.worklistDataGrid.row-selection-mode-disabled": "Mode Sélection de ligne désactivé.",
+  "Terra.worklistDataGrid.all-rows-selected": "Toutes les lignes sont sélectionnées.",
+  "Terra.worklistDataGrid.all-rows-unselected": "Aucune ligne n'est sélectionnée.",
+  "Terra.worklist-data-grid.resize-handle-template": "Poignée de redimensionnement de colonne pour {columnText}. Pour l'utiliser, appuyez sur la touche Entrée.",
+  "Terra.worklist-data-grid.resize-handle-value-text": "{columnWidth} pixels",
+  "Terra.worklist-data-grid.cell-focus-trapped": "Focus contenu dans la cellule. Pour reprendre la navigation de la grille, appuyez sur la touche Échappement.",
+  "Terra.worklist-data-grid.resume-navigation": "Navigation de la grille reprise."
+}
