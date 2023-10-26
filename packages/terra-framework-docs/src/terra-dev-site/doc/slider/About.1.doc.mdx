@@ -1,0 +1,57 @@
+import { Notice } from "@cerner/terra-docs";
+import { Badge } from 'terra-slider/package.json?dev-site-package';
+
+import SliderPropsTable from 'terra-slider/src/Slider?dev-site-props-table';
+
+import DefaultSlider from './Examples.2/DefaultSlider?dev-site-example';
+import CustomSlider from './Examples.2/CustomSlider?dev-site-example';
+import DisabledSlider from './Examples.2/DisabledSlider?dev-site-example';
+import SliderWithOnChangeCallback from './Examples.2/SliderWithOnChangeCallback?dev-site-example';
+import SliderWithValueUpdate from './Examples.2/SliderWithValueUpdate?dev-site-example';
+
+<Badge />
+
+# Terra Slider
+
+Terra Slider provides a way to select a value from a given range by sliding a thumb along a bar to track the value.
+
+<Notice variant="caution" ariaLevel="2">
+Terra Slider is an input component used to quickly select an imprecise value within a range such as a zoom level. It does not yet include features required for entering precise values.
+</Notice>
+
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-slider`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+ * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
+
+## Examples
+<DefaultSlider />
+<CustomSlider />
+<DisabledSlider />
+<SliderWithOnChangeCallback />
+<SliderWithValueUpdate />
+
+## Slider props table
+<SliderPropsTable />
+

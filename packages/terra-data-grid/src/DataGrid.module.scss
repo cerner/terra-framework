@@ -13,6 +13,8 @@
     // Style for the grid itself
     border-collapse: separate;
     border-spacing: 0;
+    // Allow for resizing of last grid column
+    margin-right: 15px;
     table-layout: fixed;
     user-select: none;
     width: 1px;
