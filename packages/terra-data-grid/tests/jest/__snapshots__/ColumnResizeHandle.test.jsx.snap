@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
+exports[`ColumnResizeHandle renders a default column resize handle when isActive is false 1`] = `
 <InjectIntl(ColumnResizeHandle)
   columnIndex={0}
   columnText="Vitals"
   columnWidth={200}
-  height={500}
+  height={200}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -33,32 +33,18 @@ exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
       "timeZone": null,
     }
   }
+  isActive={false}
   maximumWidth={300}
   minimumWidth={60}
-  onResizeMouseDown={
-    [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
-            "preventDefault": [Function],
-            "stopPropagation": [Function],
-          },
-        ],
-      ],
-      "results": Array [
-        Object {
-          "type": "return",
-          "value": undefined,
-        },
-      ],
-    }
-  }
+  onResizeMouseDown={[MockFunction]}
+  onResizeMouseUp={[MockFunction]}
 >
   <ColumnResizeHandle
     columnIndex={0}
+    columnResizeIncrement={10}
     columnText="Vitals"
     columnWidth={200}
-    height={500}
+    height={200}
     intl={
       Object {
         "defaultFormats": Object {},
@@ -86,43 +72,33 @@ exports[`ColumnResizeHandle renders a default column resize handle 1`] = `
         "timeZone": null,
       }
     }
+    isActive={false}
     maximumWidth={300}
     minimumWidth={60}
-    onResizeMouseDown={
-      [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
-              "preventDefault": [Function],
-              "stopPropagation": [Function],
-            },
-          ],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
-      }
-    }
+    onResizeMouseDown={[MockFunction]}
+    onResizeMouseUp={[MockFunction]}
   >
     <div
       aria-hidden={true}
-      aria-label="Vitals"
-      aria-valuemax={300}
-      aria-valuemin={60}
-      aria-valuenow={200}
-      aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+      aria-label={null}
+      aria-valuemax={null}
+      aria-valuemin={null}
+      aria-valuenow={null}
+      aria-valuetext={null}
       className="resize-handle"
       draggable={true}
       onBlur={[Function]}
+      onClick={[Function]}
       onFocus={[Function]}
+      onKeyDown={[Function]}
       onMouseDown={[Function]}
-      role="slider"
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      role={null}
       style={
         Object {
-          "height": "500px",
+          "height": "200px",
         }
       }
       tabIndex={-1}

@@ -34,14 +34,14 @@ const DefaultFlowsheetDataGrid = () => {
           { content: 'Cardiac Index (L/min/m2)' },
           { content: '2.25' },
           { content: '2.28' },
-          { content: '2.8' },
+          { content: null },
         ],
       },
       {
         id: '4',
         cells: [
           { content: 'ICP (mmHg)' },
-          { content: '11' },
+          { content: null },
           { content: '11' },
           { content: '12' },
         ],
@@ -51,7 +51,7 @@ const DefaultFlowsheetDataGrid = () => {
         cells: [
           { content: 'CPP (mmHg)' },
           { content: '63' },
-          { content: '47' },
+          { content: null },
           { content: '48' },
         ],
       },

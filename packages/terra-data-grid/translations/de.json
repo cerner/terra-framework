@@ -1,0 +1,22 @@
+{
+  "Terra.dataGrid.maskedCell": "Verborgene Daten",
+  "Terra.dataGrid.columnError": "Fehler in Zusammenhang mit der Spalte.",
+  "Terra.dataGrid.blank": "Leer",
+  "Terra.dataGrid.row-index": "Zeile {row}",
+  "Terra.dataGrid.resizeHandleValueText": "{columnWidth} Pixel - Spaltenbreite",
+  "Terra.dataGrid.cell-focus-trapped": "Fokus in Zelle enthalten. Esc-Taste drücken, um die Rasternavigation wieder aufzunehmen.",
+  "Terra.dataGrid.cell-interactable": "Die Zelle enthält interaktive Elemente. Eingabetaste drücken, um den Fokus innerhalb der Zelle zu verschieben.",
+  "Terra.dataGrid.resume-navigation": "Die Rasternavigation wurde wieder aufgenommen.",
+  "Terra.worklistDataGrid.row-selection-template": "Zeile {row} ausgewählt.",
+  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} Zeilen ausgewählt.",
+  "Terra.worklistDataGrid.multiple-rows-unselected": "Auswahl für {rowCount} Zeilen aufgehoben.",
+  "Terra.worklistDataGrid.row-selection-cleared-template": "Auswahl für Zeile {row} aufgehoben.",
+  "Terra.worklistDataGrid.row-selection-mode-enabled": "Zeilenauswahlmodus aktiviert.",
+  "Terra.worklistDataGrid.row-selection-mode-disabled": "Zeilenauswahlmodus deaktiviert.",
+  "Terra.worklistDataGrid.all-rows-selected": "Alle Zeilen ausgewählt",
+  "Terra.worklistDataGrid.all-rows-unselected": "Keine Zeilen ausgewählt",
+  "Terra.worklist-data-grid.resize-handle-template": "Handle zur Größenänderung der Spalte für {columnText}. Eingabetaste drücken, um diesen zu verwenden.",
+  "Terra.worklist-data-grid.resize-handle-value-text": "{columnWidth} Pixel",
+  "Terra.worklist-data-grid.cell-focus-trapped": "Fokus in Zelle enthalten. Esc-Taste drücken, um die Rasternavigation wieder aufzunehmen.",
+  "Terra.worklist-data-grid.resume-navigation": "Die Rasternavigation wurde wieder aufgenommen."
+}

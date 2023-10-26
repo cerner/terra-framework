@@ -42,7 +42,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
               "content": "Heart Rate Monitored (bpm)",
             },
             Object {
-              "content": "",
+              "content": "65",
             },
             Object {
               "content": "66",
@@ -88,6 +88,149 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
             },
             Object {
               "content": "47",
+            },
+          ],
+          "id": "4",
+        },
+      ]
+    }
+  />
+</div>
+`;
+
+exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell contents with a "No results" visual indicator and hidden text 1`] = `
+<div
+  className="flowsheet-data-grid-container"
+>
+  <ForwardRef
+    ariaLabel="Test Flowsheet Data Grid"
+    columnHeaderHeight="2.5rem"
+    defaultColumnWidth={200}
+    id="test-terra-flowsheet-data-grid"
+    overflowColumns={
+      Array [
+        Object {
+          "displayName": "March 16",
+          "id": "Column-1",
+          "isResizable": false,
+        },
+        Object {
+          "displayName": "March 17",
+          "id": "Column-2",
+          "isResizable": false,
+        },
+      ]
+    }
+    pinnedColumns={
+      Array [
+        Object {
+          "displayName": "Vitals",
+          "id": "Column-0",
+          "isResizable": false,
+        },
+      ]
+    }
+    rowHeaderIndex={0}
+    rowHeight="2.5rem"
+    rows={
+      Array [
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Heart Rate Monitored (bpm)",
+            },
+            Object {
+              "content": <React.Fragment>
+                <span
+                  aria-hidden={true}
+                >
+                  Terra.flowsheetDataGrid.no-result-display
+                </span>
+                <VisuallyHiddenText
+                  text="Terra.flowsheetDataGrid.no-result"
+                />
+              </React.Fragment>,
+            },
+            Object {
+              "content": "66",
+            },
+          ],
+          "id": "1",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Temperature Oral (degC)",
+            },
+            Object {
+              "content": "36.7",
+            },
+            Object {
+              "content": <React.Fragment>
+                <span
+                  aria-hidden={true}
+                >
+                  Terra.flowsheetDataGrid.no-result-display
+                </span>
+                <VisuallyHiddenText
+                  text="Terra.flowsheetDataGrid.no-result"
+                />
+              </React.Fragment>,
+            },
+          ],
+          "id": "2",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Cardiac Index (L/min/m2)",
+            },
+            Object {
+              "content": <React.Fragment>
+                <span
+                  aria-hidden={true}
+                >
+                  Terra.flowsheetDataGrid.no-result-display
+                </span>
+                <VisuallyHiddenText
+                  text="Terra.flowsheetDataGrid.no-result"
+                />
+              </React.Fragment>,
+            },
+            Object {
+              "content": "2.28",
+            },
+          ],
+          "id": "3",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "",
+            },
+            Object {
+              "content": <React.Fragment>
+                <span
+                  aria-hidden={true}
+                >
+                  Terra.flowsheetDataGrid.no-result-display
+                </span>
+                <VisuallyHiddenText
+                  text="Terra.flowsheetDataGrid.no-result"
+                />
+              </React.Fragment>,
+            },
+            Object {
+              "content": <React.Fragment>
+                <span
+                  aria-hidden={true}
+                >
+                  Terra.flowsheetDataGrid.no-result-display
+                </span>
+                <VisuallyHiddenText
+                  text="Terra.flowsheetDataGrid.no-result"
+                />
+              </React.Fragment>,
             },
           ],
           "id": "4",
