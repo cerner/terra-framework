@@ -1,11 +1,11 @@
 import React, {
-  useState, useRef, useCallback, useEffect, forwardRef, useImperativeHandle,
+  useState, useRef, useCallback, forwardRef, useImperativeHandle,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import Table, { GridContext } from 'terra-table';
+import Table, { GridConstants, GridContext } from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import rowShape from './proptypes/rowShape';
 import { columnShape } from './proptypes/columnShape';
@@ -13,7 +13,6 @@ import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
-import { mapDataGridColumn, mapDataGridRow } from './utils/dataGridMappers';
 
 const cx = classNames.bind(styles);
 
@@ -145,11 +144,11 @@ const DataGrid = injectIntl((props) => {
 
   const grid = useRef();
   const gridContainerRef = useRef();
-
+  const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
-  const focusedRow = useRef(0);
-  const focusedCol = useRef(0);
+  const [focusedRow, setFocusedRow] = useState(0);
+  const [focusedCol, setFocusedCol] = useState(0);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
   // -------------------------------------
   // functions
@@ -160,8 +159,8 @@ const DataGrid = injectIntl((props) => {
 
   const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
-    focusedRow.current = newRowIndex;
-    focusedCol.current = newColIndex;
+    setFocusedRow(newRowIndex);
+    setFocusedCol(newColIndex);
     let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
     if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
       [focusedCell] = focusedCell.getElementsByTagName('input');
@@ -180,40 +179,34 @@ const DataGrid = injectIntl((props) => {
     props.focusFuncRef,
     () => ({
       setFocusedRowCol,
-      getFocusedCell() { return { row: focusedRow.current, col: focusedCol.current }; },
+      getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [focusedCol, focusedRow],
   );
 
-  // -------------------------------------
-  // useEffect Hooks
-
-  useEffect(() => {
-    // We have to search the dom for the table ref because react-intl v2 does not support forwardRef.
-
-    const [table] = gridContainerRef.current.getElementsByTagName('table');
-    grid.current = table;
-  }, [gridContainerRef]);
+  const handleTableRefs = useCallback((node) => {
+    grid.current = node.tableRef;
+    tableContainerRef.current = node.containerRef;
+  }, []);
 
   // -------------------------------------
 
   const handleMoveCellFocus = (fromCell, toCell) => {
     // Obtain coordinate rectangles for grid container, column header, and new cell selection
-    const tableContainer = gridContainerRef.current.firstChild;
-    const gridContainerRect = tableContainer.getBoundingClientRect();
+    const gridContainerRect = tableContainerRef.current.getBoundingClientRect();
     const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
     const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
 
     // Calculate horizontal scroll offset for right boundary
     if (nextCellRect.right > gridContainerRect.right) {
-      tableContainer.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
+      tableContainerRef.current.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
     } else {
       // Calculate horizontal scroll offset for left boundary
       let scrollOffsetX = 0;
-      if (pinnedColumns.length > 0 || hasSelectableRows) {
-        const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
-        const lastPinnedColumnIndex = pinnedColumns.length - 1 + pinnedColumnOffset;
+      const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
+      const lastPinnedColumnIndex = pinnedColumns.length - 1 + pinnedColumnOffset;
+      if (lastPinnedColumnIndex >= 0) {
         if (toCell.col > lastPinnedColumnIndex) {
           const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[lastPinnedColumnIndex].getBoundingClientRect();
           scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
@@ -223,14 +216,14 @@ const DataGrid = injectIntl((props) => {
       }
 
       if (scrollOffsetX < 0) {
-        tableContainer.scrollBy(scrollOffsetX, 0);
+        tableContainerRef.current.scrollBy(scrollOffsetX, 0);
       }
     }
 
     // Calculate vertical scroll offset
     const scrollOffsetY = nextCellRect.top - columnHeaderRect.bottom;
     if (scrollOffsetY < 0) {
-      tableContainer.scrollBy(0, scrollOffsetY);
+      tableContainerRef.current.scrollBy(0, scrollOffsetY);
     }
 
     setFocusedRowCol(toCell.row, toCell.col, true);
@@ -238,17 +231,16 @@ const DataGrid = injectIntl((props) => {
 
   const handleColumnSelect = useCallback((columnId) => {
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
-    focusedRow.current = 0;
-    focusedCol.current = columnIndex;
+    setFocusedCol(columnIndex === -1 ? 0 : columnId);
 
     if (onColumnSelect) {
-      onColumnSelect(columnId);
+      onColumnSelect(columnIndex === -1 ? WorklistDataGridUtils.ROW_SELECTION_COLUMN.id : columnId);
     }
   }, [onColumnSelect, displayedColumns]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    focusedRow.current = selectionDetails.rowIndex;
-    focusedCol.current = selectionDetails.columnIndex;
+    setFocusedRow(selectionDetails.rowIndex);
+    setFocusedCol(selectionDetails.columnIndex);
     if (onCellSelect) {
       onCellSelect(selectionDetails);
     }
@@ -272,7 +264,7 @@ const DataGrid = injectIntl((props) => {
       && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
       && window.getComputedStyle(element).visibility !== 'hidden'
       && element.closest('[inert]') === null
-      && (element.id === id || !grid.current.contains(element)),
+      && (element.id === id || !gridContainerRef.current.contains(element)),
     );
 
     // Identify index of the active element in the DOM excluding data grid children
@@ -312,7 +304,7 @@ const DataGrid = injectIntl((props) => {
   };
 
   const handleKeyDown = (event) => {
-    const cellCoordinates = { row: focusedRow.current, col: focusedCol.current };
+    const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
 
@@ -419,7 +411,7 @@ const DataGrid = injectIntl((props) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
-        setFocusedRowCol(focusedRow.current, focusedCol.current, true);
+        setFocusedRowCol(focusedRow, focusedCol, true);
       }
     }
 
@@ -437,16 +429,17 @@ const DataGrid = injectIntl((props) => {
       onKeyDown={handleKeyDown}
       onMouseDown={onMouseDown}
       onFocus={onFocus}
+      id={id}
       className={cx('data-grid-container')}
     >
-      <GridContext.Provider value={{ role: 'grid', setCellAriaLiveMessage }}>
+      <GridContext.Provider value={{ role: GridConstants.GRID, setCellAriaLiveMessage }}>
         <Table
-          id={id}
-          rows={rows.map(row => mapDataGridRow(row))}
+          id={`${id}-table`}
+          rows={rows}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
-          pinnedColumns={pinnedColumns.map(column => mapDataGridColumn(column))}
-          overflowColumns={overflowColumns.map(column => mapDataGridColumn(column))}
+          pinnedColumns={pinnedColumns}
+          overflowColumns={overflowColumns}
           defaultColumnWidth={defaultColumnWidth}
           columnHeaderHeight={columnHeaderHeight}
           rowHeight={rowHeight}
@@ -456,6 +449,7 @@ const DataGrid = injectIntl((props) => {
           onCellSelect={handleCellSelection}
           hasSelectableRows={hasSelectableRows}
           isStriped
+          ref={handleTableRefs}
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />

@@ -13,7 +13,6 @@ import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
-import { mapDataGridColumn, mapDataGridRow } from './utils/dataGridMappers';
 
 const cx = classNames.bind(styles);
 
@@ -178,6 +177,22 @@ function WorklistDataGrid(props) {
   const dataGridFuncRef = useRef();
   const gridReceivedFocus = useRef(false);
   const gridHasFocus = document.getElementById(`${id}-worklist-data-grid-container`)?.contains(document.activeElement);
+
+  const makeWorklistDataGridColumns = (column) => ({
+    ...column,
+    isResizable: column.isResizable !== false,
+    isSelectable: column.isSelectable !== false,
+  });
+
+  const worklistDataGridPinnedColumns = pinnedColumns.map(column => makeWorklistDataGridColumns(column));
+  const worklistDataGridOverflowColumns = overflowColumns.map(column => makeWorklistDataGridColumns(column));
+  const worklistDataGridRows = rows.map((row) => ({
+    ...row,
+    cells: row.cells.map((cell) => ({
+      ...cell,
+      isSelectable: cell.isSelectable !== false,
+    })),
+  }));
 
   // -------------------------------------
   // useEffect Hooks
@@ -419,11 +434,11 @@ function WorklistDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        rows={rows.map(row => mapDataGridRow(row))}
+        rows={worklistDataGridRows}
         rowHeight={rowHeight}
         rowHeaderIndex={rowHeaderIndex}
-        pinnedColumns={pinnedColumns.map(column => mapDataGridColumn(column))}
-        overflowColumns={overflowColumns.map(column => mapDataGridColumn(column))}
+        pinnedColumns={worklistDataGridPinnedColumns}
+        overflowColumns={worklistDataGridOverflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onColumnSelect={onColumnSelect}

@@ -65,7 +65,11 @@ const DefaultDataGrid = () => {
     <React.Fragment>
       <DataGrid
         id="default-terra-data-grid"
-        overflowColumns={cols}
+        overflowColumns={cols.map((col) => ({
+          ...col,
+          isSelectable: col.isSelectable !== false,
+          isResizable: col.isResizable !== false,
+        }))}
         rows={rows}
         rowHeaderIndex={0}
         ariaLabel="Data Grid"

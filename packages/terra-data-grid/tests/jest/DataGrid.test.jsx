@@ -4,7 +4,6 @@ import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import DataGrid from '../../src/DataGrid';
 import WorklistDataGridUtils from '../../src/utils/WorklistDataGridUtils';
 import ERRORS from '../../src/utils/constants';
-import { mapDataGridColumn, mapDataGridRow } from '../../src/utils/dataGridMappers';
 
 // Source data for tests
 const dataFile = {
@@ -77,7 +76,8 @@ describe('DataGrid', () => {
     );
 
     // One row used for the header.
-    const columnHeader = wrapper.find('Memo(ColumnHeader)');
+
+    const columnHeader = wrapper.find('ColumnHeader');
     expect(columnHeader).toHaveLength(1);
 
     // The number of rows should match the given data.
@@ -106,9 +106,10 @@ describe('DataGrid', () => {
 
     const rows = wrapper.find('Row');
     expect(rows).toHaveLength(dataFile.rows.length);
-    verifyRow(0, rows.get(0), mapDataGridRow(dataFile.rows[0]), dataFile.cols.map(columns => mapDataGridColumn(columns)));
-    verifyRow(1, rows.get(1), mapDataGridRow(dataFile.rows[1]), dataFile.cols.map(columns => mapDataGridColumn(columns)));
-    verifyRow(2, rows.get(2), mapDataGridRow(dataFile.rows[2]), dataFile.cols.map(columns => mapDataGridColumn(columns)));
+
+    verifyRow(0, rows.get(0), dataFile.rows[0], dataFile.cols);
+    verifyRow(1, rows.get(1), dataFile.rows[1], dataFile.cols);
+    verifyRow(2, rows.get(2), dataFile.rows[2], dataFile.cols);
 
     expect(wrapper).toMatchSnapshot();
   });
