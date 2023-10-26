@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.11.1 - (October 25, 2023)
+
 * Fixed
   * Fixed the dropdown options are being cut off on smaller viewports.
   * Fixed keyboard navigation after mouse click for draggable tabs.
