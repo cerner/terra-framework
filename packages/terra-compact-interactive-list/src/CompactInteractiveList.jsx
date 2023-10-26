@@ -23,15 +23,6 @@ const propTypes = {
    * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
-
-  /**
-   * Boolean indicating whether or not the column headers should be displayed. Defaults to false.
-   */
-  hasColumnHeaders: PropTypes.bool,
-};
-
-const defaultProps = {
-  hasColumnHeaders: false,
 };
 
 // const defaultColumnMinimumWidth = 60;
@@ -42,7 +33,6 @@ const CompactInteractiveList = (props) => {
     id,
     ariaLabelledBy,
     ariaLabel,
-    hasColumnHeaders,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -58,7 +48,7 @@ const CompactInteractiveList = (props) => {
         role="grid"
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
-        className={cx('compact-interactive-list', theme.className, { headerless: !hasColumnHeaders })}
+        className={cx('compact-interactive-list', theme.className)}
       >
         <div role="row">
           <div role="gridcell">This is the placeholder div</div>
@@ -69,6 +59,5 @@ const CompactInteractiveList = (props) => {
 };
 
 CompactInteractiveList.propTypes = propTypes;
-CompactInteractiveList.defaultProps = defaultProps;
 
 export default injectIntl(CompactInteractiveList);
