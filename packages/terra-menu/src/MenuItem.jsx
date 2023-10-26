@@ -384,7 +384,6 @@ class MenuItem extends React.Component {
             aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
-            aria-describedby={ariaDescribedBy}
           >
             {content}
           </li>

@@ -119,6 +119,7 @@ class MenuContent extends React.Component {
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onKeyDownBackButton = this.onKeyDownBackButton.bind(this);
     this.validateFocus = this.validateFocus.bind(this);
+    this.ariaDescribedByHandle = this.ariaDescribedByHandle.bind(this);
     this.needsFocus = props.isFocused;
     this.handleContainerRef = this.handleContainerRef.bind(this);
     this.menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
@@ -342,6 +343,23 @@ class MenuContent extends React.Component {
     );
   }
 
+  ariaDescribedByHandle(value, index) {
+    let ariaDescribedByValue;
+    if (MenuUtils.isMac()) {
+      ariaDescribedByValue = value.props.ariaDescribedBy;
+    }
+    if (!MenuUtils.isMac()) {
+      if (!this.props.index && this.props.showHeader && index === 0 && value.props.ariaDescribedBy) {
+        ariaDescribedByValue = `${this.menuTopHeaderId} ${value.props.ariaDescribedBy}`;
+      } else if (!this.props.index && this.props.showHeader && index === 0 && value.props.ariaDescribedBy === undefined) {
+        ariaDescribedByValue = this.menuTopHeaderId;
+      } else {
+        ariaDescribedByValue = value.props.ariaDescribedBy;
+      }
+    }
+    return ariaDescribedByValue;
+  }
+
   render() {
     let index = -1;
     const totalItems = MenuUtils.totalItems(this.props.children);
@@ -356,7 +374,7 @@ class MenuContent extends React.Component {
         index += 1;
         const onKeyDown = this.wrapOnKeyDown(item, index, item.props.isDisabled);
         const isActive = this.state.focusIndex === index;
-
+        const ariaDescribedByHandleValue = this.ariaDescribedByHandle(item, index);
         newItem = React.cloneElement(item, {
           onClick,
           onKeyDown,
@@ -364,20 +382,21 @@ class MenuContent extends React.Component {
           totalItems,
           index,
           intl: this.props.intl,
-          'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? this.menuTopHeaderId : undefined,
+          'aria-describedby': ariaDescribedByHandleValue,
         });
         // If the child has children then it is an item group, so iterate through it's children
       } else if (item.props.children) {
         const children = item.props.children ? [] : undefined;
         React.Children.forEach(item.props.children, (child) => {
           index += 1;
+          const ariaDescribedByHandleValue = this.ariaDescribedByHandle(child, index);
           const clonedElement = React.cloneElement(child, {
             onKeyDown: this.wrapOnKeyDown(child, index, child.props.isDisabled),
             isActive: index === this.state.focusIndex,
             totalItems,
             index,
             intl: this.props.intl,
-            'aria-describedby': !MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0 ? this.menuTopHeaderId : undefined,
+            'aria-describedby': ariaDescribedByHandleValue,
           });
           children.push(clonedElement);
         });
