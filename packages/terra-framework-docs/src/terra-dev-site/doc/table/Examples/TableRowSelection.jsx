@@ -86,6 +86,11 @@ const TableRowSelection = () => {
     setRowData(newRowData);
   }, [rowData]);
 
+  const onRowSelectionHeaderSelect = useCallback(() => {
+    // eslint-disable-next-line no-alert
+    alert('Row Selection Header Clicked');
+  }, []);
+
   return (
     <React.Fragment>
       <div>
@@ -106,6 +111,7 @@ const TableRowSelection = () => {
         ariaLabel="Table with Row Selections"
         hasSelectableRows={hasSelectableRows} // Prop to turn row selection mode on/off
         onRowSelect={onRowSelect} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects one or more rows.
+        onRowSelectionHeaderSelect={onRowSelectionHeaderSelect}
       />
     </React.Fragment>
   );
