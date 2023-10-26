@@ -112,6 +112,8 @@ exports[`Cell verifies that a cell has renders that masked label text, when prov
 <td
   aria-label="Some Label Here"
   className="cell masked"
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
   style={
     Object {
       "left": null,
