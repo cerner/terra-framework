@@ -7,6 +7,7 @@
 
 * Added
   * Added example for Flowsheet Data Grid containing "No Result" cells.
+  * Added initial setup for `terra-compact-interactive-list` documentation.
 
 ## 1.42.0 - (October 20, 2023)
 
