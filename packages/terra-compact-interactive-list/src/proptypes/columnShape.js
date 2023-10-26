@@ -10,10 +10,6 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
-   * Boolean value indicating whether or not the column has an error in the data.
-   */
-  hasError: PropTypes.bool,
-  /**
    * Number that specifies the minimum column width in pixels.
    */
   minimumWidth: PropTypes.number,

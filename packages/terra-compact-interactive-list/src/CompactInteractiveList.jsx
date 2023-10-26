@@ -25,14 +25,13 @@ const propTypes = {
   ariaLabel: PropTypes.string,
 
   /**
-   * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
-   * but the voice reader will use the column header values for a11y.
+   * Boolean indicating whether or not the column headers should be displayed. Defaults to false.
    */
   hasColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
-  hasColumnHeaders: true,
+  hasColumnHeaders: false,
 };
 
 // const defaultColumnMinimumWidth = 60;
