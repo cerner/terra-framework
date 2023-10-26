@@ -92,7 +92,7 @@ const SortableTable = () => {
       overflowColumns={tableColumns}
       rows={tableRows}
       onColumnSelect={handleColumnSelect}
-      ariaLabel="Table"
+      ariaLabel="Sortable Table"
     />
   );
 };

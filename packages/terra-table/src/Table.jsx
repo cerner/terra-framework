@@ -1,5 +1,5 @@
 import React, {
-  useState, useContext, useRef, useCallback, useEffect, useMemo,
+  useState, useContext, useRef, useCallback, useEffect, useMemo, forwardRef, useImperativeHandle,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -128,7 +128,7 @@ const defaultProps = {
 const defaultColumnMinimumWidth = 60;
 const defaultColumnMaximumWidth = 300;
 
-function Table(props) {
+const Table = (props) => {
   const {
     id,
     ariaLabelledBy,
@@ -172,6 +172,11 @@ function Table(props) {
 
   const isGridContext = gridContext.role === GridConstants.GRID;
   const columnContextValue = useMemo(() => ({ pinnedColumnOffsets }), [pinnedColumnOffsets]);
+
+  useImperativeHandle(props.tableRefs, () => ({
+    getTableRef() { return tableRef.current; },
+    getTableContainerRef() { return tableContainerRef.current; },
+  }), [tableRef, tableContainerRef]);
 
   // Initialize column width properties
   const initializeColumn = (column) => ({
@@ -236,7 +241,7 @@ function Table(props) {
 
       const tableContainer = tableContainerRef.current;
       setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
-                        || tableContainer.scrollHeight > tableContainer.clientHeight);
+                          || tableContainer.scrollHeight > tableContainer.clientHeight);
     });
 
     resizeObserver.observe(tableRef.current);
@@ -300,7 +305,7 @@ function Table(props) {
     <div
       ref={tableContainerRef}
       className={cx('table-container')}
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+        // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
       <table
@@ -352,9 +357,9 @@ function Table(props) {
       </table>
     </div>
   );
-}
+};
 
 Table.propTypes = propTypes;
 Table.defaultProps = defaultProps;
 
-export default React.memo(injectIntl(Table));
+export default forwardRef((props, ref) => <Table {...props} tableRefs={ref} />);

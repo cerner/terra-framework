@@ -3,12 +3,12 @@
 
 
 :local {
-  .striped-table-row:nth-child(even) {
-    background-color: var(--terra-table-row-striped-background-color, #f0f0f0);
-  }
-
   .row {
     background-color: var(--terra-table-row-background-color, #fff);
+    
+    .striped-table-row:nth-child(even):not(.selected) {
+      background-color: var(--terra-table-row-striped-background-color, #f0f0f0);
+    }
 
     &.selectable:hover {
       background-color: var(--terra-table-row-hover-background-color, #e2f2fc);

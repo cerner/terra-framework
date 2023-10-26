@@ -92,7 +92,7 @@ const ZebraStripedTable = () => {
       overflowColumns={cols}
       rows={rows}
       isStriped
-      ariaLabel="Table"
+      ariaLabel="Table with zebra striping"
     />
   );
 };
