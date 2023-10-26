@@ -52,7 +52,6 @@ exports[`Cell renders a pinned cell 1`] = `
     rowIndex={1}
   >
     <th
-      aria-selected={false}
       className="cell pinned"
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -375,7 +374,6 @@ exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] =
 
 exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeader prop is false 1`] = `
 <td
-  aria-selected={false}
   className="cell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
@@ -400,7 +398,6 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
 
 exports[`Cell verifies that only a row header cell (<th>) is created when isRowHeader prop is true 1`] = `
 <th
-  aria-selected={false}
   className="cell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}

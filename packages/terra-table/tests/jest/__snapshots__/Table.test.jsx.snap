@@ -195,7 +195,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
               Object {
                 "id": "table-rowSelectionColumn",
                 "isResizable": false,
-                "isSelectable": true,
+                "isSelectable": false,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 40,
@@ -240,7 +240,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
                 isResizable={false}
-                isSelectable={true}
+                isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
@@ -283,7 +283,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                     }
                   }
                   isResizable={false}
-                  isSelectable={true}
+                  isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
@@ -293,10 +293,8 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   width={40}
                 >
                   <th
-                    className="column-header selectable pinned"
+                    className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -305,7 +303,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                         "left": 0,
                       }
                     }
-                    tabIndex={0}
                   >
                     <div
                       className="header-container"
@@ -590,7 +587,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -719,7 +716,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       rowIndex={1}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -805,7 +801,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   rowIndex={1}
                 >
                   <th
-                    aria-selected={false}
                     className="cell highlighted"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -883,7 +878,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell highlighted blank"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -964,7 +958,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked highlighted"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -1303,7 +1296,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
               Object {
                 "id": "table-rowSelectionColumn",
                 "isResizable": false,
-                "isSelectable": true,
+                "isSelectable": false,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 40,
@@ -1348,7 +1341,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
                 isResizable={false}
-                isSelectable={true}
+                isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
@@ -1391,7 +1384,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     }
                   }
                   isResizable={false}
-                  isSelectable={true}
+                  isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
@@ -1401,10 +1394,8 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   width={40}
                 >
                   <th
-                    className="column-header selectable pinned"
+                    className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -1413,7 +1404,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         "left": 0,
                       }
                     }
-                    tabIndex={0}
                   >
                     <div
                       className="header-container"
@@ -1698,7 +1688,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -1826,7 +1816,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       rowIndex={1}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -1912,7 +1901,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={1}
                 >
                   <th
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -1990,7 +1978,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell blank"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2071,7 +2058,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2120,7 +2106,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -2248,7 +2234,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       rowIndex={2}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -2333,7 +2318,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={2}
                 >
                   <th
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2411,7 +2395,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={2}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2488,7 +2471,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={2}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2537,7 +2519,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -2665,7 +2647,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       rowIndex={3}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -2750,7 +2731,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={3}
                 >
                   <th
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2828,7 +2808,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={3}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2905,7 +2884,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={3}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -2953,7 +2931,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -3082,7 +3060,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       rowIndex={4}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -3167,7 +3144,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={4}
                 >
                   <th
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -3245,7 +3221,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={4}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -3321,7 +3296,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   rowIndex={4}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -3528,7 +3502,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
               Object {
                 "id": "table-rowSelectionColumn",
                 "isResizable": false,
-                "isSelectable": true,
+                "isSelectable": false,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 40,
@@ -3573,7 +3547,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
                 isResizable={false}
-                isSelectable={true}
+                isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
@@ -3616,7 +3590,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                     }
                   }
                   isResizable={false}
-                  isSelectable={true}
+                  isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
@@ -3626,10 +3600,8 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                   width={40}
                 >
                   <th
-                    className="column-header selectable pinned"
+                    className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -3638,7 +3610,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                         "left": 0,
                       }
                     }
-                    tabIndex={0}
                   >
                     <div
                       className="header-container"
@@ -4280,7 +4251,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "maximumWidth": 300,
                   "minimumWidth": 60,
                   "width": 40,
@@ -4325,7 +4296,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   headerHeight="2.5rem"
                   id="table-rowSelectionColumn"
                   isResizable={false}
-                  isSelectable={true}
+                  isSelectable={false}
                   key="table-rowSelectionColumn"
                   maximumWidth={300}
                   minimumWidth={60}
@@ -4368,7 +4339,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       }
                     }
                     isResizable={false}
-                    isSelectable={true}
+                    isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
@@ -4378,10 +4349,8 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     width={40}
                   >
                     <th
-                      className="column-header selectable pinned"
+                      className="column-header pinned"
                       key="table-rowSelectionColumn"
-                      onKeyDown={[Function]}
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -4390,7 +4359,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           "left": 0,
                         }
                       }
-                      tabIndex={0}
                     >
                       <div
                         className="header-container"
@@ -4675,7 +4643,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   Object {
                     "id": "table-rowSelectionColumn",
                     "isResizable": false,
-                    "isSelectable": true,
+                    "isSelectable": false,
                     "width": 40,
                   },
                   Object {
@@ -4803,7 +4771,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         rowIndex={1}
                       >
                         <td
-                          aria-selected={false}
                           className="cell pinned"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -4889,7 +4856,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={1}
                   >
                     <th
-                      aria-selected={false}
                       className="cell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -4967,7 +4933,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={1}
                   >
                     <td
-                      aria-selected={false}
                       className="cell blank"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5048,7 +5013,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={1}
                   >
                     <td
-                      aria-selected={false}
                       className="cell masked"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5097,7 +5061,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   Object {
                     "id": "table-rowSelectionColumn",
                     "isResizable": false,
-                    "isSelectable": true,
+                    "isSelectable": false,
                     "width": 40,
                   },
                   Object {
@@ -5225,7 +5189,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         rowIndex={2}
                       >
                         <td
-                          aria-selected={false}
                           className="cell pinned"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5310,7 +5273,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={2}
                   >
                     <th
-                      aria-selected={false}
                       className="cell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5388,7 +5350,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={2}
                   >
                     <td
-                      aria-selected={false}
                       className="cell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5465,7 +5426,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={2}
                   >
                     <td
-                      aria-selected={false}
                       className="cell masked"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5514,7 +5474,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   Object {
                     "id": "table-rowSelectionColumn",
                     "isResizable": false,
-                    "isSelectable": true,
+                    "isSelectable": false,
                     "width": 40,
                   },
                   Object {
@@ -5642,7 +5602,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         rowIndex={3}
                       >
                         <td
-                          aria-selected={false}
                           className="cell pinned"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5727,7 +5686,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={3}
                   >
                     <th
-                      aria-selected={false}
                       className="cell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5805,7 +5763,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={3}
                   >
                     <td
-                      aria-selected={false}
                       className="cell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5882,7 +5839,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={3}
                   >
                     <td
-                      aria-selected={false}
                       className="cell masked"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -5930,7 +5886,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   Object {
                     "id": "table-rowSelectionColumn",
                     "isResizable": false,
-                    "isSelectable": true,
+                    "isSelectable": false,
                     "width": 40,
                   },
                   Object {
@@ -6059,7 +6015,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         rowIndex={4}
                       >
                         <td
-                          aria-selected={false}
                           className="cell pinned"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -6144,7 +6099,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={4}
                   >
                     <th
-                      aria-selected={false}
                       className="cell highlighted"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -6222,7 +6176,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={4}
                   >
                     <td
-                      aria-selected={false}
                       className="cell highlighted"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -6298,7 +6251,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     rowIndex={4}
                   >
                     <td
-                      aria-selected={false}
                       className="cell highlighted"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -6636,7 +6588,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
               Object {
                 "id": "table-rowSelectionColumn",
                 "isResizable": false,
-                "isSelectable": true,
+                "isSelectable": false,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 40,
@@ -6681,7 +6633,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
                 isResizable={false}
-                isSelectable={true}
+                isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
@@ -6724,7 +6676,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     }
                   }
                   isResizable={false}
-                  isSelectable={true}
+                  isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
@@ -6734,10 +6686,8 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   width={40}
                 >
                   <th
-                    className="column-header selectable pinned"
+                    className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onKeyDown={[Function]}
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -6746,7 +6696,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         "left": 0,
                       }
                     }
-                    tabIndex={0}
                   >
                     <div
                       className="header-container"
@@ -7031,7 +6980,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -7160,7 +7109,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       rowIndex={1}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -7246,7 +7194,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={1}
                 >
                   <th
-                    aria-selected={false}
                     className="cell highlighted"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -7324,7 +7271,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell highlighted blank"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -7405,7 +7351,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked highlighted"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -7454,7 +7399,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -7582,7 +7527,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       rowIndex={2}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -7667,7 +7611,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={2}
                 >
                   <th
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -7745,7 +7688,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={2}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -7822,7 +7764,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={2}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -7871,7 +7812,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -7999,7 +7940,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       rowIndex={3}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -8084,7 +8024,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={3}
                 >
                   <th
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -8162,7 +8101,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={3}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -8239,7 +8177,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={3}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -8287,7 +8224,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 Object {
                   "id": "table-rowSelectionColumn",
                   "isResizable": false,
-                  "isSelectable": true,
+                  "isSelectable": false,
                   "width": 40,
                 },
                 Object {
@@ -8416,7 +8353,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       rowIndex={4}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -8501,7 +8437,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={4}
                 >
                   <th
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -8579,7 +8514,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={4}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -8655,7 +8589,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   rowIndex={4}
                 >
                   <td
-                    aria-selected={false}
                     className="cell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -12497,7 +12430,7 @@ Array [
 ]
 `;
 
-exports[`Table verifies row selection column header selection 1`] = `
+exports[`Table verifies row selection column header not selectable without callback 1`] = `
 <InjectIntl(Table)
   hasSelectableRows={true}
   id="test-terra-table"
@@ -12528,12 +12461,10 @@ exports[`Table verifies row selection column header selection 1`] = `
       "timeZone": null,
     }
   }
-  onColumnSelect={
+  onRowSelectionHeaderSelect={
     [MockFunction] {
       "calls": Array [
-        Array [
-          "table-rowSelectionColumn",
-        ],
+        Array [],
       ],
       "results": Array [
         Object {
@@ -12663,12 +12594,10 @@ exports[`Table verifies row selection column header selection 1`] = `
         "timeZone": null,
       }
     }
-    onColumnSelect={
+    onRowSelectionHeaderSelect={
       [MockFunction] {
         "calls": Array [
-          Array [
-            "table-rowSelectionColumn",
-          ],
+          Array [],
         ],
         "results": Array [
           Object {
@@ -13337,7 +13266,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       rowIndex={1}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -13423,7 +13351,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={1}
                 >
                   <th
-                    aria-selected={false}
                     className="cell pinned"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -13501,7 +13428,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell pinned blank"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -13582,7 +13508,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={1}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -13758,7 +13683,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       rowIndex={2}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -13843,7 +13767,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={2}
                 >
                   <th
-                    aria-selected={false}
                     className="cell pinned"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -13921,7 +13844,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={2}
                 >
                   <td
-                    aria-selected={false}
                     className="cell pinned"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -13998,7 +13920,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={2}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -14174,7 +14095,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       rowIndex={3}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -14259,7 +14179,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={3}
                 >
                   <th
-                    aria-selected={false}
                     className="cell pinned"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -14337,7 +14256,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={3}
                 >
                   <td
-                    aria-selected={false}
                     className="cell pinned"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -14414,7 +14332,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={3}
                 >
                   <td
-                    aria-selected={false}
                     className="cell masked"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -14590,7 +14507,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       rowIndex={4}
                     >
                       <td
-                        aria-selected={false}
                         className="cell pinned"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
@@ -14675,7 +14591,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={4}
                 >
                   <th
-                    aria-selected={false}
                     className="cell pinned highlighted"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -14753,7 +14668,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={4}
                 >
                   <td
-                    aria-selected={false}
                     className="cell pinned highlighted"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
@@ -14829,7 +14743,2343 @@ exports[`Table verifies row selection column header selection 1`] = `
                   rowIndex={4}
                 >
                   <td
-                    aria-selected={false}
+                    className="cell highlighted"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": null,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      47
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+            </tr>
+          </Row>
+        </tbody>
+      </table>
+      <VisuallyHiddenText
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-live="polite"
+        text="Terra.table.row-selection-template"
+      >
+        <span
+          aria-live="polite"
+          className="visually-hidden-text"
+        >
+          Terra.table.row-selection-template
+        </span>
+      </VisuallyHiddenText>
+    </div>
+  </Table>
+</InjectIntl(Table)>
+`;
+
+exports[`Table verifies row selection column header selection 1`] = `
+<InjectIntl(Table)
+  hasSelectableRows={true}
+  id="test-terra-table"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  onColumnSelect={[MockFunction]}
+  overflowColumns={
+    Array [
+      Object {
+        "displayName": "March 17",
+        "id": "Column-2",
+        "isSelectable": false,
+      },
+    ]
+  }
+  pinnedColumns={
+    Array [
+      Object {
+        "displayName": " Vitals",
+        "id": "Column-0",
+      },
+      Object {
+        "displayName": "March 16",
+        "id": "Column-1",
+      },
+    ]
+  }
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Heart Rate Monitored (bpm)",
+            "isSelectable": false,
+          },
+          Object {
+            "content": "",
+          },
+          Object {
+            "content": "66",
+            "isMasked": true,
+          },
+        ],
+        "id": "1",
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Temperature Oral (degC)",
+          },
+          Object {
+            "content": "36.7",
+          },
+          Object {
+            "content": "36.9",
+            "isMasked": true,
+          },
+        ],
+        "id": "2",
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Cardiac Index (L/min/m2)",
+          },
+          Object {
+            "content": "2.25",
+          },
+          Object {
+            "content": "2.28",
+            "isMasked": true,
+          },
+        ],
+        "id": "3",
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Oxygen Flow Rate (L/min)",
+          },
+          Object {
+            "content": "63",
+          },
+          Object {
+            "content": "47",
+          },
+        ],
+        "id": "4",
+        "isSelected": true,
+      },
+    ]
+  }
+>
+  <Table
+    columnHeaderHeight="2.5rem"
+    defaultColumnWidth={200}
+    hasColumnHeaders={true}
+    hasSelectableRows={true}
+    id="test-terra-table"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    onColumnSelect={[MockFunction]}
+    overflowColumns={
+      Array [
+        Object {
+          "displayName": "March 17",
+          "id": "Column-2",
+          "isSelectable": false,
+        },
+      ]
+    }
+    pinnedColumns={
+      Array [
+        Object {
+          "displayName": " Vitals",
+          "id": "Column-0",
+        },
+        Object {
+          "displayName": "March 16",
+          "id": "Column-1",
+        },
+      ]
+    }
+    rowHeaderIndex={0}
+    rowHeight="2.5rem"
+    rows={
+      Array [
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Heart Rate Monitored (bpm)",
+              "isSelectable": false,
+            },
+            Object {
+              "content": "",
+            },
+            Object {
+              "content": "66",
+              "isMasked": true,
+            },
+          ],
+          "id": "1",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Temperature Oral (degC)",
+            },
+            Object {
+              "content": "36.7",
+            },
+            Object {
+              "content": "36.9",
+              "isMasked": true,
+            },
+          ],
+          "id": "2",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Cardiac Index (L/min/m2)",
+            },
+            Object {
+              "content": "2.25",
+            },
+            Object {
+              "content": "2.28",
+              "isMasked": true,
+            },
+          ],
+          "id": "3",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Oxygen Flow Rate (L/min)",
+            },
+            Object {
+              "content": "63",
+            },
+            Object {
+              "content": "47",
+            },
+          ],
+          "id": "4",
+          "isSelected": true,
+        },
+      ]
+    }
+  >
+    <div
+      className="table-container"
+    >
+      <table
+        className="table"
+        id="test-terra-table"
+        role="table"
+      >
+        <colgroup>
+          <col
+            key="table-rowSelectionColumn"
+            style={
+              Object {
+                "width": "40px",
+              }
+            }
+          />
+          <col
+            key="Column-0"
+            style={
+              Object {
+                "width": "200px",
+              }
+            }
+          />
+          <col
+            key="Column-1"
+            style={
+              Object {
+                "width": "200px",
+              }
+            }
+          />
+          <col
+            key="Column-2"
+            style={
+              Object {
+                "width": "200px",
+              }
+            }
+          />
+        </colgroup>
+        <ColumnHeader
+          columns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": false,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "maximumWidth": 300,
+                "minimumWidth": 60,
+                "width": 200,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "maximumWidth": 300,
+                "minimumWidth": 60,
+                "width": 200,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+                "maximumWidth": 300,
+                "minimumWidth": 60,
+                "width": 200,
+              },
+            ]
+          }
+          hasColumnHeaders={true}
+          headerHeight="2.5rem"
+          onColumnSelect={[Function]}
+          onResizeMouseDown={[Function]}
+          tableHeight={0}
+        >
+          <thead>
+            <tr
+              className="column-header-row"
+              height="2.5rem"
+            >
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={0}
+                headerHeight="2.5rem"
+                id="table-rowSelectionColumn"
+                isResizable={false}
+                isSelectable={false}
+                key="table-rowSelectionColumn"
+                maximumWidth={300}
+                minimumWidth={60}
+                onColumnSelect={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                tableHeight={0}
+                width={40}
+              >
+                <ColumnHeaderCell
+                  columnIndex={0}
+                  hasError={false}
+                  headerHeight="2.5rem"
+                  id="table-rowSelectionColumn"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isResizable={false}
+                  isSelectable={false}
+                  maximumWidth={300}
+                  minimumWidth={60}
+                  onColumnSelect={[Function]}
+                  onResizeMouseDown={[Function]}
+                  rowIndex={0}
+                  tableHeight={0}
+                  width={40}
+                >
+                  <th
+                    className="column-header pinned"
+                    key="table-rowSelectionColumn"
+                    role="columnheader"
+                    scope="col"
+                    style={
+                      Object {
+                        "height": "2.5rem",
+                        "left": 0,
+                      }
+                    }
+                  >
+                    <div
+                      className="header-container"
+                    >
+                      <span />
+                    </div>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={1}
+                displayName=" Vitals"
+                headerHeight="2.5rem"
+                id="Column-0"
+                key="Column-0"
+                maximumWidth={300}
+                minimumWidth={60}
+                onColumnSelect={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                tableHeight={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+                  columnIndex={1}
+                  displayName=" Vitals"
+                  hasError={false}
+                  headerHeight="2.5rem"
+                  id="Column-0"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isResizable={false}
+                  isSelectable={false}
+                  maximumWidth={300}
+                  minimumWidth={60}
+                  onColumnSelect={[Function]}
+                  onResizeMouseDown={[Function]}
+                  rowIndex={0}
+                  tableHeight={0}
+                  width={200}
+                >
+                  <th
+                    className="column-header pinned"
+                    key="Column-0"
+                    role="columnheader"
+                    scope="col"
+                    style={
+                      Object {
+                        "height": "2.5rem",
+                        "left": 40,
+                      }
+                    }
+                  >
+                    <div
+                      className="header-container"
+                      role="button"
+                    >
+                      <span>
+                         Vitals
+                      </span>
+                    </div>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={2}
+                displayName="March 16"
+                headerHeight="2.5rem"
+                id="Column-1"
+                key="Column-1"
+                maximumWidth={300}
+                minimumWidth={60}
+                onColumnSelect={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                tableHeight={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+                  columnIndex={2}
+                  displayName="March 16"
+                  hasError={false}
+                  headerHeight="2.5rem"
+                  id="Column-1"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isResizable={false}
+                  isSelectable={false}
+                  maximumWidth={300}
+                  minimumWidth={60}
+                  onColumnSelect={[Function]}
+                  onResizeMouseDown={[Function]}
+                  rowIndex={0}
+                  tableHeight={0}
+                  width={200}
+                >
+                  <th
+                    className="column-header pinned"
+                    key="Column-1"
+                    role="columnheader"
+                    scope="col"
+                    style={
+                      Object {
+                        "height": "2.5rem",
+                        "left": 240,
+                      }
+                    }
+                  >
+                    <div
+                      className="header-container"
+                      role="button"
+                    >
+                      <span>
+                        March 16
+                      </span>
+                    </div>
+                    <div
+                      className="pinned-columns-divider"
+                      style={
+                        Object {
+                          "height": 0,
+                          "left": 199,
+                        }
+                      }
+                    />
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+              <InjectIntl(ColumnHeaderCell)
+                columnIndex={3}
+                displayName="March 17"
+                headerHeight="2.5rem"
+                id="Column-2"
+                isSelectable={false}
+                key="Column-2"
+                maximumWidth={300}
+                minimumWidth={60}
+                onColumnSelect={[Function]}
+                onResizeMouseDown={[Function]}
+                rowIndex={0}
+                tableHeight={0}
+                width={200}
+              >
+                <ColumnHeaderCell
+                  columnIndex={3}
+                  displayName="March 17"
+                  hasError={false}
+                  headerHeight="2.5rem"
+                  id="Column-2"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isResizable={false}
+                  isSelectable={false}
+                  maximumWidth={300}
+                  minimumWidth={60}
+                  onColumnSelect={[Function]}
+                  onResizeMouseDown={[Function]}
+                  rowIndex={0}
+                  tableHeight={0}
+                  width={200}
+                >
+                  <th
+                    className="column-header"
+                    key="Column-2"
+                    role="columnheader"
+                    scope="col"
+                    style={
+                      Object {
+                        "height": "2.5rem",
+                        "left": null,
+                      }
+                    }
+                  >
+                    <div
+                      className="header-container"
+                      role="button"
+                    >
+                      <span>
+                        March 17
+                      </span>
+                    </div>
+                  </th>
+                </ColumnHeaderCell>
+              </InjectIntl(ColumnHeaderCell)>
+            </tr>
+          </thead>
+        </ColumnHeader>
+        <tbody>
+          <Row
+            cells={
+              Array [
+                Object {
+                  "content": "Heart Rate Monitored (bpm)",
+                  "isSelectable": false,
+                },
+                Object {
+                  "content": "",
+                },
+                Object {
+                  "content": "66",
+                  "isMasked": true,
+                },
+              ]
+            }
+            displayedColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": false,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isSelectable": false,
+                },
+              ]
+            }
+            hasRowSelection={true}
+            height="2.5rem"
+            id="1"
+            key="1"
+            onCellSelect={[Function]}
+            rowHeaderIndex={0}
+            rowIndex={1}
+          >
+            <tr
+              className="row selectable"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "height": "2.5rem",
+                }
+              }
+            >
+              <InjectIntl(RowSelectionCell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={0}
+                isSelected={false}
+                onCellSelect={[Function]}
+                rowId="1"
+                rowIndex={1}
+              >
+                <RowSelectionCell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={0}
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="1"
+                  rowIndex={1}
+                >
+                  <InjectIntl(Cell)
+                    columnId="table-rowSelectionColumn"
+                    columnIndex={0}
+                    isSelected={false}
+                    key="1_table-rowSelectionColumn"
+                    onCellSelect={[Function]}
+                    rowId="1"
+                    rowIndex={1}
+                  >
+                    <Cell
+                      columnId="table-rowSelectionColumn"
+                      columnIndex={0}
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isMasked={false}
+                      isRowHeader={false}
+                      isSelectable={false}
+                      isSelected={false}
+                      onCellSelect={[Function]}
+                      rowId="1"
+                      rowIndex={1}
+                    >
+                      <td
+                        className="cell pinned"
+                        onKeyDown={[Function]}
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "left": 0,
+                          }
+                        }
+                      >
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={false}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={0}
+                            type="checkbox"
+                          />
+                        </div>
+                      </td>
+                    </Cell>
+                  </InjectIntl(Cell)>
+                </RowSelectionCell>
+              </InjectIntl(RowSelectionCell)>
+              <InjectIntl(Cell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={1}
+                height="2.5rem"
+                isHighlighted={false}
+                isRowHeader={true}
+                isSelectable={false}
+                isSelected={false}
+                key="1_table-rowSelectionColumn"
+                onCellSelect={[Function]}
+                rowId="1"
+                rowIndex={1}
+              >
+                <Cell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={1}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={false}
+                  isRowHeader={true}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="1"
+                  rowIndex={1}
+                >
+                  <th
+                    className="cell pinned"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    role="rowheader"
+                    scope="row"
+                    style={
+                      Object {
+                        "left": 40,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Heart Rate Monitored (bpm)
+                    </div>
+                  </th>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-0"
+                columnIndex={2}
+                height="2.5rem"
+                isHighlighted={false}
+                isRowHeader={false}
+                isSelected={false}
+                key="1_Column-0"
+                onCellSelect={[Function]}
+                rowId="1"
+                rowIndex={1}
+              >
+                <Cell
+                  columnId="Column-0"
+                  columnIndex={2}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={false}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="1"
+                  rowIndex={1}
+                >
+                  <td
+                    className="cell pinned blank"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": 240,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.blank
+                      </span>
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-1"
+                columnIndex={3}
+                height="2.5rem"
+                isHighlighted={false}
+                isMasked={true}
+                isRowHeader={false}
+                isSelected={false}
+                key="1_Column-1"
+                onCellSelect={[Function]}
+                rowId="1"
+                rowIndex={1}
+              >
+                <Cell
+                  columnId="Column-1"
+                  columnIndex={3}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={true}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="1"
+                  rowIndex={1}
+                >
+                  <td
+                    className="cell masked"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": null,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.maskedCell
+                      </span>
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+            </tr>
+          </Row>
+          <Row
+            cells={
+              Array [
+                Object {
+                  "content": "Temperature Oral (degC)",
+                },
+                Object {
+                  "content": "36.7",
+                },
+                Object {
+                  "content": "36.9",
+                  "isMasked": true,
+                },
+              ]
+            }
+            displayedColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": false,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isSelectable": false,
+                },
+              ]
+            }
+            hasRowSelection={true}
+            height="2.5rem"
+            id="2"
+            key="2"
+            onCellSelect={[Function]}
+            rowHeaderIndex={0}
+            rowIndex={2}
+          >
+            <tr
+              className="row selectable"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "height": "2.5rem",
+                }
+              }
+            >
+              <InjectIntl(RowSelectionCell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={0}
+                isSelected={false}
+                onCellSelect={[Function]}
+                rowId="2"
+                rowIndex={2}
+              >
+                <RowSelectionCell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={0}
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="2"
+                  rowIndex={2}
+                >
+                  <InjectIntl(Cell)
+                    columnId="table-rowSelectionColumn"
+                    columnIndex={0}
+                    isSelected={false}
+                    key="2_table-rowSelectionColumn"
+                    onCellSelect={[Function]}
+                    rowId="2"
+                    rowIndex={2}
+                  >
+                    <Cell
+                      columnId="table-rowSelectionColumn"
+                      columnIndex={0}
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isMasked={false}
+                      isRowHeader={false}
+                      isSelectable={false}
+                      isSelected={false}
+                      onCellSelect={[Function]}
+                      rowId="2"
+                      rowIndex={2}
+                    >
+                      <td
+                        className="cell pinned"
+                        onKeyDown={[Function]}
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "left": 0,
+                          }
+                        }
+                      >
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={false}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={0}
+                            type="checkbox"
+                          />
+                        </div>
+                      </td>
+                    </Cell>
+                  </InjectIntl(Cell)>
+                </RowSelectionCell>
+              </InjectIntl(RowSelectionCell)>
+              <InjectIntl(Cell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={1}
+                height="2.5rem"
+                isHighlighted={false}
+                isRowHeader={true}
+                isSelected={false}
+                key="2_table-rowSelectionColumn"
+                onCellSelect={[Function]}
+                rowId="2"
+                rowIndex={2}
+              >
+                <Cell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={1}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={false}
+                  isRowHeader={true}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="2"
+                  rowIndex={2}
+                >
+                  <th
+                    className="cell pinned"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    role="rowheader"
+                    scope="row"
+                    style={
+                      Object {
+                        "left": 40,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Temperature Oral (degC)
+                    </div>
+                  </th>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-0"
+                columnIndex={2}
+                height="2.5rem"
+                isHighlighted={false}
+                isRowHeader={false}
+                isSelected={false}
+                key="2_Column-0"
+                onCellSelect={[Function]}
+                rowId="2"
+                rowIndex={2}
+              >
+                <Cell
+                  columnId="Column-0"
+                  columnIndex={2}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={false}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="2"
+                  rowIndex={2}
+                >
+                  <td
+                    className="cell pinned"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": 240,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      36.7
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-1"
+                columnIndex={3}
+                height="2.5rem"
+                isHighlighted={false}
+                isMasked={true}
+                isRowHeader={false}
+                isSelected={false}
+                key="2_Column-1"
+                onCellSelect={[Function]}
+                rowId="2"
+                rowIndex={2}
+              >
+                <Cell
+                  columnId="Column-1"
+                  columnIndex={3}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={true}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="2"
+                  rowIndex={2}
+                >
+                  <td
+                    className="cell masked"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": null,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.maskedCell
+                      </span>
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+            </tr>
+          </Row>
+          <Row
+            cells={
+              Array [
+                Object {
+                  "content": "Cardiac Index (L/min/m2)",
+                },
+                Object {
+                  "content": "2.25",
+                },
+                Object {
+                  "content": "2.28",
+                  "isMasked": true,
+                },
+              ]
+            }
+            displayedColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": false,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isSelectable": false,
+                },
+              ]
+            }
+            hasRowSelection={true}
+            height="2.5rem"
+            id="3"
+            key="3"
+            onCellSelect={[Function]}
+            rowHeaderIndex={0}
+            rowIndex={3}
+          >
+            <tr
+              className="row selectable"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "height": "2.5rem",
+                }
+              }
+            >
+              <InjectIntl(RowSelectionCell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={0}
+                isSelected={false}
+                onCellSelect={[Function]}
+                rowId="3"
+                rowIndex={3}
+              >
+                <RowSelectionCell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={0}
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="3"
+                  rowIndex={3}
+                >
+                  <InjectIntl(Cell)
+                    columnId="table-rowSelectionColumn"
+                    columnIndex={0}
+                    isSelected={false}
+                    key="3_table-rowSelectionColumn"
+                    onCellSelect={[Function]}
+                    rowId="3"
+                    rowIndex={3}
+                  >
+                    <Cell
+                      columnId="table-rowSelectionColumn"
+                      columnIndex={0}
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isMasked={false}
+                      isRowHeader={false}
+                      isSelectable={false}
+                      isSelected={false}
+                      onCellSelect={[Function]}
+                      rowId="3"
+                      rowIndex={3}
+                    >
+                      <td
+                        className="cell pinned"
+                        onKeyDown={[Function]}
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "left": 0,
+                          }
+                        }
+                      >
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={false}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={0}
+                            type="checkbox"
+                          />
+                        </div>
+                      </td>
+                    </Cell>
+                  </InjectIntl(Cell)>
+                </RowSelectionCell>
+              </InjectIntl(RowSelectionCell)>
+              <InjectIntl(Cell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={1}
+                height="2.5rem"
+                isHighlighted={false}
+                isRowHeader={true}
+                isSelected={false}
+                key="3_table-rowSelectionColumn"
+                onCellSelect={[Function]}
+                rowId="3"
+                rowIndex={3}
+              >
+                <Cell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={1}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={false}
+                  isRowHeader={true}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="3"
+                  rowIndex={3}
+                >
+                  <th
+                    className="cell pinned"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    role="rowheader"
+                    scope="row"
+                    style={
+                      Object {
+                        "left": 40,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Cardiac Index (L/min/m2)
+                    </div>
+                  </th>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-0"
+                columnIndex={2}
+                height="2.5rem"
+                isHighlighted={false}
+                isRowHeader={false}
+                isSelected={false}
+                key="3_Column-0"
+                onCellSelect={[Function]}
+                rowId="3"
+                rowIndex={3}
+              >
+                <Cell
+                  columnId="Column-0"
+                  columnIndex={2}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={false}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="3"
+                  rowIndex={3}
+                >
+                  <td
+                    className="cell pinned"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": 240,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      2.25
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-1"
+                columnIndex={3}
+                height="2.5rem"
+                isHighlighted={false}
+                isMasked={true}
+                isRowHeader={false}
+                isSelected={false}
+                key="3_Column-1"
+                onCellSelect={[Function]}
+                rowId="3"
+                rowIndex={3}
+              >
+                <Cell
+                  columnId="Column-1"
+                  columnIndex={3}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={false}
+                  isMasked={true}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="3"
+                  rowIndex={3}
+                >
+                  <td
+                    className="cell masked"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": null,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      <span
+                        className="no-data-cell"
+                      >
+                        Terra.table.maskedCell
+                      </span>
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+            </tr>
+          </Row>
+          <Row
+            cells={
+              Array [
+                Object {
+                  "content": "Oxygen Flow Rate (L/min)",
+                },
+                Object {
+                  "content": "63",
+                },
+                Object {
+                  "content": "47",
+                },
+              ]
+            }
+            displayedColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": false,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isSelectable": false,
+                },
+              ]
+            }
+            hasRowSelection={true}
+            height="2.5rem"
+            id="4"
+            isSelected={true}
+            key="4"
+            onCellSelect={[Function]}
+            rowHeaderIndex={0}
+            rowIndex={4}
+          >
+            <tr
+              className="row selected selectable"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+              style={
+                Object {
+                  "height": "2.5rem",
+                }
+              }
+            >
+              <InjectIntl(RowSelectionCell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={0}
+                isSelected={true}
+                onCellSelect={[Function]}
+                rowId="4"
+                rowIndex={4}
+              >
+                <RowSelectionCell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={0}
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isSelected={true}
+                  onCellSelect={[Function]}
+                  rowId="4"
+                  rowIndex={4}
+                >
+                  <InjectIntl(Cell)
+                    columnId="table-rowSelectionColumn"
+                    columnIndex={0}
+                    isSelected={false}
+                    key="4_table-rowSelectionColumn"
+                    onCellSelect={[Function]}
+                    rowId="4"
+                    rowIndex={4}
+                  >
+                    <Cell
+                      columnId="table-rowSelectionColumn"
+                      columnIndex={0}
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isMasked={false}
+                      isRowHeader={false}
+                      isSelectable={false}
+                      isSelected={false}
+                      onCellSelect={[Function]}
+                      rowId="4"
+                      rowIndex={4}
+                    >
+                      <td
+                        className="cell pinned"
+                        onKeyDown={[Function]}
+                        onMouseDown={[Function]}
+                        style={
+                          Object {
+                            "left": 0,
+                          }
+                        }
+                      >
+                        <div
+                          className="cell-content"
+                          style={
+                            Object {
+                              "height": undefined,
+                            }
+                          }
+                        >
+                          <input
+                            aria-label="Terra.table.row-index"
+                            checked={true}
+                            className="input"
+                            readOnly={true}
+                            tabIndex={0}
+                            type="checkbox"
+                          />
+                        </div>
+                      </td>
+                    </Cell>
+                  </InjectIntl(Cell)>
+                </RowSelectionCell>
+              </InjectIntl(RowSelectionCell)>
+              <InjectIntl(Cell)
+                columnId="table-rowSelectionColumn"
+                columnIndex={1}
+                height="2.5rem"
+                isHighlighted={true}
+                isRowHeader={true}
+                isSelected={false}
+                key="4_table-rowSelectionColumn"
+                onCellSelect={[Function]}
+                rowId="4"
+                rowIndex={4}
+              >
+                <Cell
+                  columnId="table-rowSelectionColumn"
+                  columnIndex={1}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={true}
+                  isMasked={false}
+                  isRowHeader={true}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="4"
+                  rowIndex={4}
+                >
+                  <th
+                    className="cell pinned highlighted"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    role="rowheader"
+                    scope="row"
+                    style={
+                      Object {
+                        "left": 40,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      Oxygen Flow Rate (L/min)
+                    </div>
+                  </th>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-0"
+                columnIndex={2}
+                height="2.5rem"
+                isHighlighted={true}
+                isRowHeader={false}
+                isSelected={false}
+                key="4_Column-0"
+                onCellSelect={[Function]}
+                rowId="4"
+                rowIndex={4}
+              >
+                <Cell
+                  columnId="Column-0"
+                  columnIndex={2}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={true}
+                  isMasked={false}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="4"
+                  rowIndex={4}
+                >
+                  <td
+                    className="cell pinned highlighted"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
+                    style={
+                      Object {
+                        "left": 240,
+                      }
+                    }
+                  >
+                    <div
+                      className="cell-content"
+                      style={
+                        Object {
+                          "height": "2.5rem",
+                        }
+                      }
+                    >
+                      63
+                    </div>
+                  </td>
+                </Cell>
+              </InjectIntl(Cell)>
+              <InjectIntl(Cell)
+                columnId="Column-1"
+                columnIndex={3}
+                height="2.5rem"
+                isHighlighted={true}
+                isRowHeader={false}
+                isSelected={false}
+                key="4_Column-1"
+                onCellSelect={[Function]}
+                rowId="4"
+                rowIndex={4}
+              >
+                <Cell
+                  columnId="Column-1"
+                  columnIndex={3}
+                  height="2.5rem"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  isHighlighted={true}
+                  isMasked={false}
+                  isRowHeader={false}
+                  isSelectable={false}
+                  isSelected={false}
+                  onCellSelect={[Function]}
+                  rowId="4"
+                  rowIndex={4}
+                >
+                  <td
                     className="cell highlighted"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}

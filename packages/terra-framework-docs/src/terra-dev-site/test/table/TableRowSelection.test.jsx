@@ -1,4 +1,4 @@
-import React, { useState, useRef, useCallback } from 'react';
+import React, { useState, useCallback } from 'react';
 import Table from 'terra-table';
 
 const tableDataJSON = {
@@ -53,26 +53,13 @@ const tableDataJSON = {
   ],
 };
 
+// eslint-disable-next-line compat/compat
+const params = new URLSearchParams(window.location.search);
+const rowSelectionHeaderSelectable = params ? params.get('header-select') : false;
+
 const TableRowSelection = () => {
-  const rowSelectionModeRef = useRef();
-  const rowHeaderIndex = 0;
   const { cols, rows } = tableDataJSON;
   const [rowData, setRowData] = useState(rows);
-  const [hasSelectableRows, setHasSelectableRows] = useState(false);
-
-  const clearRowSelection = useCallback(() => {
-    const newRowData = [...rowData];
-    // eslint-disable-next-line no-return-assign, no-param-reassign
-    newRowData.forEach(row => (row.isSelected = false));
-    setRowData(newRowData);
-  }, [rowData]);
-
-  const onRowSelectionModeChange = useCallback((event) => {
-    if (!event.target.checked) {
-      clearRowSelection();
-    }
-    setHasSelectableRows(event.target.checked);
-  }, [clearRowSelection]);
 
   const onRowSelect = useCallback((rowId) => {
     // Remove current selections
@@ -87,27 +74,17 @@ const TableRowSelection = () => {
   }, [rowData]);
 
   return (
-    <React.Fragment>
-      <div>
-        <label htmlFor="rowSelectionMode"><b>Row Selection Mode</b></label>
-        <input
-          id="rowSelectionMode"
-          type="checkbox"
-          ref={rowSelectionModeRef}
-          onChange={onRowSelectionModeChange}
-        />
-      </div>
-      <Table
-        id="table-with-row-selections"
-        overflowColumns={cols}
-        rows={rowData}
-        rowHeaderIndex={rowHeaderIndex}
-        columnWidth="180px"
-        ariaLabel="Table with Row Selections"
-        hasSelectableRows={hasSelectableRows} // Prop to turn row selection mode on/off
-        onRowSelect={onRowSelect} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects one or more rows.
-      />
-    </React.Fragment>
+    <Table
+      id="table-with-row-selections"
+      overflowColumns={cols}
+      rows={rowData}
+      rowHeaderIndex={1}
+      columnWidth="180px"
+      ariaLabel="Table with Row Selections"
+      hasSelectableRows
+      onRowSelect={onRowSelect}
+      onRowSelectionHeaderSelect={rowSelectionHeaderSelectable ? () => {} : undefined}
+    />
   );
 };
 

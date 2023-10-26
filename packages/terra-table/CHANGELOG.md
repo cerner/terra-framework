@@ -2,11 +2,13 @@
 
 ## Unreleased
 
+* Added
+  * Added row selection mode to the table component.
+
 ## 5.1.0-alpha.0 - (October 20, 2023)
 
 * Added
   * Added the ability to toggle zebra striping for table rows.
-  * Added row selection mode to the table component.
   
 * Changed
   * Updated the table component so that the cell dive-in logic would not execute when not in the grid context.

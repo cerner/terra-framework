@@ -283,7 +283,7 @@ function Cell(props) {
   return (
     <CellTag
       ref={isGridContext ? cellRef : undefined}
-      aria-selected={isSelected}
+      aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}

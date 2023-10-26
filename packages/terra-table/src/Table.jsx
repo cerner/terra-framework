@@ -13,7 +13,6 @@ import { columnShape } from './proptypes/columnShape';
 import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
 import Row from './subcomponents/Row';
-import RowSelectionUtils from './utils/rowSelectionUtils';
 import rowShape from './proptypes/rowShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './Table.module.scss';
@@ -102,6 +101,12 @@ const propTypes = {
   onColumnSelect: PropTypes.func,
 
   /**
+   * Callback function that is called when the row selection column header is selected. Parameters:
+   *  @param {string} columnId columnId
+   */
+  onRowSelectionHeaderSelect: PropTypes.func,
+
+  /**
    * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
    */
@@ -154,6 +159,7 @@ function Table(props) {
     onColumnSelect,
     onCellSelect,
     onRowSelect,
+    onRowSelectionHeaderSelect,
     hasSelectableRows,
     hasColumnHeaders,
     isStriped,
@@ -198,7 +204,15 @@ function Table(props) {
     maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
   });
 
-  const displayedColumns = (hasSelectableRows ? [RowSelectionUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
+  // Create row selection column object
+  const tableRowSelectionColumn = {
+    id: 'table-rowSelectionColumn',
+    width: 40,
+    isSelectable: !!onRowSelectionHeaderSelect,
+    isResizable: false,
+  };
+
+  const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
   // -------------------------------------
   // functions
@@ -323,10 +337,14 @@ function Table(props) {
   // event handlers
 
   const handleColumnSelect = useCallback((columnId) => {
-    if (onColumnSelect) {
+    if (columnId === tableRowSelectionColumn.id) {
+      if (onRowSelectionHeaderSelect) {
+        onRowSelectionHeaderSelect();
+      }
+    } else if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect]);
+  }, [onColumnSelect, onRowSelectionHeaderSelect, tableRowSelectionColumn.id]);
 
   const onResizeMouseDown = useCallback((event, index, resizeColumnWidth) => {
     // Store current table and column values for resize calculations

@@ -9,7 +9,6 @@ import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import ERRORS from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
-import RowSelectionUtils from '../../src/utils/rowSelectionUtils';
 
 import Table from '../../src/Table';
 
@@ -162,7 +161,33 @@ describe('Table', () => {
     columnHeader.at(0).simulate('mouseDown');
 
     // Validate mock function was called from simulated click event
-    expect(mockColumnSelect).toHaveBeenCalledWith(RowSelectionUtils.ROW_SELECTION_COLUMN.id);
+    expect(mockColumnSelect).not.toHaveBeenCalled();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection column header not selectable without callback', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        hasSelectableRows
+        rows={tableData.rows}
+        onRowSelectionHeaderSelect={mockColumnSelect}
+      />,
+    );
+
+    // Find column headers
+    const columnHeader = wrapper.find(ColumnHeaderCell);
+
+    // Simulate onMouseDown event on row selection column header
+    columnHeader.at(0).simulate('mouseDown');
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
   });
