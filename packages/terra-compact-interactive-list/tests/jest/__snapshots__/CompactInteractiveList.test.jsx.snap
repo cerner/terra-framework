@@ -9,7 +9,15 @@ exports[`placeholder for tests placeholder for a test 1`] = `
     className="compact-interactive-list"
     role="grid"
   >
-    This is the placeholder div
+    <div
+      role="row"
+    >
+      <div
+        role="gridcell"
+      >
+        This is the placeholder div
+      </div>
+    </div>
   </div>
 </div>
 `;
