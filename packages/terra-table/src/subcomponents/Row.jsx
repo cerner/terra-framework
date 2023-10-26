@@ -134,6 +134,7 @@ function Row(props) {
           key={`${id}_${displayedColumns[cellColumnIndex].id}`}
           isSelected={!hasRowSelection && cellData.isSelected}
           isMasked={cellData.isMasked}
+          maskedLabel={cellData.maskedLabel}
           isSelectable={cellData.isSelectable}
           isRowHeader={cellColumnIndex === rowHeaderIndex}
           isHighlighted={isHovered || isSelected}

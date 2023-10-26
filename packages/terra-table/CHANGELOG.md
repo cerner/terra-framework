@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added ability for consumers to specify a custom screen reader message for masked cells.
+  
 ## 5.1.1-alpha.0 - (October 25, 2023)
 
 * Changed

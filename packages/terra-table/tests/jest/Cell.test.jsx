@@ -252,6 +252,35 @@ describe('Cell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('verifies that a cell has renders that masked label text, when provided', () => {
+    const wrapper = shallowWithIntl(
+      <IntlProvider locale="en">
+        <Cell
+          rowId="RowID"
+          columnId="ColumnId"
+          ariaLabel="Some Label Here"
+          rowIndex={1}
+          columnIndex={2}
+          key="key"
+          isMasked
+          maskedLabel="MaskedLabel"
+          onCellSelect={jest.fn}
+        >
+          Data in cell
+        </Cell>
+      </IntlProvider>,
+    ).dive().dive();
+
+    const maskedCell = wrapper.find('td.masked');
+    expect(maskedCell).toHaveLength(1);
+
+    const cellContent = maskedCell.find('div');
+    expect(cellContent.text()).toBe('MaskedLabel');
+    expect(cellContent).toHaveLength(1);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('verifies mask takes precedence when cell is masked, selectable and selected', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
