@@ -5,6 +5,9 @@
 * Added
   * Added row selection mode to the table component.
   * Added ability for consumers to specify a custom screen reader message for masked cells.
+
+* Fixed
+  * Fixed the column header background color for the Orion Fusion theme.
   
 ## 5.1.1-alpha.0 - (October 25, 2023)
 
