@@ -1,16 +1,23 @@
-# Terra Table
+# Terra Compact Interactive List
 
-[![NPM version](https://badgen.net/npm/v/terra-table)](https://www.npmjs.org/package/terra-table)
+[![NPM version](https://badgen.net/npm/v/terra-compact-interactive-list)](https://www.npmjs.org/package/terra-compact-interactive-list)
+[![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
-The terra-table component provides users a way to render data in a tabular format.
+---
+### Notice
+
+> Terra Compact Interactive List is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
+---
+
+The Compact Interactive List component provides users a way to render a collection of interactive data in a list format into a single tab stop. The list can be arranged in columns to fit wide space, and the user can navigate between them with the arrow keys.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://engineering.cerner.com/terra-ui/components/cerner-terra-framework-docs/table/about)
+- [Documentation](https://engineering.cerner.com/terra-ui/components/cerner-terra-framework-docs/compact-interactive-list/about)
 - [LICENSE](#license)
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-table`
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-compact-interactive-list`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
