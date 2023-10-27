@@ -182,7 +182,7 @@ npm run test
       For example:
        ```sh
        "scripts": {
-        "wdio-fusion": "terra wdio --disableSeleniumService=true --themes orion-fusion-theme",
+        "wdio:fusion": "terra wdio --disableSeleniumService=true --themes orion-fusion-theme",
         }
        ```
     - If any of the compose files were to be changed, you must refresh the docker container by deleting the corresponding existing docker images, then running the following command:

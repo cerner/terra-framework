@@ -9,7 +9,7 @@ import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import ERRORS from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
-import RowSelectionUtils from '../../src/utils/rowSelectionUtils';
+
 import Table from '../../src/Table';
 
 // Source data for tests
@@ -161,7 +161,33 @@ describe('Table', () => {
     columnHeader.at(0).simulate('mouseDown');
 
     // Validate mock function was called from simulated click event
-    expect(mockColumnSelect).toHaveBeenCalledWith(RowSelectionUtils.ROW_SELECTION_COLUMN.id);
+    expect(mockColumnSelect).not.toHaveBeenCalled();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection column header not selectable without callback', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        hasSelectableRows
+        rows={tableData.rows}
+        onRowSelectionHeaderSelect={mockColumnSelect}
+      />,
+    );
+
+    // Find column headers
+    const columnHeader = wrapper.find(ColumnHeaderCell);
+
+    // Simulate onMouseDown event on row selection column header
+    columnHeader.at(0).simulate('mouseDown');
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -218,6 +244,25 @@ describe('Table', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockCellSelect).toHaveBeenCalled();
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies that the column widths are set properly in the colgroup', () => {
+    const wrapper = shallowWithIntl(
+      <IntlProvider locale="en">
+        <Table
+          id="test-terra-table"
+          overflowColumns={tableData.cols}
+          rows={tableData.rows}
+          defaultColumnWidth={150}
+        />
+      </IntlProvider>,
+    ).dive().dive();
+
+    // Verify that column headers are not present
+    const column = wrapper.find('col').get(0);
+    expect(column.props.style.width).toBe('150px');
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -279,6 +324,136 @@ describe('with pinned columns', () => {
 
     expect(pinnedColumnHeaderCells).toHaveLength(1 * (tableData.rows.length + 1));
     expect(console.warn).toHaveBeenCalledWith(expect.stringContaining(ERRORS.PINNED_COLUMNS_UNDEFINED)); // eslint-disable-line no-console
+  });
+});
+
+describe('Row Selection', () => {
+  it('verifies row selection row selection update', () => {
+    const wrapper = mountWithIntl(
+      <IntlProvider locale="en">
+        <Table
+          id="test-terra-table"
+          overflowColumns={tableData.cols}
+          rows={tableData.rows}
+          hasSelectableRows
+          isStriped
+        />
+      </IntlProvider>,
+    );
+
+    const newRows = [...tableData.rows];
+    newRows[0] = { ...tableData.rows[0] };
+    newRows[0].isSelected = true;
+
+    wrapper.setProps({ rows: newRows });
+
+    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    expect(hiddenText.props().text).toBe('Terra.table.row-selection-template');
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection row unselected update', () => {
+    // Start with two selected rows
+    const initialRows = [...tableData.rows];
+    initialRows[0] = { ...tableData.rows[0] };
+    initialRows[0].isSelected = true;
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={initialRows}
+        hasSelectableRows
+        isStriped
+      />,
+    );
+
+    // Unselect the fourth row
+    const newRows = [...initialRows];
+    newRows[3] = { ...initialRows[3] };
+    newRows[3].isSelected = false;
+
+    wrapper.setProps({ rows: newRows });
+    wrapper.update();
+
+    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    expect(hiddenText.props().text).toBe('Terra.table.row-selection-cleared-template');
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection all row selection single selction', () => {
+    // Start with two selected rows
+    const initialRows = [...tableData.rows.slice(0, 1)];
+    initialRows[0] = { ...initialRows[0] };
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={initialRows}
+        hasSelectableRows
+        isStriped
+      />,
+    );
+
+    // Select the one table row, which would be all rows in this scenario
+    const newRows = [...initialRows];
+    newRows[0] = { ...initialRows[0] };
+    newRows[0].isSelected = true;
+
+    wrapper.setProps({ rows: newRows });
+    wrapper.update();
+
+    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    expect(hiddenText.props().text).toBe('Terra.table.all-rows-selected');
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection all rows unselected update', () => {
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={tableData.rows}
+        hasSelectableRows
+        isStriped
+      />,
+    );
+
+    wrapper.setProps({ rows: [] });
+    wrapper.update();
+
+    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection all rows unselected single unselect', () => {
+    const newRows = [...tableData.rows];
+    newRows[3] = { ...tableData.rows[3] };
+    newRows[3].isSelected = false;
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={tableData.rows}
+        hasSelectableRows
+        isStriped
+      />,
+    );
+
+    wrapper.setProps({ rows: newRows });
+    wrapper.update();
+
+    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
+
+    expect(wrapper).toMatchSnapshot();
   });
 });
 

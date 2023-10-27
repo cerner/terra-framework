@@ -92,6 +92,18 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
+  describe('Table Without Header', () => {
+    const tableWithoutHeadersSelector = '#table-without-headers';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-without-headers');
+    });
+
+    it('Renders a table without column headers', () => {
+      Terra.validates.element('table-without-column-headers', { selector: tableWithoutHeadersSelector });
+    });
+  });
+
   describe('Zebra Striped Table', () => {
     const zebraStripeTableSelector = '#zebra-striped-table';
 
@@ -101,6 +113,28 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
     it('Validates a table has zebra striping when specified via props', () => {
       Terra.validates.element('zebra-striped-table', { selector: zebraStripeTableSelector });
+    });
+  });
+
+  describe('Focusable Cell Element Navigation : ', () => {
+    const focusElementSelector = 'body';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-focusable-cell');
+    });
+
+    it('validates that the first interactive element in the table is given focus on tab', () => {
+      browser.keys(['Tab']);
+
+      expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('table-focus-first-button', { columnResizeSelector: focusElementSelector });
+    });
+
+    it('validates that the second interactive element in the table is given focus with two tabs', () => {
+      browser.keys(['Tab', 'Tab']);
+
+      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('table-focus-input', { columnResizeSelector: focusElementSelector });
     });
   });
 
@@ -143,6 +177,57 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
     it('Validates a table has zebra striping when specified via props', () => {
       Terra.validates.element('table-with-sectinos', { selector: tableWithSectionsSelector });
+    });
+  });
+  
+  describe('With row selection', () => {
+    const rowSelectionTableSelector = '#table-with-row-selections';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-row-selection');
+    });
+
+    it('verifies that first row selection checkbox gets focus', () => {
+      browser.keys(['Tab']);
+
+      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('row-selection-first-row-checkbox-focused', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that first row is selected', () => {
+      browser.keys(['Tab', 'Space']);
+
+      Terra.validates.element('row-selection-first-row-selected', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that first row is unselected', () => {
+      browser.keys(['Tab', 'Space', 'Space']);
+
+      Terra.validates.element('row-selection-first-row-unselected', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that multiple rows are selected', () => {
+      browser.keys(['Tab', 'Space', 'Tab', 'Tab', 'Space']);
+
+      Terra.validates.element('row-selection-multiple-selections', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[0].$$('td')[2].moveTo();
+      browser.pause(1000);
+      Terra.validates.element('row-selection-hover', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[0].$$('td')[2].click();
+      Terra.validates.element('row-selection-cell-click', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-row-selection?header-select=true');
+      browser.keys(['Tab']);
+
+      Terra.validates.element('row-selection-header-selectable', { selector: rowSelectionTableSelector });
     });
   });
 });

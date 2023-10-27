@@ -1,0 +1,136 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slider should render a default slider with proper required props 1`] = `
+<div
+  className="slider"
+  style={
+    Object {
+      "--terra-slider-progress-status": "30%",
+    }
+  }
+>
+  <span
+    aria-hidden="true"
+    className="label"
+  >
+    testLabel
+  </span>
+  <span
+    aria-hidden="true"
+    className="slider-label slider-min-label"
+  >
+    0
+  </span>
+  <input
+    aria-describedby="00000000-0000-0000-0000-000000000000"
+    aria-label="testLabel"
+    className="input-range"
+    disabled={false}
+    max={100}
+    min={0}
+    onChange={[Function]}
+    type="range"
+    value={30}
+  />
+  <span
+    aria-hidden="true"
+    className="slider-label slider-max-label"
+  >
+    100
+  </span>
+  <VisuallyHiddenText
+    id="00000000-0000-0000-0000-000000000000"
+    text="Terra.slider.ariaDescribedByTextWithoutLabels"
+  />
+</div>
+`;
+
+exports[`Slider should render a disabled slider 1`] = `
+<div
+  className="slider"
+  style={
+    Object {
+      "--terra-slider-progress-status": "50%",
+    }
+  }
+>
+  <span
+    aria-hidden="true"
+    className="label"
+  >
+    testLabel
+  </span>
+  <span
+    aria-hidden="true"
+    className="slider-label slider-min-label"
+  >
+    0
+  </span>
+  <input
+    aria-describedby="00000000-0000-0000-0000-000000000000"
+    aria-label="testLabel"
+    className="input-range"
+    disabled={true}
+    max={100}
+    min={0}
+    onChange={[Function]}
+    type="range"
+    value={50}
+  />
+  <span
+    aria-hidden="true"
+    className="slider-label slider-max-label"
+  >
+    100
+  </span>
+  <VisuallyHiddenText
+    id="00000000-0000-0000-0000-000000000000"
+    text="Terra.slider.ariaDescribedByTextWithoutLabels"
+  />
+</div>
+`;
+
+exports[`Slider should render a slider with custom min and max labels 1`] = `
+<div
+  className="slider"
+  style={
+    Object {
+      "--terra-slider-progress-status": "50%",
+    }
+  }
+>
+  <span
+    aria-hidden="true"
+    className="label"
+  >
+    testLabel
+  </span>
+  <span
+    aria-hidden="true"
+    className="slider-label slider-min-label"
+  >
+    testMinimumLabel
+  </span>
+  <input
+    aria-describedby="00000000-0000-0000-0000-000000000000"
+    aria-label="testLabel"
+    className="input-range"
+    disabled={false}
+    max={100}
+    min={0}
+    onChange={[Function]}
+    type="range"
+    value={50}
+  />
+  <span
+    aria-hidden="true"
+    className="slider-label slider-max-label"
+  >
+    testMaximumLabel
+  </span>
+  <VisuallyHiddenText
+    id="00000000-0000-0000-0000-000000000000"
+    text="Terra.slider.ariaDescribedByTextWithLabels"
+  />
+</div>
+`;

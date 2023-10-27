@@ -202,7 +202,7 @@ const ColumnHeaderCell = (props) => {
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={isSelectable && onColumnSelect ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }}
+      style={{ height: headerHeight, left: cellLeftEdge }}
     >
       <div className={cx('header-container')} role={displayName && 'button'}>
         {errorIcon}

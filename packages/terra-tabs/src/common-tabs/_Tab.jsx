@@ -192,7 +192,7 @@ const Tab = ({
       if (index === 0) {
         element = document.getElementById(tabIds[index + 1]);
       }
-      const ariaLabel = label ? `${label} ${deleteTabLabel}` : '';
+      const ariaLabel = label ? `${label} ${deleteTabLabel}, ${element.title}` : '';
       if (element) {
         element.setAttribute('aria-label', ariaLabel);
         element.focus();
@@ -229,6 +229,10 @@ const Tab = ({
       if (onChange) {
         onChange(event, itemKey);
       }
+    }
+    // Fix for keyboard navigation after mouse click which was failing due to draggable props.
+    if (isDraggable) {
+      event.currentTarget.focus();
     }
   }
   attributes.tabIndex = isSelected ? 0 : -1;
