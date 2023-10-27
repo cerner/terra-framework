@@ -57,6 +57,11 @@ const propTypes = {
   isMasked: PropTypes.bool,
 
   /**
+   * Provides a custom string for masked cells to be read by screen readers. This value is only applied if the cell is masked.
+   */
+  maskedLabel: PropTypes.string,
+
+  /**
    * Boolean value indicating whether or not the column header is selectable.
    */
   isSelectable: PropTypes.bool,
@@ -106,6 +111,7 @@ function Cell(props) {
     columnIndex,
     ariaLabel,
     isMasked,
+    maskedLabel,
     isRowHeader,
     isSelectable,
     isSelected,
@@ -205,7 +211,7 @@ function Cell(props) {
   if (isMasked) {
     cellContent = (
       <span className={cx('no-data-cell', theme.className)}>
-        {intl.formatMessage({ id: 'Terra.table.maskedCell' })}
+        {maskedLabel || intl.formatMessage({ id: 'Terra.table.maskedCell' })}
       </span>
     );
   } else if (!children) {

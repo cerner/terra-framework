@@ -1,11 +1,11 @@
 import React from 'react';
-import { FlowsheetDataGrid } from 'terra-data-grid';
+import DataGrid from 'terra-data-grid/lib/DataGrid';
 
 const gridDataJSON = {
   cols: [
-    { id: 'Column-0', displayName: 'Vitals', isSelectable: false },
-    { id: 'Column-1', displayName: 'March 16' },
-    { id: 'Column-2', displayName: 'March 17' },
+    { id: 'Column-0', displayName: 'Vitals' },
+    { id: 'Column-1', displayName: 'Fixed' },
+    { id: 'Column-2', displayName: 'March 17', isResizable: false },
     { id: 'Column-3', displayName: 'March 18' },
   ],
   rows: [
@@ -19,6 +19,7 @@ const gridDataJSON = {
       ],
     },
     {
+      height: '150px',
       id: '2',
       cells: [
         { content: 'Temperature Oral (degC)' },
@@ -57,17 +58,21 @@ const gridDataJSON = {
   ],
 };
 
-const DefaultFlowsheetDataGrid = () => {
+const DataGridWithColumnResizing = () => {
+  const rowHeaderIndex = 0;
   const { cols, rows } = gridDataJSON;
 
   return (
-    <FlowsheetDataGrid
-      id="default-terra-flowsheet-data-grid"
-      columns={cols}
+    <DataGrid
+      id="terra-data-grid-with-column-resizing"
+      overflowColumns={cols}
       rows={rows}
-      ariaLabel="Flowsheet Data Grid"
+      rowHeaderIndex={rowHeaderIndex}
+      rowHeight="50px"
+      columnHeaderHeight="50px"
+      ariaLabel="Data Grid With Column Resizing"
     />
   );
 };
 
-export default DefaultFlowsheetDataGrid;
+export default DataGridWithColumnResizing;
