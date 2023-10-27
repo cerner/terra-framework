@@ -1,0 +1,26 @@
+// Themes
+// @import '../orion-fusion-theme/VisualRow.module';
+// @import '../clinical-lowlight-theme/VisualRow.module';
+
+:local {
+  .visual-row {
+    display: flex;
+    &:nth-child(n) {
+      flex: 1 1 50%;
+    }
+    background-color: var(--terra-data-grid-row-striped-odd-background-color, #fff);
+    &:first-child {
+      border-top: var(--terra-data-grid-cell-border-left, 1px solid #dedfe0);
+    }
+
+    /*
+    &:nth-child(even) {
+      background-color: var(--terra-data-grid-row-striped-even-background-color, #f0f0f0);
+    }
+
+    &:nth-child(odd) {
+      background-color: var(--terra-data-grid-row-striped-odd-background-color, #fff);
+    }
+    */
+  }
+}

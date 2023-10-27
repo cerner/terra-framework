@@ -1,0 +1,17 @@
+// Themes
+@import '../orion-fusion-theme/Cell.module';
+@import '../clinical-lowlight-theme/Cell.module';
+
+:local {
+  .cell {
+    font-weight: normal;
+    padding: var(--terra-data-grid-cell-content-padding, 7px);
+    position: relative;
+  }
+
+  .cell-content {
+    overflow: hidden;
+    overflow-wrap: break-word;
+    text-align: left;
+  }
+}

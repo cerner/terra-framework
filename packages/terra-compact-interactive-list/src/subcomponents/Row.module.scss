@@ -1,0 +1,17 @@
+// Themes
+@import '../orion-fusion-theme/Row.module';
+@import '../clinical-lowlight-theme/Row.module';
+
+:local {
+  .row {
+    display: flex;
+    display: flex;
+    flex: 1 1 50%;
+
+    border-bottom: var(--terra-data-grid-cell-border-bottom, 1px solid #dedfe0);
+    border-right: var(--terra-data-grid-cell-border-right, 1px solid #dedfe0);
+    &:first-child {
+      border-left: var(--terra-data-grid-cell-border-left, 1px solid #dedfe0);
+    }
+  }
+}
