@@ -1,0 +1,22 @@
+{
+  "Terra.dataGrid.maskedCell": "Maskerade data",
+  "Terra.dataGrid.columnError": "Fel som rör kolumnen",
+  "Terra.dataGrid.blank": "Tomt",
+  "Terra.dataGrid.row-index": "Rad {row}",
+  "Terra.dataGrid.resizeHandleValueText": "{columnWidth} pixlars kolumnbredd",
+  "Terra.dataGrid.cell-focus-trapped": "Fokus befinner sig i cellen. Tryck på Esc-tangenten för att återgå till navigering i rutnätet.",
+  "Terra.dataGrid.cell-interactable": "Cellen innehåller interaktiva element. Tryck på Retur för att flytta fokus till cellen.",
+  "Terra.dataGrid.resume-navigation": "Navigering i rutnätet återupptas.",
+  "Terra.worklistDataGrid.row-selection-template": "Rad {row} har markerats. ",
+  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} rader har markerats. ",
+  "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} rader har avmarkerats. ",
+  "Terra.worklistDataGrid.row-selection-cleared-template": "Rad {row} har avmarkerats. ",
+  "Terra.worklistDataGrid.row-selection-mode-enabled": "Radmarkeringsläge aktiverat.",
+  "Terra.worklistDataGrid.row-selection-mode-disabled": "Radmarkeringsläge inaktiverat",
+  "Terra.worklistDataGrid.all-rows-selected": "Alla rader är markerade",
+  "Terra.worklistDataGrid.all-rows-unselected": "Inga rader är markerade",
+  "Terra.worklist-data-grid.resize-handle-template": "Storleksanpassningshandtag för kolumnen {columnText}. Tryck på Retur för att använda.",
+  "Terra.worklist-data-grid.resize-handle-value-text": "{columnWidth} pixlar",
+  "Terra.worklist-data-grid.cell-focus-trapped": "Fokus befinner sig i cellen. Tryck på Esc-tangenten för att återgå till navigering i rutnätet.",
+  "Terra.worklist-data-grid.resume-navigation": "Navigering i rutnätet återupptas."
+}

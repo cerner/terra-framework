@@ -128,4 +128,52 @@ describe('ColumnHeader', () => {
 
     expect(wrapper).toMatchSnapshot();
   });
+
+  it('verifies that the hasColumnHeaders prop hides the table column headers when set to false', () => {
+    const columns = [{
+      id: 'Column-0',
+      displayName: ' Vitals',
+    }, {
+      id: 'Column-1',
+      displayName: ' Patient',
+    }];
+
+    const wrapper = shallow(
+      <ColumnHeader
+        columns={columns}
+        hasColumnHeaders={false}
+        headerHeight="3rem"
+      />,
+    );
+
+    // Verify that column headers are not present
+    const columnHeader = wrapper.find('.hidden');
+    expect(columnHeader).toHaveLength(1);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies that the column headers are not hidden when the hasColumnHeader is true', () => {
+    const columns = [{
+      id: 'Column-0',
+      displayName: ' Vitals',
+    }, {
+      id: 'Column-1',
+      displayName: ' Patient',
+    }];
+
+    const wrapper = shallow(
+      <ColumnHeader
+        columns={columns}
+        headerHeight="3rem"
+        hasColumnHeaders
+      />,
+    );
+
+    // Verify that column headers are present
+    const columnHeader = wrapper.find('.hidden');
+    expect(columnHeader).toHaveLength(0);
+
+    expect(wrapper).toMatchSnapshot();
+  });
 });

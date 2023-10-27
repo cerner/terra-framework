@@ -116,6 +116,7 @@ Array [
     <Table
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
+      hasColumnHeaders={true}
       id="test-terra-table"
       intl={
         Object {
@@ -263,7 +264,33 @@ Array [
           id="test-terra-table"
           role="grid"
         >
-          <Memo(ColumnHeader)
+          <colgroup>
+            <col
+              key="Column-0"
+              style={
+                Object {
+                  "width": "200px",
+                }
+              }
+            />
+            <col
+              key="Column-1"
+              style={
+                Object {
+                  "width": "200px",
+                }
+              }
+            />
+            <col
+              key="Column-2"
+              style={
+                Object {
+                  "width": "200px",
+                }
+              }
+            />
+          </colgroup>
+          <ColumnHeader
             columns={
               Array [
                 Object {
@@ -290,6 +317,7 @@ Array [
                 },
               ]
             }
+            hasColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
             onResizeMouseDown={[Function]}
@@ -366,7 +394,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 0,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -448,7 +475,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 200,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -540,7 +566,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": null,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -558,7 +583,7 @@ Array [
                 </InjectIntl(ColumnHeaderCell)>
               </tr>
             </thead>
-          </Memo(ColumnHeader)>
+          </ColumnHeader>
           <tbody>
             <Row
               cells={
@@ -1966,6 +1991,7 @@ Array [
     <Table
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
+      hasColumnHeaders={true}
       id="test-terra-table"
       intl={
         Object {
@@ -2113,7 +2139,33 @@ Array [
           id="test-terra-table"
           role="grid"
         >
-          <Memo(ColumnHeader)
+          <colgroup>
+            <col
+              key="Column-0"
+              style={
+                Object {
+                  "width": "200px",
+                }
+              }
+            />
+            <col
+              key="Column-1"
+              style={
+                Object {
+                  "width": "200px",
+                }
+              }
+            />
+            <col
+              key="Column-2"
+              style={
+                Object {
+                  "width": "200px",
+                }
+              }
+            />
+          </colgroup>
+          <ColumnHeader
             columns={
               Array [
                 Object {
@@ -2140,6 +2192,7 @@ Array [
                 },
               ]
             }
+            hasColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
             onResizeMouseDown={[Function]}
@@ -2216,7 +2269,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 0,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -2298,7 +2350,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 200,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -2390,7 +2441,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": null,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -2408,7 +2458,7 @@ Array [
                 </InjectIntl(ColumnHeaderCell)>
               </tr>
             </thead>
-          </Memo(ColumnHeader)>
+          </ColumnHeader>
           <tbody>
             <Row
               cells={
@@ -3836,6 +3886,7 @@ exports[`Table verifies row selection column header selection 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
+    hasColumnHeaders={true}
     hasSelectableRows={true}
     id="test-terra-table"
     intl={
@@ -3977,7 +4028,41 @@ exports[`Table verifies row selection column header selection 1`] = `
         id="test-terra-table"
         role="table"
       >
-        <Memo(ColumnHeader)
+        <colgroup>
+          <col
+            key="table-rowSelectionColumn"
+            style={
+              Object {
+                "width": "40px",
+              }
+            }
+          />
+          <col
+            key="Column-0"
+            style={
+              Object {
+                "width": "200px",
+              }
+            }
+          />
+          <col
+            key="Column-1"
+            style={
+              Object {
+                "width": "200px",
+              }
+            }
+          />
+          <col
+            key="Column-2"
+            style={
+              Object {
+                "width": "200px",
+              }
+            }
+          />
+        </colgroup>
+        <ColumnHeader
           columns={
             Array [
               Object {
@@ -4012,6 +4097,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
+          hasColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeMouseDown={[Function]}
@@ -4090,7 +4176,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                     tabIndex={0}
@@ -4169,7 +4254,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 40,
-                        "width": "200px",
                       }
                     }
                   >
@@ -4250,7 +4334,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 240,
-                        "width": "200px",
                       }
                     }
                   >
@@ -4341,7 +4424,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -4358,7 +4440,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               </InjectIntl(ColumnHeaderCell)>
             </tr>
           </thead>
-        </Memo(ColumnHeader)>
+        </ColumnHeader>
         <tbody>
           <Row
             cells={
@@ -5956,6 +6038,243 @@ exports[`Table verifies row selection column header selection 1`] = `
 </InjectIntl(Table)>
 `;
 
+exports[`Table verifies that the column widths are set properly in the colgroup 1`] = `
+<div
+  className="table-container"
+>
+  <table
+    className="table"
+    id="test-terra-table"
+    role="table"
+  >
+    <ContextProvider
+      value={
+        Object {
+          "pinnedColumnOffsets": Array [
+            0,
+          ],
+        }
+      }
+    >
+      <colgroup>
+        <col
+          key="Column-0"
+          style={
+            Object {
+              "width": "150px",
+            }
+          }
+        />
+        <col
+          key="Column-1"
+          style={
+            Object {
+              "width": "150px",
+            }
+          }
+        />
+        <col
+          key="Column-2"
+          style={
+            Object {
+              "width": "150px",
+            }
+          }
+        />
+      </colgroup>
+      <Memo(ColumnHeader)
+        columns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 150,
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 150,
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isSelectable": false,
+              "maximumWidth": 300,
+              "minimumWidth": 60,
+              "width": 150,
+            },
+          ]
+        }
+        hasColumnHeaders={true}
+        headerHeight="2.5rem"
+        onColumnSelect={[Function]}
+        onResizeMouseDown={[Function]}
+        tableHeight={0}
+      />
+      <tbody>
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Heart Rate Monitored (bpm)",
+                "isSelectable": false,
+              },
+              Object {
+                "content": "",
+              },
+              Object {
+                "content": "66",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="1"
+          key="1"
+          rowHeaderIndex={0}
+          rowIndex={1}
+        />
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Temperature Oral (degC)",
+              },
+              Object {
+                "content": "36.7",
+              },
+              Object {
+                "content": "36.9",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="2"
+          key="2"
+          rowHeaderIndex={0}
+          rowIndex={2}
+        />
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Cardiac Index (L/min/m2)",
+              },
+              Object {
+                "content": "2.25",
+              },
+              Object {
+                "content": "2.28",
+                "isMasked": true,
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="3"
+          key="3"
+          rowHeaderIndex={0}
+          rowIndex={3}
+        />
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Oxygen Flow Rate (L/min)",
+              },
+              Object {
+                "content": "63",
+              },
+              Object {
+                "content": "47",
+              },
+            ]
+          }
+          displayedColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isSelectable": false,
+              },
+            ]
+          }
+          height="2.5rem"
+          id="4"
+          isSelected={true}
+          key="4"
+          rowHeaderIndex={0}
+          rowIndex={4}
+        />
+      </tbody>
+    </ContextProvider>
+  </table>
+</div>
+`;
+
 exports[`Table verifies that the table created is consistent with the rows and overflowColumns props 1`] = `
 <div
   className="table-container"
@@ -5974,6 +6293,32 @@ exports[`Table verifies that the table created is consistent with the rows and o
         }
       }
     >
+      <colgroup>
+        <col
+          key="Column-0"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <col
+          key="Column-1"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <col
+          key="Column-2"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+      </colgroup>
       <Memo(ColumnHeader)
         columns={
           Array [
@@ -6001,6 +6346,7 @@ exports[`Table verifies that the table created is consistent with the rows and o
             },
           ]
         }
+        hasColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeMouseDown={[Function]}
@@ -6184,6 +6530,32 @@ exports[`Table verifies the rows are created with the right props 1`] = `
         }
       }
     >
+      <colgroup>
+        <col
+          key="Column-0"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <col
+          key="Column-1"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <col
+          key="Column-2"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+      </colgroup>
       <Memo(ColumnHeader)
         columns={
           Array [
@@ -6211,6 +6583,7 @@ exports[`Table verifies the rows are created with the right props 1`] = `
             },
           ]
         }
+        hasColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeMouseDown={[Function]}
@@ -6394,6 +6767,32 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
         }
       }
     >
+      <colgroup>
+        <col
+          key="Column-0"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <col
+          key="Column-1"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+        <col
+          key="Column-2"
+          style={
+            Object {
+              "width": "200px",
+            }
+          }
+        />
+      </colgroup>
       <Memo(ColumnHeader)
         columns={
           Array [
@@ -6421,6 +6820,7 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
             },
           ]
         }
+        hasColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeMouseDown={[Function]}

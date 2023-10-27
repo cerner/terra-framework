@@ -19,4 +19,15 @@
       outline-offset: var(--terra-table-cell-focus-outline-offset, -2px);
     }
   }
+
+  /* stylelint-disable selector-max-compound-selectors */
+  .headerless {
+    tr:first-child {
+      td,
+      th {
+        border-top: var(--terra-table-headerless-first-row-border-top, 1px solid #dedfe0);
+      }
+    }
+  }
+  /* stylelint-enable selector-max-compound-selectors */
 }

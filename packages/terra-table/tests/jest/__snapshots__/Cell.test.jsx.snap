@@ -105,6 +105,33 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
 </td>
 `;
 
+exports[`Cell verifies that a cell has renders that masked label text, when provided 1`] = `
+<td
+  aria-label="Some Label Here"
+  className="cell masked"
+  style={
+    Object {
+      "left": null,
+    }
+  }
+>
+  <div
+    className="cell-content"
+    style={
+      Object {
+        "height": undefined,
+      }
+    }
+  >
+    <span
+      className="no-data-cell"
+    >
+      MaskedLabel
+    </span>
+  </div>
+</td>
+`;
+
 exports[`Cell verifies that a cell has the correct styles and no content when isMasked prop is true 1`] = `
 <td
   aria-label="Some Label Here"
