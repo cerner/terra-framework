@@ -4,6 +4,7 @@ import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 
 import ThemeContext from 'terra-theme-context';
+import GridContext, { GridConstants } from '../utils/GridContext';
 
 import Cell from './Cell';
 import styles from './RowSelectionCell.module.scss';
@@ -66,6 +67,10 @@ function RowSelectionCell(props) {
   } = props;
 
   const theme = useContext(ThemeContext);
+
+  const gridContext = useContext(GridContext);
+  const isGridContext = gridContext.role === GridConstants.GRID;
+
   const rowLabel = intl.formatMessage({ id: 'Terra.table.row-index' }, { row: rowIndex + 1 });
 
   const selectionCheckbox = (
@@ -73,7 +78,7 @@ function RowSelectionCell(props) {
       type="checkbox"
       aria-label={ariaLabel || rowLabel}
       readOnly
-      tabIndex={-1}
+      tabIndex={isGridContext ? -1 : 0}
       checked={isSelected}
       className={cx('input', theme.className)}
     />
