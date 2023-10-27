@@ -18,7 +18,7 @@ const tableData = {
   sections: [{
     id: 'section-0',
     isCollapsible: true,
-    isCollapsed: false,
+    isCollapsed: true,
     text: 'Test Section',
     rows: [
       {

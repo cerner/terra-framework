@@ -8,10 +8,6 @@
     .header:not(.visible) {
       display: none;
     }
-
-    button:focus {
-      outline: none;
-    }
   }
 
   .header.visible th {
