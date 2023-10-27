@@ -6,5 +6,14 @@
   "Terra.table.columnError": "Errors associated with column",
   "Terra.table.resizeHandleValueText": "{columnWidth} pixels column width",
   "Terra.table.resume-navigation": "Table navigation resumed.",
-  "Terra.table.row-index" : "Row {row}"
+  "Terra.table.row-index" : "Row {row}",
+
+  "Terra.table.row-selection-template" : "Row {row} selected. ",
+  "Terra.table.multiple-rows-selected": "{rowCount} rows selected. ",
+  "Terra.table.multiple-rows-unselected": "{rowCount} rows unselected. ",
+  "Terra.table.row-selection-cleared-template" : "Row {row} unselected. ",
+  "Terra.table.row-selection-mode-enabled": "Row Selection Mode enabled.",
+  "Terra.table.row-selection-mode-disabled": "Row Selection Mode disabled",
+  "Terra.table.all-rows-selected" : "All rows selected",
+  "Terra.table.all-rows-unselected" : "No rows selected"
 }

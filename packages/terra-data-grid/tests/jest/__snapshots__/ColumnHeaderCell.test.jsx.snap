@@ -5,6 +5,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -19,6 +20,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
   <div
     className="header-container"
     role="button"
+    tabIndex="-1"
   >
     <span>
        Vitals
@@ -33,7 +35,10 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
+    onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -43,6 +48,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
   aria-sort="ascending"
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -57,6 +63,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
   <div
     className="header-container"
     role="button"
+    tabIndex="-1"
   >
     <IconError
       a11yLabel="Terra.dataGrid.columnError"
@@ -77,7 +84,10 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
+    onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -87,6 +97,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
   aria-sort="descending"
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -101,6 +112,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
   <div
     className="header-container"
     role="button"
+    tabIndex="-1"
   >
     <span>
        Vitals
@@ -115,7 +127,10 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
+    onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -124,6 +139,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -138,6 +154,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
   <div
     className="header-container"
     role="button"
+    tabIndex="-1"
   >
     <IconError
       a11yLabel="Terra.dataGrid.columnError"
@@ -153,7 +170,10 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
+    onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -179,6 +199,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   <div
     className="header-container"
     role="button"
+    tabIndex="-1"
   >
     <IconError
       a11yLabel="Terra.dataGrid.columnError"
@@ -199,7 +220,10 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
+    onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -209,6 +233,8 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   aria-sort="ascending"
   className="column-header"
   key="Column-0"
+  onKeyDown={[Function]}
+  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -222,7 +248,6 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
 >
   <div
     className="header-container"
-    role="button"
   >
     <IconError
       a11yLabel="Terra.dataGrid.columnError"
@@ -243,7 +268,10 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
+    onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -252,6 +280,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
 <th
   className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
@@ -266,6 +295,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
   <div
     className="header-container"
     role="button"
+    tabIndex="-1"
   >
     <span>
        Vitals
@@ -275,7 +305,10 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
     columnIndex={0}
     columnText=" Vitals"
     columnWidth={100}
+    isActive={false}
     onResizeMouseDown={[Function]}
+    onResizeMouseUp={[Function]}
+    setIsActive={[Function]}
   />
 </th>
 `;
@@ -323,7 +356,9 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         "timeZone": null,
       }
     }
+    isActive={false}
     isResizable={true}
+    isResizeActive={false}
     isSelectable={true}
     sortIndicator="ascending"
     width={100}
@@ -332,6 +367,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       aria-sort="ascending"
       className="column-header selectable pinned"
       key="Column-0"
+      onKeyDown={[Function]}
       role="columnheader"
       scope="col"
       style={
@@ -346,6 +382,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       <div
         className="header-container"
         role="button"
+        tabIndex="-1"
       >
         <IconError
           a11yLabel="Terra.dataGrid.columnError"
@@ -425,10 +462,14 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         columnIndex={0}
         columnText=" Vitals"
         columnWidth={100}
+        isActive={false}
         onResizeMouseDown={[Function]}
+        onResizeMouseUp={[Function]}
+        setIsActive={[Function]}
       >
         <ColumnResizeHandle
           columnIndex={0}
+          columnResizeIncrement={10}
           columnText=" Vitals"
           columnWidth={100}
           intl={
@@ -458,19 +499,29 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
               "timeZone": null,
             }
           }
+          isActive={false}
           onResizeMouseDown={[Function]}
+          onResizeMouseUp={[Function]}
+          setIsActive={[Function]}
         >
           <div
             aria-hidden={true}
-            aria-label=" Vitals"
-            aria-valuenow={100}
-            aria-valuetext="Terra.dataGrid.resizeHandleValueText"
+            aria-label={null}
+            aria-valuemax={null}
+            aria-valuemin={null}
+            aria-valuenow={null}
+            aria-valuetext={null}
             className="resize-handle"
             draggable={true}
             onBlur={[Function]}
+            onClick={[Function]}
             onFocus={[Function]}
+            onKeyDown={[Function]}
             onMouseDown={[Function]}
-            role="slider"
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            role={null}
             style={
               Object {
                 "height": "undefinedpx",

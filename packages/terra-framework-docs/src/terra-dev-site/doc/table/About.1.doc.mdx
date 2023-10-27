@@ -48,3 +48,37 @@ import Table from "terra-table";
 ## Table Props
 
 <TablePropsTable />
+
+### Column
+A column specifies the data to render a cell in the header row of the Worklist Data Grid.
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
+|**displayName**|string|optional|none|String of text to render within the column header cell.|
+|**hasError**|bool|optional|none|Boolean value indicating whether or not the column has an error in the data.|
+|**isResizable**|bool|optional|none|Boolean value indicating whether or not the column header is resizable.|
+|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the column header is selectable.|
+|**minimumWidth**|number|optional|none|Number that specifies the minimum column width in pixels.|
+|**maximumWidth**|number|optional|none|Number that specifies the maximum column width in pixels.|
+|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
+|**sortIndicator**|custom|optional|none|A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered. One of `ascending`, `descending`.
+
+### Row
+A row defines the cells rendered within the row.
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the row within the grid.|
+|**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. Cells will be rendered in the order given and are expected to be in the same order as the columns.|
+|**isSelected**|bool|optional|none|A boolean indicating whether or not the row should render as selected.|
+|**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used for accessibility when announcing the row (un)selection.|
+
+### Cell
+A cell defines the content rendered at the intersection of a row and a column.
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**content**|content|optional|none|The content to render within the cell.|
+|**isMasked**|bool|optional|none|A boolean indicating if the cell content is masked.|
+|**maskedLabel**|bool|optional|none|Provides a custom string for masked cells to be read by screen readers. This value is only applied if the cell is masked.|

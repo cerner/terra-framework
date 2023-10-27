@@ -25,7 +25,7 @@ const tableData = {
         { content: '' },
         { content: 'Quinzell, Harleen' },
         { content: '' },
-        { isMasked: true },
+        { isMasked: true, maskedLabel: 'Age Hidden' },
         { isMasked: true },
         { content: 'Admitting Physician' },
       ],

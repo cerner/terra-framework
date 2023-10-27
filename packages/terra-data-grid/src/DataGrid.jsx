@@ -1,5 +1,5 @@
 import React, {
-  useState, useRef, useCallback, forwardRef, useImperativeHandle,
+  useState, useRef, useCallback, useImperativeHandle, forwardRef,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -59,6 +59,11 @@ const propTypes = {
    * String that specifies the column height. Any valid CSS height value is accepted.
    */
   columnHeaderHeight: PropTypes.string,
+
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
 
   /**
    * String that specifies the height for the rows in the grid. Any valid CSS value is accepted.
@@ -131,6 +136,7 @@ const DataGrid = injectIntl((props) => {
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
+    columnResizeIncrement,
     rowHeight,
     onColumnSelect,
     onCellSelect,
@@ -142,14 +148,23 @@ const DataGrid = injectIntl((props) => {
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
 
+  // Reference variable for WorklistDataGrid table element
   const grid = useRef();
   const gridContainerRef = useRef();
   const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
+  const [checkResizable, setCheckResizable] = useState(false);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
+  const [gridHasFocus, setGridHasFocus] = useState(false);
+
+  // Aria live region message management
+  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
+
+  // Define ColumnContext Provider value object
+
   // -------------------------------------
   // functions
 
@@ -307,10 +322,12 @@ const DataGrid = injectIntl((props) => {
     const cellCoordinates = { row: focusedRow, col: focusedCol };
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
+    setCheckResizable(false);
 
     const targetElement = event.target;
 
     // Allow default behavior if the event target is an editable field
+
     if (event.keyCode !== KeyCode.KEY_TAB
         && (isTextInput(targetElement)
             || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
@@ -340,6 +357,7 @@ const DataGrid = injectIntl((props) => {
         } else {
           // Left key
           nextCol -= 1;
+          setCheckResizable(cellCoordinates.row === 0);
         }
         break;
       case KeyCode.KEY_RIGHT:
@@ -407,15 +425,26 @@ const DataGrid = injectIntl((props) => {
     handleFocus.current = false;
   };
 
+  /**
+   * Establishes selection state when the WorklistDataGrid gains focus
+   * @param {*} event focus event data
+   */
   const onFocus = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
         setFocusedRowCol(focusedRow, focusedCol, true);
+        setGridHasFocus(true);
       }
     }
 
     handleFocus.current = true;
+  };
+
+  const onBlur = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      setGridHasFocus(false);
+    }
   };
 
   // -------------------------------------
@@ -429,10 +458,11 @@ const DataGrid = injectIntl((props) => {
       onKeyDown={handleKeyDown}
       onMouseDown={onMouseDown}
       onFocus={onFocus}
+      onBlur={onBlur}
       id={id}
       className={cx('data-grid-container')}
     >
-      <GridContext.Provider value={{ role: GridConstants.GRID, setCellAriaLiveMessage }}>
+      <GridContext.Provider value={{ role: GridConstants.GRID, setCellAriaLiveMessage, setColumnHeaderAriaLiveMessage }}>
         <Table
           id={`${id}-table`}
           rows={rows}
@@ -452,6 +482,7 @@ const DataGrid = injectIntl((props) => {
           ref={handleTableRefs}
         />
       </GridContext.Provider>
+      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );

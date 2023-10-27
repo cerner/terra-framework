@@ -2,11 +2,22 @@
 
 ## Unreleased
 
-* Fixed
-  * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
+## 1.43.0 - (October 25, 2023)
 
 * Added
+  * Added examples and test to `terra-table` for row selection mode.
+  * New Terra Slider component documentation, examples and tests.
+
+* Fixed
+  * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
+  * Fixed broken links in the Worklist Data Grid documentation in `terra-data-grid` component.
+
+* Added
+  * Added test for data grid column resizing.
   * Added example for Flowsheet Data Grid containing "No Result" cells.
+
+* Updated
+  * Updated `terra-table` example to show providing custom masked cell message label.
 
 ## 1.42.0 - (October 20, 2023)
 
@@ -23,11 +34,9 @@
 
 * Added
   * Added documentation for the new `terra-table` component.
-  
+
 * Changed
   * Updated `terra-menu` examples with focus highlight styles for terra-button on closing menu with selection of menu-item.
-
-* Updated
   * Updates examples for `terra-data-grid` to cover scenarios for focusable elements prevented from receiving focus.
   * Updated focusable cell test for `terra-data-grid` to account for focusable elements in a hidden container.
 

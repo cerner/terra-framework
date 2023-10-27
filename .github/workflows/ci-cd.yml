@@ -42,7 +42,7 @@ jobs:
           npm run lint
       - name: Testing Project
         run: |
-          npm run jest
+          npm run jest:no-coverage
       - if: github.event_name == 'pull_request'
         name: Danger
         uses: danger/danger-js@9.1.8
@@ -81,7 +81,7 @@ jobs:
         env:
           SITE: build/${{ matrix.theme }}
           FORM_FACTOR: ${{ matrix.form-factor }}
-        run: npm run wdio-${{ matrix.theme }}
+        run: npm run wdio:${{ matrix.theme }}
 
   release-and-deploy:
     runs-on: ubuntu-latest

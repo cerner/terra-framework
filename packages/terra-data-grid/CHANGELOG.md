@@ -2,7 +2,16 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed the column header background color for the Orion Fusion theme.
+
+## 1.0.0 - (October 25, 2023)
+* Initial working component release.
+  
 * Added
+  * Added additional screen reader support to announce that column headers are interactable upon selection.
+  * Added keyboard support for column resizing.
+  * Added translations.
   * Added "No Result" cells to FlowsheetDataGrid.
 
 ## 0.8.1 - (October 17, 2023)
@@ -42,7 +51,7 @@
   * Updated the `terra-worklist-data-grid` component to set initial focus to the row selection header when row selection mode is enabled.
 
 ___
-All release notes below apply to the `terra-worklist-data-grid` package (renamed to `terra-data-grid` the 0.6 release above).
+All release notes below apply to the `terra-worklist-data-grid` package (renamed to `terra-data-grid` with the 0.6 release above).
 
 ## 0.5.0 - (August 31, 2023)
 

@@ -57,6 +57,11 @@ const propTypes = {
   isMasked: PropTypes.bool,
 
   /**
+   * Provides a custom string for masked cells to be read by screen readers. This value is only applied if the cell is masked.
+   */
+  maskedLabel: PropTypes.string,
+
+  /**
    * Boolean value indicating whether or not the column header is selectable.
    */
   isSelectable: PropTypes.bool,
@@ -106,6 +111,7 @@ function Cell(props) {
     columnIndex,
     ariaLabel,
     isMasked,
+    maskedLabel,
     isRowHeader,
     isSelectable,
     isSelected,
@@ -163,8 +169,37 @@ function Cell(props) {
     }
   });
 
+  /**
+   *
+   * @param {HTMLElement} element - The element to check if it is a text input
+   * @returns True if the element is a editable field.  Otherwise, false.
+   */
+  const isEditableField = (element) => {
+    const { tagName } = element;
+
+    // Check if text input field
+    if (tagName.toLowerCase() === 'input') {
+      const validTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
+      const inputType = element.type;
+      return validTypes.indexOf(inputType) >= 0;
+    }
+
+    // Check if textarea or select element
+    if (['textarea', 'select'].indexOf(tagName.toLowerCase()) >= 0) {
+      return true;
+    }
+
+    // Check if content editable div
+    if (element.hasAttribute('contentEditable') && element.getAttribute('contentEditable') !== false) {
+      return true;
+    }
+
+    return false;
+  };
+
   const handleKeyDown = (event) => {
     const key = event.keyCode;
+    const targetElement = event.target;
 
     if (isFocusTrapEnabled) {
       switch (key) {
@@ -178,7 +213,7 @@ function Cell(props) {
       switch (key) {
         case KeyCode.KEY_RETURN:
           // Lock focus into component
-          if (hasFocusableElements()) {
+          if (isGridContext && hasFocusableElements()) {
             setIsFocusTrapEnabled(true);
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
@@ -193,7 +228,11 @@ function Cell(props) {
               rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
             });
           }
-          event.preventDefault(); // prevent the default scrolling
+
+          // Allow default behavior if the event target is an editable field
+          if (!isEditableField(targetElement)) {
+            event.preventDefault(); // prevent the default scrolling
+          }
           break;
         default:
       }
@@ -205,7 +244,7 @@ function Cell(props) {
   if (isMasked) {
     cellContent = (
       <span className={cx('no-data-cell', theme.className)}>
-        {intl.formatMessage({ id: 'Terra.table.maskedCell' })}
+        {maskedLabel || intl.formatMessage({ id: 'Terra.table.maskedCell' })}
       </span>
     );
   } else if (!children) {
@@ -250,13 +289,13 @@ function Cell(props) {
   return (
     <CellTag
       ref={isGridContext ? cellRef : undefined}
-      aria-selected={isSelected}
+      aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onMouseDown={isGridContext && onCellSelect ? onMouseDown : undefined}
-      onKeyDown={isGridContext ? handleKeyDown : undefined}
+      onMouseDown={onCellSelect ? onMouseDown : undefined}
+      onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props
       style={{ left: cellLeftEdge }}
     >

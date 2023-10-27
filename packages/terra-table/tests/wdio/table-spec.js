@@ -167,4 +167,55 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('scrollable-table-second-scroll', { selector: scrollableTableSelector });
     });
   });
+
+  describe('With row selection', () => {
+    const rowSelectionTableSelector = '#table-with-row-selections';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-row-selection');
+    });
+
+    it('verifies that first row selection checkbox gets focus', () => {
+      browser.keys(['Tab']);
+
+      expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
+      Terra.validates.element('row-selection-first-row-checkbox-focused', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that first row is selected', () => {
+      browser.keys(['Tab', 'Space']);
+
+      Terra.validates.element('row-selection-first-row-selected', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that first row is unselected', () => {
+      browser.keys(['Tab', 'Space', 'Space']);
+
+      Terra.validates.element('row-selection-first-row-unselected', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that multiple rows are selected', () => {
+      browser.keys(['Tab', 'Space', 'Tab', 'Tab', 'Space']);
+
+      Terra.validates.element('row-selection-multiple-selections', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[0].$$('td')[2].moveTo();
+      browser.pause(1000);
+      Terra.validates.element('row-selection-hover', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[0].$$('td')[2].click();
+      Terra.validates.element('row-selection-cell-click', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-row-selection?header-select=true');
+      browser.keys(['Tab']);
+
+      Terra.validates.element('row-selection-header-selectable', { selector: rowSelectionTableSelector });
+    });
+  });
 });
