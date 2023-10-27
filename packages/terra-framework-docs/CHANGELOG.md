@@ -5,6 +5,7 @@
 ## 1.43.0 - (October 25, 2023)
 
 * Added
+  * Added examples and test to `terra-table` for row selection mode.
   * New Terra Slider component documentation, examples and tests.
 
 * Fixed
