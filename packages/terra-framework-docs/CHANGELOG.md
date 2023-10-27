@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Updated customDisplay examples for tabs.
+
 ## 1.42.0 - (October 20, 2023)
 
 * Added

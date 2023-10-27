@@ -174,6 +174,7 @@ class Tabs extends React.Component {
           isDisabled={child.props.isDisabled}
           isClosable={isClosable}
           variant="framework"
+          customDisplay={child.props.customDisplay}
         />,
       );
     });
