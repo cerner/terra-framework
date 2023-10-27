@@ -179,7 +179,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('table-with-sectinos', { selector: tableWithSectionsSelector });
     });
   });
-  
+
   describe('With row selection', () => {
     const rowSelectionTableSelector = '#table-with-row-selections';
 
