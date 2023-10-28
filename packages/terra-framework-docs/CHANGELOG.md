@@ -15,6 +15,7 @@
 * Added
   * Added test for data grid column resizing.
   * Added example for Flowsheet Data Grid containing "No Result" cells.
+  * Added initial setup for `terra-compact-interactive-list` documentation.
 
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.
