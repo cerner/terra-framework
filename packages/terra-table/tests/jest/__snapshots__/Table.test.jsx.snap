@@ -714,6 +714,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={1}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -799,6 +800,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <th
                     className="cell highlighted"
@@ -876,6 +878,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell highlighted blank"
@@ -956,6 +959,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell masked highlighted"
@@ -1814,6 +1818,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={1}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -1899,6 +1904,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <th
                     className="cell"
@@ -1976,6 +1982,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell blank"
@@ -2056,6 +2063,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -2232,6 +2240,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={2}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -2316,6 +2325,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <th
                     className="cell"
@@ -2393,6 +2403,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -2469,6 +2480,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -2645,6 +2657,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={3}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -2729,6 +2742,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <th
                     className="cell"
@@ -2806,6 +2820,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -2882,6 +2897,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -3058,6 +3074,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={4}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -3142,6 +3159,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <th
                     className="cell"
@@ -3219,6 +3237,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -3294,6 +3313,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -4769,6 +4789,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={1}
+                        sectionId=""
                       >
                         <td
                           className="cell pinned"
@@ -4854,6 +4875,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <th
                       className="cell"
@@ -4931,6 +4953,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <td
                       className="cell blank"
@@ -5011,6 +5034,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -5187,6 +5211,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={2}
+                        sectionId=""
                       >
                         <td
                           className="cell pinned"
@@ -5271,6 +5296,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <th
                       className="cell"
@@ -5348,6 +5374,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <td
                       className="cell"
@@ -5424,6 +5451,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -5600,6 +5628,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={3}
+                        sectionId=""
                       >
                         <td
                           className="cell pinned"
@@ -5684,6 +5713,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <th
                       className="cell"
@@ -5761,6 +5791,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <td
                       className="cell"
@@ -5837,6 +5868,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -6013,6 +6045,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={4}
+                        sectionId=""
                       >
                         <td
                           className="cell pinned"
@@ -6097,6 +6130,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <th
                       className="cell highlighted"
@@ -6174,6 +6208,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <td
                       className="cell highlighted"
@@ -6249,6 +6284,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <td
                       className="cell highlighted"
@@ -7107,6 +7143,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={1}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -7192,6 +7229,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <th
                     className="cell highlighted"
@@ -7269,6 +7307,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell highlighted blank"
@@ -7349,6 +7388,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell masked highlighted"
@@ -7525,6 +7565,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={2}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -7609,6 +7650,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <th
                     className="cell"
@@ -7686,6 +7728,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -7762,6 +7805,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -7938,6 +7982,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={3}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -8022,6 +8067,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <th
                     className="cell"
@@ -8099,6 +8145,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -8175,6 +8222,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -8351,6 +8399,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={4}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -8435,6 +8484,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <th
                     className="cell"
@@ -8512,6 +8562,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -8587,6 +8638,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell"
@@ -8655,6 +8707,8 @@ Array [
               "isShiftPressed": undefined,
               "rowId": "1",
               "rowIndex": 1,
+              "sectionId": "",
+              "sectionIndex": undefined,
             },
           ],
         ],
@@ -8796,6 +8850,8 @@ Array [
                 "isShiftPressed": undefined,
                 "rowId": "1",
                 "rowIndex": 1,
+                "sectionId": "",
+                "sectionIndex": undefined,
               },
             ],
           ],
@@ -9323,6 +9379,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned"
@@ -9413,6 +9470,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned blank"
@@ -9506,6 +9564,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -9647,6 +9706,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned"
@@ -9737,6 +9797,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned"
@@ -9826,6 +9887,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -9967,6 +10029,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned"
@@ -10057,6 +10120,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned"
@@ -10146,6 +10210,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -10287,6 +10352,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned highlighted"
@@ -10377,6 +10443,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned highlighted"
@@ -10465,6 +10532,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <td
                       className="cell highlighted"
@@ -10550,6 +10618,8 @@ Array [
               "isShiftPressed": undefined,
               "rowId": "1",
               "rowIndex": 1,
+              "sectionId": "",
+              "sectionIndex": undefined,
             },
           ],
         ],
@@ -10691,6 +10761,8 @@ Array [
                 "isShiftPressed": undefined,
                 "rowId": "1",
                 "rowIndex": 1,
+                "sectionId": "",
+                "sectionIndex": undefined,
               },
             ],
           ],
@@ -11218,6 +11290,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned"
@@ -11308,6 +11381,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned blank"
@@ -11401,6 +11475,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={1}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -11542,6 +11617,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned"
@@ -11632,6 +11708,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned"
@@ -11721,6 +11798,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={2}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -11862,6 +11940,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned"
@@ -11952,6 +12031,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned"
@@ -12041,6 +12121,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={3}
+                    sectionId=""
                   >
                     <td
                       className="cell masked"
@@ -12182,6 +12263,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <th
                       className="cell pinned highlighted"
@@ -12272,6 +12354,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <td
                       className="cell pinned highlighted"
@@ -12360,6 +12443,7 @@ Array [
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={4}
+                    sectionId=""
                   >
                     <td
                       className="cell highlighted"
@@ -13264,6 +13348,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={1}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -13349,6 +13434,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned"
@@ -13426,6 +13512,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned blank"
@@ -13506,6 +13593,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -13681,6 +13769,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={2}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -13765,6 +13854,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned"
@@ -13842,6 +13932,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned"
@@ -13918,6 +14009,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -14093,6 +14185,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={3}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -14177,6 +14270,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned"
@@ -14254,6 +14348,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned"
@@ -14330,6 +14425,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -14505,6 +14601,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={4}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -14589,6 +14686,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned highlighted"
@@ -14666,6 +14764,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned highlighted"
@@ -14741,6 +14840,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell highlighted"
@@ -15601,6 +15701,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={1}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -15686,6 +15787,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned"
@@ -15763,6 +15865,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned blank"
@@ -15843,6 +15946,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -16018,6 +16122,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={2}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -16102,6 +16207,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned"
@@ -16179,6 +16285,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned"
@@ -16255,6 +16362,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -16430,6 +16538,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={3}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -16514,6 +16623,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned"
@@ -16591,6 +16701,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned"
@@ -16667,6 +16778,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
+                  sectionId=""
                 >
                   <td
                     className="cell masked"
@@ -16842,6 +16954,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={4}
+                      sectionId=""
                     >
                       <td
                         className="cell pinned"
@@ -16926,6 +17039,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <th
                     className="cell pinned highlighted"
@@ -17003,6 +17117,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell pinned highlighted"
@@ -17078,6 +17193,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
+                  sectionId=""
                 >
                   <td
                     className="cell highlighted"

@@ -157,12 +157,12 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('scrollable-table-second-focus', { selector: scrollableTableSelector });
     });
 
-    it('Validates a table has zebra striping when specified via props', () => {
+    it('Validates table is scrollable vertically via arrow keys', () => {
       browser.keys(['Tab', 'ArrowDown', 'ArrowDown']);
       Terra.validates.element('scrollable-table-first-scroll', { selector: scrollableTableSelector });
     });
 
-    it('Validates second scrollable table receives focus', () => {
+    it('Validates table is scrollable horizontally via arrow keys', () => {
       browser.keys(['Tab', 'Tab', 'ArrowRight', 'ArrowRight']);
       Terra.validates.element('scrollable-table-second-scroll', { selector: scrollableTableSelector });
     });
@@ -175,8 +175,8 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-sections');
     });
 
-    it('Validates a table has zebra striping when specified via props', () => {
-      Terra.validates.element('table-with-sectinos', { selector: tableWithSectionsSelector });
+    it('Validates a table with sections', () => {
+      Terra.validates.element('table-with-sections', { selector: tableWithSectionsSelector });
     });
   });
 

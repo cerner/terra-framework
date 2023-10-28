@@ -50,6 +50,7 @@ exports[`Cell renders a pinned cell 1`] = `
     onCellSelect={[Function]}
     rowId="RowID"
     rowIndex={1}
+    sectionId=""
   >
     <th
       className="cell pinned"
@@ -211,6 +212,7 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
     isSelectable={false}
     rowId="RowID"
     rowIndex={1}
+    sectionId=""
   >
     <td
       aria-label="Some Label Here"
@@ -310,6 +312,7 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
     isSelectable={false}
     rowId="RowID"
     rowIndex={1}
+    sectionId=""
   >
     <td
       aria-label="Some Label Here"
