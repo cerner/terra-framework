@@ -7,7 +7,6 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import Row from './subcomponents/Row';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
@@ -229,6 +228,16 @@ function Table(props) {
   const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
+  const tableSectionReducer = (rowCount, currentSection) => {
+    const sectionIndexOffset = (!!currentSection.text || currentSection.isCollapsible) ? 1 : 0;
+
+    // eslint-disable-next-line no-param-reassign
+    currentSection.sectionRowIndex = rowCount + sectionIndexOffset;
+    return rowCount + currentSection.rows.length + sectionIndexOffset;
+  };
+  const tableSections = sections ? [...sections] : [{ id: 'section-0', rows }];
+  const tableRowCount = tableSections.reduce(tableSectionReducer, 1) + 1;
+
   // -------------------------------------
   // functions
 
@@ -413,6 +422,7 @@ function Table(props) {
         role={gridContext.role}
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
+        aria-rowcount={tableRowCount}
         className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
@@ -434,11 +444,11 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
           />
-          {sections ? sections.map((section, sectionIndex) => (
+          {tableSections.map((section) => (
             <Section
               id={section.id}
               key={section.id}
-              sectionIndex={sectionIndex + 1}
+              sectionRowIndex={section.sectionRowIndex}
               isCollapsible={section.isCollapsible}
               isCollapsed={section.isCollapsed}
               isTableStriped={isStriped}
@@ -451,26 +461,7 @@ function Table(props) {
               onCellSelect={isGridContext || hasSelectableRows ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
             />
-          )) : (
-            <tbody>
-              {rows.map((row, rowIndex) => (
-                <Row
-                  rowIndex={rowIndex + 1}
-                  key={row.id}
-                  height={rowHeight}
-                  id={row.id}
-                  cells={row.cells}
-                  ariaLabel={row.ariaLabel}
-                  hasRowSelection={hasSelectableRows}
-                  displayedColumns={displayedColumns}
-                  rowHeaderIndex={rowHeaderIndex}
-                  onCellSelect={isGridContext || hasSelectableRows ? handleCellSelection : undefined}
-                  isSelected={row.isSelected}
-                  isTableStriped={isStriped}
-                />
-              ))}
-            </tbody>
-          )}
+          ))}
         </ColumnContext.Provider>
       </table>
       <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />

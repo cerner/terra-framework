@@ -93,6 +93,7 @@ const TableWithSections = () => {
       overflowColumns={tableData.cols}
       sections={tableSections}
       onSectionSelect={handleSectionSelect}
+      isStriped
     />
   );
 };

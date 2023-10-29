@@ -21,9 +21,9 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
-   * The row's position in the table. This is zero based.
+   * The section's row index position in the table.
    */
-  sectionIndex: PropTypes.number,
+  sectionRowIndex: PropTypes.number,
 
   /**
    * A boolean indicating whether or not the the section is collapsible. If true, the DataGrid's `onRequestSectionCollapse`
@@ -94,7 +94,7 @@ const defaultProps = {
 function Section(props) {
   const {
     id,
-    sectionIndex,
+    sectionRowIndex,
     isCollapsible,
     isCollapsed,
     isTableStriped,
@@ -113,19 +113,20 @@ function Section(props) {
   const gridContext = useContext(GridContext);
   const isGridContext = gridContext.role === GridConstants.GRID;
 
+  const isVisible = text || isCollapsible;
+
   const handleMouseDown = (event) => {
     onSectionSelect(id);
     event.stopPropagation();
   };
 
   return (
-    <tbody className={cx('section', {
-      collapsed: isCollapsed,
-      collapsible: isCollapsible,
-    }, theme.className)}
-    >
+    <>
+      {/* Render section rows */}
+      {isVisible && (
       <tr
-        className={cx('header', { visible: text || isCollapsible })}
+        aria-rowindex={sectionRowIndex}
+        className={cx('header', { visible: isVisible })}
       >
         <th
           align="left"
@@ -140,23 +141,31 @@ function Section(props) {
           />
         </th>
       </tr>
-      {rows.map((row, rowIndex) => (
-        <Row
-          rowIndex={sectionIndex + (rowIndex + 1)}
-          key={row.id}
-          height={rowHeight}
-          id={row.id}
-          cells={row.cells}
-          ariaLabel={row.ariaLabel}
-          hasRowSelection={hasRowSelection}
-          displayedColumns={displayedColumns}
-          rowHeaderIndex={rowHeaderIndex}
-          onCellSelect={isGridContext ? onCellSelect : undefined}
-          isSelected={row.isSelected}
-          isTableStriped={isTableStriped}
-        />
-      ))}
-    </tbody>
+      )}
+      <tbody className={cx('section', {
+        collapsed: isCollapsed,
+        collapsible: isCollapsible,
+      }, theme.className)}
+      >
+        {/* Render section rows */}
+        {rows.map((row, rowIndex) => (
+          <Row
+            rowIndex={sectionRowIndex + (rowIndex + 1)}
+            key={row.id}
+            height={rowHeight}
+            id={row.id}
+            cells={row.cells}
+            ariaLabel={row.ariaLabel}
+            hasRowSelection={hasRowSelection}
+            displayedColumns={displayedColumns}
+            rowHeaderIndex={rowHeaderIndex}
+            onCellSelect={isGridContext ? onCellSelect : undefined}
+            isSelected={row.isSelected}
+            isTableStriped={isTableStriped}
+          />
+        ))}
+      </tbody>
+    </>
   );
 }
 

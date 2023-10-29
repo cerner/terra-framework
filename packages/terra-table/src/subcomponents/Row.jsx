@@ -29,11 +29,6 @@ const propTypes = {
   sectionId: PropTypes.string,
 
   /**
-   * The section's position in the table. This is zero based.
-   */
-  sectionIndex: PropTypes.number,
-
-  /**
    * String that specifies height of the row. Any valid CSS width value is accepted.
   */
   height: PropTypes.string,
@@ -96,7 +91,6 @@ function Row(props) {
     hasRowSelection,
     id,
     sectionId,
-    sectionIndex,
     isSelected,
     isTableStriped,
     cells,
@@ -114,6 +108,7 @@ function Row(props) {
 
   return (
     <tr
+      aria-rowindex={rowIndex}
       className={cx('row', {
         selected: isSelected,
         selectable: hasRowSelection,
@@ -132,7 +127,6 @@ function Row(props) {
           rowIndex={rowIndex}
           columnIndex={0}
           sectionId={sectionId}
-          sectionIndex={sectionIndex}
           isSelected={isSelected}
           ariaLabel={ariaLabel}
           onCellSelect={onCellSelect}
@@ -146,7 +140,6 @@ function Row(props) {
           rowIndex={rowIndex}
           columnIndex={cellColumnIndex + columnIndexOffSet}
           sectionId={sectionId}
-          sectionIndex={sectionIndex}
           key={`${id}_${displayedColumns[cellColumnIndex].id}`}
           isSelected={!hasRowSelection && cellData.isSelected}
           isMasked={cellData.isMasked}

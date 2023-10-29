@@ -4,14 +4,15 @@
 
 :local {
   .section {
-    &.collapsed tr:not(.header),
-    .header:not(.visible) {
+    &.collapsed {
       display: none;
     }
   }
 
-  .header.visible th {
-    border-left: var(--terra-table-cell-border-left, 1px solid #dedfe0);
-    border-right: var(--terra-table-cell-border-right, 1px solid #dedfe0);
+  .header {
+    &.visible th {
+      border-left: var(--terra-table-cell-border-left, 1px solid #dedfe0);
+      border-right: var(--terra-table-cell-border-right, 1px solid #dedfe0);
+    }
   }
 }

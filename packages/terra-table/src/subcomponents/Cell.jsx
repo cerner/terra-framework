@@ -52,11 +52,6 @@ const propTypes = {
   sectionId: PropTypes.string,
 
   /**
-   * The section's position in the table. This is zero based.
-   */
-  sectionIndex: PropTypes.number,
-
-  /**
    * Content that will be rendered within the Cell.
    */
   children: PropTypes.node,
@@ -121,7 +116,6 @@ function Cell(props) {
     rowIndex,
     columnIndex,
     sectionId,
-    sectionIndex,
     ariaLabel,
     isMasked,
     maskedLabel,
@@ -177,7 +171,7 @@ function Cell(props) {
   const onMouseDown = ((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        sectionId, sectionIndex, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+        sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
       });
     }
   });
@@ -238,7 +232,7 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
             onCellSelect({
-              sectionId, sectionIndex, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+              sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
             });
           }
 

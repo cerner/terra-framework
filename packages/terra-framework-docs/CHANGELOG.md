@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples and test to `terra-table` for table sections.
+
 ## 1.43.0 - (October 25, 2023)
 
 * Added
