@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated screen reader response to announce hot keys suggestions.
+
 ## 4.92.0 - (October 11, 2023)
 
 * Changed
@@ -11,9 +14,6 @@
 
 * Fixed
   * Fixed DateInput prop types for `excludeDates`, `includeDates`, `maxDate`, `minDate`.
-
-* Changed
-  * Updated screen reader response to announce hot keys suggestions.
 
 ## 4.90.0 - (September 19, 2023)
 
