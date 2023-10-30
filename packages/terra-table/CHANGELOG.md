@@ -8,6 +8,7 @@
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
+  * Fixed issue where column header cell was receiving tab focus instead of the button for table role.
   
 ## 5.1.1-alpha.0 - (October 25, 2023)
 
