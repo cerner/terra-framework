@@ -5,19 +5,20 @@
 ## 1.43.0 - (October 25, 2023)
 
 * Added
+  * Added examples and test to `terra-table` for row selection mode.
   * New Terra Slider component documentation, examples and tests.
 
 * Fixed
   * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
+  * Fixed broken links in the Worklist Data Grid documentation in `terra-data-grid` component.
 
 * Added
   * Added test for data grid column resizing.
   * Added example for Flowsheet Data Grid containing "No Result" cells.
   * Added initial setup for `terra-compact-interactive-list` documentation.
 
-* Fixed
-  * Fixed the `terra-tabs` icon-only examples keyboard navigation issue.
-  * Fixed broken links in the Worklist Data Grid documentation in `terra-data-grid` component.
+* Updated
+  * Updated `terra-table` example to show providing custom masked cell message label.
 
 ## 1.42.0 - (October 20, 2023)
 
