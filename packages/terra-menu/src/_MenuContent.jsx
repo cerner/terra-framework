@@ -344,20 +344,11 @@ class MenuContent extends React.Component {
   }
 
   ariaDescribedByHandle(value, index) {
-    let ariaDescribedByValue;
-    if (MenuUtils.isMac()) {
-      ariaDescribedByValue = value.props.ariaDescribedBy;
+    if (!MenuUtils.isMac() && !this.props.index && this.props.showHeader && index === 0) {
+      const ariaDescribedByValue = (value.props.ariaDescribedBy) ? ` ${value.props.ariaDescribedBy}` : '';
+      return `${this.menuTopHeaderId}${ariaDescribedByValue}`;
     }
-    if (!MenuUtils.isMac()) {
-      if (!this.props.index && this.props.showHeader && index === 0 && value.props.ariaDescribedBy) {
-        ariaDescribedByValue = `${this.menuTopHeaderId} ${value.props.ariaDescribedBy}`;
-      } else if (!this.props.index && this.props.showHeader && index === 0 && value.props.ariaDescribedBy === undefined) {
-        ariaDescribedByValue = this.menuTopHeaderId;
-      } else {
-        ariaDescribedByValue = value.props.ariaDescribedBy;
-      }
-    }
-    return ariaDescribedByValue;
+    return value.props.ariaDescribedBy;
   }
 
   render() {
