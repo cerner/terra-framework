@@ -408,13 +408,17 @@ exports[`correctly applies the theme context className 1`] = `
         >
           <VisuallyHiddenText
             aria-live="off"
-            text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
+            text=" 
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey "
           >
             <span
               aria-live="off"
               className="visually-hidden-text"
             >
-               Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
+               
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
             </span>
           </VisuallyHiddenText>
           <div
@@ -890,13 +894,17 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
     >
       <VisuallyHiddenText
         aria-live="off"
-        text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  "
+        text=" 
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey "
       >
         <span
           aria-live="off"
           className="visually-hidden-text"
         >
-           Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
+           
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
         </span>
       </VisuallyHiddenText>
       <div
@@ -1024,7 +1032,9 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
+       
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
     </span>
     <div
       aria-hidden="true"
@@ -1150,7 +1160,9 @@ exports[`should render a date input with isInvalid prop 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
+       
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
     </span>
     <div
       aria-hidden="true"
@@ -1276,7 +1288,9 @@ exports[`should render a default date input 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-       Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat  
+       
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
     </span>
     <div
       aria-hidden="true"
@@ -1775,13 +1789,17 @@ exports[`should render a default date input with all props 1`] = `
     >
       <VisuallyHiddenText
         aria-live="off"
-        text=" Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 "
+        text=" 
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey "
       >
         <span
           aria-live="off"
           className="visually-hidden-text"
         >
-           Terra.datePicker.dateFormatLabel Terra.datePicker.dateFormat Sunday, January 1, 2017 
+           
+            Terra.datePicker.dateFormatLabel 
+            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey 
         </span>
       </VisuallyHiddenText>
       <div
