@@ -15,8 +15,30 @@ const propTypes = {
    */
   id: PropTypes.string.isRequired,
 
-  rows: PropTypes.arrayOf(rowShape),
+  /**
+   * Data for columns.
+   */
   columns: PropTypes.arrayOf(columnShape),
+
+  /**
+     * Data for rows (list items) content.
+     */
+  rows: PropTypes.arrayOf(rowShape),
+
+  /**
+   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
+   */
+  columnMinimumWidth: PropTypes.string,
+
+  /**
+     * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
+     */
+  columnMaximumWidth: PropTypes.string,
+
+  /**
+   * A number of visual columns.
+   */
+  numberOfColumns: PropTypes.number,
 };
 
 const VisualRow = (props) => {
@@ -24,6 +46,9 @@ const VisualRow = (props) => {
     id,
     rows,
     columns,
+    columnMinimumWidth,
+    columnMaximumWidth,
+    numberOfColumns,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -40,8 +65,10 @@ const VisualRow = (props) => {
           id={row.id}
           cells={row.cells}
           ariaLabel={row.ariaLabel}
-          onCellSelect={() => {}}
           columns={columns}
+          columnMinimumWidth={columnMinimumWidth}
+          columnMaximumWidth={columnMaximumWidth}
+          numberOfColumns={numberOfColumns}
         />
       ))}
     </div>

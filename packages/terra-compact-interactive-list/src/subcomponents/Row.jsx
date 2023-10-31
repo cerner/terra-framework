@@ -11,55 +11,73 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * An identifier to uniquely identify the row within the grid.
+   * An identifier to uniquely identify the row.
    */
-  // id: PropTypes.string.isRequired,
-
-  /**
-   * The row's position in the Grid. This is zero based.
-   */
-  // rowIndex: PropTypes.number,
+  id: PropTypes.string.isRequired,
 
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
   cells: PropTypes.arrayOf(cellShape),
 
-  // columnId: PropTypes.string,
+  /**
+   * Data for columns.
+   */
   columns: PropTypes.arrayOf(columnShape),
+
+  /**
+   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
+   */
+  columnMinimumWidth: PropTypes.string,
+
+  /**
+   * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
+   */
+  columnMaximumWidth: PropTypes.string,
+
+  /**
+   * A number of visual columns.
+   */
+  numberOfColumns: PropTypes.number,
 };
 
-function Row(props) {
+const Row = (props) => {
   const {
-    // rowIndex,
-    // id,
+    id,
     cells,
     columns,
+    columnMinimumWidth,
+    columnMaximumWidth,
+    numberOfColumns,
   } = props;
 
   const theme = useContext(ThemeContext);
 
   return (
     <div
+      id={id}
       role="row"
       className={cx('row', theme.className)}
+      // eslint-disable-next-line react/forbid-dom-props
+      style={{
+        flex: `1 1 ${Math.min(100 / numberOfColumns)}%`,
+      }}
     >
       {cells.map((cellData, index) => (
         <Cell
-        // rowId={rowId}
-        // columnId={columnId}
-        // rowIndex={cellRowIndex}
-        // columnIndex={cellColumnIndex}
           key={cellData.id}
-          // eslint-disable-next-line react/forbid-component-props
-          style={columns[index].style}
+          width={columns[index].width}
+          flexGrow={columns[index].flexGrow}
+          alignToCenter={columns[index].alignToCenter}
+          columnMinimumWidth={columnMinimumWidth}
+          columnMaximumWidth={columnMaximumWidth}
         >
           {cellData.content}
         </Cell>
       ))}
     </div>
   );
-}
+};
 
 Row.propTypes = propTypes;
 

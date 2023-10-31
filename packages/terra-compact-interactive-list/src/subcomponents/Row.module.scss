@@ -5,13 +5,13 @@
 :local {
   .row {
     display: flex;
-    display: flex;
-    flex: 1 1 50%;
 
-    border-bottom: var(--terra-data-grid-cell-border-bottom, 1px solid #dedfe0);
-    border-right: var(--terra-data-grid-cell-border-right, 1px solid #dedfe0);
+    border-bottom: var(--terra-compact-interactive-list-row-border-bottom, 1px solid #dedfe0);
+    border-right: var(--terra-compact-interactive-list-row-border-right, 1px solid #dedfe0);
     &:first-child {
-      border-left: var(--terra-data-grid-cell-border-left, 1px solid #dedfe0);
+      border-left: var(--terra-compact-interactive-list-row-border-left, 1px solid #dedfe0);
     }
+
+    background-color: var(--terra-compact-interactive-list-row-background-color, #fefffe);
   }
 }

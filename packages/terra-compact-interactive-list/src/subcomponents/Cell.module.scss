@@ -5,13 +5,14 @@
 :local {
   .cell {
     font-weight: normal;
-    padding: var(--terra-data-grid-cell-content-padding, 7px);
+    padding: var(--terra-compact-interactive-list-cell-content-padding, 7px);
     position: relative;
-  }
-
-  .cell-content {
-    overflow: hidden;
-    overflow-wrap: break-word;
+    display: flex;
     text-align: left;
+    align-items: center;
+
+    &:hover {
+      background-color: var(--terra-compact-interactive-list-hover-background-color, #e0f2fb);
+    }
   }
 }

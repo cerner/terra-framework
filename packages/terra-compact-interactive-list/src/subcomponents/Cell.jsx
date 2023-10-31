@@ -1,9 +1,5 @@
-import React, {
-  useContext, useState, useRef, useEffect,
-} from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
-import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './Cell.module.scss';
@@ -12,24 +8,9 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String identifier of the row in which the Cell will be rendered.
+   * An identifier to uniquely identify the cell.
    */
-  rowId: PropTypes.string.isRequired,
-
-  /**
-   * String identifier of the column in which the Cell will be rendered.
-   */
-  columnId: PropTypes.string.isRequired,
-
-  /**
-   * The cell's row position in the grid. This is zero based.
-   */
-  rowIndex: PropTypes.number,
-
-  /**
-   * The cell's column position in the grid. This is zero based.
-   */
-  columnIndex: PropTypes.number,
+  id: PropTypes.string.isRequired,
 
   /**
    * Content that will be rendered within the Cell.
@@ -37,128 +18,71 @@ const propTypes = {
   children: PropTypes.node,
 
   /**
-   * Boolean indicating whether the Cell is currently selected.
+   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
    */
-  isSelected: PropTypes.bool,
+  columnMinimumWidth: PropTypes.string,
 
   /**
-   * String that labels the cell for accessibility.
+   * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
    */
-  ariaLabel: PropTypes.string,
+  columnMaximumWidth: PropTypes.string,
 
   /**
-   * Callback function that will be called when this cell is selected.
+   * Cell width
    */
-  onCellSelect: PropTypes.func,
+  width: PropTypes.number,
 
   /**
-   * @private
-   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   * Allows the cell to grow.
    */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-  style: PropTypes.any,
+  flexGrow: PropTypes.boolean,
+
+  /**
+   * Allows the centrally allign within the cell.
+   */
+  alignToCenter: PropTypes.boolean,
 };
 
 const defaultProps = {
-  isSelected: false,
+  flexGrow: false,
+  alignToCenter: false,
 };
 
-function Cell(props) {
+const Cell = (props) => {
   const {
-    rowId,
-    columnId,
-    rowIndex,
-    columnIndex,
-    ariaLabel,
-    isSelected,
+    id,
     children,
-    onCellSelect,
-    style,
-    // intl,
+    width,
+    flexGrow,
+    columnMinimumWidth,
+    columnMaximumWidth,
+    alignToCenter,
   } = props;
 
-  const cellRef = useRef();
-  const [isInteractable, setInteractable] = useState(false);
   const theme = useContext(ThemeContext);
-  // const columnContext = useContext(ColumnContext);
-
-  /**
-   * Determine if cell has focusable elements
-   */
-  const hasFocusableElements = () => {
-    const focusableElementSelector = "a[href]:not([tabindex='-1']), area[href]:not([tabindex='-1']), input:not([disabled]):not([tabindex='-1']), "
-    + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
-    + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
-
-    const focusableElements = [...cellRef.current.querySelectorAll(`${focusableElementSelector}`)].filter(el => !el.hasAttribute('disabled') && !el.getAttribute('aria-hidden'));
-
-    return focusableElements.length > 0;
-  };
-
-  useEffect(() => {
-    setInteractable(hasFocusableElements());
-  }, []);
-
-  /**
-   * Handles mouse down event for cell
-   */
-  const onMouseDown = ((event) => {
-    onCellSelect({
-      rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: true,
-    });
-  });
-
-  /**
-   * Keyboard event handler
-   */
-  const handleKeyDown = (event) => {
-    const key = event.keyCode;
-
-    switch (key) {
-      case KeyCode.KEY_RETURN:
-        // Lock focus into component
-        if (hasFocusableElements()) {
-          // columnContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.dataGrid.cell-focus-trapped' }));
-          event.stopPropagation();
-          event.preventDefault();
-        }
-        break;
-      case KeyCode.KEY_SPACE:
-        if (onCellSelect) {
-          onCellSelect({
-            rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: true,
-          });
-        }
-        event.preventDefault(); // prevent the default scrolling
-        break;
-      default:
-    }
-  };
-
-  const className = cx('cell', {
-    selected: isSelected,
-  }, theme.className);
+  const className = cx('cell', theme.className);
 
   return (
 
     <div
+      id={id}
       role="gridcell"
       className={className}
-      ref={cellRef}
-      aria-selected={isSelected}
-      aria-label={ariaLabel}
-      tabIndex={isInteractable ? null : -1}
-      onMouseDown={onCellSelect ? onMouseDown : undefined}
-      onKeyDown={handleKeyDown}
+      tabIndex={-1}
       // eslint-disable-next-line react/forbid-dom-props
-      style={style}
+      style={{
+        flex: `${flexGrow ? 1 : 0} 0 ${width}px`,
+        justifyContent: `${alignToCenter ? 'center' : 'left'}`,
+        minWidth: columnMinimumWidth,
+        maxWidth: columnMaximumWidth,
+      }}
     >
       {children}
     </div>
   );
-}
+};
 
 Cell.propTypes = propTypes;
 Cell.defaultProps = defaultProps;
 
-export default React.memo(injectIntl(Cell));
+export default React.memo(Cell);

@@ -33,20 +33,50 @@ const propTypes = {
    * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
+
   /**
-   * Data for content in the body of the Grid. Rows will be rendered in the order given.
+   * Data for columns.
    */
   columns: PropTypes.arrayOf(columnShape),
-  rows: PropTypes.arrayOf(rowShape),
-  numberOfColumns: PropTypes.number,
-};
 
-// const defaultColumnMinimumWidth = 60;
-// const defaultColumnMaximumWidth = 300;
+  /**
+   * Data for rows (list items) content.
+   */
+  rows: PropTypes.arrayOf(rowShape),
+
+  /**
+   * A number of visual columns.
+   */
+  numberOfColumns: PropTypes.number,
+
+  /**
+   * A string for container's width. Any valid css string. Defaults to '100%'.
+   */
+  width: PropTypes.string,
+
+  /**
+   * A string for container's minimum width. Any valid css string. Defaults to '500px'.
+   */
+  minimumWidth: PropTypes.string,
+
+  /**
+   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
+   */
+  columnMinimumWidth: PropTypes.string,
+
+  /**
+   * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
+   */
+  columnMaximumWidth: PropTypes.string,
+};
 
 const defaultProps = {
   rows: [],
   numberOfColumns: 2,
+  width: '100%',
+  minimumWidth: '500px',
+  columnMinimumWidth: '20px',
+  columnMaximumWidth: '100%',
 };
 
 const CompactInteractiveList = (props) => {
@@ -57,6 +87,10 @@ const CompactInteractiveList = (props) => {
     columns,
     rows,
     numberOfColumns,
+    width,
+    minimumWidth,
+    columnMinimumWidth,
+    columnMaximumWidth,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -74,13 +108,18 @@ const CompactInteractiveList = (props) => {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         className={cx('compact-interactive-list', theme.className)}
+        // eslint-disable-next-line react/forbid-dom-props
+        style={{ width, minWidth: minimumWidth }}
       >
         {visualRows.map((visualRow, index) => (
           <VisualRow
-              // key={`visual-row-${index}`}
+            key={`visual-row-${index}`}
             id={`visual-row-${index}`}
             rows={visualRow}
             columns={columns}
+            columnMinimumWidth={columnMinimumWidth}
+            columnMaximumWidth={columnMaximumWidth}
+            numberOfColumns={numberOfColumns}
           />
         ))}
       </div>

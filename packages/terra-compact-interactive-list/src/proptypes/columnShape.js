@@ -9,18 +9,16 @@ const columnShape = PropTypes.shape({
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
+
   /**
-   * Number that specifies the minimum column width in pixels.
-   */
-  minimumWidth: PropTypes.number,
-  /**
-   * Number that specifies the maximum column width in pixels.
-   */
-  maximumWidth: PropTypes.number,
-  /**
-   * A number (in px) specifying the width of the column. If not provided, the Table's default column width will be used.
+   * Width of the column
    */
   width: PropTypes.number,
+
+  /**
+   * Whether the column width can grow
+   */
+  flexGrow: PropTypes.boolean,
 });
 
 export default columnShape;
