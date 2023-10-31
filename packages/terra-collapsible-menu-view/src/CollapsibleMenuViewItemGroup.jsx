@@ -30,6 +30,10 @@ const propTypes = {
    * String that labels the group for accessibility.
    */
   ariaLabel: PropTypes.string,
+  /**
+   * String that used in menu item for aria-describedby that labels the group for accessibility.
+   */
+  groupId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -75,6 +79,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       isMultiSelect,
       selectedKeys,
       ariaLabel,
+      groupId,
       ...customProps
     } = this.props;
 
@@ -90,7 +95,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
         });
         return (
           <li role="none">
-            <div {...customProps} role="group">
+            <div {...customProps} role="group" id={groupId} aria-label={ariaLabel}>
               {cloneChildren}
             </div>
           </li>
@@ -99,7 +104,7 @@ class CollapsibleMenuViewItemGroup extends React.Component {
       if (onChange) {
         return (
           <li role="none">
-            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange} aria-label={ariaLabel}>
+            <Menu.ItemGroup {...customProps} onChange={this.handleMenuOnChange} id={groupId} aria-label={ariaLabel}>
               {children}
             </Menu.ItemGroup>
           </li>

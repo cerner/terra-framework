@@ -53,11 +53,12 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
           ]}
         />
         <CollapsibleMenuView.Divider key="divider1" />
-        <CollapsibleMenuView.ItemGroup ariaLabel="View Type Single Selection" key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
+        <CollapsibleMenuView.ItemGroup ariaLabel="View Type Single Selection" groupId="view-type-single-select" key="ViewTypeSelection" selectedKeys={[this.state.displayType]} onChange={this.handleDisplayTypeChange}>
           <CollapsibleMenuView.Item
             icon={<IconTable />}
             text="Table View"
             key="tableView"
+            ariaDescribedBy="view-type-single-select"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.displayType === 'tableView'}
@@ -66,6 +67,7 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
             icon={<IconVisualization />}
             text="Chart View"
             key="chartView"
+            ariaDescribedBy="view-type-single-select"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.displayType === 'chartView'}
@@ -74,6 +76,7 @@ class AlwaysCollapsedMenuItemsDemo extends React.Component {
             icon={<IconTreemap />}
             text="Treemap View"
             key="treemapView"
+            ariaDescribedBy="view-type-single-select"
             isIconOnly
             shouldCloseOnClick={false}
             isSelected={this.state.displayType === 'treemapView'}
