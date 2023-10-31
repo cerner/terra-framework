@@ -19,9 +19,21 @@ const propTypes = {
   headerHeight: PropTypes.string.isRequired,
 
   /**
-   * Number that specifies the height of the table in pixels.
-   */
+  * Number that specifies the height of the data grid in pixels.
+  */
   tableHeight: PropTypes.number,
+  /**
+   * Column index for cell that can receive tab focus.
+   */
+  activeColumnIndex: PropTypes.number,
+  /**
+   * Specifies if resize handle should be active.
+   */
+  isActiveColumnResizing: PropTypes.bool,
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
 
   /**
    * Function that is called when a selectable header cell is selected. Parameters:
@@ -35,6 +47,11 @@ const propTypes = {
   onResizeMouseDown: PropTypes.func,
 
   /**
+   * Function that is called when the the keyboard is used to adjust the column size.
+   */
+  onResizeHandleChange: PropTypes.func,
+
+  /**
    * Boolean indicating whether or not the table columns should be displayed.
    */
   hasColumnHeaders: PropTypes.bool,
@@ -46,11 +63,15 @@ const defaultProps = {
 
 const ColumnHeader = (props) => {
   const {
+    activeColumnIndex,
+    isActiveColumnResizing,
+    columnResizeIncrement,
     columns,
     headerHeight,
     tableHeight,
     onColumnSelect,
     onResizeMouseDown,
+    onResizeHandleChange,
     hasColumnHeaders,
   } = props;
 
@@ -74,10 +95,14 @@ const ColumnHeader = (props) => {
             isResizable={hasColumnHeaders && column.isResizable}
             isSelectable={hasColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
+            isActive={activeColumnIndex === columnIndex}
+            isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+            columnResizeIncrement={columnResizeIncrement}
             hasError={column.hasError}
             sortIndicator={column.sortIndicator}
             onColumnSelect={onColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
+            onResizeHandleChange={onResizeHandleChange}
           />
         ))}
       </tr>

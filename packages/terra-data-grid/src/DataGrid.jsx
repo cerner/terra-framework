@@ -148,6 +148,14 @@ const DataGrid = injectIntl((props) => {
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
 
+  const dataGridRows = rows.map((row) => ({
+    ...row,
+    cells: row.cells.map((cell) => ({
+      ...cell,
+      isSelectable: cell.isSelectable !== false,
+    })),
+  }));
+
   // Reference variable for WorklistDataGrid table element
   const grid = useRef();
   const gridContainerRef = useRef();
@@ -201,8 +209,10 @@ const DataGrid = injectIntl((props) => {
   );
 
   const handleTableRefs = useCallback((node) => {
-    grid.current = node.tableRef;
-    tableContainerRef.current = node.containerRef;
+    if (node) {
+      grid.current = node.tableRef;
+      tableContainerRef.current = node.containerRef;
+    }
   }, []);
 
   // -------------------------------------
@@ -465,9 +475,10 @@ const DataGrid = injectIntl((props) => {
       <GridContext.Provider value={{ role: GridConstants.GRID, setCellAriaLiveMessage, setColumnHeaderAriaLiveMessage }}>
         <Table
           id={`${id}-table`}
-          rows={rows}
+          rows={dataGridRows}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
+          columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
           defaultColumnWidth={defaultColumnWidth}

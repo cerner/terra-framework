@@ -1,12 +1,16 @@
-import React, { useContext, useRef, useCallback } from 'react';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import * as KeyCode from 'keycode-js';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
-import IconDown from 'terra-icon/lib/icon/IconDown';
-import IconError from 'terra-icon/lib/icon/IconError';
-import IconUp from 'terra-icon/lib/icon/IconUp';
+import { IconUp, IconDown, IconError } from 'terra-icon';
 import ThemeContext from 'terra-theme-context';
 
 import ColumnContext from '../utils/ColumnContext';
@@ -60,6 +64,11 @@ const propTypes = {
   maximumWidth: PropTypes.number,
 
   /**
+   * Boolean value indicating whether or not the header cell is focused.
+   */
+  isActive: PropTypes.bool,
+
+  /**
    * Boolean value indicating whether or not the column header is selectable.
   */
   isSelectable: PropTypes.bool,
@@ -73,6 +82,16 @@ const propTypes = {
    * Height of the parent table.
    */
   tableHeight: PropTypes.number,
+
+  /**
+   * Boolean value indicating whether or not the column header is resizable.
+   */
+  isResizeActive: PropTypes.bool,
+
+  /**
+     * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+     */
+  columnResizeIncrement: PropTypes.number,
 
   /**
    * The cell's row position in the table. This is zero based.
@@ -97,6 +116,16 @@ const propTypes = {
   onResizeMouseDown: PropTypes.func,
 
   /**
+   * Function that is called when the mouse up event is triggered on the column resize handle.
+   */
+  onResizeMouseUp: PropTypes.func,
+
+  /**
+   * Function that is called when the the keyboard is used to adjust the column size.
+   */
+  onResizeHandleChange: PropTypes.func,
+
+  /**
    * @private
    * Object containing intl APIs
    */
@@ -106,7 +135,9 @@ const propTypes = {
 const defaultProps = {
   hasError: false,
   isSelectable: false,
+  isActive: false,
   isResizable: false,
+  isResizeActive: false,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -115,9 +146,12 @@ const ColumnHeaderCell = (props) => {
     displayName,
     sortIndicator,
     hasError,
+    isActive,
     isResizable,
     isSelectable,
     tableHeight,
+    isResizeActive,
+    columnResizeIncrement,
     width,
     minimumWidth,
     maximumWidth,
@@ -126,24 +160,52 @@ const ColumnHeaderCell = (props) => {
     columnIndex,
     onColumnSelect,
     onResizeMouseDown,
+    onResizeHandleChange,
     rowIndex,
   } = props;
 
   const columnContext = useContext(ColumnContext);
   const gridContext = useContext(GridContext);
   const theme = useContext(ThemeContext);
-  const columnHeaderCell = useRef();
+
+  const columnHeaderCellRef = useRef();
+  const columnHeaderCellButtonRef = useRef();
+
+  const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
   const isGridContext = gridContext.role === GridConstants.GRID;
 
+  const columnHeaderFocusArea = useCallback(() => (columnHeaderCellButtonRef.current ? columnHeaderCellButtonRef.current : columnHeaderCellRef.current),
+    []);
+
+  useEffect(() => {
+    if (isActive) {
+      if (isResizable && isResizeActive) {
+        setResizeHandleActive(true);
+      } else {
+        columnHeaderFocusArea().focus();
+        setResizeHandleActive(false);
+      }
+    } else {
+      setResizeHandleActive(false);
+    }
+  }, [columnHeaderFocusArea, isActive, isResizable, isResizeActive]);
+
   const onResizeHandleMouseDown = useCallback((event) => {
+    event.stopPropagation();
     if (onResizeMouseDown) {
-      onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
+      onResizeMouseDown(event, columnIndex, columnHeaderCellRef.current.offsetWidth);
     }
   }, [columnIndex, onResizeMouseDown]);
 
+  // Restore focus to column header after resize action is completed.
+  const onResizeHandleMouseUp = useCallback(() => {
+    columnHeaderFocusArea().focus();
+    setResizeHandleActive(false);
+  }, [columnHeaderFocusArea]);
+
   const handleMouseDown = (event) => {
-    onColumnSelect(id, { row: rowIndex, col: columnIndex });
+    onColumnSelect(id, { row: rowIndex, col: columnIndex }, isSelectable);
     event.stopPropagation();
   };
 
@@ -152,9 +214,26 @@ const ColumnHeaderCell = (props) => {
     switch (key) {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
-        onColumnSelect(id, { row: rowIndex, col: columnIndex });
+        if (isSelectable && onColumnSelect) {
+          onColumnSelect(id, { row: rowIndex, col: columnIndex }, isSelectable);
+        }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
+        break;
+      case KeyCode.KEY_LEFT:
+        if (isResizable && isResizeHandleActive) {
+          columnHeaderFocusArea().focus();
+          setResizeHandleActive(false);
+          event.stopPropagation();
+          event.preventDefault();
+        }
+        break;
+      case KeyCode.KEY_RIGHT:
+        if (isResizable && !isResizeHandleActive) {
+          setResizeHandleActive(true);
+          event.stopPropagation();
+          event.preventDefault();
+        }
         break;
       default:
     }
@@ -187,9 +266,9 @@ const ColumnHeaderCell = (props) => {
   }
 
   return (
-  /* eslint-disable react/forbid-dom-props */
+    /* eslint-disable react/forbid-dom-props */
     <th
-      ref={columnHeaderCell}
+      ref={columnHeaderCellRef}
       key={id}
       className={cx('column-header', theme.className, {
         selectable: isSelectable,
@@ -200,25 +279,33 @@ const ColumnHeaderCell = (props) => {
       scope="col"
       aria-sort={sortIndicator}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
-      onKeyDown={isSelectable && onColumnSelect ? handleKeyDown : undefined}
+      onKeyDown={isSelectable || isResizable ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height: headerHeight, left: cellLeftEdge }}
     >
-      <div className={cx('header-container')} role={displayName && 'button'}>
+      <div
+        className={cx('header-container')}
+        {...isSelectable && displayName && { ref: columnHeaderCellButtonRef, tabIndex: '-1', role: 'button' }}
+      >
         {errorIcon}
         <span>{displayName}</span>
         {sortIndicatorIcon}
       </div>
-      { isResizable && (
-      <ColumnResizeHandle
-        columnIndex={columnIndex}
-        columnText={displayName}
-        columnWidth={width}
-        height={tableHeight}
-        minimumWidth={minimumWidth}
-        maximumWidth={maximumWidth}
-        onResizeMouseDown={onResizeHandleMouseDown}
-      />
+      {isResizable && (
+        <ColumnResizeHandle
+          columnIndex={columnIndex}
+          columnText={displayName}
+          columnWidth={width}
+          height={tableHeight}
+          columnResizeIncrement={columnResizeIncrement}
+          isActive={isResizeHandleActive}
+          setIsActive={setResizeHandleActive}
+          minimumWidth={minimumWidth}
+          maximumWidth={maximumWidth}
+          onResizeMouseDown={onResizeHandleMouseDown}
+          onResizeMouseUp={onResizeHandleMouseUp}
+          onResizeHandleChange={onResizeHandleChange}
+        />
       )}
       {pinnedColumnsDivider}
     </th>

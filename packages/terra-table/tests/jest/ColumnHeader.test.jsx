@@ -125,6 +125,7 @@ describe('ColumnHeader', () => {
     expect(columnHeaderCell.props().tableHeight).toBe(500);
     expect(columnHeaderCell.props().onColumnSelect).toBe(mockColumnSelect);
     expect(columnHeaderCell.props().onResizeMouseDown).toBe(mockResizeMouseDown);
+    expect(columnHeaderCell.props().tableHeight).toBe(500);
 
     expect(wrapper).toMatchSnapshot();
   });

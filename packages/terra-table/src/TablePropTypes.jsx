@@ -29,6 +29,11 @@ export const tableShape = {
   ariaLabel: PropTypes.string,
 
   /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
+
+  /**
       * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
       * Columns will be presented in the order given.
       */
