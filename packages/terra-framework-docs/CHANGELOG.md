@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `aria-label` and `ariaDescribedBy` props.
+
 ## 1.43.0 - (October 25, 2023)
 
 * Added
