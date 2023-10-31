@@ -235,7 +235,7 @@ function Table(props) {
     currentSection.sectionRowIndex = rowCount + sectionIndexOffset;
     return rowCount + currentSection.rows.length + sectionIndexOffset;
   };
-  const tableSections = sections ? [...sections] : [{ id: 'section-0', rows }];
+  const tableSections = useMemo(() => (sections ? [...sections] : [{ id: 'section-0', rows }]), [rows, sections]);
   const tableRowCount = tableSections.reduce(tableSectionReducer, 1) + 1;
 
   // -------------------------------------
@@ -271,11 +271,12 @@ function Table(props) {
   // useEffect for row updates
   useEffect(() => {
     const previousSelectedRows = [...selectedRows.current];
-    selectedRows.current = rows.filter((row) => row.isSelected).map(row => (row.id));
+    const selectableRows = tableSections.flatMap(section => (section.rows.map(row => (row))));
+    selectedRows.current = selectableRows.filter((row) => row.isSelected).map(row => (row.id));
 
     if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
       setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.all-rows-unselected' }));
-    } else if (selectedRows.current.length === rows.length) {
+    } else if (selectedRows.current.length === selectableRows.length) {
       setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.all-rows-selected' }));
     } else {
       const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
@@ -283,16 +284,14 @@ function Table(props) {
       let selectionUpdateAriaMessage = '';
 
       if (rowSelectionsAdded.length === 1) {
-        const newRowIndex = rows.findIndex(row => row.id === rowSelectionsAdded[0]);
-        const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 2; // Accounts for header row and zero-based index
+        const selectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsAdded[0]}']`).getAttribute('aria-rowindex');
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.row-selection-template' }, { row: selectedRowLabel });
       } else if (rowSelectionsAdded.length > 1) {
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
       }
 
       if (rowSelectionsRemoved.length === 1) {
-        const removedRowIndex = rows.findIndex(row => row.id === rowSelectionsRemoved[0]);
-        const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 2; // Accounts for header row and zero-based index
+        const unselectedRowLabel = tableRef.current.querySelectorr(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('data-row-id');
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
@@ -302,7 +301,7 @@ function Table(props) {
         setRowSelectionAriaLiveMessage(selectionUpdateAriaMessage);
       }
     }
-  }, [intl, rows]);
+  }, [intl, rows, tableSections]);
 
   // useEffect for row displayed columns
   useEffect(() => {

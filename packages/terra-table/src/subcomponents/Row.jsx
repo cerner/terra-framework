@@ -109,11 +109,13 @@ function Row(props) {
   return (
     <tr
       aria-rowindex={rowIndex}
+      data-row-id={id}
       className={cx('row', {
         selected: isSelected,
         selectable: hasRowSelection,
         'striped-table-row': isTableStriped,
-      }, theme.className)} // eslint-disable-next-line react/forbid-dom-props
+      }, theme.className)}
+      // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
       onMouseEnter={hasRowSelection ? () => { setHovered(true); } : undefined}
       onMouseLeave={hasRowSelection ? () => { setHovered(false); } : undefined}

@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import SectionHeader from 'terra-section-header';
 
 import ThemeContext from 'terra-theme-context';
-import GridContext, { GridConstants } from '../utils/GridContext';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
@@ -110,9 +109,6 @@ function Section(props) {
 
   const theme = useContext(ThemeContext);
 
-  const gridContext = useContext(GridContext);
-  const isGridContext = gridContext.role === GridConstants.GRID;
-
   const isVisible = text || isCollapsible;
 
   const handleMouseDown = (event) => {
@@ -159,7 +155,7 @@ function Section(props) {
             hasRowSelection={hasRowSelection}
             displayedColumns={displayedColumns}
             rowHeaderIndex={rowHeaderIndex}
-            onCellSelect={isGridContext ? onCellSelect : undefined}
+            onCellSelect={onCellSelect}
             isSelected={row.isSelected}
             isTableStriped={isTableStriped}
           />
