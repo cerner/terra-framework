@@ -228,6 +228,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.props().tabIndex).toBe(0);
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
@@ -269,7 +270,8 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container');
+    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.props().tabIndex).toBeUndefined();
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);

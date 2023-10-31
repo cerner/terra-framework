@@ -260,11 +260,6 @@ const ColumnHeaderCell = (props) => {
     )
     : null;
 
-  let tabIndex = isSelectable ? 0 : undefined;
-  if (isGridContext) {
-    tabIndex = -1;
-  }
-
   return (
     /* eslint-disable react/forbid-dom-props */
     <th
@@ -274,7 +269,7 @@ const ColumnHeaderCell = (props) => {
         selectable: isSelectable,
         pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
       })}
-      tabIndex={tabIndex}
+      tabIndex={isGridContext ? -1 : undefined}
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
@@ -286,6 +281,7 @@ const ColumnHeaderCell = (props) => {
       <div
         className={cx('header-container')}
         {...isSelectable && displayName && { ref: columnHeaderCellButtonRef, tabIndex: '-1', role: 'button' }}
+        tabIndex={(!isGridContext && isSelectable) ? 0 : undefined}
       >
         {errorIcon}
         <span>{displayName}</span>
