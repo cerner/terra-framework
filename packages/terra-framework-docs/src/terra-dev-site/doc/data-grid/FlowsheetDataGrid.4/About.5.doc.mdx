@@ -52,6 +52,17 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 ## Grid props table
 <FlowsheetDataGridPropsTable />
 
+### Column
+A column specifies the data to render a cell in the header row of the Flowsheet Data Grid.
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
+|**displayName**|string|optional|none|String of text to render within the column header cell.|
+|**hasError**|bool|optional|none|Boolean value indicating whether or not the column has an error in the data.|
+|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the column header is selectable.|
+|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
+
 ### Rows
 Rows define the cells rendered within the row as well as the row's selection properties.
 The order in which the rows are provided will be the order in which they are rendered.
