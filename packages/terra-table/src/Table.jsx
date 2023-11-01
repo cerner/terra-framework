@@ -24,6 +24,8 @@ export const Table = injectIntl((props) => {
     id,
     ariaLabelledBy,
     ariaLabel,
+    activeColumnIndex,
+    isActiveColumnResizing,
     columnResizeIncrement,
     rows,
     pinnedColumns,
@@ -70,7 +72,11 @@ export const Table = injectIntl((props) => {
   const selectedRows = useRef([]);
   const [rowSelectionAriaLiveMessage, setRowSelectionAriaLiveMessage] = useState(null);
   const [rowSelectionModeAriaLiveMessage, setRowSelectionModeAriaLiveMessage] = useState(null);
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets }), [pinnedColumnOffsets]);
+
+  // Aria live region message management
+  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
+
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets]);
 
   // Initialize column width properties
   const initializeColumn = (column) => ({
@@ -264,6 +270,24 @@ export const Table = injectIntl((props) => {
     setActiveIndex(null);
   };
 
+  const onResizeHandleChange = useCallback((columnIndex, increment) => {
+    const { minimumWidth, maximumWidth, width } = tableColumns[columnIndex];
+    const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
+
+    // Update the width for the column in the state variable
+    const newGridColumns = [...tableColumns];
+    newGridColumns[columnIndex].width = newColumnWidth;
+    setTableColumns(newGridColumns);
+
+    // Update the column and table width
+    tableRef.current.style.width = `${tableRef.current.offsetWidth + increment}px`;
+
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(tableColumns[columnIndex].id, tableColumns[columnIndex].width);
+    }
+  }, [tableColumns, onColumnResize]);
+
   // -------------------------------------
 
   return (
@@ -293,6 +317,8 @@ export const Table = injectIntl((props) => {
           </colgroup>
 
           <ColumnHeader
+            isActiveColumnResizing={isActiveColumnResizing}
+            activeColumnIndex={activeColumnIndex}
             columns={tableColumns}
             hasColumnHeaders={hasColumnHeaders}
             headerHeight={columnHeaderHeight}
@@ -300,6 +326,7 @@ export const Table = injectIntl((props) => {
             tableHeight={tableHeight}
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
+            onResizeHandleChange={onResizeHandleChange}
           />
           <tbody>
             {rows.map((row, index) => (
@@ -323,6 +350,7 @@ export const Table = injectIntl((props) => {
       </table>
       <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
+      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
     </div>
   );
 });

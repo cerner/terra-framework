@@ -24,9 +24,20 @@ export const tableShape = {
   ariaLabelledBy: PropTypes.string,
 
   /**
-      * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
-      */
+ * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
+ */
   ariaLabel: PropTypes.string,
+
+  /**
+   * @private
+   * Column index for cell that can receive tab focus.
+   */
+  activeColumnIndex: PropTypes.number,
+  /**
+   * @private
+   * Specifies if resize handle should be active.
+   */
+  isActiveColumnResizing: PropTypes.bool,
 
   /**
    * Numeric increment in pixels to adjust column width when resizing via the keyboard.

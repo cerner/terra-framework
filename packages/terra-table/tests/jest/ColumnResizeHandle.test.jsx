@@ -108,7 +108,7 @@ describe('ColumnResizeHandle', () => {
 
     wrapper.find('.resize-handle').simulate('focus');
 
-    expect(wrapper.find('.resize-handle').props()['aria-label']).toBe('Terra.worklist-data-grid.resize-handle-template');
+    expect(wrapper.find('.resize-handle').props()['aria-label']).toBe('Terra.table.resize-handle-template');
   });
 
   it('sets the appropriate prop values on space keydown', () => {
@@ -122,7 +122,7 @@ describe('ColumnResizeHandle', () => {
     wrapper.find('.resize-handle').simulate('keydown', { keyCode: 32 }); // space
 
     expect(wrapper.find('.resize-handle').props()['aria-label']).toBe(null);
-    expect(wrapper.find('.resize-handle').props()['aria-valuetext']).toBe('Terra.worklist-data-grid.resize-handle-value-text');
+    expect(wrapper.find('.resize-handle').props()['aria-valuetext']).toBe('Terra.table.resize-handle-value-text');
     expect(wrapper.find('.resize-handle').props().role).toBe('slider');
   });
 
@@ -137,7 +137,7 @@ describe('ColumnResizeHandle', () => {
     wrapper.find('.resize-handle').simulate('keydown', { keyCode: 13 }); // enter
 
     expect(wrapper.find('.resize-handle').props()['aria-label']).toBe(null);
-    expect(wrapper.find('.resize-handle').props()['aria-valuetext']).toBe('Terra.worklist-data-grid.resize-handle-value-text');
+    expect(wrapper.find('.resize-handle').props()['aria-valuetext']).toBe('Terra.table.resize-handle-value-text');
     expect(wrapper.find('.resize-handle').props().role).toBe('slider');
   });
 

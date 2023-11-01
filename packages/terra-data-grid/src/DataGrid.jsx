@@ -478,6 +478,8 @@ const DataGrid = injectIntl((props) => {
           rows={dataGridRows}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
+          activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
+          isActiveColumnResizing={focusedRow === 0 && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
