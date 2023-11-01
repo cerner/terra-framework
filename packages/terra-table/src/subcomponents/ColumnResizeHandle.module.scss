@@ -1,5 +1,7 @@
-@import '../clinical-lowlight-theme/ColumnResizeHandle.module';
+/* stylelint-disable terra/custom-property-pseudo-selectors */
+// Themes
 @import '../orion-fusion-theme/ColumnResizeHandle.module';
+@import '../clinical-lowlight-theme/ColumnResizeHandle.module';
 
 :local {
   .resize-handle {

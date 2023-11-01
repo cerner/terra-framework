@@ -19,7 +19,7 @@ const cx = classNames.bind(styles);
 const defaultColumnMinimumWidth = 60;
 const defaultColumnMaximumWidth = 300;
 
-export const Table = injectIntl((props) => {
+const Table = injectIntl((props) => {
   const {
     id,
     ariaLabelledBy,
