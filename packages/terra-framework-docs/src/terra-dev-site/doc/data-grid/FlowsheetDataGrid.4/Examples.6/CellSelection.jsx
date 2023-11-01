@@ -65,20 +65,22 @@ const CellSelection = () => {
     if (rowId && columnId) {
       const rowIndex = rowData.findIndex(e => e.id === rowId);
       const columnIndex = cols.findIndex(e => e.id === columnId);
+      let otherSelectionsExist = false;
 
-      // Remove current selections
+      // Remove cell selections, excluding current cell
       const newRowData = [...rowData];
       for (let row = 0; row < rowData.length; row += 1) {
         for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
           const currentCell = rowData[row].cells[cell];
           if (currentCell.isSelected && !(row === rowIndex && cell === columnIndex)) {
             currentCell.isSelected = false;
+            otherSelectionsExist = true;
           }
         }
       }
 
-      // Toggle selection state of selected cell
-      newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected;
+      // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
+      newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected || otherSelectionsExist;
       setRowData(newRowData);
     }
   }, [cols, rowData]);
