@@ -1,8 +1,6 @@
 import { Badge } from "terra-table/package.json?dev-site-package";
 import DefaultTable from "./Examples/DefaultTable?dev-site-example";
 
-import TablePropsTable from "terra-table/src/TablePropTypes?dev-site-props-table";
-
 <Badge />
 
 # Terra Table
@@ -47,7 +45,13 @@ import Table from "terra-table";
 
 ## Table Props
 
-<TablePropsTable />
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
+|**rows**|array|optional|[]|Data for content in the body of the table. Rows will be rendered in the order given.|
+|**ariaLabelledBy**|string|optional|none|String that identifies the element (or elements) that labels the table.|
+|**ariaLabel**|string|optional|none|String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.|
+|**columnResizeIncrement**|number|optional|none|Numeric increment in pixels to adjust column width when resizing via the keyboard.|
 
 ### Column
 A column specifies the data to render a cell in the header row of the Worklist Data Grid.
