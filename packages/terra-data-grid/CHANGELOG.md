@@ -4,16 +4,16 @@
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
+  * Added ability to select a range of cells to FlowsheetDataGrid.
 
 ## 1.0.0 - (October 25, 2023)
 * Initial working component release.
-  
+
 * Added
   * Added additional screen reader support to announce that column headers are interactable upon selection.
   * Added keyboard support for column resizing.
   * Added translations.
   * Added "No Result" cells to FlowsheetDataGrid.
-  * Added ability to select a range of cells to FlowsheetDataGrid.
 
 ## 0.8.1 - (October 17, 2023)
 

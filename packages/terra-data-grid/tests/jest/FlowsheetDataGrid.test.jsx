@@ -636,7 +636,7 @@ describe('Single cell selection', () => {
     ]);
   });
 
-  it('verifies Shift+Click selects a range of cells when the selected range is only the anchor cell', () => {
+  it('verifies Shift+Click selects a single cell when no cells are initially selected', () => {
     const wrapper = mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
@@ -650,10 +650,11 @@ describe('Single cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
-    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{ rowId: '4', columnId: 'Column-2' }]);
+    expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-2');
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
-  it('verifies Shift+Space selects a range of cells when the selected range is only the anchor cell', () => {
+  it('verifies Shift+Space selects a single cell when no cells are initially selected', () => {
     const wrapper = mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
@@ -667,6 +668,7 @@ describe('Single cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });
-    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{ rowId: '4', columnId: 'Column-2' }]);
+    expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-2');
+    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 });

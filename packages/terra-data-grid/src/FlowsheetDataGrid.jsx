@@ -202,10 +202,7 @@ function FlowsheetDataGrid(props) {
       return;
     }
 
-    if (selectionDetails.isShiftPressed) {
-      if (!anchorCell.current) {
-        anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
-      }
+    if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
