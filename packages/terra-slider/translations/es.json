@@ -1,0 +1,4 @@
+{
+  "Terra.slider.ariaDescribedByTextWithLabels": "Ajuste la barra deslizante para seleccionar un valor entre {minimumLabel} ({minimumValue}) y {maximumLabel} ({maximumValue}).",
+  "Terra.slider.ariaDescribedByTextWithoutLabels": "Ajuste la barra deslizante para seleccionar un valor entre {minimumValue} y {maximumValue}."
+}

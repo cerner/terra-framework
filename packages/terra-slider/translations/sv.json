@@ -1,0 +1,4 @@
+{
+  "Terra.slider.ariaDescribedByTextWithLabels": "Justera skjutreglaget för att välja ett värde mellan {minimumLabel} ({minimumValue}) och {maximumLabel} ({maximumValue})",
+  "Terra.slider.ariaDescribedByTextWithoutLabels": "Justera skjutreglaget för att välja ett värde mellan {minimumValue} och {maximumValue}"
+}

@@ -1,0 +1,4 @@
+{
+  "Terra.slider.ariaDescribedByTextWithLabels": "Regler einstellen, um einen Wert zwischen {minimumLabel} ({minimumValue}) und {maximumLabel} ({maximumValue}) auszuwählen",
+  "Terra.slider.ariaDescribedByTextWithoutLabels": "Regler einstellen, um einen Wert zwischen {minimumValue} und {maximumValue} auszuwählen"
+}
