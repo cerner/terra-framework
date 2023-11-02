@@ -183,10 +183,10 @@ function FlowsheetDataGrid(props) {
     const columnIndexRightBound = Math.max(anchorColumnIndex, columnIndex);
 
     const cellsToSelect = [];
-    for (let row = rowIndexTopBound; row <= rowIndexBottomBound; row += 1) {
-      const rowId = rows[row].id;
-      for (let cell = columnIndexLeftBound; cell <= columnIndexRightBound; cell += 1) {
-        const columnId = columns[cell].id;
+    for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
+      const rowId = rows[rowIdx].id;
+      for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
+        const columnId = columns[colIdx].id;
         cellsToSelect.push({ rowId, columnId });
       }
     }

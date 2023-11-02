@@ -40,8 +40,8 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       navigateToCell(1, 1);
       browser.keys(['Space']);
 
-      Terra.validates.element('selection-and-focus-on-1-1', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(1) td:nth-of-type(1)').isFocused()).toBe(true);
+      Terra.validates.element('selection-and-focus-on-1-1', { selector: defaultSelector });
     });
 
     it('validates that navigating the grid does not change the selected cell', () => {
@@ -49,8 +49,8 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       browser.keys(['Space']);
       moveCurrentPositionBy(2, 0);
 
-      Terra.validates.element('selection-1-1-focus-3-1', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
+      Terra.validates.element('selection-1-1-focus-3-1', { selector: defaultSelector });
     });
 
     it('validates that selecting another cell moves the selection and focus to current cell', () => {
@@ -59,8 +59,8 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(2, 0);
       browser.keys(['Space']);
 
-      Terra.validates.element('selection-3-1-focus-3-1', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
+      Terra.validates.element('selection-3-1-focus-3-1', { selector: defaultSelector });
     });
 
     it('validates that Shift+Space selects a range of cells starting at the first selected cell', () => {
@@ -91,8 +91,8 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(2, -1);
       releaseShiftKey();
 
-      Terra.validates.element('selection-arrows-range-1-1-to-3-1-focus-3-0', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) th:nth-of-type(1)').isFocused()).toBe(true);
+      Terra.validates.element('selection-arrows-range-1-1-to-3-1-focus-3-0', { selector: defaultSelector });
     });
 
     it('validates that Shift+Arrow keys does not select column header cells when navigated to', () => {
@@ -102,31 +102,31 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(-3, 0);
       releaseShiftKey();
 
-      Terra.validates.element('selection-arrows-range-3-1-to-1-1-focus-0-1', { selector: defaultSelector });
       expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
+      Terra.validates.element('selection-arrows-range-3-1-to-1-1-focus-0-1', { selector: defaultSelector });
     });
 
     it('validates that clicking on a cell, moves selection and focus to that cell', () => {
       clickCell(3, 1, defaultSelector);
 
-      Terra.validates.element('selection-3-1-focus-3-1-with-hover', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
+      Terra.validates.element('selection-3-1-focus-3-1-with-hover', { selector: defaultSelector });
     });
 
     it('validates that navigation does not change cell selected via mouse click', () => {
       clickCell(3, 1, defaultSelector);
       moveCurrentPositionBy(-2, -1);
 
-      Terra.validates.element('selection-3-1-focus-1-0', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(1) th:nth-of-type(1)').isFocused()).toBe(true);
+      Terra.validates.element('selection-3-1-focus-1-0', { selector: defaultSelector });
     });
 
     it('validates that mouse click moves selection and focus to clicked cell', () => {
       clickCell(3, 1, defaultSelector);
       clickCell(4, 2, defaultSelector);
 
-      Terra.validates.element('selection-4-2-focus-4-2', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(4) td:nth-of-type(2)').isFocused()).toBe(true);
+      Terra.validates.element('selection-4-2-focus-4-2', { selector: defaultSelector });
     });
 
     it('validates that Shift+Click selects a range of cells starting at the first selected cell', () => {
@@ -142,8 +142,8 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       clickCell(3, 1, defaultSelector);
       browser.keys(['Escape']);
 
-      Terra.validates.element('cell-3-1-focused', { selector: defaultSelector });
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
+      Terra.validates.element('cell-3-1-focused', { selector: defaultSelector });
     });
   });
 });
