@@ -2,10 +2,6 @@
 
 ## Unreleased
 
-* Fixed
-  * Fixes issue where tab label fails to get updated due to
-    having the same key before and after tab label update.
-
 ## 7.11.1 - (October 25, 2023)
 
 * Fixed

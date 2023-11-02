@@ -159,16 +159,12 @@ class Tabs extends React.Component {
     const prevTab = prevProps.tabData.find((tab) => tab.isSelected === true);
     const currTab = this.props.tabData.find((tab) => tab.isSelected === true);
     const prevtabKeys = [];
-    const prevtabLabels = [];
     prevProps.tabData.forEach(child => {
       prevtabKeys.push(child.id);
-      prevtabLabels.push(child.label);
     });
     const curtabKeys = [];
-    const curtabLabels = [];
     this.props.tabData.forEach(child => {
       curtabKeys.push(child.id);
-      curtabLabels.push(child.label);
     });
 
     // Allow dynamic addition of tabs.
@@ -179,10 +175,8 @@ class Tabs extends React.Component {
       let isTabEqual = false;
       for (let i = 0; i < curtabKeys.length; i += 1) {
         const prevKey = prevtabKeys[i];
-        const prevLabel = prevtabLabels[i];
         const curKey = curtabKeys[i];
-        const curLabel = curtabLabels[i];
-        if (prevKey !== curKey || prevLabel !== curLabel) {
+        if (prevKey !== curKey) {
           isTabEqual = true;
         }
       }
