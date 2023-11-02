@@ -6,44 +6,39 @@ import styles from './VisualRow.module.scss';
 import rowShape from '../proptypes/rowShape';
 import Row from './Row';
 import columnShape from '../proptypes/columnShape';
+import { checkIfRowNeedsMaxWidth, checkIfRowHasFlexColumns } from './utils/utils';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * An identifier to uniquely identify the row within the grid.
-   */
-  id: PropTypes.string.isRequired,
-
   /**
    * Data for columns.
    */
   columns: PropTypes.arrayOf(columnShape),
 
   /**
-     * Data for rows (list items) content.
-     */
-  rows: PropTypes.arrayOf(rowShape),
-
-  /**
-   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
+   * Data for rows (list items) content.
    */
-  columnMinimumWidth: PropTypes.string,
-
-  /**
-     * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
-     */
-  columnMaximumWidth: PropTypes.string,
+  rows: PropTypes.arrayOf(rowShape),
 
   /**
    * A number of visual columns.
    */
   numberOfColumns: PropTypes.number,
+
+  /**
+   * A number for columns' minimum width in px. Defaults to 60.
+   */
+  columnMinimumWidth: PropTypes.number,
+
+  /**
+   * A number for columns' minimum width in px.
+   */
+  columnMaximumWidth: PropTypes.number,
 };
 
 const VisualRow = (props) => {
   const {
-    id,
     rows,
     columns,
     columnMinimumWidth,
@@ -53,10 +48,22 @@ const VisualRow = (props) => {
 
   const theme = useContext(ThemeContext);
 
+  const isFlexGrow = checkIfRowHasFlexColumns(columns);
+  const rowNeedsMaxWidth = checkIfRowNeedsMaxWidth(columns, columnMaximumWidth);
+
+  const getRowWidthSum = (total, column) => total + (column.width || column.maximumWidth || columnMaximumWidth);
+  const rowWidth = columns.reduce(getRowWidthSum, 0);
+  const visualRowWidth = Math.round(rowWidth * numberOfColumns);
+
+  const style = isFlexGrow ? {
+    maxWidth: rowNeedsMaxWidth ? `${visualRowWidth}px` : null,
+  } : { width: `${visualRowWidth}px` };
+
   return (
     <div
       className={cx('visual-row', theme.className)}
-      id={id}
+      // eslint-disable-next-line react/forbid-dom-props
+      style={style}
     >
       {rows.map((row, index) => (
         <Row
@@ -69,6 +76,9 @@ const VisualRow = (props) => {
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}
           numberOfColumns={numberOfColumns}
+          rowWidth={!rowNeedsMaxWidth && rowWidth}
+          isFlexGrow={isFlexGrow}
+          rowMaxWidth={rowNeedsMaxWidth && rowWidth}
         />
       ))}
     </div>

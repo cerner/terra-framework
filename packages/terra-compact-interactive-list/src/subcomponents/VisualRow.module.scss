@@ -5,9 +5,7 @@
 :local {
   .visual-row {
     display: flex;
-    &:nth-child(n) {
-      flex: 1 0 50%;
-    }
+
     background-color: var(--terra-compact-interactive-list-row-background-color, #fff);
     &:first-child {
       border-top: var(--terra-compact-interactive-list-row-border-top, 1px solid #dedfe0);

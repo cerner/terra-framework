@@ -26,19 +26,34 @@ const propTypes = {
   columns: PropTypes.arrayOf(columnShape),
 
   /**
-   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
+   * A number for columns' minimum width in px. Defaults to 60.
    */
-  columnMinimumWidth: PropTypes.string,
+  columnMinimumWidth: PropTypes.number,
 
   /**
-   * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
+   * A number for columns' minimum width in px.
    */
-  columnMaximumWidth: PropTypes.string,
+  columnMaximumWidth: PropTypes.number,
 
   /**
    * A number of visual columns.
    */
   numberOfColumns: PropTypes.number,
+
+  /**
+   * Indicates if the column is flex growing column.
+   */
+  isFlexGrow: PropTypes.bool,
+
+  /**
+   * Row's maximum width in px
+   */
+  rowMaxWidth: PropTypes.number,
+
+  /**
+   * Row's width in px
+   */
+  rowWidth: PropTypes.number,
 };
 
 const Row = (props) => {
@@ -49,9 +64,17 @@ const Row = (props) => {
     columnMinimumWidth,
     columnMaximumWidth,
     numberOfColumns,
+    isFlexGrow,
+    rowMaxWidth,
+    rowWidth,
   } = props;
 
   const theme = useContext(ThemeContext);
+
+  const style = isFlexGrow ? {
+    flex: `1 1 ${Math.min(100 / numberOfColumns)}%`,
+    maxWidth: rowMaxWidth ? `${rowMaxWidth}px` : null,
+  } : { width: `${rowWidth}px` };
 
   return (
     <div
@@ -59,16 +82,12 @@ const Row = (props) => {
       role="row"
       className={cx('row', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{
-        flex: `1 1 ${Math.min(100 / numberOfColumns)}%`,
-      }}
+      style={style}
     >
       {cells.map((cellData, index) => (
         <Cell
           key={cellData.id}
-          width={columns[index].width}
-          flexGrow={columns[index].flexGrow}
-          alignToCenter={columns[index].alignToCenter}
+          column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}
         >

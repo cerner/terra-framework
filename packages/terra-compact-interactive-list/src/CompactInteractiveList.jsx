@@ -45,7 +45,7 @@ const propTypes = {
   rows: PropTypes.arrayOf(rowShape),
 
   /**
-   * A number of visual columns.
+   * A number of visual columns. Defaults to 1.
    */
   numberOfColumns: PropTypes.number,
 
@@ -55,28 +55,32 @@ const propTypes = {
   width: PropTypes.string,
 
   /**
-   * A string for container's minimum width. Any valid css string. Defaults to '500px'.
+   * A number for container's minimum width in px. Defaults to '500px'.
    */
-  minimumWidth: PropTypes.string,
+  minimumWidth: PropTypes.number,
 
   /**
-   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
+   * A number for container's maximum width in px. Defaults to '500px'.
    */
-  columnMinimumWidth: PropTypes.string,
+  maximumWidth: PropTypes.number,
 
   /**
-   * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
+   * A number for columns' minimum width in px. Defaults to 60.
    */
-  columnMaximumWidth: PropTypes.string,
+  columnMinimumWidth: PropTypes.number,
+
+  /**
+   * A number for columns' minimum width in px.
+   */
+  columnMaximumWidth: PropTypes.number,
 };
 
 const defaultProps = {
   rows: [],
-  numberOfColumns: 2,
+  numberOfColumns: 1,
   width: '100%',
-  minimumWidth: '500px',
-  columnMinimumWidth: '20px',
-  columnMaximumWidth: '100%',
+  minimumWidth: 500,
+  columnMinimumWidth: 60,
 };
 
 const CompactInteractiveList = (props) => {
@@ -89,12 +93,19 @@ const CompactInteractiveList = (props) => {
     numberOfColumns,
     width,
     minimumWidth,
+    maximumWidth,
     columnMinimumWidth,
     columnMaximumWidth,
   } = props;
 
   const theme = useContext(ThemeContext);
   const visualRows = getVisualRows(rows, numberOfColumns);
+
+  const style = {
+    width,
+    minWidth: `${minimumWidth}px`,
+    maximumWidth: maximumWidth ? `${maximumWidth}px` : null,
+  };
 
   return (
     <div
@@ -109,7 +120,7 @@ const CompactInteractiveList = (props) => {
         aria-label={ariaLabel}
         className={cx('compact-interactive-list', theme.className)}
         // eslint-disable-next-line react/forbid-dom-props
-        style={{ width, minWidth: minimumWidth }}
+        style={style}
       >
         {visualRows.map((visualRow, index) => (
           <VisualRow

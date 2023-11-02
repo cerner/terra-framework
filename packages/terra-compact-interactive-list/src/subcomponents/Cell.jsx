@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { checkIfColumnIsFlex } from './utils/utils';
+import columnShape from '../proptypes/columnShape';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -18,49 +20,45 @@ const propTypes = {
   children: PropTypes.node,
 
   /**
-   * A string for columns' minimum width. Any valid css string. Defaults to '20px'.
+   * A column data.
    */
-  columnMinimumWidth: PropTypes.string,
+  column: PropTypes.instanceOf(columnShape),
 
   /**
-   * A string for columns' maximum width. Any valid css string. Defaults to '300px'.
+   * A number for columns' minimum width in px. Defaults to 60.
    */
-  columnMaximumWidth: PropTypes.string,
+  columnMinimumWidth: PropTypes.number,
 
   /**
-   * Cell width
+   * A number for columns' minimum width in px.
    */
-  width: PropTypes.number,
-
-  /**
-   * Allows the cell to grow.
-   */
-  flexGrow: PropTypes.boolean,
-
-  /**
-   * Allows the centrally allign within the cell.
-   */
-  alignToCenter: PropTypes.boolean,
-};
-
-const defaultProps = {
-  flexGrow: false,
-  alignToCenter: false,
+  columnMaximumWidth: PropTypes.number,
 };
 
 const Cell = (props) => {
   const {
     id,
     children,
-    width,
-    flexGrow,
+    column,
     columnMinimumWidth,
     columnMaximumWidth,
-    alignToCenter,
   } = props;
 
   const theme = useContext(ThemeContext);
   const className = cx('cell', theme.className);
+
+  const {
+    width, flexGrow, alignToCenter, maximumWidth,
+  } = column;
+  const isFlexGrow = checkIfColumnIsFlex(flexGrow, width);
+  const maxWidth = maximumWidth || columnMaximumWidth;
+
+  const style = {
+    flex: isFlexGrow ? `1 1 ${width || columnMinimumWidth}px` : null,
+    width: isFlexGrow ? null : `${width}px`,
+    justifyContent: `${alignToCenter ? 'center' : 'left'}`,
+    maxWidth: isFlexGrow && maxWidth ? maxWidth : null,
+  };
 
   return (
 
@@ -70,12 +68,7 @@ const Cell = (props) => {
       className={className}
       tabIndex={-1}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{
-        flex: `${flexGrow ? 1 : 0} 0 ${width}px`,
-        justifyContent: `${alignToCenter ? 'center' : 'left'}`,
-        minWidth: columnMinimumWidth,
-        maxWidth: columnMaximumWidth,
-      }}
+      style={style}
     >
       {children}
     </div>
@@ -83,6 +76,5 @@ const Cell = (props) => {
 };
 
 Cell.propTypes = propTypes;
-Cell.defaultProps = defaultProps;
 
 export default React.memo(Cell);

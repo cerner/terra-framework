@@ -1,0 +1,62 @@
+import FixedWidthColumns from './FixedWidthColumns?dev-site-examples';
+import GrowingColumnsWithBreakpoints from './GrowingColumnsWithBreakpoints?dev-site-example';
+import GrowingColumnsFixedColumnNumber from './GrowingColumnsFixedColumnNumber?dev-site-example';
+import GrowingColumnsFixedColumnNumber2 from './GrowingColumnsFixedColumnNumber2?dev-site-example';
+import GrowingColumnsFixedWidth from './GrowingColumnsFixedWidth?dev-site-example';
+import GrowingColumnsUnknownWidth from './GrowingColumnsUnknownWidth?dev-site-example';
+import GrowingColumnsUnknownWidthMaxWidth from './GrowingColumnsUnknownWidthMaxWidth?dev-site-example';
+
+# Compact Interactive List with fixed width columns
+
+* In this example all semantic columns have `width` set to a number of pixels. 
+* The semantic columns (and hence the visual columns) will always stay the same width and would not grow bigger to fill up the container width.
+
+<FixedWidthColumns />
+
+# Full width Compact Interactive List.
+
+### Fixed number of columns
+
+*  In this example the first and last semantic columns have width set to 60 pixels, but the middle column has no `width`. 
+*  Omitting the `width` prop will make the middle semantic column to grow to take all available space.
+*  Another option to make the column grow is to set the `flexGrow` prop to true and set the `width` to a number of pixels. In this case the width will be used as a flex basis.
+*  The number of columns is set to 2 and is not going to change.
+*  Try wider and narrower screen size to see the middle column in each item to grow and shrink depending on the screen size, the number of columns will always stay the same.
+*  The `minimumWidth` prop can be set to the whole list to prevent it from getting too narrow. It defaults to 500px if haven't been set by user. 
+*  Once the table reaches its minimum width, the horizontal scroll shows up.  
+
+<GrowingColumnsFixedColumnNumber />
+
+### Growing columns limited by maximumWidth
+
+*  The `maximumWidth` prop can be set to a semantic column. This example is similar to the one above except the middle column has a `maximumWidth` set.
+*  If the 'columnMaximumWidth` prop is set to the whole list, it will affect all semantic columns.
+
+<GrowingColumnsFixedColumnNumber2 />
+
+### Dynamically change the number of columns with resize observer
+
+* If the resize observer is attached to the wrapper component to control the `numberOfColumns` prop, the number of columns can be adjusted to the width.
+* Try wider and narrower screen size to see the middle column grow and shrink and also the number of columns change.
+* Once the table reaches its minimum width, the horizontal scroll shows up.
+
+<GrowingColumnsWithBreakpoints />
+
+### Fixed width of the whole list
+
+* The width of the whole list with growing columns can be limited to any valid css width, in this example it is 800px.
+
+<GrowingColumnsFixedWidth />
+
+### No columns width was provided by user
+
+* If some (or all) columns' width is not specified by user, it'll be considered a flexGrow column with flexBase set to the `minimumColumnWidth`.
+* The `minimumColumnWidth` can be passed by user as a prop to the list, othervise it defaults to 60px.
+* In this example the width wasn't set for columnes at all, so each semantic column is a flexGrow column with the same flexBasis="60px".
+
+<GrowingColumnsUnknownWidth />
+
+### Comtrolling columns width with maximumColumnWidth
+
+<GrowingColumnsUnknownWidthMaxWidth />
+

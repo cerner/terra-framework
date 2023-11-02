@@ -4,6 +4,7 @@
 
 :local {
   .row {
+    position: relative;
     display: flex;
 
     border-bottom: var(--terra-compact-interactive-list-row-border-bottom, 1px solid #dedfe0);
