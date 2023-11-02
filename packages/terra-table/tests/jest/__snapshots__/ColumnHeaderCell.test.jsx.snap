@@ -3,20 +3,23 @@
 exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] = `
 <th
   aria-sort="ascending"
-  className="column-header"
+  className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
     Object {
       "height": "150px",
       "left": null,
+      "width": "100px",
     }
   }
 >
   <div
     className="header-container"
     role="button"
+    tabIndex={0}
   >
     <span>
        Vitals
@@ -33,20 +36,23 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
 exports[`ColumnHeaderCell renders a column header cell with ascending sort and error 1`] = `
 <th
   aria-sort="ascending"
-  className="column-header"
+  className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
     Object {
       "height": "150px",
       "left": null,
+      "width": "100px",
     }
   }
 >
   <div
     className="header-container"
     role="button"
+    tabIndex={0}
   >
     <IconError
       a11yLabel="Terra.table.columnError"
@@ -69,20 +75,23 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
 exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] = `
 <th
   aria-sort="descending"
-  className="column-header"
+  className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
     Object {
       "height": "150px",
       "left": null,
+      "width": "100px",
     }
   }
 >
   <div
     className="header-container"
     role="button"
+    tabIndex={0}
   >
     <span>
        Vitals
@@ -98,20 +107,23 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
 
 exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
 <th
-  className="column-header"
+  className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
     Object {
       "height": "150px",
       "left": null,
+      "width": "100px",
     }
   }
 >
   <div
     className="header-container"
     role="button"
+    tabIndex={0}
   >
     <IconError
       a11yLabel="Terra.table.columnError"
@@ -139,6 +151,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     Object {
       "height": "150px",
       "left": null,
+      "width": "100px",
     }
   }
 >
@@ -170,18 +183,19 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   aria-sort="ascending"
   className="column-header"
   key="Column-0"
+  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={
     Object {
       "height": "150px",
       "left": null,
+      "width": "100px",
     }
   }
 >
   <div
     className="header-container"
-    role="button"
   >
     <IconError
       a11yLabel="Terra.table.columnError"
@@ -203,20 +217,23 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
 
 exports[`ColumnHeaderCell renders a default column header cell 1`] = `
 <th
-  className="column-header"
+  className="column-header selectable"
   key="Column-0"
+  onKeyDown={[Function]}
   role="columnheader"
   scope="col"
   style={
     Object {
       "height": "150px",
       "left": null,
+      "width": "100px",
     }
   }
 >
   <div
     className="header-container"
     role="button"
+    tabIndex={0}
   >
     <span>
        Vitals
@@ -268,7 +285,9 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         "timeZone": null,
       }
     }
+    isActive={false}
     isResizable={false}
+    isResizeActive={false}
     isSelectable={false}
     sortIndicator="ascending"
     width={100}
@@ -283,12 +302,12 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         Object {
           "height": "150px",
           "left": 0,
+          "width": "100px",
         }
       }
     >
       <div
         className="header-container"
-        role="button"
       >
         <IconError
           a11yLabel="Terra.table.columnError"

@@ -23,6 +23,7 @@ describe('ColumnHeaderCell', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -41,7 +42,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
@@ -57,6 +58,7 @@ describe('ColumnHeaderCell', () => {
       id: 'Column-0',
       displayName: ' Vitals',
       sortIndicator: 'ascending',
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -75,7 +77,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -92,6 +94,7 @@ describe('ColumnHeaderCell', () => {
       id: 'Column-0',
       displayName: ' Vitals',
       sortIndicator: 'descending',
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -110,7 +113,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('descending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -127,6 +130,7 @@ describe('ColumnHeaderCell', () => {
       id: 'Column-0',
       displayName: ' Vitals',
       hasError: true,
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -145,7 +149,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBeUndefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -163,6 +167,7 @@ describe('ColumnHeaderCell', () => {
       displayName: ' Vitals',
       sortIndicator: 'ascending',
       hasError: true,
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -181,7 +186,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
@@ -200,6 +205,7 @@ describe('ColumnHeaderCell', () => {
       displayName: ' Vitals',
       sortIndicator: 'ascending',
       hasError: true,
+      isSelectable: true,
     };
 
     const mockClick = jest.fn();
@@ -221,7 +227,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.width).toBe('100px');
@@ -264,13 +270,13 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(-1);
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    const headerContainer = columnHeader.find('.header-container');
     expect(headerContainer.props().tabIndex).toBeUndefined();
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
