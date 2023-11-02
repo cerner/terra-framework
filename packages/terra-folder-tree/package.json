@@ -30,7 +30,9 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "terra-action-header": "^2.85.0",
+    "terra-spacer": "^3.61.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",

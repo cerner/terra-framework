@@ -1,7 +1,11 @@
-@import '~terra-mixins/lib/Mixins';
-
 // Themes
 @import './orion-fusion-theme/FolderTree.module';
 @import './clinical-lowlight-theme/FolderTree.module';
 
-// :local {}
+:local {
+  .folder-tree {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+}
