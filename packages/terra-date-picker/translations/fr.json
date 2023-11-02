@@ -13,5 +13,6 @@
   "Terra.datePicker.calendarInstructions": "Pour modifier la sélection, utilisez les touches fléchées. Appuyez sur la touche Entrée pour sélectionner une date. Appuyez sur la touche Échap pour fermer la fenêtre contextuelle du sélecteur de dates.",
   "Terra.datePicker.dateFormatLabel": "Format de date:",
   "Terra.datePicker.selected": "sélectionné.",
-  "Terra.datePicker.invalidDate": "Saisissez une date valide."
+  "Terra.datePicker.invalidDate": "Saisissez une date valide.",
+  "Terra.datePicker.hotKey": "Appuyez sur la touche T pour définir la date sur la date du jour, puis sur la touche Plus pour la définir sur un jour postérieur ou sur la touche Moins pour la définir sur un jour antérieur."
 }

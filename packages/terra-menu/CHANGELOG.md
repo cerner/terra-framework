@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `ariaDescribedBy` prop for `menu-item` to announce group information.
+
 ## 6.79.0 - (October 25, 2023)
 
 * Changed
@@ -98,9 +101,9 @@
 
 ## 6.65.1 - (April 12, 2023)
 
-* Fixed 
+* Fixed
   * Fixed issue of navigation on menu header click.
-  
+
 * Added
   * Allow screen readers to recognise as menu button
   * Added context for menu item index, item with submenu and selected/unselected state
@@ -114,7 +117,7 @@
 
 * Changed
   * Allow existing classnames on icon to be retained
-  
+
 ## 6.63.0 - (February 14, 2023)
 
 * Changed

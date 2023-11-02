@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Added
-  * Added examples and test to `terra-table` for table sections.
+  * Added examples and tests to `terra-table` for table sections.
+  * Added `aria-label` and `ariaDescribedBy` props.
 
 ## 1.43.0 - (October 25, 2023)
 
