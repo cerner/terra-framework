@@ -256,12 +256,20 @@ const DataGrid = injectIntl((props) => {
 
   const handleColumnSelect = useCallback((columnId) => {
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
-    setFocusedCol(columnIndex === -1 ? 0 : columnId);
+    setFocusedCol(columnIndex);
 
     if (onColumnSelect) {
-      onColumnSelect(columnIndex === -1 ? WorklistDataGridUtils.ROW_SELECTION_COLUMN.id : columnId);
+      onColumnSelect(columnId);
     }
   }, [onColumnSelect, displayedColumns]);
+
+  const handleRowSelectionHeaderSelect = useCallback(() => {
+    setFocusedCol(0);
+    setFocusedRow(0);
+    if (onColumnSelect) {
+      onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
+    }
+  }, [onColumnSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     setFocusedRow(selectionDetails.rowIndex);
@@ -490,6 +498,7 @@ const DataGrid = injectIntl((props) => {
           onColumnResize={onColumnResize}
           onColumnSelect={handleColumnSelect}
           onCellSelect={handleCellSelection}
+          onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
           isStriped
           ref={handleTableRefs}
