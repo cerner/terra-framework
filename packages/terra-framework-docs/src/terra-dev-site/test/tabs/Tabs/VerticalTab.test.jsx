@@ -29,9 +29,9 @@ const VerticalTab = () => {
   const customTab = (
     <Tabs.Pane
       customDisplay={(
-        <div className={cx('custom-display')}>
+        <span className={cx('custom-display', 'custom-vertical')}>
           Custom display
-        </div>
+        </span>
       )}
       label="Custom display"
       key="tCustomTab"

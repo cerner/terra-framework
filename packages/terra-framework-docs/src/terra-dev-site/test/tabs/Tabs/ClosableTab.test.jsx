@@ -32,7 +32,7 @@ const ClosableTab = () => {
 
   tabsExample.push(
     {
-      label: 'Customized Tab',
+      label: 'Cutomised Test Tab',
       customDisplay: <div className={cx('custom-display')}>Customized Tab</div>,
       key: 'CloseCustomTab',
       content: 'Custom display',

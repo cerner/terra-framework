@@ -1,0 +1,4 @@
+{
+  "Terra.slider.ariaDescribedByTextWithLabels": "Ajuste o interruptor para selecionar um valor entre {minimumLabel} ({minimumValue}) e {maximumLabel} ({maximumValue})",
+  "Terra.slider.ariaDescribedByTextWithoutLabels": "Ajuste o interruptor para selecionar um valor entre {minimumValue} e {maximumValue}"
+}

@@ -1,0 +1,4 @@
+{
+  "Terra.slider.ariaDescribedByTextWithLabels": "Adjust slider to select a value between {minimumLabel} ({minimumValue}) and {maximumLabel} ({maximumValue})",
+  "Terra.slider.ariaDescribedByTextWithoutLabels": "Adjust slider to select a value between {minimumValue} and {maximumValue}"
+}

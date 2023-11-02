@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added translations for Terra Slider component.
+  
 ## 1.0.1 - (October 25, 2023)
 
 * Initial working component release.
