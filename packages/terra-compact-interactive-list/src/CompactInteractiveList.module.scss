@@ -1,0 +1,17 @@
+@import './clinical-lowlight-theme/CompactInteractiveList.module';
+@import './orion-fusion-theme/CompactInteractiveList.module';
+
+:local {
+  .compact-interactive-list-container {
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+  }
+
+  .compact-interactive-list {
+    :focus {
+      outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
+      outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);
+    }
+  }
+}

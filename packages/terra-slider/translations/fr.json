@@ -1,0 +1,4 @@
+{
+  "Terra.slider.ariaDescribedByTextWithLabels": "Ajuster le curseur de façon à sélectionner une valeur entre {minimumLabel} ({minimumValue}) et {maximumLabel} ({maximumValue})",
+  "Terra.slider.ariaDescribedByTextWithoutLabels": "Ajuster le curseur de façon à sélectionner une valeur entre {minimumValue} et {maximumValue}"
+}

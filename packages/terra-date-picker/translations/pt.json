@@ -13,5 +13,6 @@
   "Terra.datePicker.calendarInstructions": "Para alterar a seleção, use as teclas de seta. Pressione Enter para selecionar uma data. Pressione Esc para fechar o pop-up do seletor de datas.",
   "Terra.datePicker.dateFormatLabel": "Formato da data:",
   "Terra.datePicker.selected": "selecionado.",
-  "Terra.datePicker.invalidDate": "Insira uma Data válida"
+  "Terra.datePicker.invalidDate": "Insira uma Data válida",
+  "Terra.datePicker.hotKey": "Pressione T para definir a data atual, a tecla + para a próxima data e a tecla - para a data anterior"
 }

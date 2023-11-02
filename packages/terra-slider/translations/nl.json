@@ -1,0 +1,4 @@
+{
+  "Terra.slider.ariaDescribedByTextWithLabels": "Pas de schuifregelaar aan om een waarde tussen {minimumLabel} ({minimumValue}) en {maximumLabel} ({maximumValue}) te selecteren",
+  "Terra.slider.ariaDescribedByTextWithoutLabels": "Pas de schuifregelaar aan om een waarde tussen {minimumValue} en {maximumValue} te selecteren"
+}

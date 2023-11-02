@@ -209,12 +209,13 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toEqual(0);
+    expect(columnHeader.props().tabIndex).toBeUndefined();
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.props().tabIndex).toBe(0);
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
@@ -256,6 +257,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
+    expect(headerContainer.props().tabIndex).toBeUndefined();
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
