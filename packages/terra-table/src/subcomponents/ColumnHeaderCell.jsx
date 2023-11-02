@@ -215,7 +215,7 @@ const ColumnHeaderCell = (props) => {
         event.preventDefault(); // prevent the default scrolling
         break;
       case KeyCode.KEY_LEFT:
-        if (isResizable && isResizeHandleActive) {
+        if (isResizable && isResizeHandleActive && isGridContext) {
           columnHeaderFocusArea().focus();
           setResizeHandleActive(false);
           event.stopPropagation();
@@ -223,7 +223,7 @@ const ColumnHeaderCell = (props) => {
         }
         break;
       case KeyCode.KEY_RIGHT:
-        if (isResizable && !isResizeHandleActive) {
+        if (isResizable && !isResizeHandleActive && isGridContext) {
           setResizeHandleActive(true);
           event.stopPropagation();
           event.preventDefault();
