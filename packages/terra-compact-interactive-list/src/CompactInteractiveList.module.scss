@@ -1,3 +1,4 @@
+// Themes
 @import './clinical-lowlight-theme/CompactInteractiveList.module';
 @import './orion-fusion-theme/CompactInteractiveList.module';
 
@@ -6,9 +7,14 @@
     height: 100%;
     overflow: auto;
     width: 100%;
+    border-left: var(--terra-compact-interactive-list-row-border, 1px solid #dedfe0);
   }
 
   .compact-interactive-list {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: var(--terra-compact-interactive-list-row-border, 1px solid #dedfe0);
+    
     :focus {
       outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
       outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);

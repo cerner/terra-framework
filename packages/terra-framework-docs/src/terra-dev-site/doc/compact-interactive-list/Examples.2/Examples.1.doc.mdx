@@ -8,8 +8,10 @@ import GrowingColumnsUnknownWidthMaxWidth from './GrowingColumnsUnknownWidthMaxW
 
 # Compact Interactive List with fixed width columns
 
-* In this example all semantic columns have `width` set to a number of pixels. 
-* The semantic columns (and hence the visual columns) will always stay the same width and would not grow bigger to fill up the container width.
+In this example all semantic columns have `width` set to a number of pixels. 
+
+* The semantic columns (and hence the visual columns) will always stay the same width and would not grow bigger or shrink to fill up the container width.
+* If the screen width is less than the list container, the horizontal scroll will be added.
 
 <FixedWidthColumns />
 
@@ -17,7 +19,8 @@ import GrowingColumnsUnknownWidthMaxWidth from './GrowingColumnsUnknownWidthMaxW
 
 ### Fixed number of columns
 
-*  In this example the first and last semantic columns have width set to 60 pixels, but the middle column has no `width`. 
+In this example the first and last semantic columns have width set to 60 pixels, but the middle column has no `width`. 
+
 *  Omitting the `width` prop will make the middle semantic column to grow to take all available space.
 *  Another option to make the column grow is to set the `flexGrow` prop to true and set the `width` to a number of pixels. In this case the width will be used as a flex basis.
 *  The number of columns is set to 2 and is not going to change.

@@ -6,14 +6,9 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './CompactInteractiveList.module.scss';
 import rowShape from './proptypes/rowShape';
-import VisualRow from './subcomponents/VisualRow';
+import Row from './subcomponents/Row';
 import columnShape from './proptypes/columnShape';
-
-const getVisualRows = (rows, numberOfColumns) => {
-  const result = [];
-  for (let i = 0; i < rows.length; i += numberOfColumns) result.push(rows.slice(i, i + numberOfColumns));
-  return result;
-};
+import { checkIfRowNeedsMaxWidth, checkIfRowHasFlexColumns } from './subcomponents/utils/utils';
 
 const cx = classNames.bind(styles);
 
@@ -99,17 +94,25 @@ const CompactInteractiveList = (props) => {
   } = props;
 
   const theme = useContext(ThemeContext);
-  const visualRows = getVisualRows(rows, numberOfColumns);
+
+  const isFlexGrow = checkIfRowHasFlexColumns(columns);
+  const rowNeedsMaxWidth = checkIfRowNeedsMaxWidth(columns, columnMaximumWidth);
+
+  const getRowWidthSum = (total, column) => total + (column.width || column.maximumWidth || columnMaximumWidth);
+  const rowWidth = columns.reduce(getRowWidthSum, 0);
+  const listWidth = Math.round(rowWidth * numberOfColumns);
+
+  console.log("maximumWidth: ", maximumWidth);
 
   const style = {
-    width,
+    width: isFlexGrow ? width : `${listWidth}px`,
     minWidth: `${minimumWidth}px`,
-    maximumWidth: maximumWidth ? `${maximumWidth}px` : null,
+    maxWidth: isFlexGrow && rowNeedsMaxWidth ? `${listWidth}px` : null,
   };
 
   return (
     <div
-      className={cx('compact-interactive-list-container')}
+      className={cx('compact-interactive-list-container', theme.className)}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
     >
@@ -118,19 +121,24 @@ const CompactInteractiveList = (props) => {
         role="grid"
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
-        className={cx('compact-interactive-list', theme.className)}
+        className={cx('compact-interactive-list')}
         // eslint-disable-next-line react/forbid-dom-props
         style={style}
       >
-        {visualRows.map((visualRow, index) => (
-          <VisualRow
-            key={`visual-row-${index}`}
-            id={`visual-row-${index}`}
-            rows={visualRow}
+        {rows.map((row, index) => (
+          <Row
+            rowIndex={index + 1}
+            key={row.id}
+            id={row.id}
+            cells={row.cells}
+            ariaLabel={row.ariaLabel}
             columns={columns}
             columnMinimumWidth={columnMinimumWidth}
             columnMaximumWidth={columnMaximumWidth}
             numberOfColumns={numberOfColumns}
+            rowWidth={!rowNeedsMaxWidth && rowWidth}
+            isFlexGrow={isFlexGrow}
+            rowMaxWidth={rowNeedsMaxWidth && rowWidth}
           />
         ))}
       </div>
