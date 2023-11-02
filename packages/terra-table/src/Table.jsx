@@ -161,7 +161,7 @@ const defaultProps = {
   hasColumnHeaders: true,
 };
 
-const Table = injectIntl((props) => {
+function Table(props) {
   const {
     id,
     ariaLabelledBy,
@@ -495,9 +495,11 @@ const Table = injectIntl((props) => {
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
     </div>
   );
-});
+}
 
 Table.propTypes = propTypes;
 Table.defaultProps = defaultProps;
 
-export default React.memo(forwardRef((props, ref) => <Table {...props} tableRefs={ref} />));
+const IntlTable = injectIntl(Table);
+
+export default React.memo(forwardRef((props, ref) => <IntlTable {...props} tableRefs={ref} />));
