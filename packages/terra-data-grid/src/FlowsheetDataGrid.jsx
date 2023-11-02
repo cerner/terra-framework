@@ -217,9 +217,11 @@ function FlowsheetDataGrid(props) {
     }
 
     if (!inShiftDirectionalMode.current) {
-      // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range.
+      // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range if one does not exist.
       inShiftDirectionalMode.current = true;
-      anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
+      if (anchorCell.current === null) {
+        anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
+      }
     }
 
     let nextRowIndex = rowIndex;
@@ -262,7 +264,10 @@ function FlowsheetDataGrid(props) {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SHIFT:
-        inShiftDirectionalMode.current = false;
+        if (inShiftDirectionalMode.current) {
+          inShiftDirectionalMode.current = false;
+          anchorCell.current = null;
+        }
         break;
       default:
     }

@@ -504,15 +504,12 @@ const DataGrid = injectIntl((props) => {
         return;
     }
 
-    if (onRangeSelection && event.shiftKey && (event.keyCode === KeyCode.KEY_UP || event.keyCode === KeyCode.KEY_DOWN)) {
+    const upDownKeys = new Set([KeyCode.KEY_UP, KeyCode.KEY_DOWN]);
+    const directionalKeys = new Set([KeyCode.KEY_UP, KeyCode.KEY_DOWN, KeyCode.KEY_LEFT, KeyCode.KEY_RIGHT]);
+    if (onRangeSelection && event.shiftKey && upDownKeys.has(event.keyCode)) {
       onRangeSelection(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
-    if (onCellRangeSelect && event.shiftKey && (
-      event.keyCode === KeyCode.KEY_UP
-      || event.keyCode === KeyCode.KEY_DOWN
-      || event.keyCode === KeyCode.KEY_LEFT
-      || event.keyCode === KeyCode.KEY_RIGHT
-    )) {
+    if (onCellRangeSelect && event.shiftKey && directionalKeys.has(event.keyCode)) {
       onCellRangeSelect(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
 
