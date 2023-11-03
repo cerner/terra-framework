@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkterra_framework=self.webpackChunkterra_framework||[]).push([[82713],{69915:function(e,r,t){var a=t(64836);Object.defineProperty(r,"__esModule",{value:!0}),r.default=void 0;var u=a(t(67294)),f=a(t(11632));r.default=function(){return u.default.createElement(f.default,null)}}}]);
