@@ -7,7 +7,8 @@
   * Added `aria-label` and `ariaDescribedBy` examples for `terra-collapsible-menu-view`.
   * Added examples and test to `terra-table` for row selection mode.
   * Added initial setup for `terra-compact-interactive-list` documentation.
-
+  * Added an error handling test for `terra-embedded-content-consumer`.
+    
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.
 
