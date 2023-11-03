@@ -6,9 +6,15 @@ import WorklistDataGrid from '../../src/WorklistDataGrid';
 // Source data for tests
 const dataFile = {
   cols: [
-    { id: 'Column-0', displayName: ' Vitals' },
-    { id: 'Column-1', displayName: 'March 16' },
-    { id: 'Column-2', displayName: 'March 17', isSelectable: false },
+    {
+      id: 'Column-0', displayName: ' Vitals', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-2', displayName: 'March 17', isSelectable: false, isResizable: true,
+    },
   ],
   rows: [
     {
