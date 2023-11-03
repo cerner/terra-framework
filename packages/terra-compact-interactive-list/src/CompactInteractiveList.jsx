@@ -8,7 +8,14 @@ import styles from './CompactInteractiveList.module.scss';
 import rowShape from './proptypes/rowShape';
 import Row from './subcomponents/Row';
 import columnShape from './proptypes/columnShape';
-import { checkIfRowNeedsMaxWidth, checkIfRowHasFlexColumns } from './subcomponents/utils/utils';
+import { WidthValueTypes, DefaultListValues } from './utils/constants';
+import {
+  getRowMaximumWidth,
+  getRowMinimumWidth,
+  checkIfRowHasFlexColumns,
+  getListMaximumWidth,
+  getListMinimumWidth,
+} from './utils/utils';
 
 const cx = classNames.bind(styles);
 
@@ -46,36 +53,45 @@ const propTypes = {
 
   /**
    * A string for container's width. Any valid css string. Defaults to '100%'.
+   * In case when all the columns has their widths explicitly set to a number, the width of the list will be determined by the width of it's columns unless the flexGrow prop would allow them grow.
    */
   width: PropTypes.string,
 
   /**
-   * A number for container's minimum width in px. Defaults to '500px'.
+   * Container's minimum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
    */
   minimumWidth: PropTypes.number,
 
   /**
-   * A number for container's maximum width in px. Defaults to '500px'.
+   * Container's maximum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
    */
   maximumWidth: PropTypes.number,
 
   /**
-   * A number for columns' minimum width in px. Defaults to 60.
+   * Columns' minimum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * A number for columns' minimum width in px.
+   * Columns' maximum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
    */
   columnMaximumWidth: PropTypes.number,
+
+  /**
+   * The width units, one of `px`, `em`, `rem`. Defaults to 'px'.
+   */
+  widthValue: PropTypes.oneOf([
+    WidthValueTypes.PX,
+    WidthValueTypes.EM,
+    WidthValueTypes.REM,
+  ]),
 };
 
 const defaultProps = {
   rows: [],
   numberOfColumns: 1,
   width: '100%',
-  minimumWidth: 500,
-  columnMinimumWidth: 60,
+  widthValue: WidthValueTypes.PX,
 };
 
 const CompactInteractiveList = (props) => {
@@ -87,6 +103,7 @@ const CompactInteractiveList = (props) => {
     rows,
     numberOfColumns,
     width,
+    widthValue,
     minimumWidth,
     maximumWidth,
     columnMinimumWidth,
@@ -95,19 +112,26 @@ const CompactInteractiveList = (props) => {
 
   const theme = useContext(ThemeContext);
 
+  const listMinimumWidth = minimumWidth || DefaultListValues.minimumWidth[widthValue];
+  const listMaximumWidth = maximumWidth || DefaultListValues.maximumWidth[widthValue];
+  const columnMinWidth = columnMinimumWidth || DefaultListValues.columnMinimumWidth[widthValue];
+  const columnMaxWidth = columnMaximumWidth || DefaultListValues.columnMaximumWidth[widthValue];
+
   const isFlexGrow = checkIfRowHasFlexColumns(columns);
-  const rowNeedsMaxWidth = checkIfRowNeedsMaxWidth(columns, columnMaximumWidth);
 
-  const getRowWidthSum = (total, column) => total + (column.width || column.maximumWidth || columnMaximumWidth);
-  const rowWidth = columns.reduce(getRowWidthSum, 0);
-  const listWidth = Math.round(rowWidth * numberOfColumns);
+  const rowMaxWidth = isFlexGrow ? getRowMaximumWidth(columns, columnMaxWidth) : null;
+  const rowMinWidth = isFlexGrow ? getRowMinimumWidth(columns, columnMinWidth) : null;
+  const getListMaxWidth = getListMaximumWidth(isFlexGrow, numberOfColumns, rowMaxWidth, listMaximumWidth);
+  const getListMinWidth = getListMinimumWidth(isFlexGrow, numberOfColumns, rowMinWidth, listMinimumWidth);
 
-  console.log("maximumWidth: ", maximumWidth);
+  const getRowWidthSum = (total, column) => total + column.width;
+  const rowWidth = !isFlexGrow && columns.reduce(getRowWidthSum, 0);
+  const listWidth = `${rowWidth * numberOfColumns}${widthValue}`;
 
   const style = {
-    width: isFlexGrow ? width : `${listWidth}px`,
-    minWidth: `${minimumWidth}px`,
-    maxWidth: isFlexGrow && rowNeedsMaxWidth ? `${listWidth}px` : null,
+    width: isFlexGrow ? width : listWidth,
+    minWidth: `${getListMinWidth}${widthValue}`,
+    maxWidth: `${getListMaxWidth}${widthValue}`,
   };
 
   return (
@@ -133,12 +157,14 @@ const CompactInteractiveList = (props) => {
             cells={row.cells}
             ariaLabel={row.ariaLabel}
             columns={columns}
-            columnMinimumWidth={columnMinimumWidth}
+            columnMinimumWidth={columnMinWidth}
             columnMaximumWidth={columnMaximumWidth}
             numberOfColumns={numberOfColumns}
-            rowWidth={!rowNeedsMaxWidth && rowWidth}
+            rowWidth={rowWidth}
             isFlexGrow={isFlexGrow}
-            rowMaxWidth={rowNeedsMaxWidth && rowWidth}
+            rowMaximumWidth={rowMaxWidth}
+            rowMinimumWidth={rowMinWidth}
+            widthValue={widthValue}
           />
         ))}
       </div>

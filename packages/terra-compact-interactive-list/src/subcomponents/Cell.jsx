@@ -2,8 +2,9 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { checkIfColumnIsFlex } from './utils/utils';
+import { checkIfColumnIsFlex } from '../utils/utils';
 import columnShape from '../proptypes/columnShape';
+import { WidthValueTypes } from '../utils/constants';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -25,14 +26,23 @@ const propTypes = {
   column: PropTypes.instanceOf(columnShape),
 
   /**
-   * A number for columns' minimum width in px. Defaults to 60.
+   * Columns' minimum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * A number for columns' minimum width in px.
+   * Columns' maximum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
    */
   columnMaximumWidth: PropTypes.number,
+
+  /**
+   * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
+   */
+  widthValue: PropTypes.oneOf([
+    WidthValueTypes.PX,
+    WidthValueTypes.EM,
+    WidthValueTypes.REM,
+  ]),
 };
 
 const Cell = (props) => {
@@ -42,6 +52,7 @@ const Cell = (props) => {
     column,
     columnMinimumWidth,
     columnMaximumWidth,
+    widthValue,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -54,10 +65,10 @@ const Cell = (props) => {
   const maxWidth = maximumWidth || columnMaximumWidth;
 
   const style = {
-    flex: isFlexGrow ? `1 1 ${width || columnMinimumWidth}px` : null,
-    width: isFlexGrow ? null : `${width}px`,
+    flex: isFlexGrow ? `1 1 ${width || columnMinimumWidth}${widthValue}` : null,
+    width: isFlexGrow ? null : `${width}${widthValue}`,
     justifyContent: `${alignToCenter ? 'center' : 'left'}`,
-    maxWidth: isFlexGrow && maxWidth ? maxWidth : null,
+    maxWidth: isFlexGrow && maxWidth ? `${maxWidth}${widthValue}` : null,
   };
 
   return (

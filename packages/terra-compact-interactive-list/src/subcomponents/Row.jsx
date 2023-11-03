@@ -6,6 +6,7 @@ import styles from './Row.module.scss';
 import Cell from './Cell';
 import cellShape from '../proptypes/cellShape';
 import columnShape from '../proptypes/columnShape';
+import { WidthValueTypes } from '../utils/constants';
 
 const cx = classNames.bind(styles);
 
@@ -26,12 +27,12 @@ const propTypes = {
   columns: PropTypes.arrayOf(columnShape),
 
   /**
-   * A number for columns' minimum width in px. Defaults to 60.
+   * A number for columns' minimum width. Defaults to 60.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * A number for columns' minimum width in px.
+   * A number for columns' minimum width.
    */
   columnMaximumWidth: PropTypes.number,
 
@@ -41,19 +42,36 @@ const propTypes = {
   numberOfColumns: PropTypes.number,
 
   /**
-   * Indicates if the column is flex growing column.
+   * Indicates if the column is flex growing column (can grow wider or shrink).
    */
   isFlexGrow: PropTypes.bool,
 
   /**
-   * Row's maximum width in px
-   */
-  rowMaxWidth: PropTypes.number,
-
-  /**
-   * Row's width in px
+   * Row's width in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * If flexGrow is set to true, will be used as a flex basis rather than fixed width.
    */
   rowWidth: PropTypes.number,
+
+  /**
+   * Row's maximum width for flex growing rows in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * Will have no effect if the width is set and flexGrow is omitted or false.
+   */
+  rowMaximumWidth: PropTypes.number,
+
+  /**
+   * Row's maximum width for flex growing rows in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * Will have no effect if the width is set and flexGrow is omitted or false.
+   */
+  rowMinimumWidth: PropTypes.number,
+
+  /**
+   * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
+   */
+  widthValue: PropTypes.oneOf([
+    WidthValueTypes.PX,
+    WidthValueTypes.EM,
+    WidthValueTypes.REM,
+  ]),
 };
 
 const Row = (props) => {
@@ -65,16 +83,19 @@ const Row = (props) => {
     columnMaximumWidth,
     numberOfColumns,
     isFlexGrow,
-    rowMaxWidth,
+    rowMaximumWidth,
+    rowMinimumWidth,
     rowWidth,
+    widthValue,
   } = props;
 
   const theme = useContext(ThemeContext);
 
   const style = isFlexGrow ? {
     flex: `1 1 ${Math.min(100 / numberOfColumns)}%`,
-    maxWidth: rowMaxWidth ? `${rowMaxWidth}px` : null,
-  } : { width: `${rowWidth}px` };
+    maxWidth: rowMaximumWidth ? `${rowMaximumWidth}${widthValue}` : null,
+    minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthValue}` : null,
+  } : { width: `${rowWidth}${widthValue}` };
 
   return (
     <div
@@ -90,6 +111,7 @@ const Row = (props) => {
           column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}
+          widthValue={widthValue}
         >
           {cellData.content}
         </Cell>
