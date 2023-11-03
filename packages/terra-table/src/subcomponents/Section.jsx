@@ -36,6 +36,11 @@ const propTypes = {
   isCollapsed: PropTypes.bool,
 
   /**
+   * A Boolean indicating whether or not the section header is visible.
+   */
+  isHidden: PropTypes.bool,
+
+  /**
    * A text string to render within the section header.
    */
   text: PropTypes.string,
@@ -87,6 +92,7 @@ const propTypes = {
 const defaultProps = {
   isCollapsible: false,
   isCollapsed: false,
+  isHidden: false,
   rows: [],
 };
 
@@ -96,6 +102,7 @@ function Section(props) {
     sectionRowIndex,
     isCollapsible,
     isCollapsed,
+    isHidden,
     isTableStriped,
     text,
     hasRowSelection,
@@ -109,8 +116,6 @@ function Section(props) {
 
   const theme = useContext(ThemeContext);
 
-  const isVisible = text || isCollapsible;
-
   const handleMouseDown = (event) => {
     onSectionSelect(id);
     event.stopPropagation();
@@ -119,10 +124,10 @@ function Section(props) {
   return (
     <>
       {/* Render section rows */}
-      {isVisible && (
+      {!isHidden && (
       <tr
         aria-rowindex={sectionRowIndex}
-        className={cx('header', { visible: isVisible })}
+        className={cx('header')}
       >
         <th
           align="left"

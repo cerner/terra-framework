@@ -3,6 +3,7 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
+import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
@@ -228,15 +229,26 @@ function Table(props) {
   const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
+  const defaultSectionRef = useRef(uuidv4());
+
+  // Create section array from props
+  const tableSections = useMemo(() => {
+    if (sections) {
+      return [...sections];
+    }
+
+    return [{ id: defaultSectionRef.current, rows }];
+  }, [rows, sections]);
+
+  // Calculate total table row count
   const tableSectionReducer = (rowCount, currentSection) => {
-    const sectionIndexOffset = (!!currentSection.text || currentSection.isCollapsible) ? 1 : 0;
+    const sectionIndexOffset = (currentSection.id !== defaultSectionRef.current) ? 1 : 0;
 
     // eslint-disable-next-line no-param-reassign
-    currentSection.sectionRowIndex = rowCount + sectionIndexOffset;
+    currentSection.sectionRowIndex = rowCount + sectionIndexOffset; // Store starting row index for each section
     return rowCount + currentSection.rows.length + sectionIndexOffset;
   };
-  const tableSections = useMemo(() => (sections ? [...sections] : [{ id: 'section-0', rows }]), [rows, sections]);
-  const tableRowCount = tableSections.reduce(tableSectionReducer, 1) + 1;
+  const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
 
   // -------------------------------------
   // functions
@@ -291,7 +303,7 @@ function Table(props) {
       }
 
       if (rowSelectionsRemoved.length === 1) {
-        const unselectedRowLabel = tableRef.current.querySelectorr(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('data-row-id');
+        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('data-row-id');
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
@@ -301,7 +313,7 @@ function Table(props) {
         setRowSelectionAriaLiveMessage(selectionUpdateAriaMessage);
       }
     }
-  }, [intl, rows, tableSections]);
+  }, [intl, tableSections]);
 
   // useEffect for row displayed columns
   useEffect(() => {
@@ -450,6 +462,7 @@ function Table(props) {
               sectionRowIndex={section.sectionRowIndex}
               isCollapsible={section.isCollapsible}
               isCollapsed={section.isCollapsed}
+              isHidden={section.id === defaultSectionRef.current}
               isTableStriped={isStriped}
               text={section.text}
               rows={section.rows}

@@ -1,0 +1,518 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Section verifies that the table created is consistent with the rows and overflowColumns props 1`] = `
+<Fragment>
+  <tr
+    aria-rowindex={1}
+    className="header"
+  >
+    <th
+      align="left"
+      colSpan={3}
+      role="columnheader"
+      scope="col"
+    >
+      <SectionHeader
+        isOpen={true}
+        isTransparent={false}
+        text="Test Section"
+      />
+    </th>
+  </tr>
+  <tbody
+    className="section"
+  >
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Heart Rate Monitored (bpm)",
+            "isSelectable": false,
+          },
+          Object {
+            "content": "",
+          },
+          Object {
+            "content": "66",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="1"
+      key="1"
+      rowIndex={2}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Temperature Oral (degC)",
+          },
+          Object {
+            "content": "36.7",
+          },
+          Object {
+            "content": "36.9",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="2"
+      key="2"
+      rowIndex={3}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Cardiac Index (L/min/m2)",
+          },
+          Object {
+            "content": "2.25",
+          },
+          Object {
+            "content": "2.28",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="3"
+      key="3"
+      rowIndex={4}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Oxygen Flow Rate (L/min)",
+          },
+          Object {
+            "content": "63",
+          },
+          Object {
+            "content": "47",
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="4"
+      isSelected={true}
+      key="4"
+      rowIndex={5}
+    />
+  </tbody>
+</Fragment>
+`;
+
+exports[`Section verifies the rows are created with the right props 1`] = `
+<Fragment>
+  <tr
+    aria-rowindex={1}
+    className="header"
+  >
+    <th
+      align="left"
+      colSpan={3}
+      role="columnheader"
+      scope="col"
+    >
+      <SectionHeader
+        isOpen={true}
+        isTransparent={false}
+        text="Test Section"
+      />
+    </th>
+  </tr>
+  <tbody
+    className="section"
+  >
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Heart Rate Monitored (bpm)",
+            "isSelectable": false,
+          },
+          Object {
+            "content": "",
+          },
+          Object {
+            "content": "66",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="1"
+      key="1"
+      rowIndex={2}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Temperature Oral (degC)",
+          },
+          Object {
+            "content": "36.7",
+          },
+          Object {
+            "content": "36.9",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="2"
+      key="2"
+      rowIndex={3}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Cardiac Index (L/min/m2)",
+          },
+          Object {
+            "content": "2.25",
+          },
+          Object {
+            "content": "2.28",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="3"
+      key="3"
+      rowIndex={4}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Oxygen Flow Rate (L/min)",
+          },
+          Object {
+            "content": "63",
+          },
+          Object {
+            "content": "47",
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="4"
+      isSelected={true}
+      key="4"
+      rowIndex={5}
+    />
+  </tbody>
+</Fragment>
+`;
+
+exports[`Section verifies the rows receive the correct props when table is zebra striped 1`] = `
+<Fragment>
+  <tr
+    aria-rowindex={1}
+    className="header"
+  >
+    <th
+      align="left"
+      colSpan={3}
+      role="columnheader"
+      scope="col"
+    >
+      <SectionHeader
+        isOpen={true}
+        isTransparent={false}
+        text="Test Section"
+      />
+    </th>
+  </tr>
+  <tbody
+    className="section"
+  >
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Heart Rate Monitored (bpm)",
+            "isSelectable": false,
+          },
+          Object {
+            "content": "",
+          },
+          Object {
+            "content": "66",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="1"
+      isTableStriped={true}
+      key="1"
+      rowIndex={2}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Temperature Oral (degC)",
+          },
+          Object {
+            "content": "36.7",
+          },
+          Object {
+            "content": "36.9",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="2"
+      isTableStriped={true}
+      key="2"
+      rowIndex={3}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Cardiac Index (L/min/m2)",
+          },
+          Object {
+            "content": "2.25",
+          },
+          Object {
+            "content": "2.28",
+            "isMasked": true,
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="3"
+      isTableStriped={true}
+      key="3"
+      rowIndex={4}
+    />
+    <Memo(Row)
+      cells={
+        Array [
+          Object {
+            "content": "Oxygen Flow Rate (L/min)",
+          },
+          Object {
+            "content": "63",
+          },
+          Object {
+            "content": "47",
+          },
+        ]
+      }
+      displayedColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isSelectable": false,
+          },
+        ]
+      }
+      id="4"
+      isSelected={true}
+      isTableStriped={true}
+      key="4"
+      rowIndex={5}
+    />
+  </tbody>
+</Fragment>
+`;

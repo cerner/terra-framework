@@ -2,7 +2,9 @@
 
 exports[`Row creates a row with the correct number of cells 1`] = `
 <tr
+  aria-rowindex={99}
   className="row"
+  data-row-id="1"
   style={
     Object {
       "height": "25px",
@@ -52,7 +54,9 @@ exports[`Row creates a row with the correct number of cells 1`] = `
 
 exports[`Row verifies the cell is created with the right props 1`] = `
 <tr
+  aria-rowindex={2}
   className="row"
+  data-row-id="3"
   style={
     Object {
       "height": "25px",
