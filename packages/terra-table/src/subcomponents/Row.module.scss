@@ -1,24 +1,23 @@
 @import '../clinical-lowlight-theme/Row.module';
 @import '../orion-fusion-theme/Row.module';
 
-
 :local {
+  .striped-table-row:nth-child(even) {
+    background-color: var(--terra-table-row-striped-background-color, #f0f0f0);
+  }
+
   .row {
     background-color: var(--terra-table-row-background-color, #fff);
-    
-    .striped-table-row:nth-child(even):not(.selected) {
-      background-color: var(--terra-table-row-striped-background-color, #f0f0f0);
-    }
 
     &.selectable:hover {
       background-color: var(--terra-table-row-hover-background-color, #e2f2fc);
       cursor: pointer;
     }
 
+
     &.selected {
       background-color: var(--terra-table-row-selected-background-color, #cbe7fa);
       border-right: 1px solid #0092e0;
-
       // Add bottom border to cells in a selected row
       td,
       th {
@@ -26,7 +25,6 @@
       }
     }
   }
-
   // Add top border for first selected row or when not adjacent to a selected row
   /* stylelint-disable selector-max-compound-selectors */
   .row.selected:first-child,

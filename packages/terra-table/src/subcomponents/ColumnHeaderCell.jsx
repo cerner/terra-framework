@@ -258,12 +258,10 @@ const ColumnHeaderCell = (props) => {
     )
     : null;
 
-  let columnTabIndex;
+  let columnTabIndex = isSelectable ? 0 : undefined;
 
   if (isGridContext) {
-    columnTabIndex = -1;
-  } else {
-    columnTabIndex = isSelectable ? 0 : undefined;
+    columnTabIndex = isSelectable && displayName ? -1 : undefined;
   }
 
   return (
