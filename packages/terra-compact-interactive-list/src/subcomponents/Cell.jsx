@@ -4,7 +4,7 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { checkIfColumnIsFlex } from '../utils/utils';
 import columnShape from '../proptypes/columnShape';
-import { WidthValueTypes } from '../utils/constants';
+import { widthUnitTypes } from '../utils/constants';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -26,22 +26,22 @@ const propTypes = {
   column: PropTypes.instanceOf(columnShape),
 
   /**
-   * Columns' minimum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * Columns' minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * Columns' maximum width in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * Columns' maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    */
   columnMaximumWidth: PropTypes.number,
 
   /**
    * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
    */
-  widthValue: PropTypes.oneOf([
-    WidthValueTypes.PX,
-    WidthValueTypes.EM,
-    WidthValueTypes.REM,
+  widthUnit: PropTypes.oneOf([
+    widthUnitTypes.PX,
+    widthUnitTypes.EM,
+    widthUnitTypes.REM,
   ]),
 };
 
@@ -52,23 +52,28 @@ const Cell = (props) => {
     column,
     columnMinimumWidth,
     columnMaximumWidth,
-    widthValue,
+    widthUnit,
   } = props;
 
   const theme = useContext(ThemeContext);
   const className = cx('cell', theme.className);
 
   const {
-    width, flexGrow, alignToCenter, maximumWidth,
+    width,
+    flexGrow,
+    alignToCenter,
+    maximumWidth,
+    minimumWidth,
   } = column;
+
   const isFlexGrow = checkIfColumnIsFlex(flexGrow, width);
-  const maxWidth = maximumWidth || columnMaximumWidth;
 
   const style = {
-    flex: isFlexGrow ? `1 1 ${width || columnMinimumWidth}${widthValue}` : null,
-    width: isFlexGrow ? null : `${width}${widthValue}`,
+    flex: isFlexGrow ? `1 1 ${width || columnMinimumWidth}${widthUnit}` : null,
+    width: isFlexGrow ? null : `${width}${widthUnit}`,
     justifyContent: `${alignToCenter ? 'center' : 'left'}`,
-    maxWidth: isFlexGrow && maxWidth ? `${maxWidth}${widthValue}` : null,
+    maxWidth: isFlexGrow && `${Math.min(maximumWidth, columnMaximumWidth)}${widthUnit}`,
+    minWidth: isFlexGrow && `${Math.max(minimumWidth, columnMinimumWidth)}${widthUnit}`,
   };
 
   return (

@@ -10,6 +10,7 @@
     display: flex;
     text-align: left;
     align-items: center;
+    overflow: hidden;
 
     &:hover {
       background-color: var(--terra-compact-interactive-list-hover-background-color, #e0f2fb);

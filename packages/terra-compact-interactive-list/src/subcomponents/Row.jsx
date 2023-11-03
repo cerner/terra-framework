@@ -6,7 +6,7 @@ import styles from './Row.module.scss';
 import Cell from './Cell';
 import cellShape from '../proptypes/cellShape';
 import columnShape from '../proptypes/columnShape';
-import { WidthValueTypes } from '../utils/constants';
+import { widthUnitTypes } from '../utils/constants';
 
 const cx = classNames.bind(styles);
 
@@ -47,19 +47,19 @@ const propTypes = {
   isFlexGrow: PropTypes.bool,
 
   /**
-   * Row's width in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * Row's width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    * If flexGrow is set to true, will be used as a flex basis rather than fixed width.
    */
   rowWidth: PropTypes.number,
 
   /**
-   * Row's maximum width for flex growing rows in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * Row's maximum width for flex growing rows in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    * Will have no effect if the width is set and flexGrow is omitted or false.
    */
   rowMaximumWidth: PropTypes.number,
 
   /**
-   * Row's maximum width for flex growing rows in units set by widthValue prop, such as `px`, `em`, or `rem`.
+   * Row's maximum width for flex growing rows in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    * Will have no effect if the width is set and flexGrow is omitted or false.
    */
   rowMinimumWidth: PropTypes.number,
@@ -67,10 +67,10 @@ const propTypes = {
   /**
    * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
    */
-  widthValue: PropTypes.oneOf([
-    WidthValueTypes.PX,
-    WidthValueTypes.EM,
-    WidthValueTypes.REM,
+  widthUnit: PropTypes.oneOf([
+    widthUnitTypes.PX,
+    widthUnitTypes.EM,
+    widthUnitTypes.REM,
   ]),
 };
 
@@ -86,16 +86,16 @@ const Row = (props) => {
     rowMaximumWidth,
     rowMinimumWidth,
     rowWidth,
-    widthValue,
+    widthUnit,
   } = props;
 
   const theme = useContext(ThemeContext);
 
   const style = isFlexGrow ? {
     flex: `1 1 ${Math.min(100 / numberOfColumns)}%`,
-    maxWidth: rowMaximumWidth ? `${rowMaximumWidth}${widthValue}` : null,
-    minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthValue}` : null,
-  } : { width: `${rowWidth}${widthValue}` };
+    maxWidth: rowMaximumWidth ? `${rowMaximumWidth}${widthUnit}` : null,
+    minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthUnit}` : null,
+  } : { width: `${rowWidth}${widthUnit}` };
 
   return (
     <div
@@ -111,7 +111,7 @@ const Row = (props) => {
           column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}
-          widthValue={widthValue}
+          widthUnit={widthUnit}
         >
           {cellData.content}
         </Cell>

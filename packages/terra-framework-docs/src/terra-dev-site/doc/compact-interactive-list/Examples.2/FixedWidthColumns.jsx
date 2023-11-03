@@ -29,7 +29,7 @@ const FixedWidthColumns = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
-    widthValue="em"
+    widthUnit="em"
   />
 );
 
