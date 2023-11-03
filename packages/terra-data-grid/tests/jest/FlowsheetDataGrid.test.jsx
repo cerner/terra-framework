@@ -63,6 +63,7 @@ describe('FlowsheetDataGrid', () => {
         displayName: 'Vitals',
         id: 'Column-0',
         isResizable: false,
+        isSelectable: true,
       },
     ];
 
@@ -71,11 +72,13 @@ describe('FlowsheetDataGrid', () => {
         displayName: 'March 16',
         id: 'Column-1',
         isResizable: false,
+        isSelectable: true,
       },
       {
         displayName: 'March 17',
         id: 'Column-2',
         isResizable: false,
+        isSelectable: true,
       },
     ];
 
@@ -83,33 +86,33 @@ describe('FlowsheetDataGrid', () => {
       {
         id: '1',
         cells: [
-          { content: 'Heart Rate Monitored (bpm)' },
-          { content: '65' },
-          { content: '66' },
+          { content: 'Heart Rate Monitored (bpm)', isSelectable: true },
+          { content: '65', isSelectable: true },
+          { content: '66', isSelectable: true },
         ],
       },
       {
         id: '2',
         cells: [
-          { content: 'Temperature Oral (degC)' },
-          { content: '36.7' },
-          { content: '36.9' },
+          { content: 'Temperature Oral (degC)', isSelectable: true },
+          { content: '36.7', isSelectable: true },
+          { content: '36.9', isSelectable: true },
         ],
       },
       {
         id: '3',
         cells: [
-          { content: 'Cardiac Index (L/min/m2)' },
-          { content: '2.25' },
-          { content: '2.28' },
+          { content: 'Cardiac Index (L/min/m2)', isSelectable: true },
+          { content: '2.25', isSelectable: true },
+          { content: '2.28', isSelectable: true },
         ],
       },
       {
         id: '4',
         cells: [
-          { content: 'Oxygen Flow Rate (L/min)' },
-          { content: '63' },
-          { content: '47' },
+          { content: 'Oxygen Flow Rate (L/min)', isSelectable: true },
+          { content: '63', isSelectable: true },
+          { content: '47', isSelectable: true },
         ],
       },
     ];
@@ -172,7 +175,7 @@ describe('FlowsheetDataGrid', () => {
       {
         id: '1',
         cells: [
-          { content: 'Heart Rate Monitored (bpm)' },
+          { content: 'Heart Rate Monitored (bpm)', isSelectable: true },
           {
             content: (
               <>
@@ -180,15 +183,16 @@ describe('FlowsheetDataGrid', () => {
                 <VisuallyHiddenText text="Terra.flowsheetDataGrid.no-result" />
               </>
             ),
+            isSelectable: true,
           },
-          { content: '66' },
+          { content: '66', isSelectable: true },
         ],
       },
       {
         id: '2',
         cells: [
-          { content: 'Temperature Oral (degC)' },
-          { content: '36.7' },
+          { content: 'Temperature Oral (degC)', isSelectable: true },
+          { content: '36.7', isSelectable: true },
           {
             content: (
               <>
@@ -196,13 +200,14 @@ describe('FlowsheetDataGrid', () => {
                 <VisuallyHiddenText text="Terra.flowsheetDataGrid.no-result" />
               </>
             ),
+            isSelectable: true,
           },
         ],
       },
       {
         id: '3',
         cells: [
-          { content: 'Cardiac Index (L/min/m2)' },
+          { content: 'Cardiac Index (L/min/m2)', isSelectable: true },
           {
             content: (
               <>
@@ -210,14 +215,15 @@ describe('FlowsheetDataGrid', () => {
                 <VisuallyHiddenText text="Terra.flowsheetDataGrid.no-result" />
               </>
             ),
+            isSelectable: true,
           },
-          { content: '2.28' },
+          { content: '2.28', isSelectable: true },
         ],
       },
       {
         id: '4',
         cells: [
-          { content: '' },
+          { content: '', isSelectable: true },
           {
             content: (
               <>
@@ -225,6 +231,7 @@ describe('FlowsheetDataGrid', () => {
                 <VisuallyHiddenText text="Terra.flowsheetDataGrid.no-result" />
               </>
             ),
+            isSelectable: true,
           },
           {
             content: (
@@ -233,6 +240,7 @@ describe('FlowsheetDataGrid', () => {
                 <VisuallyHiddenText text="Terra.flowsheetDataGrid.no-result" />
               </>
             ),
+            isSelectable: true,
           },
         ],
       },

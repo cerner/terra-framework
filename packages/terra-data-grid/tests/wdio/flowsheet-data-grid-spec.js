@@ -1,4 +1,4 @@
-const defaultSelector = '#default-terra-flowsheet-data-grid';
+const defaultSelector = '#default-terra-flowsheet-data-grid-table';
 
 Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
   describe('Default Flowsheet Data Grid', () => {
