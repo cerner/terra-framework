@@ -4,10 +4,18 @@ import DataGrid from 'terra-data-grid/lib/DataGrid';
 const DefaultDataGrid = () => {
   const gridDataJSON = {
     cols: [
-      { id: 'Column-0', displayName: 'Vitals', isSelectable: false },
-      { id: 'Column-1', displayName: 'March 16' },
-      { id: 'Column-2', displayName: 'March 17' },
-      { id: 'Column-3', displayName: 'March 18' },
+      {
+        id: 'Column-0', displayName: 'Vitals', isSelectable: false, isResizable: true,
+      },
+      {
+        id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
+      },
+      {
+        id: 'Column-2', displayName: 'March 17', isSelectable: true, isResizable: true,
+      },
+      {
+        id: 'Column-3', displayName: 'March 18', isSelectable: true, isResizable: true,
+      },
     ],
     rows: [
       {
@@ -65,11 +73,7 @@ const DefaultDataGrid = () => {
     <React.Fragment>
       <DataGrid
         id="default-terra-data-grid"
-        overflowColumns={cols.map((col) => ({
-          ...col,
-          isSelectable: col.isSelectable !== false,
-          isResizable: col.isResizable !== false,
-        }))}
+        overflowColumns={cols}
         rows={rows}
         rowHeaderIndex={0}
         ariaLabel="Data Grid"

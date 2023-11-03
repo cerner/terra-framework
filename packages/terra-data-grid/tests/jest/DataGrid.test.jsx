@@ -8,42 +8,48 @@ import ERRORS from '../../src/utils/constants';
 // Source data for tests
 const dataFile = {
   cols: [
-    { id: 'Column-0', displayName: ' Vitals' },
-    { id: 'Column-1', displayName: 'March 16' },
-    { id: 'Column-2', displayName: 'March 17', isSelectable: false },
+    {
+      id: 'Column-0', displayName: ' Vitals', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-2', displayName: 'March 17', isSelectable: false, isResizable: true,
+    },
   ],
   rows: [
     {
       id: '1',
       cells: [
         { content: 'Heart Rate Monitored (bpm)', isSelectable: false },
-        { content: '' },
-        { content: '66', isMasked: true },
+        { content: '', isSelectable: true },
+        { content: '66', isMasked: true, isSelectable: true },
       ],
     },
     {
       id: '2',
       cells: [
-        { content: 'Temperature Oral (degC)' },
-        { content: '36.7' },
-        { content: '36.9', isMasked: true },
+        { content: 'Temperature Oral (degC)', isSelectable: true },
+        { content: '36.7', isSelectable: true },
+        { content: '36.9', isMasked: true, isSelectable: true },
       ],
     },
     {
       id: '3',
       cells: [
-        { content: 'Cardiac Index (L/min/m2)' },
-        { content: '2.25' },
-        { content: '2.28', isMasked: true },
+        { content: 'Cardiac Index (L/min/m2)', isSelectable: true },
+        { content: '2.25', isSelectable: true },
+        { content: '2.28', isMasked: true, isSelectable: true },
       ],
     },
     {
       id: '4',
       isSelected: true,
       cells: [
-        { content: 'Oxygen Flow Rate (L/min)' },
-        { content: '63' },
-        { content: '47' },
+        { content: 'Oxygen Flow Rate (L/min)', isSelectable: true },
+        { content: '63', isSelectable: true },
+        { content: '47', isSelectable: true },
       ],
     },
   ],

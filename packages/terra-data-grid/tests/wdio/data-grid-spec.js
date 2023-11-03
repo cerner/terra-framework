@@ -1,4 +1,4 @@
-const defaultSelector = '#default-terra-data-grid';
+const defaultSelector = '#default-terra-data-grid-table';
 
 const moveCurrentPositionBy = (row, col) => browser.keys(
   new Array(Math.abs(row)).fill(row > 0 ? 'ArrowDown' : 'ArrowUp')
@@ -263,7 +263,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
   });
 
   describe('with pinned columns', () => {
-    const pinnedColumnsSelector = '#data-grid-pinned-columns';
+    const pinnedColumnsSelector = '#data-grid-pinned-columns-table';
 
     it('adds pinned columns', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-pinned-columns');
@@ -280,7 +280,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
   });
 
   describe('with sticky column header', () => {
-    const stickyHeaderSelector = '#terra-data-grid-sticky';
+    const stickyHeaderSelector = '#terra-data-grid-sticky-table';
 
     it('verifies that the table column header is fixed when scrolling', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-sticky-header');
@@ -305,20 +305,21 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
   });
 
   describe('column resizing', () => {
+    const columnResizingGridSelector = '#terra-data-grid-with-column-resizing-table';
     it('focuses on the column resize handle', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-column-resizing');
       browser.keys(['Tab']); // navigate to first column
       browser.keys(['ArrowRight']); // navigate to first column resize handle
 
       expect($('tr.column-header-row').$('//th[1]/div[2]').isFocused()).toBe(true);
-      Terra.validates.element('column-resize-handle-focused', { selector: '#terra-data-grid-with-column-resizing' });
+      Terra.validates.element('column-resize-handle-focused', { selector: columnResizingGridSelector });
     });
 
     it('increases the column width with the keyboard in resize mode', () => {
       // disabling the 'aria-input-field-name' rule as it is dynamically removed
       // for the keyboard resize workflow and this causes an accessibility failure
       const options = {
-        selector: '#terra-data-grid-with-column-resizing',
+        selector: columnResizingGridSelector,
         rules: { 'aria-input-field-name': { enabled: false } },
       };
 
@@ -334,7 +335,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       // disabling the 'aria-input-field-name' rule as it is dynamically removed
       // for the keyboard resize workflow and this causes an accessibility failure
       const options = {
-        selector: '#terra-data-grid-with-column-resizing',
+        selector: columnResizingGridSelector,
         rules: { 'aria-input-field-name': { enabled: false } },
       };
 
@@ -438,7 +439,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['ArrowRight']);
       expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
 
-      Terra.validates.element('column-header-0-2-focused', { selector: '#terra-data-grid-with-column-resizing' });
+      Terra.validates.element('column-header-0-2-focused', { selector: columnResizingGridSelector });
     });
 
     it('focuses on the column header when navigating right from a non-resizable column header', () => {
@@ -450,7 +451,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['ArrowRight']);
       expect(browser.$('tr.column-header-row th:nth-child(4) div[role=button]').isFocused()).toBe(true);
 
-      Terra.validates.element('column-header-0-3-focused', { selector: '#terra-data-grid-with-column-resizing' });
+      Terra.validates.element('column-header-0-3-focused', { selector: columnResizingGridSelector });
     });
 
     it('focuses on the column header when navigating left to a non-resizable column header from resizable column header', () => {
@@ -462,7 +463,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['ArrowLeft']);
       expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
 
-      Terra.validates.element('column-header-0-2-focused', { selector: '#terra-data-grid-with-column-resizing' });
+      Terra.validates.element('column-header-0-2-focused', { selector: columnResizingGridSelector });
     });
   });
 });
