@@ -255,6 +255,7 @@ function Table(props) {
   // -------------------------------------
   // useEffect Hooks
 
+  // eslint-disable-next-line react/prop-types
   useImperativeHandle(props.tableRefs, () => ({
     tableRef: tableRef.current,
     containerRef: tableContainerRef.current,
