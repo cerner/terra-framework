@@ -1,6 +1,14 @@
 import React from 'react';
+import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
+
 import { Consumer } from 'xfc';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
+
+import styles from './EmbeddedContentConsumer.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
@@ -75,6 +83,11 @@ const propTypes = {
     key: PropTypes.string,
     handler: PropTypes.func,
   })),
+  /**
+   * @private
+   * The intl object to be injected for translations.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 class EmbeddedContentConsumer extends React.Component {
@@ -129,18 +142,35 @@ class EmbeddedContentConsumer extends React.Component {
       onAuthorize,
       options,
       eventHandlers,
+      intl,
       ...customProps
     } = this.props;
 
     return (
-      <div
-        {...customProps}
-        ref={(element) => { this.embeddedContentWrapper = element; }}
-      />
+      <>
+        <VisuallyHiddenText
+          className={cx('visually-hidden-text')}
+          text={intl.formatMessage(
+            { id: 'Terra.embeddedContentConsumer.beginEmbeddedContent' },
+            { name: title },
+          )}
+        />
+        <div
+          {...customProps}
+          ref={(element) => { this.embeddedContentWrapper = element; }}
+        />
+        <VisuallyHiddenText
+          className={cx('visually-hidden-text')}
+          text={intl.formatMessage(
+            { id: 'Terra.embeddedContentConsumer.endEmbeddedContent' },
+            { name: title },
+          )}
+        />
+      </>
     );
   }
 }
 
 EmbeddedContentConsumer.propTypes = propTypes;
 
-export default EmbeddedContentConsumer;
+export default injectIntl(EmbeddedContentConsumer);

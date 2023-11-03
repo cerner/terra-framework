@@ -1,0 +1,4 @@
+{
+  "Terra.embeddedContentConsumer.beginEmbeddedContent": "Inicio del contenido insertado, {name}",
+  "Terra.embeddedContentConsumer.endEmbeddedContent": "Fin del contenido insertado, {name}"
+}
