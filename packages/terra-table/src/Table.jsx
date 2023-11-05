@@ -23,18 +23,18 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String that will be used to identify the table. If multiple tables are on the same page, each table should have
-   * a unique id.
+   * Unique id used to identify the table.
    */
   id: PropTypes.string.isRequired,
 
   /**
-  * Data for content in the body of the table. Rows will be rendered in the order given.
+  * Data for content in the body of the table when sections do not exist. Rows will be rendered in the order given.
+  * The sections prop will text precedence over this prop.
   */
   rows: PropTypes.arrayOf(rowShape),
 
   /**
-  * Data for content in the body of the table. Rows will be rendered in the order given.
+  * Data for content in the body of the table. Sections will be rendered in the order given.
   */
   sections: PropTypes.arrayOf(sectionShape),
 

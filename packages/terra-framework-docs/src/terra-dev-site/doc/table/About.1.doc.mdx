@@ -64,6 +64,17 @@ A column specifies the data to render a cell in the header row of the Worklist D
 |**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
 |**sortIndicator**|custom|optional|none|A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered. One of `ascending`, `descending`.
 
+### Section
+A section defines the rows rendered within the section.
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the row within the grid.|
+|**isCollapsible**|bool|false|Boolean value indicating whether or not the the section is collapsible.|
+|**isCollapsed**|bool|optional|false|Boolean value indicating whether or not the section is collapsed. If true, contents of the section will not be displayed.|
+|**text**|string|optional|none|A text string to render within the section header.|
+|**rows**|array|optional|[]|An array of row objects to be rendered within the section.|
+
 ### Row
 A row defines the cells rendered within the row.
 
