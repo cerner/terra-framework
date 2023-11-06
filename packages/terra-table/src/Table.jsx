@@ -1,5 +1,5 @@
 import React, {
-  useState, useContext, useRef, useCallback, useEffect, useMemo, forwardRef, useImperativeHandle,
+  useState, useContext, useRef, useCallback, useEffect, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -60,6 +60,17 @@ const propTypes = {
    * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
+
+  /**
+   * Parameter used to access the table element for grid components.
+   * @private
+   */
+  gridRef: PropTypes.shape({ current: PropTypes.any }),
+  /**
+     * Parameter used to acccess the table's container element for grid components.
+     * @private
+     */
+  gridContainerRef: PropTypes.shape({ current: PropTypes.any }),
 
   /**
      * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
@@ -185,6 +196,8 @@ function Table(props) {
     isStriped,
     rowHeaderIndex,
     intl,
+    gridRef,
+    gridContainerRef,
   } = props;
 
   if (pinnedColumns.length === 0) {
@@ -254,12 +267,6 @@ function Table(props) {
 
   // -------------------------------------
   // useEffect Hooks
-
-  // eslint-disable-next-line react/prop-types
-  useImperativeHandle(props.tableRefs, () => ({
-    tableRef: tableRef.current,
-    containerRef: tableContainerRef.current,
-  }), [tableRef, tableContainerRef]);
 
   useEffect(() => {
     if (!rowSelectionEffectTriggered.current) {
@@ -431,17 +438,31 @@ function Table(props) {
     }
   }, [tableColumns, onColumnResize]);
 
+  const handleTableRef = useCallback((node) => {
+    if (gridRef) {
+      gridRef.current = node;
+    }
+    tableRef.current = node;
+  }, [gridRef]);
+
+  const handleContainerRef = useCallback((node) => {
+    if (gridContainerRef) {
+      gridContainerRef.current = node;
+    }
+    tableContainerRef.current = node;
+  }, [gridContainerRef]);
+
   // -------------------------------------
 
   return (
     <div
-      ref={tableContainerRef}
+      ref={handleContainerRef}
       className={cx('table-container')}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
       <table
-        ref={tableRef}
+        ref={handleTableRef}
         id={id}
         role={gridContext.role}
         aria-labelledby={ariaLabelledBy}
@@ -501,6 +522,4 @@ function Table(props) {
 Table.propTypes = propTypes;
 Table.defaultProps = defaultProps;
 
-const IntlTable = injectIntl(Table);
-
-export default React.memo(forwardRef((props, ref) => <IntlTable {...props} tableRefs={ref} />));
+export default React.memo(injectIntl(Table));

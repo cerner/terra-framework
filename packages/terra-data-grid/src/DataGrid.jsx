@@ -208,13 +208,6 @@ const DataGrid = injectIntl((props) => {
     [focusedCol, focusedRow],
   );
 
-  const handleTableRefs = useCallback((node) => {
-    if (node) {
-      grid.current = node.tableRef;
-      tableContainerRef.current = node.containerRef;
-    }
-  }, []);
-
   // -------------------------------------
 
   const handleMoveCellFocus = (fromCell, toCell) => {
@@ -501,7 +494,8 @@ const DataGrid = injectIntl((props) => {
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
           isStriped
-          ref={handleTableRefs}
+          gridRef={grid}
+          gridContainerRef={tableContainerRef}
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />

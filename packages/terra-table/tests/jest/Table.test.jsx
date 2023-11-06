@@ -82,7 +82,7 @@ describe('Table', () => {
           rows={tableData.rows}
         />
       </IntlProvider>,
-    ).dive().dive().dive();
+    ).dive().dive();
 
     // One row used for the header.
     const columnHeader = wrapper.find(ColumnHeader);
@@ -112,7 +112,7 @@ describe('Table', () => {
           rows={tableData.rows}
         />
       </IntlProvider>,
-    ).dive().dive().dive();
+    ).dive().dive();
 
     const rows = wrapper.find(Row);
     expect(rows).toHaveLength(tableData.rows.length);
@@ -133,7 +133,7 @@ describe('Table', () => {
           isStriped
         />
       </IntlProvider>,
-    ).dive().dive().dive();
+    ).dive().dive();
 
     const testRow = wrapper.find(Row).get(0);
     expect(testRow.props.isTableStriped).toBe(true);
@@ -258,7 +258,7 @@ describe('Table', () => {
           defaultColumnWidth={150}
         />
       </IntlProvider>,
-    ).dive().dive().dive();
+    ).dive().dive();
 
     // Verify that column headers are not present
     const column = wrapper.find('col').get(0);
