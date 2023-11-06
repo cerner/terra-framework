@@ -534,7 +534,7 @@ const DataGrid = injectIntl((props) => {
     setDataGridColumns(newGridColumns);
 
     // Update the column and table width
-    grid.current.style.width = `${grid.current.offsetWidth + increment}px`;
+    grid.current.style.width = `${grid.current.offsetWidth + (newColumnWidth - width)}px`;
 
     // Notify consumers of the new column width
     if (onColumnResize) {
