@@ -1,78 +1,91 @@
 import React from 'react';
-import { IconHospital, IconAnalytics, IconBriefcase, IconDocuments } from 'terra-icon';
+import classNames from 'classnames/bind';
+
+import { IconDocuments } from 'terra-icon';
 import FolderTree from 'terra-folder-tree';
 
+import styles from './BasicFolderTree.module.scss';
+
+const cx = classNames.bind(styles);
+
 const BasicFolderTree = () => {
-  const [selectedKey, setSelectedKey] = React.useState('a');
-  
+  const [selectedKey, setSelectedKey] = React.useState('info');
+
   return (
-  <FolderTree
-    title="Documents"
-    key="a"
-    isSelected={selectedKey === 'a'}
-    onClick={() => {setSelectedKey('a')}}
-  >
-    <FolderTree.TreeItem
-      text="info.txt"
-      icon={<IconDocuments />}
-      key="b"
-      isSelected={selectedKey === 'b'}
-      onClick={() => {setSelectedKey('b')}}
-    />
-    <FolderTree.TreeItem
-      text="projects_2023.txt"
-      icon={<IconDocuments />}
-      key="c"
-      isSelected={selectedKey === 'c'}
-      onClick={() => {setSelectedKey('c')}}
-    />
-    <FolderTree.TreeItem
-      text="Projects"
-      key="d"
-      isSelected={selectedKey === 'd'}
-      onClick={() => {setSelectedKey('d')}}
-      subtreeItems={[
-        (<FolderTree.TreeItem
-          text="project_data1.txt"
+    <div className={cx('content-wrapper')}>
+      <FolderTree
+        title="Documents"
+        key="documents"
+      >
+        <FolderTree.Item
+          label="info.txt"
           icon={<IconDocuments />}
-          key="e"
-          isSelected={selectedKey === 'e'}
-          onClick={() => {setSelectedKey('e')}}
-        />),
-        (<FolderTree.TreeItem
-          text="project_data2.txt"
+          key="info"
+          isSelected={selectedKey === 'info'}
+          onClick={() => { setSelectedKey('info'); }}
+        />
+        <FolderTree.Item
+          label="projects_2023.txt"
           icon={<IconDocuments />}
-          key="f"
-          isSelected={selectedKey === 'f'}
-          onClick={() => {setSelectedKey('f')}}
-          />),
-        (<FolderTree.TreeItem
-          text="Tests"
-          key="g"
-          isSelected={selectedKey === 'g'}
-          onClick={() => {setSelectedKey('g')}}
-          icon={<IconDocuments />}
-          subtreeItems={[
-            (<FolderTree.TreeItem
-              text="test1.txt"
+          key="projects_2023"
+          isSelected={selectedKey === 'projects_2023'}
+          onClick={() => { setSelectedKey('projects_2023'); }}
+        />
+        <FolderTree.Item
+          label="Projects"
+          key="projects"
+          isSelected={selectedKey === 'projects'}
+          onClick={() => { setSelectedKey('projects'); }}
+          subfolderItems={[
+            (<FolderTree.Item
+              label="project_data1.txt"
               icon={<IconDocuments />}
-              key="h"
-              isSelected={selectedKey === 'h'}
-              onClick={() => {setSelectedKey('h')}}
-              isDisabled
+              key="project_data1"
+              isSelected={selectedKey === 'project_data1'}
+              onClick={() => { setSelectedKey('project_data1'); }}
             />),
-            (<FolderTree.TreeItem
-              text="test2.txt"
+            (<FolderTree.Item
+              label="project_data2.txt"
               icon={<IconDocuments />}
-              key="i"
-              isSelected={selectedKey === 'i'}
-              onClick={() => {setSelectedKey('i')}}
+              key="project_data2"
+              isSelected={selectedKey === 'project_data2'}
+              onClick={() => { setSelectedKey('project_data2'); }}
+            />),
+            (<FolderTree.Item
+              label="Tests"
+              key="tests"
+              isSelected={selectedKey === 'tests'}
+              onClick={() => { setSelectedKey('tests'); }}
+              icon={<IconDocuments />}
+              subfolderItems={[
+                (<FolderTree.Item
+                  label="very_very_very_very_very_very_very_long_name_test.txt"
+                  icon={<IconDocuments />}
+                  key="long-name-test"
+                  isSelected={selectedKey === 'long-name-test'}
+                  onClick={() => { setSelectedKey('long-name-test'); }}
+                />),
+                (<FolderTree.Item
+                  label="test.txt"
+                  icon={<IconDocuments />}
+                  key="test"
+                  isSelected={selectedKey === 'test'}
+                  onClick={() => { setSelectedKey('test'); }}
+                />),
+                (<FolderTree.Item
+                  label="even_longer_long_long_long_long_long_long_long_long_long_long_long_long_name_test.txt"
+                  icon={<IconDocuments />}
+                  key="longer-name-test"
+                  isSelected={selectedKey === 'longer-name-test'}
+                  onClick={() => { setSelectedKey('longer-name-test'); }}
+                />),
+              ]}
             />),
           ]}
-        />),
-      ]}
-    />
-  </FolderTree>
-);}
+        />
+      </FolderTree>
+    </div>
+  );
+};
 
 export default BasicFolderTree;
