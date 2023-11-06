@@ -21,6 +21,7 @@
       display: flex;
       height: 100%;
       padding: var(--terra-table-header-cell-padding, 5px);
+      position: relative;
       width: 100%;
     }
 
@@ -41,6 +42,26 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+
+    .tooltip {
+      display: none;
+      left: 2rem;
+      position: absolute;
+      top: 2rem;
+      background: black;
+      color: white;
+    }
+
+    &:hover .tooltip,
+    &:focus .tooltip,
+    .header-container:focus + .tooltip {
+      display: block;
+    }
+  }
+
+  .column-header.hide-tooltip:focus .tooltip,
+  .hide-tooltip .header-container:focus + .tooltip {
+    display: none;
   }
 
   // Hover state for selectable elements

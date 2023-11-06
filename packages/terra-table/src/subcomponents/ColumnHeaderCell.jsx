@@ -1,4 +1,6 @@
-import React, { useContext, useRef, useCallback } from 'react';
+import React, {
+  useContext, useRef, useCallback, useState,
+} from 'react';
 import * as KeyCode from 'keycode-js';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
@@ -106,7 +108,7 @@ const propTypes = {
 const defaultProps = {
   hasError: false,
   isSelectable: false,
-  isResizable: false,
+  isResizable: true,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -134,6 +136,8 @@ const ColumnHeaderCell = (props) => {
   const theme = useContext(ThemeContext);
   const columnHeaderCell = useRef();
 
+  const [isHideTooltip, setHideTooltip] = useState(false);
+
   const isGridContext = gridContext.role === GridConstants.GRID;
 
   const onResizeHandleMouseDown = useCallback((event) => {
@@ -156,8 +160,15 @@ const ColumnHeaderCell = (props) => {
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
         break;
+      case KeyCode.KEY_ESCAPE:
+        setHideTooltip(true);
+        break;
       default:
     }
+  };
+
+  const handleBlur = () => {
+    setHideTooltip(false);
   };
 
   const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.table.columnError' })} className={cx('error-icon')} />;
@@ -181,19 +192,23 @@ const ColumnHeaderCell = (props) => {
     )
     : null;
 
+  const headerClassNames = cx('column-header', theme.className, {
+    'hide-tooltip': isHideTooltip,
+    selectable: isSelectable,
+    pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
+  });
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
       ref={columnHeaderCell}
       key={id}
-      className={cx('column-header', theme.className, {
-        selectable: isSelectable,
-        pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
-      })}
+      className={headerClassNames}
       tabIndex={isGridContext ? -1 : undefined}
       role="columnheader"
       scope="col"
       aria-sort={sortIndicator}
+      onBlur={handleBlur}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={isSelectable && onColumnSelect ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-dom-props
@@ -208,6 +223,7 @@ const ColumnHeaderCell = (props) => {
         <span>{displayName}</span>
         {sortIndicatorIcon}
       </div>
+      <div className={cx('tooltip')} role="tooltip">{displayName}</div>
       { isResizable && (
       <ColumnResizeHandle
         columnIndex={columnIndex}
