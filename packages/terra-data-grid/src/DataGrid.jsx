@@ -1,5 +1,5 @@
 import React, {
-  useState, useRef, useCallback, useImperativeHandle, forwardRef,
+  useState, useRef, useCallback, forwardRef, useImperativeHandle,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -148,6 +148,7 @@ const DataGrid = injectIntl((props) => {
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
 
+  // By default, all grid-based components have selectable cells.
   const dataGridRows = rows.map((row) => ({
     ...row,
     cells: row.cells.map((cell) => ({
@@ -260,7 +261,7 @@ const DataGrid = injectIntl((props) => {
     setFocusedCol(0);
     setFocusedRow(0);
     if (onColumnSelect) {
-      onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
+      onColumnSelect(WorklistDataGridUtils.TABLE_ROW_SELECTION_COLUMN.id);
     }
   }, [onColumnSelect]);
 

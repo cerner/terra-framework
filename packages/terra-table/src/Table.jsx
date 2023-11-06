@@ -20,29 +20,26 @@ import styles from './Table.module.scss';
 
 const cx = classNames.bind(styles);
 
-const defaultColumnMinimumWidth = 60;
-const defaultColumnMaximumWidth = 300;
-
 const propTypes = {
-  /*
-      * String that will be used to identify the table. If multiple tables are on the same page, each table should have
-      * a unique id.
-      */
+  /**
+   * String that will be used to identify the table. If multiple tables are on the same page, each table should have
+   * a unique id.
+   */
   id: PropTypes.string.isRequired,
 
   /**
-     * Data for content in the body of the table. Rows will be rendered in the order given.
-     */
+  * Data for content in the body of the table. Rows will be rendered in the order given.
+  */
   rows: PropTypes.arrayOf(rowShape),
 
   /**
-      * String that identifies the element (or elements) that labels the table.
-      */
+   * String that identifies the element (or elements) that labels the table.
+   */
   ariaLabelledBy: PropTypes.string,
 
   /**
-     * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
-     */
+   * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
+   */
   ariaLabel: PropTypes.string,
 
   /**
@@ -67,97 +64,97 @@ const propTypes = {
    */
   gridRef: PropTypes.shape({ current: PropTypes.any }),
   /**
-     * Parameter used to acccess the table's container element for grid components.
-     * @private
-     */
+   * Parameter used to acccess the table's container element for grid components.
+   * @private
+   */
   gridContainerRef: PropTypes.shape({ current: PropTypes.any }),
 
   /**
-     * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
-     * Columns will be presented in the order given.
-     */
+   * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
+   * Columns will be presented in the order given.
+   */
   pinnedColumns: PropTypes.arrayOf(columnShape),
 
   /**
-     * Data for overflow columns. Overflow columns are rendered in the table's horizontal overflow.
-     * Columns will be presented in the order given.
-     */
+   * Data for overflow columns. Overflow columns are rendered in the table's horizontal overflow.
+   * Columns will be presented in the order given.
+   */
   overflowColumns: PropTypes.arrayOf(columnShape),
 
   /**
-     * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
-     */
+   * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
+   */
   defaultColumnWidth: PropTypes.number,
 
   /**
-     * String that specifies the column height. Any valid CSS height value is accepted.
-     */
+   * String that specifies the column height. Any valid CSS height value is accepted.
+   */
   columnHeaderHeight: PropTypes.string,
 
   /**
-     * String that specifies the height for the rows in the table. Any valid CSS value is accepted.
-     */
+   * String that specifies the height for the rows in the table. Any valid CSS value is accepted.
+   */
   rowHeight: PropTypes.string,
 
   /**
-     * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the table.
-     */
+   * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the table.
+   */
   rowHeaderIndex: validateRowHeaderIndex,
 
   /**
-     * Function that is called when a resizable column is resized. Parameters:
-     * @param {string} columnId columnId
-     * @param {string} requestedWidth requestedWidth
-     */
+   * Function that is called when a resizable column is resized. Parameters:
+   * @param {string} columnId columnId
+   * @param {string} requestedWidth requestedWidth
+   */
   onColumnResize: PropTypes.func,
 
   /**
-     * Callback function that is called when a selectable cell is selected. Parameters:
-     * @private
-     * @param {string} rowId rowId
-     * @param {string} columnId columnId
-     */
+   * Callback function that is called when a selectable cell is selected. Parameters:
+   * @private
+   * @param {string} rowId rowId
+   * @param {string} columnId columnId
+   */
   onCellSelect: PropTypes.func,
 
   /**
-     * Callback function that is called when one or more rows are selected or unselected. Parameters:
-     * @param {string} rowId row id of the selected row
-     */
+   * Callback function that is called when one or more rows are selected or unselected. Parameters:
+   * @param {string} rowId row id of the selected row
+   */
   onRowSelect: PropTypes.func,
 
   /**
-     * Callback function that is called when a selectable column is selected. Parameters:
-     *  @param {string} columnId columnId
-     */
+   * Callback function that is called when a selectable column is selected. Parameters:
+   *  @param {string} columnId columnId
+   */
   onColumnSelect: PropTypes.func,
 
   /**
-     * Callback function that is called when the row selection column header is selected. Parameters:
-     *  @param {string} columnId columnId
-     */
+   * Callback function that is called when the row selection column header is selected. Parameters:
+   *  @param {string} columnId columnId
+   */
   onRowSelectionHeaderSelect: PropTypes.func,
 
   /**
-     * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
-     * rendered to allow for row selection to occur.
-     */
+   * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
+   * rendered to allow for row selection to occur.
+   */
   hasSelectableRows: PropTypes.bool,
 
   /**
-     * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
-     * but the voice reader will use the column header values for a11y.
-     */
+   * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
+   * but the voice reader will use the column header values for a11y.
+   */
   hasColumnHeaders: PropTypes.bool,
 
   /*
-     * Boolean specifying whether or not the table should have zebra striping for rows.
-     */
+   * Boolean specifying whether or not the table should have zebra striping for rows.
+   */
   isStriped: PropTypes.bool,
 
   /**
-     * @private
-     * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
-     */
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
@@ -171,6 +168,9 @@ const defaultProps = {
   rows: [],
   hasColumnHeaders: true,
 };
+
+const defaultColumnMinimumWidth = 60;
+const defaultColumnMaximumWidth = 300;
 
 function Table(props) {
   const {
@@ -370,6 +370,20 @@ function Table(props) {
 
   // -------------------------------------
 
+  const handleTableRef = useCallback((node) => {
+    if (gridRef) {
+      gridRef.current = node;
+    }
+    tableRef.current = node;
+  }, [gridRef]);
+
+  const handleContainerRef = useCallback((node) => {
+    if (gridContainerRef) {
+      gridContainerRef.current = node;
+    }
+    tableContainerRef.current = node;
+  }, [gridContainerRef]);
+
   // -------------------------------------
   // event handlers
 
@@ -430,27 +444,13 @@ function Table(props) {
     setTableColumns(newGridColumns);
 
     // Update the column and table width
-    tableRef.current.style.width = `${tableRef.current.offsetWidth + increment}px`;
+    tableRef.current.style.width = `${tableRef.current.offsetWidth + (newColumnWidth - width)}px`;
 
     // Notify consumers of the new column width
     if (onColumnResize) {
       onColumnResize(tableColumns[columnIndex].id, tableColumns[columnIndex].width);
     }
   }, [tableColumns, onColumnResize]);
-
-  const handleTableRef = useCallback((node) => {
-    if (gridRef) {
-      gridRef.current = node;
-    }
-    tableRef.current = node;
-  }, [gridRef]);
-
-  const handleContainerRef = useCallback((node) => {
-    if (gridContainerRef) {
-      gridContainerRef.current = node;
-    }
-    tableContainerRef.current = node;
-  }, [gridContainerRef]);
 
   // -------------------------------------
 

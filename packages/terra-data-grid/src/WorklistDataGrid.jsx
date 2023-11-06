@@ -13,6 +13,7 @@ import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
+import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 
 const cx = classNames.bind(styles);
 
@@ -178,21 +179,14 @@ function WorklistDataGrid(props) {
   const gridReceivedFocus = useRef(false);
   const gridHasFocus = document.getElementById(`${id}-worklist-data-grid-container`)?.contains(document.activeElement);
 
-  const makeWorklistDataGridColumns = (column) => ({
+  const makeWorklistDataGridColumns = (columns) => columns.map(column => ({
     ...column,
     isResizable: column.isResizable !== false,
     isSelectable: column.isSelectable !== false,
-  });
-
-  const worklistDataGridPinnedColumns = pinnedColumns.map(column => makeWorklistDataGridColumns(column));
-  const worklistDataGridOverflowColumns = overflowColumns.map(column => makeWorklistDataGridColumns(column));
-  const worklistDataGridRows = rows.map((row) => ({
-    ...row,
-    cells: row.cells.map((cell) => ({
-      ...cell,
-      isSelectable: cell.isSelectable !== false,
-    })),
   }));
+
+  const worklistDataGridPinnedColumns = makeWorklistDataGridColumns(pinnedColumns);
+  const worklistDataGridOverflowColumns = makeWorklistDataGridColumns(overflowColumns);
 
   // -------------------------------------
   // useEffect Hooks
@@ -392,6 +386,14 @@ function WorklistDataGrid(props) {
     }
   }, [handleRowSelection, hasSelectableRows, onCellSelect]);
 
+  const handleColumnSelect = useCallback((columnId) => {
+    if (columnId === WorklistDataGridUtils.TABLE_ROW_SELECTION_COLUMN.id) {
+      onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
+    } else {
+      onColumnSelect(columnId);
+    }
+  }, [onColumnSelect]);
+
   const handleKeyUp = (event) => {
     const key = event.keyCode;
     switch (key) {
@@ -434,14 +436,14 @@ function WorklistDataGrid(props) {
         id={id}
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
-        rows={worklistDataGridRows}
+        rows={rows}
         rowHeight={rowHeight}
         rowHeaderIndex={rowHeaderIndex}
         pinnedColumns={worklistDataGridPinnedColumns}
         overflowColumns={worklistDataGridOverflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
-        onColumnSelect={onColumnSelect}
+        onColumnSelect={onColumnSelect ? handleColumnSelect : undefined}
         onColumnResize={onColumnResize}
         onCellSelect={handleCellSelection}
         onClearSelection={handleClearSelection}

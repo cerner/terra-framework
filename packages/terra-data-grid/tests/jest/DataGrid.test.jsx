@@ -136,7 +136,7 @@ describe('DataGrid', () => {
     columnHeader.at(0).simulate('mouseDown');
 
     // Validate mock function was called from simulated click event
-    expect(mockColumnSelect).toHaveBeenCalledWith(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
+    expect(mockColumnSelect).toHaveBeenCalledWith(WorklistDataGridUtils.TABLE_ROW_SELECTION_COLUMN.id);
 
     expect(wrapper).toMatchSnapshot();
   });

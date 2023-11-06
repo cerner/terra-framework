@@ -272,7 +272,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
-    expect(columnHeader.props().onMouseDown).toBeDefined();
+    expect(columnHeader.props().onMouseDown).toBeUndefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
@@ -313,6 +313,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = mountWithIntl(
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
+        isSelectable
       />,
     );
     wrapper.find('.column-header').simulate('mousedown');

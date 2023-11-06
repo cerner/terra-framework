@@ -183,7 +183,6 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   aria-sort="ascending"
   className="column-header"
   key="Column-0"
-  onMouseDown={[Function]}
   role="columnheader"
   scope="col"
   style={

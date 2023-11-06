@@ -302,7 +302,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   <th
                     className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -396,7 +395,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   <th
                     className="column-header"
                     key="Column-0"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -483,7 +481,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   <th
                     className="column-header"
                     key="Column-1"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -571,7 +568,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   <th
                     className="column-header"
                     key="Column-2"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -778,20 +774,20 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -856,19 +852,19 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -935,20 +931,20 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -1444,7 +1440,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   <th
                     className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -1538,7 +1533,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   <th
                     className="column-header"
                     key="Column-0"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -1625,7 +1619,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   <th
                     className="column-header"
                     key="Column-1"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -1713,7 +1706,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   <th
                     className="column-header"
                     key="Column-2"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -1919,20 +1911,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -1997,19 +1989,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -2076,20 +2068,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -2337,19 +2329,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -2414,19 +2406,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -2489,20 +2481,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -2750,19 +2742,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -2827,19 +2819,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -2902,20 +2894,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -3163,19 +3155,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -3240,19 +3232,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -3315,19 +3307,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -3691,7 +3683,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                   <th
                     className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -3785,7 +3776,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                   <th
                     className="column-header"
                     key="Column-0"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -3872,7 +3862,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                   <th
                     className="column-header"
                     key="Column-1"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -3960,7 +3949,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                   <th
                     className="column-header"
                     key="Column-2"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -4481,7 +4469,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     <th
                       className="column-header pinned"
                       key="table-rowSelectionColumn"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -4575,7 +4562,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     <th
                       className="column-header"
                       key="Column-0"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -4662,7 +4648,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     <th
                       className="column-header"
                       key="Column-1"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -4750,7 +4735,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     <th
                       className="column-header"
                       key="Column-2"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -4956,20 +4940,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelectable={false}
                   isSelected={false}
-                  key="1_table-rowSelectionColumn"
+                  key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -5034,19 +5018,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
-                  key="1_Column-0"
+                  key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -5113,20 +5097,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="1_Column-1"
+                  key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -5374,19 +5358,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelected={false}
-                  key="2_table-rowSelectionColumn"
+                  key="2_Column-0"
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -5451,19 +5435,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
-                  key="2_Column-0"
+                  key="2_Column-1"
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -5526,20 +5510,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="2_Column-1"
+                  key="2_Column-2"
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -5787,19 +5771,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelected={false}
-                  key="3_table-rowSelectionColumn"
+                  key="3_Column-0"
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -5864,19 +5848,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
-                  key="3_Column-0"
+                  key="3_Column-1"
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -5939,20 +5923,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="3_Column-1"
+                  key="3_Column-2"
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -6200,19 +6184,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={true}
                   isSelected={false}
-                  key="4_table-rowSelectionColumn"
+                  key="4_Column-0"
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -6277,19 +6261,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="4_Column-0"
+                  key="4_Column-1"
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -6352,19 +6336,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="4_Column-1"
+                  key="4_Column-2"
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -6859,7 +6843,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   <th
                     className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -6953,7 +6936,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   <th
                     className="column-header"
                     key="Column-0"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -7040,7 +7022,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   <th
                     className="column-header"
                     key="Column-1"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -7128,7 +7109,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   <th
                     className="column-header"
                     key="Column-2"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -7335,20 +7315,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -7413,19 +7393,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -7492,20 +7472,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -7753,19 +7733,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -7830,19 +7810,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -7905,20 +7885,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -8166,19 +8146,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -8243,19 +8223,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -8318,20 +8298,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -8579,19 +8559,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -8656,19 +8636,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -8731,19 +8711,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -9240,7 +9220,6 @@ Array [
                     <th
                       className="column-header pinned"
                       key="Column-0"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -9328,7 +9307,6 @@ Array [
                     <th
                       className="column-header pinned"
                       key="Column-1"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -9426,7 +9404,6 @@ Array [
                     <th
                       className="column-header"
                       key="Column-2"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -11168,7 +11145,6 @@ Array [
                     <th
                       className="column-header pinned"
                       key="Column-0"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -11256,7 +11232,6 @@ Array [
                     <th
                       className="column-header pinned"
                       key="Column-1"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -11354,7 +11329,6 @@ Array [
                     <th
                       className="column-header"
                       key="Column-2"
-                      onMouseDown={[Function]}
                       role="columnheader"
                       scope="col"
                       style={
@@ -13209,7 +13183,6 @@ exports[`Table verifies row selection column header not selectable without callb
                   <th
                     className="column-header pinned"
                     key="Column-0"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -13296,7 +13269,6 @@ exports[`Table verifies row selection column header not selectable without callb
                   <th
                     className="column-header pinned"
                     key="Column-1"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -13393,7 +13365,6 @@ exports[`Table verifies row selection column header not selectable without callb
                   <th
                     className="column-header"
                     key="Column-2"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -13598,20 +13569,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -13676,19 +13647,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -13755,20 +13726,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -14015,19 +13986,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -14092,19 +14063,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -14167,20 +14138,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -14427,19 +14398,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -14504,19 +14475,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -14579,20 +14550,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -14839,19 +14810,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -14916,19 +14887,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -14991,19 +14962,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -15502,7 +15473,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <th
                     className="column-header pinned"
                     key="table-rowSelectionColumn"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -15587,7 +15557,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <th
                     className="column-header pinned"
                     key="Column-0"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -15674,7 +15643,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <th
                     className="column-header pinned"
                     key="Column-1"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -15771,7 +15739,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <th
                     className="column-header"
                     key="Column-2"
-                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -15976,20 +15943,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -16054,19 +16021,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -16133,20 +16100,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -16393,19 +16360,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -16470,19 +16437,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -16545,20 +16512,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -16805,19 +16772,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -16882,19 +16849,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -16957,20 +16924,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -17217,19 +17184,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -17294,19 +17261,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -17369,19 +17336,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
