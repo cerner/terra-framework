@@ -59,17 +59,6 @@ const propTypes = {
   columnResizeIncrement: PropTypes.number,
 
   /**
-   * Parameter used to access the table element for grid components.
-   * @private
-   */
-  gridRef: PropTypes.shape({ current: PropTypes.any }),
-  /**
-   * Parameter used to acccess the table's container element for grid components.
-   * @private
-   */
-  gridContainerRef: PropTypes.shape({ current: PropTypes.any }),
-
-  /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
    * Columns will be presented in the order given.
    */
@@ -196,8 +185,6 @@ function Table(props) {
     isStriped,
     rowHeaderIndex,
     intl,
-    gridRef,
-    gridContainerRef,
   } = props;
 
   if (pinnedColumns.length === 0) {
@@ -371,18 +358,18 @@ function Table(props) {
   // -------------------------------------
 
   const handleTableRef = useCallback((node) => {
-    if (gridRef) {
-      gridRef.current = node;
+    if (gridContext.tableRef) {
+      gridContext.tableRef.current = node;
     }
     tableRef.current = node;
-  }, [gridRef]);
+  }, [gridContext.tableRef]);
 
   const handleContainerRef = useCallback((node) => {
-    if (gridContainerRef) {
-      gridContainerRef.current = node;
+    if (gridContext.tableContainerRef) {
+      gridContext.tableContainerRef.current = node;
     }
     tableContainerRef.current = node;
-  }, [gridContainerRef]);
+  }, [gridContext.tableContainerRef]);
 
   // -------------------------------------
   // event handlers

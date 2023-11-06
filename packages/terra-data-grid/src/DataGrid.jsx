@@ -169,7 +169,6 @@ const DataGrid = injectIntl((props) => {
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
   // Aria live region message management
-  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
 
   // Define ColumnContext Provider value object
@@ -474,7 +473,13 @@ const DataGrid = injectIntl((props) => {
       id={id}
       className={cx('data-grid-container')}
     >
-      <GridContext.Provider value={{ role: GridConstants.GRID, setCellAriaLiveMessage, setColumnHeaderAriaLiveMessage }}>
+      <GridContext.Provider value={{
+        role: GridConstants.GRID,
+        setCellAriaLiveMessage,
+        tableRef: grid,
+        tableContainerRef,
+      }}
+      >
         <Table
           id={`${id}-table`}
           rows={dataGridRows}
@@ -495,11 +500,8 @@ const DataGrid = injectIntl((props) => {
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
           isStriped
-          gridRef={grid}
-          gridContainerRef={tableContainerRef}
         />
       </GridContext.Provider>
-      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );
