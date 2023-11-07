@@ -3,12 +3,16 @@
 exports[`FlowsheetDataGrid renders the row header column as pinned and remaining columns as overflow and all columns as not resizable 1`] = `
 <div
   className="flowsheet-data-grid-container"
+  onKeyUp={[Function]}
 >
   <ForwardRef
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     id="test-terra-flowsheet-data-grid"
+    onCellRangeSelect={[Function]}
+    onCellSelect={[Function]}
+    onClearSelection={[Function]}
     overflowColumns={
       Array [
         Object {
@@ -95,18 +99,26 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
       ]
     }
   />
+  <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
+  />
 </div>
 `;
 
 exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell contents with a "No results" visual indicator and hidden text 1`] = `
 <div
   className="flowsheet-data-grid-container"
+  onKeyUp={[Function]}
 >
   <ForwardRef
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     id="test-terra-flowsheet-data-grid"
+    onCellRangeSelect={[Function]}
+    onCellSelect={[Function]}
+    onClearSelection={[Function]}
     overflowColumns={
       Array [
         Object {
@@ -237,6 +249,10 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
         },
       ]
     }
+  />
+  <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
   />
 </div>
 `;

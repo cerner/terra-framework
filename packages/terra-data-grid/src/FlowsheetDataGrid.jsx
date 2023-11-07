@@ -1,7 +1,10 @@
-import React, { useMemo } from 'react';
+import React, {
+  useState, useCallback, useEffect, useMemo, useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
+import * as KeyCode from 'keycode-js';
 
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 
@@ -69,6 +72,12 @@ const propTypes = {
   onClearSelectedCells: PropTypes.func,
 
   /**
+   * Callback function that is called when a range of selectable cells is selected. Parameters:
+   * @param {array} cells - Array of cells each containing a rowId and columnId, both as strings.
+   */
+  onCellRangeSelect: PropTypes.func,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -95,8 +104,14 @@ function FlowsheetDataGrid(props) {
     rowHeight,
     onCellSelect,
     onClearSelectedCells,
+    onCellRangeSelect,
     intl,
   } = props;
+
+  const anchorCell = useRef(null);
+  const selectedCells = useRef([]);
+  const [cellSelectionAriaLiveMessage, setCellSelectionAriaLiveMessage] = useState(null);
+  const inShiftDirectionalMode = useRef(false);
 
   const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
   const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
@@ -128,8 +143,139 @@ function FlowsheetDataGrid(props) {
     return newRows;
   }, [intl, rows]);
 
+  useEffect(() => {
+    const previousSelectedCells = [...selectedCells.current];
+    const newSelectedCells = [];
+    rows.forEach((row) => {
+      row.cells.forEach((cell, cellIndex) => {
+        if (cell.isSelected) {
+          newSelectedCells.push({ rowId: row.id, columnId: columns[cellIndex].id });
+        }
+      });
+    });
+    selectedCells.current = [...newSelectedCells];
+
+    if (!selectedCells.current.length) {
+      anchorCell.current = null;
+    }
+
+    if (previousSelectedCells.length > 0 && selectedCells.current.length === 0) {
+      setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-cells-selected' }));
+    } else if (selectedCells.current.length) {
+      setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.cells-selected' }, { cellCount: selectedCells.current.length }));
+    }
+  }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
+
+  const handleClearSelectedCells = useCallback(() => {
+    if (onClearSelectedCells) {
+      onClearSelectedCells();
+    }
+  }, [onClearSelectedCells]);
+
+  const selectCellRange = useCallback((rowIndex, columnIndex) => {
+    const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
+    const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
+
+    // Determine the boundaries of selected region.
+    const rowIndexTopBound = Math.min(anchorRowIndex, rowIndex - 1);
+    const rowIndexBottomBound = Math.max(anchorRowIndex, rowIndex - 1);
+    const columnIndexLeftBound = Math.min(anchorColumnIndex, columnIndex);
+    const columnIndexRightBound = Math.max(anchorColumnIndex, columnIndex);
+
+    const cellsToSelect = [];
+    for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
+      const rowId = rows[rowIdx].id;
+      for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
+        const columnId = columns[colIdx].id;
+        cellsToSelect.push({ rowId, columnId });
+      }
+    }
+
+    if (onCellRangeSelect) {
+      onCellRangeSelect(cellsToSelect);
+    }
+  }, [rows, columns, onCellRangeSelect]);
+
+  const handleCellSelection = useCallback((selectionDetails) => {
+    // Exclude the row header column.
+    if (!selectionDetails.isCellSelectable || selectionDetails.columnIndex === 0) {
+      return;
+    }
+
+    if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
+      selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
+    } else if (onCellSelect) {
+      anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
+      onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
+    }
+  }, [onCellSelect, selectCellRange]);
+
+  const handleCellRangeSelection = useCallback((rowIndex, columnIndex, direction) => {
+    // Exclude the row header column as an eligible anchor/start cell.
+    if (columnIndex <= 0 && !inShiftDirectionalMode.current) {
+      return;
+    }
+
+    if (!inShiftDirectionalMode.current) {
+      // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range if one does not exist.
+      inShiftDirectionalMode.current = true;
+      if (anchorCell.current === null) {
+        anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
+      }
+    }
+
+    let nextRowIndex = rowIndex;
+    let nextColumnIndex = columnIndex;
+
+    switch (direction) {
+      case KeyCode.KEY_UP:
+        nextRowIndex -= 1;
+        break;
+      case KeyCode.KEY_DOWN:
+        nextRowIndex += 1;
+        break;
+      case KeyCode.KEY_LEFT:
+        nextColumnIndex -= 1;
+        break;
+      case KeyCode.KEY_RIGHT:
+        nextColumnIndex += 1;
+        break;
+      default:
+        break;
+    }
+
+    // Reset to valid selectable index if outer bounds reached.
+    if (nextRowIndex <= 0) {
+      nextRowIndex = 1;
+    } else if (nextRowIndex > rows.length) {
+      nextRowIndex = rows.length;
+    }
+
+    if (nextColumnIndex <= 0) {
+      nextColumnIndex = 1;
+    } else if (nextColumnIndex >= columns.length) {
+      nextColumnIndex = columns.length - 1;
+    }
+
+    selectCellRange(nextRowIndex, nextColumnIndex);
+  }, [rows, columns, selectCellRange]);
+
+  const handleKeyUp = (event) => {
+    const key = event.keyCode;
+    switch (key) {
+      case KeyCode.KEY_SHIFT:
+        if (inShiftDirectionalMode.current) {
+          inShiftDirectionalMode.current = false;
+          anchorCell.current = null;
+        }
+        break;
+      default:
+    }
+  };
+
   return (
-    <div className={cx('flowsheet-data-grid-container')}>
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div className={cx('flowsheet-data-grid-container')} onKeyUp={handleKeyUp}>
       <DataGrid
         id={id}
         ariaLabel={ariaLabel}
@@ -141,9 +287,11 @@ function FlowsheetDataGrid(props) {
         overflowColumns={overflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
-        onCellSelect={onCellSelect}
-        onClearSelectedCells={onClearSelectedCells}
+        onCellSelect={handleCellSelection}
+        onClearSelection={handleClearSelectedCells}
+        onCellRangeSelect={handleCellRangeSelection}
       />
+      <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>
   );
 }
