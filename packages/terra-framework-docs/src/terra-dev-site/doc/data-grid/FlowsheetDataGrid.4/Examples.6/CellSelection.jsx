@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
-const DefaultFlowsheetDataGrid = () => {
+const CellSelection = () => {
   const gridDataJSON = {
     cols: [
       { id: 'Column-0', displayName: 'Vitals', isSelectable: false },
@@ -34,14 +34,14 @@ const DefaultFlowsheetDataGrid = () => {
           { content: 'Cardiac Index (L/min/m2)' },
           { content: '2.25' },
           { content: '2.28' },
-          { content: null },
+          { content: '2.8' },
         ],
       },
       {
         id: '4',
         cells: [
           { content: 'ICP (mmHg)' },
-          { content: null },
+          { content: '11' },
           { content: '11' },
           { content: '12' },
         ],
@@ -51,7 +51,7 @@ const DefaultFlowsheetDataGrid = () => {
         cells: [
           { content: 'CPP (mmHg)' },
           { content: '63' },
-          { content: null },
+          { content: '47' },
           { content: '48' },
         ],
       },
@@ -130,4 +130,4 @@ const DefaultFlowsheetDataGrid = () => {
   );
 };
 
-export default DefaultFlowsheetDataGrid;
+export default CellSelection;

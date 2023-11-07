@@ -3,9 +3,6 @@ import { Badge } from 'terra-grid/package.json?dev-site-package';
 
 import FlowsheetDataGridPropsTable from 'terra-data-grid/src/FlowsheetDataGrid?dev-site-props-table';
 
-import BasicFlowsheetDataGrid from './Examples.6/BasicFlowsheetDataGrid?dev-site-example';
-import FlowsheetDataGridResultsMissing from './Examples.6/FlowsheetDataGridResultsMissing?dev-site-example';
-
 <Badge />
 
 # Terra FlowsheetDataGrid
@@ -46,14 +43,25 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
  * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
 
 ## Examples
-<BasicFlowsheetDataGrid title= 'Basic Flowsheet Data Grid' />
-<FlowsheetDataGridResultsMissing
-  title= 'Flowsheet Data Grid with "No Result" Cells'
-  description= 'If the content of a cell is an empty string, "--", or null, it will be represented by a dash and presented to assistive technologies as "No result."'
-/>
+|Link to Example| Description|
+|-|-|
+|[BasicFlowsheetDataGrid](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/basic-flowsheet-data-grid)|An example of the Flowsheet Data Grid with basic keyboard interactions.|
+|[NoResultsCells](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/no-result-cells)|An example containing "No result" cells.|
+|[CellSelection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/cell-selection)|An example demonstrating the ability to select a single cell or range of cells.|
 
 ## Grid props table
 <FlowsheetDataGridPropsTable />
+
+### Column
+A column specifies the data to render a cell in the header row of the Flowsheet Data Grid.
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
+|**displayName**|string|optional|none|String of text to render within the column header cell.|
+|**hasError**|bool|optional|none|Boolean value indicating whether or not the column has an error in the data.|
+|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the column header is selectable.|
+|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
 
 ### Rows
 Rows define the cells rendered within the row as well as the row's selection properties.
