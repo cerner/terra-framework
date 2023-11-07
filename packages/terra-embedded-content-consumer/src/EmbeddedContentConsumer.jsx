@@ -144,12 +144,7 @@ class EmbeddedContentConsumer extends React.Component {
         || doc.body.scrollWidth > doc.body.clientWidth);
     };
 
-    const scrollingEnabled = () => {
-      if (this.xfcFrame?.iframe?.getAttribute('scrolling') === 'no') {
-        return false;
-      }
-      return true;
-    };
+    const scrollingEnabled = () => (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
 
     window.onload = () => {
       this.hasFocusableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${focusableElementSelector}`)].some(
@@ -160,7 +155,7 @@ class EmbeddedContentConsumer extends React.Component {
           && element.closest('[inert]') === null,
       );
 
-      if (scrollingEnabled() && isContentScrollable() && this.hasFocusableElement === false) {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasFocusableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
@@ -168,7 +163,7 @@ class EmbeddedContentConsumer extends React.Component {
     };
 
     window.onresize = () => {
-      if (scrollingEnabled() && isContentScrollable() && this.hasFocusableElement === false) {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasFocusableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
@@ -178,11 +173,11 @@ class EmbeddedContentConsumer extends React.Component {
     };
 
     this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
-      if (this.hasFocusableElement === true || !isContentScrollable()) {
+      if (this.hasFocusableElement || !isContentScrollable()) {
         return;
       }
 
-      if (scrollingEnabled() && isContentScrollable() && this.hasFocusableElement === false) {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasFocusableElement) {
         this.xfcFrame.iframe.className = cx('iframe-focus-style');
       }
     }, true);
