@@ -10,8 +10,4 @@
   .iframe-focus-style {
     outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed #000);
   }
-
-  .iframe-blur-style {
-    outline: var(--terra-embedded-content-consumer-blur-outline, none);
-  }
 }

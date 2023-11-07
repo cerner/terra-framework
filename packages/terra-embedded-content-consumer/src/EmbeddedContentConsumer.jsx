@@ -107,7 +107,6 @@ class EmbeddedContentConsumer extends React.Component {
 
     frameOptions.focusIndicator = {
       classNameFocusStyle: cx('iframe-focus-style'),
-      classNameBlurStyle: cx('iframe-blur-style'),
     };
 
     // Mount the provided source as the application into the content wrapper.
@@ -190,7 +189,7 @@ class EmbeddedContentConsumer extends React.Component {
 
     // Listen for blur event and callback function to apply the style
     this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', () => {
-      this.xfcFrame.iframe.className = cx('iframe-blur-style');
+      this.xfcFrame.iframe.removeAttribute('class');
     }, true);
   }
 
