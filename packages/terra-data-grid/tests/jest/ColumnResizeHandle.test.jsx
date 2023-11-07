@@ -99,15 +99,6 @@ describe('ColumnResizeHandle', () => {
     expect(wrapper.find('.resize-handle').props()['aria-valuenow']).toBe(200);
     expect(wrapper.find('.resize-handle').props()['aria-valuemin']).toBe(60);
     expect(wrapper.find('.resize-handle').props()['aria-valuemax']).toBe(300);
-  });
-
-  it('sets aria-label on focus', async () => {
-    const wrapper = mountWithIntl(
-      <ColumnResizeHandle />,
-    );
-
-    wrapper.find('.resize-handle').simulate('focus');
-
     expect(wrapper.find('.resize-handle').props()['aria-label']).toBe('Terra.worklist-data-grid.resize-handle-template');
   });
 
