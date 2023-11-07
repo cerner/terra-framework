@@ -4,14 +4,14 @@
 
 :local {
   .row {
-    position: relative;
-    display: flex;
     box-sizing: border-box;
+    display: flex;
+    position: relative;
 
-    &:not(.row-placeholder){
+    &:not(.row-placeholder) {
+      background-color: var(--terra-compact-interactive-list-row-background-color, #fefffe);
       border-bottom: var(--terra-compact-interactive-list-row-border-bottom, 1px solid #dedfe0);
       border-right: var(--terra-compact-interactive-list-row-border-right, 1px solid #dedfe0);
-      background-color: var(--terra-compact-interactive-list-row-background-color, #fefffe);
     }
   }
 }
