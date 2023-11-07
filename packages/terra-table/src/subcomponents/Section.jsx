@@ -20,6 +20,11 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * The section's row index position in the table.
    */
   sectionRowIndex: PropTypes.number,
@@ -99,6 +104,7 @@ const defaultProps = {
 function Section(props) {
   const {
     id,
+    tableId,
     sectionRowIndex,
     isCollapsible,
     isCollapsed,
@@ -130,6 +136,7 @@ function Section(props) {
         className={cx('header')}
       >
         <th
+          id={`${tableId}-${id}`}
           align="left"
           colSpan={displayedColumns.length}
           role="columnheader"
@@ -155,6 +162,8 @@ function Section(props) {
             key={row.id}
             height={rowHeight}
             id={row.id}
+            sectionId={!isHidden ? id : undefined}
+            tableId={tableId}
             cells={row.cells}
             ariaLabel={row.ariaLabel}
             hasRowSelection={hasRowSelection}

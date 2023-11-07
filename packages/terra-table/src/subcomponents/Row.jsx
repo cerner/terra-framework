@@ -19,6 +19,11 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * The row's position in the table. This is zero based.
    */
   rowIndex: PropTypes.number,
@@ -90,6 +95,7 @@ function Row(props) {
     height,
     hasRowSelection,
     id,
+    tableId,
     sectionId,
     isSelected,
     isTableStriped,
@@ -129,6 +135,7 @@ function Row(props) {
           rowIndex={rowIndex}
           columnIndex={0}
           sectionId={sectionId}
+          tableId={tableId}
           isSelected={isSelected}
           ariaLabel={ariaLabel}
           onCellSelect={onCellSelect}
@@ -142,6 +149,7 @@ function Row(props) {
           rowIndex={rowIndex}
           columnIndex={cellColumnIndex + columnIndexOffSet}
           sectionId={sectionId}
+          tableId={tableId}
           key={`${id}_${displayedColumns[cellColumnIndex].id}`}
           isSelected={!hasRowSelection && cellData.isSelected}
           isMasked={cellData.isMasked}

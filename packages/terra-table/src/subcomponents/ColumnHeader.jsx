@@ -9,6 +9,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * Data for columns. By default, columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(columnShape).isRequired,
@@ -46,6 +51,7 @@ const defaultProps = {
 
 const ColumnHeader = (props) => {
   const {
+    tableId,
     columns,
     headerHeight,
     tableHeight,
@@ -64,7 +70,7 @@ const ColumnHeader = (props) => {
         {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
             key={column.id}
-            id={column.id}
+            id={`${tableId}-${column.id}`}
             rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}

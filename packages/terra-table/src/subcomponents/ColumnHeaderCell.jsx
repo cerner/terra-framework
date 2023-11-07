@@ -184,6 +184,7 @@ const ColumnHeaderCell = (props) => {
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
+      id={id}
       ref={columnHeaderCell}
       key={id}
       className={cx('column-header', theme.className, {

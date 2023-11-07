@@ -6,6 +6,11 @@ import ColumnHeaderCell from './ColumnHeaderCell';
 
 const propTypes = {
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * Data for columns. By default, columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(columnShape).isRequired,
@@ -47,6 +52,7 @@ const propTypes = {
 
 const ColumnHeader = (props) => {
   const {
+    tableId,
     columns,
     headerHeight,
     tableHeight,
@@ -62,6 +68,7 @@ const ColumnHeader = (props) => {
   const buildColumn = (column, columnIndex) => (
     <ColumnHeaderCell
       key={column.id}
+      tableId={tableId}
       id={column.id}
       rowIndex={0}
       columnIndex={columnIndex}

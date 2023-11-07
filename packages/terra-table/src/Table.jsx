@@ -448,6 +448,7 @@ function Table(props) {
           </colgroup>
 
           <ColumnHeader
+            tableId={id}
             columns={tableColumns}
             hasColumnHeaders={hasColumnHeaders}
             headerHeight={columnHeaderHeight}
@@ -458,6 +459,7 @@ function Table(props) {
           {tableSections.map((section) => (
             <Section
               id={section.id}
+              tableId={id}
               key={section.id}
               sectionRowIndex={section.sectionRowIndex}
               isCollapsible={section.isCollapsible}
