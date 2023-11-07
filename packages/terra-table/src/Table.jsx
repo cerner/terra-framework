@@ -15,6 +15,7 @@ import GridContext, { GridConstants } from './utils/GridContext';
 import Row from './subcomponents/Row';
 import rowShape from './proptypes/rowShape';
 import validateRowHeaderIndex from './proptypes/validators';
+
 import styles from './Table.module.scss';
 
 const cx = classNames.bind(styles);
@@ -40,6 +41,22 @@ const propTypes = {
    * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
+
+  /**
+   * @private
+   * Column index for cell that can receive tab focus.
+   */
+  activeColumnIndex: PropTypes.number,
+  /**
+   * @private
+   * Specifies if resize handle should be active.
+   */
+  isActiveColumnResizing: PropTypes.bool,
+
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
@@ -149,6 +166,9 @@ function Table(props) {
     id,
     ariaLabelledBy,
     ariaLabel,
+    activeColumnIndex,
+    isActiveColumnResizing,
+    columnResizeIncrement,
     rows,
     pinnedColumns,
     overflowColumns,
@@ -194,7 +214,11 @@ function Table(props) {
   const selectedRows = useRef([]);
   const [rowSelectionAriaLiveMessage, setRowSelectionAriaLiveMessage] = useState(null);
   const [rowSelectionModeAriaLiveMessage, setRowSelectionModeAriaLiveMessage] = useState(null);
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets }), [pinnedColumnOffsets]);
+
+  // Aria live region message management
+  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
+
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets]);
 
   // Initialize column width properties
   const initializeColumn = (column) => ({
@@ -333,6 +357,20 @@ function Table(props) {
 
   // -------------------------------------
 
+  const handleTableRef = useCallback((node) => {
+    if (gridContext.tableRef) {
+      gridContext.tableRef.current = node;
+    }
+    tableRef.current = node;
+  }, [gridContext.tableRef]);
+
+  const handleContainerRef = useCallback((node) => {
+    if (gridContext.tableContainerRef) {
+      gridContext.tableContainerRef.current = node;
+    }
+    tableContainerRef.current = node;
+  }, [gridContext.tableContainerRef]);
+
   // -------------------------------------
   // event handlers
 
@@ -383,17 +421,35 @@ function Table(props) {
     setActiveIndex(null);
   };
 
+  const onResizeHandleChange = useCallback((columnIndex, increment) => {
+    const { minimumWidth, maximumWidth, width } = tableColumns[columnIndex];
+    const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
+
+    // Update the width for the column in the state variable
+    const newGridColumns = [...tableColumns];
+    newGridColumns[columnIndex].width = newColumnWidth;
+    setTableColumns(newGridColumns);
+
+    // Update the column and table width
+    tableRef.current.style.width = `${tableRef.current.offsetWidth + (newColumnWidth - width)}px`;
+
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(tableColumns[columnIndex].id, tableColumns[columnIndex].width);
+    }
+  }, [tableColumns, onColumnResize]);
+
   // -------------------------------------
 
   return (
     <div
-      ref={tableContainerRef}
+      ref={handleContainerRef}
       className={cx('table-container')}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
       <table
-        ref={tableRef}
+        ref={handleTableRef}
         id={id}
         role={gridContext.role}
         aria-labelledby={ariaLabelledBy}
@@ -412,12 +468,16 @@ function Table(props) {
           </colgroup>
 
           <ColumnHeader
+            isActiveColumnResizing={isActiveColumnResizing}
+            activeColumnIndex={activeColumnIndex}
             columns={tableColumns}
             hasColumnHeaders={hasColumnHeaders}
             headerHeight={columnHeaderHeight}
+            columnResizeIncrement={columnResizeIncrement}
             tableHeight={tableHeight}
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
+            onResizeHandleChange={onResizeHandleChange}
           />
           <tbody>
             {rows.map((row, index) => (
@@ -441,6 +501,7 @@ function Table(props) {
       </table>
       <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
+      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
     </div>
   );
 }

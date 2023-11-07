@@ -1,18 +1,21 @@
-import React, { useContext, useRef, useCallback } from 'react';
-import * as KeyCode from 'keycode-js';
-import { injectIntl } from 'react-intl';
-import classNames from 'classnames/bind';
+import React, {
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from 'react';
 import PropTypes from 'prop-types';
-
-import IconDown from 'terra-icon/lib/icon/IconDown';
-import IconError from 'terra-icon/lib/icon/IconError';
-import IconUp from 'terra-icon/lib/icon/IconUp';
+import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
+import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import { IconUp, IconDown, IconError } from 'terra-icon';
 
-import ColumnContext from '../utils/ColumnContext';
 import ColumnResizeHandle from './ColumnResizeHandle';
 import GridContext, { GridConstants } from '../utils/GridContext';
 import { SortIndicators } from '../proptypes/columnShape';
+import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -22,16 +25,6 @@ const propTypes = {
    * Required string representing a unique identifier for the column header cell.
    */
   id: PropTypes.string.isRequired,
-
-  /**
-   * String that specifies the column height. Any valid CSS height value accepted.
-  */
-  headerHeight: PropTypes.string.isRequired,
-
-  /**
-   * String that specifies the default width for columns in the table. Any valid CSS width value is accepted.
-   */
-  width: PropTypes.number.isRequired,
 
   /**
    * String of text to render within the column header cell.
@@ -60,6 +53,11 @@ const propTypes = {
   maximumWidth: PropTypes.number,
 
   /**
+   * Boolean value indicating whether or not the header cell is focused.
+   */
+  isActive: PropTypes.bool,
+
+  /**
    * Boolean value indicating whether or not the column header is selectable.
   */
   isSelectable: PropTypes.bool,
@@ -70,17 +68,37 @@ const propTypes = {
   isResizable: PropTypes.bool,
 
   /**
-   * Height of the parent table.
-   */
+    * Height of the parent table.
+    */
   tableHeight: PropTypes.number,
 
   /**
-   * The cell's row position in the table. This is zero based.
+   * Boolean value indicating whether or not the column header is resizable.
+   */
+  isResizeActive: PropTypes.bool,
+
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
+
+  /**
+   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
+   */
+  width: PropTypes.number.isRequired,
+
+  /**
+   * String that specifies the column height. Any valid CSS height value accepted.
+  */
+  headerHeight: PropTypes.string.isRequired,
+
+  /**
+   * The cell's row position in the grid. This is zero based.
    */
   rowIndex: PropTypes.number,
 
   /**
-   * The cell's column position in the table. This is zero based.
+   * The cell's column position in the grid. This is zero based.
    */
   columnIndex: PropTypes.number,
 
@@ -97,6 +115,11 @@ const propTypes = {
   onResizeMouseDown: PropTypes.func,
 
   /**
+   * Function that is called when the the keyboard is used to adjust the column size.
+   */
+  onResizeHandleChange: PropTypes.func,
+
+  /**
    * @private
    * Object containing intl APIs
    */
@@ -106,7 +129,9 @@ const propTypes = {
 const defaultProps = {
   hasError: false,
   isSelectable: false,
+  isActive: false,
   isResizable: false,
+  isResizeActive: false,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -115,59 +140,111 @@ const ColumnHeaderCell = (props) => {
     displayName,
     sortIndicator,
     hasError,
-    isResizable,
+    isActive,
     isSelectable,
+    isResizable,
     tableHeight,
+    isResizeActive,
+    columnResizeIncrement,
     width,
     minimumWidth,
     maximumWidth,
     headerHeight,
-    intl,
-    columnIndex,
     onColumnSelect,
-    onResizeMouseDown,
+    intl,
     rowIndex,
+    columnIndex,
+    onResizeMouseDown,
+    onResizeHandleChange,
   } = props;
 
   const columnContext = useContext(ColumnContext);
   const gridContext = useContext(GridContext);
-  const theme = useContext(ThemeContext);
-  const columnHeaderCell = useRef();
+
+  const columnHeaderCellRef = useRef();
+  const columnHeaderCellButtonRef = useRef();
+
+  const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
   const isGridContext = gridContext.role === GridConstants.GRID;
 
+  const columnHeaderFocusArea = useCallback(() => (columnHeaderCellButtonRef.current ? columnHeaderCellButtonRef.current : columnHeaderCellRef.current), []);
+
+  useEffect(() => {
+    if (isActive) {
+      if (isResizable && isResizeActive) {
+        setResizeHandleActive(true);
+      } else {
+        columnHeaderFocusArea().focus();
+        setResizeHandleActive(false);
+      }
+    } else {
+      setResizeHandleActive(false);
+    }
+  }, [columnHeaderFocusArea, isActive, isResizable, isResizeActive]);
+
   const onResizeHandleMouseDown = useCallback((event) => {
+    event.stopPropagation();
     if (onResizeMouseDown) {
-      onResizeMouseDown(event, columnIndex, columnHeaderCell.current.offsetWidth);
+      onResizeMouseDown(event, columnIndex, columnHeaderCellRef.current.offsetWidth);
     }
   }, [columnIndex, onResizeMouseDown]);
 
+  // Restore focus to column header after resize action is completed.
+  const onResizeHandleMouseUp = useCallback(() => {
+    columnHeaderFocusArea().focus();
+    setResizeHandleActive(false);
+  }, [columnHeaderFocusArea]);
+
+  // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
     onColumnSelect(id, { row: rowIndex, col: columnIndex });
     event.stopPropagation();
   };
 
+  // Handle column header selection via the space bar.
   const handleKeyDown = (event) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
-        onColumnSelect(id, { row: rowIndex, col: columnIndex });
+        if (isSelectable && onColumnSelect) {
+          onColumnSelect(id, { row: rowIndex, col: columnIndex }, isSelectable);
+        }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
+        break;
+      case KeyCode.KEY_LEFT:
+        if (isResizable && isResizeHandleActive && isGridContext) {
+          columnHeaderFocusArea().focus();
+          setResizeHandleActive(false);
+          event.stopPropagation();
+          event.preventDefault();
+        }
+        break;
+      case KeyCode.KEY_RIGHT:
+        if (isResizable && !isResizeHandleActive && isGridContext) {
+          setResizeHandleActive(true);
+          event.stopPropagation();
+          event.preventDefault();
+        }
         break;
       default:
     }
   };
 
+  let sortIndicatorIcon;
   const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.table.columnError' })} className={cx('error-icon')} />;
 
-  let sortIndicatorIcon;
+  // Add the sort indicator based on the sort direction
   if (sortIndicator === SortIndicators.ASCENDING) {
     sortIndicatorIcon = <IconUp />;
   } else if (sortIndicator === SortIndicators.DESCENDING) {
     sortIndicatorIcon = <IconDown />;
   }
+
+  // Retrieve current theme from context
+  const theme = useContext(ThemeContext);
 
   const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
   const dividerLeftEdge = width - 1;
@@ -181,10 +258,18 @@ const ColumnHeaderCell = (props) => {
     )
     : null;
 
+  // For tables, we want elements to be tabbable when selectable, but not anytime else.
+  let columnTabIndex = isSelectable ? 0 : undefined;
+
+  if (isGridContext) {
+    // For grids, we only want 1 tab stop. We then define the focus behavior in DataGrid.
+    columnTabIndex = isSelectable && displayName ? -1 : undefined;
+  }
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
-      ref={columnHeaderCell}
+      ref={(columnHeaderCellRef)}
       key={id}
       className={cx('column-header', theme.className, {
         selectable: isSelectable,
@@ -195,14 +280,13 @@ const ColumnHeaderCell = (props) => {
       scope="col"
       aria-sort={sortIndicator}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
-      onKeyDown={isSelectable && onColumnSelect ? handleKeyDown : undefined}
-      // eslint-disable-next-line react/forbid-dom-props
-      style={{ height: headerHeight, left: cellLeftEdge }}
+      onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
+      style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
       <div
         className={cx('header-container')}
-        role={displayName && 'button'}
-        tabIndex={(!isGridContext && isSelectable) ? 0 : undefined}
+        {...isSelectable && displayName && { ref: columnHeaderCellButtonRef, role: 'button' }}
+        tabIndex={columnTabIndex}
       >
         {errorIcon}
         <span>{displayName}</span>
@@ -213,10 +297,15 @@ const ColumnHeaderCell = (props) => {
         columnIndex={columnIndex}
         columnText={displayName}
         columnWidth={width}
+        columnResizeIncrement={columnResizeIncrement}
+        isActive={isResizeHandleActive}
+        setIsActive={setResizeHandleActive}
         height={tableHeight}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}
+        onResizeMouseUp={onResizeHandleMouseUp}
+        onResizeHandleChange={onResizeHandleChange}
       />
       )}
       {pinnedColumnsDivider}

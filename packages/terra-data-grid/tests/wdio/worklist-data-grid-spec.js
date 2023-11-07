@@ -1,4 +1,4 @@
-const defaultSelector = '#default-terra-worklist-data-grid';
+const defaultSelector = '#default-terra-worklist-data-grid-table';
 
 const holdDownShiftKey = () => {
   browser.performActions([{
@@ -397,8 +397,8 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
   });
 
   describe('with pinned columns', () => {
-    const pinnedColumnsSelector = '#pinned-columns';
-    const pinnedColumnsWithRowSelectionSelector = '#pinned-columns-with-row-selection';
+    const pinnedColumnsSelector = '#pinned-columns-table';
+    const pinnedColumnsWithRowSelectionSelector = '#pinned-columns-with-row-selection-table';
 
     it('selects the current cell with spacebar', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/pinned-columns');

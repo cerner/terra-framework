@@ -1,22 +1,17 @@
 import React, {
-  useState, useContext, useRef, useCallback, useEffect, useMemo, forwardRef, useImperativeHandle,
+  useState, useRef, useCallback, forwardRef, useImperativeHandle, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import ResizeObserver from 'resize-observer-polyfill';
-import ThemeContext from 'terra-theme-context';
+import Table, { GridConstants, GridContext } from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import ColumnHeader from './subcomponents/ColumnHeader';
-import Row from './subcomponents/Row';
 import rowShape from './proptypes/rowShape';
 import { columnShape } from './proptypes/columnShape';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
-import ColumnContext from './utils/ColumnContext';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
-import ERRORS from './utils/constants';
 import './_elementPolyfill';
 
 const cx = classNames.bind(styles);
@@ -114,6 +109,11 @@ const propTypes = {
   onRangeSelection: PropTypes.func,
 
   /**
+   * Callback function that is called when you click on the row selection header.
+  */
+  onRowSelectionHeaderSelect: PropTypes.func,
+
+  /**
    * Callback function that is called when a cell range selection occurs. Parameters:
    * @param {number} rowIndex RowIndex of the cell from which the range selection was triggered.
    * @param {number} columnIndex ColumnIndex of the cell from which the range selection was triggered.
@@ -155,44 +155,27 @@ const DataGrid = injectIntl((props) => {
     onCellSelect,
     onClearSelection,
     onRangeSelection,
+    onRowSelectionHeaderSelect,
     onCellRangeSelect,
     hasSelectableRows,
     rowHeaderIndex,
   } = props;
 
-  if (pinnedColumns.length === 0) {
-    // eslint-disable-next-line no-console
-    console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
-  }
-
-  // Default column size constraints
-  const defaultColumnMinimumWidth = 60;
-  const defaultColumnMaximumWidth = 300;
-
-  const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
-
-  // Initialize column width properties
-  const initializeColumn = (column) => ({
-    ...column,
-    width: column.width || defaultColumnWidth,
-    minimumWidth: column.minimumWidth || defaultColumnMinimumWidth,
-    maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
-  });
-
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
-  const [dataGridColumns, setDataGridColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
-  // Manage column resize
-  const [tableHeight, setTableHeight] = useState(0);
-  const [activeIndex, setActiveIndex] = useState(null);
-  const activeColumnPageX = useRef(0);
-  const activeColumnWidth = useRef(200);
-  const tableWidth = useRef(0);
+  // By default, all grid-based components have selectable cells.
+  const dataGridRows = rows.map((row) => ({
+    ...row,
+    cells: row.cells.map((cell) => ({
+      ...cell,
+      isSelectable: cell.isSelectable !== false,
+    })),
+  }));
 
   // Reference variable for WorklistDataGrid table element
   const grid = useRef();
   const gridContainerRef = useRef();
-
+  const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
   const [checkResizable, setCheckResizable] = useState(false);
@@ -201,12 +184,16 @@ const DataGrid = injectIntl((props) => {
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
   // Aria live region message management
-  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
 
+  const gridContextValue = useMemo(() => ({
+    role: GridConstants.GRID,
+    setCellAriaLiveMessage,
+    tableRef: grid,
+    tableContainerRef,
+  }), [grid, tableContainerRef]);
+
   // Define ColumnContext Provider value object
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage, setCellAriaLiveMessage }), [pinnedColumnOffsets]);
-  const theme = useContext(ThemeContext);
 
   // -------------------------------------
   // functions
@@ -244,85 +231,24 @@ const DataGrid = injectIntl((props) => {
   );
 
   // -------------------------------------
-  // callback Hooks
-
-  const gridRef = useCallback((node) => {
-    if (!node) {
-      return;
-    }
-
-    grid.current = node;
-
-    const resizeObserver = new ResizeObserver(() => {
-      // Update table height state variable
-      setTableHeight(grid.current.offsetHeight - 1);
-    });
-
-    // Register resize observer to detect size changes
-    resizeObserver.observe(node);
-  }, []);
-
-  // -------------------------------------
-  // useEffect Hooks
-
-  // useEffect for row selection
-  useEffect(() => {
-    setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasSelectableRows]);
-
-  // useEffect for row displayed columns
-  useEffect(() => {
-    setDataGridColumns(displayedColumns.map((column) => initializeColumn(column)));
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pinnedColumns, overflowColumns]);
-
-  // useEffect to calculate pinned column offsets
-  useEffect(() => {
-    const offsetArray = [];
-    let cumulativeOffset = 0;
-    let lastPinnedColumnIndex;
-
-    // if grid has selectable rows but no pinned columns, then set the offset of the first column to 0
-    if (hasSelectableRows && pinnedColumns.length === 0) {
-      lastPinnedColumnIndex = 0;
-      offsetArray.push(cumulativeOffset);
-      setPinnedColumnOffsets(offsetArray);
-      return;
-    }
-
-    if (pinnedColumns.length > 0) {
-      offsetArray.push(cumulativeOffset);
-
-      lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
-
-      // eslint-disable-next-line array-callback-return
-      dataGridColumns.slice(0, lastPinnedColumnIndex).map((pinnedColumn) => {
-        cumulativeOffset += pinnedColumn.width;
-        offsetArray.push(cumulativeOffset);
-      });
-    }
-    setPinnedColumnOffsets(offsetArray);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [dataGridColumns]);
-
-  // -------------------------------------
 
   const handleMoveCellFocus = (fromCell, toCell) => {
     // Obtain coordinate rectangles for grid container, column header, and new cell selection
-    const gridContainerRect = gridContainerRef.current.getBoundingClientRect();
+    const gridContainerRect = tableContainerRef.current.getBoundingClientRect();
     const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
     const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
 
     // Calculate horizontal scroll offset for right boundary
     if (nextCellRect.right > gridContainerRect.right) {
-      gridContainerRef.current.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
+      tableContainerRef.current.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
     } else {
       // Calculate horizontal scroll offset for left boundary
       let scrollOffsetX = 0;
-      if (pinnedColumnOffsets.length > 0) {
-        if (toCell.col > pinnedColumnOffsets.length - 1) {
-          const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[pinnedColumnOffsets.length - 1].getBoundingClientRect();
+      const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
+      const lastPinnedColumnIndex = pinnedColumns.length - 1 + pinnedColumnOffset;
+      if (lastPinnedColumnIndex >= 0) {
+        if (toCell.col > lastPinnedColumnIndex) {
+          const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[lastPinnedColumnIndex].getBoundingClientRect();
           scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
         }
       } else {
@@ -330,28 +256,35 @@ const DataGrid = injectIntl((props) => {
       }
 
       if (scrollOffsetX < 0) {
-        gridContainerRef.current.scrollBy(scrollOffsetX, 0);
+        tableContainerRef.current.scrollBy(scrollOffsetX, 0);
       }
     }
 
     // Calculate vertical scroll offset
     const scrollOffsetY = nextCellRect.top - columnHeaderRect.bottom;
     if (scrollOffsetY < 0) {
-      gridContainerRef.current.scrollBy(0, scrollOffsetY);
+      tableContainerRef.current.scrollBy(0, scrollOffsetY);
     }
 
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
-  const handleColumnSelect = useCallback((columnId, cellCoordinates, isSelectable) => {
-    setFocusedRow(cellCoordinates.row);
-    setFocusedCol(cellCoordinates.col);
+  const handleColumnSelect = useCallback((columnId) => {
+    const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
+    setFocusedCol(columnIndex);
 
-    // Notify consumers of column header selection
-    if (isSelectable && onColumnSelect) {
+    if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect]);
+  }, [onColumnSelect, displayedColumns]);
+
+  const handleRowSelectionHeaderSelect = useCallback(() => {
+    setFocusedCol(0);
+    setFocusedRow(0);
+    if (onRowSelectionHeaderSelect) {
+      onRowSelectionHeaderSelect();
+    }
+  }, [onRowSelectionHeaderSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     setFocusedRow(selectionDetails.rowIndex);
@@ -379,11 +312,11 @@ const DataGrid = injectIntl((props) => {
       && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
       && window.getComputedStyle(element).visibility !== 'hidden'
       && element.closest('[inert]') === null
-      && (element.id === id || !grid.current.contains(element)),
+      && (element.id === id || !gridContainerRef.current.contains(element)),
     );
 
     // Identify index of the active element in the DOM excluding data grid children
-    const index = focusableElements.indexOf(grid.current);
+    const index = focusableElements.indexOf(gridContainerRef.current);
     if (index > -1) {
       // Move focus outside data grid
       const indexOffset = moveForward ? 1 : -1;
@@ -525,66 +458,6 @@ const DataGrid = injectIntl((props) => {
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const onResizeMouseDown = useCallback((event, index, resizeColumnWidth) => {
-    // Store current table and column values for resize calculations
-    tableWidth.current = grid.current.offsetWidth;
-    activeColumnPageX.current = event.pageX;
-    activeColumnWidth.current = resizeColumnWidth;
-
-    setFocusedRow(0);
-    setFocusedCol(index);
-
-    // Set the active index to the selected column
-    setActiveIndex(index);
-  }, []);
-
-  const onResizeHandleChange = useCallback((columnIndex, increment) => {
-    const { minimumWidth, maximumWidth, width } = dataGridColumns[columnIndex];
-    const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
-
-    // Update the width for the column in the state variable
-    const newGridColumns = [...dataGridColumns];
-    newGridColumns[columnIndex].width = newColumnWidth;
-    setDataGridColumns(newGridColumns);
-
-    // Update the column and table width
-    grid.current.style.width = `${grid.current.offsetWidth + (newColumnWidth - width)}px`;
-
-    // Notify consumers of the new column width
-    if (onColumnResize) {
-      onColumnResize(dataGridColumns[columnIndex].id, dataGridColumns[columnIndex].width);
-    }
-  }, [dataGridColumns, onColumnResize]);
-
-  const onMouseMove = (event) => {
-    if (activeIndex == null) {
-      return;
-    }
-
-    // Ensure the new column width falls within the range of the minimum and maximum values
-    const diffX = event.pageX - activeColumnPageX.current;
-    const { minimumWidth, maximumWidth } = dataGridColumns[activeIndex];
-    const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
-
-    // Update the width for the column in the state variable
-    const newGridColumns = [...dataGridColumns];
-    newGridColumns[activeIndex].width = newColumnWidth;
-    setDataGridColumns(newGridColumns);
-
-    // Update the column and table width
-    grid.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
-  };
-
-  const onMouseUp = () => {
-    // Notify consumers of the new column width
-    if (onColumnResize) {
-      onColumnResize(dataGridColumns[activeIndex].id, dataGridColumns[activeIndex].width);
-    }
-
-    // Remove active index
-    setActiveIndex(null);
-  };
-
   const onMouseDown = () => {
     // Prevent focus event updates when triggered by mouse
     handleFocus.current = false;
@@ -615,55 +488,41 @@ const DataGrid = injectIntl((props) => {
   // -------------------------------------
 
   return (
-    <div ref={gridContainerRef} className={cx('data-grid-container')}>
-      <table
-        ref={gridRef}
-        id={id}
-        role="grid"
-        aria-labelledby={ariaLabelledBy}
-        aria-label={ariaLabel}
-        className={cx('data-grid', theme.className)}
-        onKeyDown={handleKeyDown}
-        onFocus={onFocus}
-        onBlur={onBlur}
-        onMouseDown={onMouseDown}
-        tabIndex={0}
-        {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
-      >
-        <ColumnContext.Provider
-          value={columnContextValue}
-        >
-          <ColumnHeader
-            columns={dataGridColumns}
-            headerHeight={columnHeaderHeight}
-            tableHeight={tableHeight}
-            activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
-            isActiveColumnResizing={focusedRow === 0 && checkResizable}
-            columnResizeIncrement={columnResizeIncrement}
-            onColumnSelect={handleColumnSelect}
-            onResizeMouseDown={onResizeMouseDown}
-            onResizeHandleChange={onResizeHandleChange}
-          />
-          <tbody>
-            {rows.map((row, index) => (
-              <Row
-                rowIndex={index + 1}
-                key={row.id}
-                height={rowHeight}
-                id={row.id}
-                isSelected={row.isSelected}
-                cells={row.cells}
-                ariaLabel={row.ariaLabel}
-                hasRowSelection={hasSelectableRows}
-                displayedColumns={displayedColumns}
-                rowHeaderIndex={rowHeaderIndex}
-                onCellSelect={handleCellSelection}
-              />
-            ))}
-          </tbody>
-        </ColumnContext.Provider>
-      </table>
-      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
+    <div
+      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
+      tabIndex={0}
+      ref={gridContainerRef}
+      onKeyDown={handleKeyDown}
+      onMouseDown={onMouseDown}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      id={id}
+      className={cx('data-grid-container')}
+    >
+      <GridContext.Provider value={gridContextValue}>
+        <Table
+          id={`${id}-table`}
+          rows={dataGridRows}
+          ariaLabelledBy={ariaLabelledBy}
+          ariaLabel={ariaLabel}
+          activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
+          isActiveColumnResizing={focusedRow === 0 && checkResizable}
+          columnResizeIncrement={columnResizeIncrement}
+          pinnedColumns={pinnedColumns}
+          overflowColumns={overflowColumns}
+          defaultColumnWidth={defaultColumnWidth}
+          columnHeaderHeight={columnHeaderHeight}
+          rowHeight={rowHeight}
+          rowHeaderIndex={rowHeaderIndex}
+          onColumnResize={onColumnResize}
+          onColumnSelect={handleColumnSelect}
+          onCellSelect={handleCellSelection}
+          onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
+          hasSelectableRows={hasSelectableRows}
+          isStriped
+        />
+      </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
     </div>
   );
