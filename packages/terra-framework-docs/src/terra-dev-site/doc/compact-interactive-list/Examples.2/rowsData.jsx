@@ -43,14 +43,6 @@ const rows = [
       { id: 'row_5-cell_3', content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
     ],
   },
-  {
-    id: 'row_6',
-    cells: [
-      { id: 'row_6-cell_1', content: ' ' },
-      { id: 'row_6-cell_2', content: 'Sbsq Observation Care/Day High Severity 99226 (6)' },
-      { id: 'row_6-cell_3', content: ' ' },
-    ],
-  },
 ];
 
 export default rows;

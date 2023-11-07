@@ -52,6 +52,12 @@ const propTypes = {
   numberOfColumns: PropTypes.number,
 
   /**
+   * By default the items go from top to bottom, then break to the next column.
+   * If flowVertically prop is set to false, items will flow left to right, then break to the next row.
+   */
+  flowVertically: PropTypes.bool,
+
+  /**
    * A string for container's width. Any valid css string. Defaults to '100%'.
    * In case when all the columns has their widths explicitly set to a number, the width of the list will be determined by the width of it's columns unless the flexGrow prop would allow them grow.
    */
@@ -92,6 +98,7 @@ const defaultProps = {
   numberOfColumns: 1,
   width: '100%',
   widthUnit: widthUnitTypes.PX,
+  flowVertically: true,
 };
 
 const CompactInteractiveList = (props) => {
@@ -102,6 +109,7 @@ const CompactInteractiveList = (props) => {
     columns,
     rows,
     numberOfColumns,
+    flowVertically,
     width,
     widthUnit,
     minimumWidth,
@@ -134,6 +142,28 @@ const CompactInteractiveList = (props) => {
     maxWidth: `${getListMaxWidth}${widthUnit}`,
   };
 
+  const numberOfRows = Math.ceil(rows.length / numberOfColumns);
+  const mapRows = () => {
+    let result = [];
+    if (flowVertically) {
+      for (let i = 0; i < numberOfRows; i += 1) {
+        for (let j = i; j < rows.length; j += numberOfRows) {
+          result.push(rows[j]);
+        }
+      }
+    } else {
+      result = [...rows];
+    }
+    // add placeholder rows
+    const placeholdersNumber = isFlexGrow ? (numberOfRows * numberOfColumns) - rows.length : 0;
+    for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
+      result.push({ id: `placeholder-row-${i}` });
+    }
+    return result;
+  };
+
+  const mappedRows = mapRows();
+
   return (
     <div
       className={cx('compact-interactive-list-container', theme.className)}
@@ -149,7 +179,7 @@ const CompactInteractiveList = (props) => {
         // eslint-disable-next-line react/forbid-dom-props
         style={style}
       >
-        {rows.map((row, index) => (
+        {mappedRows.map((row, index) => (
           <Row
             rowIndex={index + 1}
             key={row.id}

@@ -97,15 +97,17 @@ const Row = (props) => {
     minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthUnit}` : null,
   } : { width: `${rowWidth}${widthUnit}` };
 
+  const activeRow = cells && cells.length > 0;
+
   return (
     <div
       id={id}
       role="row"
-      className={cx('row', theme.className)}
+      className={cx('row', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
     >
-      {cells.map((cellData, index) => (
+      {activeRow && cells.map((cellData, index) => (
         <Cell
           key={cellData.id}
           column={columns[index]}
