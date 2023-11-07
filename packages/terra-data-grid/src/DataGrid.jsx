@@ -1,5 +1,5 @@
 import React, {
-  useState, useRef, useCallback, forwardRef, useImperativeHandle,
+  useState, useRef, useCallback, forwardRef, useImperativeHandle, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -185,6 +185,13 @@ const DataGrid = injectIntl((props) => {
 
   // Aria live region message management
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
+
+  const gridContextValue = useMemo(() => ({
+    role: GridConstants.GRID,
+    setCellAriaLiveMessage,
+    tableRef: grid,
+    tableContainerRef,
+  }), [grid, tableContainerRef]);
 
   // Define ColumnContext Provider value object
 
@@ -493,13 +500,7 @@ const DataGrid = injectIntl((props) => {
       id={id}
       className={cx('data-grid-container')}
     >
-      <GridContext.Provider value={{
-        role: GridConstants.GRID,
-        setCellAriaLiveMessage,
-        tableRef: grid,
-        tableContainerRef,
-      }}
-      >
+      <GridContext.Provider value={gridContextValue}>
         <Table
           id={`${id}-table`}
           rows={dataGridRows}
