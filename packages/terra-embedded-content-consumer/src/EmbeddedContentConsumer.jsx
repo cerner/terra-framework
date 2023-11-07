@@ -138,7 +138,7 @@ class EmbeddedContentConsumer extends React.Component {
       + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
       + "[contentEditable=true]:not([tabindex='-1'])";
 
-    const isContentScrollable = function () {
+    const isContentScrollable = () => {
       const doc = this.xfcFrame?.iframe?.contentWindow?.document;
       return (doc.documentElement.scrollHeight > doc.documentElement.clientHeight
         || doc.body.scrollHeight > doc.body.clientHeight
@@ -146,11 +146,9 @@ class EmbeddedContentConsumer extends React.Component {
         || doc.body.scrollWidth > doc.body.clientWidth);
     };
 
-    const scrollingEnabled = function () {
-      return (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
-    };
+    const scrollingEnabled = () => (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
 
-    window.onload = function () {
+    window.onload = () => {
       this.hasInteractableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${interactableElementSelector}`)].some(
         (element) => !element.hasAttribute('disabled')
           && !element.getAttribute('aria-hidden')
