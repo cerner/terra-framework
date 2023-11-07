@@ -9,8 +9,8 @@
     box-sizing: border-box;
 
     &:not(.row-placeholder){
-      border-bottom: var(--terra-compact-interactive-list-row-border, 1px solid #dedfe0);
-      border-right: var(--terra-compact-interactive-list-row-border, 1px solid #dedfe0);
+      border-bottom: var(--terra-compact-interactive-list-row-border-bottom, 1px solid #dedfe0);
+      border-right: var(--terra-compact-interactive-list-row-border-right, 1px solid #dedfe0);
       background-color: var(--terra-compact-interactive-list-row-background-color, #fefffe);
     }
   }

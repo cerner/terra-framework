@@ -4,14 +4,14 @@
 
 :local {
   .cell {
-    font-weight: normal;
-    padding: var(--terra-compact-interactive-list-cell-content-padding, 7px);
-    position: relative;
-    display: flex;
-    text-align: left;
     align-items: center;
+    display: flex;
+    font-weight: normal;
     overflow: hidden;
-
+    padding: var(--terra-compact-interactive-list-cell-content-padding, 7px);
+    position: relative;    
+    text-align: left; 
+    
     &:hover {
       background-color: var(--terra-compact-interactive-list-hover-background-color, #e0f2fb);
     }
