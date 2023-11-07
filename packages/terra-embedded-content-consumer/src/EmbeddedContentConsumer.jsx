@@ -138,7 +138,7 @@ class EmbeddedContentConsumer extends React.Component {
       + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
       + "[contentEditable=true]:not([tabindex='-1'])";
 
-    const isContentScrollable = () => {
+    const isContentScrollable = function () {
       const doc = this.xfcFrame?.iframe?.contentWindow?.document;
       return (doc.documentElement.scrollHeight > doc.documentElement.clientHeight
         || doc.body.scrollHeight > doc.body.clientHeight
@@ -146,7 +146,9 @@ class EmbeddedContentConsumer extends React.Component {
         || doc.body.scrollWidth > doc.body.clientWidth);
     };
 
-    const scrollingEnabled = () => (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
+    const scrollingEnabled = function () {
+      return (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
+    };
 
     window.onload = function () {
       this.hasInteractableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${interactableElementSelector}`)].some(
@@ -157,7 +159,7 @@ class EmbeddedContentConsumer extends React.Component {
           && element.closest('[inert]') === null,
       );
 
-      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
+      if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
@@ -165,7 +167,7 @@ class EmbeddedContentConsumer extends React.Component {
     };
 
     window.onresize = function () {
-      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
+      if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
@@ -174,18 +176,18 @@ class EmbeddedContentConsumer extends React.Component {
       }
     };
 
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
-      if (this.hasInteractableElement || !isContentScrollable()) {
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', function () {
+      if (this.hasInteractableElement === true || !isContentScrollable()) {
         return;
       }
 
-      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
+      if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
         this.xfcFrame.iframe.className = cx('iframe-focus-style');
       }
     }, true);
 
     // Listen for blur event and callback function to apply the style
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', () => {
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', function () {
       this.xfcFrame.iframe.removeAttribute('class');
     }, true);
   }
