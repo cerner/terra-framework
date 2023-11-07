@@ -119,9 +119,11 @@ class EmbeddedContentConsumer extends React.Component {
 
     // Handle srcdoc use case since xfc doesn't support srcdoc
     // and no postMessage between consumer and provider content
-    if (frameOptions.iframeAttrs.srcdoc) {
-      this.setupEventListenersForFrameSrcDoc();
-    }
+
+    // if (frameOptions.iframeAttrs.srcdoc) {
+    //   this.setupEventListenersForFrameSrcDoc();
+    // }
+    this.setupEventListenersForFrameSrcDoc();
 
     // Attach the event handlers to the xfc frame.
     this.addEventListener('xfc.launched', this.props.onLaunch);
@@ -132,7 +134,7 @@ class EmbeddedContentConsumer extends React.Component {
   }
 
   setupEventListenersForFrameSrcDoc() {
-    const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
+    const interactableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
       + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
       + "[contentEditable=true]:not([tabindex='-1'])";
 
@@ -146,8 +148,8 @@ class EmbeddedContentConsumer extends React.Component {
 
     const scrollingEnabled = () => (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
 
-    window.onload = () => {
-      this.hasFocusableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${focusableElementSelector}`)].some(
+    window.onload = function () {
+      this.hasInteractableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${interactableElementSelector}`)].some(
         (element) => !element.hasAttribute('disabled')
           && !element.getAttribute('aria-hidden')
           && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
@@ -155,15 +157,15 @@ class EmbeddedContentConsumer extends React.Component {
           && element.closest('[inert]') === null,
       );
 
-      if (scrollingEnabled() && isContentScrollable() && !this.hasFocusableElement) {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
       }
     };
 
-    window.onresize = () => {
-      if (scrollingEnabled() && isContentScrollable() && !this.hasFocusableElement) {
+    window.onresize = function () {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
@@ -173,11 +175,11 @@ class EmbeddedContentConsumer extends React.Component {
     };
 
     this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
-      if (this.hasFocusableElement || !isContentScrollable()) {
+      if (this.hasInteractableElement || !isContentScrollable()) {
         return;
       }
 
-      if (scrollingEnabled() && isContentScrollable() && !this.hasFocusableElement) {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
         this.xfcFrame.iframe.className = cx('iframe-focus-style');
       }
     }, true);
