@@ -258,9 +258,11 @@ const ColumnHeaderCell = (props) => {
     )
     : null;
 
+  // For tables, we want elements to be tabbable when selectable, but not anytime else.
   let columnTabIndex = isSelectable ? 0 : undefined;
 
   if (isGridContext) {
+    // For grids, we only want 1 tab stop. We then define the focus behavior in DataGrid.
     columnTabIndex = isSelectable && displayName ? -1 : undefined;
   }
 
