@@ -387,11 +387,11 @@ function WorklistDataGrid(props) {
   }, [handleRowSelection, hasSelectableRows, onCellSelect]);
 
   const handleColumnSelect = useCallback((columnId) => {
-    if (columnId === WorklistDataGridUtils.TABLE_ROW_SELECTION_COLUMN.id) {
-      onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
-    } else {
-      onColumnSelect(columnId);
-    }
+    onColumnSelect(columnId);
+  }, [onColumnSelect]);
+
+  const handleRowSelectionHeaderSelect = useCallback(() => {
+    onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
   }, [onColumnSelect]);
 
   const handleKeyUp = (event) => {
@@ -444,6 +444,7 @@ function WorklistDataGrid(props) {
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onColumnSelect={onColumnSelect ? handleColumnSelect : undefined}
+        onRowSelectionHeaderSelect={onColumnSelect ? handleRowSelectionHeaderSelect : undefined}
         onColumnResize={onColumnResize}
         onCellSelect={handleCellSelection}
         onClearSelection={handleClearSelection}

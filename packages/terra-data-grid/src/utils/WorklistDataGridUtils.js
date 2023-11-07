@@ -8,16 +8,8 @@ const ROW_SELECTION_COLUMN = {
   isResizable: false,
 };
 
-const TABLE_ROW_SELECTION_COLUMN = {
-  id: 'table-rowSelectionColumn',
-  width: 40,
-  isSelectable: true,
-  isResizable: false,
-};
-
 const WorklistDataGridUtils = {
   ROW_SELECTION_COLUMN,
-  TABLE_ROW_SELECTION_COLUMN,
 };
 
 export default WorklistDataGridUtils;

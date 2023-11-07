@@ -2,7 +2,6 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import DataGrid from '../../src/DataGrid';
-import WorklistDataGridUtils from '../../src/utils/WorklistDataGridUtils';
 import ERRORS from '../../src/utils/constants';
 
 // Source data for tests
@@ -116,7 +115,7 @@ describe('DataGrid', () => {
   });
 
   it('verifies row selection column header selection', () => {
-    const mockColumnSelect = jest.fn();
+    const mockOnRowSelectionHeaderColumnSelect = jest.fn();
 
     const wrapper = mountWithIntl(
       <DataGrid
@@ -125,7 +124,7 @@ describe('DataGrid', () => {
         overflowColumns={dataFile.cols.slice(2)}
         hasSelectableRows
         rows={dataFile.rows}
-        onColumnSelect={mockColumnSelect}
+        onRowSelectionHeaderSelect={mockOnRowSelectionHeaderColumnSelect}
       />,
     );
 
@@ -136,7 +135,7 @@ describe('DataGrid', () => {
     columnHeader.at(0).simulate('mouseDown');
 
     // Validate mock function was called from simulated click event
-    expect(mockColumnSelect).toHaveBeenCalledWith(WorklistDataGridUtils.TABLE_ROW_SELECTION_COLUMN.id);
+    expect(mockOnRowSelectionHeaderColumnSelect).toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
   });

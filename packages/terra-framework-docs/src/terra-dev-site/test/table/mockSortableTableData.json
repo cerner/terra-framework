@@ -1,8 +1,8 @@
 {
   "cols": [
-    { "id": "Column-0", "displayName": "Vitals", "isSelectable": true, "sortIndicator": "ascending", "isResizable": true },
-    { "id": "Column-1", "displayName": "March 16", "isSelectable": true, "isResizable": true },
-    { "id": "Column-2", "displayName": "March 17", "isSelectable": true },
+    { "id": "Column-0", "displayName": "Vitals", "isSelectable": true, "sortIndicator": "ascending" },
+    { "id": "Column-1", "displayName": "March 16", "isSelectable": true },
+    { "id": "Column-2", "displayName": "March 17" },
     { "id": "Column-3", "displayName": "March 18" }
   ],
   "rows": [

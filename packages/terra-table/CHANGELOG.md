@@ -8,7 +8,6 @@
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
-  * Fixed an issue with row selection integrating with table zebra stripes.
   * Fixed issue where column header cell was receiving tab focus instead of the button for table role.
   * Fixed column header left border style.
   

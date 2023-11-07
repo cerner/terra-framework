@@ -109,6 +109,11 @@ const propTypes = {
   onRangeSelection: PropTypes.func,
 
   /**
+   * Callback function that is called when you click on the row selection header.
+  */
+  onRowSelectionHeaderSelect: PropTypes.func,
+
+  /**
    * Callback function that is called when a cell range selection occurs. Parameters:
    * @param {number} rowIndex RowIndex of the cell from which the range selection was triggered.
    * @param {number} columnIndex ColumnIndex of the cell from which the range selection was triggered.
@@ -150,6 +155,7 @@ const DataGrid = injectIntl((props) => {
     onCellSelect,
     onClearSelection,
     onRangeSelection,
+    onRowSelectionHeaderSelect,
     onCellRangeSelect,
     hasSelectableRows,
     rowHeaderIndex,
@@ -268,10 +274,10 @@ const DataGrid = injectIntl((props) => {
   const handleRowSelectionHeaderSelect = useCallback(() => {
     setFocusedCol(0);
     setFocusedRow(0);
-    if (onColumnSelect) {
-      onColumnSelect(WorklistDataGridUtils.TABLE_ROW_SELECTION_COLUMN.id);
+    if (onRowSelectionHeaderSelect) {
+      onRowSelectionHeaderSelect();
     }
-  }, [onColumnSelect]);
+  }, [onRowSelectionHeaderSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     setFocusedRow(selectionDetails.rowIndex);

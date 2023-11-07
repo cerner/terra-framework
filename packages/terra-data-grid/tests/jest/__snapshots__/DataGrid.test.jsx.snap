@@ -5489,12 +5489,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       "timeZone": null,
     }
   }
-  onColumnSelect={
+  onRowSelectionHeaderSelect={
     [MockFunction] {
       "calls": Array [
-        Array [
-          "table-rowSelectionColumn",
-        ],
+        Array [],
       ],
       "results": Array [
         Object {
@@ -5640,12 +5638,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         "timeZone": null,
       }
     }
-    onColumnSelect={
+    onRowSelectionHeaderSelect={
       [MockFunction] {
         "calls": Array [
-          Array [
-            "table-rowSelectionColumn",
-          ],
+          Array [],
         ],
         "results": Array [
           Object {
@@ -5793,12 +5789,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           "timeZone": null,
         }
       }
-      onColumnSelect={
+      onRowSelectionHeaderSelect={
         [MockFunction] {
           "calls": Array [
-            Array [
-              "table-rowSelectionColumn",
-            ],
+            Array [],
           ],
           "results": Array [
             Object {

@@ -42,7 +42,6 @@ const SortableTable = () => {
       id="sortable-table"
       overflowColumns={tableColumns}
       rows={tableRows}
-      columnResizeIncrement={5}
       onColumnSelect={handleColumnSelect}
     />
   );
