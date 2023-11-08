@@ -266,11 +266,15 @@ function Table(props) {
 
   // Calculate total table row count
   const tableSectionReducer = (rowCount, currentSection) => {
-    const sectionIndexOffset = (currentSection.id !== defaultSectionRef.current) ? 1 : 0;
+    if (currentSection.id !== defaultSectionRef.current) {
+      // eslint-disable-next-line no-param-reassign
+      currentSection.sectionRowIndex = rowCount + 1;
+      return rowCount + currentSection.rows.length + 1;
+    }
 
     // eslint-disable-next-line no-param-reassign
-    currentSection.sectionRowIndex = rowCount + sectionIndexOffset; // Store starting row index for each section
-    return rowCount + currentSection.rows.length + sectionIndexOffset;
+    currentSection.sectionRowIndex = 0;
+    return rowCount + currentSection.rows.length;
   };
   const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
 

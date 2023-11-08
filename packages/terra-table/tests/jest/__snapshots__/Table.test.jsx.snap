@@ -659,7 +659,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
               },
             ]
           }
-          sectionRowIndex={1}
+          sectionRowIndex={0}
           tableId="test-terra-table"
         >
           <tbody
@@ -712,11 +712,11 @@ exports[`Row Selection verifies row selection all row selection single selction 
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={2}
+              rowIndex={1}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={2}
+                aria-rowindex={1}
                 className="row selected selectable striped-table-row"
                 data-row-id="1"
                 onMouseEnter={[Function]}
@@ -733,7 +733,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   isSelected={true}
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -769,7 +769,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                     isSelected={true}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -779,7 +779,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       key="1_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -817,7 +817,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="1"
-                        rowIndex={2}
+                        rowIndex={1}
                         sectionId=""
                       >
                         <td
@@ -864,7 +864,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -905,7 +905,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -946,7 +946,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -987,7 +987,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1030,7 +1030,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                   key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1071,7 +1071,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1935,7 +1935,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
               },
             ]
           }
-          sectionRowIndex={1}
+          sectionRowIndex={0}
           tableId="test-terra-table"
         >
           <tbody
@@ -1987,11 +1987,11 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={2}
+              rowIndex={1}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={2}
+                aria-rowindex={1}
                 className="row selectable striped-table-row"
                 data-row-id="1"
                 onMouseEnter={[Function]}
@@ -2008,7 +2008,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -2044,7 +2044,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -2054,7 +2054,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       key="1_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -2092,7 +2092,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="1"
-                        rowIndex={2}
+                        rowIndex={1}
                         sectionId=""
                       >
                         <td
@@ -2139,7 +2139,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2180,7 +2180,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2221,7 +2221,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2262,7 +2262,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2305,7 +2305,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2346,7 +2346,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2425,11 +2425,11 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
               key="2"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={3}
+              rowIndex={2}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={3}
+                aria-rowindex={2}
                 className="row selectable striped-table-row"
                 data-row-id="2"
                 onMouseEnter={[Function]}
@@ -2446,7 +2446,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -2482,7 +2482,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -2492,7 +2492,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       key="2_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -2530,7 +2530,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="2"
-                        rowIndex={3}
+                        rowIndex={2}
                         sectionId=""
                       >
                         <td
@@ -2576,7 +2576,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="2_Column-0"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2617,7 +2617,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2658,7 +2658,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="2_Column-1"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2699,7 +2699,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2738,7 +2738,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="2_Column-2"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2779,7 +2779,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2858,11 +2858,11 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
               key="3"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={4}
+              rowIndex={3}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={4}
+                aria-rowindex={3}
                 className="row selectable striped-table-row"
                 data-row-id="3"
                 onMouseEnter={[Function]}
@@ -2879,7 +2879,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -2915,7 +2915,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -2925,7 +2925,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       key="3_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -2963,7 +2963,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="3"
-                        rowIndex={4}
+                        rowIndex={3}
                         sectionId=""
                       >
                         <td
@@ -3009,7 +3009,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="3_Column-0"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -3050,7 +3050,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -3091,7 +3091,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="3_Column-1"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -3132,7 +3132,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -3171,7 +3171,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="3_Column-2"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -3212,7 +3212,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -3291,11 +3291,11 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
               key="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={5}
+              rowIndex={4}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={5}
+                aria-rowindex={4}
                 className="row selectable striped-table-row"
                 data-row-id="4"
                 onMouseEnter={[Function]}
@@ -3312,7 +3312,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -3348,7 +3348,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -3358,7 +3358,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       key="4_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -3396,7 +3396,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="4"
-                        rowIndex={5}
+                        rowIndex={4}
                         sectionId=""
                       >
                         <td
@@ -3442,7 +3442,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="4_Column-0"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -3483,7 +3483,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -3524,7 +3524,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="4_Column-1"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -3565,7 +3565,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -3603,7 +3603,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                   key="4_Column-2"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -3644,7 +3644,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -4312,7 +4312,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
           rowHeaderIndex={0}
           rowHeight="2.5rem"
           rows={Array []}
-          sectionRowIndex={1}
+          sectionRowIndex={0}
           tableId="test-terra-table"
         >
           <tbody
@@ -5216,7 +5216,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                 },
               ]
             }
-            sectionRowIndex={1}
+            sectionRowIndex={0}
             tableId="test-terra-table"
           >
             <tbody
@@ -5268,11 +5268,11 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                 key="1"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={2}
+                rowIndex={1}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={2}
+                  aria-rowindex={1}
                   className="row selectable striped-table-row"
                   data-row-id="1"
                   onMouseEnter={[Function]}
@@ -5289,7 +5289,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <RowSelectionCell
@@ -5325,7 +5325,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       tableId="test-terra-table"
                     >
                       <InjectIntl(Cell)
@@ -5335,7 +5335,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         key="1_table-rowSelectionColumn"
                         onCellSelect={[Function]}
                         rowId="1"
-                        rowIndex={2}
+                        rowIndex={1}
                       >
                         <Cell
                           columnId="table-rowSelectionColumn"
@@ -5373,7 +5373,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
-                          rowIndex={2}
+                          rowIndex={1}
                           sectionId=""
                         >
                           <td
@@ -5420,7 +5420,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="1_Column-0"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -5461,7 +5461,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -5502,7 +5502,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="1_Column-1"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -5543,7 +5543,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -5586,7 +5586,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="1_Column-2"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -5627,7 +5627,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -5706,11 +5706,11 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                 key="2"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={3}
+                rowIndex={2}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={3}
+                  aria-rowindex={2}
                   className="row selectable striped-table-row"
                   data-row-id="2"
                   onMouseEnter={[Function]}
@@ -5727,7 +5727,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <RowSelectionCell
@@ -5763,7 +5763,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       tableId="test-terra-table"
                     >
                       <InjectIntl(Cell)
@@ -5773,7 +5773,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         key="2_table-rowSelectionColumn"
                         onCellSelect={[Function]}
                         rowId="2"
-                        rowIndex={3}
+                        rowIndex={2}
                       >
                         <Cell
                           columnId="table-rowSelectionColumn"
@@ -5811,7 +5811,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
-                          rowIndex={3}
+                          rowIndex={2}
                           sectionId=""
                         >
                           <td
@@ -5857,7 +5857,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="2_Column-0"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -5898,7 +5898,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -5939,7 +5939,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="2_Column-1"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -5980,7 +5980,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -6019,7 +6019,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="2_Column-2"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -6060,7 +6060,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -6139,11 +6139,11 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                 key="3"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={4}
+                rowIndex={3}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={4}
+                  aria-rowindex={3}
                   className="row selectable striped-table-row"
                   data-row-id="3"
                   onMouseEnter={[Function]}
@@ -6160,7 +6160,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <RowSelectionCell
@@ -6196,7 +6196,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       tableId="test-terra-table"
                     >
                       <InjectIntl(Cell)
@@ -6206,7 +6206,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         key="3_table-rowSelectionColumn"
                         onCellSelect={[Function]}
                         rowId="3"
-                        rowIndex={4}
+                        rowIndex={3}
                       >
                         <Cell
                           columnId="table-rowSelectionColumn"
@@ -6244,7 +6244,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
-                          rowIndex={4}
+                          rowIndex={3}
                           sectionId=""
                         >
                           <td
@@ -6290,7 +6290,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="3_Column-0"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -6331,7 +6331,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -6372,7 +6372,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="3_Column-1"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -6413,7 +6413,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -6452,7 +6452,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="3_Column-2"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -6493,7 +6493,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -6572,11 +6572,11 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                 key="4"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={5}
+                rowIndex={4}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={5}
+                  aria-rowindex={4}
                   className="row selected selectable striped-table-row"
                   data-row-id="4"
                   onMouseEnter={[Function]}
@@ -6593,7 +6593,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     isSelected={true}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <RowSelectionCell
@@ -6629,7 +6629,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={true}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       tableId="test-terra-table"
                     >
                       <InjectIntl(Cell)
@@ -6639,7 +6639,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         key="4_table-rowSelectionColumn"
                         onCellSelect={[Function]}
                         rowId="4"
-                        rowIndex={5}
+                        rowIndex={4}
                       >
                         <Cell
                           columnId="table-rowSelectionColumn"
@@ -6677,7 +6677,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="4"
-                          rowIndex={5}
+                          rowIndex={4}
                           sectionId=""
                         >
                           <td
@@ -6723,7 +6723,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="4_Column-0"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -6764,7 +6764,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -6805,7 +6805,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="4_Column-1"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -6846,7 +6846,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -6884,7 +6884,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                     key="4_Column-2"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -6925,7 +6925,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -7789,7 +7789,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
               },
             ]
           }
-          sectionRowIndex={1}
+          sectionRowIndex={0}
           tableId="test-terra-table"
         >
           <tbody
@@ -7842,11 +7842,11 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={2}
+              rowIndex={1}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={2}
+                aria-rowindex={1}
                 className="row selected selectable striped-table-row"
                 data-row-id="1"
                 onMouseEnter={[Function]}
@@ -7863,7 +7863,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   isSelected={true}
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -7899,7 +7899,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={true}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -7909,7 +7909,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       key="1_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -7947,7 +7947,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="1"
-                        rowIndex={2}
+                        rowIndex={1}
                         sectionId=""
                       >
                         <td
@@ -7994,7 +7994,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8035,7 +8035,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -8076,7 +8076,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8117,7 +8117,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -8160,7 +8160,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8201,7 +8201,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -8280,11 +8280,11 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
               key="2"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={3}
+              rowIndex={2}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={3}
+                aria-rowindex={2}
                 className="row selectable striped-table-row"
                 data-row-id="2"
                 onMouseEnter={[Function]}
@@ -8301,7 +8301,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -8337,7 +8337,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -8347,7 +8347,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       key="2_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -8385,7 +8385,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="2"
-                        rowIndex={3}
+                        rowIndex={2}
                         sectionId=""
                       >
                         <td
@@ -8431,7 +8431,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="2_Column-0"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8472,7 +8472,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -8513,7 +8513,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="2_Column-1"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8554,7 +8554,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -8593,7 +8593,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="2_Column-2"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8634,7 +8634,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -8713,11 +8713,11 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
               key="3"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={4}
+              rowIndex={3}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={4}
+                aria-rowindex={3}
                 className="row selectable striped-table-row"
                 data-row-id="3"
                 onMouseEnter={[Function]}
@@ -8734,7 +8734,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -8770,7 +8770,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -8780,7 +8780,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       key="3_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -8818,7 +8818,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="3"
-                        rowIndex={4}
+                        rowIndex={3}
                         sectionId=""
                       >
                         <td
@@ -8864,7 +8864,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="3_Column-0"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8905,7 +8905,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -8946,7 +8946,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="3_Column-1"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -8987,7 +8987,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -9026,7 +9026,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="3_Column-2"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -9067,7 +9067,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -9146,11 +9146,11 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
               key="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={5}
+              rowIndex={4}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={5}
+                aria-rowindex={4}
                 className="row selectable striped-table-row"
                 data-row-id="4"
                 onMouseEnter={[Function]}
@@ -9167,7 +9167,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -9203,7 +9203,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -9213,7 +9213,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       key="4_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -9251,7 +9251,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="4"
-                        rowIndex={5}
+                        rowIndex={4}
                         sectionId=""
                       >
                         <td
@@ -9297,7 +9297,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="4_Column-0"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -9338,7 +9338,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -9379,7 +9379,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="4_Column-1"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -9420,7 +9420,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -9458,7 +9458,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                   key="4_Column-2"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -9499,7 +9499,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -9582,7 +9582,7 @@ Array [
               "isCellSelectable": false,
               "isShiftPressed": undefined,
               "rowId": "1",
-              "rowIndex": 2,
+              "rowIndex": 1,
               "sectionId": "",
             },
           ],
@@ -9724,7 +9724,7 @@ Array [
                 "isCellSelectable": false,
                 "isShiftPressed": undefined,
                 "rowId": "1",
-                "rowIndex": 2,
+                "rowIndex": 1,
                 "sectionId": "",
               },
             ],
@@ -10274,7 +10274,7 @@ Array [
                 },
               ]
             }
-            sectionRowIndex={1}
+            sectionRowIndex={0}
             tableId="test-terra-table"
           >
             <tbody
@@ -10318,11 +10318,11 @@ Array [
                 key="1"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={2}
+                rowIndex={1}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={2}
+                  aria-rowindex={1}
                   className="row"
                   data-row-id="1"
                   style={
@@ -10341,7 +10341,7 @@ Array [
                     key="1_Column-0"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -10381,7 +10381,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -10436,7 +10436,7 @@ Array [
                     key="1_Column-1"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -10476,7 +10476,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -10533,7 +10533,7 @@ Array [
                     key="1_Column-2"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -10573,7 +10573,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -10659,11 +10659,11 @@ Array [
                 key="2"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={3}
+                rowIndex={2}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={3}
+                  aria-rowindex={2}
                   className="row"
                   data-row-id="2"
                   style={
@@ -10681,7 +10681,7 @@ Array [
                     key="2_Column-0"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -10721,7 +10721,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -10776,7 +10776,7 @@ Array [
                     key="2_Column-1"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -10816,7 +10816,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -10869,7 +10869,7 @@ Array [
                     key="2_Column-2"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -10909,7 +10909,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -10995,11 +10995,11 @@ Array [
                 key="3"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={4}
+                rowIndex={3}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={4}
+                  aria-rowindex={3}
                   className="row"
                   data-row-id="3"
                   style={
@@ -11017,7 +11017,7 @@ Array [
                     key="3_Column-0"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -11057,7 +11057,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -11112,7 +11112,7 @@ Array [
                     key="3_Column-1"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -11152,7 +11152,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -11205,7 +11205,7 @@ Array [
                     key="3_Column-2"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -11245,7 +11245,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -11331,11 +11331,11 @@ Array [
                 key="4"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={5}
+                rowIndex={4}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={5}
+                  aria-rowindex={4}
                   className="row selected"
                   data-row-id="4"
                   style={
@@ -11353,7 +11353,7 @@ Array [
                     key="4_Column-0"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -11393,7 +11393,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -11448,7 +11448,7 @@ Array [
                     key="4_Column-1"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -11488,7 +11488,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -11540,7 +11540,7 @@ Array [
                     key="4_Column-2"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -11580,7 +11580,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -11680,7 +11680,7 @@ Array [
               "isCellSelectable": false,
               "isShiftPressed": undefined,
               "rowId": "1",
-              "rowIndex": 2,
+              "rowIndex": 1,
               "sectionId": "",
             },
           ],
@@ -11822,7 +11822,7 @@ Array [
                 "isCellSelectable": false,
                 "isShiftPressed": undefined,
                 "rowId": "1",
-                "rowIndex": 2,
+                "rowIndex": 1,
                 "sectionId": "",
               },
             ],
@@ -12372,7 +12372,7 @@ Array [
                 },
               ]
             }
-            sectionRowIndex={1}
+            sectionRowIndex={0}
             tableId="test-terra-table"
           >
             <tbody
@@ -12416,11 +12416,11 @@ Array [
                 key="1"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={2}
+                rowIndex={1}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={2}
+                  aria-rowindex={1}
                   className="row"
                   data-row-id="1"
                   style={
@@ -12439,7 +12439,7 @@ Array [
                     key="1_Column-0"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -12479,7 +12479,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -12534,7 +12534,7 @@ Array [
                     key="1_Column-1"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -12574,7 +12574,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -12631,7 +12631,7 @@ Array [
                     key="1_Column-2"
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -12671,7 +12671,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -12757,11 +12757,11 @@ Array [
                 key="2"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={3}
+                rowIndex={2}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={3}
+                  aria-rowindex={2}
                   className="row"
                   data-row-id="2"
                   style={
@@ -12779,7 +12779,7 @@ Array [
                     key="2_Column-0"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -12819,7 +12819,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -12874,7 +12874,7 @@ Array [
                     key="2_Column-1"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -12914,7 +12914,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -12967,7 +12967,7 @@ Array [
                     key="2_Column-2"
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -13007,7 +13007,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -13093,11 +13093,11 @@ Array [
                 key="3"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={4}
+                rowIndex={3}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={4}
+                  aria-rowindex={3}
                   className="row"
                   data-row-id="3"
                   style={
@@ -13115,7 +13115,7 @@ Array [
                     key="3_Column-0"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -13155,7 +13155,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -13210,7 +13210,7 @@ Array [
                     key="3_Column-1"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -13250,7 +13250,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -13303,7 +13303,7 @@ Array [
                     key="3_Column-2"
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -13343,7 +13343,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -13429,11 +13429,11 @@ Array [
                 key="4"
                 onCellSelect={[Function]}
                 rowHeaderIndex={0}
-                rowIndex={5}
+                rowIndex={4}
                 tableId="test-terra-table"
               >
                 <tr
-                  aria-rowindex={5}
+                  aria-rowindex={4}
                   className="row selected"
                   data-row-id="4"
                   style={
@@ -13451,7 +13451,7 @@ Array [
                     key="4_Column-0"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -13491,7 +13491,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -13546,7 +13546,7 @@ Array [
                     key="4_Column-1"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -13586,7 +13586,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -13638,7 +13638,7 @@ Array [
                     key="4_Column-2"
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <Cell
@@ -13678,7 +13678,7 @@ Array [
                       isSelectable={false}
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                       sectionId=""
                       tableId="test-terra-table"
                     >
@@ -14588,7 +14588,7 @@ exports[`Table verifies row selection column header not selectable without callb
               },
             ]
           }
-          sectionRowIndex={1}
+          sectionRowIndex={0}
           tableId="test-terra-table"
         >
           <tbody
@@ -14639,11 +14639,11 @@ exports[`Table verifies row selection column header not selectable without callb
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={2}
+              rowIndex={1}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={2}
+                aria-rowindex={1}
                 className="row selectable"
                 data-row-id="1"
                 onMouseEnter={[Function]}
@@ -14660,7 +14660,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -14696,7 +14696,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -14706,7 +14706,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       key="1_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -14744,7 +14744,7 @@ exports[`Table verifies row selection column header not selectable without callb
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="1"
-                        rowIndex={2}
+                        rowIndex={1}
                         sectionId=""
                       >
                         <td
@@ -14791,7 +14791,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -14832,7 +14832,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -14873,7 +14873,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -14914,7 +14914,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -14957,7 +14957,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -14998,7 +14998,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -15076,11 +15076,11 @@ exports[`Table verifies row selection column header not selectable without callb
               key="2"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={3}
+              rowIndex={2}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={3}
+                aria-rowindex={2}
                 className="row selectable"
                 data-row-id="2"
                 onMouseEnter={[Function]}
@@ -15097,7 +15097,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -15133,7 +15133,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -15143,7 +15143,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       key="2_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -15181,7 +15181,7 @@ exports[`Table verifies row selection column header not selectable without callb
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="2"
-                        rowIndex={3}
+                        rowIndex={2}
                         sectionId=""
                       >
                         <td
@@ -15227,7 +15227,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="2_Column-0"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -15268,7 +15268,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -15309,7 +15309,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="2_Column-1"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -15350,7 +15350,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -15389,7 +15389,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="2_Column-2"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -15430,7 +15430,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -15508,11 +15508,11 @@ exports[`Table verifies row selection column header not selectable without callb
               key="3"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={4}
+              rowIndex={3}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={4}
+                aria-rowindex={3}
                 className="row selectable"
                 data-row-id="3"
                 onMouseEnter={[Function]}
@@ -15529,7 +15529,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -15565,7 +15565,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -15575,7 +15575,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       key="3_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -15613,7 +15613,7 @@ exports[`Table verifies row selection column header not selectable without callb
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="3"
-                        rowIndex={4}
+                        rowIndex={3}
                         sectionId=""
                       >
                         <td
@@ -15659,7 +15659,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="3_Column-0"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -15700,7 +15700,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -15741,7 +15741,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="3_Column-1"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -15782,7 +15782,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -15821,7 +15821,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="3_Column-2"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -15862,7 +15862,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -15940,11 +15940,11 @@ exports[`Table verifies row selection column header not selectable without callb
               key="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={5}
+              rowIndex={4}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={5}
+                aria-rowindex={4}
                 className="row selected selectable"
                 data-row-id="4"
                 onMouseEnter={[Function]}
@@ -15961,7 +15961,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   isSelected={true}
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -15997,7 +15997,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={true}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -16007,7 +16007,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       key="4_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -16045,7 +16045,7 @@ exports[`Table verifies row selection column header not selectable without callb
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="4"
-                        rowIndex={5}
+                        rowIndex={4}
                         sectionId=""
                       >
                         <td
@@ -16091,7 +16091,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="4_Column-0"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -16132,7 +16132,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -16173,7 +16173,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="4_Column-1"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -16214,7 +16214,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -16252,7 +16252,7 @@ exports[`Table verifies row selection column header not selectable without callb
                   key="4_Column-2"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -16293,7 +16293,7 @@ exports[`Table verifies row selection column header not selectable without callb
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -17159,7 +17159,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          sectionRowIndex={1}
+          sectionRowIndex={0}
           tableId="test-terra-table"
         >
           <tbody
@@ -17210,11 +17210,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={2}
+              rowIndex={1}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={2}
+                aria-rowindex={1}
                 className="row selectable"
                 data-row-id="1"
                 onMouseEnter={[Function]}
@@ -17231,7 +17231,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -17267,7 +17267,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -17277,7 +17277,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="1_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={2}
+                      rowIndex={1}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -17315,7 +17315,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="1"
-                        rowIndex={2}
+                        rowIndex={1}
                         sectionId=""
                       >
                         <td
@@ -17362,7 +17362,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17403,7 +17403,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -17444,7 +17444,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17485,7 +17485,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -17528,7 +17528,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={2}
+                  rowIndex={1}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17569,7 +17569,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={2}
+                    rowIndex={1}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -17647,11 +17647,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="2"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={3}
+              rowIndex={2}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={3}
+                aria-rowindex={2}
                 className="row selectable"
                 data-row-id="2"
                 onMouseEnter={[Function]}
@@ -17668,7 +17668,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -17704,7 +17704,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -17714,7 +17714,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="2_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={3}
+                      rowIndex={2}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -17752,7 +17752,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="2"
-                        rowIndex={3}
+                        rowIndex={2}
                         sectionId=""
                       >
                         <td
@@ -17798,7 +17798,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="2_Column-0"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17839,7 +17839,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -17880,7 +17880,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="2_Column-1"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17921,7 +17921,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -17960,7 +17960,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="2_Column-2"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={3}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18001,7 +18001,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={3}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -18079,11 +18079,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="3"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={4}
+              rowIndex={3}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={4}
+                aria-rowindex={3}
                 className="row selectable"
                 data-row-id="3"
                 onMouseEnter={[Function]}
@@ -18100,7 +18100,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -18136,7 +18136,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -18146,7 +18146,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="3_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={4}
+                      rowIndex={3}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -18184,7 +18184,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="3"
-                        rowIndex={4}
+                        rowIndex={3}
                         sectionId=""
                       >
                         <td
@@ -18230,7 +18230,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="3_Column-0"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18271,7 +18271,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -18312,7 +18312,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="3_Column-1"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18353,7 +18353,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -18392,7 +18392,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="3_Column-2"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={4}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18433,7 +18433,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={4}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -18511,11 +18511,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={5}
+              rowIndex={4}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={5}
+                aria-rowindex={4}
                 className="row selected selectable"
                 data-row-id="4"
                 onMouseEnter={[Function]}
@@ -18532,7 +18532,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={true}
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -18568,7 +18568,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={true}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -18578,7 +18578,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="4_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={5}
+                      rowIndex={4}
                     >
                       <Cell
                         columnId="table-rowSelectionColumn"
@@ -18616,7 +18616,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="4"
-                        rowIndex={5}
+                        rowIndex={4}
                         sectionId=""
                       >
                         <td
@@ -18662,7 +18662,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="4_Column-0"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18703,7 +18703,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -18744,7 +18744,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="4_Column-1"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18785,7 +18785,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -18823,7 +18823,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="4_Column-2"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={5}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18864,7 +18864,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={5}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -19102,7 +19102,7 @@ exports[`Table verifies that the column widths are set properly in the colgroup 
             },
           ]
         }
-        sectionRowIndex={1}
+        sectionRowIndex={0}
         tableId="test-terra-table"
       />
     </ContextProvider>
