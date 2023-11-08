@@ -164,7 +164,7 @@ class EmbeddedContentConsumer extends React.Component {
       }
     };
 
-    window.onresize = function () {
+    window.onresize = () => {
       if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
@@ -174,7 +174,7 @@ class EmbeddedContentConsumer extends React.Component {
       }
     };
 
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', function () {
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
       if (this.hasInteractableElement === true || !isContentScrollable()) {
         return;
       }
@@ -185,7 +185,7 @@ class EmbeddedContentConsumer extends React.Component {
     }, true);
 
     // Listen for blur event and callback function to apply the style
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', function () {
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', () => {
       this.xfcFrame.iframe.removeAttribute('class');
     }, true);
   }
