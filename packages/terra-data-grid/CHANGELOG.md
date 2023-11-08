@@ -5,6 +5,7 @@
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
   * Fixed pinned column divider issue during keyboard resize.
+  * Fixed resize handle being communicated when non-header cell is focused.
 
 * Added
   * Added ability to select a range of cells to FlowsheetDataGrid.
