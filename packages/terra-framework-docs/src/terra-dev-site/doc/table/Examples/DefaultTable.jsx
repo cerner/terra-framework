@@ -53,6 +53,7 @@ const DefaultTable = () => (
     id="my-table-id"
     overflowColumns={tableData.cols}
     rows={tableData.rows}
+    ariaLabel="Table"
   />
 );
 

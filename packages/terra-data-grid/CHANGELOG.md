@@ -4,10 +4,14 @@
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
+  * Fixed pinned column divider issue during keyboard resize.
+
+* Added
+  * Added ability to select a range of cells to FlowsheetDataGrid.
 
 ## 1.0.0 - (October 25, 2023)
 * Initial working component release.
-  
+
 * Added
   * Added additional screen reader support to announce that column headers are interactable upon selection.
   * Added keyboard support for column resizing.
