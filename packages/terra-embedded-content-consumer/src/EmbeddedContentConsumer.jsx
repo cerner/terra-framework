@@ -117,13 +117,8 @@ class EmbeddedContentConsumer extends React.Component {
       this.props.onMount(this.xfcFrame);
     }
 
-    // Handle srcdoc use case since xfc doesn't support srcdoc
-    // and no postMessage between consumer and provider content
-
-    // if (frameOptions.iframeAttrs.srcdoc) {
-    //   this.setupEventListenersForFrameSrcDoc();
-    // }
-    this.setupEventListenersForFrameSrcDoc();
+    // iframe visual focus indicator
+    this.handleFrameVisualFocusIndicator();
 
     // Attach the event handlers to the xfc frame.
     this.addEventListener('xfc.launched', this.props.onLaunch);
@@ -133,11 +128,13 @@ class EmbeddedContentConsumer extends React.Component {
     this.addEventListeners(this.props.eventHandlers);
   }
 
-  setupEventListenersForFrameSrcDoc() {
+  handleFrameVisualFocusIndicator() {
+    // Selectors for interactable elements
     const interactableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
       + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
       + "[contentEditable=true]:not([tabindex='-1'])";
 
+    // Check if the content is scrollable
     const isContentScrollable = () => {
       const doc = this.xfcFrame?.iframe?.contentWindow?.document;
       return (doc.documentElement.scrollHeight > doc.documentElement.clientHeight
@@ -146,9 +143,12 @@ class EmbeddedContentConsumer extends React.Component {
         || doc.body.scrollWidth > doc.body.clientWidth);
     };
 
+    // Check if the iframe has `scrolling` attribute set or not
+    // The default `scrolling` attribute is `auto`.
     const scrollingEnabled = () => (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
 
-    window.onload = () => {
+    // Event listener and callback function for when `load` is completed for the content in the iframe
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('load', () => {
       this.hasInteractableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${interactableElementSelector}`)].some(
         (element) => !element.hasAttribute('disabled')
           && !element.getAttribute('aria-hidden')
@@ -162,9 +162,10 @@ class EmbeddedContentConsumer extends React.Component {
         // using tab key when scrolling is enabled
         this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
       }
-    };
+    });
 
-    window.onresize = () => {
+    // Event listener and callback function for `resize` event of the iframe
+    this.xfcFrame?.iframe?.contentWindow?.addEventListener('resize', () => {
       if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
@@ -172,8 +173,9 @@ class EmbeddedContentConsumer extends React.Component {
       } else if (this.xfcFrame?.iframe?.contentWindow?.document.body.getAttribute('tabIndex') === '0') {
         this.xfcFrame.iframe.contentWindow.document.body.removeAttribute('tabIndex');
       }
-    };
+    });
 
+    // Event listener and callback function for `focus` event is in the iframe
     this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
       if (this.hasInteractableElement === true || !isContentScrollable()) {
         return;
@@ -184,7 +186,7 @@ class EmbeddedContentConsumer extends React.Component {
       }
     }, true);
 
-    // Listen for blur event and callback function to apply the style
+    // Event Listener and callback function for `blur` event in the iframe
     this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', () => {
       this.xfcFrame.iframe.removeAttribute('class');
     }, true);
