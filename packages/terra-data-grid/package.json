@@ -30,12 +30,9 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "focus-trap-react": "^6.0.0",
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
-    "terra-icon": "^3.54.0",
     "terra-table": "^5.1.1-alpha.0",
-    "terra-theme-context": "^1.8.0",
     "terra-visually-hidden-text": "^2.36.0"
   },
   "scripts": {

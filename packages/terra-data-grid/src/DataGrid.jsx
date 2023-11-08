@@ -193,8 +193,6 @@ const DataGrid = injectIntl((props) => {
     tableContainerRef,
   }), [grid, tableContainerRef]);
 
-  // Define ColumnContext Provider value object
-
   // -------------------------------------
   // functions
 
