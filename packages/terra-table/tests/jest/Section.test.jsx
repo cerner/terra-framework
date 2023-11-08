@@ -46,26 +46,12 @@ const tableData = {
   ],
 };
 
-beforeAll(() => {
-  jest.spyOn(console, 'error').mockImplementation();
-  jest.spyOn(console, 'warn').mockImplementation();
-});
-
-afterEach(() => {
-  console.error.mockClear(); // eslint-disable-line no-console
-  console.warn.mockClear(); // eslint-disable-line no-console
-});
-
-afterAll(() => {
-  console.error.mockRestore(); // eslint-disable-line no-console
-  console.warn.mockRestore(); // eslint-disable-line no-console
-});
-
 describe('Section', () => {
   it('verifies that the table created is consistent with the rows and overflowColumns props', () => {
     const wrapper = shallow(
       <Section
         id="test-section"
+        tableId="test-table"
         text="Test Section"
         sectionRowIndex={1}
         displayedColumns={tableData.cols}
@@ -82,6 +68,7 @@ describe('Section', () => {
     const verifyRow = (rowIndex, rowComponent, data, overflowColumns) => {
       expect(rowComponent.props.displayedColumns).toEqual(overflowColumns);
       expect(rowComponent.props.hasRowSelection).toBe(false);
+      expect(rowComponent.props.tableId).toBe('test-table');
       expect(rowComponent.key).toEqual(data.id);
       expect(rowComponent.props.onCellSelect).toBeUndefined();
       expect(rowComponent.props.rowHeaderIndex).toEqual(0);
@@ -92,6 +79,7 @@ describe('Section', () => {
     const wrapper = shallow(
       <Section
         id="test-section"
+        tableId="test-table"
         sectionRowIndex={1}
         text="Test Section"
         displayedColumns={tableData.cols}
@@ -112,6 +100,7 @@ describe('Section', () => {
     const wrapper = shallow(
       <Section
         id="test-section"
+        tableId="test-table"
         sectionRowIndex={1}
         text="Test Section"
         displayedColumns={tableData.cols}
@@ -122,6 +111,7 @@ describe('Section', () => {
 
     const testRow = wrapper.find(Row).at(0);
     expect(testRow.props().isTableStriped).toBe(true);
+    expect(testRow.props().tableId).toBe('test-table');
     expect(wrapper).toMatchSnapshot();
   });
 });

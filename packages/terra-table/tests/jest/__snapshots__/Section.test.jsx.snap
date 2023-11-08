@@ -9,6 +9,7 @@ exports[`Section verifies that the table created is consistent with the rows and
     <th
       align="left"
       colSpan={3}
+      id="test-table-test-section"
       role="columnheader"
       scope="col"
     >
@@ -58,6 +59,8 @@ exports[`Section verifies that the table created is consistent with the rows and
       id="1"
       key="1"
       rowIndex={2}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -94,6 +97,8 @@ exports[`Section verifies that the table created is consistent with the rows and
       id="2"
       key="2"
       rowIndex={3}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -130,6 +135,8 @@ exports[`Section verifies that the table created is consistent with the rows and
       id="3"
       key="3"
       rowIndex={4}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -166,6 +173,8 @@ exports[`Section verifies that the table created is consistent with the rows and
       isSelected={true}
       key="4"
       rowIndex={5}
+      sectionId="test-section"
+      tableId="test-table"
     />
   </tbody>
 </Fragment>
@@ -180,6 +189,7 @@ exports[`Section verifies the rows are created with the right props 1`] = `
     <th
       align="left"
       colSpan={3}
+      id="test-table-test-section"
       role="columnheader"
       scope="col"
     >
@@ -229,6 +239,8 @@ exports[`Section verifies the rows are created with the right props 1`] = `
       id="1"
       key="1"
       rowIndex={2}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -265,6 +277,8 @@ exports[`Section verifies the rows are created with the right props 1`] = `
       id="2"
       key="2"
       rowIndex={3}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -301,6 +315,8 @@ exports[`Section verifies the rows are created with the right props 1`] = `
       id="3"
       key="3"
       rowIndex={4}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -337,6 +353,8 @@ exports[`Section verifies the rows are created with the right props 1`] = `
       isSelected={true}
       key="4"
       rowIndex={5}
+      sectionId="test-section"
+      tableId="test-table"
     />
   </tbody>
 </Fragment>
@@ -351,6 +369,7 @@ exports[`Section verifies the rows receive the correct props when table is zebra
     <th
       align="left"
       colSpan={3}
+      id="test-table-test-section"
       role="columnheader"
       scope="col"
     >
@@ -401,6 +420,8 @@ exports[`Section verifies the rows receive the correct props when table is zebra
       isTableStriped={true}
       key="1"
       rowIndex={2}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -438,6 +459,8 @@ exports[`Section verifies the rows receive the correct props when table is zebra
       isTableStriped={true}
       key="2"
       rowIndex={3}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -475,6 +498,8 @@ exports[`Section verifies the rows receive the correct props when table is zebra
       isTableStriped={true}
       key="3"
       rowIndex={4}
+      sectionId="test-section"
+      tableId="test-table"
     />
     <Memo(Row)
       cells={
@@ -512,6 +537,8 @@ exports[`Section verifies the rows receive the correct props when table is zebra
       isTableStriped={true}
       key="4"
       rowIndex={5}
+      sectionId="test-section"
+      tableId="test-table"
     />
   </tbody>
 </Fragment>

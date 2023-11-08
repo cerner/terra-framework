@@ -21,6 +21,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     onCellSelect={[Function]}
     rowId="1"
     rowIndex={99}
+    tableId="test-table"
   >
     Heart Rate Monitored (bpm)
   </Memo(InjectIntl(Cell))>
@@ -34,6 +35,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     onCellSelect={[Function]}
     rowId="1"
     rowIndex={99}
+    tableId="test-table"
   />
   <Memo(InjectIntl(Cell))
     columnId="Column-2"
@@ -46,6 +48,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
     onCellSelect={[Function]}
     rowId="1"
     rowIndex={99}
+    tableId="test-table"
   >
     66
   </Memo(InjectIntl(Cell))>
@@ -73,6 +76,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     onCellSelect={[Function]}
     rowId="3"
     rowIndex={2}
+    tableId="test-table"
   >
     Cardiac Index (L/min/m2)
   </Memo(InjectIntl(Cell))>
@@ -86,6 +90,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     onCellSelect={[Function]}
     rowId="3"
     rowIndex={2}
+    tableId="test-table"
   >
     2.25
   </Memo(InjectIntl(Cell))>
@@ -100,6 +105,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
     onCellSelect={[Function]}
     rowId="3"
     rowIndex={2}
+    tableId="test-table"
   >
     2.28
   </Memo(InjectIntl(Cell))>

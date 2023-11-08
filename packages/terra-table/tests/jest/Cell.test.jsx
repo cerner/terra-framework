@@ -17,6 +17,7 @@ describe('Cell', () => {
           columnId="ColumnId"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           isSelected={false}
           isRowHeader
@@ -45,6 +46,7 @@ describe('Cell', () => {
           columnId="ColumnId"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           isSelected={false}
           isRowHeader={false}
@@ -73,6 +75,7 @@ describe('Cell', () => {
           columnId="ColumnId"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           isSelectable
           onCellSelect={jest.fn}
@@ -100,6 +103,7 @@ describe('Cell', () => {
           columnId="ColumnId"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           onCellSelect={jest.fn}
         />
@@ -124,6 +128,7 @@ describe('Cell', () => {
           ariaLabel="Some Label Here"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           isSelected
           onCellSelect={jest.fn}
@@ -155,6 +160,7 @@ describe('Cell', () => {
           ariaLabel="Some Label Here"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
         >
           Data in cell
@@ -179,6 +185,7 @@ describe('Cell', () => {
           ariaLabel="Some Label Here"
           rowIndex={1}
           columnIndex={0}
+          tableId="test-table"
           key="key"
         >
           <button type="button">Button</button>
@@ -207,6 +214,7 @@ describe('Cell', () => {
           ariaLabel="Some Label Here"
           rowIndex={1}
           columnIndex={0}
+          tableId="test-table"
           key="key"
         >
           Data in cell
@@ -233,6 +241,7 @@ describe('Cell', () => {
           ariaLabel="Some Label Here"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           isMasked
           onCellSelect={jest.fn}
@@ -261,6 +270,7 @@ describe('Cell', () => {
           ariaLabel="Some Label Here"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           isMasked
           maskedLabel="MaskedLabel"
@@ -290,6 +300,7 @@ describe('Cell', () => {
           ariaLabel="Some Label Here"
           rowIndex={1}
           columnIndex={2}
+          tableId="test-table"
           key="key"
           isSelected
           isMasked
@@ -324,6 +335,7 @@ describe('Cell', () => {
           columnId="ColumnId"
           rowIndex={1}
           columnIndex={0}
+          tableId="test-table"
           key="key"
           isSelected={false}
           isRowHeader

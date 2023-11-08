@@ -91,7 +91,8 @@ const ColumnHeader = (props) => {
         {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
             key={column.id}
-            id={`${tableId}-${column.id}`}
+            id={column.id}
+            tableId={tableId}
             rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}
