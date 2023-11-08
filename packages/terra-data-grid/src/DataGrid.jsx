@@ -471,7 +471,9 @@ const DataGrid = injectIntl((props) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
-        setFocusedRowCol(focusedRow, focusedCol, true);
+        // When deleting rows, we run into errors of re-focusing cells out of bounds.
+        const newRow = Math.min(dataGridRows.length - 1, focusedRow);
+        setFocusedRowCol(newRow, focusedCol, true);
         setGridHasFocus(true);
       }
     }
