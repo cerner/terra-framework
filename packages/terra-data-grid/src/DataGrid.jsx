@@ -126,6 +126,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether or not the DataGrid should hide the column headers.
+   */
+  hideColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -136,29 +141,31 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  hideColumnHeaders: false,
 };
 
 const DataGrid = injectIntl((props) => {
   const {
-    id,
-    ariaLabelledBy,
     ariaLabel,
-    rows,
-    pinnedColumns,
-    overflowColumns,
-    onColumnResize,
-    defaultColumnWidth,
+    ariaLabelledBy,
     columnHeaderHeight,
     columnResizeIncrement,
-    rowHeight,
-    onColumnSelect,
+    defaultColumnWidth,
+    hasSelectableRows,
+    hideColumnHeaders,
+    id,
+    onCellRangeSelect,
     onCellSelect,
     onClearSelection,
+    onColumnResize,
+    onColumnSelect,
     onRangeSelection,
     onRowSelectionHeaderSelect,
-    onCellRangeSelect,
-    hasSelectableRows,
+    overflowColumns,
+    pinnedColumns,
     rowHeaderIndex,
+    rowHeight,
+    rows,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -520,6 +527,7 @@ const DataGrid = injectIntl((props) => {
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
+          hasColumnHeaders={!hideColumnHeaders}
           isStriped
         />
       </GridContext.Provider>

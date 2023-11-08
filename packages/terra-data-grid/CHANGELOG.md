@@ -10,6 +10,9 @@
 * Added
   * Added ability to select a range of cells to FlowsheetDataGrid.
 
+* Changed
+  * Updated FlowsheetDataGrid to no longer have column headers.
+
 ## 1.0.0 - (October 25, 2023)
 * Initial working component release.
 

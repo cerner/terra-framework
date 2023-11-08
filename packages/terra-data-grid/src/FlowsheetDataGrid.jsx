@@ -295,6 +295,7 @@ function FlowsheetDataGrid(props) {
         onCellSelect={handleCellSelection}
         onClearSelection={handleClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
+        hideColumnHeaders
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>
