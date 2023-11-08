@@ -112,6 +112,7 @@ function FlowsheetDataGrid(props) {
     onClearSelectedCells,
     onCellRangeSelect,
     intl,
+    hasColumnHeaders
   } = props;
 
   const anchorCell = useRef(null);
