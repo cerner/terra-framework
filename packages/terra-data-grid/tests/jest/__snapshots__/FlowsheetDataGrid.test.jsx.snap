@@ -9,6 +9,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
+    hideColumnHeaders={true}
     id="test-terra-flowsheet-data-grid"
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
@@ -130,6 +131,7 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
+    hideColumnHeaders={true}
     id="test-terra-flowsheet-data-grid"
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
