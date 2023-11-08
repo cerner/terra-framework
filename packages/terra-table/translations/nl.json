@@ -1,0 +1,21 @@
+{
+  "Terra.table.blank": "Leeg",
+  "Terra.table.maskedCell": "Gemaskeerde gegevens",
+  "Terra.table.cell-focus-trapped": "Focus behouden in cel. Druk op Escape om de rasternavigatie te hervatten.",
+  "Terra.table.cell-interactable": "Cel bevat interactieve elementen. Druk op Enter om de focus binnen de cel te verplaatsen.",
+  "Terra.table.columnError": "Fouten die verband houden met kolom",
+  "Terra.table.resizeHandleValueText": "{columnWidth} pixels kolombreedte",
+  "Terra.table.resume-navigation": "Rasternavigatie hervat.",
+  "Terra.table.row-index": "Rij {row}",
+
+  "Terra.table.row-selection-template": "Rij {row} geselecteerd. ",
+  "Terra.table.multiple-rows-selected": "{rowCount} rijen geselecteerd. ",
+  "Terra.table.multiple-rows-unselected": "{rowCount} rijen gedeselecteerd. ",
+  "Terra.table.resize-handle-template": "Kolomformaatgreep voor {columnText}. Druk op Enter om te gebruiken.",
+  "Terra.table.resize-handle-value-text": "{columnWidth} pixels",
+  "Terra.table.row-selection-cleared-template": "Rij {row} gedeselecteerd. ",
+  "Terra.table.row-selection-mode-enabled": "Selectiemodus voor rijen ingeschakeld.",
+  "Terra.table.row-selection-mode-disabled": "Selectiemodus voor rijen uitgeschakeld.",
+  "Terra.table.all-rows-selected": "Alle rijen geselecteerd",
+  "Terra.table.all-rows-unselected": "Geen rijen geselecteerd"
+}
