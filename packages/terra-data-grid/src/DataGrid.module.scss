@@ -5,23 +5,10 @@
 :local {
   .data-grid-container {
     height: 100%;
-    overflow: auto;
     width: 100%;
   }
 
-  .data-grid {
-    // Style for the grid itself
-    border-collapse: separate;
-    border-spacing: 0;
-    // Allow for resizing of last grid column
-    margin-right: 15px;
-    table-layout: fixed;
+  table {
     user-select: none;
-    width: 1px;
-
-    :focus {
-      outline: var(--terra-data-grid-cell-focus-outline, 3px dashed #000);
-      outline-offset: var(--terra-data-grid-cell-focus-outline-offset, -2px);
-    }
   }
 }

@@ -1,4 +1,4 @@
-const defaultSelector = '#default-terra-flowsheet-data-grid';
+const defaultSelector = '#default-terra-flowsheet-data-grid-table';
 
 const holdDownShiftKey = () => {
   browser.performActions([{

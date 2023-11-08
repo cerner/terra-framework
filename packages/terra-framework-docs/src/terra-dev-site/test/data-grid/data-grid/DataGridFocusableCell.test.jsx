@@ -33,34 +33,43 @@ const DataGridFocusableCell = () => {
 
   const gridDataJSON = {
     cols: [
-      { id: 'Column-0', displayName: 'Patient' },
-      { id: 'Column-1', displayName: 'Location' },
-      { id: 'Column-2', displayName: 'Illness Severity' },
-      { id: 'Column-3', displayName: 'Visit' },
+      {
+        id: 'Column-0', displayName: 'Patient', isSelectable: true, isResizable: true,
+      },
+      {
+        id: 'Column-1', displayName: 'Location', isSelectable: true, isResizable: true,
+      },
+      {
+        id: 'Column-2', displayName: 'Illness Severity', isSelectable: true, isResizable: true,
+      },
+      {
+        id: 'Column-3', displayName: 'Visit', isSelectable: true, isResizable: true,
+      },
     ],
     rows: [
       {
         id: '1',
         cells: [
-          { content: 'Fleck, Arthur' },
-          { content: buttonCell },
-          { content: inputCell },
-          { content: anchorCell },
+          { content: 'Fleck, Arthur', isSelectable: true },
+          { content: buttonCell, isSelectable: true },
+          { content: inputCell, isSelectable: true },
+          { content: anchorCell, isSelectable: true },
         ],
       },
       {
         id: '2',
         cells: [
-          { content: 'Wayne, Bruce' },
+          { content: 'Wayne, Bruce', isSelectable: true },
           {
             content: (<div>
               {buttonCell}
               {inputCell2}
               {/* eslint-disable-next-line react/jsx-closing-tag-location */}
             </div>),
+            isSelectable: true,
           },
-          { content: selectCell },
-          { content: textAreaCell },
+          { content: selectCell, isSelectable: true },
+          { content: textAreaCell, isSelectable: true },
         ],
       },
     ],

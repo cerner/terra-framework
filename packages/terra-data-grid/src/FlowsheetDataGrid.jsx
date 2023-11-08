@@ -112,8 +112,12 @@ function FlowsheetDataGrid(props) {
   const selectedCells = useRef([]);
   const [cellSelectionAriaLiveMessage, setCellSelectionAriaLiveMessage] = useState(null);
   const inShiftDirectionalMode = useRef(false);
+  const flowsheetColumns = useMemo(() => columns.map(column => ({
+    ...column,
+    isSelectable: column.isSelectable !== false,
+    isResizable: false,
+  })), [columns]);
 
-  const flowsheetColumns = useMemo(() => columns.map(column => ({ ...column, isResizable: false })), [columns]);
   const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
   const overflowColumns = flowsheetColumns.length > 1 ? flowsheetColumns.slice(1) : [];
 
@@ -131,6 +135,7 @@ function FlowsheetDataGrid(props) {
     newRows.forEach((row, rowIndex) => {
       const newCells = [...row.cells];
       newCells.forEach((cell, cellIndex) => {
+        newCells[cellIndex].isSelectable = cell.isSelectable !== false;
         // Cell content has no result and is not a row header (first column), set content to "No result".
         if (contentHasNoResult(cell.content) && cellIndex !== 0) {
           newCells[cellIndex].content = noResultCellContent;

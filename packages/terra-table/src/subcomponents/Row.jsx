@@ -125,25 +125,29 @@ function Row(props) {
         />
         )
       }
-      {cells.map((cellData, cellColumnIndex) => (
-        <Cell
-          rowId={id}
-          columnId={displayedColumns[cellColumnIndex].id}
-          rowIndex={rowIndex}
-          columnIndex={cellColumnIndex + columnIndexOffSet}
-          key={`${id}_${displayedColumns[cellColumnIndex].id}`}
-          isSelected={!hasRowSelection && cellData.isSelected}
-          isMasked={cellData.isMasked}
-          maskedLabel={cellData.maskedLabel}
-          isSelectable={cellData.isSelectable}
-          isRowHeader={cellColumnIndex === rowHeaderIndex}
-          isHighlighted={isHovered || isSelected}
-          onCellSelect={onCellSelect}
-          height={height}
-        >
-          {cellData.content}
-        </Cell>
-      ))}
+      {cells.map((cellData, index) => {
+        const cellColumnIndex = index + columnIndexOffSet;
+        const columnId = displayedColumns[cellColumnIndex].id;
+        return (
+          <Cell
+            rowId={id}
+            columnId={columnId}
+            rowIndex={rowIndex}
+            columnIndex={cellColumnIndex}
+            key={`${id}_${columnId}`}
+            isSelected={!hasRowSelection && cellData.isSelected}
+            isMasked={cellData.isMasked}
+            maskedLabel={cellData.maskedLabel}
+            isSelectable={cellData.isSelectable}
+            isRowHeader={cellColumnIndex === (rowHeaderIndex + columnIndexOffSet)}
+            isHighlighted={isHovered || isSelected}
+            onCellSelect={onCellSelect}
+            height={height}
+          >
+            {cellData.content}
+          </Cell>
+        );
+      })}
     </tr>
   );
 }

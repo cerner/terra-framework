@@ -3,17 +3,39 @@ import DataGrid from 'terra-data-grid/lib/DataGrid';
 
 const gridDataJSON = {
   cols: [
-    { id: 'Column-0', displayName: 'Patient' },
-    { id: 'Column-1', displayName: 'Location' },
-    { id: 'Column-2', displayName: 'Illness Severity' },
-    { id: 'Column-3', displayName: 'Visit' },
-    { id: 'Column-4', displayName: 'Allergy' },
-    { id: 'Column-5', displayName: 'Primary Contact' },
-    { id: 'Column-6', displayName: 'Generic Order Counts' },
-    { id: 'Column-7', displayName: 'Patient Age' },
-    { id: 'Column-8', displayName: 'Medication History' },
-    { id: 'Column-9', displayName: 'My Relationship' },
-    { id: 'Column-10', displayName: 'Not Selectable', isSelectable: false },
+    {
+      id: 'Column-0', displayName: 'Patient', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'Location', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-2', displayName: 'Illness Severity', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-3', displayName: 'Visit', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-4', displayName: 'Allergy', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-5', displayName: 'Primary Contact', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-6', displayName: 'Generic Order Counts', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-7', displayName: 'Patient Age', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-8', displayName: 'Medication History', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-9', displayName: 'My Relationship', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-10', displayName: 'Not Selectable', isSelectable: false, isResizable: true,
+    },
   ],
   rows: [
     {
