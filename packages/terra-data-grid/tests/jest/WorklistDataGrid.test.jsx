@@ -2,15 +2,19 @@ import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl } from 'terra-enzyme-intl';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
-import Row from '../../src/subcomponents/Row';
-import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 
 // Source data for tests
 const dataFile = {
   cols: [
-    { id: 'Column-0', displayName: ' Vitals' },
-    { id: 'Column-1', displayName: 'March 16' },
-    { id: 'Column-2', displayName: 'March 17', isSelectable: false },
+    {
+      id: 'Column-0', displayName: ' Vitals', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-2', displayName: 'March 17', isSelectable: false, isResizable: true,
+    },
   ],
   rows: [
     {
@@ -79,7 +83,7 @@ describe('WorklistDataGrid', () => {
     );
 
     // Find column headers
-    const nonSelectableCell = wrapper.find(Row).at(0).find('th:not(.selectable)');
+    const nonSelectableCell = wrapper.find('Row').at(0).find('th:not(.selectable)');
 
     // Simulate onMouseDown event on row selection column header
     nonSelectableCell.at(0).simulate('keydown', { keyCode: 32 });
@@ -104,7 +108,7 @@ describe('WorklistDataGrid', () => {
     );
 
     // Find column headers
-    const maskedCell = wrapper.find(Row).at(0).find('.masked');
+    const maskedCell = wrapper.find('Row').at(0).find('.masked');
 
     // Simulate onMouseDown event on row selection column header
     maskedCell.at(0).simulate('keydown', { keyCode: 32 });
@@ -142,7 +146,7 @@ describe('Row selection', () => {
     );
 
     // Find column headers
-    const nonSelectableCell = wrapper.find(Row).at(0).find('th:not(.selectable)');
+    const nonSelectableCell = wrapper.find('Row').at(0).find('th:not(.selectable)');
 
     // Simulate onMouseDown event on row selection column header
     nonSelectableCell.at(0).simulate('keydown', { keyCode: 32 });
@@ -168,7 +172,7 @@ describe('Row selection', () => {
     );
 
     // Find column headers
-    const maskedCell = wrapper.find(Row).at(0).find('.masked');
+    const maskedCell = wrapper.find('Row').at(0).find('.masked');
 
     // Simulate onMouseDown event on row selection column header
     maskedCell.at(0).simulate('keydown', { keyCode: 32 });
@@ -194,7 +198,7 @@ describe('Row selection', () => {
     );
 
     // Find and select a selectable cell in the 3rd row.
-    const selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate that only the onRowSelect callback is called.
@@ -220,7 +224,7 @@ describe('Row selection', () => {
     );
 
     // Find and select a selectable cell in the 3rd row.
-    const selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     selectableCell.at(0).simulate('mouseDown');
 
     // Validate that only the onRowSelect callback is called.
@@ -246,7 +250,7 @@ describe('Row selection', () => {
     );
 
     // The 4th row is selected so unselect it using space key.
-    const selectableCell = wrapper.find(Row).at(3).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(3).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate that only the onRowSelect callback is called.
@@ -272,7 +276,7 @@ describe('Row selection', () => {
     );
 
     // The 4th row is selected so unselect it using mouse.
-    const selectableCell = wrapper.find(Row).at(3).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(3).find('td.selectable');
     selectableCell.at(0).simulate('mouseDown');
 
     // Validate that only the onRowSelect callback is called.
@@ -296,7 +300,7 @@ describe('Row selection', () => {
       />,
     );
 
-    const selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     selectableCell.at(0).simulate('mouseDown'); // Row selection is not on so cell will be selected.
     expect(mockOnCellSelect).toHaveBeenCalledWith('1', 'Column-1'); // The first click to select the cell from which shift+Down will occur.
 
@@ -321,10 +325,10 @@ describe('Row selection', () => {
       />,
     );
 
-    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    const rowSelectionHeader = wrapper.find('ColumnHeaderCell').at(0);
     rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
 
-    const selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
 
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }]);
@@ -348,10 +352,10 @@ describe('Row selection', () => {
       />,
     );
 
-    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    const rowSelectionHeader = wrapper.find('ColumnHeaderCell').at(0);
     rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
 
-    const selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
 
@@ -377,11 +381,11 @@ describe('Row selection', () => {
       />,
     );
 
-    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    const rowSelectionHeader = wrapper.find('ColumnHeaderCell').at(0);
     rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
 
     // Find a cell on row 1 and use Shift+Down to create a selected range of rows.
-    let selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    let selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }]);
 
@@ -390,7 +394,7 @@ describe('Row selection', () => {
     selectableCell.at(0).simulate('keydown', { shiftKey: false, keyCode: 40 });
 
     // Find a cell on Row 3 and do a Shift+Down
-    selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '3', selected: true }, { id: '4', selected: true }]);
 
@@ -414,10 +418,10 @@ describe('Row selection', () => {
       />,
     );
 
-    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    const rowSelectionHeader = wrapper.find('ColumnHeaderCell').at(0);
     rowSelectionHeader.at(0).simulate('keydown', { keyCode: 40 });
 
-    const selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 }); // Shift+Down starts the range
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 }); // Shift+Down extends the range
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 38 }); // Shift+Up contracts the range
@@ -445,13 +449,13 @@ describe('Row selection', () => {
       />,
     );
 
-    let selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    let selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     // Select Row 1 using space.
     selectableCell.at(0).simulate('keydown', { keyCode: 32 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }]);
 
     // Shift+Click on row 3
-    selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     selectableCell.at(0).simulate('mouseDown', { shiftKey: true });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }, { id: '3', selected: true }]);
 
@@ -475,13 +479,13 @@ describe('Row selection', () => {
       />,
     );
 
-    let selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    let selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     // Select Row 1 using Mouse.
     selectableCell.at(0).simulate('mouseDown');
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }]);
 
     // Shift+Space on row 3
-    selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     selectableCell.at(0).simulate('keyDown', { shiftKey: true, keyCode: 32 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }, { id: '3', selected: true }]);
 
@@ -504,7 +508,7 @@ describe('Row selection', () => {
       />,
     );
 
-    const selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     // Select Row 3 using Shift+Click when row selection is off.
     selectableCell.at(0).simulate('mouseDown', { shiftKey: true });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '3', selected: true }]);
@@ -528,7 +532,7 @@ describe('Row selection', () => {
       />,
     );
 
-    const selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    const selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     // Select Row 3 using Shift+Space when row selection is off.
     selectableCell.at(0).simulate('keyDown', { shiftKey: true, keyCode: 32 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '3', selected: true }]);
@@ -553,13 +557,13 @@ describe('Row selection', () => {
       />,
     );
 
-    let selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    let selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     // Select Row 1 using Shift+Click. Row is selected and anchor created.
     selectableCell.at(0).simulate('mouseDown', { shiftKey: true });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }]);
 
     // Shift+Click on row 3
-    selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     selectableCell.at(0).simulate('mouseDown', { shiftKey: true });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }, { id: '3', selected: true }]);
 
@@ -583,13 +587,13 @@ describe('Row selection', () => {
       />,
     );
 
-    let selectableCell = wrapper.find(Row).at(0).find('td.selectable');
+    let selectableCell = wrapper.find('Row').at(0).find('td.selectable');
     // Select Row 1 using Shift+Space. Row is selected and anchor created.
     selectableCell.at(0).simulate('keyDown', { shiftKey: true, keyCode: 32 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }]);
 
     // Shift+Space on row 3
-    selectableCell = wrapper.find(Row).at(2).find('td.selectable');
+    selectableCell = wrapper.find('Row').at(2).find('td.selectable');
     selectableCell.at(0).simulate('keyDown', { shiftKey: true, keyCode: 32 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }, { id: '3', selected: true }]);
 

@@ -227,6 +227,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
           hasColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
           tableHeight={0}
         >
@@ -239,12 +240,15 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -282,11 +286,14 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -301,6 +308,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": 0,
+                        "width": "40px",
                       }
                     }
                   >
@@ -326,10 +334,13 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -368,11 +379,14 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -387,12 +401,12 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                          Vitals
@@ -406,10 +420,13 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -448,11 +465,14 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -467,12 +487,12 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 16
@@ -486,11 +506,14 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -529,11 +552,14 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -548,12 +574,12 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 17
@@ -748,20 +774,20 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -826,19 +852,19 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -905,20 +931,20 @@ exports[`Row Selection verifies row selection all row selection single selction 
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -1007,6 +1033,17 @@ exports[`Row Selection verifies row selection all row selection single selction 
         >
           Terra.table.all-rows-selected
         </span>
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
       </VisuallyHiddenText>
     </div>
   </Table>
@@ -1328,6 +1365,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
           hasColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
           tableHeight={0}
         >
@@ -1340,12 +1378,15 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -1383,11 +1424,14 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -1402,6 +1446,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": 0,
+                        "width": "40px",
                       }
                     }
                   >
@@ -1427,10 +1472,13 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -1469,11 +1517,14 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -1488,12 +1539,12 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                          Vitals
@@ -1507,10 +1558,13 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -1549,11 +1603,14 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -1568,12 +1625,12 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 16
@@ -1587,11 +1644,14 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -1630,11 +1690,14 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -1649,12 +1712,12 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 17
@@ -1848,20 +1911,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -1926,19 +1989,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -2005,20 +2068,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -2266,19 +2329,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -2343,19 +2406,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -2418,20 +2481,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -2679,19 +2742,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -2756,19 +2819,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -2831,20 +2894,20 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -3092,19 +3155,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -3169,19 +3232,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -3244,19 +3307,19 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -3341,6 +3404,17 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
         >
           Terra.table.all-rows-unselected
         </span>
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
       </VisuallyHiddenText>
     </div>
   </Table>
@@ -3534,6 +3608,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
           hasColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
           tableHeight={0}
         >
@@ -3546,12 +3621,15 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -3589,11 +3667,14 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -3608,6 +3689,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
+                        "width": "40px",
                       }
                     }
                   >
@@ -3633,10 +3715,13 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -3675,11 +3760,14 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -3694,12 +3782,12 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                          Vitals
@@ -3713,10 +3801,13 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -3755,11 +3846,14 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -3774,12 +3868,12 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 16
@@ -3793,11 +3887,14 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -3836,11 +3933,14 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -3855,12 +3955,12 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 17
@@ -3893,6 +3993,17 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
         >
           Terra.table.all-rows-unselected
         </span>
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
       </VisuallyHiddenText>
     </div>
   </Table>
@@ -4283,6 +4394,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
             hasColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
+            onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
             tableHeight={0}
           >
@@ -4295,12 +4407,15 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   columnIndex={0}
                   headerHeight="2.5rem"
                   id="table-rowSelectionColumn"
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   key="table-rowSelectionColumn"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -4338,11 +4453,14 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -4357,6 +4475,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": 0,
+                          "width": "40px",
                         }
                       }
                     >
@@ -4382,10 +4501,13 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -4424,11 +4546,14 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -4443,12 +4568,12 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": null,
+                          "width": "200px",
                         }
                       }
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                            Vitals
@@ -4462,10 +4587,13 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -4504,11 +4632,14 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -4523,12 +4654,12 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": null,
+                          "width": "200px",
                         }
                       }
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 16
@@ -4542,11 +4673,14 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+                  isActive={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -4585,11 +4719,14 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -4604,12 +4741,12 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": null,
+                          "width": "200px",
                         }
                       }
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 17
@@ -4803,20 +4940,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelectable={false}
                   isSelected={false}
-                  key="1_table-rowSelectionColumn"
+                  key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -4881,19 +5018,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
-                  key="1_Column-0"
+                  key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -4960,20 +5097,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="1_Column-1"
+                  key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={1}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -5221,19 +5358,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelected={false}
-                  key="2_table-rowSelectionColumn"
+                  key="2_Column-0"
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -5298,19 +5435,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
-                  key="2_Column-0"
+                  key="2_Column-1"
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -5373,20 +5510,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="2_Column-1"
+                  key="2_Column-2"
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={2}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -5634,19 +5771,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelected={false}
-                  key="3_table-rowSelectionColumn"
+                  key="3_Column-0"
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -5711,19 +5848,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
-                  key="3_Column-0"
+                  key="3_Column-1"
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -5786,20 +5923,20 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="3_Column-1"
+                  key="3_Column-2"
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={3}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -6047,19 +6184,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </RowSelectionCell>
                 </InjectIntl(RowSelectionCell)>
                 <InjectIntl(Cell)
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={true}
                   isSelected={false}
-                  key="4_table-rowSelectionColumn"
+                  key="4_Column-0"
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
                 >
                   <Cell
-                    columnId="table-rowSelectionColumn"
+                    columnId="Column-0"
                     columnIndex={1}
                     height="2.5rem"
                     intl={
@@ -6124,19 +6261,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="4_Column-0"
+                  key="4_Column-1"
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
                 >
                   <Cell
-                    columnId="Column-0"
+                    columnId="Column-1"
                     columnIndex={2}
                     height="2.5rem"
                     intl={
@@ -6199,19 +6336,19 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                   </Cell>
                 </InjectIntl(Cell)>
                 <InjectIntl(Cell)
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={false}
                   isSelected={false}
-                  key="4_Column-1"
+                  key="4_Column-2"
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={4}
                 >
                   <Cell
-                    columnId="Column-1"
+                    columnId="Column-2"
                     columnIndex={3}
                     height="2.5rem"
                     intl={
@@ -6296,6 +6433,17 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
           >
             Terra.table.row-selection-template
           </span>
+        </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="polite"
+          text={null}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            className="visually-hidden-text"
+          />
         </VisuallyHiddenText>
       </div>
     </Table>
@@ -6620,6 +6768,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
           hasColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
           tableHeight={0}
         >
@@ -6632,12 +6781,15 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -6675,11 +6827,14 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -6694,6 +6849,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
+                        "width": "40px",
                       }
                     }
                   >
@@ -6719,10 +6875,13 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -6761,11 +6920,14 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -6780,12 +6942,12 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                          Vitals
@@ -6799,10 +6961,13 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -6841,11 +7006,14 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -6860,12 +7028,12 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 16
@@ -6879,11 +7047,14 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -6922,11 +7093,14 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -6941,12 +7115,12 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 17
@@ -7141,20 +7315,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -7219,19 +7393,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -7298,20 +7472,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -7559,19 +7733,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -7636,19 +7810,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -7711,20 +7885,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -7972,19 +8146,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -8049,19 +8223,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -8124,20 +8298,20 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -8385,19 +8559,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -8462,19 +8636,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -8537,19 +8711,19 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -8634,6 +8808,17 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
         >
           Terra.table.row-selection-cleared-template
         </span>
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
       </VisuallyHiddenText>
     </div>
   </Table>
@@ -8960,6 +9145,7 @@ Array [
             hasColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
+            onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
             tableHeight={0}
           >
@@ -8973,10 +9159,13 @@ Array [
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -9015,11 +9204,14 @@ Array [
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -9034,13 +9226,13 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 0,
+                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                            Vitals
@@ -9054,10 +9246,13 @@ Array [
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -9096,11 +9291,14 @@ Array [
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -9115,13 +9313,13 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 200,
+                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 16
@@ -9144,11 +9342,14 @@ Array [
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+                  isActive={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -9187,11 +9388,14 @@ Array [
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -9206,13 +9410,13 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": null,
+                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 17
@@ -10527,6 +10731,17 @@ Array [
           >
             Terra.table.row-selection-template
           </span>
+        </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="polite"
+          text={null}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            className="visually-hidden-text"
+          />
         </VisuallyHiddenText>
       </div>
     </Table>
@@ -10855,6 +11070,7 @@ Array [
             hasColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
+            onResizeHandleChange={[Function]}
             onResizeMouseDown={[Function]}
             tableHeight={0}
           >
@@ -10868,10 +11084,13 @@ Array [
                   displayName=" Vitals"
                   headerHeight="2.5rem"
                   id="Column-0"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-0"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -10910,11 +11129,14 @@ Array [
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -10929,13 +11151,13 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 0,
+                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                            Vitals
@@ -10949,10 +11171,13 @@ Array [
                   displayName="March 16"
                   headerHeight="2.5rem"
                   id="Column-1"
+                  isActive={false}
+                  isResizeActive={false}
                   key="Column-1"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -10991,11 +11216,14 @@ Array [
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -11010,13 +11238,13 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 200,
+                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 16
@@ -11039,11 +11267,14 @@ Array [
                   displayName="March 17"
                   headerHeight="2.5rem"
                   id="Column-2"
+                  isActive={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   key="Column-2"
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -11082,11 +11313,14 @@ Array [
                         "timeZone": null,
                       }
                     }
+                    isActive={false}
                     isResizable={false}
+                    isResizeActive={false}
                     isSelectable={false}
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
+                    onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
                     rowIndex={0}
                     tableHeight={0}
@@ -11101,13 +11335,13 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": null,
+                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
                     >
                       <div
                         className="header-container"
-                        role="button"
                       >
                         <span>
                           March 17
@@ -12422,6 +12656,17 @@ Array [
           >
             Terra.table.row-selection-template
           </span>
+        </VisuallyHiddenText>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-live="polite"
+          text={null}
+        >
+          <span
+            aria-atomic="true"
+            aria-live="polite"
+            className="visually-hidden-text"
+          />
         </VisuallyHiddenText>
       </div>
     </Table>
@@ -12776,6 +13021,7 @@ exports[`Table verifies row selection column header not selectable without callb
           hasColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
           tableHeight={0}
         >
@@ -12788,12 +13034,15 @@ exports[`Table verifies row selection column header not selectable without callb
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={true}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -12831,11 +13080,14 @@ exports[`Table verifies row selection column header not selectable without callb
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={true}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -12852,6 +13104,7 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": 0,
+                        "width": "40px",
                       }
                     }
                   >
@@ -12869,10 +13122,13 @@ exports[`Table verifies row selection column header not selectable without callb
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -12911,11 +13167,14 @@ exports[`Table verifies row selection column header not selectable without callb
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -12930,12 +13189,12 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": 40,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                          Vitals
@@ -12949,10 +13208,13 @@ exports[`Table verifies row selection column header not selectable without callb
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -12991,11 +13253,14 @@ exports[`Table verifies row selection column header not selectable without callb
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -13010,12 +13275,12 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": 240,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 16
@@ -13038,11 +13303,14 @@ exports[`Table verifies row selection column header not selectable without callb
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -13081,11 +13349,14 @@ exports[`Table verifies row selection column header not selectable without callb
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -13100,12 +13371,12 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 17
@@ -13298,20 +13569,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -13376,19 +13647,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -13455,20 +13726,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -13715,19 +13986,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -13792,19 +14063,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -13867,20 +14138,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -14127,19 +14398,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -14204,19 +14475,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -14279,20 +14550,20 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -14539,19 +14810,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -14616,19 +14887,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -14691,19 +14962,19 @@ exports[`Table verifies row selection column header not selectable without callb
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -14788,6 +15059,17 @@ exports[`Table verifies row selection column header not selectable without callb
         >
           Terra.table.row-selection-template
         </span>
+      </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
       </VisuallyHiddenText>
     </div>
   </Table>
@@ -15116,6 +15398,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           hasColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
+          onResizeHandleChange={[Function]}
           onResizeMouseDown={[Function]}
           tableHeight={0}
         >
@@ -15128,12 +15411,15 @@ exports[`Table verifies row selection column header selection 1`] = `
                 columnIndex={0}
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
+                isActive={false}
                 isResizable={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="table-rowSelectionColumn"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -15171,11 +15457,14 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -15190,6 +15479,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
+                        "width": "40px",
                       }
                     }
                   >
@@ -15206,10 +15496,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                 displayName=" Vitals"
                 headerHeight="2.5rem"
                 id="Column-0"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-0"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -15248,11 +15541,14 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -15267,12 +15563,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 40,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                          Vitals
@@ -15286,10 +15582,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                 displayName="March 16"
                 headerHeight="2.5rem"
                 id="Column-1"
+                isActive={false}
+                isResizeActive={false}
                 key="Column-1"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -15328,11 +15627,14 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -15347,12 +15649,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 240,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 16
@@ -15375,11 +15677,14 @@ exports[`Table verifies row selection column header selection 1`] = `
                 displayName="March 17"
                 headerHeight="2.5rem"
                 id="Column-2"
+                isActive={false}
+                isResizeActive={false}
                 isSelectable={false}
                 key="Column-2"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
+                onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
                 rowIndex={0}
                 tableHeight={0}
@@ -15418,11 +15723,14 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "timeZone": null,
                     }
                   }
+                  isActive={false}
                   isResizable={false}
+                  isResizeActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
+                  onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
                   rowIndex={0}
                   tableHeight={0}
@@ -15437,12 +15745,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
+                        "width": "200px",
                       }
                     }
                   >
                     <div
                       className="header-container"
-                      role="button"
                     >
                       <span>
                         March 17
@@ -15635,20 +15943,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelectable={false}
                 isSelected={false}
-                key="1_table-rowSelectionColumn"
+                key="1_Column-0"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -15713,19 +16021,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-0"
+                key="1_Column-1"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -15792,20 +16100,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="1_Column-1"
+                key="1_Column-2"
                 onCellSelect={[Function]}
                 rowId="1"
                 rowIndex={1}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -16052,19 +16360,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="2_table-rowSelectionColumn"
+                key="2_Column-0"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -16129,19 +16437,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-0"
+                key="2_Column-1"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -16204,20 +16512,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="2_Column-1"
+                key="2_Column-2"
                 onCellSelect={[Function]}
                 rowId="2"
                 rowIndex={2}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -16464,19 +16772,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={true}
                 isSelected={false}
-                key="3_table-rowSelectionColumn"
+                key="3_Column-0"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -16541,19 +16849,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={false}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-0"
+                key="3_Column-1"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -16616,20 +16924,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={false}
                 isMasked={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="3_Column-1"
+                key="3_Column-2"
                 onCellSelect={[Function]}
                 rowId="3"
                 rowIndex={3}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -16876,19 +17184,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </RowSelectionCell>
               </InjectIntl(RowSelectionCell)>
               <InjectIntl(Cell)
-                columnId="table-rowSelectionColumn"
+                columnId="Column-0"
                 columnIndex={1}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={true}
                 isSelected={false}
-                key="4_table-rowSelectionColumn"
+                key="4_Column-0"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="table-rowSelectionColumn"
+                  columnId="Column-0"
                   columnIndex={1}
                   height="2.5rem"
                   intl={
@@ -16953,19 +17261,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-0"
+                columnId="Column-1"
                 columnIndex={2}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-0"
+                key="4_Column-1"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-0"
+                  columnId="Column-1"
                   columnIndex={2}
                   height="2.5rem"
                   intl={
@@ -17028,19 +17336,19 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </Cell>
               </InjectIntl(Cell)>
               <InjectIntl(Cell)
-                columnId="Column-1"
+                columnId="Column-2"
                 columnIndex={3}
                 height="2.5rem"
                 isHighlighted={true}
                 isRowHeader={false}
                 isSelected={false}
-                key="4_Column-1"
+                key="4_Column-2"
                 onCellSelect={[Function]}
                 rowId="4"
                 rowIndex={4}
               >
                 <Cell
-                  columnId="Column-1"
+                  columnId="Column-2"
                   columnIndex={3}
                   height="2.5rem"
                   intl={
@@ -17126,6 +17434,17 @@ exports[`Table verifies row selection column header selection 1`] = `
           Terra.table.row-selection-template
         </span>
       </VisuallyHiddenText>
+      <VisuallyHiddenText
+        aria-atomic="true"
+        aria-live="polite"
+        text={null}
+      >
+        <span
+          aria-atomic="true"
+          aria-live="polite"
+          className="visually-hidden-text"
+        />
+      </VisuallyHiddenText>
     </div>
   </Table>
 </InjectIntl(Table)>
@@ -17146,6 +17465,7 @@ exports[`Table verifies that the column widths are set properly in the colgroup 
           "pinnedColumnOffsets": Array [
             0,
           ],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -17205,6 +17525,7 @@ exports[`Table verifies that the column widths are set properly in the colgroup 
         hasColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
         tableHeight={0}
       />
@@ -17370,6 +17691,11 @@ exports[`Table verifies that the column widths are set properly in the colgroup 
     text={null}
   />
   <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
     aria-live="polite"
     text={null}
   />
@@ -17391,6 +17717,7 @@ exports[`Table verifies that the table created is consistent with the rows and o
           "pinnedColumnOffsets": Array [
             0,
           ],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -17450,6 +17777,7 @@ exports[`Table verifies that the table created is consistent with the rows and o
         hasColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
         tableHeight={0}
       />
@@ -17615,6 +17943,11 @@ exports[`Table verifies that the table created is consistent with the rows and o
     text={null}
   />
   <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
     aria-live="polite"
     text={null}
   />
@@ -17636,6 +17969,7 @@ exports[`Table verifies the rows are created with the right props 1`] = `
           "pinnedColumnOffsets": Array [
             0,
           ],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -17695,6 +18029,7 @@ exports[`Table verifies the rows are created with the right props 1`] = `
         hasColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
         tableHeight={0}
       />
@@ -17860,6 +18195,11 @@ exports[`Table verifies the rows are created with the right props 1`] = `
     text={null}
   />
   <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
     aria-live="polite"
     text={null}
   />
@@ -17881,6 +18221,7 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
           "pinnedColumnOffsets": Array [
             0,
           ],
+          "setColumnHeaderAriaLiveMessage": [Function],
         }
       }
     >
@@ -17940,6 +18281,7 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
         hasColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
+        onResizeHandleChange={[Function]}
         onResizeMouseDown={[Function]}
         tableHeight={0}
       />
@@ -18109,6 +18451,11 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
     text={null}
   />
   <VisuallyHiddenText
+    aria-live="polite"
+    text={null}
+  />
+  <VisuallyHiddenText
+    aria-atomic="true"
     aria-live="polite"
     text={null}
   />

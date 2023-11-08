@@ -11,6 +11,8 @@
   "Terra.table.row-selection-template" : "Row {row} selected. ",
   "Terra.table.multiple-rows-selected": "{rowCount} rows selected. ",
   "Terra.table.multiple-rows-unselected": "{rowCount} rows unselected. ",
+  "Terra.table.resize-handle-template": "Column resize handle for {columnText}. Press Enter to use.",
+  "Terra.table.resize-handle-value-text": "{columnWidth} pixels",
   "Terra.table.row-selection-cleared-template" : "Row {row} unselected. ",
   "Terra.table.row-selection-mode-enabled": "Row Selection Mode enabled.",
   "Terra.table.row-selection-mode-disabled": "Row Selection Mode disabled",

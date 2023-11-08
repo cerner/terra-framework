@@ -1,20 +1,29 @@
 import React from 'react';
-import { IntlProvider } from 'react-intl';
-
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
-
-import ColumnContext from '../../src/utils/ColumnContext';
+import { IntlProvider } from 'react-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
+import ColumnContext from '../../src/utils/ColumnContext';
+
+beforeAll(() => {
+  jest.spyOn(console, 'error').mockImplementation();
+  jest.spyOn(console, 'warn').mockImplementation();
+});
+
+afterAll(() => {
+  console.error.mockRestore(); // eslint-disable-line no-console
+  console.warn.mockRestore(); // eslint-disable-line no-console
+});
 
 describe('ColumnHeaderCell', () => {
   it('renders a default column header cell', () => {
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -28,12 +37,13 @@ describe('ColumnHeaderCell', () => {
       </IntlProvider>,
     ).dive().dive();
 
-    const columnHeader = wrapper.find('.column-header');
+    const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
+    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
@@ -48,6 +58,7 @@ describe('ColumnHeaderCell', () => {
       id: 'Column-0',
       displayName: ' Vitals',
       sortIndicator: 'ascending',
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -61,13 +72,14 @@ describe('ColumnHeaderCell', () => {
       </IntlProvider>,
     ).dive().dive();
 
-    const columnHeader = wrapper.find('.column-header');
+    const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
+    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
@@ -82,6 +94,7 @@ describe('ColumnHeaderCell', () => {
       id: 'Column-0',
       displayName: ' Vitals',
       sortIndicator: 'descending',
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -95,13 +108,14 @@ describe('ColumnHeaderCell', () => {
       </IntlProvider>,
     ).dive().dive();
 
-    const columnHeader = wrapper.find('.column-header');
+    const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('descending');
+    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
@@ -116,6 +130,7 @@ describe('ColumnHeaderCell', () => {
       id: 'Column-0',
       displayName: ' Vitals',
       hasError: true,
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -129,13 +144,14 @@ describe('ColumnHeaderCell', () => {
       </IntlProvider>,
     ).dive().dive();
 
-    const columnHeader = wrapper.find('.column-header');
+    const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBeUndefined();
+    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
@@ -151,6 +167,7 @@ describe('ColumnHeaderCell', () => {
       displayName: ' Vitals',
       sortIndicator: 'ascending',
       hasError: true,
+      isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
@@ -164,13 +181,14 @@ describe('ColumnHeaderCell', () => {
       </IntlProvider>,
     ).dive().dive();
 
-    const columnHeader = wrapper.find('.column-header');
+    const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
+    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
@@ -187,6 +205,7 @@ describe('ColumnHeaderCell', () => {
       displayName: ' Vitals',
       sortIndicator: 'ascending',
       hasError: true,
+      isSelectable: true,
     };
 
     const mockClick = jest.fn();
@@ -195,7 +214,6 @@ describe('ColumnHeaderCell', () => {
       <IntlProvider locale="en">
         <ColumnHeaderCell
           columnIndex={0}
-          isSelectable
           width={100}
           headerHeight="150px"
           {...column}
@@ -209,9 +227,10 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
-    expect(columnHeader.props().tabIndex).toBeUndefined();
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeDefined();
+    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
@@ -254,9 +273,10 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeUndefined();
+    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
 
-    const headerContainer = columnHeader.find('.header-container[role="button"]');
+    const headerContainer = columnHeader.find('.header-container');
     expect(headerContainer.props().tabIndex).toBeUndefined();
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
@@ -266,8 +286,6 @@ describe('ColumnHeaderCell', () => {
   });
 
   it('renders a pinned column header cell', () => {
-    jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
-
     const column = {
       id: 'Column-0',
       displayName: ' Vitals',
@@ -288,7 +306,19 @@ describe('ColumnHeaderCell', () => {
 
     expect(wrapper.find('.pinned')).toHaveLength(1);
     expect(wrapper).toMatchSnapshot();
+  });
 
-    console.error.mockRestore(); // eslint-disable-line no-console
+  it('calls a custom column select callback function on mouse down', () => {
+    const mockOnColumnSelect = jest.fn();
+    const wrapper = mountWithIntl(
+      <ColumnHeaderCell
+        onColumnSelect={mockOnColumnSelect}
+        isSelectable
+      />,
+    );
+    wrapper.find('.column-header').simulate('mousedown');
+
+    // Validate mock function was called from simulated onMouseDown event
+    expect(mockOnColumnSelect).toHaveBeenCalled();
   });
 });
