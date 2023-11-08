@@ -95,6 +95,17 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('selection-arrows-range-1-1-to-3-1-focus-3-0', { selector: defaultSelector });
     });
 
+    it('validates that Shift+Arrow keys does not select column header cells when navigated to', () => {
+      navigateToCell(3, 1);
+      browser.keys(['Space']);
+      holdDownShiftKey();
+      moveCurrentPositionBy(-3, 0);
+      releaseShiftKey();
+
+      expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
+      Terra.validates.element('selection-arrows-range-3-1-to-1-1-focus-0-1', { selector: defaultSelector });
+    });
+
     it('validates that clicking on a cell, moves selection and focus to that cell', () => {
       clickCell(3, 1, defaultSelector);
 
