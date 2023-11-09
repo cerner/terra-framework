@@ -12,7 +12,6 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
     Object {
       "height": "150px",
       "left": null,
-      "width": "100px",
     }
   }
 >
@@ -45,7 +44,6 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
     Object {
       "height": "150px",
       "left": null,
-      "width": "100px",
     }
   }
 >
@@ -84,7 +82,6 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
     Object {
       "height": "150px",
       "left": null,
-      "width": "100px",
     }
   }
 >
@@ -116,7 +113,6 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
     Object {
       "height": "150px",
       "left": null,
-      "width": "100px",
     }
   }
 >
@@ -151,7 +147,6 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     Object {
       "height": "150px",
       "left": null,
-      "width": "100px",
     }
   }
 >
@@ -189,7 +184,6 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     Object {
       "height": "150px",
       "left": null,
-      "width": "100px",
     }
   }
 >
@@ -225,7 +219,6 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
     Object {
       "height": "150px",
       "left": null,
-      "width": "100px",
     }
   }
 >
@@ -301,7 +294,6 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         Object {
           "height": "150px",
           "left": 0,
-          "width": "100px",
         }
       }
     >

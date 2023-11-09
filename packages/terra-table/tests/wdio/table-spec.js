@@ -218,4 +218,62 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('row-selection-header-selectable', { selector: rowSelectionTableSelector });
     });
   });
+
+  describe('Resizable Table', () => {
+    const resizableColumnsTableSelector = '#resizable-columns-table';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/resizable-columns-table');
+    });
+
+    it('focuses on the column resize handle', () => {
+      browser.keys(['Tab', 'Tab']);
+      Terra.validates.element('column-resize-handle-focused', { selector: resizableColumnsTableSelector });
+    });
+
+    it('increases the column width with the keyboard in resize mode', () => {
+      // disabling the 'aria-input-field-name' rule as it is dynamically removed
+      // for the keyboard resize workflow and this causes an accessibility failure
+      const options = {
+        selector: resizableColumnsTableSelector,
+        rules: { 'aria-input-field-name': { enabled: false } },
+      };
+
+      browser.keys(['Tab', 'Tab', 'Space', 'ArrowRight', 'ArrowRight']);
+      expect($('tr.column-header-row th:first-child').getCSSProperty('width').parsed.value).toBe(220);
+      Terra.validates.element('column-resize-increase-keyboard', options);
+    });
+
+    it('decreases the column width with the keyboard in resize mode', () => {
+      // disabling the 'aria-input-field-name' rule as it is dynamically removed
+      // for the keyboard resize workflow and this causes an accessibility failure
+      const options = {
+        selector: resizableColumnsTableSelector,
+        rules: { 'aria-input-field-name': { enabled: false } },
+      };
+
+      browser.keys(['Tab', 'Tab', 'Space', 'ArrowLeft', 'ArrowLeft']);
+      expect($('tr.column-header-row th:first-child').getCSSProperty('width').parsed.value).toBe(180);
+      Terra.validates.element('column-resize-decrease-keyboard', options);
+    });
+
+    it('exits out of resize mode after hitting the escape key', () => {
+      browser.keys(['Tab', 'Tab', 'Space', 'ArrowLeft', 'ArrowLeft', 'Escape', 'Tab', 'Tab']);
+      expect($('tr.column-header-row th:first-child').getCSSProperty('width').parsed.value).toBe(180);
+      expect(browser.$('tr.column-header-row th:first-child div[class*=resize-handle]').isFocused()).toBe(false);
+      expect(browser.$('tr.column-header-row th:nth-child(2) div[class*=resize-handle]').isFocused()).toBe(true);
+    });
+
+    it('resumes column focus after tabbing out and back into the table', () => {
+      browser.keys([...Array(8).fill('Tab'), 'Shift', 'Tab']); // tab until out of table, and then back in.
+
+      expect(browser.$('tr.column-header-row th:nth-child(4) div[class*=resize-handle]').isFocused()).toBe(true);
+    });
+
+    it('does not focus on column resize handle if it is disabled', () => {
+      browser.keys([...Array(7).fill('Tab')]); // We skip over the column that has column resize disabled.
+
+      expect(browser.$('tr.column-header-row th:nth-child(4) div[class*=resize-handle]').isFocused()).toBe(true);
+    });
+  });
 });

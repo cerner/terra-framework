@@ -10,6 +10,7 @@
   * Added an error handling test for `terra-embedded-content-consumer`.
   * Added single and ranged cell selection Flowsheet Data Grid example.
   * Added aria labels for table examples.
+  * Added examples for resizable columns in tables.
 
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.

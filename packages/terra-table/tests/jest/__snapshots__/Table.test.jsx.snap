@@ -308,7 +308,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                   >
@@ -401,7 +400,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -487,7 +485,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -574,7 +571,6 @@ exports[`Row Selection verifies row selection all row selection single selction 
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -1446,7 +1442,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                   >
@@ -1539,7 +1534,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -1625,7 +1619,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -1712,7 +1705,6 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -3689,7 +3681,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                   >
@@ -3782,7 +3773,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -3868,7 +3858,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -3955,7 +3944,6 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -4475,7 +4463,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": 0,
-                          "width": "40px",
                         }
                       }
                     >
@@ -4568,7 +4555,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": null,
-                          "width": "200px",
                         }
                       }
                     >
@@ -4654,7 +4640,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": null,
-                          "width": "200px",
                         }
                       }
                     >
@@ -4741,7 +4726,6 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                         Object {
                           "height": "2.5rem",
                           "left": null,
-                          "width": "200px",
                         }
                       }
                     >
@@ -6849,7 +6833,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                   >
@@ -6942,7 +6925,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -7028,7 +7010,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -7115,7 +7096,6 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -9226,7 +9206,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 0,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -9313,7 +9292,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 200,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -9410,7 +9388,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": null,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -11151,7 +11128,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 0,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -11238,7 +11214,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": 200,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -11335,7 +11310,6 @@ Array [
                         Object {
                           "height": "2.5rem",
                           "left": null,
-                          "width": "200px",
                         }
                       }
                       tabIndex={-1}
@@ -13104,7 +13078,6 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                   >
@@ -13189,7 +13162,6 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": 40,
-                        "width": "200px",
                       }
                     }
                   >
@@ -13275,7 +13247,6 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": 240,
-                        "width": "200px",
                       }
                     }
                   >
@@ -13371,7 +13342,6 @@ exports[`Table verifies row selection column header not selectable without callb
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
@@ -15479,7 +15449,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                   >
@@ -15563,7 +15532,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 40,
-                        "width": "200px",
                       }
                     }
                   >
@@ -15649,7 +15617,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 240,
-                        "width": "200px",
                       }
                     }
                   >
@@ -15745,7 +15712,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                   >
