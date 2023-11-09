@@ -204,15 +204,19 @@ const DataGrid = injectIntl((props) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
-    let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
-    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-      [focusedCell] = focusedCell.getElementsByTagName('input');
-    }
 
     if (makeActiveElement) {
+      // Set focus on input field (checkbox) of row selection cells.
+      let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+      if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+        [focusedCell] = focusedCell.getElementsByTagName('input');
+      }
+
+      // Set focus to column header button, if it exists
       if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
         focusedCell = focusedCell.querySelector('[role="button"]');
       }
+
       focusedCell?.focus();
     }
   };
