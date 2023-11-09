@@ -1,12 +1,4 @@
 {
-  "Terra.dataGrid.maskedCell": "Gemaskeerde gegevens",
-  "Terra.dataGrid.columnError": "Fouten die verband houden met kolom",
-  "Terra.dataGrid.blank": "Leeg",
-  "Terra.dataGrid.row-index": "Rij {row}",
-  "Terra.dataGrid.resizeHandleValueText": "{columnWidth} pixels kolombreedte",
-  "Terra.dataGrid.cell-focus-trapped": "Focus behouden in cel. Druk op Escape om de rasternavigatie te hervatten.",
-  "Terra.dataGrid.cell-interactable": "Cel bevat interactieve elementen. Druk op Enter om de focus binnen de cel te verplaatsen.",
-  "Terra.dataGrid.resume-navigation": "Rasternavigatie hervat.",
   "Terra.worklistDataGrid.row-selection-template": "Rij {row} geselecteerd. ",
   "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} rijen geselecteerd. ",
   "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} rijen gedeselecteerd. ",
@@ -14,9 +6,5 @@
   "Terra.worklistDataGrid.row-selection-mode-enabled": "Selectiemodus voor rijen ingeschakeld.",
   "Terra.worklistDataGrid.row-selection-mode-disabled": "Selectiemodus voor rijen uitgeschakeld.",
   "Terra.worklistDataGrid.all-rows-selected": "Alle rijen geselecteerd",
-  "Terra.worklistDataGrid.all-rows-unselected": "Geen rijen geselecteerd",
-  "Terra.worklist-data-grid.resize-handle-template": "Kolomformaatgreep voor {columnText}. Druk op Enter om te gebruiken.",
-  "Terra.worklist-data-grid.resize-handle-value-text": "{columnWidth} pixels",
-  "Terra.worklist-data-grid.cell-focus-trapped": "Focus behouden in cel. Druk op Escape om de rasternavigatie te hervatten.",
-  "Terra.worklist-data-grid.resume-navigation": "Rasternavigatie hervat."
+  "Terra.worklistDataGrid.all-rows-unselected": "Geen rijen geselecteerd"
 }

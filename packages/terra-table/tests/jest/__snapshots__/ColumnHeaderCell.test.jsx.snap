@@ -4,6 +4,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
 <th
   aria-sort="ascending"
   className="column-header selectable"
+  id="test-table-Column-0"
   key="Column-0"
   onKeyDown={[Function]}
   role="columnheader"
@@ -37,6 +38,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
 <th
   aria-sort="ascending"
   className="column-header selectable"
+  id="test-table-Column-0"
   key="Column-0"
   onKeyDown={[Function]}
   role="columnheader"
@@ -76,6 +78,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
 <th
   aria-sort="descending"
   className="column-header selectable"
+  id="test-table-Column-0"
   key="Column-0"
   onKeyDown={[Function]}
   role="columnheader"
@@ -108,6 +111,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
 exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
 <th
   className="column-header selectable"
+  id="test-table-Column-0"
   key="Column-0"
   onKeyDown={[Function]}
   role="columnheader"
@@ -142,6 +146,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
 <th
   aria-sort="ascending"
   className="column-header selectable"
+  id="test-table-Column-0"
   key="Column-0"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
@@ -182,6 +187,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
 <th
   aria-sort="ascending"
   className="column-header"
+  id="test-table-Column-0"
   key="Column-0"
   role="columnheader"
   scope="col"
@@ -217,6 +223,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
 exports[`ColumnHeaderCell renders a default column header cell 1`] = `
 <th
   className="column-header selectable"
+  id="test-table-Column-0"
   key="Column-0"
   onKeyDown={[Function]}
   role="columnheader"
@@ -249,6 +256,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
   headerHeight="150px"
   id="Column-0"
   sortIndicator="ascending"
+  tableId="test-table"
   width={100}
 >
   <ColumnHeaderCell
@@ -289,11 +297,13 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     isResizeActive={false}
     isSelectable={false}
     sortIndicator="ascending"
+    tableId="test-table"
     width={100}
   >
     <th
       aria-sort="ascending"
       className="column-header pinned"
+      id="test-table-Column-0"
       key="Column-0"
       role="columnheader"
       scope="col"

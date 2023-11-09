@@ -27,6 +27,11 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
@@ -137,6 +142,7 @@ const defaultProps = {
 const ColumnHeaderCell = (props) => {
   const {
     id,
+    tableId,
     displayName,
     sortIndicator,
     hasError,
@@ -269,6 +275,7 @@ const ColumnHeaderCell = (props) => {
   /* eslint-disable react/forbid-dom-props */
     <th
       ref={!hasButtonElement ? columnHeaderCellRef : undefined}
+      id={`${tableId}-${id}`}
       key={id}
       className={cx('column-header', theme.className, {
         selectable: isSelectable,
