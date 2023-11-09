@@ -9,6 +9,7 @@
   * Added initial setup for `terra-compact-interactive-list` documentation.
   * Added an error handling test for `terra-embedded-content-consumer`.
   * Added single and ranged cell selection Flowsheet Data Grid example.
+  * Added deprecation warning for `terra-file-path`.
   * Added aria labels for table examples.
 
 * Updated
