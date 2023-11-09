@@ -3,6 +3,7 @@
 exports[`ColumnHeader renders a column header with an active resize column 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
     height="3rem"
   >
@@ -16,6 +17,7 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
       key="Column-0"
       rowIndex={0}
       tableHeight={500}
+      tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
@@ -27,6 +29,7 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
       key="Column-1"
       rowIndex={0}
       tableHeight={500}
+      tableId="test-table"
     />
   </tr>
 </thead>
@@ -35,6 +38,7 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
 exports[`ColumnHeader renders a column header with callbacks 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
     height="3rem"
   >
@@ -50,6 +54,7 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
       onResizeMouseDown={[MockFunction]}
       rowIndex={0}
       tableHeight={500}
+      tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
@@ -63,6 +68,7 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
       onResizeMouseDown={[MockFunction]}
       rowIndex={0}
       tableHeight={500}
+      tableId="test-table"
     />
   </tr>
 </thead>
@@ -71,6 +77,7 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
 exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
     height="3rem"
   >
@@ -84,6 +91,7 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       key="Column-0"
       rowIndex={0}
       tableHeight={500}
+      tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
@@ -95,6 +103,7 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       key="Column-1"
       rowIndex={0}
       tableHeight={500}
+      tableId="test-table"
     />
   </tr>
 </thead>
@@ -103,6 +112,7 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
 exports[`ColumnHeader renders a default column header 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
     height="3rem"
   >
@@ -115,6 +125,7 @@ exports[`ColumnHeader renders a default column header 1`] = `
       isResizeActive={false}
       key="Column-0"
       rowIndex={0}
+      tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
@@ -125,6 +136,7 @@ exports[`ColumnHeader renders a default column header 1`] = `
       isResizeActive={false}
       key="Column-1"
       rowIndex={0}
+      tableId="test-table"
     />
   </tr>
 </thead>
@@ -133,6 +145,7 @@ exports[`ColumnHeader renders a default column header 1`] = `
 exports[`ColumnHeader verifies that the column headers are not hidden when the hasColumnHeader is true 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
     height="3rem"
   >
@@ -145,6 +158,7 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
       isResizeActive={false}
       key="Column-0"
       rowIndex={0}
+      tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
@@ -155,6 +169,7 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
       isResizeActive={false}
       key="Column-1"
       rowIndex={0}
+      tableId="test-table"
     />
   </tr>
 </thead>
@@ -163,6 +178,7 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
 exports[`ColumnHeader verifies that the hasColumnHeaders prop hides the table column headers when set to false 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row hidden"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -176,6 +192,7 @@ exports[`ColumnHeader verifies that the hasColumnHeaders prop hides the table co
       isSelectable={false}
       key="Column-0"
       rowIndex={0}
+      tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={1}
@@ -188,6 +205,7 @@ exports[`ColumnHeader verifies that the hasColumnHeaders prop hides the table co
       isSelectable={false}
       key="Column-1"
       rowIndex={0}
+      tableId="test-table"
     />
   </tr>
 </thead>

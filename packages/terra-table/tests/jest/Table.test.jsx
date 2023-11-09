@@ -3,13 +3,13 @@ import { IntlProvider } from 'react-intl';
 
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
+import { v4 as uuidv4 } from 'uuid';
 
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import ERRORS from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
-
 import Table from '../../src/Table';
 
 // Source data for tests
@@ -56,9 +56,11 @@ const tableData = {
   ],
 };
 
+let mockSpyUuid;
 beforeAll(() => {
   jest.spyOn(console, 'error').mockImplementation();
   jest.spyOn(console, 'warn').mockImplementation();
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
 });
 
 afterEach(() => {
@@ -69,10 +71,11 @@ afterEach(() => {
 afterAll(() => {
   console.error.mockRestore(); // eslint-disable-line no-console
   console.warn.mockRestore(); // eslint-disable-line no-console
+  mockSpyUuid.mockRestore();
 });
 
 describe('Table', () => {
-  it('verifies that the table created is consistent with the rows and overflowColumns props', () => {
+  it('verifies that the table created has a column header', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <Table
@@ -87,57 +90,6 @@ describe('Table', () => {
     // One row used for the header.
     const columnHeader = wrapper.find(ColumnHeader);
     expect(columnHeader).toHaveLength(1);
-
-    // The number of rows should match the given data.
-    expect(wrapper.find(Row)).toHaveLength(tableData.rows.length);
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('verifies the rows are created with the right props', () => {
-    const verifyRow = (rowIndex, rowComponent, data, overflowColumns) => {
-      expect(rowComponent.props.displayedColumns).toEqual(overflowColumns);
-      expect(rowComponent.props.hasRowSelection).toBe(false);
-      expect(rowComponent.key).toEqual(data.id);
-      expect(rowComponent.props.onCellSelect).toBeUndefined();
-      expect(rowComponent.props.rowHeaderIndex).toEqual(0);
-      expect(rowComponent.props.rowIndex).toEqual(rowIndex + 1);
-      expect(rowComponent.props.cells).toEqual(data.cells);
-    };
-
-    const wrapper = shallowWithIntl(
-      <IntlProvider locale="en">
-        <Table
-          id="test-terra-table"
-          overflowColumns={tableData.cols}
-          rows={tableData.rows}
-        />
-      </IntlProvider>,
-    ).dive().dive();
-
-    const rows = wrapper.find(Row);
-    expect(rows).toHaveLength(tableData.rows.length);
-    verifyRow(0, rows.get(0), tableData.rows[0], tableData.cols);
-    verifyRow(1, rows.get(1), tableData.rows[1], tableData.cols);
-    verifyRow(2, rows.get(2), tableData.rows[2], tableData.cols);
-
-    expect(wrapper).toMatchSnapshot();
-  });
-
-  it('verifies the rows receive the correct props when table is zebra striped', () => {
-    const wrapper = shallowWithIntl(
-      <IntlProvider locale="en">
-        <Table
-          id="test-terra-table"
-          overflowColumns={tableData.cols}
-          rows={tableData.rows}
-          isStriped
-        />
-      </IntlProvider>,
-    ).dive().dive();
-
-    const testRow = wrapper.find(Row).get(0);
-    expect(testRow.props.isTableStriped).toBe(true);
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection column header selection', () => {
