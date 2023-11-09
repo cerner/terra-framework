@@ -133,10 +133,14 @@ const ColumnResizeHandle = (props) => {
     onResizeMouseUp();
   };
 
-  const handleFocus = () => {
+  const fitToTable = () => {
     // Update resize handle height to match parent table height
     resizeHandleRef.current.style.height = `${height}px`;
+  };
+
+  const handleFocus = () => {
     setIsActive(true);
+    fitToTable();
   };
 
   const onMouseLeave = () => {
@@ -213,7 +217,7 @@ const ColumnResizeHandle = (props) => {
       style={{ height: `${height}px` }} // eslint-disable-line react/forbid-dom-props
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
-      onMouseEnter={handleFocus}
+      onMouseEnter={fitToTable}
       onMouseLeave={onMouseLeave}
       onKeyDown={onKeyDown}
       onClick={onClick}
