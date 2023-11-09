@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 5.2.0 - (November 9, 2023)
+## 5.1.1-alpha.1 - (November 9, 2023)
 
 * Added
   * Added row selection mode to the table component.
