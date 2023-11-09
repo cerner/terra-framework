@@ -32,7 +32,7 @@
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
-    "terra-table": "^5.2.0",
+    "terra-table": "^5.1.1-alpha.1",
     "terra-visually-hidden-text": "^2.36.0"
   },
   "devDependencies": {
