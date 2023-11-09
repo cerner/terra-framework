@@ -1578,10 +1578,10 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                             },
                           ]
                         }
-                        id="03b3fb9f-1b88-49fe-a77e-6bd31e9816c6"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="03b3fb9f-1b88-49fe-a77e-6bd31e9816c6"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -4849,10 +4849,10 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           ]
                         }
                         hasRowSelection={true}
-                        id="1ce54664-6880-4fac-b833-883e17071104"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="1ce54664-6880-4fac-b833-883e17071104"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -8744,10 +8744,10 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           ]
                         }
                         hasRowSelection={true}
-                        id="5ded4788-a122-47e4-a1bd-0dbb3b805ba3"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="5ded4788-a122-47e4-a1bd-0dbb3b805ba3"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -12503,10 +12503,10 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                             },
                           ]
                         }
-                        id="d08a1bcc-a908-424a-9ca0-1aec59b60b78"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="d08a1bcc-a908-424a-9ca0-1aec59b60b78"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -15774,10 +15774,10 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           ]
                         }
                         hasRowSelection={true}
-                        id="cc354a38-d604-4b03-b0b4-50a26a516f9c"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="cc354a38-d604-4b03-b0b4-50a26a516f9c"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -19669,10 +19669,10 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           ]
                         }
                         hasRowSelection={true}
-                        id="21cddcb3-7f3b-43e5-8a1a-833743f4920e"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="21cddcb3-7f3b-43e5-8a1a-833743f4920e"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -23612,10 +23612,10 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           ]
                         }
                         hasRowSelection={true}
-                        id="761cddca-7755-476e-a412-3ff7eef7a99f"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="761cddca-7755-476e-a412-3ff7eef7a99f"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -27475,10 +27475,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           ]
                         }
                         hasRowSelection={true}
-                        id="f7c7a6d7-aeaf-4b5a-bbf3-e82e8035576e"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="f7c7a6d7-aeaf-4b5a-bbf3-e82e8035576e"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -31272,10 +31272,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             },
                           ]
                         }
-                        id="99ba98a3-3dde-46d1-ad5b-dfd4d40fd9be"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="99ba98a3-3dde-46d1-ad5b-dfd4d40fd9be"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -34551,10 +34551,10 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           ]
                         }
                         hasRowSelection={true}
-                        id="11db200c-afd5-46ee-8254-b42ccafb951c"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="11db200c-afd5-46ee-8254-b42ccafb951c"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -38446,10 +38446,10 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           ]
                         }
                         hasRowSelection={true}
-                        id="c5d44699-a8c9-4003-bf31-c41f3f32e5cf"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="c5d44699-a8c9-4003-bf31-c41f3f32e5cf"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -42301,10 +42301,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           ]
                         }
                         hasRowSelection={true}
-                        id="f095b12d-a969-473b-a1ad-83d453d22ac4"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="f095b12d-a969-473b-a1ad-83d453d22ac4"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -46156,10 +46156,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           ]
                         }
                         hasRowSelection={true}
-                        id="9e621a32-9525-428b-8fdc-69347d4b35e7"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="9e621a32-9525-428b-8fdc-69347d4b35e7"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -50011,10 +50011,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           ]
                         }
                         hasRowSelection={true}
-                        id="1700b974-2362-40fc-a233-83f6df53eeb3"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="1700b974-2362-40fc-a233-83f6df53eeb3"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -53866,10 +53866,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           ]
                         }
                         hasRowSelection={true}
-                        id="0e41be37-95bc-458b-bdd1-8df6924f766b"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="0e41be37-95bc-458b-bdd1-8df6924f766b"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -57717,10 +57717,10 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           ]
                         }
                         hasRowSelection={true}
-                        id="905b8159-9719-4db3-b93b-f2ed4426d3ce"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="905b8159-9719-4db3-b93b-f2ed4426d3ce"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -61568,10 +61568,10 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           ]
                         }
                         hasRowSelection={true}
-                        id="9325ea2c-8691-4c7b-ad41-15d3a7f67ea7"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="9325ea2c-8691-4c7b-ad41-15d3a7f67ea7"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -65261,10 +65261,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             },
                           ]
                         }
-                        id="eeadd8b5-13b0-493d-9dbc-6b0bafc5059a"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="eeadd8b5-13b0-493d-9dbc-6b0bafc5059a"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
@@ -68330,10 +68330,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             },
                           ]
                         }
-                        id="a09e663e-67de-4652-941c-f86bc8eed1a7"
+                        id="00000000-0000-0000-0000-000000000000"
                         isHidden={true}
                         isTableStriped={true}
-                        key="a09e663e-67de-4652-941c-f86bc8eed1a7"
+                        key="00000000-0000-0000-0000-000000000000"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowHeight="2.5rem"
