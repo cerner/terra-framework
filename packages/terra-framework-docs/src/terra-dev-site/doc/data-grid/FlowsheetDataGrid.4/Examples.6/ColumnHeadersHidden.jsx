@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
-const DefaultFlowsheetDataGrid = () => {
+const ColumnHeadersHidden = () => {
   const gridDataJSON = {
     cols: [
       { id: 'Column-0', displayName: 'Vitals', isSelectable: false },
@@ -131,4 +131,4 @@ const DefaultFlowsheetDataGrid = () => {
   );
 };
 
-export default DefaultFlowsheetDataGrid;
+export default ColumnHeadersHidden;
