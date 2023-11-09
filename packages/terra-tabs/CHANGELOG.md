@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 7.12.0 - (November 9, 2023)
+## 7.11.2 - (November 9, 2023)
 
 * Fixed
   * Fixed issue to prefer `customDisplay` prop over `label` prop.
