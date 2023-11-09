@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.1 - (November 9, 2023)
+
 * Changed
   * The component has been marked as deprecated as it is only intended to be used with the fusion passthrough effort.
 * Fixed

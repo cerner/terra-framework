@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.2.0 - (November 9, 2023)
+
 * Added
   * Added row selection mode to the table component.
   * Added ability for consumers to specify a custom screen reader message for masked cells.

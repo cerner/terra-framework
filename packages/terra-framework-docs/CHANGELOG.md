@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.44.0 - (November 9, 2023)
+
 * Added
   * Updated customDisplay examples for tabs.
   * Added `aria-label` and `ariaDescribedBy` examples for `terra-collapsible-menu-view`.
