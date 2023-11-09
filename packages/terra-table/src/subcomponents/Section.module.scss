@@ -1,0 +1,18 @@
+@import '../clinical-lowlight-theme/Row.module';
+@import '../orion-fusion-theme/Row.module';
+
+
+:local {
+  .section {
+    &.collapsed {
+      display: none;
+    }
+  }
+
+  .header {
+    th {
+      border-left: var(--terra-table-cell-border-left, 1px solid #dedfe0);
+      border-right: var(--terra-table-cell-border-right, 1px solid #dedfe0);
+    }
+  }
+}

@@ -12,6 +12,9 @@
 * Added
   * Added ability to select a range of cells to FlowsheetDataGrid.
 
+* Changed
+  * Updated unit test to account for generated ids of `terra-table` elements.
+
 ## 1.0.0 - (October 25, 2023)
 * Initial working component release.
 

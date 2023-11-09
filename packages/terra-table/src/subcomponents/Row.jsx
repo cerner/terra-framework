@@ -19,9 +19,19 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * The row's position in the table. This is zero based.
    */
   rowIndex: PropTypes.number,
+
+  /**
+   * An identifier for the section.
+   */
+  sectionId: PropTypes.string,
 
   /**
    * String that specifies height of the row. Any valid CSS width value is accepted.
@@ -85,6 +95,8 @@ function Row(props) {
     height,
     hasRowSelection,
     id,
+    tableId,
+    sectionId,
     isSelected,
     isTableStriped,
     cells,
@@ -102,11 +114,14 @@ function Row(props) {
 
   return (
     <tr
+      aria-rowindex={rowIndex}
+      data-row-id={id}
       className={cx('row', {
         selected: isSelected,
         selectable: hasRowSelection,
         'striped-table-row': isTableStriped,
-      }, theme.className)} // eslint-disable-next-line react/forbid-dom-props
+      }, theme.className)}
+      // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
       onMouseEnter={hasRowSelection ? () => { setHovered(true); } : undefined}
       onMouseLeave={hasRowSelection ? () => { setHovered(false); } : undefined}
@@ -119,6 +134,8 @@ function Row(props) {
           columnId={displayedColumns[0].id}
           rowIndex={rowIndex}
           columnIndex={0}
+          sectionId={sectionId}
+          tableId={tableId}
           isSelected={isSelected}
           ariaLabel={ariaLabel}
           onCellSelect={onCellSelect}
@@ -134,6 +151,8 @@ function Row(props) {
             columnId={columnId}
             rowIndex={rowIndex}
             columnIndex={cellColumnIndex}
+            sectionId={sectionId}
+            tableId={tableId}
             key={`${id}_${columnId}`}
             isSelected={!hasRowSelection && cellData.isSelected}
             isMasked={cellData.isMasked}

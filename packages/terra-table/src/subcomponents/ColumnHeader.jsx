@@ -9,6 +9,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * Data for columns. By default, columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(columnShape).isRequired,
@@ -63,6 +68,7 @@ const defaultProps = {
 
 const ColumnHeader = (props) => {
   const {
+    tableId,
     activeColumnIndex,
     isActiveColumnResizing,
     columnResizeIncrement,
@@ -78,6 +84,7 @@ const ColumnHeader = (props) => {
   return (
     <thead>
       <tr
+        aria-rowindex={1}
         className={cx('column-header-row', { hidden: !hasColumnHeaders })}
         height={hasColumnHeaders ? headerHeight : undefined}
       >
@@ -85,6 +92,7 @@ const ColumnHeader = (props) => {
           <ColumnHeaderCell
             key={column.id}
             id={column.id}
+            tableId={tableId}
             rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}
