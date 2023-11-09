@@ -57,7 +57,7 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-#        form-factor: [tiny, small, medium, large, huge, enormous]
+        form-factor: [tiny, small, medium, large, huge, enormous]
         theme: [default, lowlight, fusion]
 
     steps:
@@ -80,7 +80,7 @@ jobs:
       - name: Run WDIO Tests for form factor ${{ matrix.form-factor }} and ${{ matrix.theme }}
         env:
           SITE: build/${{ matrix.theme }}
-#          FORM_FACTOR: ${{ matrix.form-factor }}
+          FORM_FACTOR: ${{ matrix.form-factor }}
         run: npm run wdio:${{ matrix.theme }}
 
   release-and-deploy:
