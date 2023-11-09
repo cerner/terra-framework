@@ -7524,6 +7524,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               onCellSelect={[Function]}
                               rowId="1"
                               rowIndex={1}
+                              tableId="test-terra-data-grid-table"
                             >
                               <Cell
                                 columnId="table-rowSelectionColumn"
@@ -7563,10 +7564,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                 rowId="1"
                                 rowIndex={1}
                                 sectionId=""
+                                tableId="test-terra-data-grid-table"
                               >
                                 <td
                                   className="cell pinned"
-                                  headers=" undefined-rowheader-1 undefined-table-rowSelectionColumn"
+                                  headers=" test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-table-rowSelectionColumn"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -8032,6 +8034,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               onCellSelect={[Function]}
                               rowId="2"
                               rowIndex={2}
+                              tableId="test-terra-data-grid-table"
                             >
                               <Cell
                                 columnId="table-rowSelectionColumn"
@@ -8071,10 +8074,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                 rowId="2"
                                 rowIndex={2}
                                 sectionId=""
+                                tableId="test-terra-data-grid-table"
                               >
                                 <td
                                   className="cell pinned"
-                                  headers=" undefined-rowheader-2 undefined-table-rowSelectionColumn"
+                                  headers=" test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-table-rowSelectionColumn"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -8536,6 +8540,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               onCellSelect={[Function]}
                               rowId="3"
                               rowIndex={3}
+                              tableId="test-terra-data-grid-table"
                             >
                               <Cell
                                 columnId="table-rowSelectionColumn"
@@ -8575,10 +8580,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                 rowId="3"
                                 rowIndex={3}
                                 sectionId=""
+                                tableId="test-terra-data-grid-table"
                               >
                                 <td
                                   className="cell pinned"
-                                  headers=" undefined-rowheader-3 undefined-table-rowSelectionColumn"
+                                  headers=" test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-table-rowSelectionColumn"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -9040,6 +9046,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               onCellSelect={[Function]}
                               rowId="4"
                               rowIndex={4}
+                              tableId="test-terra-data-grid-table"
                             >
                               <Cell
                                 columnId="table-rowSelectionColumn"
@@ -9079,10 +9086,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                 rowId="4"
                                 rowIndex={4}
                                 sectionId=""
+                                tableId="test-terra-data-grid-table"
                               >
                                 <td
                                   className="cell pinned"
-                                  headers=" undefined-rowheader-4 undefined-table-rowSelectionColumn"
+                                  headers=" test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-table-rowSelectionColumn"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
