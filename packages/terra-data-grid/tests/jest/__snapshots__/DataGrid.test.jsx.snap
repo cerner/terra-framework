@@ -906,6 +906,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               }
                             }
                             tabIndex={-1}
+                            title=" Vitals"
                           >
                             <div
                               className="header-container"
@@ -1083,6 +1084,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               }
                             }
                             tabIndex={-1}
+                            title="March 16"
                           >
                             <div
                               className="header-container"
@@ -1268,6 +1270,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               }
                             }
                             tabIndex={-1}
+                            title="March 17"
                           >
                             <div
                               className="header-container"
@@ -3826,6 +3829,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               }
                             }
                             tabIndex={-1}
+                            title=" Vitals"
                           >
                             <div
                               className="header-container"
@@ -4003,6 +4007,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               }
                             }
                             tabIndex={-1}
+                            title="March 16"
                           >
                             <div
                               className="header-container"
@@ -4188,6 +4193,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               }
                             }
                             tabIndex={-1}
+                            title="March 17"
                           >
                             <div
                               className="header-container"
@@ -6827,6 +6833,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            title=" Vitals"
                           >
                             <div
                               className="header-container"
@@ -7004,6 +7011,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            title="March 16"
                           >
                             <div
                               className="header-container"
@@ -7189,6 +7197,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            title="March 17"
                           >
                             <div
                               className="header-container"
@@ -10317,6 +10326,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               }
                             }
                             tabIndex={-1}
+                            title=" Vitals"
                           >
                             <div
                               className="header-container"
@@ -10494,6 +10504,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               }
                             }
                             tabIndex={-1}
+                            title="March 16"
                           >
                             <div
                               className="header-container"
@@ -10679,6 +10690,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               }
                             }
                             tabIndex={-1}
+                            title="March 17"
                           >
                             <div
                               className="header-container"
@@ -13152,6 +13164,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            title=" Vitals"
                           >
                             <div
                               className="header-container"
@@ -13329,6 +13342,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            title="March 16"
                           >
                             <div
                               className="header-container"
@@ -13505,6 +13519,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               }
                             }
                             tabIndex={-1}
+                            title="March 17"
                           >
                             <div
                               className="header-container"

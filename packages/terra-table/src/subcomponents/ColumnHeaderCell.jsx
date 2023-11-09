@@ -285,6 +285,7 @@ const ColumnHeaderCell = (props) => {
       tabIndex={isGridContext ? -1 : undefined}
       role="columnheader"
       scope="col"
+      title={displayName}
       aria-sort={sortIndicator}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}

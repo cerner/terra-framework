@@ -5,6 +5,7 @@
 * Added
   * Added row selection mode to the table component.
   * Added ability for consumers to specify a custom screen reader message for masked cells.
+  * Added title attribute to column header cells to enable tooltips.
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
