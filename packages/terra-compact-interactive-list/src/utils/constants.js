@@ -15,14 +15,4 @@ export const DefaultListValues = {
     [widthUnitTypes.EM]: 10,
     [widthUnitTypes.REM]: 10,
   },
-  columnMaximumWidth: {
-    [widthUnitTypes.PX]: 1000,
-    [widthUnitTypes.EM]: 100,
-    [widthUnitTypes.REM]: 100,
-  },
-  maximumWidth: {
-    [widthUnitTypes.PX]: 5000,
-    [widthUnitTypes.EM]: 500,
-    [widthUnitTypes.REM]: 500,
-  },
 };

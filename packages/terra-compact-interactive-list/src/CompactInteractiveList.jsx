@@ -1,3 +1,5 @@
+/* eslint-disable react/forbid-dom-props */
+/* eslint-disable no-undef */
 /* eslint-disable react/no-array-index-key */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
@@ -13,8 +15,6 @@ import {
   getRowMaximumWidth,
   getRowMinimumWidth,
   checkIfRowHasFlexColumns,
-  getListMaximumWidth,
-  getListMinimumWidth,
 } from './utils/utils';
 
 const cx = classNames.bind(styles);
@@ -120,29 +120,34 @@ const CompactInteractiveList = (props) => {
 
   const theme = useContext(ThemeContext);
 
-  const listMinimumWidth = minimumWidth || DefaultListValues.minimumWidth[widthUnit];
-  const listMaximumWidth = maximumWidth || DefaultListValues.maximumWidth[widthUnit];
+  // defining styles to apply to the list container
+  const containerStyle = maximumWidth ? { maxWidth: `${maximumWidth}${widthUnit}` } : null;
+
   const columnMinWidth = columnMinimumWidth || DefaultListValues.columnMinimumWidth[widthUnit];
-  const columnMaxWidth = columnMaximumWidth || DefaultListValues.columnMaximumWidth[widthUnit];
-
+  const columnMaxWidth = columnMaximumWidth;
+  // check if list has responsive columns
   const isFlexGrow = checkIfRowHasFlexColumns(columns);
-
+  // if there are responsive columns, the items will need maxWidth and minWidth
   const rowMaxWidth = isFlexGrow ? getRowMaximumWidth(columns, columnMaxWidth) : null;
   const rowMinWidth = isFlexGrow ? getRowMinimumWidth(columns, columnMinWidth) : null;
-  const getListMaxWidth = getListMaximumWidth(isFlexGrow, numberOfColumns, rowMaxWidth, listMaximumWidth);
-  const getListMinWidth = getListMinimumWidth(isFlexGrow, numberOfColumns, rowMinWidth, listMinimumWidth);
-
+  // calculate row width based on the width of its columns
   const getRowWidthSum = (total, column) => total + column.width;
   const rowWidth = !isFlexGrow && columns.reduce(getRowWidthSum, 0);
+  // calculate list width based on the item width and number of columns
   const listWidth = `${rowWidth * numberOfColumns}${widthUnit}`;
-
+  const listMinWidth = Math.max(rowMinWidth * numberOfColumns, (minimumWidth || DefaultListValues.minimumWidth[widthUnit]));
+  // defining styles to apply to the list
   const style = {
     width: isFlexGrow ? width : listWidth,
-    minWidth: `${getListMinWidth}${widthUnit}`,
-    maxWidth: `${getListMaxWidth}${widthUnit}`,
+    minWidth: `${listMinWidth}${widthUnit}`,
   };
+  if (rowMaxWidth) {
+    style.maxWidth = `${rowMaxWidth * numberOfColumns}${widthUnit}`;
+  }
 
+  // number of rows including placeholder rows
   const numberOfRows = Math.ceil(rows.length / numberOfColumns);
+  // map rows differently depending on vertical or horizontal orientation
   const mapRows = () => {
     let result = [];
     if (flowVertically) {
@@ -161,7 +166,6 @@ const CompactInteractiveList = (props) => {
     }
     return result;
   };
-
   const mappedRows = mapRows();
 
   return (
@@ -169,6 +173,7 @@ const CompactInteractiveList = (props) => {
       className={cx('compact-interactive-list-container', theme.className)}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
+      style={containerStyle}
     >
       <div
         id={id}
@@ -176,7 +181,6 @@ const CompactInteractiveList = (props) => {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         className={cx('compact-interactive-list')}
-        // eslint-disable-next-line react/forbid-dom-props
         style={style}
       >
         {mappedRows.map((row, index) => (

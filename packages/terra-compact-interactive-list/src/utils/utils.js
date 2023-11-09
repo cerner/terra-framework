@@ -43,34 +43,11 @@ export const getRowMinimumWidth = (columns, columnMinimumWidth) => {
     if (checkIfColumnIsFlex(columns[i].flexGrow, columns[i].width)) {
       flexColumnWasFound = true;
       if (columns[i].minimumWidth || columnMinimumWidth) {
-        const colMaxWidth = columns[i].minimumWidth || columnMinimumWidth;
-        minWidth += colMaxWidth;
+        minWidth += columns[i].minimumWidth || columnMinimumWidth;
       } else { return null; }
     } else if (columns[i].width) {
       minWidth += columns[i].width;
     } else { return null; }
   }
   return flexColumnWasFound ? minWidth : null;
-};
-
-/**
- * A list needs a maximumWidth set if:
- * 1) There are no flex items, but the max width was set for the whole list (for scroll).
- * 2) There are flex columns:
- *      a) If there is now rowMaxWidth, use list max width.
- *      b) If rowMaxWidth * numberOfColumns is < list max width, use rowMaxWidth * numberOfColumns, as the list shouldn't grow wider thatn it's rows.
- *      c) If rowMaxWidth * numberOfColumns is >= list max width, use list max width
- */
-export const getListMaximumWidth = (isFlex, numberOfColumns, rowMaximumWidth, maximumWidth) => {
-  if (!isFlex || !rowMaximumWidth) {
-    return maximumWidth || null;
-  }
-  return Math.min(rowMaximumWidth * numberOfColumns, maximumWidth);
-};
-
-export const getListMinimumWidth = (isFlex, numberOfColumns, rowMinimumWidth, minimumWidth) => {
-  if (!isFlex || !rowMinimumWidth) {
-    return minimumWidth || null;
-  }
-  return Math.max(rowMinimumWidth * numberOfColumns, minimumWidth);
 };
