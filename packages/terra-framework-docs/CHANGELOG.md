@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added examples and tests to `terra-table` for table sections.
   * Updated customDisplay examples for tabs.
   * Added `aria-label` and `ariaDescribedBy` examples for `terra-collapsible-menu-view`.
   * Added examples and test to `terra-table` for row selection mode.

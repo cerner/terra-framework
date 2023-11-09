@@ -47,6 +47,16 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
+   * An identifier for the section.
+   */
+  sectionId: PropTypes.string,
+
+  /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * Content that will be rendered within the Cell.
    */
   children: PropTypes.node,
@@ -101,6 +111,7 @@ const defaultProps = {
   isRowHeader: false,
   isSelectable: false,
   isMasked: false,
+  sectionId: '',
 };
 
 function Cell(props) {
@@ -109,6 +120,8 @@ function Cell(props) {
     columnId,
     rowIndex,
     columnIndex,
+    sectionId,
+    tableId,
     ariaLabel,
     isMasked,
     maskedLabel,
@@ -164,7 +177,7 @@ function Cell(props) {
   const onMouseDown = ((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+        sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
       });
     }
   });
@@ -225,7 +238,7 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
             onCellSelect({
-              rowId, columnId, rowIndex, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+              sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
             });
           }
 
@@ -286,11 +299,18 @@ function Cell(props) {
     );
   }
 
+  // Determine table cell header attribute values
+  const sectionHeaderId = sectionId ? `${tableId}-${sectionId}` : '';
+  const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId}` : '';
+  const columnHeaderId = `${tableId}-${columnId}`;
+
   return (
     <CellTag
+      id={isRowHeader ? `${tableId}-rowheader-${rowId}` : undefined}
       ref={isGridContext ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
+      headers={`${sectionHeaderId} ${rowHeaderId} ${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}

@@ -15,6 +15,7 @@ describe('ColumnHeader', () => {
 
     const wrapper = shallow(
       <ColumnHeader
+        tableId="test-table"
         columns={columns}
         columnWidths={['2.5rem', '2.5rem']}
         headerHeight="3rem"
@@ -44,6 +45,7 @@ describe('ColumnHeader', () => {
 
     const wrapper = shallow(
       <ColumnHeader
+        tableId="test-table"
         activeResizeIndex={0}
         columns={columns}
         headerHeight="3rem"
@@ -74,6 +76,7 @@ describe('ColumnHeader', () => {
 
     const wrapper = shallow(
       <ColumnHeader
+        tableId="test-table"
         columns={columns}
         headerHeight="3rem"
         tableHeight={500}
@@ -107,6 +110,7 @@ describe('ColumnHeader', () => {
 
     const wrapper = shallow(
       <ColumnHeader
+        tableId="test-table"
         columns={columns}
         headerHeight="3rem"
         tableHeight={500}
@@ -123,6 +127,7 @@ describe('ColumnHeader', () => {
     // Validate ColumnHeaderCell React component
     const columnHeaderCell = columnHeader.find(ColumnHeaderCell).first();
     expect(columnHeaderCell.props().tableHeight).toBe(500);
+    expect(columnHeaderCell.props().tableId).toBe('test-table');
     expect(columnHeaderCell.props().onColumnSelect).toBe(mockColumnSelect);
     expect(columnHeaderCell.props().onResizeMouseDown).toBe(mockResizeMouseDown);
 
@@ -140,6 +145,7 @@ describe('ColumnHeader', () => {
 
     const wrapper = shallow(
       <ColumnHeader
+        tableId="test-table"
         columns={columns}
         hasColumnHeaders={false}
         headerHeight="3rem"
@@ -164,6 +170,7 @@ describe('ColumnHeader', () => {
 
     const wrapper = shallow(
       <ColumnHeader
+        tableId="test-table"
         columns={columns}
         headerHeight="3rem"
         hasColumnHeaders

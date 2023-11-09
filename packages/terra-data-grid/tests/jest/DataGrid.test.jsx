@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
+import { v4 as uuidv4 } from 'uuid';
 import DataGrid from '../../src/DataGrid';
 import ERRORS from '../../src/utils/constants';
 
@@ -54,14 +55,17 @@ const dataFile = {
   ],
 };
 
+let mockSpyUuid;
 beforeAll(() => {
   jest.spyOn(console, 'error').mockImplementation();
   jest.spyOn(console, 'warn').mockImplementation();
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
 });
 
 afterAll(() => {
   console.error.mockRestore(); // eslint-disable-line no-console
   console.warn.mockRestore(); // eslint-disable-line no-console
+  mockSpyUuid.mockRestore();
 });
 
 describe('DataGrid', () => {
