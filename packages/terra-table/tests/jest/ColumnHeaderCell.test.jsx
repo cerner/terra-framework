@@ -29,6 +29,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -40,6 +41,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -63,6 +65,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -74,6 +77,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -98,6 +102,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -109,6 +114,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -133,6 +139,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -144,6 +151,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -169,6 +177,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -180,6 +189,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -208,6 +218,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -220,6 +231,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -250,6 +262,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -262,6 +275,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header:not(selectable)');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -289,6 +303,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{ pinnedColumnOffsets: [0] }}>
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"

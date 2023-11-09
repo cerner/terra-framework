@@ -35,6 +35,9 @@
     "terra-table": "^5.1.1-alpha.0",
     "terra-visually-hidden-text": "^2.36.0"
   },
+  "devDependencies": {
+    "uuid": "3.4.0"
+  },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",

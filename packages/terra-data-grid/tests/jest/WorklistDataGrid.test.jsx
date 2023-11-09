@@ -1,6 +1,7 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl } from 'terra-enzyme-intl';
+import { v4 as uuidv4 } from 'uuid';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
 
 // Source data for tests
@@ -53,9 +54,11 @@ const dataFile = {
   ],
 };
 
+let mockSpyUuid;
 beforeAll(() => {
   jest.spyOn(console, 'error').mockImplementation();
   jest.spyOn(console, 'warn').mockImplementation();
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
 });
 
 afterEach(() => {
@@ -66,6 +69,7 @@ afterEach(() => {
 afterAll(() => {
   console.error.mockRestore(); // eslint-disable-line no-console
   console.warn.mockRestore(); // eslint-disable-line no-console
+  mockSpyUuid.mockRestore();
 });
 
 describe('WorklistDataGrid', () => {
