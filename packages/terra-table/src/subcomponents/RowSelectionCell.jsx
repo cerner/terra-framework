@@ -18,6 +18,11 @@ const propTypes = {
   columnId: PropTypes.string.isRequired,
 
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -68,6 +73,7 @@ function RowSelectionCell(props) {
   const {
     rowId,
     columnId,
+    tableId,
     rowIndex,
     columnIndex,
     sectionId,
@@ -100,6 +106,7 @@ function RowSelectionCell(props) {
     <Cell
       rowId={rowId}
       columnId={columnId}
+      tableId={tableId}
       key={`${rowId}_${columnId}`}
       rowIndex={rowIndex}
       columnIndex={columnIndex}
