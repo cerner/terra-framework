@@ -209,8 +209,11 @@ const DataGrid = injectIntl((props) => {
       [focusedCell] = focusedCell.getElementsByTagName('input');
     }
 
-    if (makeActiveElement && newRowIndex !== 0) {
-      focusedCell.focus();
+    if (makeActiveElement) {
+      if (newRowIndex === 0) {
+        [focusedCell] = focusedCell.querySelector('[tabindex=\'0\'], [tabindex=\'-1\']');
+      }
+      focusedCell?.focus();
     }
   };
 

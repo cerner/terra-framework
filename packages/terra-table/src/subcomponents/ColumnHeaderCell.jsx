@@ -162,26 +162,23 @@ const ColumnHeaderCell = (props) => {
   const gridContext = useContext(GridContext);
 
   const columnHeaderCellRef = useRef();
-  const columnHeaderCellButtonRef = useRef();
 
   const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
   const isGridContext = gridContext.role === GridConstants.GRID;
-
-  const columnHeaderFocusableElement = useCallback(() => (columnHeaderCellButtonRef.current ? columnHeaderCellButtonRef.current : columnHeaderCellRef.current), []);
 
   useEffect(() => {
     if (isActive) {
       if (isResizable && isResizeActive) {
         setResizeHandleActive(true);
       } else {
-        columnHeaderFocusableElement().focus();
+        columnHeaderCellRef.current.focus();
         setResizeHandleActive(false);
       }
     } else {
       setResizeHandleActive(false);
     }
-  }, [columnHeaderFocusableElement, isActive, isResizable, isResizeActive]);
+  }, [isActive, isResizable, isResizeActive]);
 
   const onResizeHandleMouseDown = useCallback((event) => {
     event.stopPropagation();
@@ -192,9 +189,9 @@ const ColumnHeaderCell = (props) => {
 
   // Restore focus to column header after resize action is completed.
   const onResizeHandleMouseUp = useCallback(() => {
-    columnHeaderFocusableElement().focus();
+    columnHeaderCellRef.current.focus();
     setResizeHandleActive(false);
-  }, [columnHeaderFocusableElement]);
+  }, []);
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
@@ -216,7 +213,7 @@ const ColumnHeaderCell = (props) => {
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive && isGridContext) {
-          columnHeaderFocusableElement().focus();
+          columnHeaderCellRef.current.focus();
           setResizeHandleActive(false);
           event.stopPropagation();
           event.preventDefault();
@@ -271,7 +268,7 @@ const ColumnHeaderCell = (props) => {
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
-      ref={(columnHeaderCellRef)}
+      ref={!hasButtonElement ? columnHeaderCellRef : undefined}
       key={id}
       className={cx('column-header', theme.className, {
         selectable: isSelectable,
@@ -287,7 +284,7 @@ const ColumnHeaderCell = (props) => {
     >
       <div
         className={cx('header-container')}
-        {...hasButtonElement && { ref: columnHeaderCellButtonRef, role: 'button' }}
+        {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
         tabIndex={buttonTabIndex}
       >
         {errorIcon}
