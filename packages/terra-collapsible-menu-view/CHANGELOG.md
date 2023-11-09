@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.84.0 - (November 9, 2023)
+
 * Added
   * Added `GroupId` prop that used in menu item for `aria-describedby` that labels the group for accessibility.
 
