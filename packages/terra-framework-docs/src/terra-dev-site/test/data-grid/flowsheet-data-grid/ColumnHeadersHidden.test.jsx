@@ -119,7 +119,7 @@ const ColumnHeadersHidden = () => {
 
   return (
     <FlowsheetDataGrid
-      id="default-terra-flowsheet-data-grid"
+      id="terra-flowsheet-data-grid-no-column-headers"
       columns={cols}
       rows={rowData}
       ariaLabel="Flowsheet Data Grid"

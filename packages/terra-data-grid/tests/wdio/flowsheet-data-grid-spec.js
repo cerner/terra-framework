@@ -31,6 +31,20 @@ const clickCell = (row, col, selector) => {
 };
 
 Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
+
+  describe('FlowsheetDataGrid configuration', () => {
+    it('renders a default data grid', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');
+      Terra.validates.element('default-flowsheet-data-grid', { selector: defaultSelector });
+    })
+
+    it('renders a flowsheet data grid without column headers', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-headers-hidden');
+      expect(browser.$('//thead').getCSSProperty('height').parsed.value).toBe(0);
+      Terra.validates.element('flowsheet-data-grid-no-column-headers', { selector: "#terra-flowsheet-data-grid-no-column-headers-table" });
+    })
+  })
+
   describe('Cell selection', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');
