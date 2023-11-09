@@ -1,3 +1,4 @@
+import { Notice } from "@cerner/terra-docs";
 import { Badge } from "terra-table/package.json?dev-site-package";
 import DefaultTable from "./Examples/DefaultTable?dev-site-example";
 
@@ -8,6 +9,10 @@ import TablePropsTable from "terra-table/lib/Table?dev-site-props-table";
 # Terra Table
 
 Terra Table is a structural component used to display tabular data. Table provides means to handle row selection and hooks for sortable columns.
+
+<Notice variant="caution" ariaLevel="2">
+Due to poor support in VoiceOver for spanned table headings, Table sections are not currently recommended for applications intended to be used on Apple devices.
+</Notice>
 
 ## Getting Started
 
@@ -66,6 +71,7 @@ A column specifies the data to render a cell in the header row of the Worklist D
 
 ### Section
 A section defines the rows rendered within the section.
+
 ***Due to poor support in VoiceOver for spanned table headings, Table sections are not currently recommended for applications intended to be used on Apple devices.***
 
 |Name|Type|Is Required|Default Value|Description|
