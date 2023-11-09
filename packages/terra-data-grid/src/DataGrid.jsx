@@ -210,8 +210,8 @@ const DataGrid = injectIntl((props) => {
     }
 
     if (makeActiveElement) {
-      if (newRowIndex === 0) {
-        [focusedCell] = focusedCell.querySelector('[tabindex=\'0\'], [tabindex=\'-1\']');
+      if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
+        focusedCell = focusedCell.querySelector('[role="button"]');
       }
       focusedCell?.focus();
     }
