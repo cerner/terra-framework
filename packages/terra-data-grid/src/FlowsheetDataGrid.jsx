@@ -95,7 +95,7 @@ const defaultProps = {
   rowHeight: '2.5rem',
   rows: [],
   columns: [],
-  hasColumnHeaders: true
+  hasColumnHeaders: true,
 };
 
 function FlowsheetDataGrid(props) {
@@ -112,7 +112,7 @@ function FlowsheetDataGrid(props) {
     onClearSelectedCells,
     onCellRangeSelect,
     intl,
-    hasColumnHeaders
+    hasColumnHeaders,
   } = props;
 
   const anchorCell = useRef(null);

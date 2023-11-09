@@ -8,7 +8,7 @@ const ColumnHeadersHidden = () => {
       { id: 'Column-1', displayName: 'March 16' },
       { id: 'Column-2', displayName: 'March 17' },
       { id: 'Column-3', displayName: 'March 18' },
-      ],
+    ],
     rows: [
       {
         id: '1',
@@ -17,7 +17,7 @@ const ColumnHeadersHidden = () => {
           { content: '68' },
           { content: '66' },
           { content: '67' },
-          ],
+        ],
       },
       {
         id: '2',
@@ -26,7 +26,7 @@ const ColumnHeadersHidden = () => {
           { content: '36.7' },
           { content: '36.9' },
           { content: '37' },
-          ],
+        ],
       },
       {
         id: '3',
@@ -35,7 +35,7 @@ const ColumnHeadersHidden = () => {
           { content: '2.25' },
           { content: '2.28' },
           { content: null },
-          ],
+        ],
       },
       {
         id: '4',
@@ -44,7 +44,7 @@ const ColumnHeadersHidden = () => {
           { content: null },
           { content: '11' },
           { content: '12' },
-          ],
+        ],
       },
       {
         id: '5',
@@ -53,9 +53,9 @@ const ColumnHeadersHidden = () => {
           { content: '63' },
           { content: null },
           { content: '48' },
-          ],
+        ],
       },
-      ],
+    ],
   };
 
   const { cols, rows } = gridDataJSON;
@@ -95,7 +95,7 @@ const ColumnHeadersHidden = () => {
     }
 
     setRowData(newRowData);
-    }, [rowData]);
+  }, [rowData]);
 
   const onCellRangeSelect = useCallback((cells) => {
     const newRowData = [...rowData];
@@ -115,7 +115,7 @@ const ColumnHeadersHidden = () => {
     });
 
     setRowData(newRowData);
-    }, [cols, rowData]);
+  }, [cols, rowData]);
 
   return (
     <FlowsheetDataGrid
@@ -128,7 +128,7 @@ const ColumnHeadersHidden = () => {
       onCellRangeSelect={onCellRangeSelect}
       hasColumnHeaders={false}
     />
-    );
+  );
 };
 
 export default ColumnHeadersHidden;
