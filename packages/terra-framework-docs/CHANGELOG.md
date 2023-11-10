@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation and examples for `terra-compact-interactive-list`.
+
 ## 1.43.0 - (October 25, 2023)
 
 * Added
