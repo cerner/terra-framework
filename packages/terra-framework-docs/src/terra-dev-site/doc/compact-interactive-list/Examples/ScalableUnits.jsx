@@ -27,31 +27,16 @@ const cols = [
 ];
 
 const ScalableUnits = () => (
-  <>
-    <p>Inside the container with the regular font size:</p>
+  <div style={{ fontSize: '1.25em' }}>
     <CompactInteractiveList
       id="growing-columns"
       rows={rows}
       columns={cols}
       numberOfColumns={2}
-      widthUnit="em" // the widthUnit prop is set to "em" for the whole component, including columns props
+      widthUnit="em"
     />
-    <br />
-    <p>
-      Inside the container with the font size increased to 1.25em:
-    </p>
-    <div style={{ fontSize: '1.25em' }}>
-      <CompactInteractiveList
-        id="growing-columns"
-        rows={rows}
-        columns={cols}
-        numberOfColumns={2}
-        widthUnit="em" // the widthUnit prop is set to "em"
-      />
 
-    </div>
-
-  </>
+  </div>
 );
 
 export default ScalableUnits;

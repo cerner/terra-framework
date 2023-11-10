@@ -26,12 +26,12 @@ const propTypes = {
   column: PropTypes.instanceOf(columnShape),
 
   /**
-   * Columns' minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * Columns' maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    */
   columnMaximumWidth: PropTypes.number,
 
@@ -77,7 +77,6 @@ const Cell = (props) => {
   };
 
   return (
-
     <div
       id={id}
       role="gridcell"

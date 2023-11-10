@@ -69,17 +69,12 @@ const propTypes = {
   minimumWidth: PropTypes.number,
 
   /**
-   * Container's maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
-   */
-  maximumWidth: PropTypes.number,
-
-  /**
-   * Columns' minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * Columns' maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
    */
   columnMaximumWidth: PropTypes.number,
 
@@ -113,15 +108,11 @@ const CompactInteractiveList = (props) => {
     width,
     widthUnit,
     minimumWidth,
-    maximumWidth,
     columnMinimumWidth,
     columnMaximumWidth,
   } = props;
 
   const theme = useContext(ThemeContext);
-
-  // defining styles to apply to the list container
-  const containerStyle = maximumWidth ? { maxWidth: `${maximumWidth}${widthUnit}` } : null;
 
   const columnMinWidth = columnMinimumWidth || DefaultListValues.columnMinimumWidth[widthUnit];
   const columnMaxWidth = columnMaximumWidth;
@@ -149,18 +140,22 @@ const CompactInteractiveList = (props) => {
   const numberOfRows = Math.ceil(rows.length / numberOfColumns);
   // map rows differently depending on vertical or horizontal orientation
   const mapRows = () => {
+    const placeholdersNumber = isFlexGrow ? (numberOfRows * numberOfColumns) - rows.length : 0;
     let result = [];
     if (flowVertically) {
       for (let i = 0; i < numberOfRows; i += 1) {
-        for (let j = i; j < rows.length; j += numberOfRows) {
-          result.push(rows[j]);
+        let x = numberOfColumns - placeholdersNumber;
+        for (let j = i; j < rows.length; j += numberOfRows - (x >= 0 ? 0 : 1)) {
+          if (result.length < rows.length) {
+            result.push(rows[j]);
+            if (x >= 0) { x -= 1; }
+          }
         }
       }
     } else {
       result = [...rows];
     }
     // add placeholder rows
-    const placeholdersNumber = isFlexGrow ? (numberOfRows * numberOfColumns) - rows.length : 0;
     for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
       result.push({ id: `placeholder-row-${i}` });
     }
@@ -173,7 +168,6 @@ const CompactInteractiveList = (props) => {
       className={cx('compact-interactive-list-container', theme.className)}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={0}
-      style={containerStyle}
     >
       <div
         id={id}

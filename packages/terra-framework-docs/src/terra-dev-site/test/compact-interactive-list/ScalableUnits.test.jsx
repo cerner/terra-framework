@@ -1,8 +1,8 @@
+/* eslint-disable react/forbid-dom-props */
 import React from 'react';
 import CompactInteractiveList from 'terra-compact-interactive-list';
 import rows from './rowsData';
 
-// Source data for tests
 const cols = [
   {
     id: 'Column-0',
@@ -13,7 +13,8 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Col_2',
-    width: 25,
+    maximumWidth: 25,
+    minimunWidth: 7,
   },
   {
     id: 'Column-2',
@@ -23,16 +24,16 @@ const cols = [
   },
 ];
 
-const FixedWidthColumns = () => (
-  <CompactInteractiveList
-    id="compact-interactive-list-id"
-    rows={rows}
-    columns={cols}
-    numberOfColumns={2}
-    widthUnit="em"
-    columnMinimumWidth={6}
-    columnMaximumWidth={10}
-  />
+const ScalableUnits = () => (
+  <div style={{ fontSize: '1.25em' }}>
+    <CompactInteractiveList
+      id="growing-columns"
+      rows={rows}
+      columns={cols}
+      numberOfColumns={2}
+      widthUnit="em"
+    />
+  </div>
 );
 
-export default FixedWidthColumns;
+export default ScalableUnits;

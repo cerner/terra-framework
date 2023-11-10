@@ -47,20 +47,16 @@ describe('Compact Interactive List', () => {
       expect(list.props().style.minWidth).toEqual('500px');
     });
 
-    it('should apply minimunWidth and maximumWidth props correctly', () => {
+    it('should apply minimunWidth correctly', () => {
       const wrapper = mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-id"
           rows={rows}
           columns={cols}
           minimumWidth={3}
-          maximumWidth={60}
           widthUnit="em"
         />,
       );
-      const container = wrapper.find('.compact-interactive-list-container');
-      expect(container.props().style.maxWidth).toEqual('60em');
-      // maximumWidth prop overrides default value
       const list = wrapper.find('.compact-interactive-list');
       expect(list.props().style.minWidth).toEqual('3em');
     });
@@ -81,7 +77,7 @@ describe('Compact Interactive List', () => {
       // columnMinimumWidth and columnMaximumWidth should NOT be applied to fixed width lists
       expect(list.props().style.minWidth).toEqual('500px');
       expect(list.props().style.maxWidth).toBeFalsy();
-      // the width should be equal to the sum of all columns' width multiplied by numberOfColumns
+      // the width should be equal to the sum of all columns width multiplied by numberOfColumns
       // the width units in this example should default to 'px'
       const getColWidthSum = (total, col) => col.width + total;
       const expectedWidth = `${cols.reduce(getColWidthSum, 0) * numberOfColumns}px`;
@@ -100,7 +96,7 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      // the width should be equal to the sum of all columns' width multiplied by numberOfColumns
+      // the width should be equal to the sum of all columns width multiplied by numberOfColumns
       // the width units in this example should default to 'em'
       const getColWidthSum = (total, col) => col.width + total;
       const expectedWidth = `${cols.reduce(getColWidthSum, 0) * numberOfColumns}em`;
@@ -191,6 +187,50 @@ describe('Compact Interactive List', () => {
       const rowMaxWidth = respCols1[0].width + respCols1[1].maximumWidth + respCols1[2].width;
       const expectedMaxWidth = `${rowMaxWidth * numberOfColumns}${widthUnit}`;
       expect(list.props().style.maxWidth).toEqual(expectedMaxWidth);
+    });
+
+    it('should flow rows vertically by default', () => {
+      const numberOfColumns = 4;
+      const wrapper = mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-id"
+          rows={rows}
+          columns={respCols}
+          numberOfColumns={numberOfColumns}
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.length).toEqual(8);
+      expect(rowElements.at(0).props().id).toEqual(rows[0].id);
+      expect(rowElements.at(1).props().id).toEqual(rows[2].id);
+      expect(rowElements.at(2).props().id).toEqual(rows[3].id);
+      expect(rowElements.at(3).props().id).toEqual(rows[4].id);
+      expect(rowElements.at(4).props().id).toEqual(rows[1].id);
+      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${5}`);
+      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${6}`);
+      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${7}`);
+    });
+
+    it('should flow horizontally if flowVertically prop is set to false', () => {
+      const numberOfColumns = 4;
+      const wrapper = mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-id"
+          rows={rows}
+          columns={respCols}
+          numberOfColumns={numberOfColumns}
+          fflowVertically={false}
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).props().id).toEqual(rows[0].id);
+      expect(rowElements.at(1).props().id).toEqual(rows[2].id);
+      expect(rowElements.at(2).props().id).toEqual(rows[3].id);
+      expect(rowElements.at(3).props().id).toEqual(rows[4].id);
+      expect(rowElements.at(4).props().id).toEqual(rows[1].id);
+      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${5}`);
+      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${6}`);
+      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${7}`);
     });
   });
 });

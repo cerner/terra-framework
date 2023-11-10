@@ -27,12 +27,12 @@ const propTypes = {
   columns: PropTypes.arrayOf(columnShape),
 
   /**
-   * A number for columns' minimum width. Defaults to 60.
+   * A number for column minimum width. Defaults to 60.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * A number for columns' minimum width.
+   * A number for column minimum width.
    */
   columnMaximumWidth: PropTypes.number,
 
@@ -74,6 +74,10 @@ const propTypes = {
   ]),
 };
 
+const defaultProps = {
+  isFlexGrow: false,
+};
+
 const Row = (props) => {
   const {
     id,
@@ -102,7 +106,7 @@ const Row = (props) => {
   return (
     <div
       id={id}
-      role="row"
+      role={activeRow ? 'row' : null}
       className={cx('row', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
@@ -123,5 +127,6 @@ const Row = (props) => {
 };
 
 Row.propTypes = propTypes;
+Row.propTypes = defaultProps;
 
 export default React.memo(Row);

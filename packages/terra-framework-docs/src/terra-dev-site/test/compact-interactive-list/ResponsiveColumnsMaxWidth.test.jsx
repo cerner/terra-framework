@@ -33,7 +33,6 @@ const ResponsiveColumnsMaxWidth = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
-    maximumWidth={80}
     widthUnit="em"
   />
 );
