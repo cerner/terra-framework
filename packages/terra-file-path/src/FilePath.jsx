@@ -67,7 +67,7 @@ const FilePath = props => {
       isReversedChildrenOrder
       useHorizontalIcon
       isStartAligned
-      iconText={intl.formatMessage({ id: 'Terra.file-path.icon.text' })}
+      menuIconText={intl.formatMessage({ id: 'Terra.file-path.icon.text' })}
     >
       {generateChildren()}
       <CollapsibleMenuView.Item isTextOnly text={lastItem.text} key={lastItem.key} />

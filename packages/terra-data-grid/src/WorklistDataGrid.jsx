@@ -13,6 +13,7 @@ import { columnShape } from './proptypes/columnShape';
 import validateRowHeaderIndex from './proptypes/validators';
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
+import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 
 const cx = classNames.bind(styles);
 
@@ -177,6 +178,15 @@ function WorklistDataGrid(props) {
   const dataGridFuncRef = useRef();
   const gridReceivedFocus = useRef(false);
   const gridHasFocus = document.getElementById(`${id}-worklist-data-grid-container`)?.contains(document.activeElement);
+
+  const makeWorklistDataGridColumns = (columns) => columns.map(column => ({
+    ...column,
+    isResizable: column.isResizable !== false,
+    isSelectable: column.isSelectable !== false,
+  }));
+
+  const worklistDataGridPinnedColumns = makeWorklistDataGridColumns(pinnedColumns);
+  const worklistDataGridOverflowColumns = makeWorklistDataGridColumns(overflowColumns);
 
   // -------------------------------------
   // useEffect Hooks
@@ -376,6 +386,14 @@ function WorklistDataGrid(props) {
     }
   }, [handleRowSelection, hasSelectableRows, onCellSelect]);
 
+  const handleColumnSelect = useCallback((columnId) => {
+    onColumnSelect(columnId);
+  }, [onColumnSelect]);
+
+  const handleRowSelectionHeaderSelect = useCallback(() => {
+    onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
+  }, [onColumnSelect]);
+
   const handleKeyUp = (event) => {
     const key = event.keyCode;
     switch (key) {
@@ -421,11 +439,12 @@ function WorklistDataGrid(props) {
         rows={rows}
         rowHeight={rowHeight}
         rowHeaderIndex={rowHeaderIndex}
-        pinnedColumns={pinnedColumns}
-        overflowColumns={overflowColumns}
+        pinnedColumns={worklistDataGridPinnedColumns}
+        overflowColumns={worklistDataGridOverflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
-        onColumnSelect={onColumnSelect}
+        onColumnSelect={onColumnSelect ? handleColumnSelect : undefined}
+        onRowSelectionHeaderSelect={onColumnSelect ? handleRowSelectionHeaderSelect : undefined}
         onColumnResize={onColumnResize}
         onCellSelect={handleCellSelection}
         onClearSelection={handleClearSelection}

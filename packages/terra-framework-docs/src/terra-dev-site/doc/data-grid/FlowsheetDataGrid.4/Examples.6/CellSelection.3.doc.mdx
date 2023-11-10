@@ -1,0 +1,36 @@
+import CellSelection from './CellSelection?dev-site-example';
+
+# Cell Selection
+
+## Description
+This example demonstrates a Flowsheet Data Grid with cell selection support by utilizing the following [properties](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#properties):
+
+* The **onCellSelect** callback prop: When the user selects a cell, this callback will be called with the `rowId` and `columnId` of the selected cell.
+In this example, the `isSelected` cell property is toggled to true, adding highlighting to the selected cell.
+
+* The **onCellRangeSelect** callback prop: When the user selects a range of multiple cells at once, a (1-D) array of cell objects, each containing `rowId` and `columnId` properties, is the function parameter.
+In this example, the `isSelected` cell property is toggled to true for each of the provided cells, adding highlighting to each cell.
+
+* The **onClearSelectedCells** callback prop: When the user presses the Escape key, this callback gets called. In this example, the `isSelected` attribute of any selected cell is set to false and the Flowsheet Data Grid is re-rendered.
+
+## Interactions
+When using this example, there are several ways to interact with the cells of the grid.
+
+### Single Cell Selection
+Selecting a single cell can be achieved by either of the following methods:
+* Click on a selectable cell. OR
+* Press Spacebar when focused on a selectable cell.
+
+### Multi-Cell (Range) Selection
+Selecting a range of multiple cells can be achieved by the following:
+
+1. Select a single cell (see [Single Cell Selection](#single-cell-selection)). AND
+2. Options include:
+
+    * Hold Shift key and click on another selectable* cell. This will select the entire range of rows and columns between the selected and starting cell.
+    * Use the directional arrow keys to navigate the focus indicator, hold Shift key and press Spacebar on another selectable cell. This option will also select the range of rows and columns between the cells.
+    * Hold Shift key and use the directional arrow keys to expand the range of selected cells.
+
+*Both the column headers and the cells in the row header (leftmost) column are focusable but not selectable when in range selection mode.
+
+<CellSelection title= 'Flowsheet Data Grid with Cell Selection' />

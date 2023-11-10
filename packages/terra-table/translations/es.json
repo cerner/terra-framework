@@ -1,0 +1,21 @@
+{
+  "Terra.table.blank": "En blanco",
+  "Terra.table.maskedCell": "Datos enmascarados",
+  "Terra.table.cell-focus-trapped": "Foco contenido en la celda. Presione Esc para reanudar la navegación por la cuadrícula.",
+  "Terra.table.cell-interactable": "La celda contiene elementos interaccionables. Presione Entrar para mover el foco dentro de la celda.",
+  "Terra.table.columnError": "Errores asociados a la columna",
+  "Terra.table.resizeHandleValueText": "{columnWidth} píxeles de ancho de columna",
+  "Terra.table.resume-navigation": "Se ha reanudado la navegación por la cuadrícula.",
+  "Terra.table.row-index": "Fila {fila}",
+  
+  "Terra.table.row-selection-template": "Fila {fila} seleccionada. ",
+  "Terra.table.multiple-rows-selected": "{rowCount} filas seleccionadas. ",
+  "Terra.table.multiple-rows-unselected": "{rowCount} filas no seleccionadas. ",
+  "Terra.table.resize-handle-template": "Control de ajuste de tamaño de columna para {columnText}. Presione Entrar para que se use.",
+  "Terra.table.resize-handle-value-text": "{columnWidth} píxeles",
+  "Terra.table.row-selection-cleared-template": "Fila {fila} no seleccionada. ",
+  "Terra.table.row-selection-mode-enabled": "Modo Selección de filas habilitado.",
+  "Terra.table.row-selection-mode-disabled": "Modo Selección de filas deshabilitado",
+  "Terra.table.all-rows-selected": "Todas las filas seleccionadas",
+  "Terra.table.all-rows-unselected": "Ninguna fila seleccionada"
+}

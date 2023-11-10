@@ -1,35 +1,226 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`EmbeddedContentConsumer should render the embedded content consumer container 1`] = `
-<div>
-  <EmbeddedContentConsumer
+exports[`InjectIntl should render the embedded content consumer container 1`] = `
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(EmbeddedContentConsumer)
     onMount={[Function]}
     src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
     title="basic provider"
   >
-    <div />
-  </EmbeddedContentConsumer>
+    <EmbeddedContentConsumer
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      onMount={[Function]}
+      src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+      title="basic provider"
+    >
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+    </EmbeddedContentConsumer>
+  </InjectIntl(EmbeddedContentConsumer)>
 </div>
 `;
 
-exports[`EmbeddedContentConsumer should render the embedded content consumer with custom class names 1`] = `
-<div>
-  <EmbeddedContentConsumer
+exports[`InjectIntl should render the embedded content consumer with custom class names 1`] = `
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(EmbeddedContentConsumer)
     className="container"
     onMount={[Function]}
     src="https://www.cdc.gov/"
     title="custom class name"
   >
-    <div
+    <EmbeddedContentConsumer
       className="container"
-    />
-  </EmbeddedContentConsumer>
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      onMount={[Function]}
+      src="https://www.cdc.gov/"
+      title="custom class name"
+    >
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div
+        className="container"
+      />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+    </EmbeddedContentConsumer>
+  </InjectIntl(EmbeddedContentConsumer)>
 </div>
 `;
 
-exports[`EmbeddedContentConsumer should render the embedded content consumer with options attributes 1`] = `
-<div>
-  <EmbeddedContentConsumer
+exports[`InjectIntl should render the embedded content consumer with options attributes 1`] = `
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(EmbeddedContentConsumer)
     onMount={[Function]}
     options={
       Object {
@@ -44,26 +235,198 @@ exports[`EmbeddedContentConsumer should render the embedded content consumer wit
     src=""
     title="inline html content"
   >
-    <div />
-  </EmbeddedContentConsumer>
+    <EmbeddedContentConsumer
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      onMount={[Function]}
+      options={
+        Object {
+          "iframeAttrs": Object {
+            "height": "100px",
+            "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
+            "title": "inline html content",
+            "width": "100%",
+          },
+        }
+      }
+      src=""
+      title="inline html content"
+    >
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+    </EmbeddedContentConsumer>
+  </InjectIntl(EmbeddedContentConsumer)>
 </div>
 `;
 
-exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop 1`] = `
-<div>
-  <EmbeddedContentConsumer
+exports[`InjectIntl should render the embedded content consumer with title prop 1`] = `
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(EmbeddedContentConsumer)
     onMount={[Function]}
     src="https://www.cdc.gov/"
     title="title for the frame content"
   >
-    <div />
-  </EmbeddedContentConsumer>
+    <EmbeddedContentConsumer
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      onMount={[Function]}
+      src="https://www.cdc.gov/"
+      title="title for the frame content"
+    >
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+    </EmbeddedContentConsumer>
+  </InjectIntl(EmbeddedContentConsumer)>
 </div>
 `;
 
-exports[`EmbeddedContentConsumer should render the embedded content consumer with title prop and options prop 1`] = `
-<div>
-  <EmbeddedContentConsumer
+exports[`InjectIntl should render the embedded content consumer with title prop and options prop 1`] = `
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(EmbeddedContentConsumer)
     onMount={[Function]}
     options={
       Object {
@@ -75,14 +438,162 @@ exports[`EmbeddedContentConsumer should render the embedded content consumer wit
     src="https://www.cdc.gov/"
     title="title that will be used for the frame content"
   >
-    <div />
-  </EmbeddedContentConsumer>
+    <EmbeddedContentConsumer
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      onMount={[Function]}
+      options={
+        Object {
+          "iframeAttrs": Object {
+            "title": "title that will be used for the frame content",
+          },
+        }
+      }
+      src="https://www.cdc.gov/"
+      title="title that will be used for the frame content"
+    >
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.beginEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+      <div />
+      <VisuallyHiddenText
+        className="visually-hidden-text"
+        text="Terra.embeddedContentConsumer.endEmbeddedContent"
+      >
+        <span
+          className="visually-hidden-text visually-hidden-text"
+        >
+          Terra.embeddedContentConsumer.endEmbeddedContent
+        </span>
+      </VisuallyHiddenText>
+    </EmbeddedContentConsumer>
+  </InjectIntl(EmbeddedContentConsumer)>
 </div>
+`;
+
+exports[`InjectIntl should render visually hidden text before and after the embedded content consumer container 1`] = `
+<InjectIntl(EmbeddedContentConsumer)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  src="https://www.google.com/"
+  title="frame content title"
+>
+  <EmbeddedContentConsumer
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    src="https://www.google.com/"
+    title="frame content title"
+  >
+    <VisuallyHiddenText
+      className="visually-hidden-text"
+      text="Terra.embeddedContentConsumer.beginEmbeddedContent"
+    >
+      <span
+        className="visually-hidden-text visually-hidden-text"
+      >
+        Terra.embeddedContentConsumer.beginEmbeddedContent
+      </span>
+    </VisuallyHiddenText>
+    <div />
+    <VisuallyHiddenText
+      className="visually-hidden-text"
+      text="Terra.embeddedContentConsumer.endEmbeddedContent"
+    >
+      <span
+        className="visually-hidden-text visually-hidden-text"
+      >
+        Terra.embeddedContentConsumer.endEmbeddedContent
+      </span>
+    </VisuallyHiddenText>
+  </EmbeddedContentConsumer>
+</InjectIntl(EmbeddedContentConsumer)>
 `;
 
 exports[`sets appropriate config option when resizeConfig.scrolling is false 1`] = `
 <div>
-  <EmbeddedContentConsumer
+  <InjectIntl(EmbeddedContentConsumer)
     options={
       Object {
         "resizeConfig": Object {
@@ -97,7 +608,7 @@ exports[`sets appropriate config option when resizeConfig.scrolling is false 1`]
 
 exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] = `
 <div>
-  <EmbeddedContentConsumer
+  <InjectIntl(EmbeddedContentConsumer)
     options={
       Object {
         "resizeConfig": Object {

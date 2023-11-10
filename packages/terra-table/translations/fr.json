@@ -1,0 +1,21 @@
+{
+  "Terra.table.blank": "Vide",
+  "Terra.table.maskedCell": "Données masquées",
+  "Terra.table.cell-focus-trapped": "Focus contenu dans la cellule. Pour reprendre la navigation de la grille, appuyez sur la touche Échappement.",
+  "Terra.table.cell-interactable": "La cellule contient des éléments avec lesquels il est possible d'interagir. Pour déplacer le focus dans la cellule, appuyez sur la touche Entrée.",
+  "Terra.table.columnError": "Erreurs associées à la colonne",
+  "Terra.table.resizeHandleValueText": "Largeur de la colonne : {columnWidth} pixels",
+  "Terra.table.resume-navigation": "Navigation de la grille reprise.",
+  "Terra.table.row-index": "Ligne {row}",
+
+  "Terra.table.row-selection-template": "Ligne {row} sélectionnée. ",
+  "Terra.table.multiple-rows-selected": "{rowCount} lignes sélectionnées. ",
+  "Terra.table.multiple-rows-unselected": "{rowCount} lignes non sélectionnées. ",
+  "Terra.table.resize-handle-template": "Poignée de redimensionnement de colonne pour {columnText}. Pour l'utiliser, appuyez sur la touche Entrée.",
+  "Terra.table.resize-handle-value-text": "{columnWidth} pixels",
+  "Terra.table.row-selection-cleared-template": "Ligne {row} non sélectionnée. ",
+  "Terra.table.row-selection-mode-enabled": "Mode Sélection de ligne activé.",
+  "Terra.table.row-selection-mode-disabled": "Mode Sélection de ligne désactivé.",
+  "Terra.table.all-rows-selected": "Toutes les lignes sont sélectionnées.",
+  "Terra.table.all-rows-unselected": "Aucune ligne n'est sélectionnée."
+}

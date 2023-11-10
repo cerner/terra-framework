@@ -9,6 +9,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Unique identifier for the parent table
+   */
+  tableId: PropTypes.string.isRequired,
+
+  /**
    * Data for columns. By default, columns will be presented in the order given.
    */
   columns: PropTypes.arrayOf(columnShape).isRequired,
@@ -19,9 +24,21 @@ const propTypes = {
   headerHeight: PropTypes.string.isRequired,
 
   /**
-   * Number that specifies the height of the table in pixels.
-   */
+  * Number that specifies the height of the table in pixels.
+  */
   tableHeight: PropTypes.number,
+  /**
+   * Column index for cell that can receive tab focus.
+   */
+  activeColumnIndex: PropTypes.number,
+  /**
+   * Specifies if resize handle should be active.
+   */
+  isActiveColumnResizing: PropTypes.bool,
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
 
   /**
    * Function that is called when a selectable header cell is selected. Parameters:
@@ -35,6 +52,11 @@ const propTypes = {
   onResizeMouseDown: PropTypes.func,
 
   /**
+   * Function that is called when the the keyboard is used to adjust the column size.
+   */
+  onResizeHandleChange: PropTypes.func,
+
+  /**
    * Boolean indicating whether or not the table columns should be displayed.
    */
   hasColumnHeaders: PropTypes.bool,
@@ -46,17 +68,23 @@ const defaultProps = {
 
 const ColumnHeader = (props) => {
   const {
+    tableId,
+    activeColumnIndex,
+    isActiveColumnResizing,
+    columnResizeIncrement,
     columns,
     headerHeight,
     tableHeight,
     onColumnSelect,
     onResizeMouseDown,
+    onResizeHandleChange,
     hasColumnHeaders,
   } = props;
 
   return (
     <thead>
       <tr
+        aria-rowindex={1}
         className={cx('column-header-row', { hidden: !hasColumnHeaders })}
         height={hasColumnHeaders ? headerHeight : undefined}
       >
@@ -64,6 +92,7 @@ const ColumnHeader = (props) => {
           <ColumnHeaderCell
             key={column.id}
             id={column.id}
+            tableId={tableId}
             rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}
@@ -74,10 +103,14 @@ const ColumnHeader = (props) => {
             isResizable={hasColumnHeaders && column.isResizable}
             isSelectable={hasColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
+            isActive={activeColumnIndex === columnIndex}
+            isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+            columnResizeIncrement={columnResizeIncrement}
             hasError={column.hasError}
             sortIndicator={column.sortIndicator}
             onColumnSelect={onColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
+            onResizeHandleChange={onResizeHandleChange}
           />
         ))}
       </tr>

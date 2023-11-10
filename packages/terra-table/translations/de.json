@@ -1,0 +1,21 @@
+{
+  "Terra.table.blank": "Leer",
+  "Terra.table.maskedCell": "Verborgene Daten",
+  "Terra.table.cell-focus-trapped": "Fokus in Zelle enthalten. Esc-Taste drücken, um die Rasternavigation wieder aufzunehmen.",
+  "Terra.table.cell-interactable": "Die Zelle enthält interaktive Elemente. Eingabetaste drücken, um den Fokus innerhalb der Zelle zu verschieben.",
+  "Terra.table.columnError": "Fehler in Zusammenhang mit der Spalte.",
+  "Terra.table.resizeHandleValueText": "{columnWidth} Pixel - Spaltenbreite",
+  "Terra.table.resume-navigation": "Die Rasternavigation wurde wieder aufgenommen.",
+  "Terra.table.row-index": "Zeile {row}",
+
+  "Terra.table.row-selection-template": "Zeile {row} ausgewählt.",
+  "Terra.table.multiple-rows-selected": "{rowCount} Zeilen ausgewählt.",
+  "Terra.table.multiple-rows-unselected": "Auswahl für {rowCount} Zeilen aufgehoben.",
+  "Terra.table.resize-handle-template": "Handle zur Größenänderung der Spalte für {columnText}. Eingabetaste drücken, um diesen zu verwenden.",
+  "Terra.table.resize-handle-value-text": "{columnWidth} Pixel",
+  "Terra.table.row-selection-cleared-template": "Auswahl für Zeile {row} aufgehoben.",
+  "Terra.table.row-selection-mode-enabled": "Zeilenauswahlmodus aktiviert.",
+  "Terra.table.row-selection-mode-disabled": "Zeilenauswahlmodus deaktiviert.",
+  "Terra.table.all-rows-selected": "Alle Zeilen ausgewählt",
+  "Terra.table.all-rows-unselected": "Keine Zeilen ausgewählt"
+}

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.93.0 - (November 9, 2023)
+
+* Changed
+  * Updated screen reader response to announce hot keys suggestions.
+
 ## 4.92.0 - (October 11, 2023)
 
 * Changed

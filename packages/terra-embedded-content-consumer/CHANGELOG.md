@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.40.0 - (November 9, 2023)
+
+* Added
+  * Added screenreader support to announce context of embedded iframe content.
+
 ## 3.39.0 - (October 3, 2023)
 
 * Added

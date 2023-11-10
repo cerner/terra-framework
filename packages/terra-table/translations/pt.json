@@ -1,0 +1,21 @@
+{
+  "Terra.table.blank": "Em branco",
+  "Terra.table.maskedCell": "Dados com máscara",
+  "Terra.table.cell-focus-trapped": "Foco contido na célula. Pressione Esc para retomar a navegação do grid.",
+  "Terra.table.cell-interactable": "Célula contém elementos interativos. Pressione Enter para mover o foco para dentro da célula.",
+  "Terra.table.columnError": "Erros associados a coluna",
+  "Terra.table.resizeHandleValueText": "{columnWidth} pixels de largura na coluna",
+  "Terra.table.resume-navigation": "Navegação do grid retomada.",
+  "Terra.table.row-index": "Linha {row}",
+
+  "Terra.table.row-selection-template": "Linha {row} selecionada. ",
+  "Terra.table.multiple-rows-selected": "{rowCount} linhas selecionadas. ",
+  "Terra.table.multiple-rows-unselected": "{rowCount} linhas não selecionadas. ",
+  "Terra.table.resize-handle-template": "Redimensionamento da coluna para {columnText}. Pressione Enter para usar.",
+  "Terra.table.resize-handle-value-text": "{columnWidth} pixels",
+  "Terra.table.row-selection-cleared-template": "Linha {row} não selecionada. ",
+  "Terra.table.row-selection-mode-enabled": "Modo de seleção de linha ativado.",
+  "Terra.table.row-selection-mode-disabled": "Modo de seleção de linha desativado",
+  "Terra.table.all-rows-selected": "Todas as linhas selecionadas",
+  "Terra.table.all-rows-unselected": "Nenhuma linha selecionada"
+}

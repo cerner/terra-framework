@@ -3,33 +3,41 @@ import React, {
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
+import { v4 as uuidv4 } from 'uuid';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
 import { columnShape } from './proptypes/columnShape';
 import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
-import Row from './subcomponents/Row';
 import rowShape from './proptypes/rowShape';
 import validateRowHeaderIndex from './proptypes/validators';
+
 import styles from './Table.module.scss';
+import sectionShape from './proptypes/sectionShape';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String that will be used to identify the table. If multiple tables are on the same page, each table should have
-   * a unique id.
+   * Unique id used to identify the table.
    */
   id: PropTypes.string.isRequired,
 
   /**
-  * Data for content in the body of the table. Rows will be rendered in the order given.
+  * Data for content in the body of the table when sections do not exist. Rows will be rendered in the order given.
+  * The sections prop will text precedence over this prop.
   */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Sections will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * String that identifies the element (or elements) that labels the table.
@@ -40,6 +48,22 @@ const propTypes = {
    * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
+
+  /**
+   * @private
+   * Column index for cell that can receive tab focus.
+   */
+  activeColumnIndex: PropTypes.number,
+  /**
+   * @private
+   * Specifies if resize handle should be active.
+   */
+  isActiveColumnResizing: PropTypes.bool,
+
+  /**
+   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   */
+  columnResizeIncrement: PropTypes.number,
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
@@ -101,6 +125,11 @@ const propTypes = {
   onColumnSelect: PropTypes.func,
 
   /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
+
+  /*
    * Callback function that is called when the row selection column header is selected. Parameters:
    *  @param {string} columnId columnId
    */
@@ -149,7 +178,11 @@ function Table(props) {
     id,
     ariaLabelledBy,
     ariaLabel,
+    activeColumnIndex,
+    isActiveColumnResizing,
+    columnResizeIncrement,
     rows,
+    sections,
     pinnedColumns,
     overflowColumns,
     onColumnResize,
@@ -158,6 +191,7 @@ function Table(props) {
     rowHeight,
     onColumnSelect,
     onCellSelect,
+    onSectionSelect,
     onRowSelect,
     onRowSelectionHeaderSelect,
     hasSelectableRows,
@@ -194,7 +228,11 @@ function Table(props) {
   const selectedRows = useRef([]);
   const [rowSelectionAriaLiveMessage, setRowSelectionAriaLiveMessage] = useState(null);
   const [rowSelectionModeAriaLiveMessage, setRowSelectionModeAriaLiveMessage] = useState(null);
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets }), [pinnedColumnOffsets]);
+
+  // Aria live region message management
+  const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
+
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets]);
 
   // Initialize column width properties
   const initializeColumn = (column) => ({
@@ -214,6 +252,32 @@ function Table(props) {
 
   const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
+
+  const defaultSectionRef = useRef(uuidv4());
+
+  // Create section array from props
+  const tableSections = useMemo(() => {
+    if (sections) {
+      return [...sections];
+    }
+
+    return [{ id: defaultSectionRef.current, rows }];
+  }, [rows, sections]);
+
+  // Calculate total table row count
+  const tableSectionReducer = (rowCount, currentSection) => {
+    if (currentSection.id !== defaultSectionRef.current) {
+      // eslint-disable-next-line no-param-reassign
+      currentSection.sectionRowIndex = rowCount + 1;
+      return rowCount + currentSection.rows.length + 1;
+    }
+
+    // eslint-disable-next-line no-param-reassign
+    currentSection.sectionRowIndex = 0;
+    return rowCount + currentSection.rows.length;
+  };
+  const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
+
   // -------------------------------------
   // functions
 
@@ -247,11 +311,12 @@ function Table(props) {
   // useEffect for row updates
   useEffect(() => {
     const previousSelectedRows = [...selectedRows.current];
-    selectedRows.current = rows.filter((row) => row.isSelected).map(row => (row.id));
+    const selectableRows = tableSections.flatMap(section => (section.rows.map(row => (row))));
+    selectedRows.current = selectableRows.filter((row) => row.isSelected).map(row => (row.id));
 
     if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
       setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.all-rows-unselected' }));
-    } else if (selectedRows.current.length === rows.length) {
+    } else if (selectedRows.current.length === selectableRows.length) {
       setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.all-rows-selected' }));
     } else {
       const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
@@ -259,16 +324,14 @@ function Table(props) {
       let selectionUpdateAriaMessage = '';
 
       if (rowSelectionsAdded.length === 1) {
-        const newRowIndex = rows.findIndex(row => row.id === rowSelectionsAdded[0]);
-        const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 2; // Accounts for header row and zero-based index
+        const selectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsAdded[0]}']`).getAttribute('aria-rowindex');
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.row-selection-template' }, { row: selectedRowLabel });
       } else if (rowSelectionsAdded.length > 1) {
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
       }
 
       if (rowSelectionsRemoved.length === 1) {
-        const removedRowIndex = rows.findIndex(row => row.id === rowSelectionsRemoved[0]);
-        const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 2; // Accounts for header row and zero-based index
+        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('data-row-id');
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
@@ -278,7 +341,7 @@ function Table(props) {
         setRowSelectionAriaLiveMessage(selectionUpdateAriaMessage);
       }
     }
-  }, [intl, rows]);
+  }, [intl, tableSections]);
 
   // useEffect for row displayed columns
   useEffect(() => {
@@ -333,6 +396,20 @@ function Table(props) {
 
   // -------------------------------------
 
+  const handleTableRef = useCallback((node) => {
+    if (gridContext.tableRef) {
+      gridContext.tableRef.current = node;
+    }
+    tableRef.current = node;
+  }, [gridContext.tableRef]);
+
+  const handleContainerRef = useCallback((node) => {
+    if (gridContext.tableContainerRef) {
+      gridContext.tableContainerRef.current = node;
+    }
+    tableContainerRef.current = node;
+  }, [gridContext.tableContainerRef]);
+
   // -------------------------------------
   // event handlers
 
@@ -383,21 +460,40 @@ function Table(props) {
     setActiveIndex(null);
   };
 
+  const onResizeHandleChange = useCallback((columnIndex, increment) => {
+    const { minimumWidth, maximumWidth, width } = tableColumns[columnIndex];
+    const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
+
+    // Update the width for the column in the state variable
+    const newGridColumns = [...tableColumns];
+    newGridColumns[columnIndex].width = newColumnWidth;
+    setTableColumns(newGridColumns);
+
+    // Update the column and table width
+    tableRef.current.style.width = `${tableRef.current.offsetWidth + (newColumnWidth - width)}px`;
+
+    // Notify consumers of the new column width
+    if (onColumnResize) {
+      onColumnResize(tableColumns[columnIndex].id, tableColumns[columnIndex].width);
+    }
+  }, [tableColumns, onColumnResize]);
+
   // -------------------------------------
 
   return (
     <div
-      ref={tableContainerRef}
+      ref={handleContainerRef}
       className={cx('table-container')}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
       <table
-        ref={tableRef}
+        ref={handleTableRef}
         id={id}
         role={gridContext.role}
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
+        aria-rowcount={tableRowCount}
         className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
@@ -412,35 +508,43 @@ function Table(props) {
           </colgroup>
 
           <ColumnHeader
+            tableId={id}
+            isActiveColumnResizing={isActiveColumnResizing}
+            activeColumnIndex={activeColumnIndex}
             columns={tableColumns}
             hasColumnHeaders={hasColumnHeaders}
             headerHeight={columnHeaderHeight}
+            columnResizeIncrement={columnResizeIncrement}
             tableHeight={tableHeight}
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
+            onResizeHandleChange={onResizeHandleChange}
           />
-          <tbody>
-            {rows.map((row, index) => (
-              <Row
-                rowIndex={index + 1}
-                key={row.id}
-                height={rowHeight}
-                id={row.id}
-                cells={row.cells}
-                ariaLabel={row.ariaLabel}
-                hasRowSelection={hasSelectableRows}
-                displayedColumns={displayedColumns}
-                rowHeaderIndex={rowHeaderIndex}
-                onCellSelect={isGridContext || hasSelectableRows ? handleCellSelection : undefined}
-                isSelected={row.isSelected}
-                isTableStriped={isStriped}
-              />
-            ))}
-          </tbody>
+          {tableSections.map((section) => (
+            <Section
+              id={section.id}
+              tableId={id}
+              key={section.id}
+              sectionRowIndex={section.sectionRowIndex}
+              isCollapsible={section.isCollapsible}
+              isCollapsed={section.isCollapsed}
+              isHidden={section.id === defaultSectionRef.current}
+              isTableStriped={isStriped}
+              text={section.text}
+              rows={section.rows}
+              rowHeight={rowHeight}
+              hasRowSelection={hasSelectableRows}
+              displayedColumns={displayedColumns}
+              rowHeaderIndex={rowHeaderIndex}
+              onCellSelect={isGridContext || hasSelectableRows ? handleCellSelection : undefined}
+              onSectionSelect={onSectionSelect}
+            />
+          ))}
         </ColumnContext.Provider>
       </table>
       <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
       <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
+      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
     </div>
   );
 }
