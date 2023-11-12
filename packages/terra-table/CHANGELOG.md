@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+## 5.1.1-alpha.1 - (November 9, 2023)
+
 * Added
   * Added row selection mode to the table component.
   * Added ability for consumers to specify a custom screen reader message for masked cells.
+  * Added sections support to the table component.
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
@@ -21,7 +24,6 @@
 
 * Added
   * Added the ability to toggle zebra striping for table rows.
-  * Added sections support to the table component.
   
 * Changed
   * Updated the table component so that the cell dive-in logic would not execute when not in the grid context.
