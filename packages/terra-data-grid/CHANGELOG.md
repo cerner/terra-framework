@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.1.0 - (November 9, 2023)
+
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
   * Fixed pinned column divider issue during keyboard resize.
