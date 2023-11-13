@@ -181,6 +181,7 @@ const DataGrid = injectIntl((props) => {
   const [checkResizable, setCheckResizable] = useState(false);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
+  const [lastSelectedRowId, setLastSelectedRowId] = useState();
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
   // Aria live region message management
@@ -279,6 +280,7 @@ const DataGrid = injectIntl((props) => {
     setFocusedCol(columnIndex);
 
     if (onColumnSelect) {
+      setLastSelectedRowId('');
       onColumnSelect(columnId);
     }
   }, [onColumnSelect, displayedColumns]);
@@ -287,6 +289,7 @@ const DataGrid = injectIntl((props) => {
     setFocusedCol(0);
     setFocusedRow(0);
     if (onRowSelectionHeaderSelect) {
+      setLastSelectedRowId('');
       onRowSelectionHeaderSelect();
     }
   }, [onRowSelectionHeaderSelect]);
@@ -295,6 +298,7 @@ const DataGrid = injectIntl((props) => {
     setFocusedRow(selectionDetails.rowIndex);
     setFocusedCol(selectionDetails.columnIndex);
     if (onCellSelect) {
+      setLastSelectedRowId(selectionDetails.rowId);
       onCellSelect(selectionDetails);
     }
   }, [onCellSelect]);
@@ -361,6 +365,7 @@ const DataGrid = injectIntl((props) => {
     let nextRow = cellCoordinates.row;
     let nextCol = cellCoordinates.col;
     setCheckResizable(false);
+    setLastSelectedRowId('');
 
     const targetElement = event.target;
 
@@ -476,9 +481,17 @@ const DataGrid = injectIntl((props) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
-        // When deleting rows, we run into errors of re-focusing cells out of bounds.
-        const newRow = Math.min(dataGridRows.length - 1, focusedRow);
-        setFocusedRowCol(newRow, focusedCol, true);
+        // When modifying the number of rows, we set the focused cell to the last selected RowId and columnId
+        if (!lastSelectedRowId) {
+          setFocusedRowCol(focusedRow, focusedCol, true);
+        } else {
+          let newRowIndex = dataGridRows.findIndex(row => row.id === lastSelectedRowId);
+
+          if (newRowIndex === -1) {
+            newRowIndex = Math.min(focusedRow, dataGridRows.length - 1);
+          }
+          setFocusedRowCol(newRowIndex + 1, focusedCol, true);
+        }
         setGridHasFocus(true);
       }
     }
