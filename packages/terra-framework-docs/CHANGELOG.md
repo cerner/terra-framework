@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.44.0 - (November 9, 2023)
+
 * Added
   * Added examples and tests to `terra-table` for table sections.
   * Updated customDisplay examples for tabs.
