@@ -8,8 +8,7 @@ const getFocusableElements = (parentElement) => {
     element => !element.hasAttribute('disabled')
         && !element.getAttribute('aria-hidden')
         && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
-        && window.getComputedStyle(element).visibility !== 'hidden'
-        && element.closest('[inert]') === null,
+        && window.getComputedStyle(element).visibility !== 'hidden',
   );
 
   return focusableElements;
