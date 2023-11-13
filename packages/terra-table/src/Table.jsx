@@ -20,6 +20,7 @@ import validateRowHeaderIndex from './proptypes/validators';
 
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
+import getFocusableElements from './utils/focusManagement';
 
 const cx = classNames.bind(styles);
 
@@ -495,23 +496,6 @@ function Table(props) {
     return false;
   };
 
-  const getFocusableTableElements = () => {
-    // add all elements we want to include in our selection
-    const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
-        + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
-        + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
-
-    const focusableElements = [...tableRef.current.querySelectorAll(`${focusableElementSelector}`)].filter(
-      element => !element.hasAttribute('disabled')
-          && !element.getAttribute('aria-hidden')
-          && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
-          && window.getComputedStyle(element).visibility !== 'hidden'
-          && element.closest('[inert]') === null,
-    );
-
-    return focusableElements;
-  };
-
   const onKeyDown = (event) => {
     const targetElement = event.target;
 
@@ -526,12 +510,12 @@ function Table(props) {
     // Handle home and end key navigation in table
     let focusableTableElements;
     if (event.keyCode === KeyCode.KEY_HOME) {
-      focusableTableElements = getFocusableTableElements();
+      focusableTableElements = getFocusableElements(tableRef.current);
       if (focusableTableElements) {
         focusableTableElements[0].focus();
       }
     } else if (event.keyCode === KeyCode.KEY_END) {
-      focusableTableElements = getFocusableTableElements();
+      focusableTableElements = getFocusableElements(tableRef.current);
       if (focusableTableElements) {
         focusableTableElements[focusableTableElements.length - 1].focus();
       }
