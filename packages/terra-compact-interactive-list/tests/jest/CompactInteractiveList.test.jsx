@@ -224,10 +224,10 @@ describe('Compact Interactive List', () => {
       );
       const rowElements = wrapper.find('.row');
       expect(rowElements.at(0).props().id).toEqual(rows[0].id);
-      expect(rowElements.at(1).props().id).toEqual(rows[2].id);
-      expect(rowElements.at(2).props().id).toEqual(rows[3].id);
-      expect(rowElements.at(3).props().id).toEqual(rows[4].id);
-      expect(rowElements.at(4).props().id).toEqual(rows[1].id);
+      expect(rowElements.at(1).props().id).toEqual(rows[1].id);
+      expect(rowElements.at(2).props().id).toEqual(rows[2].id);
+      expect(rowElements.at(3).props().id).toEqual(rows[3].id);
+      expect(rowElements.at(4).props().id).toEqual(rows[4].id);
       expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${5}`);
       expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${6}`);
       expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${7}`);
