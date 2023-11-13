@@ -2,13 +2,15 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed issue where focus was given to the column header instead of its button element.
+
 ## 1.1.0 - (November 9, 2023)
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
   * Fixed pinned column divider issue during keyboard resize.
   * Fixed resize handle being communicated when non-header cell is focused.
-  * Fixed issue where focus was given to the column header instead of its button element.
 
 * Added
   * Added ability to select a range of cells to FlowsheetDataGrid.
