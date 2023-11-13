@@ -50,9 +50,9 @@ const propTypes = {
 
   /**
    * By default the items go from top to bottom, then break to the next column.
-   * If flowVertically prop is set to false, items will flow left to right, then break to the next row.
+   * If flowHorizontally prop is set to true, items will flow left to right, then break to the next row.
    */
-  flowVertically: PropTypes.bool,
+  flowHorizontally: PropTypes.bool,
 
   /**
    * A string for container's width. Any valid css string. Defaults to '100%'.
@@ -61,17 +61,17 @@ const propTypes = {
   width: PropTypes.string,
 
   /**
-   * Container's minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Container's minimum width in units set by widthUnit prop, such as px, em, or rem.
    */
   minimumWidth: PropTypes.number,
 
   /**
-   * Columns minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns minimum width in units set by widthUnit prop, such as px, em, or rem.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * Columns maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns maximum width in units set by widthUnit prop, such as px, em, or rem.
    */
   columnMaximumWidth: PropTypes.number,
 
@@ -90,7 +90,6 @@ const defaultProps = {
   numberOfColumns: 1,
   width: '100%',
   widthUnit: widthUnitTypes.PX,
-  flowVertically: true,
 };
 
 const CompactInteractiveList = (props) => {
@@ -101,7 +100,7 @@ const CompactInteractiveList = (props) => {
     columns,
     rows,
     numberOfColumns,
-    flowVertically,
+    flowHorizontally,
     width,
     widthUnit,
     minimumWidth,
@@ -139,7 +138,9 @@ const CompactInteractiveList = (props) => {
   const mapRows = () => {
     const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
     let result = [];
-    if (flowVertically) {
+    if (flowHorizontally) {
+      result = [...rows];
+    } else {
       for (let i = 0; i < numberOfRows; i += 1) {
         let x = numberOfColumns - placeholdersNumber;
         for (let j = i; j < rows.length; j += numberOfRows - (x >= 0 ? 0 : 1)) {
@@ -149,8 +150,6 @@ const CompactInteractiveList = (props) => {
           }
         }
       }
-    } else {
-      result = [...rows];
     }
     // add placeholder rows
     for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {

@@ -44,7 +44,7 @@ const WidthBreakpointsHorizontalFlow = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
-      flowVertically={false}
+      flowHorizontally
       // there is no widthUnit prop set, so it will default to px
     />
   );

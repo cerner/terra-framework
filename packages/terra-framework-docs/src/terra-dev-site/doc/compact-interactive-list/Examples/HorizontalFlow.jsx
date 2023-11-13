@@ -44,7 +44,7 @@ const HorizontalFlow = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
-      flowVertically={false}
+      flowHorizontally
     />
   );
 };

@@ -211,7 +211,7 @@ describe('Compact Interactive List', () => {
       expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${7}`);
     });
 
-    it('should flow horizontally if flowVertically prop is set to false', () => {
+    it('should flow horizontally if flowHorizontally prop is set', () => {
       const numberOfColumns = 4;
       const wrapper = mountWithIntl(
         <CompactInteractiveList
@@ -219,7 +219,7 @@ describe('Compact Interactive List', () => {
           rows={rows}
           columns={respCols}
           numberOfColumns={numberOfColumns}
-          fflowVertically={false}
+          flowHorizontally
         />,
       );
       const rowElements = wrapper.find('.row');
