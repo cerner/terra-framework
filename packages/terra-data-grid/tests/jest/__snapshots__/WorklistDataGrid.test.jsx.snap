@@ -797,7 +797,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
                   intl={
@@ -1003,7 +1002,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -3770,7 +3769,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -3993,7 +3991,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -7455,7 +7453,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -7678,7 +7675,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -11118,7 +11115,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
                   intl={
@@ -11324,7 +11320,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -14091,7 +14087,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -14314,7 +14309,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -17776,7 +17771,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -17999,7 +17993,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -21509,7 +21503,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -21732,7 +21725,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -25162,7 +25155,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -25385,7 +25377,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -28863,7 +28855,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
                   intl={
@@ -29069,7 +29060,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -31844,7 +31835,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -32067,7 +32057,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -35529,7 +35519,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -35752,7 +35741,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -39174,7 +39163,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -39397,7 +39385,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -42819,7 +42807,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -43042,7 +43029,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -46464,7 +46451,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -46687,7 +46673,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -50109,7 +50095,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -50332,7 +50317,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -53750,7 +53735,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -53973,7 +53957,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -57391,7 +57375,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasSelectableRows={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
@@ -57614,7 +57597,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -60988,7 +60971,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
                   intl={
@@ -61194,7 +61176,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}
@@ -63873,7 +63855,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 <Table
                   columnHeaderHeight="2.5rem"
                   defaultColumnWidth={200}
-                  hasColumnHeaders={true}
                   hasVisibleColumnHeaders={true}
                   id="test-terra-worklist-data-grid-table"
                   intl={
@@ -64079,7 +64060,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             },
                           ]
                         }
-                        hasColumnHeaders={true}
+                        hasVisibleColumnHeaders={true}
                         headerHeight="2.5rem"
                         isActiveColumnResizing={false}
                         onColumnSelect={[Function]}

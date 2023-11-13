@@ -602,7 +602,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
             hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
@@ -808,7 +807,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -3335,7 +3334,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
             hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
@@ -3541,7 +3539,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -6045,7 +6043,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
             hasSelectableRows={true}
             hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
@@ -6268,7 +6265,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -9424,7 +9421,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
             hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
@@ -9630,7 +9626,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -12078,7 +12074,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
             hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
@@ -12281,7 +12276,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}

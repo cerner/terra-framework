@@ -126,7 +126,7 @@ const ColumnHeadersHidden = () => {
       onCellSelect={onCellSelect}
       onClearSelectedCells={onClearSelectedCells}
       onCellRangeSelect={onCellRangeSelect}
-      hasColumnHeaders={false}
+      hasVisibleColumnHeaders={false}
     />
   );
 };

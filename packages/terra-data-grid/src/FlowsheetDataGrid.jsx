@@ -86,7 +86,7 @@ const propTypes = {
   /**
    * Bool to show/hid column headers. Column headers are visible by default.
    */
-  hasColumnHeaders: PropTypes.bool,
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -95,7 +95,7 @@ const defaultProps = {
   rowHeight: '2.5rem',
   rows: [],
   columns: [],
-  hasColumnHeaders: true,
+  hasVisibleColumnHeaders: true,
 };
 
 function FlowsheetDataGrid(props) {
@@ -112,7 +112,7 @@ function FlowsheetDataGrid(props) {
     onClearSelectedCells,
     onCellRangeSelect,
     intl,
-    hasColumnHeaders,
+    hasVisibleColumnHeaders,
   } = props;
 
   const anchorCell = useRef(null);
@@ -302,7 +302,7 @@ function FlowsheetDataGrid(props) {
         onCellSelect={handleCellSelection}
         onClearSelection={handleClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
-        hasColumnHeaders={hasColumnHeaders}
+        hasVisibleColumnHeaders={hasVisibleColumnHeaders}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>
