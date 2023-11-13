@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added navigation via Home and End Keys.
+
 ## 5.1.1-alpha.1 - (November 9, 2023)
 
 * Added
