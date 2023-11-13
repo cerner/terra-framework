@@ -160,7 +160,7 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
 </thead>
 `;
 
-exports[`ColumnHeader verifies that the hasColumnHeaders prop hides the table column headers when set to false 1`] = `
+exports[`ColumnHeader verifies that the hasVisibleColumnHeaders prop hides the table column headers when set to false 1`] = `
 <thead>
   <tr
     className="column-header-row hidden"

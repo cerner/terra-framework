@@ -130,7 +130,7 @@ const propTypes = {
   /**
    * Boolean indicating whether or not the DataGrid should hide the column headers.
    */
-  hasColumnHeaders: PropTypes.bool,
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -141,7 +141,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
-  hasColumnHeaders: true,
+  hasVisibleColumnHeaders: true,
 };
 
 const DataGrid = injectIntl((props) => {
@@ -151,7 +151,7 @@ const DataGrid = injectIntl((props) => {
     columnHeaderHeight,
     columnResizeIncrement,
     defaultColumnWidth,
-    hasColumnHeaders,
+    hasVisibleColumnHeaders,
     hasSelectableRows,
     id,
     onCellRangeSelect,
@@ -527,7 +527,7 @@ const DataGrid = injectIntl((props) => {
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
-          hasColumnHeaders={hasColumnHeaders}
+          hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
         />
       </GridContext.Provider>

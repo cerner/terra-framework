@@ -74,8 +74,8 @@ exports[`Row Selection verifies row selection all row selection single selction 
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -224,7 +224,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -1168,8 +1168,8 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -1362,7 +1362,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -3475,8 +3475,8 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -3605,7 +3605,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -4197,8 +4197,8 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
     <Table
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      hasColumnHeaders={true}
       hasSelectableRows={true}
+      hasVisibleColumnHeaders={true}
       id="test-terra-table"
       intl={
         Object {
@@ -4391,7 +4391,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                 },
               ]
             }
-            hasColumnHeaders={true}
+            hasVisibleColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
             onResizeHandleChange={[Function]}
@@ -6570,8 +6570,8 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -6765,7 +6765,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -8941,7 +8941,7 @@ Array [
     <Table
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      hasColumnHeaders={true}
+      hasVisibleColumnHeaders={true}
       id="test-terra-table"
       intl={
         Object {
@@ -9142,7 +9142,7 @@ Array [
                 },
               ]
             }
-            hasColumnHeaders={true}
+            hasVisibleColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
             onResizeHandleChange={[Function]}
@@ -10866,7 +10866,7 @@ Array [
     <Table
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      hasColumnHeaders={true}
+      hasVisibleColumnHeaders={true}
       id="test-terra-table"
       intl={
         Object {
@@ -11067,7 +11067,7 @@ Array [
                 },
               ]
             }
-            hasColumnHeaders={true}
+            hasVisibleColumnHeaders={true}
             headerHeight="2.5rem"
             onColumnSelect={[Function]}
             onResizeHandleChange={[Function]}
@@ -12809,8 +12809,8 @@ exports[`Table verifies row selection column header not selectable without callb
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -13018,7 +13018,7 @@ exports[`Table verifies row selection column header not selectable without callb
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -15198,8 +15198,8 @@ exports[`Table verifies row selection column header selection 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -15395,7 +15395,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -17522,7 +17522,7 @@ exports[`Table verifies that the column widths are set properly in the colgroup 
             },
           ]
         }
-        hasColumnHeaders={true}
+        hasVisibleColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
@@ -17774,7 +17774,7 @@ exports[`Table verifies that the table created is consistent with the rows and o
             },
           ]
         }
-        hasColumnHeaders={true}
+        hasVisibleColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
@@ -18026,7 +18026,7 @@ exports[`Table verifies the rows are created with the right props 1`] = `
             },
           ]
         }
-        hasColumnHeaders={true}
+        hasVisibleColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
@@ -18278,7 +18278,7 @@ exports[`Table verifies the rows receive the correct props when table is zebra s
             },
           ]
         }
-        hasColumnHeaders={true}
+        hasVisibleColumnHeaders={true}
         headerHeight="2.5rem"
         onColumnSelect={[Function]}
         onResizeHandleChange={[Function]}
