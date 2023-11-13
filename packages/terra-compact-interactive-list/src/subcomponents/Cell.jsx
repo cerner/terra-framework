@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import { checkIfColumnIsFlex } from '../utils/utils';
+import { checkIfColumnIsResponsive } from '../utils/utils';
 import columnShape from '../proptypes/columnShape';
 import { widthUnitTypes } from '../utils/constants';
 import styles from './Cell.module.scss';
@@ -66,7 +66,7 @@ const Cell = (props) => {
     minimumWidth,
   } = column;
 
-  const isResponsive = checkIfColumnIsFlex(flexGrow, width);
+  const isResponsive = checkIfColumnIsResponsive(flexGrow, width);
 
   const style = {
     flex: isResponsive ? `1 1 ${width || columnMinimumWidth}${widthUnit}` : null,

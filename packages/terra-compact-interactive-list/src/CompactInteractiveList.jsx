@@ -1,6 +1,3 @@
-/* eslint-disable react/forbid-dom-props */
-/* eslint-disable no-undef */
-/* eslint-disable react/no-array-index-key */
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -14,7 +11,7 @@ import { widthUnitTypes, DefaultListValues } from './utils/constants';
 import {
   getRowMaximumWidth,
   getRowMinimumWidth,
-  checkIfRowHasFlexColumns,
+  checkIfRowHasResponsiveColumns,
 } from './utils/utils';
 
 const cx = classNames.bind(styles);
@@ -117,7 +114,7 @@ const CompactInteractiveList = (props) => {
   const columnMinWidth = columnMinimumWidth || DefaultListValues.columnMinimumWidth[widthUnit];
   const columnMaxWidth = columnMaximumWidth;
   // check if list has responsive columns
-  const isResponsive = checkIfRowHasFlexColumns(columns);
+  const isResponsive = checkIfRowHasResponsiveColumns(columns);
   // if there are responsive columns, the items will need maxWidth and minWidth
   const rowMaxWidth = isResponsive ? getRowMaximumWidth(columns, columnMaxWidth) : null;
   const rowMinWidth = isResponsive ? getRowMinimumWidth(columns, columnMinWidth) : null;
@@ -175,6 +172,7 @@ const CompactInteractiveList = (props) => {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         className={cx('compact-interactive-list')}
+        // eslint-disable-next-line react/forbid-dom-props
         style={style}
       >
         {mappedRows.map((row, index) => (
