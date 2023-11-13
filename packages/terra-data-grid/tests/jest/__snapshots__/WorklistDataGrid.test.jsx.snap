@@ -1097,7 +1097,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -1275,7 +1274,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -4364,7 +4362,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -4542,7 +4539,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -8270,7 +8266,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -8448,7 +8443,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -12047,7 +12041,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -12225,7 +12218,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -15314,7 +15306,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -15492,7 +15483,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -19220,7 +19210,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -19398,7 +19387,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -23174,7 +23162,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -23352,7 +23339,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -27048,7 +27034,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -27226,7 +27211,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -30863,7 +30847,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -31041,7 +31024,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -34138,7 +34120,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -34316,7 +34297,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -38044,7 +38024,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -38222,7 +38201,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -41910,7 +41888,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -42088,7 +42065,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -45776,7 +45752,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -45954,7 +45929,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -49642,7 +49616,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -49820,7 +49793,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -53508,7 +53480,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -53686,7 +53657,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -57370,7 +57340,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -57548,7 +57517,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -61232,7 +61200,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -61410,7 +61377,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -64943,7 +64909,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -65121,7 +65086,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div
@@ -68015,7 +67979,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title=" Vitals"
                                 >
                                   <div
@@ -68193,7 +68156,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                       "width": "200px",
                                     }
                                   }
-                                  tabIndex={-1}
                                   title="March 16"
                                 >
                                   <div

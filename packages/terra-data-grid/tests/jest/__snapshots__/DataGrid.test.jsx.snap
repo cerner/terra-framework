@@ -905,7 +905,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title=" Vitals"
                           >
                             <div
@@ -1083,7 +1082,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title="March 16"
                           >
                             <div
@@ -3828,7 +3826,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title=" Vitals"
                           >
                             <div
@@ -4006,7 +4003,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title="March 16"
                           >
                             <div
@@ -6832,7 +6828,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title=" Vitals"
                           >
                             <div
@@ -7010,7 +7005,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title="March 16"
                           >
                             <div
@@ -10325,7 +10319,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title=" Vitals"
                           >
                             <div
@@ -10503,7 +10496,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title="March 16"
                           >
                             <div
@@ -13163,7 +13155,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title=" Vitals"
                           >
                             <div
@@ -13341,7 +13332,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                                 "width": "200px",
                               }
                             }
-                            tabIndex={-1}
                             title="March 16"
                           >
                             <div

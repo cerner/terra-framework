@@ -5,6 +5,9 @@
 * Added
   * Added title attribute to column header cells to enable tooltips.
 
+* Fixed
+  * Fixed tab index issues in the column header cells.
+  
 ## 5.1.1-alpha.1 - (November 9, 2023)
 
 * Added
