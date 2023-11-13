@@ -23,7 +23,7 @@ const propTypes = {
   /**
    * A column data.
    */
-  column: PropTypes.instanceOf(columnShape),
+  column: columnShape,
 
   /**
    * Columns minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
@@ -42,7 +42,7 @@ const propTypes = {
     widthUnitTypes.PX,
     widthUnitTypes.EM,
     widthUnitTypes.REM,
-  ]),
+  ]).isRequired,
 };
 
 const Cell = (props) => {
@@ -66,14 +66,14 @@ const Cell = (props) => {
     minimumWidth,
   } = column;
 
-  const isFlexGrow = checkIfColumnIsFlex(flexGrow, width);
+  const isResponsive = checkIfColumnIsFlex(flexGrow, width);
 
   const style = {
-    flex: isFlexGrow ? `1 1 ${width || columnMinimumWidth}${widthUnit}` : null,
-    width: isFlexGrow ? null : `${width}${widthUnit}`,
+    flex: isResponsive ? `1 1 ${width || columnMinimumWidth}${widthUnit}` : null,
+    width: isResponsive ? null : `${width}${widthUnit}`,
     justifyContent: `${alignToCenter ? 'center' : 'left'}`,
-    maxWidth: isFlexGrow && `${Math.min(maximumWidth, columnMaximumWidth)}${widthUnit}`,
-    minWidth: isFlexGrow && `${Math.max(minimumWidth, columnMinimumWidth)}${widthUnit}`,
+    maxWidth: isResponsive && `${Math.min(maximumWidth, columnMaximumWidth)}${widthUnit}`,
+    minWidth: isResponsive && `${Math.max(minimumWidth, columnMinimumWidth)}${widthUnit}`,
   };
 
   return (

@@ -117,19 +117,19 @@ const CompactInteractiveList = (props) => {
   const columnMinWidth = columnMinimumWidth || DefaultListValues.columnMinimumWidth[widthUnit];
   const columnMaxWidth = columnMaximumWidth;
   // check if list has responsive columns
-  const isFlexGrow = checkIfRowHasFlexColumns(columns);
+  const isResponsive = checkIfRowHasFlexColumns(columns);
   // if there are responsive columns, the items will need maxWidth and minWidth
-  const rowMaxWidth = isFlexGrow ? getRowMaximumWidth(columns, columnMaxWidth) : null;
-  const rowMinWidth = isFlexGrow ? getRowMinimumWidth(columns, columnMinWidth) : null;
+  const rowMaxWidth = isResponsive ? getRowMaximumWidth(columns, columnMaxWidth) : null;
+  const rowMinWidth = isResponsive ? getRowMinimumWidth(columns, columnMinWidth) : null;
   // calculate row width based on the width of its columns
   const getRowWidthSum = (total, column) => total + column.width;
-  const rowWidth = !isFlexGrow && columns.reduce(getRowWidthSum, 0);
+  const rowWidth = isResponsive ? 0 : columns.reduce(getRowWidthSum, 0);
   // calculate list width based on the item width and number of columns
   const listWidth = `${rowWidth * numberOfColumns}${widthUnit}`;
   const listMinWidth = Math.max(rowMinWidth * numberOfColumns, (minimumWidth || DefaultListValues.minimumWidth[widthUnit]));
   // defining styles to apply to the list
   const style = {
-    width: isFlexGrow ? width : listWidth,
+    width: isResponsive ? width : listWidth,
     minWidth: `${listMinWidth}${widthUnit}`,
   };
   if (rowMaxWidth) {
@@ -140,7 +140,7 @@ const CompactInteractiveList = (props) => {
   const numberOfRows = Math.ceil(rows.length / numberOfColumns);
   // map rows differently depending on vertical or horizontal orientation
   const mapRows = () => {
-    const placeholdersNumber = isFlexGrow ? (numberOfRows * numberOfColumns) - rows.length : 0;
+    const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
     let result = [];
     if (flowVertically) {
       for (let i = 0; i < numberOfRows; i += 1) {
@@ -189,7 +189,7 @@ const CompactInteractiveList = (props) => {
             columnMaximumWidth={columnMaximumWidth}
             numberOfColumns={numberOfColumns}
             rowWidth={rowWidth}
-            isFlexGrow={isFlexGrow}
+            isResponsive={isResponsive}
             rowMaximumWidth={rowMaxWidth}
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}

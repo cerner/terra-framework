@@ -24,7 +24,7 @@ const propTypes = {
   /**
    * Data for columns.
    */
-  columns: PropTypes.arrayOf(columnShape),
+  columns: PropTypes.arrayOf(columnShape).isRequired,
 
   /**
    * A number for column minimum width. Defaults to 60.
@@ -39,16 +39,16 @@ const propTypes = {
   /**
    * A number of visual columns.
    */
-  numberOfColumns: PropTypes.number,
+  numberOfColumns: PropTypes.number.isRequired,
 
   /**
    * Indicates if the column is flex growing column (can grow wider or shrink).
    */
-  isFlexGrow: PropTypes.bool,
+  isResponsive: PropTypes.bool.isRequired,
 
   /**
    * Row's width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
-   * If flexGrow is set to true, will be used as a flex basis rather than fixed width.
+   * Disregarder if flexGrow is set to true.
    */
   rowWidth: PropTypes.number,
 
@@ -71,11 +71,7 @@ const propTypes = {
     widthUnitTypes.PX,
     widthUnitTypes.EM,
     widthUnitTypes.REM,
-  ]),
-};
-
-const defaultProps = {
-  isFlexGrow: false,
+  ]).isRequired,
 };
 
 const Row = (props) => {
@@ -86,7 +82,7 @@ const Row = (props) => {
     columnMinimumWidth,
     columnMaximumWidth,
     numberOfColumns,
-    isFlexGrow,
+    isResponsive,
     rowMaximumWidth,
     rowMinimumWidth,
     rowWidth,
@@ -95,7 +91,7 @@ const Row = (props) => {
 
   const theme = useContext(ThemeContext);
 
-  const style = isFlexGrow ? {
+  const style = isResponsive ? {
     flex: `1 1 ${Math.min(100 / numberOfColumns)}%`,
     maxWidth: rowMaximumWidth ? `${rowMaximumWidth}${widthUnit}` : null,
     minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthUnit}` : null,
@@ -113,6 +109,7 @@ const Row = (props) => {
     >
       {activeRow && cells.map((cellData, index) => (
         <Cell
+          id={cellData.id}
           key={cellData.id}
           column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}
@@ -127,6 +124,5 @@ const Row = (props) => {
 };
 
 Row.propTypes = propTypes;
-Row.propTypes = defaultProps;
 
 export default React.memo(Row);

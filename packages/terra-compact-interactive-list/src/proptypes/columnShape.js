@@ -36,12 +36,12 @@ const columnShape = PropTypes.shape({
    * Whether the column width can grow (a flex growing column).
    * Defaults to false if the width is set and true if the width is not set.
    */
-  flexGrow: PropTypes.boolean,
+  flexGrow: PropTypes.bool,
 
   /**
    * Whether the column content should be aligned to the center. If not set to true, the content will be aligned to the left.
    */
-  alignToCenter: PropTypes.boolean,
+  alignToCenter: PropTypes.bool,
 
 });
 
