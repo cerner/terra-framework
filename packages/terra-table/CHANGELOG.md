@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added title attribute to column header cells to enable tooltips.
+
 * Fixed
   * Fixed tab index issues in the column header cells.
   
