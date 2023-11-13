@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed issue where focus was given to the column header instead of its button element.
+
 ## 1.1.0 - (November 9, 2023)
 
 * Fixed
