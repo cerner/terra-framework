@@ -7,10 +7,8 @@ import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-
+import { sectionShape, rowShape, columnShape } from 'terra-table';
 import DataGrid from './DataGrid';
-import rowShape from './proptypes/rowShape';
-import { columnShape } from './proptypes/columnShape';
 import styles from './FlowsheetDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -36,6 +34,11 @@ const propTypes = {
    * Data for content in the body of the Grid. Rows will be rendered in the order given. The first cell in each row will be the row header.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Sections will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * Data for columns. Columns will be presented in the order given.
@@ -98,6 +101,7 @@ function FlowsheetDataGrid(props) {
     ariaLabelledBy,
     ariaLabel,
     rows,
+    sections,
     columns,
     defaultColumnWidth,
     columnHeaderHeight,
@@ -148,6 +152,39 @@ function FlowsheetDataGrid(props) {
     return newRows;
   }, [intl, rows]);
 
+  const flowsheetSections = useMemo(() => {
+    if (!sections) {
+      return null;
+    }
+
+    const noResultCellContent = (
+      <>
+        <span aria-hidden>{intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result-display' })}</span>
+        <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result' })} />
+      </>
+    );
+
+    const newSections = [...sections];
+    newSections.forEach((section, sectionIndex) => {
+      const newRows = [...section.rows];
+      newRows.forEach((row, rowIndex) => {
+        const newCells = [...row.cells];
+        newCells.forEach((cell, cellIndex) => {
+          newCells[cellIndex].isSelectable = cell.isSelectable !== false;
+          // Cell content has no result and is not a row header (first column), set content to "No result".
+          if (contentHasNoResult(cell.content) && cellIndex !== 0) {
+            newCells[cellIndex].content = noResultCellContent;
+          }
+        });
+
+        newRows[rowIndex].cells = newCells;
+      });
+      newSections[sectionIndex].rows = newRows;
+    });
+
+    return newSections;
+  }, [intl, sections]);
+
   useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
@@ -171,25 +208,25 @@ function FlowsheetDataGrid(props) {
     }
   }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
 
-  const handleClearSelectedCells = useCallback(() => {
-    if (onClearSelectedCells) {
-      onClearSelectedCells();
+  const selectCellRange = useCallback((selectedRowId, selectedColumnId) => {
+    let gridRows = rows;
+    if (sections) {
+      gridRows = sections.flatMap((section) => section.rows);
     }
-  }, [onClearSelectedCells]);
-
-  const selectCellRange = useCallback((rowIndex, columnIndex) => {
-    const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
+    const anchorRowIndex = gridRows.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
+    const selectedRowIndex = gridRows.findIndex(row => row.id === selectedRowId);
+    const selectedColumnIndex = columns.findIndex(col => col.id === selectedColumnId);
 
     // Determine the boundaries of selected region.
-    const rowIndexTopBound = Math.min(anchorRowIndex, rowIndex - 1);
-    const rowIndexBottomBound = Math.max(anchorRowIndex, rowIndex - 1);
-    const columnIndexLeftBound = Math.min(anchorColumnIndex, columnIndex);
-    const columnIndexRightBound = Math.max(anchorColumnIndex, columnIndex);
+    const rowIndexTopBound = Math.min(anchorRowIndex, selectedRowIndex);
+    const rowIndexBottomBound = Math.max(anchorRowIndex, selectedRowIndex);
+    const columnIndexLeftBound = Math.min(anchorColumnIndex, selectedColumnIndex);
+    const columnIndexRightBound = Math.max(anchorColumnIndex, selectedColumnIndex);
 
     const cellsToSelect = [];
     for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
-      const rowId = rows[rowIdx].id;
+      const rowId = gridRows[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
         const columnId = columns[colIdx].id;
         cellsToSelect.push({ rowId, columnId });
@@ -199,7 +236,7 @@ function FlowsheetDataGrid(props) {
     if (onCellRangeSelect) {
       onCellRangeSelect(cellsToSelect);
     }
-  }, [rows, columns, onCellRangeSelect]);
+  }, [rows, sections, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     // Exclude the row header column.
@@ -208,7 +245,7 @@ function FlowsheetDataGrid(props) {
     }
 
     if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
-      selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
+      selectCellRange(selectionDetails.rowId, selectionDetails.columnId);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
@@ -286,6 +323,7 @@ function FlowsheetDataGrid(props) {
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
         rows={flowsheetRows}
+        sections={flowsheetSections}
         rowHeight={rowHeight}
         rowHeaderIndex={0}
         pinnedColumns={pinnedColumns}
@@ -293,7 +331,7 @@ function FlowsheetDataGrid(props) {
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={handleCellSelection}
-        onClearSelection={handleClearSelectedCells}
+        onClearSelection={onClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />

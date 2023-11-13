@@ -142,11 +142,14 @@ function Section(props) {
           role="columnheader"
           scope="col"
         >
-          <SectionHeader
-            text={text}
-            isOpen={!isCollapsed}
-            onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
-          />
+          <div>
+            <SectionHeader
+              text={text}
+              isOpen={!isCollapsed}
+              onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
+            />
+          </div>
+          <div />
         </th>
       </tr>
       )}

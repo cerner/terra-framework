@@ -5,12 +5,11 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import Table, { GridConstants, GridContext } from 'terra-table';
+import Table, {
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex,
+} from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import rowShape from './proptypes/rowShape';
-import { columnShape } from './proptypes/columnShape';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
-import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -37,6 +36,11 @@ const propTypes = {
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Sections will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
@@ -144,6 +148,7 @@ const DataGrid = injectIntl((props) => {
     ariaLabelledBy,
     ariaLabel,
     rows,
+    sections,
     pinnedColumns,
     overflowColumns,
     onColumnResize,
@@ -502,6 +507,7 @@ const DataGrid = injectIntl((props) => {
         <Table
           id={`${id}-table`}
           rows={dataGridRows}
+          sections={sections}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
           activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
