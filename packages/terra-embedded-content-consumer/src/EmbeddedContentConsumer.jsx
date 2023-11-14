@@ -133,7 +133,10 @@ class EmbeddedContentConsumer extends React.Component {
     this.contentWindow = this.xfcFrame?.iframe?.contentWindow;
 
     /**
-     * Check if the content is scrollable
+     * Check if the iframe has `scrolling` attribute set or not
+     * The default `scrolling` attribute is `auto`.
+     *
+     * Then check if the content is scrollable
      * `documentElement` is the <html> element of the document
      * `body` is the <body> element of the document
      * if `scrollHeight` > `clientHeight` or `scrollWidth` > `clientWidth`
@@ -141,15 +144,12 @@ class EmbeddedContentConsumer extends React.Component {
      */
     const isContentScrollable = () => {
       const frameDocument = this.contentWindow?.document;
-      return (frameDocument.documentElement.scrollHeight > frameDocument.documentElement.clientHeight
+      return (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no')
+        && (frameDocument.documentElement.scrollHeight > frameDocument.documentElement.clientHeight
         || frameDocument.body.scrollHeight > frameDocument.body.clientHeight
         || frameDocument.documentElement.scrollWidth > frameDocument.documentElement.clientWidth
         || frameDocument.body.scrollWidth > frameDocument.body.clientWidth);
     };
-
-    // Check if the iframe has `scrolling` attribute set or not
-    // The default `scrolling` attribute is `auto`.
-    const scrollingEnabled = () => (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
 
     // Event listener and callback function for when `load` is completed for the content in the iframe
     this.contentWindow?.addEventListener('load', () => {
@@ -169,7 +169,7 @@ class EmbeddedContentConsumer extends React.Component {
       // Initialize and save the original tabIndex value
       this.originalTabIndexValue = this.contentWindow.document.body.getAttribute('tabIndex');
 
-      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
+      if (isContentScrollable() && !this.hasInteractableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.contentWindow.document.body.tabIndex = 0;
@@ -178,7 +178,7 @@ class EmbeddedContentConsumer extends React.Component {
 
     // Event listener and callback function for `resize` event of the iframe
     this.contentWindow?.addEventListener('resize', () => {
-      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
+      if (isContentScrollable() && !this.hasInteractableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
         this.contentWindow.document.body.tabIndex = 0;
@@ -191,15 +191,13 @@ class EmbeddedContentConsumer extends React.Component {
 
     // Event listener and callback function for `focus` event is in the iframe
     this.contentWindow?.addEventListener('focus', () => {
-      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
-        // this.xfcFrame.iframe.className = cx('iframe-focus-style');
+      if (isContentScrollable() && !this.hasInteractableElement) {
         this.xfcFrame.iframe.classList.add(cx('iframe-focus-style'));
       }
     }, true);
 
     // Event Listener and callback function for `blur` event in the iframe
     this.contentWindow?.addEventListener('blur', () => {
-      // this.xfcFrame.iframe.removeAttribute('class');
       this.xfcFrame.iframe.classList.remove(cx('iframe-focus-style'));
     }, true);
   }
