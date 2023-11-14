@@ -42,17 +42,17 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-headers-hidden');
       });
 
-      it.only('renders a flowsheet data grid without column headers', () => {
+      it('renders a flowsheet data grid without column headers', () => {
         expect(browser.$('//thead').getCSSProperty('height').parsed.value).toBe(0);
         Terra.validates.element('flowsheet-data-grid-no-column-headers', { selector: '#terra-flowsheet-data-grid-no-column-headers-table' });
       });
 
-      it.only('tabs into (1, 0) instead of (0, 0)', () => {
+      it('tabs into (1, 0) instead of (0, 0)', () => {
         browser.keys(['Tab']);
         expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-1"]').isFocused()).toBe(true);
       });
 
-      it.only('does not focus the header column', () => {
+      it('does not focus the header column', () => {
         browser.keys(['ArrowDown']);
         expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-2"]').isFocused()).toBe(true);
 
