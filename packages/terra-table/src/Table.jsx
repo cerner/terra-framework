@@ -273,7 +273,7 @@ function Table(props) {
     }
 
     // eslint-disable-next-line no-param-reassign
-    currentSection.sectionRowIndex = 0;
+    currentSection.sectionRowIndex = rowCount;
     return rowCount + currentSection.rows.length;
   };
   const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
