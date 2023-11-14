@@ -396,6 +396,45 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
+  describe('row deletion', () => {
+    const deleteRowsSelector = '#worklist-data-grid-delete-rows';
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-delete-rows');
+    });
+
+    it('retains the last selected row index when filtering rows', () => {
+      clickCell(2, 1, deleteRowsSelector);
+      clickCell(8, 1, deleteRowsSelector);
+      clickCell(5, 1, deleteRowsSelector);
+
+      browser.$('#filter-rows-button').click();
+      browser.keys(['Tab']);
+
+      expect(browser.$('tbody tr:nth-child(2) th').isFocused()).toBe(true);
+    });
+
+    it('uses the last focused row when the row is deleted and the index is not out of bounds', () => {
+      clickCell(1, 1, deleteRowsSelector);
+      holdDownShiftKey();
+      clickCell(3, 1, deleteRowsSelector);
+
+      browser.$('#delete-rows-button').click();
+      browser.keys(['Tab', 'Tab']);
+
+      expect(browser.$('tbody tr:nth-child(3) th').isFocused()).toBe(true);
+    });
+
+    it('focuses the last row when the selected and the index is out of bounds', () => {
+      clickCell(5, 1, deleteRowsSelector);
+      holdDownShiftKey();
+      clickCell(10, 1, deleteRowsSelector);
+
+      browser.$('#delete-rows-button').click();
+      browser.keys(['Tab', 'Tab']);
+      expect(browser.$('tbody tr:last-child th').isFocused()).toBe(true);
+    });
+  });
+
   describe('with pinned columns', () => {
     const pinnedColumnsSelector = '#pinned-columns-table';
     const pinnedColumnsWithRowSelectionSelector = '#pinned-columns-with-row-selection-table';
