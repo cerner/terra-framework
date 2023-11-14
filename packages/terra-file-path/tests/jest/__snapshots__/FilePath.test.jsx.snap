@@ -2,9 +2,9 @@
 
 exports[`Default File Path should have the right href per hyperlink 1`] = `
 <InjectIntl(CollapsibleMenuView)
-  iconText="Terra.file-path.icon.text"
   isReversedChildrenOrder={true}
   isStartAligned={true}
+  menuIconText="Terra.file-path.icon.text"
   useHorizontalIcon={true}
 >
   <CollapsibleMenuViewHyperlink
@@ -41,9 +41,9 @@ exports[`Default File Path should have the right href per hyperlink 1`] = `
 
 exports[`Default File Path should not render the last item as a hyperlink 1`] = `
 <InjectIntl(CollapsibleMenuView)
-  iconText="Terra.file-path.icon.text"
   isReversedChildrenOrder={true}
   isStartAligned={true}
+  menuIconText="Terra.file-path.icon.text"
   useHorizontalIcon={true}
 >
   <CollapsibleMenuViewHyperlink
@@ -181,9 +181,9 @@ exports[`On Click File Path should render a component with on clickable items 1`
 
 exports[`On Click File Path should trigger the correct on click per item 1`] = `
 <InjectIntl(CollapsibleMenuView)
-  iconText="Terra.file-path.icon.text"
   isReversedChildrenOrder={true}
   isStartAligned={true}
+  menuIconText="Terra.file-path.icon.text"
   useHorizontalIcon={true}
 >
   <CollapsibleMenuViewHyperlink

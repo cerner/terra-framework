@@ -1,0 +1,21 @@
+{
+  "Terra.table.blank": "Tomt",
+  "Terra.table.maskedCell": "Maskerade data",
+  "Terra.table.columnError": "Fel som rör kolumnen",
+  "Terra.table.cell-focus-trapped": "Fokus befinner sig i cellen. Tryck på Esc-tangenten för att återgå till navigering i rutnätet.",
+  "Terra.table.cell-interactable": "Cellen innehåller interaktiva element. Tryck på Retur för att flytta fokus till cellen.",
+  "Terra.table.resizeHandleValueText": "{columnWidth} pixlars kolumnbredd",
+  "Terra.table.resume-navigation": "Navigering i rutnätet återupptas.",
+  "Terra.table.row-index": "Rad {row}",
+
+  "Terra.table.row-selection-template": "Rad {row} har markerats. ",
+  "Terra.table.multiple-rows-selected": "{rowCount} rader har markerats. ",
+  "Terra.table.multiple-rows-unselected": "{rowCount} rader har avmarkerats. ",
+  "Terra.table.resize-handle-template": "Storleksanpassningshandtag för kolumnen {columnText}. Tryck på Retur för att använda.",
+  "Terra.table.resize-handle-value-text": "{columnWidth} pixlar",
+  "Terra.table.row-selection-cleared-template": "Rad {row} har avmarkerats. ",
+  "Terra.table.row-selection-mode-enabled": "Radmarkeringsläge aktiverat.",
+  "Terra.table.row-selection-mode-disabled": "Radmarkeringsläge inaktiverat",
+  "Terra.table.all-rows-selected": "Alla rader är markerade",
+  "Terra.table.all-rows-unselected": "Inga rader är markerade"
+}

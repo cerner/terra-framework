@@ -46,6 +46,7 @@ describe('Row', () => {
       <Row
         rowIndex={99}
         id={rowData.id}
+        tableId="test-table"
         height="25px"
         cells={rowData.cells}
         hasRowSelection={tableData.rows[0].hasSelectableRows}
@@ -72,6 +73,7 @@ describe('Row', () => {
       expect(cell.props.children).toEqual(expectedCell.content);
       expect(cell.props.columnId).toEqual(columnId);
       expect(cell.props.rowId).toEqual(rowId);
+      expect(cell.props.tableId).toBe('test-table');
       expect(cell.props.rowIndex).toEqual(rowIndex);
       expect(cell.props.columnIndex).toEqual(cellIndex);
       expect(cell.props.isRowHeader).toEqual(isRowHeader);
@@ -87,6 +89,7 @@ describe('Row', () => {
         rowIndex={rowIndex}
         key={rowIndex}
         id={rowData.id}
+        tableId="test-table"
         height="25px"
         cells={rowData.cells}
         isSelectable={rowData.isSelectable}
