@@ -4,6 +4,7 @@
 
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
+  * Fixed an issue when data accesses invalid indexes when deleting rows.
 
 ## 1.1.0 - (November 9, 2023)
 
