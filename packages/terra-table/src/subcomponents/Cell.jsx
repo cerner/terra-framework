@@ -177,7 +177,7 @@ function Cell(props) {
   const onMouseDown = ((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+        sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
       });
     }
   });
@@ -238,7 +238,7 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
             onCellSelect({
-              sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+              sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
             });
           }
 
