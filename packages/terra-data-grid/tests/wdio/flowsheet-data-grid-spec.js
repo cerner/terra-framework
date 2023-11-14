@@ -49,15 +49,15 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
 
       it.only('tabs into (1, 0) instead of (0, 0)', () => {
         browser.keys(['Tab']);
-        expect(browser.$('//table[@id="terra-flowsheet-data-grid-no-column-headers-table"]/tbody/tr[2]/td[1]/div[1]').isFocused()).toBe(true);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-1"]').isFocused()).toBe(true);
       });
 
       it.only('does not focus the header column', () => {
         browser.keys(['ArrowDown']);
-        expect(browser.$('//table[@id="terra-flowsheet-data-grid-no-column-headers-table"]/tbody/tr[3]/td[1]').isFocused()).toBe(true);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-2"]').isFocused()).toBe(true);
 
         browser.keys(['ArrowUp', 'ArrowUp']);
-        expect(browser.$('//table[@id="terra-flowsheet-data-grid-no-column-headers-table"]/tbody/tr[2]/td[1]').isFocused()).toBe(true);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-1"]').isFocused()).toBe(true);
       });
     });
   });
