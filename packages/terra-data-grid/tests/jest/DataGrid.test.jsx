@@ -256,7 +256,7 @@ describe('Error handling - prop types', () => {
         rows={dataFile.rows}
         rowHeaderIndex="2"
       />,
-    ).dive();
+    );
 
     expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_NOT_AN_INTEGER)); // eslint-disable-line no-console
   });
@@ -268,7 +268,7 @@ describe('Error handling - prop types', () => {
         rows={dataFile.rows}
         rowHeaderIndex={-1}
       />,
-    ).dive();
+    );
 
     expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_ZERO)); // eslint-disable-line no-console
   });
@@ -282,7 +282,7 @@ describe('Error handling - prop types', () => {
         rowHeaderIndex={2}
         rows={dataFile.rows}
       />,
-    ).dive();
+    );
 
     expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_EXCEEDS_PINNED)); // eslint-disable-line no-console
   });

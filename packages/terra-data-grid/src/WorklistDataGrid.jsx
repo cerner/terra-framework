@@ -160,7 +160,6 @@ function WorklistDataGrid(props) {
     rowHeaderIndex,
   } = props;
 
-  const selectedRows = useRef([]);
   const inShiftUpDownMode = useRef(false);
   const multiSelectRange = useRef({ start: null, end: null });
   const dataGridFuncRef = useRef();
@@ -183,7 +182,6 @@ function WorklistDataGrid(props) {
   useEffect(() => {
     if (!hasSelectableRows) {
       multiSelectRange.current = {};
-      selectedRows.current = [];
     }
 
     if (gridReceivedFocus.current) {
