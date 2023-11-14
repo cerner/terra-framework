@@ -83,8 +83,8 @@ const propTypes = {
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 
-  /**
-   * Bool to show/hid column headers. Column headers are visible by default.
+  /**e
+   * Boolean to show/hide column headers. By default, it is set to `true` and column headers are visible.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
 };
