@@ -129,18 +129,22 @@ class EmbeddedContentConsumer extends React.Component {
   }
 
   handleFrameVisualFocusIndicator() {
-    // Selectors for interactable elements
-    const interactableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
-      + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
-      + "[contentEditable=true]:not([tabindex='-1'])";
+    // reference to the xfc iframe's contentWindow
+    this.contentWindow = this.xfcFrame?.iframe?.contentWindow;
 
-    // Check if the content is scrollable
+    /**
+     * Check if the content is scrollable
+     * `documentElement` is the <html> element of the document
+     * `body` is the <body> element of the document
+     * if `scrollHeight` > `clientHeight` or `scrollWidth` > `clientWidth`
+     * then there is scrolling, and the content won't fit, and will need to scroll.
+     */
     const isContentScrollable = () => {
-      const doc = this.xfcFrame?.iframe?.contentWindow?.document;
-      return (doc.documentElement.scrollHeight > doc.documentElement.clientHeight
-        || doc.body.scrollHeight > doc.body.clientHeight
-        || doc.documentElement.scrollWidth > doc.documentElement.clientWidth
-        || doc.body.scrollWidth > doc.body.clientWidth);
+      const frameDocument = this.contentWindow?.document;
+      return (frameDocument.documentElement.scrollHeight > frameDocument.documentElement.clientHeight
+        || frameDocument.body.scrollHeight > frameDocument.body.clientHeight
+        || frameDocument.documentElement.scrollWidth > frameDocument.documentElement.clientWidth
+        || frameDocument.body.scrollWidth > frameDocument.body.clientWidth);
     };
 
     // Check if the iframe has `scrolling` attribute set or not
@@ -148,8 +152,13 @@ class EmbeddedContentConsumer extends React.Component {
     const scrollingEnabled = () => (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no');
 
     // Event listener and callback function for when `load` is completed for the content in the iframe
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('load', () => {
-      this.hasInteractableElement = [...this.xfcFrame?.iframe?.contentWindow?.document.body.querySelectorAll(`${interactableElementSelector}`)].some(
+    this.contentWindow?.addEventListener('load', () => {
+      // Selectors for interactable elements
+      const interactableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
+        + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+        + "[contentEditable=true]:not([tabindex='-1'])";
+
+      this.hasInteractableElement = [...this.contentWindow.document.body.querySelectorAll(`${interactableElementSelector}`)].some(
         (element) => !element.hasAttribute('disabled')
           && !element.getAttribute('aria-hidden')
           && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
@@ -157,38 +166,41 @@ class EmbeddedContentConsumer extends React.Component {
           && element.closest('[inert]') === null,
       );
 
-      if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
+      // Initialize and save the original tabIndex value
+      this.originalTabIndexValue = this.contentWindow.document.body.getAttribute('tabIndex');
+
+      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
-        this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
+        this.contentWindow.document.body.tabIndex = 0;
       }
     });
 
     // Event listener and callback function for `resize` event of the iframe
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('resize', () => {
-      if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
+    this.contentWindow?.addEventListener('resize', () => {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
         // Set tabIndex="0" so focus can go into the document when
         // using tab key when scrolling is enabled
-        this.xfcFrame.iframe.contentWindow.document.body.tabIndex = 0;
-      } else if (this.xfcFrame?.iframe?.contentWindow?.document.body.getAttribute('tabIndex') === '0') {
-        this.xfcFrame.iframe.contentWindow.document.body.removeAttribute('tabIndex');
+        this.contentWindow.document.body.tabIndex = 0;
+      } else if (this.originalTabIndexValue === null) {
+        this.contentWindow.document.body.removeAttribute('tabIndex');
+      } else {
+        this.contentWindow.document.body.tabIndex = this.originalTabIndexValue;
       }
     });
 
     // Event listener and callback function for `focus` event is in the iframe
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('focus', () => {
-      if (this.hasInteractableElement === true || !isContentScrollable()) {
-        return;
-      }
-
-      if (scrollingEnabled() && isContentScrollable() && this.hasInteractableElement === false) {
-        this.xfcFrame.iframe.className = cx('iframe-focus-style');
+    this.contentWindow?.addEventListener('focus', () => {
+      if (scrollingEnabled() && isContentScrollable() && !this.hasInteractableElement) {
+        // this.xfcFrame.iframe.className = cx('iframe-focus-style');
+        this.xfcFrame.iframe.classList.add(cx('iframe-focus-style'));
       }
     }, true);
 
     // Event Listener and callback function for `blur` event in the iframe
-    this.xfcFrame?.iframe?.contentWindow?.addEventListener('blur', () => {
-      this.xfcFrame.iframe.removeAttribute('class');
+    this.contentWindow?.addEventListener('blur', () => {
+      // this.xfcFrame.iframe.removeAttribute('class');
+      this.xfcFrame.iframe.classList.remove(cx('iframe-focus-style'));
     }, true);
   }
 
