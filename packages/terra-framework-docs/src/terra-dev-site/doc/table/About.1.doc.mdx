@@ -1,3 +1,4 @@
+import { Notice } from "@cerner/terra-docs";
 import { Badge } from "terra-table/package.json?dev-site-package";
 import DefaultTable from "./Examples/DefaultTable?dev-site-example";
 
@@ -8,6 +9,10 @@ import TablePropsTable from "terra-table/lib/Table?dev-site-props-table";
 # Terra Table
 
 Terra Table is a structural component used to display tabular data. Table provides means to handle row selection and hooks for sortable columns.
+
+<Notice variant="caution" ariaLevel="2">
+Due to poor support in VoiceOver for spanned table headings, Table sections are not currently recommended for applications intended to be used on Apple devices.
+</Notice>
 
 ## Getting Started
 
@@ -63,6 +68,19 @@ A column specifies the data to render a cell in the header row of the Worklist D
 |**maximumWidth**|number|optional|none|Number that specifies the maximum column width in pixels.|
 |**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
 |**sortIndicator**|custom|optional|none|A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered. One of `ascending`, `descending`.
+
+### Section
+A section defines the rows rendered within the section.
+
+***Due to poor support in VoiceOver for spanned table headings, Table sections are not currently recommended for applications intended to be used on Apple devices.***
+
+|Name|Type|Is Required|Default Value|Description|
+|---|---|---|---|---|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the section within the grid.|
+|**isCollapsible**|bool|false|Boolean value indicating whether or not the the section is collapsible.|
+|**isCollapsed**|bool|optional|false|Boolean value indicating whether or not the section is collapsed. If true, contents of the section will not be displayed.|
+|**text**|string|optional|none|A text string to render within the section header.|
+|**rows**|array|optional|[]|An array of row objects to be rendered within the section.|
 
 ### Row
 A row defines the cells rendered within the row.

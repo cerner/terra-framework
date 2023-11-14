@@ -2,13 +2,17 @@
 
 ## Unreleased
 
+## 1.44.0 - (November 9, 2023)
+
 * Added
+  * Added examples and tests to `terra-table` for table sections.
   * Updated customDisplay examples for tabs.
   * Added `aria-label` and `ariaDescribedBy` examples for `terra-collapsible-menu-view`.
   * Added examples and test to `terra-table` for row selection mode.
   * Added initial setup for `terra-compact-interactive-list` documentation.
   * Added an error handling test for `terra-embedded-content-consumer`.
   * Added single and ranged cell selection Flowsheet Data Grid example.
+  * Added deprecation warning for `terra-file-path`.
   * Added aria labels for table examples.
   * Added `hasColumnHeaders` example for FlowsheetDataGrid.
 

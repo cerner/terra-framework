@@ -22,13 +22,14 @@ describe('ColumnHeaderCell', () => {
   it('renders a default column header cell', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       isSelectable: true,
     };
 
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -40,11 +41,13 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.children()).toHaveLength(1);
@@ -56,7 +59,7 @@ describe('ColumnHeaderCell', () => {
   it('renders a column header cell with ascending sort', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       isSelectable: true,
     };
@@ -64,6 +67,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -75,12 +79,14 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
@@ -92,7 +98,7 @@ describe('ColumnHeaderCell', () => {
   it('renders a column header cell with descending sort', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'descending',
       isSelectable: true,
     };
@@ -100,6 +106,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -111,12 +118,14 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('descending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
@@ -128,7 +137,7 @@ describe('ColumnHeaderCell', () => {
   it('renders a column header cell with error', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       hasError: true,
       isSelectable: true,
     };
@@ -136,6 +145,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -147,12 +157,14 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBeUndefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
@@ -164,7 +176,7 @@ describe('ColumnHeaderCell', () => {
   it('renders a column header cell with ascending sort and error', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
       isSelectable: true,
@@ -173,6 +185,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -184,12 +197,14 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('span').text().trim()).toBe('Vitals');
@@ -202,7 +217,7 @@ describe('ColumnHeaderCell', () => {
   it('renders a column header cell with onColumnSelect callback', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
       isSelectable: true,
@@ -213,6 +228,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -225,6 +241,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -232,6 +249,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.props().tabIndex).toBe(0);
@@ -245,7 +263,7 @@ describe('ColumnHeaderCell', () => {
   it('renders a column header cell with onColumnSelect callback but not selectable', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
       isSelectable: false,
@@ -256,6 +274,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = shallowWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"
@@ -268,6 +287,7 @@ describe('ColumnHeaderCell', () => {
     const columnHeader = wrapper.find('.column-header:not(selectable)');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.key()).toBe('Column-0');
+    expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
@@ -275,6 +295,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().onMouseDown).toBeUndefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container');
     expect(headerContainer.props().tabIndex).toBeUndefined();
@@ -288,7 +309,7 @@ describe('ColumnHeaderCell', () => {
   it('renders a pinned column header cell', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
     };
@@ -296,6 +317,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{ pinnedColumnOffsets: [0] }}>
         <ColumnHeaderCell
+          tableId="test-table"
           columnIndex={0}
           width={100}
           headerHeight="150px"

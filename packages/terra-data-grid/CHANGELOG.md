@@ -3,6 +3,11 @@
 ## Unreleased
 
 * Fixed
+  * Fixed issue where focus was given to the column header instead of its button element.
+
+## 1.1.0 - (November 9, 2023)
+
+* Fixed
   * Fixed the column header background color for the Orion Fusion theme.
   * Fixed pinned column divider issue during keyboard resize.
   * Fixed resize handle being communicated when non-header cell is focused.
@@ -11,6 +16,9 @@
   * Added ability to select a range of cells to FlowsheetDataGrid.
   * Added `hasColumnHeaders` prop for FlowsheetDataGrid to toggle hiding of column headers.
 
+
+* Changed
+  * Updated unit test to account for generated ids of `terra-table` elements.
 
 ## 1.0.0 - (October 25, 2023)
 * Initial working component release.

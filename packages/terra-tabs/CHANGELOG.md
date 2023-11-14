@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.11.2 - (November 9, 2023)
+
 * Fixed
   * Fixed issue to prefer `customDisplay` prop over `label` prop.
   * Fixes issue where tab label fails to get updated due to
