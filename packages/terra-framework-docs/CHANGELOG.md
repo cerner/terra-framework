@@ -14,7 +14,7 @@
   * Added single and ranged cell selection Flowsheet Data Grid example.
   * Added deprecation warning for `terra-file-path`.
   * Added aria labels for table examples.
-  * Added `hasColumnHeaders` example for FlowsheetDataGrid.
+  * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
 
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.

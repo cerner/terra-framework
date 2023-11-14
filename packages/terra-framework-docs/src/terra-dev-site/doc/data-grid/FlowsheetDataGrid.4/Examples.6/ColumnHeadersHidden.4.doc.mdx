@@ -1,6 +1,15 @@
 import ColumnHeadersHidden from './ColumnHeadersHidden?dev-site-example';
 
+# Hiding Column Headers
+
+### Description
+The [Flowsheet Data Grid](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about) can hide column headers with the `hasVisibleColumnHeaders` prop.
+
+### Usage
+The `hasVisibleColumns` is a boolean. By default, it is set to `true`.
+When it is set to `false`, the column headers are hidden, but still exist in the DOM and can be read by screenreaders when providing context for the table.
+
 <ColumnHeadersHidden
 title= 'Flowsheet Data Grid with no column headers'
-description= 'The column headers can be hidden with the hasColumnHeaders prop set to false.'
+description= 'The column headers can be hidden with the hasVisibleColumnHeaders prop set to false.'
 />

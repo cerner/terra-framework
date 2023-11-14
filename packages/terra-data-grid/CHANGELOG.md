@@ -14,7 +14,7 @@
 
 * Added
   * Added ability to select a range of cells to FlowsheetDataGrid.
-  * Added `hasColumnHeaders` prop for FlowsheetDataGrid to toggle hiding of column headers.
+  * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle hiding of column headers.
 
 
 * Changed
