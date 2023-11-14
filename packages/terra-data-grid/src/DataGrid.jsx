@@ -186,7 +186,9 @@ const DataGrid = injectIntl((props) => {
   const handleFocus = useRef(true);
 
   const [checkResizable, setCheckResizable] = useState(false);
-  const [focusedRow, setFocusedRow] = useState(0);
+
+  // if columns are not visible then set the first selectable row index to 1
+  const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
   const [focusedCol, setFocusedCol] = useState(0);
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
