@@ -378,6 +378,7 @@ const DataGrid = injectIntl((props) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:
+        if (!hasVisibleColumnHeaders && nextRow - 1 === 0) break;
         nextRow -= 1;
         break;
       case KeyCode.KEY_DOWN:
