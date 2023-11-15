@@ -385,7 +385,6 @@ const DataGrid = injectIntl((props) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:
-        if (!hasVisibleColumnHeaders && nextRow - 1 === 0) break;
         nextRow -= 1;
         break;
       case KeyCode.KEY_DOWN:
@@ -465,7 +464,7 @@ const DataGrid = injectIntl((props) => {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    if (nextCol < 0 || nextRow < 0) {
+    if (nextCol < 0 || nextRow < (hasVisibleColumnHeaders ? 0 : 1)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
