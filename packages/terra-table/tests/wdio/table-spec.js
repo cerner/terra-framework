@@ -229,5 +229,17 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
       Terra.validates.element('row-selection-header-selectable', { selector: rowSelectionTableSelector });
     });
+
+    it('verifies Home key selects first focusable element', () => {
+      browser.keys(['Tab', 'Tab', 'Home']);
+
+      Terra.validates.element('row-selection-home', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that End key selects last focusable element', () => {
+      browser.keys(['Tab', 'End']);
+
+      Terra.validates.element('row-selection-end', { selector: rowSelectionTableSelector });
+    });
   });
 });
