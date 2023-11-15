@@ -1,6 +1,9 @@
-import React, { useContext } from 'react';
+import React, {
+  useContext, useState, useCallback,
+} from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './CompactInteractiveList.module.scss';
@@ -12,6 +15,10 @@ import {
   getRowMaximumWidth,
   getRowMinimumWidth,
   checkIfRowHasResponsiveColumns,
+  isTextInput,
+  handleLeftKey,
+  handleRightKey,
+  moveFocusFromGrid,
 } from './utils/utils';
 
 const cx = classNames.bind(styles);
@@ -83,6 +90,16 @@ const propTypes = {
     widthUnitTypes.EM,
     widthUnitTypes.REM,
   ]),
+
+  /**
+   * Callback function that will be called on click on the cell.
+   */
+  onCellSelect: PropTypes.func,
+
+  /**
+   * Callback function that is called when all selected cells need to be unselected. Parameters: none.
+   */
+  onClearSelection: PropTypes.func,
 };
 
 const defaultProps = {
@@ -106,9 +123,14 @@ const CompactInteractiveList = (props) => {
     minimumWidth,
     columnMinimumWidth,
     columnMaximumWidth,
+    onCellSelect,
+    onClearSelection,
   } = props;
 
   const theme = useContext(ThemeContext);
+  const listRef = React.useRef();
+  const [focusedRow, setFocusedRow] = useState(0);
+  const [focusedCol, setFocusedCol] = useState(0);
 
   const columnMinWidth = columnMinimumWidth || DefaultListValues.columnMinimumWidth[widthUnit];
   const columnMaxWidth = columnMaximumWidth;
@@ -159,24 +181,103 @@ const CompactInteractiveList = (props) => {
   };
   const mappedRows = mapRows();
 
+  const setFocusedRowCol = (newRowIndex, newColIndex) => {
+    setFocusedRow(newRowIndex);
+    setFocusedCol(newColIndex);
+    const focusedCell = listRef.current.children[newRowIndex].children[newColIndex];
+    focusedCell.focus();
+  };
+
+  const handleKeyDown = (event) => {
+    const cellCoordinates = { row: focusedRow, col: focusedCol };
+    let nextVisualRow = cellCoordinates.row;
+    let nextSemanticCol = cellCoordinates.col;
+
+    const targetElement = event.target;
+
+    // Allow default behavior if the event target is an editable field
+
+    if (event.keyCode !== KeyCode.KEY_TAB
+        && (isTextInput(targetElement)
+            || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
+            || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
+      return;
+    }
+
+    const key = event.keyCode;
+    switch (key) {
+      case KeyCode.KEY_UP:
+        break;
+      case KeyCode.KEY_DOWN:
+        break;
+      case KeyCode.KEY_LEFT: {
+        const moveFocusTo = handleLeftKey(event, nextVisualRow, nextSemanticCol, numberOfColumns, columns.length);
+        nextVisualRow = moveFocusTo.row;
+        nextSemanticCol = moveFocusTo.col;
+        break;
+      }
+      case KeyCode.KEY_RIGHT: {
+        const moveFocusTo = handleRightKey(event, nextVisualRow, nextSemanticCol, numberOfColumns, columns.length, rows.length);
+        nextVisualRow = moveFocusTo.row;
+        nextSemanticCol = moveFocusTo.col;
+        break;
+      }
+      case KeyCode.KEY_HOME:
+        break;
+      case KeyCode.KEY_END:
+        break;
+      case KeyCode.KEY_ESCAPE:
+        if (onClearSelection) {
+          onClearSelection();
+        }
+        event.preventDefault();
+        return;
+      case KeyCode.KEY_TAB:
+        moveFocusFromGrid(!event.shiftKey, id, listRef);
+        event.preventDefault();
+        return;
+      default:
+        return;
+    }
+
+    setFocusedRowCol(nextVisualRow, nextSemanticCol);
+    event.preventDefault(); // prevent the page from moving with the arrow keys.
+  };
+
+  const handleOnCellSelect = useCallback(({ rowIndex, columnIndex }) => {
+    setFocusedRow(rowIndex);
+    setFocusedCol(columnIndex);
+    if (onCellSelect) {
+      onCellSelect({ rowIndex, columnIndex });
+    }
+  }, [onCellSelect]);
+
+  const onFocus = (event) => {
+    if (event.target === listRef.current) {
+      const focusedCell = listRef.current.children[focusedRow].children[focusedCol];
+      focusedCell.focus();
+      event.preventDefault();
+    }
+  };
+
   return (
-    <div
-      className={cx('compact-interactive-list-container', theme.className)}
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={0}
-    >
+    <div className={cx('compact-interactive-list-container', theme.className)}>
       <div
         id={id}
         role="grid"
+        ref={listRef}
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         className={cx('compact-interactive-list')}
         // eslint-disable-next-line react/forbid-dom-props
         style={style}
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        onFocus={onFocus}
       >
         {mappedRows.map((row, index) => (
           <Row
-            rowIndex={index + 1}
+            rowIndex={index}
             key={row.id}
             id={row.id}
             cells={row.cells}
@@ -190,6 +291,7 @@ const CompactInteractiveList = (props) => {
             rowMaximumWidth={rowMaxWidth}
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}
+            onCellSelect={(columnIndex) => handleOnCellSelect({ rowIndex: index, columnIndex })}
           />
         ))}
       </div>

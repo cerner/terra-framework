@@ -43,6 +43,11 @@ const propTypes = {
     widthUnitTypes.EM,
     widthUnitTypes.REM,
   ]).isRequired,
+
+  /**
+   * Callback function that will be called on click on the cell.
+   */
+  onCellSelect: PropTypes.func,
 };
 
 const Cell = (props) => {
@@ -53,6 +58,7 @@ const Cell = (props) => {
     columnMinimumWidth,
     columnMaximumWidth,
     widthUnit,
+    onCellSelect,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -84,6 +90,7 @@ const Cell = (props) => {
       tabIndex={-1}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
+      onMouseDown={onCellSelect}
     >
       {children}
     </div>

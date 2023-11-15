@@ -65,6 +65,11 @@ const propTypes = {
   rowMinimumWidth: PropTypes.number,
 
   /**
+   * Callback function that will be called on click on the cell.
+   */
+  onCellSelect: PropTypes.func,
+
+  /**
    * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
    */
   widthUnit: PropTypes.oneOf([
@@ -87,6 +92,7 @@ const Row = (props) => {
     rowMinimumWidth,
     rowWidth,
     widthUnit,
+    onCellSelect,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -115,6 +121,7 @@ const Row = (props) => {
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}
           widthUnit={widthUnit}
+          onCellSelect={() => onCellSelect(index)}
         >
           {cellData.content}
         </Cell>
