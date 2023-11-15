@@ -29,6 +29,14 @@ If the number of widgets is large, replacing the table with a grid can dramatica
 |Home| Moves focus to the first focusable element in the table when the current focus is not within an editable field.|
 |End | Moves focus to the last focusable element in the table when the current focus is not within an editable field.|
 
+### Assistive Technology Support
+#### WAI ARIA Roles and States
+* [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+  * **Table**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/table/about#table-props) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+  * **Row**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/table/about#row) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) to announce interactions with the row.
+* [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
+  * **Table**: When the [_ariaLabelledBy_](/components/cerner-terra-framework-docs/table/about#table-props) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
