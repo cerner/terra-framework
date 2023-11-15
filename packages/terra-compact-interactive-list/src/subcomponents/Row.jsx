@@ -109,8 +109,7 @@ const Row = (props) => {
     >
       {activeRow && cells.map((cellData, index) => (
         <Cell
-          id={cellData.id}
-          key={cellData.id}
+          key={`row-${id}-col-${columns[index].id}`}
           column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}

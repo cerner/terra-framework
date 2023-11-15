@@ -16,3 +16,9 @@ export const DefaultListValues = {
     [widthUnitTypes.REM]: 10,
   },
 };
+
+export const alignTypes = {
+  CENTER: 'center',
+  LEFT: 'left',
+  RIGHT: 'right',
+};

@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { alignTypes } from '../utils/constants';
 
 const columnShape = PropTypes.shape({
   /**
@@ -39,9 +40,13 @@ const columnShape = PropTypes.shape({
   flexGrow: PropTypes.bool,
 
   /**
-   * Whether the column content should be aligned to the center. If not set to true, the content will be aligned to the left.
+   * Aligns the cell content to center, righ, or left. Defaults to the left.
    */
-  alignToCenter: PropTypes.bool,
+  align: PropTypes.oneOf([
+    alignTypes.CENTER,
+    alignTypes.RIGHT,
+    alignTypes.LEFT,
+  ]),
 
 });
 

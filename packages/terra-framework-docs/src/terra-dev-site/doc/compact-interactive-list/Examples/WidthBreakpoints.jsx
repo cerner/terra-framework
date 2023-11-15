@@ -1,5 +1,5 @@
 import React from 'react';
-import CompactInteractiveList from 'terra-compact-interactive-list';
+import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import { ActiveBreakpointContext } from 'terra-breakpoints';
 import rows from './rowsData';
 
@@ -20,7 +20,7 @@ const cols = [
     id: 'Column-0',
     displayName: 'Col_1',
     width: 60, // there is no widthUnit prop set in the component, so it will default to px
-    alignToCenter: true,
+    align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
@@ -32,7 +32,7 @@ const cols = [
     id: 'Column-2',
     displayName: 'Col_3',
     width: 60, // there is no widthUnit prop set in the component, so it will default to px
-    alignToCenter: true,
+    align: alignTypes.CENTER,
   },
 ];
 

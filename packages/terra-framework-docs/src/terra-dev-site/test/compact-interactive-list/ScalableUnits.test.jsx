@@ -1,6 +1,6 @@
 /* eslint-disable react/forbid-dom-props */
 import React from 'react';
-import CompactInteractiveList from 'terra-compact-interactive-list';
+import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import rows from './rowsData';
 
 const cols = [
@@ -8,7 +8,7 @@ const cols = [
     id: 'Column-0',
     displayName: 'Col_1',
     width: 5,
-    alignToCenter: true,
+    align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
@@ -20,7 +20,7 @@ const cols = [
     id: 'Column-2',
     displayName: 'Col_3',
     width: 5,
-    alignToCenter: true,
+    align: alignTypes.CENTER,
   },
 ];
 
