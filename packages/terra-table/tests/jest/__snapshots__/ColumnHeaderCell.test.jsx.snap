@@ -23,10 +23,13 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
     role="button"
     tabIndex={0}
   >
-    <span>
+    <span
+      className="display-text"
+    >
       Vitals
     </span>
     <IconUp
+      className="sort-icon"
       data-name="Layer 1"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -58,16 +61,19 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
     role="button"
     tabIndex={0}
   >
+    <span
+      className="display-text"
+    >
+      Vitals
+    </span>
     <IconError
       a11yLabel="Terra.table.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span>
-      Vitals
-    </span>
     <IconUp
+      className="sort-icon"
       data-name="Layer 1"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -99,10 +105,13 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
     role="button"
     tabIndex={0}
   >
-    <span>
+    <span
+      className="display-text"
+    >
       Vitals
     </span>
     <IconDown
+      className="sort-icon"
       data-name="Layer 1"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -133,15 +142,17 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
     role="button"
     tabIndex={0}
   >
+    <span
+      className="display-text"
+    >
+      Vitals
+    </span>
     <IconError
       a11yLabel="Terra.table.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span>
-      Vitals
-    </span>
   </div>
 </th>
 `;
@@ -170,16 +181,19 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
     role="button"
     tabIndex={0}
   >
+    <span
+      className="display-text"
+    >
+      Vitals
+    </span>
     <IconError
       a11yLabel="Terra.table.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span>
-      Vitals
-    </span>
     <IconUp
+      className="sort-icon"
       data-name="Layer 1"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -208,16 +222,19 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
   <div
     className="header-container"
   >
+    <span
+      className="display-text"
+    >
+      Vitals
+    </span>
     <IconError
       a11yLabel="Terra.table.columnError"
       className="error-icon"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
     />
-    <span>
-      Vitals
-    </span>
     <IconUp
+      className="sort-icon"
       data-name="Layer 1"
       viewBox="0 0 48 48"
       xmlns="http://www.w3.org/2000/svg"
@@ -248,7 +265,9 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
     role="button"
     tabIndex={0}
   >
-    <span>
+    <span
+      className="display-text"
+    >
       Vitals
     </span>
   </div>
@@ -327,6 +346,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       <div
         className="header-container"
       >
+        <span
+          className="display-text"
+        >
+          Vitals
+        </span>
         <IconError
           a11yLabel="Terra.table.columnError"
           className="error-icon"
@@ -366,15 +390,14 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             </svg>
           </IconBase>
         </IconError>
-        <span>
-          Vitals
-        </span>
         <IconUp
+          className="sort-icon"
           data-name="Layer 1"
           viewBox="0 0 48 48"
           xmlns="http://www.w3.org/2000/svg"
         >
           <IconBase
+            className="sort-icon"
             data-name="Layer 1"
             focusable="false"
             height="1em"
@@ -385,7 +408,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             xmlns="http://www.w3.org/2000/svg"
           >
             <svg
-              className="tui-Icon icon"
+              className="tui-Icon icon sort-icon"
               data-name="Layer 1"
               focusable="false"
               height="1em"

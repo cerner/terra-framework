@@ -1105,7 +1105,9 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -1283,7 +1285,9 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -1468,7 +1472,9 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -4289,15 +4295,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -4392,7 +4394,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -4570,7 +4574,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -4755,7 +4761,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -8225,15 +8233,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -8328,7 +8332,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -8506,7 +8512,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -8691,7 +8699,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -12119,7 +12129,9 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -12297,7 +12309,9 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -12482,7 +12496,9 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -15303,15 +15319,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -15406,7 +15418,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -15584,7 +15598,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -15769,7 +15785,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -19239,15 +19257,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -19342,7 +19356,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -19520,7 +19536,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -19705,7 +19723,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -23223,15 +23243,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -23326,7 +23342,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -23504,7 +23522,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -23689,7 +23709,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -27127,15 +27149,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -27230,7 +27248,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -27408,7 +27428,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -27593,7 +27615,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -31059,7 +31083,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -31237,7 +31263,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -31422,7 +31450,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -34251,15 +34281,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -34354,7 +34380,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -34532,7 +34560,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -34717,7 +34747,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -38187,15 +38219,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -38290,7 +38318,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -38468,7 +38498,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -38653,7 +38685,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -42083,15 +42117,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -42186,7 +42216,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -42364,7 +42396,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -42549,7 +42583,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -45979,15 +46015,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -46082,7 +46114,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -46260,7 +46294,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -46445,7 +46481,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -49875,15 +49913,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -49978,7 +50012,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -50156,7 +50192,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -50341,7 +50379,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -53771,15 +53811,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -53874,7 +53910,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -54052,7 +54090,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -54237,7 +54277,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -57663,15 +57705,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -57766,7 +57804,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -57944,7 +57984,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -58129,7 +58171,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -61555,15 +61599,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <VisuallyHiddenText
-                                      text="Terra.table.row-selection-header-display"
+                                    <span
+                                      className="display-text hidden"
                                     >
-                                      <span
-                                        className="visually-hidden-text"
-                                      >
-                                        Terra.table.row-selection-header-display
-                                      </span>
-                                    </VisuallyHiddenText>
+                                      Terra.table.row-selection-header-display
+                                    </span>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -61658,7 +61698,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -61836,7 +61878,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -62021,7 +62065,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -65383,7 +65429,9 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -65561,7 +65609,9 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -65746,7 +65796,9 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>
@@ -68459,7 +68511,9 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                        Vitals
                                     </span>
                                   </div>
@@ -68637,7 +68691,9 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     role="button"
                                     tabIndex={-1}
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 16
                                     </span>
                                   </div>
@@ -68822,7 +68878,9 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   <div
                                     className="header-container"
                                   >
-                                    <span>
+                                    <span
+                                      className="display-text"
+                                    >
                                       March 17
                                     </span>
                                   </div>

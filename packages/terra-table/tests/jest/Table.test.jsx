@@ -609,9 +609,9 @@ describe('Row Selection', () => {
 
     // Validate row selection column header
     const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
-    const hiddenDisplay = rowSelectionHeader.find('VisuallyHiddenText');
-    expect(hiddenDisplay.props().text).toBe('Terra.table.row-selection-header-display');
+    const hiddenDisplay = rowSelectionHeader.find('.hidden');
     expect(hiddenDisplay).toHaveLength(1);
+    expect(hiddenDisplay.text()).toBe('Terra.table.row-selection-header-display');
 
     // Validate column header without hidden display text
     const columnHeader = wrapper.find(ColumnHeaderCell).at(1);

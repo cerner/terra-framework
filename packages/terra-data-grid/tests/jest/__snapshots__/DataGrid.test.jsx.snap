@@ -913,7 +913,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                  Vitals
                               </span>
                             </div>
@@ -1091,7 +1093,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 16
                               </span>
                             </div>
@@ -1276,7 +1280,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             <div
                               className="header-container"
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 17
                               </span>
                             </div>
@@ -3840,7 +3846,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                  Vitals
                               </span>
                             </div>
@@ -4018,7 +4026,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 16
                               </span>
                             </div>
@@ -4203,7 +4213,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             <div
                               className="header-container"
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 17
                               </span>
                             </div>
@@ -6761,15 +6773,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               role="button"
                               tabIndex={-1}
                             >
-                              <VisuallyHiddenText
-                                text="Terra.table.row-selection-header-display"
+                              <span
+                                className="display-text hidden"
                               >
-                                <span
-                                  className="visually-hidden-text"
-                                >
-                                  Terra.table.row-selection-header-display
-                                </span>
-                              </VisuallyHiddenText>
+                                Terra.table.row-selection-header-display
+                              </span>
                             </div>
                           </th>
                         </ColumnHeaderCell>
@@ -6864,7 +6872,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                  Vitals
                               </span>
                             </div>
@@ -7042,7 +7052,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 16
                               </span>
                             </div>
@@ -7227,7 +7239,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             <div
                               className="header-container"
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 17
                               </span>
                             </div>
@@ -10371,7 +10385,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                  Vitals
                               </span>
                             </div>
@@ -10549,7 +10565,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 16
                               </span>
                             </div>
@@ -10734,7 +10752,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             <div
                               className="header-container"
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 17
                               </span>
                             </div>
@@ -13213,7 +13233,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                  Vitals
                               </span>
                             </div>
@@ -13391,7 +13413,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role="button"
                               tabIndex={-1}
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 16
                               </span>
                             </div>
@@ -13567,7 +13591,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             <div
                               className="header-container"
                             >
-                              <span>
+                              <span
+                                className="display-text"
+                              >
                                 March 17
                               </span>
                             </div>
