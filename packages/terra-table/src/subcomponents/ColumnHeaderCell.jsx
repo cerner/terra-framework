@@ -168,26 +168,23 @@ const ColumnHeaderCell = (props) => {
   const gridContext = useContext(GridContext);
 
   const columnHeaderCellRef = useRef();
-  const columnHeaderCellButtonRef = useRef();
 
   const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
   const isGridContext = gridContext.role === GridConstants.GRID;
-
-  const columnHeaderFocusArea = useCallback(() => (columnHeaderCellButtonRef.current ? columnHeaderCellButtonRef.current : columnHeaderCellRef.current), []);
 
   useEffect(() => {
     if (isActive) {
       if (isResizable && isResizeActive) {
         setResizeHandleActive(true);
       } else {
-        columnHeaderFocusArea().focus();
+        columnHeaderCellRef.current.focus();
         setResizeHandleActive(false);
       }
     } else {
       setResizeHandleActive(false);
     }
-  }, [columnHeaderFocusArea, isActive, isResizable, isResizeActive]);
+  }, [isActive, isResizable, isResizeActive]);
 
   const onResizeHandleMouseDown = useCallback((event) => {
     event.stopPropagation();
@@ -198,9 +195,9 @@ const ColumnHeaderCell = (props) => {
 
   // Restore focus to column header after resize action is completed.
   const onResizeHandleMouseUp = useCallback(() => {
-    columnHeaderFocusArea().focus();
+    columnHeaderCellRef.current.focus();
     setResizeHandleActive(false);
-  }, [columnHeaderFocusArea]);
+  }, []);
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
@@ -222,7 +219,7 @@ const ColumnHeaderCell = (props) => {
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive && isGridContext) {
-          columnHeaderFocusArea().focus();
+          columnHeaderCellRef.current.focus();
           setResizeHandleActive(false);
           event.stopPropagation();
           event.preventDefault();
@@ -265,26 +262,29 @@ const ColumnHeaderCell = (props) => {
     : null;
 
   // For tables, we want elements to be tabbable when selectable, but not anytime else.
-  let columnTabIndex = isSelectable ? 0 : undefined;
-
+  let buttonTabIndex = isSelectable ? 0 : undefined;
   if (isGridContext) {
     // For grids, we only want 1 tab stop. We then define the focus behavior in DataGrid.
-    columnTabIndex = isSelectable && displayName ? -1 : undefined;
+    buttonTabIndex = isSelectable && displayName ? -1 : undefined;
   }
+
+  // Determine if button element is required for column header
+  const hasButtonElement = isSelectable && displayName;
 
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
+      ref={!hasButtonElement ? columnHeaderCellRef : undefined}
       id={`${tableId}-${id}`}
-      ref={(columnHeaderCellRef)}
       key={id}
       className={cx('column-header', theme.className, {
         selectable: isSelectable,
         pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
       })}
-      tabIndex={isGridContext ? -1 : undefined}
+      tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role="columnheader"
       scope="col"
+      title={displayName}
       aria-sort={sortIndicator}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
@@ -292,8 +292,8 @@ const ColumnHeaderCell = (props) => {
     >
       <div
         className={cx('header-container')}
-        {...isSelectable && displayName && { ref: columnHeaderCellButtonRef, role: 'button' }}
-        tabIndex={columnTabIndex}
+        {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
+        tabIndex={buttonTabIndex}
       >
         {errorIcon}
         <span>{displayName}</span>

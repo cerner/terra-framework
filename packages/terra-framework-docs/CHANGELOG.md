@@ -5,6 +5,9 @@
 * Added
   * Added documentation and examples for `terra-compact-interactive-list`.
 
+* Updated
+  * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
+
 ## 1.44.0 - (November 9, 2023)
 
 * Added
