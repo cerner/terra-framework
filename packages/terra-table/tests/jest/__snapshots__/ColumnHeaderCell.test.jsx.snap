@@ -16,6 +16,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
       "width": "100px",
     }
   }
+  title="Vitals"
 >
   <div
     className="header-container"
@@ -23,7 +24,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] =
     tabIndex={0}
   >
     <span>
-       Vitals
+      Vitals
     </span>
     <IconUp
       data-name="Layer 1"
@@ -50,6 +51,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
       "width": "100px",
     }
   }
+  title="Vitals"
 >
   <div
     className="header-container"
@@ -63,7 +65,7 @@ exports[`ColumnHeaderCell renders a column header cell with ascending sort and e
       xmlns="http://www.w3.org/2000/svg"
     />
     <span>
-       Vitals
+      Vitals
     </span>
     <IconUp
       data-name="Layer 1"
@@ -90,6 +92,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
       "width": "100px",
     }
   }
+  title="Vitals"
 >
   <div
     className="header-container"
@@ -97,7 +100,7 @@ exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] 
     tabIndex={0}
   >
     <span>
-       Vitals
+      Vitals
     </span>
     <IconDown
       data-name="Layer 1"
@@ -123,6 +126,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
       "width": "100px",
     }
   }
+  title="Vitals"
 >
   <div
     className="header-container"
@@ -136,7 +140,7 @@ exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
       xmlns="http://www.w3.org/2000/svg"
     />
     <span>
-       Vitals
+      Vitals
     </span>
   </div>
 </th>
@@ -159,6 +163,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
       "width": "100px",
     }
   }
+  title="Vitals"
 >
   <div
     className="header-container"
@@ -172,7 +177,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
       xmlns="http://www.w3.org/2000/svg"
     />
     <span>
-       Vitals
+      Vitals
     </span>
     <IconUp
       data-name="Layer 1"
@@ -198,6 +203,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
       "width": "100px",
     }
   }
+  title="Vitals"
 >
   <div
     className="header-container"
@@ -209,7 +215,7 @@ exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callb
       xmlns="http://www.w3.org/2000/svg"
     />
     <span>
-       Vitals
+      Vitals
     </span>
     <IconUp
       data-name="Layer 1"
@@ -235,6 +241,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
       "width": "100px",
     }
   }
+  title="Vitals"
 >
   <div
     className="header-container"
@@ -242,7 +249,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
     tabIndex={0}
   >
     <span>
-       Vitals
+      Vitals
     </span>
   </div>
 </th>
@@ -251,7 +258,7 @@ exports[`ColumnHeaderCell renders a default column header cell 1`] = `
 exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
 <InjectIntl(ColumnHeaderCell)
   columnIndex={0}
-  displayName=" Vitals"
+  displayName="Vitals"
   hasError={true}
   headerHeight="150px"
   id="Column-0"
@@ -261,7 +268,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
 >
   <ColumnHeaderCell
     columnIndex={0}
-    displayName=" Vitals"
+    displayName="Vitals"
     hasError={true}
     headerHeight="150px"
     id="Column-0"
@@ -314,6 +321,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
           "width": "100px",
         }
       }
+      title="Vitals"
     >
       <div
         className="header-container"
@@ -358,7 +366,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
           </IconBase>
         </IconError>
         <span>
-           Vitals
+          Vitals
         </span>
         <IconUp
           data-name="Layer 1"

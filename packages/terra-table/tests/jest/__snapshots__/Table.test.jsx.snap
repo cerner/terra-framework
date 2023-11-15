@@ -154,6 +154,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
         aria-rowcount={2}
         className="table"
         id="test-terra-table"
+        onKeyDown={[Function]}
         role="table"
       >
         <colgroup>
@@ -413,6 +414,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                         "width": "200px",
                       }
                     }
+                    title=" Vitals"
                   >
                     <div
                       className="header-container"
@@ -502,6 +504,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                         "width": "200px",
                       }
                     }
+                    title="March 16"
                   >
                     <div
                       className="header-container"
@@ -592,6 +595,7 @@ exports[`Row Selection verifies row selection all row selection single selction 
                         "width": "200px",
                       }
                     }
+                    title="March 17"
                   >
                     <div
                       className="header-container"
@@ -1388,6 +1392,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
         aria-rowcount={5}
         className="table"
         id="test-terra-table"
+        onKeyDown={[Function]}
         role="table"
       >
         <colgroup>
@@ -1647,6 +1652,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         "width": "200px",
                       }
                     }
+                    title=" Vitals"
                   >
                     <div
                       className="header-container"
@@ -1736,6 +1742,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         "width": "200px",
                       }
                     }
+                    title="March 16"
                   >
                     <div
                       className="header-container"
@@ -1826,6 +1833,7 @@ exports[`Row Selection verifies row selection all rows unselected single unselec
                         "width": "200px",
                       }
                     }
+                    title="March 17"
                   >
                     <div
                       className="header-container"
@@ -3837,6 +3845,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
         aria-rowcount={1}
         className="table"
         id="test-terra-table"
+        onKeyDown={[Function]}
         role="table"
       >
         <colgroup>
@@ -4096,6 +4105,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                         "width": "200px",
                       }
                     }
+                    title=" Vitals"
                   >
                     <div
                       className="header-container"
@@ -4185,6 +4195,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                         "width": "200px",
                       }
                     }
+                    title="March 16"
                   >
                     <div
                       className="header-container"
@@ -4275,6 +4286,7 @@ exports[`Row Selection verifies row selection all rows unselected update 1`] = `
                         "width": "200px",
                       }
                     }
+                    title="March 17"
                   >
                     <div
                       className="header-container"
@@ -4677,6 +4689,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
           aria-rowcount={5}
           className="table"
           id="test-terra-table"
+          onKeyDown={[Function]}
           role="table"
         >
           <colgroup>
@@ -4936,6 +4949,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           "width": "200px",
                         }
                       }
+                      title=" Vitals"
                     >
                       <div
                         className="header-container"
@@ -5025,6 +5039,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           "width": "200px",
                         }
                       }
+                      title="March 16"
                     >
                       <div
                         className="header-container"
@@ -5115,6 +5130,7 @@ exports[`Row Selection verifies row selection row selection update 1`] = `
                           "width": "200px",
                         }
                       }
+                      title="March 17"
                     >
                       <div
                         className="header-container"
@@ -7257,6 +7273,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
         aria-rowcount={5}
         className="table"
         id="test-terra-table"
+        onKeyDown={[Function]}
         role="table"
       >
         <colgroup>
@@ -7516,6 +7533,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         "width": "200px",
                       }
                     }
+                    title=" Vitals"
                   >
                     <div
                       className="header-container"
@@ -7605,6 +7623,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         "width": "200px",
                       }
                     }
+                    title="March 16"
                   >
                     <div
                       className="header-container"
@@ -7695,6 +7714,7 @@ exports[`Row Selection verifies row selection row unselected update 1`] = `
                         "width": "200px",
                       }
                     }
+                    title="March 17"
                   >
                     <div
                       className="header-container"
@@ -10007,6 +10027,7 @@ Array [
                         }
                       }
                       tabIndex={-1}
+                      title=" Vitals"
                     >
                       <div
                         className="header-container"
@@ -10097,6 +10118,7 @@ Array [
                         }
                       }
                       tabIndex={-1}
+                      title="March 16"
                     >
                       <div
                         className="header-container"
@@ -10197,6 +10219,7 @@ Array [
                         }
                       }
                       tabIndex={-1}
+                      title="March 17"
                     >
                       <div
                         className="header-container"
@@ -12105,6 +12128,7 @@ Array [
                         }
                       }
                       tabIndex={-1}
+                      title=" Vitals"
                     >
                       <div
                         className="header-container"
@@ -12195,6 +12219,7 @@ Array [
                         }
                       }
                       tabIndex={-1}
+                      title="March 16"
                     >
                       <div
                         className="header-container"
@@ -12295,6 +12320,7 @@ Array [
                         }
                       }
                       tabIndex={-1}
+                      title="March 17"
                     >
                       <div
                         className="header-container"
@@ -14063,6 +14089,7 @@ exports[`Table verifies row selection column header not selectable without callb
         aria-rowcount={5}
         className="table"
         id="test-terra-table"
+        onKeyDown={[Function]}
         role="table"
       >
         <colgroup>
@@ -14316,6 +14343,7 @@ exports[`Table verifies row selection column header not selectable without callb
                         "width": "200px",
                       }
                     }
+                    title=" Vitals"
                   >
                     <div
                       className="header-container"
@@ -14405,6 +14433,7 @@ exports[`Table verifies row selection column header not selectable without callb
                         "width": "200px",
                       }
                     }
+                    title="March 16"
                   >
                     <div
                       className="header-container"
@@ -14504,6 +14533,7 @@ exports[`Table verifies row selection column header not selectable without callb
                         "width": "200px",
                       }
                     }
+                    title="March 17"
                   >
                     <div
                       className="header-container"
@@ -16645,6 +16675,7 @@ exports[`Table verifies row selection column header selection 1`] = `
         aria-rowcount={5}
         className="table"
         id="test-terra-table"
+        onKeyDown={[Function]}
         role="table"
       >
         <colgroup>
@@ -16895,6 +16926,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "width": "200px",
                       }
                     }
+                    title=" Vitals"
                   >
                     <div
                       className="header-container"
@@ -16984,6 +17016,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "width": "200px",
                       }
                     }
+                    title="March 16"
                   >
                     <div
                       className="header-container"
@@ -17083,6 +17116,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "width": "200px",
                       }
                     }
+                    title="March 17"
                   >
                     <div
                       className="header-container"
@@ -18983,6 +19017,7 @@ exports[`Table verifies that the column widths are set properly in the colgroup 
     aria-rowcount={5}
     className="table"
     id="test-terra-table"
+    onKeyDown={[Function]}
     role="table"
   >
     <ContextProvider
