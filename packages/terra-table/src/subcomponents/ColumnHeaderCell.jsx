@@ -10,6 +10,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { IconUp, IconDown, IconError } from 'terra-icon';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
@@ -61,6 +62,11 @@ const propTypes = {
    * Boolean value indicating whether or not the header cell is focused.
    */
   isActive: PropTypes.bool,
+
+  /**
+   * Boolean value indicating whether or not the header cell is focused.
+   */
+  isDisplayVisible: PropTypes.bool,
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
@@ -135,6 +141,7 @@ const defaultProps = {
   hasError: false,
   isSelectable: false,
   isActive: false,
+  isDisplayVisible: true,
   isResizable: false,
   isResizeActive: false,
 };
@@ -147,6 +154,7 @@ const ColumnHeaderCell = (props) => {
     sortIndicator,
     hasError,
     isActive,
+    isDisplayVisible,
     isSelectable,
     isResizable,
     tableHeight,
@@ -296,7 +304,7 @@ const ColumnHeaderCell = (props) => {
         tabIndex={buttonTabIndex}
       >
         {errorIcon}
-        <span>{displayName}</span>
+        {isDisplayVisible ? <span>{displayName}</span> : <VisuallyHiddenText text={displayName} />}
         {sortIndicatorIcon}
       </div>
       { isResizable && (

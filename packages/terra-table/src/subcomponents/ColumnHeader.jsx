@@ -96,6 +96,7 @@ const ColumnHeader = (props) => {
             rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}
+            isDisplayVisible={column.isDisplayVisible}
             width={column.width}
             minimumWidth={column.minimumWidth}
             maximumWidth={column.maximumWidth}

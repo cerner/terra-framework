@@ -1069,6 +1069,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -1246,6 +1247,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -1432,6 +1434,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -3064,20 +3067,22 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -3085,12 +3090,13 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -4139,7 +4145,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -4192,9 +4200,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -4211,6 +4221,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -4242,6 +4253,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -4270,12 +4282,22 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -4334,6 +4356,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -4511,6 +4534,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -4697,6 +4721,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -4825,7 +4850,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -4961,7 +4988,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -5471,7 +5500,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -5977,7 +6008,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -6482,7 +6515,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -6968,20 +7003,22 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -6989,12 +7026,13 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -8043,7 +8081,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -8096,9 +8136,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -8115,6 +8157,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -8146,6 +8189,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -8174,12 +8218,22 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -8238,6 +8292,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -8415,6 +8470,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -8601,6 +8657,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -8729,7 +8786,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -8865,7 +8924,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -9375,7 +9436,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -9881,7 +9944,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -10386,7 +10451,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -10872,20 +10939,22 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -10893,12 +10962,13 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -12013,6 +12083,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -12190,6 +12261,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -12376,6 +12448,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -14008,20 +14081,22 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -14029,12 +14104,13 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -15083,7 +15159,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -15136,9 +15214,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -15155,6 +15235,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -15186,6 +15267,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -15214,12 +15296,22 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -15278,6 +15370,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -15455,6 +15548,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -15641,6 +15735,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -15769,7 +15864,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -15905,7 +16002,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -16415,7 +16514,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -16921,7 +17022,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -17426,7 +17529,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -17912,20 +18017,22 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -17933,12 +18040,13 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -18987,7 +19095,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -19040,9 +19150,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -19059,6 +19171,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -19090,6 +19203,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -19118,12 +19232,22 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -19182,6 +19306,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -19359,6 +19484,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -19545,6 +19671,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -19673,7 +19800,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -19809,7 +19938,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -20319,7 +20450,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -20825,7 +20958,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -21330,7 +21465,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -21816,20 +21953,22 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -21837,12 +21976,13 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -22939,7 +23079,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -22992,9 +23134,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -23011,6 +23155,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -23042,6 +23187,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -23070,12 +23216,22 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -23134,6 +23290,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -23311,6 +23468,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -23497,6 +23655,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -23625,7 +23784,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -23761,7 +23922,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -24271,7 +24434,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -24777,7 +24942,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -25282,7 +25449,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -25768,20 +25937,22 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -25789,12 +25960,13 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -26811,7 +26983,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -26864,9 +27038,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -26883,6 +27059,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -26914,6 +27091,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -26942,12 +27120,22 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -27006,6 +27194,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -27183,6 +27372,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -27369,6 +27559,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -27497,7 +27688,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -27633,7 +27826,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -28143,7 +28338,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -28649,7 +28846,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -29154,7 +29353,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -29640,20 +29841,22 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -29661,12 +29864,13 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -30819,6 +31023,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -30996,6 +31201,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -31182,6 +31388,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -32814,20 +33021,22 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -32835,12 +33044,13 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -33897,7 +34107,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -33950,9 +34162,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -33969,6 +34183,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -34000,6 +34215,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -34028,12 +34244,22 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -34092,6 +34318,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -34269,6 +34496,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -34455,6 +34683,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -34583,7 +34812,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -34719,7 +34950,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -35229,7 +35462,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -35735,7 +35970,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -36240,7 +36477,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -36726,20 +36965,22 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -36747,12 +36988,13 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -37801,7 +38043,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -37854,9 +38098,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -37873,6 +38119,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -37904,6 +38151,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -37932,12 +38180,22 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -37996,6 +38254,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -38173,6 +38432,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -38359,6 +38619,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -38487,7 +38748,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -38623,7 +38886,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -39133,7 +39398,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -39639,7 +39906,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -40144,7 +40413,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -40630,20 +40901,22 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -40651,12 +40924,13 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -41665,7 +41939,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -41718,9 +41994,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -41737,6 +42015,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -41768,6 +42047,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -41796,12 +42076,22 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -41860,6 +42150,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -42037,6 +42328,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -42223,6 +42515,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -42351,7 +42644,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -42487,7 +42782,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -42997,7 +43294,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -43503,7 +43802,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -44008,7 +44309,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -44494,20 +44797,22 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -44515,12 +44820,13 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -45529,7 +45835,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -45582,9 +45890,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -45601,6 +45911,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -45632,6 +45943,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -45660,12 +45972,22 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -45724,6 +46046,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -45901,6 +46224,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -46087,6 +46411,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -46215,7 +46540,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -46351,7 +46678,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -46861,7 +47190,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -47367,7 +47698,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -47872,7 +48205,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -48358,20 +48693,22 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -48379,12 +48716,13 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -49393,7 +49731,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -49446,9 +49786,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -49465,6 +49807,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -49496,6 +49839,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -49524,12 +49868,22 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -49588,6 +49942,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -49765,6 +50120,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -49951,6 +50307,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -50079,7 +50436,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -50215,7 +50574,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -50725,7 +51086,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -51231,7 +51594,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -51736,7 +52101,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -52222,20 +52589,22 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -52243,12 +52612,13 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -53257,7 +53627,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -53310,9 +53682,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -53329,6 +53703,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -53360,6 +53735,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -53388,12 +53764,22 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -53452,6 +53838,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -53629,6 +54016,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -53815,6 +54203,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -53943,7 +54332,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -54079,7 +54470,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -54589,7 +54982,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -55095,7 +55490,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -55600,7 +55997,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -56086,20 +56485,22 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -56107,12 +56508,13 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -57117,7 +57519,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -57170,9 +57574,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -57189,6 +57595,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -57220,6 +57627,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -57248,12 +57656,22 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -57312,6 +57730,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -57489,6 +57908,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -57675,6 +58095,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -57803,7 +58224,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -57939,7 +58362,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -58449,7 +58874,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -58955,7 +59382,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -59460,7 +59889,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -59946,20 +60377,22 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -59967,12 +60400,13 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -60977,7 +61411,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         columns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "maximumWidth": 300,
@@ -61030,9 +61466,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <InjectIntl(ColumnHeaderCell)
                               columnIndex={0}
+                              displayName="Terra.table.row-selection-header-display"
                               headerHeight="2.5rem"
                               id="table-rowSelectionColumn"
                               isActive={false}
+                              isDisplayVisible={false}
                               isResizable={false}
                               isResizeActive={false}
                               isSelectable={true}
@@ -61049,6 +61487,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             >
                               <ColumnHeaderCell
                                 columnIndex={0}
+                                displayName="Terra.table.row-selection-header-display"
                                 hasError={false}
                                 headerHeight="2.5rem"
                                 id="table-rowSelectionColumn"
@@ -61080,6 +61519,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={false}
                                 isResizable={false}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -61108,12 +61548,22 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       "width": "40px",
                                     }
                                   }
-                                  tabIndex={-1}
+                                  title="Terra.table.row-selection-header-display"
                                 >
                                   <div
                                     className="header-container"
+                                    role="button"
+                                    tabIndex={-1}
                                   >
-                                    <span />
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -61172,6 +61622,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -61349,6 +61800,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -61535,6 +61987,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -61663,7 +62116,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         displayedColumns={
                           Array [
                             Object {
+                              "displayName": "Terra.table.row-selection-header-display",
                               "id": "table-rowSelectionColumn",
+                              "isDisplayVisible": false,
                               "isResizable": false,
                               "isSelectable": true,
                               "width": 40,
@@ -61799,7 +62254,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -62309,7 +62766,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -62815,7 +63274,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -63320,7 +63781,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             displayedColumns={
                               Array [
                                 Object {
+                                  "displayName": "Terra.table.row-selection-header-display",
                                   "id": "table-rowSelectionColumn",
+                                  "isDisplayVisible": false,
                                   "isResizable": false,
                                   "isSelectable": true,
                                   "width": 40,
@@ -63806,20 +64269,22 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -63827,12 +64292,13 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -64881,6 +65347,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -65058,6 +65525,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -65244,6 +65712,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -66876,20 +67345,22 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -66897,12 +67368,13 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>
@@ -67951,6 +68423,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -68128,6 +68601,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={true}
@@ -68314,6 +68788,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   }
                                 }
                                 isActive={false}
+                                isDisplayVisible={true}
                                 isResizable={true}
                                 isResizeActive={false}
                                 isSelectable={false}
@@ -69946,20 +70421,22 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     </table>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-mode-region"
                       text={null}
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-mode-region"
                       />
                     </VisuallyHiddenText>
                     <VisuallyHiddenText
                       aria-live="polite"
+                      className="row-selection-region"
                       text="Terra.table.row-selection-template"
                     >
                       <span
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text row-selection-region"
                       >
                         Terra.table.row-selection-template
                       </span>
@@ -69967,12 +70444,13 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                     <VisuallyHiddenText
                       aria-atomic="true"
                       aria-live="polite"
+                      className="column-header-region"
                       text={null}
                     >
                       <span
                         aria-atomic="true"
                         aria-live="polite"
-                        className="visually-hidden-text"
+                        className="visually-hidden-text column-header-region"
                       />
                     </VisuallyHiddenText>
                   </div>

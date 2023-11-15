@@ -877,6 +877,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -1054,6 +1055,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -1240,6 +1242,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={false}
@@ -2872,20 +2875,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               </table>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-mode-region"
                 text={null}
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-mode-region"
                 />
               </VisuallyHiddenText>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-region"
                 text="Terra.table.row-selection-template"
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-region"
                 >
                   Terra.table.row-selection-template
                 </span>
@@ -2893,12 +2898,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               <VisuallyHiddenText
                 aria-atomic="true"
                 aria-live="polite"
+                className="column-header-region"
                 text={null}
               >
                 <span
                   aria-atomic="true"
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text column-header-region"
                 />
               </VisuallyHiddenText>
             </div>
@@ -3798,6 +3804,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -3975,6 +3982,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -4161,6 +4169,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={false}
@@ -5793,20 +5802,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               </table>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-mode-region"
                 text={null}
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-mode-region"
                 />
               </VisuallyHiddenText>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-region"
                 text="Terra.table.row-selection-template"
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-region"
                 >
                   Terra.table.row-selection-template
                 </span>
@@ -5814,12 +5825,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               <VisuallyHiddenText
                 aria-atomic="true"
                 aria-live="polite"
+                className="column-header-region"
                 text={null}
               >
                 <span
                   aria-atomic="true"
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text column-header-region"
                 />
               </VisuallyHiddenText>
             </div>
@@ -6605,7 +6617,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   columns={
                     Array [
                       Object {
+                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
+                        "isDisplayVisible": false,
                         "isResizable": false,
                         "isSelectable": true,
                         "maximumWidth": 300,
@@ -6658,9 +6672,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     >
                       <InjectIntl(ColumnHeaderCell)
                         columnIndex={0}
+                        displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn"
                         isActive={false}
+                        isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
                         isSelectable={true}
@@ -6677,6 +6693,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <ColumnHeaderCell
                           columnIndex={0}
+                          displayName="Terra.table.row-selection-header-display"
                           hasError={false}
                           headerHeight="2.5rem"
                           id="table-rowSelectionColumn"
@@ -6708,6 +6725,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
                           isSelectable={true}
@@ -6736,12 +6754,22 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                 "width": "40px",
                               }
                             }
-                            tabIndex={-1}
+                            title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
+                              role="button"
+                              tabIndex={-1}
                             >
-                              <span />
+                              <VisuallyHiddenText
+                                text="Terra.table.row-selection-header-display"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  Terra.table.row-selection-header-display
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                           </th>
                         </ColumnHeaderCell>
@@ -6800,6 +6828,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -6977,6 +7006,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -7163,6 +7193,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={false}
@@ -7291,7 +7322,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
+                        "isDisplayVisible": false,
                         "isResizable": false,
                         "isSelectable": true,
                         "width": 40,
@@ -7427,7 +7460,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       displayedColumns={
                         Array [
                           Object {
+                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
+                            "isDisplayVisible": false,
                             "isResizable": false,
                             "isSelectable": true,
                             "width": 40,
@@ -7937,7 +7972,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       displayedColumns={
                         Array [
                           Object {
+                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
+                            "isDisplayVisible": false,
                             "isResizable": false,
                             "isSelectable": true,
                             "width": 40,
@@ -8443,7 +8480,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       displayedColumns={
                         Array [
                           Object {
+                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
+                            "isDisplayVisible": false,
                             "isResizable": false,
                             "isSelectable": true,
                             "width": 40,
@@ -8948,7 +8987,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       displayedColumns={
                         Array [
                           Object {
+                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
+                            "isDisplayVisible": false,
                             "isResizable": false,
                             "isSelectable": true,
                             "width": 40,
@@ -9434,20 +9475,22 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               </table>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-mode-region"
                 text={null}
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-mode-region"
                 />
               </VisuallyHiddenText>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-region"
                 text="Terra.table.row-selection-template"
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-region"
                 >
                   Terra.table.row-selection-template
                 </span>
@@ -9455,12 +9498,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               <VisuallyHiddenText
                 aria-atomic="true"
                 aria-live="polite"
+                className="column-header-region"
                 text={null}
               >
                 <span
                   aria-atomic="true"
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text column-header-region"
                 />
               </VisuallyHiddenText>
             </div>
@@ -10291,6 +10335,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -10468,6 +10513,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -10654,6 +10700,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={false}
@@ -12286,20 +12333,22 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               </table>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-mode-region"
                 text={null}
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-mode-region"
                 />
               </VisuallyHiddenText>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-region"
                 text="Terra.table.row-selection-template"
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-region"
                 >
                   Terra.table.row-selection-template
                 </span>
@@ -12307,12 +12356,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               <VisuallyHiddenText
                 aria-atomic="true"
                 aria-live="polite"
+                className="column-header-region"
                 text={null}
               >
                 <span
                   aria-atomic="true"
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text column-header-region"
                 />
               </VisuallyHiddenText>
             </div>
@@ -13127,6 +13177,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -13304,6 +13355,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={true}
@@ -13481,6 +13533,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             }
                           }
                           isActive={false}
+                          isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
                           isSelectable={false}
@@ -15113,20 +15166,22 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               </table>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-mode-region"
                 text={null}
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-mode-region"
                 />
               </VisuallyHiddenText>
               <VisuallyHiddenText
                 aria-live="polite"
+                className="row-selection-region"
                 text="Terra.table.row-selection-template"
               >
                 <span
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text row-selection-region"
                 >
                   Terra.table.row-selection-template
                 </span>
@@ -15134,12 +15189,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               <VisuallyHiddenText
                 aria-atomic="true"
                 aria-live="polite"
+                className="column-header-region"
                 text={null}
               >
                 <span
                   aria-atomic="true"
                   aria-live="polite"
-                  className="visually-hidden-text"
+                  className="visually-hidden-text column-header-region"
                 />
               </VisuallyHiddenText>
             </div>

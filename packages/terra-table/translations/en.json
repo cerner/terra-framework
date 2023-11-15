@@ -17,5 +17,7 @@
   "Terra.table.row-selection-mode-enabled": "Row Selection Mode enabled.",
   "Terra.table.row-selection-mode-disabled": "Row Selection Mode disabled",
   "Terra.table.all-rows-selected" : "All rows selected",
-  "Terra.table.all-rows-unselected" : "No rows selected"
+  "Terra.table.all-rows-unselected" : "No rows selected",
+
+  "Terra.table.row-selection-header-display": "Row selection"
 }

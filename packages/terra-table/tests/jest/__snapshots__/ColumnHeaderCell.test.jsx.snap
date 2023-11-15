@@ -300,6 +300,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       }
     }
     isActive={false}
+    isDisplayVisible={true}
     isResizable={false}
     isResizeActive={false}
     isSelectable={false}

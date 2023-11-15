@@ -299,7 +299,7 @@ describe('Row Selection', () => {
 
     wrapper.setProps({ rows: newRows });
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.row-selection-template');
 
     expect(wrapper).toMatchSnapshot();
@@ -329,7 +329,7 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.row-selection-cleared-template');
 
     expect(wrapper).toMatchSnapshot();
@@ -358,7 +358,7 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.all-rows-selected');
 
     expect(wrapper).toMatchSnapshot();
@@ -378,7 +378,7 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: [] });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
 
     expect(wrapper).toMatchSnapshot();
@@ -402,10 +402,32 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies row selection header has proper visually hidden text', () => {
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={tableData.rows}
+        hasSelectableRows
+      />,
+    );
+
+    // Validate row selection column header
+    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    const hiddenDisplay = rowSelectionHeader.find('VisuallyHiddenText');
+    expect(hiddenDisplay.props().text).toBe('Terra.table.row-selection-header-display');
+    expect(hiddenDisplay).toHaveLength(1);
+
+    // Validate column header without hidden display text
+    const columnHeader = wrapper.find(ColumnHeaderCell).at(1);
+    const hiddenColumnHeader = columnHeader.find('VisuallyHiddenText');
+    expect(hiddenColumnHeader).toHaveLength(0);
   });
 });
 
