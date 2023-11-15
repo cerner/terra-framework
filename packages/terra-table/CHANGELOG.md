@@ -5,6 +5,7 @@
 * Added
   * Added navigation via Home and End Keys.
   * Added title attribute to column header cells to enable tooltips.
+  * Added screenreader text to the row selection column header.
 
 * Fixed
   * Fixed tab index issues in the column header cells.
