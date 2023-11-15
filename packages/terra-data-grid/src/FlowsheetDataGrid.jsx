@@ -248,11 +248,19 @@ function FlowsheetDataGrid(props) {
       selectCellRange(selectionDetails.rowId, selectionDetails.columnId);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
-      onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
+      onCellSelect(selectionDetails.sectionId, selectionDetails.rowId, selectionDetails.columnId);
     }
   }, [onCellSelect, selectCellRange]);
 
-  const handleCellRangeSelection = useCallback((rowIndex, columnIndex, direction) => {
+  const handleCellRangeSelection = useCallback((rowId, columnId, direction) => {
+    let gridRows = rows;
+    if (sections) {
+      gridRows = sections.flatMap((section) => section.rows);
+    }
+
+    const rowIndex = gridRows.findIndex(row => row.id === rowId);
+    const columnIndex = columns.findIndex(col => col.id === columnId);
+
     // Exclude the row header column as an eligible anchor/start cell.
     if (columnIndex <= 0 && !inShiftDirectionalMode.current) {
       return;
@@ -262,7 +270,7 @@ function FlowsheetDataGrid(props) {
       // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range if one does not exist.
       inShiftDirectionalMode.current = true;
       if (anchorCell.current === null) {
-        anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
+        anchorCell.current = { rowId, columnId };
       }
     }
 
@@ -300,7 +308,7 @@ function FlowsheetDataGrid(props) {
     }
 
     selectCellRange(nextRowIndex, nextColumnIndex);
-  }, [rows, columns, selectCellRange]);
+  }, [rows, sections, columns, selectCellRange]);
 
   const handleKeyUp = (event) => {
     const key = event.keyCode;

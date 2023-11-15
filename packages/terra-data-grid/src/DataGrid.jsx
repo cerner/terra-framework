@@ -446,7 +446,8 @@ const DataGrid = injectIntl((props) => {
       onRangeSelection(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
     if (onCellRangeSelect && event.shiftKey && directionalKeys.has(event.keyCode)) {
-      onCellRangeSelect(cellCoordinates.row, cellCoordinates.col, event.keyCode);
+      const cellRangeRowId = grid.current.rows[cellCoordinates.row].getAttribute('data-row-id');
+      onCellRangeSelect(cellRangeRowId, displayedColumns[cellCoordinates.col].id, event.keyCode);
     }
 
     if (nextRow > rows.length || nextCol >= displayedColumns.length) {

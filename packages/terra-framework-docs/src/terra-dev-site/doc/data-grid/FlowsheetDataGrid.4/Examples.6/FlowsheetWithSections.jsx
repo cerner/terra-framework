@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
@@ -75,25 +75,108 @@ const gridDataJSON = {
 };
 
 const FlowsheetWithSections = () => {
-  const [tableSections, setTableSections] = useState(gridDataJSON.sections);
+  const { cols, sections } = gridDataJSON;
+  const [sectionData, setSectionData] = useState(sections);
 
   const handleSectionSelect = (sectionId) => {
-    const newSections = [...tableSections];
+    const newSections = [...sectionData];
     const sectionIndex = newSections.findIndex(section => section.id === sectionId);
 
     if (sectionIndex > -1) {
       newSections[sectionIndex].isCollapsed = !newSections[sectionIndex].isCollapsed;
     }
 
-    setTableSections(newSections);
+    setSectionData(newSections);
   };
+
+  const onCellSelect = useCallback((sectionId, rowId, columnId) => {
+    const sectionIndex = sectionData.findIndex(section => section.id === sectionId);
+
+    const rowIndex = sectionData[sectionIndex].rows.findIndex(row => row.id === rowId);
+    const columnIndex = cols.findIndex(column => column.id === columnId);
+
+    // Remove cell selections, excluding current cell
+    const newSectionData = [...sectionData];
+    for (let section = 0; section < sectionData.length; section += 1) {
+      newSectionData[section].rows = [...sectionData[section].rows];
+      for (let row = 0; row < sectionData[section].rows.length; row += 1) {
+        const newRowData = { ...sectionData[section].rows[row] };
+        newSectionData[section].rows[row] = newRowData;
+        newRowData.cells = [...newRowData.cells];
+        for (let cell = 0; cell < newRowData.cells.length; cell += 1) {
+          const newCellData = { ...newRowData.cells[cell] };
+          newRowData.cells[cell] = newCellData;
+
+          const currentCell = newCellData;
+          if (currentCell.isSelected && !(section === sectionIndex && row === rowIndex && cell === columnIndex)) {
+            currentCell.isSelected = false;
+          }
+        }
+      }
+    }
+
+    // Toggle selection state of selected cell
+    newSectionData[sectionIndex].rows[rowIndex].cells[columnIndex].isSelected = !newSectionData[sectionIndex].rows[rowIndex].cells[columnIndex].isSelected;
+    setSectionData(newSectionData);
+  }, [cols, sectionData]);
+
+  const onClearSelectedCells = useCallback(() => {
+    // Remove current selections
+    const newSectionData = [...sectionData];
+    for (let section = 0; section < sectionData.length; section += 1) {
+      newSectionData[section].rows = [...sectionData[section].rows];
+      for (let row = 0; row < sectionData[section].rows.length; row += 1) {
+        const newRowData = { ...sectionData[section].rows[row] };
+        newSectionData[section].rows[row] = newRowData;
+        newRowData.cells = [...newRowData.cells];
+        for (let cell = 0; cell < newRowData.cells.length; cell += 1) {
+          const newCellData = { ...newRowData.cells[cell] };
+          newRowData.cells[cell] = newCellData;
+          newCellData.isSelected = false;
+        }
+      }
+    }
+
+    setSectionData(newSectionData);
+  }, [sectionData]);
+
+  const onCellRangeSelect = useCallback((cells) => {
+    // Remove current selections
+    const newSectionData = [...sectionData];
+    for (let section = 0; section < sectionData.length; section += 1) {
+      newSectionData[section].rows = [...sectionData[section].rows];
+      for (let row = 0; row < sectionData[section].rows.length; row += 1) {
+        const newRowData = { ...sectionData[section].rows[row] };
+        newSectionData[section].rows[row] = newRowData;
+        newRowData.cells = [...newRowData.cells];
+        for (let cell = 0; cell < newRowData.cells.length; cell += 1) {
+          const newCellData = { ...newRowData.cells[cell] };
+          newRowData.cells[cell] = newCellData;
+          newCellData.isSelected = false;
+        }
+      }
+    }
+
+    cells.forEach((cell) => {
+      const sectionIndex = sectionData.findIndex(section => section.id === cell.sectionId);
+      const rowIndex = sectionData[sectionIndex].rows.findIndex(row => row.id === cell.rowId);
+      const columnIndex = cols.findIndex(column => column.id === cell.columnId);
+
+      newSectionData[sectionIndex].rows[rowIndex].cells[columnIndex].isSelected = true;
+    });
+
+    setSectionData(newSectionData);
+  }, [cols, sectionData]);
 
   return (
     <FlowsheetDataGrid
       id="flowsheet-with-sections"
       columns={gridDataJSON.cols}
-      sections={tableSections}
+      sections={sectionData}
       onSectionSelect={handleSectionSelect}
+      onCellSelect={onCellSelect}
+      onClearSelectedCells={onClearSelectedCells}
+      onCellRangeSelect={onCellRangeSelect}
       isStriped
     />
   );
