@@ -112,6 +112,9 @@ class EmbeddedContentConsumer extends React.Component {
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
 
+    // Set additional style on xfcFrame
+    this.xfcFrame.iframe.classList.add(cx('xfc-iframe-margin'));
+
     // Notify that the consumer frame has mounted.
     if (this.props.onMount) {
       this.props.onMount(this.xfcFrame);
@@ -191,9 +194,7 @@ class EmbeddedContentConsumer extends React.Component {
 
     // Event listener and callback function for `focus` event is in the iframe
     this.contentWindow?.addEventListener('focus', () => {
-      if (isContentScrollable() && !this.hasInteractableElement) {
-        this.xfcFrame.iframe.classList.add(cx('iframe-focus-style'));
-      }
+      this.xfcFrame.iframe.classList.add(cx('iframe-focus-style'));
     }, true);
 
     // Event Listener and callback function for `blur` event in the iframe

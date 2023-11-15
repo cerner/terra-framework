@@ -9,5 +9,13 @@
 
   .iframe-focus-style {
     outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed #000);
+    outline-offset: 1px;
+    margin-top: 4px;
+    margin-bottom: 4px;
+  }
+
+  .xfc-iframe-margin {
+    margin-top: 4px;
+    margin-bottom: 4px;
   }
 }
