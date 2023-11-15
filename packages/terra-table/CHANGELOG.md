@@ -9,6 +9,7 @@
 
 * Fixed
   * Fixed tab index issues in the column header cells.
+  * Fixed screenreader issue due to space in the headers attribute.
   
 ## 5.1.1-alpha.1 - (November 9, 2023)
 

@@ -96,7 +96,7 @@ describe('DataGrid', () => {
       expect(rowComponent.key).toEqual(data.id);
       expect(rowComponent.props.onCellSelect).toBeDefined();
       expect(rowComponent.props.rowHeaderIndex).toEqual(0);
-      expect(rowComponent.props.rowIndex).toEqual(rowIndex + 1);
+      expect(rowComponent.props.rowIndex).toEqual(rowIndex + 2);
       expect(rowComponent.props.cells).toEqual(data.cells);
     };
 
