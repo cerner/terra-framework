@@ -173,7 +173,7 @@ function Cell(props) {
   const onMouseDown = ((event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+        sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
       });
     }
   });
@@ -234,7 +234,7 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
             onCellSelect({
-              sectionId, rowId, rowIndex, columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
+              sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isCellSelectable: (!isMasked && isSelectable),
             });
           }
 
@@ -296,8 +296,8 @@ function Cell(props) {
   }
 
   // Determine table cell header attribute values
-  const sectionHeaderId = sectionId ? `${tableId}-${sectionId}` : '';
-  const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId}` : '';
+  const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
+  const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId} ` : '';
   const columnHeaderId = `${tableId}-${columnId}`;
 
   return (
@@ -306,7 +306,7 @@ function Cell(props) {
       ref={isGridContext ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
-      headers={`${sectionHeaderId} ${rowHeaderId} ${columnHeaderId}`}
+      headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
