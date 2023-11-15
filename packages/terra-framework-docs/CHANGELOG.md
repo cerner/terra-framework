@@ -7,6 +7,7 @@
 
 * Updated
   * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
+  * Removed alpha notice for FlowsheetDataGrid.
 
 
 ## 1.44.0 - (November 9, 2023)
