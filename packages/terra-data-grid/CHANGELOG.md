@@ -4,6 +4,9 @@
 
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
+ 
+* Added
+  * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.
 
 ## 1.1.0 - (November 9, 2023)
 
@@ -14,8 +17,6 @@
 
 * Added
   * Added ability to select a range of cells to FlowsheetDataGrid.
-  * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle hiding of column headers.
-
 
 * Changed
   * Updated unit test to account for generated ids of `terra-table` elements.
