@@ -86,6 +86,7 @@ const ColumnHeader = (props) => {
       <tr
         aria-rowindex={1}
         className={cx('column-header-row', { hidden: !hasColumnHeaders })}
+        data-row-id="table-header-row"
         height={hasColumnHeaders ? headerHeight : undefined}
       >
         {columns.map((column, columnIndex) => (

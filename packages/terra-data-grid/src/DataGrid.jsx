@@ -178,10 +178,12 @@ const DataGrid = injectIntl((props) => {
   const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
+  const lastActiveRowId = useRef();
+  const lastActiveColumnId = useRef();
+
   const [checkResizable, setCheckResizable] = useState(false);
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
-  const [lastActiveRowId, setLastActiveRowId] = useState();
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
   // Aria live region message management
@@ -197,14 +199,17 @@ const DataGrid = injectIntl((props) => {
   // -------------------------------------
   // functions
 
-  const isRowSelectionCell = (columnIndex) => (
+  const isRowSelectionCell = useCallback((columnIndex) => (
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
-  );
+  ), [displayedColumns, hasSelectableRows]);
 
-  const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
+  const setFocusedRowCol = useCallback((newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
+
+    lastActiveRowId.current = grid.current.rows[newRowIndex].getAttribute('data-row-id');
+    lastActiveColumnId.current = displayedColumns[newColIndex].id;
 
     if (makeActiveElement) {
       // Set focus on input field (checkbox) of row selection cells.
@@ -220,7 +225,7 @@ const DataGrid = injectIntl((props) => {
 
       focusedCell?.focus();
     }
-  };
+  }, [isRowSelectionCell, displayedColumns]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
@@ -277,31 +282,27 @@ const DataGrid = injectIntl((props) => {
 
   const handleColumnSelect = useCallback((columnId) => {
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
-    setFocusedCol(columnIndex);
+    setFocusedRowCol(focusedRow, columnIndex);
 
     if (onColumnSelect) {
-      setLastActiveRowId('');
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect, displayedColumns]);
+  }, [onColumnSelect, displayedColumns, focusedRow, setFocusedRowCol]);
 
   const handleRowSelectionHeaderSelect = useCallback(() => {
-    setFocusedCol(0);
-    setFocusedRow(0);
+    setFocusedRowCol(0, 0);
     if (onRowSelectionHeaderSelect) {
-      setLastActiveRowId('');
       onRowSelectionHeaderSelect();
     }
-  }, [onRowSelectionHeaderSelect]);
+  }, [onRowSelectionHeaderSelect, setFocusedRowCol]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    setFocusedRow(selectionDetails.rowIndex);
-    setFocusedCol(selectionDetails.columnIndex);
+    const { columnIndex, rowIndex } = selectionDetails;
+    setFocusedRowCol(rowIndex, columnIndex);
     if (onCellSelect) {
-      setLastActiveRowId(selectionDetails.rowId);
       onCellSelect(selectionDetails);
     }
-  }, [onCellSelect]);
+  }, [onCellSelect, setFocusedRowCol]);
 
   // -------------------------------------
   // event handlers
@@ -464,9 +465,6 @@ const DataGrid = injectIntl((props) => {
       return;
     }
 
-    const newRowId = nextRow === 0 ? undefined : dataGridRows[nextRow - 1]?.id;
-    setLastActiveRowId(newRowId);
-
     handleMoveCellFocus(cellCoordinates, { row: nextRow, col: nextCol });
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
@@ -485,15 +483,19 @@ const DataGrid = injectIntl((props) => {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
         // When modifying the number of rows, we set the focused cell to the last selected RowId and columnId
-        if (lastActiveRowId) {
-          let newRowIndex = dataGridRows.findIndex(row => row.id === lastActiveRowId);
+        if (lastActiveRowId.current && lastActiveColumnId.current) {
+          let newRowIndex = dataGridRows.findIndex(row => row.id === lastActiveRowId.current);
+          let newColumnIndex = displayedColumns.findIndex(col => col.id === lastActiveColumnId.current);
 
-          if (newRowIndex === -1) {
-            newRowIndex = Math.min(focusedRow, dataGridRows.length);
-          } else {
-            newRowIndex += 1;
-          }
-          setFocusedRowCol(newRowIndex, focusedCol, true);
+          newRowIndex = newRowIndex === -1
+            ? Math.min(focusedRow, dataGridRows.length)
+            : newRowIndex + 1;
+
+          newColumnIndex = newColumnIndex === -1
+            ? Math.min(focusedCol, displayedColumns.length - 1)
+            : newColumnIndex;
+
+          setFocusedRowCol(newRowIndex, newColumnIndex, true);
         } else {
           setFocusedRowCol(focusedRow, focusedCol, true);
         }
