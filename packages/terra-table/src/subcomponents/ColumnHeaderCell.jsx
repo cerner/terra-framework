@@ -10,7 +10,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
+// import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { IconUp, IconDown, IconError } from 'terra-icon';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
@@ -249,9 +249,9 @@ const ColumnHeaderCell = (props) => {
 
   // Add the sort indicator based on the sort direction
   if (sortIndicator === SortIndicators.ASCENDING) {
-    sortIndicatorIcon = <IconUp />;
+    sortIndicatorIcon = <IconUp className={cx('sort-icon')} />;
   } else if (sortIndicator === SortIndicators.DESCENDING) {
-    sortIndicatorIcon = <IconDown />;
+    sortIndicatorIcon = <IconDown className={cx('sort-icon')} />;
   }
 
   // Retrieve current theme from context
@@ -303,8 +303,8 @@ const ColumnHeaderCell = (props) => {
         {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
         tabIndex={buttonTabIndex}
       >
+        <span className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
         {errorIcon}
-        {isDisplayVisible ? <span>{displayName}</span> : <VisuallyHiddenText text={displayName} />}
         {sortIndicatorIcon}
       </div>
       { isResizable && (
