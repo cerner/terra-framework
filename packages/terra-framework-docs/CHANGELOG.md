@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
+
 ## 1.44.0 - (November 9, 2023)
 
 * Added
@@ -14,7 +17,6 @@
   * Added single and ranged cell selection Flowsheet Data Grid example.
   * Added deprecation warning for `terra-file-path`.
   * Added aria labels for table examples.
-  * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
 
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.
