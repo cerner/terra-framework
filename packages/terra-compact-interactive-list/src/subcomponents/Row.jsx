@@ -16,8 +16,6 @@ const propTypes = {
    */
   id: PropTypes.string.isRequired,
 
-  rowIndex: PropTypes.number,
-
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
@@ -96,7 +94,6 @@ const propTypes = {
 const Row = (props) => {
   const {
     id,
-    rowIndex,
     cells,
     columns,
     columnMinimumWidth,
@@ -131,7 +128,6 @@ const Row = (props) => {
     <div
       id={id}
       role={activeRow ? 'row' : null}
-      aria-rowindex={activeRow ? rowIndex : null}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row_topmost', isLeftmost && 'row_leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props

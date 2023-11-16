@@ -186,7 +186,6 @@ const CompactInteractiveList = (props) => {
       >
         {mappedRows.map((row, index) => (
           <Row
-            rowIndex={index + 1}
             key={row.id}
             id={row.id}
             cells={row.cells}
