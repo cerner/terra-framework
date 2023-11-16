@@ -214,10 +214,6 @@ function FlowsheetDataGrid(props) {
   }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    if (!selectionDetails.isCellSelectable) {
-      return;
-    }
-
     if (selectionDetails.isShiftPressed && anchorCell.current !== null && selectionDetails.columnIndex > 0) {
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
