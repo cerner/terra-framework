@@ -68,7 +68,7 @@ const FolderTreeItem = ({
     </ul>
   ) : null;
 
-  const itemIcon = subfolder ? <IconFolder /> : icon;
+  const itemIcon = subfolder ? <IconFolder a11yLabel="Folder" /> : icon;
 
   const itemClassNames = classNames(
     cx(

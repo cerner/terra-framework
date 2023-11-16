@@ -18,13 +18,21 @@ const propTypes = {
    * The title of the folder tree.
    */
   title: PropTypes.string.isRequired,
+  /**
+   * The heading level for the title of the folder tree.
+   */
+  headerLevel: PropTypes.number
 };
 
-const FolderTree = ({ children, title }) => (
+const defaultProps = {
+  headerLevel: 3,
+}
+
+const FolderTree = ({ children, title, headerLevel }) => (
   <>
     <ActionHeader
       text={title}
-      level={3} // does this need to be configurable?
+      level={headerLevel}
     />
     <ul
       className={cx('folder-tree')}
@@ -36,6 +44,7 @@ const FolderTree = ({ children, title }) => (
 );
 
 FolderTree.propTypes = propTypes;
+FolderTree.defaultProps = defaultProps;
 
 FolderTree.Item = FolderTreeItem;
 export default FolderTree;
