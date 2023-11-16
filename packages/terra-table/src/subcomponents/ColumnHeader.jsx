@@ -85,7 +85,7 @@ const ColumnHeader = (props) => {
     <thead>
       <tr
         aria-rowindex={1}
-        data-row-id="table-header-row"
+        data-row-id={`${tableId}-header-row`}
         className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
         height={hasVisibleColumnHeaders ? headerHeight : undefined}
       >

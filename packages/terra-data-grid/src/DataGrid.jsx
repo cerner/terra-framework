@@ -185,8 +185,7 @@ const DataGrid = injectIntl((props) => {
   const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
-  const lastActiveRowId = useRef();
-  const lastActiveColumnId = useRef();
+  const lastFocusedIds = useRef({ rowId: '', columnId: '' });
 
   const [checkResizable, setCheckResizable] = useState(false);
 
@@ -217,8 +216,10 @@ const DataGrid = injectIntl((props) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    lastActiveRowId.current = grid.current.rows[newRowIndex].getAttribute('data-row-id');
-    lastActiveColumnId.current = displayedColumns[newColIndex].id;
+    lastFocusedIds.current = {
+      rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
+      columnId: displayedColumns[newColIndex].id,
+    };
 
     if (makeActiveElement) {
       // Set focus on input field (checkbox) of row selection cells.
@@ -492,22 +493,25 @@ const DataGrid = injectIntl((props) => {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
         // When modifying the number of rows, we set the focused cell to the last selected RowId and columnId
-        if (lastActiveRowId.current && lastActiveColumnId.current) {
-          let newRowIndex = dataGridRows.findIndex(row => row.id === lastActiveRowId.current);
-          let newColumnIndex = displayedColumns.findIndex(col => col.id === lastActiveColumnId.current);
+        let newRowIndex = focusedRow;
+        let newColumnIndex = focusedCol;
+        const headerOffset = hasVisibleColumnHeaders ? 1 : 0;
 
+        if (lastFocusedIds.current.rowId) {
+          newRowIndex = dataGridRows.findIndex(row => row.id === lastFocusedIds.current.rowId);
           newRowIndex = newRowIndex === -1
-            ? Math.min(focusedRow, dataGridRows.length)
-            : newRowIndex + 1;
+            ? Math.min(focusedRow, dataGridRows.length - 1 + headerOffset)
+            : (newRowIndex + headerOffset);
+        }
 
+        if (lastFocusedIds.current.columnId) {
+          newColumnIndex = displayedColumns.findIndex(column => column.id === lastFocusedIds.current.columnId);
           newColumnIndex = newColumnIndex === -1
             ? Math.min(focusedCol, displayedColumns.length - 1)
             : newColumnIndex;
-
-          setFocusedRowCol(newRowIndex, newColumnIndex, true);
-        } else {
-          setFocusedRowCol(focusedRow, focusedCol, true);
         }
+
+        setFocusedRowCol(newRowIndex, newColumnIndex, true);
         setGridHasFocus(true);
       }
     }
@@ -565,7 +569,6 @@ const DataGrid = injectIntl((props) => {
   );
 });
 
-DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
 
 export default forwardRef((props, ref) => <DataGrid {...props} focusFuncRef={ref} />);

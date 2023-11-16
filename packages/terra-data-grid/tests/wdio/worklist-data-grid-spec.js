@@ -433,6 +433,15 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab']);
       expect(browser.$('tbody tr:last-child th').isFocused()).toBe(true);
     });
+
+    it('focuses on the last column when selected and the index is out of bounds', () => {
+      clickCell(0, 2, deleteRowsSelector);
+      clickCell(0, 2, deleteRowsSelector);
+      clickCell(0, 2, deleteRowsSelector);
+
+      browser.keys(['Shift', 'Tab']);
+      expect(browser.$('thead th:nth-child(2)').isFocused()).toBe(true);
+    });
   });
 
   describe('with pinned columns', () => {
