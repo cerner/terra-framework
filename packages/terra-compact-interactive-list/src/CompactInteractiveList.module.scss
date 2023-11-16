@@ -4,13 +4,15 @@
 
 :local {
   .compact-interactive-list-container {
-    border-left: var(--terra-compact-interactive-list-row-border-left, 1px solid #dedfe0);
     height: auto;
     overflow: auto;
+
+    > * {
+      box-sizing: border-box;
+    }
   }
 
   .compact-interactive-list {
-    border-top: var(--terra-compact-interactive-list-row-border-top, 1px solid #dedfe0);
     display: flex;
     flex-wrap: wrap;
 

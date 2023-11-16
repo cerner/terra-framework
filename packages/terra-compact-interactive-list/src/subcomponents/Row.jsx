@@ -16,6 +16,8 @@ const propTypes = {
    */
   id: PropTypes.string.isRequired,
 
+  rowIndex: PropTypes.number,
+
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
@@ -72,11 +74,29 @@ const propTypes = {
     widthUnitTypes.EM,
     widthUnitTypes.REM,
   ]).isRequired,
+
+  flowHorizontally: PropTypes.bool,
+
+  /**
+   * Row height in units set by widthUnit prop, such as px, em, or rem.
+   */
+  rowHeight: PropTypes.number,
+
+  /**
+   * Indicates if the row is located in the top visual row and needs a top border.
+   */
+  isTopmost: PropTypes.bool,
+
+  /**
+   * Indicates if the row is located in the left visual column and needs a left border.
+   */
+  isLeftmost: PropTypes.bool,
 };
 
 const Row = (props) => {
   const {
     id,
+    rowIndex,
     cells,
     columns,
     columnMinimumWidth,
@@ -87,15 +107,23 @@ const Row = (props) => {
     rowMinimumWidth,
     rowWidth,
     widthUnit,
+    flowHorizontally,
+    rowHeight,
+    isTopmost,
+    isLeftmost,
   } = props;
 
   const theme = useContext(ThemeContext);
 
   const style = isResponsive ? {
-    flex: `1 1 ${Math.min(100 / numberOfColumns)}%`,
+    width: flowHorizontally ? null : `${Math.min(100 / numberOfColumns)}%`,
+    flex: flowHorizontally ? `1 1 ${Math.min(100 / numberOfColumns)}%` : null,
     maxWidth: rowMaximumWidth ? `${rowMaximumWidth}${widthUnit}` : null,
     minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthUnit}` : null,
   } : { width: `${rowWidth}${widthUnit}` };
+  if (rowHeight) {
+    style.height = `${rowHeight}${widthUnit}`;
+  }
 
   const activeRow = cells && cells.length > 0;
 
@@ -103,7 +131,9 @@ const Row = (props) => {
     <div
       id={id}
       role={activeRow ? 'row' : null}
-      className={cx('row', !activeRow && 'row-placeholder', theme.className)}
+      aria-rowindex={activeRow ? rowIndex : null}
+      aria-hidden={activeRow ? null : true}
+      className={cx('row', isTopmost && 'row_topmost', isLeftmost && 'row_leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
     >

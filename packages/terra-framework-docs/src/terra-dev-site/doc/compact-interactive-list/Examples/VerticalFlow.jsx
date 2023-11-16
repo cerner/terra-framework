@@ -15,6 +15,18 @@ const getNumberOfColumns = (activeBreakpoint) => {
   }
 };
 
+const getRowHeight = (activeBreakpoint) => {
+  switch (activeBreakpoint) {
+    case 'enormous': return 60;
+    case 'huge': return 60;
+    case 'large': return 60;
+    case 'medium': return 60;
+    case 'small': return 40;
+    case 'tiny': return 40;
+    default: return 40;
+  }
+};
+
 const cols = [
   {
     id: 'Column-0',
@@ -44,6 +56,7 @@ const VerticalFlow = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
+      rowHeight={getRowHeight(activeBreakpoint)}
     />
   );
 };

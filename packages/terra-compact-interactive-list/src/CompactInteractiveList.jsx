@@ -44,6 +44,11 @@ const propTypes = {
   rows: PropTypes.arrayOf(rowShape),
 
   /**
+   * Row height in units set by widthUnit prop, such as px, em, or rem.
+   */
+  rowHeight: PropTypes.number,
+
+  /**
    * A number of visual columns. Defaults to 1.
    */
   numberOfColumns: PropTypes.number,
@@ -99,6 +104,7 @@ const CompactInteractiveList = (props) => {
     ariaLabel,
     columns,
     rows,
+    rowHeight,
     numberOfColumns,
     flowHorizontally,
     width,
@@ -120,13 +126,17 @@ const CompactInteractiveList = (props) => {
   // calculate row width based on the width of its columns
   const getRowWidthSum = (total, column) => total + column.width;
   const rowWidth = isResponsive ? 0 : columns.reduce(getRowWidthSum, 0);
+  const rowsPerColumn = Math.ceil(rows.length / numberOfColumns);
+  const calculatedRowHeight = flowHorizontally ? null : rowHeight || DefaultListValues.rowDefaultHeight[widthUnit];
   // calculate list width based on the item width and number of columns
   const listWidth = `${rowWidth * numberOfColumns}${widthUnit}`;
   const listMinWidth = Math.max(rowMinWidth * numberOfColumns, (minimumWidth || DefaultListValues.minimumWidth[widthUnit]));
   // defining styles to apply to the list
   const style = {
     width: isResponsive ? width : listWidth,
+    height: flowHorizontally ? null : `${calculatedRowHeight * rowsPerColumn}${widthUnit}`,
     minWidth: `${listMinWidth}${widthUnit}`,
+    flexDirection: flowHorizontally ? 'row' : 'column',
   };
   if (rowMaxWidth) {
     style.maxWidth = `${rowMaxWidth * numberOfColumns}${widthUnit}`;
@@ -138,26 +148,26 @@ const CompactInteractiveList = (props) => {
   const mapRows = () => {
     const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
     let result = [];
+    result = [...rows];
     if (flowHorizontally) {
-      result = [...rows];
-    } else {
-      for (let i = 0; i < numberOfRows; i += 1) {
-        let x = numberOfColumns - placeholdersNumber;
-        for (let j = i; j < rows.length; j += numberOfRows - (x >= 0 ? 0 : 1)) {
-          if (result.length < rows.length) {
-            result.push(rows[j]);
-            if (x >= 0) { x -= 1; }
-          }
-        }
+      // all placeholder rows go in the end.
+      for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
+        result.push({ id: `placeholder-row-${i}` });
       }
-    }
-    // add placeholder rows
-    for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
-      result.push({ id: `placeholder-row-${i}` });
+    } else {
+      // inject placeholders to specific positions so that they all appear in the last row.
+      let position = rows.length;
+      for (let i = placeholdersNumber; i > 0; i -= 1) {
+        result.splice(position, 0, { id: `placeholder-row-${i}` });
+        position -= rowsPerColumn - 1;
+      }
     }
     return result;
   };
+
   const mappedRows = mapRows();
+  const checkIfLeftmost = (index) => (flowHorizontally ? index % numberOfColumns === 0 : index < rowsPerColumn);
+  const checkIfTopmost = (index) => (flowHorizontally ? index < numberOfColumns : index % rowsPerColumn === 0);
 
   return (
     <div
@@ -190,6 +200,10 @@ const CompactInteractiveList = (props) => {
             rowMaximumWidth={rowMaxWidth}
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}
+            flowHorizontally={flowHorizontally}
+            rowHeight={calculatedRowHeight}
+            isTopmost={checkIfTopmost(index)}
+            isLeftmost={checkIfLeftmost(index)}
           />
         ))}
       </div>

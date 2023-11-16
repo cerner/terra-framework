@@ -44,6 +44,7 @@ const WidthBreakpoints = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
+      rowHeight={80}
       // there is no widthUnit prop set, so it will default to px
     />
   );

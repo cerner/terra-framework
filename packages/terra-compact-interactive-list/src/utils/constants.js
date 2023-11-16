@@ -7,13 +7,18 @@ export const widthUnitTypes = {
 export const DefaultListValues = {
   columnMinimumWidth: {
     [widthUnitTypes.PX]: 60,
-    [widthUnitTypes.EM]: 2,
-    [widthUnitTypes.REM]: 2,
+    [widthUnitTypes.EM]: 4,
+    [widthUnitTypes.REM]: 4,
   },
   minimumWidth: {
     [widthUnitTypes.PX]: 500,
     [widthUnitTypes.EM]: 10,
     [widthUnitTypes.REM]: 10,
+  },
+  rowDefaultHeight: {
+    [widthUnitTypes.PX]: 40,
+    [widthUnitTypes.EM]: 3,
+    [widthUnitTypes.REM]: 3,
   },
 };
 

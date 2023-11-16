@@ -14,4 +14,12 @@
       border-right: var(--terra-compact-interactive-list-row-border-right, 1px solid #dedfe0);
     }
   }
+
+  .row_topmost  {
+    border-top: var(--terra-compact-interactive-list-row-border-top, 1px solid #dedfe0);
+  }
+
+  .row_leftmost  {
+    border-left: var(--terra-compact-interactive-list-row-border-top, 1px solid #dedfe0);
+  }
 }
