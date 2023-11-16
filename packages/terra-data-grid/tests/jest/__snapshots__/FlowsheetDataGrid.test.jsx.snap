@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FlowsheetDataGrid renders the row header column as pinned and remaining columns as overflow and all columns as not resizable 1`] = `
+exports[`FlowsheetDataGrid renders the row header column as pinned and remaining columns as overflow, all columns as not resizable and all columns and row cells as selectable 1`] = `
 <div
   className="flowsheet-data-grid-container"
   onKeyUp={[Function]}
