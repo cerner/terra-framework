@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import { injectIntl } from 'react-intl';
 
 import Spacer from 'terra-spacer';
 import Arrange from 'terra-arrange';
@@ -37,6 +38,11 @@ const propTypes = {
    * Level of nesting for this item.
    */
   level: PropTypes.number,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -51,6 +57,7 @@ const FolderTreeItem = ({
   isSelected,
   onClick,
   level,
+  intl,
 }) => {
   const theme = useContext(ThemeContext);
 
@@ -62,13 +69,14 @@ const FolderTreeItem = ({
       {subfolderItems.map((item) => (
         <FolderTreeItem
           {...item.props}
+          intl={intl}
           level={level + 1}
         />
       ))}
     </ul>
   ) : null;
 
-  const itemIcon = subfolder ? <IconFolder a11yLabel="Folder" /> : icon;
+  const itemIcon = subfolder ? <IconFolder a11yLabel={intl.formatMessage({ id: 'Terra.folder-tree.folder-icon' })} /> : icon;
 
   const itemClassNames = classNames(
     cx(
@@ -111,4 +119,4 @@ const FolderTreeItem = ({
 FolderTreeItem.propTypes = propTypes;
 FolderTreeItem.defaultProps = defaultProps;
 
-export default FolderTreeItem;
+export default injectIntl(FolderTreeItem);
