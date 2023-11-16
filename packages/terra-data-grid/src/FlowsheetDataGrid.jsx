@@ -208,7 +208,7 @@ function FlowsheetDataGrid(props) {
     }
   }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
 
-  const selectCellRange = useCallback((selectedSectionId, selectedRowId, selectedColumnId) => {
+  const selectCellRange = useCallback((selectedRowId, selectedColumnId) => {
     let gridRows = rows;
     if (sections) {
       gridRows = sections.flatMap((section) => section.rows);
@@ -245,7 +245,7 @@ function FlowsheetDataGrid(props) {
     }
 
     if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
-      selectCellRange(selectionDetails.sectionId, selectionDetails.rowId, selectionDetails.columnId);
+      selectCellRange(selectionDetails.rowId, selectionDetails.columnId);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
