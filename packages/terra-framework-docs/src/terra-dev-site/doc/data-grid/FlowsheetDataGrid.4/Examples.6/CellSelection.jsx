@@ -87,7 +87,6 @@ const CellSelection = () => {
 
       // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
       newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected || otherSelectionsExist;
-
       setRowData(newRowData);
     }
   }, [cols, rowData]);
