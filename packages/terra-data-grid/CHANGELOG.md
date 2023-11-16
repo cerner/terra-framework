@@ -4,7 +4,8 @@
 
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
- 
+  * Fixed issue where row headers were not selectable cells for `onCellSelect` prop in FlowsheetDataGrid.
+
 * Added
   * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.
 

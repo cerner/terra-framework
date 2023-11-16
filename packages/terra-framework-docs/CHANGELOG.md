@@ -4,6 +4,7 @@
 
 * Added
   * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
+  * Added row selection example for FlowsheetDataGrid.
 
 * Updated
   * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
