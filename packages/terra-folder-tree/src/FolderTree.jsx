@@ -21,12 +21,12 @@ const propTypes = {
   /**
    * The heading level for the title of the folder tree.
    */
-  headerLevel: PropTypes.number
+  headerLevel: PropTypes.number,
 };
 
 const defaultProps = {
   headerLevel: 3,
-}
+};
 
 const FolderTree = ({ children, title, headerLevel }) => (
   <>
