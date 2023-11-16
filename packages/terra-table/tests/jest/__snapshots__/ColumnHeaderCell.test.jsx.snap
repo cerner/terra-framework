@@ -144,12 +144,12 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
           </IconBase>
         </IconUp>
         <VisuallyHiddenText
-          text="Vitals Terra.table.columnError Terra.table.sort-ascending"
+          text="Vitals, Terra.table.columnError, Terra.table.sort-ascending"
         >
           <span
             className="visually-hidden-text"
           >
-            Vitals Terra.table.columnError Terra.table.sort-ascending
+            Vitals, Terra.table.columnError, Terra.table.sort-ascending
           </span>
         </VisuallyHiddenText>
       </div>

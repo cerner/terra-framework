@@ -284,8 +284,8 @@ const ColumnHeaderCell = (props) => {
 
   // Format header description for screenreader
   let headerDescription = displayName;
-  headerDescription += errorIcon ? ` ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
-  headerDescription += sortDescription ? ` ${sortDescription}` : '';
+  headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
+  headerDescription += sortDescription ? `, ${sortDescription}` : '';
 
   return (
   /* eslint-disable react/forbid-dom-props */

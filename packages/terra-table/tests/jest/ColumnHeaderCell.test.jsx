@@ -88,7 +88,7 @@ describe('ColumnHeaderCell', () => {
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
-    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals Terra.table.sort-ascending');
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.sort-ascending');
   });
 
   it('renders a column header cell with descending sort', () => {
@@ -125,7 +125,7 @@ describe('ColumnHeaderCell', () => {
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconDown)).toHaveLength(1);
-    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals Terra.table.sort-descending');
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.sort-descending');
   });
 
   it('renders a column header cell with error', () => {
@@ -162,7 +162,7 @@ describe('ColumnHeaderCell', () => {
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconError)).toHaveLength(1);
-    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals Terra.table.columnError');
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError');
   });
 
   it('renders a column header cell with ascending sort and error', () => {
@@ -201,7 +201,7 @@ describe('ColumnHeaderCell', () => {
     expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
-    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals Terra.table.columnError Terra.table.sort-ascending');
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError, Terra.table.sort-ascending');
   });
 
   it('renders a column header cell with onColumnSelect callback', () => {
@@ -245,7 +245,7 @@ describe('ColumnHeaderCell', () => {
     expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
-    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals Terra.table.columnError Terra.table.sort-ascending');
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError, Terra.table.sort-ascending');
   });
 
   it('renders a column header cell with onColumnSelect callback but not selectable', () => {
@@ -289,7 +289,7 @@ describe('ColumnHeaderCell', () => {
     expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
-    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals Terra.table.columnError Terra.table.sort-ascending');
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError, Terra.table.sort-ascending');
   });
 
   it('renders a pinned column header cell', () => {
