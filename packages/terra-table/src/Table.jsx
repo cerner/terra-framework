@@ -147,7 +147,7 @@ const propTypes = {
    * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
    * but the voice reader will use the column header values for a11y.
    */
-  hasColumnHeaders: PropTypes.bool,
+  hasVisibleColumnHeaders: PropTypes.bool,
 
   /*
    * Boolean specifying whether or not the table should have zebra striping for rows.
@@ -169,7 +169,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
-  hasColumnHeaders: true,
+  hasVisibleColumnHeaders: true,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -197,7 +197,7 @@ function Table(props) {
     onRowSelect,
     onRowSelectionHeaderSelect,
     hasSelectableRows,
-    hasColumnHeaders,
+    hasVisibleColumnHeaders,
     isStriped,
     rowHeaderIndex,
     intl,
@@ -539,7 +539,7 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
+        className={cx('table', theme.className, { headerless: !hasVisibleColumnHeaders })}
         onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
@@ -558,7 +558,7 @@ function Table(props) {
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
             columns={tableColumns}
-            hasColumnHeaders={hasColumnHeaders}
+            hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
             columnResizeIncrement={columnResizeIncrement}
             tableHeight={tableHeight}
