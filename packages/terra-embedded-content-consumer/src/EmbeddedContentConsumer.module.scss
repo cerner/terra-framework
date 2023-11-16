@@ -3,8 +3,9 @@
 @import './orion-fusion-theme/EmbeddedContentConsumer.module';
 
 :local {
-  .visually-hidden-text {
-    height: 0;
+  .iframe-style {
+    margin-bottom: 4px;
+    margin-top: 4px;
   }
 
   .iframe-focus-style {
@@ -14,8 +15,7 @@
     outline-offset: 1px;
   }
 
-  .xfc-iframe-margin {
-    margin-bottom: 4px;
-    margin-top: 4px;
+  .visually-hidden-text {
+    height: 0;
   }
 }

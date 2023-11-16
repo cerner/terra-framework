@@ -113,7 +113,7 @@ class EmbeddedContentConsumer extends React.Component {
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
 
     // Set additional style on xfcFrame
-    this.xfcFrame.iframe.classList.add(cx('xfc-iframe-margin'));
+    this.xfcFrame.iframe.classList.add(cx('iframe-style'));
 
     // Notify that the consumer frame has mounted.
     if (this.props.onMount) {
