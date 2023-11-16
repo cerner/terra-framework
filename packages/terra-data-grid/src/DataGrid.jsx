@@ -292,12 +292,12 @@ const DataGrid = injectIntl((props) => {
 
   const handleColumnSelect = useCallback((columnId) => {
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
-    setFocusedRowCol(focusedRow, columnIndex);
+    setFocusedRowCol(0, columnIndex);
 
     if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect, displayedColumns, focusedRow, setFocusedRowCol]);
+  }, [onColumnSelect, displayedColumns, setFocusedRowCol]);
 
   const handleRowSelectionHeaderSelect = useCallback(() => {
     setFocusedRowCol(0, 0);
@@ -492,11 +492,11 @@ const DataGrid = injectIntl((props) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
-        // When modifying the number of rows, we set the focused cell to the last selected RowId and columnId
         let newRowIndex = focusedRow;
         let newColumnIndex = focusedCol;
         const headerOffset = hasVisibleColumnHeaders ? 1 : 0;
 
+        // Check for last focused row ID. If found set the index. Otherwise set it to the last focused row or last index.
         if (lastFocusedIds.current.rowId) {
           newRowIndex = dataGridRows.findIndex(row => row.id === lastFocusedIds.current.rowId);
           newRowIndex = newRowIndex === -1
@@ -504,6 +504,7 @@ const DataGrid = injectIntl((props) => {
             : (newRowIndex + headerOffset);
         }
 
+        // Check for last focused column ID. If found set the index. Otherwise set it to the last focused column or last index.
         if (lastFocusedIds.current.columnId) {
           newColumnIndex = displayedColumns.findIndex(column => column.id === lastFocusedIds.current.columnId);
           newColumnIndex = newColumnIndex === -1

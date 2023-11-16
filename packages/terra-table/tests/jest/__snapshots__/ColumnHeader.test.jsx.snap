@@ -3,7 +3,9 @@
 exports[`ColumnHeader renders a column header with an active resize column 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
+    data-row-id="test-table-header-row"
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -37,7 +39,9 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
 exports[`ColumnHeader renders a column header with callbacks 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
+    data-row-id="test-table-header-row"
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -75,7 +79,9 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
 exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
+    data-row-id="test-table-header-row"
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -109,7 +115,9 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
 exports[`ColumnHeader renders a default column header 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
+    data-row-id="test-table-header-row"
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -141,7 +149,9 @@ exports[`ColumnHeader renders a default column header 1`] = `
 exports[`ColumnHeader verifies that the column headers are not hidden when the hasColumnHeader is true 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row"
+    data-row-id="test-table-header-row"
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -173,7 +183,9 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
 exports[`ColumnHeader verifies that the hasVisibleColumnHeaders prop hides the table column headers when set to false 1`] = `
 <thead>
   <tr
+    aria-rowindex={1}
     className="column-header-row hidden"
+    data-row-id="test-table-header-row"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
       columnIndex={0}

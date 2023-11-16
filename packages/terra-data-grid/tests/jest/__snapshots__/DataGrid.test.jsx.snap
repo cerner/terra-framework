@@ -822,7 +822,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
+                      data-row-id="test-terra-data-grid-table-header-row"
                       height="2.5rem"
                     >
                       <InjectIntl(ColumnHeaderCell)
@@ -3745,7 +3747,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
+                      data-row-id="test-terra-data-grid-table-header-row"
                       height="2.5rem"
                     >
                       <InjectIntl(ColumnHeaderCell)
@@ -6659,7 +6663,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
+                      data-row-id="test-terra-data-grid-table-header-row"
                       height="2.5rem"
                     >
                       <InjectIntl(ColumnHeaderCell)
@@ -10242,7 +10248,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
+                      data-row-id="test-terra-data-grid-table-header-row"
                       height="2.5rem"
                     >
                       <InjectIntl(ColumnHeaderCell)
@@ -13080,7 +13088,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
+                      data-row-id="test-terra-data-grid-table-header-row"
                       height="2.5rem"
                     >
                       <InjectIntl(ColumnHeaderCell)
