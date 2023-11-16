@@ -82,6 +82,11 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+
+  /**
+   * Boolean to show/hide column headers. By default, it is set to `true` and column headers are visible.
+   */
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -90,6 +95,7 @@ const defaultProps = {
   rowHeight: '2.5rem',
   rows: [],
   columns: [],
+  hasVisibleColumnHeaders: true,
 };
 
 function FlowsheetDataGrid(props) {
@@ -106,6 +112,7 @@ function FlowsheetDataGrid(props) {
     onClearSelectedCells,
     onCellRangeSelect,
     intl,
+    hasVisibleColumnHeaders,
   } = props;
 
   const anchorCell = useRef(null);
@@ -295,6 +302,7 @@ function FlowsheetDataGrid(props) {
         onCellSelect={handleCellSelection}
         onClearSelection={handleClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
+        hasVisibleColumnHeaders={hasVisibleColumnHeaders}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>

@@ -122,8 +122,8 @@ exports[`Table verifies row selection column header selection 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -321,7 +321,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -331,7 +331,6 @@ exports[`Table verifies row selection column header selection 1`] = `
         >
           <thead>
             <tr
-              aria-rowindex={1}
               className="column-header-row"
               height="2.5rem"
             >
