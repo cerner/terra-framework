@@ -74,7 +74,7 @@ const FolderTreeItem = ({
     cx(
       'folder-tree-item',
       { selected: isSelected },
-      theme.className
+      theme.className,
     ),
   );
 
