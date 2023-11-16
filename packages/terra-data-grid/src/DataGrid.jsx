@@ -570,5 +570,6 @@ const DataGrid = injectIntl((props) => {
 });
 
 DataGrid.defaultProps = defaultProps;
+DataGrid.propTypes = propTypes;
 
 export default forwardRef((props, ref) => <DataGrid {...props} focusFuncRef={ref} />);
