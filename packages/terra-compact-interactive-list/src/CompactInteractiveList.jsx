@@ -152,7 +152,7 @@ const CompactInteractiveList = (props) => {
     if (flowHorizontally) {
       // all placeholder rows go in the end.
       for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
-        result.push({ id: `placeholder-row-${i}` });
+        result.push({ id: `placeholder-row-${i - rows.length + 1}` });
       }
     } else {
       // inject placeholders to specific positions so that they all appear in the last row.

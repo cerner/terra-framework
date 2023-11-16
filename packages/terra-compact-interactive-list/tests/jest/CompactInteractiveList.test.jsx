@@ -202,13 +202,20 @@ describe('Compact Interactive List', () => {
       const rowElements = wrapper.find('.row');
       expect(rowElements.length).toEqual(8);
       expect(rowElements.at(0).props().id).toEqual(rows[0].id);
-      expect(rowElements.at(1).props().id).toEqual(rows[2].id);
-      expect(rowElements.at(2).props().id).toEqual(rows[3].id);
-      expect(rowElements.at(3).props().id).toEqual(rows[4].id);
-      expect(rowElements.at(4).props().id).toEqual(rows[1].id);
-      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${5}`);
-      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${6}`);
-      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${7}`);
+      expect(rowElements.at(0).props().role).toEqual('row');
+      expect(rowElements.at(0).props()['aria-hidden']).toBeFalsy();
+
+      expect(rowElements.at(1).props().id).toEqual(rows[1].id);
+      expect(rowElements.at(2).props().id).toEqual(rows[2].id);
+
+      expect(rowElements.at(3).props().id).toEqual(`placeholder-row-${1}`);
+      expect(rowElements.at(3).props().role).toBeFalsy();
+      expect(rowElements.at(3).props()['aria-hidden']).toEqual(true);
+
+      expect(rowElements.at(4).props().id).toEqual(rows[3].id);
+      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${2}`);
+      expect(rowElements.at(6).props().id).toEqual(rows[4].id);
+      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${3}`);
     });
 
     it('should flow horizontally if flowHorizontally prop is set', () => {
@@ -224,13 +231,19 @@ describe('Compact Interactive List', () => {
       );
       const rowElements = wrapper.find('.row');
       expect(rowElements.at(0).props().id).toEqual(rows[0].id);
+      expect(rowElements.at(0).props().role).toEqual('row');
+      expect(rowElements.at(0).props()['aria-hidden']).toBeFalsy();
+
       expect(rowElements.at(1).props().id).toEqual(rows[1].id);
       expect(rowElements.at(2).props().id).toEqual(rows[2].id);
       expect(rowElements.at(3).props().id).toEqual(rows[3].id);
       expect(rowElements.at(4).props().id).toEqual(rows[4].id);
-      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${5}`);
-      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${6}`);
-      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${7}`);
+      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${1}`);
+      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${2}`);
+
+      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${3}`);
+      expect(rowElements.at(7).props().role).toBeFalsy();
+      expect(rowElements.at(7).props()['aria-hidden']).toEqual(true);
     });
   });
 });
