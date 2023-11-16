@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Added
+  * Added new test for Terra Slider component for long field labels.
 * Updated
   * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
 
