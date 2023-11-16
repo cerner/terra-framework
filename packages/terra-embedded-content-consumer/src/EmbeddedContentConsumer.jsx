@@ -194,6 +194,10 @@ class EmbeddedContentConsumer extends React.Component {
 
     // Event listener and callback function for `focus` event is in the iframe
     this.contentWindow?.addEventListener('focus', () => {
+      if (this.hasInteractableElement) {
+        return;
+      }
+
       this.xfcFrame.iframe.classList.add(cx('iframe-focus-style'));
     }, true);
 
