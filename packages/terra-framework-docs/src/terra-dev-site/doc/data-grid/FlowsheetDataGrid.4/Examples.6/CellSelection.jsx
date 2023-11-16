@@ -60,6 +60,13 @@ const CellSelection = () => {
 
   const { cols, rows } = gridDataJSON;
   const [rowData, setRowData] = useState(rows);
+  const [selectedRow, setSelectedRow] = useState(undefined);
+
+  const clearSelectedRow = useCallback(() => {
+    if (selectedRow) {
+      setSelectedRow(undefined);
+    }
+  }, [selectedRow]);
 
   const onCellSelect = useCallback((rowId, columnId) => {
     if (rowId && columnId) {
@@ -79,11 +86,23 @@ const CellSelection = () => {
         }
       }
 
-      // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
-      newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected || otherSelectionsExist;
+      // If the current cell is a row header, toggle selection of entire row of cells.
+      if (columnIndex === 0) {
+        if (selectedRow !== rowId) {
+          newRowData[rowIndex].cells = newRowData[rowIndex].cells.map((cell) => ({ ...cell, isSelected: cell.isSelectable }));
+          setSelectedRow(rowId);
+        } else {
+          newRowData[rowIndex].cells = newRowData[rowIndex].cells.map((cell) => ({ ...cell, isSelected: false }));
+          clearSelectedRow();
+        }
+      } else {
+        // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
+        newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected || otherSelectionsExist;
+        clearSelectedRow();
+      }
       setRowData(newRowData);
     }
-  }, [cols, rowData]);
+  }, [clearSelectedRow, cols, rowData, selectedRow]);
 
   const onClearSelectedCells = useCallback(() => {
     // Remove current selections
@@ -94,8 +113,9 @@ const CellSelection = () => {
       }
     }
 
+    clearSelectedRow();
     setRowData(newRowData);
-  }, [rowData]);
+  }, [clearSelectedRow, rowData]);
 
   const onCellRangeSelect = useCallback((cells) => {
     const newRowData = [...rowData];
@@ -114,8 +134,9 @@ const CellSelection = () => {
       newRowData[rowIndex].cells[columnIndex].isSelected = true;
     });
 
+    clearSelectedRow();
     setRowData(newRowData);
-  }, [cols, rowData]);
+  }, [clearSelectedRow, cols, rowData]);
 
   return (
     <FlowsheetDataGrid

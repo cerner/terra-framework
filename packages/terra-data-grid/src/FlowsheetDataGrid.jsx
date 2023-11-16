@@ -185,6 +185,10 @@ function FlowsheetDataGrid(props) {
   }, [onClearSelectedCells]);
 
   const selectCellRange = useCallback((rowIndex, columnIndex) => {
+    if (anchorCell.current === null) {
+      return;
+    }
+
     const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
 
@@ -199,7 +203,9 @@ function FlowsheetDataGrid(props) {
       const rowId = rows[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
         const columnId = columns[colIdx].id;
-        cellsToSelect.push({ rowId, columnId });
+        if (rows[rowIdx].cells[colIdx].isSelectable) {
+          cellsToSelect.push({ rowId, columnId });
+        }
       }
     }
 
@@ -209,15 +215,17 @@ function FlowsheetDataGrid(props) {
   }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    // Exclude the row header column.
-    if (!selectionDetails.isCellSelectable || selectionDetails.columnIndex === 0) {
+    if (!selectionDetails.isCellSelectable) {
       return;
     }
 
-    if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
+    if (selectionDetails.isShiftPressed && anchorCell.current !== null && selectionDetails.columnIndex !== 0) {
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
-      anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
+      // Set anchor cell, or clear anchor cell if row header was selected.
+      anchorCell.current = (selectionDetails.columnIndex !== 0)
+        ? { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId }
+        : null;
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
     }
   }, [onCellSelect, selectCellRange]);
