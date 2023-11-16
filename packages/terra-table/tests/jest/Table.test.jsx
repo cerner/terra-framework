@@ -615,7 +615,7 @@ describe('Row Selection', () => {
 
     // Validate column header without hidden display text
     const columnHeader = wrapper.find(ColumnHeaderCell).at(1);
-    const hiddenColumnHeader = columnHeader.find('VisuallyHiddenText');
+    const hiddenColumnHeader = columnHeader.find('.hidden');
     expect(hiddenColumnHeader).toHaveLength(0);
   });
 });

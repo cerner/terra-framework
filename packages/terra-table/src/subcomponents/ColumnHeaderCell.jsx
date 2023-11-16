@@ -10,7 +10,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
-// import VisuallyHiddenText from 'terra-visually-hidden-text';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { IconUp, IconDown, IconError } from 'terra-icon';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
@@ -244,14 +244,17 @@ const ColumnHeaderCell = (props) => {
     }
   };
 
-  let sortIndicatorIcon;
-  const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.table.columnError' })} className={cx('error-icon')} />;
+  const errorIcon = hasError && <IconError className={cx('error-icon')} />;
 
   // Add the sort indicator based on the sort direction
+  let sortIndicatorIcon;
+  let sortDescription = '';
   if (sortIndicator === SortIndicators.ASCENDING) {
-    sortIndicatorIcon = <IconUp className={cx('sort-icon')} />;
+    sortIndicatorIcon = <IconUp />;
+    sortDescription = intl.formatMessage({ id: 'Terra.table.sort-ascending' });
   } else if (sortIndicator === SortIndicators.DESCENDING) {
-    sortIndicatorIcon = <IconDown className={cx('sort-icon')} />;
+    sortIndicatorIcon = <IconDown />;
+    sortDescription = intl.formatMessage({ id: 'Terra.table.sort-descending' });
   }
 
   // Retrieve current theme from context
@@ -279,6 +282,10 @@ const ColumnHeaderCell = (props) => {
   // Determine if button element is required for column header
   const hasButtonElement = isSelectable && displayName;
 
+  let headerDescription = displayName;
+  headerDescription += errorIcon ? ` ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
+  headerDescription += sortDescription ? ` ${sortDescription}` : '';
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
@@ -293,7 +300,6 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       title={displayName}
-      aria-sort={sortIndicator}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
@@ -303,9 +309,10 @@ const ColumnHeaderCell = (props) => {
         {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
         tabIndex={buttonTabIndex}
       >
-        <span className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
         {errorIcon}
+        <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
         {sortIndicatorIcon}
+        <VisuallyHiddenText text={headerDescription} />
       </div>
       { isResizable && (
       <ColumnResizeHandle

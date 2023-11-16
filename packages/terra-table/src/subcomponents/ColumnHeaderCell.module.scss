@@ -28,7 +28,6 @@
     // Add right margin for error icon
     .error-icon {
       margin-right: var(--terra-table-error-icon-margin-right, 5px);
-      order: 1;
     }
 
     // Style column header text
@@ -37,16 +36,11 @@
       border: 0;
       flex: 1;
       font-weight: normal;
-      order: 2;
       outline: none;
       overflow: hidden;
       text-align: left;
       text-overflow: ellipsis;
       white-space: nowrap;
-    }
-
-    .sort-icon {
-      order: 3;
     }
 
     .display-text.hidden {

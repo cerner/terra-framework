@@ -914,10 +914,20 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                  Vitals
                               </span>
+                              <VisuallyHiddenText
+                                text=" Vitals"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                   Vitals
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={0}
@@ -1094,10 +1104,20 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 16
                               </span>
+                              <VisuallyHiddenText
+                                text="March 16"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 16
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={1}
@@ -1281,10 +1301,20 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="header-container"
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 17
                               </span>
+                              <VisuallyHiddenText
+                                text="March 17"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 17
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={2}
@@ -3847,10 +3877,20 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                  Vitals
                               </span>
+                              <VisuallyHiddenText
+                                text=" Vitals"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                   Vitals
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={0}
@@ -4027,10 +4067,20 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 16
                               </span>
+                              <VisuallyHiddenText
+                                text="March 16"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 16
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={1}
@@ -4214,10 +4264,20 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="header-container"
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 17
                               </span>
+                              <VisuallyHiddenText
+                                text="March 17"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 17
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={2}
@@ -6774,10 +6834,20 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text hidden"
                               >
                                 Terra.table.row-selection-header-display
                               </span>
+                              <VisuallyHiddenText
+                                text="Terra.table.row-selection-header-display"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  Terra.table.row-selection-header-display
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                           </th>
                         </ColumnHeaderCell>
@@ -6873,10 +6943,20 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                  Vitals
                               </span>
+                              <VisuallyHiddenText
+                                text=" Vitals"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                   Vitals
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={1}
@@ -7053,10 +7133,20 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 16
                               </span>
+                              <VisuallyHiddenText
+                                text="March 16"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 16
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={2}
@@ -7240,10 +7330,20 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="header-container"
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 17
                               </span>
+                              <VisuallyHiddenText
+                                text="March 17"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 17
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={3}
@@ -10386,10 +10486,20 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                  Vitals
                               </span>
+                              <VisuallyHiddenText
+                                text=" Vitals"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                   Vitals
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={0}
@@ -10566,10 +10676,20 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 16
                               </span>
+                              <VisuallyHiddenText
+                                text="March 16"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 16
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={1}
@@ -10753,10 +10873,20 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="header-container"
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 17
                               </span>
+                              <VisuallyHiddenText
+                                text="March 17"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 17
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={2}
@@ -13234,10 +13364,20 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                  Vitals
                               </span>
+                              <VisuallyHiddenText
+                                text=" Vitals"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                   Vitals
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={0}
@@ -13414,10 +13554,20 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               tabIndex={-1}
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 16
                               </span>
+                              <VisuallyHiddenText
+                                text="March 16"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 16
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={1}
@@ -13592,10 +13742,20 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="header-container"
                             >
                               <span
+                                aria-hidden={true}
                                 className="display-text"
                               >
                                 March 17
                               </span>
+                              <VisuallyHiddenText
+                                text="March 17"
+                              >
+                                <span
+                                  className="visually-hidden-text"
+                                >
+                                  March 17
+                                </span>
+                              </VisuallyHiddenText>
                             </div>
                             <InjectIntl(ColumnResizeHandle)
                               columnIndex={2}

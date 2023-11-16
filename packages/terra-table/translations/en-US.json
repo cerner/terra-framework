@@ -19,5 +19,7 @@
   "Terra.table.all-rows-selected" : "All rows selected",
   "Terra.table.all-rows-unselected" : "No rows selected",
 
-  "Terra.table.row-selection-header-display": "Row selection"
+  "Terra.table.row-selection-header-display": "Row selection",
+  "Terra.table.sort-ascending": "Sorted ascending",
+  "Terra.table.sort-descending": "Sorted descending"
 }

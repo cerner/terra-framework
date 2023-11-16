@@ -425,10 +425,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                       className="header-container"
                     >
                       <span
+                        aria-hidden={true}
                         className="display-text hidden"
                       >
                         Terra.table.row-selection-header-display
                       </span>
+                      <VisuallyHiddenText
+                        text="Terra.table.row-selection-header-display"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.table.row-selection-header-display
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -518,10 +528,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                       className="header-container"
                     >
                       <span
+                        aria-hidden={true}
                         className="display-text"
                       >
                          Vitals
                       </span>
+                      <VisuallyHiddenText
+                        text=" Vitals"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                           Vitals
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -611,10 +631,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                       className="header-container"
                     >
                       <span
+                        aria-hidden={true}
                         className="display-text"
                       >
                         March 16
                       </span>
+                      <VisuallyHiddenText
+                        text="March 16"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          March 16
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                     <div
                       className="pinned-columns-divider"
@@ -714,10 +744,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                       className="header-container"
                     >
                       <span
+                        aria-hidden={true}
                         className="display-text"
                       >
                         March 17
                       </span>
+                      <VisuallyHiddenText
+                        text="March 17"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          March 17
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>

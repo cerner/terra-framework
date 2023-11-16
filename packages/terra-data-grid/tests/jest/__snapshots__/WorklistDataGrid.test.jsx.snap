@@ -1106,10 +1106,20 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={0}
@@ -1286,10 +1296,20 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -1473,10 +1493,20 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -4296,10 +4326,20 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -4395,10 +4435,20 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -4575,10 +4625,20 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -4762,10 +4822,20 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -8234,10 +8304,20 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -8333,10 +8413,20 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -8513,10 +8603,20 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -8700,10 +8800,20 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -12130,10 +12240,20 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={0}
@@ -12310,10 +12430,20 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -12497,10 +12627,20 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -15320,10 +15460,20 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -15419,10 +15569,20 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -15599,10 +15759,20 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -15786,10 +15956,20 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -19258,10 +19438,20 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -19357,10 +19547,20 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -19537,10 +19737,20 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -19724,10 +19934,20 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -23244,10 +23464,20 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -23343,10 +23573,20 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -23523,10 +23763,20 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -23710,10 +23960,20 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -27150,10 +27410,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -27249,10 +27519,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -27429,10 +27709,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -27616,10 +27906,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -31084,10 +31384,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={0}
@@ -31264,10 +31574,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -31451,10 +31771,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -34282,10 +34612,20 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -34381,10 +34721,20 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -34561,10 +34911,20 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -34748,10 +35108,20 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -38220,10 +38590,20 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -38319,10 +38699,20 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -38499,10 +38889,20 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -38686,10 +39086,20 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -42118,10 +42528,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -42217,10 +42637,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -42397,10 +42827,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -42584,10 +43024,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -46016,10 +46466,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -46115,10 +46575,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -46295,10 +46765,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -46482,10 +46962,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -49914,10 +50404,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -50013,10 +50513,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -50193,10 +50703,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -50380,10 +50900,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -53812,10 +54342,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -53911,10 +54451,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -54091,10 +54641,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -54278,10 +54838,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -57706,10 +58276,20 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -57805,10 +58385,20 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -57985,10 +58575,20 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -58172,10 +58772,20 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -61600,10 +62210,20 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text hidden"
                                     >
                                       Terra.table.row-selection-header-display
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="Terra.table.row-selection-header-display"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        Terra.table.row-selection-header-display
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                 </th>
                               </ColumnHeaderCell>
@@ -61699,10 +62319,20 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -61879,10 +62509,20 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -62066,10 +62706,20 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={3}
@@ -65430,10 +66080,20 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={0}
@@ -65610,10 +66270,20 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -65797,10 +66467,20 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
@@ -68512,10 +69192,20 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                        Vitals
                                     </span>
+                                    <VisuallyHiddenText
+                                      text=" Vitals"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                         Vitals
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={0}
@@ -68692,10 +69382,20 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     tabIndex={-1}
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 16
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 16"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 16
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={1}
@@ -68879,10 +69579,20 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                     className="header-container"
                                   >
                                     <span
+                                      aria-hidden={true}
                                       className="display-text"
                                     >
                                       March 17
                                     </span>
+                                    <VisuallyHiddenText
+                                      text="March 17"
+                                    >
+                                      <span
+                                        className="visually-hidden-text"
+                                      >
+                                        March 17
+                                      </span>
+                                    </VisuallyHiddenText>
                                   </div>
                                   <InjectIntl(ColumnResizeHandle)
                                     columnIndex={2}
