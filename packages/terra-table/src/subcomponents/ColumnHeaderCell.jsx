@@ -282,6 +282,7 @@ const ColumnHeaderCell = (props) => {
   // Determine if button element is required for column header
   const hasButtonElement = isSelectable && displayName;
 
+  // Format header description for screenreader
   let headerDescription = displayName;
   headerDescription += errorIcon ? ` ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? ` ${sortDescription}` : '';
