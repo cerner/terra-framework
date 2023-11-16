@@ -31,6 +31,37 @@ const clickCell = (row, col, selector) => {
 };
 
 Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
+  describe('FlowsheetDataGrid configuration', () => {
+    it('renders a default data grid', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');
+      Terra.validates.element('default-flowsheet-data-grid', { selector: defaultSelector });
+    });
+
+    describe('flowsheet data grid with no column headers', () => {
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-headers-hidden');
+      });
+
+      it('renders a flowsheet data grid without column headers', () => {
+        expect(browser.$('//thead').getCSSProperty('height').parsed.value).toBe(0);
+        Terra.validates.element('flowsheet-data-grid-no-column-headers', { selector: '#terra-flowsheet-data-grid-no-column-headers-table' });
+      });
+
+      it('tabs into (1, 0) instead of (0, 0)', () => {
+        browser.keys(['Tab']);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-1"]').isFocused()).toBe(true);
+      });
+
+      it('does not focus the header column', () => {
+        browser.keys(['ArrowDown']);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-2"]').isFocused()).toBe(true);
+
+        browser.keys(['ArrowUp', 'ArrowUp']);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-1"]').isFocused()).toBe(true);
+      });
+    });
+  });
+
   describe('Cell selection', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');

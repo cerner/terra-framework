@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Renamed `hasColumnHeaders` prop to `hasVisibleColumnHeaders`.
+
 * Added
   * Added navigation via Home and End Keys.
   * Added title attribute to column header cells to enable tooltips.

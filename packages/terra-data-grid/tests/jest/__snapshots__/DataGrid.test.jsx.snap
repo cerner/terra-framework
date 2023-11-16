@@ -160,6 +160,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     focusFuncRef={null}
+    hasVisibleColumnHeaders={true}
     id="test-terra-data-grid"
     intl={
       Object {
@@ -320,6 +321,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       focusFuncRef={null}
+      hasVisibleColumnHeaders={true}
       id="test-terra-data-grid"
       intl={
         Object {
@@ -488,6 +490,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          hasVisibleColumnHeaders={true}
           id="test-terra-data-grid-table"
           isActiveColumnResizing={false}
           isStriped={true}
@@ -602,7 +605,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
+            hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
               Object {
@@ -808,7 +811,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -819,7 +822,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 >
                   <thead>
                     <tr
-                      aria-rowindex={1}
                       className="column-header-row"
                       height="2.5rem"
                     >
@@ -3123,6 +3125,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     focusFuncRef={null}
+    hasVisibleColumnHeaders={true}
     id="test-terra-data-grid"
     intl={
       Object {
@@ -3283,6 +3286,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       focusFuncRef={null}
+      hasVisibleColumnHeaders={true}
       id="test-terra-data-grid"
       intl={
         Object {
@@ -3451,6 +3455,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          hasVisibleColumnHeaders={true}
           id="test-terra-data-grid-table"
           isActiveColumnResizing={false}
           isStriped={true}
@@ -3565,7 +3570,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
+            hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
               Object {
@@ -3771,7 +3776,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -3782,7 +3787,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                 >
                   <thead>
                     <tr
-                      aria-rowindex={1}
                       className="column-header-row"
                       height="2.5rem"
                     >
@@ -6078,6 +6082,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     defaultColumnWidth={200}
     focusFuncRef={null}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-data-grid"
     intl={
       Object {
@@ -6229,6 +6234,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       defaultColumnWidth={200}
       focusFuncRef={null}
       hasSelectableRows={true}
+      hasVisibleColumnHeaders={true}
       id="test-terra-data-grid"
       intl={
         Object {
@@ -6388,6 +6394,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasSelectableRows={true}
+          hasVisibleColumnHeaders={true}
           id="test-terra-data-grid-table"
           isActiveColumnResizing={false}
           isStriped={true}
@@ -6502,8 +6509,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
             hasSelectableRows={true}
+            hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
               Object {
@@ -6727,7 +6734,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -6738,7 +6745,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                 >
                   <thead>
                     <tr
-                      aria-rowindex={1}
                       className="column-header-row"
                       height="2.5rem"
                     >
@@ -9778,6 +9784,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     focusFuncRef={null}
+    hasVisibleColumnHeaders={true}
     id="test-terra-data-grid"
     intl={
       Object {
@@ -9915,6 +9922,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       focusFuncRef={null}
+      hasVisibleColumnHeaders={true}
       id="test-terra-data-grid"
       intl={
         Object {
@@ -10060,6 +10068,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          hasVisibleColumnHeaders={true}
           id="test-terra-data-grid-table"
           isActiveColumnResizing={false}
           isStriped={true}
@@ -10174,7 +10183,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
+            hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
               Object {
@@ -10380,7 +10389,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -10391,7 +10400,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                 >
                   <thead>
                     <tr
-                      aria-rowindex={1}
                       className="column-header-row"
                       height="2.5rem"
                     >
@@ -12668,6 +12676,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
     focusFuncRef={null}
+    hasVisibleColumnHeaders={true}
     id="test-terra-data-grid"
     intl={
       Object {
@@ -12802,6 +12811,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       focusFuncRef={null}
+      hasVisibleColumnHeaders={true}
       id="test-terra-data-grid"
       intl={
         Object {
@@ -12944,6 +12954,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          hasVisibleColumnHeaders={true}
           id="test-terra-data-grid-table"
           isActiveColumnResizing={false}
           isStriped={true}
@@ -13055,7 +13066,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            hasColumnHeaders={true}
+            hasVisibleColumnHeaders={true}
             id="test-terra-data-grid-table"
             intl={
               Object {
@@ -13258,7 +13269,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  hasColumnHeaders={true}
+                  hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
                   isActiveColumnResizing={false}
                   onColumnSelect={[Function]}
@@ -13269,7 +13280,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                 >
                   <thead>
                     <tr
-                      aria-rowindex={1}
                       className="column-header-row"
                       height="2.5rem"
                     >
