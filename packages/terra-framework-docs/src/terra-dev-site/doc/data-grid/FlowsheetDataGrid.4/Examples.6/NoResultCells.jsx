@@ -62,10 +62,10 @@ const NoResultCells = () => {
 
   return (
     <FlowsheetDataGrid
-      id="default-terra-flowsheet-data-grid-results-missing"
+      id="default-terra-flowsheet-data-grid-no-result-cells"
       columns={cols}
       rows={rows}
-      ariaLabel="Flowsheet Data Grid with Results Missing"
+      ariaLabel="Flowsheet Data Grid with No Result Cells"
     />
   );
 };

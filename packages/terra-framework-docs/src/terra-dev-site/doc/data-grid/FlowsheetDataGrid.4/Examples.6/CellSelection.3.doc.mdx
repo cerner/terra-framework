@@ -7,7 +7,6 @@ This example demonstrates a Flowsheet Data Grid with cell selection support by u
 
 * The **onCellSelect** callback prop: When the user selects a cell, this callback will be called with the `rowId` and `columnId` of the selected cell.
 In this example, the `isSelected` cell property is toggled to true, adding highlighting to the selected cell.
-This callback can also be used to highlight a row of cells, as demonstrated in the example when selecting a row header.
 
 * The **onCellRangeSelect** callback prop: When the user selects a range of multiple cells at once, a (1-D) array of cell objects, each containing `rowId` and `columnId` properties, is the function parameter.
 In this example, the `isSelected` cell property is toggled to true for each of the provided cells, adding highlighting to each cell.

@@ -219,13 +219,12 @@ function FlowsheetDataGrid(props) {
       return;
     }
 
-    if (selectionDetails.isShiftPressed && anchorCell.current !== null && selectionDetails.columnIndex !== 0) {
+    if (selectionDetails.isShiftPressed && anchorCell.current !== null && selectionDetails.columnIndex > 0) {
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
-      // Set anchor cell, or clear anchor cell if row header was selected.
-      anchorCell.current = (selectionDetails.columnIndex !== 0)
-        ? { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId }
-        : null;
+      if (selectionDetails.columnIndex > 0) {
+        anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
+      }
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
     }
   }, [onCellSelect, selectCellRange]);
