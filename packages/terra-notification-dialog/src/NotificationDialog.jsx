@@ -161,6 +161,7 @@ const NotificationDialog = (props) => {
       ariaDescribedBy="dialogBody"
       role={signalWord === 'Alert' ? 'alertdialog' : 'dialog'}
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
+      onRequestClose={() => {}}
       isOpen
       closeOnEsc
       closeOnOutsideClick={false}

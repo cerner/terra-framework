@@ -198,11 +198,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       data-terra-abstract-modal-begin="true"
                       tabindex="-1"
                     >
-                      <span
-                        class="visually-hidden-text"
-                      >
-                        Terra.AbstractModal.BeginModalDialog
-                      </span>
                       <div
                         class="content-container-fill"
                       >
@@ -240,11 +235,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                           </div>
                         </div>
                       </div>
-                      <span
-                        class="visually-hidden-text"
-                      >
-                        Terra.AbstractModal.EndModalDialog
-                      </span>
                     </div>
                   </div>
                 </div>
@@ -288,20 +278,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                     data-terra-abstract-modal-begin={true}
                     tabIndex="-1"
                   >
-                    <FormattedMessage
-                      id="Terra.AbstractModal.BeginModalDialog"
-                      values={Object {}}
-                    >
-                      <VisuallyHiddenText
-                        text="Terra.AbstractModal.BeginModalDialog"
-                      >
-                        <span
-                          className="visually-hidden-text"
-                        >
-                          Terra.AbstractModal.BeginModalDialog
-                        </span>
-                      </VisuallyHiddenText>
-                    </FormattedMessage>
                     <ContentContainer
                       fill={true}
                       header={<React.Fragment />}
@@ -457,20 +433,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                         </div>
                       </div>
                     </ContentContainer>
-                    <FormattedMessage
-                      id="Terra.AbstractModal.EndModalDialog"
-                      values={Object {}}
-                    >
-                      <VisuallyHiddenText
-                        text="Terra.AbstractModal.EndModalDialog"
-                      >
-                        <span
-                          className="visually-hidden-text"
-                        >
-                          Terra.AbstractModal.EndModalDialog
-                        </span>
-                      </VisuallyHiddenText>
-                    </FormattedMessage>
                   </div>
                 </div>
               </ForwardRef>
