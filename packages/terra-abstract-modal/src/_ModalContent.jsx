@@ -19,6 +19,14 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string.isRequired,
   /**
+   * String that labels the modal for screen readers.
+   */
+  ariaLabelledBy: PropTypes.string,
+  /**
+   * String that labels the modal for screen readers.
+   */
+  ariaDescribedBy: PropTypes.string,
+  /**
    * Content inside the modal dialog.
    */
   children: PropTypes.node.isRequired,
@@ -63,6 +71,10 @@ const propTypes = {
    * Callback function to set the reference of the element that will receive focus when the Slide content is visible.
    */
   setModalFocusElementRef: PropTypes.func,
+  /**
+   * If set to true, the AbstractModal is rendered inside a NotificationDialog.
+   */
+  isCalledFromNotificationDialog: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -79,6 +91,8 @@ const defaultProps = {
 const ModalContent = forwardRef((props, ref) => {
   const {
     ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     children,
     classNameModal,
     classNameOverlay,
@@ -90,6 +104,7 @@ const ModalContent = forwardRef((props, ref) => {
     rootSelector,
     zIndex,
     setModalFocusElementRef,
+    isCalledFromNotificationDialog,
     ...customProps
   } = props;
 
@@ -138,38 +153,44 @@ const ModalContent = forwardRef((props, ref) => {
       }
       <div
         {...customProps}
-        tabIndex={platformIsiOS ? '-1' : '0'}
+        tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
         aria-label={ariaLabel}
+        aria-labelledby={ariaLabelledBy}
+        aria-describedby={ariaDescribedBy}
         className={modalClassName}
         role={role}
         ref={ref}
       >
         <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-          <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
+          {(!isCalledFromNotificationDialog && isCalledFromNotificationDialog !== undefined) && (
+            <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+          )}
           {children}
-          <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-            {text => {
-              // In the latest version of react-intl this param is an array, when previous versions it was a string.
-              let useText = text;
-              if (Array.isArray(text)) {
-                useText = text.join('');
-              }
-              return (
-                <VisuallyHiddenText text={useText} />
-              );
-            }}
-          </FormattedMessage>
+          {(!isCalledFromNotificationDialog && isCalledFromNotificationDialog !== undefined) && (
+            <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+              {text => {
+                // In the latest version of react-intl this param is an array, when previous versions it was a string.
+                let useText = text;
+                if (Array.isArray(text)) {
+                  useText = text.join('');
+                }
+                return (
+                  <VisuallyHiddenText text={useText} />
+                );
+              }}
+            </FormattedMessage>
+          )}
         </div>
       </div>
     </React.Fragment>

@@ -156,16 +156,16 @@ const NotificationDialog = (props) => {
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <AbstractModal
-      ariaLabel={signalWord}
-      aria-labelledby="notification-dialog-signal-word"
-      aria-describedby={dialogTitle ? 'notification-dialog-title' : 'notification-dialog-signal-word'}
-      role="alertdialog"
+      ariaLabel=""
+      ariaLabelledBy="header-container"
+      ariaDescribedBy="dialogBody"
+      role={signalWord === 'Alert' ? 'alertdialog' : 'dialog'}
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       isOpen
-      onRequestClose={() => {}}
-      closeOnEsc={false}
+      closeOnEsc
       closeOnOutsideClick={false}
       zIndex="9000"
+      isCalledFromNotificationDialog
     >
       <FocusTrap focusTrapOptions={{ returnFocusOnDeactivate: true, clickOutsideDeactivates: false, escapeDeactivates: false }}>
         <div className={cx('notification-dialog-inner-wrapper')}>
