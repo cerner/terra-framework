@@ -126,6 +126,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether or not the DataGrid should hide the column headers.
+   */
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -136,29 +141,31 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  hasVisibleColumnHeaders: true,
 };
 
 const DataGrid = injectIntl((props) => {
   const {
-    id,
-    ariaLabelledBy,
     ariaLabel,
-    rows,
-    pinnedColumns,
-    overflowColumns,
-    onColumnResize,
-    defaultColumnWidth,
+    ariaLabelledBy,
     columnHeaderHeight,
     columnResizeIncrement,
-    rowHeight,
-    onColumnSelect,
+    defaultColumnWidth,
+    hasVisibleColumnHeaders,
+    hasSelectableRows,
+    id,
+    onCellRangeSelect,
     onCellSelect,
     onClearSelection,
+    onColumnResize,
+    onColumnSelect,
     onRangeSelection,
     onRowSelectionHeaderSelect,
-    onCellRangeSelect,
-    hasSelectableRows,
+    overflowColumns,
+    pinnedColumns,
     rowHeaderIndex,
+    rowHeight,
+    rows,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -182,7 +189,9 @@ const DataGrid = injectIntl((props) => {
   const lastActiveColumnId = useRef();
 
   const [checkResizable, setCheckResizable] = useState(false);
-  const [focusedRow, setFocusedRow] = useState(0);
+
+  // if columns are not visible then set the first selectable row index to 1
+  const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
   const [focusedCol, setFocusedCol] = useState(0);
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
@@ -460,7 +469,7 @@ const DataGrid = injectIntl((props) => {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    if (nextCol < 0 || nextRow < 0) {
+    if (nextCol < 0 || nextRow < (hasVisibleColumnHeaders ? 0 : 1)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -547,6 +556,7 @@ const DataGrid = injectIntl((props) => {
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
+          hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
         />
       </GridContext.Provider>

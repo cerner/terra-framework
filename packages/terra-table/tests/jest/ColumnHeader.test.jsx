@@ -134,7 +134,7 @@ describe('ColumnHeader', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('verifies that the hasColumnHeaders prop hides the table column headers when set to false', () => {
+  it('verifies that the hasVisibleColumnHeaders prop hides the table column headers when set to false', () => {
     const columns = [{
       id: 'Column-0',
       displayName: ' Vitals',
@@ -147,7 +147,7 @@ describe('ColumnHeader', () => {
       <ColumnHeader
         tableId="test-table"
         columns={columns}
-        hasColumnHeaders={false}
+        hasVisibleColumnHeaders={false}
         headerHeight="3rem"
       />,
     );
@@ -173,7 +173,7 @@ describe('ColumnHeader', () => {
         tableId="test-table"
         columns={columns}
         headerHeight="3rem"
-        hasColumnHeaders
+        hasVisibleColumnHeaders
       />,
     );
 
