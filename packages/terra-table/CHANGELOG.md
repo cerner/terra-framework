@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Renamed `hasColumnHeaders` prop to `hasVisibleColumnHeaders`.
+
+* Added
+  * Added navigation via Home and End Keys.
+  * Added title attribute to column header cells to enable tooltips.
+
+* Fixed
+  * Fixed tab index issues in the column header cells.
+  * Fixed screenreader issue due to space in the headers attribute.
+  
 ## 5.1.1-alpha.1 - (November 9, 2023)
 
 * Added

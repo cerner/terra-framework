@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
@@ -19,6 +20,7 @@ import validateRowHeaderIndex from './proptypes/validators';
 
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
+import getFocusableElements from './utils/focusManagement';
 
 const cx = classNames.bind(styles);
 
@@ -145,7 +147,7 @@ const propTypes = {
    * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
    * but the voice reader will use the column header values for a11y.
    */
-  hasColumnHeaders: PropTypes.bool,
+  hasVisibleColumnHeaders: PropTypes.bool,
 
   /*
    * Boolean specifying whether or not the table should have zebra striping for rows.
@@ -167,7 +169,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
-  hasColumnHeaders: true,
+  hasVisibleColumnHeaders: true,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -195,7 +197,7 @@ function Table(props) {
     onRowSelect,
     onRowSelectionHeaderSelect,
     hasSelectableRows,
-    hasColumnHeaders,
+    hasVisibleColumnHeaders,
     isStriped,
     rowHeaderIndex,
     intl,
@@ -273,7 +275,7 @@ function Table(props) {
     }
 
     // eslint-disable-next-line no-param-reassign
-    currentSection.sectionRowIndex = 0;
+    currentSection.sectionRowIndex = rowCount;
     return rowCount + currentSection.rows.length;
   };
   const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
@@ -478,6 +480,48 @@ function Table(props) {
     }
   }, [tableColumns, onColumnResize]);
 
+  /**
+   *
+   * @param {HTMLElement} element - The element to check if it is a text input
+   * @returns True if the element is a text input.  Otherwise, false.
+   */
+  const isTextInput = (element) => {
+    const { tagName } = element;
+    if (tagName.toLowerCase() === 'input') {
+      const validTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
+      const inputType = element.type;
+      return validTypes.indexOf(inputType) >= 0;
+    }
+
+    return false;
+  };
+
+  const onKeyDown = (event) => {
+    const targetElement = event.target;
+
+    // Allow default behavior if the event target is an editable field
+    if (event.keyCode !== KeyCode.KEY_TAB
+        && (isTextInput(targetElement)
+            || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
+            || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
+      return;
+    }
+
+    // Handle home and end key navigation in table
+    let focusableTableElements;
+    if (event.keyCode === KeyCode.KEY_HOME) {
+      focusableTableElements = getFocusableElements(tableRef.current);
+      if (focusableTableElements) {
+        focusableTableElements[0].focus();
+      }
+    } else if (event.keyCode === KeyCode.KEY_END) {
+      focusableTableElements = getFocusableElements(tableRef.current);
+      if (focusableTableElements) {
+        focusableTableElements[focusableTableElements.length - 1].focus();
+      }
+    }
+  };
+
   // -------------------------------------
 
   return (
@@ -487,6 +531,7 @@ function Table(props) {
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
       <table
         ref={handleTableRef}
         id={id}
@@ -494,7 +539,8 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
+        className={cx('table', theme.className, { headerless: !hasVisibleColumnHeaders })}
+        onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
@@ -512,7 +558,7 @@ function Table(props) {
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
             columns={tableColumns}
-            hasColumnHeaders={hasColumnHeaders}
+            hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
             columnResizeIncrement={columnResizeIncrement}
             tableHeight={tableHeight}
