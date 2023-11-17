@@ -16,7 +16,7 @@ const BasicConsumerWithNoScrolling = () => (
       className={cx('iframe')}
       options={{ iframeAttrs: { id: 'basic-consumer-frame' }, resizeConfig: { scrolling: false, fixedWidth: '100%', fixedHeight: '200px' } }}
       title="Basic Consumer"
-      src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+      src="../../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
     />
   </div>
 );

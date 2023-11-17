@@ -22,7 +22,7 @@ const CustomEventConsumer = () => (
     <div id="CustomEvent">
       <EmbeddedContentConsumer
         className={cx('iframe')}
-        src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
+        src="../../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
         eventHandlers={eventHandlers}
         title="Basic Consumer"
         options={{ iframeAttrs: { id: 'custom-event-consumer-frame' } }}
