@@ -4,6 +4,7 @@
 
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
+  * Fixed issue where row selection was being announced twice in Worklist Data Grid.
  
 * Added
   * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.
