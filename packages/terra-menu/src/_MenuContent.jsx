@@ -122,6 +122,8 @@ class MenuContent extends React.Component {
     this.ariaDescribedByHandle = this.ariaDescribedByHandle.bind(this);
     this.needsFocus = props.isFocused;
     this.handleContainerRef = this.handleContainerRef.bind(this);
+    this.getSubmenuHeight = this.getSubmenuHeight.bind(this);
+    this.setListNode = this.setListNode.bind(this);
     this.menuHeaderId = `terra-menu-headertitle-${uuidv4()}`;
     this.menuTopHeaderId = `terra-menu-headertitle-${uuidv4()}`;
 
@@ -178,6 +180,20 @@ class MenuContent extends React.Component {
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
       event.preventDefault();
       this.props.onRequestBack();
+    }
+  }
+
+  getSubmenuHeight() {
+    if (this.props.index > 0 && this.listNode) {
+      return this.listNode.clientHeight + this.listNode.parentNode.parentNode.parentNode.firstChild.clientHeight + 1;
+    }
+
+    return 0;
+  }
+
+  setListNode(node) {
+    if (node) {
+      this.listNode = node;
     }
   }
 
@@ -417,7 +433,7 @@ class MenuContent extends React.Component {
     if (this.props.showHeader || isSubMenu) {
       header = this.buildHeader(isFullScreen);
     }
-    const contentHeight = this.props.isHeightBounded ? '100%' : this.props.fixedHeight;
+    const contentHeight = this.props.isHeightBounded ? '100%' : null;
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
@@ -425,14 +441,14 @@ class MenuContent extends React.Component {
       <div
         ref={this.handleContainerRef}
         className={contentClass}
-        style={{ height: contentHeight, width: contentWidth, position: contentPosition }}
+        style={{ height: isSubMenu ? this.getSubmenuHeight() : contentHeight, width: contentWidth, position: contentPosition }}
         tabIndex="-1"
         aria-modal="true"
         role="dialog"
         onKeyDown={this.onKeyDown}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
-          <List className={cx('list')} role="menu" data-submenu={isSubMenu}>
+          <List className={cx('list')} role="menu" data-submenu={isSubMenu} refCallback={this.setListNode}>
             {items}
           </List>
         </ContentContainer>
