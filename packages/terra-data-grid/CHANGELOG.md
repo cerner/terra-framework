@@ -10,7 +10,7 @@
   * Added section support to FlowsheetDataGrid.
 
 Changed
-  * Updated all columns and cells to be selectable in FlowsheetDataGrid, as `isSelectable` prop is not supported for columns or cells.
+  * Updated all cells to be selectable and columns unselectable in FlowsheetDataGrid, as `isSelectable` prop is not supported for columns or cells.
 
 ## 1.1.0 - (November 9, 2023)
 
