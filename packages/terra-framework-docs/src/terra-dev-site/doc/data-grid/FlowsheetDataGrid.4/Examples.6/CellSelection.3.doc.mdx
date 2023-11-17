@@ -2,7 +2,7 @@ import CellSelection from './CellSelection?dev-site-example';
 
 # Cell Selection
 
-## Description
+### Description
 This example demonstrates a Flowsheet Data Grid with cell selection support by utilizing the following [properties](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#properties):
 
 * The **onCellSelect** callback prop: When the user selects a cell, this callback will be called with the `rowId` and `columnId` of the selected cell.
@@ -13,15 +13,15 @@ In this example, the `isSelected` cell property is toggled to true for each of t
 
 * The **onClearSelectedCells** callback prop: When the user presses the Escape key, this callback gets called. In this example, the `isSelected` attribute of any selected cell is set to false and the Flowsheet Data Grid is re-rendered.
 
-## Interactions
+### Interactions
 When using this example, there are several ways to interact with the cells of the grid.
 
-### Single Cell Selection
+#### Single Cell Selection
 Selecting a single cell can be achieved by either of the following methods:
 * Click on a selectable cell. OR
 * Press Spacebar when focused on a selectable cell.
 
-### Multi-Cell (Range) Selection
+#### Multi-Cell (Range) Selection
 Selecting a range of multiple cells can be achieved by the following:
 
 1. Select a single cell (see [Single Cell Selection](#single-cell-selection)). AND

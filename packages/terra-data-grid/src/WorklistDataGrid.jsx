@@ -6,9 +6,8 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import rowShape from './proptypes/rowShape';
-import { columnShape } from './proptypes/columnShape';
-import validateRowHeaderIndex from './proptypes/validators';
+import { rowShape, columnShape, validateRowHeaderIndex } from 'terra-table';
+
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';

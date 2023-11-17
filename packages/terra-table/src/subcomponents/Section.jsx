@@ -8,7 +8,7 @@ import ThemeContext from 'terra-theme-context';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
-import { columnShape } from '../proptypes/columnShape';
+import columnShape from '../proptypes/columnShape';
 import styles from './Section.module.scss';
 
 const cx = classNames.bind(styles);
@@ -142,11 +142,14 @@ function Section(props) {
           role="columnheader"
           scope="col"
         >
-          <SectionHeader
-            text={text}
-            isOpen={!isCollapsed}
-            onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
-          />
+          <div>
+            <SectionHeader
+              text={text}
+              isOpen={!isCollapsed}
+              onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
+            />
+          </div>
+          <div />
         </th>
       </tr>
       )}
