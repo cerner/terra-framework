@@ -129,7 +129,7 @@ const Row = (props) => {
       id={id}
       role={activeRow ? 'row' : null}
       aria-hidden={activeRow ? null : true}
-      className={cx('row', isTopmost && 'row_topmost', isLeftmost && 'row_leftmost', !activeRow && 'row-placeholder', theme.className)}
+      className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
     >
