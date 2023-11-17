@@ -70,6 +70,11 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
+
+  /**
    * Callback function that is called when all selected cells need to be unselected. Parameters: none.
    */
   onClearSelectedCells: PropTypes.func,
@@ -107,6 +112,7 @@ function FlowsheetDataGrid(props) {
     columnHeaderHeight,
     rowHeight,
     onCellSelect,
+    onSectionSelect,
     onClearSelectedCells,
     onCellRangeSelect,
     intl,
@@ -331,6 +337,7 @@ function FlowsheetDataGrid(props) {
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={handleCellSelection}
+        onSectionSelect={onSectionSelect}
         onClearSelection={onClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
       />

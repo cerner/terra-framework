@@ -94,6 +94,11 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
+
+  /**
    * Callback function that is called when a selectable column is selected. Parameters:
    *  @param {string} columnId columnId
    */
@@ -157,6 +162,7 @@ const DataGrid = injectIntl((props) => {
     columnResizeIncrement,
     rowHeight,
     onColumnSelect,
+    onSectionSelect,
     onCellSelect,
     onClearSelection,
     onRangeSelection,
@@ -521,6 +527,7 @@ const DataGrid = injectIntl((props) => {
           rowHeaderIndex={rowHeaderIndex}
           onColumnResize={onColumnResize}
           onColumnSelect={handleColumnSelect}
+          onSectionSelect={onSectionSelect}
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
