@@ -242,4 +242,21 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('row-selection-end', { selector: rowSelectionTableSelector });
     });
   });
+
+  describe('With single row selection', () => {
+    const rowSelectionTableSelector = '#table-with-single-row-selection';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-row-selection');
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[0].$$('td')[2].moveTo();
+      browser.pause(1000);
+      Terra.validates.element('row-selection-hover', { selector: rowSelectionTableSelector });
+
+      browser.$$('tbody tr')[0].$$('td')[2].click();
+      Terra.validates.element('row-selection-cell-click', { selector: rowSelectionTableSelector });
+    });
+  });
 });

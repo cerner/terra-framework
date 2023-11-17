@@ -533,7 +533,7 @@ const DataGrid = injectIntl((props) => {
           onColumnSelect={handleColumnSelect}
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
-          hasSelectableRows={hasSelectableRows}
+          rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
         />

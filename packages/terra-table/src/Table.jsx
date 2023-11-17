@@ -24,6 +24,11 @@ import getFocusableElements from './utils/focusManagement';
 
 const cx = classNames.bind(styles);
 
+export const rowSelectionModes = {
+  single: 'single',
+  multiple: 'multiple',
+};
+
 const propTypes = {
   /**
    * Unique id used to identify the table.
@@ -141,7 +146,13 @@ const propTypes = {
    * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
    * rendered to allow for row selection to occur.
    */
-  hasSelectableRows: PropTypes.bool,
+  // hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Enables row selection capabilities for the table.
+   * Use 'single' for single row selection and 'multiple' for multi-row selection.
+   */
+  rowSelectionMode: PropTypes.oneOf(Object.keys(rowSelectionModes)),
 
   /**
    * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
@@ -191,12 +202,12 @@ function Table(props) {
     defaultColumnWidth,
     columnHeaderHeight,
     rowHeight,
+    rowSelectionMode,
     onColumnSelect,
     onCellSelect,
     onSectionSelect,
     onRowSelect,
     onRowSelectionHeaderSelect,
-    hasSelectableRows,
     hasVisibleColumnHeaders,
     isStriped,
     rowHeaderIndex,
@@ -252,6 +263,7 @@ function Table(props) {
     isResizable: false,
   };
 
+  const hasSelectableRows = rowSelectionMode === rowSelectionModes.multiple;
   const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
@@ -304,11 +316,11 @@ function Table(props) {
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
+    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === rowSelectionModes.multiple ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
     setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasSelectableRows]);
+  }, [rowSelectionMode]);
 
   // useEffect for row updates
   useEffect(() => {
@@ -579,10 +591,10 @@ function Table(props) {
               text={section.text}
               rows={section.rows}
               rowHeight={rowHeight}
-              hasRowSelection={hasSelectableRows}
+              rowSelectionMode={rowSelectionMode}
               displayedColumns={displayedColumns}
               rowHeaderIndex={rowHeaderIndex}
-              onCellSelect={isGridContext || hasSelectableRows ? handleCellSelection : undefined}
+              onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
             />
           ))}

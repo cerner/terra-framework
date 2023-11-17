@@ -56,10 +56,10 @@ const propTypes = {
   rows: PropTypes.arrayOf(rowShape),
 
   /**
-   * Boolean indicating whether or not the table allows a row to be selected. If true, an additional
-   * column containing a checkbox is rendered to indicate when when the row is selected.
+   * Enables row selection capabilities for the table.
+   * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
-  hasRowSelection: PropTypes.bool,
+  rowSelectionMode: PropTypes.string,
 
   /**
    * All columns currently displayed.
@@ -111,7 +111,7 @@ function Section(props) {
     isHidden,
     isTableStriped,
     text,
-    hasRowSelection,
+    rowSelectionMode,
     displayedColumns,
     onCellSelect,
     rowHeight,
@@ -166,7 +166,7 @@ function Section(props) {
             tableId={tableId}
             cells={row.cells}
             ariaLabel={row.ariaLabel}
-            hasRowSelection={hasRowSelection}
+            rowSelectionMode={rowSelectionMode}
             displayedColumns={displayedColumns}
             rowHeaderIndex={rowHeaderIndex}
             onCellSelect={onCellSelect}

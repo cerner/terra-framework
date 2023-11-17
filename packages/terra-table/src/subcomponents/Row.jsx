@@ -60,10 +60,10 @@ const propTypes = {
   ariaLabel: PropTypes.string,
 
   /**
-   * Boolean indicating whether or not the table allows a row to be selected. If true, an additional
-   * column containing a checkbox is rendered to indicate when when the row is selected.
+   * Enables row selection capabilities for the table.
+   * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
-  hasRowSelection: PropTypes.bool,
+  rowSelectionMode: PropTypes.string,
 
   /**
    * All columns currently displayed.
@@ -84,7 +84,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  hasRowSelection: false,
   rowHeaderIndex: 0,
   isSelected: false,
 };
@@ -93,7 +92,7 @@ function Row(props) {
   const {
     rowIndex,
     height,
-    hasRowSelection,
+    rowSelectionMode,
     id,
     tableId,
     sectionId,
@@ -110,7 +109,8 @@ function Row(props) {
 
   const [isHovered, setHovered] = useState(false);
 
-  const columnIndexOffSet = hasRowSelection ? 1 : 0;
+  const isMultiRowSelect = (rowSelectionMode === 'multiple');
+  const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
 
   return (
     <tr
@@ -118,16 +118,16 @@ function Row(props) {
       data-row-id={id}
       className={cx('row', {
         selected: isSelected,
-        selectable: hasRowSelection,
+        selectable: !!rowSelectionMode,
         'striped-table-row': isTableStriped,
       }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={{ height }}
-      onMouseEnter={hasRowSelection ? () => { setHovered(true); } : undefined}
-      onMouseLeave={hasRowSelection ? () => { setHovered(false); } : undefined}
+      onMouseEnter={rowSelectionMode ? () => { setHovered(true); } : undefined}
+      onMouseLeave={rowSelectionMode ? () => { setHovered(false); } : undefined}
     >
       {
-        hasRowSelection
+        isMultiRowSelect
         && (
         <RowSelectionCell
           rowId={id}
@@ -154,7 +154,7 @@ function Row(props) {
             sectionId={sectionId}
             tableId={tableId}
             key={`${id}_${columnId}`}
-            isSelected={!hasRowSelection && cellData.isSelected}
+            isSelected={!rowSelectionMode && cellData.isSelected}
             isMasked={cellData.isMasked}
             maskedLabel={cellData.maskedLabel}
             isSelectable={cellData.isSelectable}
