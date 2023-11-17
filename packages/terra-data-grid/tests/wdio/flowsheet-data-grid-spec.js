@@ -185,4 +185,15 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('cell-3-1-focused', { selector: defaultSelector });
     });
   });
+
+  describe('Sections', () => {
+    const sectionSelector = '#flowsheet-with-sections';
+    beforeEach(() => {
+      browser.url('raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-sections');
+    });
+
+    it('validate Flowsheet section UI', () => {
+      Terra.validates.element('flowsheet-with-sections', { selector: sectionSelector });
+    });
+  });
 });
