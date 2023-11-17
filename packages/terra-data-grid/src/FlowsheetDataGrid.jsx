@@ -214,25 +214,19 @@ function FlowsheetDataGrid(props) {
     }
   }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
 
-  const selectCellRange = useCallback((selectedRowId, selectedColumnId) => {
-    let gridRows = rows;
-    if (sections) {
-      gridRows = sections.flatMap((section) => section.rows);
-    }
-    const anchorRowIndex = gridRows.findIndex(row => row.id === anchorCell.current.rowId);
+  const selectCellRange = useCallback((rowIndex, columnIndex) => {
+    const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
-    const selectedRowIndex = gridRows.findIndex(row => row.id === selectedRowId);
-    const selectedColumnIndex = columns.findIndex(col => col.id === selectedColumnId);
 
     // Determine the boundaries of selected region.
-    const rowIndexTopBound = Math.min(anchorRowIndex, selectedRowIndex);
-    const rowIndexBottomBound = Math.max(anchorRowIndex, selectedRowIndex);
-    const columnIndexLeftBound = Math.min(anchorColumnIndex, selectedColumnIndex);
-    const columnIndexRightBound = Math.max(anchorColumnIndex, selectedColumnIndex);
+    const rowIndexTopBound = Math.min(anchorRowIndex, rowIndex - 1);
+    const rowIndexBottomBound = Math.max(anchorRowIndex, rowIndex - 1);
+    const columnIndexLeftBound = Math.min(anchorColumnIndex, columnIndex);
+    const columnIndexRightBound = Math.max(anchorColumnIndex, columnIndex);
 
     const cellsToSelect = [];
     for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
-      const rowId = gridRows[rowIdx].id;
+      const rowId = rows[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
         const columnId = columns[colIdx].id;
         cellsToSelect.push({ rowId, columnId });
@@ -242,7 +236,7 @@ function FlowsheetDataGrid(props) {
     if (onCellRangeSelect) {
       onCellRangeSelect(cellsToSelect);
     }
-  }, [rows, sections, columns, onCellRangeSelect]);
+  }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     // Exclude the row header column.
@@ -251,7 +245,7 @@ function FlowsheetDataGrid(props) {
     }
 
     if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
-      selectCellRange(selectionDetails.rowId, selectionDetails.columnId);
+      selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
