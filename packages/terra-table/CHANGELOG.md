@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.0.0 - (November 17, 2023)
+
 * Breaking Changes
   * Renamed `hasColumnHeaders` prop to `hasVisibleColumnHeaders`.
 

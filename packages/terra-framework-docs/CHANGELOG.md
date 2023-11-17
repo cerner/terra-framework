@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.45.0 - (November 17, 2023)
+
 * Added
   * Added example to `terra-table` to show column states and sorting;
   * Added new test for Terra Slider component for long field labels.
