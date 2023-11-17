@@ -3,9 +3,10 @@
 ## Unreleased
 
 * Added
+  * Added new test for Terra Slider component for long field labels.
   * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
   * Added examples and tests to `terra-data-grid` for sections in FlowsheetDataGrid.
-
+  
 * Updated
   * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
   * Removed alpha notice for FlowsheetDataGrid.
