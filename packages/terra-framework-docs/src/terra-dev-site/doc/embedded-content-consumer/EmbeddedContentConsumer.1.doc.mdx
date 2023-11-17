@@ -1,4 +1,5 @@
 import { Badge } from 'terra-embedded-content-consumer/package.json?dev-site-package';
+import { Notice } from "@cerner/terra-docs";
 
 import EmbeddedContentConsumerPropsTable from 'terra-embedded-content-consumer/src/EmbeddedContentConsumer?dev-site-props-table';
 
@@ -61,9 +62,11 @@ Consumer.init();
 <Notice variant="important" ariaLevel="3">
 
 #### Accessibility Guidance: Title
+
 For the purposes of accessibility compliance, it is **critical** to screen reader users that the title of the frame is set to a meaningful title for the content inside the iframe.
 
 #### Accessibility Guidance: Scrolling
+
 When using this Embedded Content Consumer component to embed another page, the default behavior is set to auto resize the content such that the content will display fully inside of the iframe. In scenario where custom configuration of XFC is made to set a `fixedWidth` or `fixedHeight` of the content, the content may not be fully visible in the viewport. For keyboard only users, it is critical that users can navigate to the iframe, and scroll to view the content fully.
 
 When specifying a `fixedWidth` or `fixedHeight` [attributes for XFC](https://github.com/cerner/xfc#iframe-resizing-config), it's also necessary to set `scrolling` option to `true` so that the content can be scrolled when not fully displayed. This is required for accessibility for keyboard only users.
