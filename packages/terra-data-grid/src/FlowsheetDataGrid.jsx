@@ -142,7 +142,7 @@ function FlowsheetDataGrid(props) {
     newRows.forEach((row, rowIndex) => {
       const newCells = [...row.cells];
       newCells.forEach((cell, cellIndex) => {
-        // Selectability not supported by Flowsheet, set all cells to true.
+        // All flowsheet cells are selectable.
         newCells[cellIndex].isSelectable = true;
         // Cell content has no result and is not a row header (first column), set content to "No result".
         if (contentHasNoResult(cell.content) && cellIndex !== 0) {
@@ -214,9 +214,11 @@ function FlowsheetDataGrid(props) {
   }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
+    // Must have an existing anchor cell and non-row header selection to select a range of cells.
     if (selectionDetails.isShiftPressed && anchorCell.current !== null && selectionDetails.columnIndex > 0) {
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
+      // Anchor cell cannot be a row header.
       if (selectionDetails.columnIndex > 0) {
         anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
       }
