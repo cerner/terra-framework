@@ -1,0 +1,17 @@
+import TableColumnStates from './TableColumnStates?dev-site-example';
+
+# Column States and Selection
+
+### Description
+This example demonstrates a [Table](/components/cerner-terra-framework-docs/table/about) that supports column states and sorting.
+A column can be selected by clicking on the column header or tabbing to the column header and pressing the Space key on the focused column header.
+Only columns that are selectable can be selected.
+
+The Column can display error and sort indicator icons to represent its current state.
+
+### Properties required
+* The **_onColumnSelect_** callback prop: When the user selects a column, this callback will be called with the columnId of the selected column.
+
+The below example also demonstrates how properties such as _isSelectable_, _hasError_ and _sortIndicator_ can be provided by the consumer to control if column header is selectable, display error state, and show sort indicator icons respectively.
+
+<TableColumnStates title='Table Column States' />

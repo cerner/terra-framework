@@ -248,6 +248,8 @@ function Table(props) {
   const tableRowSelectionColumn = {
     id: 'table-rowSelectionColumn',
     width: 40,
+    displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
+    isDisplayVisible: false,
     isSelectable: !!onRowSelectionHeaderSelect,
     isResizable: false,
   };
@@ -588,9 +590,9 @@ function Table(props) {
           ))}
         </ColumnContext.Provider>
       </table>
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
-      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('row-selection-mode-region')} aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('row-selection-region')} aria-live="polite" text={rowSelectionAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('column-header-region')} aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
     </div>
   );
 }

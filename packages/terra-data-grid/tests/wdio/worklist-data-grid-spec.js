@@ -33,7 +33,7 @@ const rowSelectionNavigateToCell = (row, col) => {
 };
 
 const clickCell = (row, col, selector) => {
-  browser.$$(`${selector} tr`)[row].$(`:nth-child(${col + 1})`).click();
+  browser.$$(`${selector} tr`)[row].$(`td:nth-child(${col + 1}), th:nth-child(${col + 1})`).click();
 };
 
 const shiftClickCell = (row, col, selector) => {

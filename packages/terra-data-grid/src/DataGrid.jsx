@@ -2,7 +2,6 @@ import React, {
   useState, useRef, useCallback, forwardRef, useImperativeHandle, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import Table, {
@@ -153,7 +152,7 @@ const defaultProps = {
   hasVisibleColumnHeaders: true,
 };
 
-const DataGrid = injectIntl((props) => {
+const DataGrid = forwardRef((props, ref) => {
   const {
     ariaLabel,
     ariaLabelledBy,
@@ -253,7 +252,7 @@ const DataGrid = injectIntl((props) => {
   // cells. In order to do so, these datagrid methods will be exposed to
   // allow those components to request focus change.
   useImperativeHandle(
-    props.focusFuncRef,
+    ref,
     () => ({
       setFocusedRowCol,
       getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
@@ -586,4 +585,4 @@ const DataGrid = injectIntl((props) => {
 DataGrid.defaultProps = defaultProps;
 DataGrid.propTypes = propTypes;
 
-export default forwardRef((props, ref) => <DataGrid {...props} focusFuncRef={ref} />);
+export default DataGrid;
