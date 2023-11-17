@@ -120,8 +120,10 @@ class EmbeddedContentConsumer extends React.Component {
       this.props.onMount(this.xfcFrame);
     }
 
-    // iframe visual focus indicator
-    this.handleFrameVisualFocusIndicator();
+    if (frameOptions.iframeAttrs.srcdoc) {
+      // Visual focus indicator for iframe with inline html
+      this.handleFrameVisualFocusIndicator();
+    }
 
     // Attach the event handlers to the xfc frame.
     this.addEventListener('xfc.launched', this.props.onLaunch);
