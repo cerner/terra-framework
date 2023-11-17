@@ -12,7 +12,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
-import { columnShape } from './proptypes/columnShape';
+import columnShape from './proptypes/columnShape';
 import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';

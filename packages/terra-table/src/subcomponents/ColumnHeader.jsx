@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ColumnHeaderCell from './ColumnHeaderCell';
-import { columnShape } from '../proptypes/columnShape';
+import columnShape from '../proptypes/columnShape';
 import styles from './ColumnHeader.module.scss';
 
 const cx = classNames.bind(styles);

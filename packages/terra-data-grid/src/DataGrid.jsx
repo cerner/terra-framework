@@ -5,12 +5,11 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import Table, { GridConstants, GridContext } from 'terra-table';
+import Table, {
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex,
+} from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import rowShape from './proptypes/rowShape';
-import { columnShape } from './proptypes/columnShape';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
-import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -37,6 +36,11 @@ const propTypes = {
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Sections will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
@@ -88,6 +92,11 @@ const propTypes = {
    * @param {string} columnId columnId
    */
   onCellSelect: PropTypes.func,
+
+  /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
 
   /**
    * Callback function that is called when a selectable column is selected. Parameters:
@@ -161,11 +170,13 @@ const DataGrid = injectIntl((props) => {
     onColumnSelect,
     onRangeSelection,
     onRowSelectionHeaderSelect,
+    onSectionSelect,
     overflowColumns,
     pinnedColumns,
     rowHeaderIndex,
     rowHeight,
     rows,
+    sections,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -545,6 +556,7 @@ const DataGrid = injectIntl((props) => {
         <Table
           id={`${id}-table`}
           rows={dataGridRows}
+          sections={sections}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
           activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
@@ -558,6 +570,7 @@ const DataGrid = injectIntl((props) => {
           rowHeaderIndex={rowHeaderIndex}
           onColumnResize={onColumnResize}
           onColumnSelect={handleColumnSelect}
+          onSectionSelect={onSectionSelect}
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
