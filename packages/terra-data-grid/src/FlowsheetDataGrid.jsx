@@ -121,7 +121,7 @@ function FlowsheetDataGrid(props) {
   const inShiftDirectionalMode = useRef(false);
   const flowsheetColumns = useMemo(() => columns.map(column => ({
     ...column,
-    isSelectable: column.isSelectable !== false,
+    isSelectable: true,
     isResizable: false,
   })), [columns]);
 
@@ -142,7 +142,8 @@ function FlowsheetDataGrid(props) {
     newRows.forEach((row, rowIndex) => {
       const newCells = [...row.cells];
       newCells.forEach((cell, cellIndex) => {
-        newCells[cellIndex].isSelectable = cell.isSelectable !== false;
+        // All flowsheet cells are selectable.
+        newCells[cellIndex].isSelectable = true;
         // Cell content has no result and is not a row header (first column), set content to "No result".
         if (contentHasNoResult(cell.content) && cellIndex !== 0) {
           newCells[cellIndex].content = noResultCellContent;
@@ -210,7 +211,7 @@ function FlowsheetDataGrid(props) {
 
   const handleCellSelection = useCallback((selectionDetails) => {
     // Exclude the row header column.
-    if (!selectionDetails.isCellSelectable || selectionDetails.columnIndex === 0) {
+    if (selectionDetails.columnIndex === 0) {
       return;
     }
 
