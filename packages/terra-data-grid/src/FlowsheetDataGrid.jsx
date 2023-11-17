@@ -86,6 +86,12 @@ const propTypes = {
   onCellRangeSelect: PropTypes.func,
 
   /**
+   * Callback function that is called when a row header cell is selected. Parameters:
+   * @param {string} rowId rowId
+   */
+  onRowSelect: PropTypes.func,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -121,6 +127,7 @@ function FlowsheetDataGrid(props) {
     onSectionSelect,
     onClearSelectedCells,
     onCellRangeSelect,
+    onRowSelect,
     intl,
     hasVisibleColumnHeaders,
   } = props;
@@ -223,6 +230,10 @@ function FlowsheetDataGrid(props) {
   }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
 
   const selectCellRange = useCallback((rowIndex, columnIndex) => {
+    if (anchorCell.current === null) {
+      return;
+    }
+
     const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
 
@@ -247,18 +258,17 @@ function FlowsheetDataGrid(props) {
   }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    // Exclude the row header column.
     if (selectionDetails.columnIndex === 0) {
-      return;
-    }
-
-    if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
+      if (onRowSelect) {
+        onRowSelect(selectionDetails.rowId);
+      }
+    } else if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
       onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
     }
-  }, [onCellSelect, selectCellRange]);
+  }, [onCellSelect, onRowSelect, selectCellRange]);
 
   const handleCellRangeSelection = useCallback((rowIndex, columnIndex, direction) => {
     // Exclude the row header column as an eligible anchor/start cell.

@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
-const ColumnHeadersHidden = () => {
+const CellSelection = () => {
   const gridDataJSON = {
     cols: [
       { id: 'Column-0', displayName: 'Vitals' },
@@ -119,16 +119,15 @@ const ColumnHeadersHidden = () => {
 
   return (
     <FlowsheetDataGrid
-      id="terra-flowsheet-data-grid-no-column-headers"
+      id="terra-flowsheet-data-grid-cell-selection"
       columns={cols}
       rows={rowData}
       ariaLabel="Flowsheet Data Grid"
       onCellSelect={onCellSelect}
       onClearSelectedCells={onClearSelectedCells}
       onCellRangeSelect={onCellRangeSelect}
-      hasVisibleColumnHeaders={false}
     />
   );
 };
 
-export default ColumnHeadersHidden;
+export default CellSelection;
