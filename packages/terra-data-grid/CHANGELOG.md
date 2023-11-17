@@ -7,6 +7,7 @@
  
 * Added
   * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.
+  * Added section support to FlowsheetDataGrid.
 
 ## 1.1.0 - (November 9, 2023)
 

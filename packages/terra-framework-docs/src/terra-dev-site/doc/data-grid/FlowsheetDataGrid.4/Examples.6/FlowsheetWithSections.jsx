@@ -4,7 +4,7 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 const gridDataJSON = {
   cols: [
     {
-      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', isSelectable: true,
+      id: 'Column-0', displayName: 'Patient', isSelectable: true,
     },
     {
       id: 'Column-1', displayName: 'Location', isSelectable: true,
