@@ -45,4 +45,4 @@ const columnShape = PropTypes.shape({
 });
 
 export default columnShape;
-export { columnShape, SortIndicators };
+export { SortIndicators };
