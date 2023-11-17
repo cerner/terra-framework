@@ -4,7 +4,7 @@
 
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
-  * Fixed an issue when data accesses invalid indexes when deleting rows.
+  * Fixed an issue when data accesses invalid indexes when deleting rows and columns.
  
 * Added
   * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.

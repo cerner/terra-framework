@@ -396,10 +396,10 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     });
   });
 
-  describe('row deletion', () => {
+  describe('row and column deletion', () => {
     const deleteRowsSelector = '#worklist-data-grid-delete-rows';
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-delete-rows');
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-delete-rows-and-columns');
     });
 
     it('retains the last selected row index when filtering rows', () => {
