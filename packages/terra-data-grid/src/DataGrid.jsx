@@ -125,6 +125,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether or not the DataGrid should hide the column headers.
+   */
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -135,29 +140,31 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  hasVisibleColumnHeaders: true,
 };
 
 const DataGrid = forwardRef((props, ref) => {
   const {
-    id,
-    ariaLabelledBy,
     ariaLabel,
-    rows,
-    pinnedColumns,
-    overflowColumns,
-    onColumnResize,
-    defaultColumnWidth,
+    ariaLabelledBy,
     columnHeaderHeight,
     columnResizeIncrement,
-    rowHeight,
-    onColumnSelect,
+    defaultColumnWidth,
+    hasVisibleColumnHeaders,
+    hasSelectableRows,
+    id,
+    onCellRangeSelect,
     onCellSelect,
     onClearSelection,
+    onColumnResize,
+    onColumnSelect,
     onRangeSelection,
     onRowSelectionHeaderSelect,
-    onCellRangeSelect,
-    hasSelectableRows,
+    overflowColumns,
+    pinnedColumns,
     rowHeaderIndex,
+    rowHeight,
+    rows,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -178,7 +185,9 @@ const DataGrid = forwardRef((props, ref) => {
   const handleFocus = useRef(true);
 
   const [checkResizable, setCheckResizable] = useState(false);
-  const [focusedRow, setFocusedRow] = useState(0);
+
+  // if columns are not visible then set the first selectable row index to 1
+  const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
   const [focusedCol, setFocusedCol] = useState(0);
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
@@ -203,13 +212,20 @@ const DataGrid = forwardRef((props, ref) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
-    let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
-    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-      [focusedCell] = focusedCell.getElementsByTagName('input');
-    }
 
     if (makeActiveElement) {
-      focusedCell.focus();
+      // Set focus on input field (checkbox) of row selection cells.
+      let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+      if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+        [focusedCell] = focusedCell.getElementsByTagName('input');
+      }
+
+      // Set focus to column header button, if it exists
+      if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
+        focusedCell = focusedCell.querySelector('[role="button"]');
+      }
+
+      focusedCell?.focus();
     }
   };
 
@@ -447,7 +463,7 @@ const DataGrid = forwardRef((props, ref) => {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    if (nextCol < 0 || nextRow < 0) {
+    if (nextCol < 0 || nextRow < (hasVisibleColumnHeaders ? 0 : 1)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -517,6 +533,7 @@ const DataGrid = forwardRef((props, ref) => {
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
+          hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
         />
       </GridContext.Provider>
