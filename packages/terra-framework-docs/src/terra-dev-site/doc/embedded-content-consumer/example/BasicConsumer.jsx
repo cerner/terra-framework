@@ -6,7 +6,7 @@ import '../providers/EmbeddedContentConsumerCommon.module.scss';
 Consumer.init();
 const BasicConsumer = () => (
   <EmbeddedContentConsumer
-    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+    src="../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
     title="Basic content example"
     options={{ resizeConfig: { scrolling: true, fixedHeight: '200px' } }}
   />

@@ -15,7 +15,7 @@ const eventHandlers = [{
 const CustomEventConsumer = () => (
   <div id="CustomEvent">
     <EmbeddedContentConsumer
-      src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
+      src="../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
       title="Custom Event Example"
       eventHandlers={eventHandlers}
     />
