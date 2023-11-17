@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added example to `terra-table` to show column states and sorting;
   * Added new test for Terra Slider component for long field labels.
   * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
   * Added examples and tests to `terra-data-grid` for sections in FlowsheetDataGrid.

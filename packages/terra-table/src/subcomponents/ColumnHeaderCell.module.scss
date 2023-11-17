@@ -19,6 +19,7 @@
     .header-container {
       align-items: center;
       display: flex;
+      flex-direction: row;
       height: 100%;
       padding: var(--terra-table-header-cell-padding, 5px);
       width: 100%;
@@ -30,7 +31,7 @@
     }
 
     // Style column header text
-    span {
+    .display-text {
       background: transparent;
       border: 0;
       flex: 1;
@@ -40,6 +41,10 @@
       text-align: left;
       text-overflow: ellipsis;
       white-space: nowrap;
+    }
+
+    .display-text.hidden {
+      color: transparent;
     }
   }
 
