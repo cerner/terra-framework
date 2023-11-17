@@ -3,7 +3,7 @@ import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl } from 'terra-enzyme-intl';
 import { IntlProvider } from 'react-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import ColumnContext from '../../src/utils/ColumnContext';
@@ -22,11 +22,11 @@ describe('ColumnHeaderCell', () => {
   it('renders a default column header cell', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       isSelectable: true,
     };
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -36,7 +36,7 @@ describe('ColumnHeaderCell', () => {
           {...column}
         />
       </IntlProvider>,
-    ).dive().dive();
+    );
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -46,23 +46,22 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
-    expect(headerContainer.children()).toHaveLength(1);
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
-
-    expect(wrapper).toMatchSnapshot();
+    expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals');
   });
 
   it('renders a column header cell with ascending sort', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       isSelectable: true,
     };
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -72,7 +71,7 @@ describe('ColumnHeaderCell', () => {
           {...column}
         />
       </IntlProvider>,
-    ).dive().dive();
+    );
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -83,23 +82,23 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
-
-    expect(wrapper).toMatchSnapshot();
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.sort-ascending');
   });
 
   it('renders a column header cell with descending sort', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'descending',
       isSelectable: true,
     };
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -109,7 +108,7 @@ describe('ColumnHeaderCell', () => {
           {...column}
         />
       </IntlProvider>,
-    ).dive().dive();
+    );
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -120,23 +119,23 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('descending');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconDown)).toHaveLength(1);
-
-    expect(wrapper).toMatchSnapshot();
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.sort-descending');
   });
 
   it('renders a column header cell with error', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       hasError: true,
       isSelectable: true,
     };
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -146,7 +145,7 @@ describe('ColumnHeaderCell', () => {
           {...column}
         />
       </IntlProvider>,
-    ).dive().dive();
+    );
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -157,24 +156,24 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBeUndefined();
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconError)).toHaveLength(1);
-
-    expect(wrapper).toMatchSnapshot();
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError');
   });
 
   it('renders a column header cell with ascending sort and error', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
       isSelectable: true,
     };
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -184,7 +183,7 @@ describe('ColumnHeaderCell', () => {
           {...column}
         />
       </IntlProvider>,
-    ).dive().dive();
+    );
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -195,19 +194,19 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
-
-    expect(wrapper).toMatchSnapshot();
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError, Terra.table.sort-ascending');
   });
 
   it('renders a column header cell with onColumnSelect callback', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
       isSelectable: true,
@@ -215,7 +214,7 @@ describe('ColumnHeaderCell', () => {
 
     const mockClick = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -226,7 +225,7 @@ describe('ColumnHeaderCell', () => {
           onColumnSelect={mockClick}
         />
       </IntlProvider>,
-    ).dive().dive();
+    );
 
     const columnHeader = wrapper.find('.column-header.selectable');
     expect(columnHeader).toHaveLength(1);
@@ -235,23 +234,22 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.props().tabIndex).toBe(0);
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
-
-    expect(wrapper).toMatchSnapshot();
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError, Terra.table.sort-ascending');
   });
 
   it('renders a column header cell with onColumnSelect callback but not selectable', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
       isSelectable: false,
@@ -259,7 +257,7 @@ describe('ColumnHeaderCell', () => {
 
     const onColumnSelect = () => {};
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -270,7 +268,7 @@ describe('ColumnHeaderCell', () => {
           onColumnSelect={onColumnSelect}
         />
       </IntlProvider>,
-    ).dive().dive();
+    );
 
     const columnHeader = wrapper.find('.column-header:not(selectable)');
     expect(columnHeader).toHaveLength(1);
@@ -279,23 +277,22 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props()['aria-sort']).toBe('ascending');
     expect(columnHeader.props().onMouseDown).toBeUndefined();
     expect(columnHeader.props().style.height).toBe('150px');
+    expect(columnHeader.props().title).toBe('Vitals');
 
     const headerContainer = columnHeader.find('.header-container');
     expect(headerContainer.props().tabIndex).toBeUndefined();
-    expect(headerContainer.find('span').text().trim()).toBe('Vitals');
+    expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
     expect(headerContainer.find(IconUp)).toHaveLength(1);
     expect(headerContainer.find(IconError)).toHaveLength(1);
-
-    expect(wrapper).toMatchSnapshot();
+    expect(headerContainer.find('VisuallyHiddenText').text()).toBe('Vitals, Terra.table.columnError, Terra.table.sort-ascending');
   });
 
   it('renders a pinned column header cell', () => {
     const column = {
       id: 'Column-0',
-      displayName: ' Vitals',
+      displayName: 'Vitals',
       sortIndicator: 'ascending',
       hasError: true,
     };

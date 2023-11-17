@@ -3,6 +3,18 @@
 ## Unreleased
 
 * Fixed
+  * Fixed issue where focus was given to the column header instead of its button element.
+
+* Added
+  * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.
+  * Added section support to FlowsheetDataGrid.
+
+Changed
+  * Updated all columns and cells to be selectable in FlowsheetDataGrid, as `isSelectable` prop is not supported for columns or cells.
+
+## 1.1.0 - (November 9, 2023)
+
+* Fixed
   * Fixed the column header background color for the Orion Fusion theme.
   * Fixed pinned column divider issue during keyboard resize.
   * Fixed resize handle being communicated when non-header cell is focused.

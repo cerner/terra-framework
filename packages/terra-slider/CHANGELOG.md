@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+* Fix
+  * Fixed wrapping issue for min/max labels on slider.
+
+## 1.1.0 - (November 9, 2023)
 
 * Added
   * Added translations for Terra Slider component.

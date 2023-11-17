@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.80.0 - (November 9, 2023)
+
 * Added
   * Added `ariaDescribedBy` prop for `menu-item` to announce group information.
 

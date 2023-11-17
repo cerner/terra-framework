@@ -2,9 +2,24 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Renamed `hasColumnHeaders` prop to `hasVisibleColumnHeaders`.
+
+* Added
+  * Added navigation via Home and End Keys.
+  * Added title attribute to column header cells to enable tooltips.
+  * Exported shapes for reusability.
+
+* Fixed
+  * Fixed tab index issues in the column header cells.
+  * Fixed screenreader issue due to space in the headers attribute.
+  
+## 5.1.1-alpha.1 - (November 9, 2023)
+
 * Added
   * Added row selection mode to the table component.
   * Added ability for consumers to specify a custom screen reader message for masked cells.
+  * Added sections support to the table component.
 
 * Fixed
   * Fixed the column header background color for the Orion Fusion theme.
@@ -22,7 +37,6 @@
 
 * Added
   * Added the ability to toggle zebra striping for table rows.
-  * Added sections support to the table component.
   
 * Changed
   * Updated the table component so that the cell dive-in logic would not execute when not in the grid context.

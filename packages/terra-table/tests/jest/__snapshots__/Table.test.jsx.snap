@@ -16488,8 +16488,8 @@ exports[`Table verifies row selection column header selection 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -16615,6 +16615,7 @@ exports[`Table verifies row selection column header selection 1`] = `
         aria-rowcount={5}
         className="table"
         id="test-terra-table"
+        onKeyDown={[Function]}
         role="table"
       >
         <colgroup>
@@ -16655,7 +16656,9 @@ exports[`Table verifies row selection column header selection 1`] = `
           columns={
             Array [
               Object {
+                "displayName": "Terra.table.row-selection-header-display",
                 "id": "table-rowSelectionColumn",
+                "isDisplayVisible": false,
                 "isResizable": false,
                 "isSelectable": false,
                 "maximumWidth": 300,
@@ -16686,7 +16689,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -16696,15 +16699,16 @@ exports[`Table verifies row selection column header selection 1`] = `
         >
           <thead>
             <tr
-              aria-rowindex={1}
               className="column-header-row"
               height="2.5rem"
             >
               <InjectIntl(ColumnHeaderCell)
                 columnIndex={0}
+                displayName="Terra.table.row-selection-header-display"
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
                 isActive={false}
+                isDisplayVisible={false}
                 isResizable={false}
                 isResizeActive={false}
                 isSelectable={false}
@@ -16721,6 +16725,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               >
                 <ColumnHeaderCell
                   columnIndex={0}
+                  displayName="Terra.table.row-selection-header-display"
                   hasError={false}
                   headerHeight="2.5rem"
                   id="table-rowSelectionColumn"
@@ -16752,6 +16757,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={false}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -16777,11 +16783,26 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "left": 0,
                       }
                     }
+                    title="Terra.table.row-selection-header-display"
                   >
                     <div
                       className="header-container"
                     >
-                      <span />
+                      <span
+                        aria-hidden={true}
+                        className="display-text hidden"
+                      >
+                        Terra.table.row-selection-header-display
+                      </span>
+                      <VisuallyHiddenText
+                        text="Terra.table.row-selection-header-display"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.table.row-selection-header-display
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -16838,6 +16859,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -16863,13 +16885,26 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "left": 40,
                       }
                     }
+                    title=" Vitals"
                   >
                     <div
                       className="header-container"
                     >
-                      <span>
+                      <span
+                        aria-hidden={true}
+                        className="display-text"
+                      >
                          Vitals
                       </span>
+                      <VisuallyHiddenText
+                        text=" Vitals"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                           Vitals
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -16926,6 +16961,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -16951,13 +16987,26 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "left": 240,
                       }
                     }
+                    title="March 16"
                   >
                     <div
                       className="header-container"
                     >
-                      <span>
+                      <span
+                        aria-hidden={true}
+                        className="display-text"
+                      >
                         March 16
                       </span>
+                      <VisuallyHiddenText
+                        text="March 16"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          March 16
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                     <div
                       className="pinned-columns-divider"
@@ -17024,6 +17073,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -17049,13 +17099,26 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "left": null,
                       }
                     }
+                    title="March 17"
                   >
                     <div
                       className="header-container"
                     >
-                      <span>
+                      <span
+                        aria-hidden={true}
+                        className="display-text"
+                      >
                         March 17
                       </span>
+                      <VisuallyHiddenText
+                        text="March 17"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          March 17
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -17067,7 +17130,9 @@ exports[`Table verifies row selection column header selection 1`] = `
           displayedColumns={
             Array [
               Object {
+                "displayName": "Terra.table.row-selection-header-display",
                 "id": "table-rowSelectionColumn",
+                "isDisplayVisible": false,
                 "isResizable": false,
                 "isSelectable": false,
                 "width": 40,
@@ -17159,7 +17224,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          sectionRowIndex={0}
+          sectionRowIndex={1}
           tableId="test-terra-table"
         >
           <tbody
@@ -17184,7 +17249,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -17210,11 +17277,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={1}
+              rowIndex={2}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={1}
+                aria-rowindex={2}
                 className="row selectable"
                 data-row-id="1"
                 onMouseEnter={[Function]}
@@ -17231,7 +17298,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={1}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -17267,7 +17334,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={1}
+                    rowIndex={2}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -17277,7 +17344,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="1_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="1"
-                      rowIndex={1}
+                      rowIndex={2}
                       tableId="test-terra-table"
                     >
                       <Cell
@@ -17316,13 +17383,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="1"
-                        rowIndex={1}
+                        rowIndex={2}
                         sectionId=""
                         tableId="test-terra-table"
                       >
                         <td
                           className="cell pinned"
-                          headers=" test-terra-table-rowheader-1 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-1 test-terra-table-table-rowSelectionColumn"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -17364,7 +17431,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="1_Column-0"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={1}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17405,13 +17472,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={1}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <th
                       className="cell pinned"
-                      headers="  test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0"
                       id="test-terra-table-rowheader-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -17446,7 +17513,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="1_Column-1"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={1}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17487,13 +17554,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={1}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell pinned blank"
-                      headers=" test-terra-table-rowheader-1 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-1 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -17530,7 +17597,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="1_Column-2"
                   onCellSelect={[Function]}
                   rowId="1"
-                  rowIndex={1}
+                  rowIndex={2}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17571,13 +17638,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="1"
-                    rowIndex={1}
+                    rowIndex={2}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell masked"
-                      headers=" test-terra-table-rowheader-1 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-1 test-terra-table-Column-2"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -17623,7 +17690,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -17649,11 +17718,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="2"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={2}
+              rowIndex={3}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={2}
+                aria-rowindex={3}
                 className="row selectable"
                 data-row-id="2"
                 onMouseEnter={[Function]}
@@ -17670,7 +17739,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={2}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -17706,7 +17775,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={2}
+                    rowIndex={3}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -17716,7 +17785,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="2_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="2"
-                      rowIndex={2}
+                      rowIndex={3}
                       tableId="test-terra-table"
                     >
                       <Cell
@@ -17755,13 +17824,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="2"
-                        rowIndex={2}
+                        rowIndex={3}
                         sectionId=""
                         tableId="test-terra-table"
                       >
                         <td
                           className="cell pinned"
-                          headers=" test-terra-table-rowheader-2 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-2 test-terra-table-table-rowSelectionColumn"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -17802,7 +17871,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="2_Column-0"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={2}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17843,13 +17912,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={2}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <th
                       className="cell pinned"
-                      headers="  test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0"
                       id="test-terra-table-rowheader-2"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -17884,7 +17953,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="2_Column-1"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={2}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -17925,13 +17994,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={2}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell pinned"
-                      headers=" test-terra-table-rowheader-2 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-2 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -17964,7 +18033,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="2_Column-2"
                   onCellSelect={[Function]}
                   rowId="2"
-                  rowIndex={2}
+                  rowIndex={3}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18005,13 +18074,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="2"
-                    rowIndex={2}
+                    rowIndex={3}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell masked"
-                      headers=" test-terra-table-rowheader-2 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-2 test-terra-table-Column-2"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -18057,7 +18126,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -18083,11 +18154,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="3"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={3}
+              rowIndex={4}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={3}
+                aria-rowindex={4}
                 className="row selectable"
                 data-row-id="3"
                 onMouseEnter={[Function]}
@@ -18104,7 +18175,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={false}
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={3}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -18140,7 +18211,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={3}
+                    rowIndex={4}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -18150,7 +18221,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="3_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="3"
-                      rowIndex={3}
+                      rowIndex={4}
                       tableId="test-terra-table"
                     >
                       <Cell
@@ -18189,13 +18260,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="3"
-                        rowIndex={3}
+                        rowIndex={4}
                         sectionId=""
                         tableId="test-terra-table"
                       >
                         <td
                           className="cell pinned"
-                          headers=" test-terra-table-rowheader-3 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-3 test-terra-table-table-rowSelectionColumn"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -18236,7 +18307,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="3_Column-0"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={3}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18277,13 +18348,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={3}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <th
                       className="cell pinned"
-                      headers="  test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0"
                       id="test-terra-table-rowheader-3"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -18318,7 +18389,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="3_Column-1"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={3}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18359,13 +18430,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={3}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell pinned"
-                      headers=" test-terra-table-rowheader-3 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-3 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -18398,7 +18469,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="3_Column-2"
                   onCellSelect={[Function]}
                   rowId="3"
-                  rowIndex={3}
+                  rowIndex={4}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18439,13 +18510,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="3"
-                    rowIndex={3}
+                    rowIndex={4}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell masked"
-                      headers=" test-terra-table-rowheader-3 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-3 test-terra-table-Column-2"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -18490,7 +18561,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -18517,11 +18590,11 @@ exports[`Table verifies row selection column header selection 1`] = `
               key="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowIndex={4}
+              rowIndex={5}
               tableId="test-terra-table"
             >
               <tr
-                aria-rowindex={4}
+                aria-rowindex={5}
                 className="row selected selectable"
                 data-row-id="4"
                 onMouseEnter={[Function]}
@@ -18538,7 +18611,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isSelected={true}
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={4}
+                  rowIndex={5}
                   tableId="test-terra-table"
                 >
                   <RowSelectionCell
@@ -18574,7 +18647,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={true}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={4}
+                    rowIndex={5}
                     tableId="test-terra-table"
                   >
                     <InjectIntl(Cell)
@@ -18584,7 +18657,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       key="4_table-rowSelectionColumn"
                       onCellSelect={[Function]}
                       rowId="4"
-                      rowIndex={4}
+                      rowIndex={5}
                       tableId="test-terra-table"
                     >
                       <Cell
@@ -18623,13 +18696,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="4"
-                        rowIndex={4}
+                        rowIndex={5}
                         sectionId=""
                         tableId="test-terra-table"
                       >
                         <td
                           className="cell pinned"
-                          headers=" test-terra-table-rowheader-4 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-4 test-terra-table-table-rowSelectionColumn"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -18670,7 +18743,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="4_Column-0"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={4}
+                  rowIndex={5}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18711,13 +18784,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={4}
+                    rowIndex={5}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <th
                       className="cell pinned highlighted"
-                      headers="  test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0"
                       id="test-terra-table-rowheader-4"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -18752,7 +18825,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="4_Column-1"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={4}
+                  rowIndex={5}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18793,13 +18866,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={4}
+                    rowIndex={5}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell pinned highlighted"
-                      headers=" test-terra-table-rowheader-4 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-4 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -18831,7 +18904,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   key="4_Column-2"
                   onCellSelect={[Function]}
                   rowId="4"
-                  rowIndex={4}
+                  rowIndex={5}
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -18872,13 +18945,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                     isSelected={false}
                     onCellSelect={[Function]}
                     rowId="4"
-                    rowIndex={4}
+                    rowIndex={5}
                     sectionId=""
                     tableId="test-terra-table"
                   >
                     <td
                       className="cell highlighted"
-                      headers=" test-terra-table-rowheader-4 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-4 test-terra-table-Column-2"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -18907,20 +18980,22 @@ exports[`Table verifies row selection column header selection 1`] = `
       </table>
       <VisuallyHiddenText
         aria-live="polite"
+        className="row-selection-mode-region"
         text={null}
       >
         <span
           aria-live="polite"
-          className="visually-hidden-text"
+          className="visually-hidden-text row-selection-mode-region"
         />
       </VisuallyHiddenText>
       <VisuallyHiddenText
         aria-live="polite"
+        className="row-selection-region"
         text="Terra.table.row-selection-template"
       >
         <span
           aria-live="polite"
-          className="visually-hidden-text"
+          className="visually-hidden-text row-selection-region"
         >
           Terra.table.row-selection-template
         </span>
@@ -18928,205 +19003,16 @@ exports[`Table verifies row selection column header selection 1`] = `
       <VisuallyHiddenText
         aria-atomic="true"
         aria-live="polite"
+        className="column-header-region"
         text={null}
       >
         <span
           aria-atomic="true"
           aria-live="polite"
-          className="visually-hidden-text"
+          className="visually-hidden-text column-header-region"
         />
       </VisuallyHiddenText>
     </div>
   </Table>
 </InjectIntl(Table)>
-`;
-
-exports[`Table verifies that the column widths are set properly in the colgroup 1`] = `
-<div
-  className="table-container"
->
-  <table
-    aria-rowcount={5}
-    className="table"
-    id="test-terra-table"
-    role="table"
-  >
-    <ContextProvider
-      value={
-        Object {
-          "pinnedColumnOffsets": Array [
-            0,
-          ],
-          "setColumnHeaderAriaLiveMessage": [Function],
-        }
-      }
-    >
-      <colgroup>
-        <col
-          key="Column-0"
-          style={
-            Object {
-              "width": "150px",
-            }
-          }
-        />
-        <col
-          key="Column-1"
-          style={
-            Object {
-              "width": "150px",
-            }
-          }
-        />
-        <col
-          key="Column-2"
-          style={
-            Object {
-              "width": "150px",
-            }
-          }
-        />
-      </colgroup>
-      <Memo(ColumnHeader)
-        columns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 150,
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 150,
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-              "maximumWidth": 300,
-              "minimumWidth": 60,
-              "width": 150,
-            },
-          ]
-        }
-        hasColumnHeaders={true}
-        headerHeight="2.5rem"
-        onColumnSelect={[Function]}
-        onResizeHandleChange={[Function]}
-        onResizeMouseDown={[Function]}
-        tableHeight={0}
-        tableId="test-terra-table"
-      />
-      <Memo(Section)
-        displayedColumns={
-          Array [
-            Object {
-              "displayName": " Vitals",
-              "id": "Column-0",
-            },
-            Object {
-              "displayName": "March 16",
-              "id": "Column-1",
-            },
-            Object {
-              "displayName": "March 17",
-              "id": "Column-2",
-              "isSelectable": false,
-            },
-          ]
-        }
-        id="00000000-0000-0000-0000-000000000000"
-        isHidden={true}
-        key="00000000-0000-0000-0000-000000000000"
-        rowHeaderIndex={0}
-        rowHeight="2.5rem"
-        rows={
-          Array [
-            Object {
-              "cells": Array [
-                Object {
-                  "content": "Heart Rate Monitored (bpm)",
-                  "isSelectable": false,
-                },
-                Object {
-                  "content": "",
-                },
-                Object {
-                  "content": "66",
-                  "isMasked": true,
-                },
-              ],
-              "id": "1",
-            },
-            Object {
-              "cells": Array [
-                Object {
-                  "content": "Temperature Oral (degC)",
-                },
-                Object {
-                  "content": "36.7",
-                },
-                Object {
-                  "content": "36.9",
-                  "isMasked": true,
-                },
-              ],
-              "id": "2",
-            },
-            Object {
-              "cells": Array [
-                Object {
-                  "content": "Cardiac Index (L/min/m2)",
-                },
-                Object {
-                  "content": "2.25",
-                },
-                Object {
-                  "content": "2.28",
-                  "isMasked": true,
-                },
-              ],
-              "id": "3",
-            },
-            Object {
-              "cells": Array [
-                Object {
-                  "content": "Oxygen Flow Rate (L/min)",
-                },
-                Object {
-                  "content": "63",
-                },
-                Object {
-                  "content": "47",
-                },
-              ],
-              "id": "4",
-              "isSelected": true,
-            },
-          ]
-        }
-        sectionRowIndex={0}
-        tableId="test-terra-table"
-      />
-    </ContextProvider>
-  </table>
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
-  <VisuallyHiddenText
-    aria-live="polite"
-    text={null}
-  />
-  <VisuallyHiddenText
-    aria-atomic="true"
-    aria-live="polite"
-    text={null}
-  />
-</div>
 `;

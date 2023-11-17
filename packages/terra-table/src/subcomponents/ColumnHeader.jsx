@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ColumnHeaderCell from './ColumnHeaderCell';
-import { columnShape } from '../proptypes/columnShape';
+import columnShape from '../proptypes/columnShape';
 import styles from './ColumnHeader.module.scss';
 
 const cx = classNames.bind(styles);
@@ -59,11 +59,11 @@ const propTypes = {
   /**
    * Boolean indicating whether or not the table columns should be displayed.
    */
-  hasColumnHeaders: PropTypes.bool,
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
-  hasColumnHeaders: true,
+  hasVisibleColumnHeaders: true,
 };
 
 const ColumnHeader = (props) => {
@@ -78,15 +78,14 @@ const ColumnHeader = (props) => {
     onColumnSelect,
     onResizeMouseDown,
     onResizeHandleChange,
-    hasColumnHeaders,
+    hasVisibleColumnHeaders,
   } = props;
 
   return (
     <thead>
       <tr
-        aria-rowindex={1}
-        className={cx('column-header-row', { hidden: !hasColumnHeaders })}
-        height={hasColumnHeaders ? headerHeight : undefined}
+        className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
+        height={hasVisibleColumnHeaders ? headerHeight : undefined}
       >
         {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
@@ -96,12 +95,13 @@ const ColumnHeader = (props) => {
             rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}
+            isDisplayVisible={column.isDisplayVisible}
             width={column.width}
             minimumWidth={column.minimumWidth}
             maximumWidth={column.maximumWidth}
             headerHeight={headerHeight}
-            isResizable={hasColumnHeaders && column.isResizable}
-            isSelectable={hasColumnHeaders && column.isSelectable}
+            isResizable={hasVisibleColumnHeaders && column.isResizable}
+            isSelectable={hasVisibleColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
             isActive={activeColumnIndex === columnIndex}
             isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}

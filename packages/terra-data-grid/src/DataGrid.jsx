@@ -5,12 +5,11 @@ import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import Table, { GridConstants, GridContext } from 'terra-table';
+import Table, {
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex,
+} from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import rowShape from './proptypes/rowShape';
-import { columnShape } from './proptypes/columnShape';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
-import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -37,6 +36,11 @@ const propTypes = {
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Sections will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
@@ -90,6 +94,11 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
+
+  /**
    * Callback function that is called when a selectable column is selected. Parameters:
    *  @param {string} columnId columnId
    */
@@ -126,6 +135,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether or not the DataGrid should hide the column headers.
+   */
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -136,29 +150,33 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  hasVisibleColumnHeaders: true,
 };
 
 const DataGrid = injectIntl((props) => {
   const {
-    id,
-    ariaLabelledBy,
     ariaLabel,
-    rows,
-    pinnedColumns,
-    overflowColumns,
-    onColumnResize,
-    defaultColumnWidth,
+    ariaLabelledBy,
     columnHeaderHeight,
     columnResizeIncrement,
-    rowHeight,
-    onColumnSelect,
+    defaultColumnWidth,
+    hasVisibleColumnHeaders,
+    hasSelectableRows,
+    id,
+    onCellRangeSelect,
     onCellSelect,
     onClearSelection,
+    onColumnResize,
+    onColumnSelect,
     onRangeSelection,
     onRowSelectionHeaderSelect,
-    onCellRangeSelect,
-    hasSelectableRows,
+    onSectionSelect,
+    overflowColumns,
+    pinnedColumns,
     rowHeaderIndex,
+    rowHeight,
+    rows,
+    sections,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -179,7 +197,9 @@ const DataGrid = injectIntl((props) => {
   const handleFocus = useRef(true);
 
   const [checkResizable, setCheckResizable] = useState(false);
-  const [focusedRow, setFocusedRow] = useState(0);
+
+  // if columns are not visible then set the first selectable row index to 1
+  const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
   const [focusedCol, setFocusedCol] = useState(0);
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
@@ -204,13 +224,20 @@ const DataGrid = injectIntl((props) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
-    let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
-    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-      [focusedCell] = focusedCell.getElementsByTagName('input');
-    }
 
     if (makeActiveElement) {
-      focusedCell.focus();
+      // Set focus on input field (checkbox) of row selection cells.
+      let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+      if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+        [focusedCell] = focusedCell.getElementsByTagName('input');
+      }
+
+      // Set focus to column header button, if it exists
+      if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
+        focusedCell = focusedCell.querySelector('[role="button"]');
+      }
+
+      focusedCell?.focus();
     }
   };
 
@@ -448,7 +475,7 @@ const DataGrid = injectIntl((props) => {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    if (nextCol < 0 || nextRow < 0) {
+    if (nextCol < 0 || nextRow < (hasVisibleColumnHeaders ? 0 : 1)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -502,6 +529,7 @@ const DataGrid = injectIntl((props) => {
         <Table
           id={`${id}-table`}
           rows={dataGridRows}
+          sections={sections}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
           activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
@@ -515,9 +543,11 @@ const DataGrid = injectIntl((props) => {
           rowHeaderIndex={rowHeaderIndex}
           onColumnResize={onColumnResize}
           onColumnSelect={handleColumnSelect}
+          onSectionSelect={onSectionSelect}
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
+          hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
         />
       </GridContext.Provider>

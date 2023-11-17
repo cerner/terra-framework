@@ -10,6 +10,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { IconUp, IconDown, IconError } from 'terra-icon';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
@@ -61,6 +62,11 @@ const propTypes = {
    * Boolean value indicating whether or not the header cell is focused.
    */
   isActive: PropTypes.bool,
+
+  /**
+   * Boolean value indicating whether or not the header cell text is displayed in the cell.
+   */
+  isDisplayVisible: PropTypes.bool,
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
@@ -135,6 +141,7 @@ const defaultProps = {
   hasError: false,
   isSelectable: false,
   isActive: false,
+  isDisplayVisible: true,
   isResizable: false,
   isResizeActive: false,
 };
@@ -147,6 +154,7 @@ const ColumnHeaderCell = (props) => {
     sortIndicator,
     hasError,
     isActive,
+    isDisplayVisible,
     isSelectable,
     isResizable,
     tableHeight,
@@ -168,26 +176,23 @@ const ColumnHeaderCell = (props) => {
   const gridContext = useContext(GridContext);
 
   const columnHeaderCellRef = useRef();
-  const columnHeaderCellButtonRef = useRef();
 
   const [isResizeHandleActive, setResizeHandleActive] = useState(false);
 
   const isGridContext = gridContext.role === GridConstants.GRID;
-
-  const columnHeaderFocusArea = useCallback(() => (columnHeaderCellButtonRef.current ? columnHeaderCellButtonRef.current : columnHeaderCellRef.current), []);
 
   useEffect(() => {
     if (isActive) {
       if (isResizable && isResizeActive) {
         setResizeHandleActive(true);
       } else {
-        columnHeaderFocusArea().focus();
+        columnHeaderCellRef.current.focus();
         setResizeHandleActive(false);
       }
     } else {
       setResizeHandleActive(false);
     }
-  }, [columnHeaderFocusArea, isActive, isResizable, isResizeActive]);
+  }, [isActive, isResizable, isResizeActive]);
 
   const onResizeHandleMouseDown = useCallback((event) => {
     event.stopPropagation();
@@ -198,9 +203,9 @@ const ColumnHeaderCell = (props) => {
 
   // Restore focus to column header after resize action is completed.
   const onResizeHandleMouseUp = useCallback(() => {
-    columnHeaderFocusArea().focus();
+    columnHeaderCellRef.current.focus();
     setResizeHandleActive(false);
-  }, [columnHeaderFocusArea]);
+  }, []);
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = (event) => {
@@ -222,7 +227,7 @@ const ColumnHeaderCell = (props) => {
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive && isGridContext) {
-          columnHeaderFocusArea().focus();
+          columnHeaderCellRef.current.focus();
           setResizeHandleActive(false);
           event.stopPropagation();
           event.preventDefault();
@@ -239,14 +244,17 @@ const ColumnHeaderCell = (props) => {
     }
   };
 
-  let sortIndicatorIcon;
-  const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.table.columnError' })} className={cx('error-icon')} />;
+  const errorIcon = hasError && <IconError className={cx('error-icon')} />;
 
   // Add the sort indicator based on the sort direction
+  let sortIndicatorIcon;
+  let sortDescription = '';
   if (sortIndicator === SortIndicators.ASCENDING) {
     sortIndicatorIcon = <IconUp />;
+    sortDescription = intl.formatMessage({ id: 'Terra.table.sort-ascending' });
   } else if (sortIndicator === SortIndicators.DESCENDING) {
     sortIndicatorIcon = <IconDown />;
+    sortDescription = intl.formatMessage({ id: 'Terra.table.sort-descending' });
   }
 
   // Retrieve current theme from context
@@ -265,39 +273,47 @@ const ColumnHeaderCell = (props) => {
     : null;
 
   // For tables, we want elements to be tabbable when selectable, but not anytime else.
-  let columnTabIndex = isSelectable ? 0 : undefined;
-
+  let buttonTabIndex = isSelectable ? 0 : undefined;
   if (isGridContext) {
     // For grids, we only want 1 tab stop. We then define the focus behavior in DataGrid.
-    columnTabIndex = isSelectable && displayName ? -1 : undefined;
+    buttonTabIndex = isSelectable && displayName ? -1 : undefined;
   }
+
+  // Determine if button element is required for column header
+  const hasButtonElement = isSelectable && displayName;
+
+  // Format header description for screenreader
+  let headerDescription = displayName;
+  headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
+  headerDescription += sortDescription ? `, ${sortDescription}` : '';
 
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
+      ref={!hasButtonElement ? columnHeaderCellRef : undefined}
       id={`${tableId}-${id}`}
-      ref={(columnHeaderCellRef)}
       key={id}
       className={cx('column-header', theme.className, {
         selectable: isSelectable,
         pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
       })}
-      tabIndex={isGridContext ? -1 : undefined}
+      tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role="columnheader"
       scope="col"
-      aria-sort={sortIndicator}
+      title={displayName}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
       <div
         className={cx('header-container')}
-        {...isSelectable && displayName && { ref: columnHeaderCellButtonRef, role: 'button' }}
-        tabIndex={columnTabIndex}
+        {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
+        tabIndex={buttonTabIndex}
       >
         {errorIcon}
-        <span>{displayName}</span>
+        <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
         {sortIndicatorIcon}
+        <VisuallyHiddenText text={headerDescription} />
       </div>
       { isResizable && (
       <ColumnResizeHandle
