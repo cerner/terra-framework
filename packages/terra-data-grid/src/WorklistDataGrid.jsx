@@ -1,14 +1,13 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React, {
-  useState, useRef, useCallback, useEffect,
+  useRef, useCallback, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { rowShape, columnShape, validateRowHeaderIndex } from 'terra-table';
+
 import styles from './WorklistDataGrid.module.scss';
 import DataGrid from './DataGrid';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
@@ -124,12 +123,6 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
-
-  /**
-   * @private
-   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
@@ -163,14 +156,9 @@ function WorklistDataGrid(props) {
     onDisableSelectableRows,
     onEnableRowSelection,
     hasSelectableRows,
-    intl,
     rowHeaderIndex,
   } = props;
 
-  const rowSelectionEffectTriggered = useRef(false);
-  const selectedRows = useRef([]);
-  const [rowSelectionAriaLiveMessage, setRowSelectionAriaLiveMessage] = useState(null);
-  const [rowSelectionModeAriaLiveMessage, setRowSelectionModeAriaLiveMessage] = useState(null);
   const inShiftUpDownMode = useRef(false);
   const multiSelectRange = useRef({ start: null, end: null });
   const dataGridFuncRef = useRef();
@@ -191,18 +179,9 @@ function WorklistDataGrid(props) {
 
   // useEffect for row selection
   useEffect(() => {
-    if (!rowSelectionEffectTriggered.current) {
-      rowSelectionEffectTriggered.current = true;
-      return;
-    }
-
     if (!hasSelectableRows) {
       multiSelectRange.current = {};
-      selectedRows.current = [];
     }
-
-    // Since the row selection mode has changed, the row selection mode needs to be updated.
-    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.worklistDataGrid.row-selection-mode-enabled' : 'Terra.worklistDataGrid.row-selection-mode-disabled' }));
 
     if (gridReceivedFocus.current) {
       let newFocusCell = dataGridFuncRef.current.getFocusedCell();
@@ -211,42 +190,6 @@ function WorklistDataGrid(props) {
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [hasSelectableRows]);
-
-  // useEffect for row updates
-  useEffect(() => {
-    const previousSelectedRows = [...selectedRows.current];
-    selectedRows.current = rows.filter((row) => row.isSelected).map(row => (row.id));
-
-    if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
-      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklistDataGrid.all-rows-unselected' }));
-    } else if (selectedRows.current.length === rows.length) {
-      setRowSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.worklistDataGrid.all-rows-selected' }));
-    } else {
-      const rowSelectionsAdded = selectedRows.current.filter(row => !previousSelectedRows.includes(row));
-      const rowSelectionsRemoved = previousSelectedRows.filter(row => !selectedRows.current.includes(row));
-      let selectionUpdateAriaMessage = '';
-
-      if (rowSelectionsAdded.length === 1) {
-        const newRowIndex = rows.findIndex(row => row.id === rowSelectionsAdded[0]);
-        const selectedRowLabel = rows[newRowIndex].ariaLabel || newRowIndex + 2; // Accounts for header row and zero-based index
-        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklistDataGrid.row-selection-template' }, { row: selectedRowLabel });
-      } else if (rowSelectionsAdded.length > 1) {
-        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.worklistDataGrid.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
-      }
-
-      if (rowSelectionsRemoved.length === 1) {
-        const removedRowIndex = rows.findIndex(row => row.id === rowSelectionsRemoved[0]);
-        const unselectedRowLabel = rows[removedRowIndex].ariaLabel || removedRowIndex + 2; // Accounts for header row and zero-based index
-        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklistDataGrid.row-selection-cleared-template' }, { row: unselectedRowLabel });
-      } else if (rowSelectionsRemoved.length > 1) {
-        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.worklistDataGrid.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
-      }
-
-      if (selectionUpdateAriaMessage) {
-        setRowSelectionAriaLiveMessage(selectionUpdateAriaMessage);
-      }
-    }
-  }, [intl, rows]);
 
   const handleClearSelection = useCallback(() => {
     if (!hasSelectableRows) {
@@ -450,8 +393,6 @@ function WorklistDataGrid(props) {
         hasSelectableRows={hasSelectableRows}
         ref={dataGridFuncRef}
       />
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
     </div>
   );
 }
@@ -459,4 +400,4 @@ function WorklistDataGrid(props) {
 WorklistDataGrid.propTypes = propTypes;
 WorklistDataGrid.defaultProps = defaultProps;
 
-export default injectIntl(WorklistDataGrid);
+export default WorklistDataGrid;
