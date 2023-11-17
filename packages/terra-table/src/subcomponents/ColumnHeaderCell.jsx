@@ -64,7 +64,7 @@ const propTypes = {
   isActive: PropTypes.bool,
 
   /**
-   * Boolean value indicating whether or not the header cell is focused.
+   * Boolean value indicating whether or not the header cell text is displayed in the cell.
    */
   isDisplayVisible: PropTypes.bool,
 
