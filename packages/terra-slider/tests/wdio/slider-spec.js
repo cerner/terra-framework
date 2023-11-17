@@ -1,4 +1,4 @@
-Terra.describeViewports('Slider', ['medium', 'large'], () => {
+Terra.describeViewports('Slider', ['medium', 'large', 'tiny'], () => {
   describe('Default Slider', () => {
     it('displays a default slider', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slider/default-slider');
@@ -87,6 +87,13 @@ Terra.describeViewports('Slider', ['medium', 'large'], () => {
     it('displays a slider with custom min and max labels', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slider/custom-slider');
       Terra.validates.element('custom-slider');
+    });
+  });
+
+  describe('Slider with long field label', () => {
+    it('displays a slider with long field label', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slider/slider-with-long-field-label');
+      Terra.validates.element('long-field-label');
     });
   });
 
