@@ -247,16 +247,16 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     const rowSelectionTableSelector = '#table-with-single-row-selection';
 
     beforeEach(() => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-row-selection');
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-single-row-selection');
     });
 
     it('validates hovering over a selectable row', () => {
-      browser.$$('tbody tr')[0].$$('td')[2].moveTo();
+      browser.$$('tbody tr')[0].$$('td')[0].moveTo();
       browser.pause(1000);
-      Terra.validates.element('row-selection-hover', { selector: rowSelectionTableSelector });
+      Terra.validates.element('row-single-selection-hover', { selector: rowSelectionTableSelector });
 
-      browser.$$('tbody tr')[0].$$('td')[2].click();
-      Terra.validates.element('row-selection-cell-click', { selector: rowSelectionTableSelector });
+      browser.$$('tbody tr')[0].$$('td')[0].click();
+      Terra.validates.element('row-single-selection-cell-click', { selector: rowSelectionTableSelector });
     });
   });
 });

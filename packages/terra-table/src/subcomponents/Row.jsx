@@ -6,7 +6,7 @@ import ThemeContext from 'terra-theme-context';
 
 import Cell from './Cell';
 import cellShape from '../proptypes/cellShape';
-import { columnShape } from '../proptypes/columnShape';
+import columnShape from '../proptypes/columnShape';
 import RowSelectionCell from './RowSelectionCell';
 import styles from './Row.module.scss';
 

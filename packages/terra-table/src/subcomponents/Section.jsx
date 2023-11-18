@@ -8,7 +8,7 @@ import ThemeContext from 'terra-theme-context';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
-import { columnShape } from '../proptypes/columnShape';
+import columnShape from '../proptypes/columnShape';
 import styles from './Section.module.scss';
 
 const cx = classNames.bind(styles);

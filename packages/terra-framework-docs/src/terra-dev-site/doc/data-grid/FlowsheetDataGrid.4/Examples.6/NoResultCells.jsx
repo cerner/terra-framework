@@ -3,7 +3,7 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
   cols: [
-    { id: 'Column-0', displayName: 'Vitals', isSelectable: false },
+    { id: 'Column-0', displayName: 'Vitals' },
     { id: 'Column-1', displayName: 'March 16' },
     { id: 'Column-2', displayName: 'March 17' },
     { id: 'Column-3', displayName: 'March 18' },
@@ -62,10 +62,10 @@ const NoResultCells = () => {
 
   return (
     <FlowsheetDataGrid
-      id="default-terra-flowsheet-data-grid-results-missing"
+      id="default-terra-flowsheet-data-grid-no-result-cells"
       columns={cols}
       rows={rows}
-      ariaLabel="Flowsheet Data Grid with Results Missing"
+      ariaLabel="Flowsheet Data Grid with No Result Cells"
     />
   );
 };
