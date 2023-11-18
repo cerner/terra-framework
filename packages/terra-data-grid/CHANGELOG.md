@@ -12,6 +12,7 @@
 
 Changed
   * Updated all columns and cells to be selectable in FlowsheetDataGrid, as `isSelectable` prop is not supported for columns or cells.
+  * Updated Table component to use new `rowSelectionMode` prop instead of `hasSelectableRows`.
 
 ## 1.1.0 - (November 9, 2023)
 
