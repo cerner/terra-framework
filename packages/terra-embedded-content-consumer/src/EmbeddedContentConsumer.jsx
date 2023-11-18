@@ -105,6 +105,7 @@ class EmbeddedContentConsumer extends React.Component {
       Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
     }
 
+    // Pass className to XFC library to set the style when the iframe has focus
     frameOptions.focusIndicator = {
       classNameFocusStyle: cx('iframe-focus-style'),
     };
@@ -120,8 +121,9 @@ class EmbeddedContentConsumer extends React.Component {
       this.props.onMount(this.xfcFrame);
     }
 
+    // Handle visual focus indicator for iframes with inline HTML using `srcdoc` attribute.
+    // For iframes using `src` and a URL, it's already being handled in XFC library.
     if (frameOptions.iframeAttrs.srcdoc) {
-      // Visual focus indicator for iframe with inline html
       this.handleFrameVisualFocusIndicator();
     }
 
@@ -133,6 +135,16 @@ class EmbeddedContentConsumer extends React.Component {
     this.addEventListeners(this.props.eventHandlers);
   }
 
+  /**
+   * Handles listening for events, and display visual focus indicator on the
+   * iframe, specifically for iframe using `srcdoc` attribute to display
+   * inline HTML content.
+   *
+   * This is needed here since the XFC library does not fully support
+   * `srcdoc`, and postMessage communication for inline HTML content inside of the frame.
+   *
+   * The XFC library already handles all scenario with `src` attribute.
+   */
   handleFrameVisualFocusIndicator() {
     // reference to the xfc iframe's contentWindow
     this.contentWindow = this.xfcFrame?.iframe?.contentWindow;

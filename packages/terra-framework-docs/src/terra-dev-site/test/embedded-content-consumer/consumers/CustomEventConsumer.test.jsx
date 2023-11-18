@@ -21,8 +21,11 @@ const CustomEventConsumer = () => (
     <p>The following is an embedded content within an iframe.</p>
     <div id="CustomEvent">
       <EmbeddedContentConsumer
-        className={cx('iframe')}
+        // TODO: Fix site doc so that relative paths can be used everywhere.
+        // For now, use `../../../../` prefix if there is any changes to the providers file so we can see changes during the PR-preview build.
+        // Otherwise, keep the existing `/terra-framework/` prefix so the page will load when viewing the live site.
         src="../../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
+        className={cx('iframe')}
         eventHandlers={eventHandlers}
         title="Basic Consumer"
         options={{ iframeAttrs: { id: 'custom-event-consumer-frame' } }}
