@@ -26,6 +26,7 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
 
     //  Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
@@ -57,6 +58,7 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
 
     // Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
@@ -123,6 +125,7 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
 
     // Validate ColumnHeaderCell React component
     const columnHeaderCell = columnHeader.find(ColumnHeaderCell).first();
@@ -155,6 +158,7 @@ describe('ColumnHeader', () => {
     // Verify that column headers are not present
     const columnHeader = wrapper.find('.hidden');
     expect(columnHeader).toHaveLength(1);
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -178,8 +182,11 @@ describe('ColumnHeader', () => {
     );
 
     // Verify that column headers are present
-    const columnHeader = wrapper.find('.hidden');
-    expect(columnHeader).toHaveLength(0);
+    const hiddenSelector = wrapper.find('.hidden');
+    expect(hiddenSelector).toHaveLength(0);
+
+    const columnHeader = wrapper.find('.column-header-row');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
 
     expect(wrapper).toMatchSnapshot();
   });

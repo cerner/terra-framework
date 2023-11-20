@@ -413,7 +413,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$('tbody tr:nth-child(2) th').isFocused()).toBe(true);
     });
 
-    it('uses the last focused row when the row is deleted and the index is not out of bounds', () => {
+    it('uses the last focused row when the row is deleted and the index is not out of bounds after deletion', () => {
       clickCell(1, 1, deleteRowsSelector);
       holdDownShiftKey();
       clickCell(3, 1, deleteRowsSelector);
@@ -424,7 +424,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       expect(browser.$('tbody tr:nth-child(3) th').isFocused()).toBe(true);
     });
 
-    it('focuses the last row when the selected and the index is out of bounds', () => {
+    it('focuses the last row when selected and the index is out of bounds after deletion', () => {
       clickCell(5, 1, deleteRowsSelector);
       holdDownShiftKey();
       clickCell(10, 1, deleteRowsSelector);

@@ -195,7 +195,7 @@ const DataGrid = forwardRef((props, ref) => {
   const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
-  const lastFocusedIds = useRef({ rowId: '', columnId: '' });
+  const focusedCellRef = useRef({ rowId: '', columnId: '' });
 
   const [checkResizable, setCheckResizable] = useState(false);
 
@@ -226,7 +226,7 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    lastFocusedIds.current = {
+    focusedCellRef.current = {
       rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
       columnId: displayedColumns[newColIndex].id,
     };
@@ -504,19 +504,18 @@ const DataGrid = forwardRef((props, ref) => {
       if (handleFocus.current) {
         let newRowIndex = focusedRow;
         let newColumnIndex = focusedCol;
-        const headerOffset = hasVisibleColumnHeaders ? 1 : 0;
 
         // Check for last focused row ID. If found set the index. Otherwise set it to the last focused row or last index.
-        if (lastFocusedIds.current.rowId) {
-          newRowIndex = dataGridRows.findIndex(row => row.id === lastFocusedIds.current.rowId);
+        if (focusedCellRef.current.rowId) {
+          newRowIndex = [...grid.current.rows].findIndex(row => row.getAttribute('data-row-id') === focusedCellRef.current.rowId);
           newRowIndex = newRowIndex === -1
-            ? Math.min(focusedRow, dataGridRows.length - 1 + headerOffset)
-            : (newRowIndex + headerOffset);
+            ? Math.min(focusedRow, grid.current.rows.length - 1)
+            : newRowIndex;
         }
 
         // Check for last focused column ID. If found set the index. Otherwise set it to the last focused column or last index.
-        if (lastFocusedIds.current.columnId) {
-          newColumnIndex = displayedColumns.findIndex(column => column.id === lastFocusedIds.current.columnId);
+        if (focusedCellRef.current.columnId) {
+          newColumnIndex = displayedColumns.findIndex(column => column.id === focusedCellRef.current.columnId);
           newColumnIndex = newColumnIndex === -1
             ? Math.min(focusedCol, displayedColumns.length - 1)
             : newColumnIndex;
