@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  *Added the customProps `isSelectable`, `isSelectedButton` to CollapsibleMenuViewItem.
+
 ## 6.84.0 - (November 9, 2023)
 
 * Added
