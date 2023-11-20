@@ -185,7 +185,8 @@ class MenuContent extends React.Component {
 
   getSubmenuHeight() {
     if (this.props.index > 0 && this.listNode) {
-      return this.listNode.clientHeight + this.listNode.parentNode.parentNode.parentNode.firstChild.clientHeight + 1;
+      const bufHeight = (this.context.name || this.context.className) === 'orion-fusion-theme' ? 20 : 10;
+      return this.listNode.clientHeight + this.listNode.parentNode.parentNode.parentNode.firstChild.clientHeight + bufHeight;
     }
 
     return 0;
@@ -433,7 +434,7 @@ class MenuContent extends React.Component {
     if (this.props.showHeader || isSubMenu) {
       header = this.buildHeader(isFullScreen);
     }
-    const contentHeight = this.props.isHeightBounded ? '100%' : null;
+    const contentHeight = this.props.isHeightBounded ? '100%' : undefined;
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
