@@ -613,6 +613,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -3400,6 +3401,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -6946,6 +6948,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -10462,6 +10465,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -13249,6 +13253,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -16795,6 +16800,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -20365,6 +20371,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -23895,6 +23902,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -27430,6 +27438,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -30221,6 +30230,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -33767,6 +33777,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -37293,6 +37304,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -40819,6 +40831,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -44345,6 +44358,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -47871,6 +47885,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -51395,6 +51410,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -54919,6 +54935,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -58402,6 +58419,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
@@ -61126,6 +61144,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 >
                   <thead>
                     <tr
+                      aria-rowindex={1}
                       className="column-header-row"
                       data-row-id="test-terra-worklist-data-grid-table-header-row"
                       height="2.5rem"
