@@ -15,7 +15,7 @@ const propTypes = {
   /**
    * String that labels the modal for screen readers.
    */
-  ariaLabel: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
   /**
    * String that labels the modal for screen readers.
    */

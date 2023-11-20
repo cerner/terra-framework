@@ -156,9 +156,7 @@ const NotificationDialog = (props) => {
   /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
   return (
     <AbstractModal
-      ariaLabel=""
-      ariaLabelledBy="header-container"
-      ariaDescribedBy="dialogBody"
+      ariaLabelledBy="notification-dialog-signal-word"
       role={signalWord === 'Alert' ? 'alertdialog' : 'dialog'}
       classNameModal={classNames(cx('notification-dialog', theme.className), customProps.className)}
       onRequestClose={() => {}}

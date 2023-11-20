@@ -2,9 +2,7 @@
 
 exports[`Notification Dialog correctly applies the theme context className 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog orion-fusion-theme"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -145,9 +143,7 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
 
 exports[`Notification Dialog shallow renders an custom notification-dialog 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -262,9 +258,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
 
 exports[`Notification Dialog shallow renders an error notification-dialog 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -378,9 +372,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
 
 exports[`Notification Dialog shallow renders an hazard-high notification-dialog 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -494,9 +486,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
 
 exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -610,9 +600,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
 
 exports[`Notification Dialog shallow renders an hazard-medium notification-dialog 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -726,9 +714,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
 
 exports[`Notification Dialog shallow renders dialog with reject button first 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -842,9 +828,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
 
 exports[`Notification Dialog shallow renders dialog with startMessage, content, and endMessage 1`] = `
 <AbstractModal
-  ariaDescribedBy="dialogBody"
-  ariaLabel=""
-  ariaLabelledBy="header-container"
+  ariaLabelledBy="notification-dialog-signal-word"
   classNameModal="notification-dialog"
   classNameOverlay={null}
   closeOnEsc={true}
@@ -1065,9 +1049,7 @@ exports[`correctly applies the theme context className 1`] = `
       variant="hazard-high"
     >
       <AbstractModal
-        ariaDescribedBy="dialogBody"
-        ariaLabel=""
-        ariaLabelledBy="header-container"
+        ariaLabelledBy="notification-dialog-signal-word"
         classNameModal="notification-dialog orion-fusion-theme"
         classNameOverlay={null}
         closeOnEsc={true}
@@ -1090,9 +1072,7 @@ exports[`correctly applies the theme context className 1`] = `
                   class="overlay layer-9000 orion-fusion-theme"
                 />
                 <div
-                  aria-describedby="dialogBody"
-                  aria-label=""
-                  aria-labelledby="header-container"
+                  aria-labelledby="notification-dialog-signal-word"
                   aria-modal="true"
                   class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                   role="dialog"
@@ -1201,9 +1181,7 @@ exports[`correctly applies the theme context className 1`] = `
           >
             <ForwardRef
               aria-modal="true"
-              ariaDescribedBy="dialogBody"
-              ariaLabel=""
-              ariaLabelledBy="header-container"
+              ariaLabelledBy="notification-dialog-signal-word"
               classNameModal="notification-dialog orion-fusion-theme"
               classNameOverlay={null}
               closeOnOutsideClick={false}
@@ -1227,9 +1205,7 @@ exports[`correctly applies the theme context className 1`] = `
                 />
               </ModalOverlay>
               <div
-                aria-describedby="dialogBody"
-                aria-label=""
-                aria-labelledby="header-container"
+                aria-labelledby="notification-dialog-signal-word"
                 aria-modal="true"
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                 onKeyDown={[Function]}
