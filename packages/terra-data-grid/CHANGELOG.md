@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.2.0 - (November 20, 2023)
+
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
   * Fixed issue where row selection was being announced twice in Worklist Data Grid.
