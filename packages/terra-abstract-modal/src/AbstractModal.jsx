@@ -89,6 +89,7 @@ const defaultProps = {
   role: 'dialog',
   rootSelector: '#root',
   zIndex: '6000',
+  isCalledFromNotificationDialog: false,
 };
 
 const AbstractModal = (props) => {

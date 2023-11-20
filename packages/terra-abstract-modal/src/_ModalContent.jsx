@@ -87,6 +87,7 @@ const defaultProps = {
   role: 'dialog',
   rootSelector: '#root',
   zIndex: '6000',
+  isCalledFromNotificationDialog: false,
 };
 
 const ModalContent = forwardRef((props, ref) => {
@@ -163,7 +164,7 @@ const ModalContent = forwardRef((props, ref) => {
         ref={ref}
       >
         <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-          {(!isCalledFromNotificationDialog && isCalledFromNotificationDialog !== undefined) && (
+          {(!isCalledFromNotificationDialog) && (
             <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
               {text => {
                 // In the latest version of react-intl this param is an array, when previous versions it was a string.
@@ -178,7 +179,7 @@ const ModalContent = forwardRef((props, ref) => {
             </FormattedMessage>
           )}
           {children}
-          {(!isCalledFromNotificationDialog && isCalledFromNotificationDialog !== undefined) && (
+          {(!isCalledFromNotificationDialog) && (
             <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
               {text => {
                 // In the latest version of react-intl this param is an array, when previous versions it was a string.
