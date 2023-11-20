@@ -131,7 +131,7 @@ function FlowsheetDataGrid(props) {
   const inShiftDirectionalMode = useRef(false);
   const flowsheetColumns = useMemo(() => columns.map(column => ({
     ...column,
-    isSelectable: true,
+    isSelectable: false,
     isResizable: false,
   })), [columns]);
 

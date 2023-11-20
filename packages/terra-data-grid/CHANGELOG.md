@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.2.0 - (November 20, 2023)
+
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
   * Fixed issue where row selection was being announced twice in Worklist Data Grid.
@@ -11,8 +13,8 @@
   * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.
   * Added section support to FlowsheetDataGrid.
 
-Changed
-  * Updated all columns and cells to be selectable in FlowsheetDataGrid, as `isSelectable` prop is not supported for columns or cells.
+* Changed
+  * Updated all cells to be selectable and columns unselectable in FlowsheetDataGrid, as `isSelectable` prop is not supported for columns or cells.
 
 ## 1.1.0 - (November 9, 2023)
 

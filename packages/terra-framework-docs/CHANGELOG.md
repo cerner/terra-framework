@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.45.0 - (November 20, 2023)
+
 * Added
   * Added example to `terra-table` to show column states and sorting;
   * Added new test for Terra Slider component for long field labels.
@@ -12,6 +14,7 @@
   * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
   * Removed alpha notice for FlowsheetDataGrid.
   * Removed unsupported props `isMasked` and `isSelectable` from FlowsheetDataGrid subcomponent documentation.
+  * Updated examples and tests in `terra-table` to validate sections in a table with pinned columns.
 
 ## 1.44.0 - (November 9, 2023)
 
