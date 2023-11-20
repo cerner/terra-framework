@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+*Added
+  *Updated example to `terra-collapsible-menu-view` to show usage of props `isSelectable` and `isSelectedButton`. 
+
 * Added
   * Added example to `terra-table` to show column states and sorting;
   * Added new test for Terra Slider component for long field labels.
