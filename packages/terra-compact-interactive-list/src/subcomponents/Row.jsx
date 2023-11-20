@@ -33,12 +33,12 @@ const propTypes = {
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * A number for column minimum width.
+   * A number for column maximum width.
    */
   columnMaximumWidth: PropTypes.number,
 
   /**
-   * A number of visual columns.
+   * Number of visual columns.
    */
   numberOfColumns: PropTypes.number.isRequired,
 
@@ -49,19 +49,19 @@ const propTypes = {
 
   /**
    * Row's width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
-   * Disregarder if flexGrow is set to true.
+   * Disregarded if flexGrow is set to true.
    */
   rowWidth: PropTypes.number,
 
   /**
    * Row's maximum width for flex growing rows in units set by widthUnit prop, such as `px`, `em`, or `rem`.
-   * Will have no effect if the width is set and flexGrow is omitted or false.
+   * Will have no effect if row width is set and flexGrow is omitted or false.
    */
   rowMaximumWidth: PropTypes.number,
 
   /**
-   * Row's maximum width for flex growing rows in units set by widthUnit prop, such as `px`, `em`, or `rem`.
-   * Will have no effect if the width is set and flexGrow is omitted or false.
+   * Row's minimum width for flex growing rows in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Will have no effect if row width is set and flexGrow is omitted or false.
    */
   rowMinimumWidth: PropTypes.number,
 
@@ -74,6 +74,10 @@ const propTypes = {
     widthUnitTypes.REM,
   ]).isRequired,
 
+  /**
+   * By default the items go from top to bottom, then break to the next column.
+   * If flowHorizontally prop is set to true, items will flow left to right, then break to the next row.
+   */
   flowHorizontally: PropTypes.bool,
 
   /**

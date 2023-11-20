@@ -124,7 +124,7 @@ const CompactInteractiveList = (props) => {
 
   // check if list has responsive columns
   const isResponsive = checkIfRowHasResponsiveColumns(conversionedColumns);
-  // if there are responsive columns, the items will need maxWidth and minWidth.
+  // if there are responsive columns, we need maxWidth and minWidth for semantic rows specifically.
 
   const rowMaxWidth = isResponsive ? getRowMaximumWidth(conversionedColumns, columnMaxWidth?.value) : null;
   const rowMinWidth = isResponsive ? getRowMinimumWidth(conversionedColumns, columnMinWidth?.value) : null;
@@ -135,7 +135,7 @@ const CompactInteractiveList = (props) => {
   const rowsPerColumn = Math.ceil(rows.length / numberOfColumns);
 
   const calculatedRowHeight = flowHorizontally ? null : getValueUnitTypePair(rowHeight || DefaultListValues.rowDefaultHeight[widthUnit]);
-  // calculate list width based on the item width and number of columns
+  // calculate list width based on the semantic row width and number of columns
   const listWidth = `${rowWidth * numberOfColumns}${widthUnit}`;
   // calculate list min width or use default
   const defaultListMinWidth = getValueUnitTypePair(DefaultListValues.listMinimumWidth[widthUnit])?.value;
@@ -175,8 +175,8 @@ const CompactInteractiveList = (props) => {
   };
 
   const mappedRows = mapRows();
-  const checkIfLeftmost = (index) => (flowHorizontally ? index % numberOfColumns === 0 : index < rowsPerColumn);
-  const checkIfTopmost = (index) => (flowHorizontally ? index < numberOfColumns : index % rowsPerColumn === 0);
+  const checkIfRowIsLeftMost = (index) => (flowHorizontally ? index % numberOfColumns === 0 : index < rowsPerColumn);
+  const checkIfRowIsTopMost = (index) => (flowHorizontally ? index < numberOfColumns : index % rowsPerColumn === 0);
 
   return (
     <div
@@ -210,8 +210,8 @@ const CompactInteractiveList = (props) => {
             widthUnit={widthUnit}
             flowHorizontally={flowHorizontally}
             rowHeight={calculatedRowHeight}
-            isTopmost={checkIfTopmost(index)}
-            isLeftmost={checkIfLeftmost(index)}
+            isTopmost={checkIfRowIsTopMost(index)}
+            isLeftmost={checkIfRowIsLeftMost(index)}
           />
         ))}
       </div>
