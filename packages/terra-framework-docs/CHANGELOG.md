@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples for resizable columns in tables.
+
 ## 1.45.0 - (November 20, 2023)
 
 * Added
@@ -28,7 +31,6 @@
   * Added single and ranged cell selection Flowsheet Data Grid example.
   * Added deprecation warning for `terra-file-path`.
   * Added aria labels for table examples.
-  * Added examples for resizable columns in tables.
 
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.
