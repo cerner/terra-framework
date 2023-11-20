@@ -64,13 +64,18 @@ const TableSingleRowSelection = () => {
   const [rowData, setRowData] = useState(rows);
 
   const onRowSelect = useCallback((rowId) => {
-    // Remove current selections
     const newRowData = [...rowData];
 
     const dataRowToUpdate = newRowData.find(row => row.id === rowId);
-    if (dataRowToUpdate) {
-      dataRowToUpdate.isSelected = !dataRowToUpdate.isSelected;
-    }
+
+    newRowData.forEach((row) => {
+      if (row.id !== dataRowToUpdate.id) {
+        // eslint-disable-next-line no-return-assign, no-param-reassign
+        row.isSelected = false;
+      }
+    });
+
+    dataRowToUpdate.isSelected = !dataRowToUpdate.isSelected;
 
     setRowData(newRowData);
   }, [rowData]);
