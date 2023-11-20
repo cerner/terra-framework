@@ -63,13 +63,13 @@ Consumer.init();
 
 #### Accessibility Guidance: Title
 
-For the purposes of accessibility compliance, it is **critical** to screen reader users that the title of the frame is set to a meaningful title for the content inside the iframe.
+For the purposes of accessibility compliance, it is **critical** to screen reader users that the title of the iframe is set, and describes the content inside the iframe. Without having a proper `title` set for the iframe, the content embedded within the iframe is not accessible. By having a title for the iframe, it helps to inform screen reader users about the content that is embedded inside of the iframe.
 
 #### Accessibility Guidance: Scrolling
 
-When using this Embedded Content Consumer component to embed another page, the default behavior is set to auto resize the content such that the content will display fully inside of the iframe. In scenario where custom configuration of XFC is made to set a `fixedWidth` or `fixedHeight` of the content, the content may not be fully visible in the viewport. For keyboard only users, it is critical that users can navigate to the iframe, and scroll to view the content fully.
+When using this Embedded Content Consumer component to embed another page, the default behavior is set to auto resize the content such that the content will display fully inside of the iframe. In scenarios where custom configuration of XFC is made to set a `fixedWidth` or `fixedHeight` or both `fixedWidth` and `fixedHeight` of the content, the content may not be fully visible in the viewport. For keyboard only users, it is critical that users can navigate to the iframe, and scroll using keyboard controls to view the content fully.
 
-When specifying a `fixedWidth` or `fixedHeight` [attributes for XFC](https://github.com/cerner/xfc#iframe-resizing-config), it's also necessary to set `scrolling` option to `true` so that the content can be scrolled when not fully displayed. This is required for accessibility for keyboard only users.
+When specifying a `fixedWidth` or `fixedHeight` [attribute for XFC](https://github.com/cerner/xfc#iframe-resizing-config), it's also necessary to set `scrolling` option to `true` so that the content can be scrolled when not fully displayed. This is required for accessibility for keyboard only users.
 
 See the [Embedded Content Consumer Props Table](#embedded-content-consumer-props-table) below for an example configuration.
 </Notice>
