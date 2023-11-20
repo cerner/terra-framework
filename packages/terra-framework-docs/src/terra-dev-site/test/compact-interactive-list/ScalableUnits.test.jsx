@@ -7,19 +7,19 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Col_1',
-    width: 5,
+    maximumWidth: '4.5em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Col_2',
-    maximumWidth: 25,
-    minimunWidth: 7,
+    maximumWidth: '25em',
+    minimumWidth: '7em',
   },
   {
     id: 'Column-2',
     displayName: 'Col_3',
-    width: 5,
+    maximumWidth: '5em',
     align: alignTypes.CENTER,
   },
 ];
@@ -31,7 +31,6 @@ const ScalableUnits = () => (
       rows={rows}
       columns={cols}
       numberOfColumns={2}
-      widthUnit="em"
     />
   </div>
 );

@@ -3,7 +3,6 @@ import React from 'react';
 import { mountWithIntl } from 'terra-enzyme-intl';
 import CompactInteractiveList from '../../src/CompactInteractiveList';
 import rows from './rowsData';
-import { DefaultListValues } from '../../src/utils/constants';
 
 beforeAll(() => {
   jest.spyOn(console, 'error').mockImplementation();
@@ -21,127 +20,84 @@ describe('Compact Interactive List', () => {
       {
         id: 'Column-0',
         displayName: 'Col_1',
-        width: 40,
+        width: '40px',
       },
       {
         id: 'Column-1',
         displayName: 'Col_2',
-        width: 200,
+        width: '200px',
       },
       {
         id: 'Column-2',
         displayName: 'Col_3',
-        width: 40,
+        width: '40px',
       },
     ];
 
-    it('should apply default minimunWidth correctly', () => {
+    it('should not apply default minimumWidth to fixed width list', () => {
       const wrapper = mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-id"
+          id="compact-interactive-list-fixed-width"
           rows={rows}
           columns={cols}
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toEqual('500px');
+      expect(list.props().style.minWidth).toBeFalsy();
     });
 
-    it('should apply minimunWidth correctly', () => {
-      const wrapper = mountWithIntl(
-        <CompactInteractiveList
-          id="compact-interactive-list-id"
-          rows={rows}
-          columns={cols}
-          minimumWidth={3}
-          widthUnit="em"
-        />,
-      );
-      const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toEqual('3em');
-    });
-
-    it('should apply columnMaximumWidth and ColumnMinimumWidth props correctly', () => {
+    it('should not apply columnMaximumWidth and columnMinimumWidth props to fixed columns width', () => {
       const numberOfColumns = 2;
       const wrapper = mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-id"
+          id="compact-interactive-list"
           rows={rows}
           columns={cols}
           numberOfColumns={numberOfColumns}
-          columnMinimumWidth={20}
-          columnMaximumWidth={200}
+          columnMinimumWidth="20px"
+          columnMaximumWidth="200px"
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
       // columnMinimumWidth and columnMaximumWidth should NOT be applied to fixed width lists
-      expect(list.props().style.minWidth).toEqual('500px');
+      expect(list.props().style.minWidth).toBeFalsy();
       expect(list.props().style.maxWidth).toBeFalsy();
       // the width should be equal to the sum of all columns width multiplied by numberOfColumns
-      // the width units in this example should default to 'px'
-      const getColWidthSum = (total, col) => col.width + total;
-      const expectedWidth = `${cols.reduce(getColWidthSum, 0) * numberOfColumns}px`;
-      expect(list.props().style.width).toEqual(expectedWidth);
-    });
-
-    it('should apply widthUnit prop correctly', () => {
-      const numberOfColumns = 3;
-      const wrapper = mountWithIntl(
-        <CompactInteractiveList
-          id="compact-interactive-list-id"
-          rows={rows}
-          columns={cols}
-          numberOfColumns={numberOfColumns}
-          widthUnit="em"
-        />,
-      );
-      const list = wrapper.find('.compact-interactive-list');
-      // the width should be equal to the sum of all columns width multiplied by numberOfColumns
-      // the width units in this example should default to 'em'
-      const getColWidthSum = (total, col) => col.width + total;
-      const expectedWidth = `${cols.reduce(getColWidthSum, 0) * numberOfColumns}em`;
-      expect(list.props().style.width).toEqual(expectedWidth);
+      expect(list.props().style.width).toEqual('560px');
     });
   });
 
   describe('responsive columns', () => {
-    const respCols = [
-      {
-        id: 'Column-0',
-        displayName: 'Col_1',
-        width: 60,
-      },
-      {
-        id: 'Column-1',
-        displayName: 'Col_2',
-        width: 200,
-        flexGrow: true,
-      },
-      {
-        id: 'Column-2',
-        displayName: 'Col_3',
-        width: 60,
-      },
-    ];
-
-    it('should calculate list minWidth based on default columnMinWidth and apply default if default is bigger', () => {
+    it('should calculate list minWidth based on default columnMinWidth and apply default minListWIdth if it is bigger', () => {
+      const respCols1 = [
+        {
+          id: 'Column-0',
+          displayName: 'Col_1',
+          width: '20px',
+        },
+        {
+          id: 'Column-1',
+          displayName: 'Col_2',
+          width: '200px',
+          flexGrow: true,
+        },
+        {
+          id: 'Column-2',
+          displayName: 'Col_3',
+          width: '20px',
+        },
+      ];
       const numberOfColumns = 2;
       const wrapper = mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-id"
+          id="compact-interactive-list-minWidth-calculation"
           rows={rows}
-          columns={respCols}
+          columns={respCols1}
           numberOfColumns={numberOfColumns}
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      // minWidth should be calculated based on default columnMinimumWidth
-      const rowMinWidth = respCols[0].width + DefaultListValues.columnMinimumWidth.px + respCols[2].width;
-      // compare to default and choose the bigger one
-      const expectedMinWidth = Math.max(DefaultListValues.minimumWidth.px, rowMinWidth * numberOfColumns);
-      const expectedMinWidthString = `${expectedMinWidth}px`;
-      expect(list.props().style.minWidth).toEqual(expectedMinWidthString);
-      // width has to be 100%
+      expect(list.props().style.minWidth).toEqual('500px');
     });
 
     it('should calculate list minWidth based on column level minimumWidth, compare to default and apply the bigger one', () => {
@@ -149,51 +105,61 @@ describe('Compact Interactive List', () => {
         {
           id: 'Column-0',
           displayName: 'Col_1',
-          width: 6,
+          width: '6em',
         },
         {
           id: 'Column-1',
           displayName: 'Col_2',
-          width: 20,
+          width: '20em',
           flexGrow: true,
-          minimumWidth: 10,
-          maximumWidth: 30,
+          minimumWidth: '10em',
+          maximumWidth: '30em',
         },
         {
           id: 'Column-2',
           displayName: 'Col_3',
-          width: 6,
+          width: '7em',
         },
       ];
       const numberOfColumns = 2;
-      const widthUnit = 'em';
       const wrapper = mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-id"
+          id="compact-interactive-list-compare-min-width"
           rows={rows}
           columns={respCols1}
           numberOfColumns={numberOfColumns}
-          widthUnit={widthUnit}
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      // minWidth should be calculated based on minimumWidth set on column level
-      const rowMinWidth = respCols1[0].width + respCols1[1].minimumWidth + respCols1[2].width;
-      // compare to default and choose the bigger one
-      const expectedMinWidth = Math.max(DefaultListValues.minimumWidth.em, rowMinWidth * numberOfColumns);
-      const expectedMinWidthString = `${expectedMinWidth}${widthUnit}`;
-      expect(list.props().style.minWidth).toEqual(expectedMinWidthString);
+      // compare to default value of 10em and choose 46em as it's bigger
+      expect(list.props().style.minWidth).toEqual('46em');
       // maxWidth should be calculated based on maximumWidth set on column level
-      const rowMaxWidth = respCols1[0].width + respCols1[1].maximumWidth + respCols1[2].width;
-      const expectedMaxWidth = `${rowMaxWidth * numberOfColumns}${widthUnit}`;
-      expect(list.props().style.maxWidth).toEqual(expectedMaxWidth);
+      expect(list.props().style.maxWidth).toEqual('86em');
     });
 
     it('should flow rows vertically by default', () => {
+      const respCols = [
+        {
+          id: 'Column-0',
+          displayName: 'Col_1',
+          width: '60px',
+        },
+        {
+          id: 'Column-1',
+          displayName: 'Col_2',
+          width: '200px',
+          flexGrow: true,
+        },
+        {
+          id: 'Column-2',
+          displayName: 'Col_3',
+          width: '60px',
+        },
+      ];
       const numberOfColumns = 4;
       const wrapper = mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-id"
+          id="compact-interactive-list-vertical-flow"
           rows={rows}
           columns={respCols}
           numberOfColumns={numberOfColumns}
@@ -219,10 +185,28 @@ describe('Compact Interactive List', () => {
     });
 
     it('should flow horizontally if flowHorizontally prop is set', () => {
+      const respCols = [
+        {
+          id: 'Column-0',
+          displayName: 'Col_1',
+          width: '60px',
+        },
+        {
+          id: 'Column-1',
+          displayName: 'Col_2',
+          width: '200px',
+          flexGrow: true,
+        },
+        {
+          id: 'Column-2',
+          displayName: 'Col_3',
+          width: '60px',
+        },
+      ];
       const numberOfColumns = 4;
       const wrapper = mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-id"
+          id="compact-interactive-list-horisontal-flow"
           rows={rows}
           columns={respCols}
           numberOfColumns={numberOfColumns}

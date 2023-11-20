@@ -7,18 +7,18 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Col_1',
-    width: 5,
+    width: '5em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Col_2',
-    width: 20,
+    width: '20em',
   },
   {
     id: 'Column-2',
     displayName: 'Col_3',
-    width: 5,
+    width: '5em',
     align: alignTypes.CENTER,
   },
 ];
@@ -29,7 +29,6 @@ const FixedWidthColumns = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
-    widthUnit="em"
   />
 );
 

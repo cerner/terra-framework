@@ -5,8 +5,9 @@ import classNames from 'classnames/bind';
 import styles from './Row.module.scss';
 import Cell from './Cell';
 import cellShape from '../proptypes/cellShape';
-import columnShape from '../proptypes/columnShape';
+import formattedColumnShape from '../proptypes/formattedColumnShape';
 import { widthUnitTypes } from '../utils/constants';
+import unitShape from '../proptypes/unitShape';
 
 const cx = classNames.bind(styles);
 
@@ -24,10 +25,10 @@ const propTypes = {
   /**
    * Data for columns.
    */
-  columns: PropTypes.arrayOf(columnShape).isRequired,
+  columns: PropTypes.arrayOf(formattedColumnShape).isRequired,
 
   /**
-   * A number for column minimum width. Defaults to 60.
+   * A number for column minimum width.
    */
   columnMinimumWidth: PropTypes.number,
 
@@ -76,9 +77,9 @@ const propTypes = {
   flowHorizontally: PropTypes.bool,
 
   /**
-   * Row height in units set by widthUnit prop, such as px, em, or rem.
+   * A valid css string, px, em, or rem supported.
    */
-  rowHeight: PropTypes.number,
+  rowHeight: unitShape,
 
   /**
    * Indicates if the row is located in the top visual row and needs a top border.
@@ -119,7 +120,7 @@ const Row = (props) => {
     minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthUnit}` : null,
   } : { width: `${rowWidth}${widthUnit}` };
   if (rowHeight) {
-    style.height = `${rowHeight}${widthUnit}`;
+    style.height = `${rowHeight?.value}${rowHeight?.unitType}`;
   }
 
   const activeRow = cells && cells.length > 0;

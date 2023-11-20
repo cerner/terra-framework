@@ -17,13 +17,13 @@ const getNumberOfColumns = (activeBreakpoint) => {
 
 const getRowHeight = (activeBreakpoint) => {
   switch (activeBreakpoint) {
-    case 'enormous': return 60;
-    case 'huge': return 60;
-    case 'large': return 60;
-    case 'medium': return 60;
-    case 'small': return 40;
-    case 'tiny': return 40;
-    default: return 40;
+    case 'enormous': return '60px';
+    case 'huge': return '60px';
+    case 'large': return '60px';
+    case 'medium': return '60px';
+    case 'small': return '40px';
+    case 'tiny': return '40px';
+    default: return '40px';
   }
 };
 
@@ -31,19 +31,19 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Col_1',
-    width: 60, // there is no widthUnit prop set in the component, so it will default to px
+    width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Col_2',
-    width: 200, // there is no widthUnit prop set in the component, so it will default to px
+    width: '200px', // will be disregarded bacause of flexGrow prop.
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
   },
   {
     id: 'Column-2',
     displayName: 'Col_3',
-    width: 60, // there is no widthUnit prop set in the component, so it will default to px
+    width: '60px', // there is no widthUnit prop set in the component, so it will default to px
     align: alignTypes.CENTER,
   },
 ];

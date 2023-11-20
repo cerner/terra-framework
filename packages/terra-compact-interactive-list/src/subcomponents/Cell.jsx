@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { checkIfColumnIsResponsive } from '../utils/utils';
-import columnShape from '../proptypes/columnShape';
+import formattedColumnShape from '../proptypes/formattedColumnShape';
 import { widthUnitTypes, alignTypes } from '../utils/constants';
 import styles from './Cell.module.scss';
 
@@ -18,20 +18,20 @@ const propTypes = {
   /**
    * A column data.
    */
-  column: columnShape,
+  column: formattedColumnShape,
 
   /**
-   * Columns minimum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns minimum width in units set by widthUnit prop.
    */
   columnMinimumWidth: PropTypes.number,
 
   /**
-   * Columns maximum width in units set by widthUnit prop, such as `px`, `em`, or `rem`.
+   * Columns maximum width in units set by widthUnit prop.
    */
   columnMaximumWidth: PropTypes.number,
 
   /**
-   * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
+   * The type of width value. Defaults to px.
    */
   widthUnit: PropTypes.oneOf([
     widthUnitTypes.PX,
@@ -63,12 +63,12 @@ const Cell = (props) => {
   const isResponsive = checkIfColumnIsResponsive(flexGrow, width);
 
   const style = {
-    flex: isResponsive ? `1 1 ${width || columnMinimumWidth}${widthUnit}` : null,
+    flex: isResponsive ? `1 1 ${width || minimumWidth || columnMinimumWidth}${widthUnit}` : null,
     width: isResponsive ? null : `${width}${widthUnit}`,
     justifyContent: align || alignTypes.LEFT,
     textAlign: align || alignTypes.LEFT,
-    maxWidth: isResponsive && `${Math.min(maximumWidth, columnMaximumWidth)}${widthUnit}`,
-    minWidth: isResponsive && `${Math.max(minimumWidth, columnMinimumWidth)}${widthUnit}`,
+    maxWidth: isResponsive && (maximumWidth || columnMaximumWidth) ? `${(maximumWidth || columnMaximumWidth)}${widthUnit}` : null,
+    minWidth: isResponsive && (minimumWidth, columnMinimumWidth) ? `${(minimumWidth || columnMinimumWidth)}${widthUnit}` : null,
   };
 
   return (

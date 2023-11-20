@@ -6,19 +6,19 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Col_1',
-    width: 60, // there is no widthUnit prop set in the component, so it will default to px
+    width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Col_2',
-    width: 200, // there is no widthUnit prop set in the component, so it will default to px
+    width: '200px', // will be disregarded because of the flexGrow prop
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
   },
   {
     id: 'Column-2',
     displayName: 'Col_3',
-    width: 60, // there is no widthUnit prop set in the component, so it will default to px
+    width: '60px',
     align: alignTypes.CENTER,
   },
 ];
@@ -29,7 +29,6 @@ const ResponsiveColumns = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
-    // there is no widthUnit prop set, so it will default to px
   />
 );
 

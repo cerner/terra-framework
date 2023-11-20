@@ -19,19 +19,19 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Col_1',
-    width: 60,
+    width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Col_2',
-    width: 200,
+    width: '200px',
     flexGrow: true,
   },
   {
     id: 'Column-2',
     displayName: 'Col_3',
-    width: 60,
+    width: '60px',
     align: alignTypes.CENTER,
   },
 ];
@@ -44,7 +44,6 @@ const WidthBreakpoints = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
-      // there is no widthUnit prop set, so it will default to px
     />
   );
 };

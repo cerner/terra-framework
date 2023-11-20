@@ -8,32 +8,31 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Col_1',
-    width: 6,
+    width: '6em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Col_2',
-    width: 20,
+    width: '60em',
     flexGrow: true,
-    minimumWidth: 10,
-    maximumWidth: 30,
+    minimumWidth: '10em',
+    maximumWidth: '30em',
   },
   {
     id: 'Column-2',
     displayName: 'Col_3',
-    width: 6,
+    width: '6em',
     align: alignTypes.CENTER,
   },
 ];
 
 const ResponsiveColumnsMaxWidth = () => (
   <CompactInteractiveList
-    id="compact-interactive-list-id"
+    id="compact-interactive-list-responsive-columns"
     rows={rows}
     columns={cols}
     numberOfColumns={2}
-    widthUnit="em"
   />
 );
 

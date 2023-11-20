@@ -13,25 +13,25 @@ const columnShape = PropTypes.shape({
   displayName: PropTypes.string,
 
   /**
-   * A valid css string, px, em, or rem supported (should be the same across all width units).
+   * Width of the column is a number value in px, em, or rem units.
    * If not set, the column will be considered a flex growing column.
    * If width is set, but flexGrow prop is also set to true, the width will be disregarded.
    */
-  width: PropTypes.string,
+  width: PropTypes.number,
 
   /**
-   * A valid css string, px, em, or rem supported (should be the same across all width units).
+   * Minimum width of the column is a number value in px, em, or rem units.
    * Will be disregarded if the width is set and flexGrow is omitted or false.
    * Is reccomended in cases the column is flex growing column.
    */
-  minimumWidth: PropTypes.string,
+  minimumWidth: PropTypes.number,
 
   /**
-   * A valid css string, px, em, or rem supported (should be the same across all width units).
+   * Maximum width of the column is a number value in px, em, or rem units.
    * Will be disregarded if the width is set and flexGrow is omitted or false.
    * Is reccomended in cases the column is flex growing column.
    */
-  maximumWidth: PropTypes.string,
+  maximumWidth: PropTypes.number,
 
   /**
    * Whether the column width can grow (a flex growing column).
