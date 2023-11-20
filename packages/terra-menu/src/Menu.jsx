@@ -99,7 +99,6 @@ class Menu extends React.Component {
 
   setPageDimensions(node) {
     if (node) {
-      this.pageHeight = node.clientHeight;
       if (this.props.contentWidth === 'auto') {
         this.setState({
           pageWidth: node.clientWidth,

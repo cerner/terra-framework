@@ -63,10 +63,6 @@ const propTypes = {
    */
   isWidthBounded: PropTypes.bool,
   /**
-   * Fixed height for content.
-   */
-  fixedHeight: PropTypes.number,
-  /**
    * Fixed width for content.
    */
   fixedWidth: PropTypes.number,
