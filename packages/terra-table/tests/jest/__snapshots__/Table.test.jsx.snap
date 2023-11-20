@@ -333,7 +333,6 @@ exports[`Table verifies row selection column header selection 1`] = `
         >
           <thead>
             <tr
-              aria-rowindex={1}
               className="column-header-row"
               data-row-id="test-terra-table-header-row"
               height="2.5rem"

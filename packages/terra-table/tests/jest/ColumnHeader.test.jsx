@@ -182,11 +182,8 @@ describe('ColumnHeader', () => {
     );
 
     // Verify that column headers are present
-    const hiddenSelector = wrapper.find('.hidden');
-    expect(hiddenSelector).toHaveLength(0);
-
-    const columnHeader = wrapper.find('.column-header-row');
-    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
+    const columnHeader = wrapper.find('.hidden');
+    expect(columnHeader).toHaveLength(0);
 
     expect(wrapper).toMatchSnapshot();
   });
