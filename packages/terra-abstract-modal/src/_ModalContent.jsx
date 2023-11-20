@@ -72,6 +72,7 @@ const propTypes = {
    */
   setModalFocusElementRef: PropTypes.func,
   /**
+   * @private
    * If set to true, the AbstractModal is rendered inside a NotificationDialog.
    */
   isCalledFromNotificationDialog: PropTypes.bool,

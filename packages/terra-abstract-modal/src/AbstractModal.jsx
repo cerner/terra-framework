@@ -74,6 +74,7 @@ const propTypes = {
    */
   setModalFocusElementRef: PropTypes.func,
   /**
+   * @private
    * If set to true, the AbstractModal is rendered inside a NotificationDialog.
    */
   isCalledFromNotificationDialog: PropTypes.bool,
@@ -106,6 +107,7 @@ const AbstractModal = (props) => {
     rootSelector,
     onRequestClose,
     zIndex,
+    isCalledFromNotificationDialog,
     ...customProps
   } = props;
 
@@ -170,6 +172,7 @@ const AbstractModal = (props) => {
         aria-modal="true"
         ref={modalElementRef}
         onKeyDown={handleKeydown}
+        isCalledFromNotificationDialog={isCalledFromNotificationDialog}
       >
         {children}
       </ModalContent>
