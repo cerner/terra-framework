@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.1.1-alpha.2 - (November 20, 2023)
+
 * Breaking Changes
   * Renamed `hasColumnHeaders` prop to `hasVisibleColumnHeaders`.
   * Renamed `hasSelectableRows` prop to `rowSelectionMode` with an enumeration.

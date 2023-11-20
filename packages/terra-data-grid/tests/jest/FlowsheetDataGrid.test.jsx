@@ -54,7 +54,7 @@ const dataFile = {
 };
 
 describe('FlowsheetDataGrid', () => {
-  it('renders the row header column as pinned and remaining columns as overflow, all columns as not resizable and all columns and row cells as selectable', () => {
+  it('renders the row header column as pinned and remaining columns as overflow, all columns as not resizable or selectable and all row cells as selectable', () => {
     const wrapper = shallowWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
@@ -69,7 +69,7 @@ describe('FlowsheetDataGrid', () => {
         displayName: 'Vitals',
         id: 'Column-0',
         isResizable: false,
-        isSelectable: true,
+        isSelectable: false,
       },
     ];
 
@@ -78,13 +78,13 @@ describe('FlowsheetDataGrid', () => {
         displayName: 'March 16',
         id: 'Column-1',
         isResizable: false,
-        isSelectable: true,
+        isSelectable: false,
       },
       {
         displayName: 'March 17',
         id: 'Column-2',
         isResizable: false,
-        isSelectable: true,
+        isSelectable: false,
       },
     ];
 
