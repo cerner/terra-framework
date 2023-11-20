@@ -258,6 +258,7 @@ function FlowsheetDataGrid(props) {
   }, [rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
+    // Call onRowSelect for row header column
     if (selectionDetails.columnIndex === 0) {
       if (onRowSelect) {
         onRowSelect(selectionDetails.rowId);
