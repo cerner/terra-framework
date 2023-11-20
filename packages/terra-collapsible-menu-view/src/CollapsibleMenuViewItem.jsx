@@ -117,6 +117,7 @@ class CollapsibleMenuViewItem extends React.Component {
     } = this.props;
 
     const { isCollapsibleGroupItem, isCollapsibleMenuItem } = this.context;
+    const { isSelectable, isSelectedButton } = customProps;
     const attributes = { ...customProps };
     let item;
 
@@ -153,6 +154,8 @@ class CollapsibleMenuViewItem extends React.Component {
               isReversed={isReversed}
               isDisabled={isDisabled}
               isIconOnly={isIconOnly}
+              isSelectable={isSelectable}
+              isSelected={isSelectedButton}
             />
           )}
         >
@@ -175,6 +178,8 @@ class CollapsibleMenuViewItem extends React.Component {
             isReversed={isReversed}
             isDisabled={isDisabled}
             isIconOnly={isIconOnly}
+            isSelectable={isSelectable}
+            isSelected={isSelectedButton}
           />
         </div>
       );
