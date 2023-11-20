@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added a section on accessibility to Embedded Content Consumer implementation guide.
+
 ## 3.40.0 - (November 9, 2023)
 
 * Added
