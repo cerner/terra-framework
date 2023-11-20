@@ -1,10 +1,2 @@
 {
-  "Terra.worklistDataGrid.row-selection-template": "Zeile {row} ausgewählt.",
-  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} Zeilen ausgewählt.",
-  "Terra.worklistDataGrid.multiple-rows-unselected": "Auswahl für {rowCount} Zeilen aufgehoben.",
-  "Terra.worklistDataGrid.row-selection-cleared-template": "Auswahl für Zeile {row} aufgehoben.",
-  "Terra.worklistDataGrid.row-selection-mode-enabled": "Zeilenauswahlmodus aktiviert.",
-  "Terra.worklistDataGrid.row-selection-mode-disabled": "Zeilenauswahlmodus deaktiviert.",
-  "Terra.worklistDataGrid.all-rows-selected": "Alle Zeilen ausgewählt",
-  "Terra.worklistDataGrid.all-rows-unselected": "Keine Zeilen ausgewählt"
 }

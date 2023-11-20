@@ -1,10 +1,2 @@
 {
-  "Terra.worklistDataGrid.row-selection-template": "Rad {row} har markerats. ",
-  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} rader har markerats. ",
-  "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} rader har avmarkerats. ",
-  "Terra.worklistDataGrid.row-selection-cleared-template": "Rad {row} har avmarkerats. ",
-  "Terra.worklistDataGrid.row-selection-mode-enabled": "Radmarkeringsläge aktiverat.",
-  "Terra.worklistDataGrid.row-selection-mode-disabled": "Radmarkeringsläge inaktiverat",
-  "Terra.worklistDataGrid.all-rows-selected": "Alla rader är markerade",
-  "Terra.worklistDataGrid.all-rows-unselected": "Inga rader är markerade"
 }

@@ -90,7 +90,8 @@ const TableWithSections = () => {
   return (
     <Table
       id="table-with-sections"
-      overflowColumns={tableData.cols}
+      pinnedColumns={tableData.cols.slice(0, 2)}
+      overflowColumns={tableData.cols.slice(2)}
       sections={tableSections}
       onSectionSelect={handleSectionSelect}
     />
