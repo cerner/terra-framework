@@ -116,7 +116,20 @@ describe('CollapsibleMenuViewItem', () => {
       const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" icon={<IconTrash />} isIconOnly />, { context }).dive();
       expect(wrapper).toMatchSnapshot();
     });
+    it('should set isSelectable on button when isSelectable is true', () => {
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelectable />);
+      expect(wrapper).toMatchSnapshot();
+    });
 
+    it('should set isSelectedButton on button when isSelectedButton is true', () => {
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelectedButton />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should set isSelectable and isSelectedButton on button when both are true', () => {
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelectable isSelectedButton />);
+      expect(wrapper).toMatchSnapshot();
+    });
     it('should render a menu item when subMenuItems are given', () => {
       const context = { isCollapsibleMenuItem: true };
       const wrapper = shallowWithIntl(
