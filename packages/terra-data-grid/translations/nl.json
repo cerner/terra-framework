@@ -1,10 +1,2 @@
 {
-  "Terra.worklistDataGrid.row-selection-template": "Rij {row} geselecteerd. ",
-  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} rijen geselecteerd. ",
-  "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} rijen gedeselecteerd. ",
-  "Terra.worklistDataGrid.row-selection-cleared-template": "Rij {row} gedeselecteerd. ",
-  "Terra.worklistDataGrid.row-selection-mode-enabled": "Selectiemodus voor rijen ingeschakeld.",
-  "Terra.worklistDataGrid.row-selection-mode-disabled": "Selectiemodus voor rijen uitgeschakeld.",
-  "Terra.worklistDataGrid.all-rows-selected": "Alle rijen geselecteerd",
-  "Terra.worklistDataGrid.all-rows-unselected": "Geen rijen geselecteerd"
 }

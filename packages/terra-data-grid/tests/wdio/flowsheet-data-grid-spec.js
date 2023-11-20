@@ -27,14 +27,22 @@ const navigateToCell = (row, col) => {
 };
 
 const clickCell = (row, col, selector) => {
-  browser.$$(`${selector} tr`)[row].$(`:nth-child(${col + 1})`).click();
+  browser.$$(`${selector} tr`)[row].$(`td:nth-child(${col + 1}), th:nth-child(${col + 1})`).click();
 };
 
 Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
   describe('FlowsheetDataGrid configuration', () => {
-    it('renders a default data grid', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');
-      Terra.validates.element('default-flowsheet-data-grid', { selector: defaultSelector });
+    describe('default flowsheet data grid', () => {
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');
+      });
+
+      it('renders a default flowsheet data grid', () => {
+        browser.$$('thead tr')[0].$$('th')[0].moveTo(); // Explicitly hover over the first column to generate consistent screenshots.
+        browser.keys(['Tab']); // Cell 0,0 gets focus
+        expect(browser.$('tr.column-header-row th:nth-child(1) div[role=button]').isFocused()).toBe(true);
+        Terra.validates.element('default-flowsheet-data-grid', { selector: defaultSelector });
+      });
     });
 
     describe('flowsheet data grid with no column headers', () => {
@@ -175,6 +183,17 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
 
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
       Terra.validates.element('cell-3-1-focused', { selector: defaultSelector });
+    });
+  });
+
+  describe('Sections', () => {
+    const sectionSelector = '#flowsheet-with-sections';
+    beforeEach(() => {
+      browser.url('raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-sections');
+    });
+
+    it('validate Flowsheet section UI', () => {
+      Terra.validates.element('flowsheet-with-sections', { selector: sectionSelector });
     });
   });
 });

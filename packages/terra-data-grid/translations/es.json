@@ -1,10 +1,2 @@
 {
-  "Terra.worklistDataGrid.row-selection-template": "Fila {fila} seleccionada. ",
-  "Terra.worklistDataGrid.multiple-rows-selected": "{rowCount} filas seleccionadas. ",
-  "Terra.worklistDataGrid.multiple-rows-unselected": "{rowCount} filas no seleccionadas. ",
-  "Terra.worklistDataGrid.row-selection-cleared-template": "Fila {fila} no seleccionada. ",
-  "Terra.worklistDataGrid.row-selection-mode-enabled": "Modo Selección de filas habilitado.",
-  "Terra.worklistDataGrid.row-selection-mode-disabled": "Modo Selección de filas deshabilitado",
-  "Terra.worklistDataGrid.all-rows-selected": "Todas las filas seleccionadas",
-  "Terra.worklistDataGrid.all-rows-unselected": "Ninguna fila seleccionada"
 }
