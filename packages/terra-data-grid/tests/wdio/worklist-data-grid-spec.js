@@ -33,7 +33,7 @@ const rowSelectionNavigateToCell = (row, col) => {
 };
 
 const clickCell = (row, col, selector) => {
-  browser.$$(`${selector} tr`)[row].$(`:nth-child(${col + 1})`).click();
+  browser.$$(`${selector} tr`)[row].$(`td:nth-child(${col + 1}), th:nth-child(${col + 1})`).click();
 };
 
 const shiftClickCell = (row, col, selector) => {
@@ -393,6 +393,54 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('row-5-to-9-selected-with-hover-row-selection-mode', { selector: defaultSelector });
       expect(browser.$$('[role="grid"] [tabIndex="0"]')).toBeElementsArrayOfSize(1);
+    });
+  });
+
+  describe('row and column deletion', () => {
+    const deleteRowsSelector = '#worklist-data-grid-delete-rows';
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-delete-rows-and-columns');
+    });
+
+    it('retains the last selected row index when filtering rows', () => {
+      clickCell(2, 1, deleteRowsSelector);
+      clickCell(8, 1, deleteRowsSelector);
+      clickCell(5, 1, deleteRowsSelector);
+
+      browser.$('#filter-rows-button').click();
+      browser.keys(['Tab']);
+
+      expect(browser.$('tbody tr:nth-child(2) th').isFocused()).toBe(true);
+    });
+
+    it('uses the last focused row when the row is deleted and the index is not out of bounds after deletion', () => {
+      clickCell(1, 1, deleteRowsSelector);
+      holdDownShiftKey();
+      clickCell(3, 1, deleteRowsSelector);
+
+      browser.$('#delete-rows-button').click();
+      browser.keys(['Tab', 'Tab']);
+
+      expect(browser.$('tbody tr:nth-child(3) th').isFocused()).toBe(true);
+    });
+
+    it('focuses the last row when selected and the index is out of bounds after deletion', () => {
+      clickCell(5, 1, deleteRowsSelector);
+      holdDownShiftKey();
+      clickCell(10, 1, deleteRowsSelector);
+
+      browser.$('#delete-rows-button').click();
+      browser.keys(['Tab', 'Tab']);
+      expect(browser.$('tbody tr:last-child th').isFocused()).toBe(true);
+    });
+
+    it('focuses on the last column when selected and the index is out of bounds', () => {
+      clickCell(0, 2, deleteRowsSelector);
+      clickCell(0, 2, deleteRowsSelector);
+      clickCell(0, 2, deleteRowsSelector);
+
+      browser.keys(['Shift', 'Tab']);
+      expect(browser.$('thead th:nth-child(2)').isFocused()).toBe(true);
     });
   });
 

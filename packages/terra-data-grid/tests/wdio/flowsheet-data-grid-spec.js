@@ -27,10 +27,48 @@ const navigateToCell = (row, col) => {
 };
 
 const clickCell = (row, col, selector) => {
-  browser.$$(`${selector} tr`)[row].$(`:nth-child(${col + 1})`).click();
+  browser.$$(`${selector} tr`)[row].$(`td:nth-child(${col + 1}), th:nth-child(${col + 1})`).click();
 };
 
 Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
+  describe('FlowsheetDataGrid configuration', () => {
+    describe('default flowsheet data grid', () => {
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');
+      });
+
+      it('renders a default flowsheet data grid', () => {
+        browser.keys(['Tab']); // Cell 0,0 gets focus
+        expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+        Terra.validates.element('default-flowsheet-data-grid', { selector: defaultSelector });
+      });
+    });
+
+    describe('flowsheet data grid with no column headers', () => {
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-headers-hidden');
+      });
+
+      it('renders a flowsheet data grid without column headers', () => {
+        expect(browser.$('//thead').getCSSProperty('height').parsed.value).toBe(0);
+        Terra.validates.element('flowsheet-data-grid-no-column-headers', { selector: '#terra-flowsheet-data-grid-no-column-headers-table' });
+      });
+
+      it('tabs into (1, 0) instead of (0, 0)', () => {
+        browser.keys(['Tab']);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-1"]').isFocused()).toBe(true);
+      });
+
+      it('does not focus the header column', () => {
+        browser.keys(['ArrowDown']);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-2"]').isFocused()).toBe(true);
+
+        browser.keys(['ArrowUp', 'ArrowUp']);
+        expect(browser.$('//*[@id="terra-flowsheet-data-grid-no-column-headers-table-rowheader-1"]').isFocused()).toBe(true);
+      });
+    });
+  });
+
   describe('Cell selection', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/default-flowsheet-data-grid');
@@ -102,7 +140,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(-3, 0);
       releaseShiftKey();
 
-      expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('tr.column-header-row th:nth-child(2)').isFocused()).toBe(true);
       Terra.validates.element('selection-arrows-range-3-1-to-1-1-focus-0-1', { selector: defaultSelector });
     });
 
@@ -144,6 +182,17 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
 
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
       Terra.validates.element('cell-3-1-focused', { selector: defaultSelector });
+    });
+  });
+
+  describe('Sections', () => {
+    const sectionSelector = '#flowsheet-with-sections';
+    beforeEach(() => {
+      browser.url('raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-sections');
+    });
+
+    it('validate Flowsheet section UI', () => {
+      Terra.validates.element('flowsheet-with-sections', { selector: sectionSelector });
     });
   });
 });

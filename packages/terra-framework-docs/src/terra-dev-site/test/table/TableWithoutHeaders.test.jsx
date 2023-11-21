@@ -76,7 +76,7 @@ const TableWithoutHeaders = () => {
       id="table-without-headers"
       overflowColumns={cols}
       rows={rows}
-      hasColumnHeaders={false}
+      hasVisibleColumnHeaders={false}
     />
   );
 };

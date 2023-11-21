@@ -15,9 +15,8 @@
     color: var(--terra-slider-label-color, #1c1f21);
     font-weight: var(--terra-slider-label-font-weight, 700);
     margin-right: var(--terra-slider-label-margin-right, 0.5rem);
-    text-align: center;
+    text-align: left;
     white-space: initial;
-    width: 20%;
   }
 
   .slider-label {
@@ -44,7 +43,6 @@
     margin-right: var(--terra-slider-input-range-margin-right, 0.5rem);
     min-height: var(--terra-slider-input-range-min-height, 3.143rem);
     min-width: var(--terra-slider-input-range-min-width, 17.143rem);
-    width: var(--terra-slider-input-range-width, 70%);
 
     &:disabled {
       cursor: default;

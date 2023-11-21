@@ -122,8 +122,8 @@ exports[`Table verifies row selection column header selection 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasColumnHeaders={true}
     hasSelectableRows={true}
+    hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
       Object {
@@ -290,7 +290,9 @@ exports[`Table verifies row selection column header selection 1`] = `
           columns={
             Array [
               Object {
+                "displayName": "Terra.table.row-selection-header-display",
                 "id": "table-rowSelectionColumn",
+                "isDisplayVisible": false,
                 "isResizable": false,
                 "isSelectable": false,
                 "maximumWidth": 300,
@@ -321,7 +323,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          hasColumnHeaders={true}
+          hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
           onResizeHandleChange={[Function]}
@@ -333,13 +335,16 @@ exports[`Table verifies row selection column header selection 1`] = `
             <tr
               aria-rowindex={1}
               className="column-header-row"
+              data-row-id="test-terra-table-header-row"
               height="2.5rem"
             >
               <InjectIntl(ColumnHeaderCell)
                 columnIndex={0}
+                displayName="Terra.table.row-selection-header-display"
                 headerHeight="2.5rem"
                 id="table-rowSelectionColumn"
                 isActive={false}
+                isDisplayVisible={false}
                 isResizable={false}
                 isResizeActive={false}
                 isSelectable={false}
@@ -356,6 +361,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               >
                 <ColumnHeaderCell
                   columnIndex={0}
+                  displayName="Terra.table.row-selection-header-display"
                   hasError={false}
                   headerHeight="2.5rem"
                   id="table-rowSelectionColumn"
@@ -387,6 +393,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={false}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -413,11 +420,26 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "width": "40px",
                       }
                     }
+                    title="Terra.table.row-selection-header-display"
                   >
                     <div
                       className="header-container"
                     >
-                      <span />
+                      <span
+                        aria-hidden={true}
+                        className="display-text hidden"
+                      >
+                        Terra.table.row-selection-header-display
+                      </span>
+                      <VisuallyHiddenText
+                        text="Terra.table.row-selection-header-display"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.table.row-selection-header-display
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -474,6 +496,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -505,9 +528,21 @@ exports[`Table verifies row selection column header selection 1`] = `
                     <div
                       className="header-container"
                     >
-                      <span>
+                      <span
+                        aria-hidden={true}
+                        className="display-text"
+                      >
                          Vitals
                       </span>
+                      <VisuallyHiddenText
+                        text=" Vitals"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                           Vitals
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -564,6 +599,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -595,9 +631,21 @@ exports[`Table verifies row selection column header selection 1`] = `
                     <div
                       className="header-container"
                     >
-                      <span>
+                      <span
+                        aria-hidden={true}
+                        className="display-text"
+                      >
                         March 16
                       </span>
+                      <VisuallyHiddenText
+                        text="March 16"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          March 16
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                     <div
                       className="pinned-columns-divider"
@@ -664,6 +712,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     }
                   }
                   isActive={false}
+                  isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
                   isSelectable={false}
@@ -695,9 +744,21 @@ exports[`Table verifies row selection column header selection 1`] = `
                     <div
                       className="header-container"
                     >
-                      <span>
+                      <span
+                        aria-hidden={true}
+                        className="display-text"
+                      >
                         March 17
                       </span>
+                      <VisuallyHiddenText
+                        text="March 17"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          March 17
+                        </span>
+                      </VisuallyHiddenText>
                     </div>
                   </th>
                 </ColumnHeaderCell>
@@ -709,7 +770,9 @@ exports[`Table verifies row selection column header selection 1`] = `
           displayedColumns={
             Array [
               Object {
+                "displayName": "Terra.table.row-selection-header-display",
                 "id": "table-rowSelectionColumn",
+                "isDisplayVisible": false,
                 "isResizable": false,
                 "isSelectable": false,
                 "width": 40,
@@ -826,7 +889,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -1265,7 +1330,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -1699,7 +1766,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -2132,7 +2201,9 @@ exports[`Table verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
+                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": false,
                     "width": 40,
@@ -2549,20 +2620,22 @@ exports[`Table verifies row selection column header selection 1`] = `
       </table>
       <VisuallyHiddenText
         aria-live="polite"
+        className="row-selection-mode-region"
         text={null}
       >
         <span
           aria-live="polite"
-          className="visually-hidden-text"
+          className="visually-hidden-text row-selection-mode-region"
         />
       </VisuallyHiddenText>
       <VisuallyHiddenText
         aria-live="polite"
+        className="row-selection-region"
         text="Terra.table.row-selection-template"
       >
         <span
           aria-live="polite"
-          className="visually-hidden-text"
+          className="visually-hidden-text row-selection-region"
         >
           Terra.table.row-selection-template
         </span>
@@ -2570,12 +2643,13 @@ exports[`Table verifies row selection column header selection 1`] = `
       <VisuallyHiddenText
         aria-atomic="true"
         aria-live="polite"
+        className="column-header-region"
         text={null}
       >
         <span
           aria-atomic="true"
           aria-live="polite"
-          className="visually-hidden-text"
+          className="visually-hidden-text column-header-region"
         />
       </VisuallyHiddenText>
     </div>

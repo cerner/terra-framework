@@ -2,15 +2,13 @@ import React, {
   useState, useRef, useCallback, forwardRef, useImperativeHandle, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
-import Table, { GridConstants, GridContext } from 'terra-table';
+import Table, {
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex,
+} from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import rowShape from './proptypes/rowShape';
-import { columnShape } from './proptypes/columnShape';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
-import validateRowHeaderIndex from './proptypes/validators';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -37,6 +35,11 @@ const propTypes = {
    * Data for content in the body of the Grid. Rows will be rendered in the order given.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Sections will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * Data for pinned columns. Pinned columns are the stickied leftmost columns of the grid.
@@ -90,6 +93,11 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
+
+  /**
    * Callback function that is called when a selectable column is selected. Parameters:
    *  @param {string} columnId columnId
    */
@@ -126,6 +134,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Boolean indicating whether or not the DataGrid should hide the column headers.
+   */
+  hasVisibleColumnHeaders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -136,29 +149,33 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
+  hasVisibleColumnHeaders: true,
 };
 
-const DataGrid = injectIntl((props) => {
+const DataGrid = forwardRef((props, ref) => {
   const {
-    id,
-    ariaLabelledBy,
     ariaLabel,
-    rows,
-    pinnedColumns,
-    overflowColumns,
-    onColumnResize,
-    defaultColumnWidth,
+    ariaLabelledBy,
     columnHeaderHeight,
     columnResizeIncrement,
-    rowHeight,
-    onColumnSelect,
+    defaultColumnWidth,
+    hasVisibleColumnHeaders,
+    hasSelectableRows,
+    id,
+    onCellRangeSelect,
     onCellSelect,
     onClearSelection,
+    onColumnResize,
+    onColumnSelect,
     onRangeSelection,
     onRowSelectionHeaderSelect,
-    onCellRangeSelect,
-    hasSelectableRows,
+    onSectionSelect,
+    overflowColumns,
+    pinnedColumns,
     rowHeaderIndex,
+    rowHeight,
+    rows,
+    sections,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -178,8 +195,12 @@ const DataGrid = injectIntl((props) => {
   const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
+  const focusedCellRef = useRef({ rowId: '', columnId: '' });
+
   const [checkResizable, setCheckResizable] = useState(false);
-  const [focusedRow, setFocusedRow] = useState(0);
+
+  // if columns are not visible then set the first selectable row index to 1
+  const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
   const [focusedCol, setFocusedCol] = useState(0);
   const [gridHasFocus, setGridHasFocus] = useState(false);
 
@@ -196,14 +217,19 @@ const DataGrid = injectIntl((props) => {
   // -------------------------------------
   // functions
 
-  const isRowSelectionCell = (columnIndex) => (
+  const isRowSelectionCell = useCallback((columnIndex) => (
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
-  );
+  ), [displayedColumns, hasSelectableRows]);
 
-  const setFocusedRowCol = (newRowIndex, newColIndex, makeActiveElement) => {
+  const setFocusedRowCol = useCallback((newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
+
+    focusedCellRef.current = {
+      rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
+      columnId: displayedColumns[newColIndex].id,
+    };
 
     if (makeActiveElement) {
       // Set focus on input field (checkbox) of row selection cells.
@@ -219,14 +245,14 @@ const DataGrid = injectIntl((props) => {
 
       focusedCell?.focus();
     }
-  };
+  }, [isRowSelectionCell, displayedColumns]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
   // cells. In order to do so, these datagrid methods will be exposed to
   // allow those components to request focus change.
   useImperativeHandle(
-    props.focusFuncRef,
+    ref,
     () => ({
       setFocusedRowCol,
       getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
@@ -276,28 +302,27 @@ const DataGrid = injectIntl((props) => {
 
   const handleColumnSelect = useCallback((columnId) => {
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
-    setFocusedCol(columnIndex);
+    setFocusedRowCol(0, columnIndex);
 
     if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect, displayedColumns]);
+  }, [onColumnSelect, displayedColumns, setFocusedRowCol]);
 
   const handleRowSelectionHeaderSelect = useCallback(() => {
-    setFocusedCol(0);
-    setFocusedRow(0);
+    setFocusedRowCol(0, 0);
     if (onRowSelectionHeaderSelect) {
       onRowSelectionHeaderSelect();
     }
-  }, [onRowSelectionHeaderSelect]);
+  }, [onRowSelectionHeaderSelect, setFocusedRowCol]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    setFocusedRow(selectionDetails.rowIndex);
-    setFocusedCol(selectionDetails.columnIndex);
+    const { columnIndex, rowIndex } = selectionDetails;
+    setFocusedRowCol(rowIndex, columnIndex);
     if (onCellSelect) {
       onCellSelect(selectionDetails);
     }
-  }, [onCellSelect]);
+  }, [onCellSelect, setFocusedRowCol]);
 
   // -------------------------------------
   // event handlers
@@ -455,10 +480,11 @@ const DataGrid = injectIntl((props) => {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    if (nextCol < 0 || nextRow < 0) {
+    if (nextCol < 0 || nextRow < (hasVisibleColumnHeaders ? 0 : 1)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
+
     handleMoveCellFocus(cellCoordinates, { row: nextRow, col: nextCol });
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
@@ -476,7 +502,26 @@ const DataGrid = injectIntl((props) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
       if (handleFocus.current) {
-        setFocusedRowCol(focusedRow, focusedCol, true);
+        let newRowIndex = focusedRow;
+        let newColumnIndex = focusedCol;
+
+        // Check for last focused row ID. If found set the index. Otherwise set it to the last focused row or last index.
+        if (focusedCellRef.current.rowId) {
+          newRowIndex = [...grid.current.rows].findIndex(row => row.getAttribute('data-row-id') === focusedCellRef.current.rowId);
+          newRowIndex = newRowIndex === -1
+            ? Math.min(focusedRow, grid.current.rows.length - 1)
+            : newRowIndex;
+        }
+
+        // Check for last focused column ID. If found set the index. Otherwise set it to the last focused column or last index.
+        if (focusedCellRef.current.columnId) {
+          newColumnIndex = displayedColumns.findIndex(column => column.id === focusedCellRef.current.columnId);
+          newColumnIndex = newColumnIndex === -1
+            ? Math.min(focusedCol, displayedColumns.length - 1)
+            : newColumnIndex;
+        }
+
+        setFocusedRowCol(newRowIndex, newColumnIndex, true);
         setGridHasFocus(true);
       }
     }
@@ -509,6 +554,7 @@ const DataGrid = injectIntl((props) => {
         <Table
           id={`${id}-table`}
           rows={dataGridRows}
+          sections={sections}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
           activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
@@ -522,9 +568,11 @@ const DataGrid = injectIntl((props) => {
           rowHeaderIndex={rowHeaderIndex}
           onColumnResize={onColumnResize}
           onColumnSelect={handleColumnSelect}
+          onSectionSelect={onSectionSelect}
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
           hasSelectableRows={hasSelectableRows}
+          hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
         />
       </GridContext.Provider>
@@ -533,7 +581,7 @@ const DataGrid = injectIntl((props) => {
   );
 });
 
-DataGrid.propTypes = propTypes;
 DataGrid.defaultProps = defaultProps;
+DataGrid.propTypes = propTypes;
 
-export default forwardRef((props, ref) => <DataGrid {...props} focusFuncRef={ref} />);
+export default DataGrid;

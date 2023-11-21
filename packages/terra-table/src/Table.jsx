@@ -12,7 +12,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
-import { columnShape } from './proptypes/columnShape';
+import columnShape from './proptypes/columnShape';
 import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';
@@ -147,7 +147,7 @@ const propTypes = {
    * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
    * but the voice reader will use the column header values for a11y.
    */
-  hasColumnHeaders: PropTypes.bool,
+  hasVisibleColumnHeaders: PropTypes.bool,
 
   /*
    * Boolean specifying whether or not the table should have zebra striping for rows.
@@ -169,7 +169,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
-  hasColumnHeaders: true,
+  hasVisibleColumnHeaders: true,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -197,7 +197,7 @@ function Table(props) {
     onRowSelect,
     onRowSelectionHeaderSelect,
     hasSelectableRows,
-    hasColumnHeaders,
+    hasVisibleColumnHeaders,
     isStriped,
     rowHeaderIndex,
     intl,
@@ -248,6 +248,8 @@ function Table(props) {
   const tableRowSelectionColumn = {
     id: 'table-rowSelectionColumn',
     width: 40,
+    displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
+    isDisplayVisible: false,
     isSelectable: !!onRowSelectionHeaderSelect,
     isResizable: false,
   };
@@ -333,7 +335,7 @@ function Table(props) {
       }
 
       if (rowSelectionsRemoved.length === 1) {
-        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('data-row-id');
+        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('aria-rowindex');
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
@@ -539,7 +541,7 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
+        className={cx('table', theme.className, { headerless: !hasVisibleColumnHeaders })}
         onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
@@ -558,7 +560,7 @@ function Table(props) {
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
             columns={tableColumns}
-            hasColumnHeaders={hasColumnHeaders}
+            hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
             columnResizeIncrement={columnResizeIncrement}
             tableHeight={tableHeight}
@@ -588,9 +590,9 @@ function Table(props) {
           ))}
         </ColumnContext.Provider>
       </table>
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
-      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('row-selection-mode-region')} aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('row-selection-region')} aria-live="polite" text={rowSelectionAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('column-header-region')} aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
     </div>
   );
 }

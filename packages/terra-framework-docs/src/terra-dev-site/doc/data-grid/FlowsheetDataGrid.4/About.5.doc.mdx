@@ -7,11 +7,6 @@ import FlowsheetDataGridPropsTable from 'terra-data-grid/src/FlowsheetDataGrid?d
 
 # Terra FlowsheetDataGrid
 
-<Notice variant="caution" ariaLevel="2">
-Terra Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
-</Notice>
-
-
 ## Getting Started
 
 - Install with [npmjs](https://www.npmjs.com):
@@ -60,7 +55,6 @@ A column specifies the data to render a cell in the header row of the Flowsheet 
 |**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
 |**displayName**|string|optional|none|String of text to render within the column header cell.|
 |**hasError**|bool|optional|none|Boolean value indicating whether or not the column has an error in the data.|
-|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the column header is selectable.|
 |**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
 
 ### Rows
@@ -81,6 +75,4 @@ Cells define the content rendered in a given row, and column. Cells will be rend
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**content**|content|optional|none|The content to render within the cell.|
-|**isMasked**|bool|optional|none|A boolean indicating whether or not the cell is masked.|
-|**isSelectable**|bool|optional|none|A boolean indicating whether or not the cell is selectable.|
 |**isSelected**|bool|optional|none|A boolean indicating whether or not the cell is selected.|

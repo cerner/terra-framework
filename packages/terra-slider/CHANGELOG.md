@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.1.1 - (November 20, 2023)
+
+* Fix
+  * Fixed wrapping issue for min/max labels on slider.
+
 ## 1.1.0 - (November 9, 2023)
 
 * Added
