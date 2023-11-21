@@ -26,7 +26,7 @@ const propTypes = {
    */
   subfolderItems: PropTypes.arrayOf(PropTypes.element),
   /**
-   * Whether or not the item is selected.
+   * Whether or not the item is selected. Since this component has the appearance of a radio button group, only one item should be selected at a time.
    */
   isSelected: PropTypes.bool,
   /**
