@@ -4,6 +4,7 @@
 
 * Fixed
   * Fixed the AT messages for the row selection functionality.
+  * Fixed resize handle not communicating aria values when focused in non-grid contexts.
 
 ## 5.1.1-alpha.2 - (November 20, 2023)
 
@@ -34,7 +35,6 @@
   * Fixed issue where column header cell was receiving tab focus instead of the button for table role.
   * Fixed column header left border style.
   * Fixed resize handle being communicated when non-header cell is focused.
-  * Fixed resize handle not communicating aria values when focused in non-grid contexts.
   
 ## 5.1.1-alpha.0 - (October 25, 2023)
 
