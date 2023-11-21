@@ -173,7 +173,7 @@ describe('Table', () => {
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
         overflowColumns={tableData.cols.slice(2)}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         rows={tableData.rows}
         onColumnSelect={mockColumnSelect}
       />,
@@ -333,7 +333,7 @@ describe('Table', () => {
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
         overflowColumns={tableData.cols.slice(2)}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         rows={tableData.rows}
         onRowSelectionHeaderSelect={mockColumnSelect}
       />,
@@ -447,7 +447,7 @@ describe('with pinned columns', () => {
           pinnedColumns={pinnedColumns}
           overflowColumns={tableData.cols.slice(2)}
           rows={tableData.rows}
-          hasSelectableRows
+          rowSelectionMode="multiple"
         />
         ,
       </GridContext.Provider>,
@@ -465,7 +465,7 @@ describe('with pinned columns', () => {
           id="sdfdss"
           overflowColumns={tableData.cols}
           rows={tableData.rows}
-          hasSelectableRows
+          rowSelectionMode="multiple"
         />
         ,
       </GridContext.Provider>,
@@ -486,7 +486,7 @@ describe('Row Selection', () => {
           id="test-terra-table"
           overflowColumns={tableData.cols}
           rows={tableData.rows}
-          hasSelectableRows
+          rowSelectionMode="multiple"
           isStriped
         />
       </IntlProvider>,
@@ -513,7 +513,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={initialRows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -540,7 +540,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={initialRows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -563,7 +563,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={tableData.rows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -585,7 +585,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={tableData.rows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -603,7 +603,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={tableData.rows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
       />,
     );
 

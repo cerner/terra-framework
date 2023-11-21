@@ -13,14 +13,11 @@ exports[`Section verifies that the table created is consistent with the rows and
       role="columnheader"
       scope="col"
     >
-      <div>
-        <SectionHeader
-          isOpen={true}
-          isTransparent={false}
-          text="Test Section"
-        />
-      </div>
-      <div />
+      <SectionHeader
+        isOpen={true}
+        isTransparent={false}
+        text="Test Section"
+      />
     </th>
   </tr>
   <tbody
@@ -196,14 +193,11 @@ exports[`Section verifies the rows are created with the right props 1`] = `
       role="columnheader"
       scope="col"
     >
-      <div>
-        <SectionHeader
-          isOpen={true}
-          isTransparent={false}
-          text="Test Section"
-        />
-      </div>
-      <div />
+      <SectionHeader
+        isOpen={true}
+        isTransparent={false}
+        text="Test Section"
+      />
     </th>
   </tr>
   <tbody
@@ -379,14 +373,11 @@ exports[`Section verifies the rows receive the correct props when table is zebra
       role="columnheader"
       scope="col"
     >
-      <div>
-        <SectionHeader
-          isOpen={true}
-          isTransparent={false}
-          text="Test Section"
-        />
-      </div>
-      <div />
+      <SectionHeader
+        isOpen={true}
+        isTransparent={false}
+        text="Test Section"
+      />
     </th>
   </tr>
   <tbody
