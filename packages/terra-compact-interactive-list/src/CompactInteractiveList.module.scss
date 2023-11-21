@@ -1,14 +1,21 @@
+// Themes
 @import './clinical-lowlight-theme/CompactInteractiveList.module';
 @import './orion-fusion-theme/CompactInteractiveList.module';
 
 :local {
   .compact-interactive-list-container {
-    height: 100%;
+    height: auto;
     overflow: auto;
-    width: 100%;
+
+    > * {
+      box-sizing: border-box;
+    }
   }
 
   .compact-interactive-list {
+    display: flex;
+    flex-wrap: wrap;
+
     :focus {
       outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
       outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);

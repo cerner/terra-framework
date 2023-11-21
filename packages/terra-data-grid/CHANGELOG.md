@@ -10,6 +10,7 @@ Changed
 * Fixed
   * Fixed issue where focus was given to the column header instead of its button element.
   * Fixed issue where row selection was being announced twice in Worklist Data Grid.
+  * Fixed an issue when the datagrid is updated and the column/row indices no longer exist.
 
 * Added
   * Added `hasVisibleColumnHeaders` prop for FlowsheetDataGrid to toggle visibility of column headers.
