@@ -606,6 +606,6 @@ describe('Row selection', () => {
     const selectableCell = wrapper.find('Row').at(2).find('th.selectable').at(0);
     selectableCell.simulate('mouseDown');
 
-    expect(mockOnRowSelect).toHaveBeenCalledWith('3');
+    expect(mockOnRowSelect).toHaveBeenCalledWith({ rowId: '3', sectionId: '' });
   });
 });

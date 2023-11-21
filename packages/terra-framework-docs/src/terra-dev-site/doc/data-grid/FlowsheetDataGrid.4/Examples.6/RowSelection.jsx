@@ -68,7 +68,8 @@ const RowSelection = () => {
     }
   }, [selectedRow]);
 
-  const onRowSelect = useCallback((rowId) => {
+  const onRowSelect = useCallback((rowToSelect) => {
+    const { rowId } = rowToSelect; // Contains rowId and sectionId
     if (rowId) {
       const rowIndex = rowData.findIndex(e => e.id === rowId);
 

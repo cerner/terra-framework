@@ -87,7 +87,7 @@ const propTypes = {
 
   /**
    * Callback function that is called when a row header cell is selected. Parameters:
-   * @param {string} rowId rowId
+   * @param {object} rowToSelect object containing rowId and sectionId, both as strings.
    */
   onRowSelect: PropTypes.func,
 
@@ -261,7 +261,7 @@ function FlowsheetDataGrid(props) {
     // Call onRowSelect for row header column
     if (selectionDetails.columnIndex === 0) {
       if (onRowSelect) {
-        onRowSelect(selectionDetails.rowId);
+        onRowSelect({ rowId: selectionDetails.rowId, sectionId: selectionDetails.sectionId });
       }
     } else if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
       selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
