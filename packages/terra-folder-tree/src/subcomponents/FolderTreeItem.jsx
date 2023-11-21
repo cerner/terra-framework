@@ -22,7 +22,7 @@ const propTypes = {
    */
   icon: PropTypes.element,
   /**
-   * List of FolderTree.Items to display in a subfolder when this FolderTreeItem is clicked.
+   * List of FolderTree.Items to display in a subfolder when this FolderTreeItem is clicked. This makes the item expandable and collapsible. It also makes the item's icon a Folder, overriding anything given as the icon prop.
    */
   subfolderItems: PropTypes.arrayOf(PropTypes.element),
   /**
