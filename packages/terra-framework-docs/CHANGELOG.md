@@ -4,6 +4,7 @@
 
 * Added
   * Added examples and tests to `terra-table` for single row selection mode.
+  * Added examples and tests for `terra-folder-tree`.
 
 ## 1.45.0 - (November 20, 2023)
 
