@@ -154,8 +154,6 @@ class CollapsibleMenuViewItem extends React.Component {
               isReversed={isReversed}
               isDisabled={isDisabled}
               isIconOnly={isIconOnly}
-              isSelectable={isSelectable}
-              isSelected={isSelectedButton}
             />
           )}
         >

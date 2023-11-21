@@ -19,7 +19,7 @@ const CollapsibleMenuViewDemo = () => {
         {isSelectedButton ? 'Selected' : 'Unselected'}
       </p>
       <CollapsibleMenuView.Item text="Select Button 1" className="Button1" key="button1" isSelectable isSelectedButton={isSelectedButton} onClick={() => setIsSelectedButton(!isSelectedButton)} />
-      <CollapsibleMenuView.Item text="Button 2" className="Button2" key="button2" isSelectable isSelectedButton={isSelectedButton} />
+      <CollapsibleMenuView.Item text="Button 2" className="Button2" key="button2" />
       <CollapsibleMenuView.Item
         icon={<IconSend />}
         text="Button3"
