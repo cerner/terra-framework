@@ -15,6 +15,11 @@ afterAll(() => {
 });
 
 describe('ColumnResizeHandle', () => {
+  const mockSetIsActive = jest.fn();
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
   it('renders a default column resize handle when isActive is false', () => {
     const mockResizeMouseDown = jest.fn();
     const mockResizeMouseUp = jest.fn();
@@ -31,6 +36,7 @@ describe('ColumnResizeHandle', () => {
         maximumWidth={300}
         onResizeMouseUp={mockResizeMouseUp}
         onResizeMouseDown={mockResizeMouseDown}
+        setIsActive={mockSetIsActive}
       />,
     );
 
@@ -51,6 +57,7 @@ describe('ColumnResizeHandle', () => {
     const wrapper = mountWithIntl(
       <ColumnResizeHandle
         onResizeMouseDown={mockResizeMouseDown}
+        setIsActive={mockSetIsActive}
       />,
     );
     const resizeHandle = wrapper.find('.resize-handle');
@@ -65,6 +72,9 @@ describe('ColumnResizeHandle', () => {
 
     // Validate mock function was called from simulated onMouseDown event
     expect(mockResizeMouseDown).toHaveBeenCalled();
+
+    // Do not invoke the setActive function when triggered via mouseDown
+    expect(mockSetIsActive).not.toHaveBeenCalled();
   });
 
   it('executes the callback function on MouseUp', () => {
@@ -72,6 +82,7 @@ describe('ColumnResizeHandle', () => {
     const wrapper = mountWithIntl(
       <ColumnResizeHandle
         onResizeMouseUp={mockResizeMouseUp}
+        setIsActive={mockSetIsActive}
       />,
     );
     const resizeHandle = wrapper.find('.resize-handle');
@@ -80,6 +91,9 @@ describe('ColumnResizeHandle', () => {
 
     // Validate mock function was called from simulated onMouseDown event
     expect(mockResizeMouseUp).toHaveBeenCalled();
+
+    // Do not invoke the setActive function when triggered via mouseDown
+    expect(mockSetIsActive).not.toHaveBeenCalled();
   });
 
   it('sets widths if isActive is set to be true', () => {
@@ -105,12 +119,15 @@ describe('ColumnResizeHandle', () => {
   it('sets the appropriate prop values on space keydown', () => {
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
-        <ColumnResizeHandle />
+        <ColumnResizeHandle setIsActive={mockSetIsActive} />
       </ColumnContext.Provider>,
     );
 
     wrapper.find('.resize-handle').simulate('focus');
     wrapper.find('.resize-handle').simulate('keydown', { keyCode: 32 }); // space
+
+    // Validate setIsActive is called when the element is focused from non-mouse events.
+    expect(mockSetIsActive).toHaveBeenCalled();
 
     expect(wrapper.find('.resize-handle').props()['aria-label']).toBe(null);
     expect(wrapper.find('.resize-handle').props()['aria-valuetext']).toBe('Terra.table.resize-handle-value-text');
@@ -120,12 +137,15 @@ describe('ColumnResizeHandle', () => {
   it('sets the appropriate prop values on enter keydown', () => {
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
-        <ColumnResizeHandle />
+        <ColumnResizeHandle setIsActive={mockSetIsActive} />
       </ColumnContext.Provider>,
     );
 
     wrapper.find('.resize-handle').simulate('focus');
     wrapper.find('.resize-handle').simulate('keydown', { keyCode: 13 }); // enter
+
+    // Validate setIsActive is called when the element is focused from non-mouse events.
+    expect(mockSetIsActive).toHaveBeenCalled();
 
     expect(wrapper.find('.resize-handle').props()['aria-label']).toBe(null);
     expect(wrapper.find('.resize-handle').props()['aria-valuetext']).toBe('Terra.table.resize-handle-value-text');
@@ -154,6 +174,7 @@ describe('ColumnResizeHandle', () => {
           columnIndex={1}
           columnResizeIncrement={10}
           onResizeHandleChange={mockResizeHandleChange}
+          setIsActive={mockSetIsActive}
         />
       </ColumnContext.Provider>,
     );
@@ -163,6 +184,9 @@ describe('ColumnResizeHandle', () => {
     wrapper.find('.resize-handle').simulate('keydown', { keyCode: 39 }); // arrow right
 
     expect(mockResizeHandleChange).toHaveBeenCalledWith(1, 10);
+
+    // Validate setIsActive is called when the element is focused from non-mouse events.
+    expect(mockSetIsActive).toHaveBeenCalled();
   });
 
   it('increases column width with left arrow', () => {
@@ -173,6 +197,7 @@ describe('ColumnResizeHandle', () => {
           columnIndex={1}
           columnResizeIncrement={10}
           onResizeHandleChange={mockResizeHandleChange}
+          setIsActive={mockSetIsActive}
         />
       </ColumnContext.Provider>,
     );
@@ -182,5 +207,7 @@ describe('ColumnResizeHandle', () => {
     wrapper.find('.resize-handle').simulate('keydown', { keyCode: 37 }); // arrow left
 
     expect(mockResizeHandleChange).toHaveBeenCalledWith(1, -10);
+    // Validate setIsActive is called when the element is focused from non-mouse events.
+    expect(mockSetIsActive).toHaveBeenCalled();
   });
 });

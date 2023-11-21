@@ -38,6 +38,7 @@ exports[`ColumnResizeHandle renders a default column resize handle when isActive
   minimumWidth={60}
   onResizeMouseDown={[MockFunction]}
   onResizeMouseUp={[MockFunction]}
+  setIsActive={[MockFunction]}
 >
   <ColumnResizeHandle
     columnIndex={0}
@@ -77,6 +78,7 @@ exports[`ColumnResizeHandle renders a default column resize handle when isActive
     minimumWidth={60}
     onResizeMouseDown={[MockFunction]}
     onResizeMouseUp={[MockFunction]}
+    setIsActive={[MockFunction]}
   >
     <div
       aria-hidden={false}
