@@ -105,7 +105,7 @@ describe('ColumnResizeHandle', () => {
   it('sets the appropriate prop values on space keydown', () => {
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
-        <ColumnResizeHandle setIsActive={jest.fn()} />
+        <ColumnResizeHandle />
       </ColumnContext.Provider>,
     );
 
@@ -120,7 +120,7 @@ describe('ColumnResizeHandle', () => {
   it('sets the appropriate prop values on enter keydown', () => {
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
-        <ColumnResizeHandle setIsActive={jest.fn()} />
+        <ColumnResizeHandle />
       </ColumnContext.Provider>,
     );
 
@@ -135,7 +135,7 @@ describe('ColumnResizeHandle', () => {
   it('sets the appropriate prop values on escape keydown', () => {
     const wrapper = mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
-        <ColumnResizeHandle setIsActive={jest.fn()} />
+        <ColumnResizeHandle />
       </ColumnContext.Provider>,
     );
 
@@ -154,7 +154,6 @@ describe('ColumnResizeHandle', () => {
           columnIndex={1}
           columnResizeIncrement={10}
           onResizeHandleChange={mockResizeHandleChange}
-          setIsActive={jest.fn()}
         />
       </ColumnContext.Provider>,
     );
@@ -174,7 +173,6 @@ describe('ColumnResizeHandle', () => {
           columnIndex={1}
           columnResizeIncrement={10}
           onResizeHandleChange={mockResizeHandleChange}
-          setIsActive={jest.fn()}
         />
       </ColumnContext.Provider>,
     );

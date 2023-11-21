@@ -108,6 +108,8 @@ const ColumnResizeHandle = (props) => {
 
   // Ref variable for native resize handle element
   const resizeHandleRef = useRef();
+  // Ref variable to prevent active state on mouse drag
+  const handleFocus = useRef(true);
 
   const [isNavigationEnabled, setNavigationEnabled] = useState(true);
 
@@ -120,6 +122,7 @@ const ColumnResizeHandle = (props) => {
   const onMouseDown = (event) => {
     // Set focus to resize handle DOM element
     resizeHandleRef.current.focus();
+    handleFocus.current = false;
 
     onResizeMouseDown(event);
 
@@ -138,9 +141,11 @@ const ColumnResizeHandle = (props) => {
     resizeHandleRef.current.style.height = `${height}px`;
   };
 
-  const handleFocus = () => {
-    setIsActive(true);
+  const onFocus = () => {
     fitToTable();
+    if (handleFocus.current) {
+      setIsActive(true);
+    }
   };
 
   const onMouseLeave = () => {
@@ -199,6 +204,7 @@ const ColumnResizeHandle = (props) => {
   const onBlur = () => {
     setNavigationEnabled(true);
     setIsActive(false);
+    handleFocus.current = true;
   };
 
   return (
@@ -221,7 +227,7 @@ const ColumnResizeHandle = (props) => {
       onMouseLeave={onMouseLeave}
       onKeyDown={onKeyDown}
       onClick={onClick}
-      onFocus={handleFocus}
+      onFocus={onFocus}
       onBlur={onBlur}
       className={cx('resize-handle', theme.className, { 'resize-handle-selected': !isNavigationEnabled })}
     />
