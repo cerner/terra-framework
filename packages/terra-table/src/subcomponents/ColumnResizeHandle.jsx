@@ -120,9 +120,10 @@ const ColumnResizeHandle = (props) => {
   }, [isActive]);
 
   const onMouseDown = (event) => {
+    // Prevent onFocus from being fired when triggered via onMouseDown
+    handleFocus.current = false;
     // Set focus to resize handle DOM element
     resizeHandleRef.current.focus();
-    handleFocus.current = false;
 
     onResizeMouseDown(event);
 
