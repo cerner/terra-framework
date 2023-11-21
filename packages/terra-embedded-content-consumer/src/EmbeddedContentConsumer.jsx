@@ -19,8 +19,8 @@ const propTypes = {
    * The title of the content in the frame.
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
-   * title of the frame is set to a meaningful title for the content inside the frame. Because the iframe content
-   * is not accessible without having a proper Title applied. The `title` prop will be required in a future release.
+   * title of the frame is set to a meaningful title for the content inside the frame, because the iframe content
+   * is not accessible without having a proper Title applied, the `title` prop will be required in a future release.
    */
   title: PropTypes.string, // TODO MVB - set `title` prop as required
   /**
@@ -65,8 +65,8 @@ const propTypes = {
    * of the content of the iframe even if `resizeConfig` option is set. It's
    * important to specify the `width` and `height` of the frame within `iframeAttrs`.
    *
-   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to keyboard only users that the
-   * embedded content is scrollable when it's not fully visible in the current viewport.
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) Iframes that are scrollable but have no actionable elements inside the frames are not natively scrollable by keyboard-only users.
+   * It is critical to keyboard-only users that the embedded content is scrollable when it's not fully visible in the current viewport.
    *
    * `resizeConfig.scrolling` - Indicates whether the content inside of the iframe should be scrollable or not. The default is false.
    * When scrolling is set to `true`, it is possible to use keyboard navigation to scroll the content even when there is no
