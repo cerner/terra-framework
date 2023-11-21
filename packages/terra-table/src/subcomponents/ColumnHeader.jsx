@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ColumnHeaderCell from './ColumnHeaderCell';
-import { columnShape } from '../proptypes/columnShape';
+import columnShape from '../proptypes/columnShape';
 import styles from './ColumnHeader.module.scss';
 
 const cx = classNames.bind(styles);
@@ -84,6 +84,8 @@ const ColumnHeader = (props) => {
   return (
     <thead>
       <tr
+        aria-rowindex={1}
+        data-row-id={`${tableId}-header-row`}
         className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
         height={hasVisibleColumnHeaders ? headerHeight : undefined}
       >
@@ -95,6 +97,7 @@ const ColumnHeader = (props) => {
             rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}
+            isDisplayVisible={column.isDisplayVisible}
             width={column.width}
             minimumWidth={column.minimumWidth}
             maximumWidth={column.maximumWidth}

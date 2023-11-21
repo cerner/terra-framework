@@ -10,6 +10,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { IconUp, IconDown, IconError } from 'terra-icon';
 
 import ColumnResizeHandle from './ColumnResizeHandle';
@@ -61,6 +62,11 @@ const propTypes = {
    * Boolean value indicating whether or not the header cell is focused.
    */
   isActive: PropTypes.bool,
+
+  /**
+   * Boolean value indicating whether or not the header cell text is displayed in the cell.
+   */
+  isDisplayVisible: PropTypes.bool,
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
@@ -135,6 +141,7 @@ const defaultProps = {
   hasError: false,
   isSelectable: false,
   isActive: false,
+  isDisplayVisible: true,
   isResizable: false,
   isResizeActive: false,
 };
@@ -147,6 +154,7 @@ const ColumnHeaderCell = (props) => {
     sortIndicator,
     hasError,
     isActive,
+    isDisplayVisible,
     isSelectable,
     isResizable,
     tableHeight,
@@ -236,14 +244,17 @@ const ColumnHeaderCell = (props) => {
     }
   };
 
-  let sortIndicatorIcon;
-  const errorIcon = hasError && <IconError a11yLabel={intl.formatMessage({ id: 'Terra.table.columnError' })} className={cx('error-icon')} />;
+  const errorIcon = hasError && <IconError className={cx('error-icon')} />;
 
   // Add the sort indicator based on the sort direction
+  let sortIndicatorIcon;
+  let sortDescription = '';
   if (sortIndicator === SortIndicators.ASCENDING) {
     sortIndicatorIcon = <IconUp />;
+    sortDescription = intl.formatMessage({ id: 'Terra.table.sort-ascending' });
   } else if (sortIndicator === SortIndicators.DESCENDING) {
     sortIndicatorIcon = <IconDown />;
+    sortDescription = intl.formatMessage({ id: 'Terra.table.sort-descending' });
   }
 
   // Retrieve current theme from context
@@ -271,6 +282,11 @@ const ColumnHeaderCell = (props) => {
   // Determine if button element is required for column header
   const hasButtonElement = isSelectable && displayName;
 
+  // Format header description for screenreader
+  let headerDescription = displayName;
+  headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
+  headerDescription += sortDescription ? `, ${sortDescription}` : '';
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
@@ -285,7 +301,6 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       title={displayName}
-      aria-sort={sortIndicator}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
@@ -296,8 +311,9 @@ const ColumnHeaderCell = (props) => {
         tabIndex={buttonTabIndex}
       >
         {errorIcon}
-        <span>{displayName}</span>
+        <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
         {sortIndicatorIcon}
+        <VisuallyHiddenText text={headerDescription} />
       </div>
       { isResizable && (
       <ColumnResizeHandle

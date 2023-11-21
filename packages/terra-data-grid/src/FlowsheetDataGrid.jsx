@@ -7,10 +7,8 @@ import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-
+import { sectionShape, rowShape, columnShape } from 'terra-table';
 import DataGrid from './DataGrid';
-import rowShape from './proptypes/rowShape';
-import { columnShape } from './proptypes/columnShape';
 import styles from './FlowsheetDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -36,6 +34,11 @@ const propTypes = {
    * Data for content in the body of the Grid. Rows will be rendered in the order given. The first cell in each row will be the row header.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+  * Data for content in the body of the table. Sections will be rendered in the order given.
+  */
+  sections: PropTypes.arrayOf(sectionShape),
 
   /**
    * Data for columns. Columns will be presented in the order given.
@@ -65,6 +68,11 @@ const propTypes = {
    * @param {string} columnId columnId
    */
   onCellSelect: PropTypes.func,
+
+  /**
+   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   */
+  onSectionSelect: PropTypes.func,
 
   /**
    * Callback function that is called when all selected cells need to be unselected. Parameters: none.
@@ -104,11 +112,13 @@ function FlowsheetDataGrid(props) {
     ariaLabelledBy,
     ariaLabel,
     rows,
+    sections,
     columns,
     defaultColumnWidth,
     columnHeaderHeight,
     rowHeight,
     onCellSelect,
+    onSectionSelect,
     onClearSelectedCells,
     onCellRangeSelect,
     intl,
@@ -121,7 +131,7 @@ function FlowsheetDataGrid(props) {
   const inShiftDirectionalMode = useRef(false);
   const flowsheetColumns = useMemo(() => columns.map(column => ({
     ...column,
-    isSelectable: column.isSelectable !== false,
+    isSelectable: false,
     isResizable: false,
   })), [columns]);
 
@@ -142,7 +152,8 @@ function FlowsheetDataGrid(props) {
     newRows.forEach((row, rowIndex) => {
       const newCells = [...row.cells];
       newCells.forEach((cell, cellIndex) => {
-        newCells[cellIndex].isSelectable = cell.isSelectable !== false;
+        // All flowsheet cells are selectable.
+        newCells[cellIndex].isSelectable = true;
         // Cell content has no result and is not a row header (first column), set content to "No result".
         if (contentHasNoResult(cell.content) && cellIndex !== 0) {
           newCells[cellIndex].content = noResultCellContent;
@@ -154,6 +165,39 @@ function FlowsheetDataGrid(props) {
 
     return newRows;
   }, [intl, rows]);
+
+  const flowsheetSections = useMemo(() => {
+    if (!sections) {
+      return null;
+    }
+
+    const noResultCellContent = (
+      <>
+        <span aria-hidden>{intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result-display' })}</span>
+        <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.flowsheetDataGrid.no-result' })} />
+      </>
+    );
+
+    const newSections = [...sections];
+    newSections.forEach((section, sectionIndex) => {
+      const newRows = [...section.rows];
+      newRows.forEach((row, rowIndex) => {
+        const newCells = [...row.cells];
+        newCells.forEach((cell, cellIndex) => {
+          newCells[cellIndex].isSelectable = cell.isSelectable !== false;
+          // Cell content has no result and is not a row header (first column), set content to "No result".
+          if (contentHasNoResult(cell.content) && cellIndex !== 0) {
+            newCells[cellIndex].content = noResultCellContent;
+          }
+        });
+
+        newRows[rowIndex].cells = newCells;
+      });
+      newSections[sectionIndex].rows = newRows;
+    });
+
+    return newSections;
+  }, [intl, sections]);
 
   useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
@@ -177,12 +221,6 @@ function FlowsheetDataGrid(props) {
       setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.cells-selected' }, { cellCount: selectedCells.current.length }));
     }
   }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
-
-  const handleClearSelectedCells = useCallback(() => {
-    if (onClearSelectedCells) {
-      onClearSelectedCells();
-    }
-  }, [onClearSelectedCells]);
 
   const selectCellRange = useCallback((rowIndex, columnIndex) => {
     const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
@@ -210,7 +248,7 @@ function FlowsheetDataGrid(props) {
 
   const handleCellSelection = useCallback((selectionDetails) => {
     // Exclude the row header column.
-    if (!selectionDetails.isCellSelectable || selectionDetails.columnIndex === 0) {
+    if (selectionDetails.columnIndex === 0) {
       return;
     }
 
@@ -293,6 +331,7 @@ function FlowsheetDataGrid(props) {
         ariaLabel={ariaLabel}
         ariaLabelledBy={ariaLabelledBy}
         rows={flowsheetRows}
+        sections={flowsheetSections}
         rowHeight={rowHeight}
         rowHeaderIndex={0}
         pinnedColumns={pinnedColumns}
@@ -300,7 +339,8 @@ function FlowsheetDataGrid(props) {
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
         onCellSelect={handleCellSelection}
-        onClearSelection={handleClearSelectedCells}
+        onSectionSelect={onSectionSelect}
+        onClearSelection={onClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
         hasVisibleColumnHeaders={hasVisibleColumnHeaders}
       />

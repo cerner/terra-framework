@@ -2,16 +2,23 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed the AT messages for the row selection functionality.
+
+## 5.1.1-alpha.2 - (November 20, 2023)
+
 * Breaking Changes
   * Renamed `hasColumnHeaders` prop to `hasVisibleColumnHeaders`.
 
 * Added
   * Added navigation via Home and End Keys.
   * Added title attribute to column header cells to enable tooltips.
+  * Exported shapes for reusability.
 
 * Fixed
   * Fixed tab index issues in the column header cells.
   * Fixed screenreader issue due to space in the headers attribute.
+  * Fixed pinned column divider covering section headers.
   
 ## 5.1.1-alpha.1 - (November 9, 2023)
 

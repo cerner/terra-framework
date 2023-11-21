@@ -89,7 +89,7 @@ function RowSelectionCell(props) {
   const gridContext = useContext(GridContext);
   const isGridContext = gridContext.role === GridConstants.GRID;
 
-  const rowLabel = intl.formatMessage({ id: 'Terra.table.row-index' }, { row: rowIndex + 1 });
+  const rowLabel = intl.formatMessage({ id: 'Terra.table.row-index' }, { row: rowIndex });
 
   const selectionCheckbox = (
     <input
