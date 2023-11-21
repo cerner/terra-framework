@@ -571,7 +571,7 @@ const DataGrid = forwardRef((props, ref) => {
           onSectionSelect={onSectionSelect}
           onCellSelect={handleCellSelection}
           onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
-          hasSelectableRows={hasSelectableRows}
+          rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
         />

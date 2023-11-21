@@ -9,11 +9,13 @@
 
 * Breaking Changes
   * Renamed `hasColumnHeaders` prop to `hasVisibleColumnHeaders`.
+  * Renamed `hasSelectableRows` prop to `rowSelectionMode` with an enumeration.
 
 * Added
   * Added navigation via Home and End Keys.
   * Added title attribute to column header cells to enable tooltips.
   * Exported shapes for reusability.
+  * Added single row selection mode.
 
 * Fixed
   * Fixed tab index issues in the column header cells.

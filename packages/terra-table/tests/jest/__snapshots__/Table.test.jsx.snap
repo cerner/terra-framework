@@ -2,7 +2,6 @@
 
 exports[`Table verifies row selection column header selection 1`] = `
 <InjectIntl(Table)
-  hasSelectableRows={true}
   id="test-terra-table"
   intl={
     Object {
@@ -53,6 +52,7 @@ exports[`Table verifies row selection column header selection 1`] = `
       },
     ]
   }
+  rowSelectionMode="multiple"
   rows={
     Array [
       Object {
@@ -122,7 +122,6 @@ exports[`Table verifies row selection column header selection 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    hasSelectableRows={true}
     hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
@@ -176,6 +175,7 @@ exports[`Table verifies row selection column header selection 1`] = `
     }
     rowHeaderIndex={0}
     rowHeight="2.5rem"
+    rowSelectionMode="multiple"
     rows={
       Array [
         Object {
@@ -788,13 +788,13 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          hasRowSelection={true}
           id="00000000-0000-0000-0000-000000000000"
           isHidden={true}
           key="00000000-0000-0000-0000-000000000000"
           onCellSelect={[Function]}
           rowHeaderIndex={0}
           rowHeight="2.5rem"
+          rowSelectionMode="multiple"
           rows={
             Array [
               Object {
@@ -907,13 +907,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              hasRowSelection={true}
               height="2.5rem"
               id="1"
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={2}
+              rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
               <tr
@@ -1348,13 +1348,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              hasRowSelection={true}
               height="2.5rem"
               id="2"
               key="2"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={3}
+              rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
               <tr
@@ -1784,13 +1784,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              hasRowSelection={true}
               height="2.5rem"
               id="3"
               key="3"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={4}
+              rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
               <tr
@@ -2219,7 +2219,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              hasRowSelection={true}
               height="2.5rem"
               id="4"
               isSelected={true}
@@ -2227,6 +2226,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={5}
+              rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
               <tr

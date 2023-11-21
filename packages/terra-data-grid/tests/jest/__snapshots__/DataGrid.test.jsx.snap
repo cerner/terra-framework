@@ -5454,7 +5454,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      hasSelectableRows={true}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
@@ -5490,6 +5489,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       }
       rowHeaderIndex={0}
       rowHeight="2.5rem"
+      rowSelectionMode="multiple"
       rows={
         Array [
           Object {
@@ -5570,7 +5570,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
-        hasSelectableRows={true}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
         intl={
@@ -5633,6 +5632,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         }
         rowHeaderIndex={0}
         rowHeight="2.5rem"
+        rowSelectionMode="multiple"
         rows={
           Array [
             Object {
@@ -6528,7 +6528,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              hasRowSelection={true}
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
@@ -6536,6 +6535,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowHeight="2.5rem"
+              rowSelectionMode="multiple"
               rows={
                 Array [
                   Object {
@@ -6666,7 +6666,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  hasRowSelection={true}
                   height="2.5rem"
                   id="1"
                   isTableStriped={true}
@@ -6674,6 +6673,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
+                  rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -7178,7 +7178,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  hasRowSelection={true}
                   height="2.5rem"
                   id="2"
                   isTableStriped={true}
@@ -7186,6 +7185,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
+                  rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -7686,7 +7686,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  hasRowSelection={true}
                   height="2.5rem"
                   id="3"
                   isTableStriped={true}
@@ -7694,6 +7693,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
+                  rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -8193,7 +8193,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  hasRowSelection={true}
                   height="2.5rem"
                   id="4"
                   isSelected={true}
@@ -8202,6 +8201,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
+                  rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
