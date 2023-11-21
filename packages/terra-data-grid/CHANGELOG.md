@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+Changed
+  * Updated Table component to use new `rowSelectionMode` prop instead of `hasSelectableRows`.
+
 ## 1.2.0 - (November 20, 2023)
 
 * Fixed
