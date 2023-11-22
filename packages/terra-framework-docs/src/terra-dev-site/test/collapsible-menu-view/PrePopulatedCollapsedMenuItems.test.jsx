@@ -3,7 +3,7 @@ import IconSend from 'terra-icon/lib/icon/IconSend';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 const CollapsibleMenuViewDemo = () => {
-  const [isSelectedButton, setIsSelectedButton] = useState(true);
+  const [isSelectedButton, setIsSelectedButton] = useState(false);
   return (
     <CollapsibleMenuView alwaysCollapsedMenuItems={[
       <CollapsibleMenuView.Item text="Collapsed Button 1" key="collapsedButton1" />,
@@ -18,7 +18,7 @@ const CollapsibleMenuViewDemo = () => {
         {' '}
         {isSelectedButton ? 'Selected' : 'Unselected'}
       </p>
-      <CollapsibleMenuView.Item text="Select Button 1" className="Button1" key="button1" isSelectable isSelected={isSelectedButton} onClick={() => setIsSelectedButton(!isSelectedButton)} />
+      <CollapsibleMenuView.Item id="data-menu-button" text="Select Button 1" className="Button1" key="button1" isSelectable isSelected={isSelectedButton} onClick={() => setIsSelectedButton(!isSelectedButton)} />
       <CollapsibleMenuView.Item text="Button 2" className="Button2" key="button2" />
       <CollapsibleMenuView.Item
         icon={<IconSend />}
