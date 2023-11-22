@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.2.0 - (November 22, 2023)
+
 * Fixed
   * Fixed the AT messages for the row selection functionality.
 
