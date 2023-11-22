@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added new test for row selection for FlowsheetDataGrid.
+
 ## 1.46.0 - (November 22, 2023)
 
 * Added

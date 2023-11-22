@@ -584,3 +584,28 @@ describe('Multi-cell selection', () => {
     ]);
   });
 });
+
+describe('Row selection', () => {
+  let mockOnRowSelect = null;
+
+  beforeEach(() => {
+    mockOnRowSelect = jest.fn();
+  });
+
+  it('verifies single row selection when a row header cell is clicked', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onRowSelect={mockOnRowSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(2).find('th.selectable').at(0);
+    selectableCell.simulate('mouseDown');
+
+    expect(mockOnRowSelect).toHaveBeenCalledWith({ rowId: '3', sectionId: '' });
+  });
+});
