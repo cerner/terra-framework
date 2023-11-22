@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+*Added
+  * Updated example to `terra-collapsible-menu-view-item` to show usage of props `isSelectable` and `isSelected`.
+
 * Added
   * Added examples and tests to `terra-table` for single row selection mode.
   * Added examples and tests for `terra-folder-tree`.

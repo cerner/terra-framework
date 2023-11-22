@@ -117,6 +117,21 @@ describe('CollapsibleMenuViewItem', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
+    it('should set isSelectable on button when isSelectable is true', () => {
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelectable />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should set isSelected on button when isSelected is true', () => {
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelected />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
+    it('should set isSelectable and isSelected on button when both are true', () => {
+      const wrapper = shallowWithIntl(<CollapsibleMenuViewItem text="Testing" isSelectable isSelected />);
+      expect(wrapper).toMatchSnapshot();
+    });
+
     it('should render a menu item when subMenuItems are given', () => {
       const context = { isCollapsibleMenuItem: true };
       const wrapper = shallowWithIntl(

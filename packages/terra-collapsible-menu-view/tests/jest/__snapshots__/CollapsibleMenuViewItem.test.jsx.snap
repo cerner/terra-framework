@@ -284,6 +284,143 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
 />
 `;
 
+exports[`CollapsibleMenuViewItem Collapsible Menu Context should set isSelectable and isSelected on button when both are true 1`] = `
+<div
+  className="face-up-item"
+>
+  <Button
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isBlock={false}
+    isCompact={false}
+    isDisabled={false}
+    isIconOnly={false}
+    isReversed={false}
+    isSelectable={true}
+    isSelected={true}
+    text="Testing"
+    type="button"
+    variant="neutral"
+  />
+</div>
+`;
+
+exports[`CollapsibleMenuViewItem Collapsible Menu Context should set isSelectable on button when isSelectable is true 1`] = `
+<div
+  className="face-up-item"
+>
+  <Button
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isBlock={false}
+    isCompact={false}
+    isDisabled={false}
+    isIconOnly={false}
+    isReversed={false}
+    isSelectable={true}
+    isSelected={false}
+    text="Testing"
+    type="button"
+    variant="neutral"
+  />
+</div>
+`;
+
+exports[`CollapsibleMenuViewItem Collapsible Menu Context should set isSelected on button when isSelected is true 1`] = `
+<div
+  className="face-up-item"
+>
+  <Button
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    isBlock={false}
+    isCompact={false}
+    isDisabled={false}
+    isIconOnly={false}
+    isReversed={false}
+    isSelected={true}
+    text="Testing"
+    type="button"
+    variant="neutral"
+  />
+</div>
+`;
+
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected prop on menu item when inside item group 1`] = `
 <MenuItem
   intl={
@@ -361,6 +498,7 @@ exports[`CollapsibleMenuViewItem should merge custom props 1`] = `
     isDisabled={false}
     isIconOnly={false}
     isReversed={false}
+    isSelected={false}
     text="Testing"
     type="button"
     variant="neutral"
@@ -405,6 +543,7 @@ exports[`CollapsibleMenuViewItem should not set isSelected on button outside of 
     isDisabled={false}
     isIconOnly={false}
     isReversed={false}
+    isSelected={true}
     text="Testing"
     type="button"
     variant="neutral"
@@ -490,6 +629,7 @@ exports[`CollapsibleMenuViewItem should render a button with icon and text when 
     isDisabled={false}
     isIconOnly={true}
     isReversed={false}
+    isSelected={false}
     text="Testing"
     type="button"
     variant="neutral"
@@ -534,6 +674,7 @@ exports[`CollapsibleMenuViewItem should render a default component 1`] = `
     isDisabled={false}
     isIconOnly={false}
     isReversed={false}
+    isSelected={false}
     text="Testing"
     type="button"
     variant="neutral"
@@ -612,6 +753,7 @@ exports[`CollapsibleMenuViewItem should render a disabled button when isDisabled
     isDisabled={true}
     isIconOnly={false}
     isReversed={false}
+    isSelected={false}
     text="Testing"
     type="button"
     variant="neutral"
@@ -718,6 +860,7 @@ exports[`CollapsibleMenuViewItem should set icon prop on button 1`] = `
     isDisabled={false}
     isIconOnly={false}
     isReversed={false}
+    isSelected={false}
     text="Testing"
     type="button"
     variant="neutral"
@@ -769,6 +912,7 @@ exports[`CollapsibleMenuViewItem should set isReversed prop on button 1`] = `
     isDisabled={false}
     isIconOnly={false}
     isReversed={true}
+    isSelected={false}
     text="Testing"
     type="button"
     variant="neutral"
