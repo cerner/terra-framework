@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.100.0 - (November 23, 2023)
+
 * Changed
   * Updated jest snapshots.
 

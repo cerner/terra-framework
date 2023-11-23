@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.85.0 - (November 23, 2023)
+
 * Added
   * Added ability to select a CollapsibleMenuViewItem when not in a group.
 

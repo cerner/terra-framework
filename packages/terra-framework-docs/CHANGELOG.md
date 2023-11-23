@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.47.0 - (November 23, 2023)
+
 * Added
   * Updated example to `terra-collapsible-menu-view-item` to show usage of props `isSelectable` and `isSelected`.
 
