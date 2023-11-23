@@ -71,6 +71,13 @@ Terra.describeViewports('Collapsed Menu', ['tiny', 'large'], () => {
     $('[data-collapsible-menu-toggle]').click();
     Terra.validates.element('collapsed menu', { selector: '#root', rules: ignoredA11y });
   });
+  it('selects and unselects Button 1', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/pre-populated-collapsed-menu-items');
+    $('#data-menu-button').click();
+    Terra.validates.element('button1 selected', { selector: '#root', rules: ignoredA11y });
+    $('#data-menu-button').click();
+    Terra.validates.element('button1 unselected', { selector: '#root', rules: ignoredA11y });
+  });
 });
 
 Terra.describeViewports('Collapsible Menu with multiselect group items', ['large'], () => {

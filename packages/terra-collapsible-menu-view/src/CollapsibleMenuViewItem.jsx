@@ -117,6 +117,8 @@ class CollapsibleMenuViewItem extends React.Component {
     } = this.props;
 
     const { isCollapsibleGroupItem, isCollapsibleMenuItem } = this.context;
+    // TODO: `isSelectable` prop is used for fusion pass through passivity and should be removed after Fusion Phase2 release.
+    const { isSelectable } = customProps;
     const attributes = { ...customProps };
     let item;
 
@@ -175,6 +177,8 @@ class CollapsibleMenuViewItem extends React.Component {
             isReversed={isReversed}
             isDisabled={isDisabled}
             isIconOnly={isIconOnly}
+            isSelectable={isSelectable}
+            isSelected={isSelected}
           />
         </div>
       );
