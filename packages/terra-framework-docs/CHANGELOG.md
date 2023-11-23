@@ -2,8 +2,11 @@
 
 ## Unreleased
 
-*Added
+* Added
   * Updated example to `terra-collapsible-menu-view-item` to show usage of props `isSelectable` and `isSelected`.
+
+* Added
+  * Added new test for row selection for FlowsheetDataGrid.
 
 ## 1.46.0 - (November 22, 2023)
 

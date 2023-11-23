@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+* Added
+  * Added `onRowSelect` callback prop to FlowsheetDataGrid to handle row header cell selection.
+
 ## 1.3.0 - (November 22, 2023)
 
-Changed
+* Changed
   * Updated Table component to use new `rowSelectionMode` prop instead of `hasSelectableRows`.
 
 ## 1.2.0 - (November 20, 2023)
