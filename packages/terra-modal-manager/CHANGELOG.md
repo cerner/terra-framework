@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated jest snapshots.
+
 ## 6.67.0 - (October 3, 2023)
 
 * Changed

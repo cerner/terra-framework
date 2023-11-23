@@ -64,6 +64,7 @@ exports[`correctly applies the theme context className 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -151,6 +152,7 @@ exports[`correctly applies the theme context className 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -328,6 +330,7 @@ exports[`should mount an open modal 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -415,6 +418,7 @@ exports[`should mount an open modal 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -593,6 +597,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -680,6 +685,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -858,6 +864,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -945,6 +952,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -1123,6 +1131,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -1210,6 +1219,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -1388,6 +1398,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={true}
       isOpen={true}
       onRequestClose={[Function]}
@@ -1475,6 +1486,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={true}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -1654,6 +1666,7 @@ exports[`should mount an open modal with custom props 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -1743,6 +1756,7 @@ exports[`should mount an open modal with custom props 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -1922,6 +1936,7 @@ exports[`should mount an open modal with modal class name 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -2009,6 +2024,7 @@ exports[`should mount an open modal with modal class name 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -2187,6 +2203,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -2274,6 +2291,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -2452,6 +2470,7 @@ exports[`should mount an open modal with role 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -2539,6 +2558,7 @@ exports[`should mount an open modal with role 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -2716,6 +2736,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -2803,6 +2824,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -2980,6 +3002,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -3067,6 +3090,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -3244,6 +3268,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
           "timeZone": null,
         }
       }
+      isCalledFromNotificationDialog={false}
       isFullscreen={false}
       isOpen={true}
       onRequestClose={[Function]}
@@ -3331,6 +3356,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 "timeZone": null,
               }
             }
+            isCalledFromNotificationDialog={false}
             isFullscreen={false}
             isScrollable={false}
             onKeyDown={[Function]}
@@ -3479,6 +3505,7 @@ exports[`should shallow an open modal 1`] = `
         "timeZone": null,
       }
     }
+    isCalledFromNotificationDialog={false}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -3542,6 +3569,7 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
         "timeZone": null,
       }
     }
+    isCalledFromNotificationDialog={false}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -3605,6 +3633,7 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
         "timeZone": null,
       }
     }
+    isCalledFromNotificationDialog={false}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -3668,6 +3697,7 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
         "timeZone": null,
       }
     }
+    isCalledFromNotificationDialog={false}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}
@@ -3731,6 +3761,7 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
         "timeZone": null,
       }
     }
+    isCalledFromNotificationDialog={false}
     isFullscreen={false}
     isOpen={true}
     onRequestClose={[Function]}

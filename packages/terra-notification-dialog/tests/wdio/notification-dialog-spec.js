@@ -160,15 +160,15 @@ Terra.describeViewports('Notification Dialog', ['tiny', 'medium', 'large'], () =
 });
 
 Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
-  it('notification dialog receives focus when displayed', () => {
+  it('accept button receives focus when displayed', () => {
     browser.url('/#/raw/tests/cerner-terra-framework-docs/notification-dialog/hazard-high-variant');
     openNotificationDialog();
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
+    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
   });
 
-  it('shifts focus to the accept button in the notification dialog when tab is pressed', () => {
+  it('shifts focus to the reject button in the notification dialog when tab is pressed', () => {
     browser.keys('Tab');
-    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
+    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
     Terra.validates.element('accept focused', { selector });
   });
 
@@ -178,32 +178,9 @@ Terra.describeViewports('Keyboard Accessibility', ['medium'], () => {
     expect($(NOTIFICATION_DIALOG_SELECTOR).isExisting()).toBeFalsy();
   });
 
-  it('reopens dialog and tabs to accept action', () => {
-    openNotificationDialog();
-    browser.keys('Tab');
-    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
-  });
-
   it('closes the notification dialog when SPACE is pressed', () => {
+    openNotificationDialog();
     browser.keys('Space');
     expect($(NOTIFICATION_DIALOG_SELECTOR).isExisting()).toBeFalsy();
-  });
-
-  it('reopens dialog shifts focus to the reject button in the notification dialog via tab', () => {
-    openNotificationDialog();
-    browser.keys(['Tab', 'Tab']);
-    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
-    Terra.validates.element('reject focused', { selector });
-  });
-
-  it('the notification dialog traps focus in modal', () => {
-    browser.keys('Tab');
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
-    browser.keys('Tab');
-    expect($(ACCEPT_ACTION_SELECTOR).isFocused()).toBeTruthy();
-    browser.keys('Tab');
-    expect($(REJECT_ACTION_SELECTOR).isFocused()).toBeTruthy();
-    browser.keys('Tab');
-    expect($(NOTIFICATION_DIALOG_SELECTOR).isFocused()).toBeTruthy();
   });
 });

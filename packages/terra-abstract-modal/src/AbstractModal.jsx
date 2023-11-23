@@ -15,7 +15,15 @@ const propTypes = {
   /**
    * String that labels the modal for screen readers.
    */
-  ariaLabel: PropTypes.string.isRequired,
+  ariaLabel: PropTypes.string,
+  /**
+   * String that labels the modal for screen readers.
+   */
+  ariaLabelledBy: PropTypes.string,
+  /**
+   * String that labels the modal for screen readers.
+   */
+  ariaDescribedBy: PropTypes.string,
   /**
    * Content inside the modal dialog.
    */
@@ -65,6 +73,11 @@ const propTypes = {
    * Callback function to set the reference of the element that will receive focus when the Slide content is visible.
    */
   setModalFocusElementRef: PropTypes.func,
+  /**
+   * @private
+   * If set to true, the AbstractModal is rendered inside a NotificationDialog.
+   */
+  isCalledFromNotificationDialog: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -76,11 +89,14 @@ const defaultProps = {
   role: 'dialog',
   rootSelector: '#root',
   zIndex: '6000',
+  isCalledFromNotificationDialog: false,
 };
 
 const AbstractModal = (props) => {
   const {
     ariaLabel,
+    ariaLabelledBy,
+    ariaDescribedBy,
     children,
     classNameModal,
     classNameOverlay,
@@ -92,6 +108,7 @@ const AbstractModal = (props) => {
     rootSelector,
     onRequestClose,
     zIndex,
+    isCalledFromNotificationDialog,
     ...customProps
   } = props;
 
@@ -144,6 +161,8 @@ const AbstractModal = (props) => {
         {...customProps}
         closeOnOutsideClick={closeOnOutsideClick}
         ariaLabel={ariaLabel}
+        ariaLabelledBy={ariaLabelledBy}
+        ariaDescribedBy={ariaDescribedBy}
         classNameModal={classNameModal}
         classNameOverlay={classNameOverlay}
         role={role}
@@ -154,6 +173,7 @@ const AbstractModal = (props) => {
         aria-modal="true"
         ref={modalElementRef}
         onKeyDown={handleKeydown}
+        isCalledFromNotificationDialog={isCalledFromNotificationDialog}
       >
         {children}
       </ModalContent>
