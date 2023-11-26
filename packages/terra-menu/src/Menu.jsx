@@ -149,29 +149,30 @@ class Menu extends React.Component {
       { submenu: this.state.stack.length > 1 },
       classNameArrow,
     ]);
-
     const visiblePage = this.state.stack.length - 1;
     const slides = this.state.stack.map((item, index) => (
-      <MenuContent
+      <>
+        <MenuContent
         // eslint-disable-next-line react/no-array-index-key
-        key={`MenuPage-${index}`}
-        title={item.props.text}
-        onRequestNext={this.push}
-        onRequestBack={this.pop}
-        onRequestClose={this.props.onRequestClose}
-        isHidden={index !== visiblePage}
-        fixedHeight={this.pageHeight}
-        fixedWidth={this.pageWidth}
-        contentWidth={Popup.Opts.widths[contentWidth]}
-        refCallback={visiblePage === 0 ? this.setPageDimensions : null}
-        index={index}
-        boundingRef={boundingRef}
-        isFocused={index === visiblePage}
-        headerTitle={this.props.headerTitle}
-        showHeader={showHeader}
-      >
-        {item.props.children || item.props.subMenuItems}
-      </MenuContent>
+          key={`MenuPage-${index}`}
+          title={item.props.text}
+          onRequestNext={this.push}
+          onRequestBack={this.pop}
+          onRequestClose={this.props.onRequestClose}
+          isHidden={index !== visiblePage}
+          fixedHeight={this.pageHeight}
+          fixedWidth={this.pageWidth}
+          contentWidth={Popup.Opts.widths[contentWidth]}
+          refCallback={visiblePage === 0 ? this.setPageDimensions : null}
+          index={index}
+          boundingRef={boundingRef}
+          isFocused={index === visiblePage}
+          headerTitle={this.props.headerTitle}
+          showHeader={showHeader}
+        >
+          {item.props.children || item.props.subMenuItems}
+        </MenuContent>
+      </>
     ));
 
     return (
