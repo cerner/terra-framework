@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
@@ -7,13 +7,15 @@ import styles from './CompactInteractiveList.module.scss';
 import rowShape from './proptypes/rowShape';
 import Row from './subcomponents/Row';
 import columnShape from './proptypes/columnShape';
-import { widthUnitTypes, DefaultListValues, WARNINGS } from './utils/constants';
+import { widthUnitTypes, DefaultListValues } from './utils/constants';
 import {
   getRowMaximumWidth,
   getRowMinimumWidth,
   checkIfRowHasResponsiveColumns,
   getValueUnitTypePair,
   converseColumnTypes,
+  getColumnMaxWidth,
+  getColumnMinWidth,
 } from './utils/utils';
 
 const cx = classNames.bind(styles);
@@ -104,23 +106,9 @@ const CompactInteractiveList = (props) => {
   const defaultUnitType = widthUnitTypes.PX;
   // map the columns to ensure that width, maximumWidth and minimumWidth use same units (px, em, or rem) across all columns.
   // if a width prop uses different units, it will be disregarded.
-  const [conversionedColumns, widthUnit] = converseColumnTypes(columns, defaultUnitType);
-  // ensure columnMinimumWidth is in the same width units
-  let columnMinWidth = getValueUnitTypePair(columnMinimumWidth);
-  if (!columnMinWidth) {
-    columnMinWidth = getValueUnitTypePair(DefaultListValues.minimumWidth[widthUnit]);
-  } else if (columnMinWidth.unitType !== widthUnit) {
-    // eslint-disable-next-line no-console
-    console.warn(WARNINGS.COLUMN_MIN_WIDTH_UNIT_TYPE);
-    columnMinWidth = getValueUnitTypePair(DefaultListValues.minimumWidth[widthUnit]);
-  }
-  // ensure columnMinimumWidth has proper width units
-  let columnMaxWidth = getValueUnitTypePair(columnMaximumWidth);
-  if (columnMaxWidth && columnMaxWidth.unitType !== widthUnit) {
-    // eslint-disable-next-line no-console
-    console.warn(WARNINGS.COLUMN_MAX_WIDTH_UNIT_TYPE);
-    columnMaxWidth = null;
-  }
+  const [conversionedColumns, widthUnit] = useMemo(() => converseColumnTypes(columns, defaultUnitType), [columns, defaultUnitType]);
+  const columnMinWidth = useMemo(() => getColumnMinWidth(columnMinimumWidth, widthUnit), [columnMinimumWidth, widthUnit]);
+  const columnMaxWidth = useMemo(() => getColumnMaxWidth(columnMaximumWidth, widthUnit), [columnMaximumWidth, widthUnit]);
 
   // check if list has responsive columns
   const isResponsive = checkIfRowHasResponsiveColumns(conversionedColumns);
