@@ -1,6 +1,6 @@
 {
   "name": "terra-folder-tree",
-  "main": "lib/FolderTree.js",
+  "main": "lib/index.js",
   "version": "1.0.0-alpha.1",
   "description": "Terra Folder Tree is a vertical menu that displays files and folders in a hierarchical tree structure.",
   "repository": {

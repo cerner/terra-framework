@@ -4,7 +4,7 @@
 :local {
   .folder-tree-item {
     align-items: center;
-    background-color: var(--terra-folder-tree-item-background-color, #fff);
+    background: var(--terra-folder-tree-item-background, #fff);
     border-bottom: var(--terra-folder-tree-item-border-bottom, 1px solid #dedfe0);
     display: flex;
     margin: 0;
@@ -18,6 +18,12 @@
     }
   }
   
+  .folder {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .selected {
     background-color: var(--terra-folder-tree-item-selected-background-color, darken(#ebf6fd, 2%));
   }

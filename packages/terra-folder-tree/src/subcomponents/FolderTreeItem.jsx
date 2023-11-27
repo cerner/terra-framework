@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
 
 import Spacer from 'terra-spacer';
 import Arrange from 'terra-arrange';
-import { IconFolder } from 'terra-icon';
+import { IconFolder, IconCaretRight, IconCaretDown } from 'terra-icon';
 import ThemeContext from 'terra-theme-context';
 
 import styles from './FolderTreeItem.module.scss';
@@ -61,10 +61,14 @@ const FolderTreeItem = ({
 }) => {
   const theme = useContext(ThemeContext);
 
-  const subfolder = subfolderItems?.length > 0 ? (
+  const [isExpanded, setIsExpanded] = useState(false);
+  const isFolder = subfolderItems?.length > 0;
+
+  const subfolder = isFolder ? (
     <ul
       className={cx('subfolder')}
       role="group"
+      hidden={!isExpanded}
     >
       {subfolderItems.map((item) => (
         <FolderTreeItem
@@ -77,11 +81,19 @@ const FolderTreeItem = ({
   ) : null;
 
   const itemIcon = subfolder ? <IconFolder a11yLabel={intl.formatMessage({ id: 'Terra.folder-tree.folder-icon' })} /> : icon;
+  const expandCollapseIcon = isExpanded
+    ? <IconCaretDown height="8px" width="8px" />
+    : <IconCaretRight height="8px" width="8px" />;
+
+  const handleExpandCollapse = () => {
+    setIsExpanded(!isExpanded);
+  };
 
   const itemClassNames = classNames(
     cx(
       'folder-tree-item',
       { selected: isSelected },
+      { folder: isFolder },
       theme.className,
     ),
   );
@@ -91,7 +103,10 @@ const FolderTreeItem = ({
       <li
         className={itemClassNames}
         role="treeitem"
+        aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
+        onClick={handleExpandCollapse}
+        onKeyDown={handleExpandCollapse}
       >
         <input
           type="radio"
@@ -102,9 +117,18 @@ const FolderTreeItem = ({
         <span style={{ paddingLeft: `${level}rem` }}>
           <Arrange
             fitStart={(
-              <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
-                {itemIcon}
-              </Spacer>
+              <>
+                <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
+                  {
+                    isFolder ? (
+                      <Spacer paddingRight="small" isInlineBlock>
+                        {expandCollapseIcon}
+                      </Spacer>
+                    ) : null
+                  }
+                  {itemIcon}
+                </Spacer>
+              </>
             )}
             fill={label}
             alignFitStart="center"
