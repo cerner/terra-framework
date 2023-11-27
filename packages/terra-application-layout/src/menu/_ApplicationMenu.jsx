@@ -60,6 +60,7 @@ class ApplicationMenu extends React.Component {
     this.renderFooter = this.renderFooter.bind(this);
     this.handleUtilityDiscloseRequest = this.handleUtilityDiscloseRequest.bind(this);
     this.handleUtilityOnChange = this.handleUtilityOnChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleUtilityDiscloseRequest(utilityMenu) {
@@ -79,6 +80,19 @@ class ApplicationMenu extends React.Component {
         },
       });
     }
+  }
+
+  handleBlur(event) {
+    const { utilityConfig, layoutConfig } = this.props;
+    const currentTarget = event.currentTarget;
+
+    if (!utilityConfig.onBlur) return;
+
+    requestAnimationFrame(() => {
+      if (!currentTarget.contains(document.activeElement)) {
+        utilityConfig.onBlur(event, layoutConfig);
+      }
+    });
   }
 
   handleUtilityOnChange(event, itemData) {
@@ -158,7 +172,11 @@ class ApplicationMenu extends React.Component {
     }
 
     return (
-      <div {...customProps} className={menuClassNames}>
+      <div
+        {...customProps}
+        className={menuClassNames}
+        onBlur={this.handleBlur}
+      >
         <ApplicationMenuLayout
           header={this.renderHeader(isCompact)}
           extensions={this.renderExtensions(isCompact)}
