@@ -69,13 +69,21 @@ const Cell = (props) => {
   const isResponsive = checkIfColumnIsResponsive(flexGrow, width);
 
   const style = {
-    flex: isResponsive ? `1 1 ${width || minimumWidth || columnMinimumWidth}${widthUnit}` : null,
-    width: isResponsive ? null : `${width}${widthUnit}`,
     justifyContent: align || alignTypes.LEFT,
     textAlign: align || alignTypes.LEFT,
-    maxWidth: isResponsive && (maximumWidth || columnMaximumWidth) ? `${(maximumWidth || columnMaximumWidth)}${widthUnit}` : null,
-    minWidth: isResponsive && (minimumWidth, columnMinimumWidth) ? `${(minimumWidth || columnMinimumWidth)}${widthUnit}` : null,
   };
+  if (isResponsive) {
+    // flex and minimumWidth props required for responsive cells
+    style.flex = `1 1 ${width || minimumWidth || columnMinimumWidth}${widthUnit}`;
+    style.minWidth = `${(minimumWidth || columnMinimumWidth)}${widthUnit}`;
+    // assign maxWidth prop only if such exist
+    if ((maximumWidth || columnMaximumWidth)) {
+      style.maxWidth = `${(maximumWidth || columnMaximumWidth)}${widthUnit}`;
+    }
+  } else {
+    // width prop is required for fixed width cells
+    style.width = `${width}${widthUnit}`;
+  }
 
   return (
     <div

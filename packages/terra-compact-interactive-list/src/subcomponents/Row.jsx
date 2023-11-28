@@ -123,12 +123,20 @@ const Row = (props) => {
 
   const theme = useContext(ThemeContext);
 
-  const style = isResponsive ? {
-    width: flowHorizontally ? null : `${Math.min(100 / numberOfColumns)}%`,
-    flex: flowHorizontally ? `1 1 ${Math.min(100 / numberOfColumns)}%` : null,
-    maxWidth: rowMaximumWidth ? `${rowMaximumWidth}${widthUnit}` : null,
-    minWidth: rowMinimumWidth ? `${rowMinimumWidth}${widthUnit}` : null,
-  } : { width: `${rowWidth}${widthUnit}` };
+  const style = {};
+  if (isResponsive) {
+    if (flowHorizontally) {
+      style.flex = `1 1 ${Math.min(100 / numberOfColumns)}%`;
+    } else {
+      style.width = `${Math.min(100 / numberOfColumns)}%`;
+    }
+    if (rowMaximumWidth) {
+      style.maxWidth = `${rowMaximumWidth}${widthUnit}`;
+    }
+    if (rowMinimumWidth) {
+      style.minWidth = `${rowMinimumWidth}${widthUnit}`;
+    }
+  } else { style.width = `${rowWidth}${widthUnit}`; }
   if (rowHeight) {
     style.height = `${rowHeight?.value}${rowHeight?.unitType}`;
   }
@@ -138,7 +146,7 @@ const Row = (props) => {
   return (
     <div
       id={id}
-      role={activeRow ? 'row' : null}
+      role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props

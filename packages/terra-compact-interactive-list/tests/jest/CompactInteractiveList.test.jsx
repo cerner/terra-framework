@@ -56,16 +56,16 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toBeFalsy();
+      expect(list.props().style.minWidth).toBeUndefined();
 
       const cellElements = wrapper.find('.cell');
       expect(cellElements.at(0).props().style.width).toEqual('40px');
-      expect(cellElements.at(0).props().style.minWidth).toBeFalsy();
-      expect(cellElements.at(0).props().style.maxWidth).toBeFalsy();
+      expect(cellElements.at(0).props().style.minWidth).toBeUndefined();
+      expect(cellElements.at(0).props().style.maxWidth).toBeUndefined();
 
       expect(cellElements.at(1).props().style.width).toEqual('200px');
-      expect(cellElements.at(1).props().style.minWidth).toBeFalsy();
-      expect(cellElements.at(1).props().style.maxWidth).toBeFalsy();
+      expect(cellElements.at(1).props().style.minWidth).toBeUndefined();
+      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
     });
 
     it('should not apply default minimumWidth to fixed width list', () => {
@@ -77,7 +77,7 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toBeFalsy();
+      expect(list.props().style.minWidth).toBeUndefined();
     });
 
     it('should not apply columnMaximumWidth and columnMinimumWidth props to fixed columns width', () => {
@@ -94,20 +94,20 @@ describe('Compact Interactive List', () => {
       );
       const list = wrapper.find('.compact-interactive-list');
       // columnMinimumWidth and columnMaximumWidth should NOT be applied to fixed width lists
-      expect(list.props().style.minWidth).toBeFalsy();
-      expect(list.props().style.maxWidth).toBeFalsy();
+      expect(list.props().style.minWidth).toBeUndefined();
+      expect(list.props().style.maxWidth).toBeUndefined();
       // the width should be equal to the sum of all columns width multiplied by numberOfColumns
       expect(list.props().style.width).toEqual('560px');
 
       // cells should have width, but no maximumWidth or minimumWidth properties.
       const cellElements = wrapper.find('.cell');
       expect(cellElements.at(0).props().style.width).toEqual('40px');
-      expect(cellElements.at(0).props().style.minWidth).toBeFalsy();
-      expect(cellElements.at(0).props().style.maxWidth).toBeFalsy();
+      expect(cellElements.at(0).props().style.minWidth).toBeUndefined();
+      expect(cellElements.at(0).props().style.maxWidth).toBeUndefined();
 
       expect(cellElements.at(1).props().style.width).toEqual('200px');
-      expect(cellElements.at(1).props().style.minWidth).toBeFalsy();
-      expect(cellElements.at(1).props().style.maxWidth).toBeFalsy();
+      expect(cellElements.at(1).props().style.minWidth).toBeUndefined();
+      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
     });
   });
 
@@ -175,9 +175,9 @@ describe('Compact Interactive List', () => {
 
       // responsive cells should have default minimumWidth properties.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeFalsy();
+      expect(cellElements.at(1).props().style.width).toBeUndefined();
       expect(cellElements.at(1).props().style.minWidth).toEqual('60px'); // Default value in px
-      expect(cellElements.at(1).props().style.maxWidth).toBeFalsy();
+      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
     });
 
     it('should calculate list min and max width based on columnMinimumWidth and columnMaximumWidth props', () => {
@@ -214,7 +214,7 @@ describe('Compact Interactive List', () => {
 
       // responsive cells should have minimumWidth and maximumWidth properties set correctly.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeFalsy();
+      expect(cellElements.at(1).props().style.width).toBeUndefined();
       expect(cellElements.at(1).props().style.minWidth).toEqual('500px');
       expect(cellElements.at(1).props().style.maxWidth).toEqual('900px');
     });
@@ -257,7 +257,7 @@ describe('Compact Interactive List', () => {
 
       // responsive cells should have minimumWidth and maximumWidth properties set correctly.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeFalsy();
+      expect(cellElements.at(1).props().style.width).toBeUndefined();
       expect(cellElements.at(1).props().style.minWidth).toEqual('10em');
       expect(cellElements.at(1).props().style.maxWidth).toEqual('30em');
     });
@@ -296,11 +296,11 @@ describe('Compact Interactive List', () => {
 
       // responsive cells should have minimumWidth and maximumWidth properties set correctly.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeFalsy();
+      expect(cellElements.at(1).props().style.width).toBeUndefined();
       expect(cellElements.at(1).props().style.minWidth).toEqual('500px');
       expect(cellElements.at(1).props().style.maxWidth).toEqual('900px');
 
-      expect(cellElements.at(2).props().style.width).toBeFalsy();
+      expect(cellElements.at(2).props().style.width).toBeUndefined();
       expect(cellElements.at(2).props().style.minWidth).toEqual('400px');
       expect(cellElements.at(2).props().style.maxWidth).toEqual('800px');
     });
@@ -337,13 +337,13 @@ describe('Compact Interactive List', () => {
       expect(rowElements.length).toEqual(8);
       expect(rowElements.at(0).props().id).toEqual(rows[0].id);
       expect(rowElements.at(0).props().role).toEqual('row');
-      expect(rowElements.at(0).props()['aria-hidden']).toBeFalsy();
+      expect(rowElements.at(0).props()['aria-hidden']).toBeNull();
 
       expect(rowElements.at(1).props().id).toEqual(rows[1].id);
       expect(rowElements.at(2).props().id).toEqual(rows[2].id);
 
       expect(rowElements.at(3).props().id).toEqual(`placeholder-row-${1}`);
-      expect(rowElements.at(3).props().role).toBeFalsy();
+      expect(rowElements.at(3).props().role).toBeUndefined();
       expect(rowElements.at(3).props()['aria-hidden']).toEqual(true);
 
       expect(rowElements.at(4).props().id).toEqual(rows[3].id);
@@ -384,7 +384,7 @@ describe('Compact Interactive List', () => {
       const rowElements = wrapper.find('.row');
       expect(rowElements.at(0).props().id).toEqual(rows[0].id);
       expect(rowElements.at(0).props().role).toEqual('row');
-      expect(rowElements.at(0).props()['aria-hidden']).toBeFalsy();
+      expect(rowElements.at(0).props()['aria-hidden']).toBeNull();
 
       expect(rowElements.at(1).props().id).toEqual(rows[1].id);
       expect(rowElements.at(2).props().id).toEqual(rows[2].id);
@@ -394,7 +394,7 @@ describe('Compact Interactive List', () => {
       expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${2}`);
 
       expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${3}`);
-      expect(rowElements.at(7).props().role).toBeFalsy();
+      expect(rowElements.at(7).props().role).toBeUndefined();
       expect(rowElements.at(7).props()['aria-hidden']).toEqual(true);
     });
   });
@@ -436,7 +436,7 @@ describe('Compact Interactive List', () => {
       // PX will be considered unitType as first column width is in PX.
       // Second semantic column width will be removed per EM inconsistent with PX unit type.
       // That will make it responsive column with minWidth and maxWidth having effect.
-      expect(cellElements.at(1).props().style.width).toBeFalsy();
+      expect(cellElements.at(1).props().style.width).toBeUndefined();
       // Second semantic column maxWidth will be used as its unitType is PM.
       expect(cellElements.at(1).props().style.maxWidth).toEqual('200px');
       // Second semantic column minWidth will be disregarded per EM inconsistent with PX unit type, the default px walue used instead.
@@ -444,9 +444,9 @@ describe('Compact Interactive List', () => {
 
       // Third semantic column width will be removed per EM inconsistent with PX unit type.
       // That will make it responsive column with minWidth and maxWidth having effect.
-      expect(cellElements.at(2).props().style.width).toBeFalsy();
+      expect(cellElements.at(2).props().style.width).toBeUndefined();
       // Second semantic column maxWidth will be disregarded as it's in EM.
-      expect(cellElements.at(2).props().style.maxWidth).toBeFalsy();
+      expect(cellElements.at(2).props().style.maxWidth).toBeUndefined();
       // Second semantic column minWidth will be applied as it's in PX.
       expect(cellElements.at(2).props().style.minWidth).toEqual('40px');
     });
@@ -481,11 +481,11 @@ describe('Compact Interactive List', () => {
       );
       const list = wrapper.find('.compact-interactive-list');
       expect(list.props().style.minWidth).toEqual('500px'); // default minWidth
-      expect(list.props().style.maxWidth).toBeFalsy();
+      expect(list.props().style.maxWidth).toBeUndefined();
 
       const cellElements = wrapper.find('.cell');
       // PX will be considered unitType as first column width is PX.
-      expect(cellElements.at(1).props().style.maxWidth).toBeFalsy();
+      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
       expect(cellElements.at(1).props().style.minWidth).toEqual('60px'); // default px value
     });
   });
