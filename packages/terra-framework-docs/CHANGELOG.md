@@ -24,7 +24,8 @@
   * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
   * Added examples and tests to `terra-data-grid` for sections in FlowsheetDataGrid.
   * Added documentation and examples for `terra-compact-interactive-list`.
-  
+  * Added a section on accessibility to `terra-embedded-content-consumer` implementation guide.
+
 * Updated
   * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
   * Removed alpha notice for FlowsheetDataGrid.
