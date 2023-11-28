@@ -131,11 +131,18 @@ const CompactInteractiveList = (props) => {
   // defining styles to apply to the list
   const style = {
     width: isResponsive ? width : listWidth,
-    height: flowHorizontally ? null : `${calculatedRowHeight?.value * rowsPerColumn}${calculatedRowHeight?.unitType}`,
-    minWidth: isResponsive ? `${listMinWidth}${widthUnit}` : null,
     flexDirection: flowHorizontally ? 'row' : 'column',
   };
+  if (!flowHorizontally) {
+    // needs height if flown vertically
+    style.height = `${calculatedRowHeight?.value * rowsPerColumn}${calculatedRowHeight?.unitType}`;
+  }
+  if (listMinWidth) {
+    // assign minWidth to the list only if such exists (list must be responsive)
+    style.minWidth = `${listMinWidth}${widthUnit}`;
+  }
   if (rowMaxWidth) {
+    // assign maxWidth prop to the list only if row maximum width exists (list must be responsive)
     style.maxWidth = `${rowMaxWidth * numberOfColumns}${widthUnit}`;
   }
 

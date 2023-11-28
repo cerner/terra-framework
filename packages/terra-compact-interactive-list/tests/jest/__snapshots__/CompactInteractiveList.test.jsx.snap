@@ -347,7 +347,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           Object {
             "flexDirection": "column",
             "height": "200px",
-            "minWidth": null,
             "width": "280px",
           }
         }
@@ -446,10 +445,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -509,10 +505,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "200px",
                   }
@@ -539,10 +532,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -676,10 +666,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -736,10 +723,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "200px",
                   }
@@ -766,10 +750,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -903,10 +884,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -963,10 +941,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "200px",
                   }
@@ -993,10 +968,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -1120,10 +1092,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -1151,10 +1120,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "200px",
                   }
@@ -1181,10 +1147,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -1289,10 +1252,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -1349,10 +1309,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "200px",
                   }
@@ -1379,10 +1336,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "40px",
                   }
@@ -1850,9 +1804,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             role="row"
             style={
               Object {
-                "flex": null,
                 "height": "40px",
-                "maxWidth": null,
                 "minWidth": "100px",
                 "width": "50%",
               }
@@ -1875,10 +1827,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -1940,10 +1889,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   Object {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
-                    "maxWidth": null,
                     "minWidth": "60px",
                     "textAlign": "left",
-                    "width": null,
                   }
                 }
                 tabIndex={-1}
@@ -1968,10 +1915,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2081,9 +2025,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             role="row"
             style={
               Object {
-                "flex": null,
                 "height": "40px",
-                "maxWidth": null,
                 "minWidth": "100px",
                 "width": "50%",
               }
@@ -2106,10 +2048,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2168,10 +2107,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   Object {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
-                    "maxWidth": null,
                     "minWidth": "60px",
                     "textAlign": "left",
-                    "width": null,
                   }
                 }
                 tabIndex={-1}
@@ -2196,10 +2133,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2309,9 +2243,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             role="row"
             style={
               Object {
-                "flex": null,
                 "height": "40px",
-                "maxWidth": null,
                 "minWidth": "100px",
                 "width": "50%",
               }
@@ -2334,10 +2266,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2396,10 +2325,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   Object {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
-                    "maxWidth": null,
                     "minWidth": "60px",
                     "textAlign": "left",
-                    "width": null,
                   }
                 }
                 tabIndex={-1}
@@ -2424,10 +2351,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2527,9 +2451,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             role="row"
             style={
               Object {
-                "flex": null,
                 "height": "40px",
-                "maxWidth": null,
                 "minWidth": "100px",
                 "width": "50%",
               }
@@ -2552,10 +2474,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2585,10 +2504,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   Object {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
-                    "maxWidth": null,
                     "minWidth": "60px",
                     "textAlign": "left",
-                    "width": null,
                   }
                 }
                 tabIndex={-1}
@@ -2613,10 +2530,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2697,9 +2611,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             role="row"
             style={
               Object {
-                "flex": null,
                 "height": "40px",
-                "maxWidth": null,
                 "minWidth": "100px",
                 "width": "50%",
               }
@@ -2722,10 +2634,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2784,10 +2693,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   Object {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
-                    "maxWidth": null,
                     "minWidth": "60px",
                     "textAlign": "left",
-                    "width": null,
                   }
                 }
                 tabIndex={-1}
@@ -2812,10 +2719,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 role="gridcell"
                 style={
                   Object {
-                    "flex": null,
                     "justifyContent": "left",
-                    "maxWidth": null,
-                    "minWidth": null,
                     "textAlign": "left",
                     "width": "20px",
                   }
@@ -2899,12 +2803,9 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             aria-hidden={true}
             className="row row-placeholder"
             id="placeholder-row-1"
-            role={null}
             style={
               Object {
-                "flex": null,
                 "height": "40px",
-                "maxWidth": null,
                 "minWidth": "100px",
                 "width": "50%",
               }
