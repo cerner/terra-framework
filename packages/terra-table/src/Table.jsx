@@ -4,6 +4,7 @@ import React, {
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
@@ -11,7 +12,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
-import { columnShape } from './proptypes/columnShape';
+import columnShape from './proptypes/columnShape';
 import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';
@@ -19,8 +20,14 @@ import validateRowHeaderIndex from './proptypes/validators';
 
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
+import getFocusableElements from './utils/focusManagement';
 
 const cx = classNames.bind(styles);
+
+export const rowSelectionModes = {
+  SINGLE: 'single',
+  MULTIPLE: 'multiple',
+};
 
 const propTypes = {
   /**
@@ -136,16 +143,16 @@ const propTypes = {
   onRowSelectionHeaderSelect: PropTypes.func,
 
   /**
-   * Boolean indicating whether or not the table should allow entire rows to be selectable. An additional column will be
-   * rendered to allow for row selection to occur.
+   * Enables row selection capabilities for the table.
+   * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
-  hasSelectableRows: PropTypes.bool,
+  rowSelectionMode: PropTypes.oneOf(Object.values(rowSelectionModes)),
 
   /**
    * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
    * but the voice reader will use the column header values for a11y.
    */
-  hasColumnHeaders: PropTypes.bool,
+  hasVisibleColumnHeaders: PropTypes.bool,
 
   /*
    * Boolean specifying whether or not the table should have zebra striping for rows.
@@ -167,7 +174,7 @@ const defaultProps = {
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
-  hasColumnHeaders: true,
+  hasVisibleColumnHeaders: true,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -189,13 +196,13 @@ function Table(props) {
     defaultColumnWidth,
     columnHeaderHeight,
     rowHeight,
+    rowSelectionMode,
     onColumnSelect,
     onCellSelect,
     onSectionSelect,
     onRowSelect,
     onRowSelectionHeaderSelect,
-    hasSelectableRows,
-    hasColumnHeaders,
+    hasVisibleColumnHeaders,
     isStriped,
     rowHeaderIndex,
     intl,
@@ -246,10 +253,13 @@ function Table(props) {
   const tableRowSelectionColumn = {
     id: 'table-rowSelectionColumn',
     width: 40,
+    displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
+    isDisplayVisible: false,
     isSelectable: !!onRowSelectionHeaderSelect,
     isResizable: false,
   };
 
+  const hasSelectableRows = rowSelectionMode === rowSelectionModes.MULTIPLE;
   const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
@@ -273,7 +283,7 @@ function Table(props) {
     }
 
     // eslint-disable-next-line no-param-reassign
-    currentSection.sectionRowIndex = 0;
+    currentSection.sectionRowIndex = rowCount;
     return rowCount + currentSection.rows.length;
   };
   const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
@@ -302,11 +312,11 @@ function Table(props) {
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: hasSelectableRows ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
+    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === rowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
     setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [hasSelectableRows]);
+  }, [rowSelectionMode]);
 
   // useEffect for row updates
   useEffect(() => {
@@ -331,7 +341,7 @@ function Table(props) {
       }
 
       if (rowSelectionsRemoved.length === 1) {
-        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('data-row-id');
+        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('aria-rowindex');
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
@@ -478,6 +488,48 @@ function Table(props) {
     }
   }, [tableColumns, onColumnResize]);
 
+  /**
+   *
+   * @param {HTMLElement} element - The element to check if it is a text input
+   * @returns True if the element is a text input.  Otherwise, false.
+   */
+  const isTextInput = (element) => {
+    const { tagName } = element;
+    if (tagName.toLowerCase() === 'input') {
+      const validTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
+      const inputType = element.type;
+      return validTypes.indexOf(inputType) >= 0;
+    }
+
+    return false;
+  };
+
+  const onKeyDown = (event) => {
+    const targetElement = event.target;
+
+    // Allow default behavior if the event target is an editable field
+    if (event.keyCode !== KeyCode.KEY_TAB
+        && (isTextInput(targetElement)
+            || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
+            || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
+      return;
+    }
+
+    // Handle home and end key navigation in table
+    let focusableTableElements;
+    if (event.keyCode === KeyCode.KEY_HOME) {
+      focusableTableElements = getFocusableElements(tableRef.current);
+      if (focusableTableElements) {
+        focusableTableElements[0].focus();
+      }
+    } else if (event.keyCode === KeyCode.KEY_END) {
+      focusableTableElements = getFocusableElements(tableRef.current);
+      if (focusableTableElements) {
+        focusableTableElements[focusableTableElements.length - 1].focus();
+      }
+    }
+  };
+
   // -------------------------------------
 
   return (
@@ -487,6 +539,7 @@ function Table(props) {
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
+      {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
       <table
         ref={handleTableRef}
         id={id}
@@ -494,7 +547,8 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        className={cx('table', theme.className, { headerless: !hasColumnHeaders })}
+        className={cx('table', theme.className, { headerless: !hasVisibleColumnHeaders })}
+        onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
         <ColumnContext.Provider
@@ -512,7 +566,7 @@ function Table(props) {
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
             columns={tableColumns}
-            hasColumnHeaders={hasColumnHeaders}
+            hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
             columnResizeIncrement={columnResizeIncrement}
             tableHeight={tableHeight}
@@ -533,18 +587,18 @@ function Table(props) {
               text={section.text}
               rows={section.rows}
               rowHeight={rowHeight}
-              hasRowSelection={hasSelectableRows}
+              rowSelectionMode={rowSelectionMode}
               displayedColumns={displayedColumns}
               rowHeaderIndex={rowHeaderIndex}
-              onCellSelect={isGridContext || hasSelectableRows ? handleCellSelection : undefined}
+              onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
             />
           ))}
         </ColumnContext.Provider>
       </table>
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
-      <VisuallyHiddenText aria-live="polite" text={rowSelectionAriaLiveMessage} />
-      <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('row-selection-mode-region')} aria-live="polite" text={rowSelectionModeAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('row-selection-region')} aria-live="polite" text={rowSelectionAriaLiveMessage} />
+      <VisuallyHiddenText className={cx('column-header-region')} aria-live="polite" aria-atomic="true" text={columnHeaderAriaLiveMessage} />
     </div>
   );
 }

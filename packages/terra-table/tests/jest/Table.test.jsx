@@ -7,6 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
+import Section from '../../src/subcomponents/Section';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import ERRORS from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
@@ -56,6 +57,78 @@ const tableData = {
   ],
 };
 
+const tableSectionData = {
+  cols: [
+    {
+      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', isSelectable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'Location', isSelectable: true,
+    },
+    { id: 'Column-2', displayName: 'Illness Severity', isSelectable: true },
+    { id: 'Column-3', displayName: 'Visit' },
+    { id: 'Column-4', displayName: 'Allergy' },
+    { id: 'Column-5', displayName: 'Primary Contact' },
+
+  ],
+  sections: [{
+    id: 'section-0',
+    text: 'Test Section',
+    rows: [
+      {
+        id: '1',
+        cells: [
+          { content: 'Fleck, Arthur' },
+          { content: '1007-MTN' },
+          { content: 'Unstable' },
+          { content: 'Inpatient, 2 months' },
+          { content: '' },
+          { content: 'Quinzell, Harleen' },
+        ],
+      },
+      {
+        id: '2',
+        cells: [
+          { content: 'Wayne, Bruce' },
+          { content: '1007-MTN-DR' },
+          { content: 'Stable' },
+          { content: 'Outpatient, 2 days' },
+          { content: 'Phytochemicals' },
+          { content: 'Grayson, Richard' },
+        ],
+      },
+    ],
+  },
+  {
+    id: 'section-1',
+    text: 'Test Section #2',
+    rows: [
+      {
+        id: '3',
+        cells: [
+          { content: 'Parker, Peter' },
+          { content: '1007-MTN' },
+          { content: 'Unstable' },
+          { content: 'Inpatient, 2 months' },
+          { content: '' },
+          { content: 'Octopus, Doctor' },
+        ],
+      },
+      {
+        id: '4',
+        cells: [
+          { content: 'Stark, Tony' },
+          { content: '1007-MTN-DR' },
+          { content: 'Stable' },
+          { content: 'Outpatient, 2 days' },
+          { content: 'Phytochemicals' },
+          { content: 'America, Captain' },
+        ],
+      },
+    ],
+  }],
+};
+
 let mockSpyUuid;
 beforeAll(() => {
   jest.spyOn(console, 'error').mockImplementation();
@@ -100,22 +173,156 @@ describe('Table', () => {
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
         overflowColumns={tableData.cols.slice(2)}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         rows={tableData.rows}
         onColumnSelect={mockColumnSelect}
       />,
     );
 
     // Find column headers
-    const columnHeader = wrapper.find(ColumnHeaderCell);
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(0);
+    expect(columnHeaderCell.props().id).toBe('table-rowSelectionColumn');
 
     // Simulate onMouseDown event on row selection column header
-    columnHeader.at(0).simulate('mouseDown');
+    columnHeaderCell.simulate('mouseDown');
 
     // Validate mock function was called from simulated click event
     expect(mockColumnSelect).not.toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies ARIA attributes for a table with sections', () => {
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableSectionData.cols}
+        sections={tableSectionData.sections}
+      />,
+    );
+
+    // Validate table properties
+    const table = wrapper.find('table');
+    expect(table.props().id).toBe('test-terra-table');
+    expect(table.props().role).toBe('table');
+    expect(table.props()['aria-rowcount']).toBe(7);
+
+    // Validate column header id attribute
+    const columnHeaderCell = wrapper.find('.column-header').at(0);
+    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0');
+
+    // Retrieve first section
+    const tableSections = wrapper.find(Section);
+    const section1 = tableSections.at(0);
+
+    // Validate section header row of the first section
+    const section1HeaderRow = section1.find('.header');
+    expect(section1HeaderRow.props()['aria-rowindex']).toBe(2);
+
+    // Validate table header element of the first section
+    const sectionHeader1 = section1HeaderRow.find('th');
+    expect(sectionHeader1.props().id).toBe('test-terra-table-section-0');
+    expect(sectionHeader1.props().colSpan).toBe(tableSectionData.cols.length);
+    expect(sectionHeader1.props().scope).toBe('col');
+
+    // Validate rows of the first section
+    const section1Row1 = section1.find('.row').at(0);
+    expect(section1Row1.props()['aria-rowindex']).toBe(3);
+    expect(section1Row1.props()['data-row-id']).toBe('1');
+    const section1Row2 = section1.find('.row').at(1);
+    expect(section1Row2.props()['aria-rowindex']).toBe(4);
+    expect(section1Row2.props()['data-row-id']).toBe('2');
+
+    // Validate cells of the first row
+    const row1Cell1 = section1Row1.find('.cell').at(0);
+    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-Column-0');
+    expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
+    const row1Cell2 = section1Row1.find('.cell').at(1);
+    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-rowheader-1 test-terra-table-Column-1');
+
+    // Retrieve second section
+    const section2 = tableSections.at(1);
+
+    // Validate section header row of the second section
+    const section2HeaderRow = section2.find('.header');
+    expect(section2HeaderRow.props()['aria-rowindex']).toBe(5);
+
+    // Validate table header element of the second section
+    const sectionHeader2 = section2HeaderRow.find('th');
+    expect(sectionHeader2.props().id).toBe('test-terra-table-section-1');
+    expect(sectionHeader2.props().colSpan).toBe(tableSectionData.cols.length);
+    expect(sectionHeader2.props().scope).toBe('col');
+
+    // Validate rows of the second section
+    const section2Row1 = section2.find('.row').at(0);
+    expect(section2Row1.props()['aria-rowindex']).toBe(6);
+    expect(section2Row1.props()['data-row-id']).toBe('3');
+    const section2Row2 = section2.find('.row').at(1);
+    expect(section2Row2.props()['aria-rowindex']).toBe(7);
+    expect(section2Row2.props()['data-row-id']).toBe('4');
+
+    // Validate cells of the first row
+    const section2Row1Cell1 = section2Row1.find('.cell').at(0);
+    expect(section2Row1Cell1.props().headers).toBe('test-terra-table-section-1 test-terra-table-Column-0');
+    expect(section2Row1Cell1.props().id).toBe('test-terra-table-rowheader-3');
+    const section2Row1Cell2 = section2Row1.find('.cell').at(1);
+    expect(section2Row1Cell2.props().headers).toBe('test-terra-table-section-1 test-terra-table-rowheader-3 test-terra-table-Column-1');
+  });
+
+  it('verifies ARIA attributes for a table without sections', () => {
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableSectionData.cols}
+        rows={tableData.rows}
+      />,
+    );
+
+    // Validate table properties
+    const table = wrapper.find('table');
+    expect(table.props().id).toBe('test-terra-table');
+    expect(table.props().role).toBe('table');
+    expect(table.props()['aria-rowcount']).toBe(5);
+
+    // Validate column header id attribute
+    const columnHeaderCell = wrapper.find('.column-header').at(0);
+    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0');
+
+    // Retrieve first section
+    const tableSections = wrapper.find(Section);
+    const section1 = tableSections.at(0);
+
+    // Validate section header row of the first section
+    const section1HeaderRow = section1.find('.header');
+    expect(section1HeaderRow).toHaveLength(0);
+
+    // Validate rows of the first section
+    const row1 = section1.find('.row').at(0);
+    expect(row1.props()['aria-rowindex']).toBe(2);
+    expect(row1.props()['data-row-id']).toBe('1');
+    const row2 = section1.find('.row').at(1);
+    expect(row2.props()['aria-rowindex']).toBe(3);
+    expect(row2.props()['data-row-id']).toBe('2');
+    const row3 = section1.find('.row').at(2);
+    expect(row3.props()['aria-rowindex']).toBe(4);
+    expect(row3.props()['data-row-id']).toBe('3');
+    const row4 = section1.find('.row').at(3);
+    expect(row4.props()['aria-rowindex']).toBe(5);
+    expect(row4.props()['data-row-id']).toBe('4');
+
+    // Validate cells of the first row
+    const row1Cell1 = row1.find('.cell').at(0);
+    expect(row1Cell1.props().headers).toBe('test-terra-table-Column-0');
+    expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
+    const row1Cell2 = row1.find('.cell').at(1);
+    expect(row1Cell2.props().headers).toBe('test-terra-table-rowheader-1 test-terra-table-Column-1');
+
+    // Validate cells of the second row
+    const row2Cell1 = row2.find('.cell').at(0);
+    expect(row2Cell1.props().headers).toBe('test-terra-table-Column-0');
+    expect(row2Cell1.props().id).toBe('test-terra-table-rowheader-2');
+    const row2Cell2 = row2.find('.cell').at(1);
+    expect(row2Cell2.props().headers).toBe('test-terra-table-rowheader-2 test-terra-table-Column-1');
   });
 
   it('verifies row selection column header not selectable without callback', () => {
@@ -126,7 +333,7 @@ describe('Table', () => {
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
         overflowColumns={tableData.cols.slice(2)}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         rows={tableData.rows}
         onRowSelectionHeaderSelect={mockColumnSelect}
       />,
@@ -140,8 +347,6 @@ describe('Table', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockColumnSelect).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies onCellSelect callback is triggered when space is pressed on a masked cell', () => {
@@ -168,8 +373,6 @@ describe('Table', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockCellSelect).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies onCellSelect callback is triggered when space is pressed on a non-selectable cell', () => {
@@ -196,8 +399,6 @@ describe('Table', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockCellSelect).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies that the column widths are set properly in the colgroup', () => {
@@ -215,8 +416,6 @@ describe('Table', () => {
     // Verify that column headers are not present
     const column = wrapper.find('col').get(0);
     expect(column.props.style.width).toBe('150px');
-
-    expect(wrapper).toMatchSnapshot();
   });
 });
 
@@ -248,7 +447,7 @@ describe('with pinned columns', () => {
           pinnedColumns={pinnedColumns}
           overflowColumns={tableData.cols.slice(2)}
           rows={tableData.rows}
-          hasSelectableRows
+          rowSelectionMode="multiple"
         />
         ,
       </GridContext.Provider>,
@@ -266,7 +465,7 @@ describe('with pinned columns', () => {
           id="sdfdss"
           overflowColumns={tableData.cols}
           rows={tableData.rows}
-          hasSelectableRows
+          rowSelectionMode="multiple"
         />
         ,
       </GridContext.Provider>,
@@ -287,7 +486,7 @@ describe('Row Selection', () => {
           id="test-terra-table"
           overflowColumns={tableData.cols}
           rows={tableData.rows}
-          hasSelectableRows
+          rowSelectionMode="multiple"
           isStriped
         />
       </IntlProvider>,
@@ -299,10 +498,8 @@ describe('Row Selection', () => {
 
     wrapper.setProps({ rows: newRows });
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.row-selection-template');
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection row unselected update', () => {
@@ -316,7 +513,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={initialRows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -329,10 +526,8 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.row-selection-cleared-template');
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection all row selection single selction', () => {
@@ -345,7 +540,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={initialRows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -358,10 +553,8 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.all-rows-selected');
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection all rows unselected update', () => {
@@ -370,7 +563,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={tableData.rows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -378,10 +571,8 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: [] });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies row selection all rows unselected single unselect', () => {
@@ -394,7 +585,7 @@ describe('Row Selection', () => {
         id="test-terra-table"
         overflowColumns={tableData.cols}
         rows={tableData.rows}
-        hasSelectableRows
+        rowSelectionMode="multiple"
         isStriped
       />,
     );
@@ -402,10 +593,30 @@ describe('Row Selection', () => {
     wrapper.setProps({ rows: newRows });
     wrapper.update();
 
-    const hiddenText = wrapper.find('VisuallyHiddenText').at(1);
+    const hiddenText = wrapper.find('.row-selection-region').at(0);
     expect(hiddenText.props().text).toBe('Terra.table.all-rows-unselected');
+  });
 
-    expect(wrapper).toMatchSnapshot();
+  it('verifies row selection header has proper visually hidden text', () => {
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableData.cols}
+        rows={tableData.rows}
+        rowSelectionMode="multiple"
+      />,
+    );
+
+    // Validate row selection column header
+    const rowSelectionHeader = wrapper.find(ColumnHeaderCell).at(0);
+    const hiddenDisplay = rowSelectionHeader.find('.hidden');
+    expect(hiddenDisplay).toHaveLength(1);
+    expect(hiddenDisplay.text()).toBe('Terra.table.row-selection-header-display');
+
+    // Validate column header without hidden display text
+    const columnHeader = wrapper.find(ColumnHeaderCell).at(1);
+    const hiddenColumnHeader = columnHeader.find('.hidden');
+    expect(hiddenColumnHeader).toHaveLength(0);
   });
 });
 

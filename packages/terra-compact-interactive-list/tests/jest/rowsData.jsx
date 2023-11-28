@@ -5,41 +5,41 @@ const rows = [
   {
     id: 'row_1',
     cells: [
-      { id: 'row_1-cell_1', content: <IconDocuments height="1.5em" width="1.5em" /> },
-      { id: 'row_1-cell_2', content: 'Discern Care Set (1)' },
-      { id: 'row_1-cell_3', content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
+      { content: <IconDocuments height="1.5em" width="1.5em" /> },
+      { content: 'Discern Care Set (1)' },
+      { content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
     ],
   },
   {
     id: 'row_2',
     cells: [
-      { id: 'row_2-cell_1', content: <IconImage height="1.5em" width="1.5em" /> },
-      { id: 'row_2-cell_2', content: 'Initial observation Care/Day High Severity 99220 (2)' },
-      { id: 'row_2-cell_3', content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
+      { content: <IconImage height="1.5em" width="1.5em" /> },
+      { content: 'Initial observation Care/Day High Severity 99220 (2)' },
+      { content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
     ],
   },
   {
     id: 'row_3',
     cells: [
-      { id: 'row_3-cell_1', content: <IconImage height="1.5em" width="1.5em" /> },
-      { id: 'row_3-cell_2', content: 'Arterial Sheath Care (3)' },
-      { id: 'row_3-cell_3', content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
+      { content: <IconImage height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (3)' },
+      { content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
     ],
   },
   {
     id: 'row_4',
     cells: [
-      { id: 'row_4-cell_1', content: ' ' },
-      { id: 'row_4-cell_2', content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
-      { id: 'row_4-cell_3', content: ' ' },
+      { content: ' ' },
+      { content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
+      { content: ' ' },
     ],
   },
   {
     id: 'row_5',
     cells: [
-      { id: 'row_5-cell_1', content: <IconImage height="1.5em" width="1.5em" /> },
-      { id: 'row_5-cell_2', content: 'Arterial Sheath Care (5)' },
-      { id: 'row_5-cell_3', content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
+      { content: <IconImage height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (5)' },
+      { content: <IconFeaturedOutline height="1.5em" width="1.5em" /> },
     ],
   },
 ];

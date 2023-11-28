@@ -1,5 +1,5 @@
 import React, {
-  useContext, useState, useCallback,
+  useContext, useState, useCallback, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -19,6 +19,10 @@ import {
   handleLeftKey,
   handleRightKey,
   moveFocusFromGrid,
+  getValueUnitTypePair,
+  converseColumnTypes,
+  getColumnMaxWidth,
+  getColumnMinWidth,
 } from './utils/utils';
 
 const cx = classNames.bind(styles);
@@ -51,6 +55,11 @@ const propTypes = {
   rows: PropTypes.arrayOf(rowShape),
 
   /**
+   * Row height should be a valid css string with height in px, em, or rem units.
+   */
+  rowHeight: PropTypes.string,
+
+  /**
    * A number of visual columns. Defaults to 1.
    */
   numberOfColumns: PropTypes.number,
@@ -68,30 +77,6 @@ const propTypes = {
   width: PropTypes.string,
 
   /**
-   * Container's minimum width in units set by widthUnit prop, such as px, em, or rem.
-   */
-  minimumWidth: PropTypes.number,
-
-  /**
-   * Columns minimum width in units set by widthUnit prop, such as px, em, or rem.
-   */
-  columnMinimumWidth: PropTypes.number,
-
-  /**
-   * Columns maximum width in units set by widthUnit prop, such as px, em, or rem.
-   */
-  columnMaximumWidth: PropTypes.number,
-
-  /**
-   * The width units, one of `px`, `em`, `rem`. Defaults to 'px'.
-   */
-  widthUnit: PropTypes.oneOf([
-    widthUnitTypes.PX,
-    widthUnitTypes.EM,
-    widthUnitTypes.REM,
-  ]),
-
-  /**
    * Callback function that will be called on click on the cell.
    */
   onCellSelect: PropTypes.func,
@@ -100,13 +85,22 @@ const propTypes = {
    * Callback function that is called when all selected cells need to be unselected. Parameters: none.
    */
   onClearSelection: PropTypes.func,
+
+  /**
+   * Columns minimum width should be a valid css string in value in px, em, or rem units.
+   */
+  columnMinimumWidth: PropTypes.string,
+
+  /**
+   * Columns maximum width should be a valid css string in value in px, em, or rem units.
+   */
+  columnMaximumWidth: PropTypes.string,
 };
 
 const defaultProps = {
   rows: [],
   numberOfColumns: 1,
   width: '100%',
-  widthUnit: widthUnitTypes.PX,
 };
 
 const CompactInteractiveList = (props) => {
@@ -116,11 +110,10 @@ const CompactInteractiveList = (props) => {
     ariaLabel,
     columns,
     rows,
+    rowHeight,
     numberOfColumns,
     flowHorizontally,
     width,
-    widthUnit,
-    minimumWidth,
     columnMinimumWidth,
     columnMaximumWidth,
     onCellSelect,
@@ -131,55 +124,6 @@ const CompactInteractiveList = (props) => {
   const listRef = React.useRef();
   const [focusedRow, setFocusedRow] = useState(0);
   const [focusedCol, setFocusedCol] = useState(0);
-
-  const columnMinWidth = columnMinimumWidth || DefaultListValues.columnMinimumWidth[widthUnit];
-  const columnMaxWidth = columnMaximumWidth;
-  // check if list has responsive columns
-  const isResponsive = checkIfRowHasResponsiveColumns(columns);
-  // if there are responsive columns, the items will need maxWidth and minWidth
-  const rowMaxWidth = isResponsive ? getRowMaximumWidth(columns, columnMaxWidth) : null;
-  const rowMinWidth = isResponsive ? getRowMinimumWidth(columns, columnMinWidth) : null;
-  // calculate row width based on the width of its columns
-  const getRowWidthSum = (total, column) => total + column.width;
-  const rowWidth = isResponsive ? 0 : columns.reduce(getRowWidthSum, 0);
-  // calculate list width based on the item width and number of columns
-  const listWidth = `${rowWidth * numberOfColumns}${widthUnit}`;
-  const listMinWidth = Math.max(rowMinWidth * numberOfColumns, (minimumWidth || DefaultListValues.minimumWidth[widthUnit]));
-  // defining styles to apply to the list
-  const style = {
-    width: isResponsive ? width : listWidth,
-    minWidth: `${listMinWidth}${widthUnit}`,
-  };
-  if (rowMaxWidth) {
-    style.maxWidth = `${rowMaxWidth * numberOfColumns}${widthUnit}`;
-  }
-
-  // number of rows including placeholder rows
-  const numberOfRows = Math.ceil(rows.length / numberOfColumns);
-  // map rows differently depending on vertical or horizontal orientation
-  const mapRows = () => {
-    const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
-    let result = [];
-    if (flowHorizontally) {
-      result = [...rows];
-    } else {
-      for (let i = 0; i < numberOfRows; i += 1) {
-        let x = numberOfColumns - placeholdersNumber;
-        for (let j = i; j < rows.length; j += numberOfRows - (x >= 0 ? 0 : 1)) {
-          if (result.length < rows.length) {
-            result.push(rows[j]);
-            if (x >= 0) { x -= 1; }
-          }
-        }
-      }
-    }
-    // add placeholder rows
-    for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
-      result.push({ id: `placeholder-row-${i}` });
-    }
-    return result;
-  };
-  const mappedRows = mapRows();
 
   const setFocusedRowCol = (newRowIndex, newColIndex) => {
     setFocusedRow(newRowIndex);
@@ -260,6 +204,69 @@ const CompactInteractiveList = (props) => {
     }
   };
 
+  const defaultUnitType = widthUnitTypes.PX;
+  // map the columns to ensure that width, maximumWidth and minimumWidth use same units (px, em, or rem) across all columns.
+  // if a width prop uses different units, it will be disregarded.
+  const [conversionedColumns, widthUnit] = useMemo(() => converseColumnTypes(columns, defaultUnitType), [columns, defaultUnitType]);
+  const columnMinWidth = useMemo(() => getColumnMinWidth(columnMinimumWidth, widthUnit), [columnMinimumWidth, widthUnit]);
+  const columnMaxWidth = useMemo(() => getColumnMaxWidth(columnMaximumWidth, widthUnit), [columnMaximumWidth, widthUnit]);
+
+  // check if list has responsive columns
+  const isResponsive = checkIfRowHasResponsiveColumns(conversionedColumns);
+  // if there are responsive columns, we need maxWidth and minWidth for semantic rows specifically.
+
+  const rowMaxWidth = isResponsive ? getRowMaximumWidth(conversionedColumns, columnMaxWidth?.value) : null;
+  const rowMinWidth = isResponsive ? getRowMinimumWidth(conversionedColumns, columnMinWidth?.value) : null;
+
+  // calculate row width based on the width of its columns
+  const getRowWidthSum = (total, column) => total + column.width;
+  const rowWidth = isResponsive ? null : conversionedColumns.reduce(getRowWidthSum, 0);
+  const rowsPerColumn = Math.ceil(rows.length / numberOfColumns);
+
+  const calculatedRowHeight = flowHorizontally ? null : getValueUnitTypePair(rowHeight || DefaultListValues.rowDefaultHeight[widthUnit]);
+  // calculate list width based on the semantic row width and number of columns
+  const listWidth = `${rowWidth * numberOfColumns}${widthUnit}`;
+  // calculate list min width or use default
+  const defaultListMinWidth = getValueUnitTypePair(DefaultListValues.listMinimumWidth[widthUnit])?.value;
+  const listMinWidth = isResponsive ? Math.max(rowMinWidth * numberOfColumns, defaultListMinWidth) : null;
+  // defining styles to apply to the list
+  const style = {
+    width: isResponsive ? width : listWidth,
+    height: flowHorizontally ? null : `${calculatedRowHeight?.value * rowsPerColumn}${calculatedRowHeight?.unitType}`,
+    minWidth: isResponsive ? `${listMinWidth}${widthUnit}` : null,
+    flexDirection: flowHorizontally ? 'row' : 'column',
+  };
+  if (rowMaxWidth) {
+    style.maxWidth = `${rowMaxWidth * numberOfColumns}${widthUnit}`;
+  }
+
+  // number of rows including placeholder rows
+  const numberOfRows = Math.ceil(rows.length / numberOfColumns);
+  // map rows differently depending on vertical or horizontal orientation
+  const mapRows = () => {
+    const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
+    let result = [];
+    result = [...rows];
+    if (flowHorizontally) {
+      // all placeholder rows go in the end.
+      for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
+        result.push({ id: `placeholder-row-${i - rows.length + 1}` });
+      }
+    } else {
+      // inject placeholders to specific positions so that they all appear in the last row.
+      let position = rows.length;
+      for (let i = placeholdersNumber; i > 0; i -= 1) {
+        result.splice(position, 0, { id: `placeholder-row-${i}` });
+        position -= rowsPerColumn - 1;
+      }
+    }
+    return result;
+  };
+
+  const mappedRows = mapRows();
+  const checkIfRowIsLeftMost = (index) => (flowHorizontally ? index % numberOfColumns === 0 : index < rowsPerColumn);
+  const checkIfRowIsTopMost = (index) => (flowHorizontally ? index < numberOfColumns : index % rowsPerColumn === 0);
+
   return (
     <div className={cx('compact-interactive-list-container', theme.className)}>
       <div
@@ -282,9 +289,9 @@ const CompactInteractiveList = (props) => {
             id={row.id}
             cells={row.cells}
             ariaLabel={row.ariaLabel}
-            columns={columns}
-            columnMinimumWidth={columnMinWidth}
-            columnMaximumWidth={columnMaximumWidth}
+            columns={conversionedColumns}
+            columnMaximumWidth={columnMaxWidth?.value}
+            columnMinimumWidth={columnMinWidth?.value}
             numberOfColumns={numberOfColumns}
             rowWidth={rowWidth}
             isResponsive={isResponsive}
@@ -292,6 +299,10 @@ const CompactInteractiveList = (props) => {
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}
             onCellSelect={(columnIndex) => handleOnCellSelect({ rowIndex: index, columnIndex })}
+            flowHorizontally={flowHorizontally}
+            rowHeight={calculatedRowHeight}
+            isTopmost={checkIfRowIsTopMost(index)}
+            isLeftmost={checkIfRowIsLeftMost(index)}
           />
         ))}
       </div>

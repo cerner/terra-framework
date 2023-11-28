@@ -4,7 +4,7 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 const CellSelection = () => {
   const gridDataJSON = {
     cols: [
-      { id: 'Column-0', displayName: 'Vitals', isSelectable: false },
+      { id: 'Column-0', displayName: 'Vitals' },
       { id: 'Column-1', displayName: 'March 16' },
       { id: 'Column-2', displayName: 'March 17' },
       { id: 'Column-3', displayName: 'March 18' },

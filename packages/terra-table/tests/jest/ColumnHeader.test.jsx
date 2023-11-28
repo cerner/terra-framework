@@ -26,6 +26,8 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
+    expect(columnHeader.props()['aria-rowindex']).toBe(1);
 
     //  Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
@@ -57,6 +59,8 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
+    expect(columnHeader.props()['aria-rowindex']).toBe(1);
 
     // Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
@@ -87,6 +91,8 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
+    expect(columnHeader.props()['aria-rowindex']).toBe(1);
 
     // Validate ColumnHeaderCell React component
     const columnHeaderCells = columnHeader.find(ColumnHeaderCell);
@@ -123,6 +129,8 @@ describe('ColumnHeader', () => {
     const columnHeader = wrapper.find('.column-header-row');
     expect(columnHeader).toHaveLength(1);
     expect(columnHeader.props().height).toBe('3rem');
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
+    expect(columnHeader.props()['aria-rowindex']).toBe(1);
 
     // Validate ColumnHeaderCell React component
     const columnHeaderCell = columnHeader.find(ColumnHeaderCell).first();
@@ -134,7 +142,7 @@ describe('ColumnHeader', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
-  it('verifies that the hasColumnHeaders prop hides the table column headers when set to false', () => {
+  it('verifies that the hasVisibleColumnHeaders prop hides the table column headers when set to false', () => {
     const columns = [{
       id: 'Column-0',
       displayName: ' Vitals',
@@ -147,7 +155,7 @@ describe('ColumnHeader', () => {
       <ColumnHeader
         tableId="test-table"
         columns={columns}
-        hasColumnHeaders={false}
+        hasVisibleColumnHeaders={false}
         headerHeight="3rem"
       />,
     );
@@ -155,6 +163,8 @@ describe('ColumnHeader', () => {
     // Verify that column headers are not present
     const columnHeader = wrapper.find('.hidden');
     expect(columnHeader).toHaveLength(1);
+    expect(columnHeader.props()['data-row-id']).toBe('test-table-header-row');
+    expect(columnHeader.props()['aria-rowindex']).toBe(1);
 
     expect(wrapper).toMatchSnapshot();
   });
@@ -173,7 +183,7 @@ describe('ColumnHeader', () => {
         tableId="test-table"
         columns={columns}
         headerHeight="3rem"
-        hasColumnHeaders
+        hasVisibleColumnHeaders
       />,
     );
 

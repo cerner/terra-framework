@@ -8,6 +8,29 @@ import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import Cell from '../../src/subcomponents/Cell';
 import ColumnContext from '../../src/utils/ColumnContext';
 
+const originalOffsetHeight = Object.getOwnPropertyDescriptor(
+  HTMLElement.prototype,
+  'offsetHeight',
+);
+const originalOffsetWidth = Object.getOwnPropertyDescriptor(HTMLElement.prototype, 'offsetWidth');
+beforeAll(() => {
+  // Define offsetHeight for HTML elements
+  Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+    configurable: true,
+    value: 44,
+  });
+
+  // Define offsetWidth for HTML elements
+  Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+    configurable: true, value: 100,
+  });
+});
+
+afterAll(() => {
+  Object.defineProperty(HTMLElement.prototype, 'offsetHeight', originalOffsetHeight);
+  Object.defineProperty(HTMLElement.prototype, 'offsetWidth', originalOffsetWidth);
+});
+
 describe('Cell', () => {
   it('verifies that only a row header cell (<th>) is created when isRowHeader prop is true', () => {
     const wrapper = shallowWithIntl(
@@ -190,7 +213,7 @@ describe('Cell', () => {
         >
           <button type="button">Button</button>
         </Cell>
-      </GridContext.Provider>,
+      </GridContext.Provider>, { attachTo: document.body },
     );
 
     const focusTrapComponent = wrapper.find('FocusTrap');

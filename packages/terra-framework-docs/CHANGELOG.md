@@ -3,7 +3,36 @@
 ## Unreleased
 
 * Added
+  * Added new test to `terra-compact-interactive-list` for inconsistent width unit types in props.
+
+## 1.47.0 - (November 23, 2023)
+
+* Added
+  * Updated example to `terra-collapsible-menu-view-item` to show usage of props `isSelectable` and `isSelected`.
+
+* Added
+  * Added new test for row selection for FlowsheetDataGrid.
+
+## 1.46.0 - (November 22, 2023)
+
+* Added
+  * Added examples and tests to `terra-table` for single row selection mode.
+  * Added examples and tests for `terra-folder-tree`.
+
+## 1.45.0 - (November 20, 2023)
+
+* Added
+  * Added example to `terra-table` to show column states and sorting;
+  * Added new test for Terra Slider component for long field labels.
+  * Added `hasVisibleColumnHeaders` example for FlowsheetDataGrid.
+  * Added examples and tests to `terra-data-grid` for sections in FlowsheetDataGrid.
   * Added documentation and examples for `terra-compact-interactive-list`.
+  
+* Updated
+  * Updated About page of `terra-table` to provide accessibility documentation for Home and End keys.
+  * Removed alpha notice for FlowsheetDataGrid.
+  * Removed unsupported props `isMasked` and `isSelectable` from FlowsheetDataGrid subcomponent documentation.
+  * Updated examples and tests in `terra-table` to validate sections in a table with pinned columns.
 
 ## 1.44.0 - (November 9, 2023)
 

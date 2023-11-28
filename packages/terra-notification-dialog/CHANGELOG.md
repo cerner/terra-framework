@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.36.0 - (November 23, 2023)
+
+* Fixed
+  * Fixed title getting announced twice.
+
 ## 4.35.0 - (October 11, 2023)
 
 * Changed

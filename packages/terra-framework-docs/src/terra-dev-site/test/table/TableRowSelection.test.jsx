@@ -81,7 +81,7 @@ const TableRowSelection = () => {
       rowHeaderIndex={1}
       columnWidth="180px"
       ariaLabel="Table with Row Selections"
-      hasSelectableRows
+      rowSelectionMode="multiple"
       onRowSelect={onRowSelect}
       onRowSelectionHeaderSelect={rowSelectionHeaderSelectable ? () => {} : undefined}
     />

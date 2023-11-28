@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { alignTypes } from '../utils/constants';
 
 const columnShape = PropTypes.shape({
   /**
@@ -12,25 +13,25 @@ const columnShape = PropTypes.shape({
   displayName: PropTypes.string,
 
   /**
-   * Width of the column in width units set by widthUnits prop, defaults to px.
+   * A valid css string, px, em, or rem supported (should be the same across all width units).
    * If not set, the column will be considered a flex growing column.
-   * If width is set, but flexGrow prop is also set to true, the width will be used as a flex basis of flex growing column.
+   * If width is set, but flexGrow prop is also set to true, the width will be disregarded.
    */
-  width: PropTypes.number,
+  width: PropTypes.string,
 
   /**
-   * Minimum width of the column in width units set by widthUnits prop, defaults to px.
+   * A valid css string, px, em, or rem supported (should be the same across all width units).
    * Will be disregarded if the width is set and flexGrow is omitted or false.
    * Is reccomended in cases the column is flex growing column.
    */
-  mimimumWidth: PropTypes.number,
+  minimumWidth: PropTypes.string,
 
   /**
-   * Maximum width of the column in width units set by widthUnits prop, defaults to px.
+   * A valid css string, px, em, or rem supported (should be the same across all width units).
    * Will be disregarded if the width is set and flexGrow is omitted or false.
    * Is reccomended in cases the column is flex growing column.
    */
-  maximumWidth: PropTypes.number,
+  maximumWidth: PropTypes.string,
 
   /**
    * Whether the column width can grow (a flex growing column).
@@ -39,9 +40,13 @@ const columnShape = PropTypes.shape({
   flexGrow: PropTypes.bool,
 
   /**
-   * Whether the column content should be aligned to the center. If not set to true, the content will be aligned to the left.
+   * Aligns the cell content to center, righ, or left. Defaults to the left.
    */
-  alignToCenter: PropTypes.bool,
+  align: PropTypes.oneOf([
+    alignTypes.CENTER,
+    alignTypes.RIGHT,
+    alignTypes.LEFT,
+  ]),
 
 });
 

@@ -67,7 +67,7 @@ describe('Section', () => {
   it('verifies the rows are created with the right props', () => {
     const verifyRow = (rowIndex, rowComponent, data, overflowColumns) => {
       expect(rowComponent.props.displayedColumns).toEqual(overflowColumns);
-      expect(rowComponent.props.hasRowSelection).toBe(false);
+      expect(rowComponent.props.rowSelectionMode).toBeUndefined();
       expect(rowComponent.props.tableId).toBe('test-table');
       expect(rowComponent.key).toEqual(data.id);
       expect(rowComponent.props.onCellSelect).toBeUndefined();

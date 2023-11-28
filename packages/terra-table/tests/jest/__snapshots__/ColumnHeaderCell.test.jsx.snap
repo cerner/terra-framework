@@ -1,257 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ColumnHeaderCell renders a column header cell with ascending sort 1`] = `
-<th
-  aria-sort="ascending"
-  className="column-header selectable"
-  id="test-table-Column-0"
-  key="Column-0"
-  onKeyDown={[Function]}
-  role="columnheader"
-  scope="col"
-  style={
-    Object {
-      "height": "150px",
-      "left": null,
-      "width": "100px",
-    }
-  }
->
-  <div
-    className="header-container"
-    role="button"
-    tabIndex={0}
-  >
-    <span>
-       Vitals
-    </span>
-    <IconUp
-      data-name="Layer 1"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
-</th>
-`;
-
-exports[`ColumnHeaderCell renders a column header cell with ascending sort and error 1`] = `
-<th
-  aria-sort="ascending"
-  className="column-header selectable"
-  id="test-table-Column-0"
-  key="Column-0"
-  onKeyDown={[Function]}
-  role="columnheader"
-  scope="col"
-  style={
-    Object {
-      "height": "150px",
-      "left": null,
-      "width": "100px",
-    }
-  }
->
-  <div
-    className="header-container"
-    role="button"
-    tabIndex={0}
-  >
-    <IconError
-      a11yLabel="Terra.table.columnError"
-      className="error-icon"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    <span>
-       Vitals
-    </span>
-    <IconUp
-      data-name="Layer 1"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
-</th>
-`;
-
-exports[`ColumnHeaderCell renders a column header cell with descending sort 1`] = `
-<th
-  aria-sort="descending"
-  className="column-header selectable"
-  id="test-table-Column-0"
-  key="Column-0"
-  onKeyDown={[Function]}
-  role="columnheader"
-  scope="col"
-  style={
-    Object {
-      "height": "150px",
-      "left": null,
-      "width": "100px",
-    }
-  }
->
-  <div
-    className="header-container"
-    role="button"
-    tabIndex={0}
-  >
-    <span>
-       Vitals
-    </span>
-    <IconDown
-      data-name="Layer 1"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
-</th>
-`;
-
-exports[`ColumnHeaderCell renders a column header cell with error 1`] = `
-<th
-  className="column-header selectable"
-  id="test-table-Column-0"
-  key="Column-0"
-  onKeyDown={[Function]}
-  role="columnheader"
-  scope="col"
-  style={
-    Object {
-      "height": "150px",
-      "left": null,
-      "width": "100px",
-    }
-  }
->
-  <div
-    className="header-container"
-    role="button"
-    tabIndex={0}
-  >
-    <IconError
-      a11yLabel="Terra.table.columnError"
-      className="error-icon"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    <span>
-       Vitals
-    </span>
-  </div>
-</th>
-`;
-
-exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback 1`] = `
-<th
-  aria-sort="ascending"
-  className="column-header selectable"
-  id="test-table-Column-0"
-  key="Column-0"
-  onKeyDown={[Function]}
-  onMouseDown={[Function]}
-  role="columnheader"
-  scope="col"
-  style={
-    Object {
-      "height": "150px",
-      "left": null,
-      "width": "100px",
-    }
-  }
->
-  <div
-    className="header-container"
-    role="button"
-    tabIndex={0}
-  >
-    <IconError
-      a11yLabel="Terra.table.columnError"
-      className="error-icon"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    <span>
-       Vitals
-    </span>
-    <IconUp
-      data-name="Layer 1"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
-</th>
-`;
-
-exports[`ColumnHeaderCell renders a column header cell with onColumnSelect callback but not selectable 1`] = `
-<th
-  aria-sort="ascending"
-  className="column-header"
-  id="test-table-Column-0"
-  key="Column-0"
-  role="columnheader"
-  scope="col"
-  style={
-    Object {
-      "height": "150px",
-      "left": null,
-      "width": "100px",
-    }
-  }
->
-  <div
-    className="header-container"
-  >
-    <IconError
-      a11yLabel="Terra.table.columnError"
-      className="error-icon"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-    <span>
-       Vitals
-    </span>
-    <IconUp
-      data-name="Layer 1"
-      viewBox="0 0 48 48"
-      xmlns="http://www.w3.org/2000/svg"
-    />
-  </div>
-</th>
-`;
-
-exports[`ColumnHeaderCell renders a default column header cell 1`] = `
-<th
-  className="column-header selectable"
-  id="test-table-Column-0"
-  key="Column-0"
-  onKeyDown={[Function]}
-  role="columnheader"
-  scope="col"
-  style={
-    Object {
-      "height": "150px",
-      "left": null,
-      "width": "100px",
-    }
-  }
->
-  <div
-    className="header-container"
-    role="button"
-    tabIndex={0}
-  >
-    <span>
-       Vitals
-    </span>
-  </div>
-</th>
-`;
-
 exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
 <InjectIntl(ColumnHeaderCell)
   columnIndex={0}
-  displayName=" Vitals"
+  displayName="Vitals"
   hasError={true}
   headerHeight="150px"
   id="Column-0"
@@ -261,7 +13,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
 >
   <ColumnHeaderCell
     columnIndex={0}
-    displayName=" Vitals"
+    displayName="Vitals"
     hasError={true}
     headerHeight="150px"
     id="Column-0"
@@ -293,6 +45,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       }
     }
     isActive={false}
+    isDisplayVisible={true}
     isResizable={false}
     isResizeActive={false}
     isSelectable={false}
@@ -301,7 +54,6 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     width={100}
   >
     <th
-      aria-sort="ascending"
       className="column-header pinned"
       id="test-table-Column-0"
       key="Column-0"
@@ -314,18 +66,17 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
           "width": "100px",
         }
       }
+      title="Vitals"
     >
       <div
         className="header-container"
       >
         <IconError
-          a11yLabel="Terra.table.columnError"
           className="error-icon"
           viewBox="0 0 48 48"
           xmlns="http://www.w3.org/2000/svg"
         >
           <IconBase
-            a11yLabel="Terra.table.columnError"
             className="IconError error-icon"
             focusable="false"
             height="1em"
@@ -339,13 +90,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
               className="tui-Icon icon IconError error-icon"
               focusable="false"
               height="1em"
+              role="presentation"
               viewBox="0 0 48 48"
               width="1em"
               xmlns="http://www.w3.org/2000/svg"
             >
-              <title>
-                Terra.table.columnError
-              </title>
               <path
                 d="M24 0c13.3 0 24 10.7 24 24S37.3 48 24 48 0 37.3 0 24C0 10.8 10.7 0 23.9 0h.1z"
                 fill="#E50000"
@@ -357,8 +106,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             </svg>
           </IconBase>
         </IconError>
-        <span>
-           Vitals
+        <span
+          aria-hidden={true}
+          className="display-text"
+        >
+          Vitals
         </span>
         <IconUp
           data-name="Layer 1"
@@ -391,6 +143,15 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
             </svg>
           </IconBase>
         </IconUp>
+        <VisuallyHiddenText
+          text="Vitals, Terra.table.columnError, Terra.table.sort-ascending"
+        >
+          <span
+            className="visually-hidden-text"
+          >
+            Vitals, Terra.table.columnError, Terra.table.sort-ascending
+          </span>
+        </VisuallyHiddenText>
       </div>
       <div
         className="pinned-columns-divider"

@@ -1,26 +1,50 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { injectIntl } from 'react-intl';
-// import classNames from 'classnames/bind';
-// import styles from './FolderTree.module.scss';
+import classNames from 'classnames/bind';
 
-// const cx = classNames.bind(styles);
+import ActionHeader from 'terra-action-header';
+
+import FolderTreeItem from './subcomponents/FolderTreeItem';
+import styles from './FolderTree.module.scss';
+
+const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * @private
-   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   * List of FolderTree.Items to be displayed as content within the FolderTree.
    */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  children: PropTypes.node.isRequired,
+  /**
+   * The title of the folder tree.
+   */
+  title: PropTypes.string.isRequired,
+  /**
+   * The heading level for the title of the folder tree.
+   */
+  headerLevel: PropTypes.number,
 };
 
-const defaultProps = {};
+const defaultProps = {
+  headerLevel: 3,
+};
 
-const FolderTree = () => (
-  <div>test</div>
+const FolderTree = ({ children, title, headerLevel }) => (
+  <>
+    <ActionHeader
+      text={title}
+      level={headerLevel}
+    />
+    <ul
+      className={cx('folder-tree')}
+      role="tree"
+    >
+      {children}
+    </ul>
+  </>
 );
 
 FolderTree.propTypes = propTypes;
 FolderTree.defaultProps = defaultProps;
 
-export default injectIntl(FolderTree);
+FolderTree.Item = FolderTreeItem;
+export default FolderTree;

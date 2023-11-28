@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`FlowsheetDataGrid renders the row header column as pinned and remaining columns as overflow and all columns as not resizable 1`] = `
+exports[`FlowsheetDataGrid renders the row header column as pinned and remaining columns as overflow, all columns as not resizable or selectable and all row cells as selectable 1`] = `
 <div
   className="flowsheet-data-grid-container"
   onKeyUp={[Function]}
@@ -9,23 +9,23 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
+    hasVisibleColumnHeaders={true}
     id="test-terra-flowsheet-data-grid"
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
-    onClearSelection={[Function]}
     overflowColumns={
       Array [
         Object {
           "displayName": "March 16",
           "id": "Column-1",
           "isResizable": false,
-          "isSelectable": true,
+          "isSelectable": false,
         },
         Object {
           "displayName": "March 17",
           "id": "Column-2",
           "isResizable": false,
-          "isSelectable": true,
+          "isSelectable": false,
         },
       ]
     }
@@ -35,7 +35,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
           "displayName": "Vitals",
           "id": "Column-0",
           "isResizable": false,
-          "isSelectable": true,
+          "isSelectable": false,
         },
       ]
     }
@@ -113,6 +113,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
         },
       ]
     }
+    sections={null}
   />
   <VisuallyHiddenText
     aria-live="polite"
@@ -130,23 +131,23 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
+    hasVisibleColumnHeaders={true}
     id="test-terra-flowsheet-data-grid"
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
-    onClearSelection={[Function]}
     overflowColumns={
       Array [
         Object {
           "displayName": "March 16",
           "id": "Column-1",
           "isResizable": false,
-          "isSelectable": true,
+          "isSelectable": false,
         },
         Object {
           "displayName": "March 17",
           "id": "Column-2",
           "isResizable": false,
-          "isSelectable": true,
+          "isSelectable": false,
         },
       ]
     }
@@ -156,7 +157,7 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
           "displayName": "Vitals",
           "id": "Column-0",
           "isResizable": false,
-          "isSelectable": true,
+          "isSelectable": false,
         },
       ]
     }
@@ -279,6 +280,7 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
         },
       ]
     }
+    sections={null}
   />
   <VisuallyHiddenText
     aria-live="polite"

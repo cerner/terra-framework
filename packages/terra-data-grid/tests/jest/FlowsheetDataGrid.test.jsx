@@ -54,7 +54,7 @@ const dataFile = {
 };
 
 describe('FlowsheetDataGrid', () => {
-  it('renders the row header column as pinned and remaining columns as overflow and all columns as not resizable', () => {
+  it('renders the row header column as pinned and remaining columns as overflow, all columns as not resizable or selectable and all row cells as selectable', () => {
     const wrapper = shallowWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
@@ -69,7 +69,7 @@ describe('FlowsheetDataGrid', () => {
         displayName: 'Vitals',
         id: 'Column-0',
         isResizable: false,
-        isSelectable: true,
+        isSelectable: false,
       },
     ];
 
@@ -78,13 +78,13 @@ describe('FlowsheetDataGrid', () => {
         displayName: 'March 16',
         id: 'Column-1',
         isResizable: false,
-        isSelectable: true,
+        isSelectable: false,
       },
       {
         displayName: 'March 17',
         id: 'Column-2',
         isResizable: false,
-        isSelectable: true,
+        isSelectable: false,
       },
     ];
 
@@ -310,72 +310,6 @@ describe('Single cell selection', () => {
     selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
 
     expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1');
-    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
-  });
-
-  it('verifies single cell selection does not occur when an unselectable cell is clicked', () => {
-    const updatedDataFile = {
-      ...dataFile,
-      rows: [
-        ...dataFile.rows.slice(0, 3),
-        {
-          id: '4',
-          cells: [
-            { content: 'Oxygen Flow Rate (L/min)' },
-            { content: '63', isSelectable: false },
-            { content: '47' },
-          ],
-        },
-      ],
-    };
-
-    const wrapper = mountWithIntl(
-      <FlowsheetDataGrid
-        id="test-terra-flowsheet-data-grid"
-        columns={dataFile.cols}
-        rows={updatedDataFile.rows}
-        ariaLabel="Test Flowsheet Data Grid"
-        onCellSelect={mockOnCellSelect}
-      />,
-    );
-
-    const selectableCell = wrapper.find('Row').at(3).find('td:not(.selectable)').at(0);
-    selectableCell.simulate('mouseDown');
-
-    expect(mockOnCellSelect).not.toHaveBeenCalled();
-    expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
-  });
-
-  it('verifies single cell selection does not occur when Space is pressed on an unselectable cell', () => {
-    const updatedDataFile = {
-      ...dataFile,
-      rows: [
-        ...dataFile.rows.slice(0, 3),
-        {
-          id: '4',
-          cells: [
-            { content: 'Oxygen Flow Rate (L/min)' },
-            { content: '63', isSelectable: false },
-            { content: '47' },
-          ],
-        },
-      ],
-    };
-
-    const wrapper = mountWithIntl(
-      <FlowsheetDataGrid
-        id="test-terra-flowsheet-data-grid"
-        columns={dataFile.cols}
-        rows={updatedDataFile.rows}
-        ariaLabel="Test Flowsheet Data Grid"
-        onCellSelect={mockOnCellSelect}
-      />,
-    );
-
-    const selectableCell = wrapper.find('Row').at(3).find('td:not(.selectable)').at(0);
-    selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
-
-    expect(mockOnCellSelect).not.toHaveBeenCalled();
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
@@ -648,5 +582,30 @@ describe('Multi-cell selection', () => {
       { rowId: '4', columnId: 'Column-1' },
       { rowId: '4', columnId: 'Column-2' },
     ]);
+  });
+});
+
+describe('Row selection', () => {
+  let mockOnRowSelect = null;
+
+  beforeEach(() => {
+    mockOnRowSelect = jest.fn();
+  });
+
+  it('verifies single row selection when a row header cell is clicked', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        rows={dataFile.rows}
+        ariaLabel="Test Flowsheet Data Grid"
+        onRowSelect={mockOnRowSelect}
+      />,
+    );
+
+    const selectableCell = wrapper.find('Row').at(2).find('th.selectable').at(0);
+    selectableCell.simulate('mouseDown');
+
+    expect(mockOnRowSelect).toHaveBeenCalledWith({ rowId: '3', sectionId: '' });
   });
 });

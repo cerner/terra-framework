@@ -229,5 +229,34 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
       Terra.validates.element('row-selection-header-selectable', { selector: rowSelectionTableSelector });
     });
+
+    it('verifies Home key selects first focusable element', () => {
+      browser.keys(['Tab', 'Tab', 'Home']);
+
+      Terra.validates.element('row-selection-home', { selector: rowSelectionTableSelector });
+    });
+
+    it('verifies that End key selects last focusable element', () => {
+      browser.keys(['Tab', 'End']);
+
+      Terra.validates.element('row-selection-end', { selector: rowSelectionTableSelector });
+    });
+  });
+
+  describe('With single row selection', () => {
+    const rowSelectionTableSelector = '#table-with-single-row-selection';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-single-row-selection');
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[0].$$('td')[0].moveTo();
+      browser.pause(1000);
+      Terra.validates.element('row-single-selection-hover', { selector: rowSelectionTableSelector });
+
+      browser.$$('tbody tr')[0].$$('td')[0].click();
+      Terra.validates.element('row-single-selection-cell-click', { selector: rowSelectionTableSelector });
+    });
   });
 });

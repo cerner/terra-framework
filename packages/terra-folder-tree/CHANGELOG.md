@@ -2,8 +2,12 @@
 
 ## Unreleased
 
+## 1.0.0-alpha.1 - (November 22, 2023)
+
+* Added
+  * Created base `terra-folder-tree` component.
+
 ## 0.1.1-alpha.0 - (October 25, 2023)
 
 * Changed
-  * Minor dependency version bump
-
+  * Minor dependency version bump.
