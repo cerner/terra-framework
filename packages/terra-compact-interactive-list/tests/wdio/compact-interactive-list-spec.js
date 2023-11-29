@@ -58,4 +58,14 @@ Terra.describeViewports('CompactInteractiveList', ['medium', 'large'], () => {
       Terra.validates.element('width breakpoints horizontal flow');
     });
   });
+
+  describe('inconsistent width units', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/compact-interactive-list/inconsistent-width-units');
+    });
+
+    it('should remove width and maximumWidth properties if width unit type is inconsistent across the columns', () => {
+      Terra.validates.element('inconsistent width units');
+    });
+  });
 });

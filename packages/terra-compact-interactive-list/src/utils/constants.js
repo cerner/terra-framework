@@ -30,7 +30,7 @@ export const alignTypes = {
 };
 
 export const WARNINGS = {
-  COLUMN_MIN_WIDTH_UNIT_TYPE: 'columnMinWidth prop has different unitType than the one used in columns. It will be disregarded and the default value will be used instead.',
-  COLUMN_MAX_WIDTH_UNIT_TYPE: 'columnMaxWidth prop has different unitType than the one used in columns. It will be disregarded.',
-  COLUMN_WIDTH_INCONSISTENT_TYPE: 'width, minWidth, and maxWidth should be of the same unit type across all the columns. px, em and rem are supported types.',
+  COLUMN_MIN_WIDTH_UNIT_TYPE: 'columnMinimumWidth prop has different unitType than the one used in columns. It will be disregarded and the default value will be used instead.',
+  COLUMN_MAX_WIDTH_UNIT_TYPE: 'columnMaximumWidth prop has different unitType than the one used in columns. It will be disregarded.',
+  COLUMN_WIDTH_INCONSISTENT_TYPE: 'width, minimumWidth, and maximumWidth properties should be of the same unit type across all the columns (px, em, and rem are supported types).',
 };
