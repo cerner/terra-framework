@@ -117,18 +117,16 @@ const FolderTreeItem = ({
         <span style={{ paddingLeft: `${level}rem` }}>
           <Arrange
             fitStart={(
-              <>
-                <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
-                  {
-                    isFolder ? (
-                      <Spacer paddingRight="small" isInlineBlock>
-                        {expandCollapseIcon}
-                      </Spacer>
-                    ) : null
-                  }
-                  {itemIcon}
-                </Spacer>
-              </>
+              <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
+                {
+                  isFolder ? (
+                    <Spacer paddingRight="small" isInlineBlock>
+                      {expandCollapseIcon}
+                    </Spacer>
+                  ) : null
+                }
+                {itemIcon}
+              </Spacer>
             )}
             fill={label}
             alignFitStart="center"
