@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.13.0 - (November 29, 2023)
+
 * Fixed
   * Added margin between icon and label in tab.
 
