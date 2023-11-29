@@ -18,10 +18,8 @@
     }
   }
   
-  .folder {
-    &:hover {
-      cursor: pointer;
-    }
+  .folder:hover {
+    cursor: pointer;
   }
 
   .selected {
