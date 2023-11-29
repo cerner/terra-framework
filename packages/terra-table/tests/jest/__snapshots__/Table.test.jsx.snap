@@ -614,7 +614,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   width={200}
                 >
                   <th
-                    className="column-header pinned"
+                    className="column-header pinned last-pinned-column"
                     id="test-terra-table-Column-1"
                     key="Column-1"
                     role="columnheader"
@@ -647,15 +647,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                         </span>
                       </VisuallyHiddenText>
                     </div>
-                    <div
-                      className="pinned-columns-divider"
-                      style={
-                        Object {
-                          "height": 0,
-                          "left": 199,
-                        }
-                      }
-                    />
                   </th>
                 </ColumnHeaderCell>
               </InjectIntl(ColumnHeaderCell)>
@@ -1199,7 +1190,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     tableId="test-terra-table"
                   >
                     <td
-                      className="cell pinned blank"
+                      className="cell pinned last-pinned-column blank"
                       headers="test-terra-table-rowheader-1 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -1639,7 +1630,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     tableId="test-terra-table"
                   >
                     <td
-                      className="cell pinned"
+                      className="cell pinned last-pinned-column"
                       headers="test-terra-table-rowheader-2 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -2075,7 +2066,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     tableId="test-terra-table"
                   >
                     <td
-                      className="cell pinned"
+                      className="cell pinned last-pinned-column"
                       headers="test-terra-table-rowheader-3 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -2511,7 +2502,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     tableId="test-terra-table"
                   >
                     <td
-                      className="cell pinned highlighted"
+                      className="cell pinned last-pinned-column highlighted"
                       headers="test-terra-table-rowheader-4 test-terra-table-Column-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}

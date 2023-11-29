@@ -10,6 +10,10 @@
   }
 
   .header {
+    button:focus {
+      outline: none;
+    }
+
     th {
       border-left: var(--terra-table-cell-border-left, 1px solid #dedfe0);
       border-right: var(--terra-table-cell-border-right, 1px solid #dedfe0);
