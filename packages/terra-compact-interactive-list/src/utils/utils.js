@@ -185,19 +185,42 @@ export const moveFocusFromGrid = (moveForward, id, containerRef) => {
 };
 
 /**
- * Calculates the new cell to focus on the LEFT ARROW KEY press
- * @param {KeyboardEvent} event - keyboard event for Left Arrow Key press.
- * @param {number} row - an index of the currently focused row in row array.
- * @param {number} col - an index of the currently focused col in the item (semantic row) cells array.
+ * Finds the first semantic row index in a visual row, where the given row is located
+ * @param {number} rowsLength - a total number of seamntic rows in the list.
  * @param {number} numberOfColumns - a number of visual columns.
- * @param {number} columnsLength - a number of seamntic columns (cells) in a visual column (item).
- * @returns - an object { row, col } for the new cell to focus on
+ * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
+ * @param {number} row - an index of the currently focused semantic row.
+ * @returns - the index of the first semantic row in the same visual row as currently focused row.
  */
-export const handleLeftKey = (event, row, col, numberOfColumns, columnsLength) => {
-  let nextVisualRow = row;
-  let nextSemanticCol = col;
-  const lastItemInVisualRow = Math.ceil((row + 1) / numberOfColumns) * numberOfColumns;
-  const firstItemInVisualRow = lastItemInVisualRow - numberOfColumns;
+const getFirstSemanticRowIndexInVisualRow = (rowsLength, numberOfColumns, flowHorizontally, row) => {
+  if (row === undefined || row === null) {
+    return 0;
+  }
+  if (flowHorizontally) {
+    const firstItemInVisualRow = (Math.floor((row + 1) / numberOfColumns) * numberOfColumns);
+    return firstItemInVisualRow;
+  }
+  const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
+  const visualColumnNumber = Math.floor(row / rowsPerColumn);
+  const firstItemInVisualRow = row - (visualColumnNumber * rowsPerColumn);
+  return firstItemInVisualRow;
+};
+
+/**
+ * Calculates new semantic row and cell indexes to focus on per LEFT ARROW KEY press.
+ * @param {KeyboardEvent} event - keyboard event.
+ * @param {number} row - an index of the currently focused semantic row.
+ * @param {number} cell - an index of the currently focused cell.
+ * @param {number} numberOfColumns - a number of visual columns.
+ * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
+ * @param {number} cellsLength - a number of cells in a semantic row.
+ * @param {number} rowsLength - a total number of seamntic rows in the list.
+ * @returns - an object { row, cell } for the new cell to focus on.
+ */
+export const handleLeftKey = (event, row, cell, numberOfColumns, flowHorizontally, cellsLength, rowsLength) => {
+  let nextRow = row;
+  let nextCell = cell;
+  const firstItemInVisualRow = getFirstSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
   if (event.metaKey) {
     // Mac: Cmd + Right
     // Win: End
@@ -205,76 +228,111 @@ export const handleLeftKey = (event, row, col, numberOfColumns, columnsLength) =
       // Mac: Ctrl + Cmd + Right
       // Windows: Ctrl + End
       // Focus moves to the first cell in the first item in the list.
-      nextVisualRow = 0;
-      nextSemanticCol = 0;
-      return { row: nextVisualRow, col: nextSemanticCol };
+      nextRow = 0;
+      nextCell = 0;
+      return { row: nextRow, cell: nextCell };
     }
     // Focus moves to the first cell in the first item in the visual row.
-    nextSemanticCol = 0;
-    nextVisualRow = firstItemInVisualRow;
-    return { row: nextVisualRow, col: nextSemanticCol };
+    nextCell = 0;
+    nextRow = firstItemInVisualRow;
+    return { row: nextRow, cell: nextCell };
   }
   // Focus should go till the start of the visual row, and should not break to the previous visual row.
-  if (col === 0) {
-    // The first cell.
+  if (cell === 0) {
     if (row === 0 || row === firstItemInVisualRow) {
       // The first item in the list, or the first item in the visual row.
-      return { row: nextVisualRow, col: nextSemanticCol };
+      // Focus should stay where it is.
+      return { row, cell };
     }
-    nextSemanticCol = columnsLength - 1;
-    nextVisualRow -= 1;
+    // The first cell. Focus moves to the last cell of the semantic row to the left.
+    nextCell = cellsLength - 1;
+    nextRow -= flowHorizontally ? 1 : Math.ceil(rowsLength / numberOfColumns);
   } else {
-    // Not first cell.
-    nextSemanticCol -= 1;
+    // Not first cell. Focus moves within the row to the next cell to the left.
+    nextCell -= 1;
   }
-  return { row: nextVisualRow, col: nextSemanticCol };
+  return { row: nextRow, cell: nextCell };
 };
 
 /**
- *
- * Calculates the new cell to focus on the RIGHT ARROW KEY press.
- * @param {KeyboardEvent} event - keyboard event for Left Arrow Key press.
- * @param {number} row - an index of the currently focused row in row array.
- * @param {number} col - an index of the currently focused col in the item (semantic row) cells array.
+ * Finds the last semantic row index in a visual row, where the given row is located
+ * @param {number} rowsLength - a total number of seamntic rows in the list.
  * @param {number} numberOfColumns - a number of visual columns.
- * @param {number} columnsLength - a number of seamntic columns (cells) in a visual column (item).
- * @param {number} rowsLength - a number of seamntic rows (items) in the list.
- * @returns - an object { row, col } for the new cell to focus on.
+ * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
+ * @param {number} row - an index of the currently focused semantic row.
+ * @returns - the index of the last semantic row in the same visual row as currently focused row.
  */
-export const handleRightKey = (event, row, col, numberOfColumns, columnsLength, rowsLength) => {
-  let nextVisualRow = row;
-  let nextSemanticCol = col;
+const getLastSemanticRowIndexInVisualRow = (rowsLength, numberOfColumns, flowHorizontally, row) => {
+  if (flowHorizontally) {
+    if (row === undefined || row === null) {
+      // If current row omitted, return the index of the last element
+      return rowsLength - 1;
+    }
+    const lastItemInVisualRow = (Math.ceil((row + 1) / numberOfColumns) * numberOfColumns) - 1;
+    return lastItemInVisualRow < rowsLength - 1 ? lastItemInVisualRow : rowsLength - 1;
+  }
+  const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
+  const numberOfPlaceholders = (rowsPerColumn * numberOfColumns) - rowsLength;
+  if ((row === undefined || row === null)) {
+    // If current row omitted, return the index of the last element in the last visual row for vertical flow
+    return (rowsPerColumn * numberOfColumns) - (rowsPerColumn * numberOfPlaceholders) - 1;
+  }
+  const visualColumnNumber = Math.floor(row / rowsPerColumn);
+  const isLastRow = ((row + 1) % rowsPerColumn === 0);
+  const columnsTillRowEnd = numberOfColumns - (isLastRow ? numberOfPlaceholders : 0) - (visualColumnNumber + 1);
+  return row + columnsTillRowEnd * rowsPerColumn;
+};
+
+/**
+ * Calculates new semantic row and cell indexes to focus on per RIGHT ARROW KEY press.
+ * @param {KeyboardEvent} event - keyboard event.
+ * @param {number} row - an index of the currently focused semantic row.
+ * @param {number} cell - an index of the currently focused cell.
+ * @param {number} numberOfColumns - a number of visual columns.
+ * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
+ * @param {number} cellsLength - a number of cells in a semantic row.
+ * @param {number} rowsLength - a total number of seamntic rows in the list.
+ * @returns - an object { row, cell } for the new cell to focus on.
+ */
+export const handleRightKey = (event, row, cell, numberOfColumns, flowHorizontally, cellsLength, rowsLength) => {
+  let nextRow = row;
+  let nextCell = cell;
   if (event.metaKey) {
-    // Mac: Cmd + Right
-    // Win: End
     if (event.ctrlKey) {
       // Mac: Ctrl + Cmd + Right
       // Windows: Ctrl + End
       // Focus moves to the last cell in the last item in the list.
-      nextVisualRow = rowsLength - 1;
-      nextSemanticCol = columnsLength - 1;
-      return { row: nextVisualRow, col: nextSemanticCol };
+
+      // Omit row index for the last element in the list
+      nextRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally);
+      nextCell = cellsLength - 1;
+      return { row: nextRow, cell: nextCell };
     }
+    // Mac: Cmd + Right
+    // Win: End
     // Focus moves to the last cell in the last item in the visual row.
-    nextSemanticCol = columnsLength - 1;
-    const lastItemInVisualRow = (Math.ceil((row + 1) / numberOfColumns) * numberOfColumns) - 1;
-    nextVisualRow = lastItemInVisualRow < rowsLength - 1 ? lastItemInVisualRow : rowsLength - 1;
-    return { row: nextVisualRow, col: nextSemanticCol };
+    nextCell = cellsLength - 1;
+    nextRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
+    return { row: nextRow, cell: nextCell };
   }
   // Focus should go till the end of the visual row, and should not break to the next visual row.
-  if (col === (columnsLength - 1)) {
-    // The last cell.
-    if (row === rowsLength - 1 || (row + 1) % numberOfColumns === 0) {
-      // The last item in the list, or the last item in the visual row.
-      return { row: nextVisualRow, col: nextSemanticCol };
+  if (cell === (cellsLength - 1)) {
+    // The last semantic column in the row.
+    // Check if the last item in visual row.
+    const lastRowIndex = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
+    if (row === lastRowIndex) {
+      // The last item in the visual row or next semantic row to the right is a placeholder.
+      // Focus should not move anywhere.
+      return { row, cell };
     }
-    nextSemanticCol = 0;
-    nextVisualRow += 1;
+    // Focus moves to the first cell of the next semantic row.
+    nextCell = 0;
+    nextRow += flowHorizontally ? 1 : Math.ceil(rowsLength / numberOfColumns);
   } else {
-    // Not last cell.
-    nextSemanticCol += 1;
+    // Focus moves to the next cell to the right in the same semantic row.
+    nextCell += 1;
   }
-  return { row: nextVisualRow, col: nextSemanticCol };
+  return { row: nextRow, cell: nextCell };
 };
 
 // ensures that columnMinimumWidth is width unit type consistent

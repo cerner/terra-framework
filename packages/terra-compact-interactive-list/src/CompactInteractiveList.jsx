@@ -1,5 +1,5 @@
 import React, {
-  useContext, useState, useCallback, useMemo,
+  useContext, useRef, useCallback, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -122,20 +122,18 @@ const CompactInteractiveList = (props) => {
 
   const theme = useContext(ThemeContext);
   const listRef = React.useRef();
-  const [focusedRow, setFocusedRow] = useState(0);
-  const [focusedCol, setFocusedCol] = useState(0);
 
-  const setFocusedRowCol = (newRowIndex, newColIndex) => {
-    setFocusedRow(newRowIndex);
-    setFocusedCol(newColIndex);
-    const focusedCell = listRef.current.children[newRowIndex].children[newColIndex];
-    focusedCell.focus();
+  // using ref so that keyboard navigation and focusing on cells won't trigger component re-render.
+  const focusedCell = useRef({ row: 0, cell: 0 });
+
+  const setFocusedRowCol = ({ row, cell }) => {
+    focusedCell.current = { row, cell };
+    const focusedListElement = listRef.current.children[row].children[cell];
+    focusedListElement.focus();
   };
 
   const handleKeyDown = (event) => {
-    const cellCoordinates = { row: focusedRow, col: focusedCol };
-    let nextVisualRow = cellCoordinates.row;
-    let nextSemanticCol = cellCoordinates.col;
+    let moveFocusTo = focusedCell.current;
 
     const targetElement = event.target;
 
@@ -155,15 +153,13 @@ const CompactInteractiveList = (props) => {
       case KeyCode.KEY_DOWN:
         break;
       case KeyCode.KEY_LEFT: {
-        const moveFocusTo = handleLeftKey(event, nextVisualRow, nextSemanticCol, numberOfColumns, columns.length);
-        nextVisualRow = moveFocusTo.row;
-        nextSemanticCol = moveFocusTo.col;
+        moveFocusTo = handleLeftKey(event, focusedCell.current.row, focusedCell.current.cell, numberOfColumns, flowHorizontally, columns.length, rows.length);
+
         break;
       }
       case KeyCode.KEY_RIGHT: {
-        const moveFocusTo = handleRightKey(event, nextVisualRow, nextSemanticCol, numberOfColumns, columns.length, rows.length);
-        nextVisualRow = moveFocusTo.row;
-        nextSemanticCol = moveFocusTo.col;
+        moveFocusTo = handleRightKey(event, focusedCell.current.row, focusedCell.current.cell, numberOfColumns, flowHorizontally, columns.length, rows.length);
+
         break;
       }
       case KeyCode.KEY_HOME:
@@ -184,22 +180,21 @@ const CompactInteractiveList = (props) => {
         return;
     }
 
-    setFocusedRowCol(nextVisualRow, nextSemanticCol);
+    setFocusedRowCol(moveFocusTo);
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const handleOnCellSelect = useCallback(({ rowIndex, columnIndex }) => {
-    setFocusedRow(rowIndex);
-    setFocusedCol(columnIndex);
+  const handleOnCellSelect = useCallback(({ row, cell }) => {
+    focusedCell.current = { row, cell };
     if (onCellSelect) {
-      onCellSelect({ rowIndex, columnIndex });
+      onCellSelect({ row, cell });
     }
   }, [onCellSelect]);
 
   const onFocus = (event) => {
     if (event.target === listRef.current) {
-      const focusedCell = listRef.current.children[focusedRow].children[focusedCol];
-      focusedCell.focus();
+      const focusedListElement = listRef.current.children[focusedCell.current.row].children[focusedCell.current.cell];
+      focusedListElement.focus();
       event.preventDefault();
     }
   };
@@ -305,7 +300,7 @@ const CompactInteractiveList = (props) => {
             rowMaximumWidth={rowMaxWidth}
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}
-            onCellSelect={(columnIndex) => handleOnCellSelect({ rowIndex: index, columnIndex })}
+            onCellSelect={(cell) => handleOnCellSelect({ row: index, cell })}
             flowHorizontally={flowHorizontally}
             rowHeight={calculatedRowHeight}
             isTopmost={checkIfRowIsTopMost(index)}
