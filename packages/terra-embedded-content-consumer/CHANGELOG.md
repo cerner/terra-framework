@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.41.0 - (November 29, 2023)
+
 * Added
   * Added documentation relating to accessibility guidance for Embedded Content Consumer props.
 
