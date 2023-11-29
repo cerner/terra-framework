@@ -63,6 +63,10 @@ const propTypes = {
    */
   isWidthBounded: PropTypes.bool,
   /**
+   * Fixed height for content.
+   */
+  fixedHeight: PropTypes.number,
+  /**
    * Fixed width for content.
    */
   fixedWidth: PropTypes.number,
@@ -182,7 +186,8 @@ class MenuContent extends React.Component {
   getSubmenuHeight() {
     if (this.props.index > 0 && this.listNode) {
       const bufHeight = (this.context.name || this.context.className) === 'orion-fusion-theme' ? 20 : 10;
-      return this.listNode.clientHeight + this.listNode.parentNode.parentNode.parentNode.firstChild.clientHeight + bufHeight;
+      const submenuHeight = this.listNode.clientHeight + this.listNode.parentNode.parentNode.parentNode.firstChild.clientHeight + bufHeight;
+      return submenuHeight > window.innerHeight ? this.props.fixedHeight : submenuHeight;
     }
 
     return 0;
@@ -430,7 +435,14 @@ class MenuContent extends React.Component {
     if (this.props.showHeader || isSubMenu) {
       header = this.buildHeader(isFullScreen);
     }
-    const contentHeight = this.props.isHeightBounded ? '100%' : undefined;
+    let contentHeight;
+    if (this.props.isHeightBounded) {
+      contentHeight = '100%';
+    } else if (!this.props.boundingRef) {
+      contentHeight = undefined;
+    } else {
+      contentHeight = this.props.fixedHeight;
+    }
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
@@ -438,7 +450,7 @@ class MenuContent extends React.Component {
       <div
         ref={this.handleContainerRef}
         className={contentClass}
-        style={{ height: isSubMenu ? this.getSubmenuHeight() : contentHeight, width: contentWidth, position: contentPosition }}
+        style={{ height: isSubMenu && !this.props.boundingRef && !this.props.isHeightBounded ? this.getSubmenuHeight() : contentHeight, width: contentWidth, position: contentPosition }}
         tabIndex="-1"
         aria-modal="true"
         role="dialog"
