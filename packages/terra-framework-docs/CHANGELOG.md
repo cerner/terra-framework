@@ -4,6 +4,12 @@
 
 * Added
   * Added examples and tests for `terra-folder-tree`.
+  * Added new test to `terra-compact-interactive-list` for inconsistent width unit types in props.
+
+## 1.48.0 - (November 29, 2023)
+
+* Changed
+  * Minor dependency version bump
 
 ## 1.47.0 - (November 23, 2023)
 
