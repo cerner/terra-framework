@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added new test to `terra-compact-interactive-list` for inconsistent width unit types in props.
+
 ## 1.48.0 - (November 29, 2023)
 
 * Changed
