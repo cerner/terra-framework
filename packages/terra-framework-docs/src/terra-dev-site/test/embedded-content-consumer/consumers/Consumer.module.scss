@@ -1,8 +1,15 @@
+@import 'terra-embedded-content-consumer/src/EmbeddedContentConsumer.module';
+
 :local {
   .iframe {
     iframe {
       border: 0;
       width: 100%;
     }
+  }
+
+  .consumer-content-wrapper {
+    margin: 10px;
+    padding: none;
   }
 }

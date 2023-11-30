@@ -54,7 +54,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     width={100}
   >
     <th
-      className="column-header pinned"
+      className="column-header pinned last-pinned-column"
       id="test-table-Column-0"
       key="Column-0"
       onKeyDown={[Function]}
@@ -154,15 +154,6 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
           </span>
         </VisuallyHiddenText>
       </div>
-      <div
-        className="pinned-columns-divider"
-        style={
-          Object {
-            "height": undefined,
-            "left": 99,
-          }
-        }
-      />
     </th>
   </ColumnHeaderCell>
 </InjectIntl(ColumnHeaderCell)>

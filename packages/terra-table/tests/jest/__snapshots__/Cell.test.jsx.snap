@@ -55,7 +55,7 @@ exports[`Cell renders a pinned cell 1`] = `
     tableId="test-table"
   >
     <th
-      className="cell pinned"
+      className="cell pinned last-pinned-column"
       headers="test-table-ColumnId"
       id="test-table-rowheader-RowID"
       onKeyDown={[Function]}

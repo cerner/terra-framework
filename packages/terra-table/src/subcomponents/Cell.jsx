@@ -269,6 +269,7 @@ function Cell(props) {
   const className = cx('cell', {
     masked: isMasked,
     pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
+    'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
     selectable: isSelectable && !isMasked,
     selected: isSelected && !isMasked,
     highlighted: isHighlighted,

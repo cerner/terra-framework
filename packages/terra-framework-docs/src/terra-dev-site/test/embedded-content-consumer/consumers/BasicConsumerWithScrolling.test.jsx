@@ -9,21 +9,28 @@ const cx = classNames.bind(styles);
 Consumer.init();
 
 const BasicConsumerWithScrolling = () => (
-  <EmbeddedContentConsumer
-    className={cx('iframe')}
-    src="/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
-    title="Basic Consumer with Scrolling"
-    options={{
-      iframeAttrs: {
-        id: 'basic-consumer-with-scrolling',
-      },
-      resizeConfig: {
-        fixedHeight: '50px',
-        fixedWidth: '100%',
-        scrolling: true,
-      },
-    }}
-  />
+  <div className={cx('consumer-content-wrapper')}>
+    <h2>Embedded Content</h2>
+    <p>The following is an embedded content within an iframe.</p>
+    <EmbeddedContentConsumer
+      // TODO: Fix site doc so that relative paths can be used everywhere.
+      // For now, use `../../../../` prefix if there is any changes to the providers file so we can see changes during the PR-preview build.
+      // Otherwise, keep the existing `/terra-framework/` prefix so the page will load when viewing the live site.
+      src="../../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider-with-scrolling"
+      className={cx('iframe')}
+      title="Basic Consumer with Scrolling"
+      options={{
+        iframeAttrs: {
+          id: 'basic-consumer-with-scrolling',
+        },
+        resizeConfig: {
+          fixedHeight: '100px',
+          fixedWidth: '100%',
+          scrolling: true,
+        },
+      }}
+    />
+  </div>
 );
 
 export default BasicConsumerWithScrolling;

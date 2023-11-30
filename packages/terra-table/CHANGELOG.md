@@ -4,6 +4,9 @@
 
 * Changed
   * Updated the table component to properly support selection callbacks for the grid context.
+  
+* Fixed
+  * Fixed the section headers so that the title would not scroll off the screen.
 
 ## 5.2.0 - (November 22, 2023)
 

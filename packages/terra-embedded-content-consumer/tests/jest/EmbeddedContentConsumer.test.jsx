@@ -1,7 +1,7 @@
 import React from 'react';
 import { Consumer } from 'xfc';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
 
 beforeAll(() => {
@@ -42,6 +42,7 @@ describe(EmbeddedContentConsumer, () => {
     const inlineHtml = '<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>';
     const frameOptions = {
       iframeAttrs: {
+        id: 'iframe-srcdoc-id',
         srcdoc: inlineHtml,
         width: '100%',
         height: '100px',
@@ -187,32 +188,34 @@ describe(EmbeddedContentConsumer, () => {
     expect(wrapper.find('VisuallyHiddenText').at(1).prop('text')).toEqual('Terra.embeddedContentConsumer.endEmbeddedContent');
     expect(wrapper).toMatchSnapshot();
   });
-});
 
-it('sets appropriate config option when resizeConfig.scrolling is true', () => {
-  const embeddedContentConsumer = (
-    <div>
-      <EmbeddedContentConsumer
-        src="https://www.google.com/"
-        options={{ resizeConfig: { scrolling: true } }}
-      />
-    </div>
-  );
+  describe('scrolling', () => {
+    it('sets appropriate config option when resizeConfig.scrolling is true', () => {
+      const embeddedContentConsumer = (
+        <div>
+          <EmbeddedContentConsumer
+            src="https://www.google.com/"
+            options={{ resizeConfig: { scrolling: true } }}
+          />
+        </div>
+      );
 
-  const wrapper = shallow(embeddedContentConsumer);
-  expect(wrapper).toMatchSnapshot();
-});
+      const wrapper = shallowWithIntl(embeddedContentConsumer);
+      expect(wrapper).toMatchSnapshot();
+    });
 
-it('sets appropriate config option when resizeConfig.scrolling is false', () => {
-  const embeddedContentConsumer = (
-    <div>
-      <EmbeddedContentConsumer
-        src="https://www.google.com/"
-        options={{ resizeConfig: { scrolling: false } }}
-      />
-    </div>
-  );
+    it('sets appropriate config option when resizeConfig.scrolling is false', () => {
+      const embeddedContentConsumer = (
+        <div>
+          <EmbeddedContentConsumer
+            src="https://www.google.com/"
+            options={{ resizeConfig: { scrolling: false } }}
+          />
+        </div>
+      );
 
-  const wrapper = shallow(embeddedContentConsumer);
-  expect(wrapper).toMatchSnapshot();
+      const wrapper = shallowWithIntl(embeddedContentConsumer);
+      expect(wrapper).toMatchSnapshot();
+    });
+  });
 });
