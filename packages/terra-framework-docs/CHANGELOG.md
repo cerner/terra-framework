@@ -55,6 +55,7 @@
 
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.
+  * Updated examples, and tests to show the visual focus indicator on the iframe of the embedded content.
 
 ## 1.43.0 - (October 25, 2023)
 

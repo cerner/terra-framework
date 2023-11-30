@@ -4,14 +4,14 @@ import { Consumer } from 'xfc';
 import '../providers/EmbeddedContentConsumerCommon.module.scss';
 
 Consumer.init();
-
 const BasicConsumer = () => (
   <EmbeddedContentConsumer
-    src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
+    // TODO: Fix site doc so that relative paths can be used everywhere.
+    // For now, use `../../../` prefix if there is any changes to the providers file so we can see changes during the PR-preview build.
+    // Otherwise, keep the existing `/terra-framework/` prefix so the page will load when viewing the live site.
+    src="../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/basic-provider"
     title="Basic content example"
-    options={{
-      resizeConfig: { scrolling: true },
-    }}
+    options={{ resizeConfig: { scrolling: true, fixedHeight: '200px' } }}
   />
 );
 
