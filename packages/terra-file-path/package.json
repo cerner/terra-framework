@@ -31,7 +31,8 @@
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
-    "terra-collapsible-menu-view": "^6.85.0"
+    "terra-collapsible-menu-view": "^6.85.0",
+    "terra-visually-hidden-text": "2.37.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.22.10",

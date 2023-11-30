@@ -64,6 +64,11 @@ const FilePath = props => {
 
   return (
     <CollapsibleMenuView
+      aria-label={
+        `${intl.formatMessage({ id: 'Terra.file-path.ariaLabel' })},
+        ${intl.formatMessage({ id: 'Terra.file-path.ariaLabel-current-location' })}
+        ${lastItem.text}`
+      }
       isReversedChildrenOrder
       useHorizontalIcon
       isStartAligned
