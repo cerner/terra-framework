@@ -10,7 +10,7 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
 
       $('input[type="radio"]').click();
-      $('h3').moveTo({xOffset: 0, yOffset: 0});
+      $('h3').moveTo({ xOffset: 0, yOffset: 0 });
       Terra.validates.screenshot('basic folder tree selected', { selector: '#basic-folder-tree' });
     });
 
