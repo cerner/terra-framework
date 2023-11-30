@@ -116,7 +116,7 @@ const FolderTreeItem = ({
         <input
           type="radio"
           checked={isSelected}
-          onClick={onClick}
+          onChange={onClick}
           aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
           tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
         />
@@ -135,7 +135,7 @@ const FolderTreeItem = ({
                 {itemIcon}
               </Spacer>
             )}
-            fill={label}
+            fill={<span>{label}</span>}
             alignFitStart="center"
           />
         </span>
