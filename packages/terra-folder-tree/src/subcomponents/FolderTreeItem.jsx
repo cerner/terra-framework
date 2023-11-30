@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
@@ -26,6 +26,10 @@ const propTypes = {
    */
   subfolderItems: PropTypes.arrayOf(PropTypes.element),
   /**
+   * Whether or not the item is expanded. Only items with subfolderItems can be expanded.
+   */
+  isExpanded: PropTypes.bool,
+  /**
    * Whether or not the item is selected. Since this component has the appearance of a radio button group, only one item should be selected at a time.
    */
   isSelected: PropTypes.bool,
@@ -33,6 +37,10 @@ const propTypes = {
    * Callback function for click event.
    */
   onClick: PropTypes.func,
+  /**
+   * Callback function for expand/collapse toggle event.
+   */
+  onToggle: PropTypes.func,
   /**
    * @private
    * Level of nesting for this item.
@@ -46,22 +54,23 @@ const propTypes = {
 };
 
 const defaultProps = {
+  isExpanded: false,
   isSelected: false,
   level: 0,
 };
 
 const FolderTreeItem = ({
   icon,
-  label,
-  subfolderItems,
+  isExpanded,
   isSelected,
-  onClick,
+  label,
   level,
+  onClick,
+  onToggle,
+  subfolderItems,
   intl,
 }) => {
   const theme = useContext(ThemeContext);
-
-  const [isExpanded, setIsExpanded] = useState(false);
   const isFolder = subfolderItems?.length > 0;
 
   const subfolder = isFolder ? (
@@ -85,10 +94,6 @@ const FolderTreeItem = ({
     ? <IconCaretDown height="8px" width="8px" style={{ verticalAlign: 'baseline' }} /> // eslint-disable-line react/forbid-component-props
     : <IconCaretRight height="8px" width="8px" style={{ verticalAlign: 'baseline' }} />; // eslint-disable-line react/forbid-component-props
 
-  const handleExpandCollapse = () => {
-    setIsExpanded(!isExpanded);
-  };
-
   const itemClassNames = classNames(
     cx(
       'folder-tree-item',
@@ -105,8 +110,8 @@ const FolderTreeItem = ({
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
-        onClick={handleExpandCollapse}
-        onKeyDown={handleExpandCollapse}
+        onClick={onToggle}
+        onKeyDown={onToggle}
       >
         <input
           type="radio"
