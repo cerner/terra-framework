@@ -69,6 +69,7 @@ describe('basic folder tree', () => {
       <FolderTree title="Documents">
         <FolderTreeItem
           label="Animals"
+          isExpanded
           subfolderItems={[
             (<FolderTreeItem label="Dog" />),
           ]}
@@ -77,7 +78,6 @@ describe('basic folder tree', () => {
     );
 
     const expandedFolder = wrapper.find(FolderTreeItem).dive().dive();
-    expandedFolder.find('.folder-tree-item').simulate('click');
 
     expect(expandedFolder.find('.folder-tree-item').prop('aria-expanded')).toBe(true);
     expect(expandedFolder.find('.subfolder').prop('hidden')).toBe(false);
