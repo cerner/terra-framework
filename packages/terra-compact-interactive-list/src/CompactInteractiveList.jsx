@@ -15,17 +15,20 @@ import {
   getRowMaximumWidth,
   getRowMinimumWidth,
   checkIfRowHasResponsiveColumns,
-  isTextInput,
-  handleLeftKey,
-  handleRightKey,
-  moveFocusFromGrid,
   getValueUnitTypePair,
   converseColumnTypes,
   getColumnMaxWidth,
   getColumnMinWidth,
+} from './utils/utils';
+
+import {
+  isTextInput,
+  handleLeftKey,
+  handleRightKey,
+  moveFocusFromGrid,
   handleDownKey,
   handleUpKey,
-} from './utils/utils';
+} from './utils/keyHandlerUtils';
 
 const cx = classNames.bind(styles);
 
@@ -166,10 +169,6 @@ const CompactInteractiveList = (props) => {
         moveFocusTo = handleRightKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       }
-      case KeyCode.KEY_HOME:
-        break;
-      case KeyCode.KEY_END:
-        break;
       case KeyCode.KEY_ESCAPE:
         if (onClearSelection) {
           onClearSelection();
