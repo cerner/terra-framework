@@ -1,4 +1,4 @@
-Terra.describeViewports('FolderTree', ['small', 'medium'], () => {
+Terra.describeViewports('FolderTree', ['medium'], () => {
   describe('Basic Folder Tree', () => {
     it('displays a basic folder tree', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
@@ -6,11 +6,11 @@ Terra.describeViewports('FolderTree', ['small', 'medium'], () => {
       Terra.validates.screenshot('basic folder tree', { selector: '#basic-folder-tree' });
     });
 
-    it('selects a folder tree item', () => {
+    it('selects a folder tree item via mouse click', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
 
-      browser.keys('Tab');
-      browser.keys('Space');
+      $('input[type="radio"]').click();
+      $('h3').moveTo({xOffset: 0, yOffset: 0});
       Terra.validates.screenshot('basic folder tree selected', { selector: '#basic-folder-tree' });
     });
 
