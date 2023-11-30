@@ -12,6 +12,10 @@
     &:first-child {
       border-left: var(--terra-table-cell-border-left, 1px solid #dedfe0);
     }
+
+    &.last-pinned-column {
+      border-right: var(--terra-table-last-pinned-cell-border-right, 2px solid #808080);
+    }
   }
 
   .selected {
