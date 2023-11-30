@@ -13,6 +13,11 @@ const columnShape = PropTypes.shape({
   displayName: PropTypes.string,
 
   /**
+   * whether the column is a column header (provides the context for screen readers).
+   */
+  rowHeader: PropTypes.bool,
+
+  /**
    * Width of the column is a number value in px, em, or rem units.
    * If not set, the column will be considered a flex growing column.
    * If width is set, but flexGrow prop is also set to true, the width will be disregarded.

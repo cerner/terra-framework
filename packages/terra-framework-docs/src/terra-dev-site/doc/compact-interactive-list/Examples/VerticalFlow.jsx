@@ -105,19 +105,20 @@ const getRowHeight = (activeBreakpoint) => {
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Procedure',
     width: '200px', // will be disregarded bacause of flexGrow prop.
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
+    rowHeader: true,
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Favorite',
     width: '60px', // there is no widthUnit prop set in the component, so it will default to px
     align: alignTypes.CENTER,
   },

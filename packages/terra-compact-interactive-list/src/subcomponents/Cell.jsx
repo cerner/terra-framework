@@ -59,6 +59,7 @@ const Cell = (props) => {
   const className = cx('cell', theme.className);
 
   const {
+    rowHeader,
     width,
     flexGrow,
     maximumWidth,
@@ -86,8 +87,9 @@ const Cell = (props) => {
   }
 
   return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      role="gridcell"
+      role={rowHeader ? 'rowheader' : 'gridcell'}
       className={className}
       tabIndex={-1}
       // eslint-disable-next-line react/forbid-dom-props
