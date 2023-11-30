@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added keyboard navigation.
+
 * Changed
   * Updated component to memoize minimum and maximum width calculations for better performance.
 
