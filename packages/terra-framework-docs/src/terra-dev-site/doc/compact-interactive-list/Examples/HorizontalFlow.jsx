@@ -56,6 +56,38 @@ const rows = [
       { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
     ],
   },
+  {
+    id: 'row_6',
+    cells: [
+      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (6)' },
+      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+    ],
+  },
+  {
+    id: 'row_7',
+    cells: [
+      { content: ' ' },
+      { content: 'Sbsq Observation Care/Day High Severity 99226 (7)' },
+      { content: ' ' },
+    ],
+  },
+  {
+    id: 'row_8',
+    cells: [
+      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (8)' },
+      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+    ],
+  },
+  {
+    id: 'row_9',
+    cells: [
+      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (9)' },
+      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+    ],
+  },
 ];
 
 const cols = [

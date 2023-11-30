@@ -23,6 +23,8 @@ import {
   converseColumnTypes,
   getColumnMaxWidth,
   getColumnMinWidth,
+  handleDownKey,
+  handleUpKey,
 } from './utils/utils';
 
 const cx = classNames.bind(styles);
@@ -149,17 +151,19 @@ const CompactInteractiveList = (props) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:
+        moveFocusTo = handleUpKey(focusedCell.current, numberOfColumns, flowHorizontally, rows.length);
+        event.preventDefault();
         break;
       case KeyCode.KEY_DOWN:
+        moveFocusTo = handleDownKey(focusedCell.current, numberOfColumns, flowHorizontally, rows.length);
+        event.preventDefault();
         break;
       case KeyCode.KEY_LEFT: {
-        moveFocusTo = handleLeftKey(event, focusedCell.current.row, focusedCell.current.cell, numberOfColumns, flowHorizontally, columns.length, rows.length);
-
+        moveFocusTo = handleLeftKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       }
       case KeyCode.KEY_RIGHT: {
-        moveFocusTo = handleRightKey(event, focusedCell.current.row, focusedCell.current.cell, numberOfColumns, flowHorizontally, columns.length, rows.length);
-
+        moveFocusTo = handleRightKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       }
       case KeyCode.KEY_HOME:
