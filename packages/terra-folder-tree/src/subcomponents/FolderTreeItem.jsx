@@ -112,6 +112,8 @@ const FolderTreeItem = ({
           type="radio"
           checked={isSelected}
           onClick={onClick}
+          aria-hidden={true} // Hiding the radio button from assistive technology since they cannot be grouped correctly
+          tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
         />
         {/* eslint-disable-next-line react/forbid-dom-props */}
         <span style={{ paddingLeft: `${level}rem` }}>
