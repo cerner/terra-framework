@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added keyboard navigation support for sections.
+
 ## 1.4.0 - (November 23, 2023)
 
 * Added

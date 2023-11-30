@@ -1080,6 +1080,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -3978,6 +3979,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -7525,6 +7527,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -10932,6 +10935,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -13830,6 +13834,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -17377,6 +17382,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -20948,6 +20954,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -24479,6 +24486,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -27905,6 +27913,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -30807,6 +30816,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -34354,6 +34364,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -37881,6 +37892,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -41408,6 +41420,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -44935,6 +44948,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -48462,6 +48476,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -51987,6 +52002,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -55512,6 +55528,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -58886,6 +58903,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -61611,6 +61629,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             id="test-terra-worklist-data-grid-table-Column-2"
                             key="Column-2"
                             onKeyDown={[Function]}
+                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={

@@ -257,7 +257,7 @@ describe('ColumnHeaderCell', () => {
       isSelectable: false,
     };
 
-    const onColumnSelect = () => {};
+    const mockColumnSelect = jest.fn();
 
     const wrapper = mountWithIntl(
       <IntlProvider locale="en">
@@ -267,7 +267,7 @@ describe('ColumnHeaderCell', () => {
           width={100}
           headerHeight="150px"
           {...column}
-          onColumnSelect={onColumnSelect}
+          onColumnSelect={mockColumnSelect}
         />
       </IntlProvider>,
     );
@@ -279,7 +279,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().onMouseDown).toBeUndefined();
+    expect(columnHeader.props().onMouseDown).toBeDefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
@@ -322,6 +322,19 @@ describe('ColumnHeaderCell', () => {
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
         isSelectable
+      />,
+    );
+    wrapper.find('.column-header').simulate('mousedown');
+
+    // Validate mock function was called from simulated onMouseDown event
+    expect(mockOnColumnSelect).toHaveBeenCalled();
+  });
+
+  it('calls a custom column select callback function on mouse down when not selectable', () => {
+    const mockOnColumnSelect = jest.fn();
+    const wrapper = mountWithIntl(
+      <ColumnHeaderCell
+        onColumnSelect={mockOnColumnSelect}
       />,
     );
     wrapper.find('.column-header').simulate('mousedown');

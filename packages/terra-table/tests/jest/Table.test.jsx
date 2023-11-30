@@ -16,7 +16,7 @@ import Table from '../../src/Table';
 // Source data for tests
 const tableData = {
   cols: [
-    { id: 'Column-0', displayName: ' Vitals' },
+    { id: 'Column-0', displayName: ' Vitals', isSelectable: true },
     { id: 'Column-1', displayName: 'March 16' },
     { id: 'Column-2', displayName: 'March 17', isSelectable: false },
   ],
@@ -190,6 +190,210 @@ describe('Table', () => {
     expect(mockColumnSelect).not.toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
+  });
+
+  it('verifies column selection header callback for table context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        rowSelectionMode="multiple"
+        rows={tableData.rows}
+        onColumnSelect={mockColumnSelect}
+      />,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(1);
+
+    // Simulate onMouseDown event on the column header
+    columnHeaderCell.simulate('mouseDown');
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalledWith('Column-0');
+  });
+
+  it('verifies column selection via spacebar for table context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        rowSelectionMode="multiple"
+        rows={tableData.rows}
+        onColumnSelect={mockColumnSelect}
+      />,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(1);
+
+    // Simulate onKeyDown event on column header
+    columnHeaderCell.at(0).simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalledWith('Column-0');
+  });
+
+  it('verifies column selection header callback for non-selectable header in table context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        rowSelectionMode="multiple"
+        rows={tableData.rows}
+        onColumnSelect={mockColumnSelect}
+      />,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(2);
+
+    // Simulate onMouseDown event on the column header
+    columnHeaderCell.simulate('mouseDown');
+
+    // Validate mock function was not called from simulated click event
+    expect(mockColumnSelect).not.toHaveBeenCalled();
+  });
+
+  it('verifies column selection via spacebar for non-selectable header in table context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        rowSelectionMode="multiple"
+        rows={tableData.rows}
+        onColumnSelect={mockColumnSelect}
+      />,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(2);
+
+    // Simulate onKeyDown event on column header
+    columnHeaderCell.simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was not called from simulated click event
+    expect(mockColumnSelect).not.toHaveBeenCalled();
+  });
+
+  it('verifies column selection header callback for grid context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <GridContext.Provider value={{ role: GridConstants.GRID }}>
+        <Table
+          id="test-terra-table"
+          pinnedColumns={tableData.cols.slice(0, 2)}
+          overflowColumns={tableData.cols.slice(2)}
+          rowSelectionMode="multiple"
+          rows={tableData.rows}
+          onColumnSelect={mockColumnSelect}
+        />
+        ,
+      </GridContext.Provider>,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(1);
+
+    // Simulate onMouseDown event on the column header
+    columnHeaderCell.simulate('mouseDown');
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalledWith({ columnId: 'Column-0', columnIndex: 1, isSelectable: true });
+  });
+
+  it('verifies column selection via spacebar for grid context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <GridContext.Provider value={{ role: GridConstants.GRID }}>
+        <Table
+          id="test-terra-table"
+          pinnedColumns={tableData.cols.slice(0, 2)}
+          overflowColumns={tableData.cols.slice(2)}
+          rowSelectionMode="multiple"
+          rows={tableData.rows}
+          onColumnSelect={mockColumnSelect}
+        />
+        ,
+      </GridContext.Provider>,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(1);
+
+    // Simulate onKeyDown event on column header
+    columnHeaderCell.simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalledWith({ columnId: 'Column-0', columnIndex: 1, isSelectable: true });
+  });
+
+  it('verifies column selection header callback for non-selectable header in grid context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <GridContext.Provider value={{ role: GridConstants.GRID }}>
+        <Table
+          id="test-terra-table"
+          pinnedColumns={tableData.cols.slice(0, 2)}
+          overflowColumns={tableData.cols.slice(2)}
+          rowSelectionMode="multiple"
+          rows={tableData.rows}
+          onColumnSelect={mockColumnSelect}
+        />
+        ,
+      </GridContext.Provider>,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(2);
+
+    // Simulate onMouseDown event on the column header
+    columnHeaderCell.simulate('mouseDown');
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalledWith({ columnId: 'Column-1', columnIndex: 2, isSelectable: false });
+  });
+
+  it('verifies column selection via spacebar for non-selectable header in grid context', () => {
+    const mockColumnSelect = jest.fn();
+
+    const wrapper = mountWithIntl(
+      <GridContext.Provider value={{ role: GridConstants.GRID }}>
+        <Table
+          id="test-terra-table"
+          pinnedColumns={tableData.cols.slice(0, 2)}
+          overflowColumns={tableData.cols.slice(2)}
+          rowSelectionMode="multiple"
+          rows={tableData.rows}
+          onColumnSelect={mockColumnSelect}
+        />
+        ,
+      </GridContext.Provider>,
+    );
+
+    // Find column headers
+    const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(2);
+
+    // Simulate onKeyDown event on column header
+    columnHeaderCell.simulate('keydown', { keyCode: 32 });
+
+    // Validate mock function was called from simulated click event
+    expect(mockColumnSelect).toHaveBeenCalledWith({ columnId: 'Column-1', columnIndex: 2, isSelectable: false });
   });
 
   it('verifies ARIA attributes for a table with sections', () => {
@@ -368,7 +572,7 @@ describe('Table', () => {
     // Find column headers
     const maskedCell = wrapper.find(Row).at(0).find('.masked');
 
-    // Simulate onMouseDown event on row selection column header
+    // Simulate onKeyDown event on row selection column header
     maskedCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate mock function was called from simulated click event
@@ -394,7 +598,7 @@ describe('Table', () => {
     // Find column headers
     const nonSelectableCell = wrapper.find(Row).at(0).find('th:not(.selectable)');
 
-    // Simulate onMouseDown event on row selection column header
+    // Simulate onKeyDown event on non-selectable cell
     nonSelectableCell.at(0).simulate('keydown', { keyCode: 32 });
 
     // Validate mock function was called from simulated click event

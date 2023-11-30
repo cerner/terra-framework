@@ -221,6 +221,10 @@ const DataGrid = forwardRef((props, ref) => {
     hasSelectableRows && columnIndex < displayedColumns.length && displayedColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
   ), [displayedColumns, hasSelectableRows]);
 
+  const isSection = useCallback((rowIndex) => (
+    grid.current.rows[rowIndex].hasAttribute('data-section-id')
+  ), []);
+
   const setFocusedRowCol = useCallback((newRowIndex, newColIndex, makeActiveElement) => {
     setCellAriaLiveMessage(null);
     setFocusedRow(newRowIndex);
@@ -232,20 +236,29 @@ const DataGrid = forwardRef((props, ref) => {
     };
 
     if (makeActiveElement) {
-      // Set focus on input field (checkbox) of row selection cells.
-      let focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
-      if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-        [focusedCell] = focusedCell.getElementsByTagName('input');
-      }
+      let focusedCell;
+      if (isSection(newRowIndex)) {
+        [focusedCell] = grid.current.rows[newRowIndex].cells;
 
-      // Set focus to column header button, if it exists
-      if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
-        focusedCell = focusedCell.querySelector('[role="button"]');
+        if (!focusedCell.hasAttribute('tabindex')) {
+          focusedCell = grid.current.rows[newRowIndex].querySelector('button');
+        }
+      } else {
+        // Set focus on input field (checkbox) of row selection cells.
+        focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+        if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+          [focusedCell] = focusedCell.getElementsByTagName('input');
+        }
+
+        // Set focus to column header button, if it exists
+        if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
+          focusedCell = focusedCell.querySelector('[role="button"]');
+        }
       }
 
       focusedCell?.focus();
     }
-  }, [isRowSelectionCell, displayedColumns]);
+  }, [displayedColumns, isSection, isRowSelectionCell]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
@@ -264,47 +277,51 @@ const DataGrid = forwardRef((props, ref) => {
   // -------------------------------------
 
   const handleMoveCellFocus = (fromCell, toCell) => {
+    if (!isSection(toCell.row)) {
     // Obtain coordinate rectangles for grid container, column header, and new cell selection
-    const gridContainerRect = tableContainerRef.current.getBoundingClientRect();
-    const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
-    const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
+      const gridContainerRect = tableContainerRef.current.getBoundingClientRect();
+      const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
+      const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
 
-    // Calculate horizontal scroll offset for right boundary
-    if (nextCellRect.right > gridContainerRect.right) {
-      tableContainerRef.current.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
-    } else {
-      // Calculate horizontal scroll offset for left boundary
-      let scrollOffsetX = 0;
-      const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
-      const lastPinnedColumnIndex = pinnedColumns.length - 1 + pinnedColumnOffset;
-      if (lastPinnedColumnIndex >= 0) {
-        if (toCell.col > lastPinnedColumnIndex) {
-          const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[lastPinnedColumnIndex].getBoundingClientRect();
-          scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
-        }
+      // Calculate horizontal scroll offset for right boundary
+      if (nextCellRect.right > gridContainerRect.right) {
+        tableContainerRef.current.scrollBy(nextCellRect.right - gridContainerRect.right, 0);
       } else {
-        scrollOffsetX = nextCellRect.left - gridContainerRect.left;
+      // Calculate horizontal scroll offset for left boundary
+        let scrollOffsetX = 0;
+        const pinnedColumnOffset = hasSelectableRows ? 1 : 0;
+        const lastPinnedColumnIndex = pinnedColumns.length - 1 + pinnedColumnOffset;
+        if (lastPinnedColumnIndex >= 0) {
+          if (toCell.col > lastPinnedColumnIndex) {
+            const lastPinnedColumnRect = grid.current.rows[toCell.row].cells[lastPinnedColumnIndex].getBoundingClientRect();
+            scrollOffsetX = nextCellRect.left - lastPinnedColumnRect.right;
+          }
+        } else {
+          scrollOffsetX = nextCellRect.left - gridContainerRect.left;
+        }
+
+        if (scrollOffsetX < 0) {
+          tableContainerRef.current.scrollBy(scrollOffsetX, 0);
+        }
       }
 
-      if (scrollOffsetX < 0) {
-        tableContainerRef.current.scrollBy(scrollOffsetX, 0);
+      // Calculate vertical scroll offset
+      const scrollOffsetY = nextCellRect.top - columnHeaderRect.bottom;
+      if (scrollOffsetY < 0) {
+        tableContainerRef.current.scrollBy(0, scrollOffsetY);
       }
-    }
-
-    // Calculate vertical scroll offset
-    const scrollOffsetY = nextCellRect.top - columnHeaderRect.bottom;
-    if (scrollOffsetY < 0) {
-      tableContainerRef.current.scrollBy(0, scrollOffsetY);
     }
 
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
-  const handleColumnSelect = useCallback((columnId) => {
+  const handleColumnSelect = useCallback((columnSelection) => {
+    const { columnId, isSelectable } = columnSelection;
+
     const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
     setFocusedRowCol(0, columnIndex);
 
-    if (onColumnSelect) {
+    if (isSelectable && onColumnSelect) {
       onColumnSelect(columnId);
     }
   }, [onColumnSelect, displayedColumns, setFocusedRowCol]);
@@ -388,17 +405,26 @@ const DataGrid = forwardRef((props, ref) => {
     setCheckResizable(false);
 
     const targetElement = event.target;
+    const key = event.keyCode;
 
     // Allow default behavior if the event target is an editable field
-
-    if (event.keyCode !== KeyCode.KEY_TAB
+    if (key !== KeyCode.KEY_TAB
         && (isTextInput(targetElement)
             || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
             || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
       return;
     }
 
-    const key = event.keyCode;
+    // Disable horizontal navigation when section has focus
+    if ((key === KeyCode.KEY_RIGHT || key === KeyCode.KEY_LEFT)
+        && isSection(cellCoordinates.row)) {
+      event.preventDefault();
+      return;
+    }
+
+    // Get grid row count
+    const gridRowCount = grid.current.rows.length;
+
     switch (key) {
       case KeyCode.KEY_UP:
         nextRow -= 1;
@@ -432,7 +458,7 @@ const DataGrid = forwardRef((props, ref) => {
           if (event.ctrlKey) {
             // Mac: Ctrl + Cmd + Right
             // Windows: Ctrl + End
-            nextRow = rows.length;
+            nextRow = gridRowCount - 1;
           }
         } else {
           // Right key
@@ -450,7 +476,7 @@ const DataGrid = forwardRef((props, ref) => {
         if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
-          nextRow = rows.length;
+          nextRow = gridRowCount - 1;
         }
         break;
       case KeyCode.KEY_ESCAPE:
@@ -476,7 +502,7 @@ const DataGrid = forwardRef((props, ref) => {
       onCellRangeSelect(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
 
-    if (nextRow > rows.length || nextCol >= displayedColumns.length) {
+    if (nextRow >= gridRowCount || nextCol >= displayedColumns.length) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }

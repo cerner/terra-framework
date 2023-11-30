@@ -423,15 +423,23 @@ function Table(props) {
   // -------------------------------------
   // event handlers
 
-  const handleColumnSelect = useCallback((columnId) => {
+  const handleColumnSelect = useCallback((columnSelection) => {
+    const { columnId, isSelectable } = columnSelection;
+
+    // Prevent execution of callback for table role when column header is not selectable
+    if (!isGridContext && !isSelectable) {
+      return;
+    }
+
     if (columnId === tableRowSelectionColumn.id) {
+      // Handle selection of row selection header
       if (onRowSelectionHeaderSelect) {
         onRowSelectionHeaderSelect();
       }
     } else if (onColumnSelect) {
-      onColumnSelect(columnId);
+      onColumnSelect(isGridContext ? columnSelection : columnId);
     }
-  }, [onColumnSelect, onRowSelectionHeaderSelect, tableRowSelectionColumn.id]);
+  }, [isGridContext, onColumnSelect, onRowSelectionHeaderSelect, tableRowSelectionColumn.id]);
 
   const onResizeMouseDown = useCallback((event, index, resizeColumnWidth) => {
     // Store current table and column values for resize calculations

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the table component to properly support selection callbacks for the grid context.
+
 ## 5.2.0 - (November 22, 2023)
 
 * Fixed

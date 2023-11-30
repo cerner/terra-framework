@@ -57,6 +57,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       className="column-header pinned"
       id="test-table-Column-0"
       key="Column-0"
+      onKeyDown={[Function]}
       role="columnheader"
       scope="col"
       style={
