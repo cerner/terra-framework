@@ -15,9 +15,6 @@ const eventHandlers = [{
 const CustomEventConsumer = () => (
   <div id="CustomEvent">
     <EmbeddedContentConsumer
-      // TODO: Fix site doc so that relative paths can be used everywhere.
-      // For now, use `../../../` prefix if there is any changes to the providers file so we can see changes during the PR-preview build.
-      // Otherwise, keep the existing `/terra-framework/` prefix so the page will load when viewing the live site.
       src="../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-event-provider"
       title="Custom Event Example"
       eventHandlers={eventHandlers}

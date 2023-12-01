@@ -260,17 +260,8 @@ const ColumnHeaderCell = (props) => {
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
+  // Calculate cell left position for pinned columns due to their sticky position style
   const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
-  const dividerLeftEdge = width - 1;
-
-  const pinnedColumnsDivider = columnIndex === columnContext.pinnedColumnOffsets.length - 1
-    ? (
-      <div
-        className={cx('pinned-columns-divider')}
-        style={{ height: tableHeight, left: dividerLeftEdge }} // eslint-disable-line react/forbid-dom-props
-      />
-    )
-    : null;
 
   // For tables, we want elements to be tabbable when selectable, but not anytime else.
   let buttonTabIndex = isSelectable ? 0 : undefined;
@@ -296,6 +287,7 @@ const ColumnHeaderCell = (props) => {
       className={cx('column-header', theme.className, {
         selectable: isSelectable,
         pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
+        'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role="columnheader"
@@ -331,7 +323,6 @@ const ColumnHeaderCell = (props) => {
         onResizeHandleChange={onResizeHandleChange}
       />
       )}
-      {pinnedColumnsDivider}
     </th>
   );
 };

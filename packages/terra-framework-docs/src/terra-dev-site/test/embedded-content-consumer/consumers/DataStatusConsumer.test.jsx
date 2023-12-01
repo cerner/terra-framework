@@ -46,9 +46,6 @@ const DataStatusConsumer = () => (
     <h2>Embedded Content</h2>
     <p>The following is an embedded content within an iframe.</p>
     <EmbeddedContentConsumer
-      // TODO: Fix site doc so that relative paths can be used everywhere.
-      // For now, use `../../../../` prefix if there is any changes to the providers file so we can see changes during the PR-preview build.
-      // Otherwise, keep the existing `/terra-framework/` prefix so the page will load when viewing the live site.
       src="../../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
       className={cx('iframe')}
       onMount={onMount}

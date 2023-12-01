@@ -145,6 +145,7 @@ function Section(props) {
           <SectionHeader
             text={text}
             isOpen={!isCollapsed}
+            isTitleFixed
             onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
           />
         </th>
