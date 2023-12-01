@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 5.3.0 - (December 1, 2023)
+## 5.2.1 - (December 1, 2023)
 
 * Fixed
   * Fixed the section headers so that the title would not scroll off the screen.
