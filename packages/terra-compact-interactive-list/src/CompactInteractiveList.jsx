@@ -287,6 +287,9 @@ const CompactInteractiveList = (props) => {
         onKeyDown={handleKeyDown}
         onFocus={onFocus}
       >
+        <div role="row" className={cx('hidden')}>
+          {columns.map((column) => (<span role="columnheader">{column.displayName}</span>))}
+        </div>
         {mappedRows.map((row, index) => (
           <Row
             rowIndex={index}
