@@ -131,10 +131,15 @@ const CompactInteractiveList = (props) => {
   // using ref so that keyboard navigation and focusing on cells won't trigger component re-render.
   const focusedCell = useRef({ row: 0, cell: 0 });
 
+  const setFocusOnCell = ({ row, cell }) => {
+    // add 1 to the row number to accomodate for hidden header
+    const focusedListElement = listRef.current.children[row + 1].children[cell];
+    focusedListElement.focus();
+  };
+
   const setFocusedRowCol = ({ row, cell }) => {
     focusedCell.current = { row, cell };
-    const focusedListElement = listRef.current.children[row].children[cell];
-    focusedListElement.focus();
+    setFocusOnCell({ row, cell });
   };
 
   const handleKeyDown = (event) => {
@@ -196,8 +201,7 @@ const CompactInteractiveList = (props) => {
 
   const onFocus = (event) => {
     if (event.target === listRef.current) {
-      const focusedListElement = listRef.current.children[focusedCell.current.row].children[focusedCell.current.cell];
-      focusedListElement.focus();
+      setFocusOnCell(focusedCell.current);
       event.preventDefault();
     }
   };
