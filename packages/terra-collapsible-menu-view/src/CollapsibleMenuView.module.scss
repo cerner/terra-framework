@@ -61,8 +61,8 @@
     }
 
     :focus {
-      outline: var(--terra-collapsible-menu-view-item-focus-outline, 2px dashed #000);
       box-shadow: var(--terra-collapsible-menu-view-item-focus-box-shadow, none);
+      outline: var(--terra-collapsible-menu-view-item-focus-outline, 2px dashed #000);
     }
   }
 
