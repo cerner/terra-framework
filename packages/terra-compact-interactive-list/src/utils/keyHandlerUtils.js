@@ -77,7 +77,7 @@ export const handleDownKey = (focusedCell, numberOfColumns, flowHorizontally, ro
   // vertical flow
   const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
   const numberOfPlaceholders = (rowsPerColumn * numberOfColumns) - rowsLength;
-  if (row + 1 === rowsLength + numberOfPlaceholders - 1) {
+  if ((numberOfPlaceholders === 0 && row + 1 === rowsLength) || (numberOfPlaceholders !== 0 && row + 1 === rowsLength + numberOfPlaceholders - 1)) {
     // the last semantic row in the last visual column, focus shouldn't go anywhere
     return focusedCell;
   }
