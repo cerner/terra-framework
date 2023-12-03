@@ -10,10 +10,10 @@ const columnShape = PropTypes.shape({
   /**
    * String of text which will be used to provide a column context and to serve as a column header if needed.
    */
-  displayName: PropTypes.string,
+  displayName: PropTypes.string.isRequired,
 
   /**
-   * whether the column is a column header (provides the context for screen readers).
+   * Undicates whether the column is a column header (provides the context for screen readers).
    */
   rowHeader: PropTypes.bool,
 

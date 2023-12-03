@@ -49,19 +49,20 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     maximumWidth: '4.5em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Service name',
     maximumWidth: '25em',
     minimumWidth: '7em',
+    rowHeader: true,
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Featured',
     maximumWidth: '5em',
     align: alignTypes.CENTER,
   },

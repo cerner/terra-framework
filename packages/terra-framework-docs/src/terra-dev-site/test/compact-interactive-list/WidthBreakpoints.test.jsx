@@ -61,19 +61,20 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Service name',
     width: '200px',
     flexGrow: true,
+    rowHeader: true,
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Featured',
     width: '60px',
     align: alignTypes.CENTER,
   },

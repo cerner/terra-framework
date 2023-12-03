@@ -49,20 +49,21 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     width: '5em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Service name',
     // flexGrow prop is not set here, but as there is no width set, the column will be flex growing anyway
     maximumWidth: '25em', // maximumWidth is reccomended for flex growing columns so that they don't grow beyond reasonable.
     minimumWidth: '7em', // minimumWidth is reccomended for flex growing columns so that they don't squish beyond reasonable.
+    rowHeader: true,
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Featured',
     width: '5em',
     align: alignTypes.CENTER,
   },

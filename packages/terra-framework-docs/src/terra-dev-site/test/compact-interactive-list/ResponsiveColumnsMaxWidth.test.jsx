@@ -50,21 +50,22 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     width: '6em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Service name',
     width: '60em',
     flexGrow: true,
     minimumWidth: '10em',
     maximumWidth: '30em',
+    rowHeader: true,
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Featured',
     width: '6em',
     align: alignTypes.CENTER,
   },
