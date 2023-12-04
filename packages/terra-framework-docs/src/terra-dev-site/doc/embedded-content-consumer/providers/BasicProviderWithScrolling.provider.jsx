@@ -1,11 +1,17 @@
 import React from 'react';
+import { Provider } from 'xfc';
 import classNames from 'classnames/bind';
 import ProviderTestTemplate from 'terra-embedded-content-consumer/lib/EmbeddedContentProviderTestTemplate';
 import styles from './EmbeddedContentConsumerCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Provider = () => (
+Provider.init({
+  acls: ['*'],
+  secret: () => (Promise.resolve('Success')),
+});
+
+const BasicProviderWithScrolling = () => (
   <ProviderTestTemplate>
     <div className={cx('content-wrapper')}>
       <h1>Basic Content With Scrolling</h1>
@@ -14,4 +20,4 @@ const Provider = () => (
   </ProviderTestTemplate>
 );
 
-export default Provider;
+export default BasicProviderWithScrolling;
