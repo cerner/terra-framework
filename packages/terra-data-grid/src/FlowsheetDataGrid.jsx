@@ -66,11 +66,13 @@ const propTypes = {
    * Callback function that is called when a selectable cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
+   * @param {string} sectionId sectionId
    */
   onCellSelect: PropTypes.func,
 
   /**
-   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   * Function that is called when a collapsible section is selected. Parameters:
+   * @param {string} sectionId sectionId
    */
   onSectionSelect: PropTypes.func,
 
@@ -229,33 +231,56 @@ function FlowsheetDataGrid(props) {
     }
   }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
 
-  const selectCellRange = useCallback((rowIndex, columnIndex) => {
+  const selectCellRange = useCallback((rowId, columnId, sectionId) => {
     if (anchorCell.current === null) {
       return;
     }
 
-    const anchorRowIndex = rows.findIndex(row => row.id === anchorCell.current.rowId);
+    const rowsToSelect = flowsheetSections?.find(section => section.id === sectionId)?.rows ?? rows;
+    const anchorRowIndex = rowsToSelect.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
 
+    const rowIndex = rowsToSelect.findIndex(row => row.id === rowId);
+    const columnIndex = columns.findIndex(col => col.id === columnId);
+
     // Determine the boundaries of selected region.
-    const rowIndexTopBound = Math.min(anchorRowIndex, rowIndex - 1);
-    const rowIndexBottomBound = Math.max(anchorRowIndex, rowIndex - 1);
+    let rowIndexTopBound = Math.min(anchorRowIndex, rowIndex);
+    let rowIndexBottomBound = Math.max(anchorRowIndex, rowIndex);
     const columnIndexLeftBound = Math.min(anchorColumnIndex, columnIndex);
     const columnIndexRightBound = Math.max(anchorColumnIndex, columnIndex);
 
+    if (flowsheetSections) {
+      const anchorSection = flowsheetSections.find(section => section.id === anchorCell.current.sectionId);
+      const selectedSection = flowsheetSections.find(section => section.id === sectionId);
+
+      if (anchorSection.id !== selectedSection.id) {
+        const newSectionOnTop = anchorSection?.sectionRowIndex <= selectedSection?.sectionRowIndex;
+        // change the upper and lower bounds if the anchor section is not the same as the selected one.
+        rowIndexTopBound = newSectionOnTop ? 0 : rowIndex;
+        rowIndexBottomBound = newSectionOnTop ? rowIndex : (rowsToSelect.length - 1);
+
+        // Change the anchor cell when selecting into a new section
+        anchorCell.current = {
+          rowId: newSectionOnTop ? rowsToSelect[rowIndexTopBound].id : rowsToSelect[rowIndexBottomBound].id,
+          columnId: anchorCell.current.columnId,
+          sectionId,
+        };
+      }
+    }
+
     const cellsToSelect = [];
     for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
-      const rowId = rows[rowIdx].id;
+      const rowIdToSelect = rowsToSelect[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
-        const columnId = columns[colIdx].id;
-        cellsToSelect.push({ rowId, columnId });
+        const columnIdToSelect = columns[colIdx].id;
+        cellsToSelect.push({ rowId: rowIdToSelect, columnId: columnIdToSelect, sectionId });
       }
     }
 
     if (onCellRangeSelect) {
       onCellRangeSelect(cellsToSelect);
     }
-  }, [rows, columns, onCellRangeSelect]);
+  }, [flowsheetSections, rows, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     // Call onRowSelect for row header column
@@ -264,10 +289,10 @@ function FlowsheetDataGrid(props) {
         onRowSelect({ rowId: selectionDetails.rowId, sectionId: selectionDetails.sectionId });
       }
     } else if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
-      selectCellRange(selectionDetails.rowIndex, selectionDetails.columnIndex);
+      selectCellRange(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.sectionId);
     } else if (onCellSelect) {
-      anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId };
-      onCellSelect(selectionDetails.rowId, selectionDetails.columnId);
+      anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId, sectionId: selectionDetails.sectionId };
+      onCellSelect(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.sectionId);
     }
   }, [onCellSelect, onRowSelect, selectCellRange]);
 

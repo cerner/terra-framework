@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
@@ -88,12 +88,66 @@ const FlowsheetWithSections = () => {
     setTableSections(newSections);
   };
 
+  const getClearedSections = useCallback(() => tableSections.map(section => ({
+    ...section,
+    rows: section.rows.map(row => ({
+      ...row,
+      cells: row.cells.map(cell => ({
+        ...cell,
+        isSelected: false,
+      })),
+    })),
+  })), [tableSections]);
+
+  const onCellSelect = useCallback((rowId, columnId, sectionId) => {
+    let selectedSection = tableSections.find(section => section.id === sectionId);
+
+    const columnIndex = gridDataJSON.cols.findIndex(col => col.id === columnId);
+    const rowIndex = selectedSection.rows.findIndex(row => row.id === rowId);
+    const selectedCell = selectedSection.rows[rowIndex].cells[columnIndex];
+
+    const newSections = getClearedSections();
+
+    //   // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
+    selectedSection = newSections.find(section => section.id === sectionId);
+    selectedSection.rows[rowIndex].cells[columnIndex].isSelected = !selectedCell.isSelected;
+    setTableSections(newSections);
+  }, [tableSections, getClearedSections]);
+
+  const handleCellRangeSelection = useCallback((cells) => {
+    const columnIndexesToUpdate = new Set(cells
+      .map(cell => cell.columnId)
+      .map(id => gridDataJSON.cols.findIndex(col => col.id === id)));
+
+    const rowsToUpdate = new Set(cells.map(cell => cell.rowId));
+
+    const newSections = getClearedSections();
+    const selectedSection = newSections.find(section => section.id === cells[0].sectionId);
+
+    selectedSection.rows = selectedSection.rows.map(row => ({
+      ...row,
+      cells: row.cells.map((cell, cellIndex) => ({
+        ...cell,
+        isSelected: columnIndexesToUpdate.has(cellIndex) && rowsToUpdate.has(row.id),
+      })),
+    }));
+
+    setTableSections(newSections);
+  }, [getClearedSections]);
+
+  const onClearSelectedCells = () => {
+    setTableSections(getClearedSections());
+  };
+
   return (
     <FlowsheetDataGrid
       id="flowsheet-with-sections"
       columns={gridDataJSON.cols}
       sections={tableSections}
       onSectionSelect={handleSectionSelect}
+      onCellRangeSelect={handleCellRangeSelection}
+      onCellSelect={onCellSelect}
+      onClearSelectedCells={onClearSelectedCells}
     />
   );
 };
