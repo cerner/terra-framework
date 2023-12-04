@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Updated the onRowSelect callback to return an object containing section and row ids.
+
 ## 5.2.1 - (December 1, 2023)
 
 * Fixed

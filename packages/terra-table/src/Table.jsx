@@ -293,7 +293,7 @@ function Table(props) {
 
   const handleCellSelection = useCallback((selectionDetails) => {
     if (!isGridContext && onRowSelect) {
-      onRowSelect(selectionDetails.rowId);
+      onRowSelect({ sectionId: selectionDetails.sectionId, rowId: selectionDetails.rowId });
       return;
     }
 
