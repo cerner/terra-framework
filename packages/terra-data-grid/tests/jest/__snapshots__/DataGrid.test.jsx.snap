@@ -1223,6 +1223,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -3895,6 +3896,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -6675,6 +6677,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -9918,6 +9921,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -12512,6 +12516,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >

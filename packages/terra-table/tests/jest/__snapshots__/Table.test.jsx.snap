@@ -859,6 +859,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           sectionRowIndex={1}
           tableId="test-terra-table"
         >
+          <tbody />
           <tbody
             className="section"
           >
