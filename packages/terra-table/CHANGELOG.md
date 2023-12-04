@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Updated the onRowSelect callback to return an object containing section and row ids.
+  
 * Added
   * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH`` constant.
   
