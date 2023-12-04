@@ -13,7 +13,6 @@ import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
 import columnShape from './proptypes/columnShape';
-import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';
 import validateRowHeaderIndex from './proptypes/validators';
@@ -24,9 +23,13 @@ import getFocusableElements from './utils/focusManagement';
 
 const cx = classNames.bind(styles);
 
-export const rowSelectionModes = {
+const RowSelectionModes = {
   SINGLE: 'single',
   MULTIPLE: 'multiple',
+};
+
+const TableConstants = {
+  ROW_SELECTION_COLUMN_WIDTH: 40,
 };
 
 const propTypes = {
@@ -146,7 +149,7 @@ const propTypes = {
    * Enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
-  rowSelectionMode: PropTypes.oneOf(Object.values(rowSelectionModes)),
+  rowSelectionMode: PropTypes.oneOf(Object.values(RowSelectionModes)),
 
   /**
    * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
@@ -208,11 +211,6 @@ function Table(props) {
     intl,
   } = props;
 
-  if (pinnedColumns.length === 0) {
-    // eslint-disable-next-line no-console
-    console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
-  }
-
   // Manage column resize
   const [tableHeight, setTableHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
@@ -252,14 +250,14 @@ function Table(props) {
   // Create row selection column object
   const tableRowSelectionColumn = {
     id: 'table-rowSelectionColumn',
-    width: 40,
+    width: TableConstants.ROW_SELECTION_COLUMN_WIDTH,
     displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
     isDisplayVisible: false,
     isSelectable: !!onRowSelectionHeaderSelect,
     isResizable: false,
   };
 
-  const hasSelectableRows = rowSelectionMode === rowSelectionModes.MULTIPLE;
+  const hasSelectableRows = rowSelectionMode === RowSelectionModes.MULTIPLE;
   const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
@@ -312,7 +310,7 @@ function Table(props) {
     }
 
     // Since the row selection mode has changed, the row selection mode needs to be updated.
-    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === rowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
+    setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === RowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
     setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -607,3 +605,4 @@ Table.propTypes = propTypes;
 Table.defaultProps = defaultProps;
 
 export default React.memo(injectIntl(Table));
+export { TableConstants, RowSelectionModes };

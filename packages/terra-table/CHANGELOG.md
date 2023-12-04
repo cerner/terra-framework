@@ -1,10 +1,16 @@
 # Changelog
 
 ## Unreleased
-
-* Changed
-  * Updated the table component to properly support selection callbacks for the grid context.
   
+* Added
+  * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH`` constant.
+  
+* Changed
+  * Removed console warning message when no pinned columns exist.
+  * Updated the table component to properly support selection callbacks for the grid context.
+
+## 5.2.1 - (December 1, 2023)
+
 * Fixed
   * Fixed the section headers so that the title would not scroll off the screen.
 

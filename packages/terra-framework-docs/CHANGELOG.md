@@ -3,7 +3,16 @@
 ## Unreleased
 
 * Added
+  * Added documentation for exported constants of `terra-table` in the About page.
+
+## 1.49.0 - (December 1, 2023)
+
+* Added
   * Added new test to `terra-compact-interactive-list` for inconsistent width unit types in props.
+
+* Updated
+  * Updated examples, and tests to show the visual focus indicator on the iframe of the embedded content.
+  * Remove TODO comments that are no longer valid since relative paths work for examples, and tests for Embedded Content Consumers.
 
 ## 1.48.0 - (November 29, 2023)
 
@@ -55,7 +64,6 @@
 
 * Updated
   * Updated `terra-table` example to show providing custom masked cell message label.
-  * Updated examples, and tests to show the visual focus indicator on the iframe of the embedded content.
 
 ## 1.43.0 - (October 25, 2023)
 

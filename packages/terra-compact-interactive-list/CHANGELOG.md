@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.0-alpha.2 - (December 1, 2023)
+
 * Changed
   * Updated component to memoize minimum and maximum width calculations for better performance.
 

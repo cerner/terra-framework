@@ -570,7 +570,6 @@ describe('with pinned columns', () => {
     const pinnedColumnHeaderCells = wrapper.find('.pinned');
 
     expect(pinnedColumnHeaderCells).toHaveLength(1 * (tableData.rows.length + 1));
-    expect(console.warn).toHaveBeenCalledWith(expect.stringContaining(ERRORS.PINNED_COLUMNS_UNDEFINED)); // eslint-disable-line no-console
   });
 });
 
