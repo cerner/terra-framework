@@ -128,63 +128,60 @@ function Section(props) {
 
   const hasSectionButton = isCollapsible && onSectionSelect;
 
-  const handleMouseDown = () => {
+  const handleClick = () => {
     onSectionSelect(id);
   };
 
   return (
-    <>
+    <tbody className={cx('section', {
+      collapsed: isCollapsed,
+      collapsible: isCollapsible,
+    }, theme.className)}
+    >
       {/* Render section rows */}
       {!isHidden && (
-      <tr
-        aria-rowindex={sectionRowIndex}
-        className={cx('header')}
-        data-section-id={id}
-      >
-        <th
-          id={`${tableId}-${id}`}
-          align="left"
-          colSpan={displayedColumns.length}
-          role="columnheader"
-          scope="col"
-          tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
-          onMouseDown={hasSectionButton ? handleMouseDown : undefined}
+        <tr
+          aria-rowindex={sectionRowIndex}
+          className={cx('header')}
+          data-section-id={id}
         >
-          <SectionHeader
-            text={text}
-            isOpen={hasSectionButton ? !isCollapsed : undefined}
-            isTitleFixed
-            onClick={hasSectionButton ? () => {} : undefined}
-          />
-        </th>
-      </tr>
+          <th
+            id={`${tableId}-${id}`}
+            align="left"
+            colSpan={displayedColumns.length}
+            role="columnheader"
+            scope="col"
+            tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
+          >
+            <SectionHeader
+              text={text}
+              isOpen={hasSectionButton ? !isCollapsed : undefined}
+              isTitleFixed
+              onClick={hasSectionButton ? handleClick : undefined}
+            />
+          </th>
+        </tr>
       )}
-      <tbody className={cx('section', {
-        collapsed: isCollapsed,
-        collapsible: isCollapsible,
-      }, theme.className)}
-      >
-        {/* Render section rows */}
-        {rows.map((row, rowIndex) => (
-          <Row
-            rowIndex={sectionRowIndex + (rowIndex + 1)}
-            key={row.id}
-            height={rowHeight}
-            id={row.id}
-            sectionId={!isHidden ? id : undefined}
-            tableId={tableId}
-            cells={row.cells}
-            ariaLabel={row.ariaLabel}
-            rowSelectionMode={rowSelectionMode}
-            displayedColumns={displayedColumns}
-            rowHeaderIndex={rowHeaderIndex}
-            onCellSelect={onCellSelect}
-            isSelected={row.isSelected}
-            isTableStriped={isTableStriped}
-          />
-        ))}
-      </tbody>
-    </>
+      {/* Render section rows */}
+      {!isCollapsed && rows.map((row, rowIndex) => (
+        <Row
+          rowIndex={sectionRowIndex + (rowIndex + 1)}
+          key={row.id}
+          height={rowHeight}
+          id={row.id}
+          sectionId={!isHidden ? id : undefined}
+          tableId={tableId}
+          cells={row.cells}
+          ariaLabel={row.ariaLabel}
+          rowSelectionMode={rowSelectionMode}
+          displayedColumns={displayedColumns}
+          rowHeaderIndex={rowHeaderIndex}
+          onCellSelect={onCellSelect}
+          isSelected={row.isSelected}
+          isTableStriped={isTableStriped}
+        />
+      ))}
+    </tbody>
   );
 }
 
