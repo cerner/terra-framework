@@ -13,7 +13,6 @@ import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
 import columnShape from './proptypes/columnShape';
-import ERRORS from './utils/constants';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';
 import validateRowHeaderIndex from './proptypes/validators';
@@ -211,11 +210,6 @@ function Table(props) {
     rowHeaderIndex,
     intl,
   } = props;
-
-  if (pinnedColumns.length === 0) {
-    // eslint-disable-next-line no-console
-    console.warn(ERRORS.PINNED_COLUMNS_UNDEFINED);
-  }
 
   // Manage column resize
   const [tableHeight, setTableHeight] = useState(0);
