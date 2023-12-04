@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed console warning message when no pinned columns exist.
+
 ## 5.2.1 - (December 1, 2023)
 
 * Fixed
