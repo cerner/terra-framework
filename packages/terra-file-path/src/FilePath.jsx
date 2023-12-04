@@ -63,20 +63,21 @@ const FilePath = props => {
   ]).flat();
 
   return (
-    <CollapsibleMenuView
+    <nav
       aria-label={
-        `${intl.formatMessage({ id: 'Terra.file-path.ariaLabel' })},
-        ${intl.formatMessage({ id: 'Terra.file-path.ariaLabel-current-location' })}
-        ${lastItem.text}`
+        `${intl.formatMessage({ id: 'Terra.file-path.ariaLabel' })}, ${intl.formatMessage({ id: 'Terra.file-path.ariaLabel-current-location' })} ${lastItem.text}`
       }
-      isReversedChildrenOrder
-      useHorizontalIcon
-      isStartAligned
-      menuIconText={intl.formatMessage({ id: 'Terra.file-path.icon.text' })}
     >
-      {generateChildren()}
-      <CollapsibleMenuView.Item isTextOnly text={lastItem.text} key={lastItem.key} />
-    </CollapsibleMenuView>
+      <CollapsibleMenuView
+        isReversedChildrenOrder
+        useHorizontalIcon
+        isStartAligned
+        menuIconText={intl.formatMessage({ id: 'Terra.file-path.icon.text' })}
+      >
+        {generateChildren()}
+        <CollapsibleMenuView.Item isTextOnly text={lastItem.text} key={lastItem.key} />
+      </CollapsibleMenuView>
+    </nav>
   );
 };
 
