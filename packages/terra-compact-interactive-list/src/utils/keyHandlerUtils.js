@@ -167,14 +167,14 @@ export const handleLeftKey = (event, focusedCell, numberOfColumns, flowHorizonta
   const { row, cell } = focusedCell;
   const firstItemInVisualRow = getFirstSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
   if (event.metaKey) {
-    // Mac: Cmd + Left
-    // Win: End
     if (event.ctrlKey) {
       // Mac: Ctrl + Cmd + Left
-      // Windows: Ctrl + End
+      // Windows: Ctrl + Home
       // Focus moves to the first cell in the first item in the list.
       return { row: 0, cell: 0 };
     }
+    // Mac: Cmd + Left
+    // Win: Home
     // Focus moves to the first cell in the first item in the visual row.
     return { row: firstItemInVisualRow, cell: 0 };
   }

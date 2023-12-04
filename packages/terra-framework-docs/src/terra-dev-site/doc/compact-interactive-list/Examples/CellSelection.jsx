@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import { IconDocuments, IconFeaturedOutline, IconImage } from 'terra-icon';
 
+// eslint-disable-next-line no-alert
 const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Button was clicked')}>Learn more</button>;
 // eslint-disable-next-line react/forbid-dom-props
 const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
@@ -110,7 +111,7 @@ const ResponsiveColumnsMaxWidth = () => {
 
   return (
     <>
-      <p>{selectedCell && selectedRow ? `Selected cell id: ${selectedCell}, selected rell id: ${selectedRow}` : 'There are no celected cells at the moment'}</p>
+      <p>{selectedCell && selectedRow ? `Selected cell id: ${selectedCell}, selected row id: ${selectedRow}.` : 'There are no celected cells at the moment.'}</p>
       <CompactInteractiveList
         id="with-breakpoints"
         rows={rows}

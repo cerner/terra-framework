@@ -76,10 +76,10 @@ The arrow key press when focused on an interactive element within the cell will 
 ## Cell selection
 
 A cell is selected by clicking on the cell or pressing the Spacebar on the focused cell. 
-A cell is selectable unless it has an interactable element within itself (in that case the interactive element default controls apply).
+A cell is selectable unless it contains an interactable element, in that case the interactive element default controls apply.
 
- * The `onCellSelect` callback prop: When the user selects a cell, this callback will be called with the rowId and columnId of the selected cell. In this example only one sell can be selected. 
- * The onClearSelectedCells callback prop: When the user presses the Escape key, this callback gets called. In this example, it sets selected cell row and cell to undefined.
+ * The `onCellSelect` callback prop: when the user selects a cell, this callback will be called with the rowId and columnId of the selected cell. In this example only one sell can be selected. 
+ * The `onClearSelectedCells` callback prop: when the user presses the Escape key, this callback gets called. In this example, it sets selected cell row and cell to undefined.
 
 <CellSelection />
 

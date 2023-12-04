@@ -3,6 +3,7 @@ import React from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import { IconDocuments, IconFeaturedOutline, IconImage } from 'terra-icon';
 
+// eslint-disable-next-line no-alert
 const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Button was clicked')}>Learn more</button>;
 const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
 const anchorCell = <a href="https://www.oracle.com/" aria-label="Visit Oracle">Visit Oracle</a>;
