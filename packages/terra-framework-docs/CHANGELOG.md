@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for exported constants of `terra-table` in the About page.
+
 * Changed
   * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.
 
