@@ -5,6 +5,8 @@ import ResponsiveColumns from './Examples/ResponsiveColumns?dev-site-examples';
 import ResponsiveColumnsMaxWidth from './Examples/ResponsiveColumnsMaxWidth?dev-site-examples';
 import HorizontalFlow from './Examples/HorizontalFlow?dev-site-examples';
 import VerticalFlow from './Examples/VerticalFlow?dev-site-examples';
+import FocusableCellContent from './Examples/FocusableCellContent?dev-site-examples';
+import CellSelection from './Examples/CellSelection?.dev-site-examples';
 
 # Compact Interactive List examples
 
@@ -61,4 +63,23 @@ The `widthUnit` prop determines the width unit type, such as `px`, `em`, or `rem
 Check out the example below to see how the same list looks like when placed within a container with `fontSize: 1.25em` and `widthUnit` prop set to `em`: 
 
 <ScalableUnits />
+
+## Cell content
+
+The content of a cell in the Compact Intercative List may be empty, text, numerical, or any combination of widgets, but only one focusable element per cell is allowed. 
+Since Compact Intercative List is one tab stop and arrow keys are used for navigation between cells, these keys are not available to navigate multiple focusable elements inside a cell. 
+If a cell contains a focusable element inside of it, when navigated to the cell via arrow keys, the focusable element will get the focus. 
+The arrow key press when focused on an interactive element within the cell will navigate away from that element an containing it cell to the new cell located in corresponding direction.
+
+<FocusableCellContent />
+
+## Cell selection
+
+A cell is selected by clicking on the cell or pressing the Spacebar on the focused cell. 
+A cell is selectable unless it has an interactable element within itself (in that case the interactive element default controls apply).
+
+ * The `onCellSelect` callback prop: When the user selects a cell, this callback will be called with the rowId and columnId of the selected cell. In this example only one sell can be selected. 
+ * The onClearSelectedCells callback prop: When the user presses the Escape key, this callback gets called. In this example, it sets selected cell row and cell to undefined.
+
+<CellSelection />
 

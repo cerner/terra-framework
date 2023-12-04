@@ -23,9 +23,10 @@ import {
 
 import {
   isTextInput,
+  getFocusableElements,
   handleLeftKey,
   handleRightKey,
-  moveFocusFromGrid,
+  moveFocusFromElement,
   handleDownKey,
   handleUpKey,
 } from './utils/keyHandlerUtils';
@@ -82,7 +83,9 @@ const propTypes = {
   width: PropTypes.string,
 
   /**
-   * Callback function that will be called on click on the cell.
+   * Callback function that is called when a selectable cell is selected. Parameters:
+   * @param {string} rowId rowId
+   * @param {string} columnId columnId
    */
   onCellSelect: PropTypes.func,
 
@@ -133,14 +136,33 @@ const CompactInteractiveList = (props) => {
 
   const setFocusOnCell = ({ row, cell }) => {
     // add 1 to the row number to accomodate for hidden header
-    const focusedListElement = listRef.current.children[row + 1].children[cell];
-    focusedListElement.focus();
+    const focusedCellElement = listRef.current.children[row + 1].children[cell];
+    const interactiveChildren = getFocusableElements(focusedCellElement);
+    if (interactiveChildren?.length > 0 && interactiveChildren[0]) {
+      // currently a cell can have only one interact-able element in it, which gets auto-focused.
+      interactiveChildren[0].focus();
+    } else {
+      // cell gets focus if there is no interact-able elements in it.
+      focusedCellElement.focus();
+    }
   };
 
   const setFocusedRowCol = ({ row, cell }) => {
     focusedCell.current = { row, cell };
     setFocusOnCell({ row, cell });
   };
+
+  const handleOnCellSelect = useCallback(({ row, cell }) => {
+    focusedCell.current = { row, cell };
+    // check for interactive elements in that cell
+    // add 1 to the row number to accomodate for hidden header
+    const elementToFocus = listRef.current.children[row + 1].children[cell];
+    const interactiveChildren = getFocusableElements(elementToFocus);
+    // if no interactive elements
+    if (onCellSelect && interactiveChildren?.length === 0) {
+      onCellSelect(rows[row].id, columns[cell].id);
+    }
+  }, [onCellSelect, rows, columns]);
 
   const handleKeyDown = (event) => {
     let moveFocusTo = focusedCell.current;
@@ -174,6 +196,12 @@ const CompactInteractiveList = (props) => {
         moveFocusTo = handleRightKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       }
+      case KeyCode.KEY_SPACE:
+        if (onCellSelect) {
+          handleOnCellSelect(focusedCell.current);
+        }
+        event.preventDefault();
+        return;
       case KeyCode.KEY_ESCAPE:
         if (onClearSelection) {
           onClearSelection();
@@ -181,7 +209,7 @@ const CompactInteractiveList = (props) => {
         event.preventDefault();
         return;
       case KeyCode.KEY_TAB:
-        moveFocusFromGrid(!event.shiftKey, id, listRef);
+        moveFocusFromElement(listRef, id, !event.shiftKey);
         event.preventDefault();
         return;
       default:
@@ -192,15 +220,8 @@ const CompactInteractiveList = (props) => {
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const handleOnCellSelect = useCallback(({ row, cell }) => {
-    focusedCell.current = { row, cell };
-    if (onCellSelect) {
-      onCellSelect({ row, cell });
-    }
-  }, [onCellSelect]);
-
   const onFocus = (event) => {
-    if (event.target === listRef.current) {
+    if (listRef.current.contains(event.target)) {
       setFocusOnCell(focusedCell.current);
       event.preventDefault();
     }

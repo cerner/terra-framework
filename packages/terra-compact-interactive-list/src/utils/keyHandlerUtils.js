@@ -1,3 +1,15 @@
+const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
+        + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+        + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
+
+export const getFocusableElements = (parentElement) => [...parentElement.querySelectorAll(`${focusableElementSelector}`)].filter(
+  element => !element.hasAttribute('disabled')
+      && !element.getAttribute('aria-hidden')
+      && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
+      && window.getComputedStyle(element).visibility !== 'hidden'
+      && element.closest('[inert]') === null,
+);
+
 /**
  * @param {HTMLElement} element - The element to check if it is a text input
  * @returns True if the element is a text input. Otherwise, false.
@@ -14,21 +26,12 @@ export const isTextInput = (element) => {
 };
 
 /**
-   * Move focus to next focusable element outside the data grid
-   */
-export const moveFocusFromGrid = (moveForward, id, containerRef) => {
-  // add all elements we want to include in our selection
-  const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
-      + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
-      + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
-
-  const focusableElements = [...document.body.querySelectorAll(`${focusableElementSelector}`)].filter(
-    element => !element.hasAttribute('disabled')
-        && !element.getAttribute('aria-hidden')
-        && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
-        && window.getComputedStyle(element).visibility !== 'hidden'
-        && element.closest('[inert]') === null
-        && (element.id === id || !containerRef.current.contains(element)),
+ * Move focus to next focusable element outside the container element
+ */
+export const moveFocusFromElement = (containerRef, id, moveForward) => {
+  // get focusable elements from the documen, filter out the container and its children
+  const focusableElements = getFocusableElements(document.body).filter(
+    element => (element.id === id || !containerRef.current.contains(element)),
   );
 
   // Identify index of the active element in the DOM excluding data grid children
