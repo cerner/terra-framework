@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added the example with `contentWidth` as auto value.
+
 ## 1.49.0 - (December 1, 2023)
 
 * Added
