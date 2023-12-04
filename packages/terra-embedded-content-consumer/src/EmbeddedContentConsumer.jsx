@@ -2,10 +2,8 @@ import React from 'react';
 import { injectIntl } from 'react-intl';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
-
 import { Consumer } from 'xfc';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-
 import styles from './EmbeddedContentConsumer.module.scss';
 
 const cx = classNames.bind(styles);
@@ -19,7 +17,8 @@ const propTypes = {
    * The title of the content in the frame.
    *
    * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to screen reader users that the
-   * title of the frame is set to a meaningful title for the content inside the frame.
+   * title of the frame is set to a meaningful title for the content inside the frame, because the iframe content
+   * is not accessible without having a proper Title applied, the `title` prop will be required in a future release.
    */
   title: PropTypes.string, // TODO MVB - set `title` prop as required
   /**
@@ -64,8 +63,8 @@ const propTypes = {
    * of the content of the iframe even if `resizeConfig` option is set. It's
    * important to specify the `width` and `height` of the frame within `iframeAttrs`.
    *
-   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to keyboard only users that the
-   * embedded content is scrollable when it's not fully visible in the current viewport.
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) Iframes that are scrollable but have no actionable elements inside the frames are not natively scrollable by keyboard-only users.
+   * It is critical to keyboard-only users that the embedded content is scrollable when it's not fully visible in the current viewport.
    *
    * `resizeConfig.scrolling` - Indicates whether the content inside of the iframe should be scrollable or not. The default is false.
    * When scrolling is set to `true`, it is possible to use keyboard navigation to scroll the content even when there is no
@@ -73,6 +72,9 @@ const propTypes = {
    *
    * See xfc consumer configuration for details: https://github.com/cerner/xfc
    *
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue) It is critical to keyboard-only users that they see where they are on the page.
+   * Terra Embedded Content Consumer adds a visible keyboard focus indicator to the content iframe by default to support these users when the iframe
+   * content has focus, (or is scrollable) but has no actionable elements inside it.
    */
   options: PropTypes.object,
   /**
@@ -107,12 +109,26 @@ class EmbeddedContentConsumer extends React.Component {
       Object.assign(frameOptions.iframeAttrs, { title: this.props.title });
     }
 
+    // Pass className to XFC library to set the style when the iframe has focus
+    frameOptions.focusIndicator = {
+      classNameFocusStyle: cx('iframe-focus-style'),
+    };
+
     // Mount the provided source as the application into the content wrapper.
     this.xfcFrame = Consumer.mount(this.embeddedContentWrapper, this.props.src, frameOptions);
+
+    // Set additional style on xfcFrame
+    this.xfcFrame.iframe.classList.add(cx('iframe-style'));
 
     // Notify that the consumer frame has mounted.
     if (this.props.onMount) {
       this.props.onMount(this.xfcFrame);
+    }
+
+    // Handle visual focus indicator for iframes with inline HTML using `srcdoc` attribute.
+    // For iframes using `src` and a URL, it's already being handled in XFC library.
+    if (frameOptions.iframeAttrs.srcdoc) {
+      this.handleFrameVisualFocusIndicator();
     }
 
     // Attach the event handlers to the xfc frame.
@@ -121,6 +137,92 @@ class EmbeddedContentConsumer extends React.Component {
 
     // Attach custom event handlers to the xfc frame.
     this.addEventListeners(this.props.eventHandlers);
+  }
+
+  /**
+   * Handles listening for events, and display visual focus indicator on the
+   * iframe, specifically for iframe using `srcdoc` attribute to display
+   * inline HTML content.
+   *
+   * This is needed here since the XFC library does not fully support
+   * `srcdoc`, and postMessage communication for inline HTML content inside of the frame.
+   *
+   * The XFC library already handles all scenario with `src` attribute.
+   */
+  handleFrameVisualFocusIndicator() {
+    // reference to the xfc iframe's contentWindow
+    this.contentWindow = this.xfcFrame?.iframe?.contentWindow;
+
+    /**
+     * Check if the iframe has `scrolling` attribute set or not
+     * The default `scrolling` attribute is `auto`.
+     *
+     * Then check if the content is scrollable
+     * `documentElement` is the <html> element of the document
+     * `body` is the <body> element of the document
+     * if `scrollHeight` > `clientHeight` or `scrollWidth` > `clientWidth`
+     * then there is scrolling, and the content won't fit, and will need to scroll.
+     */
+    const isContentScrollable = () => {
+      const frameDocument = this.contentWindow?.document;
+      return (this.xfcFrame?.iframe?.getAttribute('scrolling') !== 'no')
+        && (frameDocument.documentElement.scrollHeight > frameDocument.documentElement.clientHeight
+        || frameDocument.body.scrollHeight > frameDocument.body.clientHeight
+        || frameDocument.documentElement.scrollWidth > frameDocument.documentElement.clientWidth
+        || frameDocument.body.scrollWidth > frameDocument.body.clientWidth);
+    };
+
+    // Event listener and callback function for when `load` is completed for the content in the iframe
+    this.contentWindow?.addEventListener('load', () => {
+      // Selectors for interactable elements
+      const interactableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
+        + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
+        + "[contentEditable=true]:not([tabindex='-1'])";
+
+      this.hasInteractableElement = [...this.contentWindow.document.body.querySelectorAll(`${interactableElementSelector}`)].some(
+        (element) => !element.hasAttribute('disabled')
+          && !element.getAttribute('aria-hidden')
+          && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
+          && window.getComputedStyle(element).visibility !== 'hidden'
+          && element.closest('[inert]') === null,
+      );
+
+      // Initialize and save the original tabIndex value
+      this.originalTabIndexValue = this.contentWindow.document.body.getAttribute('tabIndex');
+
+      if (isContentScrollable() && !this.hasInteractableElement) {
+        // Set tabIndex="0" so focus can go into the document when
+        // using tab key when scrolling is enabled
+        this.contentWindow.document.body.tabIndex = 0;
+      }
+    });
+
+    // Event listener and callback function for `resize` event of the iframe
+    this.contentWindow?.addEventListener('resize', () => {
+      if (isContentScrollable() && !this.hasInteractableElement) {
+        // Set tabIndex="0" so focus can go into the document when
+        // using tab key when scrolling is enabled
+        this.contentWindow.document.body.tabIndex = 0;
+      } else if (this.originalTabIndexValue === null) {
+        this.contentWindow.document.body.removeAttribute('tabIndex');
+      } else {
+        this.contentWindow.document.body.tabIndex = this.originalTabIndexValue;
+      }
+    });
+
+    // Event listener and callback function for `focus` event is in the iframe
+    this.contentWindow?.addEventListener('focus', () => {
+      if (this.hasInteractableElement) {
+        return;
+      }
+
+      this.xfcFrame.iframe.classList.add(cx('iframe-focus-style'));
+    }, true);
+
+    // Event Listener and callback function for `blur` event in the iframe
+    this.contentWindow?.addEventListener('blur', () => {
+      this.xfcFrame.iframe.classList.remove(cx('iframe-focus-style'));
+    }, true);
   }
 
   addEventListener(eventName, eventHandler) {
