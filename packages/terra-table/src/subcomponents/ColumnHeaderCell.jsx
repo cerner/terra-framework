@@ -104,11 +104,6 @@ const propTypes = {
   headerHeight: PropTypes.string.isRequired,
 
   /**
-   * The cell's row position in the grid. This is zero based.
-   */
-  rowIndex: PropTypes.number,
-
-  /**
    * The cell's column position in the grid. This is zero based.
    */
   columnIndex: PropTypes.number,
@@ -207,9 +202,8 @@ const ColumnHeaderCell = (props) => {
   }, []);
 
   // Handle column header selection via the mouse click.
-  const handleMouseDown = (event) => {
-    onColumnSelect({ columnId: id, columnIndex, isSelectable });
-    event.stopPropagation();
+  const handleMouseDown = () => {
+    onColumnSelect(id);
   };
 
   // Handle column header selection via the space bar.
@@ -218,8 +212,8 @@ const ColumnHeaderCell = (props) => {
     switch (key) {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
-        if (onColumnSelect) {
-          onColumnSelect({ columnId: id, columnIndex, isSelectable });
+        if (isSelectable && onColumnSelect) {
+          onColumnSelect(id);
         }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
@@ -292,8 +286,8 @@ const ColumnHeaderCell = (props) => {
       role="columnheader"
       scope="col"
       title={displayName}
-      onMouseDown={onColumnSelect ? handleMouseDown : undefined}
-      onKeyDown={handleKeyDown}
+      onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
+      onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
     >
       <div

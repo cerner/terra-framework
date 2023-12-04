@@ -126,9 +126,10 @@ function Section(props) {
   const gridContext = useContext(GridContext);
   const isGridContext = gridContext.role === GridConstants.GRID;
 
-  const handleMouseDown = (event) => {
+  const hasSectionButton = isCollapsible && onSectionSelect;
+
+  const handleMouseDown = () => {
     onSectionSelect(id);
-    event.stopPropagation();
   };
 
   return (
@@ -146,13 +147,14 @@ function Section(props) {
           colSpan={displayedColumns.length}
           role="columnheader"
           scope="col"
-          tabIndex={isGridContext && !(isCollapsible && onSectionSelect) ? -1 : undefined}
+          tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
+          onMouseDown={hasSectionButton ? handleMouseDown : undefined}
         >
           <SectionHeader
             text={text}
-            isOpen={!isCollapsed}
+            isOpen={hasSectionButton ? !isCollapsed : undefined}
             isTitleFixed
-            onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
+            onClick={hasSectionButton ? () => {} : undefined}
           />
         </th>
       </tr>

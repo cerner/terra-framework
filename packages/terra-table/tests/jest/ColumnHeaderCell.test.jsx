@@ -279,7 +279,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().onMouseDown).toBeDefined();
+    expect(columnHeader.props().onMouseDown).toBeUndefined();
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
@@ -330,7 +330,7 @@ describe('ColumnHeaderCell', () => {
     expect(mockOnColumnSelect).toHaveBeenCalled();
   });
 
-  it('calls a custom column select callback function on mouse down when not selectable', () => {
+  it('verifes that the custom column select callback is not called on mouse down when not selectable', () => {
     const mockOnColumnSelect = jest.fn();
     const wrapper = mountWithIntl(
       <ColumnHeaderCell
@@ -340,6 +340,6 @@ describe('ColumnHeaderCell', () => {
     wrapper.find('.column-header').simulate('mousedown');
 
     // Validate mock function was called from simulated onMouseDown event
-    expect(mockOnColumnSelect).toHaveBeenCalled();
+    expect(mockOnColumnSelect).not.toHaveBeenCalled();
   });
 });

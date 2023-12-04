@@ -202,7 +202,6 @@ const DataGrid = forwardRef((props, ref) => {
   // if columns are not visible then set the first selectable row index to 1
   const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
   const [focusedCol, setFocusedCol] = useState(0);
-  const [gridHasFocus, setGridHasFocus] = useState(false);
 
   // Aria live region message management
   const [cellAriaLiveMessage, setCellAriaLiveMessage] = useState(null);
@@ -314,32 +313,6 @@ const DataGrid = forwardRef((props, ref) => {
 
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
-
-  const handleColumnSelect = useCallback((columnSelection) => {
-    const { columnId, isSelectable } = columnSelection;
-
-    const columnIndex = displayedColumns.findIndex(column => column.id === columnId);
-    setFocusedRowCol(0, columnIndex);
-
-    if (isSelectable && onColumnSelect) {
-      onColumnSelect(columnId);
-    }
-  }, [onColumnSelect, displayedColumns, setFocusedRowCol]);
-
-  const handleRowSelectionHeaderSelect = useCallback(() => {
-    setFocusedRowCol(0, 0);
-    if (onRowSelectionHeaderSelect) {
-      onRowSelectionHeaderSelect();
-    }
-  }, [onRowSelectionHeaderSelect, setFocusedRowCol]);
-
-  const handleCellSelection = useCallback((selectionDetails) => {
-    const { columnIndex, rowIndex } = selectionDetails;
-    setFocusedRowCol(rowIndex, columnIndex);
-    if (onCellSelect) {
-      onCellSelect(selectionDetails);
-    }
-  }, [onCellSelect, setFocusedRowCol]);
 
   // -------------------------------------
   // event handlers
@@ -515,9 +488,20 @@ const DataGrid = forwardRef((props, ref) => {
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
-  const onMouseDown = () => {
-    // Prevent focus event updates when triggered by mouse
-    handleFocus.current = false;
+  const handleMouseDown = (event) => {
+    // Determine cell containing click event
+    const clickTarget = event.target;
+    const targetCell = clickTarget.closest('td, th');
+
+    // Store focused cell position
+    if (targetCell) {
+      // Prevent focus event updates when triggered by mouse
+      handleFocus.current = false;
+
+      setCheckResizable(false);
+
+      setFocusedRowCol(targetCell.parentElement.rowIndex, targetCell.cellIndex);
+    }
   };
 
   /**
@@ -548,20 +532,15 @@ const DataGrid = forwardRef((props, ref) => {
         }
 
         setFocusedRowCol(newRowIndex, newColumnIndex, true);
-        setGridHasFocus(true);
       }
     }
 
     handleFocus.current = true;
   };
 
-  const onBlur = (event) => {
-    if (!event.currentTarget.contains(event.relatedTarget)) {
-      setGridHasFocus(false);
-    }
-  };
-
   // -------------------------------------
+
+  const isGridActive = grid.current?.contains(document.activeElement);
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -570,9 +549,8 @@ const DataGrid = forwardRef((props, ref) => {
       tabIndex={0}
       ref={gridContainerRef}
       onKeyDown={handleKeyDown}
-      onMouseDown={onMouseDown}
+      onMouseDown={handleMouseDown}
       onFocus={onFocus}
-      onBlur={onBlur}
       id={id}
       className={cx('data-grid-container')}
     >
@@ -583,7 +561,7 @@ const DataGrid = forwardRef((props, ref) => {
           sections={sections}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
-          activeColumnIndex={(gridHasFocus && focusedRow === 0) ? focusedCol : undefined}
+          activeColumnIndex={(isGridActive && focusedRow === 0) ? focusedCol : undefined}
           isActiveColumnResizing={focusedRow === 0 && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
@@ -593,10 +571,10 @@ const DataGrid = forwardRef((props, ref) => {
           rowHeight={rowHeight}
           rowHeaderIndex={rowHeaderIndex}
           onColumnResize={onColumnResize}
-          onColumnSelect={handleColumnSelect}
+          onColumnSelect={onColumnSelect}
           onSectionSelect={onSectionSelect}
-          onCellSelect={handleCellSelection}
-          onRowSelectionHeaderSelect={handleRowSelectionHeaderSelect}
+          onRowSelectionHeaderSelect={onRowSelectionHeaderSelect}
+          onCellSelect={onCellSelect}
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
