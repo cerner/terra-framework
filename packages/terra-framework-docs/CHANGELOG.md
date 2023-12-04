@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for exported constants of `terra-table` in the About page.
+
 ## 1.49.0 - (December 1, 2023)
 
 * Added
