@@ -133,13 +133,10 @@ function Section(props) {
   };
 
   return (
-    <tbody className={cx('section', {
-      collapsed: isCollapsed,
-      collapsible: isCollapsible,
-    }, theme.className)}
-    >
-      {/* Render section rows */}
-      {!isHidden && (
+    <>
+      <tbody>
+        {/* Render section rows */}
+        {!isHidden && (
         <tr
           aria-rowindex={sectionRowIndex}
           className={cx('header')}
@@ -161,27 +158,34 @@ function Section(props) {
             />
           </th>
         </tr>
-      )}
-      {/* Render section rows */}
-      {!isCollapsed && rows.map((row, rowIndex) => (
-        <Row
-          rowIndex={sectionRowIndex + (rowIndex + 1)}
-          key={row.id}
-          height={rowHeight}
-          id={row.id}
-          sectionId={!isHidden ? id : undefined}
-          tableId={tableId}
-          cells={row.cells}
-          ariaLabel={row.ariaLabel}
-          rowSelectionMode={rowSelectionMode}
-          displayedColumns={displayedColumns}
-          rowHeaderIndex={rowHeaderIndex}
-          onCellSelect={onCellSelect}
-          isSelected={row.isSelected}
-          isTableStriped={isTableStriped}
-        />
-      ))}
-    </tbody>
+        )}
+      </tbody>
+      <tbody className={cx('section', {
+        collapsed: isCollapsed,
+        collapsible: isCollapsible,
+      }, theme.className)}
+      >
+        {/* Render section rows */}
+        {!isCollapsed && rows.map((row, rowIndex) => (
+          <Row
+            rowIndex={sectionRowIndex + (rowIndex + 1)}
+            key={row.id}
+            height={rowHeight}
+            id={row.id}
+            sectionId={!isHidden ? id : undefined}
+            tableId={tableId}
+            cells={row.cells}
+            ariaLabel={row.ariaLabel}
+            rowSelectionMode={rowSelectionMode}
+            displayedColumns={displayedColumns}
+            rowHeaderIndex={rowHeaderIndex}
+            onCellSelect={onCellSelect}
+            isSelected={row.isSelected}
+            isTableStriped={isTableStriped}
+          />
+        ))}
+      </tbody>
+    </>
   );
 }
 
