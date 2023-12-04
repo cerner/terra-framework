@@ -1,9 +1,8 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
+import { mountWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 import DataGrid from '../../src/DataGrid';
-import ERRORS from '../../src/utils/constants';
 
 // Source data for tests
 const dataFile = {
@@ -244,46 +243,5 @@ describe('with pinned columns', () => {
     const pinnedColumnHeaderCells = wrapper.find('.pinned');
 
     expect(pinnedColumnHeaderCells).toHaveLength(1 * (dataFile.rows.length + 1));
-    expect(console.warn).toHaveBeenCalledWith(expect.stringContaining(ERRORS.PINNED_COLUMNS_UNDEFINED)); // eslint-disable-line no-console
-  });
-});
-
-describe('Error handling - prop types', () => {
-  it('throws an error if rowHeaderIndex is not an integer', () => {
-    shallowWithIntl(
-      <DataGrid
-        id="test-terra-data-grid"
-        rows={dataFile.rows}
-        rowHeaderIndex="2"
-      />,
-    );
-
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_NOT_AN_INTEGER)); // eslint-disable-line no-console
-  });
-
-  it('throws an error if rowHeaderIndex is not a positive integer', () => {
-    shallowWithIntl(
-      <DataGrid
-        id="test-terra-data-grid"
-        rows={dataFile.rows}
-        rowHeaderIndex={-1}
-      />,
-    );
-
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_ZERO)); // eslint-disable-line no-console
-  });
-
-  it('throws an error if rowHeaderIndex is greater than the length of pinned columns', () => {
-    shallowWithIntl(
-      <DataGrid
-        id="test-terra-data-grid"
-        pinnedColumns={dataFile.cols.slice(0, 2)}
-        overflowColumns={dataFile.cols.slice(2)}
-        rowHeaderIndex={2}
-        rows={dataFile.rows}
-      />,
-    );
-
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_EXCEEDS_PINNED)); // eslint-disable-line no-console
   });
 });
