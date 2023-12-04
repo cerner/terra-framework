@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Updated examples and tests for `terra-table` to consume udpated onRowSelect callback.
+  * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.
 
 ## 1.49.0 - (December 1, 2023)
 
