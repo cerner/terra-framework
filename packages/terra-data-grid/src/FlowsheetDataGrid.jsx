@@ -343,8 +343,27 @@ function FlowsheetDataGrid(props) {
       nextColumnIndex = columns.length - 1;
     }
 
-    selectCellRange(nextRowIndex, nextColumnIndex);
-  }, [rows, columns, selectCellRange]);
+    let nextRowId = rows[nextRowIndex]?.id;
+    let nextSectionId = '';
+
+    if (sections) {
+      for (let i = 0; i < sections.length; i += 1) {
+        const currentSection = sections[i];
+        const currentSectionRowIndex = currentSection?.sectionRowIndex;
+        const row = currentSection.rows.find((_, index) => (index + currentSectionRowIndex) === nextRowIndex);
+
+        if (row) {
+          nextRowId = row.id;
+          nextSectionId = currentSection.id;
+          break;
+        }
+      }
+    }
+
+    const nextColumnId = columns[nextColumnIndex].id;
+
+    selectCellRange(nextRowId, nextColumnId, nextSectionId);
+  }, [rows, sections, columns, selectCellRange]);
 
   const handleKeyUp = (event) => {
     const key = event.keyCode;
