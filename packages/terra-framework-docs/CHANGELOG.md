@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added examples and tests for `terra-folder-tree`.
   * Added documentation for exported constants of `terra-table` in the About page.
 
 * Changed
