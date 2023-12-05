@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Table from 'terra-table';
 
 const tableData = {
@@ -91,11 +91,29 @@ const TableWithCollapsibleSections = () => {
     setTableSections(newSections);
   };
 
+  const onRowSelect = useCallback((rowSelection) => {
+    const { sectionId, rowId } = rowSelection;
+
+    const newSections = [...tableSections];
+
+    const sectionIndex = newSections.findIndex(section => section.id === sectionId);
+
+    const rowIndexToUpdate = newSections[sectionIndex].rows.findIndex(row => row.id === rowId);
+    if (rowIndexToUpdate >= 0) {
+      newSections[sectionIndex].rows[rowIndexToUpdate] = { ...newSections[sectionIndex].rows[rowIndexToUpdate] };
+      newSections[sectionIndex].rows[rowIndexToUpdate].isSelected = !newSections[sectionIndex].rows[rowIndexToUpdate].isSelected;
+    }
+
+    setTableSections(newSections);
+  }, [tableSections]);
+
   return (
     <Table
       id="table-with-sections"
       overflowColumns={tableData.cols}
       sections={tableSections}
+      rowSelectionMode="multiple"
+      onRowSelect={onRowSelect}
       onSectionSelect={handleSectionSelect}
     />
   );

@@ -4,6 +4,11 @@
 
 * Added
   * Added the example with `contentWidth` as auto value.
+  * Added documentation for exported constants of `terra-table` in the About page.
+
+* Changed
+  * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.
+  * Updated XFC initialization for the Embedded Content Consumer examples.
 
 ## 1.49.0 - (December 1, 2023)
 
