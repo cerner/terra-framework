@@ -443,6 +443,7 @@ class MenuContent extends React.Component {
     } else {
       contentHeight = this.props.fixedHeight;
     }
+    const menuHeight = isSubMenu && !this.props.boundingRef && !this.props.isHeightBounded ? this.getSubmenuHeight() : contentHeight;
     const contentPosition = this.props.isHeightBounded ? 'relative' : 'static';
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
@@ -450,7 +451,7 @@ class MenuContent extends React.Component {
       <div
         ref={this.handleContainerRef}
         className={contentClass}
-        style={{ height: isSubMenu && !this.props.boundingRef && !this.props.isHeightBounded ? this.getSubmenuHeight() : contentHeight, width: contentWidth, position: contentPosition }}
+        style={{ height: menuHeight, width: contentWidth, position: contentPosition }}
         tabIndex="-1"
         aria-modal="true"
         role="dialog"
