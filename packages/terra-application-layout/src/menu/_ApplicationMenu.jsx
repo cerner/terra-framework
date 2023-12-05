@@ -84,12 +84,10 @@ class ApplicationMenu extends React.Component {
 
   handleBlur(event) {
     const { utilityConfig, layoutConfig } = this.props;
-    const currentTarget = event.currentTarget;
-
-    if (!utilityConfig.onBlur) return;
+    const { currentTarget, relatedTarget } = event;
 
     requestAnimationFrame(() => {
-      if (!currentTarget.contains(document.activeElement)) {
+      if (!currentTarget.contains(relatedTarget)) {
         utilityConfig.onBlur(event, layoutConfig);
       }
     });
@@ -165,6 +163,7 @@ class ApplicationMenu extends React.Component {
     customProps.className);
 
     const isCompact = Helpers.isSizeCompact(layoutConfig.size);
+    const onBlur = utilityConfig && utilityConfig.onBlur ? this.handleBlur : undefined;
 
     let clonedContent;
     if (content) {
@@ -175,7 +174,7 @@ class ApplicationMenu extends React.Component {
       <div
         {...customProps}
         className={menuClassNames}
-        onBlur={this.handleBlur}
+        onBlur={onBlur}
       >
         <ApplicationMenuLayout
           header={this.renderHeader(isCompact)}
