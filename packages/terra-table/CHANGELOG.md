@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Updated the onRowSelect callback to return an object containing section and row ids.
+  
+* Added
+  * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH`` constant.
+  
+* Changed
+  * Removed console warning message when no pinned columns exist.
+
 ## 5.2.1 - (December 1, 2023)
 
 * Fixed
