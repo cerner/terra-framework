@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added new exaples for cell content and cell selection to `terra-compact-interactive-list`.
+
 ## 1.49.0 - (December 1, 2023)
 
 * Added
