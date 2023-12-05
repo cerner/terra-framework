@@ -1,4 +1,18 @@
+// Themes
+@import './clinical-lowlight-theme/EmbeddedContentConsumer.module';
+@import './orion-fusion-theme/EmbeddedContentConsumer.module';
+
 :local {
+  .iframe-style {
+    margin-bottom: 4px;
+    margin-top: 4px;
+  }
+
+  .iframe-focus-style {
+    outline: var(--terra-embedded-content-consumer-focus-outline, 2px dashed #000);
+    outline-offset: 1px;
+  }
+
   .visually-hidden-text {
     height: 0;
   }

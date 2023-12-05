@@ -6,6 +6,11 @@ import styles from './EmbeddedContentConsumerCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
+Provider.init({
+  acls: ['*'],
+  secret: () => (Promise.resolve('Success')),
+});
+
 class EmbeddedContent extends React.Component {
   constructor(props) {
     super(props);

@@ -43,9 +43,9 @@ class CustomEventsConsumer extends React.Component {
     return (
       <div id="CustomEvents">
         <EmbeddedContentConsumer
-          src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
+          src="../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/custom-events-provider"
           title="Custom events example"
-          options={{}}
+          options={{ iframeAttrs: { id: 'custom-events-consumer-frame' } }}
           onMount={this.onMount}
           eventHandlers={eventHandlers}
         />
