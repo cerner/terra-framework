@@ -2,6 +2,7 @@ import React from 'react';
 import Menu from 'terra-menu';
 import Button from 'terra-button';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
+import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
 
 class LargeMenuAutoWidth extends React.Component {
   constructor(props) {
@@ -46,7 +47,17 @@ class LargeMenuAutoWidth extends React.Component {
           contentWidth="auto"
         >
           <Menu.Item text="Default 1" key="1" className="TestFirstItem" />
-          <Menu.Item text="Default 3" key="3" />
+          <Menu.Item
+            text="Nested Menu"
+            key="2"
+            subMenuItems={[
+              <Menu.Item text="Default 2.1" key="2.1" />,
+              <Menu.Item text="Default 2.2" key="2.2" />,
+              <Menu.Item text="Default 2.3" key="2.3" />,
+              <Menu.Item text="Default 2.4" key="2.4" icon={<IconPrinter />} />,
+            ]}
+          />
+          <Menu.Item text="Default 3  With Longer Text" key="3" />
           <Menu.Item text="Default 4" key="4" />
           <Menu.Item text="Default 5" key="5" />
           <Menu.Item text="Default 7" key="7" />
@@ -66,7 +77,7 @@ class LargeMenuAutoWidth extends React.Component {
           <Menu.Item text="Default 22" key="22" />
           <Menu.Item text="Default 23" key="23" />
           <Menu.Item text="Default 24" key="24" />
-          <Menu.Item text="Default 25 With Longer Text" key="25" />
+          <Menu.Item text="Default 25" key="25" />
           <Menu.Item text="Default 26" key="26" />
           <Menu.Item text="Default 27" key="27" />
           <Menu.Item text="Default 28" key="28" />
