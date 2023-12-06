@@ -641,7 +641,7 @@ describe('Flowsheet with Sections', () => {
     mockOnCellRangeSelect = jest.fn();
   });
 
-  it('verifies the cells in range are returned in multi-cell select.', () => {
+  it('verifies the cells within sections are returned in multi-cell select.', () => {
     const wrapper = mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
@@ -718,4 +718,92 @@ describe('Flowsheet with Sections', () => {
       { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
     ]);
   });
+
+  // it('verifies the cells within sections are returned in range select.', () => {
+  //   const wrapper = mountWithIntl(
+  //     <FlowsheetDataGrid
+  //       id="test-terra-flowsheet-data-grid"
+  //       columns={dataFile.cols}
+  //       sections={sectionData}
+  //       ariaLabel="Test Flowsheet Data Grid"
+  //       onCellSelect={mockOnCellSelect}
+  //       onCellRangeSelect={mockOnCellRangeSelect}
+  //     />,
+  //   );
+
+  //   const anchorCell = wrapper.find('Row').at(0).find('td.selectable').at(0);
+  //   anchorCell.simulate('mouseDown');
+
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
+
+  //   expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+  //     { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
+  //     { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
+  //     { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
+  //     { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+  //   ]);
+  // });
+
+  // it("verifies the selected section's cells in range are returned in range select when the anchor cell is on top in another section.", () => {
+  //   const wrapper = mountWithIntl(
+  //     <FlowsheetDataGrid
+  //       id="test-terra-flowsheet-data-grid"
+  //       columns={dataFile.cols}
+  //       sections={sectionData}
+  //       ariaLabel="Test Flowsheet Data Grid"
+  //       onCellSelect={mockOnCellSelect}
+  //       onCellRangeSelect={mockOnCellRangeSelect}
+  //     />,
+  //   );
+
+  //   const anchorCell = wrapper.find('Row').at(0).find('td.selectable').at(0);
+  //   anchorCell.simulate('mouseDown');
+
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
+
+  //   expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(5);
+
+  //   expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+  //     { rowId: '3', columnId: 'Column-1', sectionId: 'section-1' },
+  //     { rowId: '3', columnId: 'Column-2', sectionId: 'section-1' },
+  //     { rowId: '4', columnId: 'Column-1', sectionId: 'section-1' },
+  //     { rowId: '4', columnId: 'Column-2', sectionId: 'section-1' },
+  //   ]);
+  // });
+
+  // it("verifies the selected section's cells in range are returned in range select when the anchor cell is on bottom in another section.", () => {
+  //   const wrapper = mountWithIntl(
+  //     <FlowsheetDataGrid
+  //       id="test-terra-flowsheet-data-grid"
+  //       columns={dataFile.cols}
+  //       sections={sectionData}
+  //       ariaLabel="Test Flowsheet Data Grid"
+  //       onCellSelect={mockOnCellSelect}
+  //       onCellRangeSelect={mockOnCellRangeSelect}
+  //     />,
+  //   );
+
+  //   const anchorCell = wrapper.find('Row').at(4).find('td.selectable').at(2);
+  //   anchorCell.simulate('mouseDown');
+
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
+
+  //   expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(5);
+
+  //   expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+  //     { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
+  //     { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
+  //     { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
+  //     { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+  //   ]);
+  // });
 });
