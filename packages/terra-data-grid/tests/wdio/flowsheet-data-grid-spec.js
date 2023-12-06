@@ -233,5 +233,54 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
     it('validate Flowsheet section UI', () => {
       Terra.validates.element('flowsheet-with-sections', { selector: sectionSelector });
     });
+
+    it('validates multi-cell select within sections', () => {
+      clickCell(2, 1, sectionSelector);
+      holdDownShiftKey();
+      clickCell(3, 2, sectionSelector);
+      releaseShiftKey();
+
+      Terra.validates.element('flowsheet-with-sections-multi-cell-select', { selector: sectionSelector });
+    });
+
+    it('validates multi-cell select across sections and the anchor section on top', () => {
+      clickCell(2, 1, sectionSelector);
+      holdDownShiftKey();
+      clickCell(6, 2, sectionSelector);
+      releaseShiftKey();
+      Terra.validates.element('flowsheet-with-sections-multi-cell-select-top-anchor', { selector: sectionSelector });
+    });
+
+    it('validates multi-cell select across sections and the anchor section on bottom', () => {
+      clickCell(6, 2, sectionSelector);
+      holdDownShiftKey();
+      clickCell(2, 1, sectionSelector);
+      releaseShiftKey();
+      Terra.validates.element('flowsheet-with-sections-multi-cell-select-bottom-anchor', { selector: sectionSelector });
+    });
+
+    // it('validates range selection within sections', () => {
+    //   clickCell(2, 1, sectionSelector);
+    //   holdDownShiftKey();
+    //   browser.keys(['Down', 'Right']);
+    //   releaseShiftKey();
+    //   Terra.validates.element('flowsheet-with-sections-multi-cell-select', { selector: sectionSelector });
+    // });
+
+    // it('validates range selection across sections and the anchor section on top', () => {
+    //   clickCell(2, 1, sectionSelector);
+    //   holdDownShiftKey();
+    //   browser.keys(['Right', 'Down', 'Down', 'Down', 'Down']);
+    //   releaseShiftKey();
+    //   Terra.validates.element('flowsheet-with-sections-multi-cell-select-top-anchor', { selector: sectionSelector });
+    // });
+
+    // it('validates range selection across sections and the anchor section on bottom', () => {
+    //   clickCell(6, 2, sectionSelector);
+    //   holdDownShiftKey();
+    //   browser.keys(['Left', 'Up', 'Up', 'Up', 'Up']);
+    //   releaseShiftKey();
+    //   Terra.validates.element('flowsheet-with-sections-multi-cell-select-bottom-anchor', { selector: sectionSelector });
+    // });
   });
 });

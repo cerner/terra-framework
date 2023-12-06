@@ -343,7 +343,7 @@ function FlowsheetDataGrid(props) {
       nextColumnIndex = columns.length - 1;
     }
 
-    let nextRowId = rows[nextRowIndex]?.id;
+    let nextRowId = rows[nextRowIndex - 1]?.id;
     let nextSectionId = '';
 
     if (sections) {

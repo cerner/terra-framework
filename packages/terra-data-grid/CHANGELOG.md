@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added feature to range and multi-select on flowsheets with sections.
+
 * Changed
   * Removed console warning message when no pinned columns exist.
 
