@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Changed variant of form-select
+
 ## 3.96.0 - (November 23, 2023)
 
 * Changed

@@ -10,6 +10,7 @@
   
 * Changed
   * Removed console warning message when no pinned columns exist.
+  * Resolved linter error `A control must be associated with a text label`.
 
 ## 5.2.1 - (December 1, 2023)
 
