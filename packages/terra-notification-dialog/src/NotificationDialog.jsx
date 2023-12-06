@@ -141,7 +141,9 @@ const NotificationDialog = (props) => {
   };
 
   useEffect(() => {
-    notificationDialogRef.current.focus();
+    const dialogBody = document.getElementById('dialogBody');
+    dialogBody.focus();
+    // notificationDialogRef.current.focus();
   }, []);
 
   const {
@@ -188,12 +190,12 @@ const NotificationDialog = (props) => {
             <div className={cx(['header-content'])}>
               <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
               <div id="header-container" className={cx('header-container')}>
-                <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
+                <h2 id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</h2>
                 <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
               </div>
             </div>
           </div>
-          <div id="dialogBody" className={cx('body')}>
+          <div id="dialogBody" tabIndex="0" className={cx('body')}>
             {(startMessage)
               && <div className={cx('message')}>{(startMessage)}</div>}
             {content
