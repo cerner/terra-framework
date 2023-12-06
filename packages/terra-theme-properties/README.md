@@ -1,6 +1,6 @@
-# Terra File Path
+# Terra Theme Properties
 
-[![NPM version](https://badgen.net/npm/v/terra-file-path)](https://www.npmjs.com/package/terra-file-path)
+[![NPM version](https://badgen.net/npm/v/terra-theme-properties)](https://www.npmjs.com/package/terra-theme-properties)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
 ---
@@ -10,7 +10,7 @@
 
 ---
 
-Terra File Path is a horizontal menu that indicates where the user is. It is also more commonly known as a breadcrumb component.
+Terra Theme Properties provides named theme variables for UX-defined styles.
 
 - [Getting Started](#getting-started)
 - [Documentation](https://engineering.cerner.com/terra-framework/components/cerner-terra-framework-docs/file-path/file-path)
@@ -18,20 +18,7 @@ Terra File Path is a horizontal menu that indicates where the user is. It is als
 
 ## Getting Started
 
-- Install from [npmjs](https://www.npmjs.com): `npm install terra-file-path`
-
-<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
-## Peer Dependencies
-
-This component requires the following peer dependencies be installed in your app for the component to properly function.
-
-| Peer Dependency | Version |
-|-|-|
-| react | ^16.8.5 |
-| react-dom | ^16.8.5 |
-| react-intl | ^2.8.0 |
-
-<!-- AUTO-GENERATED-CONTENT:END -->
+- Install from [npmjs](https://www.npmjs.com): `npm install terra-theme-properties`
 
 ## LICENSE
 
