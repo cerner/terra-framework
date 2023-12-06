@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added focus to the initial interactive element with in the notification dialog.
+
 ## 4.36.0 - (November 23, 2023)
 
 * Fixed

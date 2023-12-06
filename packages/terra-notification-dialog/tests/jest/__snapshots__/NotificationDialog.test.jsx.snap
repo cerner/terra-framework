@@ -39,12 +39,12 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -55,6 +55,7 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -172,12 +173,12 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Custom
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -190,6 +191,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -277,12 +279,12 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.error
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -295,6 +297,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -382,12 +385,12 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -400,6 +403,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -487,12 +491,12 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-low
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -505,6 +509,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -592,12 +597,12 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-medium
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -610,6 +615,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -697,12 +703,12 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -715,6 +721,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -802,12 +809,12 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -820,6 +827,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
       <div
         className="body"
         id="dialogBody"
+        tabIndex="0"
       >
         <div
           className="message"
@@ -1000,18 +1008,23 @@ exports[`correctly applies the theme context className 1`] = `
                   class="overlay layer-9000 orion-fusion-theme"
                 />
                 <div
-                  aria-describedby="dialogBody"
-                  aria-labelledby="header-container"
                   aria-modal="true"
+                  ariadescribedby="dialogBody"
+                  arialabelledby="header-container"
                   class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                   role="alertdialog"
-                  tabindex="-1"
+                  tabindex="0"
                 >
                   <div
                     class="abstract-modal-container"
                     data-terra-abstract-modal-begin="true"
                     tabindex="-1"
                   >
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
                     <div
                       class="notification-dialog-inner-wrapper"
                     >
@@ -1040,12 +1053,12 @@ exports[`correctly applies the theme context className 1`] = `
                               class="header-container"
                               id="header-container"
                             >
-                              <div
+                              <h2
                                 class="signal-word"
                                 id="notification-dialog-signal-word"
                               >
                                 Terra.notification.dialog.hazard-high
-                              </div>
+                              </h2>
                               <div
                                 class="title"
                                 id="notification-dialog-title"
@@ -1056,6 +1069,7 @@ exports[`correctly applies the theme context className 1`] = `
                         <div
                           class="body"
                           id="dialogBody"
+                          tabindex="0"
                         >
                           <div
                             class="message"
@@ -1071,13 +1085,13 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             <button
                               aria-disabled="false"
-                              class="button emphasis is-focused orion-fusion-theme"
+                              class="button emphasis orion-fusion-theme"
                               data-terra-notification-dialog-button="accept"
                               tabindex="0"
                               type="button"
                             >
                               <span
-                                class="button-label-win text-only"
+                                class="button-label text-only"
                               >
                                 <span
                                   class=""
@@ -1093,7 +1107,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                class="button-label-win text-only"
+                                class="button-label text-only"
                               >
                                 <span
                                   class=""
@@ -1106,6 +1120,11 @@ exports[`correctly applies the theme context className 1`] = `
                         </div>
                       </div>
                     </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
                 </div>
               </div>
@@ -1137,19 +1156,34 @@ exports[`correctly applies the theme context className 1`] = `
                 />
               </ModalOverlay>
               <div
-                aria-describedby="dialogBody"
-                aria-labelledby="header-container"
                 aria-modal="true"
+                ariaDescribedBy="dialogBody"
+                ariaLabelledBy="header-container"
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                isCalledFromNotificationDialog={true}
                 onKeyDown={[Function]}
                 role="alertdialog"
-                tabIndex="-1"
+                tabIndex="0"
               >
                 <div
                   className="abstract-modal-container"
                   data-terra-abstract-modal-begin={true}
                   tabIndex="-1"
                 >
+                  <FormattedMessage
+                    id="Terra.AbstractModal.BeginModalDialog"
+                    values={Object {}}
+                  >
+                    <VisuallyHiddenText
+                      text="Terra.AbstractModal.BeginModalDialog"
+                    >
+                      <span
+                        className="visually-hidden-text"
+                      >
+                        Terra.AbstractModal.BeginModalDialog
+                      </span>
+                    </VisuallyHiddenText>
+                  </FormattedMessage>
                   <div
                     className="notification-dialog-inner-wrapper"
                   >
@@ -1182,12 +1216,12 @@ exports[`correctly applies the theme context className 1`] = `
                             className="header-container"
                             id="header-container"
                           >
-                            <div
+                            <h2
                               className="signal-word"
                               id="notification-dialog-signal-word"
                             >
                               Terra.notification.dialog.hazard-high
-                            </div>
+                            </h2>
                             <div
                               className="title"
                               id="notification-dialog-title"
@@ -1198,6 +1232,7 @@ exports[`correctly applies the theme context className 1`] = `
                       <div
                         className="body"
                         id="dialogBody"
+                        tabIndex="0"
                       >
                         <div
                           className="message"
@@ -1228,7 +1263,7 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             <button
                               aria-disabled={false}
-                              className="button emphasis is-focused orion-fusion-theme"
+                              className="button emphasis orion-fusion-theme"
                               data-terra-notification-dialog-button="accept"
                               disabled={false}
                               onBlur={[Function]}
@@ -1241,7 +1276,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                className="button-label-win text-only"
+                                className="button-label text-only"
                               >
                                 <span
                                   className=""
@@ -1278,7 +1313,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                className="button-label-win text-only"
+                                className="button-label text-only"
                               >
                                 <span
                                   className=""
@@ -1292,6 +1327,20 @@ exports[`correctly applies the theme context className 1`] = `
                       </div>
                     </div>
                   </div>
+                  <FormattedMessage
+                    id="Terra.AbstractModal.EndModalDialog"
+                    values={Object {}}
+                  >
+                    <VisuallyHiddenText
+                      text="Terra.AbstractModal.EndModalDialog"
+                    >
+                      <span
+                        className="visually-hidden-text"
+                      >
+                        Terra.AbstractModal.EndModalDialog
+                      </span>
+                    </VisuallyHiddenText>
+                  </FormattedMessage>
                 </div>
               </div>
             </ForwardRef>
