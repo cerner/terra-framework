@@ -15,11 +15,8 @@
   
     &:hover {
       background-color: var(--terra-folder-tree-item-hover-background-color, #f4fafe);
+      cursor: pointer;
     }
-  }
-  
-  .folder:hover {
-    cursor: pointer;
   }
 
   .selected {
@@ -30,5 +27,9 @@
     list-style: none;
     margin: 0;
     padding: 0;
+  }
+
+  .radio:hover {
+    cursor: pointer;
   }
 }

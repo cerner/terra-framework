@@ -82,4 +82,26 @@ describe('basic folder tree', () => {
     expect(expandedFolder.find('.folder-tree-item').prop('aria-expanded')).toBe(true);
     expect(expandedFolder.find('.subfolder').prop('hidden')).toBe(false);
   });
+
+  it('does not trigger expand/collapse on folder selection', () => {
+    const onClick = jest.fn();
+    const onToggle = jest.fn();
+
+    const wrapper = shallowWithIntl(
+      <FolderTreeItem
+        label="Animals"
+        onClick={onClick}
+        onToggle={onToggle}
+        subfolderItems={[
+          (<FolderTreeItem label="Dog" />),
+        ]}
+      />,
+    ).dive();
+
+    const radioButton = wrapper.find('.radio');
+    radioButton.simulate('click', { stopPropagation: () => {} });
+
+    expect(onClick).toHaveBeenCalled();
+    expect(onToggle).not.toHaveBeenCalled();
+  });
 });
