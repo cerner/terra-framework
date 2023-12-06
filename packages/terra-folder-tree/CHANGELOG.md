@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added the ability to expand and collapse folders.
+
 ## 1.0.0-alpha.1 - (November 22, 2023)
 
 * Added
