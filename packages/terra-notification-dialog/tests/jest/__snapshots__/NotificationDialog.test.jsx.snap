@@ -1008,23 +1008,18 @@ exports[`correctly applies the theme context className 1`] = `
                   class="overlay layer-9000 orion-fusion-theme"
                 />
                 <div
+                  aria-describedby="dialogBody"
+                  aria-labelledby="header-container"
                   aria-modal="true"
-                  ariadescribedby="dialogBody"
-                  arialabelledby="header-container"
                   class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                   role="alertdialog"
-                  tabindex="0"
+                  tabindex="-1"
                 >
                   <div
                     class="abstract-modal-container"
                     data-terra-abstract-modal-begin="true"
                     tabindex="-1"
                   >
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
                     <div
                       class="notification-dialog-inner-wrapper"
                     >
@@ -1091,7 +1086,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                class="button-label text-only"
+                                class="button-label-win text-only"
                               >
                                 <span
                                   class=""
@@ -1107,7 +1102,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                class="button-label text-only"
+                                class="button-label-win text-only"
                               >
                                 <span
                                   class=""
@@ -1120,11 +1115,6 @@ exports[`correctly applies the theme context className 1`] = `
                         </div>
                       </div>
                     </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
                   </div>
                 </div>
               </div>
@@ -1156,34 +1146,19 @@ exports[`correctly applies the theme context className 1`] = `
                 />
               </ModalOverlay>
               <div
+                aria-describedby="dialogBody"
+                aria-labelledby="header-container"
                 aria-modal="true"
-                ariaDescribedBy="dialogBody"
-                ariaLabelledBy="header-container"
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
-                isCalledFromNotificationDialog={true}
                 onKeyDown={[Function]}
                 role="alertdialog"
-                tabIndex="0"
+                tabIndex="-1"
               >
                 <div
                   className="abstract-modal-container"
                   data-terra-abstract-modal-begin={true}
                   tabIndex="-1"
                 >
-                  <FormattedMessage
-                    id="Terra.AbstractModal.BeginModalDialog"
-                    values={Object {}}
-                  >
-                    <VisuallyHiddenText
-                      text="Terra.AbstractModal.BeginModalDialog"
-                    >
-                      <span
-                        className="visually-hidden-text"
-                      >
-                        Terra.AbstractModal.BeginModalDialog
-                      </span>
-                    </VisuallyHiddenText>
-                  </FormattedMessage>
                   <div
                     className="notification-dialog-inner-wrapper"
                   >
@@ -1276,7 +1251,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                className="button-label text-only"
+                                className="button-label-win text-only"
                               >
                                 <span
                                   className=""
@@ -1313,7 +1288,7 @@ exports[`correctly applies the theme context className 1`] = `
                               type="button"
                             >
                               <span
-                                className="button-label text-only"
+                                className="button-label-win text-only"
                               >
                                 <span
                                   className=""
@@ -1327,20 +1302,6 @@ exports[`correctly applies the theme context className 1`] = `
                       </div>
                     </div>
                   </div>
-                  <FormattedMessage
-                    id="Terra.AbstractModal.EndModalDialog"
-                    values={Object {}}
-                  >
-                    <VisuallyHiddenText
-                      text="Terra.AbstractModal.EndModalDialog"
-                    >
-                      <span
-                        className="visually-hidden-text"
-                      >
-                        Terra.AbstractModal.EndModalDialog
-                      </span>
-                    </VisuallyHiddenText>
-                  </FormattedMessage>
                 </div>
               </div>
             </ForwardRef>
