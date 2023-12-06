@@ -2,8 +2,10 @@
 
 ## Unreleased
 
+## 3.42.1 - (December 5, 2023)
+
 * Fixed
-  * Updated XFC initialization for the Embedded Content Consumer examples.
+  * Fixed XFC initialization for the Embedded Content Consumer examples.
 
 ## 3.42.0 - (December 1, 2023)
 
