@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed bug to set focus on previous pill when delete key is pressed and a pill is deleted.
+
 ## 1.15.0 - (November 23, 2023)
 
 * Changed
