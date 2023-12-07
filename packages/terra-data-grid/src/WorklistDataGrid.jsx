@@ -327,10 +327,6 @@ function WorklistDataGrid(props) {
     }
   }, [handleRowSelection, hasSelectableRows, onCellSelect]);
 
-  const handleColumnSelect = useCallback((columnId) => {
-    onColumnSelect(columnId);
-  }, [onColumnSelect]);
-
   const handleRowSelectionHeaderSelect = useCallback(() => {
     onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
   }, [onColumnSelect]);
@@ -384,7 +380,7 @@ function WorklistDataGrid(props) {
         overflowColumns={worklistDataGridOverflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
-        onColumnSelect={onColumnSelect ? handleColumnSelect : undefined}
+        onColumnSelect={onColumnSelect}
         onRowSelectionHeaderSelect={onColumnSelect ? handleRowSelectionHeaderSelect : undefined}
         onColumnResize={onColumnResize}
         onCellSelect={handleCellSelection}
