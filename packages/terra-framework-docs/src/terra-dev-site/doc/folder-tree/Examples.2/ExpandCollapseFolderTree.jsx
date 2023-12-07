@@ -28,11 +28,31 @@ const ExpandCollapseFolderTree = () => {
     setExpandedKeys(newExpandedKeys);
   };
 
+  const handleExpandAll = () => {
+    const newExpandedKeys = {
+      ...expandedKeys,
+    };
+    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = true; });
+
+    setExpandedKeys(newExpandedKeys);
+  };
+
+  const handleCollapseAll = () => {
+    const newExpandedKeys = {
+      ...expandedKeys,
+    };
+    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = false; });
+
+    setExpandedKeys(newExpandedKeys);
+  };
+
   return (
     <div className={cx('content-wrapper')}>
       <FolderTree
         title="Documents"
         key="documents"
+        onExpandAll={handleExpandAll}
+        onCollapseAll={handleCollapseAll}
       >
         <FolderTree.Item
           label="Projects - Level 1"

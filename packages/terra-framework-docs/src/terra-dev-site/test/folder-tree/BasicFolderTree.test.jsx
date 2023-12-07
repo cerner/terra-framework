@@ -5,12 +5,44 @@ import FolderTree from 'terra-folder-tree';
 
 const BasicFolderTree = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
+  const [expandedKeys, setExpandedKeys] = React.useState({
+    projects: false,
+    tests: false,
+  });
+
+  const handleExpandCollapseKeys = (key) => {
+    const newExpandedKeys = {
+      ...expandedKeys,
+      [key]: !expandedKeys[key],
+    };
+    setExpandedKeys(newExpandedKeys);
+  };
+
+  const handleExpandAll = () => {
+    const newExpandedKeys = {
+      ...expandedKeys,
+    };
+    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = true; });
+
+    setExpandedKeys(newExpandedKeys);
+  };
+
+  const handleCollapseAll = () => {
+    const newExpandedKeys = {
+      ...expandedKeys,
+    };
+    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = false; });
+
+    setExpandedKeys(newExpandedKeys);
+  };
 
   return (
     <div id="basic-folder-tree">
       <FolderTree
         title="Documents"
         key="documents"
+        onExpandAll={handleExpandAll}
+        onCollapseAll={handleCollapseAll}
       >
         <FolderTree.Item
           label="info.txt"
@@ -30,7 +62,9 @@ const BasicFolderTree = () => {
           label="Projects"
           key="projects"
           isSelected={selectedKey === 'projects'}
+          isExpanded={expandedKeys.projects}
           onClick={() => { setSelectedKey('projects'); }}
+          onToggle={() => { handleExpandCollapseKeys('projects'); }}
           subfolderItems={[
             (<FolderTree.Item
               label="project_data1.txt"
@@ -50,7 +84,9 @@ const BasicFolderTree = () => {
               label="Tests"
               key="tests"
               isSelected={selectedKey === 'tests'}
+              isExpanded={expandedKeys.tests}
               onClick={() => { setSelectedKey('tests'); }}
+              onToggle={() => { handleExpandCollapseKeys('tests'); }}
               icon={<IconDocuments />}
               subfolderItems={[
                 (<FolderTree.Item
