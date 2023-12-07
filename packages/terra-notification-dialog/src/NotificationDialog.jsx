@@ -141,9 +141,7 @@ const NotificationDialog = (props) => {
   };
 
   useEffect(() => {
-    const dialogBody = document.getElementById('dialogBody');
-    dialogBody.focus();
-    // notificationDialogRef.current.focus();
+    notificationDialogRef.current.focus();
   }, []);
 
   const {
@@ -195,7 +193,7 @@ const NotificationDialog = (props) => {
               </div>
             </div>
           </div>
-          <div id="dialogBody" tabIndex="0" className={cx('body')}>
+          <div className={cx('body')}>
             {(startMessage)
               && <div className={cx('message')}>{(startMessage)}</div>}
             {content

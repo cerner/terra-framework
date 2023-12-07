@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Button from 'terra-button';
 import NotificationDialog from 'terra-notification-dialog';
+import ContentContainer from 'terra-content-container';
 
 const NotificationDialogWithLongText = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,7 +49,7 @@ const NotificationDialogWithLongText = () => {
         <NotificationDialog
           variant="hazard-medium"
           dialogTitle="Use a Title That Relates Directly to the Actions - Long Titles Should Be Avoided When Possible"
-          startMessage={message}
+          startMessage={<ContentContainer setFocusOnContainer>{message}</ContentContainer>}
           acceptAction={{
             text: 'Emphasized Accept Action',
             onClick: handleCloseModal,
