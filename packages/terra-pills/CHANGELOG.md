@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed jaws providing navigation instructions on empty pill box.
+
 ## 1.15.0 - (November 23, 2023)
 
 * Changed
