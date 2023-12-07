@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added focus to the initial interactive element with in the notification dialog.
+  * Added focus to the notification dialog content for keyboard users with arrow keys.
 
 ## 4.36.0 - (November 23, 2023)
 
