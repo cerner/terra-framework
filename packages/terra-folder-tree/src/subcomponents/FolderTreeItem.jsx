@@ -106,7 +106,9 @@ const FolderTreeItem = ({
     // Stop click propagation to prevent triggering expand/collapse when selecting folders
     event.stopPropagation();
 
-    onClick();
+    if (onClick) {
+      onClick();
+    }
   };
 
   return (
