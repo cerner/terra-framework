@@ -3,7 +3,6 @@ import React from "react";
 import { mountWithIntl } from "terra-enzyme-intl";
 import CompactInteractiveList from "../../src/CompactInteractiveList";
 import rows from "./rowsData";
-import { act } from 'react-dom/test-utils';
 
 beforeAll(() => {
   jest.spyOn(console, "error").mockImplementation();
