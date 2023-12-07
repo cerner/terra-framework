@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updates `terra-theme-provider` examples to show the new ability to specify a theme density.
+
 ## 1.50.0 - (December 5, 2023)
 
 * Added
