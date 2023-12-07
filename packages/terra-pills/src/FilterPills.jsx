@@ -407,7 +407,7 @@ const FilterPills = (props) => {
       aria-describedby={pillGroupAriaDescribedBy}
       className={pillListClassNames}
       ref={filterPillsRef}
-      role="list"
+      role={navigator.userAgent.indexOf('Edg') !== -1 ? '' : 'list'}
       tabIndex={containerTabindex}
     >
       <VisuallyHiddenText
