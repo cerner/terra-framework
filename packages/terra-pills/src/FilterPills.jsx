@@ -286,7 +286,8 @@ const FilterPills = (props) => {
         event.preventDefault();
         focusPreviousNode(pills, rollUpPill);
         break;
-      case KEY_BACK_SPACE || KEY_DELETE:
+      case KEY_BACK_SPACE:
+      case KEY_DELETE:
         event.preventDefault();
         focusNodeAfterDelete(pills);
         break;
