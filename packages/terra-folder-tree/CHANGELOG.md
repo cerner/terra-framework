@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated cursor style to pointer for clickable regions.
+
 ## 1.0.0-alpha.2 - (December 5, 2023)
 
 * Added

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated examples and tests for `terra-folder-tree`.
+
 ## 1.50.0 - (December 5, 2023)
 
 * Added
