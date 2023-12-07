@@ -1,9 +1,9 @@
 # Changelog
 
 ## Unreleased
-* Added
-  * Added focus to the notification dialog content for keyboard users with arrow keys.
 
+* Added
+  * Added focus to the notification dialog content for keyboard users to navigate with arrow keys.
 
 * Added
   * Added examples and tests for `terra-folder-tree`.
