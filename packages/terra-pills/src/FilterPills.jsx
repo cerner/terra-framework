@@ -398,18 +398,23 @@ const FilterPills = (props) => {
     return reducedArray;
   };
 
+  const ariaLabelHint = (!ariaLabelledBy) ? `${removedPillInteractionHint}, ${containerHint.current}` : undefined;
+  const ariaAttrs = (React.Children.count(children)) ? {
+    'aria-live': 'assertive',
+    'aria-label': ariaLabelHint,
+    'aria-labelledby': ariaLabelledBy,
+    'aria-describedby': pillGroupAriaDescribedBy,
+    role: 'list',
+    tabIndex: containerTabindex,
+  } : { role: 'group' };
+
   return (
     <div
       {...customProps}
       {...filterPillsProps}
-      aria-live="assertive"
-      aria-label={!ariaLabelledBy ? `${removedPillInteractionHint} ${containerHint.current}` : undefined}
-      aria-labelledby={ariaLabelledBy}
-      aria-describedby={pillGroupAriaDescribedBy}
+      {...ariaAttrs}
       className={pillListClassNames}
       ref={filterPillsRef}
-      role={navigator.userAgent.indexOf('Edg') !== -1 ? '' : 'list'}
-      tabIndex={containerTabindex}
     >
       <VisuallyHiddenText
         aria-live="polite"
