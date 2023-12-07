@@ -74,7 +74,9 @@ const TableRowSelection = () => {
     setHasSelectableRows(event.target.checked);
   }, [clearRowSelection]);
 
-  const onRowSelect = useCallback((rowId) => {
+  const onRowSelect = useCallback((rowSelection) => {
+    const { rowId } = rowSelection;
+
     // Remove current selections
     const newRowData = [...rowData];
 

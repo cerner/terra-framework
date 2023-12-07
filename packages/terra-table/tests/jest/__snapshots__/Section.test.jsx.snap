@@ -15,7 +15,9 @@ exports[`Section verifies that the table created is consistent with the rows and
     >
       <SectionHeader
         isOpen={true}
+        isTitleFixed={true}
         isTransparent={false}
+        level={2}
         text="Test Section"
       />
     </th>
@@ -195,7 +197,9 @@ exports[`Section verifies the rows are created with the right props 1`] = `
     >
       <SectionHeader
         isOpen={true}
+        isTitleFixed={true}
         isTransparent={false}
+        level={2}
         text="Test Section"
       />
     </th>
@@ -375,7 +379,9 @@ exports[`Section verifies the rows receive the correct props when table is zebra
     >
       <SectionHeader
         isOpen={true}
+        isTitleFixed={true}
         isTransparent={false}
+        level={2}
         text="Test Section"
       />
     </th>

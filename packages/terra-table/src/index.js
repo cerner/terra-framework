@@ -1,4 +1,4 @@
-import Table from './Table';
+import Table, { TableConstants, RowSelectionModes } from './Table';
 import GridContext, { GridConstants } from './utils/GridContext';
 import cellShape from './proptypes/cellShape';
 import columnShape from './proptypes/columnShape';
@@ -8,5 +8,5 @@ import validateRowHeaderIndex from './proptypes/validators';
 
 export default Table;
 export {
-  GridContext, GridConstants, cellShape, columnShape, rowShape, sectionShape, validateRowHeaderIndex,
+  GridContext, GridConstants, TableConstants, RowSelectionModes, cellShape, columnShape, rowShape, sectionShape, validateRowHeaderIndex,
 };

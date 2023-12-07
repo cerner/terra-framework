@@ -1,5 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.scrolling is false 1`] = `
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(EmbeddedContentConsumer)
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": false,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
+</div>
+`;
+
+exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.scrolling is true 1`] = `
+<div
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+>
+  <InjectIntl(EmbeddedContentConsumer)
+    options={
+      Object {
+        "resizeConfig": Object {
+          "scrolling": true,
+        },
+      }
+    }
+    src="https://www.google.com/"
+  />
+</div>
+`;
+
 exports[`InjectIntl should render the embedded content consumer container 1`] = `
 <div
   intl={
@@ -226,6 +312,7 @@ exports[`InjectIntl should render the embedded content consumer with options att
       Object {
         "iframeAttrs": Object {
           "height": "100px",
+          "id": "iframe-srcdoc-id",
           "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
           "title": "inline html content",
           "width": "100%",
@@ -268,6 +355,7 @@ exports[`InjectIntl should render the embedded content consumer with options att
         Object {
           "iframeAttrs": Object {
             "height": "100px",
+            "id": "iframe-srcdoc-id",
             "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
             "title": "inline html content",
             "width": "100%",
@@ -589,34 +677,4 @@ exports[`InjectIntl should render visually hidden text before and after the embe
     </VisuallyHiddenText>
   </EmbeddedContentConsumer>
 </InjectIntl(EmbeddedContentConsumer)>
-`;
-
-exports[`sets appropriate config option when resizeConfig.scrolling is false 1`] = `
-<div>
-  <InjectIntl(EmbeddedContentConsumer)
-    options={
-      Object {
-        "resizeConfig": Object {
-          "scrolling": false,
-        },
-      }
-    }
-    src="https://www.google.com/"
-  />
-</div>
-`;
-
-exports[`sets appropriate config option when resizeConfig.scrolling is true 1`] = `
-<div>
-  <InjectIntl(EmbeddedContentConsumer)
-    options={
-      Object {
-        "resizeConfig": Object {
-          "scrolling": true,
-        },
-      }
-    }
-    src="https://www.google.com/"
-  />
-</div>
 `;

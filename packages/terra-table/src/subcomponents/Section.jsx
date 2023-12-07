@@ -1,9 +1,11 @@
+// TODO: fix linter error
+/* eslint-disable jsx-a11y/control-has-associated-label */
+
 import React, { useContext } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
 import SectionHeader from 'terra-section-header';
-
 import ThemeContext from 'terra-theme-context';
 
 import Row from './Row';
@@ -145,6 +147,7 @@ function Section(props) {
           <SectionHeader
             text={text}
             isOpen={!isCollapsed}
+            isTitleFixed
             onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
           />
         </th>

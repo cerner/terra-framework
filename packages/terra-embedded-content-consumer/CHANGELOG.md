@@ -2,10 +2,26 @@
 
 ## Unreleased
 
+## 3.42.1 - (December 5, 2023)
+
+* Fixed
+  * Fixed XFC initialization for the Embedded Content Consumer examples.
+
+## 3.42.0 - (December 1, 2023)
+
+* Changed
+  * Minor dependency version bump
+
+## 3.41.0 - (November 29, 2023)
+
+* Added
+  * Added documentation relating to accessibility guidance for Embedded Content Consumer props.
+
 ## 3.40.0 - (November 9, 2023)
 
 * Added
   * Added screenreader support to announce context of embedded iframe content.
+  * Added visual focus indicator on the iframe when the content doesn't have any interactable element, iframe is scrollable, and content is scrollable for keyboard only users.
 
 ## 3.39.0 - (October 3, 2023)
 
