@@ -99,7 +99,7 @@ describe('basic folder tree', () => {
     ).dive();
 
     const radioButton = wrapper.find('.radio');
-    radioButton.simulate('click', { stopPropagation: () => {} });
+    radioButton.simulate('change');
 
     expect(onClick).toHaveBeenCalled();
     expect(onToggle).not.toHaveBeenCalled();

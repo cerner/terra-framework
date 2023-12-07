@@ -102,12 +102,13 @@ const FolderTreeItem = ({
     ),
   );
 
-  const handleRadioButtonClick = (event) => {
-    // Stop click propagation to prevent triggering expand/collapse when selecting folders
-    event.stopPropagation();
+  const handleToggle = (event) => {
+    if (event.target.nodeName === 'INPUT') {
+      return;
+    }
 
-    if (onClick) {
-      onClick();
+    if (onToggle) {
+      onToggle();
     }
   };
 
@@ -120,13 +121,12 @@ const FolderTreeItem = ({
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
-        onClick={isFolder ? onToggle : onClick}
+        onClick={isFolder ? handleToggle : onClick}
       >
         <input
           type="radio"
           checked={isSelected}
           onChange={onClick}
-          onClick={handleRadioButtonClick}
           aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
           tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
           className={cx('radio')}
