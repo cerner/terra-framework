@@ -5,6 +5,8 @@
 * Added
   * Added keyboard navigation support for sections.
   
+## 1.6.0 - (December 5, 2023)
+
 * Changed
   * Removed console warning message when no pinned columns exist.
 
