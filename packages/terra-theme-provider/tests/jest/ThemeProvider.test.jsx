@@ -24,7 +24,7 @@ describe('ThemeProvider', () => {
     expect(document.documentElement.classList.contains('cerner-mock-theme')).toBe(true);
   });
 
-  it('verify density is added to documentElement class list', () => {
+  it('verifies density is added to documentElement class list', () => {
     mount(
       <ThemeProvider density="compact">
         <p>Child content</p>
@@ -34,7 +34,7 @@ describe('ThemeProvider', () => {
     expect(document.documentElement.classList.contains('compact')).toBe(true);
   });
 
-  it('verify both theme name and density are added to documentElement class list', () => {
+  it('verifies both theme name and density are added to documentElement class list', () => {
     mount(
       <ThemeProvider themeName="cerner-mock-theme" density="compact">
         <p>Child content</p>
@@ -46,7 +46,7 @@ describe('ThemeProvider', () => {
     expect(document.documentElement.classList.contains('compact')).toBe(true);
   });
 
-  it('verify no classes are added to the documentElement class list when props are not passed', () => {
+  it('verifies no classes are added to the documentElement class list when props are not passed', () => {
     mount(
       <ThemeProvider>
         <p>Child content</p>

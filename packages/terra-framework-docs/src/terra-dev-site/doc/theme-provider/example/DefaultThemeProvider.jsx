@@ -48,7 +48,7 @@ class DefaultThemeProvider extends React.Component {
 
       densitySwitcher = (
         <div className={cx('theme-switcher-wrapper')}>
-          <label htmlFor="density"> Theme: </label>
+          <label htmlFor="density"> Density: </label>
           <select id="density" value={this.state.density} onChange={this.handleDensityChange}>
             <option value="">Default</option>
             <option value="compact">Compact</option>
