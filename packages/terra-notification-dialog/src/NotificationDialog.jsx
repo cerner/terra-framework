@@ -193,7 +193,7 @@ const NotificationDialog = (props) => {
               </div>
             </div>
           </div>
-          <div className={cx('body')}>
+          <div id="dialogBody" className={cx('body')}>
             {(startMessage)
               && <div className={cx('message')}>{(startMessage)}</div>}
             {content
