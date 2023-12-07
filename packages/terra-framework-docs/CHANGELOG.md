@@ -2,10 +2,13 @@
 
 ## Unreleased
 
+## 1.50.0 - (December 5, 2023)
+
 * Added
   * Added focus to the notification dialog content for keyboard users to navigate with arrow keys.
 
 * Added
+  * Added the example with `contentWidth` as auto value.
   * Added examples and tests for `terra-folder-tree`.
   * Added documentation for exported constants of `terra-table` in the About page.
 
