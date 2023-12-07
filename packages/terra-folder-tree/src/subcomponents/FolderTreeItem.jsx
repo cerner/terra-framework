@@ -113,13 +113,14 @@ const FolderTreeItem = ({
 
   return (
     <>
+      {/* TODO: Re-enable this eslint rule once keyboard handling is implemented */}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <li
         className={itemClassNames}
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
         onClick={isFolder ? onToggle : onClick}
-        onKeyDown={isFolder ? onToggle : onClick}
       >
         <input
           type="radio"
