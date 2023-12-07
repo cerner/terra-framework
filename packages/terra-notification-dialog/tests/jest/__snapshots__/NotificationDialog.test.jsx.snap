@@ -54,6 +54,7 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -188,6 +189,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -292,6 +294,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -396,6 +399,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -500,6 +504,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -604,6 +609,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -708,6 +714,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -812,6 +819,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
       </div>
       <div
         className="body"
+        id="dialogBody"
       >
         <div
           className="message"
@@ -1047,6 +1055,7 @@ exports[`correctly applies the theme context className 1`] = `
                         </div>
                         <div
                           class="body"
+                          id="dialogBody"
                         >
                           <div
                             class="message"
@@ -1188,6 +1197,7 @@ exports[`correctly applies the theme context className 1`] = `
                       </div>
                       <div
                         className="body"
+                        id="dialogBody"
                       >
                         <div
                           className="message"
