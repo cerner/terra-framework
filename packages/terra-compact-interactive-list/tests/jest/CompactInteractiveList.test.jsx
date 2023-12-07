@@ -534,6 +534,12 @@ describe('Compact Interactive List', () => {
     const arrowUpProps = {
       key: 'ArrowUp', keyCode: 38, which: 38,
     };
+    const homeKeyProps = {
+      key: 'Home', keyCode: 36, which: 36,
+    };
+    const endKeyProps = {
+      key: 'End', keyCode: 35, which: 35,
+    };
 
     beforeEach(() => {
       document.getElementsByTagName('html')[0].innerHTML = '';
@@ -673,6 +679,43 @@ describe('Compact Interactive List', () => {
       });
       expect(document.activeElement).toBe(cellElements.at(0).instance());
     });
+
+    it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
+      const wrapper = mountWithIntl(
+        testListVerticalFlow, {
+          attachTo: document.body,
+        },
+      );
+      const list = wrapper.find('.compact-interactive-list');
+      list.instance().focus();
+      // Set focus to the first cell
+      const cellElements = wrapper.find('.cell');
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+
+      // Testing END_KEY
+      // should focus the last cell in the current visual row
+      list.simulate('keyDown', endKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(11).instance());
+
+      // Testing END_KEY + CTRL + META_KEY
+      // should focus the last cell in the last list element
+      list.simulate('keyDown', {
+        ...endKeyProps, ctrlKey: true, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
+
+      // Testing HOME_KEY
+      // should focus the first cell in the current visual row
+      list.simulate('keyDown', homeKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+
+      // Testing HOME_KEY + CTRL + META_KEY
+      // should focus the first cell in the first list element
+      list.simulate('keyDown', {
+        ...homeKeyProps, ctrlKey: true, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+    });
   });
 });
 
@@ -720,6 +763,12 @@ describe('Keyboard navigation, horizontal flow', () => {
   };
   const arrowUpProps = {
     key: 'ArrowUp', keyCode: 38, which: 38,
+  };
+  const homeKeyProps = {
+    key: 'Home', keyCode: 36, which: 36,
+  };
+  const endKeyProps = {
+    key: 'End', keyCode: 35, which: 35,
   };
 
   beforeEach(() => {
@@ -857,6 +906,43 @@ describe('Keyboard navigation, horizontal flow', () => {
     // should focus the first cell in the first list element
     list.simulate('keyDown', {
       ...arrowLeftProps, ctrlKey: true, metaKey: true,
+    });
+    expect(document.activeElement).toBe(cellElements.at(0).instance());
+  });
+
+  it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
+    const wrapper = mountWithIntl(
+      testListVerticalFlow, {
+        attachTo: document.body,
+      },
+    );
+    const list = wrapper.find('.compact-interactive-list');
+    list.instance().focus();
+    // Set focus to the first cell
+    const cellElements = wrapper.find('.cell');
+    expect(document.activeElement).toBe(cellElements.at(0).instance());
+
+    // Testing END_KEY
+    // should focus the last cell in the current visual row
+    list.simulate('keyDown', endKeyProps);
+    expect(document.activeElement).toBe(cellElements.at(5).instance());
+
+    // Testing END_KEY + CTRL + META_KEY (CMD on mac or HOME for windows)
+    // should focus the last cell in the last list element
+    list.simulate('keyDown', {
+      ...endKeyProps, ctrlKey: true, metaKey: true,
+    });
+    expect(document.activeElement).toBe(cellElements.at(14).instance());
+
+    // Testing HOME_KEY
+    // should focus the first cell in the current visual row
+    list.simulate('keyDown', homeKeyProps);
+    expect(document.activeElement).toBe(cellElements.at(12).instance());
+
+    // Testing HOME_KEY + CTRL + META_KEY (CMD on mac or HOME for windows)
+    // should focus the first cell in the first list element
+    list.simulate('keyDown', {
+      ...homeKeyProps, ctrlKey: true, metaKey: true,
     });
     expect(document.activeElement).toBe(cellElements.at(0).instance());
   });

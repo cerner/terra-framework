@@ -277,3 +277,51 @@ export const handleRightKey = (event, focusedCell, numberOfColumns, flowHorizont
   }
   return { row: nextRow, cell: nextCell };
 };
+
+/**
+   * Calculates new semantic row and cell indexes to focus on per END KEY press.
+   * @param {KeyboardEvent} event - keyboard event.
+   * @param {object} focusedCell - a { row, cell } pair, where row and cell are indexes of currently focused semantic row and a cell within that row.
+   * @param {number} numberOfColumns - a number of visual columns.
+   * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
+   * @param {number} cellsLength - a number of cells in a semantic row.
+   * @param {number} rowsLength - a total number of seamntic rows in the list.
+   * @returns - an object { row, cell } for the new cell to focus on.
+   */
+export const handleEndKey = (event, focusedCell, numberOfColumns, flowHorizontally, cellsLength, rowsLength) => {
+  const { row, cell } = focusedCell;
+  let nextRow = row;
+  let nextCell = cell;
+  if (event.metaKey && event.ctrlKey) {
+    // Focus moves to the last cell in the last item in the list.
+
+    // Omiting row index for the last element in the list
+    nextRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally);
+    nextCell = cellsLength - 1;
+    return { row: nextRow, cell: nextCell };
+  }
+  // Focus moves to the last cell in the last item in the visual row.
+  nextCell = cellsLength - 1;
+  nextRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
+  return { row: nextRow, cell: nextCell };
+};
+
+/**
+   * Calculates new semantic row and cell indexes to focus on per HOME ARROW KEY press.
+   * @param {KeyboardEvent} event - keyboard event.
+   * @param {object} focusedCell - a { row, cell } pair, where row and cell are indexes of currently focused semantic row and a cell within that row.
+   * @param {number} numberOfColumns - a number of visual columns.
+   * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
+   * @param {number} rowsLength - a total number of seamntic rows in the list.
+   * @returns - an object { row, cell } for the new cell to focus on.
+   */
+export const handleHomeKey = (event, focusedCell, numberOfColumns, flowHorizontally, rowsLength) => {
+  const { row } = focusedCell;
+  if (event.metaKey && event.ctrlKey) {
+    // Focus moves to the first cell in the first item in the list.
+    return { row: 0, cell: 0 };
+  }
+  // Focus moves to the first cell in the first item in the visual row.
+  const firstItemInVisualRow = getFirstSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
+  return { row: firstItemInVisualRow, cell: 0 };
+};

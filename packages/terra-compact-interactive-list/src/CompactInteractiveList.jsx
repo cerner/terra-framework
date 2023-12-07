@@ -29,6 +29,8 @@ import {
   moveFocusFromElement,
   handleDownKey,
   handleUpKey,
+  handleHomeKey,
+  handleEndKey,
 } from './utils/keyHandlerUtils';
 
 const cx = classNames.bind(styles);
@@ -196,6 +198,12 @@ const CompactInteractiveList = (props) => {
         moveFocusTo = handleRightKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       }
+      case KeyCode.KEY_HOME:
+        moveFocusTo = handleHomeKey(event, focusedCell.current, numberOfColumns, flowHorizontally, rows.length);
+        break;
+      case KeyCode.KEY_END:
+        moveFocusTo = handleEndKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
+        break;
       case KeyCode.KEY_SPACE:
         if (onCellSelect) {
           handleOnCellSelect(focusedCell.current);
