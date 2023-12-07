@@ -45,6 +45,7 @@ exports[`Table verifies row selection column header selection 1`] = `
       Object {
         "displayName": " Vitals",
         "id": "Column-0",
+        "isSelectable": true,
       },
       Object {
         "displayName": "March 16",
@@ -166,6 +167,7 @@ exports[`Table verifies row selection column header selection 1`] = `
         Object {
           "displayName": " Vitals",
           "id": "Column-0",
+          "isSelectable": true,
         },
         Object {
           "displayName": "March 16",
@@ -302,6 +304,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
+                "isSelectable": true,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 200,
@@ -354,7 +357,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
-                rowIndex={0}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={40}
@@ -402,7 +404,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
-                  rowIndex={0}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={40}
@@ -451,13 +452,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                 id="Column-0"
                 isActive={false}
                 isResizeActive={false}
+                isSelectable={true}
                 key="Column-0"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
-                rowIndex={0}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={200}
@@ -499,21 +500,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
-                  isSelectable={false}
+                  isSelectable={true}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
-                  rowIndex={0}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={200}
                 >
                   <th
-                    className="column-header pinned"
+                    className="column-header selectable pinned"
                     id="test-terra-table-Column-0"
                     key="Column-0"
+                    onKeyDown={[Function]}
+                    onMouseDown={[Function]}
                     role="columnheader"
                     scope="col"
                     style={
@@ -527,6 +529,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <div
                       className="header-container"
+                      role="button"
+                      tabIndex={0}
                     >
                       <span
                         aria-hidden={true}
@@ -560,7 +564,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
-                rowIndex={0}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={200}
@@ -608,7 +611,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
-                  rowIndex={0}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={200}
@@ -664,7 +666,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
-                rowIndex={0}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={200}
@@ -712,7 +713,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
-                  rowIndex={0}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={200}
@@ -771,6 +771,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
+                "isSelectable": true,
               },
               Object {
                 "displayName": "March 16",
@@ -858,6 +859,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           sectionRowIndex={1}
           tableId="test-terra-table"
         >
+          <tbody />
           <tbody
             className="section"
           >
@@ -890,6 +892,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   Object {
                     "displayName": " Vitals",
                     "id": "Column-0",
+                    "isSelectable": true,
                   },
                   Object {
                     "displayName": "March 16",
@@ -1331,6 +1334,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   Object {
                     "displayName": " Vitals",
                     "id": "Column-0",
+                    "isSelectable": true,
                   },
                   Object {
                     "displayName": "March 16",
@@ -1767,6 +1771,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   Object {
                     "displayName": " Vitals",
                     "id": "Column-0",
+                    "isSelectable": true,
                   },
                   Object {
                     "displayName": "March 16",
@@ -2202,6 +2207,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   Object {
                     "displayName": " Vitals",
                     "id": "Column-0",
+                    "isSelectable": true,
                   },
                   Object {
                     "displayName": "March 16",

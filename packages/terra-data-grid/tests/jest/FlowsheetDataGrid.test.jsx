@@ -415,6 +415,10 @@ describe('Multi-cell selection', () => {
       />,
     );
 
+    const initialCell = wrapper.find('Row').at(2).find('td.selectable').at(1);
+    initialCell.simulate('mouseDown');
+    initialCell.simulate('keydown', { keyCode: DOWN_ARROW_KEY });
+
     const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
     expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-2', '');

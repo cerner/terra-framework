@@ -43,6 +43,12 @@ Terra.describeViewports('Menu', ['medium'], () => {
     Terra.validates.element('large height', { selector: '#root', rules: ignoredA11y });
   });
 
+  it('displays a Menu with Large Height Auto Width', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/large-menu-auto-width');
+    $('#large-menu-button-autowidth').click();
+    Terra.validates.element('large height auto width', { selector: '#root', rules: ignoredA11y });
+  });
+
   it('displays a non-selectable menu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/non-selectable-menu');
     $('#non-selectable-menu-button').click();

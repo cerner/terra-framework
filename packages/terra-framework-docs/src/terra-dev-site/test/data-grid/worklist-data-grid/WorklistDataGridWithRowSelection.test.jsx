@@ -52,6 +52,7 @@ const WorklistDataGridWithRowSelection = () => {
       onRowSelect={onRowSelect}
       onRowSelectAll={onRowSelectAll}
       onClearSelectedRows={clearRowSelection}
+      onColumnSelect={() => {}}
       onDisableSelectableRows={disableSelectableRows}
       onEnableRowSelection={() => {
         setHasSelectableRows(true);

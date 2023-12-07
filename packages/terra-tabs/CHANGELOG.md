@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fixed aria-label condition in tab.
+
 ## 7.13.0 - (November 29, 2023)
 
 * Fixed

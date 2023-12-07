@@ -1,8 +1,9 @@
 # Changelog
 
 ## Unreleased
+## 5.3.0 - (December 6, 2023)
 
-* Breaking Changes
+* Breaking Changes (Note: this breaking change is needed at this time but does not have major impact)
   * Updated the onRowSelect callback to return an object containing section and row ids.
   
 * Added
@@ -10,7 +11,7 @@
   
 * Changed
   * Removed console warning message when no pinned columns exist.
-  * Resolved linter error `A control must be associated with a text label`.
+  * Updated the table component to properly support selection callbacks for the grid context.
 
 ## 5.2.1 - (December 1, 2023)
 
