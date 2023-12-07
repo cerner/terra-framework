@@ -58,7 +58,6 @@ const cols = [
     displayName: 'Service name',
     maximumWidth: '25em',
     minimumWidth: '7em',
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -75,6 +74,7 @@ const ScalableUnits = () => (
       rows={rows}
       columns={cols}
       numberOfColumns={2}
+      rowHeaderIndex={1}
     />
   </div>
 );

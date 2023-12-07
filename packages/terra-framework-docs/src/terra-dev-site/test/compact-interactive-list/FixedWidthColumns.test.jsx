@@ -58,7 +58,6 @@ const cols = [
     id: 'Column-1',
     displayName: 'Service name',
     width: '350px',
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -76,6 +75,7 @@ const FixedWidthColumns = () => (
     numberOfColumns={2}
     columnMinimumWidth="20px" // should have no effect of fixed columns
     columnMaximumWidth="200px" // should have no effect of fixed columns
+    rowHeaderIndex={1}
   />
 );
 

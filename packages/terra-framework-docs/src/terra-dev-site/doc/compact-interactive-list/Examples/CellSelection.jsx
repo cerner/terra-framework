@@ -79,7 +79,6 @@ const cols = [
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
     maximumWidth: '300px',
     minimumWidth: '100px',
-    rowHeader: true, // needed for assistive technologies for row context
   },
   {
     id: 'Column-2',
@@ -96,22 +95,22 @@ const cols = [
 ];
 
 const ResponsiveColumnsMaxWidth = () => {
-  const [selectedCell, setSelectedCell] = useState(null);
+  const [selectedColumn, setSelectedColumn] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null);
 
-  const onCellSelect = (rowId, colId) => {
-    setSelectedCell(colId);
+  const onCellSelect = ({ rowId, columnId }) => {
+    setSelectedColumn(columnId);
     setSelectedRow(rowId);
   };
 
   const onClearSelection = () => {
-    setSelectedCell(undefined);
+    setSelectedColumn(undefined);
     setSelectedRow(undefined);
   };
 
   return (
     <>
-      <p>{selectedCell && selectedRow ? `Selected cell id: ${selectedCell}, selected row id: ${selectedRow}.` : 'There are no celected cells at the moment.'}</p>
+      <p>{selectedColumn && selectedRow ? `Selected cell id: ${selectedColumn}, selected row id: ${selectedRow}.` : 'There are no celected cells at the moment.'}</p>
       <CompactInteractiveList
         id="with-breakpoints"
         rows={rows}
@@ -120,6 +119,7 @@ const ResponsiveColumnsMaxWidth = () => {
         columnMinimumWidth="234px"
         onCellSelect={onCellSelect} // For cell selection, a callback function must be provided so that the Worklist Data Grid can invoke it when a cell is selective.
         onClearSelection={onClearSelection}
+        rowHeaderIndex={1}
       />
     </>
   );

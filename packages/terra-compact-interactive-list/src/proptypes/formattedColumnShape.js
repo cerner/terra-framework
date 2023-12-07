@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { alignTypes } from '../utils/constants';
 
-const columnShape = PropTypes.shape({
+const formattedColumnShape = PropTypes.shape({
   /**
    * Required string representing a unique identifier for the column.
    */
@@ -11,11 +11,6 @@ const columnShape = PropTypes.shape({
    * String of text which will be used to provide a column context and to serve as a column header if needed.
    */
   displayName: PropTypes.string,
-
-  /**
-   * whether the column is a column header (provides the context for screen readers).
-   */
-  rowHeader: PropTypes.bool,
 
   /**
    * Width of the column is a number value in px, em, or rem units.
@@ -55,4 +50,4 @@ const columnShape = PropTypes.shape({
 
 });
 
-export default columnShape;
+export default formattedColumnShape;

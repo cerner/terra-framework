@@ -463,13 +463,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_1-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_1"
+              rowIndex={0}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -525,13 +530,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_1-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_1"
+              rowIndex={0}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -554,13 +564,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_1-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_1"
+              rowIndex={0}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -692,13 +707,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_2-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_2"
+              rowIndex={1}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -751,13 +771,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_2-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_2"
+              rowIndex={1}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -780,13 +805,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_2-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_2"
+              rowIndex={1}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -918,13 +948,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_3-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_3"
+              rowIndex={2}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -977,13 +1012,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_3-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_3"
+              rowIndex={2}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1006,13 +1046,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_3-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_3"
+              rowIndex={2}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1134,13 +1179,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_4-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_4"
+              rowIndex={3}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1164,13 +1214,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_4-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_4"
+              rowIndex={3}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1193,13 +1248,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_4-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_4"
+              rowIndex={3}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1302,13 +1362,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_5-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_5"
+              rowIndex={4}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1361,13 +1426,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_5-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_5"
+              rowIndex={4}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1390,13 +1460,18 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_5-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_5"
+              rowIndex={4}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1910,13 +1985,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_1-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_1"
+              rowIndex={0}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -1972,13 +2052,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_1-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_1"
+              rowIndex={0}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2002,13 +2087,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_1-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_1"
+              rowIndex={0}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2139,13 +2229,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_2-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_2"
+              rowIndex={1}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2198,13 +2293,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_2-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_2"
+              rowIndex={1}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2228,13 +2328,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_2-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_2"
+              rowIndex={1}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2365,13 +2470,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_3-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_3"
+              rowIndex={2}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2424,13 +2534,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_3-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_3"
+              rowIndex={2}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2454,13 +2569,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_3-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_3"
+              rowIndex={2}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2581,13 +2701,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_4-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_4"
+              rowIndex={3}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2611,13 +2736,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_4-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_4"
+              rowIndex={3}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2641,13 +2771,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_4-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_4"
+              rowIndex={3}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2749,13 +2884,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={0}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_5-col-Column-0"
               onCellSelect={[Function]}
+              rowId="row_5"
+              rowIndex={4}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2808,13 +2948,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
+              columnIndex={1}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_5-col-Column-1"
               onCellSelect={[Function]}
+              rowId="row_5"
+              rowIndex={4}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
@@ -2838,13 +2983,18 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
+              columnIndex={2}
               columnMinimumWidth={60}
+              isRowHeader={false}
               key="row-row_5-col-Column-2"
               onCellSelect={[Function]}
+              rowId="row_5"
+              rowIndex={4}
               widthUnit="px"
             >
               <div
                 className="cell"
+                onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={

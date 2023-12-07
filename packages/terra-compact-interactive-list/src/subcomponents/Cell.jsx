@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import * as KeyCode from 'keycode-js';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
@@ -10,6 +11,26 @@ import styles from './Cell.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  /**
+   * String identifier of the row in which the Cell will be rendered.
+   */
+  rowId: PropTypes.string.isRequired,
+
+  /**
+   * The cell's row position in the table. This is zero based.
+   */
+  rowIndex: PropTypes.number,
+
+  /**
+   * The cell's column position in the table. This is zero based.
+   */
+  columnIndex: PropTypes.number,
+
+  /**
+   * Boolean indicating that the cell is a row header.
+   */
+  isRowHeader: PropTypes.bool,
+
   /**
    * Content that will be rendered within the Cell.
    */
@@ -47,19 +68,23 @@ const propTypes = {
 
 const Cell = (props) => {
   const {
+    rowId,
+    rowIndex,
+    columnIndex,
     children,
     column,
     columnMinimumWidth,
     columnMaximumWidth,
     widthUnit,
     onCellSelect,
+    isRowHeader,
   } = props;
 
   const theme = useContext(ThemeContext);
   const className = cx('cell', theme.className);
 
   const {
-    rowHeader,
+    id,
     width,
     flexGrow,
     maximumWidth,
@@ -68,6 +93,21 @@ const Cell = (props) => {
   } = column;
 
   const isResponsive = checkIfColumnIsResponsive(flexGrow, width);
+
+  const handleKeyDown = (event) => {
+    const key = event.keyCode;
+    if (key === KeyCode.KEY_SPACE) {
+      onCellSelect({
+        rowId, rowIndex, columnId: id, columnIndex, event,
+      });
+    }
+  };
+
+  const handleMouseDown = () => {
+    onCellSelect({
+      rowId, rowIndex, columnId: id, columnIndex,
+    });
+  };
 
   const style = {
     justifyContent: align || alignTypes.LEFT,
@@ -89,12 +129,13 @@ const Cell = (props) => {
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
-      role={rowHeader ? 'rowheader' : 'gridcell'}
+      role={isRowHeader ? 'rowheader' : 'gridcell'}
       className={className}
       tabIndex={-1}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
-      onMouseDown={onCellSelect}
+      onMouseDown={handleMouseDown}
+      onKeyDown={handleKeyDown}
     >
       {children}
     </div>

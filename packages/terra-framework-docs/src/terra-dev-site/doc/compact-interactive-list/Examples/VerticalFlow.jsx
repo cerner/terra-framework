@@ -114,7 +114,6 @@ const cols = [
     displayName: 'Service name',
     width: '200px', // will be disregarded bacause of flexGrow prop.
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -133,6 +132,7 @@ const VerticalFlow = () => {
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
       rowHeight={getRowHeight(activeBreakpoint)}
+      rowHeaderIndex={1}
     />
   );
 };

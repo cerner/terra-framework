@@ -70,7 +70,6 @@ const cols = [
     displayName: 'Service name',
     width: '200px',
     flexGrow: true,
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -88,6 +87,7 @@ const WidthBreakpointsHorizontalFlow = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
+      rowHeaderIndex={1}
       flowHorizontally
     />
   );

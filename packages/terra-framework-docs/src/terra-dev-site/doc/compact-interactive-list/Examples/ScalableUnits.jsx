@@ -59,7 +59,6 @@ const cols = [
     // flexGrow prop is not set here, but as there is no width set, the column will be flex growing anyway
     maximumWidth: '25em', // maximumWidth is reccomended for flex growing columns so that they don't grow beyond reasonable.
     minimumWidth: '7em', // minimumWidth is reccomended for flex growing columns so that they don't squish beyond reasonable.
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -76,6 +75,7 @@ const ScalableUnits = () => (
       rows={rows}
       columns={cols}
       numberOfColumns={2}
+      rowHeaderIndex={1}
     />
   </div>
 );

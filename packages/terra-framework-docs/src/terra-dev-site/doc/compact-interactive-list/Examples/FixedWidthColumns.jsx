@@ -57,7 +57,6 @@ const cols = [
     id: 'Column-1',
     displayName: 'Service name',
     width: '20em',
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -73,6 +72,7 @@ const FixedWidthColumns = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
+    rowHeaderIndex={1}
   />
 );
 

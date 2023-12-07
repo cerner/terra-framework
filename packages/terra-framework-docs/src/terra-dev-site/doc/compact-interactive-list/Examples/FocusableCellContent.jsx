@@ -79,7 +79,6 @@ const cols = [
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
     maximumWidth: '300px',
     minimumWidth: '100px',
-    rowHeader: true, // needed for assistive technologies for row context
   },
   {
     id: 'Column-2',
@@ -102,6 +101,7 @@ const ResponsiveColumnsMaxWidth = () => (
     columns={cols}
     numberOfColumns={2}
     columnMinimumWidth="234px"
+    rowHeaderIndex={1}
   />
 );
 

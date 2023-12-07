@@ -102,7 +102,6 @@ const cols = [
     displayName: 'Service name',
     width: '200px', // will be disregarded as flexGrow prop set to true will make it flex growing column
     flexGrow: true,
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -120,6 +119,7 @@ const HorizontalFlow = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
+      rowHeaderIndex={1}
       flowHorizontally
     />
   );

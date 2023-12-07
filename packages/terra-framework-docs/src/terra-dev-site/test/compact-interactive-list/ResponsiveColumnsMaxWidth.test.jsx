@@ -61,7 +61,6 @@ const cols = [
     flexGrow: true,
     minimumWidth: '10em',
     maximumWidth: '30em',
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -77,6 +76,7 @@ const ResponsiveColumnsMaxWidth = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
+    rowHeaderIndex={1}
   />
 );
 

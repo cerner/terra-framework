@@ -57,7 +57,6 @@ const cols = [
     displayName: 'Service name',
     width: '200px', // will be disregarded because of the flexGrow prop
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
-    rowHeader: true,
   },
   {
     id: 'Column-2',
@@ -73,6 +72,7 @@ const ResponsiveColumns = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
+    rowHeaderIndex={1}
   />
 );
 

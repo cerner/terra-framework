@@ -16,6 +16,10 @@ const propTypes = {
    * An identifier to uniquely identify the row.
    */
   id: PropTypes.string.isRequired,
+  /**
+   * The row's position in the table. This is zero based.
+   */
+  rowIndex: PropTypes.number,
 
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
@@ -99,11 +103,17 @@ const propTypes = {
    * Indicates if the row is located in the left visual column and needs a left border.
    */
   isLeftmost: PropTypes.bool,
+
+  /**
+   * A zero-based index indicating which column represents the row header.
+   */
+  rowHeaderIndex: PropTypes.number,
 };
 
 const Row = (props) => {
   const {
     id,
+    rowIndex,
     cells,
     columns,
     columnMinimumWidth,
@@ -119,6 +129,7 @@ const Row = (props) => {
     rowHeight,
     isTopmost,
     isLeftmost,
+    rowHeaderIndex,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -155,11 +166,15 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
+          rowIndex={rowIndex}
+          rowId={id}
+          columnIndex={index}
+          isRowHeader={index === rowHeaderIndex}
           column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}
           widthUnit={widthUnit}
-          onCellSelect={() => onCellSelect(index)}
+          onCellSelect={onCellSelect}
         >
           {cellData.content}
         </Cell>

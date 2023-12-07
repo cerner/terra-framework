@@ -105,6 +105,11 @@ const propTypes = {
    * Columns maximum width should be a valid css string in value in px, em, or rem units.
    */
   columnMaximumWidth: PropTypes.string,
+
+  /**
+   * A zero-based index indicating which column represents the row header.
+   */
+  rowHeaderIndex: PropTypes.number,
 };
 
 const defaultProps = {
@@ -128,6 +133,7 @@ const CompactInteractiveList = (props) => {
     columnMaximumWidth,
     onCellSelect,
     onClearSelection,
+    rowHeaderIndex,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -154,17 +160,22 @@ const CompactInteractiveList = (props) => {
     setFocusOnCell({ row, cell });
   };
 
-  const handleOnCellSelect = useCallback(({ row, cell }) => {
-    focusedCell.current = { row, cell };
+  const handleOnCellSelect = useCallback(({
+    rowId, rowIndex, columnId, columnIndex, event,
+  }) => {
+    focusedCell.current = { row: rowIndex, cell: columnIndex };
     // check for interactive elements in that cell
     // add 1 to the row number to accomodate for hidden header
-    const elementToFocus = listRef.current.children[row + 1].children[cell];
-    const interactiveChildren = getFocusableElements(elementToFocus);
+    const focusedElement = listRef.current.children[rowIndex + 1].children[columnIndex];
+    const interactiveChildren = getFocusableElements(focusedElement);
     // if no interactive elements
-    if (onCellSelect && interactiveChildren?.length === 0) {
-      onCellSelect(rows[row].id, columns[cell].id);
+    if (interactiveChildren?.length === 0) {
+      event?.preventDefault(); // needed to avoid scroll on list cells
+      if (onCellSelect) {
+        onCellSelect({ rowId, columnId });
+      }
     }
-  }, [onCellSelect, rows, columns]);
+  }, [onCellSelect]);
 
   const handleKeyDown = (event) => {
     let moveFocusTo = focusedCell.current;
@@ -204,12 +215,6 @@ const CompactInteractiveList = (props) => {
       case KeyCode.KEY_END:
         moveFocusTo = handleEndKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
-      case KeyCode.KEY_SPACE:
-        if (onCellSelect) {
-          handleOnCellSelect(focusedCell.current);
-        }
-        event.preventDefault();
-        return;
       case KeyCode.KEY_ESCAPE:
         if (onClearSelection) {
           onClearSelection();
@@ -339,11 +344,12 @@ const CompactInteractiveList = (props) => {
             rowMaximumWidth={rowMaxWidth}
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}
-            onCellSelect={(cell) => handleOnCellSelect({ row: index, cell })}
+            onCellSelect={handleOnCellSelect}
             flowHorizontally={flowHorizontally}
             rowHeight={calculatedRowHeight}
             isTopmost={checkIfRowIsTopMost(index)}
             isLeftmost={checkIfRowIsLeftMost(index)}
+            rowHeaderIndex={rowHeaderIndex}
           />
         ))}
       </div>
