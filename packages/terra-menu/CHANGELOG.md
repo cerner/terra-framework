@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed the issue with `contentWidth` as auto value.
+
 ## 6.81.0 - (November 23, 2023)
 
 * Changed

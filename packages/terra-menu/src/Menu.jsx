@@ -84,7 +84,10 @@ class Menu extends React.Component {
     this.setPageDimensions = this.setPageDimensions.bind(this);
     this.push = this.push.bind(this);
     this.pop = this.pop.bind(this);
-    this.state = { stack: [this] };
+    this.state = {
+      stack: [this],
+      pageWidth: undefined,
+    };
   }
 
   componentDidUpdate(prevProps) {
@@ -98,11 +101,15 @@ class Menu extends React.Component {
     if (node) {
       this.pageHeight = node.clientHeight;
       if (this.props.contentWidth === 'auto') {
-        this.pageWidth = node.clientWidth;
+        this.setState({
+          pageWidth: node.clientWidth,
+        });
       }
     } else {
       this.pageHeight = undefined;
-      this.pageWidth = undefined;
+      this.setState({
+        pageWidth: undefined,
+      });
     }
   }
 
@@ -161,7 +168,7 @@ class Menu extends React.Component {
         onRequestClose={this.props.onRequestClose}
         isHidden={index !== visiblePage}
         fixedHeight={this.pageHeight}
-        fixedWidth={this.pageWidth}
+        fixedWidth={this.state.pageWidth}
         contentWidth={Popup.Opts.widths[contentWidth]}
         refCallback={visiblePage === 0 ? this.setPageDimensions : null}
         index={index}
