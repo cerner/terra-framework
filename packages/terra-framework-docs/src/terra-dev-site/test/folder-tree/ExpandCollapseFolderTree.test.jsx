@@ -10,6 +10,10 @@ const ExpandCollapseFolderTree = () => {
     'projects-4': false,
   });
 
+  const handleSelect = (key) => {
+    setSelectedKey(key);
+  };
+
   const handleExpandCollapseKeys = (key) => {
     const newExpandedKeys = {
       ...expandedKeys,
@@ -29,7 +33,7 @@ const ExpandCollapseFolderTree = () => {
           key="projects"
           isSelected={selectedKey === 'projects'}
           isExpanded={expandedKeys.projects}
-          onClick={() => { setSelectedKey('projects'); }}
+          onClick={() => { handleSelect('projects'); }}
           onToggle={() => { handleExpandCollapseKeys('projects'); }}
           subfolderItems={[
             <FolderTree.Item
@@ -37,7 +41,7 @@ const ExpandCollapseFolderTree = () => {
               key="projects-2"
               isSelected={selectedKey === 'projects-2'}
               isExpanded={expandedKeys['projects-2']}
-              onClick={() => { setSelectedKey('projects-2'); handleExpandCollapseKeys('projects-2'); }}
+              onClick={() => { handleSelect('projects-2'); }}
               onToggle={() => { handleExpandCollapseKeys('projects-2'); }}
               subfolderItems={[
                 <FolderTree.Item
@@ -45,7 +49,7 @@ const ExpandCollapseFolderTree = () => {
                   key="projects-3"
                   isSelected={selectedKey === 'projects-3'}
                   isExpanded={expandedKeys['projects-3']}
-                  onClick={() => { setSelectedKey('projects-3'); handleExpandCollapseKeys('projects-3'); }}
+                  onClick={() => { handleSelect('projects-3'); }}
                   onToggle={() => { handleExpandCollapseKeys('projects-3'); }}
                   subfolderItems={[
                     <FolderTree.Item
@@ -53,7 +57,7 @@ const ExpandCollapseFolderTree = () => {
                       key="projects-4"
                       isSelected={selectedKey === 'projects-4'}
                       isExpanded={expandedKeys['projects-4']}
-                      onClick={() => { setSelectedKey('projects-4'); handleExpandCollapseKeys('projects-4'); }}
+                      onClick={() => { handleSelect('projects-4'); }}
                       onToggle={() => { handleExpandCollapseKeys('projects-4'); }}
                       subfolderItems={[
                         <FolderTree.Item
