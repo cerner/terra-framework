@@ -32,6 +32,8 @@ const TableConstants = {
   ROW_SELECTION_COLUMN_WIDTH: 40,
 };
 
+const ROW_SELECTION_COLUMN_ID = 'table-rowSelectionColumn';
+
 const propTypes = {
   /**
    * Unique id used to identify the table.
@@ -247,18 +249,21 @@ function Table(props) {
     maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
   });
 
-  // Create row selection column object
-  const tableRowSelectionColumn = {
-    id: 'table-rowSelectionColumn',
-    width: TableConstants.ROW_SELECTION_COLUMN_WIDTH,
-    displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
-    isDisplayVisible: false,
-    isSelectable: !!onRowSelectionHeaderSelect,
-    isResizable: false,
-  };
-
   const hasSelectableRows = rowSelectionMode === RowSelectionModes.MULTIPLE;
-  const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
+  const displayedColumns = useMemo(() => {
+    // Create row selection column object
+    const tableRowSelectionColumn = {
+      id: ROW_SELECTION_COLUMN_ID,
+      width: TableConstants.ROW_SELECTION_COLUMN_WIDTH,
+      displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
+      isDisplayVisible: false,
+      isSelectable: !!onRowSelectionHeaderSelect,
+      isResizable: false,
+    };
+
+    return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
+  }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
+
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   const defaultSectionRef = useRef(uuidv4());
@@ -422,14 +427,14 @@ function Table(props) {
   // event handlers
 
   const handleColumnSelect = useCallback((columnId) => {
-    if (columnId === tableRowSelectionColumn.id) {
+    if (columnId === ROW_SELECTION_COLUMN_ID) {
       if (onRowSelectionHeaderSelect) {
         onRowSelectionHeaderSelect();
       }
     } else if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect, onRowSelectionHeaderSelect, tableRowSelectionColumn.id]);
+  }, [onColumnSelect, onRowSelectionHeaderSelect]);
 
   const onResizeMouseDown = useCallback((event, index, resizeColumnWidth) => {
     // Store current table and column values for resize calculations
