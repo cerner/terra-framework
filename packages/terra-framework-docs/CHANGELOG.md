@@ -3,9 +3,13 @@
 ## Unreleased
 
 * Changed
+  * Changed terra-pills example to announce removed state of pills.
   * Updated examples and tests for `terra-folder-tree`.
 
 ## 1.50.0 - (December 5, 2023)
+
+* Added
+  * Added focus to the notification dialog content for keyboard users to navigate with arrow keys.
 
 * Added
   * Added the example with `contentWidth` as auto value.
