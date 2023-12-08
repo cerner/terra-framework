@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+* Fixed
+  * Removed unnecessary rerenders
+
 ## 5.3.0 - (December 6, 2023)
 
 * Breaking Changes (Note: this breaking change is needed at this time but does not have major impact)
