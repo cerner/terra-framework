@@ -234,9 +234,9 @@ const CompactInteractiveList = (props) => {
   };
 
   const onFocus = (event) => {
-    if (listRef.current.contains(event.target)) {
+    if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) {
+      // Not triggered when swapping focus between children
       setFocusOnCell(focusedCell.current);
-      event.preventDefault();
     }
   };
 
