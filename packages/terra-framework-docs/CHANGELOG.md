@@ -1,6 +1,8 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
 
 * Changed
   * Changed terra-pills example to announce removed state of pills.
