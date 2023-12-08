@@ -94,7 +94,6 @@ const FilterPills = (props) => {
   const isPillDeleted = useRef(false);
   const isRollUpRemoved = useRef(false);
   const removedLabel = useRef();
-  const containerHint = useRef(ariaLabel);
 
   // Identifies the number of pills that needs to be hidden/rolled up
   const generateRollUp = useCallback(() => {
@@ -379,7 +378,7 @@ const FilterPills = (props) => {
   if (isCollapsible && (rollUpCount > 0) && isCollapsed) {
     pillGroupInteractionHint += `, ${intl.formatMessage({ id: 'Terra.pills.hint.rollupNotVisible' }, { pillsNotVisibleCount: rollUpCount })}`;
   } else if (isCollapsible && !isCollapsed && showRollupPillInteraction) {
-    removedPillInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.rollupVisible' });
+    pillGroupInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.rollupVisible' });
   }
   if (pillRemoved) {
     removedPillInteractionHint = intl.formatMessage({ id: 'Terra.pills.hint.wasRemoved' }, { pillLabelName: removedLabel.current });
@@ -398,7 +397,7 @@ const FilterPills = (props) => {
     return reducedArray;
   };
 
-  const ariaLabelHint = (!ariaLabelledBy) ? `${removedPillInteractionHint}, ${containerHint.current}` : undefined;
+  const ariaLabelHint = (!ariaLabelledBy) ? `${removedPillInteractionHint}, ${ariaLabel}` : undefined;
   const ariaAttrs = (React.Children.count(children)) ? {
     'aria-live': 'assertive',
     'aria-label': ariaLabelHint,
@@ -420,7 +419,6 @@ const FilterPills = (props) => {
         aria-live="polite"
         id={pillGroupInteractionHintID}
         text={pillGroupInteractionHint}
-        aria-hidden="true"
       />
       {children ? renderChildren(children) : []}
       {(isCollapsible && rollUpCount > 0) && (
