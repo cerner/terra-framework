@@ -98,20 +98,30 @@ const FolderTreeItem = ({
     cx(
       'folder-tree-item',
       { selected: isSelected },
-      { folder: isFolder },
       theme.className,
     ),
   );
 
+  const handleToggle = (event) => {
+    if (event.target.nodeName === 'INPUT') {
+      return;
+    }
+
+    if (onToggle) {
+      onToggle();
+    }
+  };
+
   return (
     <>
+      {/* TODO: Re-enable this eslint rule once keyboard handling is implemented */}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <li
         className={itemClassNames}
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
-        onClick={onToggle}
-        onKeyDown={onToggle}
+        onClick={isFolder ? handleToggle : onClick}
       >
         <input
           type="radio"
@@ -119,6 +129,7 @@ const FolderTreeItem = ({
           onChange={onClick}
           aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
           tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
+          className={cx('radio')}
         />
         {/* eslint-disable-next-line react/forbid-dom-props */}
         <span style={{ paddingLeft: `${level}rem` }}>

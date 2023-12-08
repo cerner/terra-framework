@@ -131,6 +131,26 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
     });
   });
 
+  describe('keyboard navigation with sections', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-sections');
+    });
+
+    it('navigates via keyboard', () => {
+      browser.keys(['Tab']);
+      Terra.validates.element('data-grid-with-section-initial-focus', { selector: defaultSelector });
+
+      browser.keys(['ArrowDown']);
+      Terra.validates.element('data-grid-first-section', { selector: defaultSelector });
+
+      browser.keys(['ArrowDown', 'ArrowDown', 'ArrowDown']);
+      Terra.validates.element('data-grid-second-section', { selector: defaultSelector });
+
+      browser.keys(['ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowUp', 'ArrowUp']);
+      Terra.validates.element('data-grid-sections-maintain-column', { selector: defaultSelector });
+    });
+  });
+
   describe('Focusable Cell Navigation : ', () => {
     const columnResizeSelector = 'body';
 

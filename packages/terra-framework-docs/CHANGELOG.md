@@ -4,6 +4,7 @@
 
 * Changed
   * Changed terra-pills example to announce removed state of pills.
+  * Updated examples and tests for `terra-folder-tree`.
 
 ## 1.50.0 - (December 5, 2023)
 
@@ -14,6 +15,7 @@
 
 * Changed
   * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.
+  * Updated examples and tests for `terra-data-grid` to consume section keyboard navigation updates.
   * Updated XFC initialization for the Embedded Content Consumer examples.
 
 ## 1.49.0 - (December 1, 2023)
