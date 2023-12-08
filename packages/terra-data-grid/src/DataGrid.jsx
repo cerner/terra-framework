@@ -268,6 +268,7 @@ const DataGrid = forwardRef((props, ref) => {
     () => ({
       setFocusedRowCol,
       getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
+      getGridRef() { return grid.current; },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [focusedCol, focusedRow],

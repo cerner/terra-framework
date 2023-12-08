@@ -138,6 +138,7 @@ function FlowsheetDataGrid(props) {
   const selectedCells = useRef([]);
   const [cellSelectionAriaLiveMessage, setCellSelectionAriaLiveMessage] = useState(null);
   const inShiftDirectionalMode = useRef(false);
+  const dataGridFuncRef = useRef();
   const flowsheetColumns = useMemo(() => columns.map(column => ({
     ...column,
     isSelectable: false,
@@ -209,6 +210,23 @@ function FlowsheetDataGrid(props) {
   }, [intl, sections]);
 
   useEffect(() => {
+    if (!anchorCell.current) {
+      return;
+    }
+
+    const rowsToSearch = flowsheetSections
+      ? flowsheetSections.flatMap(section => section.rows.map(row => ({ ...row, sectionId: section.id })))
+      : flowsheetRows;
+
+    const columnIndex = flowsheetColumns.findIndex(column => column.id === anchorCell.current.columnId);
+    const anchor = rowsToSearch?.find(row => row.id === anchorCell.current.rowId)?.cells[columnIndex];
+
+    if (!anchor?.isSelected) {
+      anchorCell.current = null;
+    }
+  }, [anchorCell, flowsheetRows, flowsheetSections, flowsheetColumns]);
+
+  useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
     rows.forEach((row) => {
@@ -236,11 +254,14 @@ function FlowsheetDataGrid(props) {
       return;
     }
 
-    const rowsToSelect = flowsheetSections?.find(section => section.id === sectionId)?.rows ?? rows;
-    const anchorRowIndex = rowsToSelect.findIndex(row => row.id === anchorCell.current.rowId);
+    const rowsToSearch = flowsheetSections
+      ? flowsheetSections.flatMap(section => section.rows.map(row => ({ ...row, sectionId: section.id })))
+      : rows;
+
+    const anchorRowIndex = rowsToSearch.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
 
-    const rowIndex = rowsToSelect.findIndex(row => row.id === rowId);
+    const rowIndex = rowsToSearch.findIndex(row => row.id === rowId);
     const columnIndex = columns.findIndex(col => col.id === columnId);
 
     // Determine the boundaries of selected region.
@@ -250,27 +271,30 @@ function FlowsheetDataGrid(props) {
     const columnIndexRightBound = Math.max(anchorColumnIndex, columnIndex);
 
     if (flowsheetSections) {
-      const anchorSection = flowsheetSections.find(section => section.id === anchorCell.current.sectionId);
       const selectedSection = flowsheetSections.find(section => section.id === sectionId);
+      const sectionTopBound = rowsToSearch.findIndex(row => row.sectionId === sectionId);
+      const sectionBottomBound = sectionTopBound + selectedSection.rows.length - 1;
 
-      if (anchorSection.id !== selectedSection.id) {
-        const newSectionOnTop = anchorSection?.sectionRowIndex <= selectedSection?.sectionRowIndex;
-        // change the upper and lower bounds if the anchor section is not the same as the selected one.
-        rowIndexTopBound = newSectionOnTop ? 0 : rowIndex;
-        rowIndexBottomBound = newSectionOnTop ? rowIndex : (rowsToSelect.length - 1);
+      rowIndexTopBound = anchorRowIndex <= sectionTopBound ? sectionTopBound : rowIndexTopBound;
+      rowIndexBottomBound = anchorRowIndex >= sectionBottomBound ? sectionBottomBound : rowIndexBottomBound;
 
-        // Change the anchor cell when selecting into a new section
-        anchorCell.current = {
-          rowId: newSectionOnTop ? rowsToSelect[rowIndexTopBound].id : rowsToSelect[rowIndexBottomBound].id,
-          columnId: anchorCell.current.columnId,
-          sectionId,
-        };
+      let newRowId = anchorCell.current.rowId;
+      if (anchorRowIndex <= rowIndexTopBound) {
+        newRowId = rowsToSearch[rowIndexTopBound].id;
+      } else if (anchorRowIndex >= rowIndexBottomBound) {
+        newRowId = rowsToSearch[rowIndexBottomBound].id;
       }
+
+      anchorCell.current = {
+        columnId: anchorCell.current.columnId,
+        rowId: newRowId,
+        sectionId,
+      };
     }
 
     const cellsToSelect = [];
     for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
-      const rowIdToSelect = rowsToSelect[rowIdx].id;
+      const rowIdToSelect = rowsToSearch[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
         const columnIdToSelect = columns[colIdx].id;
         cellsToSelect.push({ rowId: rowIdToSelect, columnId: columnIdToSelect, sectionId });
@@ -302,11 +326,28 @@ function FlowsheetDataGrid(props) {
       return;
     }
 
+    const gridRef = dataGridFuncRef.current.getGridRef();
+
+    let anchorSectionId = '';
+    if (flowsheetSections) {
+      for (let rowIdx = rowIndex; rowIdx > 0; rowIdx -= 1) {
+        const currentSectionId = gridRef.rows[rowIdx].getAttribute('data-section-id');
+        if (currentSectionId) {
+          anchorSectionId = currentSectionId;
+          break;
+        }
+      }
+    }
+
     if (!inShiftDirectionalMode.current) {
       // Start of range selection using Shift+Up/Down/Left/Right so save this as the anchor/start for the range if one does not exist.
       inShiftDirectionalMode.current = true;
-      if (anchorCell.current === null) {
-        anchorCell.current = { rowId: rows[rowIndex - 1].id, columnId: columns[columnIndex].id };
+      if (anchorCell.current === null && !gridRef.rows[rowIndex].hasAttribute('data-section-id')) {
+        anchorCell.current = {
+          rowId: gridRef.rows[rowIndex].getAttribute('data-row-id'),
+          columnId: columns[columnIndex].id,
+          sectionId: anchorSectionId,
+        };
       }
     }
 
@@ -333,8 +374,8 @@ function FlowsheetDataGrid(props) {
     // Reset to valid selectable index if outer bounds reached.
     if (nextRowIndex <= 0) {
       nextRowIndex = 1;
-    } else if (nextRowIndex > rows.length) {
-      nextRowIndex = rows.length;
+    } else if (nextRowIndex >= gridRef.rows.length) {
+      nextRowIndex = gridRef.rows.length - 1;
     }
 
     if (nextColumnIndex <= 0) {
@@ -343,27 +384,22 @@ function FlowsheetDataGrid(props) {
       nextColumnIndex = columns.length - 1;
     }
 
-    let nextRowId = rows[nextRowIndex - 1]?.id;
-    let nextSectionId = '';
+    const nextColumnId = columns[nextColumnIndex].id;
+    const nextRowId = gridRef.rows[nextRowIndex].getAttribute('data-row-id');
 
-    if (sections) {
-      for (let i = 0; i < sections.length; i += 1) {
-        const currentSection = sections[i];
-        const currentSectionRowIndex = currentSection?.sectionRowIndex;
-        const row = currentSection.rows.find((_, index) => (index + currentSectionRowIndex) === nextRowIndex);
+    if (!gridRef.rows[nextRowIndex].hasAttribute('data-section-id')) {
+      let nextSectionId = '';
 
-        if (row) {
-          nextRowId = row.id;
-          nextSectionId = currentSection.id;
+      for (let rowIdx = nextRowIndex; rowIdx > 0; rowIdx -= 1) {
+        const currentSectionId = gridRef.rows[rowIdx].getAttribute('data-section-id');
+        if (currentSectionId) {
+          nextSectionId = currentSectionId;
           break;
         }
       }
+      selectCellRange(nextRowId, nextColumnId, nextSectionId);
     }
-
-    const nextColumnId = columns[nextColumnIndex].id;
-
-    selectCellRange(nextRowId, nextColumnId, nextSectionId);
-  }, [rows, sections, columns, selectCellRange]);
+  }, [flowsheetSections, columns, selectCellRange]);
 
   const handleKeyUp = (event) => {
     const key = event.keyCode;
@@ -398,6 +434,7 @@ function FlowsheetDataGrid(props) {
         onClearSelection={onClearSelectedCells}
         onCellRangeSelect={handleCellRangeSelection}
         hasVisibleColumnHeaders={hasVisibleColumnHeaders}
+        ref={dataGridFuncRef}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>

@@ -81,6 +81,16 @@ const FlowsheetWithSections = () => {
     const newSections = [...tableSections];
     const sectionIndex = newSections.findIndex(section => section.id === sectionId);
 
+    const sectionToClear = newSections.find(section => section.id === sectionId);
+
+    sectionToClear.rows = sectionToClear.rows.map(row => ({
+      ...row,
+      cells: row.cells.map(cell => ({
+        ...cell,
+        isSelected: false,
+      })),
+    }));
+
     if (sectionIndex > -1) {
       newSections[sectionIndex].isCollapsed = !newSections[sectionIndex].isCollapsed;
     }

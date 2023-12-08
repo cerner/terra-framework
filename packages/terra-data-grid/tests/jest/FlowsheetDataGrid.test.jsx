@@ -723,91 +723,93 @@ describe('Flowsheet with Sections', () => {
     ]);
   });
 
-  // it('verifies the cells within sections are returned in range select.', () => {
-  //   const wrapper = mountWithIntl(
-  //     <FlowsheetDataGrid
-  //       id="test-terra-flowsheet-data-grid"
-  //       columns={dataFile.cols}
-  //       sections={sectionData}
-  //       ariaLabel="Test Flowsheet Data Grid"
-  //       onCellSelect={mockOnCellSelect}
-  //       onCellRangeSelect={mockOnCellRangeSelect}
-  //     />,
-  //   );
+  it('verifies the cells within sections are returned in range select.', () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        sections={sectionData}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+        onCellRangeSelect={mockOnCellRangeSelect}
+      />,
+    );
 
-  //   const anchorCell = wrapper.find('Row').at(0).find('td.selectable').at(0);
-  //   anchorCell.simulate('mouseDown');
+    const anchorCell = wrapper.find('Row').at(0).find('td.selectable').at(0);
+    anchorCell.simulate('mouseDown');
 
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
 
-  //   expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-  //     { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-  //     { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-  //     { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-  //     { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
-  //   ]);
-  // });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(2);
 
-  // it("verifies the selected section's cells in range are returned in range select when the anchor cell is on top in another section.", () => {
-  //   const wrapper = mountWithIntl(
-  //     <FlowsheetDataGrid
-  //       id="test-terra-flowsheet-data-grid"
-  //       columns={dataFile.cols}
-  //       sections={sectionData}
-  //       ariaLabel="Test Flowsheet Data Grid"
-  //       onCellSelect={mockOnCellSelect}
-  //       onCellRangeSelect={mockOnCellRangeSelect}
-  //     />,
-  //   );
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
+      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
+      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
+      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+    ]);
+  });
 
-  //   const anchorCell = wrapper.find('Row').at(0).find('td.selectable').at(0);
-  //   anchorCell.simulate('mouseDown');
+  it("verifies the selected section's cells in range are returned in range select when the anchor cell is on top in another section.", () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        sections={sectionData}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+        onCellRangeSelect={mockOnCellRangeSelect}
+      />,
+    );
 
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
+    const anchorCell = wrapper.find('Row').at(0).find('td.selectable').at(0);
+    anchorCell.simulate('mouseDown');
 
-  //   expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(5);
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
 
-  //   expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-  //     { rowId: '3', columnId: 'Column-1', sectionId: 'section-1' },
-  //     { rowId: '3', columnId: 'Column-2', sectionId: 'section-1' },
-  //     { rowId: '4', columnId: 'Column-1', sectionId: 'section-1' },
-  //     { rowId: '4', columnId: 'Column-2', sectionId: 'section-1' },
-  //   ]);
-  // });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
 
-  // it("verifies the selected section's cells in range are returned in range select when the anchor cell is on bottom in another section.", () => {
-  //   const wrapper = mountWithIntl(
-  //     <FlowsheetDataGrid
-  //       id="test-terra-flowsheet-data-grid"
-  //       columns={dataFile.cols}
-  //       sections={sectionData}
-  //       ariaLabel="Test Flowsheet Data Grid"
-  //       onCellSelect={mockOnCellSelect}
-  //       onCellRangeSelect={mockOnCellRangeSelect}
-  //     />,
-  //   );
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+      { rowId: '3', columnId: 'Column-1', sectionId: 'section-1' },
+      { rowId: '3', columnId: 'Column-2', sectionId: 'section-1' },
+      { rowId: '4', columnId: 'Column-1', sectionId: 'section-1' },
+      { rowId: '4', columnId: 'Column-2', sectionId: 'section-1' },
+    ]);
+  });
 
-  //   const anchorCell = wrapper.find('Row').at(4).find('td.selectable').at(2);
-  //   anchorCell.simulate('mouseDown');
+  it("verifies the selected section's cells in range are returned in range select when the anchor cell is on bottom in another section.", () => {
+    const wrapper = mountWithIntl(
+      <FlowsheetDataGrid
+        id="test-terra-flowsheet-data-grid"
+        columns={dataFile.cols}
+        sections={sectionData}
+        ariaLabel="Test Flowsheet Data Grid"
+        onCellSelect={mockOnCellSelect}
+        onCellRangeSelect={mockOnCellRangeSelect}
+      />,
+    );
 
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
-  //   wrapper.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
+    const anchorCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
+    anchorCell.simulate('mouseDown');
 
-  //   expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(5);
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
+    anchorCell.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
 
-  //   expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-  //     { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-  //     { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-  //     { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-  //     { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
-  //   ]);
-  // });
+    expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
+
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
+      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
+      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
+      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
+      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+    ]);
+  });
 });
