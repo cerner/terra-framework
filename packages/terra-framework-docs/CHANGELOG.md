@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Changed terra-pills example to announce removed state of pills.
+
 ## 1.50.0 - (December 5, 2023)
 
 * Added
