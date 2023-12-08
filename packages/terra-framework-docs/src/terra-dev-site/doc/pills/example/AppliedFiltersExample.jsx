@@ -32,7 +32,6 @@ const AppliedFiltersExample = () => {
   };
 
   const appliedFiltersLabel = 'Applied Filters:';
-  const appliedFiltersLabelId = 'terra-filter-pills-example-applied-filters-label';
 
   return (
     <>
@@ -41,7 +40,6 @@ const AppliedFiltersExample = () => {
           <div className={cx('toolbar-flex-container')}>
             <div className={cx('toolbar-flex-item-start')}>
               <Text
-                id={appliedFiltersLabelId}
                 className={cx('applied-filters-label')}
               >
                 {appliedFiltersLabel}
@@ -50,7 +48,6 @@ const AppliedFiltersExample = () => {
             <div className={cx('toolbar-flex-item-fill')}>
               <FilterPills
                 ariaLabel={appliedFiltersLabel}
-                ariaLabelledBy={appliedFiltersLabelId}
                 isCollapsible
                 onRemove={handleOnRemove}
               >

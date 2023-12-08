@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Changed terra-pills example to announce removed state of pills.
   * Updated examples and tests for `terra-folder-tree`.
 
 ## 1.50.0 - (December 5, 2023)
