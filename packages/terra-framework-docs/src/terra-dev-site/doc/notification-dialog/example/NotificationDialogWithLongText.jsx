@@ -49,7 +49,7 @@ const NotificationDialogWithLongText = () => {
         <NotificationDialog
           variant="hazard-medium"
           dialogTitle="Use a Title That Relates Directly to the Actions - Long Titles Should Be Avoided When Possible"
-          startMessage={<ContentContainer setFocusOnContainer>{message}</ContentContainer>}
+          content={<ContentContainer setFocusOnContainer>{message}</ContentContainer>}
           acceptAction={{
             text: 'Emphasized Accept Action',
             onClick: handleCloseModal,
