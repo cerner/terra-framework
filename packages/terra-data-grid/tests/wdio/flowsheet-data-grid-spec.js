@@ -246,9 +246,9 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
     it('validates multi-cell select within sections', () => {
       navigateToCell(2, 1, sectionSelector);
       browser.keys(['Space']);
-      holdDownShiftKey();
 
-      navigateToCell(3, 2, sectionSelector);
+      moveCurrentPositionBy(1, 1, sectionSelector);
+      holdDownShiftKey();
       browser.keys(['Space']);
       releaseShiftKey();
 
@@ -258,9 +258,9 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
     it('validates multi-cell select across sections and the anchor section on top', () => {
       navigateToCell(2, 1, sectionSelector);
       browser.keys(['Space']);
-      holdDownShiftKey();
 
       moveCurrentPositionBy(4, 1, sectionSelector);
+      holdDownShiftKey();
       browser.keys(['Space']);
       releaseShiftKey();
 
@@ -270,9 +270,9 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
     it('validates multi-cell select across sections and the anchor section on bottom', () => {
       navigateToCell(6, 2, sectionSelector);
       browser.keys(['Space']);
-      holdDownShiftKey();
 
       moveCurrentPositionBy(-4, -1, sectionSelector);
+      holdDownShiftKey();
       browser.keys(['Space']);
       releaseShiftKey();
 
