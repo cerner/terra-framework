@@ -6,7 +6,7 @@
 ---
 ### Notice
 
-> Terra File Path is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
+> Terra Theme Properties is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
 
 ---
 

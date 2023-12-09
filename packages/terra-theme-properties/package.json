@@ -1,7 +1,7 @@
 {
   "name": "terra-theme-properties",
   "main": "src/index.js",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Terra Theme Properties provides named theme variables for UX-defined styles.",
   "repository": {
     "type": "git",
@@ -15,6 +15,13 @@
     "terra-theme-properties",
     "theme-properties",
     "UI"
+  ],
+  "files": [
+    "lib",
+    "CHANGELOG.md",
+    "NOTICE",
+    "LICENSE",
+    "README.md"
   ],
   "author": "Oracle Corporation",
   "license": "Apache-2.0",
