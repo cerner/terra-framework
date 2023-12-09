@@ -495,21 +495,17 @@ describe('Compact Interactive List', () => {
       {
         id: 'Column-0',
         displayName: 'Col_1',
-        width: '60px',
+        width: '100px',
       },
       {
         id: 'Column-1',
         displayName: 'Col_2',
-        width: '200em',
-        minimumWidth: '10em',
-        maximumWidth: '200px',
+        width: '200px',
       },
       {
         id: 'Column-2',
         displayName: 'Col_3',
-        width: '3em',
-        minimumWidth: '40px',
-        maximumWidth: '200em',
+        width: '100px',
       },
     ];
 
@@ -717,233 +713,332 @@ describe('Compact Interactive List', () => {
       expect(document.activeElement).toBe(cellElements.at(0).instance());
     });
   });
-});
 
-describe('Keyboard navigation, horizontal flow', () => {
-  const cols = [
-    {
-      id: 'Column-0',
-      displayName: 'Col_1',
-      width: '60px',
-    },
-    {
-      id: 'Column-1',
-      displayName: 'Col_2',
-      width: '200em',
-      minimumWidth: '10em',
-      maximumWidth: '200px',
-    },
-    {
-      id: 'Column-2',
-      displayName: 'Col_3',
-      width: '3em',
-      minimumWidth: '40px',
-      maximumWidth: '200em',
-    },
-  ];
+  describe('Keyboard navigation, horizontal flow', () => {
+    const cols = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '100px',
+      },
+      {
+        id: 'Column-1',
+        displayName: 'Col_2',
+        width: '200em',
+      },
+      {
+        id: 'Column-2',
+        displayName: 'Col_3',
+        width: '100px',
+      },
+    ];
 
-  const testListVerticalFlow = (
-    <CompactInteractiveList
-      id="compact-interactive-list-key-navigation"
-      rows={rows}
-      columns={cols}
-      numberOfColumns={2}
-      flowHorizontally
-    />
-  );
+    const testListVerticalFlow = (
+      <CompactInteractiveList
+        id="compact-interactive-list-key-navigation"
+        rows={rows}
+        columns={cols}
+        numberOfColumns={2}
+        flowHorizontally
+      />
+    );
 
-  const arrowRightProps = {
-    key: 'ArrowRight', keyCode: 39, which: 39,
-  };
-  const arrowLeftProps = {
-    key: 'ArrowLeft', keyCode: 37, which: 37,
-  };
-  const arrowDownProps = {
-    key: 'ArrowDown', keyCode: 40, which: 40,
-  };
-  const arrowUpProps = {
-    key: 'ArrowUp', keyCode: 38, which: 38,
-  };
-  const homeKeyProps = {
-    key: 'Home', keyCode: 36, which: 36,
-  };
-  const endKeyProps = {
-    key: 'End', keyCode: 35, which: 35,
-  };
+    const arrowRightProps = {
+      key: 'ArrowRight', keyCode: 39, which: 39,
+    };
+    const arrowLeftProps = {
+      key: 'ArrowLeft', keyCode: 37, which: 37,
+    };
+    const arrowDownProps = {
+      key: 'ArrowDown', keyCode: 40, which: 40,
+    };
+    const arrowUpProps = {
+      key: 'ArrowUp', keyCode: 38, which: 38,
+    };
+    const homeKeyProps = {
+      key: 'Home', keyCode: 36, which: 36,
+    };
+    const endKeyProps = {
+      key: 'End', keyCode: 35, which: 35,
+    };
 
-  beforeEach(() => {
-    document.getElementsByTagName('html')[0].innerHTML = '';
+    beforeEach(() => {
+      document.getElementsByTagName('html')[0].innerHTML = '';
+    });
+
+    it('Right/Left Arrows should move through cells and stop at the visual row end/start', () => {
+      const wrapper = mountWithIntl(
+        testListVerticalFlow, {
+          attachTo: document.body,
+        },
+      );
+      const list = wrapper.find('.compact-interactive-list');
+      list.instance().focus();
+      // Set focus to the first cell
+      const cellElements = wrapper.find('.cell');
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+
+      // Testing RIGHT ARROW
+      // move one cell to the right, same row
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(1).instance());
+      // move one cell to the right, same row
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(2).instance());
+      // move one cell to the right, should enter a new row and a new visual column
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      // move two cells to the right to reach the end of the row
+      list.simulate('keyDown', arrowRightProps);
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
+      // should not move to the right as the row end reached
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
+
+      // Move one row down to start testing left arrow
+      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(11).instance());
+
+      // Testing LEFT ARROW
+      // move one cell to the left, same row
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(10).instance());
+      // move 2 cell to the left to break to the previous visual column
+      list.simulate('keyDown', arrowLeftProps);
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
+      // move 2 cell to the left to reach the first visual column start
+      list.simulate('keyDown', arrowLeftProps);
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      // should not move anymore as the start of the visual row has been reached
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+    });
+
+    it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
+      const wrapper = mountWithIntl(
+        testListVerticalFlow, {
+          attachTo: document.body,
+        },
+      );
+      const list = wrapper.find('.compact-interactive-list');
+      list.instance().focus();
+      // Set focus to the first cell
+      const cellElements = wrapper.find('.cell');
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+
+      // Testing DOWN ARROW
+      // move one cell down, same sematic column
+      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      // move two cells down, should break to the next visual column
+      list.simulate('keyDown', arrowDownProps);
+      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      // move one cells down to reach the end of the visual column and the list
+      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(9).instance());
+      // should not move as the end of the list has been reached
+      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(9).instance());
+
+      // Testing UP ARROW
+      // move one cell up, same visual column
+      list.simulate('keyDown', arrowUpProps);
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      // move one cell up, break to the previous visual column
+      list.simulate('keyDown', arrowUpProps);
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
+      // move 2 cell3 up to reach the first visual row in the list
+      list.simulate('keyDown', arrowUpProps);
+      list.simulate('keyDown', arrowUpProps);
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+      // should not move as the beginning of the list has been reached
+      list.simulate('keyDown', arrowUpProps);
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+    });
+
+    it('Right/left Arrow Keys + metaKey and Right/left Arrow Keys + ctrl + metaKey should take to the end/start of the visual row/list', () => {
+      const wrapper = mountWithIntl(
+        testListVerticalFlow, {
+          attachTo: document.body,
+        },
+      );
+      const list = wrapper.find('.compact-interactive-list');
+      list.instance().focus();
+      // Set focus to the first cell
+      const cellElements = wrapper.find('.cell');
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+
+      // Testing RIGHT ARROW + META_KEY (CMD on mac or HOME for windows)
+      // should focus the last cell in the current visual row
+      list.simulate('keyDown', {
+        ...arrowRightProps, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
+
+      // Testing RIGHT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
+      // should focus the last cell in the last list element
+      list.simulate('keyDown', {
+        ...arrowRightProps, ctrlKey: true, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
+
+      // Testing LEFT ARROW + META_KEY (CMD on mac or HOME for windows)
+      // should focus the first cell in the current visual row
+      list.simulate('keyDown', {
+        ...arrowLeftProps, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
+
+      // Testing LEFT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
+      // should focus the first cell in the first list element
+      list.simulate('keyDown', {
+        ...arrowLeftProps, ctrlKey: true, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+    });
+
+    it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
+      const wrapper = mountWithIntl(
+        testListVerticalFlow, {
+          attachTo: document.body,
+        },
+      );
+      const list = wrapper.find('.compact-interactive-list');
+      list.instance().focus();
+      // Set focus to the first cell
+      const cellElements = wrapper.find('.cell');
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+
+      // Testing END_KEY
+      // should focus the last cell in the current visual row
+      list.simulate('keyDown', endKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
+
+      // Testing END_KEY + CTRL + META_KEY (CMD on mac or HOME for windows)
+      // should focus the last cell in the last list element
+      list.simulate('keyDown', {
+        ...endKeyProps, ctrlKey: true, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
+
+      // Testing HOME_KEY
+      // should focus the first cell in the current visual row
+      list.simulate('keyDown', homeKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
+
+      // Testing HOME_KEY + CTRL + META_KEY (CMD on mac or HOME for windows)
+      // should focus the first cell in the first list element
+      list.simulate('keyDown', {
+        ...homeKeyProps, ctrlKey: true, metaKey: true,
+      });
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+    });
   });
 
-  it('Right/Left Arrows should move through cells and stop at the visual row end/start', () => {
-    const wrapper = mountWithIntl(
-      testListVerticalFlow, {
-        attachTo: document.body,
+  describe('Whitespace keydown on cell', () => {
+    const cols = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '100px',
       },
-    );
-    const list = wrapper.find('.compact-interactive-list');
-    list.instance().focus();
-    // Set focus to the first cell
-    const cellElements = wrapper.find('.cell');
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
-
-    // Testing RIGHT ARROW
-    // move one cell to the right, same row
-    list.simulate('keyDown', arrowRightProps);
-    expect(document.activeElement).toBe(cellElements.at(1).instance());
-    // move one cell to the right, same row
-    list.simulate('keyDown', arrowRightProps);
-    expect(document.activeElement).toBe(cellElements.at(2).instance());
-    // move one cell to the right, should enter a new row and a new visual column
-    list.simulate('keyDown', arrowRightProps);
-    expect(document.activeElement).toBe(cellElements.at(3).instance());
-    // move two cells to the right to reach the end of the row
-    list.simulate('keyDown', arrowRightProps);
-    list.simulate('keyDown', arrowRightProps);
-    expect(document.activeElement).toBe(cellElements.at(5).instance());
-    // should not move to the right as the row end reached
-    list.simulate('keyDown', arrowRightProps);
-    expect(document.activeElement).toBe(cellElements.at(5).instance());
-
-    // Move one row down to start testing left arrow
-    list.simulate('keyDown', arrowDownProps);
-    expect(document.activeElement).toBe(cellElements.at(11).instance());
-
-    // Testing LEFT ARROW
-    // move one cell to the left, same row
-    list.simulate('keyDown', arrowLeftProps);
-    expect(document.activeElement).toBe(cellElements.at(10).instance());
-    // move 2 cell to the left to break to the previous visual column
-    list.simulate('keyDown', arrowLeftProps);
-    list.simulate('keyDown', arrowLeftProps);
-    expect(document.activeElement).toBe(cellElements.at(8).instance());
-    // move 2 cell to the left to reach the first visual column start
-    list.simulate('keyDown', arrowLeftProps);
-    list.simulate('keyDown', arrowLeftProps);
-    expect(document.activeElement).toBe(cellElements.at(6).instance());
-    // should not move anymore as the start of the visual row has been reached
-    list.simulate('keyDown', arrowLeftProps);
-    expect(document.activeElement).toBe(cellElements.at(6).instance());
-  });
-
-  it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
-    const wrapper = mountWithIntl(
-      testListVerticalFlow, {
-        attachTo: document.body,
+      {
+        id: 'Column-1',
+        displayName: 'Col_2',
+        width: '200px',
       },
-    );
-    const list = wrapper.find('.compact-interactive-list');
-    list.instance().focus();
-    // Set focus to the first cell
-    const cellElements = wrapper.find('.cell');
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
-
-    // Testing DOWN ARROW
-    // move one cell down, same sematic column
-    list.simulate('keyDown', arrowDownProps);
-    expect(document.activeElement).toBe(cellElements.at(6).instance());
-    // move two cells down, should break to the next visual column
-    list.simulate('keyDown', arrowDownProps);
-    list.simulate('keyDown', arrowDownProps);
-    expect(document.activeElement).toBe(cellElements.at(3).instance());
-    // move one cells down to reach the end of the visual column and the list
-    list.simulate('keyDown', arrowDownProps);
-    expect(document.activeElement).toBe(cellElements.at(9).instance());
-    // should not move as the end of the list has been reached
-    list.simulate('keyDown', arrowDownProps);
-    expect(document.activeElement).toBe(cellElements.at(9).instance());
-
-    // Testing UP ARROW
-    // move one cell up, same visual column
-    list.simulate('keyDown', arrowUpProps);
-    expect(document.activeElement).toBe(cellElements.at(3).instance());
-    // move one cell up, break to the previous visual column
-    list.simulate('keyDown', arrowUpProps);
-    expect(document.activeElement).toBe(cellElements.at(12).instance());
-    // move 2 cell3 up to reach the first visual row in the list
-    list.simulate('keyDown', arrowUpProps);
-    list.simulate('keyDown', arrowUpProps);
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
-    // should not move as the beginning of the list has been reached
-    list.simulate('keyDown', arrowUpProps);
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
-  });
-
-  it('Right/left Arrow Keys + metaKey and Right/left Arrow Keys + ctrl + metaKey should take to the end/start of the visual row/list', () => {
-    const wrapper = mountWithIntl(
-      testListVerticalFlow, {
-        attachTo: document.body,
+      {
+        id: 'Column-2',
+        displayName: 'Col_3',
+        width: '100px',
       },
-    );
-    const list = wrapper.find('.compact-interactive-list');
-    list.instance().focus();
-    // Set focus to the first cell
-    const cellElements = wrapper.find('.cell');
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
+    ];
 
-    // Testing RIGHT ARROW + META_KEY (CMD on mac or HOME for windows)
-    // should focus the last cell in the current visual row
-    list.simulate('keyDown', {
-      ...arrowRightProps, metaKey: true,
+    const spaceKeyProps = {
+      key: 'Space', keyCode: 32, which: 32,
+    };
+
+    beforeEach(() => {
+      document.getElementsByTagName('html')[0].innerHTML = '';
     });
-    expect(document.activeElement).toBe(cellElements.at(5).instance());
 
-    // Testing RIGHT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
-    // should focus the last cell in the last list element
-    list.simulate('keyDown', {
-      ...arrowRightProps, ctrlKey: true, metaKey: true,
+    it('should call onCellSelect method if cell is selactable', () => {
+      const mockOnCellSelect = jest.fn();  
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+          onCellSelect={mockOnCellSelect}
+        />
+      );
+
+      const wrapper = mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const list = wrapper.find('.compact-interactive-list');
+      list.instance().focus();
+      // Set focus to the first cell
+      const cellElements = wrapper.find('.cell');
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+
+      // Testing SPACE
+      cellElements.at(0).simulate('keyDown', spaceKeyProps);
+      expect(mockOnCellSelect).toHaveBeenCalledTimes(1);      
     });
-    expect(document.activeElement).toBe(cellElements.at(14).instance());
 
-    // Testing LEFT ARROW + META_KEY (CMD on mac or HOME for windows)
-    // should focus the first cell in the current visual row
-    list.simulate('keyDown', {
-      ...arrowLeftProps, metaKey: true,
+    it('Should cnot all onCellSelect method if cell is not selactable', () => {
+      const buttonCell = <button type="button" aria-label="Learn more button" onClick={jest.fn()}>Learn more</button>;
+      const new_rows = [
+        {
+          id: 'row_1',
+          cells: [
+            { content: buttonCell },
+            { content: 'Discern Care Set (1)' },
+            { content: 'Row 1 Cell 3 mock content' },
+          ],
+        },
+        {
+          id: 'row_2',
+          cells: [
+            { content: 'Row 2 Cell 1 mock content' },
+            { content: 'Initial observation Care/Day High Severity 99220 (2)' },
+            { content: 'Row 2 Cell 3 mock content' },
+          ],
+        },
+      ];
+      const mockOnCellSelect = jest.fn();  
+      
+      const wrapper = mountWithIntl(
+          <CompactInteractiveList
+            id="compact-interactive-list-space-key-on-cell"
+            rows={new_rows}
+            columns={cols}
+            numberOfColumns={2}
+            onCellSelect={mockOnCellSelect}
+          />, {
+            attachTo: document.body,
+          },
+        );
+
+      const list = wrapper.find('.compact-interactive-list');
+      const cellElements = wrapper.find('.cell');
+      const button = wrapper.find('button');
+
+      list.instance().focus();
+      // As first cell contains interactive element (button), the focus should go to the button
+      expect(document.activeElement).toBe(button.instance());
+
+      // Testing SPACE on interactive cell
+      cellElements.at(0).simulate('keyDown', spaceKeyProps);
+      expect(mockOnCellSelect).not.toHaveBeenCalled();
     });
-    expect(document.activeElement).toBe(cellElements.at(12).instance());
-
-    // Testing LEFT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
-    // should focus the first cell in the first list element
-    list.simulate('keyDown', {
-      ...arrowLeftProps, ctrlKey: true, metaKey: true,
-    });
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
-  });
-
-  it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
-    const wrapper = mountWithIntl(
-      testListVerticalFlow, {
-        attachTo: document.body,
-      },
-    );
-    const list = wrapper.find('.compact-interactive-list');
-    list.instance().focus();
-    // Set focus to the first cell
-    const cellElements = wrapper.find('.cell');
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
-
-    // Testing END_KEY
-    // should focus the last cell in the current visual row
-    list.simulate('keyDown', endKeyProps);
-    expect(document.activeElement).toBe(cellElements.at(5).instance());
-
-    // Testing END_KEY + CTRL + META_KEY (CMD on mac or HOME for windows)
-    // should focus the last cell in the last list element
-    list.simulate('keyDown', {
-      ...endKeyProps, ctrlKey: true, metaKey: true,
-    });
-    expect(document.activeElement).toBe(cellElements.at(14).instance());
-
-    // Testing HOME_KEY
-    // should focus the first cell in the current visual row
-    list.simulate('keyDown', homeKeyProps);
-    expect(document.activeElement).toBe(cellElements.at(12).instance());
-
-    // Testing HOME_KEY + CTRL + META_KEY (CMD on mac or HOME for windows)
-    // should focus the first cell in the first list element
-    list.simulate('keyDown', {
-      ...homeKeyProps, ctrlKey: true, metaKey: true,
-    });
-    expect(document.activeElement).toBe(cellElements.at(0).instance());
   });
 });

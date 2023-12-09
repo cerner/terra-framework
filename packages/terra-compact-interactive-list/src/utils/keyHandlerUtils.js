@@ -9,7 +9,6 @@ const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not
 export const getFocusableElements = (parentElement) => [...parentElement.querySelectorAll(`${focusableElementSelector}`)].filter(
   element => !element.hasAttribute('disabled')
       && !element.getAttribute('aria-hidden')
-      && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
       && window.getComputedStyle(element).visibility !== 'hidden',
 );
 
