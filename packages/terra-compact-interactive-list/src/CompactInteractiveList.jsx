@@ -1,5 +1,5 @@
 import React, {
-  useContext, useRef, useCallback, useMemo,
+  useContext, useRef, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -116,6 +116,7 @@ const defaultProps = {
   rows: [],
   numberOfColumns: 1,
   width: '100%',
+  rowHeaderIndex: 0,
 };
 
 const CompactInteractiveList = (props) => {
