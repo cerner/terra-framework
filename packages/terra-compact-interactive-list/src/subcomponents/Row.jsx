@@ -75,6 +75,11 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
+   * Callback function that will pass the focused column and focused row indexes to the main component.
+   */
+  setFocusedCell: PropTypes.func,
+
+  /**
    * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
    */
   widthUnit: PropTypes.oneOf([
@@ -125,6 +130,7 @@ const Row = (props) => {
     rowWidth,
     widthUnit,
     onCellSelect,
+    setFocusedCell,
     flowHorizontally,
     rowHeight,
     isTopmost,
@@ -175,6 +181,7 @@ const Row = (props) => {
           columnMaximumWidth={columnMaximumWidth}
           widthUnit={widthUnit}
           onCellSelect={onCellSelect}
+          setFocusedCell={setFocusedCell}
         >
           {cellData.content}
         </Cell>

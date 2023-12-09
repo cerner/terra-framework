@@ -2,12 +2,15 @@ const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not
         + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
         + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
 
+/* NOTE: This method doesn't include check for element.closest('[inert]') === null in purpose
+ * The method is caled on initial render to ensure the cell has no interactable elements, and set the cell tabindex based on that.
+ * on render one of the parent elements has inert="" which made it always return no interactible elements for every cell.
+*/
 export const getFocusableElements = (parentElement) => [...parentElement.querySelectorAll(`${focusableElementSelector}`)].filter(
   element => !element.hasAttribute('disabled')
       && !element.getAttribute('aria-hidden')
       && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
-      && window.getComputedStyle(element).visibility !== 'hidden'
-      && element.closest('[inert]') === null,
+      && window.getComputedStyle(element).visibility !== 'hidden',
 );
 
 /**

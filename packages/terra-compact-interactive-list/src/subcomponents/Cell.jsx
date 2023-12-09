@@ -1,9 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import * as KeyCode from 'keycode-js';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { checkIfColumnIsResponsive } from '../utils/utils';
+import { getFocusableElements } from '../utils/keyHandlerUtils';
 import formattedColumnShape from '../proptypes/formattedColumnShape';
 import { widthUnitTypes, alignTypes } from '../utils/constants';
 import styles from './Cell.module.scss';
@@ -64,6 +65,11 @@ const propTypes = {
    * Callback function that will be called on click on the cell.
    */
   onCellSelect: PropTypes.func,
+
+  /**
+   * Callback function that will pass the focused column and focused row indexes to the main component.
+   */
+  setFocusedCell: PropTypes.func,
 };
 
 const Cell = (props) => {
@@ -77,11 +83,14 @@ const Cell = (props) => {
     columnMaximumWidth,
     widthUnit,
     onCellSelect,
+    setFocusedCell,
     isRowHeader,
   } = props;
 
   const theme = useContext(ThemeContext);
-  const className = cx('cell', theme.className);
+  const cellRef = React.useRef();
+  const [isSelectableCell, setIsSelectableCell] = useState(false);
+  const className = cx('cell', theme.className, { selectable: isSelectableCell });
 
   const {
     id,
@@ -94,19 +103,32 @@ const Cell = (props) => {
 
   const isResponsive = checkIfColumnIsResponsive(flexGrow, width);
 
+  useEffect(() => {
+    if (cellRef?.current) {
+      const interactiveChildren = getFocusableElements(cellRef?.current);
+      // if no interactive elements
+      if (interactiveChildren?.length === 0) {
+        setIsSelectableCell(true);
+      }
+    }
+  }, [cellRef]);
+
   const handleKeyDown = (event) => {
+    // does not need setFocusedCell call as the cell focused by key is tracked in CompactInteractiveList component
     const key = event.keyCode;
-    if (key === KeyCode.KEY_SPACE) {
-      onCellSelect({
-        rowId, rowIndex, columnId: id, columnIndex, event,
-      });
+    if (key === KeyCode.KEY_SPACE && isSelectableCell) {
+      event.preventDefault(); // prevents scroll on empty cells
+      if (onCellSelect) {
+        onCellSelect({ rowId, columnId: id });
+      }
     }
   };
 
   const handleMouseDown = () => {
-    onCellSelect({
-      rowId, rowIndex, columnId: id, columnIndex,
-    });
+    setFocusedCell({ rowIndex, columnIndex });
+    if (isSelectableCell && onCellSelect) {
+      onCellSelect({ rowId, columnId: id });
+    }
   };
 
   const style = {
@@ -130,8 +152,9 @@ const Cell = (props) => {
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       role={isRowHeader ? 'rowheader' : 'gridcell'}
+      ref={cellRef}
       className={className}
-      tabIndex={-1}
+      tabIndex={isSelectableCell ? -1 : null}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
       onMouseDown={handleMouseDown}

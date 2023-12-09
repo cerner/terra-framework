@@ -142,7 +142,7 @@ const CompactInteractiveList = (props) => {
   // using ref so that keyboard navigation and focusing on cells won't trigger component re-render.
   const focusedCell = useRef({ row: 0, cell: 0 });
 
-  const setFocusOnCell = ({ row, cell }) => {
+  const focusCell = ({ row, cell }) => {
     // add 1 to the row number to accomodate for hidden header
     const focusedCellElement = listRef.current.children[row + 1].children[cell];
     const interactiveChildren = getFocusableElements(focusedCellElement);
@@ -155,27 +155,9 @@ const CompactInteractiveList = (props) => {
     }
   };
 
-  const setFocusedRowCol = ({ row, cell }) => {
-    focusedCell.current = { row, cell };
-    setFocusOnCell({ row, cell });
-  };
-
-  const handleOnCellSelect = useCallback(({
-    rowId, rowIndex, columnId, columnIndex, event,
-  }) => {
+  const setFocusedCell = ({ rowIndex, columnIndex }) => {
     focusedCell.current = { row: rowIndex, cell: columnIndex };
-    // check for interactive elements in that cell
-    // add 1 to the row number to accomodate for hidden header
-    const focusedElement = listRef.current.children[rowIndex + 1].children[columnIndex];
-    const interactiveChildren = getFocusableElements(focusedElement);
-    // if no interactive elements
-    if (interactiveChildren?.length === 0) {
-      event?.preventDefault(); // needed to avoid scroll on list cells
-      if (onCellSelect) {
-        onCellSelect({ rowId, columnId });
-      }
-    }
-  }, [onCellSelect]);
+  };
 
   const handleKeyDown = (event) => {
     let moveFocusTo = focusedCell.current;
@@ -228,15 +210,15 @@ const CompactInteractiveList = (props) => {
       default:
         return;
     }
-
-    setFocusedRowCol(moveFocusTo);
+    focusedCell.current = moveFocusTo;
+    focusCell(moveFocusTo);
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
 
   const onFocus = (event) => {
-    if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
-      setFocusOnCell(focusedCell.current);
+      focusCell(focusedCell.current);
     }
   };
 
@@ -344,7 +326,8 @@ const CompactInteractiveList = (props) => {
             rowMaximumWidth={rowMaxWidth}
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}
-            onCellSelect={handleOnCellSelect}
+            onCellSelect={onCellSelect}
+            setFocusedCell={setFocusedCell}
             flowHorizontally={flowHorizontally}
             rowHeight={calculatedRowHeight}
             isTopmost={checkIfRowIsTopMost(index)}

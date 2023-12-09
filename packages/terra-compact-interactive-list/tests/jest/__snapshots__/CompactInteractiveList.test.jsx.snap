@@ -429,7 +429,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={true}
           key="row_1"
           numberOfColumns={1}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -440,6 +439,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           rowMaximumWidth={null}
           rowMinimumWidth={null}
           rowWidth={280}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -467,13 +467,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_1"
               rowIndex={0}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -534,13 +534,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_1"
               rowIndex={0}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -568,13 +568,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_1"
               rowIndex={0}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -673,7 +673,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_2"
           numberOfColumns={1}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -684,6 +683,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           rowMaximumWidth={null}
           rowMinimumWidth={null}
           rowWidth={280}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -711,13 +711,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_2"
               rowIndex={1}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -775,13 +775,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_2"
               rowIndex={1}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -809,13 +809,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_2"
               rowIndex={1}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -914,7 +914,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_3"
           numberOfColumns={1}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -925,6 +924,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           rowMaximumWidth={null}
           rowMinimumWidth={null}
           rowWidth={280}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -952,13 +952,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_3"
               rowIndex={2}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1016,13 +1016,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_3"
               rowIndex={2}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1050,13 +1050,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_3"
               rowIndex={2}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1145,7 +1145,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_4"
           numberOfColumns={1}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -1156,6 +1155,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           rowMaximumWidth={null}
           rowMinimumWidth={null}
           rowWidth={280}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -1183,13 +1183,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_4"
               rowIndex={3}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1218,13 +1218,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_4"
               rowIndex={3}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1252,13 +1252,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_4"
               rowIndex={3}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1328,7 +1328,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_5"
           numberOfColumns={1}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -1339,6 +1338,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           rowMaximumWidth={null}
           rowMinimumWidth={null}
           rowWidth={280}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -1366,13 +1366,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_5"
               rowIndex={4}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1430,13 +1430,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_5"
               rowIndex={4}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1464,13 +1464,13 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_5"
               rowIndex={4}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1951,7 +1951,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={true}
           key="row_1"
           numberOfColumns={2}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -1962,6 +1961,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           rowMaximumWidth={null}
           rowMinimumWidth={100}
           rowWidth={null}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -1989,13 +1989,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_1"
               rowIndex={0}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2056,13 +2056,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_1"
               rowIndex={0}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2091,13 +2091,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_1"
               rowIndex={0}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2195,7 +2195,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="row_2"
           numberOfColumns={2}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2206,6 +2205,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           rowMaximumWidth={null}
           rowMinimumWidth={100}
           rowWidth={null}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -2233,13 +2233,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_2"
               rowIndex={1}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2297,13 +2297,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_2"
               rowIndex={1}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2332,13 +2332,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_2"
               rowIndex={1}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2436,7 +2436,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="row_3"
           numberOfColumns={2}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2447,6 +2446,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           rowMaximumWidth={null}
           rowMinimumWidth={100}
           rowWidth={null}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -2474,13 +2474,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_3"
               rowIndex={2}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2538,13 +2538,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_3"
               rowIndex={2}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2573,13 +2573,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_3"
               rowIndex={2}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2667,7 +2667,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={true}
           key="row_4"
           numberOfColumns={2}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2678,6 +2677,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           rowMaximumWidth={null}
           rowMinimumWidth={100}
           rowWidth={null}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -2705,13 +2705,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_4"
               rowIndex={3}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2740,13 +2740,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_4"
               rowIndex={3}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2775,13 +2775,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_4"
               rowIndex={3}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2850,7 +2850,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="row_5"
           numberOfColumns={2}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2861,6 +2860,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           rowMaximumWidth={null}
           rowMinimumWidth={100}
           rowWidth={null}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
@@ -2888,13 +2888,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-0"
-              onCellSelect={[Function]}
               rowId="row_5"
               rowIndex={4}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2952,13 +2952,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-1"
-              onCellSelect={[Function]}
               rowId="row_5"
               rowIndex={4}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2987,13 +2987,13 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-2"
-              onCellSelect={[Function]}
               rowId="row_5"
               rowIndex={4}
+              setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                className="cell"
+                className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -3068,7 +3068,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="placeholder-row-1"
           numberOfColumns={2}
-          onCellSelect={[Function]}
           rowHeight={
             Object {
               "unitType": "px",
@@ -3079,6 +3078,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           rowMaximumWidth={null}
           rowMinimumWidth={100}
           rowWidth={null}
+          setFocusedCell={[Function]}
           widthUnit="px"
         >
           <div
