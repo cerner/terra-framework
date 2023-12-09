@@ -218,6 +218,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
       }
     }
     numberOfColumns={1}
+    rowHeaderIndex={0}
     rows={
       Array [
         Object {
@@ -429,6 +430,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={true}
           key="row_1"
           numberOfColumns={1}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -465,7 +467,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_1-col-Column-0"
               rowId="row_1"
               rowIndex={0}
@@ -476,7 +478,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -673,6 +675,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_2"
           numberOfColumns={1}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -709,7 +712,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_2-col-Column-0"
               rowId="row_2"
               rowIndex={1}
@@ -720,7 +723,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -914,6 +917,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_3"
           numberOfColumns={1}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -950,7 +954,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_3-col-Column-0"
               rowId="row_3"
               rowIndex={2}
@@ -961,7 +965,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -1145,6 +1149,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_4"
           numberOfColumns={1}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -1181,7 +1186,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_4-col-Column-0"
               rowId="row_4"
               rowIndex={3}
@@ -1192,7 +1197,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -1328,6 +1333,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           isTopmost={false}
           key="row_5"
           numberOfColumns={1}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -1364,7 +1370,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_5-col-Column-0"
               rowId="row_5"
               rowIndex={4}
@@ -1375,7 +1381,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -1740,6 +1746,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
       }
     }
     numberOfColumns={2}
+    rowHeaderIndex={0}
     rows={
       Array [
         Object {
@@ -1951,6 +1958,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={true}
           key="row_1"
           numberOfColumns={2}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -1987,7 +1995,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_1-col-Column-0"
               rowId="row_1"
               rowIndex={0}
@@ -1998,7 +2006,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -2195,6 +2203,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="row_2"
           numberOfColumns={2}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2231,7 +2240,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_2-col-Column-0"
               rowId="row_2"
               rowIndex={1}
@@ -2242,7 +2251,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -2436,6 +2445,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="row_3"
           numberOfColumns={2}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2472,7 +2482,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_3-col-Column-0"
               rowId="row_3"
               rowIndex={2}
@@ -2483,7 +2493,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -2667,6 +2677,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={true}
           key="row_4"
           numberOfColumns={2}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2703,7 +2714,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_4-col-Column-0"
               rowId="row_4"
               rowIndex={3}
@@ -2714,7 +2725,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -2850,6 +2861,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="row_5"
           numberOfColumns={2}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
@@ -2886,7 +2898,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               }
               columnIndex={0}
               columnMinimumWidth={60}
-              isRowHeader={false}
+              isRowHeader={true}
               key="row-row_5-col-Column-0"
               rowId="row_5"
               rowIndex={4}
@@ -2897,7 +2909,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 className="cell selectable"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
-                role="gridcell"
+                role="rowheader"
                 style={
                   Object {
                     "justifyContent": "left",
@@ -3068,6 +3080,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           isTopmost={false}
           key="placeholder-row-1"
           numberOfColumns={2}
+          rowHeaderIndex={0}
           rowHeight={
             Object {
               "unitType": "px",
