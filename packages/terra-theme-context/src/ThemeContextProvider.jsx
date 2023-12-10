@@ -7,12 +7,14 @@ const propTypes = {
    * The components to be rendered within the context of the ThemeContextProvider. Components rendered here are able to interact with ThemeContextProvider through the ThemeContext.
    */
   children: PropTypes.element.isRequired,
+
   /**
-   * An object containing the name and className of the selected theme.
+   * An object containing the name, className, and density of the selected theme.
    */
   theme: PropTypes.shape({
     name: PropTypes.string,
     className: PropTypes.string,
+    density: PropTypes.string,
   }),
 };
 
@@ -21,7 +23,12 @@ const defaultProps = {
 };
 
 const ThemeContextProvider = ({ theme, children }) => {
-  const contextValue = useMemo(() => ({ name: theme.name, className: theme.className }), [theme.name, theme.className]);
+  const contextValue = useMemo(() => ({
+    name: theme.name,
+    className: theme.className,
+    density: theme.density,
+  }), [theme.name, theme.className, theme.density]);
+
   return (
     <ThemeContext.Provider value={contextValue}>
       {children}
