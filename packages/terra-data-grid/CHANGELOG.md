@@ -2,9 +2,13 @@
 
 ## Unreleased
 
+* Breaking Change
+  * `OnCellSelect` now returns an object containing rowId, columnId and sectionId.
+
 * Added
   * Added keyboard navigation support for sections.
-  * Added feature to range and multi-select on flowsheets with sections.
+  * Added range-select and multi-select on flowsheets with sections.
+  * `onCellRangeSelect` now also returns a sectionId for each cell in range.
   
 ## 1.6.0 - (December 5, 2023)
 

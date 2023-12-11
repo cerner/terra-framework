@@ -304,7 +304,11 @@ describe('Single cell selection', () => {
     const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('mouseDown');
 
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
@@ -322,7 +326,11 @@ describe('Single cell selection', () => {
     const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
 
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
@@ -340,7 +348,11 @@ describe('Single cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
-    expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-2', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '4',
+      columnId: 'Column-2',
+      sectionId: '',
+    });
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
@@ -358,7 +370,11 @@ describe('Single cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });
-    expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-2', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '4',
+      columnId: 'Column-2',
+      sectionId: '',
+    });
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 });
@@ -386,7 +402,11 @@ describe('Multi-cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('mouseDown');
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
@@ -421,7 +441,11 @@ describe('Multi-cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
-    expect(mockOnCellSelect).toHaveBeenCalledWith('4', 'Column-2', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '4',
+      columnId: 'Column-2',
+      sectionId: '',
+    });
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
@@ -452,7 +476,11 @@ describe('Multi-cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('mouseDown');
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     // Would go past last row
@@ -488,7 +516,11 @@ describe('Multi-cell selection', () => {
 
     const selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('mouseDown');
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
 
     // Would select row header
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
@@ -520,7 +552,11 @@ describe('Multi-cell selection', () => {
 
     let selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('mouseDown');
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
@@ -546,7 +582,11 @@ describe('Multi-cell selection', () => {
 
     let selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('mouseDown');
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });
@@ -572,7 +612,11 @@ describe('Multi-cell selection', () => {
 
     let selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
@@ -598,7 +642,11 @@ describe('Multi-cell selection', () => {
 
     let selectableCell = wrapper.find('Row').at(2).find('td.selectable').at(0);
     selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
-    expect(mockOnCellSelect).toHaveBeenCalledWith('3', 'Column-1', '');
+    expect(mockOnCellSelect).toHaveBeenCalledWith({
+      rowId: '3',
+      columnId: 'Column-1',
+      sectionId: '',
+    });
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });

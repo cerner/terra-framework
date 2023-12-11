@@ -64,9 +64,7 @@ const propTypes = {
 
   /**
    * Callback function that is called when a selectable cell is selected. Parameters:
-   * @param {string} rowId rowId
-   * @param {string} columnId columnId
-   * @param {string} sectionId sectionId
+   * @param {object} selectedCell object containing rowId, columnId and sectionId, all as strings.
    */
   onCellSelect: PropTypes.func,
 
@@ -83,7 +81,7 @@ const propTypes = {
 
   /**
    * Callback function that is called when a range of selectable cells is selected. Parameters:
-   * @param {array} cells - Array of cells each containing a rowId and columnId, both as strings.
+   * @param {array} cells - Array of cells each containing a rowId, columnId, and sectionId, all as strings.
    */
   onCellRangeSelect: PropTypes.func,
 
@@ -316,7 +314,11 @@ function FlowsheetDataGrid(props) {
       selectCellRange(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.sectionId);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId, sectionId: selectionDetails.sectionId };
-      onCellSelect(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.sectionId);
+      onCellSelect({
+        rowId: selectionDetails.rowId,
+        columnId: selectionDetails.columnId,
+        sectionId: selectionDetails.sectionId,
+      });
     }
   }, [onCellSelect, onRowSelect, selectCellRange]);
 

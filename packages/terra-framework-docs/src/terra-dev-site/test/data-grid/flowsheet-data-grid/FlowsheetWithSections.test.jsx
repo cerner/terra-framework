@@ -109,18 +109,18 @@ const FlowsheetWithSections = () => {
     })),
   })), [tableSections]);
 
-  const onCellSelect = useCallback((rowId, columnId, sectionId) => {
-    let selectedSection = tableSections.find(section => section.id === sectionId);
+  const onCellSelect = useCallback((selectedCell) => {
+    let selectedSection = tableSections.find(section => section.id === selectedCell.sectionId);
 
-    const columnIndex = gridDataJSON.cols.findIndex(col => col.id === columnId);
-    const rowIndex = selectedSection.rows.findIndex(row => row.id === rowId);
-    const selectedCell = selectedSection.rows[rowIndex].cells[columnIndex];
+    const columnIndex = gridDataJSON.cols.findIndex(col => col.id === selectedCell.columnId);
+    const rowIndex = selectedSection.rows.findIndex(row => row.id === selectedCell.rowId);
+    const previousCell = selectedSection.rows[rowIndex].cells[columnIndex];
 
     const newSections = getClearedSections();
 
     //   // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
-    selectedSection = newSections.find(section => section.id === sectionId);
-    selectedSection.rows[rowIndex].cells[columnIndex].isSelected = !selectedCell.isSelected;
+    selectedSection = newSections.find(section => section.id === selectedCell.sectionId);
+    selectedSection.rows[rowIndex].cells[columnIndex].isSelected = !previousCell.isSelected;
     setTableSections(newSections);
   }, [tableSections, getClearedSections]);
 
