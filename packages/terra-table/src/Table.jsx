@@ -157,7 +157,7 @@ const propTypes = {
    */
   hasVisibleColumnHeaders: PropTypes.bool,
 
-  /*
+  /**
    * Boolean specifying whether or not the table should have zebra striping for rows.
    */
   isStriped: PropTypes.bool,

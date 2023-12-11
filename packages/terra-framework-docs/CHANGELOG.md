@@ -1,6 +1,10 @@
 # Changelog
 
 ## Unreleased
+
+* Added
+  * Added implementation guide for `terra-table`.
+
 * Changed
   * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
 

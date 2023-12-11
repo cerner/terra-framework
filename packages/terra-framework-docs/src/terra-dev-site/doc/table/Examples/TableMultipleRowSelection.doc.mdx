@@ -1,11 +1,11 @@
-import TableSingleRowSelection from './TableSingleRowSelection?dev-site-example';
+import TableRowSelection from './TableRowSelection?dev-site-example';
 
-# Table - Single Row Selection
+# Table - Multiple Row Selection
 
 ### Description
 
 Row Selection Mode is controlled via a prop and is off by default.
-When creating a Table that supports single row selection, the prop has to be explicitly set by the consumer.
+When creating a Table that supports multiple row selections, the prop has to be explicitly set by the consumer.
 This example demonstrates a Table with full support for multiple row selections.
 Since the component is an accessible table component, each row selection checkbox is a tab stop.
 
@@ -13,13 +13,14 @@ Since the component is an accessible table component, each row selection checkbo
 This example demonstrates a Worklist Data Grid with full support for row selection by utilizing the following [Worklist Data Grid properties](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#properties):
 * rowSelectionMode
 * onRowSelect
+* onRowSelectionHeaderSelect
 
 ## Row Selection Interactions
 When using this example, the following row centric outcomes may be achieved by using the respective actions.
 
 |Outcome|Action|
 |---|---|
-|Select a row|When single row selection is enabled, click or press Spacebar anywhere on an _unselected_ row|
-|Unselect a row|Click or press Spacebar anywhere on an _selected_ row.|
+|Select a row|When multiple row selection is enabled, click or press Spacebar on any row selection checkbox.|
+|Unselect a row|Click or press Spacebar on any row selection checkbox.|
 
-<TableSingleRowSelection title='Table With Single Row Selection' />
+<TableRowSelection title='Table With Row Selection' />
