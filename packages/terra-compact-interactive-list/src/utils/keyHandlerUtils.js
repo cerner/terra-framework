@@ -65,9 +65,8 @@ export const moveFocusFromElement = (containerRef, id, moveForward) => {
  */
 export const handleDownKey = (focusedCell, numberOfColumns, flowHorizontally, rowsLength) => {
   const { row, cell } = focusedCell;
-  let visualColumnNumber;
   if (flowHorizontally) {
-    visualColumnNumber = row % numberOfColumns;
+    const visualColumnNumber = row % numberOfColumns;
     const nextRow = row + numberOfColumns;
     if (nextRow > rowsLength - 1) {
       if (visualColumnNumber === numberOfColumns - 1) {
@@ -86,12 +85,8 @@ export const handleDownKey = (focusedCell, numberOfColumns, flowHorizontally, ro
     // the last semantic row in the last visual column, focus shouldn't go anywhere
     return focusedCell;
   }
-  // focus should go to the next semantic row except placeholder rows
-  visualColumnNumber = Math.floor(row / rowsPerColumn);
-  const nextRowIsLastRow = ((row + 2) % rowsPerColumn === 0);
-  const lastRowIsPlaceholder = !(numberOfColumns - numberOfPlaceholders > visualColumnNumber);
-  const placeholderShift = nextRowIsLastRow && lastRowIsPlaceholder ? 1 : 0;
-  return { row: row + 1 + placeholderShift, cell };
+  // focus should go to the next semantic row unless the last row
+  return { row: row + 1 < rowsLength ? row + 1 : row, cell };
 };
 
 /**
@@ -109,9 +104,8 @@ export const handleUpKey = (focusedCell, numberOfColumns, flowHorizontally, rows
     return focusedCell;
   }
   const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
-  let visualColumnNumber;
   if (flowHorizontally) {
-    visualColumnNumber = row % numberOfColumns;
+    const visualColumnNumber = row % numberOfColumns;
     if (row === visualColumnNumber) {
       // the first semantic row in current visual column, focus should move to the previous visual column last semantic row
       let newRow = (numberOfColumns * rowsPerColumn) - (numberOfColumns - (visualColumnNumber - 1));
@@ -124,13 +118,7 @@ export const handleUpKey = (focusedCell, numberOfColumns, flowHorizontally, rows
     return { row: row - numberOfColumns, cell };
   }
   // vertical flow
-  const numberOfPlaceholders = (rowsPerColumn * numberOfColumns) - rowsLength;
-  // focus should go to the next semantic row except placeholder rows
-  visualColumnNumber = Math.floor(row / rowsPerColumn);
-  const isFirstRowInVisualColumn = (row % rowsPerColumn === 0);
-  const previousColumnHasPlaceholder = !(numberOfColumns - numberOfPlaceholders > visualColumnNumber - 1);
-  const placeholderShift = isFirstRowInVisualColumn && previousColumnHasPlaceholder ? 1 : 0;
-  return { row: row - 1 - placeholderShift, cell };
+  return { row: row - 1, cell };
 };
 
 /**
@@ -181,7 +169,6 @@ export const handleLeftKey = (event, focusedCell, numberOfColumns, flowHorizonta
     return { row: firstItemInVisualRow, cell: 0 };
   }
   // Focus should go till the start of the visual row, and should not break to the previous visual row.
-
   if (cell === 0) {
     let nextCell = cell;
     let nextRow = row;
@@ -208,24 +195,18 @@ export const handleLeftKey = (event, focusedCell, numberOfColumns, flowHorizonta
    * @returns - the index of the last semantic row in the same visual row as currently focused row.
    */
 const getLastSemanticRowIndexInVisualRow = (rowsLength, numberOfColumns, flowHorizontally, row) => {
+  if (row === undefined || row === null) {
+    // If current row omitted, return the index of the last element
+    return rowsLength - 1;
+  }
   if (flowHorizontally) {
-    if (row === undefined || row === null) {
-      // If current row omitted, return the index of the last element
-      return rowsLength - 1;
-    }
     const lastItemInVisualRow = (Math.ceil((row + 1) / numberOfColumns) * numberOfColumns) - 1;
     return lastItemInVisualRow < rowsLength - 1 ? lastItemInVisualRow : rowsLength - 1;
   }
   const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
-  const numberOfPlaceholders = (rowsPerColumn * numberOfColumns) - rowsLength;
-  if ((row === undefined || row === null)) {
-    // If current row omitted, return the index of the last element in the last visual row for vertical flow
-    return (rowsPerColumn * numberOfColumns) - (rowsPerColumn * numberOfPlaceholders) - 1;
-  }
-  const visualColumnNumber = Math.floor(row / rowsPerColumn);
-  const isLastRow = ((row + 1) % rowsPerColumn === 0);
-  const columnsTillRowEnd = numberOfColumns - (isLastRow ? numberOfPlaceholders : 0) - (visualColumnNumber + 1);
-  return row + columnsTillRowEnd * rowsPerColumn;
+  const rowsToTop = row % rowsPerColumn;
+  const lastItemInVisualRow = (numberOfColumns - 1) * rowsPerColumn + rowsToTop;
+  return lastItemInVisualRow < rowsLength ? lastItemInVisualRow : lastItemInVisualRow - rowsPerColumn;
 };
 
 /**
@@ -249,7 +230,7 @@ export const handleRightKey = (event, focusedCell, numberOfColumns, flowHorizont
       // Focus moves to the last cell in the last item in the list.
 
       // Omit row index for the last element in the list
-      nextRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally);
+      nextRow = rowsLength - 1;
       nextCell = cellsLength - 1;
       return { row: nextRow, cell: nextCell };
     }
@@ -298,7 +279,7 @@ export const handleEndKey = (event, focusedCell, numberOfColumns, flowHorizontal
     // Focus moves to the last cell in the last item in the list.
 
     // Omiting row index for the last element in the list
-    nextRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally);
+    nextRow = rowsLength - 1;
     nextCell = cellsLength - 1;
     return { row: nextRow, cell: nextCell };
   }
