@@ -9,6 +9,9 @@
   * Added keyboard navigation support for sections.
   * Added range-select and multi-select on flowsheets with sections.
   * `onCellRangeSelect` now also returns a sectionId for each cell in range.
+
+* Fixed
+  * Removed unnecessary rerenders
   
 ## 1.6.0 - (December 5, 2023)
 

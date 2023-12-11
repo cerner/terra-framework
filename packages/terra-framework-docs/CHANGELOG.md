@@ -1,10 +1,13 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
 
 * Changed
   * Changed terra-pills example to announce removed state of pills.
   * Updated examples and tests for `terra-folder-tree`.
+  * Updated `terra-data-grid` exmaples and tests to pass properties properly.
 
 ## 1.50.0 - (December 5, 2023)
 
