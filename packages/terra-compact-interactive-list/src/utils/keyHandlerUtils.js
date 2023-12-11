@@ -275,7 +275,7 @@ export const handleEndKey = (event, focusedCell, numberOfColumns, flowHorizontal
   const { row, cell } = focusedCell;
   let nextRow = row;
   let nextCell = cell;
-  if (event.metaKey && event.ctrlKey) {
+  if (event.metaKey || event.ctrlKey) {
     // Focus moves to the last cell in the last item in the list.
 
     // Omiting row index for the last element in the list
@@ -300,7 +300,7 @@ export const handleEndKey = (event, focusedCell, numberOfColumns, flowHorizontal
    */
 export const handleHomeKey = (event, focusedCell, numberOfColumns, flowHorizontally, rowsLength) => {
   const { row } = focusedCell;
-  if (event.metaKey && event.ctrlKey) {
+  if (event.metaKey || event.ctrlKey) {
     // Focus moves to the first cell in the first item in the list.
     return { row: 0, cell: 0 };
   }
