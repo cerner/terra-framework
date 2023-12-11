@@ -207,14 +207,17 @@ function FlowsheetDataGrid(props) {
     return newSections;
   }, [intl, sections]);
 
+  const flattenSections = (sectionsToFlatten) => sectionsToFlatten.flatMap(section => section.rows.map(row => ({
+    ...row,
+    sectionId: section.id,
+  })));
+
   useEffect(() => {
     if (!anchorCell.current) {
       return;
     }
 
-    const rowsToSearch = flowsheetSections
-      ? flowsheetSections.flatMap(section => section.rows.map(row => ({ ...row, sectionId: section.id })))
-      : flowsheetRows;
+    const rowsToSearch = flowsheetSections ? flattenSections(flowsheetSections) : flowsheetRows;
 
     const columnIndex = flowsheetColumns.findIndex(column => column.id === anchorCell.current.columnId);
     const anchor = rowsToSearch?.find(row => row.id === anchorCell.current.rowId)?.cells[columnIndex];
@@ -227,7 +230,9 @@ function FlowsheetDataGrid(props) {
   useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
-    rows.forEach((row) => {
+    const rowsToSelect = flowsheetSections ? flattenSections(flowsheetSections) : flowsheetRows;
+
+    rowsToSelect.forEach((row) => {
       row.cells.forEach((cell, cellIndex) => {
         if (cell.isSelected) {
           newSelectedCells.push({ rowId: row.id, columnId: columns[cellIndex].id });
@@ -245,7 +250,7 @@ function FlowsheetDataGrid(props) {
     } else if (selectedCells.current.length) {
       setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.cells-selected' }, { cellCount: selectedCells.current.length }));
     }
-  }, [intl, rows, columns, setCellSelectionAriaLiveMessage]);
+  }, [intl, flowsheetRows, flowsheetSections, columns, setCellSelectionAriaLiveMessage]);
 
   const selectCellRange = useCallback((rowId, columnId, sectionId) => {
     if (anchorCell.current === null) {
@@ -253,7 +258,7 @@ function FlowsheetDataGrid(props) {
     }
 
     const rowsToSearch = flowsheetSections
-      ? flowsheetSections.flatMap(section => section.rows.map(row => ({ ...row, sectionId: section.id })))
+      ? flattenSections(flowsheetSections)
       : rows;
 
     const anchorRowIndex = rowsToSearch.findIndex(row => row.id === anchorCell.current.rowId);
