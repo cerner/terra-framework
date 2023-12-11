@@ -11,6 +11,7 @@
 * Changed
   * Changed terra-pills example to announce removed state of pills.
   * Updated examples and tests for `terra-folder-tree`.
+  * Updated `terra-data-grid` exmaples and tests to pass properties properly.
 
 ## 1.50.0 - (December 5, 2023)
 

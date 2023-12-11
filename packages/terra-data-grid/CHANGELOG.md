@@ -4,6 +4,9 @@
 
 * Added
   * Added keyboard navigation support for sections.
+
+* Fixed
+  * Removed unnecessary rerenders
   
 ## 1.6.0 - (December 5, 2023)
 
