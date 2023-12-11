@@ -213,21 +213,6 @@ function FlowsheetDataGrid(props) {
   })));
 
   useEffect(() => {
-    if (!anchorCell.current) {
-      return;
-    }
-
-    const rowsToSearch = flowsheetSections ? flattenSections(flowsheetSections) : flowsheetRows;
-
-    const columnIndex = flowsheetColumns.findIndex(column => column.id === anchorCell.current.columnId);
-    const anchor = rowsToSearch?.find(row => row.id === anchorCell.current.rowId)?.cells[columnIndex];
-
-    if (!anchor?.isSelected) {
-      anchorCell.current = null;
-    }
-  }, [anchorCell, flowsheetRows, flowsheetSections, flowsheetColumns]);
-
-  useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
     const rowsToSelect = flowsheetSections ? flattenSections(flowsheetSections) : flowsheetRows;
@@ -280,19 +265,6 @@ function FlowsheetDataGrid(props) {
 
       rowIndexTopBound = anchorRowIndex <= sectionTopBound ? sectionTopBound : rowIndexTopBound;
       rowIndexBottomBound = anchorRowIndex >= sectionBottomBound ? sectionBottomBound : rowIndexBottomBound;
-
-      let newRowId = anchorCell.current.rowId;
-      if (anchorRowIndex <= rowIndexTopBound) {
-        newRowId = rowsToSearch[rowIndexTopBound].id;
-      } else if (anchorRowIndex >= rowIndexBottomBound) {
-        newRowId = rowsToSearch[rowIndexBottomBound].id;
-      }
-
-      anchorCell.current = {
-        columnId: anchorCell.current.columnId,
-        rowId: newRowId,
-        sectionId,
-      };
     }
 
     const cellsToSelect = [];
