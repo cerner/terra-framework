@@ -1,7 +1,7 @@
 // TODO: fix linter error
 /* eslint-disable jsx-a11y/control-has-associated-label */
 
-import React, { useContext } from 'react';
+import React, { useCallback, useContext } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
@@ -130,9 +130,9 @@ function Section(props) {
 
   const hasSectionButton = isCollapsible && onSectionSelect;
 
-  const handleClick = () => {
+  const handleClick = useCallback(() => {
     onSectionSelect(id);
-  };
+  }, [id, onSectionSelect]);
 
   return (
     <>
