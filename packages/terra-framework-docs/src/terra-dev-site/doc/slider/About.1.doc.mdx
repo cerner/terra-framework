@@ -2,16 +2,22 @@ import { Notice } from "@cerner/terra-docs";
 import { Badge } from 'terra-slider/package.json?dev-site-package';
 
 import SliderPropsTable from 'terra-slider/src/Slider?dev-site-props-table';
-
 import DefaultSlider from './Examples.2/DefaultSlider?dev-site-example';
-import CustomSlider from './Examples.2/CustomSlider?dev-site-example';
-import DisabledSlider from './Examples.2/DisabledSlider?dev-site-example';
-import SliderWithOnChangeCallback from './Examples.2/SliderWithOnChangeCallback?dev-site-example';
-import SliderWithValueUpdate from './Examples.2/SliderWithValueUpdate?dev-site-example';
 
 <Badge />
 
 # Terra Slider
+
+## Table of Contents
+* [Overview](/components/cerner-terra-framework-docs/slider/about#overview)
+* [Examples](/components/cerner-terra-framework-docs/slider/about#examples)
+* [Accessibility](/components/cerner-terra-framework-docs/slider/about#accessibility)
+* [Implementation](/components/cerner-terra-framework-docs/slider/about#implementation)
+* [Testing](/components/cerner-terra-framework-docs/slider/about#testing)
+* [Properties](/components/cerner-terra-framework-docs/slider/about#properties)
+* [Terra Standards](/components/cerner-terra-framework-docs/slider/about#terra-standards)
+
+## Overview
 
 Terra Slider provides a way to select a value from a given range by sliding a thumb along a bar to track the value.
 
@@ -19,14 +25,67 @@ Terra Slider provides a way to select a value from a given range by sliding a th
 Terra Slider is an input component used to quickly select an imprecise value within a range such as a zoom level. It does not yet include features required for entering precise values.
 </Notice>
 
+<DefaultSlider />
 
-## Getting Started
+### Features
+* Supports management of label visibility above the search field through isLabelVisible prop. When isLabelVisible is set to 'true', The label text will be a default value 'search' or the groupName prop value if passed in.
+* Supports placeholder text to display in the search field.
+* Supports adding a minimum length of search text required before performing autosearch.
+* Supports search delay with default value of 2500ms or 'searchDelay' prop value passed in.
+* Supports a default value to be set for search text.
+
+Refer to the [examples](/components/cerner-terra-framework-docs/slider/about#examples) section for detailed demonstration of the features supported by the Search Field.
+
+## Examples
+|Link to Example| Description|
+|-|-|
+|[BasicSlider](/components/cerner-terra-framework-docs/slider/examples/default-slider)|An example of basic slider using the required props 'label', 'minimumValue', 'maximumValue', 'value'.|
+|[CustomSlider](/components/cerner-terra-framework-docs/slider/examples/custom-slider)|An example demonstrating a slider with a custom labels using the 'minimumLabel' and 'maximumLabel' props.|
+|[DisabledSlider](/components/cerner-terra-framework-docs/slider/examples/disabled-slider)|An example demonstrating a disabled slider using the 'isDisabled' prop. |
+|[SliderWithOnChangeCallback](/components/cerner-terra-framework-docs/slider/examples/slider-with-on-change-callback)|An example demonstrating a slider with an onChange Callback using the 'onChange' callback prop.|
+|[SliderWithValueUpdate](/components/cerner-terra-framework-docs/slider/examples/slider-with-value-update)|An example demonstrating a slider with value updates using the 'value' and 'onChange' prop.|
+
+## Accessibility
+### Keyboard Interactions
+
+List of keyboard interactions supported by Search Field
+
+|Key interactions|Description|
+|---|---|
+|Tab           | Moves focus into the search field. If already on the search text box with text entered, tab moves focus to the clear text button. If already on clear text button, tab moves followed by focus to the search button.|
+|Shift + Tab    | Moves focus to the previous focusable element in the tab sequence.|
+|Up Arrow    | Moves focus to the previous focusable element in the tab sequence.|
+|Down Arrow     | Moves focus one cell down. If focus is on the bottom cell in the column, focus does not move.|
+|Right Arrow    | Moves focus one cell to the right. If focus is on the right-most cell in the row, focus does not move.|
+|Left Arrow     | Moves focus one cell to the left. If focus is on the left-most cell in the row, focus does not move.|
+|Home           | Moves focus to the first cell in the row that contains focus.|
+|End            | Moves focus to the last cell in the row that contains focus.|
+|Space| When on clear button, clears the current search text. When on search button, triggers the search callback.|
+|Enter| When on clear button, clears the current search text. When on search button, triggers the search callback.|
+
+### Assistive Technology Support
+#### WAI ARIA Roles and States
+* [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+  * aria-label default value is set to 'search' for the basic search field.
+  * When '[_groupName_](/components/cerner-terra-core-docs/search-field/about#search-field-props)' prop is passed in, the prop value will be used as a custom aria-label.
+  * A custom aria-label value can also be passed in through '[inputAttributes](/components/cerner-terra-core-docs/search-field/about#search-field-props)' prop.
+
+## Implementation
+
+### Installation
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-slider`
 
-<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
-## Peer Dependencies
+### Usage
+
+```jsx
+import Slider from 'terra-slider';
+```
+
+### Dependencies
+
+#### Peer Dependencies
 
 This component requires the following peer dependencies be installed in your app for the component to properly function.
 
@@ -36,22 +95,13 @@ This component requires the following peer dependencies be installed in your app
 | react-dom | ^16.8.5 |
 | react-intl | ^2.8.0 |
 
-<!-- AUTO-GENERATED-CONTENT:END -->
-
-## Component Features
-
- * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
- * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
- * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
- * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
-
-## Examples
-<DefaultSlider />
-<CustomSlider />
-<DisabledSlider />
-<SliderWithOnChangeCallback />
-<SliderWithValueUpdate />
-
-## Slider props table
+## Properties
+### Slider props table
 <SliderPropsTable />
+
+## Terra Standards
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
 
