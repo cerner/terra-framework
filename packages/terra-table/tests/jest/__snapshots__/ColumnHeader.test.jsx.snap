@@ -16,7 +16,6 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
       isActive={false}
       isResizeActive={false}
       key="Column-0"
-      rowIndex={0}
       tableHeight={500}
       tableId="test-table"
     />
@@ -28,7 +27,6 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
       isActive={false}
       isResizeActive={false}
       key="Column-1"
-      rowIndex={0}
       tableHeight={500}
       tableId="test-table"
     />
@@ -54,7 +52,6 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
       key="Column-0"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
-      rowIndex={0}
       tableHeight={500}
       tableId="test-table"
     />
@@ -68,7 +65,6 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
       key="Column-1"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
-      rowIndex={0}
       tableHeight={500}
       tableId="test-table"
     />
@@ -92,7 +88,6 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       isActive={false}
       isResizeActive={false}
       key="Column-0"
-      rowIndex={0}
       tableHeight={500}
       tableId="test-table"
     />
@@ -104,7 +99,6 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       isActive={false}
       isResizeActive={false}
       key="Column-1"
-      rowIndex={0}
       tableHeight={500}
       tableId="test-table"
     />
@@ -128,7 +122,6 @@ exports[`ColumnHeader renders a default column header 1`] = `
       isActive={false}
       isResizeActive={false}
       key="Column-0"
-      rowIndex={0}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -139,7 +132,6 @@ exports[`ColumnHeader renders a default column header 1`] = `
       isActive={false}
       isResizeActive={false}
       key="Column-1"
-      rowIndex={0}
       tableId="test-table"
     />
   </tr>
@@ -162,7 +154,6 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
       isActive={false}
       isResizeActive={false}
       key="Column-0"
-      rowIndex={0}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -173,7 +164,6 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
       isActive={false}
       isResizeActive={false}
       key="Column-1"
-      rowIndex={0}
       tableId="test-table"
     />
   </tr>
@@ -197,7 +187,6 @@ exports[`ColumnHeader verifies that the hasVisibleColumnHeaders prop hides the t
       isResizeActive={false}
       isSelectable={false}
       key="Column-0"
-      rowIndex={0}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -210,7 +199,6 @@ exports[`ColumnHeader verifies that the hasVisibleColumnHeaders prop hides the t
       isResizeActive={false}
       isSelectable={false}
       key="Column-1"
-      rowIndex={0}
       tableId="test-table"
     />
   </tr>

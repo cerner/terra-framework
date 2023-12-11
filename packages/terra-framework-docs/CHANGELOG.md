@@ -1,13 +1,28 @@
 # Changelog
 
 ## Unreleased
+* Changed
+  * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
+
+* Changed
+  * Changed terra-pills example to announce removed state of pills.
+  * Updated examples and tests for `terra-folder-tree`.
+  * Updated `terra-data-grid` exmaples and tests to pass properties properly.
+
+## 1.50.0 - (December 5, 2023)
 
 * Added
+  * Added focus to the notification dialog content for keyboard users to navigate with arrow keys.
+
+* Added
+  * Added the example with `contentWidth` as auto value.
+  * Added examples and tests for `terra-folder-tree`.
   * Added documentation for exported constants of `terra-table` in the About page.
   * Added new examples for cell content and cell selection to `terra-compact-interactive-list`.
 
 * Changed
   * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.
+  * Updated examples and tests for `terra-data-grid` to consume section keyboard navigation updates.
   * Updated XFC initialization for the Embedded Content Consumer examples.
 
 ## 1.49.0 - (December 1, 2023)

@@ -164,7 +164,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
   <div
     className="data-grid-container"
     id="test-terra-data-grid"
-    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -177,9 +176,29 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
       isStriped={true}
-      onCellSelect={[Function]}
-      onColumnSelect={[Function]}
-      onRowSelectionHeaderSelect={[Function]}
+      onCellSelect={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "columnId": "Column-2",
+                "columnIndex": 2,
+                "isCellSelectable": false,
+                "isShiftPressed": undefined,
+                "rowId": "1",
+                "rowIndex": 1,
+                "sectionId": "",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       overflowColumns={
         Array [
           Object {
@@ -319,9 +338,29 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         }
         isActiveColumnResizing={false}
         isStriped={true}
-        onCellSelect={[Function]}
-        onColumnSelect={[Function]}
-        onRowSelectionHeaderSelect={[Function]}
+        onCellSelect={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "columnId": "Column-2",
+                  "columnIndex": 2,
+                  "isCellSelectable": false,
+                  "isShiftPressed": undefined,
+                  "rowId": "1",
+                  "rowIndex": 1,
+                  "sectionId": "",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         overflowColumns={
           Array [
             Object {
@@ -525,7 +564,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -573,7 +611,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -715,7 +752,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -763,7 +799,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -905,7 +940,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -953,7 +987,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -1190,6 +1223,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -2803,7 +2837,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
   <div
     className="data-grid-container"
     id="test-terra-data-grid"
-    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -2816,9 +2849,29 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
       isStriped={true}
-      onCellSelect={[Function]}
-      onColumnSelect={[Function]}
-      onRowSelectionHeaderSelect={[Function]}
+      onCellSelect={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              Object {
+                "columnId": "Column-0",
+                "columnIndex": 0,
+                "isCellSelectable": false,
+                "isShiftPressed": undefined,
+                "rowId": "1",
+                "rowIndex": 1,
+                "sectionId": "",
+              },
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       overflowColumns={
         Array [
           Object {
@@ -2958,9 +3011,29 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         }
         isActiveColumnResizing={false}
         isStriped={true}
-        onCellSelect={[Function]}
-        onColumnSelect={[Function]}
-        onRowSelectionHeaderSelect={[Function]}
+        onCellSelect={
+          [MockFunction] {
+            "calls": Array [
+              Array [
+                Object {
+                  "columnId": "Column-0",
+                  "columnIndex": 0,
+                  "isCellSelectable": false,
+                  "isShiftPressed": undefined,
+                  "rowId": "1",
+                  "rowIndex": 1,
+                  "sectionId": "",
+                },
+              ],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         overflowColumns={
           Array [
             Object {
@@ -3164,7 +3237,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -3212,7 +3284,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -3354,7 +3425,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -3402,7 +3472,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -3544,7 +3613,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -3592,7 +3660,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -3829,6 +3896,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -5433,7 +5501,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
   <div
     className="data-grid-container"
     id="test-terra-data-grid"
-    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -5446,9 +5513,19 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
       isStriped={true}
-      onCellSelect={[Function]}
-      onColumnSelect={[Function]}
-      onRowSelectionHeaderSelect={[Function]}
+      onRowSelectionHeaderSelect={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
+      }
       overflowColumns={
         Array [
           Object {
@@ -5589,9 +5666,19 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         }
         isActiveColumnResizing={false}
         isStriped={true}
-        onCellSelect={[Function]}
-        onColumnSelect={[Function]}
-        onRowSelectionHeaderSelect={[Function]}
+        onRowSelectionHeaderSelect={
+          [MockFunction] {
+            "calls": Array [
+              Array [],
+            ],
+            "results": Array [
+              Object {
+                "type": "return",
+                "value": undefined,
+              },
+            ],
+          }
+        }
         overflowColumns={
           Array [
             Object {
@@ -5815,7 +5902,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={40}
@@ -5863,7 +5949,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={40}
@@ -5924,7 +6009,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -5972,7 +6056,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -6114,7 +6197,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -6162,7 +6244,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -6304,7 +6385,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -6352,7 +6432,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -6598,6 +6677,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -8828,7 +8908,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
   <div
     className="data-grid-container"
     id="test-terra-data-grid"
-    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -8841,9 +8920,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
       isStriped={true}
-      onCellSelect={[Function]}
-      onColumnSelect={[Function]}
-      onRowSelectionHeaderSelect={[Function]}
       overflowColumns={
         Array [
           Object {
@@ -8983,9 +9059,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
         }
         isActiveColumnResizing={false}
         isStriped={true}
-        onCellSelect={[Function]}
-        onColumnSelect={[Function]}
-        onRowSelectionHeaderSelect={[Function]}
         overflowColumns={
           Array [
             Object {
@@ -9189,7 +9262,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -9237,7 +9309,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -9379,7 +9450,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -9427,7 +9497,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -9569,7 +9638,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -9617,7 +9685,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -9854,6 +9921,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >
@@ -11441,7 +11509,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
   <div
     className="data-grid-container"
     id="test-terra-data-grid"
-    onBlur={[Function]}
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
@@ -11454,9 +11521,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
       isStriped={true}
-      onCellSelect={[Function]}
-      onColumnSelect={[Function]}
-      onRowSelectionHeaderSelect={[Function]}
       overflowColumns={
         Array [
           Object {
@@ -11593,9 +11657,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
         }
         isActiveColumnResizing={false}
         isStriped={true}
-        onCellSelect={[Function]}
-        onColumnSelect={[Function]}
-        onRowSelectionHeaderSelect={[Function]}
         overflowColumns={
           Array [
             Object {
@@ -11796,7 +11857,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -11844,7 +11904,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -11986,7 +12045,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -12034,7 +12092,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -12176,7 +12233,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    rowIndex={0}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
@@ -12224,7 +12280,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      rowIndex={0}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
@@ -12461,6 +12516,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               sectionRowIndex={1}
               tableId="test-terra-data-grid-table"
             >
+              <tbody />
               <tbody
                 className="section"
               >

@@ -104,11 +104,6 @@ const propTypes = {
   headerHeight: PropTypes.string.isRequired,
 
   /**
-   * The cell's row position in the grid. This is zero based.
-   */
-  rowIndex: PropTypes.number,
-
-  /**
    * The cell's column position in the grid. This is zero based.
    */
   columnIndex: PropTypes.number,
@@ -166,7 +161,6 @@ const ColumnHeaderCell = (props) => {
     headerHeight,
     onColumnSelect,
     intl,
-    rowIndex,
     columnIndex,
     onResizeMouseDown,
     onResizeHandleChange,
@@ -208,9 +202,8 @@ const ColumnHeaderCell = (props) => {
   }, []);
 
   // Handle column header selection via the mouse click.
-  const handleMouseDown = (event) => {
-    onColumnSelect(id, { row: rowIndex, col: columnIndex });
-    event.stopPropagation();
+  const handleMouseDown = () => {
+    onColumnSelect(id);
   };
 
   // Handle column header selection via the space bar.
@@ -220,7 +213,7 @@ const ColumnHeaderCell = (props) => {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
         if (isSelectable && onColumnSelect) {
-          onColumnSelect(id, { row: rowIndex, col: columnIndex }, isSelectable);
+          onColumnSelect(id);
         }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling

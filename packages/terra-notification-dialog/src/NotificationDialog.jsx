@@ -188,7 +188,7 @@ const NotificationDialog = (props) => {
             <div className={cx(['header-content'])}>
               <NotificationIcon variant={variant} iconClassName={custom.iconClassName} />
               <div id="header-container" className={cx('header-container')}>
-                <div id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</div>
+                <h2 id="notification-dialog-signal-word" className={cx('signal-word')}>{signalWord}</h2>
                 <div id="notification-dialog-title" className={cx('title')}>{dialogTitle}</div>
               </div>
             </div>
