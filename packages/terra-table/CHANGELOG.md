@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.3.1 - (December 11, 2023)
+
 * Fixed
   * Removed unnecessary rerenders
 
