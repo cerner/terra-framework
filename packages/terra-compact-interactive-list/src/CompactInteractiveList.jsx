@@ -186,11 +186,9 @@ const CompactInteractiveList = (props) => {
     switch (key) {
       case KeyCode.KEY_UP:
         moveFocusTo = handleUpKey(moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
-        event.preventDefault();
         break;
       case KeyCode.KEY_DOWN:
         moveFocusTo = handleDownKey(moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
-        event.preventDefault();
         break;
       case KeyCode.KEY_LEFT: {
         moveFocusTo = handleLeftKey(event, moveFocusTo, numberOfColumns, flowHorizontally, columns.length, rows.length);
