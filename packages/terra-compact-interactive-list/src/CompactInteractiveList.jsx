@@ -33,7 +33,7 @@ import {
   getFocusedCellIndexes,
   getFocusedCellIds,
 } from './utils/keyHandlerUtils';
-import { getFocusableElements } from '../../terra-table/src';
+import getFocusableElements from '../../terra-table/src/utils/focusManagement';
 
 const cx = classNames.bind(styles);
 

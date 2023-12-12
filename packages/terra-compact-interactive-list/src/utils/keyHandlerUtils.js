@@ -1,4 +1,4 @@
-import { getFocusableElements } from '../../../terra-table/src';
+import getFocusableElements from '../../../terra-table/src/utils/focusManagement';
 
 /**
  * @param {HTMLElement} element - The element to check if it is a text input
