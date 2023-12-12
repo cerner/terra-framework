@@ -1,3 +1,4 @@
 {
-  "Terra.timeInput.seconds": "segundos"
+  "Terra.timeInput.seconds": "segundos",
+  "Terra.timeInput.invalidTime": "Please enter a valid Time"
 }
