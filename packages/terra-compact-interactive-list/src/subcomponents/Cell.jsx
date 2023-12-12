@@ -18,16 +18,6 @@ const propTypes = {
   rowId: PropTypes.string.isRequired,
 
   /**
-   * The cell's row position in the table. This is zero based.
-   */
-  rowIndex: PropTypes.number,
-
-  /**
-   * The cell's column position in the table. This is zero based.
-   */
-  columnIndex: PropTypes.number,
-
-  /**
    * Boolean indicating that the cell is a row header.
    */
   isRowHeader: PropTypes.bool,
@@ -67,7 +57,7 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
-   * Callback function that will pass the focused column and focused row indexes to the main component.
+   * Callback function that will pass the focused column and focused row ids to the main component.
    */
   setFocusedCell: PropTypes.func,
 };
@@ -75,8 +65,6 @@ const propTypes = {
 const Cell = (props) => {
   const {
     rowId,
-    rowIndex,
-    columnIndex,
     children,
     column,
     columnMinimumWidth,
@@ -125,7 +113,7 @@ const Cell = (props) => {
   };
 
   const handleMouseDown = () => {
-    setFocusedCell({ rowIndex, columnIndex });
+    setFocusedCell({ rowId, columnId: id });
     if (isSelectableCell && onCellSelect) {
       onCellSelect({ rowId, columnId: id });
     }

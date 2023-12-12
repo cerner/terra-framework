@@ -447,6 +447,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           <div
             aria-hidden={null}
             className="row row-topmost row-leftmost"
+            data-row-id="row_1"
             id="row_1"
             role="row"
             style={
@@ -465,12 +466,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_1-col-Column-0"
               rowId="row_1"
-              rowIndex={0}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -532,12 +531,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-1"
               rowId="row_1"
-              rowIndex={0}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -566,12 +563,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-2"
               rowId="row_1"
-              rowIndex={0}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -692,6 +687,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           <div
             aria-hidden={null}
             className="row row-leftmost"
+            data-row-id="row_2"
             id="row_2"
             role="row"
             style={
@@ -710,12 +706,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_2-col-Column-0"
               rowId="row_2"
-              rowIndex={1}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -774,12 +768,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-1"
               rowId="row_2"
-              rowIndex={1}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -808,12 +800,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-2"
               rowId="row_2"
-              rowIndex={1}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -934,6 +924,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           <div
             aria-hidden={null}
             className="row row-leftmost"
+            data-row-id="row_3"
             id="row_3"
             role="row"
             style={
@@ -952,12 +943,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_3-col-Column-0"
               rowId="row_3"
-              rowIndex={2}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1016,12 +1005,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-1"
               rowId="row_3"
-              rowIndex={2}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1050,12 +1037,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-2"
               rowId="row_3"
-              rowIndex={2}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1166,6 +1151,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           <div
             aria-hidden={null}
             className="row row-leftmost"
+            data-row-id="row_4"
             id="row_4"
             role="row"
             style={
@@ -1184,12 +1170,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_4-col-Column-0"
               rowId="row_4"
-              rowIndex={3}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1219,12 +1203,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-1"
               rowId="row_4"
-              rowIndex={3}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1253,12 +1235,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-2"
               rowId="row_4"
-              rowIndex={3}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1350,6 +1330,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           <div
             aria-hidden={null}
             className="row row-leftmost"
+            data-row-id="row_5"
             id="row_5"
             role="row"
             style={
@@ -1368,12 +1349,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_5-col-Column-0"
               rowId="row_5"
-              rowIndex={4}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1432,12 +1411,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-1"
               rowId="row_5"
-              rowIndex={4}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1466,12 +1443,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   "width": 40,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-2"
               rowId="row_5"
-              rowIndex={4}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -1975,6 +1950,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           <div
             aria-hidden={null}
             className="row row-topmost row-leftmost"
+            data-row-id="row_1"
             id="row_1"
             role="row"
             style={
@@ -1993,12 +1969,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_1-col-Column-0"
               rowId="row_1"
-              rowIndex={0}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2060,12 +2034,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-1"
               rowId="row_1"
-              rowIndex={0}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2095,12 +2067,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_1-col-Column-2"
               rowId="row_1"
-              rowIndex={0}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2220,6 +2190,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           <div
             aria-hidden={null}
             className="row row-leftmost"
+            data-row-id="row_2"
             id="row_2"
             role="row"
             style={
@@ -2238,12 +2209,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_2-col-Column-0"
               rowId="row_2"
-              rowIndex={1}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2302,12 +2271,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-1"
               rowId="row_2"
-              rowIndex={1}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2337,12 +2304,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_2-col-Column-2"
               rowId="row_2"
-              rowIndex={1}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2462,6 +2427,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           <div
             aria-hidden={null}
             className="row row-leftmost"
+            data-row-id="row_3"
             id="row_3"
             role="row"
             style={
@@ -2480,12 +2446,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_3-col-Column-0"
               rowId="row_3"
-              rowIndex={2}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2544,12 +2508,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-1"
               rowId="row_3"
-              rowIndex={2}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2579,12 +2541,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_3-col-Column-2"
               rowId="row_3"
-              rowIndex={2}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2694,6 +2654,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           <div
             aria-hidden={null}
             className="row row-topmost"
+            data-row-id="row_4"
             id="row_4"
             role="row"
             style={
@@ -2712,12 +2673,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_4-col-Column-0"
               rowId="row_4"
-              rowIndex={3}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2747,12 +2706,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-1"
               rowId="row_4"
-              rowIndex={3}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2782,12 +2739,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_4-col-Column-2"
               rowId="row_4"
-              rowIndex={3}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2878,6 +2833,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           <div
             aria-hidden={null}
             className="row"
+            data-row-id="row_5"
             id="row_5"
             role="row"
             style={
@@ -2896,12 +2852,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={0}
               columnMinimumWidth={60}
               isRowHeader={true}
               key="row-row_5-col-Column-0"
               rowId="row_5"
-              rowIndex={4}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2960,12 +2914,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 200,
                 }
               }
-              columnIndex={1}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-1"
               rowId="row_5"
-              rowIndex={4}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -2995,12 +2947,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   "width": 20,
                 }
               }
-              columnIndex={2}
               columnMinimumWidth={60}
               isRowHeader={false}
               key="row-row_5-col-Column-2"
               rowId="row_5"
-              rowIndex={4}
               setFocusedCell={[Function]}
               widthUnit="px"
             >
@@ -3097,6 +3047,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           <div
             aria-hidden={true}
             className="row row-placeholder"
+            data-row-id="placeholder-row-1"
             id="placeholder-row-1"
             style={
               Object {

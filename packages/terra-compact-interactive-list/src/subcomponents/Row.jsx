@@ -16,10 +16,6 @@ const propTypes = {
    * An identifier to uniquely identify the row.
    */
   id: PropTypes.string.isRequired,
-  /**
-   * The row's position in the table. This is zero based.
-   */
-  rowIndex: PropTypes.number,
 
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
@@ -75,7 +71,7 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
-   * Callback function that will pass the focused column and focused row indexes to the main component.
+   * Callback function that will pass the focused column and focused row ids to the main component.
    */
   setFocusedCell: PropTypes.func,
 
@@ -118,7 +114,6 @@ const propTypes = {
 const Row = (props) => {
   const {
     id,
-    rowIndex,
     cells,
     columns,
     columnMinimumWidth,
@@ -163,6 +158,7 @@ const Row = (props) => {
   return (
     <div
       id={id}
+      data-row-id={id}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
@@ -172,9 +168,7 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
-          rowIndex={rowIndex}
           rowId={id}
-          columnIndex={index}
           isRowHeader={index === rowHeaderIndex}
           column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}

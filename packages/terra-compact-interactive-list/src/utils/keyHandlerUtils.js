@@ -308,3 +308,33 @@ export const handleHomeKey = (event, focusedCell, numberOfColumns, flowHorizonta
   const firstItemInVisualRow = getFirstSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
   return { row: firstItemInVisualRow, cell: 0 };
 };
+
+/**
+  * Finds the row and cell indexes of the element per it's row and column ids.
+  * @param {object} - columns
+  * @param {HTMLDivElement} list - listRef.current for the list element
+  * @param {object} ids - { rowId, columnId } object
+  * @returns - a pair of indexes for the row and cell in { row, cell } format.
+  */
+export const getFocusedCellIndexes = (list, columns, ids) => {
+  const { rowId, columnId } = ids;
+  const row = [...list.children].findIndex(rowElement => rowElement.getAttribute('data-row-id') === rowId);
+  const cell = columns.findIndex(col => col.id === columnId);
+  // row - 1 needs to accomodate for the hidden header row
+  return { row: row - 1, cell };
+};
+
+/**
+  * Finds the row and column ids of the element per it's row and cell indexes.
+  * @param {object} - columns
+  * @param {HTMLDivElement} list - listRef.current for the list element
+  * @param {object} ids - { rowId, columnId } object
+  * @returns - a pair of ids for the row and cell in { rowId, columnId } format.
+  */
+export const getFocusedCellIds = (list, columns, indexes) => {
+  const { row, cell } = indexes;
+  // row + 1 needs to accomodate for the hidden header row
+  const rowId = list.children[row + 1].getAttribute('data-row-id');
+  const columnId = columns[cell].id;
+  return { rowId, columnId };
+};

@@ -1,5 +1,5 @@
 import React, {
-  useContext, useRef, useMemo,
+  useContext, useRef, useMemo, useEffect,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -31,6 +31,8 @@ import {
   handleUpKey,
   handleHomeKey,
   handleEndKey,
+  getFocusedCellIndexes,
+  getFocusedCellIds,
 } from './utils/keyHandlerUtils';
 
 const cx = classNames.bind(styles);
@@ -68,7 +70,7 @@ const propTypes = {
   rowHeight: PropTypes.string,
 
   /**
-   * A number of visual columns. Defaults to 1.
+   * A number of visual columns. Defaults to 1. Number of visual rows is calculated as the number of items divided by the number of columns, rounded up.
    */
   numberOfColumns: PropTypes.number,
 
@@ -141,7 +143,14 @@ const CompactInteractiveList = (props) => {
   const listRef = React.useRef();
 
   // using ref so that keyboard navigation and focusing on cells won't trigger component re-render.
-  const focusedCell = useRef({ row: 0, cell: 0 });
+  const focusedCell = useRef({ rowId: '', columnId: '' });
+
+  // set the first cell as a default focus cell once the list renders
+  useEffect(() => {
+    if (listRef?.current && focusedCell?.current) {
+      focusedCell.current = getFocusedCellIds(listRef?.current, columns, { row: 0, cell: 0 });
+    }
+  }, [listRef, focusedCell, columns]);
 
   const focusCell = ({ row, cell }) => {
     // add 1 to the row number to accomodate for hidden header
@@ -156,12 +165,12 @@ const CompactInteractiveList = (props) => {
     }
   };
 
-  const setFocusedCell = ({ rowIndex, columnIndex }) => {
-    focusedCell.current = { row: rowIndex, cell: columnIndex };
+  const setFocusedCell = ({ rowId, columnId }) => {
+    focusedCell.current = { rowId, columnId };
   };
 
   const handleKeyDown = (event) => {
-    let moveFocusTo = focusedCell.current;
+    let moveFocusTo = getFocusedCellIndexes(listRef?.current, columns, focusedCell.current);
 
     const targetElement = event.target;
 
@@ -177,26 +186,26 @@ const CompactInteractiveList = (props) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_UP:
-        moveFocusTo = handleUpKey(focusedCell.current, numberOfColumns, flowHorizontally, rows.length);
+        moveFocusTo = handleUpKey(moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
         event.preventDefault();
         break;
       case KeyCode.KEY_DOWN:
-        moveFocusTo = handleDownKey(focusedCell.current, numberOfColumns, flowHorizontally, rows.length);
+        moveFocusTo = handleDownKey(moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
         event.preventDefault();
         break;
       case KeyCode.KEY_LEFT: {
-        moveFocusTo = handleLeftKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
+        moveFocusTo = handleLeftKey(event, moveFocusTo, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       }
       case KeyCode.KEY_RIGHT: {
-        moveFocusTo = handleRightKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
+        moveFocusTo = handleRightKey(event, moveFocusTo, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       }
       case KeyCode.KEY_HOME:
-        moveFocusTo = handleHomeKey(event, focusedCell.current, numberOfColumns, flowHorizontally, rows.length);
+        moveFocusTo = handleHomeKey(event, moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
         break;
       case KeyCode.KEY_END:
-        moveFocusTo = handleEndKey(event, focusedCell.current, numberOfColumns, flowHorizontally, columns.length, rows.length);
+        moveFocusTo = handleEndKey(event, moveFocusTo, numberOfColumns, flowHorizontally, columns.length, rows.length);
         break;
       case KeyCode.KEY_ESCAPE:
         if (onClearSelection) {
@@ -211,7 +220,7 @@ const CompactInteractiveList = (props) => {
       default:
         return;
     }
-    focusedCell.current = moveFocusTo;
+    focusedCell.current = getFocusedCellIds(listRef?.current, columns, moveFocusTo);
     focusCell(moveFocusTo);
     event.preventDefault(); // prevent the page from moving with the arrow keys.
   };
@@ -219,7 +228,7 @@ const CompactInteractiveList = (props) => {
   const onFocus = (event) => {
     if (!event.currentTarget.contains(event.relatedTarget)) {
       // Not triggered when swapping focus between children
-      focusCell(focusedCell.current);
+      focusCell(getFocusedCellIndexes(listRef?.current, columns, focusedCell.current));
     }
   };
 
