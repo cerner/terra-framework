@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added 
+  * Added export for `getFocusableElements` method for focus management.
+
 * Fixed
   * Removed unnecessary rerenders
 

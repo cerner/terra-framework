@@ -977,6 +977,18 @@ describe('Compact Interactive List', () => {
       document.getElementsByTagName('html')[0].innerHTML = '';
     });
 
+    beforeAll(() => {
+      // Define offsetHeight for HTML elements
+      Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+        configurable: true,
+        value: 44,
+      });
+      // Define offsetWidth for HTML elements
+      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+        configurable: true, value: 100,
+      });
+    });
+
     it('should call onCellSelect method if cell is selactable', () => {
       const mockOnCellSelect = jest.fn();
       const testList = (
