@@ -94,7 +94,6 @@ const ColumnHeader = (props) => {
             key={column.id}
             id={column.id}
             tableId={tableId}
-            rowIndex={0}
             columnIndex={columnIndex}
             displayName={column.displayName}
             isDisplayVisible={column.isDisplayVisible}

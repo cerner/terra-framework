@@ -47,7 +47,7 @@ const DefaultWorklistDataGrid = () => {
       <WorklistDataGrid
         id="default-terra-worklist-data-grid"
         overflowColumns={cols}
-        rows={rows}
+        rows={rowData}
         rowHeaderIndex={rowHeaderIndex}
         onCellSelect={onCellSelect}
         onClearSelectedCells={onClearSelectedCells}

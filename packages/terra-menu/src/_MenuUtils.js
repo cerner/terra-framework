@@ -46,11 +46,18 @@ const findMenuItem = (updatedStack, key) => {
   return undefined;
 };
 
+/**
+ * Util to determine if the user agent indicates that the browser is Safari
+ * @return {boolean}
+ */
+const isSafari = () => navigator.userAgent.indexOf('Safari') !== -1 && navigator.userAgent.indexOf('Chrome') === -1;
+
 const MenuUtils = {
   isFullScreen,
   isMac,
   totalItems,
   findMenuItem,
+  isSafari,
 };
 
 export default MenuUtils;

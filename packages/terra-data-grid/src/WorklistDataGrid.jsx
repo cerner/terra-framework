@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React, {
-  useRef, useCallback, useEffect,
+  useRef, useCallback, useEffect, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -171,8 +171,8 @@ function WorklistDataGrid(props) {
     isSelectable: column.isSelectable !== false,
   }));
 
-  const worklistDataGridPinnedColumns = makeWorklistDataGridColumns(pinnedColumns);
-  const worklistDataGridOverflowColumns = makeWorklistDataGridColumns(overflowColumns);
+  const worklistDataGridPinnedColumns = useMemo(() => (makeWorklistDataGridColumns(pinnedColumns)), [pinnedColumns]);
+  const worklistDataGridOverflowColumns = useMemo(() => (makeWorklistDataGridColumns(overflowColumns)), [overflowColumns]);
 
   // -------------------------------------
   // useEffect Hooks
@@ -327,10 +327,6 @@ function WorklistDataGrid(props) {
     }
   }, [handleRowSelection, hasSelectableRows, onCellSelect]);
 
-  const handleColumnSelect = useCallback((columnId) => {
-    onColumnSelect(columnId);
-  }, [onColumnSelect]);
-
   const handleRowSelectionHeaderSelect = useCallback(() => {
     onColumnSelect(WorklistDataGridUtils.ROW_SELECTION_COLUMN.id);
   }, [onColumnSelect]);
@@ -384,7 +380,7 @@ function WorklistDataGrid(props) {
         overflowColumns={worklistDataGridOverflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}
-        onColumnSelect={onColumnSelect ? handleColumnSelect : undefined}
+        onColumnSelect={onColumnSelect}
         onRowSelectionHeaderSelect={onColumnSelect ? handleRowSelectionHeaderSelect : undefined}
         onColumnResize={onColumnResize}
         onCellSelect={handleCellSelection}

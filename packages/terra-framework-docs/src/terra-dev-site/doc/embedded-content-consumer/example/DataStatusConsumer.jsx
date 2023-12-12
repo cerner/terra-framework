@@ -40,7 +40,9 @@ const onAuthorize = () => {
 
 const DataStatusConsumer = () => (
   <EmbeddedContentConsumer
-    src="../../../#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
+    // Use `../../../` prefix if there is any changes to the providers file so we can see changes during the PR-preview build.
+    // Otherwise, keep the existing `/terra-framework/` prefix so the page will load when viewing the live site under /terra-ui and /terra-framework.
+    src="/terra-framework/#/raw/provider/cerner-terra-framework-docs/embedded-content-consumer/providers/data-status-provider"
     onMount={onMount}
     onLaunch={onLaunch}
     onAuthorize={onAuthorize}
