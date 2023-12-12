@@ -63,13 +63,15 @@ const FolderTree = ({
       ariaLabel={title}
     >
       <Button
-        text={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all' })}
+        title={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all' })}
+        text={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-instructions' })}
         variant="utility"
         icon={<IconExpandRow />}
         onClick={onExpandAll}
       />
       <Button
-        text={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all' })}
+        title={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all' })}
+        text={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-instructions' })}
         variant="utility"
         icon={<IconCollapseRow />}
         onClick={onCollapseAll}
