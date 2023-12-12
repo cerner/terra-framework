@@ -207,17 +207,21 @@ function FlowsheetDataGrid(props) {
     return newSections;
   }, [intl, sections]);
 
-  const flattenSections = (sectionsToFlatten) => sectionsToFlatten.flatMap(section => section.rows.map(row => ({
-    ...row,
-    sectionId: section.id,
-  })));
+  const rowsToSearch = useMemo(() => {
+    if (flowsheetSections) {
+      return flowsheetSections.flatMap(section => section.rows.map(row => ({
+        ...row,
+        sectionId: section.id,
+      })));
+    }
+    return flowsheetRows;
+  }, [flowsheetSections, flowsheetRows]);
 
   useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
-    const rowsToSelect = flowsheetSections ? flattenSections(flowsheetSections) : flowsheetRows;
 
-    rowsToSelect.forEach((row) => {
+    rowsToSearch.forEach((row) => {
       row.cells.forEach((cell, cellIndex) => {
         if (cell.isSelected) {
           newSelectedCells.push({ rowId: row.id, columnId: columns[cellIndex].id });
@@ -235,16 +239,12 @@ function FlowsheetDataGrid(props) {
     } else if (selectedCells.current.length) {
       setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.cells-selected' }, { cellCount: selectedCells.current.length }));
     }
-  }, [intl, flowsheetRows, flowsheetSections, columns, setCellSelectionAriaLiveMessage]);
+  }, [intl, rowsToSearch, columns, setCellSelectionAriaLiveMessage]);
 
   const selectCellRange = useCallback((rowId, columnId, sectionId) => {
     if (anchorCell.current === null) {
       return;
     }
-
-    const rowsToSearch = flowsheetSections
-      ? flattenSections(flowsheetSections)
-      : rows;
 
     const anchorRowIndex = rowsToSearch.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = columns.findIndex(col => col.id === anchorCell.current.columnId);
@@ -279,7 +279,7 @@ function FlowsheetDataGrid(props) {
     if (onCellRangeSelect) {
       onCellRangeSelect(cellsToSelect);
     }
-  }, [flowsheetSections, rows, columns, onCellRangeSelect]);
+  }, [rowsToSearch, flowsheetSections, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
     // Call onRowSelect for row header column
