@@ -23,7 +23,6 @@ import {
 
 import {
   isTextInput,
-  getFocusableElements,
   handleLeftKey,
   handleRightKey,
   moveFocusFromElement,
@@ -34,6 +33,7 @@ import {
   getFocusedCellIndexes,
   getFocusedCellIds,
 } from './utils/keyHandlerUtils';
+import { getFocusableElements } from '../../terra-table/src';
 
 const cx = classNames.bind(styles);
 

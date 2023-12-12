@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import { checkIfColumnIsResponsive } from '../utils/utils';
-import { getFocusableElements } from '../utils/keyHandlerUtils';
+import { getFocusableElements } from '../../../terra-table/src';
 import formattedColumnShape from '../proptypes/formattedColumnShape';
 import { widthUnitTypes, alignTypes } from '../utils/constants';
 import styles from './Cell.module.scss';

@@ -1,21 +1,4 @@
-/* NOTE: This method is copied from the Terra table component.
- * Remove once terra-table release allows to use the original method.
- */
-export const getFocusableElements = (parentElement) => {
-  // add all elements we want to include in our selection
-  const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
-      + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
-      + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
-
-  const focusableElements = [...parentElement.querySelectorAll(`${focusableElementSelector}`)].filter(
-    element => !element.hasAttribute('disabled')
-        && !element.getAttribute('aria-hidden')
-        && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
-        && window.getComputedStyle(element).visibility !== 'hidden',
-  );
-
-  return focusableElements;
-};
+import { getFocusableElements } from '../../../terra-table/src';
 
 /**
  * @param {HTMLElement} element - The element to check if it is a text input
