@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added the ability to expand all/collapse all folders.
+  * Added `onExpandAll` and `onCollapseAll` props.
+
 * Changed
   * Updated cursor style to pointer for clickable regions.
 
