@@ -65,6 +65,12 @@
     .start-icon {
       opacity: var(--terra-menu-item-disabled-start-icon-opacity, 0.25);
     }
+
+    &:focus {
+      box-shadow: var(--terra-menu-item-focus-box-shadow, none);
+      outline: var(--terra-menu-item-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-menu-item-focus-outline-offset, -2px);
+    }
   }
 
   .is-top-level .text {
