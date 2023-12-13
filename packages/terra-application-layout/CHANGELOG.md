@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.76.0 - (December 13, 2023)
+
+* Added
+  * Added `onBlur` property for utilityConfig that will trigger on _ApplicationMenu blur event
+
 ## 5.76.0 - (November 23, 2023)
 
 * Changed
