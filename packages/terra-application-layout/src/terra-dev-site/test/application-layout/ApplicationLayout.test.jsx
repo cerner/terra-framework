@@ -274,6 +274,7 @@ class ApplicationLayoutTest extends React.Component {
       menuItems: Utils.utilityHelpers.getDefaultUtilityItems(intl, userData, customUtilityItems),
       initialSelectedKey: Utils.utilityHelpers.defaultKeys.MENU,
       onChange: () => {},
+      onBlur: () => {},
     });
 
     return (
