@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.3.1 - (December 11, 2023)
+
 * Fixed
   * Fixed comment error for Table documentation.
   * Removed unnecessary rerenders

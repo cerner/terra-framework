@@ -4,6 +4,8 @@
 
 * Added
   * Added implementation guide for `terra-table`.
+  
+## 1.51.0 - (December 11, 2023)
 
 * Changed
   * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
@@ -22,6 +24,7 @@
   * Added the example with `contentWidth` as auto value.
   * Added examples and tests for `terra-folder-tree`.
   * Added documentation for exported constants of `terra-table` in the About page.
+  * Added new examples for cell content and cell selection to `terra-compact-interactive-list`.
 
 * Changed
   * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.

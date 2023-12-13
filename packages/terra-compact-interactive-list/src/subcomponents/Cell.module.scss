@@ -9,9 +9,10 @@
     overflow: hidden;
     padding: var(--terra-compact-interactive-list-cell-content-padding, 7px);
     position: relative;
+  }
 
-    &:hover {
-      background-color: var(--terra-compact-interactive-list-hover-background-color, #e0f2fb);
-    }
+  .selectable:hover {
+    background-color: var(--terra-compact-interactive-list-hover-background-color, #e0f2fb);
+    cursor: pointer;
   }
 }
