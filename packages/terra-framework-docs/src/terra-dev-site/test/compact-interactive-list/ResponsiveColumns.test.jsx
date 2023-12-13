@@ -50,18 +50,18 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Service name',
     flexGrow: true,
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Featured',
     width: '60px',
     align: alignTypes.CENTER,
   },
@@ -73,6 +73,7 @@ const FixedWidthColumns = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
+    rowHeaderIndex={1}
   />
 );
 

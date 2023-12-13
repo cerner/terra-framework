@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-* Added
-  * New stylings for the focus indicator.
 * Fixed
   * Fixed the issue with `contentWidth` as auto value.
   

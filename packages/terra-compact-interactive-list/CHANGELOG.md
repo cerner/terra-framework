@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added keyboard navigation.
+
 ## 1.0.0-alpha.2 - (December 1, 2023)
 
 * Changed
