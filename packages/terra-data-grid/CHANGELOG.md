@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.7.0 - (December 11, 2023)
+
 * Added
   * Added keyboard navigation support for sections.
 

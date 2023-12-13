@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 1.51.0 - (December 11, 2023)
+
 * Changed
   * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
 
