@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.52.0 - (December 13, 2023)
+
+* Changed
+  * Updated Flowsheet Data Grid Sections Example to showcase multi-select and range selection on sections.
+
+## 1.51.0 - (December 11, 2023)
+
 * Changed
   * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
   * Changed terra-pills example to announce removed state of pills.
@@ -17,6 +24,7 @@
   * Added the example with `contentWidth` as auto value.
   * Added examples and tests for `terra-folder-tree`.
   * Added documentation for exported constants of `terra-table` in the About page.
+  * Added new examples for cell content and cell selection to `terra-compact-interactive-list`.
 
 * Changed
   * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.
