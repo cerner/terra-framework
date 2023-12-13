@@ -5,11 +5,11 @@
 ## 1.8.0 - (December 13, 2023)
 
 * Breaking Change
-  * `OnCellSelect` now returns an object containing rowId, columnId and sectionId.
+  * Flowsheet `OnCellSelect` callback now returns an object containing rowId, columnId and sectionId.
 
 * Added
   * Added range-select and multi-select on flowsheets with sections.
-  * `onCellRangeSelect` now also returns a sectionId for each cell in range.
+  * Flowsheet `onCellRangeSelect` callback now also returns a sectionId for each cell in range.
 
 ## 1.7.0 - (December 11, 2023)
 
