@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-## 2.0.0 - (December 13, 2023)
+## 1.8.0 - (December 13, 2023)
 
 * Breaking Change
   * `OnCellSelect` now returns an object containing rowId, columnId and sectionId.
