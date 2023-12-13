@@ -4,23 +4,22 @@ import TableRowSelection from './TableRowSelection?dev-site-example';
 
 ### Description
 
-Row Selection Mode is controlled via a prop and is off by default.
-When creating a Table that supports multiple row selections, the prop has to be explicitly set by the consumer.
-This example demonstrates a Table with full support for multiple row selections.
-Since the component is an accessible table component, each row selection checkbox is a tab stop.
+Row selection mode is controlled with a property and is off by default.
+When creating a table that supports multiple row selections, the consumer must set the property.
+This example demonstrates a table with full support for multiple row selections.
+Because the component is an accessible table, each row selection checkbox is a tab stop.
 
-### Properties required
-This example demonstrates a Table with full support for row selection by utilizing the following [Table](/components/cerner-terra-framework-docs/table/about#properties):
+### Required Properties
 * rowSelectionMode
 * onRowSelect
 * onRowSelectionHeaderSelect
 
 ## Row Selection Interactions
-When using this example, the following row centric outcomes may be achieved by using the respective actions.
+For this example, you can perform the following actions to achieve row-centric outcomes:
 
 |Outcome|Action|
 |---|---|
-|Select a row|When multiple row selection is enabled, click or press Spacebar on any row selection checkbox.|
-|Unselect a row|Click or press Spacebar on any row selection checkbox.|
+|Select a Row|When multiple row selection is enabled, select the row, or press **TAB** until the row is active and then press the **SPACEBAR** to select the checkbox.|
+|Clear a Row|Select the row, or press **TAB** until the row is active and then press the **SPACEBAR** to clear the checkbox.|
 
 <TableRowSelection title='Table With Row Selection' />

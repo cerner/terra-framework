@@ -4,22 +4,21 @@ import TableSingleRowSelection from './TableSingleRowSelection?dev-site-example'
 
 ### Description
 
-Row Selection Mode is controlled via a prop and is off by default.
-When creating a Table that supports single row selection, the prop has to be explicitly set by the consumer.
-This example demonstrates a Table with full support for multiple row selections.
-Since the component is an accessible table component, each row selection checkbox is a tab stop.
+Row selection mode is controlled with a property and is off by default.
+When creating a table that supports single row selection, the consumer must set the property.
+This example demonstrates a table with full support for multiple row selections.
+Because the component is an accessible table, each row selection checkbox is a tab stop.
 
-### Properties required
-This example demonstrates a Table with full support for row selection by utilizing the following [Table](/components/cerner-terra-framework-docs/table/about#properties):
+### Required Properties
 * rowSelectionMode
 * onRowSelect
 
 ## Row Selection Interactions
-When using this example, the following row centric outcomes may be achieved by using the respective actions.
+For this example, you can perform the following actions to achieve row-centric outcomes:
 
 |Outcome|Action|
 |---|---|
-|Select a row|When single row selection is enabled, click or press Spacebar anywhere on an _unselected_ row|
-|Unselect a row|Click or press Spacebar anywhere on an _selected_ row.|
+|Select a Row|When single row selection is enabled, select the appropriate row, or press **TAB** until the row is active and then press the **SPACEBAR**.|
+|Clear a Row|Select the appropriate row, or press **TAB** until the row is active and then press the **SPACEBAR**.|
 
 <TableSingleRowSelection title='Table With Single Row Selection' />

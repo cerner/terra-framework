@@ -5,11 +5,11 @@ import SortableTable from "./SortableTable?dev-site-example";
 
 ### Description
 
-This example demonstrates a [Table](/components/cerner-terra-framework-docs/table/about) with the sortable data.
-The Table component does not have logic to perform column sorting as knowledge about the column data business logic would be required.
-Consumers can enable sorting capabilities by listening to the _onColumnSelect_ callback and properly updating the source data of the Table.
+This example demonstrates a [Table](/components/cerner-terra-framework-docs/table/about) component with sortable information.
+The Table component does not have logic to perform column sorting because knowledge about the column data business logic would be required.
+Consumers can enable sorting capabilities by listening to the _onColumnSelect_ callback and properly updating the source data of the table.
 
-### Properties required
-* **_onColumnSelect_**: When the user selects a column, this callback will be called with the columnId of the selected column.
+### Required Properties
+**_onColumnSelect_**: When the user selects a column, this callback is called with the columnId of the selected column.
 
 <SortableTable />

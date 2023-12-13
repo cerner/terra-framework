@@ -3,12 +3,11 @@ import TableWithoutHeaders from './TableWithoutHeaders?dev-site-example';
 # Headerless Table
 
 ### Description
-This example demonstrates a [Table](/components/cerner-terra-framework-docs/table/about) without column headers.
-The column headers still exist in the DOM for proper accessibility support.  However, they are hidden from the user's view.
-Since the column headers exist in the DOM and are visible to screen readers, this must be accounteed for during implementation.
+This example demonstrates a [Table](/components/cerner-terra-framework-docs/table/about) component without column headers.
+The column headers still exist in the Document Object Model (DOM) for proper accessibility support. However, they are hidden from the user's view.
+Ensure that you account for these factors during implementation.
 
-### Properties required
-* **hasVisibleColumnHeaders**: Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns, but the voice reader will use the column header values for a11y.
-A value of false will hide the column headers. Otherwise, the column headers will be visible. 
+### Required Properties
+**hasVisibleColumnHeaders**: A Boolean value indicating whether the table columns are displayed. Setting the value to **false** hides the columns, but a screen reader still reads the column header values.
 
 <TableWithoutHeaders title='Table Without Column Headers' />
