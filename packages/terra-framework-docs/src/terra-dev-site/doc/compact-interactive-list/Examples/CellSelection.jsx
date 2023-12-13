@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
-import { IconDocuments, IconFeaturedOutline, IconImage } from 'terra-icon';
+import {
+  IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
+} from 'terra-icon';
 
 // eslint-disable-next-line no-alert
-const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Button was clicked')}>Learn more</button>;
+const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Learn more button was clicked')}>Learn more</button>;
 // eslint-disable-next-line react/forbid-dom-props
 const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
-const anchorCell = <a href="https://www.oracle.com/" aria-label="Visit Oracle">Visit Oracle</a>;
+const anchorCell = <a href="https://www.oracle.com/" aria-label="Documentation">Documentation</a>;
 const textAreaCell = <textarea name="textArea" aria-label="Text Area" rows="1" cols="15" />;
 const selectCell = (
   <select name="specialties" id="specialties" aria-label="Select Specialty">
@@ -17,32 +19,38 @@ const selectCell = (
   </select>
 );
 
+const iconFeaturedOff = <IconFeaturedOff a11yLabel="Featured off" height="1.5em" width="1.5em" />;
+const iconFeatured = <IconFeatured a11yLabel="Featured" height="1.5em" width="1.5em" />;
+const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
+const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
+const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
+
 const rows = [
   {
     id: 'row_1',
     cells: [
-      { content: <IconDocuments a11yLabel="Documents" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
       { content: buttonCell },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
   {
     id: 'row_2',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
       { content: inputCell },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
   {
     id: 'row_3',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNotNormal },
       { content: 'Arterial Sheath Care (3)' },
       { content: anchorCell },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
   {
@@ -51,59 +59,83 @@ const rows = [
       { content: ' ' },
       { content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
       { content: textAreaCell },
-      { content: ' ' },
+      { content: '' },
     ],
   },
   {
     id: 'row_5',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsCritical },
       { content: 'Arterial Sheath Care (5)' },
       { content: selectCell },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
 ];
+
+const calculateRows = (featuredRowsIds) => {
+  const calculatedRows = [...rows];
+  return calculatedRows.map(row => {
+    const newRow = { ...row, cells: [...row.cells] };
+    if (featuredRowsIds.indexOf(row.id) >= 0) {
+      newRow.cells[3] = { ...row.cells[3], content: iconFeatured };
+    } else { newRow.cells[3] = { ...row.cells[3], content: iconFeaturedOff }; }
+    return newRow;
+  });
+};
 
 const cols = [
   {
     id: 'Column-0',
     displayName: 'Icon',
-    width: '60px',
+    width: '50px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '200px', // will be disregarded because of flexGrow prop
+    width: '250px', // will be disregarded because of flexGrow prop
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
-    maximumWidth: '300px',
+    maximumWidth: '350px',
     minimumWidth: '100px',
   },
   {
     id: 'Column-2',
     displayName: 'Details',
-    width: '200px',
+    width: '150px',
     align: alignTypes.RIGHT,
   },
   {
     id: 'Column-3',
     displayName: 'Featured',
-    width: '60px',
+    width: '50px',
     align: alignTypes.CENTER,
   },
 ];
 
 const ResponsiveColumnsMaxWidth = () => {
+  const [featuredRowsIds, setFeaturedRowsIds] = useState([]);
   const [selectedColumn, setSelectedColumn] = useState(null);
   const [selectedRow, setSelectedRow] = useState(null);
+  const displayedRows = calculateRows(featuredRowsIds);
 
   const onCellSelect = ({ rowId, columnId }) => {
+    if (columnId === cols[3].id) {
+      const newSelectedRows = [...featuredRowsIds];
+      const index = newSelectedRows.findIndex(row => row === rowId);
+      if (index >= 0) {
+        newSelectedRows.splice(index, 1);
+      } else {
+        newSelectedRows.push(rowId);
+      }
+      setFeaturedRowsIds(newSelectedRows);
+    }
     setSelectedColumn(columnId);
     setSelectedRow(rowId);
   };
 
   const onClearSelection = () => {
+    setFeaturedRowsIds([]);
     setSelectedColumn(undefined);
     setSelectedRow(undefined);
   };
@@ -113,7 +145,7 @@ const ResponsiveColumnsMaxWidth = () => {
       <p>{selectedColumn && selectedRow ? `Selected cell id: ${selectedColumn}, selected row id: ${selectedRow}.` : 'There are no celected cells at the moment.'}</p>
       <CompactInteractiveList
         id="with-breakpoints"
-        rows={rows}
+        rows={displayedRows}
         columns={cols}
         numberOfColumns={2}
         columnMinimumWidth="234px"

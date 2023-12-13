@@ -1,30 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
-import { IconDocuments, IconFeaturedOutline, IconImage } from 'terra-icon';
+import {
+  IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
+} from 'terra-icon';
+
+const iconFeaturedOff = <IconFeaturedOff a11yLabel="Featured off" height="1.5em" width="1.5em" />;
+const iconFeatured = <IconFeatured a11yLabel="Featured" height="1.5em" width="1.5em" />;
+const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
+const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
+const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
 
 const rows = [
   {
     id: 'row_1',
     cells: [
-      { content: <IconDocuments a11yLabel="Documents" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
   {
     id: 'row_2',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
   {
     id: 'row_3',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNotNormal },
       { content: 'Arterial Sheath Care (3)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
   {
@@ -38,12 +46,23 @@ const rows = [
   {
     id: 'row_5',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsCritical },
       { content: 'Arterial Sheath Care (5)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: '' },
     ],
   },
 ];
+
+const calculateRows = (featuredRowsIds) => {
+  const calculatedRows = [...rows];
+  return calculatedRows.map(row => {
+    const newRow = { ...row, cells: [...row.cells] };
+    if (featuredRowsIds.indexOf(row.id) >= 0) {
+      newRow.cells[2] = { ...row.cells[2], content: iconFeatured };
+    } else { newRow.cells[2] = { ...row.cells[2], content: iconFeaturedOff }; }
+    return newRow;
+  });
+};
 
 const cols = [
   {
@@ -55,10 +74,10 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '200px', // will be disregarded because of flexGrow prop
+    width: '300px', // will be disregarded because of flexGrow prop
     flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
-    maximumWidth: '300px',
-    minimumWidth: '100px',
+    maximumWidth: '400px',
+    minimumWidth: '200px',
   },
   {
     id: 'Column-2',
@@ -68,15 +87,39 @@ const cols = [
   },
 ];
 
-const ResponsiveColumnsMaxWidth = () => (
-  <CompactInteractiveList
-    id="with-breakpoints"
-    rows={rows}
-    columns={cols}
-    numberOfColumns={2}
-    columnMinimumWidth="234px"
-    rowHeaderIndex={1}
-  />
-);
+const ResponsiveColumnsMaxWidth = () => {
+  const [featuredRowsIds, setFeaturedRowsIds] = useState([]);
+  const displayedRows = calculateRows(featuredRowsIds);
+
+  const onCellSelect = ({ rowId, columnId }) => {
+    if (columnId === cols[2].id) {
+      const newSelectedRows = [...featuredRowsIds];
+      const index = newSelectedRows.findIndex(row => row === rowId);
+      if (index >= 0) {
+        newSelectedRows.splice(index, 1);
+      } else {
+        newSelectedRows.push(rowId);
+      }
+      setFeaturedRowsIds(newSelectedRows);
+    }
+  };
+
+  const onClearSelection = () => {
+    setFeaturedRowsIds([]);
+  };
+
+  return (
+    <CompactInteractiveList
+      id="with-breakpoints"
+      rows={displayedRows}
+      columns={cols}
+      numberOfColumns={2}
+      columnMinimumWidth="234px"
+      rowHeaderIndex={1}
+      onCellSelect={onCellSelect}
+      onClearSelection={onClearSelection}
+    />
+  );
+};
 
 export default ResponsiveColumnsMaxWidth;

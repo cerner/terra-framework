@@ -1,0 +1,31 @@
+import ResponsiveColumns from '../Examples/ResponsiveColumns?dev-site-examples';
+import ResponsiveColumnsMaxWidth from '../Examples/ResponsiveColumnsMaxWidth?dev-site-examples';
+
+# Responsive Columns
+
+### Description
+
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) with responsive columns.
+
+* The middle semantic column with the text information has `flexGrow` prop set to `true` which allowes it to grow to fill up container's width.
+* The maximum width for the text column is not limited, the minimum width would take the default value.
+* Once the list reaches its minimum width, defined by fixed width columns and the default minimum width of the flex growing column, the scroll shows up.
+
+<ResponsiveColumns />
+
+### Usage
+
+There are two ways to make a sematic column responsive:
+
+*  Omitting the `width` in column props will make the semantic column grow to take all available space.
+*  Setting the `flexGrow` prop to true with the `width` set to a number of width units (such as `px`, `em`, or `rem`) will also make the column size responsive. In this case the width will be used as a flex basis.
+
+#### Controlling maximum and minimum width with props
+
+* To control the minimum and maximum width of all flexible columns in the component, `columnMaximumWidth` and `columnMinimumWidth` props can be passed to the Compact Interactive List. 
+* If `columnMinimumWidth` prop hasn't been set, the default value will be used.
+* Alternatively, the `minimumWidth` prop can be passed individually to the desired columns. 
+
+In following example the text column has `maximumWidth: 400px` and `minimumWidth: 200px`:
+
+<ResponsiveColumnsMaxWidth />
