@@ -5,6 +5,11 @@
 * Added
   * Added implementation guide for `terra-table`.
   
+## 1.52.0 - (December 13, 2023)
+
+* Changed
+  * Updated Flowsheet Data Grid Sections Example to showcase multi-select and range selection on sections.
+
 ## 1.51.0 - (December 11, 2023)
 
 * Changed
