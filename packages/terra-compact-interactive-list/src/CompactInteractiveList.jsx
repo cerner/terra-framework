@@ -1,6 +1,9 @@
-import React, { useContext, useMemo } from 'react';
+import React, {
+  useContext, useRef, useMemo, useEffect,
+} from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import styles from './CompactInteractiveList.module.scss';
@@ -17,6 +20,20 @@ import {
   getColumnMaxWidth,
   getColumnMinWidth,
 } from './utils/utils';
+
+import {
+  isTextInput,
+  handleLeftKey,
+  handleRightKey,
+  moveFocusFromElement,
+  handleDownKey,
+  handleUpKey,
+  handleHomeKey,
+  handleEndKey,
+  getFocusedCellIndexes,
+  getFocusedCellIds,
+} from './utils/keyHandlerUtils';
+import getFocusableElements from '../../terra-table/src/utils/focusManagement';
 
 const cx = classNames.bind(styles);
 
@@ -53,7 +70,7 @@ const propTypes = {
   rowHeight: PropTypes.string,
 
   /**
-   * A number of visual columns. Defaults to 1.
+   * A number of visual columns. Defaults to 1. Number of visual rows is calculated as the number of items divided by the number of columns, rounded up.
    */
   numberOfColumns: PropTypes.number,
 
@@ -70,20 +87,37 @@ const propTypes = {
   width: PropTypes.string,
 
   /**
-   * Columns minimum width should be a valid css string in value in px, em, or rem units..
+   * Callback function that is called when a selectable cell is selected.
+   * Returns an object with named parameters for rowId and columnId
+   */
+  onCellSelect: PropTypes.func,
+
+  /**
+   * Callback function that is called when all selected cells need to be unselected. Parameters: none.
+   */
+  onClearSelection: PropTypes.func,
+
+  /**
+   * Columns minimum width should be a valid css string in value in px, em, or rem units.
    */
   columnMinimumWidth: PropTypes.string,
 
   /**
-   * Columns maximum width should be a valid css string in value in px, em, or rem units..
+   * Columns maximum width should be a valid css string in value in px, em, or rem units.
    */
   columnMaximumWidth: PropTypes.string,
+
+  /**
+   * A zero-based index indicating which column represents the row header.
+   */
+  rowHeaderIndex: PropTypes.number,
 };
 
 const defaultProps = {
   rows: [],
   numberOfColumns: 1,
   width: '100%',
+  rowHeaderIndex: 0,
 };
 
 const CompactInteractiveList = (props) => {
@@ -99,9 +133,101 @@ const CompactInteractiveList = (props) => {
     width,
     columnMinimumWidth,
     columnMaximumWidth,
+    onCellSelect,
+    onClearSelection,
+    rowHeaderIndex,
   } = props;
 
   const theme = useContext(ThemeContext);
+  const listRef = React.useRef();
+
+  // using ref so that keyboard navigation and focusing on cells won't trigger component re-render.
+  const focusedCell = useRef({ rowId: '', columnId: '' });
+
+  // set the first cell as a default focus cell once the list renders
+  useEffect(() => {
+    if (listRef?.current && focusedCell?.current) {
+      focusedCell.current = getFocusedCellIds(listRef?.current, columns, { row: 0, cell: 0 });
+    }
+  }, [listRef, focusedCell, columns]);
+
+  const focusCell = ({ row, cell }) => {
+    // add 1 to the row number to accomodate for hidden header
+    const focusedCellElement = listRef.current.children[row + 1].children[cell];
+    const interactiveChildren = getFocusableElements(focusedCellElement);
+    if (interactiveChildren?.length > 0 && interactiveChildren[0]) {
+      // currently a cell can have only one interact-able element in it, which gets auto-focused.
+      interactiveChildren[0].focus();
+    } else {
+      // cell gets focus if there is no interact-able elements in it.
+      focusedCellElement.focus();
+    }
+  };
+
+  const setFocusedCell = ({ rowId, columnId }) => {
+    focusedCell.current = { rowId, columnId };
+  };
+
+  const handleKeyDown = (event) => {
+    let moveFocusTo = getFocusedCellIndexes(listRef?.current, columns, focusedCell.current);
+
+    const targetElement = event.target;
+
+    // Allow default behavior if the event target is an editable field
+
+    if (event.keyCode !== KeyCode.KEY_TAB
+        && (isTextInput(targetElement)
+            || ['textarea', 'select'].indexOf(targetElement.tagName.toLowerCase()) >= 0
+            || (targetElement.hasAttribute('contentEditable') && targetElement.getAttribute('contentEditable') !== false))) {
+      return;
+    }
+
+    const key = event.keyCode;
+    switch (key) {
+      case KeyCode.KEY_UP:
+        moveFocusTo = handleUpKey(moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
+        break;
+      case KeyCode.KEY_DOWN:
+        moveFocusTo = handleDownKey(moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
+        break;
+      case KeyCode.KEY_LEFT: {
+        moveFocusTo = handleLeftKey(event, moveFocusTo, numberOfColumns, flowHorizontally, columns.length, rows.length);
+        break;
+      }
+      case KeyCode.KEY_RIGHT: {
+        moveFocusTo = handleRightKey(event, moveFocusTo, numberOfColumns, flowHorizontally, columns.length, rows.length);
+        break;
+      }
+      case KeyCode.KEY_HOME:
+        moveFocusTo = handleHomeKey(event, moveFocusTo, numberOfColumns, flowHorizontally, rows.length);
+        break;
+      case KeyCode.KEY_END:
+        moveFocusTo = handleEndKey(event, moveFocusTo, numberOfColumns, flowHorizontally, columns.length, rows.length);
+        break;
+      case KeyCode.KEY_ESCAPE:
+        if (onClearSelection) {
+          onClearSelection();
+        }
+        event.preventDefault();
+        return;
+      case KeyCode.KEY_TAB:
+        moveFocusFromElement(listRef, id, !event.shiftKey);
+        event.preventDefault();
+        return;
+      default:
+        return;
+    }
+    focusedCell.current = getFocusedCellIds(listRef?.current, columns, moveFocusTo);
+    focusCell(moveFocusTo);
+    event.preventDefault(); // prevent the page from moving with the arrow keys.
+  };
+
+  const onFocus = (event) => {
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      // Not triggered when swapping focus between children
+      focusCell(getFocusedCellIndexes(listRef?.current, columns, focusedCell.current));
+    }
+  };
 
   const defaultUnitType = widthUnitTypes.PX;
   // map the columns to ensure that width, maximumWidth and minimumWidth use same units (px, em, or rem) across all columns.
@@ -151,20 +277,10 @@ const CompactInteractiveList = (props) => {
   // map rows differently depending on vertical or horizontal orientation
   const mapRows = () => {
     const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
-    let result = [];
-    result = [...rows];
-    if (flowHorizontally) {
-      // all placeholder rows go in the end.
-      for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
-        result.push({ id: `placeholder-row-${i - rows.length + 1}` });
-      }
-    } else {
-      // inject placeholders to specific positions so that they all appear in the last row.
-      let position = rows.length;
-      for (let i = placeholdersNumber; i > 0; i -= 1) {
-        result.splice(position, 0, { id: `placeholder-row-${i}` });
-        position -= rowsPerColumn - 1;
-      }
+    const result = [...rows];
+    // add placeholder rows to the end.
+    for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
+      result.push({ id: `placeholder-row-${i - rows.length + 1}` });
     }
     return result;
   };
@@ -174,22 +290,26 @@ const CompactInteractiveList = (props) => {
   const checkIfRowIsTopMost = (index) => (flowHorizontally ? index < numberOfColumns : index % rowsPerColumn === 0);
 
   return (
-    <div
-      className={cx('compact-interactive-list-container', theme.className)}
-      // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
-      tabIndex={0}
-    >
+    <div className={cx('compact-interactive-list-container', theme.className)}>
       <div
         id={id}
         role="grid"
+        ref={listRef}
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         className={cx('compact-interactive-list')}
         // eslint-disable-next-line react/forbid-dom-props
         style={style}
+        tabIndex={0}
+        onKeyDown={handleKeyDown}
+        onFocus={onFocus}
       >
+        <div role="row" className={cx('hidden')}>
+          {columns.map((column) => (<span key={column.id} role="columnheader">{column.displayName}</span>))}
+        </div>
         {mappedRows.map((row, index) => (
           <Row
+            rowIndex={index}
             key={row.id}
             id={row.id}
             cells={row.cells}
@@ -203,10 +323,13 @@ const CompactInteractiveList = (props) => {
             rowMaximumWidth={rowMaxWidth}
             rowMinimumWidth={rowMinWidth}
             widthUnit={widthUnit}
+            onCellSelect={onCellSelect}
+            setFocusedCell={setFocusedCell}
             flowHorizontally={flowHorizontally}
             rowHeight={calculatedRowHeight}
             isTopmost={checkIfRowIsTopMost(index)}
             isLeftmost={checkIfRowIsLeftMost(index)}
+            rowHeaderIndex={rowHeaderIndex}
           />
         ))}
       </div>

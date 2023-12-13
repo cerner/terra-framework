@@ -39,12 +39,12 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -172,12 +172,12 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Custom
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -277,12 +277,12 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.error
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -382,12 +382,12 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -487,12 +487,12 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-low
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -592,12 +592,12 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-medium
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -697,12 +697,12 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -802,12 +802,12 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
             className="header-container"
             id="header-container"
           >
-            <div
+            <h2
               className="signal-word"
               id="notification-dialog-signal-word"
             >
               Terra.notification.dialog.hazard-high
-            </div>
+            </h2>
             <div
               className="title"
               id="notification-dialog-title"
@@ -1040,12 +1040,12 @@ exports[`correctly applies the theme context className 1`] = `
                               class="header-container"
                               id="header-container"
                             >
-                              <div
+                              <h2
                                 class="signal-word"
                                 id="notification-dialog-signal-word"
                               >
                                 Terra.notification.dialog.hazard-high
-                              </div>
+                              </h2>
                               <div
                                 class="title"
                                 id="notification-dialog-title"
@@ -1182,12 +1182,12 @@ exports[`correctly applies the theme context className 1`] = `
                             className="header-container"
                             id="header-container"
                           >
-                            <div
+                            <h2
                               className="signal-word"
                               id="notification-dialog-signal-word"
                             >
                               Terra.notification.dialog.hazard-high
-                            </div>
+                            </h2>
                             <div
                               className="title"
                               id="notification-dialog-title"

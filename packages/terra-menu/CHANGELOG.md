@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+* Added
+  * New stylings for the focus indicator.
+
+## 6.82.0 - (December 11, 2023)
+
+* Fixed
+  * Fixed the issue with `contentWidth` as auto value.
+  
+* Changed
+  * Allow menu/sub-menu to dynamically set height based on menu items.
+
 ## 6.81.0 - (November 23, 2023)
 
 * Changed
