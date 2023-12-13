@@ -529,6 +529,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                               paddingStyle="none"
                                               refCallback={[Function]}
                                               role="menu"
+                                              zIndex={6001}
                                             >
                                               <ul
                                                 className="list orion-fusion-theme list"
