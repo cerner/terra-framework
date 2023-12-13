@@ -28,11 +28,12 @@ Terra Slider is an input component used to quickly select an imprecise value wit
 <DefaultSlider />
 
 ### Features
-* Supports management of label visibility above the search field through isLabelVisible prop. When isLabelVisible is set to 'true', The label text will be a default value 'search' or the groupName prop value if passed in.
-* Supports placeholder text to display in the search field.
-* Supports adding a minimum length of search text required before performing autosearch.
-* Supports search delay with default value of 2500ms or 'searchDelay' prop value passed in.
-* Supports a default value to be set for search text.
+Supports:
+* Management of custom slider label, minimum label and maximum label.
+* Setting default value for slider.
+* Disabling of slider.
+* Making other updates based on slider value change using the 'onChange' callback prop.
+* Externally updating the slider value using the 'value' prop.
 
 Refer to the [examples](/components/cerner-terra-framework-docs/slider/about#examples) section for detailed demonstration of the features supported by the Search Field.
 
@@ -48,27 +49,27 @@ Refer to the [examples](/components/cerner-terra-framework-docs/slider/about#exa
 ## Accessibility
 ### Keyboard Interactions
 
-List of keyboard interactions supported by Search Field
+List of keyboard interactions supported by Slider
 
 |Key interactions|Description|
 |---|---|
-|Tab           | Moves focus into the search field. If already on the search text box with text entered, tab moves focus to the clear text button. If already on clear text button, tab moves followed by focus to the search button.|
+|Up Arrow    | Increases the value of the slider by one step.|
+|Down Arrow     | Decreases the value of the slider by one step. |
+|Right Arrow    | Increases the value of the slider by one step.|
+|Left Arrow     | Decrease the value of the slider by one step.|
+|Page Up    | Increases the value of the slider by ten steps.|
+|Page Down     | Decrease the value of the slider by ten steps.|
+|Home           | Set the slider to the first allowed value in its range.|
+|End            | Set the slider to the last allowed value in its range.|
+|Tab           | Moves focus into the slider on the thumb. If focus is already on the slider, it moves focus to the next focusable element in the tab sequence.|
 |Shift + Tab    | Moves focus to the previous focusable element in the tab sequence.|
-|Up Arrow    | Moves focus to the previous focusable element in the tab sequence.|
-|Down Arrow     | Moves focus one cell down. If focus is on the bottom cell in the column, focus does not move.|
-|Right Arrow    | Moves focus one cell to the right. If focus is on the right-most cell in the row, focus does not move.|
-|Left Arrow     | Moves focus one cell to the left. If focus is on the left-most cell in the row, focus does not move.|
-|Home           | Moves focus to the first cell in the row that contains focus.|
-|End            | Moves focus to the last cell in the row that contains focus.|
-|Space| When on clear button, clears the current search text. When on search button, triggers the search callback.|
-|Enter| When on clear button, clears the current search text. When on search button, triggers the search callback.|
 
 ### Assistive Technology Support
 #### WAI ARIA Roles and States
 * [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
-  * aria-label default value is set to 'search' for the basic search field.
-  * When '[_groupName_](/components/cerner-terra-core-docs/search-field/about#search-field-props)' prop is passed in, the prop value will be used as a custom aria-label.
-  * A custom aria-label value can also be passed in through '[inputAttributes](/components/cerner-terra-core-docs/search-field/about#search-field-props)' prop.
+  * aria-label value is set to the 'label' prop value.
+* [aria--describedby] (https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)
+  * aria-describedby value is set to a visually hidden text with instructions to adjust the slider value between minimum and maximum values.
 
 ## Implementation
 
