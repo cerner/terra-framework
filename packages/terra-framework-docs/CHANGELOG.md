@@ -27,6 +27,7 @@
   * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.
   * Updated examples and tests for `terra-data-grid` to consume section keyboard navigation updates.
   * Updated XFC initialization for the Embedded Content Consumer examples.
+  * Updated Flowsheet Data Grid Sections Example to showcase multi-select and range selection on sections. 
 
 ## 1.49.0 - (December 1, 2023)
 
