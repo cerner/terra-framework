@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * New stylings for the focus indicator.
+  * Support for screen readers, now announces that it is the file path component and which location you are currently at.
+
 ## 1.2.0 - (December 11, 2023)
 
 * Changed
