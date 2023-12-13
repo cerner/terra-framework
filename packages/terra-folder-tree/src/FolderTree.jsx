@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
+import { v4 as uuidv4 } from 'uuid';
 
 import ActionHeader from 'terra-action-header';
 import Button from 'terra-button';
@@ -51,41 +52,48 @@ const FolderTree = ({
   onExpandAll,
   onCollapseAll,
   intl,
-}) => (
-  <>
-    <ActionHeader
-      text={title}
-      level={headerLevel}
-    />
-    <Toolbar
-      align="end"
-      ariaControls={title}
-      ariaLabel={title}
-    >
-      <Button
-        title={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all' })}
-        text={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-instructions' })}
-        variant="utility"
-        icon={<IconExpandRow />}
-        onClick={onExpandAll}
+}) => {
+  const folderTreeID = `folder-tree-${uuidv4()}`;
+
+  return (
+    <>
+      <ActionHeader
+        text={title}
+        level={headerLevel}
       />
-      <Button
-        title={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all' })}
-        text={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-instructions' })}
-        variant="utility"
-        icon={<IconCollapseRow />}
-        onClick={onCollapseAll}
-      />
-    </Toolbar>
-    <ul
-      className={cx('folder-tree')}
-      role="tree"
-      aria-label={title}
-    >
-      {children}
-    </ul>
-  </>
-);
+      <Toolbar
+        align="end"
+        ariaControls={title}
+        ariaLabel={title}
+      >
+        <Button
+          title={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all' })}
+          text={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-instructions' })}
+          variant="utility"
+          icon={<IconExpandRow />}
+          onClick={onExpandAll}
+          aria-controls={folderTreeID}
+        />
+        <Button
+          title={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all' })}
+          text={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-instructions' })}
+          variant="utility"
+          icon={<IconCollapseRow />}
+          onClick={onCollapseAll}
+          aria-controls={folderTreeID}
+        />
+      </Toolbar>
+      <ul
+        id={folderTreeID}
+        className={cx('folder-tree')}
+        role="tree"
+        aria-label={title}
+      >
+        {children}
+      </ul>
+    </>
+  );
+};
 
 FolderTree.propTypes = propTypes;
 FolderTree.defaultProps = defaultProps;
