@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added new Accessibility and Implementation guide for Terra Slider.
   * Added new test to `terra-compact-interactive-list` for inconsistent width unit types in props.
 
 * Updated
