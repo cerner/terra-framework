@@ -3,12 +3,27 @@ import React from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import { IconDocuments, IconFeaturedOutline, IconImage } from 'terra-icon';
 
+// eslint-disable-next-line no-alert
+const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Button was clicked')}>Learn more</button>;
+const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
+const anchorCell = <a href="https://www.oracle.com/" aria-label="Visit Oracle">Visit Oracle</a>;
+const textAreaCell = <textarea name="textArea" aria-label="Text Area" rows="1" cols="15" />;
+const selectCell = (
+  <select name="specialties" id="specialties" aria-label="Select Specialty">
+    <option value="ambulatory">Ambulatory</option>
+    <option value="cardiology">Cardiology</option>
+    <option value="radiology">Radiology</option>
+    <option value="neurology">Neurology</option>
+  </select>
+);
+
 const rows = [
   {
     id: 'row_1',
     cells: [
       { content: <IconDocuments a11yLabel="Documents" height="1.5em" width="1.5em" /> },
       { content: 'Discern Care Set (1)' },
+      { content: buttonCell },
       { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
     ],
   },
@@ -17,6 +32,7 @@ const rows = [
     cells: [
       { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
+      { content: inputCell },
       { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
     ],
   },
@@ -25,6 +41,7 @@ const rows = [
     cells: [
       { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
       { content: 'Arterial Sheath Care (3)' },
+      { content: anchorCell },
       { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
     ],
   },
@@ -33,6 +50,7 @@ const rows = [
     cells: [
       { content: ' ' },
       { content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
+      { content: textAreaCell },
       { content: ' ' },
     ],
   },
@@ -41,6 +59,7 @@ const rows = [
     cells: [
       { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
       { content: 'Arterial Sheath Care (5)' },
+      { content: selectCell },
       { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
     ],
   },
@@ -50,33 +69,40 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Icon',
-    maximumWidth: '4.5em',
+    width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Service name',
-    maximumWidth: '25em',
-    minimumWidth: '7em',
+    width: '200px', // will be disregarded because of flexGrow prop
+    flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
+    maximumWidth: '300px',
+    minimumWidth: '100px',
   },
   {
     id: 'Column-2',
+    displayName: 'Details',
+    width: '200px',
+    align: alignTypes.RIGHT,
+  },
+  {
+    id: 'Column-3',
     displayName: 'Featured',
-    maximumWidth: '5em',
+    width: '60px',
     align: alignTypes.CENTER,
   },
 ];
 
-const ScalableUnits = () => (
-  <div style={{ fontSize: '1.25em' }}>
-    <CompactInteractiveList
-      id="growing-columns"
-      rows={rows}
-      columns={cols}
-      numberOfColumns={2}
-      rowHeaderIndex={1}
-    />
-  </div>
+const ResponsiveColumnsMaxWidth = () => (
+  <CompactInteractiveList
+    id="with-breakpoints"
+    rows={rows}
+    columns={cols}
+    numberOfColumns={2}
+    columnMinimumWidth="234px"
+    rowHeaderIndex={1}
+  />
 );
 
-export default ScalableUnits;
+export default ResponsiveColumnsMaxWidth;

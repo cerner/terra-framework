@@ -18,6 +18,7 @@
   * Added the example with `contentWidth` as auto value.
   * Added examples and tests for `terra-folder-tree`.
   * Added documentation for exported constants of `terra-table` in the About page.
+  * Added new examples for cell content and cell selection to `terra-compact-interactive-list`.
 
 * Changed
   * Updated examples and tests for `terra-table` to consume updated onRowSelect callback.

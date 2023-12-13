@@ -50,13 +50,13 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     width: '6em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Service name',
     width: '60em',
     flexGrow: true,
     minimumWidth: '10em',
@@ -64,7 +64,7 @@ const cols = [
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Featured',
     width: '6em',
     align: alignTypes.CENTER,
   },
@@ -76,6 +76,7 @@ const ResponsiveColumnsMaxWidth = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
+    rowHeaderIndex={1}
   />
 );
 
