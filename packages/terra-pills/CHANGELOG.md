@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.15.1 - (December 11, 2023)
+
 * Fixed
   * Fixed jaws providing navigation instructions on empty pill box.
   * Fixed bug to set focus on previous pill when delete key is pressed and a pill is deleted.
