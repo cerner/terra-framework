@@ -3,5 +3,11 @@
     --terra-table-cell-focus-outline: 3px dashed #000;
     --terra-table-cell-focus-outline-offset: -2px;
     --terra-table-headerless-first-row-border-top: 1px solid #c8cacb;
+
+    // Add box shadow for table container focused state
+    &.table-container:focus {
+      box-shadow: 0 0 8px #a6d9f4;
+      outline: none;
+    } 
   }
 }
