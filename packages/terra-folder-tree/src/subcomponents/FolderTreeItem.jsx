@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 
 import Spacer from 'terra-spacer';
 import Arrange from 'terra-arrange';
@@ -112,6 +113,12 @@ const FolderTreeItem = ({
     }
   };
 
+  const handleKeyDown = (onSelect) => (event) => {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
+      onSelect(event);
+    }
+  };
+
   return (
     <>
       {/* TODO: Re-enable this eslint rule once keyboard handling is implemented */}
@@ -122,6 +129,9 @@ const FolderTreeItem = ({
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
         onClick={isFolder ? handleToggle : onClick}
+        onKeyDown={isFolder ? handleKeyDown(handleToggle) : handleKeyDown(onClick)}
+        data-item-show-focus
+        tabIndex={0}
       >
         <input
           type="radio"
