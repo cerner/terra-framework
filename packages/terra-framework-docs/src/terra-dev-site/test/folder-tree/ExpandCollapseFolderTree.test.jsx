@@ -3,7 +3,7 @@ import FolderTree from 'terra-folder-tree';
 
 const ExpandCollapseFolderTree = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
-  const [expandedKeys, setExpandedKeys] = React.useState({
+  const [expandedItems, setExpandedItems] = React.useState({
     projects: false,
     'projects-2': false,
     'projects-3': false,
@@ -15,29 +15,29 @@ const ExpandCollapseFolderTree = () => {
   };
 
   const handleExpandCollapseKeys = (key) => {
-    const newExpandedKeys = {
-      ...expandedKeys,
-      [key]: !expandedKeys[key],
+    const newExpandedItems = {
+      ...expandedItems,
+      [key]: !expandedItems[key],
     };
-    setExpandedKeys(newExpandedKeys);
+    setExpandedItems(newExpandedItems);
   };
 
   const handleExpandAll = () => {
-    const newExpandedKeys = {
-      ...expandedKeys,
+    const newExpandedItems = {
+      ...expandedItems,
     };
-    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = true; });
+    Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = true; });
 
-    setExpandedKeys(newExpandedKeys);
+    setExpandedItems(newExpandedItems);
   };
 
   const handleCollapseAll = () => {
-    const newExpandedKeys = {
-      ...expandedKeys,
+    const newExpandedItems = {
+      ...expandedItems,
     };
-    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = false; });
+    Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = false; });
 
-    setExpandedKeys(newExpandedKeys);
+    setExpandedItems(newExpandedItems);
   };
 
   return (
@@ -52,7 +52,7 @@ const ExpandCollapseFolderTree = () => {
           label="Projects - Level 1"
           key="projects"
           isSelected={selectedKey === 'projects'}
-          isExpanded={expandedKeys.projects}
+          isExpanded={expandedItems.projects}
           onClick={() => { handleSelect('projects'); }}
           onToggle={() => { handleExpandCollapseKeys('projects'); }}
           subfolderItems={[
@@ -60,7 +60,7 @@ const ExpandCollapseFolderTree = () => {
               label="Projects - Level 2"
               key="projects-2"
               isSelected={selectedKey === 'projects-2'}
-              isExpanded={expandedKeys['projects-2']}
+              isExpanded={expandedItems['projects-2']}
               onClick={() => { handleSelect('projects-2'); }}
               onToggle={() => { handleExpandCollapseKeys('projects-2'); }}
               subfolderItems={[
@@ -68,7 +68,7 @@ const ExpandCollapseFolderTree = () => {
                   label="Projects - Level 3"
                   key="projects-3"
                   isSelected={selectedKey === 'projects-3'}
-                  isExpanded={expandedKeys['projects-3']}
+                  isExpanded={expandedItems['projects-3']}
                   onClick={() => { handleSelect('projects-3'); }}
                   onToggle={() => { handleExpandCollapseKeys('projects-3'); }}
                   subfolderItems={[
@@ -76,7 +76,7 @@ const ExpandCollapseFolderTree = () => {
                       label="Projects - Level 4"
                       key="projects-4"
                       isSelected={selectedKey === 'projects-4'}
-                      isExpanded={expandedKeys['projects-4']}
+                      isExpanded={expandedItems['projects-4']}
                       onClick={() => { handleSelect('projects-4'); }}
                       onToggle={() => { handleExpandCollapseKeys('projects-4'); }}
                       subfolderItems={[
@@ -84,7 +84,7 @@ const ExpandCollapseFolderTree = () => {
                           label="Important Document"
                           key="important-document"
                           isSelected={selectedKey === 'important-document'}
-                          isExpanded={expandedKeys.projects}
+                          isExpanded={expandedItems.projects}
                           onClick={() => { setSelectedKey('important-document'); }}
                         />,
                       ]}

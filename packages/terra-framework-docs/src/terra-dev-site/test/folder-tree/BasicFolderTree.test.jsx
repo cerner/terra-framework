@@ -5,35 +5,35 @@ import FolderTree from 'terra-folder-tree';
 
 const BasicFolderTree = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
-  const [expandedKeys, setExpandedKeys] = React.useState({
+  const [expandedItems, setExpandedItems] = React.useState({
     projects: false,
     tests: false,
   });
 
   const handleExpandCollapseKeys = (key) => {
-    const newExpandedKeys = {
-      ...expandedKeys,
-      [key]: !expandedKeys[key],
+    const newExpandedItems = {
+      ...expandedItems,
+      [key]: !expandedItems[key],
     };
-    setExpandedKeys(newExpandedKeys);
+    setExpandedItems(newExpandedItems);
   };
 
   const handleExpandAll = () => {
-    const newExpandedKeys = {
-      ...expandedKeys,
+    const newExpandedItems = {
+      ...expandedItems,
     };
-    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = true; });
+    Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = true; });
 
-    setExpandedKeys(newExpandedKeys);
+    setExpandedItems(newExpandedItems);
   };
 
   const handleCollapseAll = () => {
-    const newExpandedKeys = {
-      ...expandedKeys,
+    const newExpandedItems = {
+      ...expandedItems,
     };
-    Object.keys(newExpandedKeys).forEach(v => { newExpandedKeys[v] = false; });
+    Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = false; });
 
-    setExpandedKeys(newExpandedKeys);
+    setExpandedItems(newExpandedItems);
   };
 
   return (
@@ -62,7 +62,7 @@ const BasicFolderTree = () => {
           label="Projects"
           key="projects"
           isSelected={selectedKey === 'projects'}
-          isExpanded={expandedKeys.projects}
+          isExpanded={expandedItems.projects}
           onClick={() => { setSelectedKey('projects'); }}
           onToggle={() => { handleExpandCollapseKeys('projects'); }}
           subfolderItems={[
@@ -84,7 +84,7 @@ const BasicFolderTree = () => {
               label="Tests"
               key="tests"
               isSelected={selectedKey === 'tests'}
-              isExpanded={expandedKeys.tests}
+              isExpanded={expandedItems.tests}
               onClick={() => { setSelectedKey('tests'); }}
               onToggle={() => { handleExpandCollapseKeys('tests'); }}
               icon={<IconDocuments />}
