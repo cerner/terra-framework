@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added FlowsheetDataGrid implementation guide.
+
 * Changed
   * Updates `terra-theme-provider` examples to show the new ability to specify a theme density.
   
