@@ -127,8 +127,8 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '200px', // will be disregarded as flexGrow prop set to true will make it flex growing column
-    flexGrow: true,
+    width: '200px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
   },
   {
     id: 'Column-2',

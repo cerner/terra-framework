@@ -1,16 +1,23 @@
-import { Notice } from "@cerner/terra-docs";
+import { Notice } from '@cerner/terra-docs';
 import ScalableUnits from './ScalableUnits?dev-site-examples';
 
-# Scalable units
-
-<Notice variant="caution" ariaLevel="2">
-<p>The supported units for width props are <b>px</b>, <b>em</b>, and <b>rem</b>.</p>
-<p>The width units should be consistent across all the props in the same component, including column <b>width</b>, <b>minWidth</b>, and <b>maxWidth</b> passed through the columns array.</p>
-<p>The width units incosistent with the rest of the component props will be disregarded.</p>
-</Notice>
+# Scalable Units
 
 ### Description
 
-This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) placed within a container with `fontSize: 1.2em` and all width props set in units relative to the font size: 
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) placed within a container with `fontSize: 1.2em` and [_width_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) props set in units relative to the font size: 
 
 <ScalableUnits />
+
+<Notice variant="important" ariaLevel="3">
+
+The supported units for width props are `px`, `em`, and `rem`. 
+The width units should be consistent across all the props in the same component. That includes:
+[_columnMinimumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[_columnMaximumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[_width_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), 
+[_minimumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), and 
+[_maximumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column).
+The width units inconsistent with the rest of the component props will be disregarded.
+
+</Notice>

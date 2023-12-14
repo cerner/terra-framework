@@ -94,8 +94,8 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '250px', // will be disregarded because of flexGrow prop
-    flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
+    width: '250px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
     maximumWidth: '350px',
     minimumWidth: '100px',
   },
@@ -149,7 +149,7 @@ const ResponsiveColumnsMaxWidth = () => {
         columns={cols}
         numberOfColumns={2}
         columnMinimumWidth="234px"
-        onCellSelect={onCellSelect} // For cell selection, a callback function must be provided so that the Worklist Data Grid can invoke it when a cell is selective.
+        onCellSelect={onCellSelect} // a callback function for cell selection
         onClearSelection={onClearSelection}
         rowHeaderIndex={1}
       />

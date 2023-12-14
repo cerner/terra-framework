@@ -27,13 +27,13 @@ The `terra-compact-interactive-list` component  provides users a way to render a
 
 ### Features
 Supports:
-* Arranging items in columns
-* Fixed and responsive width columns
-* Px, em, and rem width units supported. Width units should be consistant across all width props (including minWidth and maxWidth) through the Compact Interactive List. Width props with units different from the rest of the document will be disregarded.
-* Vertical and horizontal item flow
-* Minimum/maximum column width for responsive columns set for all columns on the component level, or to each column individually
-* Selectable cells
-* Intercatable elements in cells (one per cell)
+* Arranging items in columns.
+* Fixed and responsive width columns.
+* `px`, `em`, and `rem` width units.
+* Vertical and horizontal flow.
+* Minimum and maximum column width for responsive columns set for all columns, or to each column individually.
+* Selectable cells.
+* Interactable elements in cells (one per cell).
 
 Refer to the [examples](/components/cerner-terra-framework-docs/compact-interactive-list/about#examples) section for detailed demonstration of the features supported by the Search Field.
 
@@ -56,7 +56,7 @@ The Compact Interactive List:
 |[FixedWidthColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/fixed-width-columns)|An example of the Compact Interactive List with fixed width columns.|
 |[ResponsiveColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/responsive-columns)|An example of the Compact Interactive List with responsive text columns.|
 |[ScalableUnits](/components/cerner-terra-framework-docs/compact-interactive-list/examples/scalable-units)|An example of the Compact Interactive List with width props set in units relative to the font size.|
-|[FlowDirection](/components/cerner-terra-framework-docs/compact-interactive-list/examples/flow-direction)|Vertical and horizontal flow examples of the Compact Interactive List.|
+|[FlowDirection](/components/cerner-terra-framework-docs/compact-interactive-list/examples/flow-direction)|The examples of the Compact Interactive List with vertical and horizontal flow directions.|
 |[NumberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/number-of-columns)|An example of the Compact Interactive List placed inside of a parent element that uses width breakpoints to dynamically change the number of columns.|
 |[CellContent](/components/cerner-terra-framework-docs/compact-interactive-list/examples/cell-content)|Compact Interactive List cell content examples.|
 
@@ -83,14 +83,13 @@ List of keyboard interactions supported by Compact Interactive List.
 ### Assistive Technology Support
 #### WAI ARIA Roles and States
 * [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
-  * **Compact Interactive List**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-data-grid-props-table) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
+  * **Compact Interactive List**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
 * [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
-  * **Compact Interactive List**: When the [_ariaLabelledBy_](/components/cerner-terra-framework-docs/data-grid/worklist-data-grid/about#worklist-data-grid-props-table) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
-
-#### Providing Column and Row Context
-
-* `rowHeaderIndex` prop should be passed to the `COmpactInteractiveList` component at all cases. It is a zero-based number of the semantic column that would provide assistive technologies with the row context on key navigation between cells.
-* `displayedName` prop should be passes to each column in columns' array. Even though the Compact Interactive List does not display semantic columns' headers, it would allow the assistive technologies with the column context on key navigation between cells.
+  * **Compact Interactive List**: When the [_ariaLabelledBy_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
+* [rowheader](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/rowheader_role)
+  * **Compact Interactive List**: When the [_rowHeaderIndex_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) is provided, the screen reader will use the corresponding cell as the header cell for a row, establishing a relationship between it and the other cells in the same row.
+* [columnheader](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/columnheader_role)
+  * **Column**: When the [_displayedName_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) is specified, the screen reader will use it to define as the header information for the semantic column.
 
 ## Implementation
 
@@ -118,10 +117,17 @@ import CompactInteractiveList from 'terra-compact-interactive-list';
 
 ## Properties
 
-<Notice variant="caution" ariaLevel="2">
-<p>The supported units for width props are <b>px</b>, <b>em</b>, and <b>rem</b>.</p>
-<p>The width units should be consistent across all the props in the same component, including column <b>width</b>, <b>minWidth</b>, and <b>maxWidth</b> passed through the columns array.</p>
-<p>The width units incosistent with the rest of the component props will be disregarded.</p>
+<Notice variant="important" ariaLevel="3">
+
+The supported units for width props are `px`, `em`, and `rem`. 
+The width units should be consistent across all the props in the same component. That includes:
+[_columnMinimumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[_columnMaximumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[_width_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), 
+[_minimumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), and 
+[_maximumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column).
+The width units inconsistent with the rest of the component props will be disregarded.
+
 </Notice>
 
 ### Compact Interactive List Props Table
@@ -146,7 +152,7 @@ A row defines the cells rendered within the row.
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the row within the list.|
-|**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. Cells will be rendered in the order given and are expected to be in the same order as the columns.|
+|**cells**|array|optional|[ ]|An array of cell objects that define the content to be rendered in the row. Cells will be rendered in the order given and are expected to be in the same order as the columns.|
 
 ### Cell
 A cell defines the content rendered at the intersection of a row and a column.

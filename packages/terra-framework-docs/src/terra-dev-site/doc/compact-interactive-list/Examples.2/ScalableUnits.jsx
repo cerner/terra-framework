@@ -75,9 +75,9 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    // flexGrow prop is not set here, but as there is no width set, the column will be flex growing anyway
-    maximumWidth: '25em', // maximumWidth is reccomended for flex growing columns so that they don't grow beyond reasonable.
-    minimumWidth: '7em', // minimumWidth is reccomended for flex growing columns so that they don't squish beyond reasonable.
+    // flexGrow prop is not set here, but as there is no width set, the column will be flex growing
+    maximumWidth: '25em',
+    minimumWidth: '7em',
   },
   {
     id: 'Column-2',

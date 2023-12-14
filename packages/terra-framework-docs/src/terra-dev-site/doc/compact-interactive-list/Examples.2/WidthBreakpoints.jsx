@@ -127,8 +127,8 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '200px', // will be disregarded because of flexGrow prop.
-    flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
+    width: '200px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
   },
   {
     id: 'Column-2',
@@ -155,22 +155,25 @@ const WidthBreakpoints = () => {
       setFeaturedRowsIds(newSelectedRows);
     }
   };
-
   const onClearSelection = () => {
     setFeaturedRowsIds([]);
   };
-  return (
+  const numberOfColumns = getNumberOfColumns(activeBreakpoint);
+
+  return (<>
+    <p>{`Active breakpoint: ${activeBreakpoint}`}</p>
+    <p>{`Number of columns: ${numberOfColumns}`}</p>
     <CompactInteractiveList
       id="with-breakpoints"
       rows={displayedRows}
       columns={cols}
-      numberOfColumns={getNumberOfColumns(activeBreakpoint)}
+      numberOfColumns={numberOfColumns}
       rowHeight="80px"
       rowHeaderIndex={1}
       onCellSelect={onCellSelect}
       onClearSelection={onClearSelection}
     />
-  );
+  </>);
 };
 
 export default WidthBreakpoints;

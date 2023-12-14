@@ -68,21 +68,21 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Icon',
-    width: '60px', // there is no widthUnit prop set in the component, so it will default to px
+    width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '300px', // will be disregarded because of flexGrow prop
-    flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
+    width: '300px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
     maximumWidth: '400px',
     minimumWidth: '200px',
   },
   {
     id: 'Column-2',
     displayName: 'Featured',
-    width: '60px', // there is no widthUnit prop set in the component, so it will default to px
+    width: '60px',
     align: alignTypes.CENTER,
   },
 ];
