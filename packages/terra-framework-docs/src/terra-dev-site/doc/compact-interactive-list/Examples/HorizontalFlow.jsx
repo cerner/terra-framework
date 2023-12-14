@@ -56,24 +56,56 @@ const rows = [
       { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
     ],
   },
+  {
+    id: 'row_6',
+    cells: [
+      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (6)' },
+      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+    ],
+  },
+  {
+    id: 'row_7',
+    cells: [
+      { content: ' ' },
+      { content: 'Sbsq Observation Care/Day High Severity 99226 (7)' },
+      { content: ' ' },
+    ],
+  },
+  {
+    id: 'row_8',
+    cells: [
+      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (8)' },
+      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+    ],
+  },
+  {
+    id: 'row_9',
+    cells: [
+      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: 'Arterial Sheath Care (9)' },
+      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+    ],
+  },
 ];
 
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Col_1',
+    displayName: 'Icon',
     width: '60px',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
-    displayName: 'Col_2',
+    displayName: 'Service name',
     width: '200px', // will be disregarded as flexGrow prop set to true will make it flex growing column
     flexGrow: true,
   },
   {
     id: 'Column-2',
-    displayName: 'Col_3',
+    displayName: 'Featured',
     width: '60px',
     align: alignTypes.CENTER,
   },
@@ -87,6 +119,7 @@ const HorizontalFlow = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
+      rowHeaderIndex={1}
       flowHorizontally
     />
   );

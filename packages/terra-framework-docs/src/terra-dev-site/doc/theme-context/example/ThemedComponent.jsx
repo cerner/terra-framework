@@ -9,9 +9,12 @@ const cx = classNames.bind(styles);
 const Themed = () => {
   const theme = React.useContext(ThemeContext);
   return (
-    <div className={cx('themed', theme.className)}>
+    <div className={cx('themed', theme.className, theme.density)}>
       <h1>
         {`Theme Name: ${theme.name}`}
+      </h1>
+      <h1>
+        {`Theme Density: ${theme.density || ''}`}
       </h1>
       <div className={cx('themed-block')} />
     </div>

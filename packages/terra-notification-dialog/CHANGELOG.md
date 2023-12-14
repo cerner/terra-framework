@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.37.0 - (December 11, 2023)
+
 * Changed
   * Changed the notification dialog heading "Alert" from 'div' tag with an 'h2' element.
 

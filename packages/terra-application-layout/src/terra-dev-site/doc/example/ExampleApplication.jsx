@@ -301,6 +301,12 @@ class ExampleApplication extends React.Component {
           },
         });
       },
+      onBlur: (event, layoutConfig) => {
+        const isCompact = Utils.helpers.isSizeCompact(layoutConfig.size);
+        if (isCompact) {
+          layoutConfig.toggleMenu();
+        }
+      },
     });
 
     return (
