@@ -20,7 +20,25 @@ describe('ThemeContextProvider', () => {
         </ThemeContextProvider>
       ));
 
-      expect(wrapper).toMatchSnapshot();
+      const contextValue = wrapper.find('ContextProvider').props().value;
+
+      expect(contextValue.name).toBe('test-theme');
+      expect(contextValue.className).toBe('test-theme-class');
+      expect(contextValue.density).toBeUndefined();
+    });
+
+    it('should render with a theme with a density', () => {
+      const wrapper = shallow((
+        <ThemeContextProvider theme={{ name: 'test-theme', className: 'test-theme-class', density: 'compact' }}>
+          <div />
+        </ThemeContextProvider>
+      ));
+
+      const contextValue = wrapper.find('ContextProvider').props().value;
+
+      expect(contextValue.name).toBe('test-theme');
+      expect(contextValue.className).toBe('test-theme-class');
+      expect(contextValue.density).toBe('compact');
     });
   });
 });

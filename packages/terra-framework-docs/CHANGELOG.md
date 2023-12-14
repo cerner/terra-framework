@@ -4,7 +4,8 @@
 
 * Changed
   * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
-
+  * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.
+  
 ## 1.52.0 - (December 13, 2023)
 
 * Changed
