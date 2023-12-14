@@ -1,81 +1,89 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Default File Path should have the right href per hyperlink 1`] = `
-<InjectIntl(CollapsibleMenuView)
-  isReversedChildrenOrder={true}
-  isStartAligned={true}
-  menuIconText="Terra.file-path.icon.text"
-  useHorizontalIcon={true}
+<nav
+  aria-label="Terra.file-path.ariaLabel, Terra.file-path.ariaLabel-current-location Google"
 >
-  <CollapsibleMenuViewHyperlink
-    href="https://oracle.com"
-    key="oracle"
-    text="Oracle"
-    variant="default"
-  />
-  <CollapsibleMenuViewDivider
-    key="divider-oracle"
-    useChevronRightIcon={true}
-  />
-  <CollapsibleMenuViewHyperlink
-    href="https://cerner.com"
-    key="cerner"
-    text="Cerner"
-    variant="default"
-  />
-  <CollapsibleMenuViewDivider
-    key="divider-cerner"
-    useChevronRightIcon={true}
-  />
-  <CollapsibleMenuViewItem
-    isIconOnly={false}
-    isReversed={false}
-    isSelected={false}
-    isTextOnly={true}
-    key="google"
-    shouldCloseOnClick={true}
-    text="Google"
-  />
-</InjectIntl(CollapsibleMenuView)>
+  <InjectIntl(CollapsibleMenuView)
+    isReversedChildrenOrder={true}
+    isStartAligned={true}
+    menuIconText="Terra.file-path.icon.text"
+    useHorizontalIcon={true}
+  >
+    <CollapsibleMenuViewHyperlink
+      href="https://oracle.com"
+      key="oracle"
+      text="Oracle"
+      variant="default"
+    />
+    <CollapsibleMenuViewDivider
+      key="divider-oracle"
+      useChevronRightIcon={true}
+    />
+    <CollapsibleMenuViewHyperlink
+      href="https://cerner.com"
+      key="cerner"
+      text="Cerner"
+      variant="default"
+    />
+    <CollapsibleMenuViewDivider
+      key="divider-cerner"
+      useChevronRightIcon={true}
+    />
+    <CollapsibleMenuViewItem
+      isIconOnly={false}
+      isReversed={false}
+      isSelected={false}
+      isTextOnly={true}
+      key="google"
+      shouldCloseOnClick={true}
+      text="Google"
+    />
+  </InjectIntl(CollapsibleMenuView)>
+</nav>
 `;
 
 exports[`Default File Path should not render the last item as a hyperlink 1`] = `
-<InjectIntl(CollapsibleMenuView)
-  isReversedChildrenOrder={true}
-  isStartAligned={true}
-  menuIconText="Terra.file-path.icon.text"
-  useHorizontalIcon={true}
+<nav
+  aria-label="Terra.file-path.ariaLabel, Terra.file-path.ariaLabel-current-location Google"
 >
-  <CollapsibleMenuViewHyperlink
-    href="https://oracle.com"
-    key="oracle"
-    text="Oracle"
-    variant="default"
-  />
-  <CollapsibleMenuViewDivider
-    key="divider-oracle"
-    useChevronRightIcon={true}
-  />
-  <CollapsibleMenuViewHyperlink
-    href="https://cerner.com"
-    key="cerner"
-    text="Cerner"
-    variant="default"
-  />
-  <CollapsibleMenuViewDivider
-    key="divider-cerner"
-    useChevronRightIcon={true}
-  />
-  <CollapsibleMenuViewItem
-    isIconOnly={false}
-    isReversed={false}
-    isSelected={false}
-    isTextOnly={true}
-    key="google"
-    shouldCloseOnClick={true}
-    text="Google"
-  />
-</InjectIntl(CollapsibleMenuView)>
+  <InjectIntl(CollapsibleMenuView)
+    isReversedChildrenOrder={true}
+    isStartAligned={true}
+    menuIconText="Terra.file-path.icon.text"
+    useHorizontalIcon={true}
+  >
+    <CollapsibleMenuViewHyperlink
+      href="https://oracle.com"
+      key="oracle"
+      text="Oracle"
+      variant="default"
+    />
+    <CollapsibleMenuViewDivider
+      key="divider-oracle"
+      useChevronRightIcon={true}
+    />
+    <CollapsibleMenuViewHyperlink
+      href="https://cerner.com"
+      key="cerner"
+      text="Cerner"
+      variant="default"
+    />
+    <CollapsibleMenuViewDivider
+      key="divider-cerner"
+      useChevronRightIcon={true}
+    />
+    <CollapsibleMenuViewItem
+      isIconOnly={false}
+      isReversed={false}
+      isSelected={false}
+      isTextOnly={true}
+      key="google"
+      shouldCloseOnClick={true}
+      text="Google"
+    />
+  </InjectIntl(CollapsibleMenuView)>
+</nav>
 `;
 
 exports[`Default File Path should render a default component 1`] = `
@@ -180,64 +188,68 @@ exports[`On Click File Path should render a component with on clickable items 1`
 `;
 
 exports[`On Click File Path should trigger the correct on click per item 1`] = `
-<InjectIntl(CollapsibleMenuView)
-  isReversedChildrenOrder={true}
-  isStartAligned={true}
-  menuIconText="Terra.file-path.icon.text"
-  useHorizontalIcon={true}
+<nav
+  aria-label="Terra.file-path.ariaLabel, Terra.file-path.ariaLabel-current-location Google"
 >
-  <CollapsibleMenuViewHyperlink
-    key="oracle"
-    onClick={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
+  <InjectIntl(CollapsibleMenuView)
+    isReversedChildrenOrder={true}
+    isStartAligned={true}
+    menuIconText="Terra.file-path.icon.text"
+    useHorizontalIcon={true}
+  >
+    <CollapsibleMenuViewHyperlink
+      key="oracle"
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
       }
-    }
-    text="Oracle"
-    variant="default"
-  />
-  <CollapsibleMenuViewDivider
-    key="divider-oracle"
-    useChevronRightIcon={true}
-  />
-  <CollapsibleMenuViewHyperlink
-    key="cerner"
-    onClick={
-      [MockFunction] {
-        "calls": Array [
-          Array [],
-        ],
-        "results": Array [
-          Object {
-            "type": "return",
-            "value": undefined,
-          },
-        ],
+      text="Oracle"
+      variant="default"
+    />
+    <CollapsibleMenuViewDivider
+      key="divider-oracle"
+      useChevronRightIcon={true}
+    />
+    <CollapsibleMenuViewHyperlink
+      key="cerner"
+      onClick={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": undefined,
+            },
+          ],
+        }
       }
-    }
-    text="Cerner"
-    variant="default"
-  />
-  <CollapsibleMenuViewDivider
-    key="divider-cerner"
-    useChevronRightIcon={true}
-  />
-  <CollapsibleMenuViewItem
-    isIconOnly={false}
-    isReversed={false}
-    isSelected={false}
-    isTextOnly={true}
-    key="google"
-    shouldCloseOnClick={true}
-    text="Google"
-  />
-</InjectIntl(CollapsibleMenuView)>
+      text="Cerner"
+      variant="default"
+    />
+    <CollapsibleMenuViewDivider
+      key="divider-cerner"
+      useChevronRightIcon={true}
+    />
+    <CollapsibleMenuViewItem
+      isIconOnly={false}
+      isReversed={false}
+      isSelected={false}
+      isTextOnly={true}
+      key="google"
+      shouldCloseOnClick={true}
+      text="Google"
+    />
+  </InjectIntl(CollapsibleMenuView)>
+</nav>
 `;

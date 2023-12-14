@@ -3,7 +3,15 @@
 ## Unreleased
 
 * Added
-  * Added `CompactInteractiveList` implementation guide.
+  * Added `terra-compact-interactive-list` implementation guide.
+  
+* Changed
+  * Updates `terra-theme-provider` examples to show the new ability to specify a theme density.
+  
+## 1.52.0 - (December 13, 2023)
+
+* Changed
+  * Updated Flowsheet Data Grid Sections Example to showcase multi-select and range selection on sections.
 
 ## 1.51.0 - (December 11, 2023)
 

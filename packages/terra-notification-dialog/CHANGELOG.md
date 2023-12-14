@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+ * Added check to throw error when invalid data type is used for action buttons.
+
 ## 4.37.0 - (December 11, 2023)
 
 * Changed
