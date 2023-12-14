@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updated Without Default Time example to have visual label in `terra-time-input`.
+
 * Changed
   * Updates `terra-theme-provider` examples to show the new ability to specify a theme density.
   
