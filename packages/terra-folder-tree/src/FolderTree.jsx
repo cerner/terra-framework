@@ -56,7 +56,7 @@ const FolderTree = ({
   const folderTreeID = `folder-tree-${uuidv4()}`;
 
   return (
-    <div className='folder-tree-container'>
+    <div className="folder-tree-container">
       <ActionHeader
         text={title}
         level={headerLevel}
