@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
+
 ## 1.52.0 - (December 13, 2023)
 
 * Changed
