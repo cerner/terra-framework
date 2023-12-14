@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `CompactInteractiveList` implementation guide.
+
 ## 1.51.0 - (December 11, 2023)
 
 * Changed
