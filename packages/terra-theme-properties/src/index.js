@@ -1,1 +1,1 @@
-require('./scss/root-theme.scss');
+require('./scss/terra-redwood-theme.scss');
