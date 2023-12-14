@@ -19,5 +19,5 @@
   "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
   "Terra.timeInput.timeFormatLabel": "Formato da hora:",
   "Terra.timeInput.timeSpacer": ":",
-  "Terra.timeInput.invalidTime": "Please enter a valid Time"
+  "Terra.timeInput.invalidTime": "Insira um horário válido"
 }
