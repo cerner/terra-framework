@@ -223,3 +223,16 @@ it('correctly applies the theme context className', () => {
   );
   expect(modal).toMatchSnapshot();
 });
+
+it('should throw an error when invalid action props are passed', () => {
+  const dialog = () => shallowWithIntl(
+    <NotificationDialog
+      variant="hazard-low"
+      dialogTitle="Test"
+      startMessage="This text is used to provide more details."
+      rejectAction=""
+    />,
+  ).dive();
+
+  expect(dialog).toThrow('Either the `acceptAction` or `rejectAction` props must be provided for Notification dialog');
+});
