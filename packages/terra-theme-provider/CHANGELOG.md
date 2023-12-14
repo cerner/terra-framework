@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added support for theme density.
+
 ## 4.13.0 - (July 31, 2023)
 
 * Changed

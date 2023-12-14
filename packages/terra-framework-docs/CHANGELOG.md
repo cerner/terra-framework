@@ -5,6 +5,9 @@
 * Added
   * Added implementation guide for `terra-table`.
   
+* Changed
+  * Updates `terra-theme-provider` examples to show the new ability to specify a theme density.
+  
 ## 1.52.0 - (December 13, 2023)
 
 * Changed
