@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-require('terra-theme-properties');
-
 const propTypes = {
   /**
    * The component(s) that will be wrapped by `<ThemeProvider />`
