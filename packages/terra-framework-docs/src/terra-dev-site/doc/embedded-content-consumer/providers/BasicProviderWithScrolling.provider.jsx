@@ -5,7 +5,7 @@ import styles from './EmbeddedContentConsumerCommon.module.scss';
 
 const cx = classNames.bind(styles);
 
-const Provider = () => (
+const BasicProviderWithScrolling = () => (
   <ProviderTestTemplate>
     <div className={cx('content-wrapper')}>
       <h1>Basic Content With Scrolling</h1>
@@ -14,4 +14,4 @@ const Provider = () => (
   </ProviderTestTemplate>
 );
 
-export default Provider;
+export default BasicProviderWithScrolling;

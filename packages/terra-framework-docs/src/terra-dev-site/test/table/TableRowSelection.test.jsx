@@ -61,7 +61,9 @@ const TableRowSelection = () => {
   const { cols, rows } = tableDataJSON;
   const [rowData, setRowData] = useState(rows);
 
-  const onRowSelect = useCallback((rowId) => {
+  const onRowSelect = useCallback((rowSelection) => {
+    const { rowId } = rowSelection;
+
     // Remove current selections
     const newRowData = [...rowData];
 

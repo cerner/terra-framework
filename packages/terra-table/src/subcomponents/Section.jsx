@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+// TODO: fix linter error
+/* eslint-disable jsx-a11y/control-has-associated-label */
+
+import React, { useCallback, useContext } from 'react';
 import classNames from 'classnames/bind';
 import PropTypes from 'prop-types';
 
 import SectionHeader from 'terra-section-header';
-
 import ThemeContext from 'terra-theme-context';
+import GridContext, { GridConstants } from '../utils/GridContext';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
@@ -122,42 +125,50 @@ function Section(props) {
 
   const theme = useContext(ThemeContext);
 
-  const handleMouseDown = (event) => {
+  const gridContext = useContext(GridContext);
+  const isGridContext = gridContext.role === GridConstants.GRID;
+
+  const hasSectionButton = isCollapsible && onSectionSelect;
+
+  const handleClick = useCallback(() => {
     onSectionSelect(id);
-    event.stopPropagation();
-  };
+  }, [id, onSectionSelect]);
 
   return (
     <>
-      {/* Render section rows */}
-      {!isHidden && (
-      <tr
-        aria-rowindex={sectionRowIndex}
-        className={cx('header')}
-      >
-        <th
-          id={`${tableId}-${id}`}
-          align="left"
-          colSpan={displayedColumns.length}
-          role="columnheader"
-          scope="col"
+      <tbody>
+        {/* Render section rows */}
+        {!isHidden && (
+        <tr
+          aria-rowindex={sectionRowIndex}
+          className={cx('header')}
+          data-section-id={id}
         >
-          <SectionHeader
-            text={text}
-            isOpen={!isCollapsed}
-            isTitleFixed
-            onClick={isCollapsible && onSectionSelect ? handleMouseDown : undefined}
-          />
-        </th>
-      </tr>
-      )}
+          <th
+            id={`${tableId}-${id}`}
+            align="left"
+            colSpan={displayedColumns.length}
+            role="columnheader"
+            scope="col"
+            tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
+          >
+            <SectionHeader
+              text={text}
+              isOpen={hasSectionButton ? !isCollapsed : undefined}
+              isTitleFixed
+              onClick={hasSectionButton ? handleClick : undefined}
+            />
+          </th>
+        </tr>
+        )}
+      </tbody>
       <tbody className={cx('section', {
         collapsed: isCollapsed,
         collapsible: isCollapsible,
       }, theme.className)}
       >
         {/* Render section rows */}
-        {rows.map((row, rowIndex) => (
+        {!isCollapsed && rows.map((row, rowIndex) => (
           <Row
             rowIndex={sectionRowIndex + (rowIndex + 1)}
             key={row.id}

@@ -272,7 +272,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -286,8 +285,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -428,8 +425,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -633,7 +628,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -681,7 +675,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -823,7 +816,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -871,7 +863,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -1013,7 +1004,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -1061,7 +1051,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -1298,6 +1287,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -3031,7 +3021,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -3045,8 +3034,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -3188,8 +3175,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -3347,7 +3332,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -3406,14 +3391,13 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -3455,23 +3439,20 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -3481,12 +3462,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -3522,7 +3502,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -3570,7 +3549,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -3712,7 +3690,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -3760,7 +3737,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -3902,7 +3878,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -3950,7 +3925,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -4086,7 +4060,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -4196,6 +4170,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -4224,7 +4199,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -4736,7 +4711,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -5244,7 +5219,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -5751,7 +5726,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -6569,7 +6544,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -6583,8 +6557,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -6726,8 +6698,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -6885,7 +6855,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -6944,14 +6914,13 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -6993,23 +6962,20 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -7019,12 +6985,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -7060,7 +7025,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -7108,7 +7072,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -7250,7 +7213,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -7298,7 +7260,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -7440,7 +7401,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -7488,7 +7448,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -7624,7 +7583,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -7734,6 +7693,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -7762,7 +7722,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -8274,7 +8234,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -8782,7 +8742,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -9289,7 +9249,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -10097,7 +10057,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -10111,8 +10070,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -10253,8 +10210,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -10458,7 +10413,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -10506,7 +10460,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -10648,7 +10601,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -10696,7 +10648,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -10838,7 +10789,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -10886,7 +10836,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -11123,6 +11072,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -12856,7 +12806,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -12870,8 +12819,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -13013,8 +12960,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -13172,7 +13117,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -13231,14 +13176,13 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -13280,23 +13224,20 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -13306,12 +13247,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -13347,7 +13287,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -13395,7 +13334,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -13537,7 +13475,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -13585,7 +13522,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -13727,7 +13663,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -13775,7 +13710,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -13911,7 +13845,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -14021,6 +13955,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -14049,7 +13984,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -14561,7 +14496,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -15069,7 +15004,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -15576,7 +15511,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -16394,7 +16329,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -16408,8 +16342,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -16551,8 +16483,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -16710,7 +16640,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -16769,14 +16699,13 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -16818,23 +16747,20 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -16844,12 +16770,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -16885,7 +16810,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -16933,7 +16857,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -17075,7 +16998,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -17123,7 +17045,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -17265,7 +17186,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -17313,7 +17233,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -17449,7 +17368,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -17559,6 +17478,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -17587,7 +17507,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -18099,7 +18019,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -18607,7 +18527,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -19114,7 +19034,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -19956,7 +19876,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -19970,8 +19889,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -20113,8 +20030,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -20272,7 +20187,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -20331,14 +20246,13 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -20380,23 +20294,20 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -20406,12 +20317,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -20447,7 +20357,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -20495,7 +20404,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -20637,7 +20545,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -20685,7 +20592,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -20827,7 +20733,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -20875,7 +20780,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -21011,7 +20915,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -21121,6 +21025,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -21149,7 +21054,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -21661,7 +21566,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -22169,7 +22074,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -22676,7 +22581,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -23478,7 +23383,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -23492,8 +23396,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -23635,8 +23537,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -23794,7 +23694,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -23853,14 +23753,13 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -23902,23 +23801,20 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -23928,12 +23824,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -23969,7 +23864,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -24017,7 +23911,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -24159,7 +24052,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -24207,7 +24099,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -24349,7 +24240,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -24397,7 +24287,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -24533,7 +24422,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -24643,6 +24532,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -24671,7 +24561,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -25183,7 +25073,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -25691,7 +25581,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -26198,7 +26088,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -27025,7 +26915,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -27039,8 +26928,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -27181,8 +27068,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -27386,7 +27271,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -27434,7 +27318,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -27576,7 +27459,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -27624,7 +27506,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -27766,7 +27647,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -27814,7 +27694,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -28051,6 +27930,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -29788,7 +29668,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -29802,8 +29681,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -29945,8 +29822,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -30104,7 +29979,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -30163,14 +30038,13 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -30212,23 +30086,20 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -30238,12 +30109,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -30279,7 +30149,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -30327,7 +30196,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -30469,7 +30337,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -30517,7 +30384,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -30659,7 +30525,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -30707,7 +30572,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -30843,7 +30707,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -30953,6 +30817,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -30981,7 +30846,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -31493,7 +31358,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -32001,7 +31866,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -32508,7 +32373,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -33326,7 +33191,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -33340,8 +33204,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -33483,8 +33345,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -33642,7 +33502,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -33701,14 +33561,13 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -33750,23 +33609,20 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -33776,12 +33632,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -33817,7 +33672,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -33865,7 +33719,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -34007,7 +33860,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -34055,7 +33907,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -34197,7 +34048,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -34245,7 +34095,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -34381,7 +34230,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -34491,6 +34340,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -34519,7 +34369,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -35031,7 +34881,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -35539,7 +35389,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -36046,7 +35896,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -36844,7 +36694,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -36858,8 +36707,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -37001,8 +36848,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -37160,7 +37005,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -37219,14 +37064,13 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -37268,23 +37112,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -37294,12 +37135,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -37335,7 +37175,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -37383,7 +37222,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -37525,7 +37363,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -37573,7 +37410,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -37715,7 +37551,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -37763,7 +37598,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -37899,7 +37733,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -38009,6 +37843,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -38037,7 +37872,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -38549,7 +38384,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -39057,7 +38892,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -39564,7 +39399,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -40362,7 +40197,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -40376,8 +40210,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -40519,8 +40351,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -40678,7 +40508,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -40737,14 +40567,13 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -40786,23 +40615,20 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -40812,12 +40638,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -40853,7 +40678,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -40901,7 +40725,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -41043,7 +40866,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -41091,7 +40913,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -41233,7 +41054,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -41281,7 +41101,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -41417,7 +41236,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -41527,6 +41346,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -41555,7 +41375,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -42067,7 +41887,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -42575,7 +42395,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -43082,7 +42902,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -43880,7 +43700,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -43894,8 +43713,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -44037,8 +43854,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -44196,7 +44011,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -44255,14 +44070,13 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -44304,23 +44118,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -44330,12 +44141,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -44371,7 +44181,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -44419,7 +44228,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -44561,7 +44369,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -44609,7 +44416,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -44751,7 +44557,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -44799,7 +44604,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -44935,7 +44739,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -45045,6 +44849,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -45073,7 +44878,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -45585,7 +45390,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -46093,7 +45898,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -46600,7 +46405,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -47398,7 +47203,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -47412,8 +47216,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -47555,8 +47357,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -47714,7 +47514,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -47773,14 +47573,13 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -47822,23 +47621,20 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -47848,12 +47644,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -47889,7 +47684,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -47937,7 +47731,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -48079,7 +47872,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -48127,7 +47919,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -48269,7 +48060,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -48317,7 +48107,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -48453,7 +48242,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -48563,6 +48352,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -48591,7 +48381,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -49103,7 +48893,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -49611,7 +49401,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -50118,7 +49908,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -50914,7 +50704,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -50928,8 +50717,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -51071,8 +50858,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -51230,7 +51015,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -51289,14 +51074,13 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -51338,23 +51122,20 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -51364,12 +51145,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -51405,7 +51185,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -51453,7 +51232,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -51595,7 +51373,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -51643,7 +51420,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -51785,7 +51561,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -51833,7 +51608,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -51969,7 +51743,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -52079,6 +51853,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -52107,7 +51882,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -52619,7 +52394,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -53127,7 +52902,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -53634,7 +53409,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -54430,7 +54205,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -54444,8 +54218,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -54587,8 +54359,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -54746,7 +54516,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "maximumWidth": 300,
                         "minimumWidth": 60,
                         "width": 40,
@@ -54805,14 +54575,13 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
-                        isSelectable={true}
+                        isSelectable={false}
                         key="table-rowSelectionColumn"
                         maximumWidth={300}
                         minimumWidth={60}
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={40}
@@ -54854,23 +54623,20 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
-                          isSelectable={true}
+                          isSelectable={false}
                           maximumWidth={300}
                           minimumWidth={60}
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={40}
                         >
                           <th
-                            className="column-header selectable pinned"
+                            className="column-header pinned"
                             id="test-terra-worklist-data-grid-table-table-rowSelectionColumn"
                             key="table-rowSelectionColumn"
-                            onKeyDown={[Function]}
-                            onMouseDown={[Function]}
                             role="columnheader"
                             scope="col"
                             style={
@@ -54880,12 +54646,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 "width": "40px",
                               }
                             }
+                            tabIndex={-1}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
                               className="header-container"
-                              role="button"
-                              tabIndex={-1}
                             >
                               <span
                                 aria-hidden={true}
@@ -54921,7 +54686,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -54969,7 +54733,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -55111,7 +54874,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -55159,7 +54921,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -55301,7 +55062,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -55349,7 +55109,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -55485,7 +55244,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": true,
+                        "isSelectable": false,
                         "width": 40,
                       },
                       Object {
@@ -55595,6 +55354,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -55623,7 +55383,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -56135,7 +55895,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -56643,7 +56403,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -57150,7 +56910,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             "id": "table-rowSelectionColumn",
                             "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": true,
+                            "isSelectable": false,
                             "width": 40,
                           },
                           Object {
@@ -57925,7 +57685,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -57939,8 +57698,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -58081,8 +57838,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -58286,7 +58041,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -58334,7 +58088,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -58476,7 +58229,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -58524,7 +58276,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -58666,7 +58417,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -58714,7 +58464,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -58951,6 +58700,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >
@@ -60641,7 +60391,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
       <div
         className="data-grid-container"
         id="test-terra-worklist-data-grid"
-        onBlur={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
@@ -60655,8 +60404,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           isActiveColumnResizing={false}
           isStriped={true}
           onCellSelect={[Function]}
-          onColumnSelect={[Function]}
-          onRowSelectionHeaderSelect={[Function]}
           overflowColumns={
             Array [
               Object {
@@ -60797,8 +60544,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
             isActiveColumnResizing={false}
             isStriped={true}
             onCellSelect={[Function]}
-            onColumnSelect={[Function]}
-            onRowSelectionHeaderSelect={[Function]}
             overflowColumns={
               Array [
                 Object {
@@ -61002,7 +60747,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -61050,7 +60794,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -61192,7 +60935,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -61240,7 +60982,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -61382,7 +61123,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         onColumnSelect={[Function]}
                         onResizeHandleChange={[Function]}
                         onResizeMouseDown={[Function]}
-                        rowIndex={0}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
                         width={200}
@@ -61430,7 +61170,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           onColumnSelect={[Function]}
                           onResizeHandleChange={[Function]}
                           onResizeMouseDown={[Function]}
-                          rowIndex={0}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
                           width={200}
@@ -61667,6 +61406,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   sectionRowIndex={1}
                   tableId="test-terra-worklist-data-grid-table"
                 >
+                  <tbody />
                   <tbody
                     className="section"
                   >

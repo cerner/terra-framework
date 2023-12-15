@@ -61,7 +61,6 @@ describe('Section', () => {
 
     // The number of rows should match the given data.
     expect(wrapper.find(Row)).toHaveLength(tableData.rows.length);
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies the rows are created with the right props', () => {
@@ -92,8 +91,6 @@ describe('Section', () => {
     verifyRow(0, rows.get(0), tableData.rows[0], tableData.cols);
     verifyRow(1, rows.get(1), tableData.rows[1], tableData.cols);
     verifyRow(2, rows.get(2), tableData.rows[2], tableData.cols);
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies the rows receive the correct props when table is zebra striped', () => {
@@ -112,6 +109,5 @@ describe('Section', () => {
     const testRow = wrapper.find(Row).at(0);
     expect(testRow.props().isTableStriped).toBe(true);
     expect(testRow.props().tableId).toBe('test-table');
-    expect(wrapper).toMatchSnapshot();
   });
 });

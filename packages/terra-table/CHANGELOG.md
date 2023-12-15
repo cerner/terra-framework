@@ -2,6 +2,26 @@
 
 ## Unreleased
 
+## 5.3.1 - (December 11, 2023)
+
+* Fixed
+  * Fixed comment error for Table documentation.
+  * Removed unnecessary rerenders
+
+## 5.3.0 - (December 6, 2023)
+
+* Breaking Changes (Note: this breaking change is needed at this time but does not have major impact)
+  * Updated the onRowSelect callback to return an object containing section and row ids.
+  
+* Added
+  * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH`` constant.
+  
+* Changed
+  * Removed console warning message when no pinned columns exist.
+  * Updated the table component to properly support selection callbacks for the grid context.
+
+## 5.2.1 - (December 1, 2023)
+
 * Fixed
   * Fixed the section headers so that the title would not scroll off the screen.
 

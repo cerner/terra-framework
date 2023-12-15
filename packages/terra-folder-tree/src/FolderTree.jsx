@@ -4,7 +4,6 @@ import classNames from 'classnames/bind';
 
 import ActionHeader from 'terra-action-header';
 
-import FolderTreeItem from './subcomponents/FolderTreeItem';
 import styles from './FolderTree.module.scss';
 
 const cx = classNames.bind(styles);
@@ -13,7 +12,7 @@ const propTypes = {
   /**
    * List of FolderTree.Items to be displayed as content within the FolderTree.
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   /**
    * The title of the folder tree.
    */
@@ -37,6 +36,7 @@ const FolderTree = ({ children, title, headerLevel }) => (
     <ul
       className={cx('folder-tree')}
       role="tree"
+      aria-label={title}
     >
       {children}
     </ul>
@@ -46,5 +46,4 @@ const FolderTree = ({ children, title, headerLevel }) => (
 FolderTree.propTypes = propTypes;
 FolderTree.defaultProps = defaultProps;
 
-FolderTree.Item = FolderTreeItem;
 export default FolderTree;

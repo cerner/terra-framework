@@ -490,6 +490,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                           <InjectIntl(List)
                                             className="list"
                                             data-submenu={false}
+                                            refCallback={[Function]}
                                             role="menu"
                                           >
                                             <List
@@ -524,8 +525,11 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                   "timeZone": null,
                                                 }
                                               }
+                                              isTabFocusDisabled={false}
                                               paddingStyle="none"
+                                              refCallback={[Function]}
                                               role="menu"
+                                              zIndex={6001}
                                             >
                                               <ul
                                                 className="list orion-fusion-theme list"
@@ -564,7 +568,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     }
                                                   }
                                                   isActive={false}
-                                                  key="abc"
+                                                  isTabFocusDisabled={false}
+                                                  key=".$abc"
                                                   onClick={[Function]}
                                                   onKeyDown={[Function]}
                                                   text="testing"
@@ -604,6 +609,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     isDisabled={false}
                                                     isHighlighted={false}
                                                     isInstructionsForUse={false}
+                                                    isTabFocusDisabled={false}
                                                     isToggled={false}
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
@@ -616,6 +622,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                       aria-disabled={false}
                                                       className="item orion-fusion-theme"
                                                       data-terra-menu-interactive-item={true}
+                                                      isTabFocusDisabled={false}
                                                       onClick={[Function]}
                                                       onKeyDown={[Function]}
                                                       onKeyUp={[Function]}
