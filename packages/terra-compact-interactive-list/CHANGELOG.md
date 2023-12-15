@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Fixed
-  * Fixed cell focus handler updated.
+* Changed
+  * Updated `handleMouseDown` method for a cell.
 
 ## 1.0.0-alpha.3 - (December 13, 2023)
 
