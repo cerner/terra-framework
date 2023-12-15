@@ -4,9 +4,8 @@ import {
   IconFeaturedOff, IconFeatured,
 } from 'terra-icon';
 
-// eslint-disable-next-line react/forbid-dom-props
-const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
-const anchorCell = <a href="https://www.oracle.com/" aria-label="Documentation">Documentation</a>;
+const anchorDocumentation = <a href="https://www.oracle.com/" aria-label="Documentation">Documentation</a>;
+const anchorLarnMore = <a href="https://www.oracle.com/" aria-label="Documentation">LearnMore</a>;
 const textAreaCell = <textarea name="textArea" aria-label="Text Area" rows="1" cols="15" />;
 const selectCell = (
   <select name="specialties" id="specialties" aria-label="Select Specialty">
@@ -48,7 +47,7 @@ const rows = [
     id: 'row_2',
     cells: [
       { content: getCellContent(texts[1]) },
-      { content: inputCell },
+      { content: anchorLarnMore },
       { content: '' },
     ],
   },
@@ -56,7 +55,7 @@ const rows = [
     id: 'row_3',
     cells: [
       { content: getCellContent(texts[2]) },
-      { content: anchorCell },
+      { content: anchorDocumentation },
       { content: '' },
     ],
   },
