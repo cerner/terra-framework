@@ -30,7 +30,7 @@ Terra Slider is an input component used to quickly select an imprecise value wit
 ### Features
 Supports:
 * Management of a custom slider label, minimum label and maximum label.
-* Setting a default value for slider.
+* Setting a default value for the slider.
 * Disabling of the slider.
 * Making other updates based on slider value change using the 'onChange' callback prop.
 * Externally updating the slider value using the 'value' prop. Consumers are given the ability to programmatically change the value of the slider without the user directly interacting with it. In most cases this isn't recommended. However, if this is done, ensure the UI makes it very clear that the value was changed and that screen readers announce the change.
@@ -57,12 +57,10 @@ List of keyboard interactions supported by Slider
 |Down Arrow     | Decreases the value of the slider by one step. |
 |Right Arrow    | Increases the value of the slider by one step.|
 |Left Arrow     | Decrease the value of the slider by one step.|
-|Page Up    | Increases the value of the slider by ten steps.|
-|Page Down     | Decrease the value of the slider by ten steps.|
+|Page Up    | Increases the value of the slider by an amount larger than the step change made by Up/Right Arrow key.|
+|Page Down     | Decrease the value of the slider by an amount larger than the step change made by Down/Left Arrow key. |
 |Home           | Set the slider to the first allowed value in its range.|
 |End            | Set the slider to the last allowed value in its range.|
-|Tab           | Moves focus into the slider on the thumb. If focus is already on the slider, it moves focus to the next focusable element in the tab sequence.|
-|Shift + Tab    | Moves focus to the previous focusable element in the tab sequence.|
 
 ### Assistive Technology Support
 #### WAI ARIA Roles and States

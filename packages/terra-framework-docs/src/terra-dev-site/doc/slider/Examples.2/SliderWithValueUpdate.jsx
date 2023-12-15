@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Slider from 'terra-slider';
 
 const SliderWithValueUpdate = () => {
-  const [value, setValue] = useState('20');
+  const [value, setValue] = useState(20);
 
   const setSliderValue = () => {
     setValue(80);
