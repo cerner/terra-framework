@@ -15,13 +15,9 @@
     // Hover
     --terra-table-header-hover-background-color: #d5e7f2;
 
-    &.column-header:focus-within {
-      box-shadow: inset 0 0 1px 3px rgba(76,178,233,.5),inset 0 0 7px 4px rgba(76,178,233,.35);
-      outline: none;
-    }
-
-    // Remove outline style from descendant components
-    :focus {
+    &.column-header:focus,
+    &.column-header :focus {
+      box-shadow: inset 0 0 1px 3px rgba(76, 178, 233, 0.5), inset 0 0 7px 4px rgba(76, 178, 233, 0.35);
       outline: none;
     }
   }

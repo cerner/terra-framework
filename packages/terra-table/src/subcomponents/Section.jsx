@@ -141,11 +141,12 @@ function Section(props) {
         {!isHidden && (
         <tr
           aria-rowindex={sectionRowIndex}
-          className={cx('header')}
+          className={cx('header', theme.className)}
           data-section-id={id}
         >
           <th
             id={`${tableId}-${id}`}
+            className={cx('header-cell')}
             align="left"
             colSpan={displayedColumns.length}
             role="columnheader"

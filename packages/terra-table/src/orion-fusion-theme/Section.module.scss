@@ -1,0 +1,16 @@
+:local {
+  .orion-fusion-theme {
+    --terra-table-cell-border-left: 1px solid #c8cacb;
+    --terra-table-cell-border-right: 1px solid #c8cacb;
+    
+    /* stylelint-disable selector-max-compound-selectors */
+    &.header {
+      .header-cell:focus,
+      .header-cell h2:focus-within {
+        box-shadow: inset 0 0 1px 3px rgba(76, 178, 233, 0.5), inset 0 0 7px 4px rgba(76, 178, 233, 0.35);
+        outline: none;
+      }
+    }
+    /* stylelint-enable selector-max-compound-selectors */
+  }
+}
