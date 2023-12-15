@@ -9,7 +9,7 @@
 
 
     &:focus {
-      outline: var(--terra-table-focus-outline, 2px dashed #000);
+      outline: var(--terra-table-focus-outline, 3px dashed #000);
       outline-offset: 1px;
     }
   }
