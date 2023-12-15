@@ -1,0 +1,23 @@
+import { Notice } from "@cerner/terra-docs";
+import WidthBreakpoints from './WidthBreakpoints?dev-site-examples';
+
+# Number of Columns
+
+### Description
+
+* The [_numberOfColumns_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop is used to arrange the list data in visual columns. 
+* If not explicitly set by user, the [_numberOfColumns_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) defaults to 1.
+
+### Change the Number of Columns dynamically
+
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) being placed in the parent container, which uses the width breakpoints to change the [_numberOfColumns_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop depending on the screen width. 
+Change the browser window width to see the number of columns change.
+
+<WidthBreakpoints />
+
+<Notice variant="caution" ariaLevel="2">
+
+With vertical flow the list items are distributed evenly between all the columns but the last one. The last column accommodates the reminder after the number of items is divided by number of columns.
+The user must monitor that the number of rows is not divisible by `numberOfColumns - 1` without a reminder, as it will lead to an empty last column.
+
+</Notice>

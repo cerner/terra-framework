@@ -1,0 +1,24 @@
+import CellContent from './CellContent?dev-site-examples';
+
+# Cell content and cell selection
+
+### Cell content
+
+* The [_content_](/components/cerner-terra-framework-docs/compact-interactive-list/about#cell) of a cell in the [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) may be empty, text, numerical, or any combination of widgets, but only one focusable element per cell is allowed. 
+  Since Compact Intercative List is one tab stop and arrow keys are used for navigation between cells, these keys are not available to navigate multiple focusable elements inside a cell. 
+* If a cell contains a focusable element inside of it, when navigated to the cell via arrow keys or mouse click, the focusable element will get the focus. 
+* The arrow key press when focused on a cell will navigate away from that cell to the new cell located in corresponding direction.
+
+### Cell selection
+
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) that has support for cell selection. 
+
+* A cell is selected by clicking on the cell or pressing the Spacebar on the focused cell. 
+* A cell is selectable unless it contains an interactable element, in that case the interactive element default controls apply.
+
+#### Properties required
+
+* The [_onCellSelect_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) callback prop: When the user selects a cell, this callback will be called with the object with `rowId` and `columnId` props of a selected cell. 
+* The [_onClearSelectedCells_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) callback prop: When the user presses the **Escape key**, this callback gets called.
+
+<CellContent />

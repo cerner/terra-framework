@@ -112,10 +112,14 @@ const Cell = (props) => {
     }
   };
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (event) => {
     setFocusedCell({ rowId, columnId: id });
     if (isSelectableCell && onCellSelect) {
-      onCellSelect({ rowId, columnId: id });
+      event.preventDefault();
+      if (onCellSelect) {
+        onCellSelect({ rowId, columnId: id });
+        cellRef?.current.focus();
+      }
     }
   };
 

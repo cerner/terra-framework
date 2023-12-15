@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed cell focus handler updated.
+
 ## 1.0.0-alpha.3 - (December 13, 2023)
 
 * Added

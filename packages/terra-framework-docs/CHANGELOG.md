@@ -4,6 +4,7 @@
 
 * Changed
   * Updates `terra-theme-provider` examples to show the new ability to specify a theme density.
+  * Updated `terra-compact-interactive-list` implementation guide and examples.
   
 ## 1.52.0 - (December 13, 2023)
 
