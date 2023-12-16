@@ -1,3 +1,5 @@
+/*stylelint-disable terra/custom-property-namespace*/
+/*stylelint-disable terra/custom-property-name*/
 .redwood-theme {
   // Badge Colors
   // ---------------------------------------
@@ -134,3 +136,5 @@
   --toolbar-background-color: var(--rds-color-ui-light-surface-neutral-10);
   --toolbar-border-color: var(--rds-color-ui-light-border-divider);
 }
+/*stylelint-enable terra/custom-property-namespace*/
+/*stylelint-enable terra/custom-property-name*/
