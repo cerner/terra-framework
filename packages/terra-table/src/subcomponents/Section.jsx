@@ -141,7 +141,7 @@ function Section(props) {
         {!isHidden && (
         <tr
           aria-rowindex={sectionRowIndex}
-          className={cx('header', theme.className)}
+          className={cx('header-row', theme.className)}
           data-section-id={id}
         >
           <th
@@ -154,6 +154,7 @@ function Section(props) {
             tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
           >
             <SectionHeader
+              className={cx('section-header')}
               text={text}
               isOpen={hasSectionButton ? !isCollapsed : undefined}
               isTitleFixed

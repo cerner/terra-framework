@@ -5,7 +5,7 @@
 
 
 :local {
-  .header {
+  .header-row {
     button:focus {
       outline: none;
     }
@@ -20,7 +20,7 @@
       }
 
       /* stylelint-disable selector-max-compound-selectors */
-      h2:focus-within {
+      .section-header:focus-within {
         --terra-section-header-focus-within-outline-offset: -5px;
       }
       /* stylelint-enable selector-max-compound-selectors */
