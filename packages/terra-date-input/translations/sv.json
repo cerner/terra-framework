@@ -25,5 +25,6 @@
   "Terra.date.input.required": "Obligatoriskt",
   "Terra.date.input.september": "September",
   "Terra.date.input.yearDescription": "Ett fyrsiffrigt tal",
-  "Terra.date.input.yearLabel": "år"
+  "Terra.date.input.yearLabel": "år",
+  "Terra.date.input.hotKey": "Tryck på T för att ange aktuellt datum, plus-tangenten för nästa datum och minus-tangenten för föregående datum"
 }

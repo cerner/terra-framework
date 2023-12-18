@@ -25,5 +25,6 @@
   "Terra.date.input.required": "Obrigatório",
   "Terra.date.input.september": "Setembro",
   "Terra.date.input.yearDescription": "Um número de quatro dígitos",
-  "Terra.date.input.yearLabel": "Ano"
+  "Terra.date.input.yearLabel": "Ano",
+  "Terra.date.input.hotKey": "Pressione T para definir a data atual, a tecla + para a próxima data e a tecla - para a data anterior"
 }
