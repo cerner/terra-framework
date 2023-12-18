@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added FlowsheetDataGrid implementation guide.
   * Added new Accessibility and Implementation guide for Terra Slider.
   * Added implementation guide for `terra-table`.
   
