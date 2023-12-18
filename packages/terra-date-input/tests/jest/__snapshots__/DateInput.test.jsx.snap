@@ -108,6 +108,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           className="month-select-wrapper"
         >
           <select
+            aria-describedby="hotKeyInstruction"
             aria-disabled={false}
             aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
             className="month-select"
@@ -198,6 +199,17 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               Terra.date.input.december
             </option>
           </select>
+          <VisuallyHiddenText
+            id="hotKeyInstruction"
+            text="Terra.date.input.hotKey"
+          >
+            <span
+              className="visually-hidden-text"
+              id="hotKeyInstruction"
+            >
+              Terra.date.input.hotKey
+            </span>
+          </VisuallyHiddenText>
         </div>
         <AccessibleInput
           autoComplete="off"
@@ -421,6 +433,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-describedby="hotKeyInstruction"
         aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
@@ -493,6 +506,12 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
           Terra.date.input.december
         </option>
       </select>
+      <span
+        class="visually-hidden-text"
+        id="hotKeyInstruction"
+      >
+        Terra.date.input.hotKey
+      </span>
     </div>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -561,6 +580,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-describedby="hotKeyInstruction"
         aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
@@ -633,6 +653,12 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
           Terra.date.input.december
         </option>
       </select>
+      <span
+        class="visually-hidden-text"
+        id="hotKeyInstruction"
+      >
+        Terra.date.input.hotKey
+      </span>
     </div>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -701,6 +727,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
+        aria-describedby="hotKeyInstruction"
         aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
@@ -773,6 +800,12 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
           Terra.date.input.december
         </option>
       </select>
+      <span
+        class="visually-hidden-text"
+        id="hotKeyInstruction"
+      >
+        Terra.date.input.hotKey
+      </span>
     </div>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -843,6 +876,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="hotKeyInstruction"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select"
@@ -933,6 +967,10 @@ exports[`DateInput should render a date input with a default date 1`] = `
         Terra.date.input.december
       </option>
     </select>
+    <VisuallyHiddenText
+      id="hotKeyInstruction"
+      text="Terra.date.input.hotKey"
+    />
   </div>
   <AccessibleInput
     autoComplete="off"
@@ -1010,6 +1048,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="hotKeyInstruction"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1100,6 +1139,10 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
         Terra.date.input.december
       </option>
     </select>
+    <VisuallyHiddenText
+      id="hotKeyInstruction"
+      text="Terra.date.input.hotKey"
+    />
   </div>
   <AccessibleInput
     autoComplete="off"
@@ -1172,6 +1215,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="hotKeyInstruction"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1262,6 +1306,10 @@ exports[`DateInput should render a date input with onBlur 1`] = `
         Terra.date.input.december
       </option>
     </select>
+    <VisuallyHiddenText
+      id="hotKeyInstruction"
+      text="Terra.date.input.hotKey"
+    />
   </div>
   <AccessibleInput
     autoComplete="off"
@@ -1334,6 +1382,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="hotKeyInstruction"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1424,6 +1473,10 @@ exports[`DateInput should render a date input with onChange 1`] = `
         Terra.date.input.december
       </option>
     </select>
+    <VisuallyHiddenText
+      id="hotKeyInstruction"
+      text="Terra.date.input.hotKey"
+    />
   </div>
   <AccessibleInput
     autoComplete="off"
@@ -1496,6 +1549,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="hotKeyInstruction"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1586,6 +1640,10 @@ exports[`DateInput should render a date input with onFocus 1`] = `
         Terra.date.input.december
       </option>
     </select>
+    <VisuallyHiddenText
+      id="hotKeyInstruction"
+      text="Terra.date.input.hotKey"
+    />
   </div>
   <AccessibleInput
     autoComplete="off"
@@ -1658,6 +1716,7 @@ exports[`DateInput should render a default date input 1`] = `
     className="month-select-wrapper"
   >
     <select
+      aria-describedby="hotKeyInstruction"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1748,6 +1807,10 @@ exports[`DateInput should render a default date input 1`] = `
         Terra.date.input.december
       </option>
     </select>
+    <VisuallyHiddenText
+      id="hotKeyInstruction"
+      text="Terra.date.input.hotKey"
+    />
   </div>
   <AccessibleInput
     autoComplete="off"
@@ -1820,6 +1883,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     className="month-select-wrapper disabled"
   >
     <select
+      aria-describedby="hotKeyInstruction"
       aria-disabled={true}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder disabled"
@@ -1910,6 +1974,10 @@ exports[`DateInput should render a disabled time input 1`] = `
         Terra.date.input.december
       </option>
     </select>
+    <VisuallyHiddenText
+      id="hotKeyInstruction"
+      text="Terra.date.input.hotKey"
+    />
   </div>
   <AccessibleInput
     autoComplete="off"
@@ -2175,7 +2243,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 className="month-select-wrapper"
               >
                 <select
-                  aria-describedby="terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000"
+                  aria-describedby="hotKeyInstruction"
                   aria-disabled={false}
                   aria-invalid={false}
                   aria-label="Terra.date.input.monthSelectLabelWithName"
@@ -2268,6 +2336,17 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     Terra.date.input.december
                   </option>
                 </select>
+                <VisuallyHiddenText
+                  id="hotKeyInstruction"
+                  text="Terra.date.input.hotKey"
+                >
+                  <span
+                    className="visually-hidden-text"
+                    id="hotKeyInstruction"
+                  >
+                    Terra.date.input.hotKey
+                  </span>
+                </VisuallyHiddenText>
               </div>
               <AccessibleInput
                 aria-describedby="terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000"
