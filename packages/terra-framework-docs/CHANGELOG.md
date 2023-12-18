@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.53.0 - (December 18, 2023)
+
 * Added
   * Added FlowsheetDataGrid implementation guide.
   * Added new Accessibility and Implementation guide for Terra Slider.

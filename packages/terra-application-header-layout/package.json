@@ -1,7 +1,7 @@
 {
   "name": "terra-application-header-layout",
   "main": "lib/ApplicationHeaderLayout.js",
-  "version": "3.39.0",
+  "version": "3.40.0",
   "description": "This component renders an application header layout. To be used with a layout.",
   "repository": {
     "type": "git",
@@ -32,7 +32,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-theme-context": "^1.8.0"
+    "terra-theme-context": "^1.9.0"
   },
   "devDependencies": {
     "terra-responsive-element": "^5.0.0"
