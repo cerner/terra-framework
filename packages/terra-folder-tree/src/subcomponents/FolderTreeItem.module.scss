@@ -29,7 +29,13 @@
     padding: 0;
   }
 
-  .radio:hover {
-    cursor: pointer;
+  .radio {
+    width: 14px;
+    height: 14px;
+    margin: 17px;
+
+    :hover {
+      cursor: pointer;
+    }
   }
 }
