@@ -17,11 +17,11 @@ class timeInput extends React.Component {
     return (
       <div>
         <Field
-          label={`Time Provided: ${this.state.time}`}
+          label={`Enter Time: ${this.state.time}`}
           htmlFor="time-input-value"
         >
           <TimeInput
-            a11yLabel="Time Provided"
+            a11yLabel="Enter Time"
             name="time-input-default"
             onChange={this.handleTimeChange}
           />
