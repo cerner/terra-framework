@@ -14,12 +14,17 @@
       border-left: var(--terra-table-cell-border-left, 1px solid #dedfe0);
       border-right: var(--terra-table-cell-border-right, 1px solid #dedfe0);
 
-      &:focus {
-        outline: var(--terra-table-section-focus-outline, 3px dashed #000);
-        outline-offset: var(--terra-table-section-focus-outline-offset, -5px);
+      /* stylelint-disable selector-max-compound-selectors */
+      &:focus { 
+        outline: none;
+
+        .section-header {
+          outline: var(--terra-table-section-focus-outline, 3px dashed #000);
+          outline-offset: var(--terra-table-section-focus-outline-offset, -5px);
+        }
       }
 
-      /* stylelint-disable selector-max-compound-selectors */
+      
       .section-header:focus-within {
         --terra-section-header-focus-within-outline-offset: -5px;
       }
