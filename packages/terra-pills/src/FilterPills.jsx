@@ -400,11 +400,9 @@ const FilterPills = (props) => {
   const ariaLabelHint = (!ariaLabelledBy) ? `${removedPillInteractionHint}, ${ariaLabel}` : undefined;
   const ariaAttrs = (React.Children.count(children)) ? {
     'aria-live': 'assertive',
-    'aria-label': ariaLabelHint,
     'aria-labelledby': ariaLabelledBy,
     'aria-describedby': pillGroupAriaDescribedBy,
     role: 'list',
-    tabIndex: containerTabindex,
   } : { role: 'group' };
 
   return (
@@ -412,8 +410,10 @@ const FilterPills = (props) => {
       {...customProps}
       {...filterPillsProps}
       {...ariaAttrs}
+      aria-label={ariaLabelHint}
       className={pillListClassNames}
       ref={filterPillsRef}
+      tabIndex={containerTabindex}
     >
       <VisuallyHiddenText
         aria-live="polite"
