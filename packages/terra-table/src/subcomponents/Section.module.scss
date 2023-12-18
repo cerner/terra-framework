@@ -17,11 +17,11 @@
       /* stylelint-disable selector-max-compound-selectors */
       &:focus { 
         outline: none;
+      }
 
-        .section-header {
-          outline: var(--terra-table-section-focus-outline, 3px dashed #000);
-          outline-offset: var(--terra-table-section-focus-outline-offset, -5px);
-        }
+      &:focus .section-header {
+        outline: var(--terra-table-section-focus-outline, 3px dashed #000);
+        outline-offset: var(--terra-table-section-focus-outline-offset, -5px);
       }
 
       
