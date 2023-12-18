@@ -142,7 +142,7 @@ const FolderTreeItem = ({
         if (isFolder && isExpanded) {
           handleToggle(event);
         } else {
-          parentRef.current.focus();
+          parentRef?.current.focus();
         }
 
         break;
