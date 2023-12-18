@@ -538,7 +538,7 @@ function Table(props) {
   return (
     <div
       ref={handleContainerRef}
-      className={cx('table-container')}
+      className={cx('table-container', theme.className)}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
@@ -550,7 +550,7 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        className={cx('table', theme.className, { headerless: !hasVisibleColumnHeaders })}
+        className={cx('table', { headerless: !hasVisibleColumnHeaders })}
         onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >

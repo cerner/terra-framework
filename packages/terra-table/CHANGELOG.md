@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed focus indicator issues.
+
 ## 5.3.1 - (December 11, 2023)
 
 * Fixed
