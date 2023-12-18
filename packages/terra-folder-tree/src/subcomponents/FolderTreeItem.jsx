@@ -128,11 +128,7 @@ const FolderTreeItem = ({
       case KeyCode.KEY_RETURN:
         event.preventDefault();
 
-        if (isFolder) {
-          handleToggle(event);
-        } else {
-          onClick(event);
-        }
+        onClick(event);
         break;
       case KeyCode.KEY_LEFT: {
         event.preventDefault();

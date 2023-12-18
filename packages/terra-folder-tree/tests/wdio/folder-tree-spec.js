@@ -57,7 +57,7 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       browser.keys('Tab');
       browser.keys('Tab');
       browser.keys('Tab');
-      browser.keys('Enter');
+      browser.keys('ArrowRight');
       Terra.validates.screenshot('expand first folder keyboard', { selector: '#expand-collapse-folder-tree' });
 
       browser.keys('ArrowDown');
