@@ -13,6 +13,11 @@
       border-left: var(--terra-table-cell-border-left, 1px solid #dedfe0);
     }
 
+    &:focus {
+      outline: var(--terra-table-cell-focus-outline, 3px dashed #000);
+      outline-offset: var(--terra-table-cell-focus-outline-offset, -5px);
+    }
+
     &.last-pinned-column {
       border-right: var(--terra-table-last-pinned-cell-border-right, 2px solid #808080);
     }

@@ -87,6 +87,7 @@ const TableFocusableCell = () => {
         id="table-focusable-cell"
         overflowColumns={cols}
         rows={rows}
+        rowHeight="45px"
         ariaLabel="Table with Focusable Elements"
       />
     </>

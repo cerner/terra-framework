@@ -1,8 +1,16 @@
+@import '../clinical-lowlight-theme/RowSelectionCell.module';
+@import '../orion-fusion-theme/RowSelectionCell.module';
+
 :local {
   .input {
     display: flex;
     height: 16px;
-    margin: auto;
+    margin: 4px;
     width: 16px;
+
+    &:focus {
+      outline: var(--terra-table-row-selection-cell-focus-outline, 3px dashed #000);
+      outline-offset: var(--terra-table-row-selection-cell-focus-outline-offset, 1px);
+    }
   }
 }

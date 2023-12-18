@@ -12,7 +12,7 @@ const BasicFolderTree = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
 
   return (
-    <div id="wrapped-label-folder-tree" className={cx('folder-tree-container')}>
+    <div id="wrapped-label-folder-tree" className={cx('content-wrapper')}>
       <FolderTree
         title="Documents"
         key="documents"

@@ -1,7 +1,11 @@
 :local {
   .orion-fusion-theme {
-    --terra-table-cell-focus-outline: 3px dashed #000;
-    --terra-table-cell-focus-outline-offset: -2px;
     --terra-table-headerless-first-row-border-top: 1px solid #c8cacb;
+
+    // Add box shadow for table container focused state
+    &.table-container:focus {
+      box-shadow: 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.5);
+      outline: none;
+    } 
   }
 }

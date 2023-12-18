@@ -4247,6 +4247,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -4283,6 +4284,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -4759,6 +4761,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -4795,6 +4798,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -5267,6 +5271,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -5303,6 +5308,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -5775,6 +5781,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -5811,6 +5818,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -5903,7 +5911,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -7770,6 +7778,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -7806,6 +7815,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -8282,6 +8292,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -8318,6 +8329,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -8790,6 +8802,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -8826,6 +8839,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -9298,6 +9312,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -9334,6 +9349,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -9426,7 +9442,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -14032,6 +14048,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -14068,6 +14085,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -14544,6 +14562,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -14580,6 +14599,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -15052,6 +15072,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -15088,6 +15109,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -15560,6 +15582,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -15596,6 +15619,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -15688,7 +15712,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -17555,6 +17579,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -17591,6 +17616,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -18067,6 +18093,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -18103,6 +18130,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -18575,6 +18603,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -18611,6 +18640,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -19083,6 +19113,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -19119,6 +19150,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -19211,7 +19243,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -21102,6 +21134,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -21138,6 +21171,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -21614,6 +21648,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -21650,6 +21685,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -22122,6 +22158,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -22158,6 +22195,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -22630,6 +22668,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -22666,6 +22705,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -22758,7 +22798,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -24609,6 +24649,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -24645,6 +24686,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -25121,6 +25163,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -25157,6 +25200,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -25629,6 +25673,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -25665,6 +25710,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -26137,6 +26183,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -26173,6 +26220,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -26265,7 +26313,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -30894,6 +30942,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -30930,6 +30979,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -31406,6 +31456,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -31442,6 +31493,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -31914,6 +31966,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -31950,6 +32003,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -32422,6 +32476,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -32458,6 +32513,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -32550,7 +32606,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -34417,6 +34473,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -34453,6 +34510,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -34929,6 +34987,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -34965,6 +35024,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -35437,6 +35497,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -35473,6 +35534,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -35945,6 +36007,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -35981,6 +36044,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -36073,7 +36137,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -37920,6 +37984,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -37956,6 +38021,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -38432,6 +38498,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -38468,6 +38535,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -38940,6 +39008,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -38976,6 +39045,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -39448,6 +39518,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -39484,6 +39555,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -39576,7 +39648,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -41423,6 +41495,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -41459,6 +41532,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -41935,6 +42009,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -41971,6 +42046,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -42443,6 +42519,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -42479,6 +42556,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -42951,6 +43029,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -42987,6 +43066,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -43079,7 +43159,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -44926,6 +45006,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -44962,6 +45043,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -45438,6 +45520,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -45474,6 +45557,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -45946,6 +46030,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -45982,6 +46067,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -46454,6 +46540,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -46490,6 +46577,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -46582,7 +46670,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -48429,6 +48517,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -48465,6 +48554,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -48941,6 +49031,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -48977,6 +49068,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -49449,6 +49541,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -49485,6 +49578,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -49957,6 +50051,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -49993,6 +50088,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -50085,7 +50181,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -51930,6 +52026,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -51966,6 +52063,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -52442,6 +52540,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -52478,6 +52577,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -52950,6 +53050,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -52986,6 +53087,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -53458,6 +53560,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -53494,6 +53597,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -53586,7 +53690,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
@@ -55431,6 +55535,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="1"
@@ -55467,6 +55572,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="1"
@@ -55943,6 +56049,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="2"
@@ -55979,6 +56086,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="2"
@@ -56451,6 +56559,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={false}
                           isSelected={false}
                           onCellSelect={[Function]}
                           rowId="3"
@@ -56487,6 +56596,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={false}
                             isSelected={false}
                             onCellSelect={[Function]}
                             rowId="3"
@@ -56959,6 +57069,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         <InjectIntl(RowSelectionCell)
                           columnId="table-rowSelectionColumn"
                           columnIndex={0}
+                          isHighlighted={true}
                           isSelected={true}
                           onCellSelect={[Function]}
                           rowId="4"
@@ -56995,6 +57106,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 "timeZone": null,
                               }
                             }
+                            isHighlighted={true}
                             isSelected={true}
                             onCellSelect={[Function]}
                             rowId="4"
@@ -57087,7 +57199,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       <input
                                         aria-label="Terra.table.row-index"
                                         checked={true}
-                                        className="input"
+                                        className="input highlighted"
                                         readOnly={true}
                                         tabIndex={-1}
                                         type="checkbox"
