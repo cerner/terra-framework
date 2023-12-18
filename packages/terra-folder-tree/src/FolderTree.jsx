@@ -55,22 +55,14 @@ const FolderTree = ({
   intl,
 }) => {
   const folderTreeID = `folder-tree-${uuidv4()}`;
-
-  let listNode = useRef();
-
-  const handleListRef = (node) => {
-    // if (refCallback) {
-    //   refCallback(node);
-    // }
-    listNode = node;
-  };
+  const listNode = useRef();
 
   const handleKeyDown = event => {
-    const listItems = listNode.querySelectorAll('[data-item-show-focus=true]');
+    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
     // Remove all hidden list items
     const visibleListItems = Array.prototype.slice.call(listItems).filter((item) => {
       let parent = item.parentNode;
-      while (parent && parent !== listNode) {
+      while (parent && parent !== listNode.current) {
         if (parent.hasAttribute('hidden')) {
           return false;
         }
@@ -87,30 +79,22 @@ const FolderTree = ({
     switch (event.nativeEvent.keyCode) {
       case KeyCode.KEY_END:
         event.preventDefault();
-
         handleEndKey();
-
         break;
       case KeyCode.KEY_HOME:
         event.preventDefault();
-
         handleHomeKey();
-
         break;
       case KeyCode.KEY_UP: {
         event.preventDefault();
-
         const previousIndex = currentIndex - 1;
         visibleListItems[previousIndex]?.focus();
-
         break;
       }
       case KeyCode.KEY_DOWN: {
         event.preventDefault();
-
         const nextIndex = currentIndex + 1;
         visibleListItems[nextIndex]?.focus();
-
         break;
       }
       case KeyCode.KEY_LEFT: {
@@ -118,9 +102,7 @@ const FolderTree = ({
         if (event.metaKey) {
           // Mac: Cmd + Left
           // Win: Home
-
           handleHomeKey();
-
           break;
         }
         break;
@@ -130,9 +112,7 @@ const FolderTree = ({
         if (event.metaKey) {
           // Mac: Cmd + Right
           // Win: End
-
           handleEndKey();
-
           break;
         }
         break;
@@ -175,7 +155,7 @@ const FolderTree = ({
         className={cx('folder-tree')}
         role="tree"
         aria-label={title}
-        ref={handleListRef}
+        ref={listNode}
         onKeyDown={handleKeyDown}
       >
         {children}
