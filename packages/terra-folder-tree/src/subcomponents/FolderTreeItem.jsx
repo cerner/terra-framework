@@ -126,7 +126,6 @@ const FolderTreeItem = ({
   const handleKeyDown = event => {
     switch (event.nativeEvent.keyCode) {
       case KeyCode.KEY_RETURN:
-      case KeyCode.KEY_SPACE:
         event.preventDefault();
 
         if (isFolder) {
