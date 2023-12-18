@@ -142,7 +142,7 @@ const CellContent = () => {
 
   return (
     <>
-      <p>{selectedColumn && selectedRow ? `Selected cell id: ${selectedColumn}, selected row id: ${selectedRow}.` : 'There are no celected cells at the moment.'}</p>
+      <p>{selectedColumn && selectedRow ? `Selected cell ID: ${selectedColumn}, selected row ID: ${selectedRow}.` : 'No cells are currently selected.'}</p>
       <CompactInteractiveList
         id="with-breakpoints"
         rows={displayedRows}
