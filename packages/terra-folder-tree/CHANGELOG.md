@@ -5,6 +5,8 @@
 * Added
   * Added the ability to expand all/collapse all folders.
   * Added `onExpandAll` and `onCollapseAll` props.
+  * Added keyboard navigation.
+  * Added new focus style indicators.
 
 ## 1.0.0-alpha.3 - (December 11, 2023)
 

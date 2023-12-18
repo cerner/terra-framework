@@ -57,6 +57,13 @@ const ExpandCollapseFolderTree = () => {
           onToggle={() => { handleExpandCollapseKeys('projects'); }}
           subfolderItems={[
             <FolderTree.Item
+              label="Important Document 1"
+              key="important-document-1"
+              isSelected={selectedKey === 'important-document-1'}
+              isExpanded={expandedItems.projects}
+              onClick={() => { setSelectedKey('important-document-1'); }}
+            />,
+            <FolderTree.Item
               label="Projects - Level 2"
               key="projects-2"
               isSelected={selectedKey === 'projects-2'}
@@ -81,15 +88,36 @@ const ExpandCollapseFolderTree = () => {
                       onToggle={() => { handleExpandCollapseKeys('projects-4'); }}
                       subfolderItems={[
                         <FolderTree.Item
-                          label="Important Document"
-                          key="important-document"
-                          isSelected={selectedKey === 'important-document'}
+                          label="Important Document 4"
+                          key="important-document-4"
+                          isSelected={selectedKey === 'important-document-4'}
                           isExpanded={expandedItems.projects}
-                          onClick={() => { setSelectedKey('important-document'); }}
+                          onClick={() => { setSelectedKey('important-document-4'); }}
+                        />,
+                        <FolderTree.Item
+                          label="Important Document 5"
+                          key="important-document-5"
+                          isSelected={selectedKey === 'important-document-5'}
+                          isExpanded={expandedItems.projects}
+                          onClick={() => { setSelectedKey('important-document-5'); }}
                         />,
                       ]}
                     />,
+                    <FolderTree.Item
+                      label="Important Document 3"
+                      key="important-document-3"
+                      isSelected={selectedKey === 'important-document-3'}
+                      isExpanded={expandedItems.projects}
+                      onClick={() => { setSelectedKey('important-document-3'); }}
+                    />,
                   ]}
+                />,
+                <FolderTree.Item
+                  label="Important Document 2"
+                  key="important-document-2"
+                  isSelected={selectedKey === 'important-document-2'}
+                  isExpanded={expandedItems.projects}
+                  onClick={() => { setSelectedKey('important-document-2'); }}
                 />,
               ]}
             />,
