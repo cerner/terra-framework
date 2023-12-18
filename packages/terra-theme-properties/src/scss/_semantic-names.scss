@@ -3,65 +3,31 @@
 .redwood-theme {
   // Badge Colors
   // ---------------------------------------
-  --badge-neutral-subtle-background-color: var(
-    --rds-color-ui-light-surface-neutral-subtle
-  );
-  --badge-neutral-subtle-text-icon-color: var(
-    --rds-color-ui-light-text-icon-secondary
-  );
-  --badge-neutral-strong-background-color: var(
-    --rds-color-ui-dark-surface-neutral-strong
-  );
-  --badge-neutral-strong-text-icon-color: var(
-    --rds-color-ui-dark-text-icon-primary
-  );
-  --badge-positive-strong-background-color: var(
-      --rds-color-ui-dark-surface-success-strong
-    );
-    --badge-positive-strong-text-icon-color:
-    var(--rds-color-ui-dark-text-icon-primary);
-  --badge-positive-subtle-background-color: var(
-      --rds-color-ui-dark-surface-success-subtle
-    );
-    --badge-positive-subtle-text-icon-color:
-    var(--rds-color-ui-light-text-icon-success);
-  --badge-negative-strong-background-color: var(
-      --rds-color-ui-dark-surface-danger-strong
-    );
-    --badge-negative-strong-text-icon-color:
-    var(--rds-color-ui-dark-text-icon-primary);
-  --badge-negative-subtle-background-color: var(
-      --rds-color-ui-dark-surface-danger-subtle
-    );
-    --badge-negative-subtle-text-icon-color:
-    var(--rds-color-ui-light-text-icon-danger);
-  --badge-warning-strong-background-color: var(
-      --rds-color-ui-dark-surface-warning-strong
-    );
-    --badge-warning-strong-text-icon-color:
-    var(--rds-color-ui-dark-text-icon-primary);
-  --badge-warning-subtle-background-color: var(
-      --rds-color-ui-dark-surface-warning-subtle
-    );
-    --badge-warning-subtle-text-icon-color:
-    var(--rds-color-ui-light-text-icon-warning);
-  --badge-information-strong-background-color: var(
-      --rds-color-ui-dark-surface-info-strong
-    );
-    --badge-information-strong-text-icon-color:
-    var(--rds-color-ui-dark-text-icon-primary);
-  --badge-information-subtle-background-color: var(
-      --rds-color-ui-dark-surface-info-subtle
-    );
-    --badge-information-subtle-text-icon-color:
-    var(--rds-color-ui-light-text-icon-info);
+  --badge-neutral-subtle-background-color: var(--rds-color-ui-light-surface-neutral-subtle);
+  --badge-neutral-subtle-text-icon-color: var(--rds-color-ui-light-text-icon-secondary);
+  --badge-neutral-strong-background-color: var(--rds-color-ui-dark-surface-neutral-strong);
+  --badge-neutral-strong-text-icon-color: var(--rds-color-ui-dark-text-icon-primary);
+  --badge-positive-strong-background-color: var(--rds-color-ui-dark-surface-success-strong);
+  --badge-positive-strong-text-icon-color: var(--rds-color-ui-dark-text-icon-primary);
+  --badge-positive-subtle-background-color: var(--rds-color-ui-dark-surface-success-subtle);
+  --badge-positive-subtle-text-icon-color: var(--rds-color-ui-light-text-icon-success);
+  --badge-negative-strong-background-color: var(--rds-color-ui-dark-surface-danger-strong);
+  --badge-negative-strong-text-icon-color: var(--rds-color-ui-dark-text-icon-primary);
+  --badge-negative-subtle-background-color: var(--rds-color-ui-dark-surface-danger-subtle);
+  --badge-negative-subtle-text-icon-color: var(--rds-color-ui-light-text-icon-danger);
+  --badge-warning-strong-background-color: var(--rds-color-ui-dark-surface-warning-strong);
+  --badge-warning-strong-text-icon-color: var(--rds-color-ui-dark-text-icon-primary);
+  --badge-warning-subtle-background-color: var(--rds-color-ui-dark-surface-warning-subtle);
+  --badge-warning-subtle-text-icon-color: var(--rds-color-ui-light-text-icon-warning);
+  --badge-information-strong-background-color: var(--rds-color-ui-dark-surface-info-strong);
+  --badge-information-strong-text-icon-color: var(--rds-color-ui-dark-text-icon-primary);
+  --badge-information-subtle-background-color: var(--rds-color-ui-dark-surface-info-subtle);
+  --badge-information-subtle-text-icon-color: var(--rds-color-ui-light-text-icon-info);
 
   // Base Colors
   // ---------------------------------------
   --text-icon-color: var(--rds-color-ui-light-text-icon-primary);
-  --application-background-color: var(
-    --rds-color-ui-light-page-background-neutral-0
-  );
+  --application-background-color: var(--rds-color-ui-light-page-background-neutral-0);
 
   // Base Font Details
   // ---------------------------------------
@@ -106,9 +72,7 @@
 
   // Overlay Colors
   // ---------------------------------------
-  --overlay-subtle-background-color: var(
-    --rds-color-ui-light-overlay-scrim-subtle
-  );
+  --overlay-subtle-background-color: var(--rds-color-ui-light-overlay-scrim-subtle);
   --overlay-strong-background-color: var(--rds-color-ui-light-overlay-scrim);
   --overlay-subtle-text-icon-color: var(--rds-color-ui-light-text-icon-primary);
   --overlay-strong-text-icon-color: var(--rds-color-ui-light-text-icon-inverse);
