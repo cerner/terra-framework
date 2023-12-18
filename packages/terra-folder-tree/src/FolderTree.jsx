@@ -66,47 +66,50 @@ const FolderTree = ({
   };
 
   const handleKeyDown = event => {
-    console.log('folder tree key down detected.');
-
     const listItems = listNode.querySelectorAll('[data-item-show-focus=true]');
-    const currentIndex = Array.from(listItems).indexOf(event.target);
-    const lastIndex = listItems.length - 1;
-    console.log('listItems', listItems);
-    console.log('currentIndex', currentIndex);
+    // Remove all hidden list items
+    const visibleListItems = Array.prototype.slice.call(listItems).filter((item) => {
+      let parent = item.parentNode;
+      while (parent && parent !== listNode) {
+        if (parent.hasAttribute('hidden')) {
+          return false;
+        }
+        parent = parent.parentNode;
+      }
+      return true;
+    });
+    const currentIndex = Array.from(visibleListItems).indexOf(event.target);
+    const lastIndex = visibleListItems.length - 1;
 
-    const handleHomeKey = () => listItems[0].focus();
-    const handleEndKey = () => listItems[lastIndex].focus();
+    const handleHomeKey = () => visibleListItems[0].focus();
+    const handleEndKey = () => visibleListItems[lastIndex].focus();
 
     switch (event.nativeEvent.keyCode) {
       case KeyCode.KEY_END:
         event.preventDefault();
-        console.log('END pressed.');
 
         handleEndKey();
 
         break;
       case KeyCode.KEY_HOME:
         event.preventDefault();
-        console.log('HOME pressed.');
 
         handleHomeKey();
 
         break;
       case KeyCode.KEY_UP: {
         event.preventDefault();
-        console.log('UP pressed.');
 
-        const previousIndex = currentIndex > 0 ? currentIndex - 1 : lastIndex;
-        listItems[previousIndex]?.focus();
+        const previousIndex = currentIndex - 1;
+        visibleListItems[previousIndex]?.focus();
 
         break;
       }
       case KeyCode.KEY_DOWN: {
         event.preventDefault();
-        console.log('DOWN pressed.');
 
-        const nextIndex = currentIndex < lastIndex ? currentIndex + 1 : 0;
-        listItems[nextIndex]?.focus();
+        const nextIndex = currentIndex + 1;
+        visibleListItems[nextIndex]?.focus();
 
         break;
       }
@@ -115,34 +118,23 @@ const FolderTree = ({
         if (event.metaKey) {
           // Mac: Cmd + Left
           // Win: Home
-          console.log('HOME pressed.');
 
           handleHomeKey();
 
           break;
         }
-        console.log('LEFT pressed.');
-
-
-
         break;
       }
       case KeyCode.KEY_RIGHT: {
         event.preventDefault();
-
         if (event.metaKey) {
           // Mac: Cmd + Right
           // Win: End
-          console.log('END pressed.');
 
           handleEndKey();
 
           break;
         }
-        console.log('RIGHT pressed.');
-
-
-
         break;
       }
       default:
