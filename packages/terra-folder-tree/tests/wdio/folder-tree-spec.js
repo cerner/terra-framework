@@ -29,6 +29,28 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       Terra.validates.screenshot('collapsed folder', { selector: '#expand-collapse-folder-tree' });
     });
 
+    it('expands and collapses all folders via mouse click', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
+
+      $('aria/Expand All').click();
+      Terra.validates.screenshot('expand all folders mouse', { selector: '#expand-collapse-folder-tree' });
+
+      $('aria/Collapse All').click();
+      Terra.validates.screenshot('collapse all folders mouse', { selector: '#expand-collapse-folder-tree' });
+    });
+
+    it('expands and collapses all folders via keyboard', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
+
+      browser.keys('Tab');
+      browser.keys('Enter');
+      Terra.validates.screenshot('expand all folders keyboard', { selector: '#expand-collapse-folder-tree' });
+
+      browser.keys('Tab');
+      browser.keys('Enter');
+      Terra.validates.screenshot('collapse all folders keyboard', { selector: '#expand-collapse-folder-tree' });
+    });
+
     it('wraps items with long labels', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/wrapped-label-folder-tree');
 
