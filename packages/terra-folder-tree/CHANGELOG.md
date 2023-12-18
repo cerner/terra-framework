@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added the ability to expand all/collapse all folders.
+  * Added `onExpandAll` and `onCollapseAll` props.
+
 ## 1.0.0-alpha.3 - (December 11, 2023)
 
 * Changed

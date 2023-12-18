@@ -10,12 +10,44 @@ const cx = classNames.bind(styles);
 
 const BasicFolderTree = () => {
   const [selectedKey, setSelectedKey] = React.useState('info');
+  const [expandedItems, setExpandedItems] = React.useState({
+    projects: false,
+    tests: false,
+  });
+
+  const handleExpandCollapseKeys = (key) => {
+    const newExpandedItems = {
+      ...expandedItems,
+      [key]: !expandedItems[key],
+    };
+    setExpandedItems(newExpandedItems);
+  };
+
+  const handleExpandAll = () => {
+    const newExpandedItems = {
+      ...expandedItems,
+    };
+    Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = true; });
+
+    setExpandedItems(newExpandedItems);
+  };
+
+  const handleCollapseAll = () => {
+    const newExpandedItems = {
+      ...expandedItems,
+    };
+    Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = false; });
+
+    setExpandedItems(newExpandedItems);
+  };
 
   return (
     <div className={cx('content-wrapper')}>
       <FolderTree
         title="Documents"
         key="documents"
+        onExpandAll={handleExpandAll}
+        onCollapseAll={handleCollapseAll}
       >
         <FolderTree.Item
           label="info.txt"
@@ -35,7 +67,9 @@ const BasicFolderTree = () => {
           label="Projects"
           key="projects"
           isSelected={selectedKey === 'projects'}
+          isExpanded={expandedItems.projects}
           onClick={() => { setSelectedKey('projects'); }}
+          onToggle={() => { handleExpandCollapseKeys('projects'); }}
           subfolderItems={[
             (<FolderTree.Item
               label="project_data1.txt"
@@ -55,7 +89,9 @@ const BasicFolderTree = () => {
               label="Tests"
               key="tests"
               isSelected={selectedKey === 'tests'}
+              isExpanded={expandedItems.tests}
               onClick={() => { setSelectedKey('tests'); }}
+              onToggle={() => { handleExpandCollapseKeys('tests'); }}
               icon={<IconDocuments />}
               subfolderItems={[
                 (<FolderTree.Item

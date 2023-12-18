@@ -18,37 +18,37 @@ const propTypes = {
   label: PropTypes.string.isRequired,
 
   /**
-  * Minimum value in the range.
+  * The minimum value in the range.
   */
   minimumValue: PropTypes.number.isRequired,
 
   /**
-  * Maximum value in the range.
+  * The maximum value in the range.
   */
   maximumValue: PropTypes.number.isRequired,
 
   /**
-  * Default or initial value for the slider.
+  * The default or initial value for the slider.
   */
   value: PropTypes.number.isRequired,
 
   /**
-  * When true, will disable the field.
+  * When set to **true**, the slider is disabled.
   */
   isDisabled: PropTypes.bool,
 
   /**
-  * Minimum value label to display on the left side of the slider.
+  * The minimum value label to display on the left of the slider.
   */
   minimumLabel: PropTypes.string,
 
   /**
-  * Maximum value label to display on the right side of the slider.
+  * The maximum value label to display on the right of the slider.
   */
   maximumLabel: PropTypes.string,
 
   /**
-  * Function to trigger when user changes the input value - function(value).
+  * The function that activates when a user changes the input value - function(value).
   */
   onChange: PropTypes.func,
 
