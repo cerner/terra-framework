@@ -76,7 +76,7 @@ const FolderTree = ({
     const handleHomeKey = () => visibleListItems[0].focus();
     const handleEndKey = () => visibleListItems[lastIndex].focus();
 
-    switch (event.nativeEvent.keyCode) {
+    switch (event.keyCode) {
       case KeyCode.KEY_END:
         event.preventDefault();
         handleEndKey();
