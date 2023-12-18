@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added hot keys functionality to month select
+
 ## 1.46.0 - (October 11, 2023)
 
 * Changed

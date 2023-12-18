@@ -138,6 +138,7 @@ class DateInput extends React.Component {
     }
 
     this.uuid = uuidv4();
+    this.hotKeyInstructionId = `${this.uuid}-hotkeyinstruction`;
 
     this.dateInputContainer = React.createRef();
     this.monthRef = React.createRef();
@@ -611,7 +612,7 @@ class DateInput extends React.Component {
           aria-disabled={this.props.disabled}
           aria-invalid={this.props.isInvalid}
           aria-required={this.props.required}
-          aria-describedby="hotKeyInstruction"
+          aria-describedby={this.hotKeyInstructionId}
         >
           <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -627,7 +628,7 @@ class DateInput extends React.Component {
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.november' })} value="11">{this.props.intl.formatMessage({ id: 'Terra.date.input.november' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.december' })} value="12">{this.props.intl.formatMessage({ id: 'Terra.date.input.december' })}</option>
         </select>
-        <VisuallyHiddenText id="hotKeyInstruction" text={intl.formatMessage({ id: 'Terra.date.input.hotKey' })} />
+        <VisuallyHiddenText id={this.hotKeyInstructionId} text={intl.formatMessage({ id: 'Terra.date.input.hotKey' })} />
       </div>
     );
   }
