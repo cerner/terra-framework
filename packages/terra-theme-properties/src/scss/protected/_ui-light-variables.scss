@@ -5,8 +5,7 @@
 // Maintained by Oracle Design, UX Foundations Team
 // Do not edit these values directly
 // -------------------------------------------------
-/*stylelint-disable terra/custom-property-namespace*/
-/*stylelint-disable terra/custom-property-name*/
+/* stylelint-disable */
 .redwood-theme {
   --ui-light-color-border-danger: var(--rds-color-alert-danger-120);
   --ui-light-color-border-disabled: var(--rds-color-neutral-190);
@@ -129,5 +128,4 @@
   --ui-light-color-text-icon-warning: var(--rds-color-alert-warning-120);
   --ui-light-color-text-icon-warning-low: var(--rds-color-alert-warning-100);
 }
-/*stylelint-enable terra/custom-property-namespace*/
-/*stylelint-enable terra/custom-property-name*/
+/* stylelint-enable */

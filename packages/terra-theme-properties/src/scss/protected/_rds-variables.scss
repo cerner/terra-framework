@@ -5,8 +5,7 @@
 // Maintained by Oracle Design, UX Foundations Team
 // Do not edit these values directly
 // -------------------------------------------------
-/*stylelint-disable terra/custom-property-namespace*/
-/*stylelint-disable terra/custom-property-name*/
+/* stylelint-disable */
 .redwood-theme {
   --rds-border-radius-lg: 8px;
   --rds-border-radius-md: 6px;
@@ -222,5 +221,4 @@
   --rds-color-pillar-sky-80: #5fa2ba;
   --rds-color-pillar-sky-90: #4190ac;
 }
-/*stylelint-enable terra/custom-property-namespace*/
-/*stylelint-enable terra/custom-property-name*/
+/* stylelint-enable */
