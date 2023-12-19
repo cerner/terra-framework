@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rollup Pill should render pill with the role group when rendered empty 1`] = `
+<Fragment>
+  <div
+    className="pills-group"
+    onBlur={[Function]}
+    onKeyDown={[Function]}
+    role="group"
+    tabIndex="-1"
+  />
+  <VisuallyHiddenText
+    aria-live="polite"
+    id="terra-pills-group-interaction-hint-00000000-0000-0000-0000-000000000000"
+    text="Terra.pills.hint.pillList, , Empty Filter Pills"
+  />
+</Fragment>
+`;
+
+exports[`Rollup Pill should render pill with the role list when rendered with pills 1`] = `
+<Fragment>
+  <div
+    aria-describedby="terra-pills-group-interaction-hint-00000000-0000-0000-0000-000000000000"
+    aria-label=", Filter Pills with labels"
+    aria-live="assertive"
+    className="pills-group"
+    onBlur={[Function]}
+    onKeyDown={[Function]}
+    role="list"
+    tabIndex="-1"
+  >
+    <InjectIntl(Pill)
+      id="1234"
+      key=".$1234"
+      label="asthma"
+      labelCategory="Allergies"
+      onRemove={[Function]}
+      onSelect={[Function]}
+    />
+  </div>
+  <VisuallyHiddenText
+    aria-live="polite"
+    id="terra-pills-group-interaction-hint-00000000-0000-0000-0000-000000000000"
+    text="Terra.pills.hint.pillList"
+  />
+</Fragment>
+`;
