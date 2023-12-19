@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.83.0 - (December 18, 2023)
+
 * Added
   * New stylings for the focus indicator.
 

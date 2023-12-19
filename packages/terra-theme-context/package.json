@@ -1,7 +1,7 @@
 {
   "name": "terra-theme-context",
   "main": "lib/ThemeContext.js",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "A react context to provide the current theme.",
   "repository": {
     "type": "git",
