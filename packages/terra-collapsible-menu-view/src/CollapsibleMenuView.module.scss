@@ -36,6 +36,10 @@
       display: none;
       width: 0;
     }
+
+    :focus {
+      outline-offset: var(--terra-collapsible-menu-view-menu-button-focus-outline-offset, -2px);
+    }
   }
 
   .face-up-item {
@@ -54,6 +58,13 @@
 
     &:first-child {
       padding-left: 0;
+    }
+
+    :focus {
+      box-shadow: var(--terra-collapsible-menu-view-item-focus-box-shadow, none);
+      outline: var(--terra-collapsible-menu-view-item-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-collapsible-menu-view-item-focus-outline-offset, 1px);
+      z-index: 1;
     }
   }
 

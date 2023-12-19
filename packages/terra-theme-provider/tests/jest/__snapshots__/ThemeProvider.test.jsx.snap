@@ -1,11 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ThemeProvider should render a theme provider component 1`] = `
-<p>
-  Child content
-</p>
-`;
-
 exports[`ThemeProvider should shallow render a theme provider component 1`] = `
 <Fragment>
   <p>

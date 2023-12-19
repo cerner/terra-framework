@@ -44,6 +44,7 @@ describe('ApplicationMenuWrapper', () => {
           utilityConfig: {
             title: 'test-utility',
             onChange: jest.fn(),
+            onBlur: jest.fn(),
             menuItems: [],
             initialSelectedKey: 'test-init-key',
           },

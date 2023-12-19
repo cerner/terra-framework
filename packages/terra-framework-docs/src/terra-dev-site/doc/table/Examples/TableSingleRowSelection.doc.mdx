@@ -1,3 +1,24 @@
 import TableSingleRowSelection from './TableSingleRowSelection?dev-site-example';
 
+# Table - Single Row Selection
+
+### Description
+
+Row selection mode is controlled with a property and is off by default.
+When creating a table that supports single row selection, the consumer must set the property.
+This example demonstrates a table with full support for multiple row selections.
+Because the component is an accessible table, each row selection checkbox is a tab stop.
+
+### Required Properties
+* rowSelectionMode
+* onRowSelect
+
+## Row Selection Interactions
+For this example, you can perform the following actions to achieve row-centric outcomes:
+
+|Outcome|Action|
+|---|---|
+|Select a Row|When single row selection is enabled, select the appropriate row, or press **TAB** until the row is active and then press the **SPACEBAR**.|
+|Clear a Row|Select the appropriate row, or press **TAB** until the row is active and then press the **SPACEBAR**.|
+
 <TableSingleRowSelection title='Table With Single Row Selection' />

@@ -3,7 +3,12 @@
 ## Unreleased
 
 * Added
-  * Added hot keys functionality to month select
+  * Added hot keys functionality to support keyboard shortcut patterns.
+
+## 1.47.0 - (December 18, 2023)
+
+* Changed
+  * Minor dependency version bump.
 
 ## 1.46.0 - (October 11, 2023)
 

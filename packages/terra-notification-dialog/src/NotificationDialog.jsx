@@ -159,7 +159,7 @@ const NotificationDialog = (props) => {
     ...customProps
   } = props;
 
-  if (acceptAction === undefined && rejectAction === undefined) {
+  if ((typeof acceptAction !== 'object' && typeof rejectAction !== 'object') || (acceptAction === undefined && rejectAction === undefined)) {
     throw new Error('Either the `acceptAction` or `rejectAction` props must be provided for Notification dialog');
   }
 

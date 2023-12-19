@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.0.0-alpha.4 - (December 18, 2023)
+
+* Added
+  * Added the ability to expand all/collapse all folders.
+  * Added `onExpandAll` and `onCollapseAll` props.
+  * Added keyboard navigation.
+  * Added new focus style indicators.
+
+## 1.0.0-alpha.3 - (December 11, 2023)
+
 * Changed
   * Updated cursor style to pointer for clickable regions.
 

@@ -1,7 +1,6 @@
 :local {
   .clinical-lowlight-theme {
-    --terra-table-cell-focus-outline: 3px dashed #fff;
-    --terra-table-cell-focus-outline-offset: -2px;
-    --terra-table-headerless-first-row-border-top: 1px solid #181b1d; 
+    --terra-table-headerless-first-row-border-top: 1px solid #181b1d;
+    --terra-table-focus-outline: 3px solid #fff; 
   }
 }
