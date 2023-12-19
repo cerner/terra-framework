@@ -6,10 +6,6 @@ import CompactInteractiveListPropsTable from 'terra-compact-interactive-list/src
 
 # Terra Compact Interactive List
 
-<Notice variant="caution" ariaLevel="2">
-Terra Compact Interactive List is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
-</Notice>
-
 ## Table of Contents
 * [Overview](/components/cerner-terra-framework-docs/compact-interactive-list/about#overview)
 * [Design Decisions](/components/cerner-terra-framework-docs/compact-interactive-list/about#design-decisions)
@@ -20,88 +16,86 @@ Terra Compact Interactive List is currently under alpha release. There may be br
 * [Terra Standards](/components/cerner-terra-framework-docs/compact-interactive-list/about#terra-standards)
 
 ## Overview
+<Notice variant="important" ariaLevel="2">
+The Terra Compact Interactive List component is currently under alpha release. Breaking changes can occur between releases until it is stable with the 1.0 release.
+</Notice>
 
-The `terra-compact-interactive-list` component  provides users a way to render a collection of interactive data in a list format into a single tab stop. The list can be arranged in columns to fit wide space, and the user can navigate between them with the arrow keys.
+The Terra Compact Interactive List component provides a way to render a collection of interactive information in a list format that has a single tab stop. You can arrange the list in columns to fit a wide space, and the user can move between them with the arrow keys.
 
 <FixedWidthColumns />
 
 ### Features
-Supports:
-* Arranging items in columns.
+* Ability to arrange items in columns.
 * Fixed and responsive width columns.
 * `px`, `em`, and `rem` width units.
 * Vertical and horizontal flow.
-* Minimum and maximum column width for responsive columns set for all columns, or to each column individually.
+* Minimum and maximum column widths that you can set for all responsive columns or for each column individually.
 * Selectable cells.
-* Interactable elements in cells (one per cell).
+* Interactive elements in cells (one per cell).
 
-Refer to the [examples](/components/cerner-terra-framework-docs/compact-interactive-list/about#examples) section for detailed demonstration of the features supported by the Search Field.
+See the [Examples](/components/cerner-terra-framework-docs/compact-interactive-list/about#examples) section for detailed demonstrations of the Compact Interactive List component features.
 
 ## Design Decisions
-
-The Compact Interactive List:
-  * Supports only one tab stop. When tabbing into the Compact Interactive List, focus will either go to the last visited cell, or the first cell upon initial entry.
-  While on the Compact Interactive List, `Tab` or `Shift+Tab` will exit the list.
-  * Does not maintain consumer data state. The state must be maintained by the consumer.
-  * Uses callbacks to communicate the actions taken by the user.
-  The callbacks are provided by the consumer and therefore the implementation is consumer specific.
-  It is up to the consumer to determine if and what actions should be taken.
-  For example, the user may click on a selectable cell in the Compact Interactive List which calls the _onCellSelect_ callback.
-  For business reasons, the consumer may decide not to honor that cell selection and instead does nothing resulting in the the cell not getting selected in the Worklist Data Grid.
-  * Supports single interactive element per cell.
+  * Only one tab stop is supported. When you press **TAB** to activate the Compact Interactive List component, the last visited cell or the first cell upon initial selection becomes active. 
+    If you press **TAB** or **SHIFT+TAB** while the Compact Interactive List component is active, you exit the list.
+  * The consumer data state is not maintained. The state must be maintained by the consumer.
+  * Callbacks are used to communicate user actions.
+  The callbacks are provided by the consumer; therefore, the implementation is consumer specific.
+  The consumer determines whether actions are performed and what those actions are.
+  For example, the user can select a cell in the Compact Interactive List component, which calls the onCellSelect callback.
+  For business reasons, the consumer may decide to not recognize that cell selection. No action is performed and the cell is not selected in the Worklist Data Grid component.
+  * A single interactive element per cell is supported.
 
 ## Examples
 |Link to Example| Description|
 |-|-|
-|[FixedWidthColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/fixed-width-columns)|An example of the Compact Interactive List with fixed width columns.|
-|[ResponsiveColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/responsive-columns)|An example of the Compact Interactive List with responsive text columns.|
-|[ScalableUnits](/components/cerner-terra-framework-docs/compact-interactive-list/examples/scalable-units)|An example of the Compact Interactive List with width props set in units relative to the font size.|
-|[FlowDirection](/components/cerner-terra-framework-docs/compact-interactive-list/examples/flow-direction)|The examples of the Compact Interactive List with vertical and horizontal flow directions.|
-|[NumberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/number-of-columns)|An example of the Compact Interactive List placed inside of a parent element that uses width breakpoints to dynamically change the number of columns.|
-|[CellContent](/components/cerner-terra-framework-docs/compact-interactive-list/examples/cell-content)|Compact Interactive List cell content examples.|
+|[FixedWidthColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/fixed-width-columns)|An example of the Compact Interactive List component with fixed width columns.|
+|[ResponsiveColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/responsive-columns)|An example of the Compact Interactive List component with responsive text columns.|
+|[ScalableUnits](/components/cerner-terra-framework-docs/compact-interactive-list/examples/scalable-units)|An example of the Compact Interactive List component with width properties set in units relative to the font size.|
+|[FlowDirection](/components/cerner-terra-framework-docs/compact-interactive-list/examples/flow-direction)|Examples of the Compact Interactive List component with vertical and horizontal flow directions.|
+|[NumberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/examples/number-of-columns)|An example of the Compact Interactive List component placed inside a main element that uses width breakpoints to dynamically change the number of columns.|
+|[CellContent](/components/cerner-terra-framework-docs/compact-interactive-list/examples/cell-content)|Examples of cell content for the Compact Interactive List component.|
 
 ## Accessibility
 ### Keyboard Interactions
 
-List of keyboard interactions supported by Compact Interactive List.
-
-|Key interactions|Description|
+|Keys |Description|
 |---|---|
-|Up Arrow       | Moves focus one cell up. If focus is on the top cell of the visual column, it will move to the last cell of the previous visual column. If focus is on the top cell of the first visual column, focus does not move.|
-|Down Arrow     | Moves focus one cell down. If focus is on the bottom cell of the visual column, it will move to the first cell of the next visual column. If focus is on the bottom cell of the last visual column, focus does not move.|
-|Right Arrow    | Moves focus one cell to the right. If focus is on the right-most cell in the visual row, focus does not move.|
-|Left Arrow     | Moves focus one cell to the left. If focus is on the left-most cell in the visual row, focus does not move.|
-|Home           | Moves focus to the first cell in the visual row that contains focus.|
-|End            | Moves focus to the last cell in the visual row that contains focus.|
-|Control + Home (Windows) <br/> or <br/> Ctrl + Command + Left Arrow (Mac) | Moves focus to the first cell in the first visual row.|
-|Control + End (Windows) <br/> or <br/> Ctrl + Command + Right Arrow (Mac) | Moves focus to the last cell in the last visual row.|
-|Tab            | Moves focus out of the list to the next focusable element in the tab sequence.|
-|Shift + Tab    | Moves focus out of the grid to the previous focusable element in the tab sequence.|
-|Space| Selects the focused cell. Cell cannot be selected if it contains focusable elements in it.|
-|Escape| Removes the cell selection.|
+|UP ARROW       | Selects the cell above the currently active cell. If the top cell of a column is active, the last cell of the previous column is selected. If the top cell of the first column is active, the active cell does not change.|
+|DOWN ARROW     | Selects the cell below the currently active cell. If the last cell of a column is active, the first cell of the next column is selected. If the last cell of the last column is active, the active cell does not change.|
+|RIGHT ARROW    | Selects the cell to the right of the currently active cell. If the right-most cell in the row is active, the active cell does not change.|
+|LEFT ARROW     | Selects the cell to the left of the currently active cell. If the left-most cell in the row is active, the active cell does not change.|
+|HOME           | Selects the first cell in the active row.|
+|END            | Selects the last cell in the active row.|
+|CTRL+HOME (Microsoft Windows) <br/> or <br/> CTRL+COMMAND+LEFT ARROW (Apple Mac) | Selects the first cell in the first row.|
+|CTRL+END (Microsoft Windows) <br/> or <br/>CTRL+COMMAND+RIGHT ARROW (Apple Mac) | Selects the last cell in the last row.|
+|TAB            | Exits the list and moves to the next selectable element in the tab sequence.|
+|SHIFT+TAB    | Exits the list and moves to the previous selectable element in the tab sequence.|
+|SPACEBAR| Selects the active cell. A cell cannot be selected if it contains active elements in it.|
+|ESC| Removes the cell selection.|
 
 ### Assistive Technology Support
 #### WAI ARIA Roles and States
 * [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
-  * **Compact Interactive List**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
+  * **Compact Interactive List**: When the [ariaLabel](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is specified, the screen reader uses the aria-label value as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
 * [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
-  * **Compact Interactive List**: When the [_ariaLabelledBy_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
+  * **Compact Interactive List**: When the [ariaLabelledBy](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is specified, the screen reader uses the aria-labelledby value to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
 * [rowheader](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/rowheader_role)
-  * **Compact Interactive List**: When the [_rowHeaderIndex_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) is provided, the screen reader will use the corresponding cell as the header cell for a row, establishing a relationship between it and the other cells in the same row.
+  * **Compact Interactive List**: When the [rowHeaderIndex](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) porperty is provided, the screen reader uses the corresponding cell as the header cell for a row, establishing a relationship between it and the other cells in the same row.
 * [columnheader](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/columnheader_role)
-  * **Column**: When the [_displayedName_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) is specified, the screen reader will use it to define as the header information for the semantic column.
+  * **Column**: When the [displayedName](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property is specified, the screen reader uses it to define the header information for the semantic column.
 
 ## Implementation
 
 ### Installation
-- Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-compact-interactive-list`
+Install with [npmjs](https://www.npmjs.com):
+`npm install terra-compact-interactive-list`
 
 ### Dependencies
 
 #### Peer Dependencies
 
-This component requires the following peer dependencies be installed in your app for the component to properly function.
+Ensure that the following peer dependencies are installed in your application for the component to properly function:
 
 | Peer Dependency | Version |
 |-|-|
@@ -119,49 +113,49 @@ import CompactInteractiveList from 'terra-compact-interactive-list';
 
 <Notice variant="important" ariaLevel="3">
 
-The supported units for width props are `px`, `em`, and `rem`. 
-The width units should be consistent across all the props in the same component. That includes:
-[_columnMinimumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
-[_columnMaximumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
-[_width_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), 
-[_minimumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), and 
-[_maximumWidth_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column).
-The width units inconsistent with the rest of the component props will be disregarded.
+The supported units for width properties are `px`, `em`, and `rem`. 
+Ensure that the width units are consistent across all the properties in the same component. The width properties are
+[columnMinimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[columnMaximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), 
+[minimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), and 
+[maximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column).
+Width units that are inconsistent with the rest of the component properties are disregarded.
 
 </Notice>
 
-### Compact Interactive List Props Table
+### Compact Interactive List Properties Table
 <CompactInteractiveListPropsTable />
 
 ### Column
-A column specifies the data to render a cell in the header row of the Worklist Data Grid.
+A column specifies the information to render a cell in the header row of the Worklist Data Grid component.
 
-|Name|Type|Is Required|Default Value|Description|
+|Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
-|**displayName**|string|<span style={{color:'#d53040'}}>required</span>|none|A string of text to be announced by screen readers on column context change.|
-|**width**|string|optional|none|A valid css string. If omitted, the column becomes responsive. `px`, `em`, or `rem` units supported.|
-|**minimumWidth**|string|optional|none|A valid css string. `px`, `em`, or `rem` units supported. Disregarded if column has fixed width.|
-|**maximumWidth**|string|optional|none|A valid css string. `px`, `em`, or `rem` units supported. Disregarded if column has fixed width.|
-|**flexGrow**|bool|optional|none|A boolean indicating whether or not the column is responsive.|
-|**align**|string|optional|'left'|A string value indicating the aligning option, `center`, `right`, or `left` options supported|
-|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the cells in this column are selectable.|
+|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the column in the grid.|
+|**displayName**|String|<span style={{color:'#d53040'}}>Required</span>|None|A string of text that screen readers read when the column context changes.|
+|**width**|String|Optional|None|A valid CSS string. If omitted, the column becomes responsive. `px`, `em`, or `rem` units are supported.|
+|**minimumWidth**|String|Optional|None|A valid CSS string. `px`, `em`, or `rem` units are supported. This property is disregarded if the column has a fixed width.|
+|**maximumWidth**|String|Optional|None|A valid CSS string. `px`, `em`, or `rem` units are supported. This property is disregarded if the column has a fixed width.|
+|**flexGrow**|Bool|Optional|None|A boolean indicating whether or not the column is responsive.|
+|**align**|String|Optional|'left'|A string value that indicates the alignment. `center`, `right`, or `left` alignments are supported.|
+|**isSelectable**|Bool|Optional|None|A boolean indicating whether or not the cells in this column are selectable.|
 
 ### Row
-A row defines the cells rendered within the row.
+A row defines the cells rendered in the row.
 
-|Name|Type|Is Required|Default Value|Description|
+|Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the row within the list.|
-|**cells**|array|optional|[ ]|An array of cell objects that define the content to be rendered in the row. Cells will be rendered in the order given and are expected to be in the same order as the columns.|
+|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the row in the list.|
+|**cells**|Array|Optional|[ ]|An array of cell objects that define the content to be rendered in the row. Cells are rendered in the order given and are expected to match the column order.|
 
 ### Cell
 A cell defines the content rendered at the intersection of a row and a column.
 
-|Name|Type|Is Required|Default Value|Description|
+|Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**content**|content|optional|none|The content to render within the cell.|
-|**isSelected**|bool|optional|none|A boolean indicating if the cell is selected.|
+|**content**|Content|Optional|None|The content to render in the cell.|
+|**isSelected**|Bool|Optional|None|A boolean indicating if the cell is selected.|
 
 ## Terra Standards
 * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)

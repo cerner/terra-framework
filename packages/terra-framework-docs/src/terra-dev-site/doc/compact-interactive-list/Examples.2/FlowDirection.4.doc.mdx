@@ -5,23 +5,23 @@ import HorizontalFlow from './HorizontalFlow?dev-site-examples';
 
 ### Vertical Flow
 
-By default the items in the [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) go from top to bottom before breaking into a new visual column.
+By default, the items in the [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component are read from top to bottom before moving to a new visual column.
 
 <VerticalFlow />
 
 #### Usage
 
-* The list items needs the [_rowHeight_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property to be explicitly set for the vertical flow. If not set by user, the default value will be used.
-* The items will be distributed evenly between all the columns but the last one. The last column will accommodate the reminder after the number of items was divided by number of columns.
-* The user must monitor that the number of rows is not divisible by [_numberOfColumns_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) - 1 without a reminder, as it will lead to an empty last column.
+* The [rowHeight](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is required for the list items to use vertical flow. If not set, the default value is used.
+* The items are distributed evenly between all columns but the last one. The last column accommodates the remainder after the number of items is divided by the number of columns.
+* Ensure that the number of rows is not divisible by the [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) value minus 1 without a remainder, which leads to an empty last column.
 
 ### Horizontal Flow
 
-The [_flowHorizontally_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop set to `true` changes the flow direction to go from left to right before breaking into a new line.
+If the [flowHorizontally](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is set to **true**, the flow direction changes to read from left to right before moving to a new line.
 
 <HorizontalFlow />
 
 #### Usage
 
-* The horizontal flow does not require the [_rowHeight_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property to be set.
-* All empty spaces will be distributed in the last row.
+* The horizontal flow does not require setting the [rowHeight](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property.
+* All empty spaces are distributed in the last row.

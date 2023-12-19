@@ -4,12 +4,12 @@ import FixedWidthColumns from './FixedWidthColumns?dev-site-examples';
 
 ### Description
 
-This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) which renders a collection of interactive data in a list format into a single tab stop. 
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component that renders a collection of interactive information in a list format that has a single tab stop. 
 
-* The list is arranged in 2 visual columns by the [_numberOfColumns_](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) prop set to `2`.
-* Each visual column consists of 3 semantic columns, such as Icon, Text Description, and an interactive Featured column.
-* All semantic columns have [_width_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) prop explicitly set, with the [_flexGrow_](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) prop omitted. The columns will keep their width and not grow wider or shrink.
-* Horizontal scroll will show up if screen width is less than the width of the list.
-* The list is a one tab stop. The user can navigate between cells with the arrow keys. **Space key** press or mouse click on the Featured cell will toggle their state. **Esc key** press while on the list would unselect all featured items.
+* The [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is set to **2** to arrange the list in two visual columns.
+* Each visual column has three semantic columns, such as an icon, a text description, and an interactive element column.
+* All semantic columns have the [width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property explicitly set, with the [flexGrow](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property omitted. The columns keep their width and do not expand or shrink.
+* A horizontal scrollbar is displayed if the screen width is less than the width of the list.
+* The list is a one-tab stop. You can move between cells with the arrow keys. Select the interactive element or use the arrow keys and press the **SPACEBAR** to change the element's state. Press the **ESC** key while in the list to clear all featured items.
 
 <FixedWidthColumns />
