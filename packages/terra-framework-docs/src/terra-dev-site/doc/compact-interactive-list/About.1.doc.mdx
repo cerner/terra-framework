@@ -36,7 +36,7 @@ The Terra Compact Interactive List component provides a way to render a collecti
 See the [Examples](/components/cerner-terra-framework-docs/compact-interactive-list/about#examples) section for detailed demonstrations of the Compact Interactive List component features.
 
 ## Design Decisions
-  * Only one tab stop is supported. When you press **TAB** to activate the Compact Interactive List component, the last visited cell or the first cell upon initial selection becomes active. 
+  * Much like a data grid, Compact Interactive List uses a roving tab stop. When you press **TAB** to focus the Compact Interactive List component, the last visited cell or the first cell upon initial selection becomes active. Focus is moved between cells using keyboard controls or mouse input.
     If you press **TAB** or **SHIFT+TAB** while the Compact Interactive List component is active, you exit the list.
   * The consumer data state is not maintained. The state must be maintained by the consumer.
   * Callbacks are used to communicate user actions.
