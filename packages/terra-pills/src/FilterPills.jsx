@@ -400,35 +400,41 @@ const FilterPills = (props) => {
   const ariaLabelHint = (!ariaLabelledBy) ? `${removedPillInteractionHint}, ${ariaLabel}` : undefined;
   const ariaAttrs = (React.Children.count(children)) ? {
     'aria-live': 'assertive',
+    'aria-label': ariaLabelHint,
     'aria-labelledby': ariaLabelledBy,
     'aria-describedby': pillGroupAriaDescribedBy,
     role: 'list',
   } : { role: 'group' };
 
+  if (!React.Children.count(children)) {
+    pillGroupInteractionHint = `${pillGroupInteractionHint}, ${ariaLabelHint}`;
+  }
+
   return (
-    <div
-      {...customProps}
-      {...filterPillsProps}
-      {...ariaAttrs}
-      aria-label={ariaLabelHint}
-      className={pillListClassNames}
-      ref={filterPillsRef}
-      tabIndex={containerTabindex}
-    >
-      <VisuallyHiddenText
-        aria-live="polite"
-        id={pillGroupInteractionHintID}
-        text={pillGroupInteractionHint}
-      />
-      {children ? renderChildren(children) : []}
-      {(isCollapsible && rollUpCount > 0) && (
+    <>
+      <div
+        {...customProps}
+        {...filterPillsProps}
+        {...ariaAttrs}
+        className={pillListClassNames}
+        ref={filterPillsRef}
+        tabIndex={containerTabindex}
+      >
+        {children ? renderChildren(children) : []}
+        {(isCollapsible && rollUpCount > 0) && (
         <RollUpPill
           isCollapsed={isCollapsed}
           onSelectRollUp={handleOnSelectRollUp}
           rollupCount={rollUpCount}
         />
-      )}
-    </div>
+        )}
+      </div>
+      <VisuallyHiddenText
+        aria-live="polite"
+        id={pillGroupInteractionHintID}
+        text={pillGroupInteractionHint}
+      />
+    </>
   );
 };
 
