@@ -111,6 +111,7 @@ const FixedWidthColumns = () => {
   return (
     <CompactInteractiveList
       id="interactive-compact-columns-width"
+      ariaLabel="Compact Interactive List"
       rows={displayedRows}
       columns={cols}
       numberOfColumns={2}

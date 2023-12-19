@@ -175,6 +175,7 @@ const VerticalFlow = () => {
   return (
     <CompactInteractiveList
       id="with-breakpoints"
+      ariaLabel="Compact Interactive List"
       rows={displayedRows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}

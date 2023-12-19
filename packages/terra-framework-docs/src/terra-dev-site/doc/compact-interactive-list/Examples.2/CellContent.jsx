@@ -128,6 +128,7 @@ const CellContent = () => {
   return (
     <CompactInteractiveList
       id="with-breakpoints"
+      ariaLabel="Compact Interactive List"
       rows={displayedRows}
       columns={cols}
       numberOfColumns={2}

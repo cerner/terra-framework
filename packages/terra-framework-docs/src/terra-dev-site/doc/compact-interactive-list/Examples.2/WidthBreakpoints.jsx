@@ -166,6 +166,7 @@ const WidthBreakpoints = () => {
       <p>{`Number of columns: ${numberOfColumns}`}</p>
       <CompactInteractiveList
         id="with-breakpoints"
+        ariaLabel="Compact Interactive List"
         rows={displayedRows}
         columns={cols}
         numberOfColumns={numberOfColumns}

@@ -112,6 +112,7 @@ const ScalableUnits = () => {
     <div style={{ fontSize: '1.25em' }}>
       <CompactInteractiveList
         id="growing-columns"
+        ariaLabel="Compact Interactive List"
         rows={displayedRows}
         columns={cols}
         numberOfColumns={2}
