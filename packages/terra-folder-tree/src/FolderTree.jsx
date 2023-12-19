@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
+import * as KeyCode from 'keycode-js';
 
 import ActionHeader from 'terra-action-header';
 import Button from 'terra-button';
@@ -54,6 +55,72 @@ const FolderTree = ({
   intl,
 }) => {
   const folderTreeID = `folder-tree-${uuidv4()}`;
+  const listNode = useRef();
+
+  const handleKeyDown = event => {
+    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
+    // Remove all hidden list items
+    const visibleListItems = Array.prototype.slice.call(listItems).filter((item) => {
+      let parent = item.parentNode;
+      while (parent && parent !== listNode.current) {
+        if (parent.hasAttribute('hidden')) {
+          return false;
+        }
+        parent = parent.parentNode;
+      }
+      return true;
+    });
+    const currentIndex = Array.from(visibleListItems).indexOf(event.target);
+    const lastIndex = visibleListItems.length - 1;
+
+    const handleHomeKey = () => visibleListItems[0].focus();
+    const handleEndKey = () => visibleListItems[lastIndex].focus();
+
+    switch (event.keyCode) {
+      case KeyCode.KEY_END:
+        event.preventDefault();
+        handleEndKey();
+        break;
+      case KeyCode.KEY_HOME:
+        event.preventDefault();
+        handleHomeKey();
+        break;
+      case KeyCode.KEY_UP: {
+        event.preventDefault();
+        const previousIndex = currentIndex - 1;
+        visibleListItems[previousIndex]?.focus();
+        break;
+      }
+      case KeyCode.KEY_DOWN: {
+        event.preventDefault();
+        const nextIndex = currentIndex + 1;
+        visibleListItems[nextIndex]?.focus();
+        break;
+      }
+      case KeyCode.KEY_LEFT: {
+        event.preventDefault();
+        if (event.metaKey) {
+          // Mac: Cmd + Left
+          // Win: Home
+          handleHomeKey();
+          break;
+        }
+        break;
+      }
+      case KeyCode.KEY_RIGHT: {
+        event.preventDefault();
+        if (event.metaKey) {
+          // Mac: Cmd + Right
+          // Win: End
+          handleEndKey();
+          break;
+        }
+        break;
+      }
+      default:
+        break;
+    }
+  };
 
   return (
     <div className="folder-tree-container">
@@ -88,6 +155,8 @@ const FolderTree = ({
         className={cx('folder-tree')}
         role="tree"
         aria-label={title}
+        ref={listNode}
+        onKeyDown={handleKeyDown}
       >
         {children}
       </ul>
