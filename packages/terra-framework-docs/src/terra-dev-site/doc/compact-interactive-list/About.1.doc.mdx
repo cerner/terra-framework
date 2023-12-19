@@ -43,7 +43,8 @@ See the [Examples](/components/cerner-terra-framework-docs/compact-interactive-l
   The callbacks are provided by the consumer; therefore, the implementation is consumer specific.
   The consumer determines whether actions are performed and what those actions are.
   For example, the user can select a cell in the Compact Interactive List component, which calls the onCellSelect callback.
-  * A single interactive element per cell is supported.
+  * A single interactive element per cell is supported. If more than one interactive component is placed in a cell, the component will not behave as intended.
+  * To maintain simple keyboard controls, interactive elements like text input fields, radio button groups, and sliders are not currently supported.
 
 ## Examples
 |Link to Example| Description|
