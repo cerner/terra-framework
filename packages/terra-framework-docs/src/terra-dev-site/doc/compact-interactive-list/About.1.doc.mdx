@@ -43,7 +43,6 @@ See the [Examples](/components/cerner-terra-framework-docs/compact-interactive-l
   The callbacks are provided by the consumer; therefore, the implementation is consumer specific.
   The consumer determines whether actions are performed and what those actions are.
   For example, the user can select a cell in the Compact Interactive List component, which calls the onCellSelect callback.
-  For business reasons, the consumer may decide to not recognize that cell selection. No action is performed and the cell is not selected in the Worklist Data Grid component.
   * A single interactive element per cell is supported.
 
 ## Examples
@@ -128,11 +127,11 @@ Width units that are inconsistent with the rest of the component properties are 
 <CompactInteractiveListPropsTable />
 
 ### Column
-A column specifies the information to render a cell in the header row of the Worklist Data Grid component.
+A column specifies the information to render cells in the columns.
 
 |Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the column in the grid.|
+|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the column in the list.|
 |**displayName**|String|<span style={{color:'#d53040'}}>Required</span>|None|A string of text that screen readers read when the column context changes.|
 |**width**|String|Optional|None|A valid CSS string. If omitted, the column becomes responsive. `px`, `em`, or `rem` units are supported.|
 |**minimumWidth**|String|Optional|None|A valid CSS string. `px`, `em`, or `rem` units are supported. This property is disregarded if the column has a fixed width.|
