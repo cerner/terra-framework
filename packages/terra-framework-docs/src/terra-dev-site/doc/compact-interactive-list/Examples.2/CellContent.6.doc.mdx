@@ -5,10 +5,17 @@ import CellContent from './CellContent?dev-site-examples';
 
 ### Cell Content
 
-* The [content](/components/cerner-terra-framework-docs/compact-interactive-list/about#cell) of a cell in the [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component may be empty, text, numerical, or any combination of widgets, but only one interactive element per cell is allowed. 
-  Because the Compact Intercative List component is one tab stop and the arrow keys are used to move between cells, these keys are not available to move to multiple interactive elements in a cell. 
+* The [content](/components/cerner-terra-framework-docs/compact-interactive-list/about#cell) of a cell in the [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component may be empty, text, numerical, or any combination of widgets, but only one interactive element per cell is allowed.
 * If a cell contains an interactive element, the interactive element becomes active when you select the cell. 
 * If you press an arrow key when a cell is active, the next or previous cell becomes active.
+
+<Notice variant="important" ariaLevel="3">
+
+* Only one interactive element per cell is allowed. Because the Compact Intercative List component is one tab stop and the arrow keys are used to move between cells, these keys are not available to move to multiple interactive elements in a cell. 
+* Focusable elements in the cells are limited to **buttons** and **anchors**. In current implementation the cell does not trap focus, 
+all focusable elements keep their native arrow key events. Placing text input, text area or select elements in a cell will make it impossible to navigate away from a cell via arrow keys. 
+
+</Notice>
 
 ### Cell Selection
 
