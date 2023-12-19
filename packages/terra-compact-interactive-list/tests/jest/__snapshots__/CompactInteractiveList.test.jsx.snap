@@ -474,7 +474,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -539,7 +539,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -571,7 +571,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -714,7 +714,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -776,7 +776,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -808,7 +808,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -951,7 +951,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -1013,7 +1013,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1045,7 +1045,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1178,7 +1178,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -1211,7 +1211,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1243,7 +1243,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1357,7 +1357,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -1419,7 +1419,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1451,7 +1451,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -1977,7 +1977,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -2042,7 +2042,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2075,7 +2075,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2217,7 +2217,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -2279,7 +2279,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2312,7 +2312,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2454,7 +2454,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -2516,7 +2516,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2549,7 +2549,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2681,7 +2681,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -2714,7 +2714,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2747,7 +2747,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2860,7 +2860,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="rowheader"
@@ -2922,7 +2922,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
@@ -2955,7 +2955,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               widthUnit="px"
             >
               <div
-                className="cell selectable"
+                className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
                 role="gridcell"
