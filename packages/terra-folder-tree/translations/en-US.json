@@ -1,3 +1,7 @@
 {
+  "Terra.folder-tree.button.collapse-all": "Collapse All",
+  "Terra.folder-tree.button.expand-all": "Expand All",
+  "Terra.folder-tree.button.collapse-all-instructions": "Collapse all folders in the tree.",
+  "Terra.folder-tree.button.expand-all-instructions": "Expand all folders in the tree.",
   "Terra.folder-tree.folder-icon": "Folder"
 }

@@ -5,11 +5,16 @@
 * Updated
   * Updated `terra-time-input` example to have visual label.
 
+## 1.53.0 - (December 18, 2023)
+
 * Added
+  * Added FlowsheetDataGrid implementation guide.
+  * Added new Accessibility and Implementation guide for Terra Slider.
   * Added implementation guide for `terra-table`.
 
 * Changed
-  * Updates `terra-theme-provider` examples to show the new ability to specify a theme density.
+  * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
+  * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.
   
 ## 1.52.0 - (December 13, 2023)
 
@@ -20,8 +25,6 @@
 
 * Changed
   * Updated path prefix to include `/terra-framework/` and remove redundant XFC Provider initialization for the examples and tests in `terra-embedded-content-consumer`.
-
-* Changed
   * Changed terra-pills example to announce removed state of pills.
   * Updated examples and tests for `terra-folder-tree`.
   * Updated `terra-data-grid` exmaples and tests to pass properties properly.
@@ -30,8 +33,6 @@
 
 * Added
   * Added focus to the notification dialog content for keyboard users to navigate with arrow keys.
-
-* Added
   * Added the example with `contentWidth` as auto value.
   * Added examples and tests for `terra-folder-tree`.
   * Added documentation for exported constants of `terra-table` in the About page.

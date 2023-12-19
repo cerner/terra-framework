@@ -6754,6 +6754,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(RowSelectionCell)
                       columnId="table-rowSelectionColumn"
                       columnIndex={0}
+                      isHighlighted={false}
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="1"
@@ -6790,6 +6791,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
+                        isHighlighted={false}
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="1"
@@ -7266,6 +7268,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(RowSelectionCell)
                       columnId="table-rowSelectionColumn"
                       columnIndex={0}
+                      isHighlighted={false}
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="2"
@@ -7302,6 +7305,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
+                        isHighlighted={false}
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="2"
@@ -7774,6 +7778,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(RowSelectionCell)
                       columnId="table-rowSelectionColumn"
                       columnIndex={0}
+                      isHighlighted={false}
                       isSelected={false}
                       onCellSelect={[Function]}
                       rowId="3"
@@ -7810,6 +7815,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
+                        isHighlighted={false}
                         isSelected={false}
                         onCellSelect={[Function]}
                         rowId="3"
@@ -8282,6 +8288,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(RowSelectionCell)
                       columnId="table-rowSelectionColumn"
                       columnIndex={0}
+                      isHighlighted={true}
                       isSelected={true}
                       onCellSelect={[Function]}
                       rowId="4"
@@ -8318,6 +8325,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             "timeZone": null,
                           }
                         }
+                        isHighlighted={true}
                         isSelected={true}
                         onCellSelect={[Function]}
                         rowId="4"
@@ -8410,7 +8418,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   <input
                                     aria-label="Terra.table.row-index"
                                     checked={true}
-                                    className="input"
+                                    className="input highlighted"
                                     readOnly={true}
                                     tabIndex={-1}
                                     type="checkbox"

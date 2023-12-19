@@ -312,7 +312,7 @@ describe('Table', () => {
     const section1 = tableSections.at(0);
 
     // Validate section header row of the first section
-    const section1HeaderRow = section1.find('.header');
+    const section1HeaderRow = section1.find('.header-row');
     expect(section1HeaderRow.props()['aria-rowindex']).toBe(2);
 
     // Validate table header element of the first section
@@ -340,7 +340,7 @@ describe('Table', () => {
     const section2 = tableSections.at(1);
 
     // Validate section header row of the second section
-    const section2HeaderRow = section2.find('.header');
+    const section2HeaderRow = section2.find('.header-row');
     expect(section2HeaderRow.props()['aria-rowindex']).toBe(5);
 
     // Validate table header element of the second section
@@ -389,7 +389,7 @@ describe('Table', () => {
     const section1 = tableSections.at(0);
 
     // Validate section header row of the first section
-    const section1HeaderRow = section1.find('.header');
+    const section1HeaderRow = section1.find('.header-row');
     expect(section1HeaderRow).toHaveLength(0);
 
     // Validate rows of the first section

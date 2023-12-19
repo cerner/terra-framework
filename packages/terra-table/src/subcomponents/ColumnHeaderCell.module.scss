@@ -16,6 +16,11 @@
       border-left: var(--terra-table-column-header-border-left, 1px solid #000);
     }
 
+    &:focus {
+      outline: var(--terra-table-column-header-focus-outline, 3px dashed #000);
+      outline-offset: var(--terra-table-column-header-focus-outline-offset, -5px);
+    }
+
     &.pinned {
       position: sticky;
       z-index: 2 !important;
@@ -33,6 +38,11 @@
       height: 100%;
       padding: var(--terra-table-header-cell-padding, 5px);
       width: 100%;
+
+      &:focus {
+        outline: var(--terra-table-column-header-focus-outline, 3px dashed #000);
+        outline-offset: var(--terra-table-column-header-button-focus-outline-offset, -4px);
+      }
     }
 
     // Add right margin for error icon
