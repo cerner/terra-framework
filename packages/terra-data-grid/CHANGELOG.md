@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added 
+  * Added translations for flowsheet.
+
 ## 1.9.0 - (December 18, 2023)
 
 * Changed
