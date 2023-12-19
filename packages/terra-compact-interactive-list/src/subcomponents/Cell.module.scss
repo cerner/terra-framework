@@ -15,4 +15,8 @@
     background-color: var(--terra-compact-interactive-list-hover-background-color, #e0f2fb);
     cursor: pointer;
   }
+
+  .selected {
+    background-color: var(--terra-table-cell-selected-background-color, #cbe7fa);
+  }
 }

@@ -48,6 +48,10 @@ const columnShape = PropTypes.shape({
     alignTypes.LEFT,
   ]),
 
+  /**
+   * Boolean value indicating whether or not the cells in this column are selectable.
+   */
+  isSelectable: PropTypes.bool,
 });
 
 export default columnShape;

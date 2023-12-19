@@ -145,6 +145,7 @@ A column specifies the data to render a cell in the header row of the Worklist D
 |**maximumWidth**|string|optional|none|A valid css string. `px`, `em`, or `rem` units supported. Disregarded if column has fixed width.|
 |**flexGrow**|bool|optional|none|A boolean indicating whether or not the column is responsive.|
 |**align**|string|optional|'left'|A string value indicating the aligning option, `center`, `right`, or `left` options supported|
+|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the cells in this column are selectable.|
 
 ### Row
 A row defines the cells rendered within the row.
@@ -160,6 +161,7 @@ A cell defines the content rendered at the intersection of a row and a column.
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**content**|content|optional|none|The content to render within the cell.|
+|**isSelected**|bool|optional|none|A boolean indicating if the cell is selected.|
 
 ## Terra Standards
 * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)

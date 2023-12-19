@@ -6,24 +6,32 @@ import {
 
 // eslint-disable-next-line no-alert
 const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Learn more button was clicked')}>Learn more</button>;
-// eslint-disable-next-line react/forbid-dom-props
-const inputCell = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
 const anchorCell = <a href="https://www.oracle.com/" aria-label="Documentation">Documentation</a>;
-const textAreaCell = <textarea name="textArea" aria-label="Text Area" rows="1" cols="15" />;
-const selectCell = (
-  <select name="specialties" id="specialties" aria-label="Select Specialty">
-    <option value="ambulatory">Ambulatory</option>
-    <option value="cardiology">Cardiology</option>
-    <option value="radiology">Radiology</option>
-    <option value="neurology">Neurology</option>
-  </select>
-);
-
 const iconFeaturedOff = <IconFeaturedOff a11yLabel="Featured off" height="1.5em" width="1.5em" />;
 const iconFeatured = <IconFeatured a11yLabel="Featured" height="1.5em" width="1.5em" />;
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
+
+const updateRows = (rowsToUpdate, columns, selectionDetails) => {
+  const columnIndex = columns.findIndex(column => selectionDetails?.columnId === column.id);
+  return [...rowsToUpdate.map(row => {
+    const newRow = {
+      ...row,
+      cells: [...row.cells.map((cell, index) => {
+        const isSelectedCell = selectionDetails?.rowId === row.id && index === columnIndex;
+        // eslint-disable-next-line no-nested-ternary
+        const isSelected = isSelectedCell ? !cell.isSelected : false;
+        let newContent = cell.content;
+        if (index === 3) {
+          newContent = isSelected ? iconFeatured : iconFeaturedOff;
+        }
+        return { ...cell, isSelected, content: newContent };
+      })],
+    };
+    return newRow;
+  })];
+};
 
 const rows = [
   {
@@ -32,7 +40,7 @@ const rows = [
       { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
       { content: buttonCell },
-      { content: '' },
+      { content: iconFeaturedOff },
     ],
   },
   {
@@ -40,8 +48,8 @@ const rows = [
     cells: [
       { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
-      { content: inputCell },
-      { content: '' },
+      { content: anchorCell },
+      { content: iconFeaturedOff },
     ],
   },
   {
@@ -50,7 +58,7 @@ const rows = [
       { content: iconResultsNotNormal },
       { content: 'Arterial Sheath Care (3)' },
       { content: anchorCell },
-      { content: '' },
+      { content: iconFeaturedOff },
     ],
   },
   {
@@ -58,8 +66,8 @@ const rows = [
     cells: [
       { content: ' ' },
       { content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
-      { content: textAreaCell },
-      { content: '' },
+      { content: buttonCell },
+      { content: iconFeaturedOff },
     ],
   },
   {
@@ -67,22 +75,11 @@ const rows = [
     cells: [
       { content: iconResultsCritical },
       { content: 'Arterial Sheath Care (5)' },
-      { content: selectCell },
-      { content: '' },
+      { content: anchorCell },
+      { content: iconFeaturedOff },
     ],
   },
 ];
-
-const calculateRows = (featuredRowsIds) => {
-  const calculatedRows = [...rows];
-  return calculatedRows.map(row => {
-    const newRow = { ...row, cells: [...row.cells] };
-    if (featuredRowsIds.indexOf(row.id) >= 0) {
-      newRow.cells[3] = { ...row.cells[3], content: iconFeatured };
-    } else { newRow.cells[3] = { ...row.cells[3], content: iconFeaturedOff }; }
-    return newRow;
-  });
-};
 
 const cols = [
   {
@@ -90,6 +87,7 @@ const cols = [
     displayName: 'Icon',
     width: '50px',
     align: alignTypes.CENTER,
+    isSelectable: true,
   },
   {
     id: 'Column-1',
@@ -98,62 +96,46 @@ const cols = [
     flexGrow: true, // makes the column grow or shrink
     maximumWidth: '350px',
     minimumWidth: '100px',
+    isSelectable: true,
   },
   {
     id: 'Column-2',
     displayName: 'Details',
     width: '150px',
     align: alignTypes.RIGHT,
+    isSelectable: true,
   },
   {
     id: 'Column-3',
     displayName: 'Featured',
     width: '50px',
     align: alignTypes.CENTER,
+    isSelectable: true,
   },
 ];
 
 const CellContent = () => {
-  const [featuredRowsIds, setFeaturedRowsIds] = useState([]);
-  const [selectedColumn, setSelectedColumn] = useState(null);
-  const [selectedRow, setSelectedRow] = useState(null);
-  const displayedRows = calculateRows(featuredRowsIds);
+  const [displayedRows, setDisplayedRows] = useState(updateRows(rows, cols));
 
   const onCellSelect = ({ rowId, columnId }) => {
-    if (columnId === cols[3].id) {
-      const newSelectedRows = [...featuredRowsIds];
-      const index = newSelectedRows.findIndex(row => row === rowId);
-      if (index >= 0) {
-        newSelectedRows.splice(index, 1);
-      } else {
-        newSelectedRows.push(rowId);
-      }
-      setFeaturedRowsIds(newSelectedRows);
-    }
-    setSelectedColumn(columnId);
-    setSelectedRow(rowId);
+    setDisplayedRows(updateRows(displayedRows, cols, { rowId, columnId }));
   };
 
   const onClearSelection = () => {
-    setFeaturedRowsIds([]);
-    setSelectedColumn(undefined);
-    setSelectedRow(undefined);
+    setDisplayedRows(updateRows(rows, cols));
   };
 
   return (
-    <>
-      <p>{selectedColumn && selectedRow ? `Selected cell id: ${selectedColumn}, selected row id: ${selectedRow}.` : 'There are no celected cells at the moment.'}</p>
-      <CompactInteractiveList
-        id="with-breakpoints"
-        rows={displayedRows}
-        columns={cols}
-        numberOfColumns={2}
-        columnMinimumWidth="234px"
-        onCellSelect={onCellSelect} // a callback function for cell selection
-        onClearSelection={onClearSelection}
-        rowHeaderIndex={1}
-      />
-    </>
+    <CompactInteractiveList
+      id="with-breakpoints"
+      rows={displayedRows}
+      columns={cols}
+      numberOfColumns={2}
+      columnMinimumWidth="234px"
+      onCellSelect={onCellSelect} // a callback function for cell selection
+      onClearSelection={onClearSelection}
+      rowHeaderIndex={1}
+    />
   );
 };
 
