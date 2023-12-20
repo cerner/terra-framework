@@ -129,7 +129,7 @@ const Cell = (props) => {
         onCellSelect({ rowId, columnId: id });
       }
     } else {
-      // allows clickable elements inside unselactable cells to be clicked, but not the cell itself
+      // allows clickable elements inside non-nselactable cells to be clicked, but not the cell itself
       event.preventDefault();
     }
   };

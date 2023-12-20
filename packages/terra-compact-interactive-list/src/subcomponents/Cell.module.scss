@@ -9,11 +9,11 @@
     overflow: hidden;
     padding: var(--terra-compact-interactive-list-cell-content-padding, 7px);
     position: relative;
-  }
 
-  :focus {
-    outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
-    outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);
+    &:focus {
+      outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
+      outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);
+    }
   }
 
   .selectable:hover {
