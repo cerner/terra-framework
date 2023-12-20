@@ -223,8 +223,9 @@ const CompactInteractiveList = (props) => {
   };
 
   const onFocus = (event) => {
-    if (!event.currentTarget.contains(event.relatedTarget)) {
+    if (!event.currentTarget.contains(event.relatedTarget) || event.target === listRef?.current) {
       // Not triggered when swapping focus between children
+      // Triggered per click on the list itself to accomodate the click on placeholder rows
       focusCell(getFocusedCellIndexes(listRef?.current, columns, focusedCell.current));
     }
   };

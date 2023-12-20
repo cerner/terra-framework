@@ -124,12 +124,13 @@ const Cell = (props) => {
 
   const handleMouseDown = (event) => {
     setFocusedCell({ rowId, columnId: id });
-    if (isSelectableCell && onCellSelect) {
-      event.preventDefault();
+    if (isSelectableCell) {
       if (onCellSelect) {
         onCellSelect({ rowId, columnId: id });
-        cellRef?.current.focus();
       }
+    } else {
+      // allows clickable elements inside unselactable cells to be clicked, but not the cell itself
+      event.preventDefault();
     }
   };
 
