@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
@@ -120,13 +120,13 @@ const cols = [
 const CellContent = () => {
   const [displayedRows, setDisplayedRows] = useState(rows);
 
-  const onCellSelect = ({ rowId, columnId }) => {
+  const onCellSelect = useCallback(({ rowId, columnId }) => {
     setDisplayedRows(updateRows(displayedRows, cols, { rowId, columnId }));
-  };
+  }, [displayedRows]);
 
-  const onClearSelection = () => {
-    setDisplayedRows(updateRows(rows, cols));
-  };
+  const onClearSelection = useCallback(() => {
+    setDisplayedRows(updateRows(displayedRows, cols));
+  }, [displayedRows]);
 
   return (
     <CompactInteractiveList

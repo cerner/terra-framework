@@ -16,7 +16,6 @@ const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" 
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
 
-
 // Source data for tests
 
 const rows = [
