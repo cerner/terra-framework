@@ -3,12 +3,11 @@ import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-li
 import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
 } from 'terra-icon';
+import Button from 'terra-button';
 
 // eslint-disable-next-line no-alert
 const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Learn more button was clicked')}>Learn more</button>;
 const anchorCell = <a href="https://www.oracle.com/" aria-label="Documentation">Documentation</a>;
-const iconFeaturedOff = <IconFeaturedOff a11yLabel="Featured off" height="1.5em" width="1.5em" />;
-const iconFeatured = <IconFeatured a11yLabel="Featured" height="1.5em" width="1.5em" />;
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
@@ -22,15 +21,19 @@ const updateRows = (rowsToUpdate, columns, selectionDetails) => {
         const isSelectedCell = selectionDetails?.rowId === row.id && index === columnIndex;
         // eslint-disable-next-line no-nested-ternary
         const isSelected = isSelectedCell ? !cell.isSelected : false;
-        let newContent = cell.content;
-        if (index === 3) {
-          newContent = isSelected ? iconFeatured : iconFeaturedOff;
-        }
-        return { ...cell, isSelected, content: newContent };
+        return { ...cell, isSelected };
       })],
     };
     return newRow;
   })];
+};
+
+const FeaturedIcon = () => {
+  const [isFeatured, setIsFeatured] = useState(false);
+  const onButtonClick = () => setIsFeatured(!isFeatured);
+  return (
+    isFeatured ? <Button variant="utility" text="Featured button" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Featured off button" icon={<IconFeaturedOff />} onClick={onButtonClick} />
+  );
 };
 
 const rows = [
@@ -40,7 +43,7 @@ const rows = [
       { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
       { content: buttonCell },
-      { content: iconFeaturedOff },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -49,7 +52,7 @@ const rows = [
       { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
       { content: anchorCell },
-      { content: iconFeaturedOff },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -58,7 +61,7 @@ const rows = [
       { content: iconResultsNotNormal },
       { content: 'Arterial Sheath Care (3)' },
       { content: anchorCell },
-      { content: iconFeaturedOff },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -67,7 +70,7 @@ const rows = [
       { content: ' ' },
       { content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
       { content: buttonCell },
-      { content: iconFeaturedOff },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -76,7 +79,7 @@ const rows = [
       { content: iconResultsCritical },
       { content: 'Arterial Sheath Care (5)' },
       { content: anchorCell },
-      { content: iconFeaturedOff },
+      { content: <FeaturedIcon /> },
     ],
   },
 ];
@@ -115,7 +118,7 @@ const cols = [
 ];
 
 const CellContent = () => {
-  const [displayedRows, setDisplayedRows] = useState(updateRows(rows, cols));
+  const [displayedRows, setDisplayedRows] = useState(rows);
 
   const onCellSelect = ({ rowId, columnId }) => {
     setDisplayedRows(updateRows(displayedRows, cols, { rowId, columnId }));
@@ -136,6 +139,7 @@ const CellContent = () => {
       onCellSelect={onCellSelect} // a callback function for cell selection
       onClearSelection={onClearSelection}
       rowHeaderIndex={1}
+      rowHeight="50px"
     />
   );
 };

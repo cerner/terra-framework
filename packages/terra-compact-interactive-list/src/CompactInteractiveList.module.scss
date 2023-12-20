@@ -15,11 +15,6 @@
   .compact-interactive-list {
     display: flex;
     flex-wrap: wrap;
-
-    :focus {
-      outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
-      outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);
-    }
   }
 
   .hidden {

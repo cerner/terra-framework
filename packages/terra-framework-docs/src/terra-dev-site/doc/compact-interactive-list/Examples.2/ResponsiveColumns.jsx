@@ -3,9 +3,15 @@ import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-li
 import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
 } from 'terra-icon';
+import Button from 'terra-button';
 
-const iconFeaturedOff = <IconFeaturedOff a11yLabel="Featured off" height="1.5em" width="1.5em" />;
-const iconFeatured = <IconFeatured a11yLabel="Featured" height="1.5em" width="1.5em" />;
+const FeaturedIcon = () => {
+  const [isFeatured, setIsFeatured] = useState(false);
+  const onButtonClick = () => setIsFeatured(!isFeatured);
+  return (
+    isFeatured ? <Button variant="utility" text="Featured button" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Featured off button" icon={<IconFeaturedOff />} onClick={onButtonClick} />
+  );
+};
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
@@ -16,7 +22,7 @@ const rows = [
     cells: [
       { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
-      { content: '' },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -24,7 +30,7 @@ const rows = [
     cells: [
       { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
-      { content: '' },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -32,7 +38,7 @@ const rows = [
     cells: [
       { content: iconResultsNotNormal },
       { content: 'Arterial Sheath Care (3)' },
-      { content: '' },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -40,7 +46,7 @@ const rows = [
     cells: [
       { content: ' ' },
       { content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
-      { content: ' ' },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -48,21 +54,10 @@ const rows = [
     cells: [
       { content: iconResultsCritical },
       { content: 'Arterial Sheath Care (5)' },
-      { content: '' },
+      { content: <FeaturedIcon /> },
     ],
   },
 ];
-
-const calculateRows = (featuredRowsIds) => {
-  const calculatedRows = [...rows];
-  return calculatedRows.map(row => {
-    const newRow = { ...row, cells: [...row.cells] };
-    if (featuredRowsIds.indexOf(row.id) >= 0) {
-      newRow.cells[2] = { ...row.cells[2], content: iconFeatured };
-    } else { newRow.cells[2] = { ...row.cells[2], content: iconFeaturedOff }; }
-    return newRow;
-  });
-};
 
 const cols = [
   {
@@ -85,39 +80,15 @@ const cols = [
   },
 ];
 
-const ResponsiveColumns = () => {
-  const [featuredRowsIds, setFeaturedRowsIds] = useState([]);
-  const displayedRows = calculateRows(featuredRowsIds);
-
-  const onCellSelect = ({ rowId, columnId }) => {
-    if (columnId === cols[2].id) {
-      const newSelectedRows = [...featuredRowsIds];
-      const index = newSelectedRows.findIndex(row => row === rowId);
-      if (index >= 0) {
-        newSelectedRows.splice(index, 1);
-      } else {
-        newSelectedRows.push(rowId);
-      }
-      setFeaturedRowsIds(newSelectedRows);
-    }
-  };
-
-  const onClearSelection = () => {
-    setFeaturedRowsIds([]);
-  };
-
-  return (
-    <CompactInteractiveList
-      id="with-breakpoints"
-      ariaLabel="Compact Interactive List"
-      rows={displayedRows}
-      columns={cols}
-      numberOfColumns={2}
-      rowHeaderIndex={1}
-      onCellSelect={onCellSelect}
-      onClearSelection={onClearSelection}
-    />
-  );
-};
+const ResponsiveColumns = () => (
+  <CompactInteractiveList
+    id="with-breakpoints"
+    ariaLabel="Compact Interactive List"
+    rows={rows}
+    columns={cols}
+    numberOfColumns={2}
+    rowHeaderIndex={1}
+  />
+);
 
 export default ResponsiveColumns;

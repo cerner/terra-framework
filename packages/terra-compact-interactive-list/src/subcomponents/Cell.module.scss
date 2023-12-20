@@ -11,6 +11,11 @@
     position: relative;
   }
 
+  :focus {
+    outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
+    outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);
+  }
+
   .selectable:hover {
     background-color: var(--terra-compact-interactive-list-hover-background-color, #e0f2fb);
     cursor: pointer;
