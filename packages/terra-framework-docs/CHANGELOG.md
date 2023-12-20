@@ -2,13 +2,16 @@
 
 ## Unreleased
 
+* Updated
+  * Updated `terra-time-input` example to have visual label.
+
 ## 1.53.0 - (December 18, 2023)
 
 * Added
   * Added FlowsheetDataGrid implementation guide.
   * Added new Accessibility and Implementation guide for Terra Slider.
   * Added implementation guide for `terra-table`.
-  
+
 * Changed
   * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
   * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.

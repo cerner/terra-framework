@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated screen response to announce when invalid time is entered.
+
 ## 4.59.0 - (December 18, 2023)
 
 * Changed
