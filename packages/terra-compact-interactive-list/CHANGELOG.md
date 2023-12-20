@@ -4,6 +4,11 @@
 
 * Changed
   * Updated `handleMouseDown` method for a cell.
+  * Updated lowlight theme styling.
+  * Updated cell selection.
+
+* Added
+  * Added `isSelectable`` prop to column shape.
 
 ## 1.0.0-alpha.4 - (December 18, 2023)
 
