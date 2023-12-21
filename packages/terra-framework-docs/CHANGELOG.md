@@ -4,6 +4,7 @@
 
 * Updated
   * Updated `terra-time-input` example to have visual label.
+  * Updated `terra-compact-interactive-list` examples.
 
 ## 1.53.0 - (December 18, 2023)
 
