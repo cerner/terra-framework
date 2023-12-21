@@ -2,8 +2,9 @@
 
 ## Unreleased
 
-* Updated
+* Changed
   * Updated `terra-time-input` example to have visual label.
+  * Updated `terra-compact-interactive-list` implementation guide and examples.
 
 ## 1.53.0 - (December 18, 2023)
 
@@ -15,7 +16,6 @@
 * Changed
   * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
   * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.
-  * Updated `terra-compact-interactive-list` implementation guide and examples.
   
 ## 1.52.0 - (December 13, 2023)
 
