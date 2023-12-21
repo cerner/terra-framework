@@ -12,11 +12,10 @@ const FeaturedIcon = () => {
     isFeatured ? <Button variant="utility" text="Featured button" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Featured off button" icon={<IconFeaturedOff />} onClick={onButtonClick} />
   );
 };
+
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
-
-// Source data for tests
 
 const rows = [
   {
@@ -71,7 +70,10 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    flexGrow: true,
+    width: '300px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
+    maximumWidth: '400px',
+    minimumWidth: '200px',
   },
   {
     id: 'Column-2',
@@ -81,15 +83,16 @@ const cols = [
   },
 ];
 
-const FixedWidthColumns = () => (
+const ResponsiveColumnsMaxWidth = () => (
   <CompactInteractiveList
-    id="compact-interactive-list-fixed-width-columns2"
+    id="with-breakpoints"
     ariaLabel="Compact Interactive List"
     rows={rows}
     columns={cols}
     numberOfColumns={2}
+    columnMinimumWidth="234px"
     rowHeaderIndex={1}
   />
 );
 
-export default FixedWidthColumns;
+export default ResponsiveColumnsMaxWidth;

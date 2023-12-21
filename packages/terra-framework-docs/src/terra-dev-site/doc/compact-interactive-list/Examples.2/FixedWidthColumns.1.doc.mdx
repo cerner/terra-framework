@@ -1,0 +1,15 @@
+import FixedWidthColumns from './FixedWidthColumns?dev-site-examples';
+
+# Fixed Width Columns
+
+### Description
+
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component that renders a collection of interactive information in a list format that has a single tab stop. 
+
+* The [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is set to **2** to arrange the list in two visual columns.
+* Each visual column has three semantic columns: an icon, a text description, and an interactive element column.
+* All semantic columns have the [width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property explicitly set, with the [flexGrow](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property omitted. The columns keep their width and do not expand or shrink.
+* A horizontal scrollbar is displayed if the screen width is less than the width of the list.
+* The list is one-tab stop. You can move focus between cells with the arrow keys or by clicking cells. Click **Featured** (star) button or use the arrow keys and press the **SPACEBAR** to change the state.
+
+<FixedWidthColumns />

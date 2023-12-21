@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
+import { ActiveBreakpointContext } from 'terra-breakpoints';
 import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
 } from 'terra-icon';
@@ -15,8 +16,6 @@ const FeaturedIcon = () => {
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
-
-// Source data for tests
 
 const rows = [
   {
@@ -59,7 +58,59 @@ const rows = [
       { content: <FeaturedIcon /> },
     ],
   },
+  {
+    id: 'row_6',
+    cells: [
+      { content: iconResultsNormal },
+      { content: 'Arterial Sheath Care (6)' },
+      { content: <FeaturedIcon /> },
+    ],
+  },
+  {
+    id: 'row_7',
+    cells: [
+      { content: ' ' },
+      { content: 'Sbsq Observation Care/Day High Severity 99226 (7)' },
+      { content: <FeaturedIcon /> },
+    ],
+  },
+  {
+    id: 'row_8',
+    cells: [
+      { content: iconResultsNormal },
+      { content: 'Arterial Sheath Care (8)' },
+      { content: <FeaturedIcon /> },
+    ],
+  },
+  {
+    id: 'row_9',
+    cells: [
+      { content: iconResultsNormal },
+      { content: 'Arterial Sheath Care (9)' },
+      { content: <FeaturedIcon /> },
+    ],
+  },
+  {
+    id: 'row_10',
+    cells: [
+      { content: iconResultsNormal },
+      { content: 'Arterial Sheath Care (10)' },
+      { content: <FeaturedIcon /> },
+    ],
+  },
 ];
+
+const getNumberOfColumns = (activeBreakpoint) => {
+  switch (activeBreakpoint) {
+    case 'enormous': return 5;
+    case 'huge': return 4;
+    case 'large': return 3;
+    case 'medium': return 2;
+    case 'small': return 1;
+    case 'tiny': return 1;
+    default: return 1;
+  }
+};
 
 const cols = [
   {
@@ -71,7 +122,8 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    flexGrow: true,
+    width: '200px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
   },
   {
     id: 'Column-2',
@@ -81,15 +133,24 @@ const cols = [
   },
 ];
 
-const FixedWidthColumns = () => (
-  <CompactInteractiveList
-    id="compact-interactive-list-fixed-width-columns2"
-    ariaLabel="Compact Interactive List"
-    rows={rows}
-    columns={cols}
-    numberOfColumns={2}
-    rowHeaderIndex={1}
-  />
-);
+const WidthBreakpoints = () => {
+  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
+  const numberOfColumns = getNumberOfColumns(activeBreakpoint);
+  return (
+    <>
+      <p>{`Active breakpoint: ${activeBreakpoint}`}</p>
+      <p>{`Number of columns: ${numberOfColumns}`}</p>
+      <CompactInteractiveList
+        id="with-breakpoints"
+        ariaLabel="Compact Interactive List"
+        rows={rows}
+        columns={cols}
+        numberOfColumns={numberOfColumns}
+        rowHeight="80px"
+        rowHeaderIndex={1}
+      />
+    </>
+  );
+};
 
-export default FixedWidthColumns;
+export default WidthBreakpoints;

@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-dom-props */
 import React, { useState } from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import {
@@ -15,8 +16,6 @@ const FeaturedIcon = () => {
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
-
-// Source data for tests
 
 const rows = [
   {
@@ -65,31 +64,35 @@ const cols = [
   {
     id: 'Column-0',
     displayName: 'Icon',
-    width: '60px',
+    width: '5em',
     align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Service name',
-    flexGrow: true,
+    // flexGrow prop is not set here, but as there is no width set, the column will be flex growing
+    maximumWidth: '25em',
+    minimumWidth: '7em',
   },
   {
     id: 'Column-2',
     displayName: 'Featured',
-    width: '60px',
+    width: '5em',
     align: alignTypes.CENTER,
   },
 ];
 
-const FixedWidthColumns = () => (
-  <CompactInteractiveList
-    id="compact-interactive-list-fixed-width-columns2"
-    ariaLabel="Compact Interactive List"
-    rows={rows}
-    columns={cols}
-    numberOfColumns={2}
-    rowHeaderIndex={1}
-  />
+const ScalableUnits = () => (
+  <div style={{ fontSize: '1.25em' }}>
+    <CompactInteractiveList
+      id="growing-columns"
+      ariaLabel="Compact Interactive List"
+      rows={rows}
+      columns={cols}
+      numberOfColumns={2}
+      rowHeaderIndex={1}
+    />
+  </div>
 );
 
-export default FixedWidthColumns;
+export default ScalableUnits;

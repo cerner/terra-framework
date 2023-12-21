@@ -1,0 +1,23 @@
+import { Notice } from "@cerner/terra-docs";
+import WidthBreakpoints from './WidthBreakpoints?dev-site-examples';
+
+# Number of Columns
+
+<Notice variant="important" ariaLevel="2">
+
+With vertical flow, the list items are distributed evenly between all columns but the last one. The last column accommodates the remainder after the number of items is divided by the number of columns.
+Note: If the number of rows is divisible by the [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) value minus 1 without a remainder, the last column will be empty.
+
+</Notice>
+
+### Description
+
+* The [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is used to arrange the list information in visual columns. 
+* If not explicitly set, the [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) value defaults to **1**.
+
+### Change the Number of Columns Dynamically
+
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component placed in the main container, which uses the width breakpoints to change the [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property depending on the screen width. 
+Change the browser window width to see the number of columns change.
+
+<WidthBreakpoints />
