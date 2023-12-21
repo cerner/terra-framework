@@ -4,10 +4,11 @@ import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
 } from 'terra-icon';
 import Button from 'terra-button';
+import Hyperlink from 'terra-hyperlink';
 
 // eslint-disable-next-line no-alert
-const buttonCell = <button type="button" aria-label="Learn more button" onClick={() => alert('Learn more button was clicked')}>Learn more</button>;
-const anchorCell = <a href="https://www.oracle.com/" aria-label="Documentation">Documentation</a>;
+const buttonCell = <Button text="Learn more" />;
+const anchorCell = <Hyperlink href="https://www.cerner.com" text="Documents" />;
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
