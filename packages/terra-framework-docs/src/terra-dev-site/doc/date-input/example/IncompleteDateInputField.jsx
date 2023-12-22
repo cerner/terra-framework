@@ -9,16 +9,16 @@ const Example = () => {
   return (
     <React.Fragment>
       <DateInputField
-        legend="Legend text"
+        legend="Appointment Date"
         name="date-input-value"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
         required
-        error="Error message"
+        error="Please select a valid event date."
         help="Help message"
         isIncomplete={isIncomplete}
       />
-      <p>{`DateInputField Value: ${value}`}</p>
+      <p>{`Appointment Date: ${value}`}</p>
       <button type="button" onClick={() => setIsIncomplete(incomplete => !incomplete)}>Toggle isIncomplete</button>
     </React.Fragment>
   );

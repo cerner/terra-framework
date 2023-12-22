@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import DateInputField from 'terra-date-input/lib/DateInputField';
 
 const Example = () => {
@@ -9,12 +8,12 @@ const Example = () => {
   return (
     <React.Fragment>
       <DateInputField
-        legend="Legend text"
+        legend="Select Due Date"
         name="date-input-value"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
         required
-        error="Error message"
+        error="Please select a valid due date."
         help="Help message"
         isInvalid={isInvalid}
       />
