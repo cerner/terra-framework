@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.0 - (January 2, 2024)
+
 * Changed
   * Updated `handleMouseDown` method for a cell.
   * Updated lowlight theme styling.
