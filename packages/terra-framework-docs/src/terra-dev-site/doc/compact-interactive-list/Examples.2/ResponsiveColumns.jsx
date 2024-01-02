@@ -16,8 +16,6 @@ const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" 
 const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
 const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
 
-// Source data for tests
-
 const rows = [
   {
     id: 'row_1',
@@ -71,7 +69,8 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    flexGrow: true,
+    width: '200px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
   },
   {
     id: 'Column-2',
@@ -81,9 +80,9 @@ const cols = [
   },
 ];
 
-const FixedWidthColumns = () => (
+const ResponsiveColumns = () => (
   <CompactInteractiveList
-    id="compact-interactive-list-fixed-width-columns2"
+    id="with-breakpoints"
     ariaLabel="Compact Interactive List"
     rows={rows}
     columns={cols}
@@ -92,4 +91,4 @@ const FixedWidthColumns = () => (
   />
 );
 
-export default FixedWidthColumns;
+export default ResponsiveColumns;

@@ -57,6 +57,11 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
+   * Boolean indicating whether the Cell is currently selected.
+   */
+  isSelected: PropTypes.bool,
+
+  /**
    * Callback function that will pass the focused column and focused row ids to the main component.
    */
   setFocusedCell: PropTypes.func,
@@ -71,6 +76,7 @@ const Cell = (props) => {
     columnMaximumWidth,
     widthUnit,
     onCellSelect,
+    isSelected,
     setFocusedCell,
     isRowHeader,
   } = props;
@@ -78,7 +84,11 @@ const Cell = (props) => {
   const theme = useContext(ThemeContext);
   const cellRef = React.useRef();
   const [isSelectableCell, setIsSelectableCell] = useState(false);
-  const className = cx('cell', theme.className, { selectable: isSelectableCell });
+  const selectable = column.isSelectable && isSelectableCell;
+  const className = cx('cell', theme.className, {
+    selected: selectable && isSelected,
+    selectable,
+  });
 
   const {
     id,
@@ -112,10 +122,15 @@ const Cell = (props) => {
     }
   };
 
-  const handleMouseDown = () => {
+  const handleMouseDown = (event) => {
     setFocusedCell({ rowId, columnId: id });
-    if (isSelectableCell && onCellSelect) {
-      onCellSelect({ rowId, columnId: id });
+    if (isSelectableCell) {
+      if (onCellSelect) {
+        onCellSelect({ rowId, columnId: id });
+      }
+    } else {
+      // allows clickable elements inside non-nselactable cells to be clicked, but not the cell itself
+      event.preventDefault();
     }
   };
 

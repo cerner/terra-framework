@@ -1,0 +1,23 @@
+import { Notice } from '@cerner/terra-docs';
+import ScalableUnits from './ScalableUnits?dev-site-examples';
+
+# Scalable Units
+
+<Notice variant="important" ariaLevel="3">
+
+The supported units for width properties are `px`, `em`, and `rem`. 
+Ensure that the width units are consistent across all properties in the same component. The width properties are
+[columnMinimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[columnMaximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), 
+[minimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), and 
+[maximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column).
+Any width units inconsistent with the rest of the component properties are disregarded.
+
+</Notice>
+
+### Description
+
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component placed in a container with fontSize set to **1.2em** and [width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) properties set in units relative to the font size. 
+
+<ScalableUnits />
