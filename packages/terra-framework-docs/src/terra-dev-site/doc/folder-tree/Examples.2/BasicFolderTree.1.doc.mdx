@@ -1,3 +1,38 @@
 import BasicFolderTree from './BasicFolderTree?dev-site-example';
 
+# Basic Folder Tree
+
+### Description
+
+The following example demonstrates a basic folder tree. For more details on specific folder tree
+features, see the following examples:
+* [Selection](./folder-tree-selection)
+* [Expand/Collapse](./folder-tree-expand-collapse)
+* [Expand/Collapse All](./folder-tree-expand-collapse-all)
+
+A folder tree is composed of two components:
+* **FolderTree**: The top-level folder tree component.
+* **FolderTreeItem**: A row in a folder tree that may have `subfolderItems`.
+  * If there are 1 or more `subfolderItems`, the row will be expandable/collapsible and display a folder icon.
+
+All children of a FolderTree **must** be FolderTreeItems.
+
+### Properties required
+
+The following FolderTree props are required for a basic folder tree:
+* **title**: The title of the folder tree. This is also used as the `aria-label` for the folder tree.
+
+The following FolderTreeItem props are required for a basic folder tree:
+* **label**: The text label for the folder tree item.
+
+```js
+<FolderTree
+  title="Documents"
+>
+  <FolderTreeItem label="First Item" />
+  <FolderTreeItem label="Second Item" />
+  <FolderTreeItem label="Third Item" />
+</FolderTree>
+```
+
 <BasicFolderTree />

@@ -1,0 +1,45 @@
+import FolderTreeExpandCollapse from './FolderTreeExpandCollapse?dev-site-example';
+
+# Expand/Collapse
+
+### Description
+
+The following example demonstrates expandable/collapsible folders.
+
+### Properties required
+
+Expanded/collapsed state is controlled by the consuming component.
+The following FolderTreeItem props are required for expand/collapse:
+* **isExpanded**: Identifies whether or not the FolderTreeItem is currently expanded. 
+* **onToggle**: This callback is called when interacting with a row that has `subfolderItems` via either of the following methods:
+  * Mouse click:
+    * Clicking anywhere on a row that has `subfolderItems`, other than on the radio button.
+  * Keyboard:
+    * Pressing Right Arrow on a focused, collapsed row that has `subfolderItems`, or Left Arrow on a focused, expanded row that has `subfolderItems`.
+* **subfolderItems**: Only FolderTreeItems that have `subfolderItems` with 1 or more items can be expanded/collapsed,
+and will display a folder icon.
+
+```js
+// Initialize folders to be collapsed
+const [expandedItems, setExpandedItems] = React.useState({
+  "row-item-1": false
+});
+
+const handleExpandCollapse = (key) => {
+  const newExpandedItems = {
+    ...expandedItems,
+    [key]: !expandedItems[key],
+  };
+  setExpandedItems(newExpandedItems);
+};
+
+<FolderTree.Item
+  key="row-item-1"
+  label="Projects"
+  isExpanded={expandedItems["row-item-1"]}
+  onToggle={() => {handleExpandCollapse("row-item-1")}}
+  subfolderItems=[...]
+/>
+```
+
+<FolderTreeExpandCollapse />

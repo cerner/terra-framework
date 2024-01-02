@@ -2,25 +2,93 @@ import { Notice } from "@cerner/terra-docs";
 import { Badge } from 'terra-folder-tree/package.json?dev-site-package';
 
 import FolderTreePropsTable from 'terra-folder-tree/src/FolderTree?dev-site-props-table';
+import FolderTreeItemPropsTable from 'terra-folder-tree/src/subcomponents/FolderTreeItem/?dev-site-props-table';
 
-import FolderTree from './Examples.2/BasicFolderTree?dev-site-example';
+import BasicFolderTree from './Examples.2/BasicFolderTree?dev-site-example';
 
 <Badge />
 
-# Terra FolderTree
+# Terra Folder Tree
 
 <Notice variant="caution" ariaLevel="2">
 Terra Folder Tree is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
 </Notice>
 
+## Table of Contents
+* [Overview](/components/cerner-terra-framework-docs/folder-tree/about#overview)
+* [Design Decisions](/components/cerner-terra-framework-docs/folder-tree/about#design-decisions)
+* [Examples](/components/cerner-terra-framework-docs/folder-tree/about#examples)
+* [Accessibility](/components/cerner-terra-framework-docs/folder-tree/about#accessibility)
+* [Implementation](/components/cerner-terra-framework-docs/folder-tree/about#implementation)
+* [Terra Standards](/components/cerner-terra-framework-docs/folder-tree/about#terra-standards)
+* [Properties](/components/cerner-terra-framework-docs/folder-tree/about#properties)
 
-## Getting Started
+## Overview
+Folder Tree is an accessible [tree view](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/) component that allows the user to display data in a hierarchical tree-like structure of nested rows.
+
+Folder Tree displays an action header containing the title of the folder tree, a toolbar
+with buttons to expand or collapse all items in the folder tree, and zero or more rows which
+may or may not include nested subrows.
+The component contains only one tab stop with the arrow keys used for primary navigation.
+See [keyboard interactions](/components/cerner-terra-framework-docs/folder-tree/about#keyboard-interactions) for all supported keys.
+Other key features of the component are listed in the [Features](/components/cerner-terra-framework-docs/folder-tree/about#features) section.
+
+<BasicFolderTree />
+
+### Features
+
+  * Keyboard Navigation
+  * [Selection](/components/cerner-terra-framework-docs/folder-tree/examples/folder-tree-selection)
+  * [Expand/Collapse](/components/cerner-terra-framework-docs/folder-tree/examples/folder-tree-expand-collapse)
+  * [Expand/Collapse All](/components/cerner-terra-framework-docs/folder-tree/examples/folder-tree-expand-collapse-all)
+
+## Design Decisions
+
+* Folder Tree does not maintain consumer data state. Expanded/collapsed and selection state of rows
+must be maintained by the consumer.
+
+## Examples
+
+|Link to Example| Description|
+|-|-|
+|[Basic Folder Tree](/components/cerner-terra-framework-docs/folder-tree/examples/basic-folder-tree)|An example of a basic folder tree.|
+|[Selection](/components/cerner-terra-framework-docs/folder-tree/examples/folder-tree-selection)|An example of implementing row selection for a folder tree.|
+|[Expand/Collapse](/components/cerner-terra-framework-docs/folder-tree/examples/folder-tree-expand-collapse)|An example of implementing expand/collapse behavior for a folder tree.|
+|[Expand/Collapse All](/components/cerner-terra-framework-docs/folder-tree/examples/folder-tree-expand-collapse-all)|An example of implementing expand/collapse all behavior for a folder tree.|
+
+## Accessibility
+
+### Keyboard Interactions
+
+Folder Tree supports the following keyboard interactions based on the [tree view keyboard interactions](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/#keyboardinteraction) outlined by the ARIA Authoring Practices Guide (APG):
+
+|Key interactions|Description|
+|---|---|
+|Right Arrow       | When focus is on a closed node, opens the node, and focus does not move.<br/>When focus is on an open node, moves focus to the first child node.<br/>When focus is on an end node (node with no children), does nothing.|
+|Left Arrow        | When focus is on an open node, closes the node.<br/>When focus is on a child node that is also either an end node or a closed node, moves focus to the parent node.<br/>When focus is on a closed node with children, does nothing.|
+|Down Arrow        | Moves focus to the next node that is focusable without opening or closing the node. |
+|Up Arrow          | Moves focus to the previous node that is focusable without opening or closing a node. |
+|Home (Windows)<br/>or<br/>Command + Left Arrow (Mac)| Moves focus to the first node in the tree without opening or closing it. |
+|End (Windows)<br/>or<br/>Command + Right Arrow (Mac)| Moves focus to the last node in the tree that is focusable without opening the node. |
+|Enter             | Performs the default action of the currently focused node. For parent nodes, it opens or closes the node. In single select trees, if the node has no children the current node is selected if not already selected (which is the default action).|
+
+### Assistive Technology Support
+
+#### WAI ARIA Roles and States
+
+* [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+  * The value of the `title` prop is used as the `aria-label` for the folder tree.
+
+## Implementation
+
+### Installation
 
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-folder-tree`
 
-<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
-## Peer Dependencies
+### Dependencies
+
+#### Peer Dependencies
 
 This component requires the following peer dependencies be installed in your app for the component to properly function.
 
@@ -30,17 +98,38 @@ This component requires the following peer dependencies be installed in your app
 | react-dom | ^16.8.5 |
 | react-intl | ^2.8.0 |
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+## FolderTree props
+<FolderTreePropsTable />
 
-## Component Features
+## FolderTreeItem props
+<FolderTreeItemPropsTable />
+
+## Terra Standards
 
  * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
  * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
  * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
  * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
 
-## Examples
-<BasicFolderTree />
+## Testing
 
-## FolderTree props table
-<FolderTreePropsTable />
+Folder Tree uses `uuid` which changes the component's description id dynamically. To mock the return value with the Jest testing library, `jest.spyOn` can be used.
+
+If Enzyme `shallow` rendering is being used for the tests then the mock may not be required. However, if `mount` is used then `uuid` should be mocked as shown below:
+
+```js
+import { v4 as uuidv4 } from 'uuid';
+
+let mockSpyUuid;
+
+// using a variable may result in failures. For best results, mock return value.
+beforeAll(() => {
+  mockSpyUuid = jest.spyOn(uuidv4, 'v4').mockReturnValue('00000000-0000-0000-0000-000000000000');
+});
+
+// restore the mock
+afterAll(() => {
+  mockSpyUuid.mockRestore();
+});
+
+```

@@ -11,43 +11,42 @@ const cx = classNames.bind(styles);
 const data = {
   title: 'Documents',
   items: [
-    { id: 'item-1-level-1', label: 'Information', icon: <IconDocuments /> },
-    { id: 'item-2-level-1', label: 'Projects - 2023', icon: <IconDocuments /> },
     {
-      id: 'item-3-level-1',
-      label: 'Projects - 2023',
+      id: 'item-1-level-1',
+      label: 'Projects - Level 1',
       items: [
-        { id: 'item-1-level-2-1', label: 'Project Data - October', icon: <IconDocuments /> },
-        { id: 'item-2-level-2-1', label: 'Project Data - November', icon: <IconDocuments /> },
-        { id: 'item-3-level-2-1', label: 'Project Data - December', icon: <IconDocuments /> },
         {
-          id: 'item-4-level-2-1',
-          label: 'Tests',
+          id: 'item-1-level-2',
+          label: 'Projects - Level 2',
           items: [
-            { id: 'item-1-level-3-1', label: 'Very Very Very Very Very Very Very Long Name Test', icon: <IconDocuments /> },
-            { id: 'item-1-level-2-1', label: 'Even Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooonger Name Test', icon: <IconDocuments /> },
+            {
+              id: 'item-1-level-3',
+              label: 'Projects - Level 3',
+              items: [
+                {
+                  id: 'item-1-level-4',
+                  label: 'Projects - Level 4',
+                  items: [
+                    { id: 'item-1-level-5', label: 'Nested Document', icon: <IconDocuments /> },
+                  ],
+                },
+              ],
+            },
           ],
         },
-      ],
-    },
-    { id: 'item-4-level-1', label: 'Projects - 2024', icon: <IconDocuments /> },
-    {
-      id: 'item-5-level-1',
-      label: 'Projects - 2024',
-      items: [
-        { id: 'item-1-level-2-2', label: 'Project Data - January', icon: <IconDocuments /> },
       ],
     },
   ],
 };
 
 const folderExpandedState = {
-  'item-3-level-1': false,
-  'item-4-level-2-1': false,
-  'item-5-level-1': false,
+  'item-1-level-1': false,
+  'item-1-level-2': false,
+  'item-1-level-3': false,
+  'item-1-level-4': false,
 }
 
-const BasicFolderTree = () => {
+const FolderTreeExpandCollapse = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
   const [expandedItems, setExpandedItems] = React.useState(folderExpandedState);
 
@@ -103,7 +102,7 @@ const BasicFolderTree = () => {
   return (
     <div className={cx('content-wrapper')}>
       <FolderTree
-        title={data.title}
+        title="Documents"
         onExpandAll={handleExpandAll}
         onCollapseAll={handleCollapseAll}
       >
@@ -113,4 +112,4 @@ const BasicFolderTree = () => {
   );
 };
 
-export default BasicFolderTree;
+export default FolderTreeExpandCollapse;
