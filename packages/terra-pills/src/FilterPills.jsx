@@ -404,6 +404,7 @@ const FilterPills = (props) => {
     'aria-labelledby': ariaLabelledBy,
     'aria-describedby': pillGroupAriaDescribedBy,
     role: 'list',
+    tabIndex: containerTabindex,
   } : { role: 'group' };
 
   if (!React.Children.count(children)) {
@@ -418,7 +419,6 @@ const FilterPills = (props) => {
         {...ariaAttrs}
         className={pillListClassNames}
         ref={filterPillsRef}
-        tabIndex={containerTabindex}
       >
         {children ? renderChildren(children) : []}
         {(isCollapsible && rollUpCount > 0) && (
