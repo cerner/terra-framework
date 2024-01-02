@@ -4,6 +4,7 @@
 
 * Changed
   * Updated `terra-time-input` example to have visual label.
+  * Updated `terra-embedded-content-consumer` example to fix axe error.
   * Updated `terra-compact-interactive-list` implementation guide and examples.
 
 ## 1.53.0 - (December 18, 2023)
