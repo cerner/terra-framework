@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added FocusTrap to confine focus within the modal popup.
+
 ## 3.44.0 - (November 23, 2023)
 
 * Fixed
