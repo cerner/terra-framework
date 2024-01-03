@@ -5,29 +5,50 @@ const propTypes = {
   /**
    * The component(s) that will be wrapped by `<ThemeProvider />`
    */
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
+
   /**
    * Name of class for specified theme
    */
   themeName: PropTypes.string,
+
+  /**
+   * Name of class for specified density
+   */
+  density: PropTypes.string,
 };
 
 const ThemeProvider = ({
   children,
   themeName,
+  density,
 }) => {
   useEffect(() => {
+    const themeClassList = [];
+
+    // Add theme name to array, if it exists
     if (themeName) {
-      document.documentElement.classList.add(themeName);
+      themeClassList.push(themeName);
+    }
+
+    // Add density to array, if it exists
+    if (density) {
+      themeClassList.push(density);
+    }
+
+    // Add theme classes to documentElement class list
+    if (themeClassList.length > 0) {
+      document.documentElement.classList.add(...themeClassList);
     }
     return () => {
-      if (themeName) {
-        document.documentElement.classList.remove(themeName);
+      // Remove theme classes from documentElement class list
+      if (themeClassList.length > 0) {
+        document.documentElement.classList.remove(...themeClassList);
       }
     };
-  }, [themeName]);
+  }, [density, themeName]);
 
-  return <React.Fragment>{children}</React.Fragment>;
+  return <>{children}</>;
 };
 
 ThemeProvider.propTypes = propTypes;

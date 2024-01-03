@@ -2,8 +2,32 @@
 
 ## Unreleased
 
+## 1.10.0 - (January 2, 2024)
+
+* Added 
+  * Added translations for flowsheet.
+
+## 1.9.0 - (December 18, 2023)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.8.0 - (December 13, 2023)
+
+* Breaking Change
+  * Flowsheet `OnCellSelect` callback now returns an object containing rowId, columnId and sectionId.
+
+* Added
+  * Added range-select and multi-select on flowsheets with sections.
+  * Flowsheet `onCellRangeSelect` callback now also returns a sectionId for each cell in range.
+
+## 1.7.0 - (December 11, 2023)
+
 * Added
   * Added keyboard navigation support for sections.
+
+* Fixed
+  * Removed unnecessary rerenders
   
 ## 1.6.0 - (December 5, 2023)
 

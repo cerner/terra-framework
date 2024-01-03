@@ -1,3 +1,5 @@
 {
+  "Terra.file-path.ariaLabel": "File path",
+  "Terra.file-path.ariaLabel-current-location": "Currently at",
   "Terra.file-path.icon.text": "Parent Folders"
 }

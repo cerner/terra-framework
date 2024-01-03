@@ -1,23 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ThemeContextProvider Snapshots should render with a theme 1`] = `
-<ContextProvider
-  value={
-    Object {
-      "className": "test-theme-class",
-      "name": "test-theme",
-    }
-  }
->
-  <div />
-</ContextProvider>
-`;
-
 exports[`ThemeContextProvider Snapshots should render with minimal props 1`] = `
 <ContextProvider
   value={
     Object {
       "className": undefined,
+      "density": undefined,
       "name": undefined,
     }
   }

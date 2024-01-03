@@ -181,13 +181,13 @@ const DataGrid = forwardRef((props, ref) => {
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
 
   // By default, all grid-based components have selectable cells.
-  const dataGridRows = rows.map((row) => ({
+  const dataGridRows = useMemo(() => (rows.map((row) => ({
     ...row,
     cells: row.cells.map((cell) => ({
       ...cell,
       isSelectable: cell.isSelectable !== false,
     })),
-  }));
+  }))), [rows]);
 
   // Reference variable for WorklistDataGrid table element
   const grid = useRef();
@@ -268,6 +268,7 @@ const DataGrid = forwardRef((props, ref) => {
     () => ({
       setFocusedRowCol,
       getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
+      getGridRef() { return grid.current; },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [focusedCol, focusedRow],

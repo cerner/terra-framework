@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 4.60.0 - (January 2, 2024)
+
+* Changed
+  * Updated screen response to announce when invalid time is entered.
+
+## 4.59.0 - (December 18, 2023)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 4.58.0 - (October 11, 2023)
 
 * Changed

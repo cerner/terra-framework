@@ -1,7 +1,3 @@
-// Themes
-@import './clinical-lowlight-theme/CompactInteractiveList.module';
-@import './orion-fusion-theme/CompactInteractiveList.module';
-
 :local {
   .compact-interactive-list-container {
     height: auto;
@@ -15,10 +11,17 @@
   .compact-interactive-list {
     display: flex;
     flex-wrap: wrap;
+  }
 
-    :focus {
-      outline: var(--terra-compact-interactive-list-cell-focus-outline, 3px dashed #000);
-      outline-offset: var(--terra-compact-interactive-list-cell-focus-outline-offset, -2px);
-    }
+  .hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    white-space: nowrap; /* Ensures words  are not read one at a time on screen readers*/
+    width: 1px;
   }
 }

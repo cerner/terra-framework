@@ -231,6 +231,7 @@ The API for the `utilityConfig` matches that of the `ApplicationHeaderUtility` a
 |`menuItems`|Array|**required**|An array of objects specifying the utility menu options to present.|
 |`initialSelectedKey`|String|**required**|The string key of the initial menu item to present.|
 |`onChange`|Function|**required**|A function that will be called upon selection of a terminal utility item.|
+|`onBlur`|Function|optional|A function that will be called when navigation menu get out of focus.|
 
 ```jsx
 import Avatar from 'terra-avatar';
@@ -267,6 +268,12 @@ const myUtilityConfig = {
      * This function will be called when items are selected within the utility menu.
      * The disclose parameter is provided for convenience, but any presentation method
      * could be used to handle that menu content selection.
+     */
+  },
+  onBlur: (event, layoutConfig) => {
+    /**
+     * This function will be called when navigation menu get out of focus. `layoutConfig` parameter is
+     * provided to enchance interaction with application-layout
      */
   },
 };

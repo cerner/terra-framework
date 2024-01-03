@@ -32,30 +32,32 @@ const TableConstants = {
   ROW_SELECTION_COLUMN_WIDTH: 40,
 };
 
+const ROW_SELECTION_COLUMN_ID = 'table-rowSelectionColumn';
+
 const propTypes = {
   /**
-   * Unique id used to identify the table.
+   * An identifier to uniquely identify the table.
    */
   id: PropTypes.string.isRequired,
 
   /**
-  * Data for content in the body of the table when sections do not exist. Rows will be rendered in the order given.
-  * The sections prop will text precedence over this prop.
+  * The information for content in the body of the table when sections do not exist. Rows are rendered in the order given.
+  * The sections property has precedence over this property.
   */
   rows: PropTypes.arrayOf(rowShape),
 
   /**
-  * Data for content in the body of the table. Sections will be rendered in the order given.
+  * The information for content in the body of the table. Sections are rendered in the order given.
   */
   sections: PropTypes.arrayOf(sectionShape),
 
   /**
-   * String that identifies the element (or elements) that labels the table.
+   * A string that identifies the element (or elements) that labels the table.
    */
   ariaLabelledBy: PropTypes.string,
 
   /**
-   * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
+   * A string that labels the table for accessibility. If the ariaLabelledBy property is specified, the ariaLabel property is not used.
    */
   ariaLabel: PropTypes.string,
 
@@ -71,51 +73,51 @@ const propTypes = {
   isActiveColumnResizing: PropTypes.bool,
 
   /**
-   * Numeric increment in pixels to adjust column width when resizing via the keyboard.
+   * A numeric increment in pixels to adjust column width when resizing with the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
 
   /**
-   * Data for pinned columns. Pinned columns are the stickied leftmost columns of the table.
-   * Columns will be presented in the order given.
+   * The information for pinned columns. Pinned columns are the stickied leftmost columns of the table.
+   * Columns are presented in the order given.
    */
   pinnedColumns: PropTypes.arrayOf(columnShape),
 
   /**
-   * Data for overflow columns. Overflow columns are rendered in the table's horizontal overflow.
-   * Columns will be presented in the order given.
+   * The information for overflow columns. Overflow columns are rendered in the table's horizontal overflow.
+   * Columns are presented in the order given.
    */
   overflowColumns: PropTypes.arrayOf(columnShape),
 
   /**
-   * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
+   * A number indicating the default column width in pixels. This value is used if no overriding width value is provided on a per-column basis.
    */
   defaultColumnWidth: PropTypes.number,
 
   /**
-   * String that specifies the column height. Any valid CSS height value is accepted.
+   * A string that specifies the column height. Any valid CSS height value is accepted.
    */
   columnHeaderHeight: PropTypes.string,
 
   /**
-   * String that specifies the height for the rows in the table. Any valid CSS value is accepted.
+   * A string that specifies the height for the rows on the table. Any valid CSS value is accepted.
    */
   rowHeight: PropTypes.string,
 
   /**
-   * Number indicating the index of the column that represents row header. Index is 0 based and cannot exceed one less than the number of columns in the table.
+   * A number indicating the index of the column that represents the row header. The index is based on 0 and cannot exceed one less than the number of columns on the table.
    */
   rowHeaderIndex: validateRowHeaderIndex,
 
   /**
-   * Function that is called when a resizable column is resized. Parameters:
+   * A function that is called when a resizable column is resized. Parameters:
    * @param {string} columnId columnId
    * @param {string} requestedWidth requestedWidth
    */
   onColumnResize: PropTypes.func,
 
   /**
-   * Callback function that is called when a selectable cell is selected. Parameters:
+   * A callback function that is called when a selectable cell is selected. Parameters:
    * @private
    * @param {string} rowId rowId
    * @param {string} columnId columnId
@@ -123,42 +125,42 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
-   * Callback function that is called when one or more rows are selected or unselected. Parameters:
+   * A callback function that is called when one or more rows are selected or cleared. Parameters:
    * @param {string} rowId row id of the selected row
    */
   onRowSelect: PropTypes.func,
 
   /**
-   * Callback function that is called when a selectable column is selected. Parameters:
+   * A callback function that is called when a selectable column is selected. Parameters:
    *  @param {string} columnId columnId
    */
   onColumnSelect: PropTypes.func,
 
   /**
-   * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
+   * A function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
    */
   onSectionSelect: PropTypes.func,
 
   /*
-   * Callback function that is called when the row selection column header is selected. Parameters:
+   * A callback function that is called when the row selection column header is selected. Parameters:
    *  @param {string} columnId columnId
    */
   onRowSelectionHeaderSelect: PropTypes.func,
 
   /**
-   * Enables row selection capabilities for the table.
+   * A mode that enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
   rowSelectionMode: PropTypes.oneOf(Object.values(RowSelectionModes)),
 
   /**
-   * Boolean indicating whether or not the table columns should be displayed. Setting the value to false will hide the columns,
-   * but the voice reader will use the column header values for a11y.
+   * A Boolean value indicating whether the table columns are displayed. Setting the value to **false** hides the columns,
+   * but a screen reader still reads the column header values for accessibility.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
 
-  /*
-   * Boolean specifying whether or not the table should have zebra striping for rows.
+  /**
+   * A Boolean value specifying whether the table has zebra striping for rows.
    */
   isStriped: PropTypes.bool,
 
@@ -247,18 +249,21 @@ function Table(props) {
     maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
   });
 
-  // Create row selection column object
-  const tableRowSelectionColumn = {
-    id: 'table-rowSelectionColumn',
-    width: TableConstants.ROW_SELECTION_COLUMN_WIDTH,
-    displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
-    isDisplayVisible: false,
-    isSelectable: !!onRowSelectionHeaderSelect,
-    isResizable: false,
-  };
-
   const hasSelectableRows = rowSelectionMode === RowSelectionModes.MULTIPLE;
-  const displayedColumns = (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
+  const displayedColumns = useMemo(() => {
+    // Create row selection column object
+    const tableRowSelectionColumn = {
+      id: ROW_SELECTION_COLUMN_ID,
+      width: TableConstants.ROW_SELECTION_COLUMN_WIDTH,
+      displayName: intl.formatMessage({ id: 'Terra.table.row-selection-header-display' }),
+      isDisplayVisible: false,
+      isSelectable: !!onRowSelectionHeaderSelect,
+      isResizable: false,
+    };
+
+    return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
+  }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
+
   const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   const defaultSectionRef = useRef(uuidv4());
@@ -422,14 +427,14 @@ function Table(props) {
   // event handlers
 
   const handleColumnSelect = useCallback((columnId) => {
-    if (columnId === tableRowSelectionColumn.id) {
+    if (columnId === ROW_SELECTION_COLUMN_ID) {
       if (onRowSelectionHeaderSelect) {
         onRowSelectionHeaderSelect();
       }
     } else if (onColumnSelect) {
       onColumnSelect(columnId);
     }
-  }, [onColumnSelect, onRowSelectionHeaderSelect, tableRowSelectionColumn.id]);
+  }, [onColumnSelect, onRowSelectionHeaderSelect]);
 
   const onResizeMouseDown = useCallback((event, index, resizeColumnWidth) => {
     // Store current table and column values for resize calculations
@@ -533,7 +538,7 @@ function Table(props) {
   return (
     <div
       ref={handleContainerRef}
-      className={cx('table-container')}
+      className={cx('table-container', theme.className)}
       // eslint-disable-next-line jsx-a11y/no-noninteractive-tabindex
       tabIndex={!isGridContext && isTableScrollable ? 0 : undefined}
     >
@@ -545,7 +550,7 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        className={cx('table', theme.className, { headerless: !hasVisibleColumnHeaders })}
+        className={cx('table', { headerless: !hasVisibleColumnHeaders })}
         onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >

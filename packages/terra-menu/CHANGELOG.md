@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 6.83.0 - (December 18, 2023)
+
+* Added
+  * New stylings for the focus indicator.
+
+## 6.82.0 - (December 11, 2023)
+
 * Fixed
   * Fixed the issue with `contentWidth` as auto value.
   

@@ -9,3 +9,15 @@ $selector: '.cerner-mock-theme';
   --terra-framework-docs-theme-provider-mock-color: #00f;
   --terra-framework-docs-theme-provider-mock-display: inline-block;
 }
+
+.compact {
+  --terra-base-font-size: 14px;
+}
+
+.comfortable {
+  --terra-base-font-size: 16px;
+}
+
+.spacious {
+  --terra-base-font-size: 18px;
+}

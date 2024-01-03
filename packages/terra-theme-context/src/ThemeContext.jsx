@@ -9,6 +9,11 @@ const themeContextShape = PropTypes.shape({
    * The default theme is indicated as undefined.
    */
   className: PropTypes.string,
+
+  /**
+   * The current application theme data density.
+   */
+  density: PropTypes.string,
 });
 
 export default ThemeProviderContext;

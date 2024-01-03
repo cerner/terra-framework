@@ -1,6 +1,6 @@
 // Themes
-@import '../orion-fusion-theme/CompactInteractiveList.module';
-@import '../clinical-lowlight-theme/CompactInteractiveList.module';
+@import '../orion-fusion-theme/Row.module';
+@import '../clinical-lowlight-theme/Row.module';
 
 :local {
   .row {
@@ -15,11 +15,11 @@
     }
   }
 
-  .row-topmost {
+  .row-topmost:not(.row-placeholder) {
     border-top: var(--terra-compact-interactive-list-row-border-top, 1px solid #dedfe0);
   }
 
-  .row-leftmost {
+  .row-leftmost:not(.row-placeholder) {
     border-left: var(--terra-compact-interactive-list-row-border-left, 1px solid #dedfe0);
   }
 }

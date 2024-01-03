@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
+import * as KeyCode from 'keycode-js';
 
 import Spacer from 'terra-spacer';
 import Arrange from 'terra-arrange';
@@ -48,6 +49,11 @@ const propTypes = {
   level: PropTypes.number,
   /**
    * @private
+   * Ref to the parent folder of the current item.
+   */
+  parentRef: PropTypes.number,
+  /**
+   * @private
    * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
@@ -68,22 +74,27 @@ const FolderTreeItem = ({
   onClick,
   onToggle,
   subfolderItems,
+  parentRef,
   intl,
 }) => {
   const theme = useContext(ThemeContext);
   const isFolder = subfolderItems?.length > 0;
+  const itemNode = useRef();
+  const subFolderNode = useRef();
 
   const subfolder = isFolder ? (
     <ul
       className={cx('subfolder')}
       role="group"
       hidden={!isExpanded}
+      ref={subFolderNode}
     >
       {subfolderItems.map((item) => (
         <FolderTreeItem
           {...item.props}
           intl={intl}
           level={level + 1}
+          parentRef={itemNode}
         />
       ))}
     </ul>
@@ -112,16 +123,55 @@ const FolderTreeItem = ({
     }
   };
 
+  const handleKeyDown = event => {
+    switch (event.keyCode) {
+      case KeyCode.KEY_RETURN:
+        event.preventDefault();
+
+        onClick(event);
+        break;
+      case KeyCode.KEY_LEFT: {
+        event.preventDefault();
+        if (event.metaKey) { break; }
+
+        if (isFolder && isExpanded) {
+          handleToggle(event);
+        } else {
+          parentRef?.current.focus();
+        }
+
+        break;
+      }
+      case KeyCode.KEY_RIGHT: {
+        event.preventDefault();
+        if (event.metaKey) { break; }
+
+        if (!isExpanded) {
+          handleToggle(event);
+        } else if (isFolder) {
+          const firstFolderChild = subFolderNode.current.querySelector('[data-item-show-focus=true]');
+          firstFolderChild?.focus();
+        }
+
+        break;
+      }
+      default:
+        break;
+    }
+  };
+
   return (
     <>
-      {/* TODO: Re-enable this eslint rule once keyboard handling is implemented */}
-      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events */}
       <li
         className={itemClassNames}
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
         onClick={isFolder ? handleToggle : onClick}
+        onKeyDown={handleKeyDown}
+        data-item-show-focus
+        tabIndex={0}
+        ref={itemNode}
       >
         <input
           type="radio"

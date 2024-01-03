@@ -8,45 +8,82 @@ import TablePropsTable from "terra-table/lib/Table?dev-site-props-table";
 
 # Terra Table
 
-Terra Table is a structural component used to display tabular data. Table provides means to handle row selection and hooks for sortable columns.
+## Table of Contents
+* [Overview](/components/cerner-terra-framework-docs/table/about#overview)
+* [Examples](/components/cerner-terra-framework-docs/table/about#examples)
+* [Accessibility](/components/cerner-terra-framework-docs/table/about#accessibility)
+* [Implementation](/components/cerner-terra-framework-docs/table/about#implementation)
+* [Properties](/components/cerner-terra-framework-docs/table/about#properties)
+* [Terra Standards](/components/cerner-terra-framework-docs/table/about#terra-standards)
 
-<Notice variant="caution" ariaLevel="2">
-Due to poor support in VoiceOver for spanned table headings, Table sections are not currently recommended for applications intended to be used on Apple devices.
-</Notice>
 
 ## Overview
-The Table is an [accessible table](https://www.w3.org/WAI/ARIA/apg/patterns/table/) component that is a static tabular structure containing one or more rows that each contain one or more cells.
-The Table is not an interactive widget.  Thus, its cells are not focusable or selectable.
+<Notice variant="important" ariaLevel="2">
+Due to poor support in Apple VoiceOver for spanned table headings, Table component sections are not currently recommended for applications used on Apple devices.
+</Notice>
 
-Tables are often used to present a combination of information and interactive widgets. Since a table is not a widget, each widget contained in a table is a separate stop in the page tab sequence. 
+The Table component is an [accessible table](https://www.w3.org/WAI/ARIA/apg/patterns/table/) with a static tabular structure containing one or more rows that each contain one or more cells.
+The Table component is not an interactive widget. Thus, its cells are not focusable or selectable.
+
+Tables are often used to present a combination of information and interactive widgets. Because a table is not a widget, each widget contained on a table is a separate stop in the page tab sequence. 
 If the number of widgets is large, replacing the table with a grid can dramatically reduce the length of the page tab sequence because a grid is a composite widget that can contain other widgets.
+
+See the following example of a default table:
+
+<DefaultTable />
+
+  ### Features
+
+  * [Zebra Striping](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)
+  * [Pinned Columns](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)
+  * [Sections](/components/cerner-terra-framework-docs/table/examples/table-with-sections)
+  * [Single Row Selection](/components/cerner-terra-framework-docs/table/examples/table-single-row-selection)
+  * [Multiple Row Selection](/components/cerner-terra-framework-docs/table/examples/table-multiple-row-selection)
+  * [Headerless Table](/components/cerner-terra-framework-docs/table/examples/table-without-headers)
+  * [Column Sorting](/components/cerner-terra-framework-docs/table/examples/sortable-table)
+  * [Column Error Indicator](/components/cerner-terra-framework-docs/table/examples/table-column-states)
+
+## Examples
+|Link to Example| Description|
+|-|-|
+|[Default Table](/components/cerner-terra-framework-docs/table/examples/default-table)|An example demonstrating a basic table populated with tabular information and no interactive elements.|
+|[Zebra Striped Table](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)|An example demonstrating the ability to enable zebra striping for table rows.|
+|[Pinned Columns](/components/cerner-terra-framework-docs/table/examples/pinned-columns)|An example demonstrating pinned columns (frozen leftmost columns) and overflow columns.|
+|[Sortable Table](/components/cerner-terra-framework-docs/table/examples/sortable-table)|An example demonstrating how to enable sorting on a table. Heading cells of sortable columns are interactive and include an icon indicating sort direction.|
+|[Table Column States](/components/cerner-terra-framework-docs/table/examples/table-column-states)|An example demonstrating column states and interactions such as an error or sort. Header cells include an icon that represents the state of the information in the column.|
+|[Table with Focusable Cells](/components/cerner-terra-framework-docs/table/examples/table-focusable-cell)|An example demonstrating tab stop behavior on a table with interactive elements. Each tabbable element on a table is a separate tab stop.|
+|[Single Row Selection](/components/cerner-terra-framework-docs/table/examples/table-single-row-selection)|An example demonstrating a table with single row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property.|
+|[Multiple Row Selection](/components/cerner-terra-framework-docs/table/examples/table-multiple-row-selection)|An example demonstrating a table with multiple row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property.|
+|[Table with Sections](/components/cerner-terra-framework-docs/table/examples/table-with-sections)|An example demonstrating how to create a table with sections.|
+|[Table Without Headers](/components/cerner-terra-framework-docs/table/examples/table-without-headers)|An example demonstrating how to hide table column headers. The column headers still exist in the Document Object Model (DOM) for accessibility.|
 
 ## Accessibility
 ### Keyboard Interactions
 
 |Keys|Description|
 |---|---|
-|Home| Moves focus to the first focusable element in the table when the current focus is not within an editable field.|
-|End | Moves focus to the last focusable element in the table when the current focus is not within an editable field.|
+|HOME| Selects the first element on the table when the currently active element is not editable.|
+|END | Selects the last element on the table when the currently active element is not editable.|
 
 ### Assistive Technology Support
 #### WAI ARIA Roles and States
 * [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
-  * **Table**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/table/about#table-props) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
-  * **Row**: When the [_ariaLabel_](/components/cerner-terra-framework-docs/table/about#row) prop is specified, the screen reader will use the _aria-label_ as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) to announce interactions with the row.
+  * **Table**: When the [ariaLabel](/components/cerner-terra-framework-docs/table/about#table-props) property is specified, the screen reader uses the aria-label value as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+  * **Row**: When the [ariaLabel](/components/cerner-terra-framework-docs/table/about#row) property is specified, the screen reader uses the aria-label value as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) to announce interactions with the row.
 * [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
-  * **Table**: When the [_ariaLabelledBy_](/components/cerner-terra-framework-docs/table/about#table-props) prop is specified, the screen reader will use the _aria-labelledby_ element to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+  * **Table**: When the [ariaLabelledBy](/components/cerner-terra-framework-docs/table/about#table-props) property is specified, the screen reader uses the aria-labelledby value to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
 
-## Getting Started
+## Implementation
 
-- Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-table`
+### Installation
+Install with [npmjs](https://www.npmjs.com):
+`npm install terra-table`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 
-## Peer Dependencies
+### Peer Dependencies
 
-This component requires the following peer dependencies be installed in your app for the component to properly function.
+Ensure that the following peer dependencies are installed in your application for the component to properly function:
 
 | Peer Dependency | Version |
 | --------------- | ------- |
@@ -56,24 +93,17 @@ This component requires the following peer dependencies be installed in your app
 
 <!-- AUTO-GENERATED-CONTENT:END -->
 
-## Usage
+### Usage
 
 ```jsx
 import Table from "terra-table";
 ```
 
-## Component Features
-
-- [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
-- [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
-- [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
-- [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
-
-# Default Table
-
-<DefaultTable />
-
-## Table Props
+## Properties
+<Notice variant="important" ariaLevel="2">
+When making changes to the columns, section, rows, or cells, the Table component requires you to pass new objects so that React can detect the changes.  
+In addition, ensure that you memoize callback functions using methods such as the useCallback hook to prevent unnecessary rerenders of components.
+</Notice>
 
 <TablePropsTable />
 
@@ -82,58 +112,66 @@ Enumeration: TableConstants
 
 |Constant|Type|Description|
 |---|---|---|
-|**ROW_SELECTION_COLUMN_WIDTH**|number|The width of the row selection column.|
+|**ROW_SELECTION_COLUMN_WIDTH**|Number|The width of the row selection column.|
 
 Enumeration: RowSelectionModes
 
 |Constant|Type|Description|
 |---|---|---|
-|**SINGLE**|string|Single row selection mode|
-|**MULTIPLE**|string|Multiple row selection mode|
+|**SINGLE**|String|Single row selection mode.|
+|**MULTIPLE**|String|Multiple row selection mode.|
 
 ### Column
-A column specifies the data to render a cell in the header row of the Worklist Data Grid.
+A column specifies the information to render a cell in the header row of the Worklist Data Grid component.
 
-|Name|Type|Is Required|Default Value|Description|
+|Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
-|**displayName**|string|optional|none|String of text to render within the column header cell.|
-|**hasError**|bool|optional|none|Boolean value indicating whether or not the column has an error in the data.|
-|**isResizable**|bool|optional|none|Boolean value indicating whether or not the column header is resizable.|
-|**isSelectable**|bool|optional|none|Boolean value indicating whether or not the column header is selectable.|
-|**minimumWidth**|number|optional|none|Number that specifies the minimum column width in pixels.|
-|**maximumWidth**|number|optional|none|Number that specifies the maximum column width in pixels.|
-|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
-|**sortIndicator**|custom|optional|none|A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered. One of `ascending`, `descending`.
+|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the column in the grid.|
+|**displayName**|String|Optional|None|A string of text to render in the column header cell.|
+|**hasError**|Bool|Optional|None|A Boolean value indicating whether the column information has an error.|
+|**isResizable**|Bool|Optional|None|A Boolean value indicating whether the column header is resizable.|
+|**isSelectable**|Bool|Optional|None|A Boolean value indicating whether the column header is selectable.|
+|**minimumWidth**|Number|Optional|None|A number that specifies the minimum column width in pixels.|
+|**maximumWidth**|Number|Optional|None|A number that specifies the maximum column width in pixels.|
+|**width**|number|Optional|None|A number that specifies the width of the column in pixels. If not provided, the Worklist Data Grid component's default column width is used.|
+|**sortIndicator**|Custom|Optional|None|A string indicating which sorting indicator is rendered (`ascending` or `descending`). A sorting indicator is rendered only if a value is provided.
 
 ### Section
-A section defines the rows rendered within the section.
+<Notice variant="important" ariaLevel="2">
+Due to poor support in Apple VoiceOver for spanned table headings, Table component sections are not currently recommended for applications used on Apple devices.
+</Notice>
 
-***Due to poor support in VoiceOver for spanned table headings, Table sections are not currently recommended for applications intended to be used on Apple devices.***
+A section defines the rows rendered in the section.
 
-|Name|Type|Is Required|Default Value|Description|
+|Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the section within the grid.|
-|**isCollapsible**|bool|false|Boolean value indicating whether or not the the section is collapsible.|
-|**isCollapsed**|bool|optional|false|Boolean value indicating whether or not the section is collapsed. If true, contents of the section will not be displayed.|
-|**text**|string|optional|none|A text string to render within the section header.|
-|**rows**|array|optional|[]|An array of row objects to be rendered within the section.|
+|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the section in the grid.|
+|**isCollapsible**|Bool|Optional|False|A Boolean value indicating whether the the section is collapsible.|
+|**isCollapsed**|Bool|Optional|False|A Boolean value indicating whether the section is collapsed. If true, the contents of the section is not displayed.|
+|**text**|String|Optional|None|A text string to render in the section header.|
+|**rows**|Array|Optional|[]|An array of row objects to be rendered in the section.|
 
 ### Row
-A row defines the cells rendered within the row.
+A row defines the cells rendered in the row.
 
-|Name|Type|Is Required|Default Value|Description|
+|Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the row within the grid.|
-|**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. Cells will be rendered in the order given and are expected to be in the same order as the columns.|
-|**isSelected**|bool|optional|none|A boolean indicating whether or not the row should render as selected.|
-|**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used for accessibility when announcing the row (un)selection.|
+|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the row in the grid.|
+|**cells**|Array|Optional|[]|An array of cell objects that define the content to be rendered in the row. Cells are rendered in the order given and are expected to match the column order.|
+|**isSelected**|Bool|Optional|None|A Boolean value indicating whether the row is rendered as selected.|
+|**ariaLabel**|String|Optional|None|A string identifier used to describe the row contents. This value is used for accessibility when announcing the row selection or deselection.|
 
 ### Cell
 A cell defines the content rendered at the intersection of a row and a column.
 
-|Name|Type|Is Required|Default Value|Description|
+|Name|Type|Required|Default Value|Description|
 |---|---|---|---|---|
-|**content**|content|optional|none|The content to render within the cell.|
-|**isMasked**|bool|optional|none|A boolean indicating if the cell content is masked.|
-|**maskedLabel**|bool|optional|none|Provides a custom string for masked cells to be read by screen readers. This value is only applied if the cell is masked.|
+|**content**|Content|Optional|None|The content to render in the cell.|
+|**isMasked**|Bool|Optional|None|A Boolean value indicating whether the cell content is masked.|
+|**maskedLabel**|Bool|Optional|None|A Boolean value that provides a custom string for screen readers to read masked cells. This value is only applied if the cell is masked.|
+
+## Terra Standards
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)

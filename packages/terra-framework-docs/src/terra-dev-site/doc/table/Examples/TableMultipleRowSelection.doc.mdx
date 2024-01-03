@@ -1,0 +1,25 @@
+import TableRowSelection from './TableRowSelection?dev-site-example';
+
+# Table - Multiple Row Selection
+
+### Description
+
+Row selection mode is controlled with a property and is off by default.
+When creating a table that supports multiple row selections, the consumer must set the property.
+This example demonstrates a table with full support for multiple row selections.
+Because the component is an accessible table, each row selection checkbox is a tab stop.
+
+### Required Properties
+* rowSelectionMode
+* onRowSelect
+* onRowSelectionHeaderSelect
+
+## Row Selection Interactions
+For this example, you can perform the following actions to achieve row-centric outcomes:
+
+|Outcome|Action|
+|---|---|
+|Select a Row|When multiple row selection is enabled, select the row, or press **TAB** until the row checkbox is active and then press the **SPACEBAR** to select the checkbox.|
+|Clear a Row|Select the row, or press **TAB** until the row checkbox is active and then press the **SPACEBAR** to clear the checkbox.|
+
+<TableRowSelection title='Table With Row Selection' />

@@ -6,9 +6,10 @@
     --terra-menu-item-hover-background-color: #f4fafe;
     --terra-menu-item-hover-background-image: none;
     --terra-menu-item-hover-box-shadow: none;
+    --terra-menu-item-focus-box-shadow: 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35);
     --terra-menu-item-focus-background-color: #ebf6fd;
-    --terra-menu-item-focus-outline: -webkit-focus-ring-color auto 5px;
-    --terra-menu-item-focus-outline-offset: -1px;
+    --terra-menu-item-focus-outline: none;
+    --terra-menu-item-focus-outline-offset: 0;
     --terra-menu-item-chevron-hover-icon-color: #1f1f21;
     --terra-menu-item-chevron-focus-icon-color: #1f1f21;
     --terra-menu-item-active-background-color: #e2f2fc;

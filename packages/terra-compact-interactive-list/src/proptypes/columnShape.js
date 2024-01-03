@@ -10,7 +10,7 @@ const columnShape = PropTypes.shape({
   /**
    * String of text which will be used to provide a column context and to serve as a column header if needed.
    */
-  displayName: PropTypes.string,
+  displayName: PropTypes.string.isRequired,
 
   /**
    * A valid css string, px, em, or rem supported (should be the same across all width units).
@@ -48,6 +48,10 @@ const columnShape = PropTypes.shape({
     alignTypes.LEFT,
   ]),
 
+  /**
+   * Boolean value indicating whether or not the cells in this column are selectable.
+   */
+  isSelectable: PropTypes.bool,
 });
 
 export default columnShape;

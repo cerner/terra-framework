@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 
 import React, {
-  useRef, useCallback, useEffect,
+  useRef, useCallback, useEffect, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
@@ -171,8 +171,8 @@ function WorklistDataGrid(props) {
     isSelectable: column.isSelectable !== false,
   }));
 
-  const worklistDataGridPinnedColumns = makeWorklistDataGridColumns(pinnedColumns);
-  const worklistDataGridOverflowColumns = makeWorklistDataGridColumns(overflowColumns);
+  const worklistDataGridPinnedColumns = useMemo(() => (makeWorklistDataGridColumns(pinnedColumns)), [pinnedColumns]);
+  const worklistDataGridOverflowColumns = useMemo(() => (makeWorklistDataGridColumns(overflowColumns)), [overflowColumns]);
 
   // -------------------------------------
   // useEffect Hooks

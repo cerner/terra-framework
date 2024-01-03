@@ -66,6 +66,16 @@ const propTypes = {
   rowMinimumWidth: PropTypes.number,
 
   /**
+   * Callback function that will be called on click on the cell.
+   */
+  onCellSelect: PropTypes.func,
+
+  /**
+   * Callback function that will pass the focused column and focused row ids to the main component.
+   */
+  setFocusedCell: PropTypes.func,
+
+  /**
    * The type of width value. One of `px`, `em`, `rem`. Defaults to 'px'.
    */
   widthUnit: PropTypes.oneOf([
@@ -94,6 +104,11 @@ const propTypes = {
    * Indicates if the row is located in the left visual column and needs a left border.
    */
   isLeftmost: PropTypes.bool,
+
+  /**
+   * A zero-based index indicating which column represents the row header.
+   */
+  rowHeaderIndex: PropTypes.number,
 };
 
 const Row = (props) => {
@@ -109,10 +124,13 @@ const Row = (props) => {
     rowMinimumWidth,
     rowWidth,
     widthUnit,
+    onCellSelect,
+    setFocusedCell,
     flowHorizontally,
     rowHeight,
     isTopmost,
     isLeftmost,
+    rowHeaderIndex,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -140,6 +158,7 @@ const Row = (props) => {
   return (
     <div
       id={id}
+      data-row-id={id}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
@@ -149,10 +168,15 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
+          isSelected={cellData.isSelected}
+          rowId={id}
+          isRowHeader={index === rowHeaderIndex}
           column={columns[index]}
           columnMinimumWidth={columnMinimumWidth}
           columnMaximumWidth={columnMaximumWidth}
           widthUnit={widthUnit}
+          onCellSelect={onCellSelect}
+          setFocusedCell={setFocusedCell}
         >
           {cellData.content}
         </Cell>

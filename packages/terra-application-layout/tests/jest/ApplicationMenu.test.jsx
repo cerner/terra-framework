@@ -30,6 +30,7 @@ describe('ApplicationHeader', () => {
           title: 'test-util-title',
           initialSelectedKey: 'test-menu',
           onChange: () => {},
+          onBlur: () => {},
           menuItems: [
             {
               key: 'test-menu',

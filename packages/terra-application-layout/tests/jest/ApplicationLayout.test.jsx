@@ -410,6 +410,7 @@ describe('ApplicationLayout', () => {
         }],
         initialSelectedKey: 'utility 1',
         onChange: () => {},
+        onBlur: () => {},
       };
 
       const applicationLayout = (

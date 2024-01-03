@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 4.37.1 - (December 18, 2023)
+
+* Fixed
+ * Added check to throw error when invalid data type is used for action buttons.
+
+## 4.37.0 - (December 11, 2023)
+
 * Changed
   * Changed the notification dialog heading "Alert" from 'div' tag with an 'h2' element.
 

@@ -5,6 +5,7 @@ exports[`UtilityButton correctly applies the theme context className 1`] = `
   value={
     Object {
       "className": "orion-fusion-theme",
+      "density": undefined,
       "name": undefined,
     }
   }

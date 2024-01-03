@@ -7,15 +7,88 @@ import FlowsheetDataGridPropsTable from 'terra-data-grid/src/FlowsheetDataGrid?d
 
 # Terra FlowsheetDataGrid
 
-## Getting Started
+## Table of Contents
+* [Overview](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#overview)
+* [Examples](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#examples)
+* [Accessibility](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#accessibility)
+* [Implementation](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#implementation)
+* [Properties](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#properties)
+* [Terra Standards](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#terra-standards)
 
+## Overview
+<Notice variant="important" ariaLevel="2">
+Due to poor support in Apple VoiceOver for spanned grid headings, the use of sections in the Flowsheet Data Grid is not currently recommended for applications used on Apple devices.
+</Notice>
+
+The Flowsheet Data Grid is an [accessible grid](https://www.w3.org/WAI/ARIA/apg/patterns/grid/) component that allows you to display data in a table-like structure of rows and columns.
+
+The Flowsheet Data Grid displays a header row and one or more rows of data.
+The component contains only one tab stop with the arrow keys used for primary navigation.
+See [keyboard interactions](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#keyboard-interactions) for all supported keys.
+
+  ### Features
+
+  * [Navigation](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/basic-flowsheet-data-grid)
+  * [No Results Cells](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/no-result-cells)
+  * [Cell selection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/cell-selection)
+  * [Row selection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/row-selection)
+  * [Sections](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/flowsheet-with-sections)
+  * [Headerless Flowsheet](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-headers-hidden)
+
+## Examples
+|Link to Example| Description|
+|-|-|
+|[BasicFlowsheetDataGrid](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/basic-flowsheet-data-grid)|An example of the Flowsheet Data Grid with basic keyboard interactions.|
+|[NoResultsCells](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/no-result-cells)|An example containing *No result* cells.|
+|[CellSelection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/cell-selection)|An example demonstrating the ability to select a single cell or range of cells.|
+|[ColumnHeadersHidden](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-headers-hidden)|An example containing visually hidden column headers.|
+|[RowSelection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/row-selection)|An example demonstrating the ability to select a row of cells.|
+|[Flowsheet Data Grid with Sections](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/flowsheet-with-sections)|An example demonstrating how to create a Flowsheet Data Grid with sections.|
+
+## Accessibility
+### Keyboard Interactions
+
+The keyboard interactions supported by Flowsheet Data Grid is similar to the [keyboard interactions for data grids](https://www.w3.org/WAI/ARIA/apg/patterns/grid/), as outlined by the ARIA Authoring Practices Guide (APG).
+
+|Key interactions|Description|
+|---|---|
+|Up Arrow       | Moves focus one cell up. If focus is on the top cell in the column, focus does not move.|
+|Down Arrow     | Moves focus one cell down. If focus is on the bottom cell in the column, focus does not move.|
+|Right Arrow    | Moves focus one cell to the right. If focus is on the furthest right cell in the row, focus does not move.|
+|Left Arrow     | Moves focus one cell to the left. If focus is on the furthest left cell in the row, focus does not move.|
+|Home           | Moves focus to the first cell in the row that contains focus.|
+|End            | Moves focus to the last cell in the row that contains focus.|
+|Control + Home (Windows) <br/> or <br/> Ctrl + Command + Left Arrow (Mac) | Moves focus to the first cell in the first nonheader row.|
+|Control + End (Windows) <br/> or <br/> Ctrl + Command + Right Arrow (Mac) | Moves focus to the last cell in the last row.|
+|Tab            | Moves focus out of the grid to the next focusable element in the tab sequence. If grid navigation is disabled thereby trapping the focus in a single grid cell, tab moves focus circularly amongst the focusable elements in the grid cell where focus is trapped.|
+|Shift + Tab    | Moves focus out of the grid to the previous focusable element in the tab sequence. If grid navigation is disabled thereby trapping focus in a single grid cell, tab moves focus circularly amongst the focusable elements in the grid cell where focus is trapped.|
+|Space| Selects the focused cell when row selection mode is off or selects the focused row when row selection mode is on.|
+|Enter| Disables grid navigation and allows navigation in the focused cell. If the cell contains focusable content, focus moves to the first focusable element in the cell. Pressing Escape restores grid navigation.|
+|Escape| Removes all cell selections.<br/> When grid navigation is off, pressing Escape restores the grid navigation.|
+|Shift + Up|Extends cell selection one row up. The selection does not extend beyond the first nonheader row.|
+|Shift + Down|Extends cell selection one row down. The selection does not extend beyond the last row.|
+|Shift + Left|Extends cell selection one column to the left. The selection does not extend to the row header column.|
+|Shift + Right|Extends cell selection one column to the right. The selection does not extend beyond the last column.|
+|Shift + Space|Selects the entire range of rows and columns between the starting and selected cells.|
+
+### Assistive Technology Support
+#### WAI ARIA Roles and States
+* [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+  * **Flowsheet Data Grid**: When the [ariaLabel](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#flowsheet-data-grid-property-table) property is specified, the screen reader uses the aria-labeled value as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+  * **Row**: When the [ariaLabel](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#rows) property is specified, the screen reader uses the aria-labeled value as the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) to announce interactions with the row.
+* [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
+  * **Flowsheet Data Grid**: When the [ariaLabelledBy](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/about#flowsheet-data-grid-property-table) property is specified, the screen reader uses the aria-labeled value to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the grid.
+
+## Implementation
+
+### Installation
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-data-grid`
 
 <!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
-## Peer Dependencies
+#### Peer Dependencies
 
-This component requires the following peer dependencies be installed in your app for the component to properly function.
+This component requires the following peer dependencies to be installed in your app for the component to properly function.
 
 | Peer Dependency | Version |
 |-|-|
@@ -30,23 +103,13 @@ This component requires the following peer dependencies be installed in your app
 import { FlowsheetDataGrid } from 'terra-data-grid';
 ```
 
-## Component Features
+## Properties
+<Notice variant="important" ariaLevel="2">
+When making changes to the columns, section, rows, or cells, the Flowsheet Data Grid component requires you to pass new objects so that React can detect the changes.  
+In addition, ensure that you memoize callback functions using methods such as the useCallback hook to prevent unnecessary rerenders of components.
+</Notice>
 
- * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
- * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
- * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
- * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
-
-## Examples
-|Link to Example| Description|
-|-|-|
-|[BasicFlowsheetDataGrid](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/basic-flowsheet-data-grid)|An example of the Flowsheet Data Grid with basic keyboard interactions.|
-|[NoResultsCells](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/no-result-cells)|An example containing "No result" cells.|
-|[CellSelection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/cell-selection)|An example demonstrating the ability to select a single cell or range of cells.|
-|[ColumnHeadersHidden](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-headers-hidden)|An example containing visually hidden column headers.|
-|[RowSelection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/row-selection)|An example demonstrating the ability to select a row of cells.|
-
-## Grid props table
+### Flowsheet Data Grid Property Table
 <FlowsheetDataGridPropsTable />
 
 ### Column
@@ -54,27 +117,33 @@ A column specifies the data to render a cell in the header row of the Flowsheet 
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
-|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column within the grid.|
-|**displayName**|string|optional|none|String of text to render within the column header cell.|
-|**hasError**|bool|optional|none|Boolean value indicating whether or not the column has an error in the data.|
-|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width will be used.|
+|**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column in the grid.|
+|**displayName**|string|optional|none|String of text to render in the column header cell.|
+|**hasError**|bool|optional|none|Boolean value indicating whether the column has an error in the data.|
+|**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width is used.|
 
 ### Rows
-Rows define the cells rendered within the row as well as the row's selection properties.
-The order in which the rows are provided will be the order in which they are rendered.
+Rows define the cells rendered in the row and the row's selection properties.
+The order in which the rows are provided is the order in which they are rendered.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
 |**id**|string|required|none|An identifier for the row. This identifier should be unique across the set of rows provided to the Grid.|
-|**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value will be used for accessibilty when announcing the row that is selected or deselected.|
-|**isSelectable**|bool|optional|none|A boolean indicating whether or not the row is selectable.|
-|**isSelected**|bool|optional|none|A boolean indicating whether or not the row should render as selected.|
+|**ariaLabel**|string|optional|none|A string identifier used to describe the row contents. This value is used for accessibilty when announcing the row that is selected or deselected.|
+|**isSelectable**|bool|optional|none|A boolean indicating whether the row is selectable.|
+|**isSelected**|bool|optional|none|A boolean indicating whether the row should render as selected.|
 |**cells**|array|optional|[]|An array of cell objects that define the content to be rendered in the row. The order in which the cells are rendered is determined by the order in which they are provided.|
 
 ### Cells
-Cells define the content rendered in a given row, and column. Cells will be rendered in the order given and are expected to be in the same order as the column.
+Cells define the content rendered in a given row and column. Cells are rendered in the order given and are expected to be in the same order as the column.
 
 |Name|Type|Is Required|Default Value|Description|
 |---|---|---|---|---|
-|**content**|content|optional|none|The content to render within the cell.|
-|**isSelected**|bool|optional|none|A boolean indicating whether or not the cell is selected.|
+|**content**|content|optional|none|The content to render in the cell.|
+|**isSelected**|bool|optional|none|A boolean indicating whether the cell is selected.|
+
+## Terra Standards
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)

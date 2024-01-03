@@ -59,6 +59,11 @@ const propTypes = {
   isSelected: PropTypes.bool,
 
   /**
+   * Boolean indicating that the cell has been highlighted.
+   */
+  isHighlighted: PropTypes.bool,
+
+  /**
    * String that labels the Row for accessibility. When a row is selected, this is the label that will be read.
    */
   ariaLabel: PropTypes.string,
@@ -79,6 +84,7 @@ function RowSelectionCell(props) {
     sectionId,
     sectionIndex,
     isSelected,
+    isHighlighted,
     ariaLabel,
     onCellSelect,
     intl,
@@ -98,7 +104,7 @@ function RowSelectionCell(props) {
       readOnly
       tabIndex={isGridContext ? -1 : 0}
       checked={isSelected}
-      className={cx('input', theme.className)}
+      className={cx('input', theme.className, { highlighted: isHighlighted })}
     />
   );
 

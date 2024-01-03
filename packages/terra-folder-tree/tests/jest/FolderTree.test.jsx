@@ -1,39 +1,40 @@
 import React from 'react';
 import ActionHeader from 'terra-action-header';
+import Button from 'terra-button';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
 import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
-import FolderTree from '../../src/FolderTree';
-import FolderTreeItem from '../../src/subcomponents/FolderTreeItem';
+import FolderTree from '../../src';
 
 describe('basic folder tree', () => {
   it('renders a folder tree with one level of children and no subfolders', () => {
     const wrapper = shallowWithIntl(
       <FolderTree title="Documents">
-        <FolderTreeItem label="Cat" />
-        <FolderTreeItem label="Dog" />
-        <FolderTreeItem label="Rabbit" />
+        <FolderTree.Item label="Cat" />
+        <FolderTree.Item label="Dog" />
+        <FolderTree.Item label="Rabbit" />
       </FolderTree>,
-    );
+    ).dive();
 
     expect(wrapper.find(ActionHeader).length).toBe(1);
     expect(wrapper.find(ActionHeader).prop('text')).toBe('Documents');
 
-    expect(wrapper.find(FolderTreeItem).length).toBe(3);
-    expect(wrapper.find(FolderTreeItem).at(0).prop('label')).toBe('Cat');
-    expect(wrapper.find(FolderTreeItem).at(0).dive().prop('level')).toBe(0);
-    expect(wrapper.find(FolderTreeItem).at(1).prop('label')).toBe('Dog');
-    expect(wrapper.find(FolderTreeItem).at(1).dive().prop('level')).toBe(0);
-    expect(wrapper.find(FolderTreeItem).at(2).prop('label')).toBe('Rabbit');
-    expect(wrapper.find(FolderTreeItem).at(2).dive().prop('level')).toBe(0);
+    expect(wrapper.find(FolderTree.Item).length).toBe(3);
+    expect(wrapper.find(FolderTree.Item).at(0).prop('label')).toBe('Cat');
+    expect(wrapper.find(FolderTree.Item).at(0).dive().prop('level')).toBe(0);
+    expect(wrapper.find(FolderTree.Item).at(1).prop('label')).toBe('Dog');
+    expect(wrapper.find(FolderTree.Item).at(1).dive().prop('level')).toBe(0);
+    expect(wrapper.find(FolderTree.Item).at(2).prop('label')).toBe('Rabbit');
+    expect(wrapper.find(FolderTree.Item).at(2).dive().prop('level')).toBe(0);
   });
 
   it('renders a folder tree item with subitems', () => {
     const wrapper = mountWithIntl(
-      <FolderTreeItem
+      <FolderTree.Item
+        label="parent folder tree item"
         subfolderItems={[
-          (<FolderTreeItem label="item 1" />),
-          (<FolderTreeItem label="item 2" />),
-          (<FolderTreeItem label="item 3" />),
+          (<FolderTree.Item label="item 1" />),
+          (<FolderTree.Item label="item 2" />),
+          (<FolderTree.Item label="item 3" />),
         ]}
       />,
     );
@@ -49,16 +50,16 @@ describe('basic folder tree', () => {
   it('hides folder items when enclosing folder is collapsed', () => {
     const wrapper = shallowWithIntl(
       <FolderTree title="Documents">
-        <FolderTreeItem
+        <FolderTree.Item
           label="Animals"
           subfolderItems={[
-            (<FolderTreeItem label="Dog" />),
+            (<FolderTree.Item label="Dog" />),
           ]}
         />
       </FolderTree>,
     );
 
-    const collapsedFolder = wrapper.find(FolderTreeItem).dive().dive();
+    const collapsedFolder = wrapper.find(FolderTree.Item).dive().dive();
 
     expect(collapsedFolder.find('.folder-tree-item').prop('aria-expanded')).toBe(false);
     expect(collapsedFolder.find('.subfolder').prop('hidden')).toBe(true);
@@ -67,17 +68,17 @@ describe('basic folder tree', () => {
   it('shows folder items when enclosing folder is expanded', () => {
     const wrapper = shallowWithIntl(
       <FolderTree title="Documents">
-        <FolderTreeItem
+        <FolderTree.Item
           label="Animals"
           isExpanded
           subfolderItems={[
-            (<FolderTreeItem label="Dog" />),
+            (<FolderTree.Item label="Dog" />),
           ]}
         />
       </FolderTree>,
     );
 
-    const expandedFolder = wrapper.find(FolderTreeItem).dive().dive();
+    const expandedFolder = wrapper.find(FolderTree.Item).dive().dive();
 
     expect(expandedFolder.find('.folder-tree-item').prop('aria-expanded')).toBe(true);
     expect(expandedFolder.find('.subfolder').prop('hidden')).toBe(false);
@@ -88,12 +89,12 @@ describe('basic folder tree', () => {
     const onToggle = jest.fn();
 
     const wrapper = shallowWithIntl(
-      <FolderTreeItem
+      <FolderTree.Item
         label="Animals"
         onClick={onClick}
         onToggle={onToggle}
         subfolderItems={[
-          (<FolderTreeItem label="Dog" />),
+          (<FolderTree.Item label="Dog" />),
         ]}
       />,
     ).dive();
@@ -103,5 +104,53 @@ describe('basic folder tree', () => {
 
     expect(onClick).toHaveBeenCalled();
     expect(onToggle).not.toHaveBeenCalled();
+  });
+
+  it('triggers the onExpandAll callback', () => {
+    const onExpandAll = jest.fn();
+
+    const wrapper = shallowWithIntl(
+      <FolderTree
+        title="Documents"
+        onExpandAll={onExpandAll}
+      >
+        <FolderTree.Item
+          label="Animals"
+          subfolderItems={[
+            (<FolderTree.Item label="Dog" />),
+          ]}
+        />
+      </FolderTree>,
+    ).dive();
+
+    const expandAllButton = wrapper.find(Button).at(0);
+    expect(expandAllButton.prop('onClick')).toBe(onExpandAll);
+
+    expandAllButton.simulate('click');
+    expect(onExpandAll).toHaveBeenCalled();
+  });
+
+  it('triggers the onCollapseAll callback', () => {
+    const onCollapseAll = jest.fn();
+
+    const wrapper = shallowWithIntl(
+      <FolderTree
+        title="Documents"
+        onCollapseAll={onCollapseAll}
+      >
+        <FolderTree.Item
+          label="Animals"
+          subfolderItems={[
+            (<FolderTree.Item label="Dog" />),
+          ]}
+        />
+      </FolderTree>,
+    ).dive();
+
+    const collapseAllButton = wrapper.find(Button).at(1);
+    expect(collapseAllButton.prop('onClick')).toBe(onCollapseAll);
+
+    collapseAllButton.simulate('click');
+    expect(onCollapseAll).toHaveBeenCalled();
   });
 });

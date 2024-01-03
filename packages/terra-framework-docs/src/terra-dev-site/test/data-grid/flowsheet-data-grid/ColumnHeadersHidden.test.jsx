@@ -61,10 +61,10 @@ const ColumnHeadersHidden = () => {
   const { cols, rows } = gridDataJSON;
   const [rowData, setRowData] = useState(rows);
 
-  const onCellSelect = useCallback((rowId, columnId) => {
-    if (rowId && columnId) {
-      const rowIndex = rowData.findIndex(e => e.id === rowId);
-      const columnIndex = cols.findIndex(e => e.id === columnId);
+  const onCellSelect = useCallback((selectedCell) => {
+    if (selectedCell.rowId && selectedCell.columnId) {
+      const rowIndex = rowData.findIndex(e => e.id === selectedCell.rowId);
+      const columnIndex = cols.findIndex(e => e.id === selectedCell.columnId);
       let otherSelectionsExist = false;
 
       // Remove cell selections, excluding current cell

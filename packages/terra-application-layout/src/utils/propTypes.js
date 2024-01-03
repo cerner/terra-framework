@@ -42,6 +42,7 @@ const utilityConfigPropType = PropTypes.shape({
   title: PropTypes.string,
   accessory: PropTypes.element,
   onChange: PropTypes.func.isRequired,
+  onBlur: PropTypes.func,
   menuItems: PropTypes.arrayOf(UtilityUtils.itemShape).isRequired,
   initialSelectedKey: PropTypes.string.isRequired,
 });

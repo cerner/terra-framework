@@ -2,33 +2,87 @@ import { Notice } from "@cerner/terra-docs";
 import { Badge } from 'terra-slider/package.json?dev-site-package';
 
 import SliderPropsTable from 'terra-slider/src/Slider?dev-site-props-table';
-
 import DefaultSlider from './Examples.2/DefaultSlider?dev-site-example';
-import CustomSlider from './Examples.2/CustomSlider?dev-site-example';
-import DisabledSlider from './Examples.2/DisabledSlider?dev-site-example';
-import SliderWithOnChangeCallback from './Examples.2/SliderWithOnChangeCallback?dev-site-example';
-import SliderWithValueUpdate from './Examples.2/SliderWithValueUpdate?dev-site-example';
 
 <Badge />
 
 # Terra Slider
 
-Terra Slider provides a way to select a value from a given range by sliding a thumb along a bar to track the value.
+## Table of Contents
+* [Overview](/components/cerner-terra-framework-docs/slider/about#overview)
+* [Examples](/components/cerner-terra-framework-docs/slider/about#examples)
+* [Accessibility](/components/cerner-terra-framework-docs/slider/about#accessibility)
+* [Implementation](/components/cerner-terra-framework-docs/slider/about#implementation)
+* [Testing](/components/cerner-terra-framework-docs/slider/about#testing)
+* [Properties](/components/cerner-terra-framework-docs/slider/about#properties)
+* [Terra Standards](/components/cerner-terra-framework-docs/slider/about#terra-standards)
 
-<Notice variant="caution" ariaLevel="2">
-Terra Slider is an input component used to quickly select an imprecise value within a range such as a zoom level. It does not yet include features required for entering precise values.
+## Overview
+<Notice variant="important" ariaLevel="2">
+The Terra Slider is an input component used to select an imprecise value within a range such as a zoom level. The component does not currently support entry of precise values.
 </Notice>
 
+The Terra Slider component provides a way to select a value from a given range by moving an indicator along a bar to track the value.
 
-## Getting Started
+<DefaultSlider />
 
-- Install with [npmjs](https://www.npmjs.com):
-  - `npm install terra-slider`
+### Features
+* Managing a custom slider label, minimum label, and maximum label.
+* Setting a default value for the slider.
+* Disabling the slider.
+* Making other updates based on the slider value changing with the onChange callback property.
+* Externally updating the slider value with the value property. Consumers can programmatically change the value of the slider without directly interacting with the element. In most cases, using this feature is not recommended. If you want to use this feature, ensure that the UI clearly indicates that the value was changed and that screen readers can announce the change.
 
-<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
-## Peer Dependencies
+See the [Examples](/components/cerner-terra-framework-docs/slider/about#examples) section for detailed demonstrations of the Slider component features.
 
-This component requires the following peer dependencies be installed in your app for the component to properly function.
+## Examples
+|Link to Example| Description|
+|-|-|
+|[DefaultSlider](/components/cerner-terra-framework-docs/slider/examples/default-slider)|An example of a basic slider that uses the following required properties: label, minimumValue, maximumValue, and value.|
+|[CustomSlider](/components/cerner-terra-framework-docs/slider/examples/custom-slider)|An example of a slider with custom labels that uses the minimumLabel and maximumLabel properties.|
+|[DisabledSlider](/components/cerner-terra-framework-docs/slider/examples/disabled-slider)|An example of a disabled slider that uses the isDisabled property. |
+|[SliderWithOnChangeCallback](/components/cerner-terra-framework-docs/slider/examples/slider-with-on-change-callback)|An example of a slider with an onChange callback that uses the onChange callback property.|
+|[SliderWithValueUpdate](/components/cerner-terra-framework-docs/slider/examples/slider-with-value-update)|An example of a slider with value updates that uses the value and onChange property.|
+
+## Accessibility
+### Keyboard Interactions
+
+|Keys |Description|
+|---|---|
+|UP ARROW    | Increases the value of the slider by one increment.|
+|DOWN ARROW     | Decreases the value of the slider by one increment. |
+|RIGHT ARROW   | Increases the value of the slider by one increment.|
+|LEFT ARROW     | Decreases the value of the slider by one increment.|
+|PAGE UP   | Increases the value of the slider by an amount larger than the increment change made with the UP ARROW or RIGHT ARROW key.|
+|PAGE DOWN    | Decreases the value of the slider by an amount larger than the increment change made with the DOWN ARROW or LEFT ARROW key. |
+|HOME           | Sets the slider to the first allowed value in its range.|
+|END            | Sets the slider to the last allowed value in its range.|
+
+### Assistive Technology Support
+#### WAI ARIA Roles and States
+* [aria-label](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-label)
+  * The aria-label value is set to the label property value.
+* [aria-describedby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-describedby)
+  * The aria-describedby value is set to hidden text with instructions to adjust the slider value between minimum and maximum values.
+
+## Implementation
+
+### Installation
+
+Install with [npmjs](https://www.npmjs.com):
+`npm install terra-slider`
+
+### Usage
+
+```jsx
+import Slider from 'terra-slider';
+```
+
+### Dependencies
+
+#### Peer Dependencies
+
+Ensure that the following peer dependencies are installed in your application for the component to properly function:
 
 | Peer Dependency | Version |
 |-|-|
@@ -36,22 +90,13 @@ This component requires the following peer dependencies be installed in your app
 | react-dom | ^16.8.5 |
 | react-intl | ^2.8.0 |
 
-<!-- AUTO-GENERATED-CONTENT:END -->
-
-## Component Features
-
- * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
- * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
- * [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
- * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
-
-## Examples
-<DefaultSlider />
-<CustomSlider />
-<DisabledSlider />
-<SliderWithOnChangeCallback />
-<SliderWithValueUpdate />
-
-## Slider props table
+## Properties
+### Slider Properties Table
 <SliderPropsTable />
+
+## Terra Standards
+* [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+* [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+* [Internationalization Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#internationalization-i18n)
+* [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
 

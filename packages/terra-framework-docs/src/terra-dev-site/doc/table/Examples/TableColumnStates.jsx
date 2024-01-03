@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import Table from 'terra-table';
 
 const tableDataJSON = {
@@ -46,7 +46,7 @@ const TableWithColumnStates = () => {
   const [tableRows, setTableRows] = useState(rows);
 
   // The onColumnSelect will sort the rows and toggle the current sort indicator.
-  const onColumnSelect = (columnId) => {
+  const onColumnSelect = useCallback((columnId) => {
     const newColumnArray = tableColumns.map((column, columnIndex) => {
       const newColumn = { ...column };
 
@@ -73,7 +73,7 @@ const TableWithColumnStates = () => {
     });
 
     setTableColumns(newColumnArray);
-  };
+  }, [tableColumns, tableRows]);
 
   return (
     <Table

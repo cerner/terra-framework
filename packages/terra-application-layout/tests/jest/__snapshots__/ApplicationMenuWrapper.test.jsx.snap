@@ -58,6 +58,7 @@ exports[`ApplicationMenuWrapper should render prop data 1`] = `
     Object {
       "initialSelectedKey": "test-init-key",
       "menuItems": Array [],
+      "onBlur": [MockFunction],
       "onChange": [MockFunction],
       "title": "test-utility",
     }

@@ -1,4 +1,15 @@
 import { Badge } from "terra-table/package.json?dev-site-package";
 import SortableTable from "./SortableTable?dev-site-example";
 
+# Sortable Table
+
+### Description
+
+This example demonstrates a [Table](/components/cerner-terra-framework-docs/table/about) component with sortable information.
+The Table component does not have logic to perform column sorting because knowledge about the column data business logic would be required.
+Consumers can enable sorting capabilities by listening to the onColumnSelect callback and properly updating the source data of the table.
+
+### Required Properties
+**onColumnSelect**: When the user selects a column, this callback is called with the columnId of the selected column.
+
 <SortableTable />

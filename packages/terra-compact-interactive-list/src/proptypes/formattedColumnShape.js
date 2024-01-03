@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { alignTypes } from '../utils/constants';
 
-const columnShape = PropTypes.shape({
+const formattedColumnShape = PropTypes.shape({
   /**
    * Required string representing a unique identifier for the column.
    */
@@ -50,4 +50,4 @@ const columnShape = PropTypes.shape({
 
 });
 
-export default columnShape;
+export default formattedColumnShape;

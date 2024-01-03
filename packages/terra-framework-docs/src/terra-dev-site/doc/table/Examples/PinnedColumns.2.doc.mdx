@@ -1,4 +1,21 @@
 import { Badge } from "terra-table/package.json?dev-site-package";
 import PinnedColumnsTable from "./PinnedColumnsTable?dev-site-example";
 
-<PinnedColumnsTable />
+# Pinned Columns
+
+### Description
+
+The [Table](/components/cerner-terra-framework-docs/table/about) component defines two types of columns: pinned and overflow.
+The pinned columns are aligned to the left of the Worklist Data Grid component and cannot be scrolled.
+The overflow section is aligned to the right of pinned columns and scrolls horizontally to reveal each overflow column.
+This example demonstrates a table that supports both pinned and overflow columns.
+
+
+### Required Properties
+* **pinnedColumns**: This property is used to specify columns that need to be left-aligned in the grid and stickied.
+
+* **overflowColumns**: This property is used to specify columns that do not need to be stickied and can scroll horizontally.
+
+Columns specified in both properties are rendered in the order that they are provided in.
+
+<PinnedColumnsTable title='Table With Pinned Columns' />

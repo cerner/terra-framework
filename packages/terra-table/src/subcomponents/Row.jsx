@@ -137,6 +137,7 @@ function Row(props) {
           sectionId={sectionId}
           tableId={tableId}
           isSelected={isSelected}
+          isHighlighted={isHovered || isSelected}
           ariaLabel={ariaLabel}
           onCellSelect={onCellSelect}
         />

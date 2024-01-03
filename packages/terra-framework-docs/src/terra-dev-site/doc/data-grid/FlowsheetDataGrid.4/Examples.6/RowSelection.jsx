@@ -95,10 +95,10 @@ const RowSelection = () => {
     }
   }, [clearSelectedRow, rowData, selectedRow]);
 
-  const onCellSelect = useCallback((rowId, columnId) => {
-    if (rowId && columnId) {
-      const rowIndex = rowData.findIndex(e => e.id === rowId);
-      const columnIndex = cols.findIndex(e => e.id === columnId);
+  const onCellSelect = useCallback((selectedCell) => {
+    if (selectedCell.rowId && selectedCell.columnId) {
+      const rowIndex = rowData.findIndex(e => e.id === selectedCell.rowId);
+      const columnIndex = cols.findIndex(e => e.id === selectedCell.columnId);
       let otherSelectionsExist = false;
 
       // Remove cell selections, excluding current cell
@@ -119,7 +119,7 @@ const RowSelection = () => {
       clearSelectedRow();
       setRowData(newRowData);
     }
-  }, [clearSelectedRow, cols, rowData]);
+  }, [cols, rowData, clearSelectedRow]);
 
   const onClearSelectedCells = useCallback(() => {
     // Remove current selections

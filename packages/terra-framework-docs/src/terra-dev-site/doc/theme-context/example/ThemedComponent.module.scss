@@ -13,6 +13,10 @@
 
   .themed-block {
     background-color: var(--terra-framework-docs-terra-theme-context-themed-component-block-background-color, #0079be);
-    height: 24px;
+    height: var(--terra-framework-docs-terra-theme-context-themed-component-block-height, 24px);
+  }
+
+  .compact {
+    --terra-framework-docs-terra-theme-context-themed-component-block-height: 16px;
   }
 }
