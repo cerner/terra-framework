@@ -416,6 +416,11 @@ class DateInput extends React.Component {
     }
 
     this.handleValueChange(event, DateInputUtil.inputType.MONTH, inputValue);
+
+    if (inputValue === '') {
+      this.setState({ year: '', day: '' });
+      this.handleOnChange(event, '');
+    }
   }
 
   handleDayChange(event) {
