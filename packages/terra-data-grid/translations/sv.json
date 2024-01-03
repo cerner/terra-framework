@@ -1,2 +1,6 @@
 {
+  "Terra.flowsheetDataGrid.cells-selected": "{cellCount} celler har valts.",
+  "Terra.flowsheetDataGrid.no-cells-selected": "Inga celler har valts.",
+  "Terra.flowsheetDataGrid.no-result": "Inga resultat",
+  "Terra.flowsheetDataGrid.no-result-display": "--"
 }

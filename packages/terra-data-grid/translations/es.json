@@ -1,2 +1,6 @@
 {
+  "Terra.flowsheetDataGrid.cells-selected": "{cellCount} celdas seleccionadas.",
+  "Terra.flowsheetDataGrid.no-cells-selected": "Ninguna celda seleccionada.",
+  "Terra.flowsheetDataGrid.no-result": "Ningún resultado.",
+  "Terra.flowsheetDataGrid.no-result-display": "--"
 }

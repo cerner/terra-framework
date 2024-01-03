@@ -9,7 +9,6 @@ The theme provider component provides a theme to Terra UI components via CSS cus
 *Note:* The CSS custom properties applied via the theme provider only work in browsers which have native support for CSS custom properties.
 
 - [Getting Started](#getting-started)
-- [Documentation](https://engineering.cerner.com/terra-framework/components/terra-theme-provider/theme-provider/theme-provider)
 - [LICENSE](#license)
 
 ## Getting Started

@@ -1,7 +1,7 @@
 {
   "name": "terra-data-grid",
   "main": "lib/index.js",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "Package containing data grid container components that enable users to navigate the grid information using directional navigation keys.",
   "repository": {
     "type": "git",

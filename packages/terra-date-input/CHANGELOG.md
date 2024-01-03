@@ -5,6 +5,11 @@
 * Added
   * Added hot keys functionality to support keyboard shortcut patterns.
 
+## 1.48.0 - (January 2, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.47.0 - (December 18, 2023)
 
 * Changed
