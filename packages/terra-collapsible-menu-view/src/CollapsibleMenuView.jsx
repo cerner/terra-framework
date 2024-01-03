@@ -100,13 +100,6 @@ class CollapsibleMenuView extends React.Component {
     this.resizeObserver.observe(this.container);
   }
 
-  shouldComponentUpdate(nextProps) {
-    if (React.Children.toArray(this.props.children).length === React.Children.toArray(nextProps.children).length) {
-      this.resetCache();
-    }
-    return true;
-  }
-
   componentDidUpdate() {
     if (this.isCalculating) {
       this.isCalculating = false;
