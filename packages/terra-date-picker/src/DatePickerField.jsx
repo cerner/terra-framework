@@ -225,15 +225,14 @@ const DatePickerField = (props) => {
 
   let mergedInputAttrs = inputAttributes;
   if (ariaDescriptionIds) {
-    mergedInputAttrs = { ...inputAttributes, 'aria-describedby': (inputAriaDescriptionId) ? `${ariaDescriptionIds} ${inputAriaDescriptionId}` : ariaDescriptionIds };
+    mergedInputAttrs = { ...inputAttributes, 'aria-describedby': (inputAriaDescriptionId) ? `${ariaDescriptionIds} ${inputAriaDescriptionId}` : ariaDescriptionIds, id: datePickerId };
   }
-
   const format = intl.formatMessage({ id: 'Terra.datePicker.dateFormat' });
 
   const helpLabel = help ? (
     <div aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })} ${format}, ${help}`}>
       {`(${format})`}
-      &nbsp;
+      <br />
       {help}
     </div>
   ) : (

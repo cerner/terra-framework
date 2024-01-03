@@ -196,7 +196,7 @@ const DatePickerInput = (props) => {
     filterDate,
     ...customProps
   } = props;
-
+  console.log('CHECKING THIS DATEINput', props.inputAttributes);
   const [isFocused, setFocused] = useState(false);
   const [dayInitialFocused, setDayInitialFocused] = useState(false);
   const [monthInitialFocused, setMonthInitialFocused] = useState(false);
@@ -220,6 +220,8 @@ const DatePickerInput = (props) => {
     // Get the inputAttributes.id and set it on the outer div and delete inputAttributes.id to prevent from setting the same id on all three inputs.
     // Create new ids to set on each input using the inputAttributes.id.
     idFromInputAttributes = inputAttributes.id;
+    console.log('CHECKNGTHIS', inputAttributes.id);
+
     monthInputId = idFromInputAttributes.concat('-terra-date-picker-month');
     dayInputId = idFromInputAttributes.concat('-terra-date-picker-day');
     yearInputId = idFromInputAttributes.concat('-terra-date-picker-year');
@@ -719,7 +721,10 @@ const DatePickerInput = (props) => {
       // Both 'ref' and 'refCallback' are required here because:
       // 'refCallback' returns the DOM element of the HTML input element
       // 'ref' when used on a class component returns the mounted instance of the component
-      refCallback={(node) => { dayInputRef = node; }}
+      refCallback={(node) => {
+        dayInputRef = node;
+        console.log('CHECKINGTHIS', nameLabelId);
+      }}
       ref={dateFormatOrder === DateUtil.dateOrder.DMY ? firstInputRefCallback : undefined}
       className={dayInputClasses}
       type="text"
@@ -834,6 +839,7 @@ const DatePickerInput = (props) => {
     invalidEntry = `${intl.formatMessage({ id: 'Terra.datePicker.invalidDate' })}.`;
     calendarDate = '';
   }
+  console.log('CHECKING THIS DATEINput Value', value);
 
   return (
     <div className={cx(theme.className)}>

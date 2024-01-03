@@ -141,6 +141,8 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
+  id: PropTypes.string,
+
 };
 
 const defaultProps = {
@@ -165,6 +167,7 @@ const defaultProps = {
   useExternalFormatMask: false,
   required: false,
   selectedDate: undefined,
+  id: undefined,
 };
 
 class DatePicker extends React.Component {
@@ -395,6 +398,7 @@ class DatePicker extends React.Component {
 
   render() {
     const {
+      id,
       ariaLabel,
       disableButtonFocusOnClose,
       excludeDates,
@@ -457,7 +461,6 @@ class DatePicker extends React.Component {
     }
 
     const theme = this.context;
-
     return (
       <div
         className={cx('date-picker', theme.className)}
@@ -517,6 +520,8 @@ class DatePicker extends React.Component {
             showYearDropdown
             preventOpenOnFocus
             name={name}
+            inputAttributesid={inputAttributes.id}
+            id={id}
             allowSameDay
             initialTimeZone={initialTimeZone}
           />

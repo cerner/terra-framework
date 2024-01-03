@@ -32,6 +32,7 @@ const DatePickerFieldTest = () => {
         name="date-input"
         datePickerId="default"
         help="Help message."
+        value="Enter Date"
       />
     </div>
   );
