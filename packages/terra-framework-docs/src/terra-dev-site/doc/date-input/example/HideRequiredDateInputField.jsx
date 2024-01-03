@@ -14,7 +14,7 @@ const Example = () => {
         onChange={(event, dateString) => setValue(dateString)}
         required
         hideRequired
-        error="Please select a valid event date."
+        error="Please enter a valid event date."
         help="Help message"
         isInvalid={isInvalid}
       />

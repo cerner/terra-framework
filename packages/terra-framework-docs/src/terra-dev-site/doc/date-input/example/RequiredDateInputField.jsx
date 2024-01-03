@@ -13,7 +13,7 @@ const Example = () => {
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
         required
-        error="Please select a valid due date."
+        error="Please enter a valid due date."
         help="Help message"
         isInvalid={isInvalid}
       />

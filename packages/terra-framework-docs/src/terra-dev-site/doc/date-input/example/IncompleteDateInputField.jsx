@@ -14,7 +14,7 @@ const Example = () => {
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
         required
-        error="Please select a valid event date."
+        error="Please enter a valid event date."
         help="Help message"
         isIncomplete={isIncomplete}
       />
