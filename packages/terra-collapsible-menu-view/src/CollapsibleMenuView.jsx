@@ -116,8 +116,8 @@ class CollapsibleMenuView extends React.Component {
   handleResize(width) {
     const childrenArray = React.Children.toArray(this.props.children);
     const menuButtonWidth = childrenArray.length > 1 ? this.menuButton.getBoundingClientRect().width : 0;
-    const parentwidth = this.menuButton.parentElement.getBoundingClientRect().width;
-    let availableWidth = (width < parentwidth) ? parentwidth - menuButtonWidth : width - menuButtonWidth;
+    const menuButtonContainerWidth = this.menuButton.parentElement.getBoundingClientRect().width;
+    let availableWidth = (width < menuButtonContainerWidth) ? menuButtonContainerWidth - menuButtonWidth : width - menuButtonWidth;
     availableWidth = (window.innerWidth - menuButtonWidth) < availableWidth ? window.innerWidth - menuButtonWidth : availableWidth;
     let hiddenStartIndex = -1;
     let calcWidth = 0;
