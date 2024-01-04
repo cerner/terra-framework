@@ -37,4 +37,12 @@ Terra.describeViewports('On Click File Path', ['tiny', 'small'], () => {
     browser.keys('Enter');
     Terra.validates.element('on click first displayed link clicked', { selector: '#root', rules: ignoredA11y });
   });
+
+  it('should display file path with clinical header', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/file-path/file-pathwith-clinical-header');
+    browser.keys('Tab');
+    Terra.validates.element('file path with header');
+    browser.keys('Enter');
+    Terra.validates.element('add file path with header', { selector: '#root', rules: ignoredA11y });
+  });
 });
