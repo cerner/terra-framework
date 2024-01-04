@@ -75,18 +75,20 @@ Terra.describeViewports('Date Input', ['medium'], () => {
   });
 
   describe('Month Select placeholder option clears value', () => {
-    it('Selects January in month select', () => {
+    it('Selects February in month select', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/date-input/day-month-year-date-input');
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
+      browser.keys(['ArrowDown']);
       browser.keys(['Enter']);
-      Terra.validates.element('First Month Selected');
+      Terra.validates.element('Month Selected');
     });
 
     it('Selects Placeholder option to clear selected value', () => {
       $('select[name="terra-date-month-date-input"]').click();
+      browser.keys(['ArrowUp']);
       browser.keys(['ArrowUp']);
       browser.keys(['Enter']);
       Terra.validates.element('Value Cleared');
