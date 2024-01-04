@@ -2595,7 +2595,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           aria-hidden={true}
           className="help-text"
         >
-          Terra.date.input.formatMonthDayYear
+          (Terra.date.input.formatMonthDayYear)
         </div>
       </fieldset>
     </DateInputField>
