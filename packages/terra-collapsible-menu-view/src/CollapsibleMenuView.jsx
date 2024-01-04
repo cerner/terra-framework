@@ -100,6 +100,13 @@ class CollapsibleMenuView extends React.Component {
     this.resizeObserver.observe(this.container);
   }
 
+  shouldComponentUpdate(nextProps) {
+    if (React.Children.toArray(this.props.children).length === React.Children.toArray(nextProps.children).length && this.isContainerWidthUsedtoResize) {
+      this.resetCache();
+    }
+    return true;
+  }
+
   componentDidUpdate() {
     if (this.isCalculating) {
       this.isCalculating = false;
@@ -117,9 +124,14 @@ class CollapsibleMenuView extends React.Component {
     const childrenArray = React.Children.toArray(this.props.children);
     const menuButtonWidth = childrenArray.length > 1 ? this.menuButton.getBoundingClientRect().width : 0;
     const menuButtonContainerWidth = this.menuButton.parentElement.getBoundingClientRect().width;
+    let availableWidth = width - menuButtonWidth;
+    this.isContainerWidthUsedtoResize = false;
     // if no wrapper is used on top of collapsiblemenuview, use observer width value to calculate availableWidth space,
     // or use menuButtonContainerWidth value to calculate availableWidth space
-    let availableWidth = (width < menuButtonContainerWidth) ? menuButtonContainerWidth - menuButtonWidth : width - menuButtonWidth;
+    if (width < menuButtonContainerWidth) {
+      availableWidth = menuButtonContainerWidth - menuButtonWidth;
+      this.isContainerWidthUsedtoResize = true;
+    }
     // to calculate available space when resized only when menuButtonContainerWidth is used
     if ((window.innerWidth - menuButtonWidth) < availableWidth) {
       availableWidth = window.innerWidth - menuButtonWidth;

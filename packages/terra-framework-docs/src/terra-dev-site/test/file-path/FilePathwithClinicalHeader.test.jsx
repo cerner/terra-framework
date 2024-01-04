@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-dom-props */
 import React, { useState } from 'react';
 import FilePath from 'terra-file-path';
-import Header from 'terra-clinical-header';
+import ActionHeader from 'terra-action-header';
 
 const FilePathwithClinicalHeader = () => {
   const path = [
@@ -24,10 +24,7 @@ const FilePathwithClinicalHeader = () => {
   return (
     <>
       <button id="add-path" type="button" onClick={handleClick}>Click Me</button>
-      <Header
-        startContent={<FilePath items={items} />}
-        level={1}
-      />
+      <ActionHeader text={<FilePath items={items} />} />
     </>
   );
 };
