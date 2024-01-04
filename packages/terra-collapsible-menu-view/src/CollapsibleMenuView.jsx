@@ -117,8 +117,13 @@ class CollapsibleMenuView extends React.Component {
     const childrenArray = React.Children.toArray(this.props.children);
     const menuButtonWidth = childrenArray.length > 1 ? this.menuButton.getBoundingClientRect().width : 0;
     const menuButtonContainerWidth = this.menuButton.parentElement.getBoundingClientRect().width;
+    // if no wrapper is used on top of collapsiblemenuview, use observer width value to calculate availableWidth space,
+    // or use menuButtonContainerWidth value to calculate availableWidth space
     let availableWidth = (width < menuButtonContainerWidth) ? menuButtonContainerWidth - menuButtonWidth : width - menuButtonWidth;
-    availableWidth = (window.innerWidth - menuButtonWidth) < availableWidth ? window.innerWidth - menuButtonWidth : availableWidth;
+    // to calculate available space when resized only when menuButtonContainerWidth is used
+    if ((window.innerWidth - menuButtonWidth) < availableWidth) {
+      availableWidth = window.innerWidth - menuButtonWidth;
+    }
     let hiddenStartIndex = -1;
     let calcWidth = 0;
     let menuHidden = true;
