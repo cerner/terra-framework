@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Cell focus styling fixed.
+
 ## 1.0.0 - (January 2, 2024)
 
 * Changed

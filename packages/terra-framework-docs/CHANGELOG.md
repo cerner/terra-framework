@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `terra-compact-interactive-list` cell content example.
+
 ## 1.54.0 - (January 2, 2024)
 
 * Changed
