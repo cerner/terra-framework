@@ -7,8 +7,8 @@
   "Terra.date.input.dayInputLabelWithName": "Tag {a11yLabel}",
   "Terra.date.input.december": "Dezember",
   "Terra.date.input.february": "Februar",
-  "Terra.date.input.formatDayMonthYear": "(TT Monat JJJJ)",
-  "Terra.date.input.formatMonthDayYear": "(Monat TT JJJJ)",
+  "Terra.date.input.formatDayMonthYear": "TT Monat JJJJ",
+  "Terra.date.input.formatMonthDayYear": "Monat TT JJJJ",
   "Terra.date.input.january": "Januar",
   "Terra.date.input.july": "Juli",
   "Terra.date.input.june": "Juni",
@@ -26,5 +26,6 @@
   "Terra.date.input.september": "September",
   "Terra.date.input.yearDescription": "Eine vierstellige Zahl",
   "Terra.date.input.yearLabel": "Jahr",
+  "Terra.date.input.dateFormatLabel": "Datumsformat:",
   "Terra.date.input.hotKey": "Drücken Sie folgende Tasten, um Daten festzulegen: 'T' für das aktuelle, Pluszeichen für das nächste und Minuszeichen für das vorherige Datum."
 }

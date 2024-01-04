@@ -7,8 +7,8 @@
   "Terra.date.input.dayInputLabelWithName": "Dag {a11yLabel}",
   "Terra.date.input.december": "December",
   "Terra.date.input.february": "Februari",
-  "Terra.date.input.formatDayMonthYear": "(DD Maand JJJJ)",
-  "Terra.date.input.formatMonthDayYear": "(Maand DD JJJJ)",
+  "Terra.date.input.formatDayMonthYear": "DD Maand JJJJ",
+  "Terra.date.input.formatMonthDayYear": "Maand DD JJJJ",
   "Terra.date.input.january": "Januari",
   "Terra.date.input.july": "Juli",
   "Terra.date.input.june": "Juni",
@@ -26,5 +26,6 @@
   "Terra.date.input.september": "September",
   "Terra.date.input.yearDescription": "Een viercijferig nummer",
   "Terra.date.input.yearLabel": "Jaar",
+  "Terra.date.input.dateFormatLabel": "Datumnotatie:",
   "Terra.date.input.hotKey": "Druk op T om de huidige datum in te stellen, op de plustoets voor de volgende datum en de mintoets voor de vorige datum."
 }

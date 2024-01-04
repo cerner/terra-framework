@@ -7,8 +7,8 @@
   "Terra.date.input.dayInputLabelWithName": "Dag i {a11yLabel}",
   "Terra.date.input.december": "December",
   "Terra.date.input.february": "Februari",
-  "Terra.date.input.formatDayMonthYear": "(DD månad ÅÅÅÅ)",
-  "Terra.date.input.formatMonthDayYear": "(månad DD ÅÅÅÅ)",
+  "Terra.date.input.formatDayMonthYear": "DD månad ÅÅÅÅ",
+  "Terra.date.input.formatMonthDayYear": "månad DD ÅÅÅÅ",
   "Terra.date.input.january": "Januari",
   "Terra.date.input.july": "Juli",
   "Terra.date.input.june": "Juni",
@@ -26,5 +26,6 @@
   "Terra.date.input.september": "September",
   "Terra.date.input.yearDescription": "Ett fyrsiffrigt tal",
   "Terra.date.input.yearLabel": "år",
+  "Terra.date.input.dateFormatLabel": "Datumformat:",
   "Terra.date.input.hotKey": "Tryck på T för att ange aktuellt datum, plus-tangenten för nästa datum och minus-tangenten för föregående datum"
 }

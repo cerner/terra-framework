@@ -178,6 +178,7 @@ class DateInput extends React.Component {
       month: DateInputUtil.splitMonth(value),
       day: DateInputUtil.splitDay(value),
       year: DateInputUtil.splitYear(value),
+      dateString: '',
       isFocused: false,
       monthIsFocused: false,
       dayIsFocused: false,
@@ -522,7 +523,9 @@ class DateInput extends React.Component {
     dateObj.setDate(dateObj.getDate() + addDays);
     const hotkeyDate = moment(dateObj).format('YYYY-MM-DD');
     const dateParts = hotkeyDate.split('-');
-    this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
+    this.setState({
+      year: dateParts[0], month: dateParts[1], day: dateParts[2], dateString: hotkeyDate,
+    });
     if (this.props.onChange) {
       this.handleOnChange(event, hotkeyDate);
     }
@@ -675,7 +678,7 @@ class DateInput extends React.Component {
         {...numberAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         label={label}
-        description={intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}
+        description={`${intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
@@ -717,7 +720,7 @@ class DateInput extends React.Component {
         {...numberAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
-        description={this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}
+        description={`${this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
@@ -820,7 +823,8 @@ class DateInput extends React.Component {
 
     const format = DateInputUtil.getDateFormat(this.props);
     const label = a11yLabel || this.props.intl.formatMessage({ id: 'Terra.date.input.labelDefault' });
-
+    const dateFormatLabel = this.props.intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' });
+    const inputDate = moment(new Date(this.state.dateString)).format('dddd MMMM D YYYY');
     return (
       <div
         {...customProps}
@@ -829,7 +833,9 @@ class DateInput extends React.Component {
         role={isA11yControlled ? null : 'group'}
         aria-label={isA11yControlled ? undefined : label}
       >
-        <AccessibleValue value={completeDateValue} readThis={`${label} ${completeDateValue}`} />
+        <div aria-live="polite">
+          <AccessibleValue value={completeDateValue} readThis={`${dateFormatLabel} ${format}. ${inputDate}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`} />
+        </div>
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
@@ -841,7 +847,7 @@ class DateInput extends React.Component {
         {/* The format is aria-hidden because it makes no sense when assistive technologies are reading the entire multi-field DateInput. Instead, each subfield component has its own description.  */}
         {(useExternalFormatMask === false) && (
           <div aria-hidden className={cx('format-text')}>
-            {format}
+            {`(${format})`}
           </div>
         )}
       </div>
