@@ -108,7 +108,7 @@ const FilterPills = (props) => {
 
   // Modifies the tabindex of the pill/rollup pill node
   const setTabIndex = (val) => {
-    const currentNode = currentPill.current ? filterPillsRef.current.querySelector(`#${currentPill.current}`) : null;
+    const currentNode = currentPill.current ? filterPillsRef.current.getElementById(currentPill.current) : null;
     if (currentNode) {
       currentNode.setAttribute('tabIndex', val);
     }
@@ -116,7 +116,7 @@ const FilterPills = (props) => {
 
   // Sets focus to the current pill/rollup pill with tabindex 0
   const focusCurrentNode = () => {
-    const currentNode = currentPill.current ? filterPillsRef.current.querySelector(`#${currentPill.current}`) : null;
+    const currentNode = currentPill.current ? filterPillsRef.current.getElementById(currentPill.current) : null;
     if (currentNode) {
       currentNode.focus();
     }
@@ -172,6 +172,7 @@ const FilterPills = (props) => {
     if (isPillDeleted.current) {
       if (React.Children.count(children) <= 0) {
         focusPillsContainer();
+        isPillDeleted.current = false;
         return;
       }
       // if there is a roll Up pill, set tabindex to -1
@@ -404,7 +405,6 @@ const FilterPills = (props) => {
     'aria-labelledby': ariaLabelledBy,
     'aria-describedby': pillGroupAriaDescribedBy,
     role: 'list',
-    tabIndex: containerTabindex,
   } : { role: 'group' };
 
   if (!React.Children.count(children)) {
@@ -417,6 +417,7 @@ const FilterPills = (props) => {
         {...customProps}
         {...filterPillsProps}
         {...ariaAttrs}
+        tabIndex={containerTabindex}
         className={pillListClassNames}
         ref={filterPillsRef}
       >
