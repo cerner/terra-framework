@@ -70,14 +70,9 @@
       background-color: var(--terra-time-input-focus-background-color, #fff);
       background-size: var(--terra-time-input-focus-background-size, 0 0);
       color: var(--terra-time-input-focus-color, #1c1f21);
-
-      [dir=ltr] & {
-        box-shadow: var(--terra-time-input-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
-      }
-
-      [dir=rtl] & {
-        box-shadow: var(--terra-time-input-focus-rtl-box-shadow, 0 0 8px #a6d9f4);
-      }
+      outline: var(--terra-time-input-outline, 2px dashed #000);
+      border-color: var(--terra-time-input-border-color, #dedfe0);
+      border-width: var(--terra-time-input-border-width, 1px);
 
       .time-input-hour,
       .time-input-minute,
@@ -99,6 +94,7 @@
       background-color: var(--terra-time-input-invalid-background-color, #fff);
       border: var(--terra-time-input-invalid-border, 1px solid #e50000);
       box-shadow: var(--terra-time-input-invalid-box-shadow, 0 0 0 1px #e50000);
+      outline: none;
 
       &:hover {
         border: var(--terra-time-input-invalid-hover-border, 1px solid #e50000);

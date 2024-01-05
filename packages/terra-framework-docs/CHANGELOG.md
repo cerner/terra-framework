@@ -4,6 +4,7 @@
 
 * Fixed
   * Fixed font size in `terra-theme-provider` examples.
+  * Fixed label value when we have 12 hours time format in `terra-time-input` examples.
 
 ## 1.58.0 - (January 18, 2024)
 
@@ -36,6 +37,14 @@
 
 * Changed
   * Updated `terra-pills` examples to enhance usablity for keyboard and screen reader user.
+  * Updated `flowsheet-data-grid` tests and examples to support non contiguous multi select.
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
+  * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
+  * Updated documentation and examples for `terra-folder-tree`.
+
+* Added
+  * Added upgrade guide for Terra Table.
 
 ## 1.54.0 - (January 2, 2024)
 
@@ -54,7 +63,7 @@
 * Changed
   * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
   * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.
-  
+
 ## 1.52.0 - (December 13, 2023)
 
 * Changed

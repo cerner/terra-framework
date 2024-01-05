@@ -845,7 +845,7 @@ describe('Time Input shortcut key operations', () => {
         expect(secondsInRange).toBe(true);
       });
 
-      it('should add 1 minute if filled', () => {
+      it('should add 1 second if filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
@@ -853,8 +853,8 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('+');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
-        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('13');
-        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('12');
+        expect($('#timeInput input[name="terra-time-second-time-input"]')).toHaveValue('13');
       });
     });
   });

@@ -1,6 +1,6 @@
 :local {
   .orion-fusion-theme {
-    /* -------------------------------------------------------------------- 
+    /* --------------------------------------------------------------------
     * Values for all versions
     * -------------------------------------------------------------------- */
     // Default
@@ -39,6 +39,7 @@
     --terra-time-input-focus-ltr-box-shadow: 0 0 8px #a6d9f4;
     --terra-time-input-focus-rtl-box-shadow: 0 0 8px #a6d9f4;
     --terra-time-input-focus-color: #1c1f21;
+    --terra-time-input-outline: 2px dashed #000;
     --terra-time-input-focus-opacity: 1;
 
     // Meridiem Button
@@ -63,7 +64,7 @@
     --terra-time-input-disabled-border: 1px solid #b2b5b6;
     --terra-time-input-disabled-color: #9b9fa1;
     --terra-time-input-disabled-opacity: 1;
-    
+
     // Invalid
     --terra-time-input-invalid-background-color: #fff;
     --terra-time-input-invalid-border: 1px solid #dedfe0;
@@ -95,7 +96,7 @@
     --terra-time-input-incomplete-disabled-color: #9b9fa1;
     --terra-time-input-incomplete-disabled-opacity: 1;
 
-    /* -------------------------------------------------------------------- 
+    /* --------------------------------------------------------------------
     * Values for 4.15.0 and after
     * -------------------------------------------------------------------- */
     // Default - Hover
