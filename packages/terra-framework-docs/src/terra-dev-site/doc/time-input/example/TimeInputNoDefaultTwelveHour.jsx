@@ -12,9 +12,9 @@ class timeInput extends React.Component {
   }
 
   handleTimeChange(event, time, meridiem) {
-    if(meridiem === "p.m.") {
-      let updatedTime = moment(time, ["HH:mm"]).format("hh:mm");
-      this.setState({ labelValue : updatedTime })
+    if (meridiem === 'p.m.') {
+      const updatedTime = moment(time, ['HH:mm']).format('hh:mm');
+      this.setState({ labelValue: updatedTime });
     } else {
       this.setState({ time });
     }
@@ -30,7 +30,7 @@ class timeInput extends React.Component {
           <TimeInput
             a11yLabel="Enter Time"
             name="time-input-value"
-            // value={this.state.time}
+            value={this.state.time}
             onChange={this.handleTimeChange}
             variant={TimeUtil.FORMAT_12_HOUR}
           />

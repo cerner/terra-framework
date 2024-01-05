@@ -3,6 +3,7 @@ import TimeInput from 'terra-time-input/lib/TimeInput';
 import TimeUtil from 'terra-time-input/lib/TimeUtil';
 import Field from 'terra-form-field';
 import moment from 'moment-timezone';
+
 class timeInput extends React.Component {
   constructor(props) {
     super(props);
@@ -11,9 +12,9 @@ class timeInput extends React.Component {
   }
 
   handleTimeChange(event, time, meridiem) {
-    if(meridiem === "p.m.") {
-      let updatedTime = moment(time, ["HH:mm"]).format("hh:mm");
-      this.setState({ labelValue : updatedTime })
+    if (meridiem === 'p.m.') {
+      const updatedTime = moment(time, ['HH:mm']).format('hh:mm');
+      this.setState({ labelValue: updatedTime });
     } else {
       this.setState({ time });
     }

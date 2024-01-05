@@ -69,10 +69,10 @@
       @include focus-styles;
       background-color: var(--terra-time-input-focus-background-color, #fff);
       background-size: var(--terra-time-input-focus-background-size, 0 0);
-      color: var(--terra-time-input-focus-color, #1c1f21);
-      outline: var(--terra-time-input-outline, 2px dashed #000);
       border-color: var(--terra-time-input-border-color, #dedfe0);
       border-width: var(--terra-time-input-border-width, 1px);
+      color: var(--terra-time-input-focus-color, #1c1f21);
+      outline: var(--terra-time-input-outline, 2px dashed #000);
 
       .time-input-hour,
       .time-input-minute,

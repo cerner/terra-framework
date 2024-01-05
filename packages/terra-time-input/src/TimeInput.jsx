@@ -508,7 +508,7 @@ class TimeInput extends React.Component {
           } else {
             second = TimeUtil.decrementSecond(second);
           }
-        } else {
+        } else if (!this.props.showSeconds) {
           if (minute === '0' || minute === '00') {
             minute = '59';
             if (hour === '0' || hour === '00') {
@@ -581,7 +581,7 @@ class TimeInput extends React.Component {
           } else {
             second = TimeUtil.incrementSecond(second);
           }
-        } else {
+        } else if (!this.props.showSeconds) {
           if (minute === '59') {
             minute = '00';
             if (hour === '23') {
@@ -909,27 +909,23 @@ class TimeInput extends React.Component {
     if (!hour) {
       return hour;
     }
-    // if (this.props.variant === "12-hour"){
-    //   return hour;
-    // } else {
-      let tempHour = parseInt(hour, 10);
+    let tempHour = parseInt(hour, 10);
 
-      if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR) {
-        if (meridiem === this.postMeridiem && tempHour < 12) {
-          tempHour += 12;
-        } else if (meridiem === this.anteMeridiem && tempHour === 12) {
-          tempHour = 0;
-        }
+    if (TimeUtil.getVariantFromLocale(this.props) === TimeUtil.FORMAT_12_HOUR) {
+      if (meridiem === this.postMeridiem && tempHour < 12) {
+        tempHour += 12;
+      } else if (meridiem === this.anteMeridiem && tempHour === 12) {
+        tempHour = 0;
       }
+    }
 
-      let hourString = tempHour.toString();
+    let hourString = tempHour.toString();
 
-      if (hourString.length < 2) {
-        hourString = '0'.concat(hourString);
-      }
+    if (hourString.length < 2) {
+      hourString = '0'.concat(hourString);
+    }
 
-      return hourString;
-    // }
+    return hourString;
   }
 
   render() {
