@@ -99,13 +99,13 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       browser.keys('Tab');
       browser.keys('ArrowDown');
       browser.keys('ArrowDown');
-      Terra.validates.screenshot('level two folder focused keyboard', { selector: '#expand-collapse-folder-tree' });
+      expect($('//li[2]').isFocused()).toBe(true);
 
       browser.keys('Tab');
-      Terra.validates.screenshot('tabbed out of focus', { selector: '#root' });
+      expect($('//li[2]').isFocused()).toBe(false);
 
       browser.keys(['Shift', 'Tab']);
-      Terra.validates.screenshot('level two folder focused keyboard', { selector: '#expand-collapse-folder-tree' });
+      expect($('//li[2]').isFocused()).toBe(true);
     });
 
     it('wraps items with long labels', () => {
