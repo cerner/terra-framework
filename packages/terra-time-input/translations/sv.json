@@ -18,5 +18,6 @@
   "Terra.timeInput.textValueTwentyFourHourMinute": "{hour}:{minute}",
   "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
   "Terra.timeInput.timeFormatLabel": "Tidsformat:",
-  "Terra.timeInput.timeSpacer": ":"
+  "Terra.timeInput.timeSpacer": ":",
+  "Terra.timeInput.invalidTime": "Ange en giltig tid"
 }

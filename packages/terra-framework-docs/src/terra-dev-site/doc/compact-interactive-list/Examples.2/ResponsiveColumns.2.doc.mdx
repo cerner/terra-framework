@@ -1,0 +1,51 @@
+import { Notice } from '@cerner/terra-docs';
+import ResponsiveColumns from './ResponsiveColumns?dev-site-examples';
+import ResponsiveColumnsMaxWidth from './ResponsiveColumnsMaxWidth?dev-site-examples';
+
+# Responsive Columns
+
+### Description
+
+This example demonstrates a [Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about) component with responsive columns.
+
+* The middle semantic column with the text information has the [flexGrow](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property set to **true**, which allows the column to expand to fill the container's width.
+* The maximum width for the text column is unlimited because the [maximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property is not set.
+* The minimum width uses the default value because the [minimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property is not set.
+* Once the list reaches its minimum width, defined by the fixed width columns and the default minimum width of the flex expanding column, the scrollbar is displayed.
+
+<ResponsiveColumns />
+
+### Usage
+
+#### Create a Responsive Column
+
+Use one of the following methods to make a sematic column responsive:
+
+* Omit the [width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property to make a semantic column expand or shrink to fill all available space.
+* Set the [flexGrow](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property to **true** with the [width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property set to a number that also makes the column responsive. 
+  If you keep [width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), the property can be used as a [flex basis](https://developer.mozilla.org/en-US/docs/Web/CSS/flex-basis).
+
+#### Control Maximum and Minimum Width
+
+<Notice variant="important" ariaLevel="3">
+
+The supported units for width properties are `px`, `em`, and `rem`. 
+Ensure that the width units are consistent across all properties in the same component. The width properties are
+[columnMinimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[columnMaximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table), 
+[width](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), 
+[minimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column), and 
+[maximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column).
+Width units inconsistent with the rest of the component properties are disregarded.
+
+</Notice>
+
+* To control the minimum and maximum width of all flexible columns in the component, use the
+  [columnMaximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) and 
+  [columnMinimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) properties. 
+  If the [columnMinimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is not set, the default value is used.
+* Alternatively, you can individually pass the [minimumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) and [maximumWidth](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) to a column, which provides more flexibility. 
+
+In the following example, the text column has the maximumWidth set to **400px** and minimumWidth set to **200px**:
+
+<ResponsiveColumnsMaxWidth />

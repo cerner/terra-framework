@@ -1,31 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
 import { ActiveBreakpointContext } from 'terra-breakpoints';
-import { IconDocuments, IconFeaturedOutline, IconImage } from 'terra-icon';
+import {
+  IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
+} from 'terra-icon';
+import Button from 'terra-button';
+
+const FeaturedIcon = () => {
+  const [isFeatured, setIsFeatured] = useState(false);
+  const onButtonClick = () => setIsFeatured(!isFeatured);
+  return (
+    isFeatured ? <Button variant="utility" text="Featured button" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Featured off button" icon={<IconFeaturedOff />} onClick={onButtonClick} />
+  );
+};
+const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
+const iconResultsNotNormal = <IconMultipleResultsNotNormal a11yLabel="Results not normal" height="1.5em" width="1.5em" />;
+const iconResultsCritical = <IconMultipleResultsCritical a11yLabel="Results critical" height="1.5em" width="1.5em" />;
 
 const rows = [
   {
     id: 'row_1',
     cells: [
-      { content: <IconDocuments a11yLabel="Documents" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
     id: 'row_2',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
     id: 'row_3',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNotNormal },
       { content: 'Arterial Sheath Care (3)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -33,23 +47,23 @@ const rows = [
     cells: [
       { content: ' ' },
       { content: 'Sbsq Observation Care/Day High Severity 99226 (4)' },
-      { content: ' ' },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
     id: 'row_5',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsCritical },
       { content: 'Arterial Sheath Care (5)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
     id: 'row_6',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Arterial Sheath Care (6)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
@@ -57,23 +71,31 @@ const rows = [
     cells: [
       { content: ' ' },
       { content: 'Sbsq Observation Care/Day High Severity 99226 (7)' },
-      { content: ' ' },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
     id: 'row_8',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Arterial Sheath Care (8)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: <FeaturedIcon /> },
     ],
   },
   {
     id: 'row_9',
     cells: [
-      { content: <IconImage a11yLabel="Picture" height="1.5em" width="1.5em" /> },
+      { content: iconResultsNormal },
       { content: 'Arterial Sheath Care (9)' },
-      { content: <IconFeaturedOutline a11yLabel="Featured" height="1.5em" width="1.5em" /> },
+      { content: <FeaturedIcon /> },
+    ],
+  },
+  {
+    id: 'row_10',
+    cells: [
+      { content: iconResultsNormal },
+      { content: 'Arterial Sheath Care (10)' },
+      { content: <FeaturedIcon /> },
     ],
   },
 ];
@@ -112,13 +134,13 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '200px', // will be disregarded bacause of flexGrow prop.
-    flexGrow: true, // flexGrow prop has to be set here, as with width set, without that prop the column would not grow.
+    width: '200px', // will be used as a css flexBasis
+    flexGrow: true, // makes the column grow or shrink
   },
   {
     id: 'Column-2',
     displayName: 'Featured',
-    width: '60px', // there is no widthUnit prop set in the component, so it will default to px
+    width: '60px',
     align: alignTypes.CENTER,
   },
 ];
@@ -128,6 +150,7 @@ const VerticalFlow = () => {
   return (
     <CompactInteractiveList
       id="with-breakpoints"
+      ariaLabel="Compact Interactive List"
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}

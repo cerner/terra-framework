@@ -1,3 +1,4 @@
 {
-  "Terra.timeInput.timeFormatLabel": "Format d'heure:"
+  "Terra.timeInput.timeFormatLabel": "Format d'heure:",
+  "Terra.timeInput.invalidTime": "Saisissez une heure valide."
 }

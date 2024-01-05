@@ -7,8 +7,8 @@
   "Terra.date.input.dayInputLabelWithName": "{a11yLabel} día",
   "Terra.date.input.december": "Diciembre",
   "Terra.date.input.february": "Febrero",
-  "Terra.date.input.formatDayMonthYear": "(DD Mes AAAA)",
-  "Terra.date.input.formatMonthDayYear": "(Mes DD AAAA)",
+  "Terra.date.input.formatDayMonthYear": "DD Mes AAAA",
+  "Terra.date.input.formatMonthDayYear": "Mes DD AAAA",
   "Terra.date.input.january": "Enero",
   "Terra.date.input.july": "Julio",
   "Terra.date.input.june": "Junio",
@@ -25,5 +25,7 @@
   "Terra.date.input.required": "Obligatorio",
   "Terra.date.input.september": "Septiembre",
   "Terra.date.input.yearDescription": "Número de cuatro dígitos",
-  "Terra.date.input.yearLabel": "Año"
+  "Terra.date.input.yearLabel": "Año",
+  "Terra.date.input.dateFormatLabel": "Formato de fecha:",
+  "Terra.date.input.hotKey": "Presione T para establecer la fecha actual, la tecla más para la próxima fecha y la tecla menos para la fecha anterior."
 }
