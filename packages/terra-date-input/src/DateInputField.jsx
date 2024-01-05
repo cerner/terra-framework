@@ -272,7 +272,7 @@ const DateInputField = (props) => {
       {/* It makes no sense for screen readers to hear the format or the help text in this position. */}
       {/* Instead, each subfield component reads its own format and the help text is read before the first control. */}
       <div aria-hidden className={cx('help-text')}>
-        {help ? `${format} ${help}` : format}
+        {help ? `(${format}) ${help}` : `(${format})`}
       </div>
     </fieldset>
   );
