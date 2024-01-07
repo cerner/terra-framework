@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `flowsheet-data-grid` tests and examples to support non contiguous multi select.
+
 ## 1.54.0 - (January 2, 2024)
 
 * Changed
