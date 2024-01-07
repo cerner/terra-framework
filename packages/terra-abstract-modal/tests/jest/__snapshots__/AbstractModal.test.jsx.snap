@@ -81,39 +81,41 @@ exports[`correctly applies the theme context className 1`] = `
               <div
                 class="overlay layer-6000 orion-fusion-theme"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000 orion-fusion-theme"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000 orion-fusion-theme"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -171,87 +173,96 @@ exports[`correctly applies the theme context className 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000 orion-fusion-theme"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000 orion-fusion-theme"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -347,39 +358,41 @@ exports[`should mount an open modal 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -437,87 +450,96 @@ exports[`should mount an open modal 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -614,39 +636,41 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               <div
                 class="overlay layer-7000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-7000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-7000"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -704,87 +728,96 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-7000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-7000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -881,39 +914,41 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               <div
                 class="overlay layer-8000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-8000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-8000"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -971,87 +1006,96 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-8000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-8000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -1148,39 +1192,41 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               <div
                 class="overlay layer-9000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-9000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-9000"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -1238,87 +1284,96 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-9000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-9000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -1415,39 +1470,41 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal is-fullscreen layer-6000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal is-fullscreen layer-6000"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -1505,87 +1562,96 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal is-fullscreen layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal is-fullscreen layer-6000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -1683,40 +1749,42 @@ exports[`should mount an open modal with custom props 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                id="custom-props"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000"
+                  id="custom-props"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -1775,88 +1843,97 @@ exports[`should mount an open modal with custom props 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              id="custom-props"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000"
+                  id="custom-props"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -1953,39 +2030,41 @@ exports[`should mount an open modal with modal class name 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000 modal-custom-class"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000 modal-custom-class"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -2043,87 +2122,96 @@ exports[`should mount an open modal with modal class name 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000 modal-custom-class"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000 modal-custom-class"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -2220,39 +2308,41 @@ exports[`should mount an open modal with overlay class name 1`] = `
               <div
                 class="overlay layer-6000 overlay-custom-class"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000"
+                  intl="[object Object]"
+                  role="dialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -2310,87 +2400,96 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -2487,39 +2586,41 @@ exports[`should mount an open modal with role 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                intl="[object Object]"
-                role="alertdialog"
-                tabindex="0"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000"
+                  intl="[object Object]"
+                  role="alertdialog"
+                  tabindex="0"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -2577,87 +2678,96 @@ exports[`should mount an open modal with role 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="alertdialog"
-              tabIndex="0"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="alertdialog"
+                  tabIndex="0"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -2753,39 +2863,41 @@ exports[`should render the correct snapshot for iPads 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="-1"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000"
+                  intl="[object Object]"
+                  role="dialog"
                   tabindex="-1"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -2843,87 +2955,96 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="-1"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="-1"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -3019,39 +3140,41 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="-1"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000"
+                  intl="[object Object]"
+                  role="dialog"
                   tabindex="-1"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -3109,87 +3232,96 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="-1"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="-1"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -3285,39 +3417,41 @@ exports[`should render the correct snapshot for iPods 1`] = `
               <div
                 class="overlay layer-6000"
               />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                intl="[object Object]"
-                role="dialog"
-                tabindex="-1"
-              >
+              <div>
                 <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  class="abstract-modal layer-6000"
+                  intl="[object Object]"
+                  role="dialog"
                   tabindex="-1"
                 >
-                  <span
-                    class="visually-hidden-text"
+                  <div
+                    class="abstract-modal-container"
+                    data-terra-abstract-modal-begin="true"
+                    tabindex="-1"
                   >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
+                    <span
+                      class="visually-hidden-text"
                     >
-                      Close Modal
-                    </button>
+                      Terra.AbstractModal.BeginModalDialog
+                    </span>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <span
+                      class="visually-hidden-text"
+                    >
+                      Terra.AbstractModal.EndModalDialog
+                    </span>
                   </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
                 </div>
               </div>
             </div>
@@ -3375,87 +3509,96 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 onClick={[Function]}
               />
             </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-              tabIndex="-1"
+            <FocusTrap
+              _createFocusTrap={[Function]}
+              active={true}
+              focusTrapOptions={Object {}}
+              paused={false}
             >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+              <div>
+                <div
+                  aria-label="Terra Modal"
+                  aria-modal="true"
+                  className="abstract-modal layer-6000"
+                  intl={
+                    Object {
+                      "defaultFormats": Object {},
+                      "defaultLocale": "en",
+                      "formatDate": [Function],
+                      "formatHTMLMessage": [Function],
+                      "formatMessage": [Function],
+                      "formatNumber": [Function],
+                      "formatPlural": [Function],
+                      "formatRelative": [Function],
+                      "formatTime": [Function],
+                      "formats": Object {},
+                      "formatters": Object {
+                        "getDateTimeFormat": [Function],
+                        "getMessageFormat": [Function],
+                        "getNumberFormat": [Function],
+                        "getPluralFormat": [Function],
+                        "getRelativeFormat": [Function],
+                      },
+                      "locale": "en",
+                      "messages": null,
+                      "now": [Function],
+                      "onError": [Function],
+                      "textComponent": "span",
+                      "timeZone": null,
+                    }
+                  }
+                  onKeyDown={[Function]}
+                  role="dialog"
+                  tabIndex="-1"
                 >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                  <div
+                    className="abstract-modal-container"
+                    data-terra-abstract-modal-begin={true}
+                    tabIndex="-1"
                   >
-                    <span
-                      className="visually-hidden-text"
+                    <FormattedMessage
+                      id="Terra.AbstractModal.BeginModalDialog"
+                      values={Object {}}
                     >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.BeginModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                    <div>
+                      <h1>
+                        Terra Modal
+                      </h1>
+                      <button
+                        onClick={[Function]}
+                        type="button"
+                      >
+                        Close Modal
+                      </button>
+                    </div>
+                    <FormattedMessage
+                      id="Terra.AbstractModal.EndModalDialog"
+                      values={Object {}}
+                    >
+                      <VisuallyHiddenText
+                        text="Terra.AbstractModal.EndModalDialog"
+                      >
+                        <span
+                          className="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
+                      </VisuallyHiddenText>
+                    </FormattedMessage>
+                  </div>
                 </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
               </div>
-            </div>
+            </FocusTrap>
           </ForwardRef>
         </Portal>
       </Portal>

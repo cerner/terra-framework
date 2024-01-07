@@ -142,6 +142,68 @@ const ModalContent = forwardRef((props, ref) => {
 
   const platformIsiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
+  /*
+    When an aria-label is set and tabIndex is set to 0, VoiceOver will read
+    the aria-label value when the modal is opened
+  */
+  const modalContent = (
+    <div
+      {...customProps}
+      tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={ariaDescribedBy}
+      className={modalClassName}
+      role={role}
+      ref={ref}
+    >
+      <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+        {(!isCalledFromNotificationDialog) && (
+        <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+          {text => {
+            // In the latest version of react-intl this param is an array, when previous versions it was a string.
+            let useText = text;
+            if (Array.isArray(text)) {
+              useText = text.join('');
+            }
+            return (
+              <VisuallyHiddenText text={useText} />
+            );
+          } }
+        </FormattedMessage>
+        )}
+        {children}
+        {(!isCalledFromNotificationDialog) && (
+        <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+          {text => {
+            // In the latest version of react-intl this param is an array, when previous versions it was a string.
+            let useText = text;
+            if (Array.isArray(text)) {
+              useText = text.join('');
+            }
+            return (
+              <VisuallyHiddenText text={useText} />
+            );
+          } }
+        </FormattedMessage>
+        )}
+      </div>
+    </div>
+  );
+
+  if (isCalledFromNotificationDialog) {
+    return (
+      <>
+        <ModalOverlay
+          onClick={closeOnOutsideClick ? onRequestClose : null}
+          className={classNameOverlay}
+          zIndex={zIndexLayer}
+        />
+        {modalContent}
+      </>
+    );
+  }
+
   return (
     <>
       <ModalOverlay
@@ -151,54 +213,7 @@ const ModalContent = forwardRef((props, ref) => {
       />
       <FocusTrap>
         <div>
-          {
-            /*
-              When an aria-label is set and tabIndex is set to 0, VoiceOver will read
-              the aria-label value when the modal is opened
-            */
-          }
-          <div
-            {...customProps}
-            tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
-            aria-label={ariaLabel}
-            aria-labelledby={ariaLabelledBy}
-            aria-describedby={ariaDescribedBy}
-            className={modalClassName}
-            role={role}
-            ref={ref}
-          >
-            <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-              {(!isCalledFromNotificationDialog) && (
-              <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-                {text => {
-                  // In the latest version of react-intl this param is an array, when previous versions it was a string.
-                  let useText = text;
-                  if (Array.isArray(text)) {
-                    useText = text.join('');
-                  }
-                  return (
-                    <VisuallyHiddenText text={useText} />
-                  );
-                } }
-              </FormattedMessage>
-              )}
-              {children}
-              {(!isCalledFromNotificationDialog) && (
-              <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-                {text => {
-                  // In the latest version of react-intl this param is an array, when previous versions it was a string.
-                  let useText = text;
-                  if (Array.isArray(text)) {
-                    useText = text.join('');
-                  }
-                  return (
-                    <VisuallyHiddenText text={useText} />
-                  );
-                } }
-              </FormattedMessage>
-              )}
-            </div>
-          </div>
+          {modalContent}
         </div>
       </FocusTrap>
     </>
