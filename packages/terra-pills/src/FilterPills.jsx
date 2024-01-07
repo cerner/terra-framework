@@ -108,7 +108,7 @@ const FilterPills = (props) => {
 
   // Modifies the tabindex of the pill/rollup pill node
   const setTabIndex = (val) => {
-    const currentNode = currentPill.current ? filterPillsRef.current.getElementById(currentPill.current) : null;
+    const currentNode = currentPill.current ? filterPillsRef.current.querySelector(`[id='${currentPill.current}']`) : null;
     if (currentNode) {
       currentNode.setAttribute('tabIndex', val);
     }
@@ -116,7 +116,7 @@ const FilterPills = (props) => {
 
   // Sets focus to the current pill/rollup pill with tabindex 0
   const focusCurrentNode = () => {
-    const currentNode = currentPill.current ? filterPillsRef.current.getElementById(currentPill.current) : null;
+    const currentNode = currentPill.current ? filterPillsRef.current.querySelector(`[id='${currentPill.current}']`) : null;
     if (currentNode) {
       currentNode.focus();
     }
