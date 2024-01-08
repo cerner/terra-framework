@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Cell focus styling fixed.
+  * Cell does not call `onCellSelect` method if corresponding column `isSelectable` prop set to `false`.
 
 ## 1.0.0 - (January 2, 2024)
 
