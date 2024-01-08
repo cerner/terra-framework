@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the `terra-date-time-picker` example for label.
+
 ## 1.54.0 - (January 2, 2024)
 
 * Changed

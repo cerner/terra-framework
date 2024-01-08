@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fixed the label announcement in screen readers issue.
+
 ## 4.95.0 - (December 18, 2023)
 
 * Changed
