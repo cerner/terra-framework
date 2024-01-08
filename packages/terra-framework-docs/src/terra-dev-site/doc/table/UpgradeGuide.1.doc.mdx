@@ -6,4 +6,51 @@ import { Badge } from "terra-table/package.json?dev-site-package";
 
 ## Changes from 4.x to 5.0
 
-Terra table will no longer support grid-like (focus, keyboard navigation, etc) functionality and now behaves more like a native, accessible table. See the Docs for new functionality.
+The latest changes in the Table component reflects the Terra Accessibility initiative. The new version reflects an implementation to make accessibile components.
+
+## New Props
+
+* Added `id`
+* Added `rows`
+* Added `sections`
+* Added `ariaLabelledBy`
+* Added `ariaLabel`
+* Added `columnResizeIncrement`
+* Added `pinnedColumns`
+* Added `overflowColumns`
+* Added `defaultColumnWidth`
+* Added `columnHeaderHeight`
+* Added `rowHeight`
+* Added `rowHeaderIndex`
+* Added `onColumnResize`
+* Added `onRowSelect`
+* Added `onColumnSelect`
+* Added `onSectionSelect`
+* Added `onRowSelectionHeaderSelect`
+* Added `rowSelectionMode`
+* Added `hasVisibleColumnHeaders`
+* Added `isStriped`
+* Added [Column API](/components/cerner-terra-framework-docs/table/about#column)
+* Added [Section API](/components/cerner-terra-framework-docs/table/about#section)
+* Added [Row API](/components/cerner-terra-framework-docs/table/about#row)
+* Added [Cell API](/components/cerner-terra-framework-docs/table/about#cell)
+* Added [Table Constants](/components/cerner-terra-framework-docs/table/about#table-constants)
+
+## Removed Props
+* Removed `bodyData`
+* Removed `checkStyle`
+* Removed `dividerStyle`
+* Removed `columnWidths`
+* Removed `hasChevrons`
+* Removed `headerData`
+* Removed `headerNode`
+* Removed `fill`
+* Removed `footerNode`
+* Removed `numberOfColumns`
+* Removed `numberOfRows`
+* Removed `cellPaddingStyle`
+* Removed `rowStyle`
+* Removed `scrollRefCallback`
+* Removed `showSimpleFooter`
+* Removed `summary`
+* Removed `summaryId`
