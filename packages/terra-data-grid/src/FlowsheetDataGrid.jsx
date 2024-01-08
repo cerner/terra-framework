@@ -283,7 +283,6 @@ function FlowsheetDataGrid(props) {
   }, [rowsToSearch, flowsheetSections, columns, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails) => {
-    console.log(selectionDetails);
     // Call onRowSelect for row header column
     if (selectionDetails.columnIndex === 0) {
       if (onRowSelect) {
