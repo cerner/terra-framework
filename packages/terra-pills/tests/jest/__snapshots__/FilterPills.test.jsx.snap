@@ -7,6 +7,7 @@ exports[`Rollup Pill should render pill with the role group when rendered empty 
     onBlur={[Function]}
     onKeyDown={[Function]}
     role="group"
+    tabIndex="-1"
   />
   <VisuallyHiddenText
     aria-live="polite"
