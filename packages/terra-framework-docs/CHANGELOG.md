@@ -2,8 +2,15 @@
 
 ## Unreleased
 
-* Updated
+* Changed
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+
+## 1.54.0 - (January 2, 2024)
+
+* Changed
   * Updated `terra-time-input` example to have visual label.
+  * Updated `terra-embedded-content-consumer` example to fix axe error.
+  * Updated `terra-compact-interactive-list` implementation guide and examples.
 
 ## 1.53.0 - (December 18, 2023)
 

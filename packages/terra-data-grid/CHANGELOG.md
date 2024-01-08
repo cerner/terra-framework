@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.10.0 - (January 2, 2024)
+
 * Added 
   * Added translations for flowsheet.
 
