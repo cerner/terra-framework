@@ -2,10 +2,10 @@
 
 ## Unreleased
 
-## 1.54.0 - (January 2, 2024)
-
 * Changed
   * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+
+## 1.54.0 - (January 2, 2024)
 
 * Changed
   * Updated `terra-time-input` example to have visual label.
