@@ -91,6 +91,23 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       Terra.validates.screenshot('last item focused keyboard', { selector: '#expand-collapse-folder-tree' });
     });
 
+    it('remembers the last focused item when tabbing in and out', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
+
+      $('aria/Expand All').click();
+      browser.keys('Tab');
+      browser.keys('Tab');
+      browser.keys('ArrowDown');
+      browser.keys('ArrowDown');
+      expect($('//li[2]').isFocused()).toBe(true);
+
+      browser.keys('Tab');
+      expect($('//li[2]').isFocused()).toBe(false);
+
+      browser.keys(['Shift', 'Tab']);
+      expect($('//li[2]').isFocused()).toBe(true);
+    });
+
     it('wraps items with long labels', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/wrapped-label-folder-tree');
 
