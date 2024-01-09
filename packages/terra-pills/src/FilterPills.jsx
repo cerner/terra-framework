@@ -172,7 +172,6 @@ const FilterPills = (props) => {
     if (isPillDeleted.current) {
       if (React.Children.count(children) <= 0) {
         focusPillsContainer();
-        isPillDeleted.current = false;
         return;
       }
       // if there is a roll Up pill, set tabindex to -1
