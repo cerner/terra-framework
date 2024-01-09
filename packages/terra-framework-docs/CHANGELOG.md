@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added 
+  * Added variant for DisclosureIntegration component.
+
 * Changed
   * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
 
