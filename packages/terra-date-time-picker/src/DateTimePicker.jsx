@@ -62,7 +62,7 @@ const propTypes = {
   /**
    * The label of the form control children.
    */
-  label: PropTypes.node.isRequired,
+  label: PropTypes.node,
   /**
    * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    * The time portion in this value is ignored because this is strictly used in the date picker.

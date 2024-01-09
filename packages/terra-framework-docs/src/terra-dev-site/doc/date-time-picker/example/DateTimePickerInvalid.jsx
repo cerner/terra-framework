@@ -17,6 +17,7 @@ const DateTimePickerExampleInvalid = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="default-invalid">
         <DateTimePicker
+          label="Enter Date/Time"
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'default-invalid' }}
           onChange={handleDateTimeChange}

@@ -17,6 +17,7 @@ const DateTimePickerExampleDefaultDate = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="defaultDate">
         <DateTimePicker
+          label="Enter Date/Time"
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'defaultDate' }}
           onChange={handleDateTimeChange}

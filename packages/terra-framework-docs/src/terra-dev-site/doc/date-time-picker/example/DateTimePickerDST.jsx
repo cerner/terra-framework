@@ -70,6 +70,7 @@ const DateTimePickerExampleDST = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="dst-picker">
         <DateTimePicker
+          label="Enter Date/Time"
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'dst-picker' }}
           onChange={handleDateTimeChange}

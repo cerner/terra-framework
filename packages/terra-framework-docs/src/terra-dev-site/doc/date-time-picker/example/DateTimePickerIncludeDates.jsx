@@ -18,6 +18,7 @@ const DateTimePickerExampleIncludeDates = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="include-dates">
         <DateTimePicker
+          label="Enter Date/Time"
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'include-dates' }}
           onChange={handleDateTimeChange}
