@@ -77,7 +77,9 @@ const RowSelection = () => {
 
       // Remove current selections
       for (let row = 0; row < rowData.length; row += 1) {
-        if (!isMetaPressed) newRowData[row].isSelected = false;
+        if (!isMetaPressed) {
+          newRowData[row].isSelected = false;
+        }
         for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
           if (!isMetaPressed) {
             newRowData[row].cells[cell].isSelected = false;
