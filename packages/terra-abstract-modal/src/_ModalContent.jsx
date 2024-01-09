@@ -212,10 +212,11 @@ const ModalContent = forwardRef((props, ref) => {
         zIndex={zIndexLayer}
       />
       <FocusTrap
-       focusTrapOptions={{
-        escapeDeactivates: true,
-        clickOutsideDeactivates: true,
-      }}>
+        focusTrapOptions={{
+          escapeDeactivates: true,
+          clickOutsideDeactivates: true,
+        }}
+      >
         <div>
           {modalContent}
         </div>
