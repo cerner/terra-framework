@@ -75,18 +75,20 @@ Terra.describeViewports('Date Input', ['medium'], () => {
   });
 
   describe('Month Select placeholder option clears value', () => {
-    it('Selects January in month select', () => {
+    it('Selects February in month select', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/date-input/day-month-year-date-input');
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
+      browser.keys(['ArrowDown']);
       browser.keys(['Enter']);
-      Terra.validates.element('First Month Selected');
+      Terra.validates.element('Month Selected');
     });
 
     it('Selects Placeholder option to clear selected value', () => {
       $('select[name="terra-date-month-date-input"]').click();
+      browser.keys(['ArrowUp']);
       browser.keys(['ArrowUp']);
       browser.keys(['Enter']);
       Terra.validates.element('Value Cleared');
@@ -304,6 +306,199 @@ Terra.describeViewports('Date Input', ['medium'], () => {
         browser.keys(['Delete']);
 
         Terra.validates.element('no shift in focus for day');
+      });
+    });
+
+    describe('Month Select Pressing T in month select', () => {
+      it('should set date to current if blank', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current if valid value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current if invalid value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['t']);
+        const currentDate = new Date();
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+    });
+
+    describe('Month Select Pressing - in month select', () => {
+      it('should set date to yesterday if blank', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current value - 1 day if valid value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['-']);
+
+        expect($('#dateInput select')).toHaveValue('2000-07-03');
+      });
+
+      it('should set date to yesterday if no value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to yesterday if invalid value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['0']);
+        browser.keys(['-']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() - 1);
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+    });
+
+    describe('Month Select Pressing + in month select', () => {
+      it('should set date to tomorrow if blank', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to current value + 1 day if valid value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/populated-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['+']);
+
+        expect($('#dateInput select')).toHaveValue('2000-07-05');
+      });
+
+      it('should set date to tomorrow if no value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
+      });
+
+      it('should set date to tomorrow if invalid value is there', () => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input');
+        browser.refresh();
+        // Removes the blinking cursor to prevent screenshot mismatches.
+        Terra.hideInputCaret('select[name="terra-date-month-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+
+        $('select[name="terra-date-month-date-input"]').click();
+        browser.keys(['ArrowDown']);
+        browser.keys(['Enter']);
+        $('input[name="terra-date-year-date-input"]').click();
+        browser.keys(['2000']);
+        $('input[name="terra-date-day-date-input"]').click();
+        browser.keys(['0']);
+        browser.keys(['+']);
+        const currentDate = new Date();
+        currentDate.setDate(currentDate.getDate() + 1);
+        expect($('#dateInput select')).toHaveValue(currentDate.toISOString().split('T')[0]);
       });
     });
 
@@ -825,6 +1020,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
       $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
+      browser.keys(['ArrowDown']);
 
       $('input[name="terra-date-day-date-input"]').click();
       browser.keys('30');
@@ -845,6 +1041,7 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
       $('select[name="terra-date-month-date-input"]').click();
+      browser.keys(['ArrowDown']);
       browser.keys(['ArrowDown']);
 
       $('input[name="terra-date-day-date-input"]').click();
