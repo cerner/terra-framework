@@ -989,7 +989,7 @@ describe('Compact Interactive List', () => {
       });
     });
 
-    it('should call onCellSelect method per mouse click or Space key down if cell is selactable', () => {
+    it('should call onCellSelect method per mouse click or Space key down if cell is selectable', () => {
       const mockOnCellSelect = jest.fn();
       const testList = (
         <CompactInteractiveList
