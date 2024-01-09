@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `terra-compact-interactive-list` cell content example.
+
 * Changed
   * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
   * Updated documentation and examples for `terra-folder-tree`.
