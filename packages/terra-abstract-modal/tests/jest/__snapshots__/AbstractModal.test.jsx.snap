@@ -176,7 +176,12 @@ exports[`correctly applies the theme context className 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -453,7 +458,12 @@ exports[`should mount an open modal 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -731,7 +741,12 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -1009,7 +1024,12 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -1287,7 +1307,12 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -1565,7 +1590,12 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -1846,7 +1876,12 @@ exports[`should mount an open modal with custom props 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -2125,7 +2160,12 @@ exports[`should mount an open modal with modal class name 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -2403,7 +2443,12 @@ exports[`should mount an open modal with overlay class name 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -2681,7 +2726,12 @@ exports[`should mount an open modal with role 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -2958,7 +3008,12 @@ exports[`should render the correct snapshot for iPads 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -3235,7 +3290,12 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>
@@ -3512,7 +3572,12 @@ exports[`should render the correct snapshot for iPods 1`] = `
             <FocusTrap
               _createFocusTrap={[Function]}
               active={true}
-              focusTrapOptions={Object {}}
+              focusTrapOptions={
+                Object {
+                  "clickOutsideDeactivates": true,
+                  "escapeDeactivates": true,
+                }
+              }
               paused={false}
             >
               <div>

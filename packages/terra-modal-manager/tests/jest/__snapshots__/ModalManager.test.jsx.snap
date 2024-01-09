@@ -283,7 +283,12 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 <FocusTrap
                   _createFocusTrap={[Function]}
                   active={true}
-                  focusTrapOptions={Object {}}
+                  focusTrapOptions={
+                    Object {
+                      "clickOutsideDeactivates": true,
+                      "escapeDeactivates": true,
+                    }
+                  }
                   paused={false}
                 >
                   <div>
