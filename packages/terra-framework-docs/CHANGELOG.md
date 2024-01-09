@@ -4,14 +4,22 @@
 
 * Changed
   * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
- 
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+
+## 1.54.0 - (January 2, 2024)
+
+* Changed
+  * Updated `terra-time-input` example to have visual label.
+  * Updated `terra-embedded-content-consumer` example to fix axe error.
+  * Updated `terra-compact-interactive-list` implementation guide and examples.
+
 ## 1.53.0 - (December 18, 2023)
 
 * Added
   * Added FlowsheetDataGrid implementation guide.
   * Added new Accessibility and Implementation guide for Terra Slider.
   * Added implementation guide for `terra-table`.
-  
+
 * Changed
   * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
   * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.

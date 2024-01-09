@@ -6,9 +6,12 @@ import ThemeContext from 'terra-theme-context';
 import { v4 as uuidv4 } from 'uuid';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import moment from 'moment-timezone';
 
 import AccessibleValue from 'terra-time-input/lib/_AccessibleValue';
 import AccessibleInput from 'terra-time-input/lib/_AccessibleInput';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import DateInputUtil from './DateInputUtil';
 import styles from './DateInput.module.scss';
 
@@ -135,6 +138,7 @@ class DateInput extends React.Component {
     }
 
     this.uuid = uuidv4();
+    this.hotKeyInstructionId = `${this.uuid}-hotkeyinstruction`;
 
     this.dateInputContainer = React.createRef();
     this.monthRef = React.createRef();
@@ -174,6 +178,7 @@ class DateInput extends React.Component {
       month: DateInputUtil.splitMonth(value),
       day: DateInputUtil.splitDay(value),
       year: DateInputUtil.splitYear(value),
+      dateString: '',
       isFocused: false,
       monthIsFocused: false,
       dayIsFocused: false,
@@ -281,8 +286,10 @@ class DateInput extends React.Component {
 
     if (inputType === DateInputUtil.inputType.DAY) {
       this.handleDayKeyDown(event);
-    } else {
+    } else if ((inputType === DateInputUtil.inputType.YEAR)) {
       this.handleYearKeyDown(event);
+    } else if ((inputType === DateInputUtil.inputType.MONTH)) {
+      this.handleMonthKeyDown(event);
     }
   }
 
@@ -395,6 +402,14 @@ class DateInput extends React.Component {
     const inputValue = event.target.value;
     const stateValue = this.state.month;
     const maxValue = 12;
+    const currentMonth = moment().format('MM');
+
+    if (inputValue === currentMonth) {
+      const date = moment().format('YYYY-MM-DD');
+      this.setState({ year: moment().year(), month: moment().format('MMMM'), day: moment().date() });
+      this.handleOnChange(event, date);
+      return;
+    }
 
     // Ignore the entry if the value did not change or it is invalid.
     if (inputValue === stateValue || Number(inputValue) > maxValue) {
@@ -402,6 +417,11 @@ class DateInput extends React.Component {
     }
 
     this.handleValueChange(event, DateInputUtil.inputType.MONTH, inputValue);
+
+    if (inputValue === '') {
+      this.setState({ year: '', day: '' });
+      this.handleOnChange(event, '');
+    }
   }
 
   handleDayChange(event) {
@@ -501,15 +521,15 @@ class DateInput extends React.Component {
       dateObj = dateFromInput;
     }
     dateObj.setDate(dateObj.getDate() + addDays);
-    const hotkeyDate = dateObj.toISOString();
-    const iSODate = hotkeyDate.split('T')[0];
-    const dateParts = iSODate.split('-');
-
-    this.setState({ year: dateParts[0], month: dateParts[1], day: dateParts[2] });
-
+    const hotkeyDate = moment(dateObj).format('YYYY-MM-DD');
+    const dateParts = hotkeyDate.split('-');
+    this.setState({
+      year: dateParts[0], month: dateParts[1], day: dateParts[2], dateString: hotkeyDate,
+    });
     if (this.props.onChange) {
-      this.handleOnChange(event, iSODate);
+      this.handleOnChange(event, hotkeyDate);
     }
+    event.preventDefault();
   }
 
   // Returns the display format, considering the locale and the prop.
@@ -592,7 +612,7 @@ class DateInput extends React.Component {
           value={this.state.month}
           name={'terra-date-month-'.concat(this.props.name)}
           onChange={this.handleMonthChange}
-          onKeyDown={this.handleMonthKeyDown}
+          onKeyDown={(e) => this.handleInputKeyDown(e, DateInputUtil.inputType.MONTH)}
           onClick={this.handleMonthClick}
           onFocus={this.handleMonthFocus}
           onBlur={this.handleMonthBlur}
@@ -600,6 +620,7 @@ class DateInput extends React.Component {
           aria-disabled={this.props.disabled}
           aria-invalid={this.props.isInvalid}
           aria-required={this.props.required}
+          aria-describedby={this.hotKeyInstructionId}
         >
           <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -615,6 +636,7 @@ class DateInput extends React.Component {
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.november' })} value="11">{this.props.intl.formatMessage({ id: 'Terra.date.input.november' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.december' })} value="12">{this.props.intl.formatMessage({ id: 'Terra.date.input.december' })}</option>
         </select>
+        <VisuallyHiddenText id={this.hotKeyInstructionId} text={intl.formatMessage({ id: 'Terra.date.input.hotKey' })} />
       </div>
     );
   }
@@ -656,7 +678,7 @@ class DateInput extends React.Component {
         {...numberAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         label={label}
-        description={intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}
+        description={`${intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
@@ -698,7 +720,7 @@ class DateInput extends React.Component {
         {...numberAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
-        description={this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}
+        description={`${this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
@@ -801,7 +823,8 @@ class DateInput extends React.Component {
 
     const format = DateInputUtil.getDateFormat(this.props);
     const label = a11yLabel || this.props.intl.formatMessage({ id: 'Terra.date.input.labelDefault' });
-
+    const dateFormatLabel = this.props.intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' });
+    const inputDate = moment(new Date(this.state.dateString)).format('dddd MMMM D YYYY');
     return (
       <div
         {...customProps}
@@ -810,7 +833,9 @@ class DateInput extends React.Component {
         role={isA11yControlled ? null : 'group'}
         aria-label={isA11yControlled ? undefined : label}
       >
-        <AccessibleValue value={completeDateValue} readThis={`${label} ${completeDateValue}`} />
+        <div aria-live="polite">
+          <AccessibleValue value={completeDateValue} readThis={`${dateFormatLabel} ${format}. ${inputDate}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`} />
+        </div>
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
           // The data stored in the value attribute will be the visible date in the date input but formatted in YYYY-MM-DD format.
@@ -822,7 +847,7 @@ class DateInput extends React.Component {
         {/* The format is aria-hidden because it makes no sense when assistive technologies are reading the entire multi-field DateInput. Instead, each subfield component has its own description.  */}
         {(useExternalFormatMask === false) && (
           <div aria-hidden className={cx('format-text')}>
-            {format}
+            {`(${format})`}
           </div>
         )}
       </div>

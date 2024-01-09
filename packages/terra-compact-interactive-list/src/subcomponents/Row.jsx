@@ -168,6 +168,7 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
+          isSelected={cellData.isSelected}
           rowId={id}
           isRowHeader={index === rowHeaderIndex}
           column={columns[index]}

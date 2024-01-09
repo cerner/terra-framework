@@ -1,9 +1,6 @@
 import React from 'react';
 import TimeInput from 'terra-time-input';
-import classNames from 'classnames/bind';
-import styles from './TimeInputDocCommon.module.scss';
-
-const cx = classNames.bind(styles);
+import Field from 'terra-form-field';
 
 class timeInput extends React.Component {
   constructor(props) {
@@ -19,17 +16,19 @@ class timeInput extends React.Component {
   render() {
     return (
       <div>
-        <p>
-          Time Provided:
-          <span className={cx('time-wrapper')}>{this.state.time}</span>
-        </p>
-        <TimeInput
-          name="time-input-value"
-          value={this.state.time}
-          onChange={this.handleTimeChange}
-          showSeconds
-          isInvalid
-        />
+        <Field
+          label={`Enter Time: ${this.state.time}`}
+          htmlFor="time-input-value"
+        >
+          <TimeInput
+            a11yLabel="Enter Time"
+            name="time-input-value"
+            value={this.state.time}
+            onChange={this.handleTimeChange}
+            showSeconds
+            isInvalid
+          />
+        </Field>
       </div>
     );
   }

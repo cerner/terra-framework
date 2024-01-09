@@ -8,6 +8,7 @@ import { injectIntl } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
 
 import * as KeyCode from 'keycode-js';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 import TimeUtil from './TimeUtil';
 import styles from './TimeInput.module.scss';
 
@@ -179,6 +180,9 @@ class TimeInput extends React.Component {
     this.handleMeridiemButtonChange = this.handleMeridiemButtonChange.bind(this);
     this.getCurrentTime = this.getCurrentTime.bind(this);
     this.setTime = this.setTime.bind(this);
+    this.visuallyHiddenComponent = null;
+    this.handleInvalidInputChange = this.handleInvalidInputChange.bind(this);
+    this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
 
     let hour = TimeUtil.splitHour(value);
     let meridiem;
@@ -250,6 +254,12 @@ class TimeInput extends React.Component {
       atMinDate: this.props.atMinDate,
     });
   }
+
+  handleInvalidInputChange = () => {
+    if (this.visuallyHiddenComponent) {
+      this.visuallyHiddenComponent.innerText = this.props.intl.formatMessage({ id: 'Terra.timeInput.invalidTime' });
+    }
+  };
 
   handleFocus(event) {
     if (this.props.onFocus && !this.timeInputContainer.current.contains(event.relatedTarget)) {
@@ -342,6 +352,7 @@ class TimeInput extends React.Component {
 
   handleHourChange(event) {
     if (!TimeUtil.validNumericInput(event.target.value)) {
+      this.handleInvalidInputChange();
       return;
     }
 
@@ -387,6 +398,7 @@ class TimeInput extends React.Component {
 
   handleMinuteChange(event) {
     if (!TimeUtil.validNumericInput(event.target.value)) {
+      this.handleInvalidInputChange();
       return;
     }
 
@@ -422,6 +434,7 @@ class TimeInput extends React.Component {
 
   handleSecondChange(event) {
     if (!TimeUtil.validNumericInput(event.target.value)) {
+      this.handleInvalidInputChange();
       return;
     }
 
@@ -740,6 +753,10 @@ class TimeInput extends React.Component {
   handleMeridiemButtonChange(event, selectedKey) {
     this.handleValueChange(event, TimeUtil.inputType.HOUR, this.state.hour.toString(), selectedKey);
   }
+
+  setVisuallyHiddenComponent = (node) => {
+    this.visuallyHiddenComponent = node;
+  };
 
   get a11yLabel() {
     const { a11yLabel, intl } = this.props;
@@ -1153,6 +1170,12 @@ class TimeInput extends React.Component {
         Screen readers should not read this because it will not make sense.
         */}
         <div aria-hidden className={cx('format-text')}>{mask()}</div>
+        <VisuallyHiddenText
+          aria-atomic="true"
+          aria-relevant="all"
+          aria-live="assertive"
+          refCallback={this.setVisuallyHiddenComponent}
+        />
       </div>
     );
     /* eslint-enable jsx-a11y/no-static-element-interactions */

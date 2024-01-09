@@ -1,5 +1,11 @@
 :local {
   .clinical-lowlight-theme {
     --terra-compact-interactive-list-hover-background-color: #25282a;
+    --terra-compact-interactive-list-cell-selected-background-color: #1e3a49;
+
+    &.cell:focus {
+      --terra-compact-interactive-list-cell-focus-outline: 3px dashed #fff;
+      --terra-compact-interactive-list-cell-focus-outline-offset: -4px;
+    }
   }
 }
