@@ -86,7 +86,7 @@ const cols = [
 
 const ResponsiveColumnsMaxWidth = () => (
   <CompactInteractiveList
-    id="compact-interactive-list-responsive-columns"
+    id="compact-interactive-list-responsive-columns-max-width"
     ariaLabel="Compact Interactive List"
     rows={rows}
     columns={cols}
