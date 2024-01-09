@@ -9,17 +9,17 @@ const Example = () => {
   return (
     <React.Fragment>
       <DateInputField
-        legend="Legend text"
+        legend="Patient's Admission Date"
         name="date-input-value"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
         showOptional
-        error="Error message"
+        error="Please enter a valid patient's admission date"
         help="Help message"
         isInvalid={isInvalid}
       />
-      <p>{`DateInputField Value: ${value}`}</p>
-      <button type="button" onClick={() => setIsInvalid(invalid => !invalid)}>Toggle isInvalid</button>
+      <p>{`Admission Date: ${value}`}</p>
+      <button type="button" onClick={() => setIsInvalid((invalid) => !invalid)}>Toggle isInvalid</button>
     </React.Fragment>
   );
 };

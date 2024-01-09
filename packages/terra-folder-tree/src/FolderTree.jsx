@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
@@ -10,6 +10,7 @@ import Button from 'terra-button';
 import Toolbar from 'terra-toolbar';
 import { IconCollapseRow, IconExpandRow } from 'terra-icon';
 
+import FolderTreeUtils from './FolderTreeUtils';
 import styles from './FolderTree.module.scss';
 
 const cx = classNames.bind(styles);
@@ -73,8 +74,8 @@ const FolderTree = ({
     const currentIndex = Array.from(visibleListItems).indexOf(event.target);
     const lastIndex = visibleListItems.length - 1;
 
-    const handleHomeKey = () => visibleListItems[0].focus();
-    const handleEndKey = () => visibleListItems[lastIndex].focus();
+    const handleHomeKey = () => FolderTreeUtils.handleMoveFocus(visibleListItems[currentIndex], visibleListItems[0]);
+    const handleEndKey = () => FolderTreeUtils.handleMoveFocus(visibleListItems[currentIndex], visibleListItems[lastIndex]);
 
     switch (event.keyCode) {
       case KeyCode.KEY_END:
@@ -88,13 +89,13 @@ const FolderTree = ({
       case KeyCode.KEY_UP: {
         event.preventDefault();
         const previousIndex = currentIndex - 1;
-        visibleListItems[previousIndex]?.focus();
+        FolderTreeUtils.handleMoveFocus(visibleListItems[currentIndex], visibleListItems[previousIndex]);
         break;
       }
       case KeyCode.KEY_DOWN: {
         event.preventDefault();
         const nextIndex = currentIndex + 1;
-        visibleListItems[nextIndex]?.focus();
+        FolderTreeUtils.handleMoveFocus(visibleListItems[currentIndex], visibleListItems[nextIndex]);
         break;
       }
       case KeyCode.KEY_LEFT: {
@@ -121,6 +122,11 @@ const FolderTree = ({
         break;
     }
   };
+
+  useEffect(() => {
+    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
+    listItems[0].tabIndex = 0;
+  }, []);
 
   return (
     <div className="folder-tree-container">
