@@ -39,7 +39,7 @@ Terra.describeViewports('On Click File Path', ['tiny', 'small'], () => {
   });
 
   it('should display file path with clinical header', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/file-path/file-pathwith-clinical-header');
+    browser.url('/raw/tests/cerner-terra-framework-docs/file-path/file-pathwith-action-header');
     browser.keys('Tab');
     Terra.validates.element('file path with header');
     browser.keys('Enter');
