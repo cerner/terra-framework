@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
+ 
 ## 1.53.0 - (December 18, 2023)
 
 * Added
