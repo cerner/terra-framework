@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import FilePath from 'terra-file-path';
 import ActionHeader from 'terra-action-header';
 
-const FilePathwithClinicalHeader = () => {
+const FilePathwithActionHeader = () => {
   const path = [
     {
       key: 'link-0',
@@ -29,4 +29,4 @@ const FilePathwithClinicalHeader = () => {
   );
 };
 
-export default FilePathwithClinicalHeader;
+export default FilePathwithActionHeader;
