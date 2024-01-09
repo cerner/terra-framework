@@ -44,7 +44,7 @@ const folderExpandedState = {
   'item-1-level-2': false,
   'item-1-level-3': false,
   'item-1-level-4': false,
-}
+};
 
 const FolderTreeExpandCollapse = () => {
   const [selectedKey, setSelectedKey] = React.useState('');

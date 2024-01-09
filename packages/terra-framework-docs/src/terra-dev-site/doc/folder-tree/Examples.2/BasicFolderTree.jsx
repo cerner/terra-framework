@@ -45,7 +45,7 @@ const folderExpandedState = {
   'item-3-level-1': false,
   'item-4-level-2-1': false,
   'item-5-level-1': false,
-}
+};
 
 const BasicFolderTree = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
