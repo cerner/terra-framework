@@ -139,7 +139,7 @@ class DisclosureComponent extends React.Component {
           {this.renderFormButton()}
           <br />
           <br />
-          <SelectField label="T-shirt size" placeholder="Select a size" selectId="tshirt-size-field" required className={cx('select-field')}>
+          <SelectField variant="combobox" label="T-shirt size" placeholder="Select a size" selectId="tshirt-size-field" required className={cx('select-field')}>
             <SelectField.Option value="Red" display="Red" />
             <SelectField.Option value="Orange" display="Orange" />
             <SelectField.Option value="Yellow" display="Yellow" />
