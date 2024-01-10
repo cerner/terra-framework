@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.12
+// Version 0.20.13
 // RDS Foundation Variables
 // -------------------------------------------------
 // Maintained by Oracle Health Design, UX Foundations Team
@@ -7,23 +7,23 @@
 // -------------------------------------------------
 
 .redwood-theme {
-  --rds-border-radius-xs: 0.1429rem;
-  --rds-border-radius-sm: 0.2857rem;
-  --rds-border-radius-md: 0.4286rem;
-  --rds-border-radius-lg: 0.5714rem;
-  --rds-border-radius-xl: 0.7143rem;
+  --rds-border-radius-xs: 2px;
+  --rds-border-radius-sm: 4px;
+  --rds-border-radius-md: 6px;
+  --rds-border-radius-lg: 8px;
+  --rds-border-radius-xl: 10px;
   --rds-border-width-0: 0;
-  --rds-border-width-1: 0.0714rem;
-  --rds-border-width-2: 0.1429rem;
-  --rds-box-shadow-xs: 0 0.0714rem 0.2857rem 0 rgba(0,0,0,0.12);
-  --rds-box-shadow-sm: 0 0.2857rem 0.5714rem 0 rgba(0,0,0,0.16);
-  --rds-box-shadow-md: 0 0.4286rem 0.8571rem 0 rgba(0,0,0,0.20);
-  --rds-box-shadow-lg: 0 0.5714rem 1.1429rem 0 rgba(0,0,0,0.24);
-  --rds-box-shadow-xl: 0 0.8571rem 1.4286rem 0 rgba(0,0,0,0.28);
-  --rds-breakpoint-sm: 22.8571rem;
-  --rds-breakpoint-md: 42.8571rem;
-  --rds-breakpoint-lg: 73.1429rem;
-  --rds-breakpoint-xl: 102.8571rem;
+  --rds-border-width-1: 1px;
+  --rds-border-width-2: 2px;
+  --rds-box-shadow-xs: 0 1px 4px 0 rgba(0,0,0,0.12);
+  --rds-box-shadow-sm: 0 4px 8px 0 rgba(0,0,0,0.16);
+  --rds-box-shadow-md: 0 6px 12px 0 rgba(0,0,0,0.20);
+  --rds-box-shadow-lg: 0 8px 16px 0 rgba(0,0,0,0.24);
+  --rds-box-shadow-xl: 0 12px 20 0 rgba(0,0,0,0.28);
+  --rds-breakpoint-sm: 320px;
+  --rds-breakpoint-md: 600px;
+  --rds-breakpoint-lg: 1024px;
+  --rds-breakpoint-xl: 1440px;
   --rds-color-dark-alert-information-strong: 247F9F;
   --rds-color-dark-alert-danger-strong: D83F2A;
   --rds-color-dark-alert-warning-strong: AE650E;
@@ -233,19 +233,19 @@
   --rds-color-pillar-sky-170: #053242;
   --rds-color-pillar-sky-180: #04232d;
   --rds-color-pillar-sky-190: #02181f;
-  --rds-focus-outline-style: dashed;
-  --rds-focus-outline-width: 0.1429rem;
-  --rds-focus-outline-offset-inside: -0.1429rem;
-  --rds-focus-outline-offset-outside: 0.1429rem;
+  --rds-focus-global-outline-style: dashed;
+  --rds-focus-global-outline-width: 2px;
+  --rds-focus-global-outline-offset-inside: -2px;
+  --rds-focus-global-outline-offset-outside: 2px;
   --rds-focus-inverse-outline-color: #fff;
   --rds-focus-normal-outline-color: #161515;
-  --rds-icon-size-2xs: 0.5714rem;
-  --rds-icon-size-xs: 0.7143rem;
-  --rds-icon-size-sm: 0.8571rem;
-  --rds-icon-size-md: 1rem;
-  --rds-icon-size-lg: 1.1429rem;
-  --rds-icon-size-xl: 1.7143rem;
-  --rds-icon-size-2xl: 2.5714rem;
+  --rds-icon-size-2xs: 8px;
+  --rds-icon-size-xs: 10px;
+  --rds-icon-size-sm: 12px;
+  --rds-icon-size-md: 14px;
+  --rds-icon-size-lg: 16px;
+  --rds-icon-size-xl: 24px;
+  --rds-icon-size-2xl: 36px;
   --rds-opacity-0: 0;
   --rds-opacity-10: 0.1;
   --rds-opacity-20: 0.2;
@@ -257,23 +257,23 @@
   --rds-opacity-80: 0.8;
   --rds-opacity-90: 0.9;
   --rds-opacity-100: 1;
-  --rds-spacing-10: 1.2857rem;
-  --rds-spacing-11: 1.4286rem;
-  --rds-spacing-12: 1.5714rem;
-  --rds-spacing-13: 1.7143rem;
-  --rds-spacing-14: 1.8571rem;
-  --rds-spacing-15: 2rem;
-  --rds-spacing-16: 2.1429rem;
+  --rds-spacing-10: 18px;
+  --rds-spacing-11: 20px;
+  --rds-spacing-12: 22px;
+  --rds-spacing-13: 24px;
+  --rds-spacing-14: 26px;
+  --rds-spacing-15: 28px;
+  --rds-spacing-16: 30px;
   --rds-spacing-00: 0;
-  --rds-spacing-01: 0.0714rem;
-  --rds-spacing-02: 0.1429rem;
-  --rds-spacing-03: 0.2857rem;
-  --rds-spacing-04: 0.4286rem;
-  --rds-spacing-05: 0.5714rem;
-  --rds-spacing-06: 0.7143rem;
-  --rds-spacing-07: 0.8571rem;
-  --rds-spacing-08: 1rem;
-  --rds-spacing-09: 1.1429rem;
+  --rds-spacing-01: 1px;
+  --rds-spacing-02: 2px;
+  --rds-spacing-03: 4px;
+  --rds-spacing-04: 6px;
+  --rds-spacing-05: 8px;
+  --rds-spacing-06: 10px;
+  --rds-spacing-07: 12px;
+  --rds-spacing-08: 14px;
+  --rds-spacing-09: 16px;
   --rds-text-decoration-none: none;
   --rds-text-decoration-underline: underline;
   --rds-typography-font-family-sans-serif: 'Oracle Sans', 'Helvetica Neue', arial, sans-serif;

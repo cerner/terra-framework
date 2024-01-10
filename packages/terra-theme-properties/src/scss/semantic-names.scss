@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.12
+// Version 0.20.13
 // Semantic Names for Terra Custom Properties
 // ENGINEERING NOTE:
 // Only reference variables from this file.
@@ -14,13 +14,20 @@
 // Default Values
 // =======================================
 .redwood-theme {
-  // Focus ring styles
+  // Keyboard focus styling
   --default-focus-outline-style: var(--rds-focus-outline-style);
-  --default-focus-outline-width: var(--rds-focus-outline-width);
-  --default-focus-outline-offset-inside: var(--rds-focus-offset-inside);
-  --default-focus-outline-offset-outside: var(--rds-focus-offset-outside);
   --default-focus-outline-color-inverse: var(--rds-focus-inverse-outline-color);
   --default-focus-outline-color-normal: var(--rds-focus-normal-outline-color);
+  --default-focus-outline-offset-inside: var(--rds-focus-offset-inside);
+  --default-focus-outline-offset-outside: var(--rds-focus-offset-outside);
+  --default-focus-outline-width: var(--rds-focus-outline-width);
+
+  // Link states
+  --link-enabled-color: var(--ui-light-color-text-icon-link);
+  --link-hover-color: var(--rds-color-alert-information-150);
+  --link-active-color: var(--rds-color-alert-information-170);
+  --link-disabled-text-color: var(--ui-light-color-text-icon-disabled);
+  --link-visited-enabled-color: var(--rds-color-plum-130);
 }
 
 // =======================================
@@ -56,50 +63,50 @@
   --badge-tiny-font-size: var(--rds-typography-font-size-xs);
   --badge-tiny-icon-size: var(--rds-icon-size-2xs);
   --badge-tiny-radius: var(--rds-border-radius-sm);
-  --badge-tiny-left-padding: var(--rds-spacing-3);
-  --badge-tiny-right-padding: var(--rds-spacing-3);
-  --badge-tiny-top-padding: var(--rds-spacing-2);
-  --badge-tiny-bottom-padding: var(--rds-spacing-2);
+  --badge-tiny-padding-left: var(--rds-spacing-3);
+  --badge-tiny-padding-right: var(--rds-spacing-3);
+  --badge-tiny-padding-top: var(--rds-spacing-2);
+  --badge-tiny-padding-bottom: var(--rds-spacing-2);
   --badge-tiny-horizontal-gap-padding: var(--rds-spacing-2);
 
   // Size -> Small
   --badge-small-font-size: var(--rds-typography-font-size-sm);
   --badge-small-icon-size: var(--rds-icon-size-xs);
   --badge-small-radius: var(--rds-border-radius-md);
-  --badge-small-left-padding: var(--rds-spacing-5);
-  --badge-small-right-padding: var(--rds-spacing-5);
-  --badge-small-top-padding: var(--rds-spacing-3);
-  --badge-small-bottom-padding: var(--rds-spacing-3);
+  --badge-small-padding-left: var(--rds-spacing-5);
+  --badge-small-padding-right: var(--rds-spacing-5);
+  --badge-small-padding-top: var(--rds-spacing-3);
+  --badge-small-padding-bottom: var(--rds-spacing-3);
   --badge-small-horizontal-gap-padding: var(--rds-spacing-3);
 
   // Size -> Medium
   --badge-medium-font-size: var(--rds-typography-font-size-md);
   --badge-medium-icon-size: var(--rds-icon-size-sm);
   --badge-medium-radius: var(--rds-border-radius-md);
-  --badge-medium-left-padding: var(--rds-spacing-5);
-  --badge-medium-right-padding: var(--rds-spacing-5);
-  --badge-medium-top-padding: var(--rds-spacing-3);
-  --badge-medium-bottom-padding: var(--rds-spacing-3);
+  --badge-medium-padding-left: var(--rds-spacing-5);
+  --badge-medium-padding-right: var(--rds-spacing-5);
+  --badge-medium-padding-top: var(--rds-spacing-3);
+  --badge-medium-padding-bottom: var(--rds-spacing-3);
   --badge-medium-horizontal-gap-padding: var(--rds-spacing-3);
 
   // Size -> Large
   --badge-large-font-size: var(--rds-typography-font-size-2xl);
   --badge-large-icon-size: var(--rds-icon-size-xl);
   --badge-large-radius: var(--rds-border-radius-md);
-  --badge-large-left-padding: var(--rds-spacing-5);
-  --badge-large-right-padding: var(--rds-spacing-5);
-  --badge-large-top-padding: var(--rds-spacing-3);
-  --badge-large-bottom-padding: var(--rds-spacing-3);
+  --badge-large-padding-left: var(--rds-spacing-5);
+  --badge-large-padding-right: var(--rds-spacing-5);
+  --badge-large-padding-top: var(--rds-spacing-3);
+  --badge-large-padding-bottom: var(--rds-spacing-3);
   --badge-large-horizontal-gap-padding: var(--rds-spacing-3);
 
   // Size -> Huge
   --badge-huge-font-size: var(--rds-typography-font-size-4xl);
   --badge-huge-icon-size: var(--rds-icon-size-3xl);
   --badge-huge-radius: var(--rds-border-radius-md);
-  --badge-huge-left-padding: var(--rds-spacing-5);
-  --badge-huge-right-padding: var(--rds-spacing-5);
-  --badge-huge-top-padding: var(--rds-spacing-3);
-  --badge-huge-bottom-padding: var(--rds-spacing-3);
+  --badge-huge-padding-left: var(--rds-spacing-5);
+  --badge-huge-padding-right: var(--rds-spacing-5);
+  --badge-huge-padding-top: var(--rds-spacing-3);
+  --badge-huge-padding-bottom: var(--rds-spacing-3);
   --badge-huge-horizontal-gap-padding: var(--rds-spacing-3);
 
   // Typography
@@ -113,27 +120,37 @@
 .redwood-theme {
   --base-text-color: var(--ui-light-color-text-icon-primary);
   --base-icon-color: var(--ui-light-color-text-icon-primary);
-  --base-application-background-color: var(--container-style-0-background-color);
+  --base-background-color: var(--container-style-0-background-color);
   --base-background-image: none;
   --base-font-family: var(--rds-typography-font-family-sans-serif);
-  --base-font-weight: var(--rds-typography-font-weight-weight-normal);
-  --base-font-size: 16px;
+  --base-font-weight: var(--rds-typography-font-weight-normal);
   --base-font-style: var(--rds-typography-font-style-normal);
 
   &.compact {
-    --base-font-size: 75%;
-    --base-line-height: 1.14285714285714286;
+    --base-font-size: 12px;
+    --base-line-height: 1.4285714286;
   }
 
   &.comfortable {
-    --base-font-size: 87.5%;
+    --base-font-size: 14px;
     --base-line-height: 1.2857142857;
   }
 
   &.spacious {
-    --base-font-size: 100%;
+    --base-font-size: 16px;
     --base-line-height: 1.4285714286;
   }
+}
+
+// =======================================
+// terra-card
+// =======================================
+
+.redwood-theme {
+  --card-background-color: var(--container-style-0-background-color);
+  --card-border: var(--rds-border-width-1) solid var(--ui-light-color-border-divider);
+  --card-border-radius: var(--rds-border-radius-lg);
+  --card-drop-shadow: var(--rds-box-shadow-sm);
 }
 
 // =======================================
@@ -157,26 +174,67 @@
 
   &.compact {
     --divider-font-size: var(--rds-typography-size-sm);
-    --divider-left-padding: var(--rds-spacing-05);
-    --divider-right-padding: var(--rds-spacing-05);
-    --divider-top-padding: var(--rds-spacing-00);
-    --divider-bottom-padding: var(--rds-spacing-00);
+    --divider-padding-left: var(--rds-spacing-05);
+    --divider-padding-right: var(--rds-spacing-05);
+    --divider-padding-top: var(--rds-spacing-00);
+    --divider-padding-bottom: var(--rds-spacing-00);
   }
 
   &.comfortable {
     --divider-font-size: var(--rds-typography-size-md);
-    --divider-left-padding: var(--rds-spacing-06);
-    --divider-right-padding: var(--rds-spacing-06);
-    --divider-top-padding: var(--rds-spacing-01);
-    --divider-bottom-padding: var(--rds-spacing-01);
+    --divider-padding-left: var(--rds-spacing-06);
+    --divider-padding-right: var(--rds-spacing-06);
+    --divider-padding-top: var(--rds-spacing-01);
+    --divider-padding-bottom: var(--rds-spacing-01);
   }
 
   &.spacious {
     --divider-font-size: var(--rds-typography-size-md);
-    --divider-left-padding: var(--rds-spacing-06);
-    --divider-right-padding: var(--rds-spacing-06);
-    --divider-top-padding: var(-rds-spacing-01);
-    --divider-bottom-padding: var(--rds-spacing-02);
+    --divider-padding-left: var(--rds-spacing-06);
+    --divider-padding-right: var(--rds-spacing-06);
+    --divider-padding-top: var(-rds-spacing-01);
+    --divider-padding-bottom: var(--rds-spacing-02);
+  }
+}
+
+// =======================================
+// terra-hyperlink
+// =======================================
+.redwood-theme {
+
+  // KEYBOARD FOCUS STYLE: normal color, outside offset
+  // LINK STYLE: Inherits default link colors
+
+  --hyperlink-text-decoration: var(--rds-text-decoration-underline);
+
+  &.compact {
+    --hyperlink-font-size: var(--rds-typography-font-size-sm);
+    --hyperlink-icon-size: var(--rds-icon-size-xs);
+    --hyperlink-padding-left: var(--rds-spacing-02);
+    --hyperlink-padding-right: var(--rds-spacing-02);
+    --hyperlink-padding-top: var(--rds-spacing-02);
+    --hyperlink-padding-bottom: var(--rds-spacing-02);
+    --hyperlink-horizontal-gap-padding: var(--rds-spacing-02);
+  }
+
+  &.comfortable {
+    --hyperlink-font-size: var(--rds-typography-font-size-md);
+    --hyperlink-icon-size: var(--rds-icon-size-sm);
+    --hyperlink-padding-left: var(--rds-spacing-02);
+    --hyperlink-padding-right: var(--rds-spacing-02);
+    --hyperlink-padding-top: var(--rds-spacing-02);
+    --hyperlink-padding-bottom: var(--rds-spacing-02);
+    --hyperlink-horizontal-gap-padding: var(--rds-spacing-03);
+  }
+
+  &.spacious {
+    --hyperlink-font-size: var(--rds-typography-font-size-lg);
+    --hyperlink-icon-size: var(--rds-icon-size-md);
+    --hyperlink-padding-left: var(--rds-spacing-02);
+    --hyperlink-padding-right: var(--rds-spacing-02);
+    --hyperlink-padding-top: var(--rds-spacing-02);
+    --hyperlink-padding-bottom: var(--rds-spacing-02);
+    --hyperlink-horizontal-gap-padding: var(--rds-spacing-04);
   }
 }
 
@@ -187,6 +245,40 @@
   --modal-background-color: var(--container-style-1-background-color);
   --modal-drop-shadow: var(--rds-box-shadow-md);
   --modal-border-radius: var(--rds-border-radius-md);
+}
+
+// =======================================
+// terra-overlay
+// =======================================
+.redwood-theme {
+  --overlay-subtle-background-color: var(--ui-light-color-overlay-scrim-subtle);
+  --overlay-subtle-text-color: var(--ui-light-color-text-icon-primary);
+  --overlay-subtle-icon-color: var(--ui-light-color-text-icon-primary);
+  --overlay-subtle-opacity: var(--rds-opacity-70);
+  --overlay-strong-background-color: var(--ui-light-color-overlay-scrim);
+  --overlay-strong-text-color: var(--ui-light-color-text-icon-inverse);
+  --overlay-strong-icon-color: var(--ui-light-color-text-icon-inverse);
+
+  &.compact {
+    --overlay-font-size: var(--rds-typography-font-size-sm);
+    --overlay-icon-height: var(--rds-icon-size-xl);
+    --overlay-icon-width: var(--rds-icon-size-xl);
+    --overlay-vertical-gap-spacing: var(--rds-spacing-05);
+  }
+
+  &.comfortable {
+    --overlay-font-size: var(--rds-typography-font-size-md);
+    --overlay-icon-height: var(--rds-icon-size-2xl);
+    --overlay-icon-width: var(--rds-icon-size-2xl);
+    --overlay-vertical-gap-spacing: var(--rds-spacing-07);
+  }
+
+  &.spacious {
+    --overlay-font-size: var(--rds-typography-font-size-lg);
+    --overlay-icon-height: var(--rds-icon-size-xl);
+    --overlay-icon-width: var(--rds-icon-size-xl);
+    --overlay-vertical-gap-spacing: var(--rds-spacing-09);
+  }
 }
 
 // =======================================
