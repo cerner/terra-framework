@@ -12,7 +12,7 @@ features, see the following examples:
 
 A folder tree is composed of two components:
 * **[FolderTree](../about#foldertree-props-table)**: The top-level folder tree component.
-* **[FolderTreeItem](../about#foldertreeitem-props-table)**: A row in a folder tree that may have `subfolderItems`.
+* **[FolderTree.Item](../about#foldertreeitem-props-table)**: A row in a folder tree that may have `subfolderItems`.
   * If there are 1 or more `subfolderItems`, the row will be expandable/collapsible and display a folder icon.
 
 All children of a FolderTree **must** be FolderTreeItems.
@@ -22,16 +22,16 @@ All children of a FolderTree **must** be FolderTreeItems.
 The following FolderTree props are required for a basic folder tree:
 * **[title](../about#foldertree-props-table)**: The title of the folder tree. This is also used as the `aria-label` for the folder tree.
 
-The following FolderTreeItem props are required for a basic folder tree:
+The following FolderTree.Item props are required for a basic folder tree:
 * **[label](../about#foldertreeitem-props-table)**: The text label for the folder tree item.
 
 ```js
 <FolderTree
   title="Documents"
 >
-  <FolderTreeItem label="First Item" />
-  <FolderTreeItem label="Second Item" />
-  <FolderTreeItem label="Third Item" />
+  <FolderTree.Item label="First Item" />
+  <FolderTree.Item label="Second Item" />
+  <FolderTree.Item label="Third Item" />
 </FolderTree>
 ```
 
