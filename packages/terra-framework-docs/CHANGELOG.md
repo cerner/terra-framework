@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Added
+  * Added test example for `terra-file-path`.
   * Added `terra-compact-interactive-list` cell content example.
 
 * Changed
