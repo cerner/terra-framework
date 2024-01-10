@@ -2,8 +2,8 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import PropTypes from 'prop-types';
 import React from 'react';
 import Input from 'terra-form-input';
-import TimeUtil from './TimeUtil';
 import { v4 as uuidv4 } from 'uuid';
+import TimeUtil from './TimeUtil';
 
 const propTypes = {
   /**

@@ -413,7 +413,7 @@ class TimeUtil {
     return variant;
   }
 
-   /**
+  /**
    * Util to determine if the user agent indicates that it is macOS
    * @return {boolean}
    */
