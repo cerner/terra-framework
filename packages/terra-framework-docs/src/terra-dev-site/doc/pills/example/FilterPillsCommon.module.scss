@@ -8,12 +8,6 @@
     margin-bottom: var(--terra-framework-docs-example-reset-button-margin-bottom, -2.42857rem);
     margin-top: 1.42857rem;
     position: relative;
-
-    &.is-disabled {
-      cursor: default;
-      opacity: 0.3;
-      pointer-events: none;
-    }
   }
 
   // Applied Filters Toolbar Example

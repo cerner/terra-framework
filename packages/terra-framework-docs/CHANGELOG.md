@@ -6,6 +6,7 @@
   * Added `terra-compact-interactive-list` cell content example.
 
 * Changed
+  * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
   * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
 
 * Added
