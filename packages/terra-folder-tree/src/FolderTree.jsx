@@ -17,7 +17,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * List of FolderTree.Items to be displayed as content within the FolderTree.
+   * List of items to be displayed as content within the Folder Tree component.
    */
   children: PropTypes.node,
   /**

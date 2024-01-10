@@ -4,6 +4,7 @@
 
 * Changed
   * Only the last focused item has a tab index of 0.
+  * Update prop descriptions.
 
 ## 1.0.0-alpha.4 - (December 18, 2023)
 
