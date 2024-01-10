@@ -8,8 +8,8 @@
   "Terra.timeInput.hourLabel": "{a11yLabel} hour",
   "Terra.timeInput.hours": "Hours",
   "Terra.timeInput.labeledTextValue": "{a11yLabel} {a11yTimeValue}",
-  "Terra.timeInput.maskHourMinute": "(hh:mm)",
-  "Terra.timeInput.maskHourMinuteSecond": "(hh:mm:ss)",
+  "Terra.timeInput.maskHourMinute": "hh:mm",
+  "Terra.timeInput.maskHourMinuteSecond": "hh:mm:ss",
   "Terra.timeInput.minutes": "Minutes",
   "Terra.timeInput.pm": "p.m.",
   "Terra.timeInput.seconds": "Seconds",
@@ -19,5 +19,6 @@
   "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
   "Terra.timeInput.timeFormatLabel": "Time Format:",
   "Terra.timeInput.timeSpacer": ":",
-  "Terra.timeInput.invalidTime": "Please enter a valid Time"
+  "Terra.timeInput.invalidTime": "Please enter a valid Time",
+  "Terra.timePicker.hotKey": "Press N to set current Time, plus key for increase time and minus key for decrease time"
 }

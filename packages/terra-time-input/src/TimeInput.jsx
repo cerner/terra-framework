@@ -1048,6 +1048,7 @@ class TimeInput extends React.Component {
     inputAttributes.required = required;
 
     const a11yTimeValue = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
+    const hotKeyDescription = intl.formatMessage({ id: 'Terra.timePicker.hotKey' });
 
     return (
       <div
@@ -1149,6 +1150,7 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             description={hourDescription()}
+            hotKeyDescription={hotKeyDescription}
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
@@ -1169,6 +1171,7 @@ class TimeInput extends React.Component {
             pattern="\d*"
             // description: Like the hour descriptions, but for the minute input.
             description={intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' })}
+            hotKeyDescription={hotKeyDescription}
           />
           {showSeconds && (
           <React.Fragment>
@@ -1191,6 +1194,7 @@ class TimeInput extends React.Component {
               pattern="\d*"
               // description: Like the hour descriptions, but for the second input.
               description={intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' })}
+              hotKeyDescription={hotKeyDescription}
             />
           </React.Fragment>
           )}

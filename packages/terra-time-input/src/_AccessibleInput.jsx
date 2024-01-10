@@ -53,6 +53,7 @@ function AccessibleInput(props) {
     disabled,
     isInvalid,
     showIsInvalid,
+    hotKeyDescription,
     ...inputProps
   } = props;
 
@@ -84,7 +85,7 @@ function AccessibleInput(props) {
         aria-describedby={descriptionId}
 
       />
-      <VisuallyHiddenText id={descriptionId} text={description} />
+      <VisuallyHiddenText id={descriptionId} text={`${description}, ${hotKeyDescription}`} />
     </>
   );
 }

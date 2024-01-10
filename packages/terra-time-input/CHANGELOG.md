@@ -7,6 +7,7 @@
 
 * Added
   * Added visual focus dashed border for `terra-time-input`.
+  * Updated screen reader response to announce hot keys suggestions.
 
 ## 4.60.0 - (January 2, 2024)
 
