@@ -81,9 +81,9 @@ const cols = [
   },
 ];
 
-const FixedWidthColumns = () => (
+const ResponsiveColumns = () => (
   <CompactInteractiveList
-    id="compact-interactive-list-fixed-width-columns2"
+    id="compact-interactive-list-responsive-columns"
     ariaLabel="Compact Interactive List"
     rows={rows}
     columns={cols}
@@ -92,4 +92,4 @@ const FixedWidthColumns = () => (
   />
 );
 
-export default FixedWidthColumns;
+export default ResponsiveColumns;

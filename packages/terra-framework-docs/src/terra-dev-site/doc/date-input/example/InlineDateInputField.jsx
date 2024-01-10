@@ -11,23 +11,23 @@ const Example = () => {
   return (
     <React.Fragment>
       <DateInputField
-        legend="Legend text"
+        legend="Select Appointment Date"
         name="date-input-value"
         value={dateFieldValue1}
         onChange={(event, dateString) => setDateFieldValue1(dateString)}
         isInline={isInline}
         isInvalid={isInvalid}
-        error="Error message"
+        error="Please select a valid appointment date"
         help="Help message"
       />
       <DateInputField
-        legend="Legend text"
+        legend="Select Appointment Date"
         name="date-input-value"
         value={dateFieldValue2}
         onChange={(event, dateString) => setDateFieldValue2(dateString)}
         isInline={isInline}
         isInvalid={isInvalid}
-        error="Error message"
+        error="Please select a valid appointment date"
         help="Help message"
       />
       <p>{`First DateInputField Value: ${dateFieldValue1}`}</p>

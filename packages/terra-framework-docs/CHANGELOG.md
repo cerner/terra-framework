@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+* Added
+  * Added test example for `terra-file-path`.
+  * Added `terra-compact-interactive-list` cell content example.
+
+* Changed
+  * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+
+* Added
+  * Added upgrade guide for Terra Table.
+
 ## 1.54.0 - (January 2, 2024)
 
 * Changed

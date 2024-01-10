@@ -8,7 +8,7 @@ import Spacer from 'terra-spacer';
 import Arrange from 'terra-arrange';
 import { IconFolder, IconCaretRight, IconCaretDown } from 'terra-icon';
 import ThemeContext from 'terra-theme-context';
-
+import FolderTreeUtils from '../FolderTreeUtils';
 import styles from './FolderTreeItem.module.scss';
 
 const cx = classNames.bind(styles);
@@ -51,7 +51,10 @@ const propTypes = {
    * @private
    * Ref to the parent folder of the current item.
    */
-  parentRef: PropTypes.number,
+  parentRef: PropTypes.oneOfType([
+    PropTypes.func,
+    PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  ]),
   /**
    * @private
    * intl object programmatically imported through injectIntl from react-intl.
@@ -137,7 +140,7 @@ const FolderTreeItem = ({
         if (isFolder && isExpanded) {
           handleToggle(event);
         } else {
-          parentRef?.current.focus();
+          FolderTreeUtils.handleMoveFocus(itemNode.current, parentRef?.current);
         }
 
         break;
@@ -150,7 +153,7 @@ const FolderTreeItem = ({
           handleToggle(event);
         } else if (isFolder) {
           const firstFolderChild = subFolderNode.current.querySelector('[data-item-show-focus=true]');
-          firstFolderChild?.focus();
+          FolderTreeUtils.handleMoveFocus(itemNode.current, firstFolderChild);
         }
 
         break;
@@ -170,7 +173,7 @@ const FolderTreeItem = ({
         onClick={isFolder ? handleToggle : onClick}
         onKeyDown={handleKeyDown}
         data-item-show-focus
-        tabIndex={0}
+        tabIndex={-1}
         ref={itemNode}
       >
         <input
