@@ -1049,6 +1049,8 @@ class TimeInput extends React.Component {
 
     const a11yTimeValue = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
     const hotKeyDescription = intl.formatMessage({ id: 'Terra.timePicker.hotKey' });
+    const minuteDescription = intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' });
+    const secondDescription = intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' });
 
     return (
       <div
@@ -1149,8 +1151,7 @@ class TimeInput extends React.Component {
             onBlur={this.handleHourBlur}
             size="2"
             pattern="\d*"
-            description={hourDescription()}
-            hotKeyDescription={hotKeyDescription}
+            description={`${hourDescription()}, ${hotKeyDescription}`}
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
@@ -1170,8 +1171,7 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             // description: Like the hour descriptions, but for the minute input.
-            description={intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' })}
-            hotKeyDescription={hotKeyDescription}
+            description={`${minuteDescription}, ${hotKeyDescription}`}
           />
           {showSeconds && (
           <React.Fragment>
@@ -1193,8 +1193,7 @@ class TimeInput extends React.Component {
               size="2"
               pattern="\d*"
               // description: Like the hour descriptions, but for the second input.
-              description={intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' })}
-              hotKeyDescription={hotKeyDescription}
+              description={`${secondDescription}, ${hotKeyDescription}`}
             />
           </React.Fragment>
           )}

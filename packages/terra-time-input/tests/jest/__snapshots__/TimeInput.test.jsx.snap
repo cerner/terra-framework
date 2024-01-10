@@ -119,7 +119,7 @@ exports[`correctly applies the theme context className 1`] = `
           />
           <AccessibleInput
             className="time-input-hour"
-            description="Terra.timeInput.hourDescriptionTwentyFour"
+            description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
             disabled={false}
             isInvalid={false}
             label="Terra.timeInput.hourLabel"
@@ -180,14 +180,16 @@ exports[`correctly applies the theme context className 1`] = `
               />
             </Input>
             <VisuallyHiddenText
+              aria-live="off"
               id="00000000-0000-0000-0000-000000000000-description"
-              text="Terra.timeInput.hourDescriptionTwentyFour"
+              text="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
             >
               <span
+                aria-live="off"
                 className="visually-hidden-text"
                 id="00000000-0000-0000-0000-000000000000-description"
               >
-                Terra.timeInput.hourDescriptionTwentyFour
+                Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey
               </span>
             </VisuallyHiddenText>
           </AccessibleInput>
@@ -234,7 +236,7 @@ exports[`correctly applies the theme context className 1`] = `
           </InjectIntl(TimeSpacer)>
           <AccessibleInput
             className="time-input-minute"
-            description="Terra.timeInput.descriptionMinute"
+            description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
             disabled={false}
             isInvalid={false}
             label="Terra.timeInput.minutes"
@@ -295,14 +297,16 @@ exports[`correctly applies the theme context className 1`] = `
               />
             </Input>
             <VisuallyHiddenText
+              aria-live="off"
               id="00000000-0000-0000-0000-000000000000-description"
-              text="Terra.timeInput.descriptionMinute"
+              text="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
             >
               <span
+                aria-live="off"
                 className="visually-hidden-text"
                 id="00000000-0000-0000-0000-000000000000-description"
               >
-                Terra.timeInput.descriptionMinute
+                Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
               </span>
             </VisuallyHiddenText>
           </AccessibleInput>
@@ -351,7 +355,7 @@ exports[`should ignore invalid times properly 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -374,7 +378,7 @@ exports[`should ignore invalid times properly 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -427,7 +431,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -450,7 +454,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
     />
     <AccessibleInput
       className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -473,7 +477,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
     />
     <AccessibleInput
       className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
+      description="Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.seconds"
@@ -544,10 +548,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <span
+        aria-live="off"
         class="visually-hidden-text"
         id="00000000-0000-0000-0000-000000000000-description"
       >
-        Terra.timeInput.hourDescriptionTwelve
+        Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey
       </span>
       <span
         aria-hidden="true"
@@ -569,10 +574,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <span
+        aria-live="off"
         class="visually-hidden-text"
         id="00000000-0000-0000-0000-000000000000-description"
       >
-        Terra.timeInput.descriptionMinute
+        Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
       </span>
     </div>
     <div
@@ -664,10 +670,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <span
+        aria-live="off"
         class="visually-hidden-text"
         id="00000000-0000-0000-0000-000000000000-description"
       >
-        Terra.timeInput.hourDescriptionTwelve
+        Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey
       </span>
       <span
         aria-hidden="true"
@@ -689,10 +696,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <span
+        aria-live="off"
         class="visually-hidden-text"
         id="00000000-0000-0000-0000-000000000000-description"
       >
-        Terra.timeInput.descriptionMinute
+        Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
       </span>
     </div>
     <div
@@ -784,10 +792,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <span
+        aria-live="off"
         class="visually-hidden-text"
         id="00000000-0000-0000-0000-000000000000-description"
       >
-        Terra.timeInput.hourDescriptionTwelve
+        Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey
       </span>
       <span
         aria-hidden="true"
@@ -809,10 +818,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         value=""
       />
       <span
+        aria-live="off"
         class="visually-hidden-text"
         id="00000000-0000-0000-0000-000000000000-description"
       >
-        Terra.timeInput.descriptionMinute
+        Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
       </span>
     </div>
     <div
@@ -983,7 +993,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       />
       <AccessibleInput
         className="time-input-hour"
-        description="Terra.timeInput.hourDescriptionTwentyFour"
+        description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
         disabled={false}
         isInvalid={false}
         label="Terra.timeInput.hourLabel"
@@ -1044,14 +1054,16 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           />
         </Input>
         <VisuallyHiddenText
+          aria-live="off"
           id="00000000-0000-0000-0000-000000000000-description"
-          text="Terra.timeInput.hourDescriptionTwentyFour"
+          text="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
         >
           <span
+            aria-live="off"
             className="visually-hidden-text"
             id="00000000-0000-0000-0000-000000000000-description"
           >
-            Terra.timeInput.hourDescriptionTwentyFour
+            Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey
           </span>
         </VisuallyHiddenText>
       </AccessibleInput>
@@ -1098,7 +1110,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       </InjectIntl(TimeSpacer)>
       <AccessibleInput
         className="time-input-minute"
-        description="Terra.timeInput.descriptionMinute"
+        description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
         disabled={false}
         isInvalid={false}
         label="Terra.timeInput.minutes"
@@ -1159,14 +1171,16 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           />
         </Input>
         <VisuallyHiddenText
+          aria-live="off"
           id="00000000-0000-0000-0000-000000000000-description"
-          text="Terra.timeInput.descriptionMinute"
+          text="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
         >
           <span
+            aria-live="off"
             className="visually-hidden-text"
             id="00000000-0000-0000-0000-000000000000-description"
           >
-            Terra.timeInput.descriptionMinute
+            Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
           </span>
         </VisuallyHiddenText>
       </AccessibleInput>
@@ -1213,7 +1227,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -1236,7 +1250,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
     />
     <AccessibleInput
       className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -1259,7 +1273,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
     />
     <AccessibleInput
       className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
+      description="Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.seconds"
@@ -1355,10 +1369,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwelve
+      Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -1380,10 +1395,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionMinute
+      Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -1405,10 +1421,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionSecond
+      Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey
     </span>
   </div>
   <div
@@ -1503,10 +1520,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwelve
+      Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -1528,10 +1546,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionMinute
+      Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
     </span>
   </div>
   <div
@@ -1626,10 +1645,11 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwentyFour
+      Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -1651,10 +1671,11 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionMinute
+      Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
     </span>
   </div>
   <div
@@ -1706,10 +1727,11 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwentyFour
+      Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -1731,10 +1753,11 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionMinute
+      Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -1756,10 +1779,11 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionSecond
+      Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey
     </span>
   </div>
   <div
@@ -1796,7 +1820,7 @@ exports[`should render a default time input 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -1819,7 +1843,7 @@ exports[`should render a default time input 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -1872,7 +1896,7 @@ exports[`should render a disabled time input 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={true}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -1895,7 +1919,7 @@ exports[`should render a disabled time input 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={true}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -1948,7 +1972,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwelve"
+      description="Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -1971,7 +1995,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -2053,7 +2077,7 @@ exports[`should render a time input with a default time 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -2076,7 +2100,7 @@ exports[`should render a time input with a default time 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -2129,7 +2153,7 @@ exports[`should render a time input with custom attributes 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       id="terra-time-input"
       isInvalid={false}
@@ -2153,7 +2177,7 @@ exports[`should render a time input with custom attributes 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       id="terra-time-input"
       isInvalid={false}
@@ -2207,7 +2231,7 @@ exports[`should render a time input with onBlur 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -2230,7 +2254,7 @@ exports[`should render a time input with onBlur 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -2283,7 +2307,7 @@ exports[`should render a time input with onChange 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -2306,7 +2330,7 @@ exports[`should render a time input with onChange 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -2359,7 +2383,7 @@ exports[`should render a time input with onFocus 1`] = `
     />
     <AccessibleInput
       className="time-input-hour"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -2382,7 +2406,7 @@ exports[`should render a time input with onFocus 1`] = `
     />
     <AccessibleInput
       className="time-input-minute"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -2435,7 +2459,7 @@ exports[`should render a time input with seconds input 1`] = `
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -2458,7 +2482,7 @@ exports[`should render a time input with seconds input 1`] = `
     />
     <AccessibleInput
       className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -2481,7 +2505,7 @@ exports[`should render a time input with seconds input 1`] = `
     />
     <AccessibleInput
       className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
+      description="Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.seconds"
@@ -2535,7 +2559,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.hourLabel"
@@ -2558,7 +2582,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
     />
     <AccessibleInput
       className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.minutes"
@@ -2581,7 +2605,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
     />
     <AccessibleInput
       className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
+      description="Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey"
       disabled={false}
       isInvalid={false}
       label="Terra.timeInput.seconds"
@@ -2634,7 +2658,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
     />
     <AccessibleInput
       className="time-input-hour with-second"
-      description="Terra.timeInput.hourDescriptionTwentyFour"
+      description="Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey"
       disabled={false}
       id="terra-time-input"
       isInvalid={false}
@@ -2658,7 +2682,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
     />
     <AccessibleInput
       className="time-input-minute with-second"
-      description="Terra.timeInput.descriptionMinute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
       disabled={false}
       id="terra-time-input"
       isInvalid={false}
@@ -2682,7 +2706,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
     />
     <AccessibleInput
       className="time-input-second"
-      description="Terra.timeInput.descriptionSecond"
+      description="Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey"
       disabled={false}
       id="id-0"
       isInvalid={false}
@@ -2752,10 +2776,11 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwentyFour
+      Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -2778,10 +2803,11 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionMinute
+      Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
     </span>
   </div>
   <div
@@ -2834,10 +2860,11 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.hourDescriptionTwentyFour
+      Terra.timeInput.hourDescriptionTwentyFour, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -2860,10 +2887,11 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionMinute
+      Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey
     </span>
     <span
       aria-hidden="true"
@@ -2886,10 +2914,11 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.timeInput.descriptionSecond
+      Terra.timeInput.descriptionSecond, Terra.timePicker.hotKey
     </span>
   </div>
   <div
