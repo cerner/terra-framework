@@ -24,6 +24,11 @@ const propTypes = {
   isInvalid: PropTypes.bool,
   /** When true, setting isInvalid to true will also visually display the input as invalid. */
   showIsInvalid: PropTypes.bool,
+  /**
+   * The string that gives a deeper understanding of the purpose and usage of the input for assistive technologies like
+   * screen readers. This value is not rendered visually.
+   * */
+  hotKeyDescription: PropTypes.string,
 };
 
 const defaultProps = {
