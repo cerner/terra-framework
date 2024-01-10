@@ -7,6 +7,7 @@
 * Added
   * Added test example for `terra-file-path`.
   * Added `terra-compact-interactive-list` cell content example.
+  * Added screen reader support to associate with error message.
 
 * Changed
   * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
