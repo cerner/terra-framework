@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed flicker issue when `collapsible-menu-view` is wrapped with `terra-clinical-header`.
+
 ## 6.87.0 - (December 18, 2023)
 
 * Added
