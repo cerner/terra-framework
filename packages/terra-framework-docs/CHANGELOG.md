@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.55.0 - (January 10, 2024)
+
 * Added
   * Added test example for `terra-file-path`.
   * Added `terra-compact-interactive-list` cell content example.
