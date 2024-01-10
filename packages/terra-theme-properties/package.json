@@ -1,6 +1,6 @@
 {
   "name": "terra-theme-properties",
-  "main": "src/index.js",
+  "main": "lib/index.js",
   "version": "0.1.0",
   "description": "Terra Theme Properties provides named theme variables for UX-defined styles.",
   "repository": {
@@ -33,8 +33,7 @@
     "@babel/cli": "^7.22.10",
     "@babel/core": "^7.22.10",
     "@cerner/eslint-config-terra": "^5.4.0",
-    "eslint": "^7.32.0",
-    "stylelint": "^13.13.1"
+    "eslint": "^7.32.0"
   },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
@@ -44,7 +43,7 @@
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint:js:fix": "eslint --ext .js,.jsx . --fix",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:scss": "stylelint ./src/*.scss",
+    "lint:scss": "stylelint ./src/**/*.scss",
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib"
   }
