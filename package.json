@@ -42,7 +42,16 @@
     "extends": "@cerner/stylelint-config-terra",
     "rules": {
       "scss/at-mixin-pattern": "^(terra-)[a-z]+([a-z0-9-]+[a-z0-9]+)?$"
-    }
+    },
+    "overrides": [
+      {
+        "files": ["packages/terra-theme-properties/**/*.scss"],
+        "rules": {
+          "terra/custom-property-name": false,
+          "terra/custom-property-namespace": false
+        }
+      }
+    ]
   },
   "scripts": {
     "clean": "npm run clean:root && npm run clean:lib",
@@ -70,8 +79,8 @@
     "lint:js": "eslint --ext .js,.jsx . --max-warnings 0",
     "lint:js:fix": "eslint --ext .js,.jsx . --fix",
     "lint:package-json": "terra package-json-lint",
-    "lint:scss": "stylelint 'packages/**/src/**/*.scss' --syntax scss",
-    "lint:scss:no-warnings": "stylelint 'packages/**/src/**/*.scss' --syntax scss --quiet",
+    "lint:scss": "stylelint 'packages/**/src/**/*.scss'",
+    "lint:scss:no-warnings": "stylelint 'packages/**/src/**/*.scss' --quiet",
     "prepare-for-release": "terra prepare-for-release",
     "postinstall": "npm run compile",
     "start": "webpack serve",
@@ -101,7 +110,7 @@
     "@cerner/jest-config-terra": "^1.0.0",
     "@cerner/package-json-lint": "^1.3.0",
     "@cerner/package-json-lint-config-terra": "^1.0.0",
-    "@cerner/stylelint-config-terra": "^4.0.0",
+    "@cerner/stylelint-config-terra": "^5.0.0",
     "@cerner/terra-cli": "^1.1.0",
     "@cerner/terra-dev-site": "^7.0.0",
     "@cerner/terra-functional-testing": "^4.0.0",
@@ -126,7 +135,7 @@
     "react-dom": "^16.8.5",
     "react-intl": "^2.9.0",
     "regenerator-runtime": "^0.13.2",
-    "stylelint": "^13.13.1",
+    "stylelint": "^15.0.0",
     "terra-aggregate-translations": "^1.0.0",
     "terra-application": "^1.48.0",
     "terra-disclosure-manager": "^4.9.0",
