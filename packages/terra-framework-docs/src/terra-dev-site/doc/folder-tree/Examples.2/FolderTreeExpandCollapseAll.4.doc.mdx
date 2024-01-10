@@ -11,11 +11,11 @@ Expand/collapse all functionality is accessible via the toolbar buttons.
 
 Expanded/collapsed state is controlled by the consuming component.
 The following FolderTree props are required for expand/collapse all:
-* **[onExpandAll](../about#foldertree-props-table)**: This callback is called when interacting with the Expand All button.
-* **[onCollapseAll](../about#foldertree-props-table)**: This callback is called when interacting with the Collapse All button.
+* **[onExpandAll](../about#foldertree-props-table)**: This callback is called when the Expand All button is activated.
+* **[onCollapseAll](../about#foldertree-props-table)**: This callback is called when the Collapse All button is activated.
 
 Only FolderTreeItems that have `subfolderItems` with 1 or more items can be expanded/collapsed,
-and will display a folder icon.
+and will always display a folder icon.
 
 ```js
 // Initialize folders to be collapsed
