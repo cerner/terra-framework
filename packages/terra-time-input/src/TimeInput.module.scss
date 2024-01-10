@@ -262,9 +262,10 @@
       }
 
       &:focus {
-        @include focus-styles;
-        outline: var(--terra-time-input-outline, 2px dashed #000);
+        border-color: var(--terra-time-input-meridiem-button-focus-border-color, #52585b);
         box-shadow: none;
+        outline: var(--terra-time-input-meridiem-button-focus-border-outline, 2px dashed #000);
+        z-index: 1;
       }
 
       &[aria-checked='true'] {
