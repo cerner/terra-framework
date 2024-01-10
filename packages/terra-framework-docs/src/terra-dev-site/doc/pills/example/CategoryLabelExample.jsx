@@ -28,7 +28,10 @@ const CategoryLabelExample = () => {
     },
   ];
   const [pills, setPills] = useState(pillsData);
-  const isResetButtonDisabled = (pills.length === pillsData.length);
+
+  const handleResetClick = () => {
+    setPills(pillsData);
+  };
 
   const handleOnRemove = (id, metaData) => {
     const pillsArray = pills;
@@ -53,10 +56,8 @@ const CategoryLabelExample = () => {
         ))}
       </FilterPills>
       <DocsButton
-        aria-disabled={isResetButtonDisabled}
-        className={cx(['terra-docs-example-reset-button', { 'is-disabled': isResetButtonDisabled }, theme.className])}
-        disabled={isResetButtonDisabled}
-        onClick={() => setPills(pillsData)}
+        className={cx(['terra-docs-example-reset-button', theme.className])}
+        onClick={handleResetClick}
       >
         Reset Example
       </DocsButton>

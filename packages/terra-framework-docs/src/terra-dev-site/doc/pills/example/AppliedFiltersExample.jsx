@@ -23,12 +23,15 @@ const AppliedFiltersExample = () => {
     pillsData.push(pillData);
   }
   const [pills, setPills] = useState(pillsData);
-  const isResetButtonDisabled = (pills.length === pillsData.length);
 
   const handleOnRemove = (id, metaData) => {
     const pillsArray = pills;
     pillsArray.splice(metaData.index, 1);
     setPills([...pillsArray]);
+  };
+
+  const handleResetClick = () => {
+    setPills(pillsData);
   };
 
   const appliedFiltersLabel = 'Applied Filters:';
@@ -77,10 +80,8 @@ const AppliedFiltersExample = () => {
         </div>
       </div>
       <DocsButton
-        aria-disabled={isResetButtonDisabled}
-        className={cx(['terra-docs-example-reset-button', { 'is-disabled': isResetButtonDisabled }, theme.className])}
-        disabled={isResetButtonDisabled}
-        onClick={() => setPills(pillsData)}
+        className={cx(['terra-docs-example-reset-button', theme.className])}
+        onClick={handleResetClick}
       >
         Reset Example
       </DocsButton>
