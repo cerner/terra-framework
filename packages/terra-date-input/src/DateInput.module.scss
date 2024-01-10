@@ -161,7 +161,7 @@
     // .focused needed for Safari Mobile
     &:focus,
     &.focused {
-      border: var(--terra-date-input-month-select-focus-border, 1px solid #4cb2e9);
+      border: var(--terra-date-input-month-select-focus-border, 2px dashed #000);
       color: var(--terra-date-input-month-select-focus-color);
       outline: 0;
     }
@@ -208,7 +208,7 @@
       // .focused needed for Safari Mobile
       &:focus,
       &.focused {
-        border: var(--terra-date-input-month-select-error-focus-border, 1px solid #e50000);
+        border: var(--terra-date-input-month-select-error-focus-border, 2px dashed #000);
       }
 
       &.disabled {
@@ -266,6 +266,10 @@
       appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
       margin: 0;
     }
+
+    &.is-focused {
+      border: var(--terra-date-input-date-input-day-focus-border, 2px dashed #000);
+    }
   }
 
   .date-input-year {
@@ -279,6 +283,10 @@
     &::-webkit-outer-spin-button {
       appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
       margin: 0;
+    }
+    
+    &.is-focused {
+      border: var(--terra-date-input-date-input-year-focus-border, 2px dashed #000);
     }
   }
 

@@ -606,7 +606,7 @@ class DateInput extends React.Component {
       <div className={DateInputMonthWrapperClassNames}>
         <select
           {...this.props.monthAttributes}
-          aria-label={label}
+          aria-label={this.props.isInvalid ? 'Error message' : label}
           ref={this.monthRef}
           className={DateInputMonthClassNames}
           value={this.state.month}
@@ -677,7 +677,7 @@ class DateInput extends React.Component {
         {...this.props.dayAttributes}
         {...numberAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
-        label={label}
+        label={this.props.isInvalid ? `${'Error message'}, ${label}` : label}
         description={`${intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
@@ -719,7 +719,7 @@ class DateInput extends React.Component {
         {...this.props.yearAttributes}
         {...numberAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
-        label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
+        label={this.props.isInvalid ? `${'Error message'}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}` : `${this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}`}
         description={`${this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         value={this.state.year}

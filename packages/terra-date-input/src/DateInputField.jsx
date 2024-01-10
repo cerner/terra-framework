@@ -113,6 +113,10 @@ const propTypes = {
    * Custom input attributes to apply to the year input
    */
   yearAttributes: PropTypes.object,
+  /**
+   * Callback ref to access date input containing DOM element.
+   */
+  refCallback: PropTypes.func,
 };
 
 const defaultProps = {
@@ -136,6 +140,7 @@ const defaultProps = {
   showOptional: false,
   value: '',
   yearAttributes: {},
+  refCallback: undefined,
 };
 
 const DateInputField = (props) => {
@@ -163,6 +168,7 @@ const DateInputField = (props) => {
     showOptional,
     value,
     yearAttributes,
+    refCallback,
     ...customProps
   } = props;
 
@@ -267,6 +273,7 @@ const DateInputField = (props) => {
         useExternalFormatMask
         value={value}
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
+        refCallback={refCallback}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
       {/* It makes no sense for screen readers to hear the format or the help text in this position. */}
