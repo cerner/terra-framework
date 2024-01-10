@@ -950,7 +950,7 @@ describe('Compact Interactive List', () => {
     });
   });
 
-  describe('Whitespace keydown on cell', () => {
+  describe('onCellSelect method', () => {
     const cols = [
       {
         id: 'Column-0',
@@ -989,7 +989,7 @@ describe('Compact Interactive List', () => {
       });
     });
 
-    it('should call onCellSelect method if cell is selactable', () => {
+    it('should call onCellSelect method per mouse click or Space key down if cell is selectable', () => {
       const mockOnCellSelect = jest.fn();
       const testList = (
         <CompactInteractiveList
@@ -1014,16 +1014,19 @@ describe('Compact Interactive List', () => {
 
       // Testing SPACE
       cellElements.at(0).simulate('keyDown', spaceKeyProps);
-      expect(mockOnCellSelect).toHaveBeenCalledTimes(1);
+      expect(mockOnCellSelect).toHaveBeenCalledWith({ columnId: 'Column-0', rowId: 'row_1' });
+      // Testing mouse down
+      cellElements.at(1).simulate('mouseDown');
+      expect(mockOnCellSelect).toHaveBeenCalledWith({ columnId: 'Column-1', rowId: 'row_1' });
     });
 
-    it('Should cnot all onCellSelect method if cell is not selactable', () => {
+    it('Should not call onCellSelect method per mouse click or Space key down if cell is not selactable', () => {
       const buttonCell = <button type="button" aria-label="Learn more button" onClick={jest.fn()}>Learn more</button>;
       const newRows = [
         {
           id: 'row_1',
           cells: [
-            { content: buttonCell },
+            { content: buttonCell }, // interactive element makes the cell unselactable
             { content: 'Discern Care Set (1)' },
             { content: 'Row 1 Cell 3 mock content' },
           ],
@@ -1037,13 +1040,31 @@ describe('Compact Interactive List', () => {
           ],
         },
       ];
+      const newCols = [
+        {
+          id: 'Column-0',
+          displayName: 'Col_1',
+          width: '100px',
+        },
+        {
+          id: 'unselectable-column-1',
+          displayName: 'Col_2',
+          width: '200px',
+          isSelectable: false, // make column non-selactable
+        },
+        {
+          id: 'Column-2',
+          displayName: 'Col_3',
+          width: '100px',
+        },
+      ];
       const mockOnCellSelect = jest.fn();
 
       const wrapper = mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-space-key-on-cell"
           rows={newRows}
-          columns={cols}
+          columns={newCols}
           numberOfColumns={2}
           onCellSelect={mockOnCellSelect}
         />, {
@@ -1059,8 +1080,12 @@ describe('Compact Interactive List', () => {
       // As first cell contains interactive element (button), the focus should go to the button
       expect(document.activeElement).toBe(button.instance());
 
-      // Testing SPACE on interactive cell
+      // SPACE or MOUSE CLICK should not select the cell with interactible element in it.
       cellElements.at(0).simulate('keyDown', spaceKeyProps);
+      cellElements.at(0).simulate('mouseDown');
+      // SPACE or MOUSE CLICK should not select the cell if corresponding column isSelectable prop set to false.
+      cellElements.at(1).simulate('keyDown', spaceKeyProps);
+      cellElements.at(1).simulate('mouseDown');
       expect(mockOnCellSelect).not.toHaveBeenCalled();
     });
   });
