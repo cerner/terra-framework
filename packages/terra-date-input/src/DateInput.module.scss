@@ -267,6 +267,7 @@
       margin: 0;
     }
 
+    &:focus,
     &.is-focused {
       border: var(--terra-date-input-date-input-day-focus-border, 2px dashed #000);
     }
@@ -285,6 +286,7 @@
       margin: 0;
     }
     
+    &:focus,
     &.is-focused {
       border: var(--terra-date-input-date-input-year-focus-border, 2px dashed #000);
     }
