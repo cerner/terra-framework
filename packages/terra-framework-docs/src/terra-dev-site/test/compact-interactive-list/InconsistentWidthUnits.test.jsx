@@ -96,11 +96,11 @@ const cols = [
   },
 ];
 
-const WidthBreakpointsHorizontalFlow = () => {
+const InconsistentWidthUnits = () => {
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
   return (
     <CompactInteractiveList
-      id="with-breakpoints"
+      id="inconsistent-width-units"
       ariaLabel="Compact Interactive List"
       rows={rows}
       columns={cols}
@@ -113,4 +113,4 @@ const WidthBreakpointsHorizontalFlow = () => {
   );
 };
 
-export default WidthBreakpointsHorizontalFlow;
+export default InconsistentWidthUnits;

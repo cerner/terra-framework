@@ -1,0 +1,67 @@
+import { Badge } from 'legacy-terra-table/package.json?dev-site-package';
+import { Notice } from "@cerner/terra-docs";
+
+import DefaultTable from './example/DefaultTable?dev-site-example';
+import CompactPaddingTable from './example/CompactPaddingTable?dev-site-example';
+import StripedTable from './example/StripedTable?dev-site-example';
+
+import PropsTable from 'legacy-terra-table/lib/Table?dev-site-props-table';
+
+<Badge />
+
+[![Deprecated](https://badgen.net/badge/status/Deprecated/grey)](/components/cerner-terra-framework-docs/table/version-4-docs/about)
+
+# Terra Table
+
+<Notice variant="deprecation">
+
+`terra-table@4` is no longer supported. If you are using `terra-table@4`, please upgrade to [v5](/components/cerner-terra-framework-docs/table/about).
+
+</Notice>
+
+Terra Table is a structural component used to create data tables. Table provides means to handle row selection and hooks for sortable columns.
+
+## Getting Started
+
+- Install with [npmjs](https://www.npmjs.com):
+  - `npm install terra-table@4`
+
+<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+## Peer Dependencies
+
+This component requires the following peer dependencies be installed in your app for the component to properly function.
+
+| Peer Dependency | Version |
+|-|-|
+| react | ^16.8.5 |
+| react-dom | ^16.8.5 |
+| react-intl | ^2.8.0 |
+
+<!-- AUTO-GENERATED-CONTENT:END -->
+
+## Usage
+
+```jsx
+import Table from 'terra-table@4';
+```
+
+## Component Features
+
+ * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)
+ * [Responsive Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#responsive-support)
+ * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
+ * [LTR/RTL Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#ltr--rtl)
+
+# Examples
+
+<DefaultTable />
+
+<StandardPaddingTable />
+
+<CompactPaddingTable />
+
+<StripedTable title="Striped Table, No Padding Table" description="(Note: the no padding style table is intended for tables with custom cell content that includes it's own internal spacing)" />
+
+## Table Props
+
+<PropsTable />
