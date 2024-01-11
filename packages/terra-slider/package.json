@@ -34,6 +34,17 @@
     "terra-visually-hidden-text": "^2.0.0",
     "uuid": "3.4.0"
   },
+  "devDependencies": {
+    "@babel/cli": "^7.22.10",
+    "@babel/core": "^7.22.10",
+    "@babel/preset-react": "^7.22.5",
+    "@cerner/eslint-config-terra": "^5.4.0",
+    "@cerner/jest-config-terra": "^2.0.0",
+    "enzyme-to-json": "^3.6.2",
+    "eslint": "^7.32.0",
+    "jest": "^27.0.0",
+    "stylelint": "^15.0.0"
+  },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
     "clean:lib": "rm -rf lib",
