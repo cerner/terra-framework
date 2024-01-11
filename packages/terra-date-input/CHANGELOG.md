@@ -6,7 +6,7 @@
 
 * Added
   * Added hot keys functionality to support keyboard shortcut patterns.
-  * Added black dashed border when input gets focussed.
+  * Added black dashed border when input gets focused.
   * Added screen reader support to associate with error message.
 
 ## 1.48.0 - (January 2, 2024)

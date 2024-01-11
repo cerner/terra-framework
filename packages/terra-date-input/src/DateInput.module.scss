@@ -269,6 +269,7 @@
 
     &[data-show-focus-styles]:focus {
       border: var(--terra-date-input-day-focus-border, 2px dashed #000);
+      box-shadow: none;
     }
   }
 
@@ -287,6 +288,7 @@
     
     &[data-show-focus-styles]:focus {
       border: var(--terra-date-input-year-focus-border, 2px dashed #000);
+      box-shadow: none;
     }
   }
 
