@@ -694,7 +694,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   day={
                                     <Input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
-                                      aria-label="Label Test Terra.datePicker.dayLabel "
+                                      aria-label="Label Test, Terra.datePicker.dayLabel "
                                       aria-required={true}
                                       className="date-input-day"
                                       disabled={true}
@@ -815,7 +815,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-error test-date-picker-help"
-                                    aria-label="Label Test Terra.datePicker.dayLabel "
+                                    aria-label="Label Test, Terra.datePicker.dayLabel "
                                     aria-required={true}
                                     className="date-input-day"
                                     disabled={true}
@@ -836,7 +836,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
-                                      aria-label="Label Test Terra.datePicker.dayLabel "
+                                      aria-label="Label Test, Terra.datePicker.dayLabel "
                                       aria-required={true}
                                       className="form-input date-input-day"
                                       disabled={true}
@@ -1579,7 +1579,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   day={
                                     <Input
                                       aria-describedby="test-date-picker-help"
-                                      aria-label="Label Terra.datePicker.dayLabel "
+                                      aria-label="Label, Terra.datePicker.dayLabel "
                                       aria-required={false}
                                       className="date-input-day"
                                       disabled={false}
@@ -1700,7 +1700,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-help"
-                                    aria-label="Label Terra.datePicker.dayLabel "
+                                    aria-label="Label, Terra.datePicker.dayLabel "
                                     aria-required={false}
                                     className="date-input-day"
                                     disabled={false}
@@ -1721,7 +1721,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
-                                      aria-label="Label Terra.datePicker.dayLabel "
+                                      aria-label="Label, Terra.datePicker.dayLabel "
                                       aria-required={false}
                                       className="form-input date-input-day"
                                       disabled={false}
@@ -2572,7 +2572,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   day={
                                     <Input
                                       aria-describedby="test-date-picker-help"
-                                      aria-label="Label Test Terra.datePicker.dayLabel "
+                                      aria-label="Label Test, Terra.datePicker.dayLabel "
                                       aria-required={true}
                                       className="date-input-day"
                                       disabled={true}
@@ -2693,7 +2693,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-help"
-                                    aria-label="Label Test Terra.datePicker.dayLabel "
+                                    aria-label="Label Test, Terra.datePicker.dayLabel "
                                     aria-required={true}
                                     className="date-input-day"
                                     disabled={true}
@@ -2714,7 +2714,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
-                                      aria-label="Label Test Terra.datePicker.dayLabel "
+                                      aria-label="Label Test, Terra.datePicker.dayLabel "
                                       aria-required={true}
                                       className="form-input date-input-day"
                                       disabled={true}
