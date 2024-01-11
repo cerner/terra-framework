@@ -1,0 +1,56 @@
+import FolderTreeExpandCollapse from './FolderTreeExpandCollapse?dev-site-example';
+
+# Expand and Collapse All
+
+### Description
+
+The example below demonstrates expand and collapse all functionality.
+Expand and collapse all functionality is available with the toolbar buttons.
+
+### Required Properties
+
+The consuming component controls the expanded and collapsed state.
+The following FolderTree properties are required for expand and collapse all:
+* **[onExpandAll](../about#foldertree-props-table):** This callback is requested when the user selects the **Expand All** button.
+* **[onCollapseAll](../about#foldertree-props-table):** This callback is requested when the user selects the **Collapse All** button.
+
+Only FolderTree.Items that have `subfolderItems` with one or more items can be expanded and collapsed.
+These FolderTree.Items display a folder icon.
+
+```js
+// Initialize folders to be collapsed
+const [expandedItems, setExpandedItems] = React.useState({
+  "row-item-1": false,
+  "row-item-2": false
+});
+
+const handleExpandAll = () => {
+  const newExpandedItems = {
+    ...expandedItems,
+  };
+  // Set all folder items in the tree to expanded
+  Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = true; });
+
+  setExpandedItems(newExpandedItems);
+};
+
+const handleCollapseAll = () => {
+  const newExpandedItems = {
+    ...expandedItems,
+  };
+  // Set all folder items in the tree to collapsed
+  Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = false; });
+
+  setExpandedItems(newExpandedItems);
+};
+
+<FolderTree
+  title={data.title}
+  onExpandAll={handleExpandAll}
+  onCollapseAll={handleCollapseAll}
+>
+  // FolderTree children can be any number of FolderTree.Items
+</FolderTree>
+```
+
+<FolderTreeExpandCollapse />
