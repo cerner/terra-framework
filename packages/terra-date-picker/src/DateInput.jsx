@@ -733,7 +733,7 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
-      aria-label={ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })} ` : intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
+      aria-label={ariaLabel ? `${ariaLabel}, ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })} ` : intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
       aria-describedby={dateFormatOrder === DateUtil.dateOrder.DMY ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
       id={dayInputId}
     />
