@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Changed
-  * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
+  * Updated `terra-brand-footer` documentation with deprecation notice and badge. 
 
 ## 1.54.0 - (January 2, 2024)
 
