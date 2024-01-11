@@ -266,9 +266,8 @@
       appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
       margin: 0;
     }
-
-    &:focus,
-    &.is-focused {
+    
+    &[data-show-focus-styles]:focus {
       border: var(--terra-date-input-day-focus-border, 2px dashed #000);
     }
   }
@@ -286,9 +285,8 @@
       margin: 0;
     }
     
-    &:focus,
-    &.is-focused {
-      border: var(--terra-date-input-year-focus-border, 2px dashed #000);
+    &[data-show-focus-styles]:focus {
+      border: var(--terra-date-input-day-focus-border, 2px dashed #000);
     }
   }
 

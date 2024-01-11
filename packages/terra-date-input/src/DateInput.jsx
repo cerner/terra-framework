@@ -696,6 +696,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        data-show-focus-styles
       />
     );
   }
@@ -738,6 +739,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        data-show-focus-styles
       />
     );
   }
