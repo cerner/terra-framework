@@ -17,7 +17,7 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * List of FolderTree.Items to be displayed as content within the FolderTree.
+   * The list of items to be displayed as content in the Folder Tree component.
    */
   children: PropTypes.node,
   /**
@@ -29,11 +29,11 @@ const propTypes = {
    */
   title: PropTypes.string.isRequired,
   /**
-   * Callback function for expand all event.
+   * The callback function for expand all event.
    */
   onExpandAll: PropTypes.func,
   /**
-   * Callback function for collapse all event.
+   * The callback function for collapse all event.
    */
   onCollapseAll: PropTypes.func,
   /**

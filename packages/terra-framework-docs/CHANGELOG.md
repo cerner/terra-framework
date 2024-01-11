@@ -11,6 +11,7 @@
 * Changed
   * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
   * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+  * Updated documentation and examples for `terra-folder-tree`.
 
 * Added
   * Added upgrade guide for Terra Table.
