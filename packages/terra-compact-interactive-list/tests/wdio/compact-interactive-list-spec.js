@@ -68,4 +68,20 @@ Terra.describeViewports('CompactInteractiveList', ['medium', 'large'], () => {
       Terra.validates.element('inconsistent width units');
     });
   });
+
+  describe('cell focus and select styling', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/compact-interactive-list/cell-content');
+    });
+
+    it('should apply focus and selection styling to cells', () => {
+      browser.keys(['Tab', 'Space', 'ArrowRight']);
+      Terra.validates.element('selected-and-focused-cells', { selector: '#compact-interactive-list-cell-content' });
+    });
+
+    it('should apply focus styling to the interactive element in the cell', () => {
+      browser.keys(['Tab', 'ArrowRight', 'ArrowRight']);
+      Terra.validates.element('focused-button-in-cell', { selector: '#compact-interactive-list-cell-content' });
+    });
+  });
 });

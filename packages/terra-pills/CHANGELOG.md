@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.16.1 - (January 10, 2024)
+
+* Fixed
+  * Resolved issue with screen reader not identifying pill status after removing the last pill.
+
 ## 1.16.0 - (December 18, 2023)
 
 * Changed

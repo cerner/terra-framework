@@ -84,7 +84,13 @@ const Cell = (props) => {
   const theme = useContext(ThemeContext);
   const cellRef = React.useRef();
   const [isSelectableCell, setIsSelectableCell] = useState(false);
-  const selectable = column.isSelectable && isSelectableCell;
+  /**
+   *  The cell is not selectable if one of the following applies:
+   *  - there is no onCellSelect method passed,
+   *  - the corresponding column isSelectable prop set to false,
+   *  - there are focusable elements inside the cell
+   */
+  const selectable = onCellSelect && column.isSelectable !== false && isSelectableCell;
   const className = cx('cell', theme.className, {
     selected: selectable && isSelected,
     selectable,
@@ -116,7 +122,7 @@ const Cell = (props) => {
     const key = event.keyCode;
     if (key === KeyCode.KEY_SPACE && isSelectableCell) {
       event.preventDefault(); // prevents scroll on empty cells
-      if (onCellSelect) {
+      if (onCellSelect && column.isSelectable !== false) {
         onCellSelect({ rowId, columnId: id });
       }
     }
@@ -125,7 +131,7 @@ const Cell = (props) => {
   const handleMouseDown = (event) => {
     setFocusedCell({ rowId, columnId: id });
     if (isSelectableCell) {
-      if (onCellSelect) {
+      if (onCellSelect && column.isSelectable !== false) {
         onCellSelect({ rowId, columnId: id });
       }
     } else {

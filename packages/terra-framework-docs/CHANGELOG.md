@@ -3,8 +3,19 @@
 ## Unreleased
 
 * Changed
-  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
   * Updated `terra-brand-footer` documentation with deprecation notice and badge. 
+
+## 1.55.0 - (January 10, 2024)
+
+* Added
+  * Added test example for `terra-file-path`.
+  * Added `terra-compact-interactive-list` cell content example.
+  * Added upgrade guide for Terra Table.
+
+* Changed
+  * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+  * Updated documentation and examples for `terra-folder-tree`.
 
 ## 1.54.0 - (January 2, 2024)
 
