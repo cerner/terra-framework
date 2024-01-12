@@ -118,6 +118,17 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /** 
+   * @private
+   * Id of the first row in table
+   */
+  firstRowId: PropTypes.string,
+
+  /**
+   * @private
+   * Id of the last row in table
+   */
+  lastRowId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -148,6 +159,8 @@ function Cell(props) {
     rowMinimumHeight,
     sectionId,
     tableId,
+    firstRowId,
+    lastRowId,
   } = props;
 
   const cellRef = useRef();

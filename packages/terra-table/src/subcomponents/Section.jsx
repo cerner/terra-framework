@@ -106,6 +106,17 @@ const propTypes = {
    * Bounding container for the table, will use window if no value provided.
    */
   boundingRef: PropTypes.func,
+  /**
+   * @private
+   * Id of the first row in table
+   */
+   firstRowId: PropTypes.string,
+
+   /**
+    * @private
+    * Id of the last row in table
+    */
+   lastRowId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -134,6 +145,8 @@ function Section(props) {
     onSectionSelect,
     rowMinimumHeight,
     boundingRef,
+    firstRowId,
+    lastRowId,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -203,6 +216,8 @@ function Section(props) {
             isSelected={row.isSelected}
             isTableStriped={isTableStriped}
             rowMinimumHeight={rowMinimumHeight}
+            firstRowId={firstRowId}
+            lastRowId={lastRowId}
           />
         ))}
       </tbody>

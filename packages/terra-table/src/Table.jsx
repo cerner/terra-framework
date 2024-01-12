@@ -579,6 +579,18 @@ function Table(props) {
   const tableStyle = {
     marginRight: hasResizableCol ? `${TableConstants.TABLE_MARGIN_RIGHT}px` : '0',
   };
+  
+  // Set first and last row Ids
+  let firstRowId;
+  let lastRowId;
+
+  if (rows && rows.length) {
+    firstRowId = rows[0].id;
+    lastRowId = rows[rows.length - 1].id;
+  } else if (sections && sections.length && sections[0].rows && sections[0].rows.length) {
+    firstRowId = sections[0].rows[0].id;
+    lastRowId = sections[sections.length - 1].rows[sections[sections.length - 1].rows.length - 1].id;
+  }
 
   // -------------------------------------
 
@@ -648,6 +660,8 @@ function Table(props) {
               onSectionSelect={onSectionSelect}
               rowMinimumHeight={rowMinimumHeight}
               boundingRef={boundingRef}
+              firstRowId={firstRowId}
+              lastRowId={lastRowId}
             />
           ))}
         </ColumnContext.Provider>
