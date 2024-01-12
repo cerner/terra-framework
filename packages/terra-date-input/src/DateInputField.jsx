@@ -140,7 +140,6 @@ const defaultProps = {
   showOptional: false,
   value: '',
   yearAttributes: {},
-  refCallback: undefined,
 };
 
 const DateInputField = (props) => {
