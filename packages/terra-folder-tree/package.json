@@ -46,10 +46,10 @@
     "clean:node_modules": "echo 'removing ./node_modules' && rm -rf node_modules && echo 'removed ./node_modules'",
     "clean": "npm run clean:node_modules && npm run clean:lib",
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
-    "jest": "jest",
+    "jest": "jest --config ../../jest.config.js",
     "lint:js:fix": "eslint --ext .js,.jsx . --fix",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:scss": "stylelint ./src/*.scss",
+    "lint:scss": "stylelint src/**/*.scss",
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest"
