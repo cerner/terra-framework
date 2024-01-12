@@ -1,5 +1,8 @@
 # Changelog
 
+* Added
+  * Added Support for non contiguous multi select in flowsheet data grid.
+
 ## Unreleased
 
 ## 1.10.0 - (January 2, 2024)

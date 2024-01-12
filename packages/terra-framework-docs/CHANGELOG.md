@@ -2,15 +2,19 @@
 
 ## Unreleased
 
+## 1.55.0 - (January 10, 2024)
+
 * Added
   * Added test example for `terra-file-path`.
   * Added `terra-compact-interactive-list` cell content example.
 
 * Changed
   * Updated the `terra-date-time-picker` example for label.
+  * Updated `flowsheet-data-grid` tests and examples to support non contiguous multi select.
   * Updated `terra-date-input-field` example to have visual label and contextual error messages.
   * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
   * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
+  * Updated documentation and examples for `terra-folder-tree`.
 
 * Added
   * Added upgrade guide for Terra Table.

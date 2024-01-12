@@ -23,23 +23,23 @@ const propTypes = {
    */
   icon: PropTypes.element,
   /**
-   * List of FolderTree.Items to display in a subfolder when this FolderTreeItem is clicked. This makes the item expandable and collapsible. It also makes the item's icon a Folder, overriding anything given as the icon prop.
+   * The list of items to display in a subfolder when it is selected. This property makes the item expandable and collapsible. The item's icon also becomes a folder, overriding anything given as the icon property.
    */
   subfolderItems: PropTypes.arrayOf(PropTypes.element),
   /**
-   * Whether or not the item is expanded. Only items with subfolderItems can be expanded.
+   * Indicates whether the item is expanded. Only items with subfolderItems can be expanded.
    */
   isExpanded: PropTypes.bool,
   /**
-   * Whether or not the item is selected. Since this component has the appearance of a radio button group, only one item should be selected at a time.
+   * Indicates whether the item is selected. Because this component has the appearance of a radio button group, only one item should be selected at a time.
    */
   isSelected: PropTypes.bool,
   /**
-   * Callback function for click event.
+   * The callback function for a click event.
    */
   onClick: PropTypes.func,
   /**
-   * Callback function for expand/collapse toggle event.
+   * The callback function for an expand or collapse toggle event.
    */
   onToggle: PropTypes.func,
   /**
