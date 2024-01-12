@@ -9,6 +9,8 @@
   * Added `terra-compact-interactive-list` cell content example.
 
 * Changed
+  * Updated `flowsheet-data-grid` tests and examples to support non contiguous multi select.
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
   * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
   * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
   * Updated documentation and examples for `terra-folder-tree`.
