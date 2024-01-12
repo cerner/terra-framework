@@ -72,7 +72,7 @@ const CellSelection = () => {
       for (let row = 0; row < rowData.length; row += 1) {
         for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
           const currentCell = rowData[row].cells[cell];
-          if (currentCell.isSelected && !(row === rowIndex && cell === columnIndex)) {
+          if (currentCell.isSelected && !(row === rowIndex && cell === columnIndex) && !selectedCell.isMetaPressed) {
             currentCell.isSelected = false;
             otherSelectionsExist = true;
           }

@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.4.0 - (January 12, 2024)
+
+* Added
+  * Added Support for non contiguous multi select in flowsheet data grid.
+
 ## 5.3.2 - (December 18, 2023)
 
 * Fixed
