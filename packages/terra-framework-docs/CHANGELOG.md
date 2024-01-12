@@ -5,7 +5,9 @@
 ## 1.56.0 - (January 12, 2024)
 
 * Changed
-  * Minor dependency version bump.
+  * Updated `flowsheet-data-grid` tests and examples to support non contiguous multi select.
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
+  * Updated documentation and examples for `terra-folder-tree`.
 
 ## 1.55.0 - (January 10, 2024)
 
@@ -15,11 +17,7 @@
   * Added upgrade guide for `terra-table`.
 
 * Changed
-  * Updated `flowsheet-data-grid` tests and examples to support non contiguous multi select.
-  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
   * Updated `terra-pills` examples to enhance usablity for keyboard and screen reader user.
-  * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
-  * Updated documentation and examples for `terra-folder-tree`.
 
 ## 1.54.0 - (January 2, 2024)
 
