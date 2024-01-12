@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.0.0-alpha.6 - (January 12, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.0.0-alpha.5 - (January 10, 2024)
 
 * Changed
