@@ -813,6 +813,7 @@ class DateTimePicker extends React.Component {
             required={required}
             atMaxDate={atMaxDate}
             atMinDate={atMinDate}
+            a11yLabel={label}
           />
 
           {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}
