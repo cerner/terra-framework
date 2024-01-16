@@ -98,13 +98,13 @@ const FlowsheetWithSections = () => {
     setTableSections(newSections);
   };
 
-  const getClearedSections = useCallback(() => tableSections.map(section => ({
+  const getClearedSections = useCallback((isMetaPressed) => tableSections.map(section => ({
     ...section,
     rows: section.rows.map(row => ({
       ...row,
       cells: row.cells.map(cell => ({
         ...cell,
-        isSelected: false,
+        isSelected: isMetaPressed ? cell.isSelected : false,
       })),
     })),
   })), [tableSections]);
@@ -116,7 +116,7 @@ const FlowsheetWithSections = () => {
     const rowIndex = selectedSection.rows.findIndex(row => row.id === selectedCell.rowId);
     const previousCell = selectedSection.rows[rowIndex].cells[columnIndex];
 
-    const newSections = getClearedSections();
+    const newSections = getClearedSections(selectedCell.isMetaPressed);
 
     //   // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
     selectedSection = newSections.find(section => section.id === selectedCell.sectionId);
