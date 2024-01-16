@@ -1,7 +1,7 @@
 {
   "name": "terra-file-path",
   "main": "lib/FilePath.js",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Terra File Path is a horizontal menu that indicates where the user is. It is also more commonly known as a breadcrumb component.",
   "repository": {
     "type": "git",
