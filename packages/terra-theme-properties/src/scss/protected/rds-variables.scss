@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.13
+// Version 0.20.14
 // RDS Foundation Variables
 // -------------------------------------------------
 // Maintained by Oracle Health Design, UX Foundations Team
@@ -12,6 +12,7 @@
   --rds-border-radius-md: 6px;
   --rds-border-radius-lg: 8px;
   --rds-border-radius-xl: 10px;
+  --rds-border-radius-circular: 50%;
   --rds-border-width-0: 0;
   --rds-border-width-1: 1px;
   --rds-border-width-2: 2px;
@@ -20,10 +21,6 @@
   --rds-box-shadow-md: 0 6px 12px 0 rgba(0,0,0,0.20);
   --rds-box-shadow-lg: 0 8px 16px 0 rgba(0,0,0,0.24);
   --rds-box-shadow-xl: 0 12px 20 0 rgba(0,0,0,0.28);
-  --rds-breakpoint-sm: 320px;
-  --rds-breakpoint-md: 600px;
-  --rds-breakpoint-lg: 1024px;
-  --rds-breakpoint-xl: 1440px;
   --rds-color-dark-alert-information-strong: 247F9F;
   --rds-color-dark-alert-danger-strong: D83F2A;
   --rds-color-dark-alert-warning-strong: AE650E;
@@ -264,6 +261,7 @@
   --rds-spacing-14: 26px;
   --rds-spacing-15: 28px;
   --rds-spacing-16: 30px;
+  --rds-spacing-17: 50px;
   --rds-spacing-00: 0;
   --rds-spacing-01: 1px;
   --rds-spacing-02: 2px;
