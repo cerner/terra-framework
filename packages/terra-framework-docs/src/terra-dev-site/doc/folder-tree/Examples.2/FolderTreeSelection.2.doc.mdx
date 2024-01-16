@@ -1,0 +1,31 @@
+import BasicFolderTree from './BasicFolderTree?dev-site-example';
+
+# Selection
+
+### Description
+
+The example below demonstrates row selection.
+
+### Required Properties
+
+The consuming component controls the selection state.
+The following FolderTree.Item properties are required for row selection:
+* **[isSelected](../about#foldertreeitem-props-table):** Specifies whether the FolderTree.Item is currently selected. 
+* **[onClick](../about#foldertreeitem-props-table):** This callback is requested when selecting a row with one of the following methods:
+  * **Mouse click:**
+    * Selecting anywhere on a row that does not contain `subfolderItems`.
+    * Selecting the radio button on a row that contains `subfolderItems`.
+  * **Keyboard:**
+    * Pressing ENTER on an active row, including rows with `subfolderItems`.
+
+```js
+<FolderTree.Item
+  key="row-item-1"
+  label="Projects"
+  icon={<IconDocuments />}
+  isSelected={selectedKey === "row-item-1"}
+  onClick={() => {setSelectedKey("row-item-1")}}
+/>
+```
+
+<BasicFolderTree />

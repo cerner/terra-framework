@@ -14,6 +14,22 @@ const releaseShiftKey = () => {
   }]);
 };
 
+const holdDownCtrlKey = () => {
+  browser.performActions([{
+    type: 'key',
+    id: 'keyboard',
+    actions: [{ type: 'keyDown', value: '\uE03D' }],
+  }]);
+};
+
+const releaseCtrlKey = () => {
+  browser.performActions([{
+    type: 'key',
+    id: 'keyboard',
+    actions: [{ type: 'keyUp', value: '\uE03D' }],
+  }]);
+};
+
 const moveCurrentPositionBy = (row, col) => browser.keys(
   new Array(Math.abs(row)).fill(row > 0 ? 'ArrowDown' : 'ArrowUp')
     .concat(new Array(Math.abs(col)).fill(col > 0 ? 'ArrowRight' : 'ArrowLeft')),
@@ -181,6 +197,15 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
 
       expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
       Terra.validates.element('cell-3-1-focused', { selector: cellSelectionSelector });
+    });
+
+    it('selects multiple non contiguous cells when Ctrl key is held down', () => {
+      holdDownCtrlKey();
+      clickCell(3, 1, cellSelectionSelector);
+      clickCell(4, 2, cellSelectionSelector);
+      clickCell(5, 3, cellSelectionSelector);
+      releaseCtrlKey();
+      Terra.validates.element('Non Contiguous Cells Selected', { selector: cellSelectionSelector });
     });
   });
 

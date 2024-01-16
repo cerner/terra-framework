@@ -69,7 +69,7 @@ const RowSelection = () => {
   }, [selectedRow]);
 
   const onRowSelect = useCallback((rowToSelect) => {
-    const { rowId } = rowToSelect; // Contains rowId and sectionId
+    const { rowId, isMetaPressed } = rowToSelect; // Contains rowId and sectionId
     if (rowId) {
       const rowIndex = rowData.findIndex(e => e.id === rowId);
 
@@ -77,16 +77,20 @@ const RowSelection = () => {
 
       // Remove current selections
       for (let row = 0; row < rowData.length; row += 1) {
-        newRowData[row].isSelected = false;
+        if (!isMetaPressed) {
+          newRowData[row].isSelected = false;
+        }
         for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
-          newRowData[row].cells[cell].isSelected = false;
+          if (!isMetaPressed) {
+            newRowData[row].cells[cell].isSelected = false;
+          }
         }
       }
 
       if (selectedRow !== rowId) {
         newRowData[rowIndex].isSelected = true;
         setSelectedRow(rowId);
-      } else {
+      } else if (!isMetaPressed) {
         newRowData[rowIndex].isSelected = false;
         clearSelectedRow();
       }
@@ -104,10 +108,10 @@ const RowSelection = () => {
       // Remove cell selections, excluding current cell
       const newRowData = [...rowData];
       for (let row = 0; row < rowData.length; row += 1) {
-        newRowData[row].isSelected = false;
+        if (!selectedCell.isMetaPressed) newRowData[row].isSelected = false;
         for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
           const currentCell = rowData[row].cells[cell];
-          if (currentCell.isSelected && !(row === rowIndex && cell === columnIndex)) {
+          if (currentCell.isSelected && !(row === rowIndex && cell === columnIndex) && !selectedCell.isMetaPressed) {
             currentCell.isSelected = false;
             otherSelectionsExist = true;
           }
