@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed path issue in `terra-folder-tree` docs.
+
 ## 1.57.0 - (January 16, 2024)
 
 * Changed
