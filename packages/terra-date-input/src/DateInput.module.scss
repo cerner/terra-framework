@@ -161,9 +161,10 @@
     // .focused needed for Safari Mobile
     &:focus,
     &.focused {
-      border: var(--terra-date-input-month-select-focus-border, 2px dashed #000);
+      border: 0;
       color: var(--terra-date-input-month-select-focus-color);
-      outline: 0;
+      outline: var(--terra-date-input-month-select-focus-outline, 2px dashed #000);
+      outline-offset: 1px;
     }
 
     &.is-placeholder {
@@ -208,7 +209,8 @@
       // .focused needed for Safari Mobile
       &:focus,
       &.focused {
-        border: var(--terra-date-input-month-select-error-focus-border, 2px dashed #000);
+        outline: var(--terra-date-input-month-select-error-focus-outline, 2px dashed #000);
+        outline-offset: 1px;
       }
 
       &.disabled {
@@ -267,9 +269,10 @@
       margin: 0;
     }
 
-    &[data-show-focus-styles]:focus {
-      border: var(--terra-date-input-day-focus-border, 2px dashed #000);
-      box-shadow: none;
+    &.is-focused {
+      border: 0;
+      outline: var(--terra-date-input-day-focus-outline, 2px dashed #000);
+      outline-offset: 1px;
     }
   }
 
@@ -286,9 +289,10 @@
       margin: 0;
     }
     
-    &[data-show-focus-styles]:focus {
-      border: var(--terra-date-input-year-focus-border, 2px dashed #000);
-      box-shadow: none;
+    &.is-focused {
+      border: 0;
+      outline: var(--terra-date-input-year-focus-outline, 2px dashed #000);
+      outline-offset: 1px;
     }
   }
 

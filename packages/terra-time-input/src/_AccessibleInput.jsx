@@ -82,7 +82,6 @@ function AccessibleInput(props) {
         aria-labelledby={value ? labelId : undefined}
         aria-label={value ? undefined : label}
         aria-describedby={descriptionId}
-
       />
       <VisuallyHiddenText id={descriptionId} text={description} />
     </>
