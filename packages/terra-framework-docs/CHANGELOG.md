@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 1.57.0 - (January 16, 2024)
-
 * Changed
   * Updated `terra-brand-footer` documentation with deprecation notice and badge.
 
