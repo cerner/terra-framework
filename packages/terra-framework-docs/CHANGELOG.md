@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added detailed documentation for creating a basic `compact-interactive-list` component.
+
 * Fixed
   * Fixed path issue in `terra-folder-tree` docs.
 
