@@ -1,7 +1,7 @@
 {
   "name": "terra-theme-properties",
   "main": "lib/index.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Terra Theme Properties provides named theme variables for UX-defined styles.",
   "repository": {
     "type": "git",
