@@ -2,19 +2,28 @@
 
 ## Unreleased
 
+* Added
+  * Added screen reader support to associate with error message.
+
+* Changed
+  * Updated `terra-brand-footer` documentation with deprecation notice and badge.
+
+## 1.56.0 - (January 12, 2024)
+
+* Changed
+  * Updated `flowsheet-data-grid` tests and examples to support non contiguous multi select.
+  * Updated `terra-date-input-field` example to have visual label and contextual error messages.
+  * Updated documentation and examples for `terra-folder-tree`.
+
 ## 1.55.0 - (January 10, 2024)
 
 * Added
   * Added test example for `terra-file-path`.
   * Added `terra-compact-interactive-list` cell content example.
-  * Added screen reader support to associate with error message.
+  * Added upgrade guide for `terra-table`.
 
 * Changed
-  * Updated terra-pills examples to enhance usablity for keyboard and screen reader user.
-  * Updated `terra-date-input-field` example to have visual label and contextual error messages. 
-
-* Added
-  * Added upgrade guide for Terra Table.
+  * Updated `terra-pills` examples to enhance usablity for keyboard and screen reader user.
 
 ## 1.54.0 - (January 2, 2024)
 

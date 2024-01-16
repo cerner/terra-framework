@@ -88,6 +88,7 @@ const propTypes = {
   /**
    * Callback function that is called when a row header cell is selected. Parameters:
    * @param {object} rowToSelect object containing rowId and sectionId, both as strings.
+   * @param {boolean} isMetaPressed isMetaPressed
    */
   onRowSelect: PropTypes.func,
 
@@ -285,7 +286,7 @@ function FlowsheetDataGrid(props) {
     // Call onRowSelect for row header column
     if (selectionDetails.columnIndex === 0) {
       if (onRowSelect) {
-        onRowSelect({ rowId: selectionDetails.rowId, sectionId: selectionDetails.sectionId });
+        onRowSelect({ rowId: selectionDetails.rowId, sectionId: selectionDetails.sectionId, isMetaPressed: selectionDetails.isMetaPressed });
       }
     } else if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
       selectCellRange(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.sectionId);
@@ -295,6 +296,7 @@ function FlowsheetDataGrid(props) {
         rowId: selectionDetails.rowId,
         columnId: selectionDetails.columnId,
         sectionId: selectionDetails.sectionId,
+        isMetaPressed: selectionDetails.isMetaPressed,
       });
     }
   }, [onCellSelect, onRowSelect, selectCellRange]);
