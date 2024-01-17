@@ -5,6 +5,8 @@
 * Added
   * Added detailed documentation for creating a basic `compact-interactive-list` component.
 
+## 1.57.1 - (January 17, 2024)
+
 * Fixed
   * Fixed path issue in `terra-folder-tree` docs.
 
