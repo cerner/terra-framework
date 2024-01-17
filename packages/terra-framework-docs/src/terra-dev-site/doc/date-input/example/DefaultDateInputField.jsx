@@ -26,12 +26,12 @@ const Example = () => {
   return (
     <React.Fragment>
       <DateInputField
-        legend="Legend text"
+        legend="Departure Date"
         name="date-input-value"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
-        error="Error message"
-        help="Help message"
+        error="Invalid Departure Date"
+        help="Note: Departure date should be greater than arrival date"
         isInvalid={isInvalid}
         refCallback={(node) => handleRef(node)}
       />
