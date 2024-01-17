@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React, {
+  useRef, useEffect, useState,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
@@ -9,6 +11,7 @@ import ActionHeader from 'terra-action-header';
 import Button from 'terra-button';
 import Toolbar from 'terra-toolbar';
 import { IconCollapseRow, IconExpandRow } from 'terra-icon';
+import VisuallyHiddenText from 'terra-visually-hidden-text';
 
 import FolderTreeUtils from './FolderTreeUtils';
 import styles from './FolderTree.module.scss';
@@ -55,12 +58,12 @@ const FolderTree = ({
   onCollapseAll,
   intl,
 }) => {
+  const [ariaLiveMessage, setAriaLiveMessage] = useState('');
+
   const folderTreeID = `folder-tree-${uuidv4()}`;
   const listNode = useRef();
 
-  const handleKeyDown = event => {
-    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
-    // Remove all hidden list items
+  const getVisibleListItems = (listItems) => {
     const visibleListItems = Array.prototype.slice.call(listItems).filter((item) => {
       let parent = item.parentNode;
       while (parent && parent !== listNode.current) {
@@ -71,6 +74,14 @@ const FolderTree = ({
       }
       return true;
     });
+
+    return visibleListItems;
+  };
+
+  const handleKeyDown = event => {
+    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
+    // Remove all hidden list items
+    const visibleListItems = getVisibleListItems(listItems);
     const currentIndex = Array.from(visibleListItems).indexOf(event.target);
     const lastIndex = visibleListItems.length - 1;
 
@@ -128,6 +139,20 @@ const FolderTree = ({
     listItems[0].tabIndex = 0;
   }, []);
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
+    const visibleListItems = getVisibleListItems(listItems);
+
+    if (visibleListItems.length === children.length) {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-announcement' }));
+    }
+
+    if (visibleListItems.length === listItems.length) {
+      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-announcement' }));
+    }
+  });
+
   return (
     <div className="folder-tree-container">
       <ActionHeader
@@ -166,6 +191,7 @@ const FolderTree = ({
       >
         {children}
       </ul>
+      <VisuallyHiddenText aria-live="polite" text={ariaLiveMessage} />
     </div>
   );
 };
