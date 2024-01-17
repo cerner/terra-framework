@@ -482,152 +482,6 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if ((event.key === '-' || event.key === '_') && !this.props.atMinDate) {
-      const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
-      if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
-        if (this.props.showSeconds) {
-          if (second === '0' || second === '00') {
-            second = '59';
-            if (minute === '0' || minute === '00') {
-              minute = '59';
-              if (hour === '0' || hour === '00') {
-                hour = '23';
-              } else {
-                if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
-                  if (meridiem === this.anteMeridiem) {
-                    meridiem = this.postMeridiem;
-                  } else {
-                    meridiem = this.anteMeridiem;
-                  }
-                }
-                hour = TimeUtil.decrementHour(hour, variant);
-              }
-            } else {
-              minute = TimeUtil.decrementMinute(minute);
-            }
-          } else {
-            second = TimeUtil.decrementSecond(second);
-          }
-        } else if (!this.props.showSeconds) {
-          if (minute === '0' || minute === '00') {
-            minute = '59';
-            if (hour === '0' || hour === '00') {
-              hour = '23';
-            } else {
-              if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
-                if (meridiem === this.anteMeridiem) {
-                  meridiem = this.postMeridiem;
-                } else {
-                  meridiem = this.anteMeridiem;
-                }
-              }
-              hour = TimeUtil.decrementHour(hour, variant);
-            }
-          } else {
-            minute = TimeUtil.decrementMinute(minute);
-          }
-        }
-        this.setTime(event, hour, minute, second, meridiem);
-      } else {
-        const currentTime = this.getCurrentTime();
-        let formatHour = currentTime.hour;
-        let formatMinute = currentTime.minute;
-        let formatMeridiem = currentTime.meridiem;
-        if (formatMinute === '0' || formatMinute === '00') {
-          formatMinute = '59';
-          if (formatHour === '0' || formatHour === '00') {
-            formatHour = '23';
-          } else {
-            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '12') {
-              if (formatMeridiem === this.anteMeridiem) {
-                formatMeridiem = this.postMeridiem;
-              } else {
-                formatMeridiem = this.anteMeridiem;
-              }
-            }
-            formatHour = TimeUtil.decrementHour(formatHour, variant);
-          }
-        } else {
-          formatMinute = TimeUtil.decrementMinute(formatMinute);
-        }
-        this.setTime(event, formatHour, formatMinute, currentTime.second, formatMeridiem);
-      }
-      return;
-    }
-
-    if ((event.key === '=' || event.key === '+') && !this.props.atMaxDate) {
-      const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
-      if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
-        if (this.props.showSeconds) {
-          if (second === '59') {
-            second = '00';
-            if (minute === '59') {
-              minute = '00';
-              if (hour === '23') {
-                hour = '00';
-              } else {
-                if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
-                  if (meridiem === this.anteMeridiem) {
-                    meridiem = this.postMeridiem;
-                  } else {
-                    meridiem = this.anteMeridiem;
-                  }
-                }
-                hour = TimeUtil.incrementHour(hour, variant);
-              }
-            } else {
-              minute = TimeUtil.incrementMinute(minute);
-            }
-          } else {
-            second = TimeUtil.incrementSecond(second);
-          }
-        } else if (!this.props.showSeconds) {
-          if (minute === '59') {
-            minute = '00';
-            if (hour === '23') {
-              hour = '00';
-            } else {
-              if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
-                if (meridiem === this.anteMeridiem) {
-                  meridiem = this.postMeridiem;
-                } else {
-                  meridiem = this.anteMeridiem;
-                }
-              }
-              hour = TimeUtil.incrementHour(hour, variant);
-            }
-          } else {
-            minute = TimeUtil.incrementMinute(minute);
-          }
-        }
-        this.setTime(event, hour, minute, second, meridiem);
-      } else {
-        const currentTime = this.getCurrentTime();
-        let formatHour = currentTime.hour;
-        let formatMinute = currentTime.minute;
-        let formatMeridiem = currentTime.meridiem;
-        if (currentTime.minute === '59') {
-          formatMinute = '00';
-          if (formatHour === '23') {
-            formatHour = '00';
-          } else {
-            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '11') {
-              if (formatMeridiem === this.anteMeridiem) {
-                formatMeridiem = this.postMeridiem;
-              } else {
-                formatMeridiem = this.anteMeridiem;
-              }
-            }
-            formatHour = TimeUtil.incrementHour(formatHour, variant);
-          }
-        } else {
-          formatMinute = TimeUtil.incrementMinute(formatMinute);
-        }
-        this.setTime(event, formatHour, formatMinute, currentTime.second, formatMeridiem);
-      }
-      return;
-    }
-
     if ((event.key === 'a' || event.key === 'A') && variant === TimeUtil.FORMAT_12_HOUR) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       meridiem = this.anteMeridiem;
@@ -671,7 +525,7 @@ class TimeInput extends React.Component {
     const previousStateValue = stateValue;
     const variant = TimeUtil.getVariantFromLocale(this.props);
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KeyCode.KEY_UP || (event.key === '=' || event.key === '+')) {
       stateValue = TimeUtil.incrementHour(stateValue, variant);
 
       // Hitting 12 when incrementing up changes the meridiem
@@ -684,7 +538,7 @@ class TimeInput extends React.Component {
       }
     }
 
-    if (event.keyCode === KeyCode.KEY_DOWN) {
+    if (event.keyCode === KeyCode.KEY_DOWN || (event.key === '-' || event.key === '_')) {
       stateValue = TimeUtil.decrementHour(stateValue, variant);
 
       // Hitting 11 when incrementing down changes the meridiem
@@ -713,11 +567,11 @@ class TimeInput extends React.Component {
     let stateValue = this.state.minute;
     const previousStateValue = stateValue;
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KeyCode.KEY_UP || (event.key === '=' || event.key === '+')) {
       stateValue = TimeUtil.incrementMinute(stateValue);
     }
 
-    if (event.keyCode === KeyCode.KEY_DOWN) {
+    if (event.keyCode === KeyCode.KEY_DOWN || (event.key === '-' || event.key === '_')) {
       stateValue = TimeUtil.decrementMinute(stateValue);
     }
 
@@ -747,11 +601,11 @@ class TimeInput extends React.Component {
     let stateValue = this.state.second;
     const previousStateValue = stateValue;
 
-    if (event.keyCode === KeyCode.KEY_UP) {
+    if (event.keyCode === KeyCode.KEY_UP || (event.key === '=' || event.key === '+')) {
       stateValue = TimeUtil.incrementSecond(stateValue);
     }
 
-    if (event.keyCode === KeyCode.KEY_DOWN) {
+    if (event.keyCode === KeyCode.KEY_DOWN || (event.key === '-' || event.key === '_')) {
       stateValue = TimeUtil.decrementSecond(stateValue);
     }
 

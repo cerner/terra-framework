@@ -125,66 +125,58 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   describe('pressing -', () => {
-    it('should roll over to 11 AM if hour and minute is at 12:00 PM', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
-      browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-      $('#timeInput input[name="terra-time-hour-time-input"]').click();
-      browser.keys('12');
-      browser.keys('00');
-      $('#timeInput input[name="terra-time-minute-time-input"]').click();
-      browser.keys('-');
-      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
-      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
-      validateElement('- causes rollover to morning');
-    });
-
-    it('should roll over to 11 PM if hour and minute is at 12:00 AM', () => {
+    it('should decrease to 11:58 AM if hour and minute is at 11:59 AM', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
-      browser.keys('12');
-      browser.keys('00');
+      browser.keys('11');
+      browser.keys('59');
       $('#timeInput input[name="terra-time-minute-time-input"]').click();
       browser.keys('-');
       expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
-      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
-      validateElement('- causes rollover to evening');
+      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('58');
+      validateElement('- change second from 59 to 58');
+    });
+
+    it('should increase to one hour', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('-');
+      validateElement('- decrease hour from 09 to 08');
     });
   });
 
   describe('pressing +', () => {
-    it('should roll over to 12 AM if hour and minute is at 11:59 PM', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-evening');
-      browser.refresh();
-      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
-      $('#timeInput input[name="terra-time-hour-time-input"]').click();
-      browser.keys('11');
-      browser.keys('59');
-      $('#timeInput input[name="terra-time-minute-time-input"]').click();
-      browser.keys('+');
-      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
-      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('00');
-      validateElement('+ causes rollover to morning');
-    });
-
-    it('should roll over to 12 PM if hour and minute is at 11:59 AM', () => {
+    it('should increase to 11:59 if hour and minute is at 11:58', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
       browser.refresh();
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
       browser.keys('11');
-      browser.keys('59');
+      browser.keys('58');
       $('#timeInput input[name="terra-time-minute-time-input"]').click();
       browser.keys('+');
-      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
-      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('00');
-      validateElement('+ causes rollover to evening');
+      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
+      validateElement('- change second from 58 to 59');
+    });
+
+    it('should increase to one hour', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('+');
+      validateElement('- increase hour from 09 to 10');
     });
   });
 
