@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.15.0 - (January 17, 2024)
+
 * Added
   * Added `terra-theme-properties` as a dependency.
 
