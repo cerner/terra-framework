@@ -5,6 +5,11 @@
 * Added
   * Added screen reader support to associate with error message.
 
+* Fixed
+  * Fixed path issue in `terra-folder-tree` docs.
+
+## 1.57.0 - (January 16, 2024)
+
 * Changed
   * Updated `terra-brand-footer` documentation with deprecation notice and badge.
 
