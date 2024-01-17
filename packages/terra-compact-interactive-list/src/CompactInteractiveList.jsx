@@ -34,6 +34,7 @@ import {
   getFocusedCellIds,
 } from './utils/keyHandlerUtils';
 import getFocusableElements from '../../terra-table/src/utils/focusManagement';
+import validateRowHeaderIndex from './proptypes/validators';
 
 const cx = classNames.bind(styles);
 
@@ -110,7 +111,7 @@ const propTypes = {
   /**
    * A zero-based index indicating which column represents the row header.
    */
-  rowHeaderIndex: PropTypes.number,
+  rowHeaderIndex: validateRowHeaderIndex,
 };
 
 const defaultProps = {
