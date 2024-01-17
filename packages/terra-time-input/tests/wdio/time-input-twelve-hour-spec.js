@@ -125,7 +125,6 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   describe('pressing -', () => {
-
     it('should decrease to 11:58 AM if hour and minute is at 11:59 AM', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
       browser.refresh();
@@ -153,7 +152,6 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
   });
 
   describe('pressing +', () => {
-
     it('should increase to 11:59 if hour and minute is at 11:58', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
       browser.refresh();

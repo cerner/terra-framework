@@ -468,12 +468,12 @@ class TimeInput extends React.Component {
   }
 
   handleInputKeyDown(event, inputType) {
-    let {
+    const {
       hour,
       minute,
       second,
-      meridiem,
     } = this.state;
+    let meridiem = this.state;
     const variant = TimeUtil.getVariantFromLocale(this.props);
 
     if (event.key === 'n' || event.key === 'N') {
