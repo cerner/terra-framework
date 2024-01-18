@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.17.0 - (January 18, 2024)
+
 * Changed
   * Replaced `:-moz-is-html` selector with `@-moz-document` to resolve Mini-Css-Plugin issue.
 
