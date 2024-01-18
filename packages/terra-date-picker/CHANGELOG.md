@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the screen reader response for label.
+
 ## 4.95.0 - (December 18, 2023)
 
 * Changed

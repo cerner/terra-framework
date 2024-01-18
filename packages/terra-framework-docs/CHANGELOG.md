@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added the example for field component in `date-time-picker`.
+
 ## 1.57.1 - (January 17, 2024)
 
 * Fixed
