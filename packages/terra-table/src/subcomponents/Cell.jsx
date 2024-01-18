@@ -281,7 +281,7 @@ function Cell(props) {
   const CellTag = isRowHeader ? 'th' : 'td';
 
   // eslint-disable-next-line react/forbid-dom-props
-  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>;
+  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ 'min-height': height }}>{cellContent}</div>;
   // Render FocusTrap container when within a grid context
   if (isGridContext) {
     cellContentComponent = (
