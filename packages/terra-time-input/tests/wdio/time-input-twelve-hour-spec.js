@@ -129,7 +129,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       it('should decrease to one hour', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('-');
@@ -179,7 +179,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       it('should decrease to one hour', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('_');
@@ -229,7 +229,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       it('should decrease to one hour', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('ArrowDown');
@@ -279,7 +279,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       it('should increase to one hour', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('+');
@@ -329,7 +329,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       it('should increase to one hour', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('=');
@@ -379,7 +379,7 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
       it('should increase to one hour', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/filled-morning');
         browser.refresh();
-        Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+        Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('ArrowUp');
