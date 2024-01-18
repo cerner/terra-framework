@@ -8,6 +8,7 @@ const Example = () => {
   const [dateFieldValue2, setDateFieldValue2] = useState('');
   const [isInline, setIsInline] = useState(true);
   const [isInvalid, setIsInvalid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleClick = () => {
     setIsInvalid(invalid => !invalid);
@@ -18,6 +19,9 @@ const Example = () => {
           monthInput.focus();
         }
       }
+      setErrorMessage('Please select a valid appointment date');
+    } else {
+      setErrorMessage('');
     }
   };
 
@@ -34,7 +38,7 @@ const Example = () => {
         onChange={(event, dateString) => setDateFieldValue1(dateString)}
         isInline={isInline}
         isInvalid={isInvalid}
-        error="Please select a valid appointment date"
+        error={errorMessage}
         help="Help message"
         refCallback={(node) => handleRef(node)}
       />
@@ -45,7 +49,7 @@ const Example = () => {
         onChange={(event, dateString) => setDateFieldValue2(dateString)}
         isInline={isInline}
         isInvalid={isInvalid}
-        error="Please select a valid appointment date"
+        error={errorMessage}
         help="Help message"
       />
       <p>{`First DateInputField Value: ${dateFieldValue1}`}</p>

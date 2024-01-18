@@ -6,6 +6,7 @@ const Example = () => {
   const ref = useRef();
   const [value, setValue] = useState('');
   const [isInvalid, setIsInvalid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleClick = () => {
     setIsInvalid(invalid => !invalid);
@@ -16,6 +17,9 @@ const Example = () => {
           monthInput.focus();
         }
       }
+      setErrorMessage('Invalid Departure Date');
+    } else {
+      setErrorMessage('');
     }
   };
 
@@ -30,7 +34,7 @@ const Example = () => {
         name="date-input-value"
         value={value}
         onChange={(event, dateString) => setValue(dateString)}
-        error="Invalid Departure Date"
+        error={errorMessage}
         help="Note: Departure date should be greater than arrival date"
         isInvalid={isInvalid}
         refCallback={(node) => handleRef(node)}

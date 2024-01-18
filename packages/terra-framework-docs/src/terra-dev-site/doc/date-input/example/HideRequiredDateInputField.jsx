@@ -6,6 +6,7 @@ const Example = () => {
   const ref = useRef();
   const [value, setValue] = useState('');
   const [isInvalid, setIsInvalid] = useState(false);
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleClick = () => {
     setIsInvalid(invalid => !invalid);
@@ -16,6 +17,9 @@ const Example = () => {
           monthInput.focus();
         }
       }
+      setErrorMessage('Please enter a valid event date.');
+    } else {
+      setErrorMessage('');
     }
   };
 
@@ -32,7 +36,7 @@ const Example = () => {
         onChange={(event, dateString) => setValue(dateString)}
         required
         hideRequired
-        error="Please enter a valid event date."
+        error={errorMessage}
         help="Help message"
         isInvalid={isInvalid}
         refCallback={(node) => handleRef(node)}
