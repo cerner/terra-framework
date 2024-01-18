@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Redwood theme styling.
+
 ## 6.69.0 - (December 18, 2023)
 
 * Changed
