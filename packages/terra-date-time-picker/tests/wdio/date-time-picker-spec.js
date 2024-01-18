@@ -1990,6 +1990,37 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-second-input"]')).toHaveValue('');
         });
       });
+      describe('DatePickerField', () => {
+        it('displays Valid DatePickerField', () => {
+          browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-field');
+          $('#root').moveTo(0, 0);
+
+          Terra.validates.element('date picker field valid');
+        });
+
+        it('displays Invalid DatePickerField', () => {
+          browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-field');
+          $('#validity-toggle').click();
+          Terra.validates.element('date picker field invalid');
+          $('#validity-toggle').click();
+        });
+
+        it('displays Incomplete DatePickerField', () => {
+          browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-field');
+          $('#incomplete-toggle').click();
+          Terra.validates.element('date picker field incomplete');
+          $('#incomplete-toggle').click();
+        });
+
+        it('displays Invalid and Incomplete DatePickerField', () => {
+          browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-field');
+          $('#validity-toggle').click();
+          $('#incomplete-toggle').click();
+          Terra.validates.element('date picker field invalid and incomplete');
+          $('#validity-toggle').click();
+          $('#incomplete-toggle').click();
+        });
+      });
     });
   });
 });

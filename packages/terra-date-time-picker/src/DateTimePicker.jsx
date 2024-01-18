@@ -15,6 +15,10 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * String that labels the current element. 'aria-label' must be present for accessibility.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the date input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
@@ -712,6 +716,7 @@ class DateTimePicker extends React.Component {
 
   render() {
     const {
+      ariaLabel,
       dateInputAttributes,
       disabled,
       excludeDates,
@@ -787,6 +792,7 @@ class DateTimePicker extends React.Component {
             required={required}
             initialTimeZone={this.initialTimeZone}
             isDefaultDateAcceptable
+            ariaLabel={ariaLabel}
           />
         </div>
         <div className={cx('time-facade')}>
