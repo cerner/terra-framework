@@ -323,13 +323,14 @@
 
 // =======================================
 // terra-modal-manager
-// https://github.com/cerner/terra-core/tree/main/packages/terra-modal-manager
+// https://github.com/cerner/terra-framework/tree/main/packages/terra-modal-manager
 // https://jira2.cerner.com/browse/UXPLATFORM-10006
 // =======================================
 .redwood-theme {
   --modal-background-color: var(--container-style-1-background-color);
   --modal-box-shadow: var(--rds-box-shadow-md);
   --modal-border-radius: var(--rds-border-radius-md);
+  // TODO add --modal-foreground-color variable or remove this line is inherit color works
 }
 
 // =======================================
