@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.14
+// Version 0.20.26
 // Semantic Names for Terra Custom Properties
 // ENGINEERING NOTE:
 // Only reference variables from this file.
@@ -15,11 +15,13 @@
 // =======================================
 .redwood-theme {
   // Keyboard focus styling
-  --default-focus-outline-style: var(--rds-focus-outline-style);
+  // Inverse color does not imply dark/lowlight theme. Some areas of the UI will have dark backgrounds,
+  // necessitating the use of an inverse-colored focus outline.
   --default-focus-outline-color-inverse: var(--rds-focus-inverse-outline-color);
   --default-focus-outline-color-normal: var(--rds-focus-normal-outline-color);
   --default-focus-outline-offset-inside: var(--rds-focus-offset-inside);
   --default-focus-outline-offset-outside: var(--rds-focus-offset-outside);
+  --default-focus-outline-style: var(--rds-focus-outline-style);
   --default-focus-outline-width: var(--rds-focus-outline-width);
 
   // Link states
@@ -39,19 +41,30 @@
 // =======================================
 // terra-badge
 // https://github.com/cerner/terra-core/tree/main/packages/terra-badge
+// https://jira2.cerner.com/browse/UXPLATFORM-9950
 // =======================================
 .redwood-theme {
-  // Color -> Neutral
+  // Color -> Neutral (Terra Default)
   --badge-neutral-background-color: var(--ui-light-color-surface-neutral-subtle);
   --badge-neutral-font-color: var(--ui-light-color-text-icon-secondary);
   --badge-neutral-icon-color: var(--ui-light-color-text-icon-secondary);
+
+  // Color -> Primary
+  --badge-primary-background-color: var(--ui-light-color-surface-info-subtle);
+  --badge-primary-font-color: var(--ui-light-color-text-icon-info);
+  --badge-primary-icon-color: var(--ui-light-color-text-icon-info);
+
+  // Color -> Secondary
+  --badge-secondary-background-color: var(--ui-light-color-surface-success-subtle);
+  --badge-secondary-font-color: var(--ui-light-color-text-icon-success);
+  --badge-secondary-icon-color: var(--ui-light-color-text-icon-success);
 
   // Color -> Positive
   --badge-positive-background-color: var(--ui-light-color-surface-success-subtle);
   --badge-positive-font-color: var(--ui-light-color-text-icon-success);
   --badge-positive-icon-color: var(--ui-light-color-text-icon-success);
 
-  // Color -> Negative
+  // Color -> Negative 
   --badge-negative-background-color: var(--ui-light-color-surface-danger-subtle);
   --badge-negative-font-color: var(--ui-light-color-text-icon-danger);
   --badge-negative-icon-color: var(--ui-light-color-text-icon-danger);
@@ -70,51 +83,51 @@
   --badge-tiny-font-size: var(--rds-typography-font-size-xs);
   --badge-tiny-icon-size: var(--rds-icon-size-2xs);
   --badge-tiny-radius: var(--rds-border-radius-sm);
-  --badge-tiny-padding-left: var(--rds-spacing-3);
-  --badge-tiny-padding-right: var(--rds-spacing-3);
-  --badge-tiny-padding-top: var(--rds-spacing-2);
-  --badge-tiny-padding-bottom: var(--rds-spacing-2);
-  --badge-tiny-horizontal-gap-padding: var(--rds-spacing-2);
+  --badge-tiny-padding-left: var(--rds-spacing-03);
+  --badge-tiny-padding-right: var(--rds-spacing-03);
+  --badge-tiny-padding-top: var(--rds-spacing-02);
+  --badge-tiny-padding-bottom: var(--rds-spacing-02);
+  --badge-tiny-horizontal-gap-padding: var(--rds-spacing-02);
 
   // Size -> Small
   --badge-small-font-size: var(--rds-typography-font-size-sm);
   --badge-small-icon-size: var(--rds-icon-size-xs);
   --badge-small-radius: var(--rds-border-radius-md);
-  --badge-small-padding-left: var(--rds-spacing-5);
-  --badge-small-padding-right: var(--rds-spacing-5);
-  --badge-small-padding-top: var(--rds-spacing-3);
-  --badge-small-padding-bottom: var(--rds-spacing-3);
-  --badge-small-horizontal-gap-padding: var(--rds-spacing-3);
+  --badge-small-padding-left: var(--rds-spacing-05);
+  --badge-small-padding-right: var(--rds-spacing-05);
+  --badge-small-padding-top: var(--rds-spacing-03);
+  --badge-small-padding-bottom: var(--rds-spacing-03);
+  --badge-small-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Size -> Medium
   --badge-medium-font-size: var(--rds-typography-font-size-md);
   --badge-medium-icon-size: var(--rds-icon-size-sm);
   --badge-medium-radius: var(--rds-border-radius-md);
-  --badge-medium-padding-left: var(--rds-spacing-5);
-  --badge-medium-padding-right: var(--rds-spacing-5);
-  --badge-medium-padding-top: var(--rds-spacing-3);
-  --badge-medium-padding-bottom: var(--rds-spacing-3);
-  --badge-medium-horizontal-gap-padding: var(--rds-spacing-3);
+  --badge-medium-padding-left: var(--rds-spacing-05);
+  --badge-medium-padding-right: var(--rds-spacing-05);
+  --badge-medium-padding-top: var(--rds-spacing-03);
+  --badge-medium-padding-bottom: var(--rds-spacing-03);
+  --badge-medium-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Size -> Large
   --badge-large-font-size: var(--rds-typography-font-size-2xl);
   --badge-large-icon-size: var(--rds-icon-size-xl);
   --badge-large-radius: var(--rds-border-radius-md);
-  --badge-large-padding-left: var(--rds-spacing-5);
-  --badge-large-padding-right: var(--rds-spacing-5);
-  --badge-large-padding-top: var(--rds-spacing-3);
-  --badge-large-padding-bottom: var(--rds-spacing-3);
-  --badge-large-horizontal-gap-padding: var(--rds-spacing-3);
+  --badge-large-padding-left: var(--rds-spacing-05);
+  --badge-large-padding-right: var(--rds-spacing-05);
+  --badge-large-padding-top: var(--rds-spacing-03);
+  --badge-large-padding-bottom: var(--rds-spacing-03);
+  --badge-large-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Size -> Huge
   --badge-huge-font-size: var(--rds-typography-font-size-4xl);
   --badge-huge-icon-size: var(--rds-icon-size-3xl);
   --badge-huge-radius: var(--rds-border-radius-md);
-  --badge-huge-padding-left: var(--rds-spacing-5);
-  --badge-huge-padding-right: var(--rds-spacing-5);
-  --badge-huge-padding-top: var(--rds-spacing-3);
-  --badge-huge-padding-bottom: var(--rds-spacing-3);
-  --badge-huge-horizontal-gap-padding: var(--rds-spacing-3);
+  --badge-huge-padding-left: var(--rds-spacing-05);
+  --badge-huge-padding-right: var(--rds-spacing-05);
+  --badge-huge-padding-top: var(--rds-spacing-03);
+  --badge-huge-padding-bottom: var(--rds-spacing-03);
+  --badge-huge-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Typography
   --badge-font-family: var(--rds-typography-font-family-condensed);
@@ -151,6 +164,7 @@
 // =======================================
 // terra-card
 // https://github.com/cerner/terra-core/tree/main/packages/terra-card
+// https://jira2.cerner.com/browse/UXPLATFORM-10149
 // =======================================
 
 .redwood-theme {
@@ -183,7 +197,8 @@
 
 // =======================================
 // terra-clinical-label-value-view
-// https://github.com/cerner/terra-clinical/blob/main/packages/terra-clinical-label-value-view/
+// https://github.com/cerner/terra-clinical/tree/main/packages/terra-clinical-label-value-view
+// https://jira2.cerner.com/browse/UXPLATFORM-9958
 // =======================================
 
 .redwood-theme {
@@ -209,6 +224,7 @@
 // =======================================
 // terra-divider
 // https://github.com/cerner/terra-core/tree/main/packages/terra-divider
+// https://jira2.cerner.com/browse/UXPLATFORM-10031
 // =======================================
 .redwood-theme {
   --divider-border-color: var(--ui-light-color-border-divider);
@@ -236,7 +252,7 @@
     --divider-font-size: var(--rds-typography-size-md);
     --divider-padding-left: var(--rds-spacing-06);
     --divider-padding-right: var(--rds-spacing-06);
-    --divider-padding-top: var(-rds-spacing-01);
+    --divider-padding-top: var(--rds-spacing-01);
     --divider-padding-bottom: var(--rds-spacing-02);
   }
 }
@@ -244,6 +260,7 @@
 // =======================================
 // terra-hyperlink
 // https: //github.com/cerner/terra-core/tree/main/packages/terra-hyperlink
+// https://jira2.cerner.com/browse/UXPLATFORM-10011
 // =======================================
 .redwood-theme {
   // KEYBOARD FOCUS STYLE: normal color, outside offset
@@ -284,28 +301,30 @@
 // =======================================
 // terra-image
 // https://github.com/cerner/terra-core/tree/main/packages/terra-image
+// https://jira2.cerner.com/browse/UXPLATFORM-10009
 // =======================================
 .redwood-theme {
-    // Rounded Image
-    --image-rounded-border-radius: var(--rds-border-radius-sm);
+  // Rounded Image
+  --image-rounded-border-radius: var(--rds-border-radius-sm);
 
-    // Circle Image
-    --image-circle-border-radius: var(--rds-border-radius-circular);
+  // Circle Image
+  --image-circle-border-radius: var(--rds-border-radius-circular);
 
-    // Thumbnail Image
-    --image-thumbnail-background-color: var(--container-style-0-background-color);
-    --image-thumbnail-border-color: var(--ui-light-color-border-divider);
-    --image-thumbmnail-border-width: var(--rds-border-width-1);
-    --image-thumbnail-border-radius: var(--rds-border-radius-sm);
-    --image-thumbnail-top-padding: var(--rds-spacing-03);
-    --image-thumbnail-bottom-padding: var(--rds-spacing-03);
-    --image-thumbnail-left-padding: var(--rds-spacing-03);
-    --image-thumbnail-right-padding: var(--rds-spacing-03);
+  // Thumbnail Image
+  --image-thumbnail-background-color: var(--container-style-0-background-color);
+  --image-thumbnail-border-color: var(--ui-light-color-border-divider);
+  --image-thumbmnail-border-width: var(--rds-border-width-1);
+  --image-thumbnail-border-radius: var(--rds-border-radius-sm);
+  --image-thumbnail-top-padding: var(--rds-spacing-03);
+  --image-thumbnail-bottom-padding: var(--rds-spacing-03);
+  --image-thumbnail-left-padding: var(--rds-spacing-03);
+  --image-thumbnail-right-padding: var(--rds-spacing-03);
 }
 
 // =======================================
 // terra-modal-manager
 // https://github.com/cerner/terra-core/tree/main/packages/terra-modal-manager
+// https://jira2.cerner.com/browse/UXPLATFORM-10006
 // =======================================
 .redwood-theme {
   --modal-background-color: var(--container-style-1-background-color);
@@ -316,6 +335,7 @@
 // =======================================
 // terra-overlay
 // https://github.com/cerner/terra-core/tree/main/packages/terra-overlay
+// https://jira2.cerner.com/browse/UXPLATFORM-10003
 // =======================================
 .redwood-theme {
   --overlay-subtle-background-color: var(--ui-light-color-overlay-scrim-subtle);
@@ -351,6 +371,7 @@
 // =======================================
 // terra-signature
 // https://github.com/cerner/terra-core/tree/main/packages/terra-signature
+// https://jira2.cerner.com/browse/UXPLATFORM-9987
 // =======================================
 .redwood-theme {
   --drawing-line-color: var(--ui-light-color-text-icon-primary);
@@ -360,6 +381,8 @@
 // =======================================
 // terra-slide-group
 // https://github.com/cerner/terra-core/tree/main/packages/terra-slide-group
+// https://jira2.cerner.com/browse/UXPLATFORM-10033
+// https://jira2.cerner.com/browse/UXPLATFORM-10033
 // =======================================
 .redwood-theme {
   --slide-group-background-color: var(--container-style-0-background-color);
@@ -368,6 +391,7 @@
 // =======================================
 // terra-slide-panel
 // https://github.com/cerner/terra-core/tree/main/packages/terra-slide-panel
+// https://jira2.cerner.com/browse/UXPLATFORM-9986
 // =======================================
 .redwood-theme {
   --slide-panel-background-color: var(--container-style-0-background-color);
@@ -375,32 +399,9 @@
 }
 
 // =======================================
-// terra-spacer
-// https://github.com/cerner/terra-core/tree/main/packages/terra-spacer
-// =======================================
-.redwood-theme {
-    --spacer-size-00: var(--rds-spacing-00); // 0
-    --spacer-size-01: var(--rds-spacing-01); // 1px
-    --spacer-size-02: var(--rds-spacing-02); // 2px
-    --spacer-size-03: var(--rds-spacing-03); // 4px (terra-spacer-small-minus-2 = 3px)
-    --spacer-size-04: var(--rds-spacing-04); // 6px (terra-spacer-small-minus-1 = 5px)
-    --spacer-size-05: var(--rds-spacing-05); // 8px (terra-spacer-small = 7px)
-    --spacer-size-06: var(--rds-spacing-06); // 10px (terra-spacer-medium)
-    --spacer-size-07: var(--rds-spacing-07); // 12px (terra-spacer-large)
-    --spacer-size-08: var(--rds-spacing-08); // 14px (terra-spacer-large-plus-1 = 15px)
-    --spacer-size-09: var(--rds-spacing-09); // 16px
-    --spacer-size-10: var(--rds-spacing-10); // 18px
-    --spacer-size-11: var(--rds-spacing-11); // 20px (terra-spacer-large-plus-2)
-    --spacer-size-12: var(--rds-spacing-12); // 22px
-    --spacer-size-13: var(--rds-spacing-13); // 24px
-    --spacer-size-14: var(--rds-spacing-14); // 26px
-    --spacer-size-15: var(--rds-spacing-15); // 28px
-    --spacer-size-16: var(--rds-spacing-16); // 30px (terra-spacer-larger-plus-3)
-    --spacer-size-17: var(--rds-spacing-17); // 50px (terra-spacer goes to 50px)
-}
-
-// =======================================
 // terra-tag
+// https://github.com/cerner/terra-core/tree/main/packages/terra-tag
+// https://jira2.cerner.com/browse/UXPLATFORM-9979
 // =======================================
 .redwood-theme {
   // KEYBOARD FOCUS STYLE: normal color, outside offset
@@ -438,4 +439,3 @@
     --tag-padding-bottom: var(--rds-spacing-05);
   }
 }
-
