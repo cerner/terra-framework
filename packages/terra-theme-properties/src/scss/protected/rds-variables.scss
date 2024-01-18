@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.26
+// Version 0.20.28
 // RDS Foundation Variables
 // -------------------------------------------------
 // Maintained by Oracle Health Design, UX Foundations Team
@@ -238,10 +238,10 @@
   --rds-color-pillar-sky-170: #053242;
   --rds-color-pillar-sky-180: #04232d;
   --rds-color-pillar-sky-190: #02181f;
-  --rds-focus-global-outline-style: dashed;
-  --rds-focus-global-outline-width: 2px;
-  --rds-focus-global-outline-offset-inside: -2px;
-  --rds-focus-global-outline-offset-outside: 2px;
+  --rds-focus-outline-style: dashed;
+  --rds-focus-outline-width: 2px;
+  --rds-focus-outline-offset-inside: -2px;
+  --rds-focus-outline-offset-outside: 2px;
   --rds-focus-inverse-outline-color: var(--rds-color-neutral-0);
   --rds-focus-normal-outline-color: var(--rds-color-neutral-190);
   --rds-icon-size-2xs: var(--rds-object-sizing-2xs);
@@ -251,13 +251,17 @@
   --rds-icon-size-lg: var(--rds-object-sizing-lg);
   --rds-icon-size-xl: var(--rds-object-sizing-xl);
   --rds-icon-size-2xl: var(--rds-object-sizing-2xl);
+  --rds-object-sizing-4xs: 4px;
+  --rds-object-sizing-3xs: 6px;
   --rds-object-sizing-2xs: 8px;
   --rds-object-sizing-xs: 10px;
   --rds-object-sizing-sm: 12px;
   --rds-object-sizing-md: 14px;
   --rds-object-sizing-lg: 16px;
-  --rds-object-sizing-xl: 24px;
-  --rds-object-sizing-2xl: 36px;
+  --rds-object-sizing-xl: 18px;
+  --rds-object-sizing-2xl: 20px;
+  --rds-object-sizing-3xl: 22px;
+  --rds-object-sizing-4xl: 24px;
   --rds-opacity-0: 0;
   --rds-opacity-10: 0.1;
   --rds-opacity-20: 0.2;

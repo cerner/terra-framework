@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.26
+// Version 0.20.28
 // Semantic Names for Terra Custom Properties
 // ENGINEERING NOTE:
 // Only reference variables from this file.
@@ -174,24 +174,24 @@
   --card-box-shadow: var(--rds-box-shadow-sm);
 
   &.compact {
-    --card-left-padding: var(--rds-spacing-06);
-    --card-right-padding: var(--rds-spacing-06);
-    --card-top-padding: var(--rds-spacing-06);
-    --card-bottom-padding: var(--rds-spacing-06);
+    --card-padding-left: var(--rds-spacing-06);
+    --card-padding-right: var(--rds-spacing-06);
+    --card-padding-top: var(--rds-spacing-06);
+    --card-padding-bottom: var(--rds-spacing-06);
   }
 
   &.comfortable {
-    --card-left-padding: var(--rds-spacing-07);
-    --card-right-padding: var(--rds-spacing-07);
-    --card-top-padding: var(--rds-spacing-07);
-    --card-bottom-padding: var(--rds-spacing-07);
+    --card-padding-left: var(--rds-spacing-07);
+    --card-padding-right: var(--rds-spacing-07);
+    --card-padding-top: var(--rds-spacing-07);
+    --card-padding-bottom: var(--rds-spacing-07);
   }
 
   &.spacious {
-    --card-left-padding: var(--rds-spacing-09);
-    --card-right-padding: var(--rds-spacing-09);
-    --card-top-padding: var(--rds-spacing-09);
-    --card-bottom-padding: var(--rds-spacing-09);
+    --card-padding-left: var(--rds-spacing-09);
+    --card-padding-right: var(--rds-spacing-09);
+    --card-padding-top: var(--rds-spacing-09);
+    --card-padding-bottom: var(--rds-spacing-09);
   }
 }
 
@@ -315,15 +315,15 @@
   --image-thumbnail-border-color: var(--ui-light-color-border-divider);
   --image-thumbmnail-border-width: var(--rds-border-width-1);
   --image-thumbnail-border-radius: var(--rds-border-radius-sm);
-  --image-thumbnail-top-padding: var(--rds-spacing-03);
-  --image-thumbnail-bottom-padding: var(--rds-spacing-03);
-  --image-thumbnail-left-padding: var(--rds-spacing-03);
-  --image-thumbnail-right-padding: var(--rds-spacing-03);
+  --image-thumbnail-padding-top: var(--rds-spacing-03);
+  --image-thumbnail-padding-bottom: var(--rds-spacing-03);
+  --image-thumbnail-padding-left: var(--rds-spacing-03);
+  --image-thumbnail-padding-right: var(--rds-spacing-03);
 }
 
 // =======================================
 // terra-modal-manager
-// https://github.com/cerner/terra-core/tree/main/packages/terra-modal-manager
+// https://github.com/cerner/terra-framework/tree/main/packages/terra-modal-manager
 // https://jira2.cerner.com/browse/UXPLATFORM-10006
 // =======================================
 .redwood-theme {
@@ -380,8 +380,7 @@
 
 // =======================================
 // terra-slide-group
-// https://github.com/cerner/terra-core/tree/main/packages/terra-slide-group
-// https://jira2.cerner.com/browse/UXPLATFORM-10033
+// https://github.com/cerner/terra-framework/tree/main/packages/terra-slide-group
 // https://jira2.cerner.com/browse/UXPLATFORM-10033
 // =======================================
 .redwood-theme {
@@ -390,7 +389,7 @@
 
 // =======================================
 // terra-slide-panel
-// https://github.com/cerner/terra-core/tree/main/packages/terra-slide-panel
+// https://github.com/cerner/terra-framework/tree/main/packages/terra-slide-panel
 // https://jira2.cerner.com/browse/UXPLATFORM-9986
 // =======================================
 .redwood-theme {
