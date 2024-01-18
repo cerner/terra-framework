@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.57.1",
+  "version": "1.58.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "main": "index.js",
   "publishConfig": {
@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@cerner/terra-docs": "^1.7.0",
-    "@cerner/terra-pills": "^1.16.1",
+    "@cerner/terra-pills": "^1.17.0",
     "classnames": "^2.2.5",
     "legacy-terra-table": "npm:terra-table@^4.36.0",
     "prop-types": "^15.5.8",
@@ -42,7 +42,7 @@
     "terra-brand-footer": "^3.12.0",
     "terra-button": "^3.3.0",
     "terra-collapsible-menu-view": "^6.87.1",
-    "terra-compact-interactive-list": "^1.0.1",
+    "terra-compact-interactive-list": "^1.1.0",
     "terra-content-container": "^3.0.0",
     "terra-data-grid": "^1.11.0",
     "terra-date-input": "^1.49.0",

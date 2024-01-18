@@ -1,7 +1,7 @@
 {
   "name": "@cerner/terra-pills",
   "main": "lib/index.js",
-  "version": "1.16.1",
+  "version": "1.17.0",
   "description": "The terra-pills component provides a way to trigger actions to launch popovers with the desired content or remove the component",
   "repository": {
     "type": "git",
