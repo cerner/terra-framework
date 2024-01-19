@@ -183,8 +183,6 @@ class TimeInput extends React.Component {
     this.visuallyHiddenComponent = null;
     this.handleInvalidInputChange = this.handleInvalidInputChange.bind(this);
     this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
-    this.plusMeridiemUpdate = this.plusMeridiemUpdate.bind(this);
-    this.minusMeridiemUpdate = this.minusMeridiemUpdate.bind(this);
 
     let hour = TimeUtil.splitHour(value);
     let meridiem;
@@ -495,7 +493,13 @@ class TimeInput extends React.Component {
               if (hour === '0' || hour === '00') {
                 hour = '23';
               } else {
-                meridiem = this.minusMeridiemUpdate(meridiem, variant, hour);
+                if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
+                  if (meridiem === this.anteMeridiem) {
+                    meridiem = this.postMeridiem;
+                  } else {
+                    meridiem = this.anteMeridiem;
+                  }
+                }
                 hour = TimeUtil.decrementHour(hour, variant);
               }
             } else {
@@ -510,7 +514,13 @@ class TimeInput extends React.Component {
             if (hour === '0' || hour === '00') {
               hour = '23';
             } else {
-              meridiem = this.minusMeridiemUpdate(meridiem, variant, hour);
+              if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
+                if (meridiem === this.anteMeridiem) {
+                  meridiem = this.postMeridiem;
+                } else {
+                  meridiem = this.anteMeridiem;
+                }
+              }
               hour = TimeUtil.decrementHour(hour, variant);
             }
           } else {
@@ -520,7 +530,13 @@ class TimeInput extends React.Component {
           if (hour === '0' || hour === '00') {
             hour = '23';
           } else {
-            meridiem = this.minusMeridiemUpdate(meridiem, variant, hour);
+            if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
+              if (meridiem === this.anteMeridiem) {
+                meridiem = this.postMeridiem;
+              } else {
+                meridiem = this.anteMeridiem;
+              }
+            }
             hour = TimeUtil.decrementHour(hour, variant);
           }
         }
@@ -536,7 +552,13 @@ class TimeInput extends React.Component {
             if (formatHour === '0' || formatHour === '00') {
               formatHour = '23';
             } else {
-              formatMeridiem = this.minusMeridiemUpdate(formatMeridiem, variant, formatHour);
+              if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '12') {
+                if (formatMeridiem === this.anteMeridiem) {
+                  formatMeridiem = this.postMeridiem;
+                } else {
+                  formatMeridiem = this.anteMeridiem;
+                }
+              }
               formatHour = TimeUtil.decrementHour(formatHour, variant);
             }
           } else {
@@ -546,7 +568,13 @@ class TimeInput extends React.Component {
           if (formatHour === '0' || formatHour === '00') {
             formatHour = '23';
           } else {
-            formatMeridiem = this.minusMeridiemUpdate(formatMeridiem, variant, formatHour);
+            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '12') {
+              if (formatMeridiem === this.anteMeridiem) {
+                formatMeridiem = this.postMeridiem;
+              } else {
+                formatMeridiem = this.anteMeridiem;
+              }
+            }
             formatHour = TimeUtil.decrementHour(formatHour, variant);
           }
         }
@@ -566,7 +594,13 @@ class TimeInput extends React.Component {
               if (hour === '23') {
                 hour = '00';
               } else {
-                meridiem = this.plusMeridiemUpdate(meridiem, variant, hour);
+                if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
+                  if (meridiem === this.anteMeridiem) {
+                    meridiem = this.postMeridiem;
+                  } else {
+                    meridiem = this.anteMeridiem;
+                  }
+                }
                 hour = TimeUtil.incrementHour(hour, variant);
               }
             } else {
@@ -581,7 +615,13 @@ class TimeInput extends React.Component {
             if (hour === '23') {
               hour = '00';
             } else {
-              meridiem = this.plusMeridiemUpdate(meridiem, variant, hour);
+              if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
+                if (meridiem === this.anteMeridiem) {
+                  meridiem = this.postMeridiem;
+                } else {
+                  meridiem = this.anteMeridiem;
+                }
+              }
               hour = TimeUtil.incrementHour(hour, variant);
             }
           } else {
@@ -591,7 +631,13 @@ class TimeInput extends React.Component {
           if (hour === '23') {
             hour = '00';
           } else {
-            meridiem = this.plusMeridiemUpdate(meridiem, variant, hour);
+            if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
+              if (meridiem === this.anteMeridiem) {
+                meridiem = this.postMeridiem;
+              } else {
+                meridiem = this.anteMeridiem;
+              }
+            }
             hour = TimeUtil.incrementHour(hour, variant);
           }
         }
@@ -607,7 +653,13 @@ class TimeInput extends React.Component {
             if (formatHour === '23') {
               formatHour = '00';
             } else {
-              formatMeridiem = this.plusMeridiemUpdate(formatMeridiem, variant, formatHour);
+              if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '11') {
+                if (formatMeridiem === this.anteMeridiem) {
+                  formatMeridiem = this.postMeridiem;
+                } else {
+                  formatMeridiem = this.anteMeridiem;
+                }
+              }
               formatHour = TimeUtil.incrementHour(formatHour, variant);
             }
           } else {
@@ -617,7 +669,13 @@ class TimeInput extends React.Component {
           if (formatHour === '23') {
             formatHour = '00';
           } else {
-            formatMeridiem = this.plusMeridiemUpdate(formatMeridiem, variant, formatHour);
+            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '11') {
+              if (formatMeridiem === this.anteMeridiem) {
+                formatMeridiem = this.postMeridiem;
+              } else {
+                formatMeridiem = this.anteMeridiem;
+              }
+            }
             formatHour = TimeUtil.incrementHour(formatHour, variant);
           }
         }
@@ -854,30 +912,6 @@ class TimeInput extends React.Component {
     }
   }
 
-  minusMeridiemUpdate(meridiem, variant, hour) {
-    let meridiemValue;
-    if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
-      if (meridiem === this.anteMeridiem) {
-        meridiemValue = this.postMeridiem;
-      } else {
-        meridiemValue = this.anteMeridiem;
-      }
-    }
-    return meridiemValue;
-  }
-
-  plusMeridiemUpdate(meridiem, variant, hour) {
-    let meridiemValue;
-    if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
-      if (meridiem === this.anteMeridiem) {
-        meridiemValue = this.postMeridiem;
-      } else {
-        meridiemValue = this.anteMeridiem;
-      }
-    }
-    return meridiemValue;
-  }
-
   focusMinuteFromHour(event) {
     // If the hour is empty or the cursor is after the value, move focus to the minute input when the right arrow is pressed.
     if (this.state.hour.length === 0 || this.state.hour.length === this.hourInput.selectionEnd) {
@@ -1071,6 +1105,9 @@ class TimeInput extends React.Component {
     inputAttributes.required = required;
 
     const a11yTimeValue = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
+    const hotKeyDescription = intl.formatMessage({ id: 'Terra.timePicker.hotKey' });
+    const minuteDescription = intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' });
+    const secondDescription = intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' });
 
     return (
       <div
@@ -1171,7 +1208,7 @@ class TimeInput extends React.Component {
             onBlur={this.handleHourBlur}
             size="2"
             pattern="\d*"
-            description={hourDescription()}
+            description={`${hourDescription()}, ${hotKeyDescription}`}
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
@@ -1191,7 +1228,7 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             // description: Like the hour descriptions, but for the minute input.
-            description={intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' })}
+            description={`${minuteDescription}, ${hotKeyDescription}`}
           />
           {showSeconds && (
           <React.Fragment>
@@ -1213,7 +1250,7 @@ class TimeInput extends React.Component {
               size="2"
               pattern="\d*"
               // description: Like the hour descriptions, but for the second input.
-              description={intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' })}
+              description={`${secondDescription}, ${hotKeyDescription}`}
             />
           </React.Fragment>
           )}
