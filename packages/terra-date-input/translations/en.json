@@ -27,5 +27,5 @@
   "Terra.date.input.yearDescription": "A four-digit number",
   "Terra.date.input.yearLabel": "Year",
   "Terra.date.input.dateFormatLabel": "Date Format:",
-  "Terra.date.input.hotKey": "Press T to set current date, plus key for next date and minus key for previous date"
+  "Terra.date.input.hotKey": "Press T to set current date, plus key for next date and minus key for previous date."
 }

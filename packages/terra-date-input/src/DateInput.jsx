@@ -102,7 +102,8 @@ const propTypes = {
    * Custom input attributes to apply to the year input
    */
   yearAttributes: PropTypes.object,
-  error: PropTypes.node,
+  errorMessageId: PropTypes.string,
+  ariadescribedby: PropTypes.string,
 };
 
 const defaultProps = {
@@ -117,7 +118,8 @@ const defaultProps = {
   value: undefined,
   useExternalFormatMask: false,
   isA11yControlled: false,
-  error: null,
+  errorMessageId: null,
+  ariadescribedby: null,
 };
 
 class DateInput extends React.Component {
@@ -141,8 +143,6 @@ class DateInput extends React.Component {
 
     this.uuid = uuidv4();
     this.hotKeyInstructionId = `${this.uuid}-hotkeyinstruction`;
-    this.errorMessageId = `${this.uuid}-errormessage`;
-
     this.dateInputContainer = React.createRef();
     this.monthRef = React.createRef();
 
@@ -623,7 +623,7 @@ class DateInput extends React.Component {
           aria-disabled={this.props.disabled}
           aria-invalid={this.props.isInvalid}
           aria-required={this.props.required}
-          aria-describedby={`${this.hotKeyInstructionId} ${this.errorMessageId}`}
+          aria-describedby={`${this.hotKeyInstructionId} ${this.props.errorMessageId}`}
         >
           <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -640,7 +640,6 @@ class DateInput extends React.Component {
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.december' })} value="12">{this.props.intl.formatMessage({ id: 'Terra.date.input.december' })}</option>
         </select>
         <VisuallyHiddenText id={this.hotKeyInstructionId} text={intl.formatMessage({ id: 'Terra.date.input.hotKey' })} />
-        <VisuallyHiddenText id={this.errorMessageId} text={`, ${this.props.error}`} />
       </div>
     );
   }
@@ -682,7 +681,7 @@ class DateInput extends React.Component {
         {...numberAttributes}
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         label={label}
-        description={`${intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}, ${this.props.error}`}
+        description={`${intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
@@ -700,6 +699,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        ariadescribedby={this.props.errorMessageId}
       />
     );
   }
@@ -724,7 +724,7 @@ class DateInput extends React.Component {
         {...numberAttributes}
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
-        description={`${this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.hotKey' })}, ${this.props.error}`}
+        description={`${this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
         className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
@@ -742,6 +742,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        ariadescribedby={this.props.errorMessageId}
       />
     );
   }

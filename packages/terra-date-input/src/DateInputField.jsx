@@ -117,6 +117,7 @@ const propTypes = {
    * Callback ref to access date input containing DOM element.
    */
   refCallback: PropTypes.func,
+  errorMessageId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -140,6 +141,7 @@ const defaultProps = {
   showOptional: false,
   value: '',
   yearAttributes: {},
+  errorMessageId: null,
 };
 
 const DateInputField = (props) => {
@@ -168,6 +170,7 @@ const DateInputField = (props) => {
     value,
     yearAttributes,
     refCallback,
+    errorMessageId,
     ...customProps
   } = props;
 
@@ -274,6 +277,7 @@ const DateInputField = (props) => {
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
         refCallback={refCallback}
         error={error}
+        errorMessageId={errorAriaDescriptionId}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
       {/* It makes no sense for screen readers to hear the format or the help text in this position. */}
