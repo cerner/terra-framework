@@ -16,6 +16,7 @@ class timeInput extends React.Component {
       const updatedTime = moment(time, ['HH:mm']).format('hh:mm');
       this.setState({ labelValue: updatedTime });
     } else {
+      this.setState({ labelValue: time });
       this.setState({ time });
     }
   }
