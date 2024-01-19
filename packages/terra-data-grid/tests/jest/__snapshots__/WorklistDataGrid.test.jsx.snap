@@ -1201,10 +1201,10 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                       },
                     ]
                   }
-                  id="fd17d622-8696-49f9-9822-2843487728d7"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="fd17d622-8696-49f9-9822-2843487728d7"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -1436,7 +1436,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -1529,7 +1529,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -1627,7 +1627,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -1788,7 +1788,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -1881,7 +1881,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -1975,7 +1975,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -2136,7 +2136,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -2229,7 +2229,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -2323,7 +2323,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -2484,7 +2484,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -2577,7 +2577,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -2670,7 +2670,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -4083,10 +4083,10 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       },
                     ]
                   }
-                  id="75d7ccf3-c837-4fac-853e-a7bd3b09fc42"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="75d7ccf3-c837-4fac-853e-a7bd3b09fc42"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -4370,7 +4370,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -4477,7 +4477,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -4572,7 +4572,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -4672,7 +4672,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -4884,7 +4884,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -4991,7 +4991,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -5086,7 +5086,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -5182,7 +5182,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -5394,7 +5394,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -5501,7 +5501,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -5596,7 +5596,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -5692,7 +5692,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -5904,7 +5904,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -6011,7 +6011,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -6106,7 +6106,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -6201,7 +6201,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -7614,10 +7614,10 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       },
                     ]
                   }
-                  id="59a54a67-6e1f-4824-8ae7-6d0f933cdcfc"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="59a54a67-6e1f-4824-8ae7-6d0f933cdcfc"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -7901,7 +7901,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -8008,7 +8008,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -8103,7 +8103,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -8203,7 +8203,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -8415,7 +8415,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -8522,7 +8522,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -8617,7 +8617,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -8713,7 +8713,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -8925,7 +8925,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -9032,7 +9032,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -9127,7 +9127,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -9223,7 +9223,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -9435,7 +9435,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -9542,7 +9542,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -9637,7 +9637,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -9732,7 +9732,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -11002,10 +11002,10 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                       },
                     ]
                   }
-                  id="c44dbc29-b26b-4a20-bc7b-54c0b49281bc"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="c44dbc29-b26b-4a20-bc7b-54c0b49281bc"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -11237,7 +11237,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -11330,7 +11330,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -11428,7 +11428,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -11589,7 +11589,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -11682,7 +11682,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -11776,7 +11776,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -11937,7 +11937,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -12030,7 +12030,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -12124,7 +12124,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -12285,7 +12285,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -12378,7 +12378,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -12471,7 +12471,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -13884,10 +13884,10 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       },
                     ]
                   }
-                  id="7fcd7461-5c00-4e34-80db-c6d5111eba3b"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="7fcd7461-5c00-4e34-80db-c6d5111eba3b"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -14171,7 +14171,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -14278,7 +14278,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -14373,7 +14373,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -14473,7 +14473,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -14685,7 +14685,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -14792,7 +14792,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -14887,7 +14887,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -14983,7 +14983,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -15195,7 +15195,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -15302,7 +15302,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -15397,7 +15397,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -15493,7 +15493,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -15705,7 +15705,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -15812,7 +15812,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -15907,7 +15907,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -16002,7 +16002,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -17415,10 +17415,10 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       },
                     ]
                   }
-                  id="30b77c1a-161b-485f-94c8-30d657817dcd"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="30b77c1a-161b-485f-94c8-30d657817dcd"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -17702,7 +17702,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -17809,7 +17809,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -17904,7 +17904,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -18004,7 +18004,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -18216,7 +18216,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -18323,7 +18323,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -18418,7 +18418,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -18514,7 +18514,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -18726,7 +18726,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -18833,7 +18833,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -18928,7 +18928,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -19024,7 +19024,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -19236,7 +19236,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -19343,7 +19343,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -19438,7 +19438,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -19533,7 +19533,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -20970,10 +20970,10 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       },
                     ]
                   }
-                  id="630fa712-9d72-499d-b746-7c256a567d66"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="630fa712-9d72-499d-b746-7c256a567d66"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -21257,7 +21257,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -21364,7 +21364,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -21459,7 +21459,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -21559,7 +21559,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -21771,7 +21771,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -21878,7 +21878,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -21973,7 +21973,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -22069,7 +22069,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -22281,7 +22281,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -22388,7 +22388,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -22483,7 +22483,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -22579,7 +22579,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -22791,7 +22791,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -22898,7 +22898,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -22993,7 +22993,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -23088,7 +23088,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -24485,10 +24485,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  id="54a77706-f59f-49a7-a037-a4c070490d39"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="54a77706-f59f-49a7-a037-a4c070490d39"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -24772,7 +24772,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -24879,7 +24879,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -24974,7 +24974,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -25074,7 +25074,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -25286,7 +25286,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -25393,7 +25393,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -25488,7 +25488,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -25584,7 +25584,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -25796,7 +25796,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -25903,7 +25903,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -25998,7 +25998,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -26094,7 +26094,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -26306,7 +26306,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -26413,7 +26413,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -26508,7 +26508,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -26603,7 +26603,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -27892,10 +27892,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  id="d9cee34c-2ec7-4713-a656-b88b95fe2ddb"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="d9cee34c-2ec7-4713-a656-b88b95fe2ddb"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -28127,7 +28127,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -28220,7 +28220,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -28318,7 +28318,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -28479,7 +28479,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -28572,7 +28572,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -28666,7 +28666,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -28827,7 +28827,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -28920,7 +28920,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -29014,7 +29014,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -29175,7 +29175,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -29268,7 +29268,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -29361,7 +29361,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -30778,10 +30778,10 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       },
                     ]
                   }
-                  id="80b236c6-ca05-46ab-8e6b-fe06b9a11edd"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="80b236c6-ca05-46ab-8e6b-fe06b9a11edd"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -31065,7 +31065,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -31172,7 +31172,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -31267,7 +31267,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -31367,7 +31367,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -31579,7 +31579,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -31686,7 +31686,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -31781,7 +31781,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -31877,7 +31877,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -32089,7 +32089,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -32196,7 +32196,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -32291,7 +32291,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -32387,7 +32387,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -32599,7 +32599,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -32706,7 +32706,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -32801,7 +32801,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -32896,7 +32896,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -34309,10 +34309,10 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       },
                     ]
                   }
-                  id="76931428-1684-41ab-bf36-2772198b825b"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="76931428-1684-41ab-bf36-2772198b825b"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -34596,7 +34596,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -34703,7 +34703,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -34798,7 +34798,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -34898,7 +34898,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -35110,7 +35110,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -35217,7 +35217,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -35312,7 +35312,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -35408,7 +35408,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -35620,7 +35620,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -35727,7 +35727,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -35822,7 +35822,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -35918,7 +35918,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -36130,7 +36130,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -36237,7 +36237,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -36332,7 +36332,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -36427,7 +36427,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -37820,10 +37820,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  id="6e2ba3a7-7410-40d6-9f06-ed7dfb212315"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="6e2ba3a7-7410-40d6-9f06-ed7dfb212315"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -38107,7 +38107,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -38214,7 +38214,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -38309,7 +38309,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -38409,7 +38409,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -38621,7 +38621,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -38728,7 +38728,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -38823,7 +38823,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -38919,7 +38919,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -39131,7 +39131,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -39238,7 +39238,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -39333,7 +39333,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -39429,7 +39429,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -39641,7 +39641,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -39748,7 +39748,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -39843,7 +39843,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -39938,7 +39938,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -41331,10 +41331,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  id="24af8b2b-3462-47ce-9816-3fac7ea3e8c3"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="24af8b2b-3462-47ce-9816-3fac7ea3e8c3"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -41618,7 +41618,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -41725,7 +41725,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -41820,7 +41820,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -41920,7 +41920,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -42132,7 +42132,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -42239,7 +42239,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -42334,7 +42334,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -42430,7 +42430,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -42642,7 +42642,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -42749,7 +42749,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -42844,7 +42844,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -42940,7 +42940,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -43152,7 +43152,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -43259,7 +43259,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -43354,7 +43354,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -43449,7 +43449,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -44842,10 +44842,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  id="986b5bf9-37b3-4699-bd00-cd699610ccd4"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="986b5bf9-37b3-4699-bd00-cd699610ccd4"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -45129,7 +45129,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -45236,7 +45236,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -45331,7 +45331,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -45431,7 +45431,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -45643,7 +45643,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -45750,7 +45750,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -45845,7 +45845,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -45941,7 +45941,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -46153,7 +46153,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -46260,7 +46260,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -46355,7 +46355,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -46451,7 +46451,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -46663,7 +46663,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -46770,7 +46770,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -46865,7 +46865,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -46960,7 +46960,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -48353,10 +48353,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  id="9e1fce90-dd19-4f56-8946-3f4c14f55ca9"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="9e1fce90-dd19-4f56-8946-3f4c14f55ca9"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -48640,7 +48640,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -48747,7 +48747,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -48842,7 +48842,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -48942,7 +48942,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -49154,7 +49154,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -49261,7 +49261,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -49356,7 +49356,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -49452,7 +49452,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -49664,7 +49664,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -49771,7 +49771,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -49866,7 +49866,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -49962,7 +49962,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -50174,7 +50174,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -50281,7 +50281,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -50376,7 +50376,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -50471,7 +50471,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -51862,10 +51862,10 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       },
                     ]
                   }
-                  id="d40779d2-a700-46f5-8917-4302fa61614b"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="d40779d2-a700-46f5-8917-4302fa61614b"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -52149,7 +52149,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -52256,7 +52256,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -52351,7 +52351,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -52451,7 +52451,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -52663,7 +52663,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -52770,7 +52770,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -52865,7 +52865,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -52961,7 +52961,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -53173,7 +53173,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -53280,7 +53280,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -53375,7 +53375,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -53471,7 +53471,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -53683,7 +53683,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -53790,7 +53790,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -53885,7 +53885,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -53980,7 +53980,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -55371,10 +55371,10 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       },
                     ]
                   }
-                  id="47b3fbd1-8f1f-4360-9421-61836f935279"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="47b3fbd1-8f1f-4360-9421-61836f935279"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -55658,7 +55658,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -55765,7 +55765,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -55860,7 +55860,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -55960,7 +55960,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -56172,7 +56172,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -56279,7 +56279,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -56374,7 +56374,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -56470,7 +56470,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -56682,7 +56682,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -56789,7 +56789,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -56884,7 +56884,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -56980,7 +56980,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -57192,7 +57192,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                       className="cell-content"
                                       style={
                                         Object {
-                                          "min-height": undefined,
+                                          "height": undefined,
                                         }
                                       }
                                     >
@@ -57299,7 +57299,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -57394,7 +57394,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -57489,7 +57489,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -58726,10 +58726,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  id="af9bf1de-71ee-41c3-8437-d4b0acb834c4"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="af9bf1de-71ee-41c3-8437-d4b0acb834c4"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -58961,7 +58961,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59054,7 +59054,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59152,7 +59152,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59313,7 +59313,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59406,7 +59406,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59500,7 +59500,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59661,7 +59661,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59754,7 +59754,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -59848,7 +59848,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -60009,7 +60009,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -60102,7 +60102,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -60195,7 +60195,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -61432,10 +61432,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  id="ba2c4ec5-9eb2-43cd-aa1d-674c0be1f5f3"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
-                  key="ba2c4ec5-9eb2-43cd-aa1d-674c0be1f5f3"
+                  key="00000000-0000-0000-0000-000000000000"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -61667,7 +61667,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -61760,7 +61760,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -61858,7 +61858,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62019,7 +62019,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62112,7 +62112,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62206,7 +62206,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62367,7 +62367,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62460,7 +62460,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62554,7 +62554,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62715,7 +62715,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62808,7 +62808,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
@@ -62901,7 +62901,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": "2.5rem",
+                                      "height": "2.5rem",
                                     }
                                   }
                                 >
