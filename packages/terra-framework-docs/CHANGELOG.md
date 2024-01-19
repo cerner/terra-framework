@@ -4,6 +4,7 @@
 
 * Added 
   * Added variant for DisclosureIntegration component.
+
 ## 1.58.0 - (January 18, 2024)
 
 * Changed
