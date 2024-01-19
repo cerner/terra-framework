@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.1.0 - (January 18, 2024)
+
+* Added
+  * Added `rowHeaderIndex` prop validation.
+
+## 1.0.1 - (January 10, 2024)
+
 * Fixed
   * Cell does not call `onCellSelect` method if corresponding column `isSelectable` prop set to `false`.
 

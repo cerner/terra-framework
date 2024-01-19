@@ -1,3 +1,38 @@
 import BasicFolderTree from './BasicFolderTree?dev-site-example';
 
+# Basic Folder Tree
+
+### Description
+
+The example below demonstrates a basic folder tree. For more details on specific folder tree
+features, see the following examples:
+* [Selection](./folder-tree-selection)
+* [Expand and Collapse](./folder-tree-expand-collapse)
+* [Expand and Collapse All](./folder-tree-expand-collapse-all)
+
+A folder tree is composed of the following components:
+* **[FolderTree](../about#foldertree-props-table)**: The top-level folder tree component.
+* **[FolderTree.Item](../about#foldertreeitem-props-table)**: A row in a folder tree that may have `subfolderItems`.
+  * If one or more `subfolderItems` exist, a folder icon is displayed for the row, which you can expand and collapse.
+
+All children of a FolderTree must be FolderTree.Items.
+
+### Required Properties
+
+The [title](../about#foldertree-props-table) FolderTree property is required for a basic folder tree. 
+This property is the title of the folder tree and also used as the `aria-label` for the folder tree.
+
+The [label](../about#foldertreeitem-props-table) FolderTree.Item property is required for a basic folder tree.
+This property is the text label for the folder tree item.
+
+```js
+<FolderTree
+  title="Documents"
+>
+  <FolderTree.Item label="First Item" />
+  <FolderTree.Item label="Second Item" />
+  <FolderTree.Item label="Third Item" />
+</FolderTree>
+```
+
 <BasicFolderTree />
