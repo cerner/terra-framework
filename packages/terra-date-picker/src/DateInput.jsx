@@ -734,7 +734,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
-      aria-describedby={`${nameLabelId} ${(dateFormatOrder === DateUtil.dateOrder.DMY ? `${ariaDescriptionIds}` : ariaDescriptionIds)}`}
+      aria-describedby={`${nameLabelId} ${ariaDescriptionIds}`}
       id={dayInputId}
     />
   );
@@ -765,7 +765,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-      aria-describedby={`${nameLabelId} ${dateFormatOrder === DateUtil.dateOrder.MDY ? `${ariaDescriptionIds}` : ariaDescriptionIds}`}
+      aria-describedby={`${nameLabelId} ${ariaDescriptionIds}`}
       id={monthInputId}
     />
   );
@@ -796,7 +796,7 @@ const DatePickerInput = (props) => {
       pattern="\d*"
       aria-required={required}
       aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-      aria-describedby={`${nameLabelId} ${dateFormatOrder === DateUtil.dateOrder.YMD ? `${ariaDescriptionIds}` : ariaDescriptionIds}`}
+      aria-describedby={`${nameLabelId} ${ariaDescriptionIds}`}
       id={yearInputId}
     />
   );
