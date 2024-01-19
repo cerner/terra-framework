@@ -80,7 +80,7 @@
   --badge-information-icon-color: var(--ui-light-color-text-icon-info);
 
   // Size -> Tiny
-  --badge-tiny-font-size: var(--rds-typography-font-size-xs);
+  --badge-tiny-font-size: var(--rds-typography-size-xs-font-size);
   --badge-tiny-icon-size: var(--rds-icon-size-2xs);
   --badge-tiny-radius: var(--rds-border-radius-sm);
   --badge-tiny-padding-left: var(--rds-spacing-03);
@@ -90,7 +90,7 @@
   --badge-tiny-horizontal-gap-padding: var(--rds-spacing-02);
 
   // Size -> Small
-  --badge-small-font-size: var(--rds-typography-font-size-sm);
+  --badge-small-font-size: var(--rds-typography-size-sm-font-size);
   --badge-small-icon-size: var(--rds-icon-size-xs);
   --badge-small-radius: var(--rds-border-radius-md);
   --badge-small-padding-left: var(--rds-spacing-05);
@@ -100,7 +100,7 @@
   --badge-small-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Size -> Medium
-  --badge-medium-font-size: var(--rds-typography-font-size-md);
+  --badge-medium-font-size: var(--rds-typography-size-md-font-size);
   --badge-medium-icon-size: var(--rds-icon-size-sm);
   --badge-medium-radius: var(--rds-border-radius-md);
   --badge-medium-padding-left: var(--rds-spacing-05);
@@ -110,7 +110,7 @@
   --badge-medium-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Size -> Large
-  --badge-large-font-size: var(--rds-typography-font-size-2xl);
+  --badge-large-font-size: var(--rds-typography-size-2xl-font-size);
   --badge-large-icon-size: var(--rds-icon-size-xl);
   --badge-large-radius: var(--rds-border-radius-md);
   --badge-large-padding-left: var(--rds-spacing-05);
@@ -268,7 +268,7 @@
   --hyperlink-text-decoration: var(--rds-text-decoration-underline);
 
   &.compact {
-    --hyperlink-font-size: var(--rds-typography-font-size-sm);
+    --hyperlink-font-size: var(--rds-typography-size-sm-font-size);
     --hyperlink-icon-size: var(--rds-icon-size-xs);
     --hyperlink-padding-left: var(--rds-spacing-02);
     --hyperlink-padding-right: var(--rds-spacing-02);
@@ -278,7 +278,7 @@
   }
 
   &.comfortable {
-    --hyperlink-font-size: var(--rds-typography-font-size-md);
+    --hyperlink-font-size: var(--rds-typography-size-md-font-size);
     --hyperlink-icon-size: var(--rds-icon-size-sm);
     --hyperlink-padding-left: var(--rds-spacing-02);
     --hyperlink-padding-right: var(--rds-spacing-02);
@@ -288,7 +288,7 @@
   }
 
   &.spacious {
-    --hyperlink-font-size: var(--rds-typography-font-size-lg);
+    --hyperlink-font-size: var(--rds-typography-size-lg-font-size);
     --hyperlink-icon-size: var(--rds-icon-size-md);
     --hyperlink-padding-left: var(--rds-spacing-02);
     --hyperlink-padding-right: var(--rds-spacing-02);
@@ -347,21 +347,21 @@
   --overlay-strong-icon-color: var(--ui-light-color-text-icon-inverse);
 
   &.compact {
-    --overlay-font-size: var(--rds-typography-font-size-sm);
+    --overlay-font-size: var(--rds-typography-size-sm-font-size);
     --overlay-icon-height: var(--rds-icon-size-xl);
     --overlay-icon-width: var(--rds-icon-size-xl);
     --overlay-vertical-gap-spacing: var(--rds-spacing-05);
   }
 
   &.comfortable {
-    --overlay-font-size: var(--rds-typography-font-size-md);
+    --overlay-font-size: var(--rds-typography-size-md-font-size);
     --overlay-icon-height: var(--rds-icon-size-2xl);
     --overlay-icon-width: var(--rds-icon-size-2xl);
     --overlay-vertical-gap-spacing: var(--rds-spacing-07);
   }
 
   &.spacious {
-    --overlay-font-size: var(--rds-typography-font-size-lg);
+    --overlay-font-size: var(--rds-typography-size-lg-font-size);
     --overlay-icon-height: var(--rds-icon-size-xl);
     --overlay-icon-width: var(--rds-icon-size-xl);
     --overlay-vertical-gap-spacing: var(--rds-spacing-09);
@@ -415,7 +415,7 @@
 
 
   &.compact {
-    --tag-font-size: var(--rds-typography-font-size-sm);
+    --tag-font-size: var(--rds-typography-size-sm-font-size);
     --tag-padding-left: var(--rds-spacing-05);
     --tag-padding-right: var(--rds-spacing-05);
     --tag-padding-top: var(--rds-spacing-03);
@@ -423,7 +423,7 @@
   }
 
   &.comfortable {
-    --tag-font-size: var(--rds-typography-font-size-md);
+    --tag-font-size: var(--rds-typography-size-md-font-size);
     --tag-padding-left: var(--rds-spacing-07);
     --tag-padding-right: var(--rds-spacing-07);
     --tag-padding-top: var(--rds-spacing-04);
@@ -431,7 +431,7 @@
   }
 
   &.spacious {
-    --tag-font-size: var(--rds-typography-font-size-md);
+    --tag-font-size: var(--rds-typography-size-md-font-size);
     --tag-padding-left: var(--rds-spacing-09);
     --tag-padding-right: var(--rds-spacing-09);
     --tag-padding-top: var(--rds-spacing-05);

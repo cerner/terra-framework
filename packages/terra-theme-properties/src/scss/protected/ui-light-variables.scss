@@ -75,7 +75,7 @@
   --ui-light-color-overlay-inverse-active: rgba(255, 255, 255, 0.12);
   --ui-light-color-overlay-inverse-hover: rgba(255, 255, 255, 0.08);
   --ui-light-color-overlay-scrim-strong: rgba(22, 21, 19, 0.4);
-  --ui-light-color-overlay-scrim-subtle: rgba(251, 249, 248, 0.7);
+  --ui-light-color-overlay-scrim-subtle: var(--rds-color-neutral-10);
   --ui-light-color-page-background-neutral-0: var(--rds-color-neutral-0);
   --ui-light-color-page-background-neutral-10: var(--rds-color-neutral-10);
   --ui-light-color-page-background-neutral-20: var(--rds-color-neutral-20);
