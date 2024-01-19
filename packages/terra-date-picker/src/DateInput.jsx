@@ -733,8 +733,8 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
-      aria-label={ariaLabel ? `${ariaLabel}, ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })} ` : intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
-      aria-describedby={dateFormatOrder === DateUtil.dateOrder.DMY ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
+      aria-label={intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}
+      aria-describedby={`${nameLabelId} ${(dateFormatOrder === DateUtil.dateOrder.DMY ? `${ariaDescriptionIds}` : ariaDescriptionIds)}`}
       id={dayInputId}
     />
   );
@@ -764,8 +764,8 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
-      aria-label={ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })} ` : intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
-      aria-describedby={dateFormatOrder === DateUtil.dateOrder.MDY ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
+      aria-label={intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}
+      aria-describedby={`${nameLabelId} ${dateFormatOrder === DateUtil.dateOrder.MDY ? `${ariaDescriptionIds}` : ariaDescriptionIds}`}
       id={monthInputId}
     />
   );
@@ -795,8 +795,8 @@ const DatePickerInput = (props) => {
       size="4"
       pattern="\d*"
       aria-required={required}
-      aria-label={ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
-      aria-describedby={dateFormatOrder === DateUtil.dateOrder.YMD ? `${nameLabelId} ${ariaDescriptionIds}` : ariaDescriptionIds}
+      aria-label={intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}
+      aria-describedby={`${nameLabelId} ${dateFormatOrder === DateUtil.dateOrder.YMD ? `${ariaDescriptionIds}` : ariaDescriptionIds}`}
       id={yearInputId}
     />
   );
@@ -851,8 +851,7 @@ const DatePickerInput = (props) => {
             name={name}
             value={dateValue}
           />
-          <VisuallyHiddenText text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
-          <VisuallyHiddenText id={nameLabelId} text={name} />
+          <VisuallyHiddenText id={nameLabelId} text={value ? `${label}, ${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}` : label} />
           <VisuallyHiddenText
             refCallback={setVisuallyHiddenComponent}
             aria-atomic="true"

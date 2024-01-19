@@ -85,21 +85,15 @@ exports[`correctly applies the theme context className 1`] = `
               type="hidden"
             />
             <VisuallyHiddenText
+              id="name-label-00000000-0000-0000-0000-000000000000"
               text="Terra.datePicker.date"
             >
               <span
                 className="visually-hidden-text"
+                id="name-label-00000000-0000-0000-0000-000000000000"
               >
                 Terra.datePicker.date
               </span>
-            </VisuallyHiddenText>
-            <VisuallyHiddenText
-              id="name-label-00000000-0000-0000-0000-000000000000"
-            >
-              <span
-                className="visually-hidden-text"
-                id="name-label-00000000-0000-0000-0000-000000000000"
-              />
             </VisuallyHiddenText>
             <VisuallyHiddenText
               aria-atomic="true"
@@ -118,7 +112,7 @@ exports[`correctly applies the theme context className 1`] = `
               dateFormatOrder="MDY"
               day={
                 <Input
-                  aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                  aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                   aria-label="Terra.datePicker.dayLabel"
                   aria-required={false}
                   className="date-input-day"
@@ -171,7 +165,7 @@ exports[`correctly applies the theme context className 1`] = `
               }
               year={
                 <Input
-                  aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                  aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                   aria-label="Terra.datePicker.yearLabel"
                   aria-required={false}
                   className="date-input-year"
@@ -239,7 +233,7 @@ exports[`correctly applies the theme context className 1`] = `
                 /
               </span>
               <Input
-                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                 aria-label="Terra.datePicker.dayLabel"
                 aria-required={false}
                 className="date-input-day"
@@ -260,7 +254,7 @@ exports[`correctly applies the theme context className 1`] = `
                 value=""
               >
                 <input
-                  aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                  aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                   aria-label="Terra.datePicker.dayLabel"
                   aria-required={false}
                   className="form-input orion-fusion-theme date-input-day"
@@ -284,7 +278,7 @@ exports[`correctly applies the theme context className 1`] = `
                 /
               </span>
               <Input
-                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                 aria-label="Terra.datePicker.yearLabel"
                 aria-required={false}
                 className="date-input-year"
@@ -305,7 +299,7 @@ exports[`correctly applies the theme context className 1`] = `
                 value=""
               >
                 <input
-                  aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                  aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                   aria-label="Terra.datePicker.yearLabel"
                   aria-required={false}
                   className="form-input orion-fusion-theme date-input-year"
@@ -527,21 +521,15 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           type="hidden"
         />
         <VisuallyHiddenText
+          id="name-label-00000000-0000-0000-0000-000000000000"
           text="Terra.datePicker.date"
         >
           <span
             className="visually-hidden-text"
+            id="name-label-00000000-0000-0000-0000-000000000000"
           >
             Terra.datePicker.date
           </span>
-        </VisuallyHiddenText>
-        <VisuallyHiddenText
-          id="name-label-00000000-0000-0000-0000-000000000000"
-        >
-          <span
-            className="visually-hidden-text"
-            id="name-label-00000000-0000-0000-0000-000000000000"
-          />
         </VisuallyHiddenText>
         <VisuallyHiddenText
           aria-atomic="true"
@@ -560,7 +548,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           dateFormatOrder="MDY"
           day={
             <Input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.dayLabel"
               aria-required={false}
               className="date-input-day"
@@ -613,7 +601,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           }
           year={
             <Input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.yearLabel"
               aria-required={false}
               className="date-input-year"
@@ -681,7 +669,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             /
           </span>
           <Input
-            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.dayLabel"
             aria-required={false}
             className="date-input-day"
@@ -702,7 +690,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             value=""
           >
             <input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.dayLabel"
               aria-required={false}
               className="form-input date-input-day"
@@ -726,7 +714,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             /
           </span>
           <Input
-            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
             aria-label="Terra.datePicker.yearLabel"
             aria-required={false}
             className="date-input-year"
@@ -747,7 +735,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             value=""
           >
             <input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
               aria-label="Terra.datePicker.yearLabel"
               aria-required={false}
               className="form-input date-input-year"
@@ -933,13 +921,10 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       />
       <span
         class="visually-hidden-text"
+        id="name-label-00000000-0000-0000-0000-000000000000"
       >
         Terra.datePicker.date
       </span>
-      <span
-        class="visually-hidden-text"
-        id="name-label-00000000-0000-0000-0000-000000000000"
-      />
       <span
         aria-atomic="true"
         aria-live="assertive"
@@ -964,7 +949,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
         /
       </span>
       <input
-        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.dayLabel"
         aria-required="true"
         class="form-input date-input-day"
@@ -981,7 +966,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
         /
       </span>
       <input
-        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.yearLabel"
         aria-required="true"
         class="form-input date-input-year"
@@ -1061,13 +1046,10 @@ exports[`should render a date input with isInvalid prop 1`] = `
       />
       <span
         class="visually-hidden-text"
+        id="name-label-00000000-0000-0000-0000-000000000000"
       >
         Terra.datePicker.date
       </span>
-      <span
-        class="visually-hidden-text"
-        id="name-label-00000000-0000-0000-0000-000000000000"
-      />
       <span
         aria-atomic="true"
         aria-live="assertive"
@@ -1092,7 +1074,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
         /
       </span>
       <input
-        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.dayLabel"
         aria-required="false"
         class="form-input date-input-day"
@@ -1109,7 +1091,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
         /
       </span>
       <input
-        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.yearLabel"
         aria-required="false"
         class="form-input date-input-year"
@@ -1189,13 +1171,10 @@ exports[`should render a default date input 1`] = `
       />
       <span
         class="visually-hidden-text"
+        id="name-label-00000000-0000-0000-0000-000000000000"
       >
         Terra.datePicker.date
       </span>
-      <span
-        class="visually-hidden-text"
-        id="name-label-00000000-0000-0000-0000-000000000000"
-      />
       <span
         aria-atomic="true"
         aria-live="assertive"
@@ -1220,7 +1199,7 @@ exports[`should render a default date input 1`] = `
         /
       </span>
       <input
-        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.dayLabel"
         aria-required="false"
         class="form-input date-input-day"
@@ -1237,7 +1216,7 @@ exports[`should render a default date input 1`] = `
         /
       </span>
       <input
-        aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+        aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
         aria-label="Terra.datePicker.yearLabel"
         aria-required="false"
         class="form-input date-input-year"
@@ -1408,23 +1387,14 @@ exports[`should render a default date input with all props 1`] = `
           value="2017-01-01"
         />
         <VisuallyHiddenText
-          text="Aria Label text, Sunday, January 1, 2017"
-        >
-          <span
-            className="visually-hidden-text"
-          >
-            Aria Label text, Sunday, January 1, 2017
-          </span>
-        </VisuallyHiddenText>
-        <VisuallyHiddenText
           id="name-label-00000000-0000-0000-0000-000000000000"
-          text="date-input"
+          text="Aria Label text, Sunday, January 1, 2017"
         >
           <span
             className="visually-hidden-text"
             id="name-label-00000000-0000-0000-0000-000000000000"
           >
-            date-input
+            Aria Label text, Sunday, January 1, 2017
           </span>
         </VisuallyHiddenText>
         <VisuallyHiddenText
@@ -1444,8 +1414,8 @@ exports[`should render a default date input with all props 1`] = `
           dateFormatOrder="MDY"
           day={
             <Input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label="Aria Label text, Terra.datePicker.dayLabel "
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-label="Terra.datePicker.dayLabel"
               aria-required={false}
               className="date-input-day"
               disabled={false}
@@ -1469,7 +1439,7 @@ exports[`should render a default date input with all props 1`] = `
           month={
             <Input
               aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label="Aria Label text Terra.datePicker.monthLabel "
+              aria-label="Terra.datePicker.monthLabel"
               aria-required={false}
               className="date-input-month"
               disabled={false}
@@ -1499,8 +1469,8 @@ exports[`should render a default date input with all props 1`] = `
           }
           year={
             <Input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label="Aria Label text Terra.datePicker.yearLabel"
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-label="Terra.datePicker.yearLabel"
               aria-required={false}
               className="date-input-year"
               disabled={false}
@@ -1524,7 +1494,7 @@ exports[`should render a default date input with all props 1`] = `
         >
           <Input
             aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-            aria-label="Aria Label text Terra.datePicker.monthLabel "
+            aria-label="Terra.datePicker.monthLabel"
             aria-required={false}
             className="date-input-month"
             disabled={false}
@@ -1546,7 +1516,7 @@ exports[`should render a default date input with all props 1`] = `
           >
             <input
               aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label="Aria Label text Terra.datePicker.monthLabel "
+              aria-label="Terra.datePicker.monthLabel"
               aria-required={false}
               className="form-input date-input-month"
               disabled={false}
@@ -1570,8 +1540,8 @@ exports[`should render a default date input with all props 1`] = `
             /
           </span>
           <Input
-            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-            aria-label="Aria Label text, Terra.datePicker.dayLabel "
+            aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-label="Terra.datePicker.dayLabel"
             aria-required={false}
             className="date-input-day"
             disabled={false}
@@ -1592,8 +1562,8 @@ exports[`should render a default date input with all props 1`] = `
             value="01"
           >
             <input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label="Aria Label text, Terra.datePicker.dayLabel "
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-label="Terra.datePicker.dayLabel"
               aria-required={false}
               className="form-input date-input-day"
               disabled={false}
@@ -1617,8 +1587,8 @@ exports[`should render a default date input with all props 1`] = `
             /
           </span>
           <Input
-            aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-            aria-label="Aria Label text Terra.datePicker.yearLabel"
+            aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+            aria-label="Terra.datePicker.yearLabel"
             aria-required={false}
             className="date-input-year"
             disabled={false}
@@ -1639,8 +1609,8 @@ exports[`should render a default date input with all props 1`] = `
             value="2017"
           >
             <input
-              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label="Aria Label text Terra.datePicker.yearLabel"
+              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+              aria-label="Terra.datePicker.yearLabel"
               aria-required={false}
               className="form-input date-input-year"
               disabled={false}
