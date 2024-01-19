@@ -40,9 +40,10 @@ exports[`DateInput correctly applies the theme context className 1`] = `
     value="2000-07-04"
   >
     <DateInput
+      ariadescribedby={null}
       dayAttributes={Object {}}
       disabled={false}
-      error={null}
+      errorMessageId={null}
       intl={
         Object {
           "defaultFormats": Object {},
@@ -81,8 +82,9 @@ exports[`DateInput correctly applies the theme context className 1`] = `
     >
       <div
         aria-label="Terra.date.input.labelDefault"
+        ariadescribedby={null}
         className="date-input clinical-lowlight-theme"
-        error={null}
+        errorMessageId={null}
         role="group"
       >
         <div
@@ -114,7 +116,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           className="month-select-wrapper"
         >
           <select
-            aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+            aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
             aria-disabled={false}
             aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
             className="month-select"
@@ -216,22 +218,12 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               Terra.date.input.hotKey
             </span>
           </VisuallyHiddenText>
-          <VisuallyHiddenText
-            id="00000000-0000-0000-0000-000000000000-errormessage"
-            text=", null"
-          >
-            <span
-              className="visually-hidden-text"
-              id="00000000-0000-0000-0000-000000000000-errormessage"
-            >
-              , null
-            </span>
-          </VisuallyHiddenText>
         </div>
         <AccessibleInput
+          ariadescribedby={null}
           autoComplete="off"
           className="date-input-day"
-          description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+          description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
           disabled={false}
           isInvalid={false}
           label="Terra.date.input.dayInputLabel"
@@ -266,6 +258,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             aria-disabled={false}
             aria-invalid={false}
             aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+            ariadescribedby={null}
             autoComplete="off"
             className="date-input-day"
             disabled={false}
@@ -291,6 +284,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               aria-disabled={false}
               aria-invalid={false}
               aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+              ariadescribedby={null}
               autoComplete="off"
               className="form-input clinical-lowlight-theme date-input-day"
               disabled={false}
@@ -311,20 +305,21 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           </Input>
           <VisuallyHiddenText
             id="00000000-0000-0000-0000-000000000000-description"
-            text="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+            text="Terra.date.input.dayDescription, Terra.date.input.hotKey"
           >
             <span
               className="visually-hidden-text"
               id="00000000-0000-0000-0000-000000000000-description"
             >
-              Terra.date.input.dayDescription, Terra.date.input.hotKey, null
+              Terra.date.input.dayDescription, Terra.date.input.hotKey
             </span>
           </VisuallyHiddenText>
         </AccessibleInput>
         <AccessibleInput
+          ariadescribedby={null}
           autoComplete="off"
           className="date-input-year"
-          description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+          description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
           disabled={false}
           isInvalid={false}
           label="Terra.date.input.yearLabel"
@@ -359,6 +354,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             aria-disabled={false}
             aria-invalid={false}
             aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+            ariadescribedby={null}
             autoComplete="off"
             className="date-input-year"
             disabled={false}
@@ -384,6 +380,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               aria-disabled={false}
               aria-invalid={false}
               aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+              ariadescribedby={null}
               autoComplete="off"
               className="form-input clinical-lowlight-theme date-input-year"
               disabled={false}
@@ -404,13 +401,13 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           </Input>
           <VisuallyHiddenText
             id="00000000-0000-0000-0000-000000000000-description"
-            text="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+            text="Terra.date.input.yearDescription, Terra.date.input.hotKey"
           >
             <span
               className="visually-hidden-text"
               id="00000000-0000-0000-0000-000000000000-description"
             >
-              Terra.date.input.yearDescription, Terra.date.input.hotKey, null
+              Terra.date.input.yearDescription, Terra.date.input.hotKey
             </span>
           </VisuallyHiddenText>
         </AccessibleInput>
@@ -454,7 +451,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
-        aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+        aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
         aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
@@ -533,12 +530,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       >
         Terra.date.input.hotKey
       </span>
-      <span
-        class="visually-hidden-text"
-        id="00000000-0000-0000-0000-000000000000-errormessage"
-      >
-        , null
-      </span>
     </div>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -558,7 +549,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.date.input.dayDescription, Terra.date.input.hotKey, null
+      Terra.date.input.dayDescription, Terra.date.input.hotKey
     </span>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -578,7 +569,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.date.input.yearDescription, Terra.date.input.hotKey, null
+      Terra.date.input.yearDescription, Terra.date.input.hotKey
     </span>
     <div
       aria-hidden="true"
@@ -611,7 +602,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
-        aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+        aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
         aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
@@ -690,12 +681,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       >
         Terra.date.input.hotKey
       </span>
-      <span
-        class="visually-hidden-text"
-        id="00000000-0000-0000-0000-000000000000-errormessage"
-      >
-        , null
-      </span>
     </div>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -715,7 +700,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.date.input.dayDescription, Terra.date.input.hotKey, null
+      Terra.date.input.dayDescription, Terra.date.input.hotKey
     </span>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -735,7 +720,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.date.input.yearDescription, Terra.date.input.hotKey, null
+      Terra.date.input.yearDescription, Terra.date.input.hotKey
     </span>
     <div
       aria-hidden="true"
@@ -768,7 +753,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="month-select-wrapper"
     >
       <select
-        aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+        aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
         aria-disabled="false"
         aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
         class="month-select is-placeholder"
@@ -847,12 +832,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       >
         Terra.date.input.hotKey
       </span>
-      <span
-        class="visually-hidden-text"
-        id="00000000-0000-0000-0000-000000000000-errormessage"
-      >
-        , null
-      </span>
     </div>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -872,7 +851,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.date.input.dayDescription, Terra.date.input.hotKey, null
+      Terra.date.input.dayDescription, Terra.date.input.hotKey
     </span>
     <input
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
@@ -892,7 +871,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
-      Terra.date.input.yearDescription, Terra.date.input.hotKey, null
+      Terra.date.input.yearDescription, Terra.date.input.hotKey
     </span>
     <div
       aria-hidden="true"
@@ -907,8 +886,9 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
 exports[`DateInput should render a date input with a default date 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
+  ariadescribedby={null}
   className="date-input"
-  error={null}
+  errorMessageId={null}
   role="group"
 >
   <div
@@ -928,7 +908,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     className="month-select-wrapper"
   >
     <select
-      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select"
@@ -1023,15 +1003,12 @@ exports[`DateInput should render a date input with a default date 1`] = `
       id="00000000-0000-0000-0000-000000000000-hotkeyinstruction"
       text="Terra.date.input.hotKey"
     />
-    <VisuallyHiddenText
-      id="00000000-0000-0000-0000-000000000000-errormessage"
-      text=", null"
-    />
   </div>
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-day"
-    description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.dayInputLabel"
@@ -1051,9 +1028,10 @@ exports[`DateInput should render a date input with a default date 1`] = `
     value="04"
   />
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-year"
-    description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.yearLabel"
@@ -1084,8 +1062,9 @@ exports[`DateInput should render a date input with a default date 1`] = `
 exports[`DateInput should render a date input with custom attributes 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
+  ariadescribedby={null}
   className="date-input"
-  error={null}
+  errorMessageId={null}
   inputAttributes={
     Object {
       "id": "terra-date-input",
@@ -1109,7 +1088,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     className="month-select-wrapper"
   >
     <select
-      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1204,15 +1183,12 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
       id="00000000-0000-0000-0000-000000000000-hotkeyinstruction"
       text="Terra.date.input.hotKey"
     />
-    <VisuallyHiddenText
-      id="00000000-0000-0000-0000-000000000000-errormessage"
-      text=", null"
-    />
   </div>
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-day"
-    description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.dayInputLabel"
@@ -1232,9 +1208,10 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     value=""
   />
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-year"
-    description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.yearLabel"
@@ -1265,8 +1242,9 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
 exports[`DateInput should render a date input with onBlur 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
+  ariadescribedby={null}
   className="date-input"
-  error={null}
+  errorMessageId={null}
   role="group"
 >
   <div
@@ -1285,7 +1263,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     className="month-select-wrapper"
   >
     <select
-      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1380,15 +1358,12 @@ exports[`DateInput should render a date input with onBlur 1`] = `
       id="00000000-0000-0000-0000-000000000000-hotkeyinstruction"
       text="Terra.date.input.hotKey"
     />
-    <VisuallyHiddenText
-      id="00000000-0000-0000-0000-000000000000-errormessage"
-      text=", null"
-    />
   </div>
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-day"
-    description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.dayInputLabel"
@@ -1408,9 +1383,10 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     value=""
   />
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-year"
-    description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.yearLabel"
@@ -1441,8 +1417,9 @@ exports[`DateInput should render a date input with onBlur 1`] = `
 exports[`DateInput should render a date input with onChange 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
+  ariadescribedby={null}
   className="date-input"
-  error={null}
+  errorMessageId={null}
   role="group"
 >
   <div
@@ -1461,7 +1438,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     className="month-select-wrapper"
   >
     <select
-      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1556,15 +1533,12 @@ exports[`DateInput should render a date input with onChange 1`] = `
       id="00000000-0000-0000-0000-000000000000-hotkeyinstruction"
       text="Terra.date.input.hotKey"
     />
-    <VisuallyHiddenText
-      id="00000000-0000-0000-0000-000000000000-errormessage"
-      text=", null"
-    />
   </div>
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-day"
-    description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.dayInputLabel"
@@ -1584,9 +1558,10 @@ exports[`DateInput should render a date input with onChange 1`] = `
     value=""
   />
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-year"
-    description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.yearLabel"
@@ -1617,8 +1592,9 @@ exports[`DateInput should render a date input with onChange 1`] = `
 exports[`DateInput should render a date input with onFocus 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
+  ariadescribedby={null}
   className="date-input"
-  error={null}
+  errorMessageId={null}
   role="group"
 >
   <div
@@ -1637,7 +1613,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     className="month-select-wrapper"
   >
     <select
-      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1732,15 +1708,12 @@ exports[`DateInput should render a date input with onFocus 1`] = `
       id="00000000-0000-0000-0000-000000000000-hotkeyinstruction"
       text="Terra.date.input.hotKey"
     />
-    <VisuallyHiddenText
-      id="00000000-0000-0000-0000-000000000000-errormessage"
-      text=", null"
-    />
   </div>
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-day"
-    description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.dayInputLabel"
@@ -1760,9 +1733,10 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     value=""
   />
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-year"
-    description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.yearLabel"
@@ -1793,8 +1767,9 @@ exports[`DateInput should render a date input with onFocus 1`] = `
 exports[`DateInput should render a default date input 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
+  ariadescribedby={null}
   className="date-input"
-  error={null}
+  errorMessageId={null}
   role="group"
 >
   <div
@@ -1813,7 +1788,7 @@ exports[`DateInput should render a default date input 1`] = `
     className="month-select-wrapper"
   >
     <select
-      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
       aria-disabled={false}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder"
@@ -1908,15 +1883,12 @@ exports[`DateInput should render a default date input 1`] = `
       id="00000000-0000-0000-0000-000000000000-hotkeyinstruction"
       text="Terra.date.input.hotKey"
     />
-    <VisuallyHiddenText
-      id="00000000-0000-0000-0000-000000000000-errormessage"
-      text=", null"
-    />
   </div>
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-day"
-    description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.dayInputLabel"
@@ -1936,9 +1908,10 @@ exports[`DateInput should render a default date input 1`] = `
     value=""
   />
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-year"
-    description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
     disabled={false}
     isInvalid={false}
     label="Terra.date.input.yearLabel"
@@ -1969,8 +1942,9 @@ exports[`DateInput should render a default date input 1`] = `
 exports[`DateInput should render a disabled time input 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
+  ariadescribedby={null}
   className="disabled date-input"
-  error={null}
+  errorMessageId={null}
   role="group"
 >
   <div
@@ -1989,7 +1963,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     className="month-select-wrapper disabled"
   >
     <select
-      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+      aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction null"
       aria-disabled={true}
       aria-label="Terra.date.input.monthSelectLabelWithDefaultName"
       className="month-select is-placeholder disabled"
@@ -2084,15 +2058,12 @@ exports[`DateInput should render a disabled time input 1`] = `
       id="00000000-0000-0000-0000-000000000000-hotkeyinstruction"
       text="Terra.date.input.hotKey"
     />
-    <VisuallyHiddenText
-      id="00000000-0000-0000-0000-000000000000-errormessage"
-      text=", null"
-    />
   </div>
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-day"
-    description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
     disabled={true}
     isInvalid={false}
     label="Terra.date.input.dayInputLabel"
@@ -2112,9 +2083,10 @@ exports[`DateInput should render a disabled time input 1`] = `
     value=""
   />
   <AccessibleInput
+    ariadescribedby={null}
     autoComplete="off"
     className="date-input-year"
-    description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+    description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
     disabled={true}
     isInvalid={false}
     label="Terra.date.input.yearLabel"
@@ -2186,6 +2158,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
       dayAttributes={Object {}}
       disabled={false}
       error={null}
+      errorMessageId={null}
       help={null}
       hideRequired={false}
       intl={
@@ -2252,6 +2225,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           }
           disabled={false}
           error={null}
+          errorMessageId="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
           isA11yControlled={true}
           isIncomplete={false}
           isInvalid={false}
@@ -2272,6 +2246,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
         >
           <DateInput
             a11yLabel="Legend text"
+            ariadescribedby={null}
             dayAttributes={
               Object {
                 "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
@@ -2279,6 +2254,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             }
             disabled={false}
             error={null}
+            errorMessageId="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
             intl={
               Object {
                 "defaultFormats": Object {},
@@ -2327,8 +2303,10 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             }
           >
             <div
+              ariadescribedby={null}
               className="date-input clinical-lowlight-theme"
               error={null}
+              errorMessageId="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
               role={null}
             >
               <div
@@ -2360,7 +2338,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 className="month-select-wrapper"
               >
                 <select
-                  aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction 00000000-0000-0000-0000-000000000000-errormessage"
+                  aria-describedby="00000000-0000-0000-0000-000000000000-hotkeyinstruction terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
                   aria-disabled={false}
                   aria-invalid={false}
                   aria-label="Terra.date.input.monthSelectLabelWithName"
@@ -2464,23 +2442,13 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     Terra.date.input.hotKey
                   </span>
                 </VisuallyHiddenText>
-                <VisuallyHiddenText
-                  id="00000000-0000-0000-0000-000000000000-errormessage"
-                  text=", null"
-                >
-                  <span
-                    className="visually-hidden-text"
-                    id="00000000-0000-0000-0000-000000000000-errormessage"
-                  >
-                    , null
-                  </span>
-                </VisuallyHiddenText>
               </div>
               <AccessibleInput
                 aria-describedby="terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000"
+                ariadescribedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
                 autoComplete="off"
                 className="date-input-day"
-                description="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+                description="Terra.date.input.dayDescription, Terra.date.input.hotKey"
                 disabled={false}
                 isIncomplete={false}
                 isInvalid={false}
@@ -2517,6 +2485,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   aria-disabled={false}
                   aria-invalid={false}
                   aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+                  ariadescribedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
                   autoComplete="off"
                   className="date-input-day"
                   disabled={false}
@@ -2542,6 +2511,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     aria-disabled={false}
                     aria-invalid={false}
                     aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+                    ariadescribedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
                     autoComplete="off"
                     className="form-input clinical-lowlight-theme date-input-day"
                     disabled={false}
@@ -2562,21 +2532,22 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 </Input>
                 <VisuallyHiddenText
                   id="00000000-0000-0000-0000-000000000000-description"
-                  text="Terra.date.input.dayDescription, Terra.date.input.hotKey, null"
+                  text="Terra.date.input.dayDescription, Terra.date.input.hotKey"
                 >
                   <span
                     className="visually-hidden-text"
                     id="00000000-0000-0000-0000-000000000000-description"
                   >
-                    Terra.date.input.dayDescription, Terra.date.input.hotKey, null
+                    Terra.date.input.dayDescription, Terra.date.input.hotKey
                   </span>
                 </VisuallyHiddenText>
               </AccessibleInput>
               <AccessibleInput
                 aria-describedby="terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000"
+                ariadescribedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
                 autoComplete="off"
                 className="date-input-year"
-                description="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+                description="Terra.date.input.yearDescription, Terra.date.input.hotKey"
                 disabled={false}
                 isIncomplete={false}
                 isInvalid={false}
@@ -2613,6 +2584,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   aria-disabled={false}
                   aria-invalid={false}
                   aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+                  ariadescribedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
                   autoComplete="off"
                   className="date-input-year"
                   disabled={false}
@@ -2638,6 +2610,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     aria-disabled={false}
                     aria-invalid={false}
                     aria-labelledby="00000000-0000-0000-0000-000000000000-label"
+                    ariadescribedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
                     autoComplete="off"
                     className="form-input clinical-lowlight-theme date-input-year"
                     disabled={false}
@@ -2658,13 +2631,13 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 </Input>
                 <VisuallyHiddenText
                   id="00000000-0000-0000-0000-000000000000-description"
-                  text="Terra.date.input.yearDescription, Terra.date.input.hotKey, null"
+                  text="Terra.date.input.yearDescription, Terra.date.input.hotKey"
                 >
                   <span
                     className="visually-hidden-text"
                     id="00000000-0000-0000-0000-000000000000-description"
                   >
-                    Terra.date.input.yearDescription, Terra.date.input.hotKey, null
+                    Terra.date.input.yearDescription, Terra.date.input.hotKey
                   </span>
                 </VisuallyHiddenText>
               </AccessibleInput>
