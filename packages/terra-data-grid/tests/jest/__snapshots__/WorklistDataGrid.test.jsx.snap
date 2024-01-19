@@ -1201,10 +1201,10 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                       },
                     ]
                   }
-                  id="cdef25fb-c86a-46af-baf3-51762c79d777"
+                  id="fd17d622-8696-49f9-9822-2843487728d7"
                   isHidden={true}
                   isTableStriped={true}
-                  key="cdef25fb-c86a-46af-baf3-51762c79d777"
+                  key="fd17d622-8696-49f9-9822-2843487728d7"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -4083,10 +4083,10 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       },
                     ]
                   }
-                  id="1ddce59c-4161-482d-b250-401d4c0dde64"
+                  id="75d7ccf3-c837-4fac-853e-a7bd3b09fc42"
                   isHidden={true}
                   isTableStriped={true}
-                  key="1ddce59c-4161-482d-b250-401d4c0dde64"
+                  key="75d7ccf3-c837-4fac-853e-a7bd3b09fc42"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -7614,10 +7614,10 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       },
                     ]
                   }
-                  id="64ac323d-35dd-4fbb-a12f-091cc513d86e"
+                  id="59a54a67-6e1f-4824-8ae7-6d0f933cdcfc"
                   isHidden={true}
                   isTableStriped={true}
-                  key="64ac323d-35dd-4fbb-a12f-091cc513d86e"
+                  key="59a54a67-6e1f-4824-8ae7-6d0f933cdcfc"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -11002,10 +11002,10 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                       },
                     ]
                   }
-                  id="d6e2aeb0-081c-4776-9927-cca6621bfa12"
+                  id="c44dbc29-b26b-4a20-bc7b-54c0b49281bc"
                   isHidden={true}
                   isTableStriped={true}
-                  key="d6e2aeb0-081c-4776-9927-cca6621bfa12"
+                  key="c44dbc29-b26b-4a20-bc7b-54c0b49281bc"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -13884,10 +13884,10 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       },
                     ]
                   }
-                  id="a97cb5d5-1377-462d-a97e-2a85dd4117ce"
+                  id="7fcd7461-5c00-4e34-80db-c6d5111eba3b"
                   isHidden={true}
                   isTableStriped={true}
-                  key="a97cb5d5-1377-462d-a97e-2a85dd4117ce"
+                  key="7fcd7461-5c00-4e34-80db-c6d5111eba3b"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -17415,10 +17415,10 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       },
                     ]
                   }
-                  id="09b975a4-c399-47bd-8807-216234c83392"
+                  id="30b77c1a-161b-485f-94c8-30d657817dcd"
                   isHidden={true}
                   isTableStriped={true}
-                  key="09b975a4-c399-47bd-8807-216234c83392"
+                  key="30b77c1a-161b-485f-94c8-30d657817dcd"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -20970,10 +20970,10 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       },
                     ]
                   }
-                  id="ff3c82b5-5ff2-46dd-b9af-12879fd35294"
+                  id="630fa712-9d72-499d-b746-7c256a567d66"
                   isHidden={true}
                   isTableStriped={true}
-                  key="ff3c82b5-5ff2-46dd-b9af-12879fd35294"
+                  key="630fa712-9d72-499d-b746-7c256a567d66"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -24485,10 +24485,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  id="ccaa9fee-15d2-48d5-82dd-a72b6a88d237"
+                  id="54a77706-f59f-49a7-a037-a4c070490d39"
                   isHidden={true}
                   isTableStriped={true}
-                  key="ccaa9fee-15d2-48d5-82dd-a72b6a88d237"
+                  key="54a77706-f59f-49a7-a037-a4c070490d39"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -27892,10 +27892,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  id="63beb134-2048-4ae1-aaab-09c07425c6c8"
+                  id="d9cee34c-2ec7-4713-a656-b88b95fe2ddb"
                   isHidden={true}
                   isTableStriped={true}
-                  key="63beb134-2048-4ae1-aaab-09c07425c6c8"
+                  key="d9cee34c-2ec7-4713-a656-b88b95fe2ddb"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -30778,10 +30778,10 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       },
                     ]
                   }
-                  id="4b36b238-3cbe-4420-affb-a03cab5ae9ca"
+                  id="80b236c6-ca05-46ab-8e6b-fe06b9a11edd"
                   isHidden={true}
                   isTableStriped={true}
-                  key="4b36b238-3cbe-4420-affb-a03cab5ae9ca"
+                  key="80b236c6-ca05-46ab-8e6b-fe06b9a11edd"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -34309,10 +34309,10 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       },
                     ]
                   }
-                  id="66080a80-66de-49af-ab8e-af029a75921e"
+                  id="76931428-1684-41ab-bf36-2772198b825b"
                   isHidden={true}
                   isTableStriped={true}
-                  key="66080a80-66de-49af-ab8e-af029a75921e"
+                  key="76931428-1684-41ab-bf36-2772198b825b"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -37820,10 +37820,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  id="04678f02-e81b-4b1a-bc50-0e5b727ffecf"
+                  id="6e2ba3a7-7410-40d6-9f06-ed7dfb212315"
                   isHidden={true}
                   isTableStriped={true}
-                  key="04678f02-e81b-4b1a-bc50-0e5b727ffecf"
+                  key="6e2ba3a7-7410-40d6-9f06-ed7dfb212315"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -41331,10 +41331,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  id="02b9254d-f038-46ed-a1c2-b73c2e70e4af"
+                  id="24af8b2b-3462-47ce-9816-3fac7ea3e8c3"
                   isHidden={true}
                   isTableStriped={true}
-                  key="02b9254d-f038-46ed-a1c2-b73c2e70e4af"
+                  key="24af8b2b-3462-47ce-9816-3fac7ea3e8c3"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -44842,10 +44842,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  id="4021d342-f684-48be-a591-73bb72e3443f"
+                  id="986b5bf9-37b3-4699-bd00-cd699610ccd4"
                   isHidden={true}
                   isTableStriped={true}
-                  key="4021d342-f684-48be-a591-73bb72e3443f"
+                  key="986b5bf9-37b3-4699-bd00-cd699610ccd4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -48353,10 +48353,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  id="dcb976a8-0836-4e76-9110-8efeca9e6705"
+                  id="9e1fce90-dd19-4f56-8946-3f4c14f55ca9"
                   isHidden={true}
                   isTableStriped={true}
-                  key="dcb976a8-0836-4e76-9110-8efeca9e6705"
+                  key="9e1fce90-dd19-4f56-8946-3f4c14f55ca9"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -51862,10 +51862,10 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       },
                     ]
                   }
-                  id="0bd83e81-6a3a-476a-a1f6-0bf1c9b293b3"
+                  id="d40779d2-a700-46f5-8917-4302fa61614b"
                   isHidden={true}
                   isTableStriped={true}
-                  key="0bd83e81-6a3a-476a-a1f6-0bf1c9b293b3"
+                  key="d40779d2-a700-46f5-8917-4302fa61614b"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -55371,10 +55371,10 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       },
                     ]
                   }
-                  id="deb7db81-f2e0-44ac-baf8-b2933a5f4e48"
+                  id="47b3fbd1-8f1f-4360-9421-61836f935279"
                   isHidden={true}
                   isTableStriped={true}
-                  key="deb7db81-f2e0-44ac-baf8-b2933a5f4e48"
+                  key="47b3fbd1-8f1f-4360-9421-61836f935279"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -58726,10 +58726,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  id="b90e859e-830c-4132-a94f-45b213c062c8"
+                  id="af9bf1de-71ee-41c3-8437-d4b0acb834c4"
                   isHidden={true}
                   isTableStriped={true}
-                  key="b90e859e-830c-4132-a94f-45b213c062c8"
+                  key="af9bf1de-71ee-41c3-8437-d4b0acb834c4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"
@@ -61432,10 +61432,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  id="62403260-6a93-480d-abaa-7a0e3ac0c982"
+                  id="ba2c4ec5-9eb2-43cd-aa1d-674c0be1f5f3"
                   isHidden={true}
                   isTableStriped={true}
-                  key="62403260-6a93-480d-abaa-7a0e3ac0c982"
+                  key="ba2c4ec5-9eb2-43cd-aa1d-674c0be1f5f3"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowHeight="2.5rem"

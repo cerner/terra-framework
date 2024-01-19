@@ -1140,10 +1140,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
-              id="bf8d0295-3af2-4c30-abd6-2cbba0d69a26"
+              id="ae4896d7-a1ea-451f-94fa-1374b5a57e0a"
               isHidden={true}
               isTableStriped={true}
-              key="bf8d0295-3af2-4c30-abd6-2cbba0d69a26"
+              key="ae4896d7-a1ea-451f-94fa-1374b5a57e0a"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowHeight="2.5rem"
@@ -3816,10 +3816,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
-              id="57c752e5-e7bf-49c8-9f5f-32b9a585d29c"
+              id="6bff38ce-debd-4362-bac1-60182b76c727"
               isHidden={true}
               isTableStriped={true}
-              key="57c752e5-e7bf-49c8-9f5f-32b9a585d29c"
+              key="6bff38ce-debd-4362-bac1-60182b76c727"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowHeight="2.5rem"
@@ -6596,10 +6596,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              id="66c87ff7-9cb2-45b0-a609-c87f292748ae"
+              id="cd73d5f4-8d10-452b-b843-6b03ff2a3fff"
               isHidden={true}
               isTableStriped={true}
-              key="66c87ff7-9cb2-45b0-a609-c87f292748ae"
+              key="cd73d5f4-8d10-452b-b843-6b03ff2a3fff"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowHeight="2.5rem"
@@ -9849,10 +9849,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   },
                 ]
               }
-              id="8a9d0ad2-f6a5-4ef3-8384-4e9110135c89"
+              id="284f3b11-a30e-4d45-b753-5ea007879846"
               isHidden={true}
               isTableStriped={true}
-              key="8a9d0ad2-f6a5-4ef3-8384-4e9110135c89"
+              key="284f3b11-a30e-4d45-b753-5ea007879846"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowHeight="2.5rem"
@@ -12444,10 +12444,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   },
                 ]
               }
-              id="b0a861ff-0c80-410c-a495-d3c2fe7ceb96"
+              id="2d9d2c80-ae85-4f56-828a-c57ae9edc151"
               isHidden={true}
               isTableStriped={true}
-              key="b0a861ff-0c80-410c-a495-d3c2fe7ceb96"
+              key="2d9d2c80-ae85-4f56-828a-c57ae9edc151"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowHeight="2.5rem"
