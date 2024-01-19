@@ -3,7 +3,6 @@
 ## Unreleased
 
 * Fixed
-  * Fixed path issue in `terra-folder-tree` docs.
   * Fixed font size in `terra-theme-provider` examples.
 
 ## 1.58.0 - (January 18, 2024)
