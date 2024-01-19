@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.1.0 - (January 18, 2024)
+
 * Added
   * Added `rowHeaderIndex` prop validation.
 

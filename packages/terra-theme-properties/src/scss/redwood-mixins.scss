@@ -1,0 +1,23 @@
+/**
+ * Add the focus indicator styles for an element
+ * @param {Boolean} innerRing - Specifies if the focus indicator ring is inside the component.  The default value is false.
+ * @param {Boolean} darkBackground - Specifies if focus indicator ring needs to be adjusted for a dark background.  The default value is false.
+ */
+@mixin terra-focus-indicator($innerRing: false, $darkBackground: false) {
+  // Determine outline color based on background
+  @if $darkBackground {
+    outline-color: var(--default-focus-outline-color-inverse);
+  } @else {
+    outline-color: var(--default-focus-outline-color-normal);
+  }
+
+  // Determine focus indicator ring offset
+  @if $innerRing {
+    outline-offset: var(--default-focus-outline-offset-inside);
+  } @else {
+    outline-offset: var(--default-focus-outline-offset-outside);
+  }
+
+  outline-style: var(--default-focus-outline-style);
+  outline-width: var(--default-focus-outline-width);
+}

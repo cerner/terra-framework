@@ -364,7 +364,7 @@
       }
     }
 
-    @supports selector(:-moz-is-html) {
+    @-moz-document url-prefix() {
       .rollup-pill-label { 
         top: var(--terra-pills-rollup-pill-label-moz-top, -0.02em); // Text alignment for Firefox
       }
@@ -381,7 +381,7 @@
     }
   }
 
-  @supports selector(:-moz-is-html) {
+  @-moz-document url-prefix() {
     .pill-label {
       top: var(--terra-pills-pill-label-moz-top, -0.02em); // Text alignment for Firefox
     }
