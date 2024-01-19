@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.26
+// Version 0.20.28
 // UI Light Variables
 // -------------------------------------------------
 // Maintained by Oracle Health Design, UX Foundations Team
@@ -66,7 +66,7 @@
   --ui-light-color-measure-reference-line: rgba(22, 21, 19, 0.8);
   --ui-light-color-measure-reference-line-contrast: rgba(245, 244, 242, 0.7);
   --ui-light-color-measure-thumb-surface: transparent;
-  --ui-light-color-measure-track-disabled: #312d2a;
+  --ui-light-color-measure-track-disabled: var(--rds-color-neutral-170);
   --ui-light-color-measure-track-enabled: rgba(49, 45, 42, 0.16);
   --ui-light-color-overlay-active-default: rgba(22, 21, 19, 0.16);
   --ui-light-color-overlay-active-danger: rgba(255, 157, 144, 0.32);
@@ -85,7 +85,7 @@
   --ui-light-color-surface-danger-strong: var(--rds-color-alert-danger-100);
   --ui-light-color-surface-danger-subtle: rgba(255, 157, 144, 0.4);
   --ui-light-color-surface-disabled: rgba(22, 21, 19, 0.04);
-  --ui-light-color-surface-info-strong: #8fbfd0;
+  --ui-light-color-surface-info-strong: var(--rds-color-alert-information-60);
   --ui-light-color-surface-info-subtle: rgba(143, 191, 208, 0.4);
   --ui-light-color-surface-neutral-0: var(--rds-color-neutral-50);
   --ui-light-color-surface-neutral-10: var(--rds-color-neutral-40);
@@ -102,7 +102,7 @@
   --ui-light-color-surface-warning: var(--rds-color-alert-warning-130);
   --ui-light-color-switch-surface-selected: var(--rds-color-brand-blue-100);
   --ui-light-color-switch-surface-unselected: var(--rds-color-neutral-90);
-  --ui-light-color-text: #161513;
+  --ui-light-color-text: var(--rds-color-neutral-190);
   --ui-light-color-text-field-enabled-border: rgba(22, 21, 19, 0.5);
   --ui-light-color-text-field-enabled-surface: var(--rds-color-neutral-0);
   --ui-light-color-text-icon-danger: var(--rds-color-alert-danger-120);

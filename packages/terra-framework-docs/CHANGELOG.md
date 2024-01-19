@@ -5,6 +5,11 @@
 * Changed
   * Updated `terra-table` test example to support large text data.
 
+## 1.58.0 - (January 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.57.1 - (January 17, 2024)
 
 * Fixed
