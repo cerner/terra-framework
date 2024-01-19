@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.28
+// Version 0.20.30
 // Semantic Names for Terra Custom Properties
 // ENGINEERING NOTE:
 // Only reference variables from this file.
@@ -19,8 +19,8 @@
   // necessitating the use of an inverse-colored focus outline.
   --default-focus-outline-color-inverse: var(--rds-focus-inverse-outline-color);
   --default-focus-outline-color-normal: var(--rds-focus-normal-outline-color);
-  --default-focus-outline-offset-inside: var(--rds-focus-offset-inside);
-  --default-focus-outline-offset-outside: var(--rds-focus-offset-outside);
+  --default-focus-outline-offset-inside: var(--rds-focus-outline-offset-inside);
+  --default-focus-outline-offset-outside: var(--rds-focus-outline-offset-outside);
   --default-focus-outline-style: var(--rds-focus-outline-style);
   --default-focus-outline-width: var(--rds-focus-outline-width);
 
@@ -29,7 +29,7 @@
   --link-hover-color: var(--rds-color-alert-information-150);
   --link-active-color: var(--rds-color-alert-information-170);
   --link-disabled-color: var(--ui-light-color-text-icon-disabled);
-  --link-visited-color: var(--rds-color-plum-130);
+  --link-visited-color: var(--rds-color-pillar-plum-130);
 
   // Container Styles
   --container-style-0-background-color: var(--rds-color-neutral-0);
@@ -342,7 +342,7 @@
   --overlay-subtle-text-color: var(--ui-light-color-text-icon-primary);
   --overlay-subtle-icon-color: var(--ui-light-color-text-icon-primary);
   --overlay-subtle-opacity: var(--rds-opacity-70);
-  --overlay-strong-background-color: var(--ui-light-color-overlay-scrim);
+  --overlay-strong-background-color: var(--ui-light-color-overlay-scrim-strong);
   --overlay-strong-text-color: var(--ui-light-color-text-icon-inverse);
   --overlay-strong-icon-color: var(--ui-light-color-text-icon-inverse);
 
