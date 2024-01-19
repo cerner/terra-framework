@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.17.0 - (January 18, 2024)
+
+* Changed
+  * Replaced `:-moz-is-html` selector with `@-moz-document` to resolve Mini-Css-Plugin issue.
+
+## 1.16.1 - (January 10, 2024)
+
 * Fixed
   * Resolved issue with screen reader not identifying pill status after removing the last pill.
 

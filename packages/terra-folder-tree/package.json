@@ -1,7 +1,7 @@
 {
   "name": "terra-folder-tree",
   "main": "lib/index.js",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.6",
   "description": "Terra Folder Tree is a vertical menu that displays files and folders in a hierarchical tree structure.",
   "repository": {
     "type": "git",
@@ -40,27 +40,16 @@
     "terra-toolbar": "^1.41.0",
     "uuid": "3.4.0"
   },
-  "devDependencies": {
-    "@babel/cli": "^7.22.10",
-    "@babel/core": "^7.22.10",
-    "@babel/preset-react": "^7.22.5",
-    "@cerner/eslint-config-terra": "^5.4.0",
-    "@cerner/jest-config-terra": "^1.5.0",
-    "enzyme-to-json": "^3.6.2",
-    "eslint": "^7.32.0",
-    "jest": "^26.6.3",
-    "stylelint": "^13.13.1"
-  },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
     "clean:lib": "rm -rf lib",
     "clean:node_modules": "echo 'removing ./node_modules' && rm -rf node_modules && echo 'removed ./node_modules'",
     "clean": "npm run clean:node_modules && npm run clean:lib",
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
-    "jest": "jest",
+    "jest": "jest --config ../../jest.config.js",
     "lint:js:fix": "eslint --ext .js,.jsx . --fix",
     "lint:js": "eslint --ext .js,.jsx . --ignore-path ../../.eslintignore",
-    "lint:scss": "stylelint ./src/*.scss",
+    "lint:scss": "stylelint src/**/*.scss",
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest"

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.49.0 - (January 10, 2024)
+
 * Added
   * Added hot keys functionality to support keyboard shortcut patterns.
 
