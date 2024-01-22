@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Fixed time input to incrememnt the seconds input instead of the minute input wihile pressing `+`, `-` keys.
+  * Fixed time input to change the focused input field instead of the minute input while pressing `+`, `-` keys.
 
 * Added
   * Added visual focus dashed border for `terra-time-input`.
