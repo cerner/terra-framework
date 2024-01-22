@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.26
+// Version 0.20.30
 // Semantic Names for Terra Custom Properties
 // ENGINEERING NOTE:
 // Only reference variables from this file.
@@ -19,8 +19,8 @@
   // necessitating the use of an inverse-colored focus outline.
   --default-focus-outline-color-inverse: var(--rds-focus-inverse-outline-color);
   --default-focus-outline-color-normal: var(--rds-focus-normal-outline-color);
-  --default-focus-outline-offset-inside: var(--rds-focus-offset-inside);
-  --default-focus-outline-offset-outside: var(--rds-focus-offset-outside);
+  --default-focus-outline-offset-inside: var(--rds-focus-outline-offset-inside);
+  --default-focus-outline-offset-outside: var(--rds-focus-outline-offset-outside);
   --default-focus-outline-style: var(--rds-focus-outline-style);
   --default-focus-outline-width: var(--rds-focus-outline-width);
 
@@ -29,7 +29,7 @@
   --link-hover-color: var(--rds-color-alert-information-150);
   --link-active-color: var(--rds-color-alert-information-170);
   --link-disabled-color: var(--ui-light-color-text-icon-disabled);
-  --link-visited-color: var(--rds-color-plum-130);
+  --link-visited-color: var(--rds-color-pillar-plum-130);
 
   // Container Styles
   --container-style-0-background-color: var(--rds-color-neutral-0);
@@ -80,7 +80,7 @@
   --badge-information-icon-color: var(--ui-light-color-text-icon-info);
 
   // Size -> Tiny
-  --badge-tiny-font-size: var(--rds-typography-font-size-xs);
+  --badge-tiny-font-size: var(--rds-typography-size-xs-font-size);
   --badge-tiny-icon-size: var(--rds-icon-size-2xs);
   --badge-tiny-radius: var(--rds-border-radius-sm);
   --badge-tiny-padding-left: var(--rds-spacing-03);
@@ -90,7 +90,7 @@
   --badge-tiny-horizontal-gap-padding: var(--rds-spacing-02);
 
   // Size -> Small
-  --badge-small-font-size: var(--rds-typography-font-size-sm);
+  --badge-small-font-size: var(--rds-typography-size-sm-font-size);
   --badge-small-icon-size: var(--rds-icon-size-xs);
   --badge-small-radius: var(--rds-border-radius-md);
   --badge-small-padding-left: var(--rds-spacing-05);
@@ -100,7 +100,7 @@
   --badge-small-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Size -> Medium
-  --badge-medium-font-size: var(--rds-typography-font-size-md);
+  --badge-medium-font-size: var(--rds-typography-size-md-font-size);
   --badge-medium-icon-size: var(--rds-icon-size-sm);
   --badge-medium-radius: var(--rds-border-radius-md);
   --badge-medium-padding-left: var(--rds-spacing-05);
@@ -110,7 +110,7 @@
   --badge-medium-horizontal-gap-padding: var(--rds-spacing-03);
 
   // Size -> Large
-  --badge-large-font-size: var(--rds-typography-font-size-2xl);
+  --badge-large-font-size: var(--rds-typography-size-2xl-font-size);
   --badge-large-icon-size: var(--rds-icon-size-xl);
   --badge-large-radius: var(--rds-border-radius-md);
   --badge-large-padding-left: var(--rds-spacing-05);
@@ -174,24 +174,24 @@
   --card-box-shadow: var(--rds-box-shadow-sm);
 
   &.compact {
-    --card-left-padding: var(--rds-spacing-06);
-    --card-right-padding: var(--rds-spacing-06);
-    --card-top-padding: var(--rds-spacing-06);
-    --card-bottom-padding: var(--rds-spacing-06);
+    --card-padding-left: var(--rds-spacing-06);
+    --card-padding-right: var(--rds-spacing-06);
+    --card-padding-top: var(--rds-spacing-06);
+    --card-padding-bottom: var(--rds-spacing-06);
   }
 
   &.comfortable {
-    --card-left-padding: var(--rds-spacing-07);
-    --card-right-padding: var(--rds-spacing-07);
-    --card-top-padding: var(--rds-spacing-07);
-    --card-bottom-padding: var(--rds-spacing-07);
+    --card-padding-left: var(--rds-spacing-07);
+    --card-padding-right: var(--rds-spacing-07);
+    --card-padding-top: var(--rds-spacing-07);
+    --card-padding-bottom: var(--rds-spacing-07);
   }
 
   &.spacious {
-    --card-left-padding: var(--rds-spacing-09);
-    --card-right-padding: var(--rds-spacing-09);
-    --card-top-padding: var(--rds-spacing-09);
-    --card-bottom-padding: var(--rds-spacing-09);
+    --card-padding-left: var(--rds-spacing-09);
+    --card-padding-right: var(--rds-spacing-09);
+    --card-padding-top: var(--rds-spacing-09);
+    --card-padding-bottom: var(--rds-spacing-09);
   }
 }
 
@@ -268,7 +268,7 @@
   --hyperlink-text-decoration: var(--rds-text-decoration-underline);
 
   &.compact {
-    --hyperlink-font-size: var(--rds-typography-font-size-sm);
+    --hyperlink-font-size: var(--rds-typography-size-sm-font-size);
     --hyperlink-icon-size: var(--rds-icon-size-xs);
     --hyperlink-padding-left: var(--rds-spacing-02);
     --hyperlink-padding-right: var(--rds-spacing-02);
@@ -278,7 +278,7 @@
   }
 
   &.comfortable {
-    --hyperlink-font-size: var(--rds-typography-font-size-md);
+    --hyperlink-font-size: var(--rds-typography-size-md-font-size);
     --hyperlink-icon-size: var(--rds-icon-size-sm);
     --hyperlink-padding-left: var(--rds-spacing-02);
     --hyperlink-padding-right: var(--rds-spacing-02);
@@ -288,7 +288,7 @@
   }
 
   &.spacious {
-    --hyperlink-font-size: var(--rds-typography-font-size-lg);
+    --hyperlink-font-size: var(--rds-typography-size-lg-font-size);
     --hyperlink-icon-size: var(--rds-icon-size-md);
     --hyperlink-padding-left: var(--rds-spacing-02);
     --hyperlink-padding-right: var(--rds-spacing-02);
@@ -315,15 +315,15 @@
   --image-thumbnail-border-color: var(--ui-light-color-border-divider);
   --image-thumbmnail-border-width: var(--rds-border-width-1);
   --image-thumbnail-border-radius: var(--rds-border-radius-sm);
-  --image-thumbnail-top-padding: var(--rds-spacing-03);
-  --image-thumbnail-bottom-padding: var(--rds-spacing-03);
-  --image-thumbnail-left-padding: var(--rds-spacing-03);
-  --image-thumbnail-right-padding: var(--rds-spacing-03);
+  --image-thumbnail-padding-top: var(--rds-spacing-03);
+  --image-thumbnail-padding-bottom: var(--rds-spacing-03);
+  --image-thumbnail-padding-left: var(--rds-spacing-03);
+  --image-thumbnail-padding-right: var(--rds-spacing-03);
 }
 
 // =======================================
 // terra-modal-manager
-// https://github.com/cerner/terra-core/tree/main/packages/terra-modal-manager
+// https://github.com/cerner/terra-framework/tree/main/packages/terra-modal-manager
 // https://jira2.cerner.com/browse/UXPLATFORM-10006
 // =======================================
 .redwood-theme {
@@ -342,26 +342,26 @@
   --overlay-subtle-text-color: var(--ui-light-color-text-icon-primary);
   --overlay-subtle-icon-color: var(--ui-light-color-text-icon-primary);
   --overlay-subtle-opacity: var(--rds-opacity-70);
-  --overlay-strong-background-color: var(--ui-light-color-overlay-scrim);
+  --overlay-strong-background-color: var(--ui-light-color-overlay-scrim-strong);
   --overlay-strong-text-color: var(--ui-light-color-text-icon-inverse);
   --overlay-strong-icon-color: var(--ui-light-color-text-icon-inverse);
 
   &.compact {
-    --overlay-font-size: var(--rds-typography-font-size-sm);
+    --overlay-font-size: var(--rds-typography-size-sm-font-size);
     --overlay-icon-height: var(--rds-icon-size-xl);
     --overlay-icon-width: var(--rds-icon-size-xl);
     --overlay-vertical-gap-spacing: var(--rds-spacing-05);
   }
 
   &.comfortable {
-    --overlay-font-size: var(--rds-typography-font-size-md);
+    --overlay-font-size: var(--rds-typography-size-md-font-size);
     --overlay-icon-height: var(--rds-icon-size-2xl);
     --overlay-icon-width: var(--rds-icon-size-2xl);
     --overlay-vertical-gap-spacing: var(--rds-spacing-07);
   }
 
   &.spacious {
-    --overlay-font-size: var(--rds-typography-font-size-lg);
+    --overlay-font-size: var(--rds-typography-size-lg-font-size);
     --overlay-icon-height: var(--rds-icon-size-xl);
     --overlay-icon-width: var(--rds-icon-size-xl);
     --overlay-vertical-gap-spacing: var(--rds-spacing-09);
@@ -380,8 +380,7 @@
 
 // =======================================
 // terra-slide-group
-// https://github.com/cerner/terra-core/tree/main/packages/terra-slide-group
-// https://jira2.cerner.com/browse/UXPLATFORM-10033
+// https://github.com/cerner/terra-framework/tree/main/packages/terra-slide-group
 // https://jira2.cerner.com/browse/UXPLATFORM-10033
 // =======================================
 .redwood-theme {
@@ -390,7 +389,7 @@
 
 // =======================================
 // terra-slide-panel
-// https://github.com/cerner/terra-core/tree/main/packages/terra-slide-panel
+// https://github.com/cerner/terra-framework/tree/main/packages/terra-slide-panel
 // https://jira2.cerner.com/browse/UXPLATFORM-9986
 // =======================================
 .redwood-theme {
@@ -416,7 +415,7 @@
 
 
   &.compact {
-    --tag-font-size: var(--rds-typography-font-size-sm);
+    --tag-font-size: var(--rds-typography-size-sm-font-size);
     --tag-padding-left: var(--rds-spacing-05);
     --tag-padding-right: var(--rds-spacing-05);
     --tag-padding-top: var(--rds-spacing-03);
@@ -424,7 +423,7 @@
   }
 
   &.comfortable {
-    --tag-font-size: var(--rds-typography-font-size-md);
+    --tag-font-size: var(--rds-typography-size-md-font-size);
     --tag-padding-left: var(--rds-spacing-07);
     --tag-padding-right: var(--rds-spacing-07);
     --tag-padding-top: var(--rds-spacing-04);
@@ -432,7 +431,7 @@
   }
 
   &.spacious {
-    --tag-font-size: var(--rds-typography-font-size-md);
+    --tag-font-size: var(--rds-typography-size-md-font-size);
     --tag-padding-left: var(--rds-spacing-09);
     --tag-padding-right: var(--rds-spacing-09);
     --tag-padding-top: var(--rds-spacing-05);

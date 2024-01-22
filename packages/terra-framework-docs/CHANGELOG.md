@@ -5,6 +5,9 @@
 * Added
   * Added detailed documentation for creating a basic `compact-interactive-list` component.
 
+* Fixed
+  * Fixed font size in `terra-theme-provider` examples.
+
 ## 1.58.0 - (January 18, 2024)
 
 * Changed
