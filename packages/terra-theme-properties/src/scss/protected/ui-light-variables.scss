@@ -1,5 +1,5 @@
 // terra-redwood-theme
-// Version 0.20.28
+// Version 0.20.30
 // UI Light Variables
 // -------------------------------------------------
 // Maintained by Oracle Health Design, UX Foundations Team
@@ -74,7 +74,8 @@
   --ui-light-color-overlay-hover-danger: rgba(255, 157, 144, 0.24);
   --ui-light-color-overlay-inverse-active: rgba(255, 255, 255, 0.12);
   --ui-light-color-overlay-inverse-hover: rgba(255, 255, 255, 0.08);
-  --ui-light-color-overlay-scrim: rgba(22, 21, 19, 0.4);
+  --ui-light-color-overlay-scrim-strong: rgba(22, 21, 19, 0.4);
+  --ui-light-color-overlay-scrim-subtle: var(--rds-color-neutral-10);
   --ui-light-color-page-background-neutral-0: var(--rds-color-neutral-0);
   --ui-light-color-page-background-neutral-10: var(--rds-color-neutral-10);
   --ui-light-color-page-background-neutral-20: var(--rds-color-neutral-20);
@@ -87,19 +88,20 @@
   --ui-light-color-surface-disabled: rgba(22, 21, 19, 0.04);
   --ui-light-color-surface-info-strong: var(--rds-color-alert-information-60);
   --ui-light-color-surface-info-subtle: rgba(143, 191, 208, 0.4);
-  --ui-light-color-surface-neutral-0: var(--rds-color-neutral-50);
-  --ui-light-color-surface-neutral-10: var(--rds-color-neutral-40);
-  --ui-light-color-surface-neutral-20: var(--rds-color-neutral-30);
-  --ui-light-color-surface-neutral-30: var(--rds-color-neutral-20);
+  --ui-light-color-surface-neutral-0: var(--rds-color-neutral-0);
+  --ui-light-color-surface-neutral-10: var(--rds-color-neutral-10);
+  --ui-light-color-surface-neutral-20: var(--rds-color-neutral-20);
+  --ui-light-color-surface-neutral-30: var(--rds-color-neutral-30);
   --ui-light-color-surface-neutral-low: var(--rds-color-neutral-40);
   --ui-light-color-surface-neutral-strong: var(--rds-color-neutral-100);
-  --ui-light-color-surface-neutral-subtle: rgba(22, 21, 19, 0.8);
+  --ui-light-color-surface-neutral-subtle: rgba(22, 21, 19, 0.08);
   --ui-light-color-surface-popup: var(--rds-color-neutral-50);
   --ui-light-color-surface-selected: var(--rds-color-brand-dark-70);
   --ui-light-color-surface-success-low: var(--rds-color-alert-success-40);
   --ui-light-color-surface-success-strong: var(--rds-color-alert-success-100);
   --ui-light-color-surface-success-subtle: rgba(138, 201, 79, 0.4);
-  --ui-light-color-surface-warning: var(--rds-color-alert-warning-130);
+  --ui-light-color-surface-warning-strong: var(--rds-color-alert-warning-130);
+  --ui-light-color-surface-warning-subtle: rgba(240, 169, 87, 0.4);
   --ui-light-color-switch-surface-selected: var(--rds-color-brand-blue-100);
   --ui-light-color-switch-surface-unselected: var(--rds-color-neutral-90);
   --ui-light-color-text: var(--rds-color-neutral-190);

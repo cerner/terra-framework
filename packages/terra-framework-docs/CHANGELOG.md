@@ -4,6 +4,8 @@
 
 * Added 
   * Added variant for DisclosureIntegration component.
+* Fixed
+  * Fixed font size in `terra-theme-provider` examples.
 
 ## 1.58.0 - (January 18, 2024)
 

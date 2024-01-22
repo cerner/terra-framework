@@ -45,7 +45,7 @@
     },
     "overrides": [
       {
-        "files": ["packages/terra-theme-properties/**/*.scss"],
+        "files": ["packages/terra-theme-properties/**/*.scss", "packages/**/redwood-theme/**/*.scss"],
         "rules": {
           "terra/custom-property-name": false,
           "terra/custom-property-namespace": false
@@ -89,10 +89,11 @@
     "start-static": "npm run compile:prod && terra express-server --site build",
     "test": "npm run lint && npm run jest && npm run wdio",
     "test:docker": "npm run lint && npm run jest && npm run wdio:docker",
-    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
+    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme redwood-theme",
     "wdio:default": "terra wdio",
     "wdio:lowlight": "NODE_OPTIONS=--max-old-space-size=2048 terra wdio --themes clinical-lowlight-theme",
     "wdio:fusion": "terra wdio --themes orion-fusion-theme",
+    "wdio:redwood": "terra wdio --themes redwood-theme",
     "wdio:docker": "terra wdio --disableSeleniumService=true --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme"
   },
   "devDependencies": {
@@ -137,7 +138,7 @@
     "regenerator-runtime": "^0.13.2",
     "stylelint": "^15.0.0",
     "terra-aggregate-translations": "^1.0.0",
-    "terra-application": "^1.48.0",
+    "terra-application": "^1.57.0",
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.4.0",
     "terra-icon": "^3.58.0",
