@@ -121,7 +121,7 @@ const defaultProps = {
   useExternalFormatMask: false,
   isA11yControlled: false,
   customProps: {
-    'aria-describedby': null
+    'aria-describedby': null,
   },
 };
 
