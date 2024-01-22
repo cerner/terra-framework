@@ -24,6 +24,9 @@ const propTypes = {
   isInvalid: PropTypes.bool,
   /** When true, setting isInvalid to true will also visually display the input as invalid. */
   showIsInvalid: PropTypes.bool,
+  /**
+   * String that labels the error message for screen readers.
+   */
   ariadescribedby: PropTypes.string,
 };
 
@@ -84,7 +87,7 @@ function AccessibleInput(props) {
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
         aria-label={value ? undefined : label}
-        aria-describedby={isInvalid && ariadescribedby ? `${descriptionId} ${ariadescribedby}` : `${descriptionId}`}
+        aria-describedby={ariadescribedby ? `${descriptionId} ${ariadescribedby}` : `${descriptionId}`}
       />
       <VisuallyHiddenText id={descriptionId} text={description} />
     </>

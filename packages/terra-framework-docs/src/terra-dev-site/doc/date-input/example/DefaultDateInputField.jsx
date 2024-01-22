@@ -17,7 +17,7 @@ const Example = () => {
           monthInput.focus();
         }
       }
-      setErrorMessage('Invalid Departure Date');
+      setErrorMessage('Invalid Departure Date.');
     } else {
       setErrorMessage('');
     }

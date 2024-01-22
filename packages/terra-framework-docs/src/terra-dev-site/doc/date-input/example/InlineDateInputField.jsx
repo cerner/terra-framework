@@ -19,7 +19,7 @@ const Example = () => {
           monthInput.focus();
         }
       }
-      setErrorMessage('Please select a valid appointment date');
+      setErrorMessage('Please select a valid appointment date.');
     } else {
       setErrorMessage('');
     }

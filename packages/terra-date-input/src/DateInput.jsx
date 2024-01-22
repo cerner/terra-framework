@@ -102,8 +102,10 @@ const propTypes = {
    * Custom input attributes to apply to the year input
    */
   yearAttributes: PropTypes.object,
-  errorMessageId: PropTypes.string,
-  ariadescribedby: PropTypes.string,
+  /**
+   * Custom props to identify the error message node
+   */
+  customProps: PropTypes.Object,
 };
 
 const defaultProps = {
@@ -118,8 +120,7 @@ const defaultProps = {
   value: undefined,
   useExternalFormatMask: false,
   isA11yControlled: false,
-  errorMessageId: null,
-  ariadescribedby: null,
+  customProps: null,
 };
 
 class DateInput extends React.Component {
@@ -575,7 +576,7 @@ class DateInput extends React.Component {
    * DateInput - even if there are other DateInputs in the same view.
    */
   monthRender() {
-    const { intl, a11yLabel } = this.props;
+    const { intl, a11yLabel, customProps } = this.props;
     let label;
 
     if (this.computedDisplayFormat() === 'month-day-year') {
@@ -623,7 +624,7 @@ class DateInput extends React.Component {
           aria-disabled={this.props.disabled}
           aria-invalid={this.props.isInvalid}
           aria-required={this.props.required}
-          aria-describedby={`${this.hotKeyInstructionId} ${this.props.errorMessageId}`}
+          aria-describedby={(customProps['aria-describedby']) ? `${this.hotKeyInstructionId} ${customProps['aria-describedby']}` : this.hotKeyInstructionId}
         >
           <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -699,7 +700,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        ariadescribedby={this.props.errorMessageId}
+        ariadescribedby={this.props.customProps['aria-describedby']}
       />
     );
   }
@@ -742,7 +743,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        ariadescribedby={this.props.errorMessageId}
+        ariadescribedby={this.props.customProps['aria-describedby']}
       />
     );
   }
