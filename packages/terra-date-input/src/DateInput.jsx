@@ -120,7 +120,9 @@ const defaultProps = {
   value: undefined,
   useExternalFormatMask: false,
   isA11yControlled: false,
-  customProps: null,
+  customProps: {
+    'aria-describedby': null
+  },
 };
 
 class DateInput extends React.Component {
