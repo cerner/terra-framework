@@ -1,7 +1,7 @@
 {
   "name": "terra-form-validation",
   "main": "lib/FormValidationUtil.js",
-  "version": "1.94.0",
+  "version": "1.95.0",
   "description": "Form Validation Examples for Terra",
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "react-final-form": ">=5.0.2 <7.0.0",
     "terra-button": "^3.3.0",
     "terra-date-input": "^1.49.0",
-    "terra-date-picker": "^4.95.0",
+    "terra-date-picker": "^4.96.0",
     "terra-form-checkbox": "^4.8.0",
     "terra-form-field": "^4.5.0",
     "terra-form-input": "^4.4.0",
