@@ -2,12 +2,14 @@
 
 ## Unreleased
 
+* Added
+  * Added black dashed border when input gets focused.
+  * Added screen reader support for error messages.
+
 ## 1.49.0 - (January 10, 2024)
 
 * Added
   * Added hot keys functionality to support keyboard shortcut patterns.
-  * Added black dashed border when input gets focused.
-  * Added screen reader support for error messages.
 
 ## 1.48.0 - (January 2, 2024)
 
