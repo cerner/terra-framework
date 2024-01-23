@@ -666,17 +666,6 @@ exports[`should render a DatePickerField with props 1`] = `
                                   </span>
                                 </VisuallyHiddenText>
                                 <VisuallyHiddenText
-                                  id="name-label-00000000-0000-0000-0000-000000000000"
-                                  text="test-date-picker"
-                                >
-                                  <span
-                                    className="visually-hidden-text"
-                                    id="name-label-00000000-0000-0000-0000-000000000000"
-                                  >
-                                    test-date-picker
-                                  </span>
-                                </VisuallyHiddenText>
-                                <VisuallyHiddenText
                                   aria-atomic="true"
                                   aria-live="assertive"
                                   aria-relevant="all"
@@ -716,7 +705,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   }
                                   month={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                      aria-describedby="test-date-picker-error test-date-picker-help"
                                       aria-label="Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="date-input-month"
@@ -769,7 +758,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   }
                                 >
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                    aria-describedby="test-date-picker-error test-date-picker-help"
                                     aria-label="Terra.datePicker.monthLabel"
                                     aria-required={true}
                                     className="date-input-month"
@@ -790,7 +779,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     value="04"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                      aria-describedby="test-date-picker-error test-date-picker-help"
                                       aria-label="Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="form-input date-input-month"
@@ -1551,17 +1540,6 @@ exports[`should render a default DatePickerField component 1`] = `
                                   </span>
                                 </VisuallyHiddenText>
                                 <VisuallyHiddenText
-                                  id="name-label-00000000-0000-0000-0000-000000000000"
-                                  text="test-date-picker"
-                                >
-                                  <span
-                                    className="visually-hidden-text"
-                                    id="name-label-00000000-0000-0000-0000-000000000000"
-                                  >
-                                    test-date-picker
-                                  </span>
-                                </VisuallyHiddenText>
-                                <VisuallyHiddenText
                                   aria-atomic="true"
                                   aria-live="assertive"
                                   aria-relevant="all"
@@ -1601,7 +1579,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   }
                                   month={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.monthLabel"
                                       aria-required={false}
                                       className="date-input-month"
@@ -1654,7 +1632,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   }
                                 >
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                    aria-describedby="test-date-picker-help"
                                     aria-label="Terra.datePicker.monthLabel"
                                     aria-required={false}
                                     className="date-input-month"
@@ -1675,7 +1653,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     value="01"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.monthLabel"
                                       aria-required={false}
                                       className="form-input date-input-month"
@@ -2544,17 +2522,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   </span>
                                 </VisuallyHiddenText>
                                 <VisuallyHiddenText
-                                  id="name-label-00000000-0000-0000-0000-000000000000"
-                                  text="test-date-picker"
-                                >
-                                  <span
-                                    className="visually-hidden-text"
-                                    id="name-label-00000000-0000-0000-0000-000000000000"
-                                  >
-                                    test-date-picker
-                                  </span>
-                                </VisuallyHiddenText>
-                                <VisuallyHiddenText
                                   aria-atomic="true"
                                   aria-live="assertive"
                                   aria-relevant="all"
@@ -2594,7 +2561,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   }
                                   month={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="date-input-month"
@@ -2647,7 +2614,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   }
                                 >
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                    aria-describedby="test-date-picker-help"
                                     aria-label="Terra.datePicker.monthLabel"
                                     aria-required={true}
                                     className="date-input-month"
@@ -2668,7 +2635,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     value="01"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="form-input date-input-month"
