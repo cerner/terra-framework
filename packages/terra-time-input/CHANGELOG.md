@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added metadata as argument for onBlur callback.
+
 ## 4.60.0 - (January 2, 2024)
 
 * Changed
