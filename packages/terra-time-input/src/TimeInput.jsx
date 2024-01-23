@@ -488,9 +488,9 @@ class TimeInput extends React.Component {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (inputType === 3 && this.props.showSeconds) {
-          if ((second === TimeUtil.SingleZeroDigit || second === TimeUtil.DoubleZeroDigit)) {
+          if (TimeUtil.initialValue.includes(second)) {
             second = TimeUtil.LastSecond;
-            if (minute === TimeUtil.SingleZeroDigit || minute === TimeUtil.DoubleZeroDigit) {
+            if (TimeUtil.initialValue.includes(minute)) {
               minute = TimeUtil.LastMinute;
               [hour, meridiem] = this.handleMinusChange(hour, variant, meridiem);
             } else {
@@ -500,7 +500,7 @@ class TimeInput extends React.Component {
             second = TimeUtil.decrementSecond(second);
           }
         } else if (inputType === 1) {
-          if (minute === TimeUtil.SingleZeroDigit || minute === TimeUtil.DoubleZeroDigit) {
+          if (TimeUtil.initialValue.includes(minute)) {
             minute = TimeUtil.LastMinute;
             [hour, meridiem] = this.handleMinusChange(hour, variant, meridiem);
           } else {
@@ -516,7 +516,7 @@ class TimeInput extends React.Component {
         let formatMinute = currentTime.minute;
         let formatMeridiem = currentTime.meridiem;
         if (inputType === 1) {
-          if (formatMinute === TimeUtil.SingleZeroDigit || formatMinute === TimeUtil.DoubleZeroDigit) {
+          if (TimeUtil.initialValue.includes(formatMinute)) {
             formatMinute = TimeUtil.LastMinute;
             [formatHour, formatMeridiem] = this.handleMinusChange(formatHour, variant, formatMeridiem);
           } else {
