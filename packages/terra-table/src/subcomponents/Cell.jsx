@@ -103,7 +103,7 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
-   * String that specifies the height of the cell. Any valid CSS value is accepted.
+   * String that specifies the min-height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
 };
