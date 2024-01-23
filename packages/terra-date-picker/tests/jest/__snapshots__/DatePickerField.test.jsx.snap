@@ -657,14 +657,23 @@ exports[`should render a DatePickerField with props 1`] = `
                                   value="2017-04-09"
                                 />
                                 <VisuallyHiddenText
-                                  id="name-label-00000000-0000-0000-0000-000000000000"
                                   text="Label Test, Sunday, January 1, 2017"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Label Test, Sunday, January 1, 2017
+                                  </span>
+                                </VisuallyHiddenText>
+                                <VisuallyHiddenText
+                                  id="name-label-00000000-0000-0000-0000-000000000000"
+                                  text="test-date-picker"
                                 >
                                   <span
                                     className="visually-hidden-text"
                                     id="name-label-00000000-0000-0000-0000-000000000000"
                                   >
-                                    Label Test, Sunday, January 1, 2017
+                                    test-date-picker
                                   </span>
                                 </VisuallyHiddenText>
                                 <VisuallyHiddenText
@@ -684,7 +693,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   dateFormatOrder="MDY"
                                   day={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                      aria-describedby="test-date-picker-error test-date-picker-help"
                                       aria-label="Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="date-input-day"
@@ -737,7 +746,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   }
                                   year={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                      aria-describedby="test-date-picker-error test-date-picker-help"
                                       aria-label="Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="date-input-year"
@@ -805,7 +814,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     /
                                   </span>
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                    aria-describedby="test-date-picker-error test-date-picker-help"
                                     aria-label="Terra.datePicker.dayLabel"
                                     aria-required={true}
                                     className="date-input-day"
@@ -826,7 +835,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     value="09"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                      aria-describedby="test-date-picker-error test-date-picker-help"
                                       aria-label="Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="form-input date-input-day"
@@ -850,7 +859,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     /
                                   </span>
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                    aria-describedby="test-date-picker-error test-date-picker-help"
                                     aria-label="Terra.datePicker.yearLabel"
                                     aria-required={true}
                                     className="date-input-year"
@@ -871,7 +880,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     value="2017"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-error test-date-picker-help"
+                                      aria-describedby="test-date-picker-error test-date-picker-help"
                                       aria-label="Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="form-input date-input-year"
@@ -1533,14 +1542,23 @@ exports[`should render a default DatePickerField component 1`] = `
                                   value="2017-01-01"
                                 />
                                 <VisuallyHiddenText
-                                  id="name-label-00000000-0000-0000-0000-000000000000"
                                   text="Label, Sunday, January 1, 2017"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Label, Sunday, January 1, 2017
+                                  </span>
+                                </VisuallyHiddenText>
+                                <VisuallyHiddenText
+                                  id="name-label-00000000-0000-0000-0000-000000000000"
+                                  text="test-date-picker"
                                 >
                                   <span
                                     className="visually-hidden-text"
                                     id="name-label-00000000-0000-0000-0000-000000000000"
                                   >
-                                    Label, Sunday, January 1, 2017
+                                    test-date-picker
                                   </span>
                                 </VisuallyHiddenText>
                                 <VisuallyHiddenText
@@ -1560,7 +1578,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   dateFormatOrder="MDY"
                                   day={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.dayLabel"
                                       aria-required={false}
                                       className="date-input-day"
@@ -1613,7 +1631,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   }
                                   year={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.yearLabel"
                                       aria-required={false}
                                       className="date-input-year"
@@ -1681,7 +1699,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     /
                                   </span>
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                    aria-describedby="test-date-picker-help"
                                     aria-label="Terra.datePicker.dayLabel"
                                     aria-required={false}
                                     className="date-input-day"
@@ -1702,7 +1720,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     value="01"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.dayLabel"
                                       aria-required={false}
                                       className="form-input date-input-day"
@@ -1726,7 +1744,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     /
                                   </span>
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                    aria-describedby="test-date-picker-help"
                                     aria-label="Terra.datePicker.yearLabel"
                                     aria-required={false}
                                     className="date-input-year"
@@ -1747,7 +1765,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     value="2017"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.yearLabel"
                                       aria-required={false}
                                       className="form-input date-input-year"
@@ -2517,14 +2535,23 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   value="2017-01-01"
                                 />
                                 <VisuallyHiddenText
-                                  id="name-label-00000000-0000-0000-0000-000000000000"
                                   text="Label Test, Sunday, January 1, 2017"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Label Test, Sunday, January 1, 2017
+                                  </span>
+                                </VisuallyHiddenText>
+                                <VisuallyHiddenText
+                                  id="name-label-00000000-0000-0000-0000-000000000000"
+                                  text="test-date-picker"
                                 >
                                   <span
                                     className="visually-hidden-text"
                                     id="name-label-00000000-0000-0000-0000-000000000000"
                                   >
-                                    Label Test, Sunday, January 1, 2017
+                                    test-date-picker
                                   </span>
                                 </VisuallyHiddenText>
                                 <VisuallyHiddenText
@@ -2544,7 +2571,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   dateFormatOrder="MDY"
                                   day={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="date-input-day"
@@ -2597,7 +2624,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   }
                                   year={
                                     <Input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="date-input-year"
@@ -2665,7 +2692,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     /
                                   </span>
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                    aria-describedby="test-date-picker-help"
                                     aria-label="Terra.datePicker.dayLabel"
                                     aria-required={true}
                                     className="date-input-day"
@@ -2686,7 +2713,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     value="01"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="form-input date-input-day"
@@ -2710,7 +2737,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     /
                                   </span>
                                   <Input
-                                    aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                    aria-describedby="test-date-picker-help"
                                     aria-label="Terra.datePicker.yearLabel"
                                     aria-required={true}
                                     className="date-input-year"
@@ -2731,7 +2758,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     value="2017"
                                   >
                                     <input
-                                      aria-describedby="name-label-00000000-0000-0000-0000-000000000000 test-date-picker-help"
+                                      aria-describedby="test-date-picker-help"
                                       aria-label="Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="form-input date-input-year"

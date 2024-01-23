@@ -355,14 +355,23 @@ exports[`correctly applies the theme context className 1`] = `
                             value="2017-01-01"
                           />
                           <VisuallyHiddenText
-                            id="name-label-00000000-0000-0000-0000-000000000000"
                             text="Terra.datePicker.date, Sunday, January 1, 2017"
+                          >
+                            <span
+                              className="visually-hidden-text"
+                            >
+                              Terra.datePicker.date, Sunday, January 1, 2017
+                            </span>
+                          </VisuallyHiddenText>
+                          <VisuallyHiddenText
+                            id="name-label-00000000-0000-0000-0000-000000000000"
+                            text="date-input"
                           >
                             <span
                               className="visually-hidden-text"
                               id="name-label-00000000-0000-0000-0000-000000000000"
                             >
-                              Terra.datePicker.date, Sunday, January 1, 2017
+                              date-input
                             </span>
                           </VisuallyHiddenText>
                           <VisuallyHiddenText
@@ -382,7 +391,7 @@ exports[`correctly applies the theme context className 1`] = `
                             dateFormatOrder="MDY"
                             day={
                               <Input
-                                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                                 aria-label="Terra.datePicker.dayLabel"
                                 aria-required={false}
                                 className="date-input-day"
@@ -435,7 +444,7 @@ exports[`correctly applies the theme context className 1`] = `
                             }
                             year={
                               <Input
-                                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                                 aria-label="Terra.datePicker.yearLabel"
                                 aria-required={false}
                                 className="date-input-year"
@@ -503,7 +512,7 @@ exports[`correctly applies the theme context className 1`] = `
                               /
                             </span>
                             <Input
-                              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.dayLabel"
                               aria-required={false}
                               className="date-input-day"
@@ -524,7 +533,7 @@ exports[`correctly applies the theme context className 1`] = `
                               value="01"
                             >
                               <input
-                                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                                 aria-label="Terra.datePicker.dayLabel"
                                 aria-required={false}
                                 className="form-input orion-fusion-theme date-input-day"
@@ -548,7 +557,7 @@ exports[`correctly applies the theme context className 1`] = `
                               /
                             </span>
                             <Input
-                              aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                               aria-label="Terra.datePicker.yearLabel"
                               aria-required={false}
                               className="date-input-year"
@@ -569,7 +578,7 @@ exports[`correctly applies the theme context className 1`] = `
                               value="2017"
                             >
                               <input
-                                aria-describedby="name-label-00000000-0000-0000-0000-000000000000 terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
                                 aria-label="Terra.datePicker.yearLabel"
                                 aria-required={false}
                                 className="form-input orion-fusion-theme date-input-year"
