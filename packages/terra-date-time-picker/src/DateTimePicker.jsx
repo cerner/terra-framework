@@ -60,10 +60,6 @@ const propTypes = {
   */
   isInvalidMeridiem: PropTypes.bool,
   /**
-   * The label of the form control children.
-   */
-  label: PropTypes.node,
-  /**
    * An ISO 8601 string representation of the maximum date that can be selected in the date picker. The value must be in the `YYYY-MM-DD` format. Must be on or before `12/31/2100`.
    * The time portion in this value is ignored because this is strictly used in the date picker.
    */
@@ -725,7 +721,6 @@ class DateTimePicker extends React.Component {
       isIncomplete,
       isInvalid,
       isInvalidMeridiem,
-      label,
       onBlur,
       onChange,
       onChangeRaw,
@@ -782,7 +777,6 @@ class DateTimePicker extends React.Component {
             inputAttributes={dateInputAttributes}
             maxDate={DateUtil.getMaxDate(maxDate)}
             minDate={DateUtil.getMinDate(minDate)}
-            ariaLabel={label}
             selectedDate={dateValue}
             value={dateValue}
             name="input"
@@ -813,7 +807,6 @@ class DateTimePicker extends React.Component {
             required={required}
             atMaxDate={atMaxDate}
             atMinDate={atMinDate}
-            a11yLabel={label}
           />
 
           {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}

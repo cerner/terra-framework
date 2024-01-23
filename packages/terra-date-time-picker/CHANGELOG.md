@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Fixed the spacing between datetimepicker and help/error text and added label for announcement in screen readers issue.
+  * Fixed the spacing between datetimepicker and help/error text issue.
 
 ## 4.102.0 - (January 2, 2024)
 

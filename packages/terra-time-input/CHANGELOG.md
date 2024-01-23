@@ -2,9 +2,6 @@
 
 ## Unreleased
 
-* Added
-  * Added the arialabel for minutes and seconds field.
-
 ## 4.60.0 - (January 2, 2024)
 
 * Changed

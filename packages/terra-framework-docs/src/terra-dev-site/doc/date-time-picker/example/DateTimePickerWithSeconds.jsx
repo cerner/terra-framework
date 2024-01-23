@@ -18,7 +18,6 @@ const DateTimePickerExampleDateWithSeconds = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="defaultDateTimeSeconds">
         <DateTimePicker
-          label="Enter Date/Time"
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'defaultDateTimeSeconds' }}
           onChange={handleDateTimeChange}

@@ -29,7 +29,6 @@ const DatePickerExampleDefault = () => {
       </p>
       <Field label="Enter Date" htmlFor="default">
         <DatePicker
-          ariaLabel="Enter Date"
           name="date-input"
           id="default"
           onChange={handleDateChange}
