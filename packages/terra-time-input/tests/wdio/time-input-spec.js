@@ -289,12 +289,14 @@ describe('Time Input onBlur operations', () => {
     it('clicks the hour input and onBlur is not triggered', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/focus-blur');
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('12');
       expect($('#blur-count').getText()).toEqual('0');
       expect($('#focus-count').getText()).toEqual('1');
     });
 
     it('tabs to the minute input and onBlur is not triggered', () => {
       browser.keys('ArrowRight');
+      browser.keys('12');
       expect($('#blur-count').getText()).toEqual('0');
       expect($('#focus-count').getText()).toEqual('1');
     });
@@ -310,6 +312,7 @@ describe('Time Input onBlur operations', () => {
       browser.keys('Tab'); // Tab out of the component.
       expect($('#blur-count').getText()).toEqual('1');
       expect($('#focus-count').getText()).toEqual('1');
+      expect($('#time-obj').getText()).toEqual('{"hour":"12","minute":"12","second":"","meridiem":"p.m."}');
     });
   });
 });

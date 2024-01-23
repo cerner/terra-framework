@@ -211,6 +211,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
       expect($('#ambiguous-date').getText()).toEqual('No');
       expect($('#complete-date').getText()).toEqual('Yes');
       expect($('#valid-date').getText()).toEqual('Yes');
+      expect($('#date-time').getText()).toEqual('{"date":"01","month":"05","year":"2019","hour":"10","minute":"10"}');
     });
   });
 
