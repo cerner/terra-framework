@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.96.0 - (January 22, 2024)
+
+* Changed
+  * Updated screen reader response not to announce name attribute.
+
 ## 4.95.0 - (December 18, 2023)
 
 * Changed
