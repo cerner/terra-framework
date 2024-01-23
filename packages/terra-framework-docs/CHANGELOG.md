@@ -5,6 +5,8 @@
 * Added
   * Added screen reader support to associate with error message.
 
+## 1.59.0 - (January 22, 2024)
+
 * Fixed
   * Fixed font size in `terra-theme-provider` examples.
 
