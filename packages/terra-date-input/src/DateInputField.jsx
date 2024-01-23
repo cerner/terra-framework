@@ -274,9 +274,7 @@ const DateInputField = (props) => {
         yearAttributes={{ ...yearAttributes, ...{ 'aria-describedby': yearAriaDescriptionIds } }}
         refCallback={refCallback}
         error={error}
-        customProps={{
-          'aria-describedby': errorAriaDescriptionId,
-        }}
+        aria-describedby={errorAriaDescriptionId}
       />
       {isInvalid && error && <div id={errorAriaDescriptionId} className={cx('error-text')}>{error}</div>}
       {/* It makes no sense for screen readers to hear the format or the help text in this position. */}

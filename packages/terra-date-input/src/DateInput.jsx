@@ -102,10 +102,6 @@ const propTypes = {
    * Custom input attributes to apply to the year input
    */
   yearAttributes: PropTypes.object,
-  /**
-   * Custom props to identify the error message node
-   */
-  customProps: PropTypes.Object,
 };
 
 const defaultProps = {
@@ -120,9 +116,6 @@ const defaultProps = {
   value: undefined,
   useExternalFormatMask: false,
   isA11yControlled: false,
-  customProps: {
-    'aria-describedby': null,
-  },
 };
 
 class DateInput extends React.Component {
@@ -578,7 +571,7 @@ class DateInput extends React.Component {
    * DateInput - even if there are other DateInputs in the same view.
    */
   monthRender() {
-    const { intl, a11yLabel, customProps } = this.props;
+    const { intl, a11yLabel, ...customProps } = this.props;
     let label;
 
     if (this.computedDisplayFormat() === 'month-day-year') {
@@ -662,7 +655,7 @@ class DateInput extends React.Component {
      * To work around this issue, the day input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
-    const { intl, a11yLabel } = this.props;
+    const { intl, a11yLabel, ...customProps } = this.props;
     let label;
 
     if (this.computedDisplayFormat() === 'day-month-year') {
@@ -702,7 +695,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        ariadescribedby={this.props.customProps['aria-describedby']}
+        ariadescribedby={customProps['aria-describedby']}
       />
     );
   }
@@ -718,6 +711,8 @@ class DateInput extends React.Component {
      * To work around this issue, the year input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
+    const { ...customProps } = this.props;
+
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
@@ -745,7 +740,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        ariadescribedby={this.props.customProps['aria-describedby']}
+        ariadescribedby={customProps['aria-describedby']}
       />
     );
   }

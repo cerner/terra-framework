@@ -40,11 +40,6 @@ exports[`DateInput correctly applies the theme context className 1`] = `
     value="2000-07-04"
   >
     <DateInput
-      customProps={
-        Object {
-          "aria-describedby": null,
-        }
-      }
       dayAttributes={Object {}}
       disabled={false}
       intl={
@@ -86,11 +81,6 @@ exports[`DateInput correctly applies the theme context className 1`] = `
       <div
         aria-label="Terra.date.input.labelDefault"
         className="date-input clinical-lowlight-theme"
-        customProps={
-          Object {
-            "aria-describedby": null,
-          }
-        }
         role="group"
       >
         <div
@@ -432,7 +422,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
   <div
     aria-label="Terra.date.input.labelDefault"
     class="date-input"
-    customprops="[object Object]"
     role="group"
   >
     <div
@@ -584,7 +573,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
   <div
     aria-label="Terra.date.input.labelDefault"
     class="date-input"
-    customprops="[object Object]"
     role="group"
   >
     <div
@@ -736,7 +724,6 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
   <div
     aria-label="Terra.date.input.labelDefault"
     class="date-input"
-    customprops="[object Object]"
     role="group"
   >
     <div
@@ -892,11 +879,6 @@ exports[`DateInput should render a date input with a default date 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
   className="date-input"
-  customProps={
-    Object {
-      "aria-describedby": null,
-    }
-  }
   role="group"
 >
   <div
@@ -1071,11 +1053,6 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
   className="date-input"
-  customProps={
-    Object {
-      "aria-describedby": null,
-    }
-  }
   inputAttributes={
     Object {
       "id": "terra-date-input",
@@ -1254,11 +1231,6 @@ exports[`DateInput should render a date input with onBlur 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
   className="date-input"
-  customProps={
-    Object {
-      "aria-describedby": null,
-    }
-  }
   role="group"
 >
   <div
@@ -1432,11 +1404,6 @@ exports[`DateInput should render a date input with onChange 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
   className="date-input"
-  customProps={
-    Object {
-      "aria-describedby": null,
-    }
-  }
   role="group"
 >
   <div
@@ -1610,11 +1577,6 @@ exports[`DateInput should render a date input with onFocus 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
   className="date-input"
-  customProps={
-    Object {
-      "aria-describedby": null,
-    }
-  }
   role="group"
 >
   <div
@@ -1788,11 +1750,6 @@ exports[`DateInput should render a default date input 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
   className="date-input"
-  customProps={
-    Object {
-      "aria-describedby": null,
-    }
-  }
   role="group"
 >
   <div
@@ -1966,11 +1923,6 @@ exports[`DateInput should render a disabled time input 1`] = `
 <div
   aria-label="Terra.date.input.labelDefault"
   className="disabled date-input"
-  customProps={
-    Object {
-      "aria-describedby": null,
-    }
-  }
   role="group"
 >
   <div
@@ -2243,11 +2195,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
         </legend>
         <InjectIntl(DateInput)
           a11yLabel="Legend text"
-          customProps={
-            Object {
-              "aria-describedby": "terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000",
-            }
-          }
+          aria-describedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
           dayAttributes={
             Object {
               "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
@@ -2275,11 +2223,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
         >
           <DateInput
             a11yLabel="Legend text"
-            customProps={
-              Object {
-                "aria-describedby": "terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000",
-              }
-            }
+            aria-describedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
             dayAttributes={
               Object {
                 "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
@@ -2335,12 +2279,8 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             }
           >
             <div
+              aria-describedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
               className="date-input clinical-lowlight-theme"
-              customProps={
-                Object {
-                  "aria-describedby": "terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000",
-                }
-              }
               error={null}
               role={null}
             >
