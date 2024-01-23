@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Updated default style set to cell from Height to Min-Height to support large text content.
+  * Replaced cell `height` property with `min-height` property to support large text content inside cell.
 
 ## 5.4.0 - (January 12, 2024)
 
