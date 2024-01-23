@@ -428,6 +428,12 @@ TimeUtil.inputType = {
   SECOND: 3,
 };
 
+TimeUtil.LastHour = '23';
+TimeUtil.LastMinute = '59';
+TimeUtil.LastSecond = '59';
+TimeUtil.SingleZeroDigit = '0';
+TimeUtil.DoubleZeroDigit = '00';
+
 TimeUtil.isConsideredMobileDevice = () => window.matchMedia('(max-width: 1024px)').matches
   && (
     'ontouchstart' in window
