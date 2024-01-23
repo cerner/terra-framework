@@ -1038,7 +1038,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "height": undefined,
+                                "min-height": undefined,
                               }
                             }
                           >
@@ -1130,7 +1130,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -1209,7 +1209,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -1293,7 +1293,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -1482,7 +1482,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "height": undefined,
+                                "min-height": undefined,
                               }
                             }
                           >
@@ -1573,7 +1573,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -1652,7 +1652,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -1732,7 +1732,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -1921,7 +1921,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "height": undefined,
+                                "min-height": undefined,
                               }
                             }
                           >
@@ -2012,7 +2012,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -2091,7 +2091,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -2171,7 +2171,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -2360,7 +2360,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "height": undefined,
+                                "min-height": undefined,
                               }
                             }
                           >
@@ -2451,7 +2451,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -2530,7 +2530,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
@@ -2609,7 +2609,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "height": "2.5rem",
+                            "min-height": "2.5rem",
                           }
                         }
                       >
