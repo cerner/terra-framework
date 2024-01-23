@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added screen reader support to associate with error message.
+  * Updated `date-input` examples to allow screen reader response for error message.
 
 ## 1.59.0 - (January 22, 2024)
 
