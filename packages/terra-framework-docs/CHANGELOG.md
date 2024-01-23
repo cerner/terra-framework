@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.59.0 - (January 22, 2024)
+
+* Fixed
+  * Fixed font size in `terra-theme-provider` examples.
+
+## 1.58.0 - (January 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.57.1 - (January 17, 2024)
 
 * Fixed
