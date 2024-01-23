@@ -695,7 +695,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        ariadescribedby={customProps['aria-describedby']}
+        ariaDescribedBy={customProps['aria-describedby']}
       />
     );
   }
@@ -740,7 +740,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
-        ariadescribedby={customProps['aria-describedby']}
+        ariaDescribedBy={customProps['aria-describedby']}
       />
     );
   }

@@ -118,7 +118,7 @@ exports[`correctly applies the theme context className 1`] = `
             value=""
           />
           <AccessibleInput
-            ariadescribedby={null}
+            ariaDescribedBy={null}
             className="time-input-hour"
             description="Terra.timeInput.hourDescriptionTwentyFour"
             disabled={false}
@@ -234,7 +234,7 @@ exports[`correctly applies the theme context className 1`] = `
             </TimeSpacer>
           </InjectIntl(TimeSpacer)>
           <AccessibleInput
-            ariadescribedby={null}
+            ariaDescribedBy={null}
             className="time-input-minute"
             description="Terra.timeInput.descriptionMinute"
             disabled={false}
@@ -352,7 +352,7 @@ exports[`should ignore invalid times properly 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -376,7 +376,7 @@ exports[`should ignore invalid times properly 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -430,7 +430,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour with-second"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -454,7 +454,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute with-second"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -478,7 +478,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-second"
       description="Terra.timeInput.descriptionSecond"
       disabled={false}
@@ -989,7 +989,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         value=""
       />
       <AccessibleInput
-        ariadescribedby={null}
+        ariaDescribedBy={null}
         className="time-input-hour"
         description="Terra.timeInput.hourDescriptionTwentyFour"
         disabled={false}
@@ -1105,7 +1105,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         </TimeSpacer>
       </InjectIntl(TimeSpacer)>
       <AccessibleInput
-        ariadescribedby={null}
+        ariaDescribedBy={null}
         className="time-input-minute"
         description="Terra.timeInput.descriptionMinute"
         disabled={false}
@@ -1221,7 +1221,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour with-second"
       description="Terra.timeInput.hourDescriptionTwelve"
       disabled={false}
@@ -1245,7 +1245,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute with-second"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -1269,7 +1269,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-second"
       description="Terra.timeInput.descriptionSecond"
       disabled={false}
@@ -1807,7 +1807,7 @@ exports[`should render a default time input 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -1831,7 +1831,7 @@ exports[`should render a default time input 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -1885,7 +1885,7 @@ exports[`should render a disabled time input 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={true}
@@ -1909,7 +1909,7 @@ exports[`should render a disabled time input 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={true}
@@ -1963,7 +1963,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwelve"
       disabled={false}
@@ -1987,7 +1987,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2070,7 +2070,7 @@ exports[`should render a time input with a default time 1`] = `
       value="T10:45"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2094,7 +2094,7 @@ exports[`should render a time input with a default time 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2148,7 +2148,7 @@ exports[`should render a time input with custom attributes 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2173,7 +2173,7 @@ exports[`should render a time input with custom attributes 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2228,7 +2228,7 @@ exports[`should render a time input with onBlur 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2252,7 +2252,7 @@ exports[`should render a time input with onBlur 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2306,7 +2306,7 @@ exports[`should render a time input with onChange 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2330,7 +2330,7 @@ exports[`should render a time input with onChange 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2384,7 +2384,7 @@ exports[`should render a time input with onFocus 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2408,7 +2408,7 @@ exports[`should render a time input with onFocus 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2462,7 +2462,7 @@ exports[`should render a time input with seconds input 1`] = `
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour with-second"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2486,7 +2486,7 @@ exports[`should render a time input with seconds input 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute with-second"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2510,7 +2510,7 @@ exports[`should render a time input with seconds input 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-second"
       description="Terra.timeInput.descriptionSecond"
       disabled={false}
@@ -2565,7 +2565,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       value="T12:12:12"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour with-second"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2589,7 +2589,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute with-second"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2613,7 +2613,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-second"
       description="Terra.timeInput.descriptionSecond"
       disabled={false}
@@ -2667,7 +2667,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       value=""
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-hour with-second"
       description="Terra.timeInput.hourDescriptionTwentyFour"
       disabled={false}
@@ -2692,7 +2692,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-minute with-second"
       description="Terra.timeInput.descriptionMinute"
       disabled={false}
@@ -2717,7 +2717,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       className="time-spacer"
     />
     <AccessibleInput
-      ariadescribedby={null}
+      ariaDescribedBy={null}
       className="time-input-second"
       description="Terra.timeInput.descriptionSecond"
       disabled={false}

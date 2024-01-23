@@ -27,13 +27,13 @@ const propTypes = {
   /**
    * String that labels the error message for screen readers.
    */
-  ariadescribedby: PropTypes.string,
+  ariaDescribedBy: PropTypes.string,
 };
 
 const defaultProps = {
   isInvalid: false,
   showIsInvalid: false,
-  ariadescribedby: null,
+  ariaDescribedBy: null,
 };
 
 /**
@@ -58,7 +58,7 @@ function AccessibleInput(props) {
     disabled,
     isInvalid,
     showIsInvalid,
-    ariadescribedby,
+    ariaDescribedBy,
     ...inputProps
   } = props;
 
@@ -87,7 +87,7 @@ function AccessibleInput(props) {
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
         aria-label={value ? undefined : label}
-        aria-describedby={ariadescribedby ? `${descriptionId} ${ariadescribedby}` : `${descriptionId}`}
+        aria-describedby={ariaDescribedBy ? `${descriptionId} ${ariaDescribedBy}` : `${descriptionId}`}
       />
       <VisuallyHiddenText id={descriptionId} text={description} />
     </>
