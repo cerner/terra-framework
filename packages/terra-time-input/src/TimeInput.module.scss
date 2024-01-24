@@ -72,6 +72,7 @@
       border-color: var(--terra-time-input-border-color, #dedfe0);
       color: var(--terra-time-input-focus-color, #1c1f21);
       outline: var(--terra-time-input-outline, 2px dashed #000);
+      box-shadow: var(--terra-time-input-focus-box-shadow, none);
 
       .time-input-hour,
       .time-input-minute,
@@ -267,6 +268,7 @@
         border-color: var(--terra-time-input-meridiem-button-focus-border-color, #52585b);
         box-shadow: none;
         outline: var(--terra-time-input-meridiem-button-focus-border-outline, 2px dashed #000);
+        box-shadow: var(--terra-time-input-focus-box-shadow, none);
         z-index: 1;
       }
 
