@@ -2,8 +2,19 @@
 
 ## Unreleased
 
+* Added
+  * Updated `date-input` examples to allow screen reader response for error message.
+
+* Changed
+  * Updated `terra-table` test example to support large text data.
+
 * Fixed
   * Fixed label value when we have 12 hours time format in `terra-time-input` examples.
+
+## 1.59.0 - (January 22, 2024)
+
+* Fixed
+  * Fixed font size in `terra-theme-provider` examples.
 
 ## 1.58.0 - (January 18, 2024)
 
