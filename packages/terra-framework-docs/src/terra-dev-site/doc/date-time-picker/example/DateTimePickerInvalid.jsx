@@ -31,5 +31,4 @@ const DateTimePickerExampleInvalid = () => {
     </div>
   );
 };
-
 export default DateTimePickerExampleInvalid;
