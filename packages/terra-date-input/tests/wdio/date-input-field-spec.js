@@ -460,4 +460,10 @@ Terra.describeViewports('Date Input Field', ['medium'], () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-input/multiple-date-input-field');
     Terra.validates.element('multiple');
   });
+
+  it('should display error message', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/date-input/default-date-input-field');
+    $('[data-terra-test-content] button').click();
+    Terra.validates.element('error message');
+  });
 });

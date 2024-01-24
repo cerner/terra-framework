@@ -27,5 +27,5 @@
   "Terra.date.input.yearDescription": "Ett fyrsiffrigt tal",
   "Terra.date.input.yearLabel": "år",
   "Terra.date.input.dateFormatLabel": "Datumformat:",
-  "Terra.date.input.hotKey": "Tryck på T för att ange aktuellt datum, plus-tangenten för nästa datum och minus-tangenten för föregående datum"
+  "Terra.date.input.hotKey": "Tryck på T för att ange aktuellt datum, plus-tangenten för nästa datum och minus-tangenten för föregående datum."
 }
