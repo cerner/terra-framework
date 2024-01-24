@@ -5,6 +5,12 @@
 
 ## Unreleased
 
+* Added
+  * Updated `date-input` examples to allow screen reader response for error message.
+
+* Changed
+  * Updated `terra-table` test example to support large text data.
+
 ## 1.59.0 - (January 22, 2024)
 
 * Fixed

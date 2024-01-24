@@ -4,6 +4,8 @@
 
 * Changed
   * Added metadata as argument for onBlur callback.
+* Fixed
+  * Fixed minor formatting mistake.
 
 ## 4.60.0 - (January 2, 2024)
 
