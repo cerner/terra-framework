@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added the `terra-date-time-picker-field` component.
+
 ## 4.103.0 - (January 22, 2024)
 
 * Changed

@@ -3,6 +3,9 @@
 ## Unreleased
 
 * Added
+  * Added example for `terra-date-time-picker-field`.
+
+* Added
   * Updated `date-input` examples to allow screen reader response for error message.
 
 * Changed
