@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Replaced cell `height` property with `min-height` property to support large text content inside cell.
+
 ## 5.4.0 - (January 12, 2024)
 
 * Added

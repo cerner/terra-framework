@@ -72,7 +72,7 @@ exports[`Cell renders a pinned cell 1`] = `
         className="cell-content"
         style={
           Object {
-            "height": "50px",
+            "min-height": "50px",
           }
         }
       >
@@ -101,7 +101,7 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
@@ -131,7 +131,7 @@ exports[`Cell verifies that a cell has renders that masked label text, when prov
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
@@ -161,7 +161,7 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
@@ -252,7 +252,7 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
           className="cell-content"
           style={
             Object {
-              "height": undefined,
+              "min-height": undefined,
             }
           }
         >
@@ -355,7 +355,7 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
           className="cell-content"
           style={
             Object {
-              "height": undefined,
+              "min-height": undefined,
             }
           }
         >
@@ -385,7 +385,7 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
@@ -410,7 +410,7 @@ exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] =
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
@@ -435,7 +435,7 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
@@ -463,7 +463,7 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
     className="cell-content"
     style={
       Object {
-        "height": "50px",
+        "min-height": "50px",
       }
     }
   >
@@ -488,7 +488,7 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
@@ -517,7 +517,7 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "min-height": undefined,
       }
     }
   >
