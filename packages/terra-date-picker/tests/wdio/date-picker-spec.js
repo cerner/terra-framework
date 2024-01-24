@@ -786,13 +786,13 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
         });
 
-        it('sets Date to yesterday on month input', () => {
+        it('sets month to last month on month input', () => {
           Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('-');
 
           const yesterday = new Date();
-          yesterday.setDate(yesterday.getDate() - 1);
+          yesterday.setDate(yesterday.getMonth() - 1);
           expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
@@ -806,13 +806,13 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
-        it('sets Date to yesterday if on year input', () => {
+        it('sets year to last year if on year input', () => {
           Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('-');
 
           const yesterday = new Date();
-          yesterday.setDate(yesterday.getDate() - 1);
+          yesterday.setDate(yesterday.getFullYear() - 1);
           expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
       });
@@ -822,7 +822,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
         });
 
-        it('sets Date to yesterday on month input', () => {
+        it('sets month to last month on month input', () => {
           Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('06');
@@ -830,7 +830,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.keys('-');
 
           const yesterday = new Date();
-          yesterday.setDate(yesterday.getDate() - 1);
+          yesterday.setDate(yesterday.getMonth() - 1);
           expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
@@ -846,7 +846,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
 
-        it('sets Date to yesterday if on year input', () => {
+        it('sets year to last year if on year input', () => {
           Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('2005');
@@ -854,7 +854,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.keys('-');
 
           const yesterday = new Date();
-          yesterday.setDate(yesterday.getDate() - 1);
+          yesterday.setDate(yesterday.getFullYear() - 1);
           expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
         });
       });
@@ -864,12 +864,12 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-start-date');
         });
 
-        it('sets Date to valid date minus 1 day if pressed in month', () => {
+        it('sets Date to valid date minus 1 month if pressed in month', () => {
           Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('-');
 
-          expect($('input')).toHaveValue('2017-03-31');
+          expect($('input')).toHaveValue('2017-03-01');
         });
 
         it('sets Date to valid date minus 1 day if pressed in day', () => {
@@ -880,12 +880,12 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue('2017-03-31');
         });
 
-        it('sets Date to valid date minus 1 day if pressed in year', () => {
+        it('sets Date to valid date minus 1 year if pressed in year', () => {
           Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('-');
 
-          expect($('input')).toHaveValue('2017-03-31');
+          expect($('input')).toHaveValue('2016-04-01');
         });
       });
 
@@ -909,13 +909,13 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
         });
 
-        it('sets Date to tomorrow on month input', () => {
+        it('sets month to next month on month input', () => {
           Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('=');
 
           const tomorrow = new Date();
-          tomorrow.setDate(tomorrow.getDate() + 1);
+          tomorrow.setDate(tomorrow.getMonth() + 1);
           expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
@@ -929,13 +929,13 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
-        it('sets Date to tomorrow if on year input', () => {
+        it('sets year to last year if on year input', () => {
           Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('=');
 
           const tomorrow = new Date();
-          tomorrow.setDate(tomorrow.getDate() + 1);
+          tomorrow.setDate(tomorrow.getFullYear() + 1);
           expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
       });
@@ -945,7 +945,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
         });
 
-        it('sets Date to tomorrow on month input', () => {
+        it('sets month to next month on month input', () => {
           Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('06');
@@ -953,7 +953,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.keys('=');
 
           const tomorrow = new Date();
-          tomorrow.setDate(tomorrow.getDate() + 1);
+          tomorrow.setDate(tomorrow.getMonth() + 1);
           expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
@@ -969,7 +969,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
-        it('sets Date to tomorrow if on year input', () => {
+        it('sets yesr to last year if on year input', () => {
           Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('2005');
@@ -977,7 +977,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.keys('=');
 
           const tomorrow = new Date();
-          tomorrow.setDate(tomorrow.getDate() + 1);
+          tomorrow.setDate(tomorrow.getFullYear() + 1);
           expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
       });
@@ -987,12 +987,12 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-start-date');
         });
 
-        it('sets Date to valid date plus 1 day if pressed in month', () => {
+        it('sets Date to valid date plus 1 month if pressed in month', () => {
           Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
           $('input[name="terra-date-month-date-input"]').click();
           browser.keys('=');
 
-          expect($('input')).toHaveValue('2017-04-02');
+          expect($('input')).toHaveValue('2017-05-01');
         });
 
         it('sets Date to valid date plus 1 day if pressed in day', () => {
@@ -1003,12 +1003,12 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue('2017-04-02');
         });
 
-        it('sets Date to valid date plus 1 day if pressed in year', () => {
+        it('sets Date to valid date plus 1 year if pressed in year', () => {
           Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('=');
 
-          expect($('input')).toHaveValue('2017-04-02');
+          expect($('input')).toHaveValue('2018-04-01');
         });
       });
 
