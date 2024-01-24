@@ -190,20 +190,6 @@ const ModalContent = forwardRef((props, ref) => {
       </div>
     </div>
   );
-
-  if (isCalledFromNotificationDialog) {
-    return (
-      <>
-        <ModalOverlay
-          onClick={closeOnOutsideClick ? onRequestClose : null}
-          className={classNameOverlay}
-          zIndex={zIndexLayer}
-        />
-        {modalContent}
-      </>
-    );
-  }
-
   return (
     <>
       <ModalOverlay
