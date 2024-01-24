@@ -139,7 +139,6 @@ class DateInput extends React.Component {
 
     this.uuid = uuidv4();
     this.hotKeyInstructionId = `${this.uuid}-hotkeyinstruction`;
-
     this.dateInputContainer = React.createRef();
     this.monthRef = React.createRef();
 
@@ -572,7 +571,7 @@ class DateInput extends React.Component {
    * DateInput - even if there are other DateInputs in the same view.
    */
   monthRender() {
-    const { intl, a11yLabel } = this.props;
+    const { intl, a11yLabel, ...customProps } = this.props;
     let label;
 
     if (this.computedDisplayFormat() === 'month-day-year') {
@@ -620,7 +619,7 @@ class DateInput extends React.Component {
           aria-disabled={this.props.disabled}
           aria-invalid={this.props.isInvalid}
           aria-required={this.props.required}
-          aria-describedby={this.hotKeyInstructionId}
+          aria-describedby={(customProps['aria-describedby']) ? `${this.hotKeyInstructionId} ${customProps['aria-describedby']}` : this.hotKeyInstructionId}
         >
           <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -656,7 +655,7 @@ class DateInput extends React.Component {
      * To work around this issue, the day input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
-    const { intl, a11yLabel } = this.props;
+    const { intl, a11yLabel, ...customProps } = this.props;
     let label;
 
     if (this.computedDisplayFormat() === 'day-month-year') {
@@ -696,6 +695,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        ariaDescribedBy={customProps['aria-describedby']}
       />
     );
   }
@@ -711,6 +711,8 @@ class DateInput extends React.Component {
      * To work around this issue, the year input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
+    const { ...customProps } = this.props;
+
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
@@ -738,6 +740,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        ariaDescribedBy={customProps['aria-describedby']}
       />
     );
   }
