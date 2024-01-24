@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Input from 'terra-form-input';
 import { v4 as uuidv4 } from 'uuid';
+import TimeUtil from './TimeUtil';
 
 const propTypes = {
   /**
@@ -65,7 +66,6 @@ function AccessibleInput(props) {
   const uuid = uuidv4();
   const labelId = `${uuid}-label`;
   const descriptionId = `${uuid}-description`;
-
   return (
     <>
       {value && <VisuallyHiddenText text={label} id={labelId} />}
@@ -89,7 +89,7 @@ function AccessibleInput(props) {
         aria-label={value ? undefined : label}
         aria-describedby={ariaDescribedBy ? `${descriptionId} ${ariaDescribedBy}` : `${descriptionId}`}
       />
-      <VisuallyHiddenText id={descriptionId} text={description} />
+      <VisuallyHiddenText aria-live={TimeUtil.isMac() ? 'polite' : 'off'} id={descriptionId} text={description} />
     </>
   );
 }

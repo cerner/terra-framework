@@ -3,7 +3,12 @@
 ## Unreleased
 
 * Fixed
+  * Fixed time input to change the focused input field instead of the minute input while pressing `+`, `-` keys.
   * Fixed minor formatting mistake.
+
+* Added
+  * Added visual focus dashed border for `terra-time-input`.
+  * Updated screen reader response to announce hot keys suggestions.
 
 ## 4.60.0 - (January 2, 2024)
 
