@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.70.0 - (January 22, 2024)
+
 * Added
   * Redwood theme styling.
 
