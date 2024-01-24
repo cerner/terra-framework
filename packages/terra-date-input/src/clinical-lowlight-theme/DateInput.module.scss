@@ -25,6 +25,8 @@
     --terra-date-input-date-input-day-max-width: 2.5rem;
     --terra-date-input-date-input-year-max-width: 3.8rem;
     --terra-date-input-gutters-margin-right: 0.3571rem;
+    --terra-date-input-day-focus-outline: 2px dashed #fff;
+    --terra-date-input-year-focus-outline: 2px dashed #fff;
 
     // Month Select Placeholder Text
     --terra-date-input-month-select-placeholder-color: #6f7477;
@@ -34,7 +36,7 @@
     --terra-date-input-month-focus-background-color: #222a2e;
     --terra-date-input-month-focus-ltr-box-shadow: none;
     --terra-date-input-month-focus-rtl-box-shadow: none;
-    --terra-date-input-month-select-focus-border: 1px solid #004c76;
+    --terra-date-input-month-select-focus-outline: 2px dashed #fff;
     --terra-date-input-month-select-focus-color: #b2b5b6;
     --terra-date-input-month-focus-background-size: auto;
 
@@ -70,7 +72,7 @@
 
     // Month Select Error - Focus
     --terra-date-input-month-error-focus-background-color: #222a2e;
-    --terra-date-input-month-select-error-focus-border: 1px solid #004c76;
+    --terra-date-input-month-select-error-focus-outline: 2px dashed #fff;
     --terra-date-input-month-error-focus-background-size: auto;
 
     // Month Select Error - Disabled
