@@ -21,7 +21,7 @@ describe('Compact Interactive List', () => {
         id: 'Column-0',
         displayName: 'Col_1',
         width: '40px',
-        minimunWidth: '20px',
+        minimumWidth: '20px',
       },
       {
         id: 'Column-1',
