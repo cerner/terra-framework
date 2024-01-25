@@ -9,9 +9,9 @@ import ResponsiveColumns from './ResponsiveColumns?dev-site-examples';
 * The **[Compact Interactive List](/components/cerner-terra-framework-docs/compact-interactive-list/about)** component consists of a grid of semantic rows (items) arranged into visual columns and visual rows.
   Each semantic row has a border, which visually separates it from the other rows in the list.
 * The rows are divided into semantic columns, which do not have visual separators, but provide data alignment and allow [**keyboard navigation**](/components/cerner-terra-framework-docs/compact-interactive-list/about#keyboard-interactions). 
-  The **[columns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-properties-table) property** provides the rules for semantic columns structure. 
+  The **[columns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-properties-table) property** provides the rules for semantic column structure. 
 * The **[cells](/components/cerner-terra-framework-docs/compact-interactive-list/about#row) property** provides the row content. 
-  The number of cells in a row must be exactly the same, as the number of elements in **[columns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-properties-table) array**. 
+  The number of cells in a row must be exactly the same as the number of elements in **[columns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-properties-table) array**. 
   If a cell is supposed to be empty, the **[content](/components/cerner-terra-framework-docs/compact-interactive-list/about#row) property** must be an empty string.
 
 ### Creating Basic Compact Interactive List
@@ -19,15 +19,15 @@ import ResponsiveColumns from './ResponsiveColumns?dev-site-examples';
 #### Basic Columns Property Example
 
 * Break row data into semantic columns in a meaningful way. Each semantic column should have as few elements as possible. 
-  In the example below, the data is split in following columns: `Icon`, `Service Name`, and `Featured`.
+  In the example below, the data is split into following columns: `Icon`, `Service Name`, and `Featured`.
 * Provide unique **[id](/components/cerner-terra-framework-docs/compact-interactive-list/about#column)**
   and meaningful **[displayName](/components/cerner-terra-framework-docs/compact-interactive-list/about#column)**
-  to all semantic columns. The column headers are hidden, but they will be used by assistive technologies, like screen readers, to provide column context.
+  to all semantic columns. The column headers are hidden, but they are used by assistive technologies, like screen readers, to provide column context.
 * Provide meaningful, identifying row headers. Assistive technologies use these to provide context as a user navigates through rows.
 
 <Notice variant="important" ariaLevel="3">
 
-**Tips to creating meaningful row headers:**
+**Tips for creating meaningful row headers:**
 
 * Select the semantic column that contains unique information (such as name or title), and set the **[rowHeaderIndex](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-properties-table) property** to the index of that column.
 * Avoid using generic information or interactive elements in cells that are row headers.
@@ -45,8 +45,8 @@ const cols = [
   },
   {
     id: 'Column-1',
-    displayName: 'Service name', // this column info will be announced as a row header
-    // omitting width property will allow the semanic column to flex grow/shrink
+    displayName: 'Service name', // this column info is announced as a row header
+    // omitting width property allows the semanic column to flex and grow or shrink
   },
   {
     id: 'Column-2',
@@ -77,7 +77,7 @@ const rows = [
 
 #### Basic Compact Interactive List Example
 
-This example demonstrates a basic Compact Interactive List component that consists of 5 semantic rows, organized in 3 semantic columns, where the `Service Name` column is a row header.
+This example demonstrates a basic Compact Interactive List component that consists of five semantic rows, organized into three semantic columns, where the `Service Name` column is a row header.
 
 ``` js
 const DefaultCompactInteractiveList = () => (
@@ -98,7 +98,7 @@ const DefaultCompactInteractiveList = () => (
 To save space and facilitate faster keyboard navigation, the rows can be organized in visual columns with **[numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-properties-table) 
 property** set to a number. Visual columns (unlike semantic columns), have visual borders at row ends.
 
-This example demonstrates the same Compact Interactive List component as above (5 semantic rows organised in 3 semantic columns), but this time the rows are split in 2 visual columns.
+This example demonstrates the same Compact Interactive List component as above (five semantic rows organized into three semantic columns), but this time the rows are split into two visual columns.
 
 ``` js
 const DefaultCompactInteractiveList = () => (
