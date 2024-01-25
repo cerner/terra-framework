@@ -77,6 +77,7 @@ const propTypes = {
   /**
    * A callback function to execute when the entire time input component loses focus.
    * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
+   * The first parameter is the event object and the second is a metaData object.
    */
   onBlur: PropTypes.func,
   /**
@@ -344,10 +345,19 @@ class TimeInput extends React.Component {
       // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
       // IE 11 sets document.activeElement to the next focused element before the blur event is called.
       const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
+      const {
+        hour, minute, second, meridiem,
+      } = this.state;
+      const metaData = {
+        hour,
+        minute,
+        second,
+        meridiem,
+      };
 
       // Handle blur only if focus has moved out of the entire time input component.
       if (!this.timeInputContainer.current.contains(activeTarget)) {
-        this.props.onBlur(event);
+        this.props.onBlur(event, metaData);
       }
     }
   }

@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.59.0",
+  "version": "1.61.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "main": "index.js",
   "publishConfig": {
@@ -42,12 +42,12 @@
     "terra-brand-footer": "^3.12.0",
     "terra-button": "^3.3.0",
     "terra-collapsible-menu-view": "^6.88.0",
-    "terra-compact-interactive-list": "^1.1.0",
+    "terra-compact-interactive-list": "^1.1.1",
     "terra-content-container": "^3.0.0",
     "terra-data-grid": "^1.11.0",
-    "terra-date-input": "^1.49.0",
-    "terra-date-picker": "^4.96.0",
-    "terra-date-time-picker": "^4.103.0",
+    "terra-date-input": "^1.50.0",
+    "terra-date-picker": "^4.97.0",
+    "terra-date-time-picker": "^4.104.0",
     "terra-disclosure-manager": "^4.43.0",
     "terra-embedded-content-consumer": "^3.43.0",
     "terra-file-path": "^1.5.0",
@@ -80,7 +80,7 @@
     "terra-text": "^4.49.0",
     "terra-theme-context": "^1.9.0",
     "terra-theme-provider": "^4.16.0",
-    "terra-time-input": "^4.60.0",
+    "terra-time-input": "^4.61.0",
     "terra-toolbar": "^1.27.0"
   }
 }

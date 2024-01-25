@@ -50,7 +50,7 @@ export const converseColumnTypes = (columns, defaultType) => {
   }
 
   if (!unitType) {
-    return [[columns], defaultType];
+    return [[...columns], defaultType];
   }
 
   const newColumns = columns.map(column => {

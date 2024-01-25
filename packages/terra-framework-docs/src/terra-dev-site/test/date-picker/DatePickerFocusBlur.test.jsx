@@ -15,6 +15,7 @@ const DatePickerFocusBlur = () => {
   const [inputValue, setInputValue] = useState('');
   const [isCompleteValue, setIsCompleteValue] = useState('No');
   const [isValidValue, setIsValidValue] = useState('Yes');
+  const [dateObj, setDateObj] = useState({});
 
   const handleBlur = (event, options) => {
     blurCount += 1;
@@ -23,6 +24,12 @@ const DatePickerFocusBlur = () => {
     setInputValue(options.inputValue);
     setIsCompleteValue(options.isCompleteValue ? 'Yes' : 'No');
     setIsValidValue(options.isValidValue ? 'Yes' : 'No');
+    const dateVal = {
+      Date: options.DD,
+      Month: options.MM,
+      Year: options.YYYY,
+    };
+    setDateObj(dateVal);
   };
 
   const handleFocus = () => {
@@ -61,6 +68,11 @@ const DatePickerFocusBlur = () => {
         Is Date Valid?
         {' '}
         <span id="valid-date">{isValidValue}</span>
+        <br />
+        <br />
+        Date Object
+        {' '}
+        <span id="date-obj">{JSON.stringify(dateObj)}</span>
       </h3>
       <DatePicker
         name="date-input-onblur"
