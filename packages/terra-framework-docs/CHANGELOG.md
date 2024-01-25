@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added the 'aria-label' attribute to announce the label information for the 'Flowsheet-Data Grid'.
+
+
 ## 1.60.0 - (January 25, 2024)
 
 * Added
