@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.1.1 - (January 25, 2024)
+
+* Fixed
+  * Fixed cell select error caused due to incorrect array concat.
+
 ## 1.1.0 - (January 18, 2024)
 
 * Added

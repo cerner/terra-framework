@@ -5,6 +5,11 @@
 * Added
   * Added detailed documentation for creating a basic `compact-interactive-list` component.
 
+## 1.61.0 - (January 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.60.0 - (January 25, 2024)
 
 * Added
