@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.50.0 - (January 25, 2024)
+
 * Added
   * Added black dashed border when input gets focused.
   * Added screen reader support for error messages.
