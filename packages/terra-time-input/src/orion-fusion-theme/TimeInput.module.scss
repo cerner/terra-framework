@@ -1,6 +1,6 @@
 :local {
   .orion-fusion-theme {
-    /* -------------------------------------------------------------------- 
+    /* --------------------------------------------------------------------
     * Values for all versions
     * -------------------------------------------------------------------- */
     // Default
@@ -39,6 +39,9 @@
     --terra-time-input-focus-ltr-box-shadow: 0 0 8px #a6d9f4;
     --terra-time-input-focus-rtl-box-shadow: 0 0 8px #a6d9f4;
     --terra-time-input-focus-color: #1c1f21;
+    --terra-time-input-outline: none;
+    --terra-time-input-focus-box-shadow: 0 0 0 1px rgba(76, 178, 233, 0.5), 0 0 4px 3px rgba(76, 178, 233, 0.35);
+    --terra-time-input-meridiem-button-focus-border-outline: none;
     --terra-time-input-focus-opacity: 1;
 
     // Meridiem Button
@@ -53,6 +56,7 @@
     --terra-time-input-meridiem-button-padding-top: 0.25rem;
     --terra-time-input-meridiem-button-selected-background-color: #595f62;
     --terra-time-input-meridiem-button-selected-border-color: #6f7477;
+    --terra-time-input-meridiem-button-focus-border-color: #595f62;
     --terra-time-input-meridiem-button-selected-color: #fff;
     --terra-time-input-meridiem-button-selected-hover-background-color: #595f62;
     --terra-time-input-meridiem-button-selected-hover-border-color: #6f7477;
@@ -63,7 +67,7 @@
     --terra-time-input-disabled-border: 1px solid #b2b5b6;
     --terra-time-input-disabled-color: #9b9fa1;
     --terra-time-input-disabled-opacity: 1;
-    
+
     // Invalid
     --terra-time-input-invalid-background-color: #fff;
     --terra-time-input-invalid-border: 1px solid #dedfe0;
@@ -95,7 +99,7 @@
     --terra-time-input-incomplete-disabled-color: #9b9fa1;
     --terra-time-input-incomplete-disabled-opacity: 1;
 
-    /* -------------------------------------------------------------------- 
+    /* --------------------------------------------------------------------
     * Values for 4.15.0 and after
     * -------------------------------------------------------------------- */
     // Default - Hover

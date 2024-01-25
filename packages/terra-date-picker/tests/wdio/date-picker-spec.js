@@ -204,6 +204,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       expect($('#input-value').getText()).toEqual('05/01/2019');
       expect($('#complete-date').getText()).toEqual('Yes');
       expect($('#valid-date').getText()).toEqual('Yes');
+      expect($('#date-obj').getText()).toEqual('{"Date":"01","Month":"05","Year":"2019"}');
     });
   });
 

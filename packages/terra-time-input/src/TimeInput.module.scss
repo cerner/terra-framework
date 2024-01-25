@@ -69,15 +69,10 @@
       @include focus-styles;
       background-color: var(--terra-time-input-focus-background-color, #fff);
       background-size: var(--terra-time-input-focus-background-size, 0 0);
+      border-color: var(--terra-time-input-border-color, #dedfe0);
       color: var(--terra-time-input-focus-color, #1c1f21);
-
-      [dir=ltr] & {
-        box-shadow: var(--terra-time-input-focus-ltr-box-shadow, 0 0 8px #a6d9f4);
-      }
-
-      [dir=rtl] & {
-        box-shadow: var(--terra-time-input-focus-rtl-box-shadow, 0 0 8px #a6d9f4);
-      }
+      outline: var(--terra-time-input-outline, 2px dashed #000);
+      box-shadow: var(--terra-time-input-focus-box-shadow, none);
 
       .time-input-hour,
       .time-input-minute,
@@ -99,13 +94,16 @@
       background-color: var(--terra-time-input-invalid-background-color, #fff);
       border: var(--terra-time-input-invalid-border, 1px solid #e50000);
       box-shadow: var(--terra-time-input-invalid-box-shadow, 0 0 0 1px #e50000);
+      outline: none;
 
       &:hover {
         border: var(--terra-time-input-invalid-hover-border, 1px solid #e50000);
       }
 
-      &:focus {
+      &.is-focused {
         border: var(--terra-time-input-invalid-focus-border, 1px solid #e50000);
+        box-shadow: var(--terra-time-input-invalid-focus-box-shadow, 0 0 0 1px #e50000, 0 0 4px 3px rgba(229, 0, 0, 0.35));
+        outline: none;
       }
 
       &.disabled {
@@ -257,7 +255,6 @@
       font-size: var(--terra-time-input-meridiem-button-font-size, 1rem);
       height: var(--terra-time-input-meridiem-button-height, 2.1428571429rem);
       line-height: var(--terra-time-input-meridiem-button-line-height, 1);
-      outline: none;
       padding-bottom: var(--terra-time-input-meridiem-button-padding-bottom, 0.286rem);
       padding-top: var(--terra-time-input-meridiem-button-padding-top, 0.286rem);
 
@@ -265,6 +262,14 @@
         background-color: var(--terra-time-input-meridiem-button-hover-background-color, #b9bbbc);
         border-color: var(--terra-time-input-meridiem-button-hover-border-color, #c8cacb);
         color: var(--terra-time-input-meridiem-button-hover-color, #000);
+      }
+
+      &:focus {
+        border-color: var(--terra-time-input-meridiem-button-focus-border-color, #52585b);
+        box-shadow: none;
+        outline: var(--terra-time-input-meridiem-button-focus-border-outline, 2px dashed #000);
+        box-shadow: var(--terra-time-input-focus-box-shadow, none);
+        z-index: 1;
       }
 
       &[aria-checked='true'] {

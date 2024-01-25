@@ -289,12 +289,14 @@ describe('Time Input onBlur operations', () => {
     it('clicks the hour input and onBlur is not triggered', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/focus-blur');
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('12');
       expect($('#blur-count').getText()).toEqual('0');
       expect($('#focus-count').getText()).toEqual('1');
     });
 
     it('tabs to the minute input and onBlur is not triggered', () => {
       browser.keys('ArrowRight');
+      browser.keys('12');
       expect($('#blur-count').getText()).toEqual('0');
       expect($('#focus-count').getText()).toEqual('1');
     });
@@ -310,6 +312,7 @@ describe('Time Input onBlur operations', () => {
       browser.keys('Tab'); // Tab out of the component.
       expect($('#blur-count').getText()).toEqual('1');
       expect($('#focus-count').getText()).toEqual('1');
+      expect($('#time-obj').getText()).toEqual('{"hour":"12","minute":"12","second":"","meridiem":"p.m."}');
     });
   });
 });
@@ -576,6 +579,10 @@ describe('Time Input shortcut key operations', () => {
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minuteInRange = (minuteValue === minuteTimeValue - 1 || minuteValue === minuteTimeValue);
+        expect(minuteInRange).toBe(true);
       });
 
       it('should set time to current time minus one minute if partially filled', () => {
@@ -651,7 +658,7 @@ describe('Time Input shortcut key operations', () => {
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
         const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
         const secondsTimeValue = Number(timevalue[1]);
-        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        const secondsInRange = (secondsTimeValue === secondsValue - 1 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
 
@@ -671,7 +678,7 @@ describe('Time Input shortcut key operations', () => {
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
         const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
         const secondsTimeValue = Number(timevalue[1]);
-        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        const secondsInRange = (secondsTimeValue === secondsValue - 1 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
 
@@ -691,7 +698,7 @@ describe('Time Input shortcut key operations', () => {
 
   describe('pressing +', () => {
     describe('in the hour input', () => {
-      it('should set time to current time plus one minute if blank', () => {
+      it('should set time to current time plus one hour if blank', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
@@ -746,6 +753,10 @@ describe('Time Input shortcut key operations', () => {
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const minuteValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
+        const minuteTimeValue = Number(timevalue[1]);
+        const minuteInRange = (minuteValue === minuteTimeValue + 1 || minuteValue === minuteTimeValue);
+        expect(minuteInRange).toBe(true);
       });
 
       it('should set time to current time plus one minute if partially filled', () => {

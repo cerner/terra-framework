@@ -640,7 +640,20 @@ class DateTimePicker extends React.Component {
       isAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
     }
 
-    const metadata = {
+    const dateSeparator = this.state.dateFormat.match(/[^a-zA-Z0-9]/)[0];
+    const dateSplit = this.dateValue.split(dateSeparator);
+    const timeSplit = timeValue.split(':');
+    const dateFormat = this.state.dateFormat.split(dateSeparator);
+    const splitObj = {
+      [dateFormat[0]]: dateSplit[0],
+      [dateFormat[1]]: dateSplit[1],
+      [dateFormat[2]]: dateSplit[2],
+      hour: timeSplit[0],
+      minutes: timeSplit[1],
+      seconds: timeSplit[2],
+    };
+
+    const tempData = {
       iSO: iSOString,
       inputValue,
       dateValue: this.dateValue || '',
@@ -649,6 +662,8 @@ class DateTimePicker extends React.Component {
       isCompleteValue: isCompleteDateTime,
       isValidValue: isValid,
     };
+
+    const metadata = { ...tempData, ...splitObj };
 
     return metadata;
   }

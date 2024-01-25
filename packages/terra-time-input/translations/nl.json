@@ -19,5 +19,6 @@
   "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
   "Terra.timeInput.timeFormatLabel": "Tijdformaat:",
   "Terra.timeInput.timeSpacer": ":",
-  "Terra.timeInput.invalidTime": "Voer een geldige tijd in"
+  "Terra.timeInput.invalidTime": "Voer een geldige tijd in",
+  "Terra.timePicker.hotKey": "Druk op N om de huidige tijd in te stellen, op de plus-toets voor een latere tijd en op de min-toets voor een eerdere tijd"
 }

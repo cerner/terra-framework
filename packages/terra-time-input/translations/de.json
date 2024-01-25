@@ -19,5 +19,6 @@
   "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
   "Terra.timeInput.timeFormatLabel": "Zeitformat:",
   "Terra.timeInput.timeSpacer": ":",
-  "Terra.timeInput.invalidTime": "Geben Sie eine gültige Zeit ein."
+  "Terra.timeInput.invalidTime": "Geben Sie eine gültige Zeit ein.",
+  "Terra.timePicker.hotKey": "Drücken Sie N, um die aktuelle Zeit festzulegen, die Plus-Taste, um die Zeit zu erhöhen, und die Minus-Taste, um die Zeit zu verringern."
 }

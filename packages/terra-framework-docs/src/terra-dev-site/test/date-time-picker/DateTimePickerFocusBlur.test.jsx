@@ -15,6 +15,7 @@ const DateTimePickerFocusBlur = () => {
   const [isAmbiguousHour, setIsAmbiguousHour] = useState('No');
   const [isCompleteValue, setIsCompleteValue] = useState('No');
   const [isValidValue, setIsValidValue] = useState('Yes');
+  const [dateTimeObj, setDateTimeObj] = useState({});
 
   const handleBlur = (event, options) => {
     blurCount += 1;
@@ -26,6 +27,15 @@ const DateTimePickerFocusBlur = () => {
     setIsAmbiguousHour(options.isAmbiguousHour ? 'Yes' : 'No');
     setIsCompleteValue(options.isCompleteValue ? 'Yes' : 'No');
     setIsValidValue(options.isValidValue ? 'Yes' : 'No');
+    const dateTimeValue = {
+      date: options.DD,
+      month: options.MM,
+      year: options.YYYY,
+      hour: options.hour,
+      minute: options.minutes,
+      seconds: options.seconds,
+    };
+    setDateTimeObj(dateTimeValue);
   };
 
   const handleFocus = () => {
@@ -88,6 +98,11 @@ const DateTimePickerFocusBlur = () => {
         Is Date-Time Valid?
         {' '}
         <span id="valid-date">{isValidValue}</span>
+        <br />
+        <br />
+        Date Time Object
+        {' '}
+        <span id="date-time">{JSON.stringify(dateTimeObj)}</span>
       </h3>
       <DateTimePicker
         name="date-time-picker-onblur"

@@ -298,10 +298,12 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             />
           </Input>
           <VisuallyHiddenText
+            aria-live="off"
             id="00000000-0000-0000-0000-000000000000-description"
             text="Terra.date.input.dayDescription, Terra.date.input.hotKey"
           >
             <span
+              aria-live="off"
               className="visually-hidden-text"
               id="00000000-0000-0000-0000-000000000000-description"
             >
@@ -392,10 +394,12 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             />
           </Input>
           <VisuallyHiddenText
+            aria-live="off"
             id="00000000-0000-0000-0000-000000000000-description"
             text="Terra.date.input.yearDescription, Terra.date.input.hotKey"
           >
             <span
+              aria-live="off"
               className="visually-hidden-text"
               id="00000000-0000-0000-0000-000000000000-description"
             >
@@ -538,6 +542,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
@@ -558,6 +563,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
@@ -689,6 +695,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
@@ -709,6 +716,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
@@ -840,6 +848,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
@@ -860,6 +869,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       value=""
     />
     <span
+      aria-live="off"
       class="visually-hidden-text"
       id="00000000-0000-0000-0000-000000000000-description"
     >
@@ -2504,10 +2514,12 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   />
                 </Input>
                 <VisuallyHiddenText
+                  aria-live="off"
                   id="00000000-0000-0000-0000-000000000000-description"
                   text="Terra.date.input.dayDescription, Terra.date.input.hotKey"
                 >
                   <span
+                    aria-live="off"
                     className="visually-hidden-text"
                     id="00000000-0000-0000-0000-000000000000-description"
                   >
@@ -2601,10 +2613,12 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   />
                 </Input>
                 <VisuallyHiddenText
+                  aria-live="off"
                   id="00000000-0000-0000-0000-000000000000-description"
                   text="Terra.date.input.yearDescription, Terra.date.input.hotKey"
                 >
                   <span
+                    aria-live="off"
                     className="visually-hidden-text"
                     id="00000000-0000-0000-0000-000000000000-description"
                   >
