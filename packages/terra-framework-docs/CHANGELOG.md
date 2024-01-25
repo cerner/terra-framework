@@ -1,5 +1,8 @@
 # Changelog
 
+* Changed
+  * Added `date-picker`, `time-input` and `date-time picker` tests to display new metadata.
+
 ## Unreleased
 
 * Added

@@ -364,13 +364,20 @@ class DatePicker extends React.Component {
     if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString, this.props.initialTimeZone)))) {
       isValidDate = true;
     }
+    const dateSeparator = format.match(/[^a-zA-Z0-9]/)[0];
+    const dateSplit = this.dateValue.split(dateSeparator);
+    const dateFormatSplit = format.split(dateSeparator);
 
-    const metadata = {
+    const dateObj = dateFormatSplit.reduce((obj, key, index) => ({ ...obj, [key]: dateSplit[index] }), {});
+
+    const tempData = {
       iSO: iSOString,
       inputValue: this.dateValue,
       isCompleteValue: isCompleteDate,
       isValidValue: isValidDate,
     };
+
+    const metadata = { ...tempData, ...dateObj };
 
     return metadata;
   }

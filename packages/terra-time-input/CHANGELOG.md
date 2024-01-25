@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Changed
+  * Added metadata as argument for onBlur callback.
 * Fixed
   * Fixed time input to change the focused input field instead of the minute input while pressing `+`, `-` keys.
   * Fixed minor formatting mistake.
