@@ -27,5 +27,5 @@
   "Terra.date.input.yearDescription": "Um número de quatro dígitos",
   "Terra.date.input.yearLabel": "Ano",
   "Terra.date.input.dateFormatLabel": "Formato da data:",
-  "Terra.date.input.hotKey": "Pressione T para definir a data atual, a tecla + para a próxima data e a tecla - para a data anterior"
+  "Terra.date.input.hotKey": "Pressione T para definir a data atual, a tecla + para a próxima data e a tecla - para a data anterior."
 }

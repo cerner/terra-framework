@@ -5,6 +5,20 @@
 * Added
   * Added detailed documentation for creating a basic `compact-interactive-list` component.
 
+## 1.60.0 - (January 25, 2024)
+
+* Added
+  * Updated `date-input` examples to allow screen reader response for error message.
+
+* Changed
+  * Updated `terra-table` test example to support large text data.
+
+* Fixed
+  * Fixed label value when we have 12 hours time format in `terra-time-input` examples.
+
+* Changed
+  * Added `date-picker`, `time-input` and `date-time picker` tests to display new metadata.
+
 ## 1.59.0 - (January 22, 2024)
 
 * Fixed
@@ -59,7 +73,7 @@
 * Changed
   * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
   * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.
-  
+
 ## 1.52.0 - (December 13, 2023)
 
 * Changed

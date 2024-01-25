@@ -259,4 +259,14 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('row-single-selection-cell-click', { selector: rowSelectionTableSelector });
     });
   });
+
+  describe('Table with Large Text Data', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-large-data');
+    });
+
+    it('verifies that a table renders with large text cell data', () => {
+      Terra.validates.element('table-large-text', '#table-with-large-text');
+    });
+  });
 });
