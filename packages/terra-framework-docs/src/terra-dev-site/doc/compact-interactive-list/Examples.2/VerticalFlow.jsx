@@ -149,7 +149,7 @@ const VerticalFlow = () => {
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
   return (
     <CompactInteractiveList
-      id="with-breakpoints"
+      id="compact-interactive-list-vertical-flow"
       ariaLabel="Compact Interactive List"
       rows={rows}
       columns={cols}
