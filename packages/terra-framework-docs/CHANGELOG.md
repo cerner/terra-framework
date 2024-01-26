@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.62.0 - (January 26, 2024)
+
 * Added
   * Added detailed documentation for creating a basic `compact-interactive-list` component.
 
