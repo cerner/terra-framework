@@ -543,38 +543,8 @@ class DateUtil {
    * @param {moment} date - date to increment
    * @return {moment} The incremented moment date
    */
-  static incrementDateByDay(date, format) {
-    const momentDate = moment(date, format, true).add(1, 'd');
-    if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
-      return DateUtil.MIN_DATE;
-    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
-      return DateUtil.MAX_DATE;
-    }
-    return momentDate.format('YYYY-MM-DD');
-  }
-
-  /**
-   * Increments a month by one month
-   * @param {moment} month - month to increment
-   * @return {moment} The incremented moment month
-   */
-  static incrementMonthByMonth(date, format) {
-    const momentDate = moment(date, format, true).add(1, 'months');
-    if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
-      return DateUtil.MIN_DATE;
-    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
-      return DateUtil.MAX_DATE;
-    }
-    return momentDate.format('YYYY-MM-DD');
-  }
-
-  /**
-   * Increments a year by one year
-   * @param {moment} year - year to increment
-   * @return {moment} The incremented moment year
-   */
-  static incrementYearByYear(date, format) {
-    const momentDate = moment(date, format, true).add(1, 'years');
+  static incrementDateByDay(date, format, inputTypeValue) {
+    const momentDate = moment(date, format, true).add(1, inputTypeValue);
     if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
       return DateUtil.MIN_DATE;
     } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
@@ -588,38 +558,8 @@ class DateUtil {
    * @param {moment} date - date to decrement
    * @return {moment} The decremented moment date
    */
-  static decrementDateByDay(date, format) {
-    const momentDate = moment(date, format, true).subtract(1, 'd');
-    if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
-      return DateUtil.MIN_DATE;
-    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
-      return DateUtil.MAX_DATE;
-    }
-    return momentDate.format('YYYY-MM-DD');
-  }
-
-  /**
-   * Decrement a month by one month
-   * @param {moment} month - month to decrement
-   * @return {moment} The decremented moment month
-   */
-  static decrementMonthByMonth(date, format) {
-    const momentDate = moment(date, format, true).subtract(1, 'months');
-    if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
-      return DateUtil.MIN_DATE;
-    } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
-      return DateUtil.MAX_DATE;
-    }
-    return momentDate.format('YYYY-MM-DD');
-  }
-
-  /**
-   * Decrement a year by one year
-   * @param {moment} year - year to decrement
-   * @return {moment} The decremented moment year
-   */
-  static decrementYearByYear(date, format) {
-    const momentDate = moment(date, format, true).subtract(1, 'years');
+  static decrementDateByDay(date, format, inputTypeValue) {
+    const momentDate = moment(date, format, true).subtract(1, inputTypeValue);
     if (momentDate.year() < Number(DateUtil.MIN_YEAR)) {
       return DateUtil.MIN_DATE;
     } if (momentDate.year() > Number(DateUtil.MAX_YEAR)) {
@@ -660,6 +600,11 @@ DateUtil.dateOrder = {
   DMY: 'DMY',
   MDY: 'MDY',
   YMD: 'YMD',
+};
+DateUtil.inputTypeString = {
+  DAYVALUE: 'd',
+  MONTHVALUE: 'months',
+  YEARVALUE: 'years',
 };
 DateUtil.ISO_EXTENDED_DATE_FORMAT = 'YYYY-MM-DD';
 DateUtil.MIN_DATE = '1900-01-01';

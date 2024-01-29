@@ -559,6 +559,16 @@ const DatePickerInput = (props) => {
     const { day, month, year } = date;
     let inputDate;
     let formattedDate;
+    let inputTypeValue;
+
+    if (inputType === DateUtil.inputType.DAY) {
+      inputTypeValue = DateUtil.inputTypeString.DAYVALUE;
+    } else if (inputType === DateUtil.inputType.MONTH) {
+      inputTypeValue = DateUtil.inputTypeString.MONTHVALUE;
+    } else {
+      inputTypeValue = DateUtil.inputTypeString.YEARVALUE;
+    }
+
     if (day.length === 2 && month.length === 2 && year.length === 4) {
       inputDate = DateUtil.convertToISO8601(`${year}-${month}-${day}`, DateUtil.ISO_EXTENDED_DATE_FORMAT);
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
@@ -578,24 +588,10 @@ const DatePickerInput = (props) => {
     }
     // decrement current valid date by 1 day, if not valid set date to yesterday instead
     if (event.key === '-' || event.key === '_') {
-      if (inputType === 0) {
-        if (validDate) {
-          inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        } else {
-          inputDate = DateUtil.decrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        }
-      } else if (inputType === 1) {
-        if (validDate) {
-          inputDate = DateUtil.decrementMonthByMonth(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        } else {
-          inputDate = DateUtil.decrementMonthByMonth(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        }
-      } else if (inputType === 2) {
-        if (validDate) {
-          inputDate = DateUtil.decrementYearByYear(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        } else {
-          inputDate = DateUtil.decrementYearByYear(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        }
+      if (validDate) {
+        inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
+      } else {
+        inputDate = DateUtil.decrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       }
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
       if (onChange) {
@@ -607,24 +603,10 @@ const DatePickerInput = (props) => {
     }
     // increment current valid date by 1 day, if not valid date set date to tomorrow instead
     if (event.key === '=' || event.key === '+') {
-      if (inputType === 0) {
-        if (validDate) {
-          inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        } else {
-          inputDate = DateUtil.incrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        }
-      } else if (inputType === 1) {
-        if (validDate) {
-          inputDate = DateUtil.incrementMonthByMonth(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        } else {
-          inputDate = DateUtil.incrementMonthByMonth(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        }
-      } else if (inputType === 2) {
-        if (validDate) {
-          inputDate = DateUtil.incrementYearByYear(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        } else {
-          inputDate = DateUtil.incrementYearByYear(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT);
-        }
+      if (validDate) {
+        inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
+      } else {
+        inputDate = DateUtil.incrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       }
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
       if (onChange) {
