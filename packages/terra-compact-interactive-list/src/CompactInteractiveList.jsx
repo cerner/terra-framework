@@ -6,6 +6,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 import styles from './CompactInteractiveList.module.scss';
 import rowShape from './proptypes/rowShape';
 import Row from './subcomponents/Row';
@@ -33,7 +34,6 @@ import {
   getFocusedCellIndexes,
   getFocusedCellIds,
 } from './utils/keyHandlerUtils';
-import getFocusableElements from '../../terra-table/src/utils/focusManagement';
 import validateRowHeaderIndex from './proptypes/validators';
 
 const cx = classNames.bind(styles);

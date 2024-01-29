@@ -45,7 +45,10 @@
     },
     "overrides": [
       {
-        "files": ["packages/terra-theme-properties/**/*.scss", "packages/**/redwood-theme/**/*.scss"],
+        "files": [
+          "packages/terra-theme-properties/**/*.scss",
+          "packages/**/redwood-theme/**/*.scss"
+        ],
         "rules": {
           "terra/custom-property-name": false,
           "terra/custom-property-namespace": false
@@ -142,6 +145,7 @@
     "terra-disclosure-manager": "^4.9.0",
     "terra-enzyme-intl": "^3.4.0",
     "terra-icon": "^3.58.0",
+    "terra-table": "^5.4.0",
     "webpack": "^5.28.0",
     "webpack-cli": "^4.6.0",
     "webpack-dev-server": "^4.11.1",
