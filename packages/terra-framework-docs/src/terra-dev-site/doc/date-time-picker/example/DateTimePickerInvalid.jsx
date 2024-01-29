@@ -4,23 +4,28 @@ import DateTimePicker from 'terra-date-time-picker';
 
 const DateTimePickerExampleInvalid = () => {
   const [dateTime, setDateTime] = useState('');
+  const [isInvalid, setisInvalid] = useState(false);
 
   const handleDateTimeChange = (event, dateTimeValue) => {
     setDateTime(dateTimeValue);
   };
 
+  const handleInvalidButtonClick = () => {
+    setisInvalid(!isInvalid);
+  };
   return (
     <div>
       <p>
         Selected ISO Date Time:
         {dateTime}
       </p>
-      <Field label="Enter Date/Time" htmlFor="default-invalid">
+      <button type="button" onClick={handleInvalidButtonClick}>Toggle Validity</button>
+      <Field label="Enter Date/Time" htmlFor="default-invalid" error="Error Message" isInvalid={isInvalid}>
         <DateTimePicker
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'default-invalid' }}
           onChange={handleDateTimeChange}
-          isInvalid
+          isInvalid={isInvalid}
         />
       </Field>
     </div>

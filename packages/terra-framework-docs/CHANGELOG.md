@@ -18,6 +18,9 @@
   * Updated `date-input` examples to allow screen reader response for error message.
 
 * Changed
+  * Updated the `terra-date-time-picker` example for Error label.
+
+* Changed
   * Updated `terra-table` test example to support large text data.
 
 * Fixed
