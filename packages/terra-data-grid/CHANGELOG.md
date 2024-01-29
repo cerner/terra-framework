@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added fromWorkListDataGrid a private prop that gets passed to terra-table.
+
 ## 1.11.0 - (January 12, 2024)
 
 * Added
