@@ -1143,6 +1143,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
+              fromWorkListDataGrid={false}
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
@@ -1273,6 +1274,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="1"
                   isTableStriped={true}
@@ -1288,13 +1290,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -1308,6 +1311,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -1378,7 +1382,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1391,6 +1395,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -1404,6 +1409,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -1471,7 +1477,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1488,6 +1494,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -1502,6 +1509,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -1569,7 +1577,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1625,6 +1633,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="2"
                   isTableStriped={true}
@@ -1640,13 +1649,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -1660,6 +1670,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -1730,7 +1741,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1743,6 +1754,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -1756,6 +1768,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -1823,7 +1836,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1836,6 +1849,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -1850,6 +1864,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -1917,7 +1932,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1973,6 +1988,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="3"
                   isTableStriped={true}
@@ -1988,13 +2004,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -2008,6 +2025,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -2078,7 +2096,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2091,6 +2109,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -2104,6 +2123,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -2171,7 +2191,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2184,6 +2204,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -2198,6 +2219,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -2265,7 +2287,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2320,6 +2342,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="4"
                   isSelected={true}
@@ -2336,13 +2359,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
@@ -2356,6 +2380,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -2426,7 +2451,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2439,6 +2464,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -2452,6 +2478,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -2519,7 +2546,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2532,6 +2559,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -2545,6 +2573,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -2612,7 +2641,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -3822,6 +3851,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
+              fromWorkListDataGrid={false}
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
@@ -3952,6 +3982,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="1"
                   isTableStriped={true}
@@ -3967,13 +3998,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -3987,6 +4019,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4057,7 +4090,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4070,6 +4103,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -4083,6 +4117,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4150,7 +4185,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4167,6 +4202,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -4181,6 +4217,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4248,7 +4285,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4304,6 +4341,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="2"
                   isTableStriped={true}
@@ -4319,13 +4357,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -4339,6 +4378,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4409,7 +4449,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4422,6 +4462,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -4435,6 +4476,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4502,7 +4544,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4515,6 +4557,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -4529,6 +4572,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4596,7 +4640,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4652,6 +4696,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="3"
                   isTableStriped={true}
@@ -4667,13 +4712,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -4687,6 +4733,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4757,7 +4804,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4770,6 +4817,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -4783,6 +4831,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4850,7 +4899,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4863,6 +4912,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -4877,6 +4927,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -4944,7 +4995,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4999,6 +5050,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="4"
                   isSelected={true}
@@ -5015,13 +5067,14 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
@@ -5035,6 +5088,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -5105,7 +5159,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -5118,6 +5172,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -5131,6 +5186,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -5198,7 +5254,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -5211,6 +5267,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -5224,6 +5281,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -5291,7 +5349,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -6605,6 +6663,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   },
                 ]
               }
+              fromWorkListDataGrid={false}
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
@@ -6744,6 +6803,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="1"
                   isTableStriped={true}
@@ -6762,7 +6822,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -6892,7 +6952,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -6914,6 +6974,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -6928,6 +6989,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -6999,7 +7061,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7012,6 +7074,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -7026,6 +7089,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -7094,7 +7158,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7111,6 +7175,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -7126,6 +7191,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -7194,7 +7260,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7258,6 +7324,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="2"
                   isTableStriped={true}
@@ -7276,7 +7343,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -7406,7 +7473,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -7428,6 +7495,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -7442,6 +7510,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -7513,7 +7582,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7526,6 +7595,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -7540,6 +7610,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -7608,7 +7679,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7621,6 +7692,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -7636,6 +7708,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -7704,7 +7777,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7768,6 +7841,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="3"
                   isTableStriped={true}
@@ -7786,7 +7860,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -7916,7 +7990,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -7938,6 +8012,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -7952,6 +8027,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -8023,7 +8099,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8036,6 +8112,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -8050,6 +8127,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -8118,7 +8196,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8131,6 +8209,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -8146,6 +8225,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -8214,7 +8294,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8277,6 +8357,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="4"
                   isSelected={true}
@@ -8296,7 +8377,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -8426,7 +8507,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -8448,6 +8529,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
@@ -8462,6 +8544,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -8533,7 +8616,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8546,6 +8629,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -8560,6 +8644,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -8628,7 +8713,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8641,6 +8726,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -8655,6 +8741,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -8723,7 +8810,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -9861,6 +9948,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   },
                 ]
               }
+              fromWorkListDataGrid={false}
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
@@ -9991,6 +10079,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="1"
                   isTableStriped={true}
@@ -10006,13 +10095,14 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -10026,6 +10116,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10096,7 +10187,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10109,6 +10200,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -10122,6 +10214,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10189,7 +10282,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10206,6 +10299,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -10220,6 +10314,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10287,7 +10382,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10343,6 +10438,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="2"
                   isTableStriped={true}
@@ -10358,13 +10454,14 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -10378,6 +10475,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10448,7 +10546,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10461,6 +10559,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -10474,6 +10573,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10541,7 +10641,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10554,6 +10654,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -10568,6 +10669,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10635,7 +10737,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10691,6 +10793,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="3"
                   isTableStriped={true}
@@ -10706,13 +10809,14 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -10726,6 +10830,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10796,7 +10901,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10809,6 +10914,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -10822,6 +10928,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10889,7 +10996,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10902,6 +11009,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -10916,6 +11024,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -10983,7 +11092,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -11038,6 +11147,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="4"
                   isSelected={true}
@@ -11054,13 +11164,14 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
@@ -11074,6 +11185,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -11144,7 +11256,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -11157,6 +11269,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -11170,6 +11283,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -11237,7 +11351,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -11250,6 +11364,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -11263,6 +11378,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -11330,7 +11446,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -12459,6 +12575,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   },
                 ]
               }
+              fromWorkListDataGrid={false}
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
@@ -12589,6 +12706,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="1"
                   isTableStriped={true}
@@ -12604,13 +12722,14 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -12624,6 +12743,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -12694,7 +12814,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -12707,6 +12827,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -12720,6 +12841,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -12787,7 +12909,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -12804,6 +12926,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -12818,6 +12941,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -12885,7 +13009,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -12941,6 +13065,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="2"
                   isTableStriped={true}
@@ -12956,13 +13081,14 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -12976,6 +13102,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13046,7 +13173,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13059,6 +13186,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -13072,6 +13200,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13139,7 +13268,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13152,6 +13281,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -13166,6 +13296,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13233,7 +13364,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13289,6 +13420,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="3"
                   isTableStriped={true}
@@ -13304,13 +13436,14 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
@@ -13324,6 +13457,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13394,7 +13528,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13407,6 +13541,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
@@ -13420,6 +13555,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13487,7 +13623,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13500,6 +13636,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
@@ -13514,6 +13651,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13581,7 +13719,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13636,6 +13774,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
+                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   id="4"
                   isSelected={true}
@@ -13652,13 +13791,14 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
@@ -13672,6 +13812,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13742,7 +13883,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13755,6 +13896,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -13768,6 +13910,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13835,7 +13978,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13848,6 +13991,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
+                      fromWorkListDataGrid={false}
                       height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
@@ -13861,6 +14005,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
+                        fromWorkListDataGrid={false}
                         height="2.5rem"
                         intl={
                           Object {
@@ -13928,7 +14073,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
