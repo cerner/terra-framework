@@ -7,7 +7,7 @@ exports[`Row creates a row with the correct number of cells 1`] = `
   data-row-id="1"
   style={
     Object {
-      "height": "25px",
+      "minHeight": "25px",
     }
   }
 >
@@ -62,7 +62,7 @@ exports[`Row verifies the cell is created with the right props 1`] = `
   data-row-id="3"
   style={
     Object {
-      "height": "25px",
+      "minHeight": "25px",
     }
   }
 >

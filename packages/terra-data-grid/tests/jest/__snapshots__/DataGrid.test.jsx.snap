@@ -4,6 +4,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 <ForwardRef
   columnHeaderHeight="2.5rem"
   defaultColumnWidth={200}
+  fromWorkListDataGrid={false}
   hasVisibleColumnHeaders={true}
   id="test-terra-data-grid"
   intl={
@@ -173,6 +174,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
+      fromWorkListDataGrid={false}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
@@ -309,6 +311,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
+        fromWorkListDataGrid={false}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
         intl={
@@ -2680,6 +2683,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
 <ForwardRef
   columnHeaderHeight="2.5rem"
   defaultColumnWidth={200}
+  fromWorkListDataGrid={false}
   hasVisibleColumnHeaders={true}
   id="test-terra-data-grid"
   intl={
@@ -2849,6 +2853,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
+      fromWorkListDataGrid={false}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
@@ -2985,6 +2990,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
+        fromWorkListDataGrid={false}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
         intl={
@@ -5356,6 +5362,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
 <ForwardRef
   columnHeaderHeight="2.5rem"
   defaultColumnWidth={200}
+  fromWorkListDataGrid={false}
   hasSelectableRows={true}
   hasVisibleColumnHeaders={true}
   id="test-terra-data-grid"
@@ -5515,6 +5522,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
+      fromWorkListDataGrid={false}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
@@ -5641,6 +5649,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
+        fromWorkListDataGrid={false}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
         intl={
@@ -8785,6 +8794,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
 <ForwardRef
   columnHeaderHeight="2.5rem"
   defaultColumnWidth={200}
+  fromWorkListDataGrid={false}
   hasVisibleColumnHeaders={true}
   id="test-terra-data-grid"
   intl={
@@ -8930,6 +8940,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
+      fromWorkListDataGrid={false}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
@@ -9042,6 +9053,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
+        fromWorkListDataGrid={false}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
         intl={
@@ -11389,6 +11401,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
 <ForwardRef
   columnHeaderHeight="2.5rem"
   defaultColumnWidth={200}
+  fromWorkListDataGrid={false}
   hasVisibleColumnHeaders={true}
   id="test-terra-data-grid"
   intl={
@@ -11531,6 +11544,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
+      fromWorkListDataGrid={false}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
       isActiveColumnResizing={false}
@@ -11640,6 +11654,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
+        fromWorkListDataGrid={false}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
         intl={
