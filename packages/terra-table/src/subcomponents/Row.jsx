@@ -81,6 +81,12 @@ const propTypes = {
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
+
+  /**
+   * @private
+   * True if Table is invoked from WorkListDataGrid component
+   */
+  fromWorkListDataGrid: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -103,6 +109,7 @@ function Row(props) {
     displayedColumns,
     rowHeaderIndex,
     onCellSelect,
+    fromWorkListDataGrid,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -111,6 +118,10 @@ function Row(props) {
 
   const isMultiRowSelect = (rowSelectionMode === 'multiple');
   const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
+
+  const heightProperties = (fromWorkListDataGrid) ? {
+    height,
+  } : { minHeight: height };
 
   return (
     <tr
@@ -122,7 +133,7 @@ function Row(props) {
         'striped-table-row': isTableStriped,
       }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{ height }}
+      style={{ ...heightProperties }}
       onMouseEnter={rowSelectionMode ? () => { setHovered(true); } : undefined}
       onMouseLeave={rowSelectionMode ? () => { setHovered(false); } : undefined}
     >
@@ -163,6 +174,7 @@ function Row(props) {
             isHighlighted={isHovered || isSelected}
             onCellSelect={onCellSelect}
             height={height}
+            fromWorkListDataGrid={fromWorkListDataGrid}
           >
             {cellData.content}
           </Cell>

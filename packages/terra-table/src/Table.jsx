@@ -169,6 +169,11 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * @private
+   * True if Table is invoked from WorkListDataGrid component
+   */
+  fromWorkListDataGrid: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -180,6 +185,7 @@ const defaultProps = {
   overflowColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
+  fromWorkListDataGrid: false,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -211,6 +217,7 @@ function Table(props) {
     isStriped,
     rowHeaderIndex,
     intl,
+    fromWorkListDataGrid,
   } = props;
 
   // Manage column resize
@@ -595,6 +602,7 @@ function Table(props) {
               rowHeaderIndex={rowHeaderIndex}
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
+              fromWorkListDataGrid={fromWorkListDataGrid}
             />
           ))}
         </ColumnContext.Provider>

@@ -139,6 +139,12 @@ const propTypes = {
    * Boolean indicating whether or not the DataGrid should hide the column headers.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
+
+  /**
+   * @private
+   * Table is called from WorkListDataGrid
+   */
+  fromWorkListDataGrid: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -150,6 +156,7 @@ const defaultProps = {
   overflowColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
+  fromWorkListDataGrid: false,
 };
 
 const DataGrid = forwardRef((props, ref) => {
@@ -176,6 +183,7 @@ const DataGrid = forwardRef((props, ref) => {
     rowHeight,
     rows,
     sections,
+    fromWorkListDataGrid,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -579,6 +587,7 @@ const DataGrid = forwardRef((props, ref) => {
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
+          fromWorkListDataGrid={fromWorkListDataGrid}
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />

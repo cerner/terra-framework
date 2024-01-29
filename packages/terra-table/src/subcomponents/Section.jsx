@@ -95,6 +95,12 @@ const propTypes = {
    * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
    */
   onSectionSelect: PropTypes.func,
+
+  /**
+   * @private
+   * True if Table is invoked from WorkListDataGrid component
+   */
+  fromWorkListDataGrid: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -121,6 +127,7 @@ function Section(props) {
     rowHeaderIndex,
     rows,
     onSectionSelect,
+    fromWorkListDataGrid,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -186,6 +193,7 @@ function Section(props) {
             onCellSelect={onCellSelect}
             isSelected={row.isSelected}
             isTableStriped={isTableStriped}
+            fromWorkListDataGrid={fromWorkListDataGrid}
           />
         ))}
       </tbody>

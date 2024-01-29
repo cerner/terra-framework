@@ -106,6 +106,12 @@ const propTypes = {
    * String that specifies the min-height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
+
+  /**
+   * @private
+   * True if Table is invoked from WorkListDataGrid component
+   */
+  fromWorkListDataGrid: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -134,6 +140,7 @@ function Cell(props) {
     onCellSelect,
     height,
     intl,
+    fromWorkListDataGrid,
   } = props;
 
   const cellRef = useRef();
@@ -280,8 +287,12 @@ function Cell(props) {
 
   const CellTag = isRowHeader ? 'th' : 'td';
 
+  const heightProperties = (fromWorkListDataGrid) ? {
+    height,
+  } : { minHeight: height };
+
   // eslint-disable-next-line react/forbid-dom-props
-  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ 'min-height': height }}>{cellContent}</div>;
+  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>;
   // Render FocusTrap container when within a grid context
   if (isGridContext) {
     cellContentComponent = (

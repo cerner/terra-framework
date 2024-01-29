@@ -388,6 +388,7 @@ function WorklistDataGrid(props) {
         onRangeSelection={onRangeSelection}
         hasSelectableRows={hasSelectableRows}
         ref={dataGridFuncRef}
+        fromWorkListDataGrid
       />
     </div>
   );
