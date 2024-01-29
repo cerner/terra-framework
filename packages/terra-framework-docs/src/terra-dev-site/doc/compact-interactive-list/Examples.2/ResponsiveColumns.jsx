@@ -82,7 +82,7 @@ const cols = [
 
 const ResponsiveColumns = () => (
   <CompactInteractiveList
-    id="with-breakpoints"
+    id="compact-interactive-list-responsive-columns"
     ariaLabel="Compact Interactive List"
     rows={rows}
     columns={cols}

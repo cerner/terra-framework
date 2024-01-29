@@ -138,7 +138,7 @@ const HorizontalFlow = () => {
 
   return (
     <CompactInteractiveList
-      id="with-breakpoints"
+      id="compact-interactive-list-horizontal-flow"
       ariaLabel="Compact Interactive List"
       rows={rows}
       columns={cols}

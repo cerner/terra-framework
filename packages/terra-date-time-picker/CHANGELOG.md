@@ -5,6 +5,11 @@
 * Added
   * Added the `terra-date-time-picker-field` component.
 
+## 4.104.0 - (January 25, 2024)
+
+* Changed
+  * Updated metadata as argument for onBlur callback.
+
 ## 4.103.0 - (January 22, 2024)
 
 * Changed
