@@ -650,10 +650,9 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleHourInputKeyDown(event) {
-    let stateValue = this.state.hour;
-    let { meridiem } = this.state;
+    const stateValue = this.state.hour;
+    const { meridiem } = this.state;
     const previousStateValue = stateValue;
-    const variant = TimeUtil.getVariantFromLocale(this.props);
 
     if (stateValue !== previousStateValue) {
       this.handleValueChange(event, TimeUtil.inputType.HOUR, stateValue, meridiem);
@@ -672,7 +671,7 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleMinuteInputKeyDown(event) {
-    let stateValue = this.state.minute;
+    const stateValue = this.state.minute;
     const previousStateValue = stateValue;
 
     if (previousStateValue !== stateValue) {
@@ -698,7 +697,7 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleSecondInputKeyDown(event) {
-    let stateValue = this.state.second;
+    const stateValue = this.state.second;
     const previousStateValue = stateValue;
 
     if (previousStateValue !== stateValue) {
