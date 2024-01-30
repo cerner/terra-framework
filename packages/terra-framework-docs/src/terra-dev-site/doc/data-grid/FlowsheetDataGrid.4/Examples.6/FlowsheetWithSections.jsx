@@ -154,6 +154,7 @@ const FlowsheetWithSections = () => {
       id="flowsheet-with-sections"
       columns={gridDataJSON.cols}
       sections={tableSections}
+      ariaLabel="Flowsheet Data Grid with Sections"
       onSectionSelect={handleSectionSelect}
       onCellRangeSelect={handleCellRangeSelection}
       onCellSelect={onCellSelect}
