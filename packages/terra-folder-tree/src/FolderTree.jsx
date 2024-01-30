@@ -59,6 +59,7 @@ const FolderTree = ({
   intl,
 }) => {
   const [ariaLiveMessage, setAriaLiveMessage] = useState('');
+  const [visibleListItemsState, setVisibleListItemsState] = useState([]);
 
   const folderTreeID = `folder-tree-${uuidv4()}`;
   const listNode = useRef();
@@ -76,6 +77,32 @@ const FolderTree = ({
     });
 
     return visibleListItems;
+  };
+
+  const handleExpandAll = () => {
+    if (!onExpandAll) {
+      return;
+    }
+
+    onExpandAll();
+
+    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
+    const visibleListItems = getVisibleListItems(listItems);
+
+    setVisibleListItemsState(visibleListItems);
+  };
+
+  const handleCollapseAll = () => {
+    if (!onCollapseAll) {
+      return;
+    }
+
+    onCollapseAll();
+
+    const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
+    const visibleListItems = getVisibleListItems(listItems);
+
+    setVisibleListItemsState(visibleListItems);
   };
 
   const handleKeyDown = event => {
@@ -139,19 +166,18 @@ const FolderTree = ({
     listItems[0].tabIndex = 0;
   }, []);
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   useEffect(() => {
     const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
     const visibleListItems = getVisibleListItems(listItems);
 
-    if (visibleListItems.length === children.length) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-announcement' }));
+    if (visibleListItems.length !== visibleListItemsState.length) {
+      if (visibleListItems.length === children.length) {
+        setAriaLiveMessage(intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-announcement' }));
+      } else if (visibleListItems.length === listItems.length) {
+        setAriaLiveMessage(intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-announcement' }));
+      }
     }
-
-    if (visibleListItems.length === listItems.length) {
-      setAriaLiveMessage(intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-announcement' }));
-    }
-  });
+  }, [children.length, intl, visibleListItemsState]);
 
   return (
     <div className="folder-tree-container">
@@ -169,7 +195,7 @@ const FolderTree = ({
           text={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-instructions' })}
           variant="utility"
           icon={<IconExpandRow />}
-          onClick={onExpandAll}
+          onClick={handleExpandAll}
           aria-controls={folderTreeID}
         />
         <Button
@@ -177,7 +203,7 @@ const FolderTree = ({
           text={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-instructions' })}
           variant="utility"
           icon={<IconCollapseRow />}
-          onClick={onCollapseAll}
+          onClick={handleCollapseAll}
           aria-controls={folderTreeID}
         />
       </Toolbar>
