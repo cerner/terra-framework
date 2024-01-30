@@ -82,6 +82,11 @@ const propTypes = {
   rowHeight: PropTypes.string,
 
   /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   */
+  rowMinimumHeight: PropTypes.string,
+
+  /**
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
@@ -95,12 +100,6 @@ const propTypes = {
    * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
    */
   onSectionSelect: PropTypes.func,
-
-  /**
-   * @private
-   * True if table has flexible row heights.
-   */
-  rowMinimumHeight: PropTypes.bool,
 };
 
 const defaultProps = {

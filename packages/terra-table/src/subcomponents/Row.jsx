@@ -39,6 +39,11 @@ const propTypes = {
   height: PropTypes.string,
 
   /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   */
+  rowMinimumHeight: PropTypes.string,
+
+  /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
   cells: PropTypes.arrayOf(cellShape),
@@ -81,12 +86,6 @@ const propTypes = {
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
-
-  /**
-   * @private
-   * True if table has flexible row heights.
-   */
-  rowMinimumHeight: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -120,10 +119,10 @@ function Row(props) {
   const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
 
   // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
-  // Here 2.5rem is the default row height.
-  const heightProperties = (rowMinimumHeight && height === '2.5rem') ? {
-    minHeight: height,
-  } : { height };
+  // Here 2.5rem is the default row minimum height.
+  const heightProperties = (height) ? {
+    height,
+  } : { minHeight: rowMinimumHeight };
 
   return (
     <tr

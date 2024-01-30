@@ -141,22 +141,20 @@ const propTypes = {
   hasVisibleColumnHeaders: PropTypes.bool,
 
   /**
-   * @private
-   * True if table has flexible row heights.
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
    */
-  rowMinimumHeight: PropTypes.bool,
+  rowMinimumHeight: PropTypes.string,
 };
 
 const defaultProps = {
   rowHeaderIndex: 0,
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
-  rowMinimumHeight: true,
+  rowMinimumHeight: '2.5rem',
 };
 
 const DataGrid = forwardRef((props, ref) => {

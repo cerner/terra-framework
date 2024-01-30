@@ -63,6 +63,11 @@ const propTypes = {
   rowHeight: PropTypes.string,
 
   /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   */
+  rowMinimumHeight: PropTypes.string,
+
+  /**
    * Callback function that is called when a selectable cell is selected. Parameters:
    * @param {object} selectedCell object containing rowId, columnId and sectionId, all as strings.
    */
@@ -107,7 +112,7 @@ const propTypes = {
 const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  rowHeight: '2.5rem',
+  rowMinimumHeight: '2.5rem',
   rows: [],
   columns: [],
   hasVisibleColumnHeaders: true,
@@ -131,6 +136,7 @@ function FlowsheetDataGrid(props) {
     onRowSelect,
     intl,
     hasVisibleColumnHeaders,
+    rowMinimumHeight,
   } = props;
 
   const anchorCell = useRef(null);
@@ -416,6 +422,7 @@ function FlowsheetDataGrid(props) {
         onCellRangeSelect={handleCellRangeSelection}
         hasVisibleColumnHeaders={hasVisibleColumnHeaders}
         ref={dataGridFuncRef}
+        rowMinimumHeight={rowMinimumHeight}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>

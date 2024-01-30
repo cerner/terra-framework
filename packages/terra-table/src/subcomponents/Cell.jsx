@@ -103,15 +103,14 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
-   * String that specifies the min-height of the cell. Any valid CSS value is accepted.
+   * String that specifies the height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
 
   /**
-   * @private
-   * True if table has flexible row heights.
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
    */
-  rowMinimumHeight: PropTypes.bool,
+  rowMinimumHeight: PropTypes.string,
 };
 
 const defaultProps = {
@@ -288,10 +287,10 @@ function Cell(props) {
   const CellTag = isRowHeader ? 'th' : 'td';
 
   // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
-  // Here 2.5rem is the default cell height.
-  const heightProperties = (rowMinimumHeight && height === '2.5rem') ? {
-    minHeight: height,
-  } : { height };
+  // Here 2.5rem is the default row minimum height.
+  const heightProperties = (height) ? {
+    height,
+  } : { minHeight: rowMinimumHeight };
 
   // eslint-disable-next-line react/forbid-dom-props
   let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>;
