@@ -109,7 +109,7 @@ const propTypes = {
 
   /**
    * @private
-   * True if Table is invoked from WorkListDataGrid component
+   * True if table has flexible row heights.
    */
   rowMinimumHeight: PropTypes.bool,
 };
