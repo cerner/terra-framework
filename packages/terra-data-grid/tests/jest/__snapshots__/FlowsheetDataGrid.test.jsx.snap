@@ -163,8 +163,7 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
       ]
     }
     rowHeaderIndex={0}
-    rowHeight="2.5rem"
-    rowMinimumHeight={true}
+    rowMinimumHeight="2.5rem"
     rows={
       Array [
         Object {

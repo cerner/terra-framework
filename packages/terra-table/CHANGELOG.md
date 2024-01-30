@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added rowMinimumHeight a private prop that gets passed down from terra-data-grid.
+  * Added rowMinimumHeight prop to support flexible row height.
 
 * Changed
   * Replaced cell `height` property with `min-height` property to support large text content inside cell.
