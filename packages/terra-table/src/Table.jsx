@@ -173,7 +173,7 @@ const propTypes = {
    * @private
    * True if Table is invoked from WorkListDataGrid component
    */
-  fromWorkListDataGrid: PropTypes.bool,
+  rowMinimumHeight: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -185,7 +185,7 @@ const defaultProps = {
   overflowColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
-  fromWorkListDataGrid: false,
+  rowMinimumHeight: true,
 };
 
 const defaultColumnMinimumWidth = 60;
@@ -217,7 +217,7 @@ function Table(props) {
     isStriped,
     rowHeaderIndex,
     intl,
-    fromWorkListDataGrid,
+    rowMinimumHeight,
   } = props;
 
   // Manage column resize
@@ -602,7 +602,7 @@ function Table(props) {
               rowHeaderIndex={rowHeaderIndex}
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
-              fromWorkListDataGrid={fromWorkListDataGrid}
+              rowMinimumHeight={rowMinimumHeight}
             />
           ))}
         </ColumnContext.Provider>

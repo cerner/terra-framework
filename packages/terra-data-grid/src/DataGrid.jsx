@@ -144,7 +144,7 @@ const propTypes = {
    * @private
    * Table is called from WorkListDataGrid
    */
-  fromWorkListDataGrid: PropTypes.bool,
+  rowMinimumHeight: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -156,7 +156,7 @@ const defaultProps = {
   overflowColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
-  fromWorkListDataGrid: false,
+  rowMinimumHeight: true,
 };
 
 const DataGrid = forwardRef((props, ref) => {
@@ -183,7 +183,7 @@ const DataGrid = forwardRef((props, ref) => {
     rowHeight,
     rows,
     sections,
-    fromWorkListDataGrid,
+    rowMinimumHeight,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -587,7 +587,7 @@ const DataGrid = forwardRef((props, ref) => {
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
-          fromWorkListDataGrid={fromWorkListDataGrid}
+          rowMinimumHeight={rowMinimumHeight}
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />

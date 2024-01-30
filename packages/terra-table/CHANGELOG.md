@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added fromWorkListDataGrid a private prop that gets passed down from terra-data-grid.
+  * Added rowMinimumHeight a private prop that gets passed down from terra-data-grid.
 
 * Changed
   * Replaced cell `height` property with `min-height` property to support large text content inside cell.

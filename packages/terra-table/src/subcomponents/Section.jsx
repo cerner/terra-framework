@@ -100,7 +100,7 @@ const propTypes = {
    * @private
    * True if Table is invoked from WorkListDataGrid component
    */
-  fromWorkListDataGrid: PropTypes.bool,
+  rowMinimumHeight: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -127,7 +127,7 @@ function Section(props) {
     rowHeaderIndex,
     rows,
     onSectionSelect,
-    fromWorkListDataGrid,
+    rowMinimumHeight,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -193,7 +193,7 @@ function Section(props) {
             onCellSelect={onCellSelect}
             isSelected={row.isSelected}
             isTableStriped={isTableStriped}
-            fromWorkListDataGrid={fromWorkListDataGrid}
+            rowMinimumHeight={rowMinimumHeight}
           />
         ))}
       </tbody>

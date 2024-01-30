@@ -111,7 +111,7 @@ const propTypes = {
    * @private
    * True if Table is invoked from WorkListDataGrid component
    */
-  fromWorkListDataGrid: PropTypes.bool,
+  rowMinimumHeight: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -140,7 +140,7 @@ function Cell(props) {
     onCellSelect,
     height,
     intl,
-    fromWorkListDataGrid,
+    rowMinimumHeight,
   } = props;
 
   const cellRef = useRef();
@@ -287,9 +287,9 @@ function Cell(props) {
 
   const CellTag = isRowHeader ? 'th' : 'td';
 
-  const heightProperties = (fromWorkListDataGrid) ? {
-    height,
-  } : { minHeight: height };
+  const heightProperties = (rowMinimumHeight) ? {
+    minHeight: height,
+  } : { height };
 
   // eslint-disable-next-line react/forbid-dom-props
   let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>;

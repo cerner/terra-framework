@@ -86,7 +86,7 @@ const propTypes = {
    * @private
    * True if Table is invoked from WorkListDataGrid component
    */
-  fromWorkListDataGrid: PropTypes.bool,
+  rowMinimumHeight: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -109,7 +109,7 @@ function Row(props) {
     displayedColumns,
     rowHeaderIndex,
     onCellSelect,
-    fromWorkListDataGrid,
+    rowMinimumHeight,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -119,9 +119,9 @@ function Row(props) {
   const isMultiRowSelect = (rowSelectionMode === 'multiple');
   const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
 
-  const heightProperties = (fromWorkListDataGrid) ? {
-    height,
-  } : { minHeight: height };
+  const heightProperties = (rowMinimumHeight) ? {
+    minHeight: height,
+  } : { height };
 
   return (
     <tr
@@ -174,7 +174,7 @@ function Row(props) {
             isHighlighted={isHovered || isSelected}
             onCellSelect={onCellSelect}
             height={height}
-            fromWorkListDataGrid={fromWorkListDataGrid}
+            rowMinimumHeight={rowMinimumHeight}
           >
             {cellData.content}
           </Cell>

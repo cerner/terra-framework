@@ -388,7 +388,7 @@ function WorklistDataGrid(props) {
         onRangeSelection={onRangeSelection}
         hasSelectableRows={hasSelectableRows}
         ref={dataGridFuncRef}
-        fromWorkListDataGrid
+        rowMinimumHeight={false}
       />
     </div>
   );
