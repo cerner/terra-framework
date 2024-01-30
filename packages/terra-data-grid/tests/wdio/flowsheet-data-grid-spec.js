@@ -97,7 +97,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
   //       Terra.validates.element('flowsheet-data-grid-column-highlight-green', { selector: '#terra-flowsheet-data-grid-column-highlight-green' });
   //     });
   //   });
-  // });
+  });
 
   describe('Cell selection', () => {
     const cellSelectionSelector = '#terra-flowsheet-data-grid-cell-selection-table';
