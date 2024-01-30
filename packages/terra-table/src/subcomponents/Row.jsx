@@ -119,7 +119,9 @@ function Row(props) {
   const isMultiRowSelect = (rowSelectionMode === 'multiple');
   const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
 
-  const heightProperties = (rowMinimumHeight) ? {
+  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
+  // Here 2.5rem is the default row height.
+  const heightProperties = (rowMinimumHeight && height === '2.5rem') ? {
     minHeight: height,
   } : { height };
 

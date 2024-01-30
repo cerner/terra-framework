@@ -287,7 +287,9 @@ function Cell(props) {
 
   const CellTag = isRowHeader ? 'th' : 'td';
 
-  const heightProperties = (rowMinimumHeight) ? {
+  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
+  // Here 2.5rem is the default cell height.
+  const heightProperties = (rowMinimumHeight && height === '2.5rem') ? {
     minHeight: height,
   } : { height };
 
