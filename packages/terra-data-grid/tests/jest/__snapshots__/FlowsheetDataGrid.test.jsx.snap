@@ -41,7 +41,7 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
     }
     rowHeaderIndex={0}
     rowHeight="2.5rem"
-    rowMinimumHeight={true}
+    rowMinimumHeight="2.5rem"
     rows={
       Array [
         Object {
