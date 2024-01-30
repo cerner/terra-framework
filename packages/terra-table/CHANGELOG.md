@@ -34,6 +34,9 @@
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
+  
+* Added
+  * Added support for orange and green column highlighting.
 
 ## 5.5.0 - (February 1, 2024)
 

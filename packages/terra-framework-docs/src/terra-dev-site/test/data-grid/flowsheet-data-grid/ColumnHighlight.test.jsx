@@ -62,7 +62,7 @@ const ColumnHighlight = () => {
 
   return (
     <FlowsheetDataGrid
-      id="terra-flowsheet-data-grid-row-selection"
+      id="terra-flowsheet-data-grid-column-highlight"
       columns={cols}
       rows={rows}
       ariaLabel="Flowsheet Data Grid"
