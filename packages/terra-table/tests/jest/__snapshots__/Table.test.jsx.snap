@@ -123,7 +123,6 @@ exports[`Table verifies row selection column header selection 1`] = `
   <Table
     columnHeaderHeight="2.5rem"
     defaultColumnWidth={200}
-    fromWorkListDataGrid={false}
     hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
@@ -178,6 +177,7 @@ exports[`Table verifies row selection column header selection 1`] = `
     }
     rowHeaderIndex={0}
     rowHeight="2.5rem"
+    rowMinimumHeight={true}
     rowSelectionMode="multiple"
     rows={
       Array [
@@ -785,13 +785,13 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
-          fromWorkListDataGrid={false}
           id="00000000-0000-0000-0000-000000000000"
           isHidden={true}
           key="00000000-0000-0000-0000-000000000000"
           onCellSelect={[Function]}
           rowHeaderIndex={0}
           rowHeight="2.5rem"
+          rowMinimumHeight={true}
           rowSelectionMode="multiple"
           rows={
             Array [
@@ -907,13 +907,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              fromWorkListDataGrid={false}
               height="2.5rem"
               id="1"
               key="1"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={2}
+              rowMinimumHeight={true}
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -1041,7 +1041,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "minHeight": undefined,
+                                "height": undefined,
                               }
                             }
                           >
@@ -1062,7 +1062,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
@@ -1072,12 +1071,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={2}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -1114,6 +1113,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={2}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1147,7 +1147,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
@@ -1156,12 +1155,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={2}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -1198,6 +1197,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={2}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1232,7 +1232,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
@@ -1242,12 +1241,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={2}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -1284,6 +1283,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={2}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1358,13 +1358,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              fromWorkListDataGrid={false}
               height="2.5rem"
               id="2"
               key="2"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={3}
+              rowMinimumHeight={true}
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -1492,7 +1492,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "minHeight": undefined,
+                                "height": undefined,
                               }
                             }
                           >
@@ -1513,7 +1513,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
@@ -1522,12 +1521,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={3}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -1564,6 +1563,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={3}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1597,7 +1597,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
@@ -1606,12 +1605,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={3}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -1648,6 +1647,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={3}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1678,7 +1678,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
@@ -1688,12 +1687,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={3}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -1730,6 +1729,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={3}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1804,13 +1804,13 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              fromWorkListDataGrid={false}
               height="2.5rem"
               id="3"
               key="3"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={4}
+              rowMinimumHeight={true}
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -1938,7 +1938,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "minHeight": undefined,
+                                "height": undefined,
                               }
                             }
                           >
@@ -1959,7 +1959,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={true}
@@ -1968,12 +1967,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={4}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -2010,6 +2009,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={4}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2043,7 +2043,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isRowHeader={false}
@@ -2052,12 +2051,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={4}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -2094,6 +2093,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={4}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2124,7 +2124,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={false}
                   isMasked={true}
@@ -2134,12 +2133,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={4}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -2176,6 +2175,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={4}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2249,7 +2249,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              fromWorkListDataGrid={false}
               height="2.5rem"
               id="4"
               isSelected={true}
@@ -2257,6 +2256,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={5}
+              rowMinimumHeight={true}
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -2384,7 +2384,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                             className="cell-content"
                             style={
                               Object {
-                                "minHeight": undefined,
+                                "height": undefined,
                               }
                             }
                           >
@@ -2405,7 +2405,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={true}
@@ -2414,12 +2413,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={5}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -2456,6 +2455,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={5}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2489,7 +2489,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={false}
@@ -2498,12 +2497,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={5}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -2540,6 +2539,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={5}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2570,7 +2570,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
-                  fromWorkListDataGrid={false}
                   height="2.5rem"
                   isHighlighted={true}
                   isRowHeader={false}
@@ -2579,12 +2578,12 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={5}
+                  rowMinimumHeight={true}
                   tableId="test-terra-table"
                 >
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
-                    fromWorkListDataGrid={false}
                     height="2.5rem"
                     intl={
                       Object {
@@ -2621,6 +2620,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={5}
+                    rowMinimumHeight={true}
                     sectionId=""
                     tableId="test-terra-table"
                   >
