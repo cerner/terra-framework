@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Changed `up`,`down` key functionality to same as `+`,`-` functionality to make uniform.
+
 * Fixed
   * Fixed time input to change the focused input field instead of the minute input while pressing `+`, `-` keys.
   * Fixed minor formatting mistake.
