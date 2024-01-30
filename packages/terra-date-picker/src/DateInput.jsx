@@ -457,18 +457,6 @@ const DatePickerInput = (props) => {
       return;
     }
 
-    if (event.keyCode === KEY_UP) {
-      const incrementedDay = DateUtil.incrementDay(date.day, date.month, date.year);
-      if (incrementedDay !== date.day) {
-        handleDateChange(event, incrementedDay, DateUtil.inputType.DAY);
-      }
-    } else if (event.keyCode === KEY_DOWN) {
-      const decrementedDay = DateUtil.decrementDay(date.day, date.month, date.year);
-      if (decrementedDay !== date.day) {
-        handleDateChange(event, decrementedDay, DateUtil.inputType.DAY);
-      }
-    }
-
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
       if ((event.keyCode === KEY_LEFT || event.keyCode === KEY_DELETE || event.keyCode === KEY_BACK_SPACE) && dayInputRef.selectionEnd === 0) {
         setInputFocus(event, monthInputRef, date.month.length, date.month.length);
@@ -489,18 +477,6 @@ const DatePickerInput = (props) => {
   const handleMonthInputKeydown = (event) => {
     if (inputAttributes?.readOnly) {
       return;
-    }
-
-    if (event.keyCode === KEY_UP) {
-      const incrementedMonth = DateUtil.incrementMonth(date.month);
-      if (incrementedMonth !== date.month) {
-        handleDateChange(event, incrementedMonth, DateUtil.inputType.MONTH);
-      }
-    } else if (event.keyCode === KEY_DOWN) {
-      const decrementedMonth = DateUtil.decrementMonth(date.month);
-      if (decrementedMonth !== date.month) {
-        handleDateChange(event, decrementedMonth, DateUtil.inputType.MONTH);
-      }
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -525,18 +501,6 @@ const DatePickerInput = (props) => {
   const handleYearInputKeydown = (event) => {
     if (inputAttributes?.readOnly) {
       return;
-    }
-
-    if (event.keyCode === KEY_UP) {
-      const incrementedYear = DateUtil.incrementYear(date.year);
-      if (incrementedYear !== date.year) {
-        handleDateChange(event, incrementedYear, DateUtil.inputType.YEAR);
-      }
-    } else if (event.keyCode === KEY_DOWN) {
-      const decrementedYear = DateUtil.decrementYear(date.year);
-      if (decrementedYear !== date.year) {
-        handleDateChange(event, decrementedYear, DateUtil.inputType.YEAR);
-      }
     }
 
     if (dateFormatOrder === DateUtil.dateOrder.MDY) {
@@ -587,7 +551,7 @@ const DatePickerInput = (props) => {
       return;
     }
     // decrement current valid date by 1 day, if not valid set date to yesterday instead
-    if (event.key === '-' || event.key === '_') {
+    if (event.key === '-' || event.key === '_' || event.keyCode === KEY_DOWN) {
       if (validDate) {
         inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       } else {
@@ -602,7 +566,7 @@ const DatePickerInput = (props) => {
       return;
     }
     // increment current valid date by 1 day, if not valid date set date to tomorrow instead
-    if (event.key === '=' || event.key === '+') {
+    if (event.key === '=' || event.key === '+' || event.keyCode === KEY_UP) {
       if (validDate) {
         inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       } else {

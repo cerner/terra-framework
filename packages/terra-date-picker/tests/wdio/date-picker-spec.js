@@ -526,67 +526,74 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
   describe('Arrow, Delete and Backspace Navigation', () => {
     describe('Up Arrow', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
-        Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
-        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
-        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       });
 
-      it('Increment month input', () => {
+      it('sets month to next month on month input', () => {
+        Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
         $('input[name="terra-date-month-date-input"]').click();
         browser.keys('ArrowUp');
 
-        Terra.validates.element('up arrow increments month input');
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getMonth() + 1);
+        expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
       });
 
-      it('Increment day input', () => {
+      it('sets Date to tomorrow if on day input', () => {
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         $('input[name="terra-date-day-date-input"]').click();
         browser.keys('ArrowUp');
 
-        Terra.validates.element('up arrow increments day input');
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
       });
 
-      it('Increment year input', () => {
+      it('sets year to last year if on year input', () => {
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
         $('input[name="terra-date-year-date-input"]').click();
         browser.keys('ArrowUp');
 
-        Terra.validates.element('up arrow increments year input');
+        const tomorrow = new Date();
+        tomorrow.setDate(tomorrow.getFullYear() + 1);
+        expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
       });
     });
 
     describe('Down Arrow', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
+      });
+
+      it('sets month to last month on month input', () => {
         Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
-        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
-        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-      });
-
-      it('Decrement month input', () => {
         $('input[name="terra-date-month-date-input"]').click();
-        browser.keys('10');
-        browser.keys('ArrowLeft');
         browser.keys('ArrowDown');
 
-        Terra.validates.element('down arrow decrements month input');
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getMonth() - 1);
+        expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
       });
 
-      it('Decrement day input', () => {
+      it('sets Date to yesterday if on day input', () => {
+        Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
         $('input[name="terra-date-day-date-input"]').click();
-        browser.keys('10');
-        browser.keys('ArrowLeft');
         browser.keys('ArrowDown');
 
-        Terra.validates.element('down arrow decrements day input');
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getDate() - 1);
+        expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
       });
 
-      it('Decrement year input', () => {
+      it('sets year to last year if on year input', () => {
+        Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
         $('input[name="terra-date-year-date-input"]').click();
-        browser.keys('2009');
         browser.keys('ArrowDown');
 
-        Terra.validates.element('down arrow decrements year input');
+        const yesterday = new Date();
+        yesterday.setDate(yesterday.getFullYear() - 1);
+        expect($('input')).toHaveValue(yesterday.toISOString().split('T')[0]);
       });
     });
 

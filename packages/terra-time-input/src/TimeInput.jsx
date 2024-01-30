@@ -484,7 +484,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if ((event.key === '-' || event.key === '_') && !this.props.atMinDate) {
+    if ((event.key === '-' || event.key === '_' || event.keyCode === KeyCode.KEY_DOWN) && !this.props.atMinDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (inputType === 3 && this.props.showSeconds) {
@@ -530,7 +530,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if ((event.key === '=' || event.key === '+') && !this.props.atMaxDate) {
+    if ((event.key === '=' || event.key === '+' || event.keyCode === KeyCode.KEY_UP) && !this.props.atMaxDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (inputType === 3 && this.props.showSeconds) {
@@ -655,28 +655,6 @@ class TimeInput extends React.Component {
     const previousStateValue = stateValue;
     const variant = TimeUtil.getVariantFromLocale(this.props);
 
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementHour(stateValue, variant);
-
-      // Hitting 12 when incrementing up changes the meridiem
-      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '12') {
-        if (meridiem === this.postMeridiem || !previousStateValue) {
-          meridiem = this.anteMeridiem;
-        } else {
-          meridiem = this.postMeridiem;
-        }
-      }
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementHour(stateValue, variant);
-
-      // Hitting 11 when incrementing down changes the meridiem
-      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '11') {
-        meridiem = meridiem === this.postMeridiem ? this.anteMeridiem : this.postMeridiem;
-      }
-    }
-
     if (stateValue !== previousStateValue) {
       this.handleValueChange(event, TimeUtil.inputType.HOUR, stateValue, meridiem);
     }
@@ -696,14 +674,6 @@ class TimeInput extends React.Component {
   handleMinuteInputKeyDown(event) {
     let stateValue = this.state.minute;
     const previousStateValue = stateValue;
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementMinute(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementMinute(stateValue);
-    }
 
     if (previousStateValue !== stateValue) {
       this.handleValueChange(event, TimeUtil.inputType.MINUTE, stateValue, this.state.meridiem);
@@ -730,14 +700,6 @@ class TimeInput extends React.Component {
   handleSecondInputKeyDown(event) {
     let stateValue = this.state.second;
     const previousStateValue = stateValue;
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementSecond(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementSecond(stateValue);
-    }
 
     if (previousStateValue !== stateValue) {
       this.handleValueChange(event, TimeUtil.inputType.SECOND, stateValue, this.state.meridiem);
