@@ -37,18 +37,33 @@
   }
 
   .column-highlight:not(:hover) {
-    background-color: var(--terra-table-cell-highlighted-not-hover-background-color, #cbe7fa);
-    box-shadow: var(--terra-table-cell-highlighted-not-hover-box-shadow, inset 1px 0 0 0 #0092e0, inset -1px 0 0 0 #0092e0);
+    background-color: var(--terra-table-cell-highlighted-not-hover-background-color, rgba(250, 203, 170, 0.38));
+    box-shadow: var(--terra-table-cell-highlighted-not-hover-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318);
+  }
+
+  .column-highlight-green:not(:hover) {
+    background-color: var(--terra-table-cell-highlighted-green-not-hover-background-color, rgba(87, 146, 47, 0.15));
+    box-shadow: var(--terra-table-cell-highlighted-green-not-hover-box-shadow, inset 1px 0 0 0 #57922f, inset -1px 0 0 0 #57922f);
   }
 
   .first-highlight:not(:hover) {
-    background-color: var(--terra-table-cell-highlighted-not-hover-background-color, #cbe7fa);
-    box-shadow: var(--terra-table-cell-highlighted-not-hover-first-box-shadow, inset 1px 0 0 0 #0092e0, inset -1px 0 0 0 #0092e0, inset 0 1px 0 0 #0092e0);
+    background-color: var(--terra-table-cell-highlighted-not-hover-background-color, rgba(250, 203, 170, 0.38));
+    box-shadow: var(--terra-table-cell-highlighted-not-hover-first-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318, inset 0 1px 0 0 #c97318);
+  }
+
+  .first-highlight-green:not(:hover) {
+    background-color: var(--terra-table-cell-highlighted-green-not-hover-background-color, rgba(87, 146, 47, 0.15));
+    box-shadow: var(--terra-table-cell-highlighted-green-not-hover-first-box-shadow, inset 1px 0 0 0 #57922f, inset -1px 0 0 0 #57922f, inset 0 1px 0 0 #57922f);
   }
 
   .last-highlight:not(:hover) {
-    background-color: var(--terra-table-cell-highlighted-not-hover-background-color, #cbe7fa);
-    box-shadow: var(--terra-table-cell-highlighted-not-hover-last-box-shadow, inset 1px 0 0 0 #0092e0, inset -1px 0 0 0 #0092e0, inset 0 -1px 0 0 #0092e0);
+    background-color: var(--terra-table-cell-highlighted-not-hover-background-color, rgba(250, 203, 170, 0.38));
+    box-shadow: var(--terra-table-cell-highlighted-not-hover-last-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318, inset 0 -1px 0 0 #c97318);
+  }
+
+  .last-highlight-green:not(:hover) {
+    background-color: var(--terra-table-cell-highlighted-green-not-hover-background-color, rgba(87, 146, 47, 0.15));
+    box-shadow: var(--terra-table-cell-highlighted-green-not-hover-last-box-shadow, inset 1px 0 0 0 #57922f, inset -1px 0 0 0 #57922f, inset 0 -1px 0 0 #57922f);
   }
 
   .cell-content {

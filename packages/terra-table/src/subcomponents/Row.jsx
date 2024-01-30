@@ -109,6 +109,11 @@ const propTypes = {
    * Id of the last row in table
    */
   lastRowId: PropTypes.string,
+
+  /**
+   * The color to be used for highlighting a column.
+   */
+  colorHighlightColor: PropTypes.oneOf(['orange', 'green']),
 };
 
 const defaultProps = {
@@ -134,6 +139,7 @@ function Row(props) {
     rowMinimumHeight,
     firstRowId,
     lastRowId,
+    colorHighlightColor,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -203,6 +209,7 @@ function Row(props) {
             rowHeaderIndex={rowHeaderIndex}
             firstRowId={firstRowId}
             lastRowId={lastRowId}
+            colorHighlightColor={colorHighlightColor}
           >
             {cellData.content}
           </Cell>

@@ -5,15 +5,15 @@
     --terra-table-cell-border-right: 1px solid #181b1d;
     --terra-table-cell-focus-outline: 3px dashed #fff;
     --terra-table-cell-selected-background-color: #1e3a49;
-    --terra-table-cell-highlighted-not-hover-background-color: #1e3a49;
+    --terra-table-cell-highlighted-not-hover-background-color: rgba(255, 177, 102, 0.1);
     --terra-table-last-pinned-cell-border-right: 2px solid #181b1d;
     --terra-table-mask-background: repeating-linear-gradient(-45deg, #434647, #434647 3px, transparent 3px, transparent 6px);
     --terra-table-highlight-mask-background: repeating-linear-gradient(-45deg, #434647, #434647 3px, transparent 3px, transparent 6px);
     --terra-table-odd-row-hover-background-color: #25282a;
     --terra-table-even-row-hover-background-color: #1d2225;
     --terra-table-pinned-columns-cell-border: 1px solid #181b1d;
-    --terra-table-cell-highlighted-not-hover-box-shadow: inset 1px 0 0 0 #004c76, inset -1px 0 0 0 #004c76;
-    --terra-table-cell-highlighted-not-hover-first-box-shadow: inset 1px 0 0 0 #004c76, inset -1px 0 0 0 #004c76, inset 0 1px 0 0 #004c76;
-    --terra-table-cell-highlighted-not-hover-last-box-shadow: inset 1px 0 0 0 #004c76, inset -1px 0 0 0 #004c76, inset 0 -1px 0 0 #004c76;
+    --terra-table-cell-highlighted-not-hover-box-shadow: inset 1px 0 0 0 #ffb166, inset -1px 0 0 0 #ffb166;
+    --terra-table-cell-highlighted-not-hover-first-box-shadow: inset 1px 0 0 0 #ffb166, inset -1px 0 0 0 #ffb166, inset 0 1px 0 0 #ffb166;
+    --terra-table-cell-highlighted-not-hover-last-box-shadow: inset 1px 0 0 0 #ffb166, inset -1px 0 0 0 #ffb166, inset 0 -1px 0 0 #ffb166;
   }
 }
