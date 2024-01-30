@@ -4118,7 +4118,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       },
                     ]
                   }
-                  id="00000000-0000-0000-0000-000000000000f"
+                  id="00000000-0000-0000-0000-000000000000"
                   isHidden={true}
                   isTableStriped={true}
                   key="00000000-0000-0000-0000-000000000000"
