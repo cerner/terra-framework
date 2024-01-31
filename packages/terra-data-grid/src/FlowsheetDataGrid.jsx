@@ -120,7 +120,7 @@ const defaultProps = {
   rows: [],
   columns: [],
   hasVisibleColumnHeaders: true,
-  colorHighlightColor: 'orange',
+  columnHighlightColor: 'orange',
 };
 
 function FlowsheetDataGrid(props) {

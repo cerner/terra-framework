@@ -131,9 +131,10 @@ const propTypes = {
   lastRowId: PropTypes.string,
 
   /**
+   * @private
    * The color to be used for highlighting a column.
    */
-  colorHighlightColor: PropTypes.oneOf(['orange', 'green']),
+  columnHighlightColor: PropTypes.oneOf(['orange', 'green']),
 };
 
 const defaultProps = {
@@ -166,7 +167,7 @@ function Cell(props) {
     tableId,
     firstRowId,
     lastRowId,
-    colorHighlightColor,
+    columnHighlightColor,
   } = props;
 
   const cellRef = useRef();

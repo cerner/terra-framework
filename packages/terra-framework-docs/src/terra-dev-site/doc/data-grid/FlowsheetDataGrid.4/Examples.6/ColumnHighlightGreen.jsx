@@ -67,7 +67,7 @@ const ColumnHighlightGreen = () => {
       rows={rows}
       ariaLabel="Flowsheet Data Grid"
       columnHighlightId="Column-2"
-      colorHighlightColor="green"
+      columnHighlightColor="green"
     />
   );
 };

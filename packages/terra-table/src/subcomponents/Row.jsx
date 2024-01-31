@@ -90,6 +90,7 @@ const propTypes = {
   rowHeaderIndex: PropTypes.number,
 
   /**
+   * @private
    * A Unique Identifier of the [column](/components/components/cerner-terra-framework-docs/table/about#column).
    * If provided, column with specified identifier will be highlighted in data-grid.
    *
@@ -111,9 +112,10 @@ const propTypes = {
   lastRowId: PropTypes.string,
 
   /**
+   * @private
    * The color to be used for highlighting a column.
    */
-  colorHighlightColor: PropTypes.oneOf(['orange', 'green']),
+  columnHighlightColor: PropTypes.oneOf(['orange', 'green']),
 };
 
 const defaultProps = {
@@ -139,7 +141,7 @@ function Row(props) {
     rowMinimumHeight,
     firstRowId,
     lastRowId,
-    colorHighlightColor,
+    columnHighlightColor,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -209,7 +211,7 @@ function Row(props) {
             rowHeaderIndex={rowHeaderIndex}
             firstRowId={firstRowId}
             lastRowId={lastRowId}
-            colorHighlightColor={colorHighlightColor}
+            columnHighlightColor={columnHighlightColor}
           >
             {cellData.content}
           </Cell>

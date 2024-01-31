@@ -147,7 +147,7 @@ function Section(props) {
     boundingRef,
     firstRowId,
     lastRowId,
-    colorHighlightColor,
+    columnHighlightColor,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -219,7 +219,7 @@ function Section(props) {
             rowMinimumHeight={rowMinimumHeight}
             firstRowId={firstRowId}
             lastRowId={lastRowId}
-            colorHighlightColor={colorHighlightColor}
+            columnHighlightColor={columnHighlightColor}
           />
         ))}
       </tbody>
