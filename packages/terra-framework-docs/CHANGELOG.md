@@ -70,6 +70,7 @@
 
 * Added
   * Added the 'aria-label' attribute to announce the information for the 'Flowsheet-Data Grid'.
+  * Added column highlighting examples for `flowsheet-data-grid` 
 
 * Changed
   * Updated `terra-folder-tree` test example.
