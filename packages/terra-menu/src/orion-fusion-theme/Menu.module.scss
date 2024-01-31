@@ -11,7 +11,8 @@
     --terra-menu-submenu-header-background-color: #f4f4f4;
     --terra-menu-submenu-header-border-bottom: 2px solid #9b9fa1;
     --terra-menu-submenu-header-button-outline-offset: -4px;
-    --terra-menu-back-button-focus-outline: -webkit-focus-ring-color solid 2px;
+    --terra-menu-back-button-focus-outline: none;
+    --terra-menu-back-button-focus-box-shadow: inset 0 0 1px 3px rgba(76,178,233,0.5),inset 0 0 7px 4px rgba(76,178,233,0.35);
     --terra-menu-submenu-header-height: auto;
     --terra-menu-submenu-header-title-color: #1c1f21;
     --terra-menu-submenu-header-title-font-size: 1.16667rem;
