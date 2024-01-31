@@ -550,12 +550,12 @@ const DatePickerInput = (props) => {
       date = { day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year };
       return;
     }
-    // decrement current valid date by 1 day, if not valid set date to yesterday instead
+
     if (event.key === '-' || event.key === '_' || event.keyCode === KEY_DOWN) {
       if (validDate) {
-        inputDate = DateUtil.decrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
+        inputDate = DateUtil.decrementDate(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       } else {
-        inputDate = DateUtil.decrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
+        inputDate = DateUtil.decrementDate(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       }
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
       if (onChange) {
@@ -565,12 +565,12 @@ const DatePickerInput = (props) => {
       date = { day: nextDayValues.day, month: nextDayValues.month, year: nextDayValues.year };
       return;
     }
-    // increment current valid date by 1 day, if not valid date set date to tomorrow instead
+
     if (event.key === '=' || event.key === '+' || event.keyCode === KEY_UP) {
       if (validDate) {
-        inputDate = DateUtil.incrementDateByDay(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
+        inputDate = DateUtil.incrementDate(inputDate, DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       } else {
-        inputDate = DateUtil.incrementDateByDay(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
+        inputDate = DateUtil.incrementDate(DateUtil.getCurrentDate(), DateUtil.ISO_EXTENDED_DATE_FORMAT, inputTypeValue);
       }
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
       if (onChange) {
