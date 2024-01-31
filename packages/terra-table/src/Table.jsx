@@ -535,7 +535,7 @@ function Table(props) {
   };
 
   // Added margin to allow for resizing of last column.
-  const hasResizableCol = tableColumns.some(col => col.isResizable);
+  const hasResizableCol = tableColumns[tableColumns.length - 1].isResizable;
   const tableStyle = {
     marginRight: hasResizableCol ? `${TableConstants.TABLE_MARGIN_RIGHT}px` : '0',
   };
@@ -557,7 +557,7 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        style={tableStyle}
+        style={tableStyle} // eslint-disable-line react/forbid-dom-props
         className={cx('table', { headerless: !hasVisibleColumnHeaders })}
         onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}

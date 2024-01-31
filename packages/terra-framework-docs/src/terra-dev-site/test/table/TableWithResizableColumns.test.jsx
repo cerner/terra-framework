@@ -3,7 +3,8 @@ import Table from 'terra-table';
 import tableData from './mockTableData.json';
 
 const TableWithResizableColumns = () => {
-  let { cols, rows } = tableData;
+  let { cols } = tableData;
+  const { rows } = tableData;
   cols = cols.map(col => ({ ...col, isResizable: true }));
 
   return (
