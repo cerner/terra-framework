@@ -477,6 +477,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -3153,6 +3158,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -5799,6 +5809,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -9186,6 +9201,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -11781,6 +11801,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
