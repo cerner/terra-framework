@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.61.0",
+  "version": "1.62.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "main": "index.js",
   "publishConfig": {
@@ -42,7 +42,7 @@
     "terra-brand-footer": "^3.12.0",
     "terra-button": "^3.3.0",
     "terra-collapsible-menu-view": "^6.88.0",
-    "terra-compact-interactive-list": "^1.1.1",
+    "terra-compact-interactive-list": "^1.2.0",
     "terra-content-container": "^3.0.0",
     "terra-data-grid": "^1.11.0",
     "terra-date-input": "^1.50.0",

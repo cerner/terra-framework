@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import CompactInteractiveList, { alignTypes } from 'terra-compact-interactive-list';
-import { ActiveBreakpointContext } from 'terra-breakpoints';
+import CompactInteractiveList from 'terra-compact-interactive-list';
 import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
 } from 'terra-icon';
@@ -58,99 +57,33 @@ const rows = [
       { content: <FeaturedIcon /> },
     ],
   },
-  {
-    id: 'row_6',
-    cells: [
-      { content: iconResultsNormal },
-      { content: 'Arterial Sheath Care (6)' },
-      { content: <FeaturedIcon /> },
-    ],
-  },
-  {
-    id: 'row_7',
-    cells: [
-      { content: ' ' },
-      { content: 'Sbsq Observation Care/Day High Severity 99226 (7)' },
-      { content: <FeaturedIcon /> },
-    ],
-  },
-  {
-    id: 'row_8',
-    cells: [
-      { content: iconResultsNormal },
-      { content: 'Arterial Sheath Care (8)' },
-      { content: <FeaturedIcon /> },
-    ],
-  },
-  {
-    id: 'row_9',
-    cells: [
-      { content: iconResultsNormal },
-      { content: 'Arterial Sheath Care (9)' },
-      { content: <FeaturedIcon /> },
-    ],
-  },
-  {
-    id: 'row_10',
-    cells: [
-      { content: iconResultsNormal },
-      { content: 'Arterial Sheath Care (10)' },
-      { content: <FeaturedIcon /> },
-    ],
-  },
 ];
-
-const getNumberOfColumns = (activeBreakpoint) => {
-  switch (activeBreakpoint) {
-    case 'enormous': return 5;
-    case 'huge': return 4;
-    case 'large': return 3;
-    case 'medium': return 2;
-    case 'small': return 1;
-    case 'tiny': return 1;
-    default: return 1;
-  }
-};
 
 const cols = [
   {
     id: 'Column-0',
     displayName: 'Icon',
     width: '60px',
-    align: alignTypes.CENTER,
   },
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '200px', // will be used as a css flexBasis
-    flexGrow: true, // makes the column grow or shrink
   },
   {
     id: 'Column-2',
     displayName: 'Featured',
     width: '60px',
-    align: alignTypes.CENTER,
   },
 ];
 
-const WidthBreakpoints = () => {
-  const activeBreakpoint = React.useContext(ActiveBreakpointContext);
-  const numberOfColumns = getNumberOfColumns(activeBreakpoint);
-  return (
-    <>
-      <p>{`Active breakpoint: ${activeBreakpoint}`}</p>
-      <p>{`Number of columns: ${numberOfColumns}`}</p>
-      <CompactInteractiveList
-        id="compact-interactive-list-width-breakpoints"
-        ariaLabel="Compact Interactive List"
-        rows={rows}
-        columns={cols}
-        numberOfColumns={numberOfColumns}
-        rowHeight="80px"
-        rowHeaderIndex={1}
-      />
-    </>
-  );
-};
+const BasicCompactInteractiveList = () => (
+  <CompactInteractiveList
+    id="compact-interactive-list-basic"
+    ariaLabel="Compact Interactive List"
+    rows={rows}
+    columns={cols}
+    rowHeaderIndex={1}
+  />
+);
 
-export default WidthBreakpoints;
+export default BasicCompactInteractiveList;

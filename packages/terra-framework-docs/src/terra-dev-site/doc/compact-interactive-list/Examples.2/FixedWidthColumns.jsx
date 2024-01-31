@@ -83,7 +83,7 @@ const cols = [
 
 const FixedWidthColumns = () => (
   <CompactInteractiveList
-    id="interactive-compact-columns-width"
+    id="compact-interactive-list-fixed-width"
     ariaLabel="Compact Interactive List"
     rows={rows}
     columns={cols}

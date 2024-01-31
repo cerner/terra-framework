@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Added
+  * Added the 'aria-label' attribute to announce the information for the 'Flowsheet-Data Grid'.
+
+## 1.62.0 - (January 26, 2024)
+
+* Added
+  * Added detailed documentation for creating a basic `compact-interactive-list` component.
+
 ## 1.61.0 - (January 25, 2024)
 
 * Changed
