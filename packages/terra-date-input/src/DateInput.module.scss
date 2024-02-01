@@ -269,7 +269,7 @@
       margin: 0;
     }
 
-    &[data-show-focus-styles]:focus {
+    &.is-focused {
       border: 0;
       outline: var(--terra-date-input-day-focus-outline, 2px dashed #000);
       outline-offset: 1px;
@@ -289,7 +289,7 @@
       margin: 0;
     }
     
-    &[data-show-focus-styles]:focus {
+    &.is-focused {
       border: 0;
       outline: var(--terra-date-input-year-focus-outline, 2px dashed #000);
       outline-offset: 1px;
