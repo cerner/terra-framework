@@ -106,6 +106,7 @@ const propTypes = {
 
   /**
    * A string that specifies the Minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
    */
   rowMinimumHeight: PropTypes.string,
 

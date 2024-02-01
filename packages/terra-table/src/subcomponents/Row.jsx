@@ -40,6 +40,7 @@ const propTypes = {
 
   /**
    * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
    */
   rowMinimumHeight: PropTypes.string,
 
@@ -119,7 +120,6 @@ function Row(props) {
   const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
 
   // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
-  // Here 2.5rem is the default row minimum height.
   const heightProperties = (height) ? {
     height,
   } : { minHeight: rowMinimumHeight };
