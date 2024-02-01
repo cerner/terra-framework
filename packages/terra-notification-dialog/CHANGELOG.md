@@ -2,10 +2,6 @@
 
 ## Unreleased
 
-* Added
-  * Added FocusLock to confine focus within the modal popup.
-
-
 ## 4.39.0 - (January 22, 2024)
 
 * Changed
