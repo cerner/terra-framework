@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added rowMinimumHeight prop to support flexible row height.
+
 * Changed
   * Added margin right to only tables with resizable columns.
   * Exported the table margin right via the `TableConstants.TABLE_MARGIN_RIGHT` constant.

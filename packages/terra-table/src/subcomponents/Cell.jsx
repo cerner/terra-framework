@@ -103,9 +103,15 @@ const propTypes = {
   onCellSelect: PropTypes.func,
 
   /**
-   * String that specifies the min-height of the cell. Any valid CSS value is accepted.
+   * String that specifies the height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
+
+  /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
+   */
+  rowMinimumHeight: PropTypes.string,
 };
 
 const defaultProps = {
@@ -134,6 +140,7 @@ function Cell(props) {
     onCellSelect,
     height,
     intl,
+    rowMinimumHeight,
   } = props;
 
   const cellRef = useRef();
@@ -280,8 +287,13 @@ function Cell(props) {
 
   const CellTag = isRowHeader ? 'th' : 'td';
 
+  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
+  const heightProperties = (height) ? {
+    height,
+  } : { minHeight: rowMinimumHeight };
+
   // eslint-disable-next-line react/forbid-dom-props
-  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ 'min-height': height }}>{cellContent}</div>;
+  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>;
   // Render FocusTrap container when within a grid context
   if (isGridContext) {
     cellContentComponent = (
