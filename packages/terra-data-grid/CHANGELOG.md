@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.12.0 - (February 1, 2024)
+
 * Added
   * Added rowMinimumHeight prop that gets passed to terra-table to support flexible row height.
 
