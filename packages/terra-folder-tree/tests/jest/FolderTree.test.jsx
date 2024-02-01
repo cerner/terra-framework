@@ -85,13 +85,13 @@ describe('basic folder tree', () => {
   });
 
   it('does not trigger expand/collapse on folder selection', () => {
-    const onClick = jest.fn();
+    const onSelect = jest.fn();
     const onToggle = jest.fn();
 
     const wrapper = shallowWithIntl(
       <FolderTree.Item
         label="Animals"
-        onClick={onClick}
+        onSelect={onSelect}
         onToggle={onToggle}
         subfolderItems={[
           (<FolderTree.Item label="Dog" />),
@@ -102,7 +102,7 @@ describe('basic folder tree', () => {
     const radioButton = wrapper.find('.radio');
     radioButton.simulate('change');
 
-    expect(onClick).toHaveBeenCalled();
+    expect(onSelect).toHaveBeenCalled();
     expect(onToggle).not.toHaveBeenCalled();
   });
 
@@ -150,5 +150,53 @@ describe('basic folder tree', () => {
 
     collapseAllButton.simulate('click');
     expect(onCollapseAll).toHaveBeenCalled();
+  });
+
+  it('renders selectable folder tree items', () => {
+    const wrapper = shallowWithIntl(
+      <FolderTree.Item
+        label="Selectable folder tree item"
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
+    expect(wrapper.exists('input[type="radio"]')).toBe(true);
+  });
+
+  it('renders selectable folder tree items when selected', () => {
+    const wrapper = shallowWithIntl(
+      <FolderTree.Item
+        label="Selectable folder tree item"
+        isSelected
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(true);
+    expect(wrapper.find('li').hasClass('selected')).toBe(true);
+  });
+
+  it('renders non-selectable folder tree items', () => {
+    const wrapper = shallowWithIntl(
+      <FolderTree.Item
+        label="Non-selectable folder tree item"
+        isSelectable={false}
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(null);
+    expect(wrapper.exists('input[type="radio"]')).toBe(false);
+  });
+
+  it('renders non-selectable folder tree items when selected', () => {
+    const wrapper = shallowWithIntl(
+      <FolderTree.Item
+        label="Non-selectable folder tree item"
+        isSelectable={false}
+        isSelected
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(null);
+    expect(wrapper.find('li').hasClass('selected')).toBe(false);
   });
 });

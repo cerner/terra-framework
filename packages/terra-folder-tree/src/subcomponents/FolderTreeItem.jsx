@@ -31,13 +31,17 @@ const propTypes = {
    */
   isExpanded: PropTypes.bool,
   /**
+   * Indicates whether the item can be selected. Selectable items will display with a radio button.
+   */
+  isSelectable: PropTypes.bool,
+  /**
    * Indicates whether the item is selected. Because this component has the appearance of a radio button group, only one item should be selected at a time.
    */
   isSelected: PropTypes.bool,
   /**
    * The callback function for a click event.
    */
-  onClick: PropTypes.func,
+  onSelect: PropTypes.func,
   /**
    * The callback function for an expand or collapse toggle event.
    */
@@ -64,6 +68,7 @@ const propTypes = {
 
 const defaultProps = {
   isExpanded: false,
+  isSelectable: true,
   isSelected: false,
   level: 0,
 };
@@ -71,10 +76,11 @@ const defaultProps = {
 const FolderTreeItem = ({
   icon,
   isExpanded,
+  isSelectable,
   isSelected,
   label,
   level,
-  onClick,
+  onSelect,
   onToggle,
   subfolderItems,
   parentRef,
@@ -108,10 +114,23 @@ const FolderTreeItem = ({
     ? <IconCaretDown height="8px" width="8px" style={{ verticalAlign: 'baseline' }} /> // eslint-disable-line react/forbid-component-props
     : <IconCaretRight height="8px" width="8px" style={{ verticalAlign: 'baseline' }} />; // eslint-disable-line react/forbid-component-props
 
+  const radioButton = isSelectable ? (
+    <input
+      type="radio"
+      checked={isSelected}
+      onChange={onSelect}
+      aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
+      tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
+      className={cx('radio')}
+    />
+  ) : (
+    <div className={cx('radio-container')} />
+  );
+
   const itemClassNames = classNames(
     cx(
       'folder-tree-item',
-      { selected: isSelected },
+      { selected: isSelectable ? isSelected : null },
       theme.className,
     ),
   );
@@ -126,12 +145,20 @@ const FolderTreeItem = ({
     }
   };
 
+  const handleSelect = () => {
+    if (isSelectable && onSelect) {
+      onSelect();
+    }
+  };
+
   const handleKeyDown = event => {
     switch (event.keyCode) {
       case KeyCode.KEY_RETURN:
         event.preventDefault();
 
-        onClick(event);
+        if (isSelectable) {
+          onSelect(event);
+        }
         break;
       case KeyCode.KEY_LEFT: {
         event.preventDefault();
@@ -169,23 +196,16 @@ const FolderTreeItem = ({
         className={itemClassNames}
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
-        aria-selected={isSelected}
-        onClick={isFolder ? handleToggle : onClick}
+        aria-selected={isSelectable ? isSelected : null}
+        onClick={isFolder ? handleToggle : handleSelect}
         onKeyDown={handleKeyDown}
         data-item-show-focus
         tabIndex={-1}
         ref={itemNode}
       >
-        <input
-          type="radio"
-          checked={isSelected}
-          onChange={onClick}
-          aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
-          tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
-          className={cx('radio')}
-        />
+        {radioButton}
         {/* eslint-disable-next-line react/forbid-dom-props */}
-        <span style={{ paddingLeft: `${level}rem` }}>
+        <span style={{ paddingLeft: `${level*14}px` }}>
           <Arrange
             fitStart={(
               <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
