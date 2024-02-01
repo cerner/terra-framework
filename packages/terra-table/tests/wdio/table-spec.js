@@ -269,4 +269,11 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('table-large-text', '#table-with-large-text');
     });
   });
+
+  describe('Table With Resizable Columns', () => {
+    it('Validates the resizable table', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-resizable-columns');
+      Terra.validates.element('resizable-table', '#resizable-terra-table');
+    });
+  });
 });

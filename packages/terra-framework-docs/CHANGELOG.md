@@ -2,6 +2,15 @@
 
 ## Unreleased
 
+## 1.63.0 - (February 1, 2024)
+
+* Changed
+  * Updated the `terra-date-time-picker` example for Error label.
+
+* Added
+  * Added documentation for exported constants of `terra-table` in the About page.
+  * Added tests for resizable `terra-table`.
+
 * Added
   * Added the 'aria-label' attribute to announce the information for the 'Flowsheet-Data Grid'.
 
