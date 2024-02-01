@@ -5,6 +5,11 @@
 * Fixed
   * Fixed date picker to change the focused input field value instead of the day input while pressing `+`, `-` keys.
 
+## 4.97.0 - (January 25, 2024)
+
+* Changed
+  * Updated metadata as argument for onBlur callback.
+
 ## 4.96.0 - (January 22, 2024)
 
 * Changed

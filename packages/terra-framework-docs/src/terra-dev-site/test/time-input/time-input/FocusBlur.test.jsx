@@ -8,16 +8,16 @@ const cx = classNames.bind(styles);
 class TimeInputOnBlur extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { blurTriggerCount: 0, focusTriggerCount: 0 };
+    this.state = { blurTriggerCount: 0, focusTriggerCount: 0, timeObj: {} };
     this.handleBlur = this.handleBlur.bind(this);
     this.handleFocus = this.handleFocus.bind(this);
     this.blurCount = 0;
     this.focusCount = 0;
   }
 
-  handleBlur() {
+  handleBlur(event, metaData) {
     this.blurCount += 1;
-    this.setState({ blurTriggerCount: this.blurCount });
+    this.setState({ blurTriggerCount: this.blurCount, timeObj: metaData });
   }
 
   handleFocus() {
@@ -36,6 +36,10 @@ class TimeInputOnBlur extends React.Component {
             <br />
             onFocus Trigger Count:
             <span id="focus-count">{this.state.focusTriggerCount}</span>
+            <br />
+            <br />
+            Time Object:
+            <span id="time-obj">{JSON.stringify(this.state.timeObj)}</span>
           </h3>
         </div>
         <TimeInput

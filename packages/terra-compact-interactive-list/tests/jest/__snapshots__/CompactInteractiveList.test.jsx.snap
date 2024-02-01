@@ -7,7 +7,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
       Object {
         "displayName": "Col_1",
         "id": "Column-0",
-        "minimunWidth": "20px",
+        "minimumWidth": "20px",
         "width": "40px",
       },
       Object {
@@ -173,7 +173,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         Object {
           "displayName": "Col_1",
           "id": "Column-0",
-          "minimunWidth": "20px",
+          "minimumWidth": "20px",
           "width": "40px",
         },
         Object {
@@ -408,7 +408,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -462,7 +462,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -648,7 +648,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -702,7 +702,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -885,7 +885,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -939,7 +939,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -1112,7 +1112,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -1166,7 +1166,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -1291,7 +1291,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -1345,7 +1345,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }

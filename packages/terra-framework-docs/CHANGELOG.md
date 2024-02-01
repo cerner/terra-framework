@@ -3,6 +3,21 @@
 ## Unreleased
 
 * Added
+  * Added the 'aria-label' attribute to announce the information for the 'Flowsheet-Data Grid'.
+
+## 1.62.0 - (January 26, 2024)
+
+* Added
+  * Added detailed documentation for creating a basic `compact-interactive-list` component.
+
+## 1.61.0 - (January 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.60.0 - (January 25, 2024)
+
+* Added
   * Updated `date-input` examples to allow screen reader response for error message.
 
 * Changed
@@ -10,6 +25,9 @@
 
 * Fixed
   * Fixed label value when we have 12 hours time format in `terra-time-input` examples.
+
+* Changed
+  * Added `date-picker`, `time-input` and `date-time picker` tests to display new metadata.
 
 ## 1.59.0 - (January 22, 2024)
 
