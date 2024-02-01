@@ -5,10 +5,10 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import FocusLock from 'react-focus-lock';
 import ModalOverlay from './_ModalOverlay';
 import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
 import styles from './ModalContent.module.scss';
-import FocusLock from 'react-focus-lock';
 
 const cx = classNamesBind.bind(styles);
 
@@ -155,18 +155,18 @@ const ModalContent = forwardRef((props, ref) => {
         */
       }
       <FocusLock>
-      <div
-        {...customProps}
-        tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
-        aria-label={ariaLabel}
-        aria-labelledby={ariaLabelledBy}
-        aria-describedby={ariaDescribedBy}
-        className={modalClassName}
-        role={role}
-        ref={ref}
-      >
-        <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-          {(!isCalledFromNotificationDialog) && (
+        <div
+          {...customProps}
+          tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
+          aria-label={ariaLabel}
+          aria-labelledby={ariaLabelledBy}
+          aria-describedby={ariaDescribedBy}
+          className={modalClassName}
+          role={role}
+          ref={ref}
+        >
+          <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+            {(!isCalledFromNotificationDialog) && (
             <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
               {text => {
                 // In the latest version of react-intl this param is an array, when previous versions it was a string.
@@ -179,9 +179,9 @@ const ModalContent = forwardRef((props, ref) => {
                 );
               }}
             </FormattedMessage>
-          )}
-          {children}
-          {(!isCalledFromNotificationDialog) && (
+            )}
+            {children}
+            {(!isCalledFromNotificationDialog) && (
             <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
               {text => {
                 // In the latest version of react-intl this param is an array, when previous versions it was a string.
@@ -194,9 +194,9 @@ const ModalContent = forwardRef((props, ref) => {
                 );
               }}
             </FormattedMessage>
-          )}
+            )}
+          </div>
         </div>
-      </div>
       </FocusLock>
     </React.Fragment>
   );
