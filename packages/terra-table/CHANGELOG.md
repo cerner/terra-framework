@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.5.0 - (February 1, 2024)
+
 * Added
   * Added rowMinimumHeight prop to support flexible row height.
 
