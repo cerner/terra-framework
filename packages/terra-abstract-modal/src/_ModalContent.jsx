@@ -8,6 +8,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ModalOverlay from './_ModalOverlay';
 import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
 import styles from './ModalContent.module.scss';
+import FocusLock from 'react-focus-lock';
 
 const cx = classNamesBind.bind(styles);
 
@@ -153,6 +154,7 @@ const ModalContent = forwardRef((props, ref) => {
           the aria-label value when the modal is opened
         */
       }
+      <FocusLock>
       <div
         {...customProps}
         tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
@@ -195,6 +197,7 @@ const ModalContent = forwardRef((props, ref) => {
           )}
         </div>
       </div>
+      </FocusLock>
     </React.Fragment>
   );
 });
