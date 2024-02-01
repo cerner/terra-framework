@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the `terra-date-time-picker` example for Error label.
+
 * Added
   * Added the 'aria-label' attribute to announce the information for the 'Flowsheet-Data Grid'.
 
