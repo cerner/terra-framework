@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed the spacing between datetimepicker and help/error text issue.
+
 ## 4.104.0 - (January 25, 2024)
 
 * Changed
