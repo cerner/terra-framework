@@ -541,6 +541,11 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -3324,6 +3329,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -6887,6 +6897,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -10438,6 +10453,11 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -13221,6 +13241,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -16784,6 +16809,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -20371,6 +20401,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -23918,6 +23953,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -27488,6 +27528,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -30275,6 +30320,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -33838,6 +33888,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -37381,6 +37436,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -40924,6 +40984,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -44467,6 +44532,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -48010,6 +48080,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -51551,6 +51626,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -55092,6 +55172,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -58610,6 +58695,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col
@@ -61348,6 +61438,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 className="table"
                 id="test-terra-worklist-data-grid-table"
                 role="grid"
+                style={
+                  Object {
+                    "marginRight": "15px",
+                  }
+                }
               >
                 <colgroup>
                   <col

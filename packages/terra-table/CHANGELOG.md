@@ -6,6 +6,10 @@
   * Added rowMinimumHeight prop to support flexible row height.
 
 * Changed
+  * Added margin right to only tables with resizable columns.
+  * Exported the table margin right via the `TableConstants.TABLE_MARGIN_RIGHT` constant.
+
+* Changed
   * Replaced cell `height` property with `min-height` property to support large text content inside cell.
 
 ## 5.4.0 - (January 12, 2024)
@@ -30,7 +34,7 @@
   * Updated the onRowSelect callback to return an object containing section and row ids.
   
 * Added
-  * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH`` constant.
+  * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH` constant.
   
 * Changed
   * Removed console warning message when no pinned columns exist.

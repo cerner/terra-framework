@@ -253,6 +253,11 @@ exports[`Table verifies row selection column header selection 1`] = `
         id="test-terra-table"
         onKeyDown={[Function]}
         role="table"
+        style={
+          Object {
+            "marginRight": "0",
+          }
+        }
       >
         <colgroup>
           <col
