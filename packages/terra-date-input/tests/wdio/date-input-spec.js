@@ -81,7 +81,6 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
-      browser.keys(['ArrowDown']);
       browser.keys(['Enter']);
       Terra.validates.element('Month Selected');
     });
