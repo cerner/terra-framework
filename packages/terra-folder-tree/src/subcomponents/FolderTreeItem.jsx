@@ -166,45 +166,48 @@ const FolderTreeItem = ({
   return (
     <>
       <li
-        className={itemClassNames}
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelected}
-        onClick={isFolder ? handleToggle : onClick}
-        onKeyDown={handleKeyDown}
-        data-item-show-focus
-        tabIndex={-1}
-        ref={itemNode}
       >
-        <input
-          type="radio"
-          checked={isSelected}
-          onChange={onClick}
-          aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
-          tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
-          className={cx('radio')}
-        />
-        {/* eslint-disable-next-line react/forbid-dom-props */}
-        <span style={{ paddingLeft: `${level}rem` }}>
-          <Arrange
-            fitStart={(
-              <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
-                {
-                  isFolder ? (
-                    <Spacer paddingRight="small" isInlineBlock>
-                      {expandCollapseIcon}
-                    </Spacer>
-                  ) : null
-                }
-                {itemIcon}
-              </Spacer>
-            )}
-            fill={<span>{label}</span>}
-            alignFitStart="center"
+        <span
+          className={itemClassNames}
+          onClick={isFolder ? handleToggle : onClick}
+          onKeyDown={handleKeyDown}
+          data-item-show-focus
+          tabIndex={-1}
+          ref={itemNode}
+        >
+          <input
+            type="radio"
+            checked={isSelected}
+            onChange={onClick}
+            aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
+            tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
+            className={cx('radio')}
           />
+          {/* eslint-disable-next-line react/forbid-dom-props */}
+          <span style={{ paddingLeft: `${level}rem` }}>
+            <Arrange
+              fitStart={(
+                <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
+                  {
+                    isFolder ? (
+                      <Spacer paddingRight="small" isInlineBlock>
+                        {expandCollapseIcon}
+                      </Spacer>
+                    ) : null
+                  }
+                  {itemIcon}
+                </Spacer>
+              )}
+              fill={<span>{label}</span>}
+              alignFitStart="center"
+            />
+          </span>
         </span>
+        {subfolder}
       </li>
-      {subfolder}
     </>
   );
 };
