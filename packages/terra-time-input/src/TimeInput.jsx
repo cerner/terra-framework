@@ -1014,7 +1014,7 @@ class TimeInput extends React.Component {
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames} role="group" aria-label={this.a11yLabel}>
+        <div className={timeInputClassNames} role="group">
           {/*
           "Time of Birth group. Time of birth Hours input., ..."
         All of the controls should be presented as a group to assistive technologies. Then, each component also
