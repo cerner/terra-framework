@@ -579,7 +579,7 @@ function Table(props) {
   const tableStyle = {
     marginRight: hasResizableCol ? `${TableConstants.TABLE_MARGIN_RIGHT}px` : '0',
   };
-  
+
   // Set first and last row Ids
   let firstRowId;
   let lastRowId;

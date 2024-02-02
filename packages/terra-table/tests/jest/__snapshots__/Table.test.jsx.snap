@@ -937,6 +937,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
+              firstRowId="1"
               id="1"
               key="1"
               lastRowId="4"
@@ -1092,6 +1093,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
+                  firstRowId="1"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelectable={false}
@@ -1108,6 +1110,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -1179,6 +1182,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
+                  firstRowId="1"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
@@ -1194,6 +1198,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -1266,6 +1271,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
+                  firstRowId="1"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
@@ -1282,6 +1288,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -1394,6 +1401,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
+              firstRowId="1"
               id="2"
               key="2"
               lastRowId="4"
@@ -1549,6 +1557,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
+                  firstRowId="1"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelected={false}
@@ -1564,6 +1573,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -1635,6 +1645,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
+                  firstRowId="1"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
@@ -1650,6 +1661,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -1718,6 +1730,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
+                  firstRowId="1"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
@@ -1734,6 +1747,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -1846,6 +1860,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
+              firstRowId="1"
               id="3"
               key="3"
               lastRowId="4"
@@ -2001,6 +2016,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
+                  firstRowId="1"
                   isHighlighted={false}
                   isRowHeader={true}
                   isSelected={false}
@@ -2016,6 +2032,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -2087,6 +2104,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
+                  firstRowId="1"
                   isHighlighted={false}
                   isRowHeader={false}
                   isSelected={false}
@@ -2102,6 +2120,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -2170,6 +2189,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
+                  firstRowId="1"
                   isHighlighted={false}
                   isMasked={true}
                   isRowHeader={false}
@@ -2186,6 +2206,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -2297,6 +2318,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   },
                 ]
               }
+              firstRowId="1"
               id="4"
               isSelected={true}
               key="4"
@@ -2453,6 +2475,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-0"
                   columnIndex={1}
+                  firstRowId="1"
                   isHighlighted={true}
                   isRowHeader={true}
                   isSelected={false}
@@ -2468,6 +2491,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-0"
                     columnIndex={1}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -2539,6 +2563,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-1"
                   columnIndex={2}
+                  firstRowId="1"
                   isHighlighted={true}
                   isRowHeader={false}
                   isSelected={false}
@@ -2554,6 +2579,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-1"
                     columnIndex={2}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
@@ -2622,6 +2648,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 <InjectIntl(Cell)
                   columnId="Column-2"
                   columnIndex={3}
+                  firstRowId="1"
                   isHighlighted={true}
                   isRowHeader={false}
                   isSelected={false}
@@ -2637,6 +2664,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   <Cell
                     columnId="Column-2"
                     columnIndex={3}
+                    firstRowId="1"
                     intl={
                       Object {
                         "defaultFormats": Object {},
