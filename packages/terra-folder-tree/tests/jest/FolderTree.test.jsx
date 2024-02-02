@@ -61,7 +61,7 @@ describe('basic folder tree', () => {
 
     const collapsedFolder = wrapper.find(FolderTree.Item).dive().dive();
 
-    expect(collapsedFolder.find('.folder-tree-item').prop('aria-expanded')).toBe(false);
+    expect(collapsedFolder.find('.folder-tree-item').parent().prop('aria-expanded')).toBe(false);
     expect(collapsedFolder.find('.subfolder').prop('hidden')).toBe(true);
   });
 
@@ -80,7 +80,7 @@ describe('basic folder tree', () => {
 
     const expandedFolder = wrapper.find(FolderTree.Item).dive().dive();
 
-    expect(expandedFolder.find('.folder-tree-item').prop('aria-expanded')).toBe(true);
+    expect(expandedFolder.find('.folder-tree-item').parent().prop('aria-expanded')).toBe(true);
     expect(expandedFolder.find('.subfolder').prop('hidden')).toBe(false);
   });
 
