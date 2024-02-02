@@ -73,6 +73,7 @@ describe('FlowsheetDataGrid', () => {
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
         rows={dataFile.rows}
+        rowHeight="2.5rem"
         ariaLabel="Test Flowsheet Data Grid"
       />,
     ).shallow();
