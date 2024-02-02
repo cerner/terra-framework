@@ -39,6 +39,16 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       Terra.validates.screenshot('collapse all folders mouse', { selector: '#expand-collapse-folder-tree' });
     });
 
+    it('announces on expands and collapses all folders', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
+
+      $('aria/Expand All').click();
+      expect($('span[aria-live="polite"]').getHTML(false)).toBe('All items expanded.');
+
+      $('aria/Collapse All').click();
+      expect($('span[aria-live="polite"]').getHTML(false)).toBe('All items collapsed.');
+    });
+
     it('expands and collapses all folders via keyboard', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
 
