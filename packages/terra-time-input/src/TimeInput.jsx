@@ -1037,6 +1037,11 @@ class TimeInput extends React.Component {
       return intl.formatMessage({ id: 'Terra.timeInput.hourDescriptionTwentyFour' });
     }
 
+    let ariaDescriptionIds;
+    if (inputAttributes && inputAttributes['aria-describedby']) {
+      ariaDescriptionIds = inputAttributes['aria-describedby'];
+    }
+
     // Fan out some component-level props into input-level a11y attributes. See the big comment below for more info.
     inputAttributes.isInvalid = isInvalid;
     inputAttributes.disabled = disabled;
@@ -1146,7 +1151,8 @@ class TimeInput extends React.Component {
             onBlur={this.handleHourBlur}
             size="2"
             pattern="\d*"
-            description={`${hourDescription()}, ${hotKeyDescription}`}
+            description={`${hourDescription()}, ${hotKeyDescription} `}
+            ariaDescribedBy={ariaDescriptionIds}
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
@@ -1167,6 +1173,7 @@ class TimeInput extends React.Component {
             pattern="\d*"
             // description: Like the hour descriptions, but for the minute input.
             description={`${minuteDescription}, ${hotKeyDescription}`}
+            ariaDescribedBy={ariaDescriptionIds}
           />
           {showSeconds && (
           <React.Fragment>
@@ -1189,6 +1196,7 @@ class TimeInput extends React.Component {
               pattern="\d*"
               // description: Like the hour descriptions, but for the second input.
               description={`${secondDescription}, ${hotKeyDescription}`}
+              ariaDescribedBy={ariaDescriptionIds}
             />
           </React.Fragment>
           )}

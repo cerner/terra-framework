@@ -15,10 +15,19 @@ const DateTimePickerExample = () => {
         Selected ISO Date Time:
         {dateTime}
       </p>
-      <Field label="Enter Date/Time" htmlFor="default">
+      <Field
+        id="default"
+        label="Enter Date/Time"
+        htmlFor="default"
+      >
         <DateTimePicker
           name="date-time-picker-example"
-          dateInputAttributes={{ id: 'default' }}
+          dateInputAttributes={{
+            'aria-describedby': 'default',
+          }}
+          timeInputAttributes={{
+            'aria-describedby': 'default',
+          }}
           onChange={handleDateTimeChange}
         />
       </Field>

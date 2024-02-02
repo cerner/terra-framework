@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the `terra-date-time-picker` example for inputAttribute. 
+
 ## 1.63.0 - (February 1, 2024)
 
 * Changed
