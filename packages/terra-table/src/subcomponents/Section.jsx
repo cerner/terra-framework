@@ -109,8 +109,8 @@ const propTypes = {
   /**
    * @private
    * Id of the first row in table
-   */
-   firstRowId: PropTypes.string,
+  */
+  firstRowId: PropTypes.string,
 
    /**
     * @private
@@ -147,7 +147,6 @@ function Section(props) {
     boundingRef,
     firstRowId,
     lastRowId,
-    columnHighlightColor,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -219,7 +218,6 @@ function Section(props) {
             rowMinimumHeight={rowMinimumHeight}
             firstRowId={firstRowId}
             lastRowId={lastRowId}
-            columnHighlightColor={columnHighlightColor}
           />
         ))}
       </tbody>

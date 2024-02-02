@@ -91,16 +91,6 @@ const propTypes = {
 
   /**
    * @private
-   * A Unique Identifier of the [column](/components/components/cerner-terra-framework-docs/table/about#column).
-   * If provided, column with specified identifier will be highlighted in data-grid.
-   *
-   * ![IMPORTANT](https://badgen.net/badge/UX/Design-Standards/blue) The column highlight feature should be limited specifically to
-   * time and timeline concepts only, best used with special instruction and guidance from User Experience to ensure proper standards.
-   */
-  columnHighlightId: PropTypes.string,
-
-  /**
-   * @private
    * Id of the first row in table
    */
   firstRowId: PropTypes.string,
@@ -110,12 +100,6 @@ const propTypes = {
    * Id of the last row in table
    */
   lastRowId: PropTypes.string,
-
-  /**
-   * @private
-   * The color to be used for highlighting a column.
-   */
-  columnHighlightColor: PropTypes.oneOf(['orange', 'green']),
 };
 
 const defaultProps = {
@@ -141,7 +125,6 @@ function Row(props) {
     rowMinimumHeight,
     firstRowId,
     lastRowId,
-    columnHighlightColor,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -211,7 +194,8 @@ function Row(props) {
             rowHeaderIndex={rowHeaderIndex}
             firstRowId={firstRowId}
             lastRowId={lastRowId}
-            columnHighlightColor={columnHighlightColor}
+            columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
+            isColumnHighlighted={displayedColumns[cellColumnIndex].isColumnHighlighted}
           >
             {cellData.content}
           </Cell>

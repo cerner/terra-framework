@@ -8,7 +8,6 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
   <ForwardRef
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
-    columnHighlightColor="orange"
     defaultColumnWidth={200}
     hasVisibleColumnHeaders={true}
     id="test-terra-flowsheet-data-grid"
@@ -131,7 +130,6 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
   <ForwardRef
     ariaLabel="Test Flowsheet Data Grid"
     columnHeaderHeight="2.5rem"
-    columnHighlightColor="orange"
     defaultColumnWidth={200}
     hasVisibleColumnHeaders={true}
     id="test-terra-flowsheet-data-grid"

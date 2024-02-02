@@ -135,6 +135,12 @@ const propTypes = {
    * The color to be used for highlighting a column.
    */
   columnHighlightColor: PropTypes.oneOf(['orange', 'green']),
+
+  /**
+   * @private
+   * Boolean value indicating whether the column needs to be highlighted.
+   */
+  isColumnHighlighted: PropTypes.string,
 };
 
 const defaultProps = {
@@ -168,6 +174,7 @@ function Cell(props) {
     firstRowId,
     lastRowId,
     columnHighlightColor,
+    isColumnHighlighted,
   } = props;
 
   const cellRef = useRef();

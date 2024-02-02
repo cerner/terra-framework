@@ -1,12 +1,14 @@
 import React from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
-const ColumnHighlight = () => {
+const ColumnHighlightOrange = () => {
   const gridDataJSON = {
     cols: [
       { id: 'Column-0', displayName: 'Vitals' },
       { id: 'Column-1', displayName: 'March 16' },
-      { id: 'Column-2', displayName: 'March 17' },
+      {
+        id: 'Column-2', displayName: 'March 17', isColumnHighlighted: true, columnHighlightColor: 'orange',
+      },
       { id: 'Column-3', displayName: 'March 18' },
     ],
     rows: [
@@ -71,4 +73,4 @@ const ColumnHighlight = () => {
   );
 };
 
-export default ColumnHighlight;
+export default ColumnHighlightOrange;

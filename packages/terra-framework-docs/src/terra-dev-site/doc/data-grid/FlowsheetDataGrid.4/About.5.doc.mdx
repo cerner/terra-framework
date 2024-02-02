@@ -44,8 +44,9 @@ See [keyboard interactions](/components/cerner-terra-framework-docs/data-grid/fl
 |[ColumnHeadersHidden](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-headers-hidden)|An example containing visually hidden column headers.|
 |[RowSelection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/row-selection)|An example demonstrating the ability to select a row of cells.|
 |[Flowsheet Data Grid with Sections](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/flowsheet-with-sections)|An example demonstrating how to create a Flowsheet Data Grid with sections.|
-|[ColumnHighlight](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-highlight)|An example of the Flowsheet Data Grid with column highlighting.|
+|[ColumnHighlightOrange](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-highlight-orange)|An example of the Flowsheet Data Grid with orange column highlighting.|
 |[ColumnHighlightGreen](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-highlight-green)|An example of the Flowsheet Data Grid with green column highlighting.|
+|[MultiColumnHighlight](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/multi-column-highlight)|An example of the Flowsheet Data Grid with orange and green column highlighting.|
 
 ## Accessibility
 ### Keyboard Interactions
@@ -124,6 +125,8 @@ A column specifies the data to render a cell in the header row of the Flowsheet 
 |**action**|object|optional|none|An object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.|
 |**hasError**|bool|optional|none|Boolean value indicating whether the column has an error in the data.|
 |**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width is used.|
+|**isColumnHighlighted**|bool|optional|none|Boolean value indicating whether the column needs to be highlighted.|
+|**columnHighlightColor**|string|optional|orange|The color to be used for highlighting a column.|
 
 ### Rows
 Rows define the cells rendered in the row and the row's selection properties.
