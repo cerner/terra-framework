@@ -84,7 +84,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     ]
   }
   rowHeaderIndex={0}
-  rowHeight="2.5rem"
+  rowMinimumHeight="2.5rem"
   rows={
     Array [
       Object {
@@ -228,7 +228,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         ]
       }
       rowHeaderIndex={0}
-      rowHeight="2.5rem"
+      rowMinimumHeight="2.5rem"
       rows={
         Array [
           Object {
@@ -391,7 +391,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           ]
         }
         rowHeaderIndex={0}
-        rowHeight="2.5rem"
+        rowMinimumHeight="2.5rem"
         rows={
           Array [
             Object {
@@ -477,6 +477,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -1146,7 +1151,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               key="00000000-0000-0000-0000-000000000000"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowHeight="2.5rem"
+              rowMinimumHeight="2.5rem"
               rows={
                 Array [
                   Object {
@@ -1270,13 +1275,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="1"
                   isTableStriped={true}
                   key="1"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -1285,14 +1290,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
@@ -1300,12 +1304,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1340,6 +1344,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -1375,7 +1380,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1388,7 +1393,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -1396,12 +1400,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1436,6 +1440,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -1468,7 +1473,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1485,7 +1490,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -1494,12 +1498,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1534,6 +1538,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -1566,7 +1571,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1622,13 +1627,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="2"
                   isTableStriped={true}
                   key="2"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -1637,14 +1642,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -1652,12 +1656,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1692,6 +1696,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -1727,7 +1732,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1740,7 +1745,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -1748,12 +1752,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1788,6 +1792,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -1820,7 +1825,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1833,7 +1838,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -1842,12 +1846,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1882,6 +1886,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -1914,7 +1919,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -1970,13 +1975,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="3"
                   isTableStriped={true}
                   key="3"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -1985,14 +1990,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -2000,12 +2004,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2040,6 +2044,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -2075,7 +2080,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2088,7 +2093,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -2096,12 +2100,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2136,6 +2140,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -2168,7 +2173,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2181,7 +2186,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -2190,12 +2194,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2230,6 +2234,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -2262,7 +2267,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2317,7 +2322,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
@@ -2325,6 +2329,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -2333,14 +2338,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
@@ -2348,12 +2352,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2388,6 +2392,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -2423,7 +2428,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2436,7 +2441,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -2444,12 +2448,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2484,6 +2488,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -2516,7 +2521,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2529,7 +2534,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -2537,12 +2541,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2577,6 +2581,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -2609,7 +2614,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -2760,7 +2765,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     ]
   }
   rowHeaderIndex={0}
-  rowHeight="2.5rem"
+  rowMinimumHeight="2.5rem"
   rows={
     Array [
       Object {
@@ -2904,7 +2909,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
         ]
       }
       rowHeaderIndex={0}
-      rowHeight="2.5rem"
+      rowMinimumHeight="2.5rem"
       rows={
         Array [
           Object {
@@ -3067,7 +3072,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
           ]
         }
         rowHeaderIndex={0}
-        rowHeight="2.5rem"
+        rowMinimumHeight="2.5rem"
         rows={
           Array [
             Object {
@@ -3153,6 +3158,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -3822,7 +3832,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               key="00000000-0000-0000-0000-000000000000"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowHeight="2.5rem"
+              rowMinimumHeight="2.5rem"
               rows={
                 Array [
                   Object {
@@ -3946,13 +3956,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="1"
                   isTableStriped={true}
                   key="1"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -3961,14 +3971,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
@@ -3976,12 +3985,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4016,6 +4025,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4051,7 +4061,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4064,7 +4074,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -4072,12 +4081,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4112,6 +4121,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4144,7 +4154,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4161,7 +4171,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -4170,12 +4179,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4210,6 +4219,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4242,7 +4252,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4298,13 +4308,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="2"
                   isTableStriped={true}
                   key="2"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -4313,14 +4323,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -4328,12 +4337,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4368,6 +4377,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4403,7 +4413,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4416,7 +4426,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -4424,12 +4433,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4464,6 +4473,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4496,7 +4506,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4509,7 +4519,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -4518,12 +4527,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4558,6 +4567,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4590,7 +4600,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4646,13 +4656,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="3"
                   isTableStriped={true}
                   key="3"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -4661,14 +4671,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -4676,12 +4685,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4716,6 +4725,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4751,7 +4761,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4764,7 +4774,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -4772,12 +4781,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4812,6 +4821,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4844,7 +4854,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4857,7 +4867,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -4866,12 +4875,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4906,6 +4915,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -4938,7 +4948,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -4993,7 +5003,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
@@ -5001,6 +5010,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -5009,14 +5019,13 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
@@ -5024,12 +5033,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5064,6 +5073,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -5099,7 +5109,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -5112,7 +5122,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -5120,12 +5129,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5160,6 +5169,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -5192,7 +5202,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -5205,7 +5215,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -5213,12 +5222,12 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5253,6 +5262,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -5285,7 +5295,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -5426,7 +5436,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     ]
   }
   rowHeaderIndex={0}
-  rowHeight="2.5rem"
+  rowMinimumHeight="2.5rem"
   rows={
     Array [
       Object {
@@ -5559,7 +5569,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
         ]
       }
       rowHeaderIndex={0}
-      rowHeight="2.5rem"
+      rowMinimumHeight="2.5rem"
       rowSelectionMode="multiple"
       rows={
         Array [
@@ -5712,7 +5722,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
           ]
         }
         rowHeaderIndex={0}
-        rowHeight="2.5rem"
+        rowMinimumHeight="2.5rem"
         rowSelectionMode="multiple"
         rows={
           Array [
@@ -5799,6 +5809,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -6602,7 +6617,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               key="00000000-0000-0000-0000-000000000000"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowHeight="2.5rem"
+              rowMinimumHeight="2.5rem"
               rowSelectionMode="multiple"
               rows={
                 Array [
@@ -6735,13 +6750,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="1"
                   isTableStriped={true}
                   key="1"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
+                  rowMinimumHeight="2.5rem"
                   rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
@@ -6753,7 +6768,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -6883,7 +6898,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -6905,7 +6920,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
@@ -6914,12 +6928,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -6955,6 +6969,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -6990,7 +7005,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7003,7 +7018,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -7012,12 +7026,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7053,6 +7067,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -7085,7 +7100,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7102,7 +7117,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -7112,12 +7126,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7153,6 +7167,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -7185,7 +7200,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7249,13 +7264,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="2"
                   isTableStriped={true}
                   key="2"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
+                  rowMinimumHeight="2.5rem"
                   rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
@@ -7267,7 +7282,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -7397,7 +7412,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -7419,7 +7434,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -7428,12 +7442,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7469,6 +7483,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -7504,7 +7519,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7517,7 +7532,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -7526,12 +7540,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7567,6 +7581,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -7599,7 +7614,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7612,7 +7627,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -7622,12 +7636,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7663,6 +7677,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -7695,7 +7710,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -7759,13 +7774,13 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="3"
                   isTableStriped={true}
                   key="3"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
+                  rowMinimumHeight="2.5rem"
                   rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
@@ -7777,7 +7792,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -7907,7 +7922,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -7929,7 +7944,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -7938,12 +7952,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7979,6 +7993,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -8014,7 +8029,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8027,7 +8042,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -8036,12 +8050,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8077,6 +8091,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -8109,7 +8124,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8122,7 +8137,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -8132,12 +8146,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8173,6 +8187,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -8205,7 +8220,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8268,7 +8283,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
@@ -8276,6 +8290,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
+                  rowMinimumHeight="2.5rem"
                   rowSelectionMode="multiple"
                   tableId="test-terra-data-grid-table"
                 >
@@ -8287,7 +8302,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onMouseLeave={[Function]}
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
@@ -8417,7 +8432,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                                   className="cell-content"
                                   style={
                                     Object {
-                                      "min-height": undefined,
+                                      "minHeight": undefined,
                                     }
                                   }
                                 >
@@ -8439,7 +8454,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
@@ -8448,12 +8462,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8489,6 +8503,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -8524,7 +8539,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8537,7 +8552,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -8546,12 +8560,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8587,6 +8601,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -8619,7 +8634,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8632,7 +8647,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -8641,12 +8655,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8682,6 +8696,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -8714,7 +8729,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -8841,7 +8856,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     ]
   }
   rowHeaderIndex={0}
-  rowHeight="2.5rem"
+  rowMinimumHeight="2.5rem"
   rows={
     Array [
       Object {
@@ -8961,7 +8976,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
         ]
       }
       rowHeaderIndex={0}
-      rowHeight="2.5rem"
+      rowMinimumHeight="2.5rem"
       rows={
         Array [
           Object {
@@ -9100,7 +9115,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
           ]
         }
         rowHeaderIndex={0}
-        rowHeight="2.5rem"
+        rowMinimumHeight="2.5rem"
         rows={
           Array [
             Object {
@@ -9186,6 +9201,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -9855,7 +9875,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               key="00000000-0000-0000-0000-000000000000"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowHeight="2.5rem"
+              rowMinimumHeight="2.5rem"
               rows={
                 Array [
                   Object {
@@ -9979,13 +9999,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="1"
                   isTableStriped={true}
                   key="1"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -9994,14 +10014,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
@@ -10009,12 +10028,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10049,6 +10068,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10084,7 +10104,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10097,7 +10117,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -10105,12 +10124,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10145,6 +10164,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10177,7 +10197,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10194,7 +10214,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -10203,12 +10222,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10243,6 +10262,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10275,7 +10295,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10331,13 +10351,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="2"
                   isTableStriped={true}
                   key="2"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -10346,14 +10366,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -10361,12 +10380,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10401,6 +10420,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10436,7 +10456,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10449,7 +10469,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -10457,12 +10476,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10497,6 +10516,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10529,7 +10549,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10542,7 +10562,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -10551,12 +10570,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10591,6 +10610,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10623,7 +10643,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10679,13 +10699,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="3"
                   isTableStriped={true}
                   key="3"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -10694,14 +10714,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -10709,12 +10728,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10749,6 +10768,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10784,7 +10804,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10797,7 +10817,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -10805,12 +10824,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10845,6 +10864,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10877,7 +10897,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -10890,7 +10910,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -10899,12 +10918,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10939,6 +10958,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -10971,7 +10991,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -11026,7 +11046,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
@@ -11034,6 +11053,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -11042,14 +11062,13 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
@@ -11057,12 +11076,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11097,6 +11116,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -11132,7 +11152,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -11145,7 +11165,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -11153,12 +11172,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11193,6 +11212,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -11225,7 +11245,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -11238,7 +11258,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -11246,12 +11265,12 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11286,6 +11305,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -11318,7 +11338,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -11442,7 +11462,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
   }
   pinnedColumns={Array []}
   rowHeaderIndex={0}
-  rowHeight="2.5rem"
+  rowMinimumHeight="2.5rem"
   rows={
     Array [
       Object {
@@ -11559,7 +11579,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       }
       pinnedColumns={Array []}
       rowHeaderIndex={0}
-      rowHeight="2.5rem"
+      rowMinimumHeight="2.5rem"
       rows={
         Array [
           Object {
@@ -11695,7 +11715,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
         }
         pinnedColumns={Array []}
         rowHeaderIndex={0}
-        rowHeight="2.5rem"
+        rowMinimumHeight="2.5rem"
         rows={
           Array [
             Object {
@@ -11781,6 +11801,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
             className="table"
             id="test-terra-data-grid-table"
             role="grid"
+            style={
+              Object {
+                "marginRight": "15px",
+              }
+            }
           >
             <colgroup>
               <col
@@ -12450,7 +12475,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               key="00000000-0000-0000-0000-000000000000"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
-              rowHeight="2.5rem"
+              rowMinimumHeight="2.5rem"
               rows={
                 Array [
                   Object {
@@ -12574,13 +12599,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="1"
                   isTableStriped={true}
                   key="1"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -12589,14 +12614,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="1"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
@@ -12604,12 +12628,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -12644,6 +12668,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -12679,7 +12704,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -12692,7 +12717,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -12700,12 +12724,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -12740,6 +12764,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -12772,7 +12797,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -12789,7 +12814,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -12798,12 +12822,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="1"
                       rowIndex={2}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -12838,6 +12862,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="1"
                         rowIndex={2}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -12870,7 +12895,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -12926,13 +12951,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="2"
                   isTableStriped={true}
                   key="2"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -12941,14 +12966,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="2"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -12956,12 +12980,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -12996,6 +13020,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13031,7 +13056,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13044,7 +13069,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -13052,12 +13076,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13092,6 +13116,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13124,7 +13149,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13137,7 +13162,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -13146,12 +13170,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="2"
                       rowIndex={3}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13186,6 +13210,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="2"
                         rowIndex={3}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13218,7 +13243,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13274,13 +13299,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="3"
                   isTableStriped={true}
                   key="3"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -13289,14 +13314,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="3"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
@@ -13304,12 +13328,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13344,6 +13368,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13379,7 +13404,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13392,7 +13417,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
@@ -13400,12 +13424,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13440,6 +13464,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13472,7 +13497,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13485,7 +13510,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
@@ -13494,12 +13518,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="3"
                       rowIndex={4}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13534,6 +13558,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="3"
                         rowIndex={4}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13566,7 +13591,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13621,7 +13646,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  height="2.5rem"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
@@ -13629,6 +13653,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
+                  rowMinimumHeight="2.5rem"
                   tableId="test-terra-data-grid-table"
                 >
                   <tr
@@ -13637,14 +13662,13 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     data-row-id="4"
                     style={
                       Object {
-                        "height": "2.5rem",
+                        "minHeight": "2.5rem",
                       }
                     }
                   >
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
@@ -13652,12 +13676,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13692,6 +13716,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13727,7 +13752,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13740,7 +13765,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -13748,12 +13772,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13788,6 +13812,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13820,7 +13845,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >
@@ -13833,7 +13858,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      height="2.5rem"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
@@ -13841,12 +13865,12 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onCellSelect={[Function]}
                       rowId="4"
                       rowIndex={5}
+                      rowMinimumHeight="2.5rem"
                       tableId="test-terra-data-grid-table"
                     >
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        height="2.5rem"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13881,6 +13905,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         onCellSelect={[Function]}
                         rowId="4"
                         rowIndex={5}
+                        rowMinimumHeight="2.5rem"
                         sectionId=""
                         tableId="test-terra-data-grid-table"
                       >
@@ -13913,7 +13938,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               className="cell-content"
                               style={
                                 Object {
-                                  "min-height": "2.5rem",
+                                  "minHeight": "2.5rem",
                                 }
                               }
                             >

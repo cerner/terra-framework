@@ -5,7 +5,9 @@
 * Fixed
   * Fixed date picker to change the focused input field value instead of the day input while pressing `+`, `-` keys.
 
-* Changeds
+## 4.98.0 - (February 1, 2024)
+
+* Changed
   * Added the break line tag in datePickerField between help message.
 
 ## 4.97.0 - (January 25, 2024)

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.3.0 - (February 1, 2024)
+
 * Fixed
   * Added `terra-table` to the dependencies in order to use `getFocusableElements` method.
 

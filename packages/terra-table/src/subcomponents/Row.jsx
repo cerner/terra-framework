@@ -39,6 +39,12 @@ const propTypes = {
   height: PropTypes.string,
 
   /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
+   */
+  rowMinimumHeight: PropTypes.string,
+
+  /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
   cells: PropTypes.arrayOf(cellShape),
@@ -103,6 +109,7 @@ function Row(props) {
     displayedColumns,
     rowHeaderIndex,
     onCellSelect,
+    rowMinimumHeight,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -111,6 +118,11 @@ function Row(props) {
 
   const isMultiRowSelect = (rowSelectionMode === 'multiple');
   const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
+
+  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
+  const heightProperties = (height) ? {
+    height,
+  } : { minHeight: rowMinimumHeight };
 
   return (
     <tr
@@ -122,7 +134,7 @@ function Row(props) {
         'striped-table-row': isTableStriped,
       }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{ height }}
+      style={{ ...heightProperties }}
       onMouseEnter={rowSelectionMode ? () => { setHovered(true); } : undefined}
       onMouseLeave={rowSelectionMode ? () => { setHovered(false); } : undefined}
     >
@@ -163,6 +175,7 @@ function Row(props) {
             isHighlighted={isHovered || isSelected}
             onCellSelect={onCellSelect}
             height={height}
+            rowMinimumHeight={rowMinimumHeight}
           >
             {cellData.content}
           </Cell>

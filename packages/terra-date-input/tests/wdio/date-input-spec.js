@@ -1020,7 +1020,6 @@ Terra.describeViewports('Date Input', ['medium'], () => {
 
       $('select[name="terra-date-month-date-input"]').click();
       browser.keys(['ArrowDown']);
-      browser.keys(['ArrowDown']);
 
       $('input[name="terra-date-day-date-input"]').click();
       browser.keys('30');
@@ -1041,7 +1040,6 @@ Terra.describeViewports('Date Input', ['medium'], () => {
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
       $('select[name="terra-date-month-date-input"]').click();
-      browser.keys(['ArrowDown']);
       browser.keys(['ArrowDown']);
 
       $('input[name="terra-date-day-date-input"]').click();

@@ -139,17 +139,23 @@ const propTypes = {
    * Boolean indicating whether or not the DataGrid should hide the column headers.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
+
+  /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
+   */
+  rowMinimumHeight: PropTypes.string,
 };
 
 const defaultProps = {
   rowHeaderIndex: 0,
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  rowHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
+  rowMinimumHeight: '2.5rem',
 };
 
 const DataGrid = forwardRef((props, ref) => {
@@ -176,6 +182,7 @@ const DataGrid = forwardRef((props, ref) => {
     rowHeight,
     rows,
     sections,
+    rowMinimumHeight,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -579,6 +586,7 @@ const DataGrid = forwardRef((props, ref) => {
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
+          rowMinimumHeight={rowMinimumHeight}
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />

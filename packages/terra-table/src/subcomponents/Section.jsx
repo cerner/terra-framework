@@ -82,6 +82,12 @@ const propTypes = {
   rowHeight: PropTypes.string,
 
   /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
+   */
+  rowMinimumHeight: PropTypes.string,
+
+  /**
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
@@ -121,6 +127,7 @@ function Section(props) {
     rowHeaderIndex,
     rows,
     onSectionSelect,
+    rowMinimumHeight,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -186,6 +193,7 @@ function Section(props) {
             onCellSelect={onCellSelect}
             isSelected={row.isSelected}
             isTableStriped={isTableStriped}
+            rowMinimumHeight={rowMinimumHeight}
           />
         ))}
       </tbody>
