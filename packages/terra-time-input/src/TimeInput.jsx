@@ -808,7 +808,7 @@ class TimeInput extends React.Component {
     }
   }
 
-  focusHour(event) {
+  focusHour() {
     // If the cursor is at the left most position in the minute input, is empty or the cursor is before the value,
     // move focus to the hour input
 
@@ -817,7 +817,7 @@ class TimeInput extends React.Component {
     }
   }
 
-  focusSecondFromMinute(event) {
+  focusSecondFromMinute() {
     // If the minute is empty or the cursor is after the value, move focus to the meridiem.
     if ((this.state.minute.length === 0
       || this.state.minute.length === this.minuteInput.selectionEnd)
@@ -827,7 +827,7 @@ class TimeInput extends React.Component {
     }
   }
 
-  focusMinuteFromSecond(event) {
+  focusMinuteFromSecond() {
     // If the cursor is at the left most position in the second input, is empty or the cursor is before the value,
     // move focus to the minute input
 
@@ -1039,8 +1039,8 @@ class TimeInput extends React.Component {
           <VisuallyHiddenText
             text={intl.formatMessage({ id: 'Terra.timeInput.labeledTextValue' },
               { a11yLabel: this.a11yLabel, a11yTimeValue })}
-              aria-live="polite"
-            />
+            aria-live="polite"
+          />
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
             // The value will be sort of like, but not strictly, an ISO 8601 value's time component.
