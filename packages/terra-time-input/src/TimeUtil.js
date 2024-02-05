@@ -436,6 +436,8 @@ TimeUtil.DoubleZeroDigit = '00';
 
 TimeUtil.initialValue = ['0', '00'];
 
+TimeUtil.letterKeycode = [38, 40, 65, 66, 67, 68, 69, 70, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90];
+
 TimeUtil.isConsideredMobileDevice = () => window.matchMedia('(max-width: 1024px)').matches
   && (
     'ontouchstart' in window

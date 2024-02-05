@@ -93,7 +93,6 @@ exports[`correctly applies the theme context className 1`] = `
         className="time-input-container orion-fusion-theme"
       >
         <div
-          aria-label="Terra.timeInput.a11yLabelDefault"
           className="time-input"
           role="group"
         >
@@ -343,7 +342,6 @@ exports[`should ignore invalid times properly 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -421,7 +419,6 @@ exports[`should ignore invalid times with seconds properly 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -526,7 +523,6 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     class="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
@@ -648,7 +644,6 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     class="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
@@ -770,7 +765,6 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     class="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
@@ -974,7 +968,6 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
     className="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       className="time-input"
       role="group"
     >
@@ -1222,7 +1215,6 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -1352,7 +1344,6 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1503,7 +1494,6 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1628,7 +1618,6 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1710,7 +1699,6 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -1818,7 +1806,6 @@ exports[`should render a default time input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -1896,7 +1883,6 @@ exports[`should render a disabled time input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="disabled time-input"
     role="group"
   >
@@ -1974,7 +1960,6 @@ exports[`should render a time input with 12 hour clock set 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2080,7 +2065,6 @@ exports[`should render a time input with a default time 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2159,7 +2143,6 @@ exports[`should render a time input with custom attributes 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2239,7 +2222,6 @@ exports[`should render a time input with onBlur 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2317,7 +2299,6 @@ exports[`should render a time input with onChange 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2395,7 +2376,6 @@ exports[`should render a time input with onFocus 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2473,7 +2453,6 @@ exports[`should render a time input with seconds input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2575,7 +2554,6 @@ exports[`should render a time input with seconds input and a value 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2678,7 +2656,6 @@ exports[`should render a time input with seconds input and custom attributes 1`]
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
@@ -2783,7 +2760,6 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
@@ -2867,7 +2843,6 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >

@@ -488,13 +488,18 @@ class TimeInput extends React.Component {
     } = this.state;
     const variant = TimeUtil.getVariantFromLocale(this.props);
 
+    if (event.key === '.' || TimeUtil.letterKeycode.includes(event.keyCode) || event.key === '-' || event.key === '_' || event.key === '=' || event.key === '+') {
+      event.preventDefault();
+    }
+
     if (event.key === 'n' || event.key === 'N') {
+      event.preventDefault();
       const currentTime = this.getCurrentTime();
       this.setTime(event, currentTime.hour, currentTime.minute, currentTime.second, currentTime.meridiem);
       return;
     }
 
-    if ((event.key === '-' || event.key === '_') && !this.props.atMinDate) {
+    if ((event.key === '-' || event.key === '_' || event.keyCode === KeyCode.KEY_DOWN) && !this.props.atMinDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (inputType === 3 && this.props.showSeconds) {
@@ -540,7 +545,7 @@ class TimeInput extends React.Component {
       return;
     }
 
-    if ((event.key === '=' || event.key === '+') && !this.props.atMaxDate) {
+    if ((event.key === '=' || event.key === '+' || event.keyCode === KeyCode.KEY_UP) && !this.props.atMaxDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
         if (inputType === 3 && this.props.showSeconds) {
@@ -660,32 +665,9 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleHourInputKeyDown(event) {
-    let stateValue = this.state.hour;
-    let { meridiem } = this.state;
+    const stateValue = this.state.hour;
+    const { meridiem } = this.state;
     const previousStateValue = stateValue;
-    const variant = TimeUtil.getVariantFromLocale(this.props);
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementHour(stateValue, variant);
-
-      // Hitting 12 when incrementing up changes the meridiem
-      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '12') {
-        if (meridiem === this.postMeridiem || !previousStateValue) {
-          meridiem = this.anteMeridiem;
-        } else {
-          meridiem = this.postMeridiem;
-        }
-      }
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementHour(stateValue, variant);
-
-      // Hitting 11 when incrementing down changes the meridiem
-      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '11') {
-        meridiem = meridiem === this.postMeridiem ? this.anteMeridiem : this.postMeridiem;
-      }
-    }
 
     if (stateValue !== previousStateValue) {
       this.handleValueChange(event, TimeUtil.inputType.HOUR, stateValue, meridiem);
@@ -704,16 +686,8 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleMinuteInputKeyDown(event) {
-    let stateValue = this.state.minute;
+    const stateValue = this.state.minute;
     const previousStateValue = stateValue;
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementMinute(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementMinute(stateValue);
-    }
 
     if (previousStateValue !== stateValue) {
       this.handleValueChange(event, TimeUtil.inputType.MINUTE, stateValue, this.state.meridiem);
@@ -738,16 +712,8 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleSecondInputKeyDown(event) {
-    let stateValue = this.state.second;
+    const stateValue = this.state.second;
     const previousStateValue = stateValue;
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementSecond(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementSecond(stateValue);
-    }
 
     if (previousStateValue !== stateValue) {
       this.handleValueChange(event, TimeUtil.inputType.SECOND, stateValue, this.state.meridiem);
@@ -1053,7 +1019,7 @@ class TimeInput extends React.Component {
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames} role="group" aria-label={this.a11yLabel}>
+        <div className={timeInputClassNames} role="group">
           {/*
           "Time of Birth group. Time of birth Hours input., ..."
         All of the controls should be presented as a group to assistive technologies. Then, each component also
