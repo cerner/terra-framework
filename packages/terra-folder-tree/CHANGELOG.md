@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added screenreader announcement when all items are expanded or collapsed.
+
 ## 1.0.0-alpha.6 - (January 12, 2024)
 
 * Changed

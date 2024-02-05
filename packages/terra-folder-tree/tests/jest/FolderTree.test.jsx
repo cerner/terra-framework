@@ -109,7 +109,7 @@ describe('basic folder tree', () => {
   it('triggers the onExpandAll callback', () => {
     const onExpandAll = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <FolderTree
         title="Documents"
         onExpandAll={onExpandAll}
@@ -121,10 +121,9 @@ describe('basic folder tree', () => {
           ]}
         />
       </FolderTree>,
-    ).dive();
+    );
 
     const expandAllButton = wrapper.find(Button).at(0);
-    expect(expandAllButton.prop('onClick')).toBe(onExpandAll);
 
     expandAllButton.simulate('click');
     expect(onExpandAll).toHaveBeenCalled();
@@ -133,7 +132,7 @@ describe('basic folder tree', () => {
   it('triggers the onCollapseAll callback', () => {
     const onCollapseAll = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = mountWithIntl(
       <FolderTree
         title="Documents"
         onCollapseAll={onCollapseAll}
@@ -145,10 +144,9 @@ describe('basic folder tree', () => {
           ]}
         />
       </FolderTree>,
-    ).dive();
+    );
 
     const collapseAllButton = wrapper.find(Button).at(1);
-    expect(collapseAllButton.prop('onClick')).toBe(onCollapseAll);
 
     collapseAllButton.simulate('click');
     expect(onCollapseAll).toHaveBeenCalled();
