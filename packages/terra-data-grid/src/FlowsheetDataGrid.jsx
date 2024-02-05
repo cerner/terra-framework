@@ -13,6 +13,11 @@ import styles from './FlowsheetDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
 
+const ColumnHighlightColor = {
+  ORANGE: 'orange',
+  GREEN: 'green',
+};
+
 const propTypes = {
   /**
    * String that identifies the element (or elements) that labels the grid.
@@ -439,3 +444,4 @@ FlowsheetDataGrid.propTypes = propTypes;
 FlowsheetDataGrid.defaultProps = defaultProps;
 
 export default injectIntl(FlowsheetDataGrid);
+export { ColumnHighlightColor };
