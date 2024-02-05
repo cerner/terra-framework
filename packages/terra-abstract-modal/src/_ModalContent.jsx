@@ -77,6 +77,11 @@ const propTypes = {
    * If set to true, the AbstractModal is rendered inside a NotificationDialog.
    */
   isCalledFromNotificationDialog: PropTypes.bool,
+  /**
+   * @private
+   * If set to true, then the focus lock will get enabled.
+   */
+  enableFocusLock: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -89,6 +94,7 @@ const defaultProps = {
   rootSelector: '#root',
   zIndex: '6000',
   isCalledFromNotificationDialog: false,
+  enableFocusLock: true,
 };
 
 const ModalContent = forwardRef((props, ref) => {
@@ -108,6 +114,7 @@ const ModalContent = forwardRef((props, ref) => {
     zIndex,
     setModalFocusElementRef,
     isCalledFromNotificationDialog,
+    enableFocusLock,
     ...customProps
   } = props;
 
@@ -141,6 +148,51 @@ const ModalContent = forwardRef((props, ref) => {
 
   const platformIsiOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
+  const modalContent = (
+    <div
+      {...customProps}
+      tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
+      aria-label={ariaLabel}
+      aria-labelledby={ariaLabelledBy}
+      aria-describedby={ariaDescribedBy}
+      className={modalClassName}
+      role={role}
+      ref={ref}
+    >
+      <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
+        {(!isCalledFromNotificationDialog) && (
+          <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+            {text => {
+              // In the latest version of react-intl this param is an array, when previous versions it was a string.
+              let useText = text;
+              if (Array.isArray(text)) {
+                useText = text.join('');
+              }
+              return (
+                <VisuallyHiddenText text={useText} />
+              );
+            }}
+          </FormattedMessage>
+        )}
+        {children}
+        {(!isCalledFromNotificationDialog) && (
+          <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+            {text => {
+              // In the latest version of react-intl this param is an array, when previous versions it was a string.
+              let useText = text;
+              if (Array.isArray(text)) {
+                useText = text.join('');
+              }
+              return (
+                <VisuallyHiddenText text={useText} />
+              );
+            }}
+          </FormattedMessage>
+        )}
+      </div>
+    </div>
+  );
+
   return (
     <React.Fragment>
       <ModalOverlay
@@ -154,50 +206,18 @@ const ModalContent = forwardRef((props, ref) => {
           the aria-label value when the modal is opened
         */
       }
-      <FocusLock>
-        <div
-          {...customProps}
-          tabIndex={platformIsiOS || isCalledFromNotificationDialog ? '-1' : '0'}
-          aria-label={ariaLabel}
-          aria-labelledby={ariaLabelledBy}
-          aria-describedby={ariaDescribedBy}
-          className={modalClassName}
-          role={role}
-          ref={ref}
-        >
-          <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
-            {(!isCalledFromNotificationDialog) && (
-            <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
-              {text => {
-                // In the latest version of react-intl this param is an array, when previous versions it was a string.
-                let useText = text;
-                if (Array.isArray(text)) {
-                  useText = text.join('');
-                }
-                return (
-                  <VisuallyHiddenText text={useText} />
-                );
-              }}
-            </FormattedMessage>
-            )}
-            {children}
-            {(!isCalledFromNotificationDialog) && (
-            <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
-              {text => {
-                // In the latest version of react-intl this param is an array, when previous versions it was a string.
-                let useText = text;
-                if (Array.isArray(text)) {
-                  useText = text.join('');
-                }
-                return (
-                  <VisuallyHiddenText text={useText} />
-                );
-              }}
-            </FormattedMessage>
-            )}
-          </div>
+      {enableFocusLock
+        && (
+        <FocusLock>
+          {modalContent}
+        </FocusLock>
+        )}
+      {!enableFocusLock
+        && (
+        <div>
+          {modalContent}
         </div>
-      </FocusLock>
+        )}
     </React.Fragment>
   );
 });

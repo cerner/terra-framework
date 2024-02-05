@@ -13,6 +13,16 @@ it('should mount an open modal', () => {
   expect(modal).toMatchSnapshot();
 });
 
+it('should mount an open modal with enableFocusLock set to true', () => {
+  const modal = mountWithIntl(<AbstractModalExample enableFocusLock />);
+  expect(modal).toMatchSnapshot();
+});
+
+it('should mount an open modal with enableFocusLock set to false', () => {
+  const modal = mountWithIntl(<AbstractModalExample enableFocusLock={false} />);
+  expect(modal).toMatchSnapshot();
+});
+
 it('should shallow an open modal 6000 z-index', () => {
   const modal = shallowWithIntl(<AbstractModalExample zIndex="6000" />);
   expect(modal).toMatchSnapshot();

@@ -78,6 +78,11 @@ const propTypes = {
    * If set to true, the AbstractModal is rendered inside a NotificationDialog.
    */
   isCalledFromNotificationDialog: PropTypes.bool,
+  /**
+   * @private
+   * If set to true, then the focus lock will get enabled.
+   */
+  enableFocusLock: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -90,6 +95,7 @@ const defaultProps = {
   rootSelector: '#root',
   zIndex: '6000',
   isCalledFromNotificationDialog: false,
+  enableFocusLock: true,
 };
 
 const AbstractModal = (props) => {
@@ -109,6 +115,7 @@ const AbstractModal = (props) => {
     onRequestClose,
     zIndex,
     isCalledFromNotificationDialog,
+    enableFocusLock,
     ...customProps
   } = props;
 
@@ -174,6 +181,7 @@ const AbstractModal = (props) => {
         ref={modalElementRef}
         onKeyDown={handleKeydown}
         isCalledFromNotificationDialog={isCalledFromNotificationDialog}
+        enableFocusLock={enableFocusLock}
       >
         {children}
       </ModalContent>
