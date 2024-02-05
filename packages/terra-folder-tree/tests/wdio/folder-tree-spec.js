@@ -109,13 +109,13 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       browser.keys('Tab');
       browser.keys('ArrowDown');
       browser.keys('ArrowDown');
-      expect($('//li[2]').isFocused()).toBe(true);
+      expect($('//li[2]/span[1]').isFocused()).toBe(true);
 
       browser.keys('Tab');
-      expect($('//li[2]').isFocused()).toBe(false);
+      expect($('//li[2]/span[1]').isFocused()).toBe(false);
 
       browser.keys(['Shift', 'Tab']);
-      expect($('//li[2]').isFocused()).toBe(true);
+      expect($('//li[2]/span[1]').isFocused()).toBe(true);
     });
 
     it('wraps items with long labels', () => {
