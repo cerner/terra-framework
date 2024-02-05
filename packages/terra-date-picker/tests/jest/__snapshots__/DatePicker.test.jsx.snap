@@ -673,16 +673,16 @@ exports[`correctly applies the theme context className 1`] = `
                       >
                         <VisuallyHiddenText
                           aria-live="off"
-                          text="Terra.datePicker.invalidDate.
-            Terra.datePicker.dateFormatLabel
+                          text="Terra.datePicker.invalidDate. 
+            Terra.datePicker.dateFormatLabel 
             Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey "
                         >
                           <span
                             aria-live="off"
                             className="visually-hidden-text"
                           >
-                            Terra.datePicker.invalidDate.
-            Terra.datePicker.dateFormatLabel
+                            Terra.datePicker.invalidDate. 
+            Terra.datePicker.dateFormatLabel 
             Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey 
                           </span>
                         </VisuallyHiddenText>
