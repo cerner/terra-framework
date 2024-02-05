@@ -169,7 +169,6 @@ const ColumnHeader = (props) => {
             onColumnSelect={onColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
             onResizeHandleChange={onResizeHandleChange}
-            isColumnHighlighted={column.isColumnHighlighted}
             columnHighlightDescription={column.columnHighlightDescription}
           />
         ))}

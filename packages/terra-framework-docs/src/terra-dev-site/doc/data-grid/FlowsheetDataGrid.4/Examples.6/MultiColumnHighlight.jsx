@@ -9,14 +9,12 @@ const MultiColumnHighlight = () => {
       {
         id: 'Column-2',
         displayName: 'March 17',
-        isColumnHighlighted: true,
         columnHighlightColor: 'orange',
         columnHighlightDescription: 'Most recent time',
       },
       {
         id: 'Column-3',
         displayName: 'March 18',
-        isColumnHighlighted: true,
         columnHighlightColor: 'green',
         columnHighlightDescription: 'Selected time',
       },

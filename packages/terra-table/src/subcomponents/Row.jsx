@@ -195,7 +195,6 @@ function Row(props) {
             firstRowId={firstRowId}
             lastRowId={lastRowId}
             columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
-            isColumnHighlighted={displayedColumns[cellColumnIndex].isColumnHighlighted}
           >
             {cellData.content}
           </Cell>

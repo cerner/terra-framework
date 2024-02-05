@@ -9,7 +9,6 @@ const ColumnHighlightOrange = () => {
       {
         id: 'Column-2',
         displayName: 'March 17',
-        isColumnHighlighted: true,
         columnHighlightColor: 'orange',
         columnHighlightDescription: 'Most recent time',
       },

@@ -20,6 +20,11 @@ import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
 
+const ColumnHighlightColor = {
+  ORANGE: 'orange',
+  GREEN: 'green',
+};
+
 const propTypes = {
   /**
    * String identifier of the row in which the Cell will be rendered.
@@ -135,12 +140,6 @@ const propTypes = {
    * The color to be used for highlighting a column.
    */
   columnHighlightColor: PropTypes.oneOf(['orange', 'green']),
-
-  /**
-   * @private
-   * Boolean value indicating whether the column needs to be highlighted.
-   */
-  isColumnHighlighted: PropTypes.string,
 };
 
 const defaultProps = {
@@ -174,7 +173,6 @@ function Cell(props) {
     firstRowId,
     lastRowId,
     columnHighlightColor,
-    isColumnHighlighted,
   } = props;
 
   const cellRef = useRef();

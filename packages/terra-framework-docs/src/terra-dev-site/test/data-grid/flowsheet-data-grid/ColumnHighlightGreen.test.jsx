@@ -9,7 +9,6 @@ const ColumnHighlightGreen = () => {
       {
         id: 'Column-2',
         displayName: 'March 17',
-        isColumnHighlighted: true,
         columnHighlightColor: 'green',
         columnHighlightDescription: 'Selected time',
       },
