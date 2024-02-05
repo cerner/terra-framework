@@ -82,21 +82,28 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       });
     });
 
-  //   describe('flowsheet data grid with column highlight', () => {
-  //     it('renders a flowsheet with default column highlight', () => {
-  //       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-highlight');
-  //       browser.keys(['Tab']); // Cell 0,0 gets focus
-  //       expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
-  //       Terra.validates.element('flowsheet-data-grid-column-highlight', { selector: '#terra-flowsheet-data-grid-column-highlight' });
-  //     });
-  //
-  //     it('renders a flowsheet data grid with green column highlight', () => {
-  //       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-highlight-green');
-  //       browser.keys(['Tab']); // Cell 0,0 gets focus
-  //       expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
-  //       Terra.validates.element('flowsheet-data-grid-column-highlight-green', { selector: '#terra-flowsheet-data-grid-column-highlight-green' });
-  //     });
-  //   });
+    // describe('flowsheet data grid with column highlight', () => {
+    //   it('renders a flowsheet with default column highlight', () => {
+    //     browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-highlight');
+    //     browser.keys(['Tab']); // Cell 0,0 gets focus
+    //     expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+    //     Terra.validates.element('flowsheet-data-grid-column-highlight', { selector: '#terra-flowsheet-data-grid-column-highlight' });
+    //   });
+    //
+    //   it('renders a flowsheet data grid with green column highlight', () => {
+    //     browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-highlight-green');
+    //     browser.keys(['Tab']); // Cell 0,0 gets focus
+    //     expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+    //     Terra.validates.element('flowsheet-data-grid-column-highlight-green', { selector: '#terra-flowsheet-data-grid-column-highlight-green' });
+    //   });
+    //
+    //   it('renders a flowsheet data grid with orange and green column highlight', () => {
+    //     browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/multi-column-highlight');
+    //     browser.keys(['Tab']); // Cell 0,0 gets focus
+    //     expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+    //     Terra.validates.element('flowsheet-data-grid-multi-column-highlight', { selector: '#terra-flowsheet-data-grid-multi-column-highlight' });
+    //   });
+    // });
   });
 
   describe('Cell selection', () => {

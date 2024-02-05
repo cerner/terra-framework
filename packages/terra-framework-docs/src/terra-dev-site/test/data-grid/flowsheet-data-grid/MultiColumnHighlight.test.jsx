@@ -7,10 +7,18 @@ const MultiColumnHighlight = () => {
       { id: 'Column-0', displayName: 'Vitals' },
       { id: 'Column-1', displayName: 'March 16' },
       {
-        id: 'Column-2', displayName: 'March 17', isColumnHighlighted: true, columnHighlightColor: 'orange',
+        id: 'Column-2',
+        displayName: 'March 17',
+        isColumnHighlighted: true,
+        columnHighlightColor: 'orange',
+        columnHighlightDescription: 'Most recent time',
       },
       {
-        id: 'Column-3', displayName: 'March 18', isColumnHighlighted: true, columnHighlightColor: 'green',
+        id: 'Column-3',
+        displayName: 'March 18',
+        isColumnHighlighted: true,
+        columnHighlightColor: 'green',
+        columnHighlightDescription: 'Selected time',
       },
     ],
     rows: [
@@ -66,7 +74,7 @@ const MultiColumnHighlight = () => {
 
   return (
     <FlowsheetDataGrid
-      id="terra-flowsheet-data-grid-column-highlight"
+      id="terra-flowsheet-data-grid-multi-column-highlight"
       columns={cols}
       rows={rows}
       ariaLabel="Flowsheet Data Grid"

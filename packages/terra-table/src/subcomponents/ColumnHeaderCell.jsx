@@ -16,7 +16,7 @@ import { IconUp, IconDown, IconError } from 'terra-icon';
 import { validateAction } from '../proptypes/validators';
 import ColumnResizeHandle from './ColumnResizeHandle';
 import GridContext, { GridConstants } from '../utils/GridContext';
-import { SortIndicators } from '../proptypes/columnShape';
+import { ColumnHighlightColor, SortIndicators } from '../proptypes/columnShape';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
 
@@ -174,6 +174,18 @@ const propTypes = {
    * Object containing intl APIs
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+
+  /**
+   * @private
+   * The information to be conveyed to screen readers about the highlighted column.
+   */
+   columnHighlightDescription: PropTypes.string,
+
+   /**
+   * @private
+   * The color to be used for highlighting a column.
+   */
+  columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
 };
 
 const defaultProps = {
@@ -216,6 +228,8 @@ const ColumnHeaderCell = (props) => {
     onResizeMouseDown,
     onResizeHandleChange,
     ownsResizeHandle,
+    columnHighlightDescription,
+    columnHighlightColor,
   } = props;
 
   const columnContext = useContext(ColumnContext);
@@ -314,6 +328,14 @@ const ColumnHeaderCell = (props) => {
     sortDescription = intl.formatMessage({ id: 'Terra.table.sort-descending' });
   }
 
+  // Add column highlight indicator based on color
+  let columnHighlightIcon;
+  if (columnHighlightColor === ColumnHighlightColor.GREEN) {
+    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
+  } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
+    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><rect className={cx('highlight-icon-square')} x="110%" y="7.5" transform="translate(-8)" /></svg>;
+  }
+
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);
 
@@ -334,6 +356,8 @@ const ColumnHeaderCell = (props) => {
   let headerDescription = displayName;
   headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
+  headerDescription += columnHighlightDescription ? `, ${columnHighlightDescription}` : '';
+
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
   const CellTag = !isActionCell ? 'th' : 'td';
 
@@ -373,6 +397,7 @@ const ColumnHeaderCell = (props) => {
         <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
         {sortIndicatorIcon}
         <VisuallyHiddenText text={headerDescription} />
+        {columnHighlightIcon}
       </div>
     );
   }

@@ -7,7 +7,11 @@ const ColumnHighlightGreen = () => {
       { id: 'Column-0', displayName: 'Vitals' },
       { id: 'Column-1', displayName: 'March 16' },
       {
-        id: 'Column-2', displayName: 'March 17', isColumnHighlighted: true, columnHighlightColor: 'green',
+        id: 'Column-2',
+        displayName: 'March 17',
+        isColumnHighlighted: true,
+        columnHighlightColor: 'green',
+        columnHighlightDescription: 'Selected time',
       },
       { id: 'Column-3', displayName: 'March 18' },
     ],
