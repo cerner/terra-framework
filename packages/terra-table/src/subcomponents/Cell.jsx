@@ -16,14 +16,10 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ColumnContext from '../utils/ColumnContext';
 import GridContext, { GridConstants } from '../utils/GridContext';
 import getFocusableElements from '../utils/focusManagement';
+import { ColumnHighlightColor } from '../proptypes/columnShape';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
-
-const ColumnHighlightColor = {
-  ORANGE: 'orange',
-  GREEN: 'green',
-};
 
 const propTypes = {
   /**
@@ -139,7 +135,7 @@ const propTypes = {
    * @private
    * The color to be used for highlighting a column.
    */
-  columnHighlightColor: PropTypes.oneOf(['orange', 'green']),
+  columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
 };
 
 const defaultProps = {

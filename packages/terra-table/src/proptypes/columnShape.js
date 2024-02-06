@@ -6,6 +6,11 @@ const SortIndicators = {
   DESCENDING: 'descending',
 };
 
+const ColumnHighlightColor = {
+  ORANGE: 'orange',
+  GREEN: 'green',
+};
+
 const columnShape = PropTypes.shape({
   /**
    * Required string representing a unique identifier for the column.
@@ -52,7 +57,7 @@ const columnShape = PropTypes.shape({
    * @private
    * The color to be used for highlighting a column.
    */
-  columnHighlightColor: PropTypes.oneOf(['orange', 'green']),
+  columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
 
   /**
    * @private
@@ -62,4 +67,4 @@ const columnShape = PropTypes.shape({
 });
 
 export default columnShape;
-export { SortIndicators };
+export { SortIndicators, ColumnHighlightColor };

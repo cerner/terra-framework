@@ -103,6 +103,11 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
     //     expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
     //     Terra.validates.element('flowsheet-data-grid-multi-column-highlight', { selector: '#terra-flowsheet-data-grid-multi-column-highlight' });
     //   });
+    //
+    //   it('renders a flowsheet data grid sections along with orange column highlight', () => {
+    //     browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-sections-with-col-highlight');
+    //     Terra.validates.element('flowsheet-data-grid-sections-with-orange-column-highlight', { selector: '#flowsheet-sections-with-col-highlight' });
+    //   });
     // });
   });
 
