@@ -64,6 +64,68 @@ Terra.describeViewports('Time Input Twelve Hour', ['medium'], () => {
     validateElement('invalid meridiem');
   });
 
+  describe('pressing -', () => {
+    it('should roll over to 11 AM if hour and minute is at 12:00 PM', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('12');
+      browser.keys('00');
+      browser.keys('p');
+      browser.keys('-');
+      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
+      validateElement('- causes rollover to morning');
+    });
+
+    it('should roll over to 11 PM if hour and minute is at 12:00 AM', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('12');
+      browser.keys('00');
+      browser.keys('-');
+      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
+      validateElement('- causes rollover to evening');
+    });
+  });
+
+  describe('pressing +', () => {
+    it('should roll over to 12 AM if hour and minute is at 11:59 PM', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('11');
+      browser.keys('59');
+      browser.keys('p');
+      browser.keys('+');
+      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('00');
+      validateElement('+ causes rollover to morning');
+    });
+
+    it('should roll over to 12 PM if hour and minute is at 11:59 AM', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/twelve-hour/default');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('11');
+      browser.keys('59');
+      browser.keys('+');
+      expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('12');
+      expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('00');
+      validateElement('+ causes rollover to evening');
+    });
+  });
+
   describe('pressing A', () => {
     describe('in the hour input', () => {
       it('should set merdiem to antemeridiem if it was postmerdiem', () => {
