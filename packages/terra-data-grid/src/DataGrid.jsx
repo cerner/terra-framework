@@ -206,8 +206,12 @@ const DataGrid = forwardRef((props, ref) => {
 
   const [checkResizable, setCheckResizable] = useState(false);
 
-  // if columns are not visible then set the first selectable row index to 1
-  const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
+  const hasColumnHeaderActions = true; // TODO add method to calculate if there are actions
+  // eslint-disable-next-line no-nested-ternary
+  const firstRowIndex = hasVisibleColumnHeaders ? 0 : (hasColumnHeaderActions ? 2 : 1);
+
+  // if columns are not visible then set the first selectable row index to 1 or 2
+  const [focusedRow, setFocusedRow] = useState(firstRowIndex);
   const [focusedCol, setFocusedCol] = useState(0);
 
   // Aria live region message management
@@ -427,7 +431,7 @@ const DataGrid = forwardRef((props, ref) => {
         } else {
           // Left key
           nextCol -= 1;
-          setCheckResizable(cellCoordinates.row === 0);
+          setCheckResizable(cellCoordinates.row === 0 || (hasColumnHeaderActions && cellCoordinates.row === 1));
         }
         break;
       case KeyCode.KEY_RIGHT:
@@ -487,7 +491,7 @@ const DataGrid = forwardRef((props, ref) => {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    if (nextCol < 0 || nextRow < (hasVisibleColumnHeaders ? 0 : 1)) {
+    if (nextCol < 0 || nextRow < (firstRowIndex)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -570,7 +574,7 @@ const DataGrid = forwardRef((props, ref) => {
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
           activeColumnIndex={(isGridActive && focusedRow === 0) ? focusedCol : undefined}
-          isActiveColumnResizing={focusedRow === 0 && checkResizable}
+          isActiveColumnResizing={(focusedRow === 0 || (hasColumnHeaderActions && focusedRow === 1)) && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
@@ -585,6 +589,7 @@ const DataGrid = forwardRef((props, ref) => {
           onCellSelect={onCellSelect}
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
+          hasColumnHeaderActions={hasColumnHeaderActions}
           isStriped
           rowMinimumHeight={rowMinimumHeight}
         />

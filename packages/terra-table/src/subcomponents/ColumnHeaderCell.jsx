@@ -12,10 +12,10 @@ import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { IconUp, IconDown, IconError } from 'terra-icon';
-
+import Button from 'terra-button';
 import ColumnResizeHandle from './ColumnResizeHandle';
 import GridContext, { GridConstants } from '../utils/GridContext';
-import { SortIndicators } from '../proptypes/columnShape';
+import { SortIndicators, actionShape } from '../proptypes/columnShape';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
 
@@ -31,6 +31,11 @@ const propTypes = {
    * Unique identifier for the parent table
    */
   tableId: PropTypes.string.isRequired,
+
+  hasColumnHeaderActions: PropTypes.bool,
+  isActionCell: PropTypes.bool,
+
+  action: PropTypes.shape(actionShape),
 
   /**
    * String of text to render within the column header cell.
@@ -145,6 +150,9 @@ const ColumnHeaderCell = (props) => {
   const {
     id,
     tableId,
+    hasColumnHeaderActions,
+    isActionCell,
+    action,
     displayName,
     sortIndicator,
     hasError,
@@ -207,12 +215,16 @@ const ColumnHeaderCell = (props) => {
   };
 
   // Handle column header selection via the space bar.
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event, callback) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
-        if (isSelectable && onColumnSelect) {
+        if (callback) {
+          // for action button
+          callback();
+          break;
+        } else if (isSelectable && onColumnSelect) {
           onColumnSelect(id);
         }
         event.stopPropagation();
@@ -271,6 +283,44 @@ const ColumnHeaderCell = (props) => {
   headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
 
+  // set focus in action cell to either button or resize handler
+  const distributeFocusWithinActionCell = (event) => {
+    if (event.target === columnHeaderCellRef?.current?.childNodes[1]) {
+      columnHeaderCellRef?.current?.childNodes[1].focus();
+    } else {
+      columnHeaderCellRef?.current?.childNodes[0].focus();
+    }
+  };
+
+  // change z-index of the cell to bring up its handler
+  const zIndexActionCell = (event, up, isPinnedColumn) => {
+    // Not triggered when swapping focus between children
+    if (!event.currentTarget.contains(event.relatedTarget)) {
+      if (event.currentTarget) {
+        const zIndexOffset = isPinnedColumn ? 4 : 1;
+        const zIndex = up ? zIndexOffset + 1 : zIndexOffset;
+        // eslint-disable-next-line no-param-reassign
+        event.currentTarget.style.zIndex = zIndex;
+      }
+    }
+  };
+
+  const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
+  const handleFocus = (event) => {
+    if (isActionCell || hasColumnHeaderActions) {
+      zIndexActionCell(event, true, isPinnedColumn);
+    }
+    if (isActionCell) {
+      distributeFocusWithinActionCell(event);
+    }
+  };
+
+  const handleBlur = (event) => {
+    if (isActionCell || hasColumnHeaderActions) {
+      zIndexActionCell(event, false, isPinnedColumn);
+    }
+  };
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <th
@@ -278,8 +328,10 @@ const ColumnHeaderCell = (props) => {
       id={`${tableId}-${id}`}
       key={id}
       className={cx('column-header', theme.className, {
+        'action-cell': isActionCell,
+        'preceeds-action-cell': hasColumnHeaderActions && !isActionCell,
         selectable: isSelectable,
-        pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
+        pinned: isPinnedColumn,
         'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
@@ -288,18 +340,32 @@ const ColumnHeaderCell = (props) => {
       title={displayName}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
+      style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
+      onFocus={handleFocus}
+      onBlur={handleBlur}
     >
-      <div
-        className={cx('header-container')}
-        {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
-        tabIndex={buttonTabIndex}
-      >
-        {errorIcon}
-        <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
-        {sortIndicatorIcon}
-        <VisuallyHiddenText text={headerDescription} />
-      </div>
+      {isActionCell && action?.onCall
+        ? (
+          <Button
+            variant="de-emphasis"
+            ref={columnHeaderCellRef}
+            isCompact
+            onClick={action?.onCall}
+            onKeyDown={(event) => handleKeyDown(event, action.onCall)}
+            text={action?.label}
+          />
+        ) : (
+          <div
+            className={cx('header-container')}
+            {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
+            tabIndex={buttonTabIndex}
+          >
+            {errorIcon}
+            <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
+            {sortIndicatorIcon}
+            <VisuallyHiddenText text={headerDescription} />
+          </div>
+        )}
       { isResizable && (
       <ColumnResizeHandle
         columnIndex={columnIndex}
@@ -309,6 +375,7 @@ const ColumnHeaderCell = (props) => {
         isActive={isResizeHandleActive}
         setIsActive={setResizeHandleActive}
         height={tableHeight}
+        topOffset={isActionCell && `-${headerHeight}`} // TODO check if headerHeight prop always exists
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}

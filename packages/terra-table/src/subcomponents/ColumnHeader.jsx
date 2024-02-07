@@ -31,6 +31,11 @@ const propTypes = {
    * Column index for cell that can receive tab focus.
    */
   activeColumnIndex: PropTypes.number,
+
+  /**
+   * Row index for cell that can receive tab focus.
+   */
+  activeRowIndex: PropTypes.number,
   /**
    * Specifies if resize handle should be active.
    */
@@ -60,16 +65,23 @@ const propTypes = {
    * Boolean indicating whether or not the table columns should be displayed.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
+
+  /**
+   * A Boolean value specifying whether the table has actions in column headers.
+   */
+  hasColumnHeaderActions: PropTypes.bool,
 };
 
 const defaultProps = {
   hasVisibleColumnHeaders: true,
+  hasColumnHeaderActions: true, // TODO - remove this to accomodate actual actions
 };
 
 const ColumnHeader = (props) => {
   const {
     tableId,
     activeColumnIndex,
+    activeRowIndex,
     isActiveColumnResizing,
     columnResizeIncrement,
     columns,
@@ -79,7 +91,14 @@ const ColumnHeader = (props) => {
     onResizeMouseDown,
     onResizeHandleChange,
     hasVisibleColumnHeaders,
+    hasColumnHeaderActions,
   } = props;
+
+  // TODO - remove this once actual actions added
+  const defaultAction = {
+    label: 'action label',
+    onCall: () => alert('Action called!'),
+  };
 
   return (
     <thead>
@@ -94,6 +113,7 @@ const ColumnHeader = (props) => {
             key={column.id}
             id={column.id}
             tableId={tableId}
+            hasColumnHeaderActions={hasColumnHeaderActions}
             columnIndex={columnIndex}
             displayName={column.displayName}
             isDisplayVisible={column.isDisplayVisible}
@@ -104,7 +124,7 @@ const ColumnHeader = (props) => {
             isResizable={hasVisibleColumnHeaders && column.isResizable}
             isSelectable={hasVisibleColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
-            isActive={activeColumnIndex === columnIndex}
+            isActive={activeColumnIndex === columnIndex && activeRowIndex === 0} // can be 2 rows in header
             isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
             columnResizeIncrement={columnResizeIncrement}
             hasError={column.hasError}
@@ -115,6 +135,44 @@ const ColumnHeader = (props) => {
           />
         ))}
       </tr>
+      {/* Actions row */}
+      {hasColumnHeaderActions && hasVisibleColumnHeaders && (
+        <tr
+          aria-rowindex={2}
+          data-row-id={`${tableId}-header-actions-row`}
+          className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
+          // TODO - check if needs height prop
+        >
+          {columns.map((column, columnIndex) => (
+            <ColumnHeaderCell
+              key={`column-${column.id}-action`}
+              id={`column-${column.id}-action`}
+              tableId={tableId}
+              // TODO if needs hasColumnHeaderActions prop add here
+              isActionCell
+              action={column.action || (columnIndex % 2 === 0 ? undefined : defaultAction)}
+              columnIndex={columnIndex}
+              // TOD - for now displayName is passed as action prop, check if needs change
+              isDisplayVisible={column.isDisplayVisible}
+              width={column.width}
+              minimumWidth={column.minimumWidth}
+              maximumWidth={column.maximumWidth}
+              headerHeight={headerHeight}
+              isResizable={hasVisibleColumnHeaders && column.isResizable}
+              // TODO - remove when finished if doesn't need isSelectable prop
+              tableHeight={tableHeight}
+              isActive={activeColumnIndex === columnIndex && activeRowIndex === 1}
+              isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+              columnResizeIncrement={columnResizeIncrement}
+              // TODO - remove when finished if doesn't need hasError prop
+              // TODO - remove when finished if doesn't need sortIndicator prop
+              // TODO - remove when finished if doesn't need onColumnSelect prop
+              onResizeMouseDown={onResizeMouseDown}
+              onResizeHandleChange={onResizeHandleChange}
+            />
+          ))}
+        </tr>
+      )}
     </thead>
   );
 };

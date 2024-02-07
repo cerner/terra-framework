@@ -172,6 +172,11 @@ const propTypes = {
   isStriped: PropTypes.bool,
 
   /**
+   * A Boolean value specifying whether the table has actions in column headers.
+   */
+  hasColumnHeaderActions: PropTypes.bool,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -216,6 +221,7 @@ function Table(props) {
     onRowSelectionHeaderSelect,
     hasVisibleColumnHeaders,
     isStriped,
+    hasColumnHeaderActions,
     rowHeaderIndex,
     intl,
     rowMinimumHeight,
@@ -401,7 +407,8 @@ function Table(props) {
   // useEffect for managing the table height.
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
-      setTableHeight(tableRef.current.offsetHeight - 1);
+      const heightOffset = hasColumnHeaderActions ? 2 : 1; // needs 2 pixels if actions row exists in headers to avoid scroll
+      setTableHeight(tableRef.current.offsetHeight - heightOffset);
 
       const tableContainer = tableContainerRef.current;
       setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
@@ -591,6 +598,7 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
             onResizeHandleChange={onResizeHandleChange}
+            hasColumnHeaderActions={hasColumnHeaderActions}
           />
           {tableSections.map((section) => (
             <Section

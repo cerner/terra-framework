@@ -36,6 +36,11 @@ const propTypes = {
   height: PropTypes.number.isRequired,
 
   /**
+   * Number that specifies the negative top offset for resize handler div when full height.
+   */
+  topOffset: PropTypes.string,
+
+  /**
    * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
@@ -90,6 +95,7 @@ const ColumnResizeHandle = (props) => {
     columnText,
     columnWidth,
     height,
+    topOffset,
     intl,
     isActive,
     maximumWidth,
@@ -134,6 +140,10 @@ const ColumnResizeHandle = (props) => {
   };
 
   const fitToTable = () => {
+    // Update topOffset for actions row
+    if (topOffset) {
+      resizeHandleRef.current.style.top = topOffset;
+    }
     // Update resize handle height to match parent table height
     resizeHandleRef.current.style.height = `${height}px`;
   };
@@ -141,6 +151,8 @@ const ColumnResizeHandle = (props) => {
   const onMouseLeave = () => {
     if (document.activeElement !== resizeHandleRef.current) {
       resizeHandleRef.current.style.height = '100%';
+      // Update topOffset as it can be shifted for actions row
+      resizeHandleRef.current.style.top = 0;
     }
   };
 
@@ -209,7 +221,7 @@ const ColumnResizeHandle = (props) => {
       aria-valuemax={isActive ? maximumWidth : null}
       aria-label={isActive && isNavigationEnabled ? intl.formatMessage({ id: 'Terra.table.resize-handle-template' }, { columnText }) : null}
       aria-valuetext={!isNavigationEnabled ? intl.formatMessage({ id: 'Terra.table.resize-handle-value-text' }, { columnWidth }) : null}
-      style={{ height: `${height}px` }} // eslint-disable-line react/forbid-dom-props
+      // TODO style={{ height: `${height}px` }} adds scroll when focus on resize handler, needs to be rempved
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}

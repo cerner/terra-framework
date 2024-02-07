@@ -21,14 +21,50 @@
       outline-offset: var(--terra-table-column-header-focus-outline-offset, -5px);
     }
 
+    /*
+     * z-index is being changed dinamically inside the header cell component.
+     * That allows two header cells (in case there is an action cell)
+     * to go up and down reletively to each other in order to show the correct resize handler
+     * above both header cells.
+     * Current z-index pattern is:
+     * ------------------------------------------
+     *                       | regular | z-index: 1
+     * regular column header | focused | z-index: 2
+     *                       | hovered | z-index: 3 !important
+     * ------------------------------------------
+     *                       | regular | z-index: 4
+     * pinned column header  | focused | z-index: 5
+     *                       | hovered | z-index: 6 !important
+    */
+
+    &:hover {
+      z-index: 3 !important;
+    }
+
     &.pinned {
       position: sticky;
-      z-index: 2 !important;
+      z-index: 4; // refer to current z-index pattern above
+    }
+
+    &.pinned:hover {
+      z-index: 6 !important; // refer to current z-index pattern above
     }
 
     &.last-pinned-column {
       border-right: var(--terra-table-last-pinned-header-border-right, 2px solid #808080);
+    }
+
+    // after element is needed for box-shadow to be applied to only right side
+    // with 2 cells in header it can't show up on top and bottom
+    &.last-pinned-column::after {
+      content: "";
+      position: absolute;
+      top:0px;
+      right:0px;
+      bottom: -1px;
+      width: 6px;
       box-shadow: var(--terra-table-last-pinned-header-box-shadow, 2px -1px 6px #808080);
+      clip-path: inset(0px -6px 0px 0px); // second position -6px must be consistant with third position (6px) in box-shadow prop, rest should be 0.
     }
 
     .header-container {
@@ -66,6 +102,18 @@
     .display-text.hidden {
       color: transparent;
     }
+  }
+
+
+  .action-cell {
+    border-top: none;
+    height: 100%;
+    // padding-top: 2px; // TODO - check padding size for a button to fit on focus border
+    // padding-bottom: 2px; // TODO - check padding size for a button to fit on focus border
+  }
+
+  .preceeds-action-cell {
+    border-bottom: none;
   }
 
   // Hover state for selectable elements

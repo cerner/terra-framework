@@ -5,6 +5,11 @@ const SortIndicators = {
   DESCENDING: 'descending',
 };
 
+const actionShape = PropTypes.shape({
+  label: PropTypes.string,
+  onCall: PropTypes.func,
+});
+
 const columnShape = PropTypes.shape({
   /**
    * Required string representing a unique identifier for the column.
@@ -14,6 +19,10 @@ const columnShape = PropTypes.shape({
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
+  /**
+   * Object containing data for column action, will be displayed in a row below the header row.
+   */
+  action: PropTypes.shape(actionShape),
   /**
    * Boolean value indicating whether or not the column has an error in the data.
    */
@@ -45,4 +54,4 @@ const columnShape = PropTypes.shape({
 });
 
 export default columnShape;
-export { SortIndicators };
+export { SortIndicators, actionShape };
