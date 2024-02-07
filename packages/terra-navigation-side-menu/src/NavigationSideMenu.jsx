@@ -20,6 +20,10 @@ const propTypes = {
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
   /**
+   * String that labels the navigation menu for screen readers.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * An array of configuration for each menu item.
    */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
@@ -147,6 +151,8 @@ class NavigationSideMenu extends Component {
     }
 
     if (selectedItem.childKeys && selectedItem.childKeys.length) {
+      // Add focus on the first item in sub menu
+      this.needsFocus = true;
       this.props.onChange(
         event,
         {
@@ -156,6 +162,7 @@ class NavigationSideMenu extends Component {
         },
       );
     } else {
+      this.needsFocus = false;
       this.props.onChange(
         event,
         {
@@ -166,6 +173,19 @@ class NavigationSideMenu extends Component {
       );
     }
   }
+
+  handleMenuListRef = (node) => {
+    this.menuContainer = node;
+    // To add focus to the first sub menu item
+    if (node && this.needsFocus) {
+      const subMenuNodes = node.querySelectorAll('[data-menu-item]');
+      if (subMenuNodes) {
+        subMenuNodes[0].focus();
+      }
+    }
+  };
+
+  getMenuContainerRef = () => this.menuContainer;
 
   setVisuallyHiddenComponent(node) {
     this.visuallyHiddenComponent = node;
@@ -189,6 +209,7 @@ class NavigationSideMenu extends Component {
         key={key}
         onClick={(event) => { this.handleItemClick(event, key); }}
         onKeyDown={onKeyDown}
+        getMenuContainerRef={this.getMenuContainerRef}
         data-menu-item={key}
       />
     );
@@ -196,7 +217,7 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <nav role="navigation"><ul role="menu" className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
+      return <nav role="navigation" aria-label={this.props.ariaLabel}><ul role="menu" ref={(refobj) => this.handleMenuListRef(refobj)} className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
     }
     return null;
   }
@@ -245,7 +266,7 @@ class NavigationSideMenu extends Component {
           <ActionHeader
             className={cx('side-menu-action-header')}
             onBack={onBack}
-            title={currentItem ? currentItem.text : null}
+            text={currentItem ? currentItem.text : null}
             data-navigation-side-menu-action-header
           />
           {toolbar}

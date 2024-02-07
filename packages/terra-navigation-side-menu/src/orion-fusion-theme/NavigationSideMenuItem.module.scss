@@ -36,10 +36,10 @@
     --terra-navigation-side-menu-item-selected-before-background-image: none;
     --terra-navigation-side-menu-item-selected-background-size: auto;
     --terra-navigation-side-menu-item-selected-border-left: 0.5rem solid #007cc3;
-    --terra-navigation-side-menu-item-selected-chevron-color: #909496;
+    --terra-navigation-side-menu-item-selected-chevron-color: #1C1F21;
     --terra-navigation-side-menu-item-selected-color: #1c1f21;
     --terra-navigation-side-menu-item-selected-focus-background-color: #f4f4f4;
-    --terra-navigation-side-menu-item-selected-focus-chevron-color: #909496;
+    --terra-navigation-side-menu-item-selected-focus-chevron-color: #1C1F21;
     --terra-navigation-side-menu-item-selected-focus-color: #1c1f21;
     --terra-navigation-side-menu-item-selected-font-weight: 600;
     --terra-navigation-side-menu-item-selected-padding-left: 0.7143rem;
@@ -47,5 +47,8 @@
     --terra-navigation-side-menu-item-selected-hover-chevron-color: #909496;
     --terra-navigation-side-menu-item-selected-hover-color: #1c1f21;
     --terra-navigation-side-menu-item-text-transform: none;
+    --terra-navigation-side-menu-focus-outline: none;
+    --terra-navigation-side-menu-focus-outline-offset: 0;
+    --terra-navigation-side-menu-item-focus-box-shadow: 0 0 0 1px rgba(76, 178, 233, 0.5), 0 0 4px 3px rgba(76, 178, 233, 0.35);
   }
 }

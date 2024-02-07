@@ -154,7 +154,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
               className="side-menu-action-header"
               data-navigation-side-menu-action-header={true}
               onBack={[Function]}
-              title="Test Menu"
+              text="Test Menu"
             />
           </React.Fragment>
         }
@@ -224,7 +224,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
               className="side-menu-action-header"
               data-navigation-side-menu-action-header={true}
               onBack={[Function]}
-              title="Test Menu"
+              text="Test Menu"
             >
               <ActionHeader
                 className="side-menu-action-header"
@@ -257,7 +257,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                   }
                 }
                 onBack={[Function]}
-                title="Test Menu"
+                text="Test Menu"
               >
                 <InjectIntl(ActionHeaderContainer)
                   className="side-menu-action-header"
@@ -489,6 +489,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                   >
                     <InjectIntl(MenuItem)
                       data-menu-item="test1"
+                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test1"
                       onClick={[Function]}
@@ -497,6 +498,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test1"
+                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -536,10 +538,9 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test1"
-                            onBlur={[Function]}
+                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
                             tabIndex="0"
                           >
@@ -554,6 +555,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     </InjectIntl(MenuItem)>
                     <InjectIntl(MenuItem)
                       data-menu-item="test2"
+                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test2"
                       onClick={[Function]}
@@ -562,6 +564,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test2"
+                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -601,10 +604,9 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test2"
-                            onBlur={[Function]}
+                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
                             tabIndex="0"
                           >
@@ -619,6 +621,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     </InjectIntl(MenuItem)>
                     <InjectIntl(MenuItem)
                       data-menu-item="test3"
+                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test3"
                       onClick={[Function]}
@@ -627,6 +630,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test3"
+                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -666,10 +670,9 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test3"
-                            onBlur={[Function]}
+                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
                             tabIndex="0"
                           >
@@ -684,6 +687,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     </InjectIntl(MenuItem)>
                     <InjectIntl(MenuItem)
                       data-menu-item="test4"
+                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test4"
                       onClick={[Function]}
@@ -692,6 +696,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test4"
+                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -731,10 +736,9 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test4"
-                            onBlur={[Function]}
+                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
                             tabIndex="0"
                           >
