@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { FlowsheetDataGrid } from 'terra-data-grid';
+import { ColumnHighlightColor, FlowsheetDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
   cols: [
@@ -13,7 +13,7 @@ const gridDataJSON = {
       id: 'Column-2',
       displayName: 'Illness Severity',
       isSelectable: true,
-      columnHighlightColor: 'orange',
+      columnHighlightColor: ColumnHighlightColor.ORANGE,
       columnHighlightDescription: 'Most recent time',
     },
     { id: 'Column-3', displayName: 'Visit' },
