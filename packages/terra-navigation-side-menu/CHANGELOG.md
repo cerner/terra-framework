@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * New stylings for the focus indicator.
+  * Keyboard navigation with arrow keys
+
 ## 2.49.0 - (December 18, 2023)
 
 * Changed
