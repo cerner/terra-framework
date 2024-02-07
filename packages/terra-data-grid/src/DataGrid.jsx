@@ -155,7 +155,6 @@ const defaultProps = {
   overflowColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
-  rowMinimumHeight: '2.5rem',
 };
 
 const DataGrid = forwardRef((props, ref) => {
