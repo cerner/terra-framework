@@ -30,6 +30,14 @@ const propTypes = {
    * The container to wrap the disclosed content. This should be provided from the application level.
    */
   withDisclosureContainer: PropTypes.func,
+  /**
+   * If set to true, then the focus lock will get enabled.
+   */
+  shouldTrapFocus: PropTypes.bool,
+};
+
+const defaultProps = {
+  shouldTrapFocus: false,
 };
 
 const heightFromSize = {
@@ -68,7 +76,7 @@ class ModalManager extends React.Component {
 
   renderModal(manager) {
     const {
-      children, disclosureAccessory, withDisclosureContainer, ...customProps
+      children, disclosureAccessory, withDisclosureContainer, shouldTrapFocus, ...customProps
     } = this.props;
     const theme = this.context;
 
@@ -104,8 +112,9 @@ class ModalManager extends React.Component {
           }}
           closeOnEsc
           closeOnOutsideClick={false}
-          ariaLabel={headerDataForPresentedComponent?.title || 'Modal'}
+          ariaLabel={(headerDataForPresentedComponent) ? headerDataForPresentedComponent.title : customProps['aria-label'] || 'Modal'}
           setModalFocusElementRef={this.setModalFocusElementRef}
+          shouldTrapFocus={shouldTrapFocus}
         >
           <ContentContainer
             fill
@@ -148,6 +157,7 @@ class ModalManager extends React.Component {
 }
 
 ModalManager.propTypes = propTypes;
+ModalManager.defaultProps = defaultProps;
 ModalManager.contextType = ThemeContext;
 
 export default ModalManager;

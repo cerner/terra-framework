@@ -79,10 +79,9 @@ const propTypes = {
    */
   isCalledFromNotificationDialog: PropTypes.bool,
   /**
-   * @private
    * If set to true, then the focus lock will get enabled.
    */
-  enableFocusLock: PropTypes.bool,
+  shouldTrapFocus: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -95,7 +94,7 @@ const defaultProps = {
   rootSelector: '#root',
   zIndex: '6000',
   isCalledFromNotificationDialog: false,
-  enableFocusLock: true,
+  shouldTrapFocus: true,
 };
 
 const AbstractModal = (props) => {
@@ -115,7 +114,7 @@ const AbstractModal = (props) => {
     onRequestClose,
     zIndex,
     isCalledFromNotificationDialog,
-    enableFocusLock,
+    shouldTrapFocus,
     ...customProps
   } = props;
 
@@ -181,7 +180,7 @@ const AbstractModal = (props) => {
         ref={modalElementRef}
         onKeyDown={handleKeydown}
         isCalledFromNotificationDialog={isCalledFromNotificationDialog}
-        enableFocusLock={enableFocusLock}
+        shouldTrapFocus={shouldTrapFocus}
       >
         {children}
       </ModalContent>

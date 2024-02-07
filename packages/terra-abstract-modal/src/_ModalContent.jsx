@@ -78,10 +78,9 @@ const propTypes = {
    */
   isCalledFromNotificationDialog: PropTypes.bool,
   /**
-   * @private
    * If set to true, then the focus lock will get enabled.
    */
-  enableFocusLock: PropTypes.bool,
+  shouldTrapFocus: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -94,7 +93,6 @@ const defaultProps = {
   rootSelector: '#root',
   zIndex: '6000',
   isCalledFromNotificationDialog: false,
-  enableFocusLock: true,
 };
 
 const ModalContent = forwardRef((props, ref) => {
@@ -114,7 +112,7 @@ const ModalContent = forwardRef((props, ref) => {
     zIndex,
     setModalFocusElementRef,
     isCalledFromNotificationDialog,
-    enableFocusLock,
+    shouldTrapFocus,
     ...customProps
   } = props;
 
@@ -193,6 +191,27 @@ const ModalContent = forwardRef((props, ref) => {
     </div>
   );
 
+  if (shouldTrapFocus) {
+    return (
+      <React.Fragment>
+        <ModalOverlay
+          onClick={closeOnOutsideClick ? onRequestClose : null}
+          className={classNameOverlay}
+          zIndex={zIndexLayer}
+        />
+        {
+          /*
+            When an aria-label is set and tabIndex is set to 0, VoiceOver will read
+            the aria-label value when the modal is opened
+          */
+        }
+        <FocusLock>
+          {modalContent}
+        </FocusLock>
+      </React.Fragment>
+    );
+  }
+
   return (
     <React.Fragment>
       <ModalOverlay
@@ -206,18 +225,7 @@ const ModalContent = forwardRef((props, ref) => {
           the aria-label value when the modal is opened
         */
       }
-      {enableFocusLock
-        && (
-        <FocusLock>
-          {modalContent}
-        </FocusLock>
-        )}
-      {!enableFocusLock
-        && (
-        <div>
-          {modalContent}
-        </div>
-        )}
+      {modalContent}
     </React.Fragment>
   );
 });
