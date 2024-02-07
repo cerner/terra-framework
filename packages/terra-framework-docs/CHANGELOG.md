@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added shouldTrapFocus to be set to 'true'.
+
 ## 1.63.0 - (February 1, 2024)
 
 * Changed
