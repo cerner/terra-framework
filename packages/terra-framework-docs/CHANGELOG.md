@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated selection examples and tests for `terra-folder-tree`.
+
 ## 1.64.0 - (February 7, 2024)
 
 * Changed
