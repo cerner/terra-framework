@@ -827,7 +827,7 @@ class DateInput extends React.Component {
     const format = DateInputUtil.getDateFormat(this.props);
     const label = a11yLabel || this.props.intl.formatMessage({ id: 'Terra.date.input.labelDefault' });
     const dateFormatLabel = this.props.intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' });
-    const inputDate = moment(new Date(this.state.dateString)).format('dddd MMMM D YYYY');
+    const inputDate = moment(this.state.dateString).format('dddd MMMM D YYYY');
     return (
       <div
         {...customProps}
