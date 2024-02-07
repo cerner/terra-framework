@@ -195,7 +195,7 @@ const FolderTree = ({
           text={intl.formatMessage({ id: 'Terra.folder-tree.button.expand-all-instructions' })}
           variant="utility"
           icon={<IconExpandRow />}
-          onClick={onExpandAll}
+          onClick={handleExpandAll}
           aria-controls={folderTreeID}
         />
         <Button
@@ -203,7 +203,7 @@ const FolderTree = ({
           text={intl.formatMessage({ id: 'Terra.folder-tree.button.collapse-all-instructions' })}
           variant="utility"
           icon={<IconCollapseRow />}
-          onClick={onCollapseAll}
+          onClick={handleCollapseAll}
           aria-controls={folderTreeID}
         />
       </Toolbar>

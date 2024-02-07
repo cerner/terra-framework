@@ -205,7 +205,7 @@ const FolderTreeItem = ({
       >
         {radioButton}
         {/* eslint-disable-next-line react/forbid-dom-props */}
-        <span style={{ paddingLeft: `${level*14}px` }}>
+        <span style={{ paddingLeft: `${level * 14}px` }}>
           <Arrange
             fitStart={(
               <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>

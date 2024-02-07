@@ -107,20 +107,15 @@ const FolderTreeSelection = () => {
   };
 
   return (
-    <>
-      <div className={cx('content-wrapper')}>
-        <FolderTree
-          title={data.title}
-          onExpandAll={handleExpandAll}
-          onCollapseAll={handleCollapseAll}
-        >
-          {buildFolderTreeItems(data.items)}
-        </FolderTree>
-      </div>
-      Selected Key:
-      {' '}
-      {selectedKey}
-    </>
+    <div className={cx('content-wrapper')}>
+      <FolderTree
+        title={data.title}
+        onExpandAll={handleExpandAll}
+        onCollapseAll={handleCollapseAll}
+      >
+        {buildFolderTreeItems(data.items)}
+      </FolderTree>
+    </div>
   );
 };
 
