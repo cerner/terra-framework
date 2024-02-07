@@ -472,6 +472,10 @@ class TimeInput extends React.Component {
     } = this.state;
     const variant = TimeUtil.getVariantFromLocale(this.props);
 
+    if (event.currentTarget.value.length === 2 && event.key.match(/^[0-9]/g)) {
+      event.currentTarget.value = '';
+    }
+
     if (!event.key.match(/^[0-9]/g) && !(event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_TAB || event.keyCode === KeyCode.KEY_RIGHT || event.keyCode === KeyCode.KEY_LEFT)) {
       event.preventDefault();
     }
