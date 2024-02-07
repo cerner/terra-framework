@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 6.84.1 - (February 7, 2024)
+
 * Fixed
   * Fixed a focus indicator styling issue for the back button.
 
