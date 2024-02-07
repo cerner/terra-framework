@@ -74,8 +74,9 @@
       }
 
       &:focus {
-        outline: var(--terra-menu-back-button-focus-outline, -webkit-focus-ring-color solid 2px); // Browser default fallback. if no fallback is provided, outline does not render.
-        outline-offset: var(--terra-menu-item-focus-outline-offset, -2px);
+        box-shadow: var(--terra-menu-back-button-focus-box-shadow, none);
+        outline: var(--terra-menu-back-button-focus-outline, #000 dashed 2px);
+        outline-offset: var(--terra-menu-back-button-focus-outline-offset, -3px);
       }
     }
   }

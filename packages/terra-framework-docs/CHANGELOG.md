@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.64.0 - (February 7, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.63.0 - (February 1, 2024)
 
 * Changed
@@ -13,6 +18,9 @@
 
 * Added
   * Added the 'aria-label' attribute to announce the information for the 'Flowsheet-Data Grid'.
+
+* Changed
+  * Updated `terra-folder-tree` test example.
 
 ## 1.62.0 - (January 26, 2024)
 
