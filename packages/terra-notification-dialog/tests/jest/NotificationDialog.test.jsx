@@ -1,6 +1,5 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import { KEY_ESCAPE } from 'keycode-js';
 
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';

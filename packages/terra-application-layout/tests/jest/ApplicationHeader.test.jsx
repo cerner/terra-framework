@@ -1,7 +1,6 @@
 import React from 'react';
 import Icon from 'terra-icon/lib/icon/IconFeatured';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mockIntl } from 'terra-enzyme-intl';
 
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ApplicationHeader from '../../src/header/_ApplicationHeader';
@@ -11,7 +10,7 @@ describe('ApplicationHeader', () => {
   it('should render default component', () => {
     const testHeader = (
       <ApplicationHeader.WrappedComponent
-        intl={mockIntl}
+        intl={enzyme.mockIntl}
         layoutConfig={{ size: 'large' }}
       />
     );
@@ -24,7 +23,7 @@ describe('ApplicationHeader', () => {
   it('should render props', () => {
     const testHeader = (
       <ApplicationHeader.WrappedComponent
-        intl={mockIntl}
+        intl={enzyme.mockIntl}
         id="test-header"
         layoutConfig={{ size: 'large' }}
         nameConfig={{ title: 'app-test-title' }}
@@ -71,7 +70,7 @@ describe('ApplicationHeader', () => {
   describe('with icons', () => {
     const subject = (
       <ApplicationHeader.WrappedComponent
-        intl={mockIntl}
+        intl={enzyme.mockIntl}
         layoutConfig={{ size: 'large' }}
         applicationLinks={{
           links: [
@@ -107,7 +106,7 @@ describe('ApplicationHeader', () => {
       const testHeader = enzyme.shallow(
         <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
           <ApplicationHeader.WrappedComponent
-            intl={mockIntl}
+            intl={enzyme.mockIntl}
             layoutConfig={{ size: 'large' }}
           />
         </ThemeContextProvider>,

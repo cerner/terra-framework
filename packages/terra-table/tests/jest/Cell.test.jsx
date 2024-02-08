@@ -2,7 +2,6 @@ import React from 'react';
 import { IntlProvider } from 'react-intl';
 
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import Cell from '../../src/subcomponents/Cell';

@@ -1,12 +1,11 @@
 import React from 'react';
 /* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mockIntl } from 'terra-enzyme-intl';
 import ExtensionRollup from '../../../src/extensions/_ExtensionRollup';
 
 describe('ExtensionRollup', () => {
   it('should render default element', () => {
     const shallowComponent = enzyme.shallow(
-      <ExtensionRollup.WrappedComponent intl={mockIntl} />,
+      <ExtensionRollup.WrappedComponent intl={enzyme.mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -15,7 +14,7 @@ describe('ExtensionRollup', () => {
   it('should render prop data', () => {
     const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
-        intl={mockIntl}
+        intl={enzyme.mockIntl}
         hasChildNotifications
         isPulsed
       />,
@@ -27,7 +26,7 @@ describe('ExtensionRollup', () => {
   it('should render with ref', () => {
     const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
-        intl={mockIntl}
+        intl={enzyme.mockIntl}
         extensionRef={React.createRef()}
       />,
     );
@@ -41,7 +40,7 @@ describe('ExtensionRollup', () => {
 
     const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
-        intl={mockIntl}
+        intl={enzyme.mockIntl}
         onSelect={mockCallBack}
       />,
     );

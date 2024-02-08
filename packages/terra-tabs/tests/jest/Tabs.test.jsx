@@ -1,6 +1,5 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { v4 as uuidv4 } from 'uuid';
 import Tabs from '../../src/Tabs';
