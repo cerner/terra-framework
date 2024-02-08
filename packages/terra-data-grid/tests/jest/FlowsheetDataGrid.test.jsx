@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import FlowsheetDataGrid from '../../src/FlowsheetDataGrid';
 

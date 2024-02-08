@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import FilePath from '../../src/FilePath';
 

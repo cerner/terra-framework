@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import AbstractModalExample from './AbstractModalExample';
 
 it('should shallow an open modal', () => {

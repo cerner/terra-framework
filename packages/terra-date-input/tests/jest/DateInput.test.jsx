@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, renderWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { v4 as uuidv4 } from 'uuid';
 import DateInput from '../../src/DateInput';

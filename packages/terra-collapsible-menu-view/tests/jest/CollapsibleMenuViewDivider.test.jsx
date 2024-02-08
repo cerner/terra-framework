@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { IconChevronRight } from 'terra-icon';
 import Menu from 'terra-menu';
 import CollapsibleMenuViewDivider from '../../src/CollapsibleMenuViewDivider';

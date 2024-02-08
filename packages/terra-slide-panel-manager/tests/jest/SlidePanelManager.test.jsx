@@ -1,8 +1,5 @@
 import React from 'react';
 import { withDisclosureManager } from 'terra-disclosure-manager';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuidv4 } from 'uuid';
 import SlidePanelManager from '../../src/SlidePanelManager';
 

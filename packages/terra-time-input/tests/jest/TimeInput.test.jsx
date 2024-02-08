@@ -1,8 +1,6 @@
 /* globals spyOn */
 
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
 import * as KeyCode from 'keycode-js';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { v4 as uuidv4 } from 'uuid';

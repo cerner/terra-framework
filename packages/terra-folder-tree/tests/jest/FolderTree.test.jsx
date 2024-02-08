@@ -1,8 +1,6 @@
 import React from 'react';
 import ActionHeader from 'terra-action-header';
 import Button from 'terra-button';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import FolderTree from '../../src';
 
 describe('basic folder tree', () => {

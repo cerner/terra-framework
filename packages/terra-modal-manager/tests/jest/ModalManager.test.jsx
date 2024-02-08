@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ModalManager from '../../src/ModalManager';

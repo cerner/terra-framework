@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 

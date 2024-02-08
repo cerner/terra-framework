@@ -1,7 +1,5 @@
 import React from 'react';
 import { Consumer } from 'xfc';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
 
 beforeAll(() => {

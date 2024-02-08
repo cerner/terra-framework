@@ -1,7 +1,5 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { mountWithIntl } from 'terra-enzyme-intl';
 
 import AddButton from '../../src/common-tabs/_AddButton';
 

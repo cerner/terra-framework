@@ -1,4 +1,3 @@
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 
 import utilityHelpers from '../../src/utils/utilityHelpers';
 

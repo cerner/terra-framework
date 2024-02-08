@@ -1,6 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 import FilterPills from '../../src/FilterPills';
 import Pill from '../../src/subcomponents/_Pill';

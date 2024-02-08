@@ -1,6 +1,5 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import TimeClarification from '../../lib/_TimeClarification';
 
 it('should render a default date time picker', () => {

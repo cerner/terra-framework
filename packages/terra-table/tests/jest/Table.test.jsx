@@ -1,8 +1,6 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';

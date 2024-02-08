@@ -1,8 +1,6 @@
 import React from 'react';
 import { ActiveBreakpointContext } from 'terra-breakpoints';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import ApplicationNavigation from '../../src/ApplicationNavigation';
 
 describe('ApplicationNavigation', () => {

@@ -1,6 +1,5 @@
 import React from 'react';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import { IntlProvider } from 'react-intl';
 import { v4 as uuidv4 } from 'uuid';
 import SlidePanel from '../../src/SlidePanel';

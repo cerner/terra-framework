@@ -1,7 +1,5 @@
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import Slider from '../../src/Slider';
 
 let mockSpyUuid;

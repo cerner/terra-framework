@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import CompactHeader from '../../../src/header/_CompactHeader';
 
 describe('CompactHeader', () => {

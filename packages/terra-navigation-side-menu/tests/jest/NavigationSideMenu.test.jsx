@@ -1,5 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 
 import NavigationSideMenu from '../../src/NavigationSideMenu';
