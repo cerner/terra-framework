@@ -19,6 +19,7 @@ const DateTimePickerExampleDefaultDate = () => {
         <DateTimePicker
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'defaultDate' }}
+          timeInputAttributes={{ id: 'defaultDate' }}
           onChange={handleDateTimeChange}
           value="2017-08-08"
         />

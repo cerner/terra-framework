@@ -28,7 +28,8 @@ function DateTimePickerTimeZone() {
       <Field label="Enter Date/Time" htmlFor="timeZone">
         <DateTimePicker
           name="date-time-picker-example"
-          dateInputAttributes={{ id: 'timezone' }}
+          dateInputAttributes={{ id: 'timezone', fieldLabel: 'Enter Date/Time' }}
+          timeInputAttributes={{ id: 'timezone', fieldLabel: 'Enter Date/Time' }}
           onChange={handleDateTimeChange}
           initialTimeZone={timeZone}
           value={dateTime}

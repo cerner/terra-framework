@@ -19,7 +19,8 @@ const DateTimePickerExampleMinMax = () => {
       <Field label="Enter Date/Time" htmlFor="min-max-dates">
         <DateTimePicker
           name="date-time-picker-example"
-          dateInputAttributes={{ id: 'min-max-dates' }}
+          dateInputAttributes={{ id: 'min-max-dates', fieldLabel: 'Enter Date/Time' }}
+          timeInputAttributes={{ id: 'min-max-dates', fieldLabel: 'Enter Date/Time' }}
           onChange={handleDateTimeChange}
           minDate={moment().format()}
           maxDate={moment().add(6, 'days').format()}

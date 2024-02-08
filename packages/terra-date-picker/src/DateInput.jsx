@@ -216,6 +216,7 @@ const DatePickerInput = (props) => {
   let monthInputId;
   let dayInputId;
   let yearInputId;
+  let labelString;
   if (inputAttributes && inputAttributes.id) {
     // Get the inputAttributes.id and set it on the outer div and delete inputAttributes.id to prevent from setting the same id on all three inputs.
     // Create new ids to set on each input using the inputAttributes.id.
@@ -225,6 +226,10 @@ const DatePickerInput = (props) => {
     yearInputId = idFromInputAttributes.concat('-terra-date-picker-year');
 
     delete inputAttributes.id;
+  }
+
+  if (inputAttributes && inputAttributes.fieldLabel) {
+    labelString = inputAttributes.fieldLabel;
   }
 
   const additionalInputProps = { ...customProps, ...inputAttributes };
@@ -732,7 +737,7 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
-      aria-label={`${inputAttributes ? inputAttributes.fieldLabel : ''} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
+      aria-label={`${labelString || ''} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
       aria-describedby={ariaDescriptionIds}
       id={dayInputId}
     />
@@ -763,7 +768,7 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
-      aria-label={`${inputAttributes ? inputAttributes.fieldLabel : ''} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
+      aria-label={`${labelString || ''} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
       aria-describedby={ariaDescriptionIds}
       id={monthInputId}
     />
@@ -794,7 +799,7 @@ const DatePickerInput = (props) => {
       size="4"
       pattern="\d*"
       aria-required={required}
-      aria-label={`${inputAttributes ? inputAttributes.fieldLabel : ''} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
+      aria-label={`${labelString || ''} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
       aria-describedby={ariaDescriptionIds}
       id={yearInputId}
     />

@@ -18,7 +18,9 @@ const DateTimePickerExampleIncomplete = () => {
       <Field label="Enter Date/Time" htmlFor="default-incomplete">
         <DateTimePicker
           name="date-time-picker-example"
-          dateInputAttributes={{ id: 'default-incomplete' }}
+          dateInputAttributes={{ id: 'default-incomplete', fieldLabel: 'Enter Date/Time' }}
+          timeInputAttributes={{ id: 'default-incomplete', fieldLabel: 'Enter Date/Time' }}
+          include-dates
           onChange={handleDateTimeChange}
           isIncomplete
           required
