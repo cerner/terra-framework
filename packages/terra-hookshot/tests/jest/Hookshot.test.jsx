@@ -11,7 +11,7 @@ it('should shallow a default component', () => {
 });
 
 it('should render a default component', () => {
-  const hookshot = render(<HookshotDefaultExample />);
+  const hookshot = enzyme.render(<HookshotDefaultExample />);
   expect(hookshot).toMatchSnapshot();
 });
 
