@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Renamed `onClick` prop to `onSelect`.
+
 * Added
   * Added `isSelectable` prop to FolderTreeItem.
 
