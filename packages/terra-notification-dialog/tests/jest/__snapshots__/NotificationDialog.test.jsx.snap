@@ -1006,10 +1006,14 @@ exports[`correctly applies the theme context className 1`] = `
             containerInfo={
               <div>
                 <div
+                  aria-hidden="true"
                   class="overlay layer-9000 orion-fusion-theme"
+                  data-focus-on-hidden="true"
                 />
                 <div
+                  aria-hidden="true"
                   data-focus-guard="true"
+                  data-focus-on-hidden="true"
                   style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
                   tabindex="0"
                 />
@@ -1127,7 +1131,9 @@ exports[`correctly applies the theme context className 1`] = `
                   </div>
                 </div>
                 <div
+                  aria-hidden="true"
                   data-focus-guard="true"
+                  data-focus-on-hidden="true"
                   style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
                   tabindex="0"
                 />
@@ -1160,165 +1166,63 @@ exports[`correctly applies the theme context className 1`] = `
                   onClick={null}
                 />
               </ModalOverlay>
-              <ForwardRef(FocusLockUICombination)>
-                <ForwardRef(FocusLockUI)
+              <ForwardRef>
+                <ForwardRef
                   sideCar={[Function]}
                 >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
+                  <ForwardRef(FocusLockUI)
+                    as={
                       Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
+                        "$$typeof": Symbol(react.forward_ref),
+                        "classNames": Object {
+                          "fullWidth": "width-before-scroll-bar",
+                          "zeroRight": "right-scroll-bar-position",
+                        },
+                        "defaultProps": Object {
+                          "enabled": true,
+                          "inert": false,
+                          "removeScrollBar": true,
+                        },
+                        "render": [Function],
                       }
                     }
-                    tabIndex={0}
-                  />
-                  <SideEffect(FocusWatcher)
-                    autoFocus={true}
-                    crossFrame={true}
                     disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          aria-describedby="dialogBody"
-                          aria-labelledby="header-container"
-                          aria-modal="true"
-                          class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
-                          role="alertdialog"
-                          tabindex="-1"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <div
-                              class="notification-dialog-inner-wrapper"
-                            >
-                              <div
-                                class="notification-dialog-container"
-                                data-terra-notification-dialog="true"
-                                tabindex="-1"
-                              >
-                                <div
-                                  class="floating-header-background hazard-high"
-                                />
-                                <div
-                                  class="header"
-                                >
-                                  <div
-                                    class="header-content"
-                                  >
-                                    <div
-                                      class="icon-container orion-fusion-theme"
-                                    >
-                                      <span
-                                        class="icon hazard-high-icon"
-                                      />
-                                    </div>
-                                    <div
-                                      class="header-container"
-                                      id="header-container"
-                                    >
-                                      <h2
-                                        class="signal-word"
-                                        id="notification-dialog-signal-word"
-                                      >
-                                        Terra.notification.dialog.hazard-high
-                                      </h2>
-                                      <div
-                                        class="title"
-                                        id="notification-dialog-title"
-                                      />
-                                    </div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="body"
-                                  id="dialogBody"
-                                >
-                                  <div
-                                    class="message"
-                                  >
-                                    The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
-                                  </div>
-                                </div>
-                                <div
-                                  class="footer"
-                                >
-                                  <div
-                                    class="actions"
-                                  >
-                                    <button
-                                      aria-disabled="false"
-                                      class="button emphasis is-focused orion-fusion-theme"
-                                      data-terra-notification-dialog-button="accept"
-                                      tabindex="0"
-                                      type="button"
-                                    >
-                                      <span
-                                        class="button-label-win text-only"
-                                      >
-                                        <span
-                                          class=""
-                                        >
-                                          Confirm
-                                        </span>
-                                      </span>
-                                    </button>
-                                    <button
-                                      aria-disabled="false"
-                                      class="button neutral orion-fusion-theme"
-                                      data-terra-notification-dialog-button="reject"
-                                      type="button"
-                                    >
-                                      <span
-                                        class="button-label-win text-only"
-                                      >
-                                        <span
-                                          class=""
-                                        >
-                                          Close
-                                        </span>
-                                      </span>
-                                    </button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    lockProps={
+                      Object {
+                        "allowPinchZoom": undefined,
+                        "as": undefined,
+                        "enabled": true,
+                        "gapMode": undefined,
+                        "inert": undefined,
+                        "onMouseDown": [Function],
+                        "onTouchStart": [Function],
+                        "shards": undefined,
+                        "sideCar": [Function],
+                        "style": undefined,
+                      }
                     }
                     onActivation={[Function]}
                     onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
+                    returnFocus={true}
+                    sideCar={[Function]}
                   >
-                    <FocusWatcher
+                    <div
+                      data-focus-guard={true}
+                      key="guard-first"
+                      style={
+                        Object {
+                          "height": "0px",
+                          "left": "1px",
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "fixed",
+                          "top": "1px",
+                          "width": "1px",
+                        }
+                      }
+                      tabIndex={0}
+                    />
+                    <RequireSideCar
                       autoFocus={true}
                       crossFrame={true}
                       disabled={false}
@@ -1455,189 +1359,1082 @@ exports[`correctly applies the theme context className 1`] = `
                           "useMedium": [Function],
                         }
                       }
-                    />
-                  </SideEffect(FocusWatcher)>
-                  <div
-                    data-focus-lock-disabled={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                  >
-                    <div
-                      aria-describedby="dialogBody"
-                      aria-labelledby="header-container"
-                      aria-modal="true"
-                      className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
-                      onKeyDown={[Function]}
-                      role="alertdialog"
-                      tabIndex="-1"
                     >
-                      <div
-                        className="abstract-modal-container"
-                        data-terra-abstract-modal-begin={true}
-                        tabIndex="-1"
-                      >
-                        <div
-                          className="notification-dialog-inner-wrapper"
-                        >
+                      <SideCar
+                        autoFocus={true}
+                        crossFrame={true}
+                        disabled={false}
+                        id={Object {}}
+                        observed={
                           <div
-                            className="notification-dialog-container"
-                            data-terra-notification-dialog={true}
-                            tabIndex="-1"
+                            data-focus-lock-disabled="false"
                           >
                             <div
-                              className="floating-header-background hazard-high"
-                            />
-                            <div
-                              className="header"
+                              aria-describedby="dialogBody"
+                              aria-labelledby="header-container"
+                              aria-modal="true"
+                              class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                              role="alertdialog"
+                              tabindex="-1"
                             >
                               <div
-                                className="header-content"
+                                class="abstract-modal-container"
+                                data-terra-abstract-modal-begin="true"
+                                tabindex="-1"
                               >
-                                <NotificationDialogIcon
-                                  variant="hazard-high"
-                                >
-                                  <div
-                                    className="icon-container orion-fusion-theme"
-                                  >
-                                    <span
-                                      className="icon hazard-high-icon"
-                                    />
-                                  </div>
-                                </NotificationDialogIcon>
                                 <div
-                                  className="header-container"
-                                  id="header-container"
+                                  class="notification-dialog-inner-wrapper"
                                 >
-                                  <h2
-                                    className="signal-word"
-                                    id="notification-dialog-signal-word"
-                                  >
-                                    Terra.notification.dialog.hazard-high
-                                  </h2>
                                   <div
-                                    className="title"
-                                    id="notification-dialog-title"
-                                  />
+                                    class="notification-dialog-container"
+                                    data-terra-notification-dialog="true"
+                                    tabindex="-1"
+                                  >
+                                    <div
+                                      class="floating-header-background hazard-high"
+                                    />
+                                    <div
+                                      class="header"
+                                    >
+                                      <div
+                                        class="header-content"
+                                      >
+                                        <div
+                                          class="icon-container orion-fusion-theme"
+                                        >
+                                          <span
+                                            class="icon hazard-high-icon"
+                                          />
+                                        </div>
+                                        <div
+                                          class="header-container"
+                                          id="header-container"
+                                        >
+                                          <h2
+                                            class="signal-word"
+                                            id="notification-dialog-signal-word"
+                                          >
+                                            Terra.notification.dialog.hazard-high
+                                          </h2>
+                                          <div
+                                            class="title"
+                                            id="notification-dialog-title"
+                                          />
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="body"
+                                      id="dialogBody"
+                                    >
+                                      <div
+                                        class="message"
+                                      >
+                                        The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="footer"
+                                    >
+                                      <div
+                                        class="actions"
+                                      >
+                                        <button
+                                          aria-disabled="false"
+                                          class="button emphasis is-focused orion-fusion-theme"
+                                          data-terra-notification-dialog-button="accept"
+                                          tabindex="0"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="button-label-win text-only"
+                                          >
+                                            <span
+                                              class=""
+                                            >
+                                              Confirm
+                                            </span>
+                                          </span>
+                                        </button>
+                                        <button
+                                          aria-disabled="false"
+                                          class="button neutral orion-fusion-theme"
+                                          data-terra-notification-dialog-button="reject"
+                                          type="button"
+                                        >
+                                          <span
+                                            class="button-label-win text-only"
+                                          >
+                                            <span
+                                              class=""
+                                            >
+                                              Close
+                                            </span>
+                                          </span>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
                                 </div>
                               </div>
                             </div>
+                          </div>
+                        }
+                        onActivation={[Function]}
+                        onDeactivation={[Function]}
+                        persistentFocus={false}
+                        returnFocus={[Function]}
+                        shards={Array []}
+                        sideCar={
+                          Object {
+                            "assignMedium": [Function],
+                            "assignSyncMedium": [Function],
+                            "options": Object {
+                              "async": true,
+                              "ssr": false,
+                            },
+                            "read": [Function],
+                            "useMedium": [Function],
+                          }
+                        }
+                      >
+                        <SideEffect(FocusWatcher)
+                          autoFocus={true}
+                          crossFrame={true}
+                          disabled={false}
+                          id={Object {}}
+                          observed={
                             <div
-                              className="body"
-                              id="dialogBody"
+                              data-focus-lock-disabled="false"
                             >
                               <div
-                                className="message"
+                                aria-describedby="dialogBody"
+                                aria-labelledby="header-container"
+                                aria-modal="true"
+                                class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                                role="alertdialog"
+                                tabindex="-1"
                               >
-                                The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                <div
+                                  class="abstract-modal-container"
+                                  data-terra-abstract-modal-begin="true"
+                                  tabindex="-1"
+                                >
+                                  <div
+                                    class="notification-dialog-inner-wrapper"
+                                  >
+                                    <div
+                                      class="notification-dialog-container"
+                                      data-terra-notification-dialog="true"
+                                      tabindex="-1"
+                                    >
+                                      <div
+                                        class="floating-header-background hazard-high"
+                                      />
+                                      <div
+                                        class="header"
+                                      >
+                                        <div
+                                          class="header-content"
+                                        >
+                                          <div
+                                            class="icon-container orion-fusion-theme"
+                                          >
+                                            <span
+                                              class="icon hazard-high-icon"
+                                            />
+                                          </div>
+                                          <div
+                                            class="header-container"
+                                            id="header-container"
+                                          >
+                                            <h2
+                                              class="signal-word"
+                                              id="notification-dialog-signal-word"
+                                            >
+                                              Terra.notification.dialog.hazard-high
+                                            </h2>
+                                            <div
+                                              class="title"
+                                              id="notification-dialog-title"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="body"
+                                        id="dialogBody"
+                                      >
+                                        <div
+                                          class="message"
+                                        >
+                                          The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="footer"
+                                      >
+                                        <div
+                                          class="actions"
+                                        >
+                                          <button
+                                            aria-disabled="false"
+                                            class="button emphasis is-focused orion-fusion-theme"
+                                            data-terra-notification-dialog-button="accept"
+                                            tabindex="0"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="button-label-win text-only"
+                                            >
+                                              <span
+                                                class=""
+                                              >
+                                                Confirm
+                                              </span>
+                                            </span>
+                                          </button>
+                                          <button
+                                            aria-disabled="false"
+                                            class="button neutral orion-fusion-theme"
+                                            data-terra-notification-dialog-button="reject"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="button-label-win text-only"
+                                            >
+                                              <span
+                                                class=""
+                                              >
+                                                Close
+                                              </span>
+                                            </span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                            <div
-                              className="footer"
+                          }
+                          onActivation={[Function]}
+                          onDeactivation={[Function]}
+                          persistentFocus={false}
+                          returnFocus={[Function]}
+                          shards={Array []}
+                        >
+                          <FocusWatcher
+                            autoFocus={true}
+                            crossFrame={true}
+                            disabled={false}
+                            id={Object {}}
+                            observed={
+                              <div
+                                data-focus-lock-disabled="false"
+                              >
+                                <div
+                                  aria-describedby="dialogBody"
+                                  aria-labelledby="header-container"
+                                  aria-modal="true"
+                                  class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                                  role="alertdialog"
+                                  tabindex="-1"
+                                >
+                                  <div
+                                    class="abstract-modal-container"
+                                    data-terra-abstract-modal-begin="true"
+                                    tabindex="-1"
+                                  >
+                                    <div
+                                      class="notification-dialog-inner-wrapper"
+                                    >
+                                      <div
+                                        class="notification-dialog-container"
+                                        data-terra-notification-dialog="true"
+                                        tabindex="-1"
+                                      >
+                                        <div
+                                          class="floating-header-background hazard-high"
+                                        />
+                                        <div
+                                          class="header"
+                                        >
+                                          <div
+                                            class="header-content"
+                                          >
+                                            <div
+                                              class="icon-container orion-fusion-theme"
+                                            >
+                                              <span
+                                                class="icon hazard-high-icon"
+                                              />
+                                            </div>
+                                            <div
+                                              class="header-container"
+                                              id="header-container"
+                                            >
+                                              <h2
+                                                class="signal-word"
+                                                id="notification-dialog-signal-word"
+                                              >
+                                                Terra.notification.dialog.hazard-high
+                                              </h2>
+                                              <div
+                                                class="title"
+                                                id="notification-dialog-title"
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="body"
+                                          id="dialogBody"
+                                        >
+                                          <div
+                                            class="message"
+                                          >
+                                            The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="footer"
+                                        >
+                                          <div
+                                            class="actions"
+                                          >
+                                            <button
+                                              aria-disabled="false"
+                                              class="button emphasis is-focused orion-fusion-theme"
+                                              data-terra-notification-dialog-button="accept"
+                                              tabindex="0"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="button-label-win text-only"
+                                              >
+                                                <span
+                                                  class=""
+                                                >
+                                                  Confirm
+                                                </span>
+                                              </span>
+                                            </button>
+                                            <button
+                                              aria-disabled="false"
+                                              class="button neutral orion-fusion-theme"
+                                              data-terra-notification-dialog-button="reject"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="button-label-win text-only"
+                                              >
+                                                <span
+                                                  class=""
+                                                >
+                                                  Close
+                                                </span>
+                                              </span>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            }
+                            onActivation={[Function]}
+                            onDeactivation={[Function]}
+                            persistentFocus={false}
+                            returnFocus={[Function]}
+                            shards={Array []}
+                          />
+                        </SideEffect(FocusWatcher)>
+                      </SideCar>
+                    </RequireSideCar>
+                    <ForwardRef
+                      data-focus-lock-disabled={false}
+                      enabled={true}
+                      inert={false}
+                      onBlur={[Function]}
+                      onFocus={[Function]}
+                      onMouseDown={[Function]}
+                      onTouchStart={[Function]}
+                      removeScrollBar={true}
+                      sideCar={[Function]}
+                    >
+                      <RequireSideCar
+                        allowPinchZoom={false}
+                        inert={false}
+                        lockRef={
+                          Object {
+                            "current": <div
+                              data-focus-lock-disabled="false"
                             >
                               <div
-                                className="actions"
+                                aria-describedby="dialogBody"
+                                aria-labelledby="header-container"
+                                aria-modal="true"
+                                class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                                role="alertdialog"
+                                tabindex="-1"
                               >
-                                <Button
-                                  data-terra-notification-dialog-button="accept"
-                                  isBlock={false}
-                                  isCompact={false}
-                                  isDisabled={false}
-                                  isIconOnly={false}
-                                  isReversed={false}
-                                  key="accept"
-                                  onClick={[Function]}
-                                  refCallback={[Function]}
-                                  tabIndex="0"
-                                  text="Confirm"
-                                  type="button"
-                                  variant="emphasis"
+                                <div
+                                  class="abstract-modal-container"
+                                  data-terra-abstract-modal-begin="true"
+                                  tabindex="-1"
                                 >
-                                  <button
-                                    aria-disabled={false}
-                                    className="button emphasis is-focused orion-fusion-theme"
-                                    data-terra-notification-dialog-button="accept"
-                                    disabled={false}
-                                    onBlur={[Function]}
-                                    onClick={[Function]}
-                                    onFocus={[Function]}
-                                    onKeyDown={[Function]}
-                                    onKeyUp={[Function]}
-                                    onMouseDown={[Function]}
-                                    tabIndex="0"
-                                    type="button"
+                                  <div
+                                    class="notification-dialog-inner-wrapper"
                                   >
-                                    <span
-                                      className="button-label-win text-only"
+                                    <div
+                                      class="notification-dialog-container"
+                                      data-terra-notification-dialog="true"
+                                      tabindex="-1"
                                     >
-                                      <span
-                                        className=""
+                                      <div
+                                        class="floating-header-background hazard-high"
+                                      />
+                                      <div
+                                        class="header"
                                       >
-                                        Confirm
-                                      </span>
-                                    </span>
-                                  </button>
-                                </Button>
-                                <Button
-                                  data-terra-notification-dialog-button="reject"
-                                  isBlock={false}
-                                  isCompact={false}
-                                  isDisabled={false}
-                                  isIconOnly={false}
-                                  isReversed={false}
-                                  key="reject"
-                                  onClick={[Function]}
-                                  text="Close"
-                                  type="button"
-                                  variant="neutral"
+                                        <div
+                                          class="header-content"
+                                        >
+                                          <div
+                                            class="icon-container orion-fusion-theme"
+                                          >
+                                            <span
+                                              class="icon hazard-high-icon"
+                                            />
+                                          </div>
+                                          <div
+                                            class="header-container"
+                                            id="header-container"
+                                          >
+                                            <h2
+                                              class="signal-word"
+                                              id="notification-dialog-signal-word"
+                                            >
+                                              Terra.notification.dialog.hazard-high
+                                            </h2>
+                                            <div
+                                              class="title"
+                                              id="notification-dialog-title"
+                                            />
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="body"
+                                        id="dialogBody"
+                                      >
+                                        <div
+                                          class="message"
+                                        >
+                                          The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                        </div>
+                                      </div>
+                                      <div
+                                        class="footer"
+                                      >
+                                        <div
+                                          class="actions"
+                                        >
+                                          <button
+                                            aria-disabled="false"
+                                            class="button emphasis is-focused orion-fusion-theme"
+                                            data-terra-notification-dialog-button="accept"
+                                            tabindex="0"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="button-label-win text-only"
+                                            >
+                                              <span
+                                                class=""
+                                              >
+                                                Confirm
+                                              </span>
+                                            </span>
+                                          </button>
+                                          <button
+                                            aria-disabled="false"
+                                            class="button neutral orion-fusion-theme"
+                                            data-terra-notification-dialog-button="reject"
+                                            type="button"
+                                          >
+                                            <span
+                                              class="button-label-win text-only"
+                                            >
+                                              <span
+                                                class=""
+                                              >
+                                                Close
+                                              </span>
+                                            </span>
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>,
+                          }
+                        }
+                        removeScrollBar={true}
+                        setCallbacks={[Function]}
+                        sideCar={
+                          Object {
+                            "assignMedium": [Function],
+                            "assignSyncMedium": [Function],
+                            "options": Object {
+                              "async": true,
+                              "ssr": false,
+                            },
+                            "read": [Function],
+                            "useMedium": [Function],
+                          }
+                        }
+                      >
+                        <SideCar
+                          allowPinchZoom={false}
+                          inert={false}
+                          lockRef={
+                            Object {
+                              "current": <div
+                                data-focus-lock-disabled="false"
+                              >
+                                <div
+                                  aria-describedby="dialogBody"
+                                  aria-labelledby="header-container"
+                                  aria-modal="true"
+                                  class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                                  role="alertdialog"
+                                  tabindex="-1"
                                 >
-                                  <button
-                                    aria-disabled={false}
-                                    className="button neutral orion-fusion-theme"
-                                    data-terra-notification-dialog-button="reject"
-                                    disabled={false}
-                                    onBlur={[Function]}
-                                    onClick={[Function]}
-                                    onFocus={[Function]}
-                                    onKeyDown={[Function]}
-                                    onKeyUp={[Function]}
-                                    onMouseDown={[Function]}
-                                    type="button"
+                                  <div
+                                    class="abstract-modal-container"
+                                    data-terra-abstract-modal-begin="true"
+                                    tabindex="-1"
                                   >
-                                    <span
-                                      className="button-label-win text-only"
+                                    <div
+                                      class="notification-dialog-inner-wrapper"
                                     >
-                                      <span
-                                        className=""
+                                      <div
+                                        class="notification-dialog-container"
+                                        data-terra-notification-dialog="true"
+                                        tabindex="-1"
                                       >
-                                        Close
-                                      </span>
-                                    </span>
-                                  </button>
-                                </Button>
+                                        <div
+                                          class="floating-header-background hazard-high"
+                                        />
+                                        <div
+                                          class="header"
+                                        >
+                                          <div
+                                            class="header-content"
+                                          >
+                                            <div
+                                              class="icon-container orion-fusion-theme"
+                                            >
+                                              <span
+                                                class="icon hazard-high-icon"
+                                              />
+                                            </div>
+                                            <div
+                                              class="header-container"
+                                              id="header-container"
+                                            >
+                                              <h2
+                                                class="signal-word"
+                                                id="notification-dialog-signal-word"
+                                              >
+                                                Terra.notification.dialog.hazard-high
+                                              </h2>
+                                              <div
+                                                class="title"
+                                                id="notification-dialog-title"
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="body"
+                                          id="dialogBody"
+                                        >
+                                          <div
+                                            class="message"
+                                          >
+                                            The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                          </div>
+                                        </div>
+                                        <div
+                                          class="footer"
+                                        >
+                                          <div
+                                            class="actions"
+                                          >
+                                            <button
+                                              aria-disabled="false"
+                                              class="button emphasis is-focused orion-fusion-theme"
+                                              data-terra-notification-dialog-button="accept"
+                                              tabindex="0"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="button-label-win text-only"
+                                              >
+                                                <span
+                                                  class=""
+                                                >
+                                                  Confirm
+                                                </span>
+                                              </span>
+                                            </button>
+                                            <button
+                                              aria-disabled="false"
+                                              class="button neutral orion-fusion-theme"
+                                              data-terra-notification-dialog-button="reject"
+                                              type="button"
+                                            >
+                                              <span
+                                                class="button-label-win text-only"
+                                              >
+                                                <span
+                                                  class=""
+                                                >
+                                                  Close
+                                                </span>
+                                              </span>
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>,
+                            }
+                          }
+                          removeScrollBar={true}
+                          setCallbacks={[Function]}
+                          sideCar={
+                            Object {
+                              "assignMedium": [Function],
+                              "assignSyncMedium": [Function],
+                              "options": Object {
+                                "async": true,
+                                "ssr": false,
+                              },
+                              "read": [Function],
+                              "useMedium": [Function],
+                            }
+                          }
+                        >
+                          <RemoveScrollSideCar
+                            allowPinchZoom={false}
+                            inert={false}
+                            lockRef={
+                              Object {
+                                "current": <div
+                                  data-focus-lock-disabled="false"
+                                >
+                                  <div
+                                    aria-describedby="dialogBody"
+                                    aria-labelledby="header-container"
+                                    aria-modal="true"
+                                    class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                                    role="alertdialog"
+                                    tabindex="-1"
+                                  >
+                                    <div
+                                      class="abstract-modal-container"
+                                      data-terra-abstract-modal-begin="true"
+                                      tabindex="-1"
+                                    >
+                                      <div
+                                        class="notification-dialog-inner-wrapper"
+                                      >
+                                        <div
+                                          class="notification-dialog-container"
+                                          data-terra-notification-dialog="true"
+                                          tabindex="-1"
+                                        >
+                                          <div
+                                            class="floating-header-background hazard-high"
+                                          />
+                                          <div
+                                            class="header"
+                                          >
+                                            <div
+                                              class="header-content"
+                                            >
+                                              <div
+                                                class="icon-container orion-fusion-theme"
+                                              >
+                                                <span
+                                                  class="icon hazard-high-icon"
+                                                />
+                                              </div>
+                                              <div
+                                                class="header-container"
+                                                id="header-container"
+                                              >
+                                                <h2
+                                                  class="signal-word"
+                                                  id="notification-dialog-signal-word"
+                                                >
+                                                  Terra.notification.dialog.hazard-high
+                                                </h2>
+                                                <div
+                                                  class="title"
+                                                  id="notification-dialog-title"
+                                                />
+                                              </div>
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="body"
+                                            id="dialogBody"
+                                          >
+                                            <div
+                                              class="message"
+                                            >
+                                              The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                            </div>
+                                          </div>
+                                          <div
+                                            class="footer"
+                                          >
+                                            <div
+                                              class="actions"
+                                            >
+                                              <button
+                                                aria-disabled="false"
+                                                class="button emphasis is-focused orion-fusion-theme"
+                                                data-terra-notification-dialog-button="accept"
+                                                tabindex="0"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="button-label-win text-only"
+                                                >
+                                                  <span
+                                                    class=""
+                                                  >
+                                                    Confirm
+                                                  </span>
+                                                </span>
+                                              </button>
+                                              <button
+                                                aria-disabled="false"
+                                                class="button neutral orion-fusion-theme"
+                                                data-terra-notification-dialog-button="reject"
+                                                type="button"
+                                              >
+                                                <span
+                                                  class="button-label-win text-only"
+                                                >
+                                                  <span
+                                                    class=""
+                                                  >
+                                                    Close
+                                                  </span>
+                                                </span>
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>,
+                              }
+                            }
+                            removeScrollBar={true}
+                            setCallbacks={[Function]}
+                          >
+                            <RemoveScrollBar>
+                              <Sheet
+                                styles="
+  .with-scroll-bars-hidden {
+   overflow: hidden !important;
+   padding-right: 2048px !important;
+  }
+  body {
+    overflow: hidden !important;
+    overscroll-behavior: contain;
+    position: relative !important;
+    padding-left: 0px;
+    padding-top: 0px;
+    padding-right: 1024px;
+    margin-left:0;
+    margin-top:0;
+    margin-right: 2048px !important;
+    
+  }
+  
+  .right-scroll-bar-position {
+    right: 2048px !important;
+  }
+  
+  .width-before-scroll-bar {
+    margin-right: 2048px !important;
+  }
+  
+  .right-scroll-bar-position .right-scroll-bar-position {
+    right: 0 !important;
+  }
+  
+  .width-before-scroll-bar .width-before-scroll-bar {
+    margin-right: 0 !important;
+  }
+  
+  body {
+    --removed-body-scroll-bar-size: 2048px;
+  }
+"
+                              />
+                            </RemoveScrollBar>
+                          </RemoveScrollSideCar>
+                        </SideCar>
+                      </RequireSideCar>
+                      <div
+                        data-focus-lock-disabled={false}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseDown={[Function]}
+                        onScrollCapture={[Function]}
+                        onTouchMoveCapture={[Function]}
+                        onTouchStart={[Function]}
+                        onWheelCapture={[Function]}
+                      >
+                        <div
+                          aria-describedby="dialogBody"
+                          aria-labelledby="header-container"
+                          aria-modal="true"
+                          className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
+                          onKeyDown={[Function]}
+                          role="alertdialog"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="abstract-modal-container"
+                            data-terra-abstract-modal-begin={true}
+                            tabIndex="-1"
+                          >
+                            <div
+                              className="notification-dialog-inner-wrapper"
+                            >
+                              <div
+                                className="notification-dialog-container"
+                                data-terra-notification-dialog={true}
+                                tabIndex="-1"
+                              >
+                                <div
+                                  className="floating-header-background hazard-high"
+                                />
+                                <div
+                                  className="header"
+                                >
+                                  <div
+                                    className="header-content"
+                                  >
+                                    <NotificationDialogIcon
+                                      variant="hazard-high"
+                                    >
+                                      <div
+                                        className="icon-container orion-fusion-theme"
+                                      >
+                                        <span
+                                          className="icon hazard-high-icon"
+                                        />
+                                      </div>
+                                    </NotificationDialogIcon>
+                                    <div
+                                      className="header-container"
+                                      id="header-container"
+                                    >
+                                      <h2
+                                        className="signal-word"
+                                        id="notification-dialog-signal-word"
+                                      >
+                                        Terra.notification.dialog.hazard-high
+                                      </h2>
+                                      <div
+                                        className="title"
+                                        id="notification-dialog-title"
+                                      />
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  className="body"
+                                  id="dialogBody"
+                                >
+                                  <div
+                                    className="message"
+                                  >
+                                    The Main Instruction is text used to provide more detail or define terminology. Don’t repeat the title verbatim.
+                                  </div>
+                                </div>
+                                <div
+                                  className="footer"
+                                >
+                                  <div
+                                    className="actions"
+                                  >
+                                    <Button
+                                      data-terra-notification-dialog-button="accept"
+                                      isBlock={false}
+                                      isCompact={false}
+                                      isDisabled={false}
+                                      isIconOnly={false}
+                                      isReversed={false}
+                                      key="accept"
+                                      onClick={[Function]}
+                                      refCallback={[Function]}
+                                      tabIndex="0"
+                                      text="Confirm"
+                                      type="button"
+                                      variant="emphasis"
+                                    >
+                                      <button
+                                        aria-disabled={false}
+                                        className="button emphasis is-focused orion-fusion-theme"
+                                        data-terra-notification-dialog-button="accept"
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        tabIndex="0"
+                                        type="button"
+                                      >
+                                        <span
+                                          className="button-label-win text-only"
+                                        >
+                                          <span
+                                            className=""
+                                          >
+                                            Confirm
+                                          </span>
+                                        </span>
+                                      </button>
+                                    </Button>
+                                    <Button
+                                      data-terra-notification-dialog-button="reject"
+                                      isBlock={false}
+                                      isCompact={false}
+                                      isDisabled={false}
+                                      isIconOnly={false}
+                                      isReversed={false}
+                                      key="reject"
+                                      onClick={[Function]}
+                                      text="Close"
+                                      type="button"
+                                      variant="neutral"
+                                    >
+                                      <button
+                                        aria-disabled={false}
+                                        className="button neutral orion-fusion-theme"
+                                        data-terra-notification-dialog-button="reject"
+                                        disabled={false}
+                                        onBlur={[Function]}
+                                        onClick={[Function]}
+                                        onFocus={[Function]}
+                                        onKeyDown={[Function]}
+                                        onKeyUp={[Function]}
+                                        onMouseDown={[Function]}
+                                        type="button"
+                                      >
+                                        <span
+                                          className="button-label-win text-only"
+                                        >
+                                          <span
+                                            className=""
+                                          >
+                                            Close
+                                          </span>
+                                        </span>
+                                      </button>
+                                    </Button>
+                                  </div>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                  <div
-                    data-focus-guard={true}
-                    style={
+                    </ForwardRef>
+                    <div
+                      data-focus-guard={true}
+                      style={
+                        Object {
+                          "height": "0px",
+                          "left": "1px",
+                          "overflow": "hidden",
+                          "padding": 0,
+                          "position": "fixed",
+                          "top": "1px",
+                          "width": "1px",
+                        }
+                      }
+                      tabIndex={0}
+                    />
+                  </ForwardRef(FocusLockUI)>
+                  <RequireSideCar
+                    setLockProps={[Function]}
+                    sideCar={
                       Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
+                        "assignMedium": [Function],
+                        "assignSyncMedium": [Function],
+                        "options": Object {
+                          "async": true,
+                          "ssr": false,
+                        },
+                        "read": [Function],
+                        "useMedium": [Function],
                       }
                     }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-              </ForwardRef(FocusLockUICombination)>
+                  >
+                    <SideCar
+                      setLockProps={[Function]}
+                      sideCar={
+                        Object {
+                          "assignMedium": [Function],
+                          "assignSyncMedium": [Function],
+                          "options": Object {
+                            "async": true,
+                            "ssr": false,
+                          },
+                          "read": [Function],
+                          "useMedium": [Function],
+                        }
+                      }
+                    >
+                      <Effect
+                        setLockProps={[Function]}
+                      >
+                        <Component>
+                          <Sheet
+                            styles="
+ [data-focus-on-hidden] {
+   pointer-events: none !important;
+ }
+"
+                          />
+                        </Component>
+                      </Effect>
+                    </SideCar>
+                  </RequireSideCar>
+                </ForwardRef>
+              </ForwardRef>
             </ForwardRef>
           </Portal>
         </Portal>

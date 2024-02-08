@@ -5,7 +5,7 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import FocusLock from 'react-focus-lock';
+import { FocusOn } from 'react-focus-on';
 import ModalOverlay from './_ModalOverlay';
 import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
 import styles from './ModalContent.module.scss';
@@ -191,27 +191,6 @@ const ModalContent = forwardRef((props, ref) => {
     </div>
   );
 
-  if (shouldTrapFocus) {
-    return (
-      <React.Fragment>
-        <ModalOverlay
-          onClick={closeOnOutsideClick ? onRequestClose : null}
-          className={classNameOverlay}
-          zIndex={zIndexLayer}
-        />
-        {
-          /*
-            When an aria-label is set and tabIndex is set to 0, VoiceOver will read
-            the aria-label value when the modal is opened
-          */
-        }
-        <FocusLock>
-          {modalContent}
-        </FocusLock>
-      </React.Fragment>
-    );
-  }
-
   return (
     <React.Fragment>
       <ModalOverlay
@@ -225,7 +204,11 @@ const ModalContent = forwardRef((props, ref) => {
           the aria-label value when the modal is opened
         */
       }
-      {modalContent}
+      {
+        shouldTrapFocus
+          ? <FocusOn onClickOutside={closeOnOutsideClick ? onRequestClose : null}>{modalContent}</FocusOn>
+          : <>{modalContent}</>
+      }
     </React.Fragment>
   );
 });

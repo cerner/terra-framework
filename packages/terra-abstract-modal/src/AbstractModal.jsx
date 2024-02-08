@@ -94,7 +94,7 @@ const defaultProps = {
   rootSelector: '#root',
   zIndex: '6000',
   isCalledFromNotificationDialog: false,
-  shouldTrapFocus: true,
+  shouldTrapFocus: false,
 };
 
 const AbstractModal = (props) => {

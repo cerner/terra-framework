@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added FocusLock to confine focus within the modal popup.
+  * Added FocusOn to confine focus within the modal popup.
 
 ## 3.45.0 - (December 18, 2023)
 

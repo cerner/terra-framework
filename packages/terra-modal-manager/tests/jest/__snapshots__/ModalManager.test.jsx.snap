@@ -99,7 +99,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
       "timeZone": null,
     }
   }
-  shouldTrapFocus={false}
+  shouldTrapFocus={true}
 >
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
@@ -181,7 +181,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
           role="dialog"
           rootSelector="#root"
           setModalFocusElementRef={[Function]}
-          shouldTrapFocus={false}
+          shouldTrapFocus={true}
           zIndex="6000"
         >
           <Portal
@@ -191,69 +191,89 @@ exports[`ModalManager should disclose content in Modal 1`] = `
               containerInfo={
                 <div>
                   <div
+                    aria-hidden="true"
                     class="overlay layer-6000"
+                    data-focus-on-hidden="true"
                   />
                   <div
-                    aria-label="Modal"
-                    aria-modal="true"
-                    class="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                    role="dialog"
+                    aria-hidden="true"
+                    data-focus-guard="true"
+                    data-focus-on-hidden="true"
+                    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
                     tabindex="0"
+                  />
+                  <div
+                    data-focus-lock-disabled="false"
                   >
                     <div
-                      class="abstract-modal-container"
-                      data-terra-abstract-modal-begin="true"
-                      tabindex="-1"
+                      aria-label="Modal"
+                      aria-modal="true"
+                      class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                      role="dialog"
+                      tabindex="0"
                     >
-                      <span
-                        class="visually-hidden-text"
-                      >
-                        Terra.AbstractModal.BeginModalDialog
-                      </span>
                       <div
-                        class="content-container-fill"
+                        class="abstract-modal-container"
+                        data-terra-abstract-modal-begin="true"
+                        tabindex="-1"
                       >
+                        <span
+                          class="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.BeginModalDialog
+                        </span>
                         <div
-                          class="header"
-                        />
-                        <div
-                          class="main"
+                          class="content-container-fill"
                         >
                           <div
-                            class="scroll normalizer"
+                            class="header"
+                          />
+                          <div
+                            class="main"
                           >
                             <div
-                              class="slide-group"
+                              class="scroll normalizer"
                             >
                               <div
-                                class="slide"
+                                class="slide-group"
                               >
-                                <span
-                                  aria-hidden="true"
-                                  aria-live="polite"
-                                  class="visually-hidden-text"
-                                />
                                 <div
-                                  class="slide-shadow"
-                                />
-                                <button
-                                  id="test-modal"
-                                  type="button"
+                                  class="slide"
                                 >
-                                  Hello World
-                                </button>
+                                  <span
+                                    aria-hidden="true"
+                                    aria-live="polite"
+                                    class="visually-hidden-text"
+                                  />
+                                  <div
+                                    class="slide-shadow"
+                                  />
+                                  <button
+                                    id="test-modal"
+                                    type="button"
+                                  >
+                                    Hello World
+                                  </button>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
+                        <span
+                          class="visually-hidden-text"
+                        >
+                          Terra.AbstractModal.EndModalDialog
+                        </span>
                       </div>
-                      <span
-                        class="visually-hidden-text"
-                      >
-                        Terra.AbstractModal.EndModalDialog
-                      </span>
                     </div>
                   </div>
+                  <div
+                    aria-hidden="true"
+                    data-focus-guard="true"
+                    data-focus-on-hidden="true"
+                    style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
+                    tabindex="0"
+                  />
                 </div>
               }
             >
@@ -271,7 +291,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                 role="dialog"
                 rootSelector="#root"
                 setModalFocusElementRef={[Function]}
-                shouldTrapFocus={false}
+                shouldTrapFocus={true}
                 zIndex="6000"
               >
                 <ModalOverlay
@@ -284,204 +304,979 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                     onClick={null}
                   />
                 </ModalOverlay>
-                <div
-                  aria-label="Modal"
-                  aria-modal="true"
-                  className="abstract-modal layer-6000 modal-manager height-870 width-1280"
-                  onKeyDown={[Function]}
-                  role="dialog"
-                  tabIndex="0"
-                >
-                  <div
-                    className="abstract-modal-container"
-                    data-terra-abstract-modal-begin={true}
-                    tabIndex="-1"
+                <ForwardRef>
+                  <ForwardRef
+                    sideCar={[Function]}
                   >
-                    <FormattedMessage
-                      id="Terra.AbstractModal.BeginModalDialog"
-                      values={Object {}}
-                    >
-                      <VisuallyHiddenText
-                        text="Terra.AbstractModal.BeginModalDialog"
-                      >
-                        <span
-                          className="visually-hidden-text"
-                        >
-                          Terra.AbstractModal.BeginModalDialog
-                        </span>
-                      </VisuallyHiddenText>
-                    </FormattedMessage>
-                    <ContentContainer
-                      fill={true}
-                      header={<React.Fragment />}
-                      setFocusOnContainer={false}
+                    <ForwardRef(FocusLockUI)
+                      as={
+                        Object {
+                          "$$typeof": Symbol(react.forward_ref),
+                          "classNames": Object {
+                            "fullWidth": "width-before-scroll-bar",
+                            "zeroRight": "right-scroll-bar-position",
+                          },
+                          "defaultProps": Object {
+                            "enabled": true,
+                            "inert": false,
+                            "removeScrollBar": true,
+                          },
+                          "render": [Function],
+                        }
+                      }
+                      disabled={false}
+                      lockProps={
+                        Object {
+                          "allowPinchZoom": undefined,
+                          "as": undefined,
+                          "enabled": true,
+                          "gapMode": undefined,
+                          "inert": undefined,
+                          "onMouseDown": [Function],
+                          "onTouchStart": [Function],
+                          "shards": undefined,
+                          "sideCar": [Function],
+                          "style": undefined,
+                        }
+                      }
+                      onActivation={[Function]}
+                      onDeactivation={[Function]}
+                      returnFocus={true}
+                      sideCar={[Function]}
                     >
                       <div
-                        className="content-container-fill"
-                      >
-                        <div
-                          className="header"
-                        />
-                        <div
-                          className="main"
-                        >
-                          <Scroll
-                            className="normalizer"
+                        data-focus-guard={true}
+                        key="guard-first"
+                        style={
+                          Object {
+                            "height": "0px",
+                            "left": "1px",
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "fixed",
+                            "top": "1px",
+                            "width": "1px",
+                          }
+                        }
+                        tabIndex={0}
+                      />
+                      <RequireSideCar
+                        autoFocus={true}
+                        crossFrame={true}
+                        disabled={false}
+                        id={Object {}}
+                        observed={
+                          <div
+                            data-focus-lock-disabled="false"
                           >
                             <div
-                              className="scroll normalizer"
+                              aria-label="Modal"
+                              aria-modal="true"
+                              class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                              role="dialog"
+                              tabindex="0"
                             >
-                              <SlideGroup
-                                isAnimated={true}
-                                items={
-                                  Array [
-                                    <Context.Provider
-                                      value={
-                                        Object {
-                                          "register": [Function],
-                                        }
-                                      }
-                                    >
-                                      <Context.Provider
-                                        value={
-                                          DisclosureManagerDelegateInstance {
-                                            "closeDisclosure": [Function],
-                                            "disclose": [Function],
-                                            "dismiss": [Function],
-                                            "maximize": [Function],
-                                            "registerDismissCheck": [Function],
-                                            "requestFocus": [Function],
-                                          }
-                                        }
-                                      >
-                                        <withDisclosureManager(Component)
-                                          id="test-modal"
-                                        />
-                                      </Context.Provider>
-                                    </Context.Provider>,
-                                  ]
-                                }
+                              <div
+                                class="abstract-modal-container"
+                                data-terra-abstract-modal-begin="true"
+                                tabindex="-1"
                               >
-                                <TransitionGroup
-                                  childFactory={[Function]}
-                                  className="slide-group"
-                                  component="div"
-                                  key="DISCLOSE_KEY"
+                                <span
+                                  class="visually-hidden-text"
+                                >
+                                  Terra.AbstractModal.BeginModalDialog
+                                </span>
+                                <div
+                                  class="content-container-fill"
                                 >
                                   <div
-                                    className="slide-group"
+                                    class="header"
+                                  />
+                                  <div
+                                    class="main"
                                   >
-                                    <CSSTransition
-                                      classNames={
-                                        Object {
-                                          "enter": "enter",
-                                          "enterActive": "enter-active",
-                                          "exit": "exit",
-                                          "exitActive": "exit-active",
-                                        }
-                                      }
-                                      enter={true}
-                                      exit={true}
-                                      id="shmmoop"
-                                      in={true}
-                                      key=".$DISCLOSE_KEY"
-                                      onEntered={[Function]}
-                                      onExit={[Function]}
-                                      onExited={[Function]}
-                                      timeout={300}
+                                    <div
+                                      class="scroll normalizer"
                                     >
-                                      <Transition
-                                        appear={false}
-                                        enter={true}
-                                        exit={true}
-                                        id="shmmoop"
-                                        in={true}
-                                        mountOnEnter={false}
-                                        onEnter={[Function]}
-                                        onEntered={[Function]}
-                                        onEntering={[Function]}
-                                        onExit={[Function]}
-                                        onExited={[Function]}
-                                        onExiting={[Function]}
-                                        timeout={300}
-                                        unmountOnExit={false}
+                                      <div
+                                        class="slide-group"
                                       >
-                                        <Slide
-                                          id="shmmoop"
-                                          isHidden={false}
-                                          isNested={false}
+                                        <div
+                                          class="slide"
+                                        >
+                                          <span
+                                            aria-hidden="true"
+                                            aria-live="polite"
+                                            class="visually-hidden-text"
+                                          />
+                                          <div
+                                            class="slide-shadow"
+                                          />
+                                          <button
+                                            id="test-modal"
+                                            type="button"
+                                          >
+                                            Hello World
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <span
+                                  class="visually-hidden-text"
+                                >
+                                  Terra.AbstractModal.EndModalDialog
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        }
+                        onActivation={[Function]}
+                        onDeactivation={[Function]}
+                        persistentFocus={false}
+                        returnFocus={[Function]}
+                        shards={Array []}
+                        sideCar={
+                          Object {
+                            "assignMedium": [Function],
+                            "assignSyncMedium": [Function],
+                            "options": Object {
+                              "async": true,
+                              "ssr": false,
+                            },
+                            "read": [Function],
+                            "useMedium": [Function],
+                          }
+                        }
+                      >
+                        <SideCar
+                          autoFocus={true}
+                          crossFrame={true}
+                          disabled={false}
+                          id={Object {}}
+                          observed={
+                            <div
+                              data-focus-lock-disabled="false"
+                            >
+                              <div
+                                aria-label="Modal"
+                                aria-modal="true"
+                                class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                                role="dialog"
+                                tabindex="0"
+                              >
+                                <div
+                                  class="abstract-modal-container"
+                                  data-terra-abstract-modal-begin="true"
+                                  tabindex="-1"
+                                >
+                                  <span
+                                    class="visually-hidden-text"
+                                  >
+                                    Terra.AbstractModal.BeginModalDialog
+                                  </span>
+                                  <div
+                                    class="content-container-fill"
+                                  >
+                                    <div
+                                      class="header"
+                                    />
+                                    <div
+                                      class="main"
+                                    >
+                                      <div
+                                        class="scroll normalizer"
+                                      >
+                                        <div
+                                          class="slide-group"
                                         >
                                           <div
-                                            aria-hidden={null}
-                                            className="slide"
-                                            onClick={[Function]}
-                                            onKeyUp={[Function]}
+                                            class="slide"
                                           >
-                                            <VisuallyHiddenText
-                                              aria-hidden={true}
+                                            <span
+                                              aria-hidden="true"
                                               aria-live="polite"
+                                              class="visually-hidden-text"
+                                            />
+                                            <div
+                                              class="slide-shadow"
+                                            />
+                                            <button
+                                              id="test-modal"
+                                              type="button"
+                                            >
+                                              Hello World
+                                            </button>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <span
+                                    class="visually-hidden-text"
+                                  >
+                                    Terra.AbstractModal.EndModalDialog
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          }
+                          onActivation={[Function]}
+                          onDeactivation={[Function]}
+                          persistentFocus={false}
+                          returnFocus={[Function]}
+                          shards={Array []}
+                          sideCar={
+                            Object {
+                              "assignMedium": [Function],
+                              "assignSyncMedium": [Function],
+                              "options": Object {
+                                "async": true,
+                                "ssr": false,
+                              },
+                              "read": [Function],
+                              "useMedium": [Function],
+                            }
+                          }
+                        >
+                          <SideEffect(FocusWatcher)
+                            autoFocus={true}
+                            crossFrame={true}
+                            disabled={false}
+                            id={Object {}}
+                            observed={
+                              <div
+                                data-focus-lock-disabled="false"
+                              >
+                                <div
+                                  aria-label="Modal"
+                                  aria-modal="true"
+                                  class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                                  role="dialog"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="abstract-modal-container"
+                                    data-terra-abstract-modal-begin="true"
+                                    tabindex="-1"
+                                  >
+                                    <span
+                                      class="visually-hidden-text"
+                                    >
+                                      Terra.AbstractModal.BeginModalDialog
+                                    </span>
+                                    <div
+                                      class="content-container-fill"
+                                    >
+                                      <div
+                                        class="header"
+                                      />
+                                      <div
+                                        class="main"
+                                      >
+                                        <div
+                                          class="scroll normalizer"
+                                        >
+                                          <div
+                                            class="slide-group"
+                                          >
+                                            <div
+                                              class="slide"
                                             >
                                               <span
-                                                aria-hidden={true}
+                                                aria-hidden="true"
                                                 aria-live="polite"
-                                                className="visually-hidden-text"
+                                                class="visually-hidden-text"
                                               />
-                                            </VisuallyHiddenText>
-                                            <div
-                                              className="slide-shadow"
-                                            />
-                                            <withDisclosureManager(Component)
-                                              id="test-modal"
-                                            >
-                                              <Component
-                                                disclosureManager={
-                                                  DisclosureManagerDelegateInstance {
-                                                    "closeDisclosure": [Function],
-                                                    "disclose": [Function],
-                                                    "dismiss": [Function],
-                                                    "maximize": [Function],
-                                                    "registerDismissCheck": [Function],
-                                                    "requestFocus": [Function],
-                                                  }
-                                                }
+                                              <div
+                                                class="slide-shadow"
+                                              />
+                                              <button
                                                 id="test-modal"
+                                                type="button"
                                               >
+                                                Hello World
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <span
+                                      class="visually-hidden-text"
+                                    >
+                                      Terra.AbstractModal.EndModalDialog
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>
+                            }
+                            onActivation={[Function]}
+                            onDeactivation={[Function]}
+                            persistentFocus={false}
+                            returnFocus={[Function]}
+                            shards={Array []}
+                          >
+                            <FocusWatcher
+                              autoFocus={true}
+                              crossFrame={true}
+                              disabled={false}
+                              id={Object {}}
+                              observed={
+                                <div
+                                  data-focus-lock-disabled="false"
+                                >
+                                  <div
+                                    aria-label="Modal"
+                                    aria-modal="true"
+                                    class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                                    role="dialog"
+                                    tabindex="0"
+                                  >
+                                    <div
+                                      class="abstract-modal-container"
+                                      data-terra-abstract-modal-begin="true"
+                                      tabindex="-1"
+                                    >
+                                      <span
+                                        class="visually-hidden-text"
+                                      >
+                                        Terra.AbstractModal.BeginModalDialog
+                                      </span>
+                                      <div
+                                        class="content-container-fill"
+                                      >
+                                        <div
+                                          class="header"
+                                        />
+                                        <div
+                                          class="main"
+                                        >
+                                          <div
+                                            class="scroll normalizer"
+                                          >
+                                            <div
+                                              class="slide-group"
+                                            >
+                                              <div
+                                                class="slide"
+                                              >
+                                                <span
+                                                  aria-hidden="true"
+                                                  aria-live="polite"
+                                                  class="visually-hidden-text"
+                                                />
+                                                <div
+                                                  class="slide-shadow"
+                                                />
                                                 <button
                                                   id="test-modal"
                                                   type="button"
                                                 >
                                                   Hello World
                                                 </button>
-                                              </Component>
-                                            </withDisclosureManager(Component)>
+                                              </div>
+                                            </div>
                                           </div>
-                                        </Slide>
-                                      </Transition>
-                                    </CSSTransition>
+                                        </div>
+                                      </div>
+                                      <span
+                                        class="visually-hidden-text"
+                                      >
+                                        Terra.AbstractModal.EndModalDialog
+                                      </span>
+                                    </div>
                                   </div>
-                                </TransitionGroup>
-                              </SlideGroup>
-                            </div>
-                          </Scroll>
-                        </div>
-                      </div>
-                    </ContentContainer>
-                    <FormattedMessage
-                      id="Terra.AbstractModal.EndModalDialog"
-                      values={Object {}}
-                    >
-                      <VisuallyHiddenText
-                        text="Terra.AbstractModal.EndModalDialog"
+                                </div>
+                              }
+                              onActivation={[Function]}
+                              onDeactivation={[Function]}
+                              persistentFocus={false}
+                              returnFocus={[Function]}
+                              shards={Array []}
+                            />
+                          </SideEffect(FocusWatcher)>
+                        </SideCar>
+                      </RequireSideCar>
+                      <ForwardRef
+                        data-focus-lock-disabled={false}
+                        enabled={true}
+                        inert={false}
+                        onBlur={[Function]}
+                        onFocus={[Function]}
+                        onMouseDown={[Function]}
+                        onTouchStart={[Function]}
+                        removeScrollBar={true}
+                        sideCar={[Function]}
                       >
-                        <span
-                          className="visually-hidden-text"
+                        <RequireSideCar
+                          allowPinchZoom={false}
+                          inert={false}
+                          lockRef={
+                            Object {
+                              "current": <div
+                                data-focus-lock-disabled="false"
+                              >
+                                <div
+                                  aria-label="Modal"
+                                  aria-modal="true"
+                                  class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                                  role="dialog"
+                                  tabindex="0"
+                                >
+                                  <div
+                                    class="abstract-modal-container"
+                                    data-terra-abstract-modal-begin="true"
+                                    tabindex="-1"
+                                  >
+                                    <span
+                                      class="visually-hidden-text"
+                                    >
+                                      Terra.AbstractModal.BeginModalDialog
+                                    </span>
+                                    <div
+                                      class="content-container-fill"
+                                    >
+                                      <div
+                                        class="header"
+                                      />
+                                      <div
+                                        class="main"
+                                      >
+                                        <div
+                                          class="scroll normalizer"
+                                        >
+                                          <div
+                                            class="slide-group"
+                                          >
+                                            <div
+                                              class="slide"
+                                            >
+                                              <span
+                                                aria-hidden="true"
+                                                aria-live="polite"
+                                                class="visually-hidden-text"
+                                              />
+                                              <div
+                                                class="slide-shadow"
+                                              />
+                                              <button
+                                                id="test-modal"
+                                                type="button"
+                                              >
+                                                Hello World
+                                              </button>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <span
+                                      class="visually-hidden-text"
+                                    >
+                                      Terra.AbstractModal.EndModalDialog
+                                    </span>
+                                  </div>
+                                </div>
+                              </div>,
+                            }
+                          }
+                          removeScrollBar={true}
+                          setCallbacks={[Function]}
+                          sideCar={
+                            Object {
+                              "assignMedium": [Function],
+                              "assignSyncMedium": [Function],
+                              "options": Object {
+                                "async": true,
+                                "ssr": false,
+                              },
+                              "read": [Function],
+                              "useMedium": [Function],
+                            }
+                          }
                         >
-                          Terra.AbstractModal.EndModalDialog
-                        </span>
-                      </VisuallyHiddenText>
-                    </FormattedMessage>
-                  </div>
-                </div>
+                          <SideCar
+                            allowPinchZoom={false}
+                            inert={false}
+                            lockRef={
+                              Object {
+                                "current": <div
+                                  data-focus-lock-disabled="false"
+                                >
+                                  <div
+                                    aria-label="Modal"
+                                    aria-modal="true"
+                                    class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                                    role="dialog"
+                                    tabindex="0"
+                                  >
+                                    <div
+                                      class="abstract-modal-container"
+                                      data-terra-abstract-modal-begin="true"
+                                      tabindex="-1"
+                                    >
+                                      <span
+                                        class="visually-hidden-text"
+                                      >
+                                        Terra.AbstractModal.BeginModalDialog
+                                      </span>
+                                      <div
+                                        class="content-container-fill"
+                                      >
+                                        <div
+                                          class="header"
+                                        />
+                                        <div
+                                          class="main"
+                                        >
+                                          <div
+                                            class="scroll normalizer"
+                                          >
+                                            <div
+                                              class="slide-group"
+                                            >
+                                              <div
+                                                class="slide"
+                                              >
+                                                <span
+                                                  aria-hidden="true"
+                                                  aria-live="polite"
+                                                  class="visually-hidden-text"
+                                                />
+                                                <div
+                                                  class="slide-shadow"
+                                                />
+                                                <button
+                                                  id="test-modal"
+                                                  type="button"
+                                                >
+                                                  Hello World
+                                                </button>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <span
+                                        class="visually-hidden-text"
+                                      >
+                                        Terra.AbstractModal.EndModalDialog
+                                      </span>
+                                    </div>
+                                  </div>
+                                </div>,
+                              }
+                            }
+                            removeScrollBar={true}
+                            setCallbacks={[Function]}
+                            sideCar={
+                              Object {
+                                "assignMedium": [Function],
+                                "assignSyncMedium": [Function],
+                                "options": Object {
+                                  "async": true,
+                                  "ssr": false,
+                                },
+                                "read": [Function],
+                                "useMedium": [Function],
+                              }
+                            }
+                          >
+                            <RemoveScrollSideCar
+                              allowPinchZoom={false}
+                              inert={false}
+                              lockRef={
+                                Object {
+                                  "current": <div
+                                    data-focus-lock-disabled="false"
+                                  >
+                                    <div
+                                      aria-label="Modal"
+                                      aria-modal="true"
+                                      class="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                                      role="dialog"
+                                      tabindex="0"
+                                    >
+                                      <div
+                                        class="abstract-modal-container"
+                                        data-terra-abstract-modal-begin="true"
+                                        tabindex="-1"
+                                      >
+                                        <span
+                                          class="visually-hidden-text"
+                                        >
+                                          Terra.AbstractModal.BeginModalDialog
+                                        </span>
+                                        <div
+                                          class="content-container-fill"
+                                        >
+                                          <div
+                                            class="header"
+                                          />
+                                          <div
+                                            class="main"
+                                          >
+                                            <div
+                                              class="scroll normalizer"
+                                            >
+                                              <div
+                                                class="slide-group"
+                                              >
+                                                <div
+                                                  class="slide"
+                                                >
+                                                  <span
+                                                    aria-hidden="true"
+                                                    aria-live="polite"
+                                                    class="visually-hidden-text"
+                                                  />
+                                                  <div
+                                                    class="slide-shadow"
+                                                  />
+                                                  <button
+                                                    id="test-modal"
+                                                    type="button"
+                                                  >
+                                                    Hello World
+                                                  </button>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <span
+                                          class="visually-hidden-text"
+                                        >
+                                          Terra.AbstractModal.EndModalDialog
+                                        </span>
+                                      </div>
+                                    </div>
+                                  </div>,
+                                }
+                              }
+                              removeScrollBar={true}
+                              setCallbacks={[Function]}
+                            >
+                              <RemoveScrollBar>
+                                <Sheet
+                                  styles="
+  .with-scroll-bars-hidden {
+   overflow: hidden !important;
+   padding-right: 1024px !important;
+  }
+  body {
+    overflow: hidden !important;
+    overscroll-behavior: contain;
+    position: relative !important;
+    padding-left: 8px;
+    padding-top: 8px;
+    padding-right: 8px;
+    margin-left:0;
+    margin-top:0;
+    margin-right: 1024px !important;
+    
+  }
+  
+  .right-scroll-bar-position {
+    right: 1024px !important;
+  }
+  
+  .width-before-scroll-bar {
+    margin-right: 1024px !important;
+  }
+  
+  .right-scroll-bar-position .right-scroll-bar-position {
+    right: 0 !important;
+  }
+  
+  .width-before-scroll-bar .width-before-scroll-bar {
+    margin-right: 0 !important;
+  }
+  
+  body {
+    --removed-body-scroll-bar-size: 1024px;
+  }
+"
+                                />
+                              </RemoveScrollBar>
+                            </RemoveScrollSideCar>
+                          </SideCar>
+                        </RequireSideCar>
+                        <div
+                          data-focus-lock-disabled={false}
+                          onBlur={[Function]}
+                          onFocus={[Function]}
+                          onMouseDown={[Function]}
+                          onScrollCapture={[Function]}
+                          onTouchMoveCapture={[Function]}
+                          onTouchStart={[Function]}
+                          onWheelCapture={[Function]}
+                        >
+                          <div
+                            aria-label="Modal"
+                            aria-modal="true"
+                            className="abstract-modal layer-6000 modal-manager height-870 width-1280"
+                            onKeyDown={[Function]}
+                            role="dialog"
+                            tabIndex="0"
+                          >
+                            <div
+                              className="abstract-modal-container"
+                              data-terra-abstract-modal-begin={true}
+                              tabIndex="-1"
+                            >
+                              <FormattedMessage
+                                id="Terra.AbstractModal.BeginModalDialog"
+                                values={Object {}}
+                              >
+                                <VisuallyHiddenText
+                                  text="Terra.AbstractModal.BeginModalDialog"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Terra.AbstractModal.BeginModalDialog
+                                  </span>
+                                </VisuallyHiddenText>
+                              </FormattedMessage>
+                              <ContentContainer
+                                fill={true}
+                                header={<React.Fragment />}
+                                setFocusOnContainer={false}
+                              >
+                                <div
+                                  className="content-container-fill"
+                                >
+                                  <div
+                                    className="header"
+                                  />
+                                  <div
+                                    className="main"
+                                  >
+                                    <Scroll
+                                      className="normalizer"
+                                    >
+                                      <div
+                                        className="scroll normalizer"
+                                      >
+                                        <SlideGroup
+                                          isAnimated={true}
+                                          items={
+                                            Array [
+                                              <Context.Provider
+                                                value={
+                                                  Object {
+                                                    "register": [Function],
+                                                  }
+                                                }
+                                              >
+                                                <Context.Provider
+                                                  value={
+                                                    DisclosureManagerDelegateInstance {
+                                                      "closeDisclosure": [Function],
+                                                      "disclose": [Function],
+                                                      "dismiss": [Function],
+                                                      "maximize": [Function],
+                                                      "registerDismissCheck": [Function],
+                                                      "requestFocus": [Function],
+                                                    }
+                                                  }
+                                                >
+                                                  <withDisclosureManager(Component)
+                                                    id="test-modal"
+                                                  />
+                                                </Context.Provider>
+                                              </Context.Provider>,
+                                            ]
+                                          }
+                                        >
+                                          <TransitionGroup
+                                            childFactory={[Function]}
+                                            className="slide-group"
+                                            component="div"
+                                            key="DISCLOSE_KEY"
+                                          >
+                                            <div
+                                              className="slide-group"
+                                            >
+                                              <CSSTransition
+                                                classNames={
+                                                  Object {
+                                                    "enter": "enter",
+                                                    "enterActive": "enter-active",
+                                                    "exit": "exit",
+                                                    "exitActive": "exit-active",
+                                                  }
+                                                }
+                                                enter={true}
+                                                exit={true}
+                                                id="shmmoop"
+                                                in={true}
+                                                key=".$DISCLOSE_KEY"
+                                                onEntered={[Function]}
+                                                onExit={[Function]}
+                                                onExited={[Function]}
+                                                timeout={300}
+                                              >
+                                                <Transition
+                                                  appear={false}
+                                                  enter={true}
+                                                  exit={true}
+                                                  id="shmmoop"
+                                                  in={true}
+                                                  mountOnEnter={false}
+                                                  onEnter={[Function]}
+                                                  onEntered={[Function]}
+                                                  onEntering={[Function]}
+                                                  onExit={[Function]}
+                                                  onExited={[Function]}
+                                                  onExiting={[Function]}
+                                                  timeout={300}
+                                                  unmountOnExit={false}
+                                                >
+                                                  <Slide
+                                                    id="shmmoop"
+                                                    isHidden={false}
+                                                    isNested={false}
+                                                  >
+                                                    <div
+                                                      aria-hidden={null}
+                                                      className="slide"
+                                                      onClick={[Function]}
+                                                      onKeyUp={[Function]}
+                                                    >
+                                                      <VisuallyHiddenText
+                                                        aria-hidden={true}
+                                                        aria-live="polite"
+                                                      >
+                                                        <span
+                                                          aria-hidden={true}
+                                                          aria-live="polite"
+                                                          className="visually-hidden-text"
+                                                        />
+                                                      </VisuallyHiddenText>
+                                                      <div
+                                                        className="slide-shadow"
+                                                      />
+                                                      <withDisclosureManager(Component)
+                                                        id="test-modal"
+                                                      >
+                                                        <Component
+                                                          disclosureManager={
+                                                            DisclosureManagerDelegateInstance {
+                                                              "closeDisclosure": [Function],
+                                                              "disclose": [Function],
+                                                              "dismiss": [Function],
+                                                              "maximize": [Function],
+                                                              "registerDismissCheck": [Function],
+                                                              "requestFocus": [Function],
+                                                            }
+                                                          }
+                                                          id="test-modal"
+                                                        >
+                                                          <button
+                                                            id="test-modal"
+                                                            type="button"
+                                                          >
+                                                            Hello World
+                                                          </button>
+                                                        </Component>
+                                                      </withDisclosureManager(Component)>
+                                                    </div>
+                                                  </Slide>
+                                                </Transition>
+                                              </CSSTransition>
+                                            </div>
+                                          </TransitionGroup>
+                                        </SlideGroup>
+                                      </div>
+                                    </Scroll>
+                                  </div>
+                                </div>
+                              </ContentContainer>
+                              <FormattedMessage
+                                id="Terra.AbstractModal.EndModalDialog"
+                                values={Object {}}
+                              >
+                                <VisuallyHiddenText
+                                  text="Terra.AbstractModal.EndModalDialog"
+                                >
+                                  <span
+                                    className="visually-hidden-text"
+                                  >
+                                    Terra.AbstractModal.EndModalDialog
+                                  </span>
+                                </VisuallyHiddenText>
+                              </FormattedMessage>
+                            </div>
+                          </div>
+                        </div>
+                      </ForwardRef>
+                      <div
+                        data-focus-guard={true}
+                        style={
+                          Object {
+                            "height": "0px",
+                            "left": "1px",
+                            "overflow": "hidden",
+                            "padding": 0,
+                            "position": "fixed",
+                            "top": "1px",
+                            "width": "1px",
+                          }
+                        }
+                        tabIndex={0}
+                      />
+                    </ForwardRef(FocusLockUI)>
+                    <RequireSideCar
+                      setLockProps={[Function]}
+                      sideCar={
+                        Object {
+                          "assignMedium": [Function],
+                          "assignSyncMedium": [Function],
+                          "options": Object {
+                            "async": true,
+                            "ssr": false,
+                          },
+                          "read": [Function],
+                          "useMedium": [Function],
+                        }
+                      }
+                    >
+                      <SideCar
+                        setLockProps={[Function]}
+                        sideCar={
+                          Object {
+                            "assignMedium": [Function],
+                            "assignSyncMedium": [Function],
+                            "options": Object {
+                              "async": true,
+                              "ssr": false,
+                            },
+                            "read": [Function],
+                            "useMedium": [Function],
+                          }
+                        }
+                      >
+                        <Effect
+                          setLockProps={[Function]}
+                        >
+                          <Component>
+                            <Sheet
+                              styles="
+ [data-focus-on-hidden] {
+   pointer-events: none !important;
+ }
+"
+                            />
+                          </Component>
+                        </Effect>
+                      </SideCar>
+                    </RequireSideCar>
+                  </ForwardRef>
+                </ForwardRef>
               </ForwardRef>
             </Portal>
           </Portal>

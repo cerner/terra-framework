@@ -32,7 +32,7 @@
     "keycode-js": "^3.1.0",
     "mutationobserver-shim": "<=0.3.3",
     "prop-types": "^15.5.8",
-    "react-focus-lock": "^2.9.7",
+    "react-focus-on": "^3.9.1",
     "react-portal": "^4.1.2",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.0.0",
