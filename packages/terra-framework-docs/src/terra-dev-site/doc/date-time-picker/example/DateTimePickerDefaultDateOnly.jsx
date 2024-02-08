@@ -18,8 +18,8 @@ const DateTimePickerExampleDefaultDate = () => {
       <Field label="Enter Date/Time" htmlFor="defaultDate">
         <DateTimePicker
           name="date-time-picker-example"
-          dateInputAttributes={{ id: 'defaultDate' }}
-          timeInputAttributes={{ id: 'defaultDate' }}
+          dateInputAttributes={{ id: 'defaultDate', fieldLabel: 'Enter Date/Time' }}
+          timeInputAttributes={{ id: 'defaultTime', fieldLabel: 'Enter Date/Time' }}
           onChange={handleDateTimeChange}
           value="2017-08-08"
         />
