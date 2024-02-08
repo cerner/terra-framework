@@ -18,7 +18,7 @@ describe('Menu', () => {
 
   // Snapshot Tests
   it('should render a default component', () => {
-    const wrapper = shallow(<DefaultMenu />);
+    const wrapper = enzyme.shallow(<DefaultMenu />);
     expect(wrapper).toMatchSnapshot();
   });
 

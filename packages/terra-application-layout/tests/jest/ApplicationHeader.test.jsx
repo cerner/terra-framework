@@ -16,7 +16,7 @@ describe('ApplicationHeader', () => {
       />
     );
 
-    const result = shallow(testHeader);
+    const result = enzyme.shallow(testHeader);
 
     expect(result).toMatchSnapshot();
   });
@@ -63,7 +63,7 @@ describe('ApplicationHeader', () => {
       />
     );
 
-    const result = shallow(testHeader);
+    const result = enzyme.shallow(testHeader);
 
     expect(result).toMatchSnapshot();
   });
@@ -97,14 +97,14 @@ describe('ApplicationHeader', () => {
         }}
       />
     );
-    const wrapper = shallow(subject);
+    const wrapper = enzyme.shallow(subject);
 
     it('should match the snapshot', () => {
       expect(wrapper).toMatchSnapshot();
     });
 
     it('correctly applies the theme context className', () => {
-      const testHeader = shallow(
+      const testHeader = enzyme.shallow(
         <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
           <ApplicationHeader.WrappedComponent
             intl={mockIntl}

@@ -82,7 +82,7 @@ describe('RoutingMenu', () => {
         />
       );
 
-      const wrapper = shallow(routingMenu);
+      const wrapper = enzyme.shallow(routingMenu);
 
       expect(wrapper.state('selectedChildKey')).toBe('/2');
 
@@ -124,7 +124,7 @@ describe('RoutingMenu', () => {
         />
       );
 
-      const wrapper = shallow(routingMenu);
+      const wrapper = enzyme.shallow(routingMenu);
 
       expect(wrapper.state('selectedChildKey')).toBe('/1');
 
@@ -163,7 +163,7 @@ describe('RoutingMenu', () => {
         />
       );
 
-      const wrapper = shallow(routingMenu);
+      const wrapper = enzyme.shallow(routingMenu);
 
       expect(wrapper.state('selectedChildKey')).toBe('/1');
 
@@ -212,7 +212,7 @@ describe('RoutingMenu', () => {
         />
       );
 
-      const result = shallow(exampleMenu);
+      const result = enzyme.shallow(exampleMenu);
 
       expect(result).toMatchSnapshot();
     });

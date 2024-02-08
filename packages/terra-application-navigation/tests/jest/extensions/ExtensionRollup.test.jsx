@@ -5,7 +5,7 @@ import ExtensionRollup from '../../../src/extensions/_ExtensionRollup';
 
 describe('ExtensionRollup', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent intl={mockIntl} />,
     );
 
@@ -13,7 +13,7 @@ describe('ExtensionRollup', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
         intl={mockIntl}
         hasChildNotifications
@@ -25,7 +25,7 @@ describe('ExtensionRollup', () => {
   });
 
   it('should render with ref', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
         intl={mockIntl}
         extensionRef={React.createRef()}
@@ -39,7 +39,7 @@ describe('ExtensionRollup', () => {
     const mockCallBack = jest.fn();
     const mockCallBack2 = jest.fn();
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
         intl={mockIntl}
         onSelect={mockCallBack}

@@ -28,7 +28,7 @@ describe('ApplicationNavigation', () => {
   });
 
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ApplicationNavigation />,
     );
 
@@ -38,7 +38,7 @@ describe('ApplicationNavigation', () => {
   it('should render with prop data at large breakpoint', () => {
     breakpointContextValue = 'large';
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ApplicationNavigation
         activeBreakpoint="large"
         titleConfig={{
@@ -74,7 +74,7 @@ describe('ApplicationNavigation', () => {
   it('should render with prop data at medium breakpoint', () => {
     breakpointContextValue = 'medium';
 
-    const shallowComponent = shallow((
+    const shallowComponent = enzyme.shallow((
       <ApplicationNavigation
         titleConfig={{
           title: 'test-title',

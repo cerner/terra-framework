@@ -5,7 +5,7 @@ import TabCount from '../../../src/tabs/_TabCount';
 
 describe('TabCount', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <TabCount.WrappedComponent intl={mockIntl} />,
     );
 
@@ -13,7 +13,7 @@ describe('TabCount', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <TabCount.WrappedComponent
         intl={mockIntl}
         value={1}

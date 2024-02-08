@@ -5,7 +5,7 @@ import DrawerMenu from '../../../src/drawer-menu/_DrawerMenu';
 
 describe('DrawerMenu', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent intl={mockIntl} />,
     );
 
@@ -13,7 +13,7 @@ describe('DrawerMenu', () => {
   });
 
   it('should render with function callbacks', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
         intl={mockIntl}
         titleConfig={{
@@ -42,7 +42,7 @@ describe('DrawerMenu', () => {
   });
 
   it('should render with navigation and utility item ids', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
         intl={mockIntl}
         titleConfig={{
@@ -72,7 +72,7 @@ describe('DrawerMenu', () => {
   });
 
   it('should render Help utility item when it is the only utility item present', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
         intl={mockIntl}
         titleConfig={{

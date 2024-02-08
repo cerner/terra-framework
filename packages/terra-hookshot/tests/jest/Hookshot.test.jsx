@@ -6,7 +6,7 @@ import {
 
 // Snapshot Tests
 it('should shallow a default component', () => {
-  const hookshot = shallow(<HookshotDefaultExample />);
+  const hookshot = enzyme.shallow(<HookshotDefaultExample />);
   expect(hookshot).toMatchSnapshot();
 });
 

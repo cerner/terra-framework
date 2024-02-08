@@ -48,7 +48,7 @@ const tableData = {
 
 describe('Section', () => {
   it('verifies that the table created is consistent with the rows and overflowColumns props', () => {
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <Section
         id="test-section"
         tableId="test-table"
@@ -75,7 +75,7 @@ describe('Section', () => {
       expect(rowComponent.props.cells).toEqual(data.cells);
     };
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <Section
         id="test-section"
         tableId="test-table"
@@ -94,7 +94,7 @@ describe('Section', () => {
   });
 
   it('verifies the rows receive the correct props when table is zebra striped', () => {
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <Section
         id="test-section"
         tableId="test-table"

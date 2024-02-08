@@ -24,7 +24,7 @@ const MockPrompt = withPromptRegistration(MockPromptBase);
 describe('NavigationPrompt', () => {
   describe('Snapshots', () => {
     it('should render with minimal props', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         />
@@ -34,7 +34,7 @@ describe('NavigationPrompt', () => {
     });
 
     it('should render with children', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPromptCheckpoint
           onPromptChange={() => {}}
           promptRegistration={promptRegistrationDefault}
@@ -47,7 +47,7 @@ describe('NavigationPrompt', () => {
     });
 
     it('should render the NotificationDialog when state is present', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         />
@@ -69,7 +69,7 @@ describe('NavigationPrompt', () => {
     });
 
     it('should render the NotificationDialog with accept as the primary action', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         />
@@ -92,7 +92,7 @@ describe('NavigationPrompt', () => {
     });
 
     it('should render the NotificationDialog with reject as the primary action', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         />
@@ -119,7 +119,7 @@ describe('NavigationPrompt', () => {
     it('should call onPromptChange during unmount', () => {
       const mockOnPromptChange = jest.fn();
 
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPromptCheckpoint
           onPromptChange={mockOnPromptChange}
           promptRegistration={promptRegistrationDefault}
@@ -133,7 +133,7 @@ describe('NavigationPrompt', () => {
     });
 
     it('should not throw if onPromptChange is not present', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         />

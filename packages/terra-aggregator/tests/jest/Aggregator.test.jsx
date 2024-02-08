@@ -13,7 +13,7 @@ AggregatorItem.propTypes = {
 
 describe('Aggregator', () => {
   it('should render an Aggregator without optional props', () => {
-    const result = shallow((
+    const result = enzyme.shallow((
       <Aggregator />
     ));
     expect(result).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('Aggregator', () => {
       component: <AggregatorItem key="3" />,
     }];
 
-    const result = shallow((
+    const result = enzyme.shallow((
       <Aggregator
         items={items}
       />
@@ -51,7 +51,7 @@ describe('Aggregator', () => {
       component: <AggregatorItem key="3" />,
     }];
 
-    const result = shallow((
+    const result = enzyme.shallow((
       <Aggregator
         items={items}
         render={renderData => (
@@ -80,7 +80,7 @@ describe('Aggregator', () => {
       component: <AggregatorItem key="3" />,
     }];
 
-    const wrapper = shallow((
+    const wrapper = enzyme.shallow((
       <Aggregator
         items={items}
       />
@@ -142,7 +142,7 @@ describe('Aggregator', () => {
       component: <AggregatorItem key="3" />,
     }];
 
-    const wrapper = shallow((
+    const wrapper = enzyme.shallow((
       <Aggregator
         items={items}
         disclose={() => {

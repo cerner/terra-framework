@@ -18,7 +18,7 @@ describe('DisclosureManagerHeaderAdapter', () => {
   });
 
   it('renders null', () => {
-    expect(shallow(<DisclosureManagerHeaderAdapter title="Test Title" collapsibleMenuView={<div>Test</div>} />)).toMatchSnapshot();
+    expect(enzyme.shallow(<DisclosureManagerHeaderAdapter title="Test Title" collapsibleMenuView={<div>Test</div>} />)).toMatchSnapshot();
   });
 
   it('registers the headerData upon mount and upon prop changes', () => {

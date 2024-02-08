@@ -5,7 +5,7 @@ import LayoutSlidePanel from '../../src/_LayoutSlidePanel';
 
 describe('LayoutSlidePanel', () => {
   it('should render without optional props', () => {
-    const result = shallow((
+    const result = enzyme.shallow((
       <LayoutSlidePanel
         size="medium"
       />
@@ -14,7 +14,7 @@ describe('LayoutSlidePanel', () => {
   });
 
   it('should render with provided props', () => {
-    const result = shallow((
+    const result = enzyme.shallow((
       <LayoutSlidePanel
         isAnimated
         isOpen
@@ -35,7 +35,7 @@ describe('LayoutSlidePanel', () => {
   });
 
   it('should render when small', () => {
-    const result = shallow((
+    const result = enzyme.shallow((
       <LayoutSlidePanel
         isAnimated
         isOpen
@@ -56,7 +56,7 @@ describe('LayoutSlidePanel', () => {
   });
 
   it('should render when tiny', () => {
-    const result = shallow((
+    const result = enzyme.shallow((
       <LayoutSlidePanel
         isAnimated
         isOpen

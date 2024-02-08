@@ -14,7 +14,7 @@ describe('ThemeProvider', () => {
 
   // Snapshot Tests
   it('should shallow render a theme provider component', () => {
-    const wrapper = shallow(defaultRender);
+    const wrapper = enzyme.shallow(defaultRender);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -59,7 +59,7 @@ describe('ThemeProvider', () => {
   // Error Handling Test
   it('should throw error for required children', () => {
     try {
-      shallow(<ThemeProvider />);
+      enzyme.shallow(<ThemeProvider />);
     } catch (e) {
       expect(e.message).toContain('The prop `children` is marked as required');
     }

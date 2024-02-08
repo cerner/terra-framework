@@ -14,7 +14,7 @@ describe('ApplicationHeader', () => {
       />
     );
 
-    const result = shallow(testHeader);
+    const result = enzyme.shallow(testHeader);
 
     expect(result).toMatchSnapshot();
   });
@@ -44,7 +44,7 @@ describe('ApplicationHeader', () => {
       />
     );
 
-    const result = shallow(testHeader);
+    const result = enzyme.shallow(testHeader);
 
     expect(result).toMatchSnapshot();
   });

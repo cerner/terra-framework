@@ -12,7 +12,7 @@ describe('UserData', () => {
       />
     );
 
-    const result = shallow(testUserData);
+    const result = enzyme.shallow(testUserData);
 
     expect(result).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('UserData', () => {
       <UserData />
     );
 
-    const result = shallow(testUserData);
+    const result = enzyme.shallow(testUserData);
 
     expect(result).toMatchSnapshot();
   });

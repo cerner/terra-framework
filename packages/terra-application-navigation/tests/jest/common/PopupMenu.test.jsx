@@ -3,7 +3,7 @@ import PopupMenu from '../../../src/common/_PopupMenu';
 
 describe('PopupMenu', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenu />,
     );
 
@@ -11,7 +11,7 @@ describe('PopupMenu', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenu
         title="my-header"
         footerText="my-footer"
@@ -42,7 +42,7 @@ describe('PopupMenu', () => {
   });
 
   it('should render with height bounded', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenu
         title="my-header"
         footerText="my-footer"
