@@ -1,4 +1,3 @@
-
 import utilityHelpers from '../../src/utils/utilityHelpers';
 
 describe('utilityHelpers', () => {

@@ -1,6 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { withDisclosureManager } from 'terra-disclosure-manager';
 import { v4 as uuidv4 } from 'uuid';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import SlidePanelManager from '../../src/SlidePanelManager';
 
 const TestContainer = withDisclosureManager(({ id }) => (
