@@ -42,6 +42,8 @@ const DatePickerExample = (props) => {
         name="date-time-picker-example"
         onChange={handleDateTimeChange}
         initialTimeZone={props.initialTimeZone}
+        dateInputAttributes={{ id: 'default', fieldLabel: 'Enter Date/Time' }}
+        timeInputAttributes={{ id: 'default', fieldLabel: 'Enter Date/Time' }}
         {...props}
       />
     </div>

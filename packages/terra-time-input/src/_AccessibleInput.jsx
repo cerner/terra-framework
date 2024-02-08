@@ -86,7 +86,7 @@ function AccessibleInput(props) {
         isInvalid={showIsInvalid && isInvalid}
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
-        aria-label={value ? undefined : label}
+        aria-label={value ? undefined : `${inputProps ? inputProps.fieldLabel : ''} ${label}`}
         aria-describedby={ariaDescribedBy ? `${descriptionId} ${ariaDescribedBy}` : `${descriptionId}`}
       />
       <VisuallyHiddenText aria-live={TimeUtil.isMac() ? 'polite' : 'off'} id={descriptionId} text={description} />
