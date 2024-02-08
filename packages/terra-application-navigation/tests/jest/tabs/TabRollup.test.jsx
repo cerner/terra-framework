@@ -5,7 +5,7 @@ import TabRollup from '../../../src/tabs/_TabRollup';
 describe('TabRollup', () => {
   it('should render default element', () => {
     const shallowComponent = enzyme.shallow(
-      <TabRollup.WrappedComponent intl={enzyme.mockIntl} />,
+      <TabRollup.WrappedComponent intl={enzymeIntl.mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -20,7 +20,7 @@ describe('TabRollup', () => {
         isPulsed
         isSelected
         hasCount
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
       />,
     );
 
@@ -31,7 +31,7 @@ describe('TabRollup', () => {
     const shallowComponent = enzyme.shallow(
       <TabRollup.WrappedComponent
         tabRef={React.createRef()}
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
       />,
     );
 
@@ -45,7 +45,7 @@ describe('TabRollup', () => {
     const shallowComponent = enzyme.shallow(
       <TabRollup.WrappedComponent
         onTabSelect={mockCallBack}
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
       />,
     );
 

@@ -4,7 +4,7 @@ import ExtensionRollup from '../../../src/extensions/_ExtensionRollup';
 describe('ExtensionRollup', () => {
   it('should render default element', () => {
     const shallowComponent = enzyme.shallow(
-      <ExtensionRollup.WrappedComponent intl={enzyme.mockIntl} />,
+      <ExtensionRollup.WrappedComponent intl={enzymeIntl.mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -13,7 +13,7 @@ describe('ExtensionRollup', () => {
   it('should render prop data', () => {
     const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         hasChildNotifications
         isPulsed
       />,
@@ -25,7 +25,7 @@ describe('ExtensionRollup', () => {
   it('should render with ref', () => {
     const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         extensionRef={React.createRef()}
       />,
     );
@@ -39,7 +39,7 @@ describe('ExtensionRollup', () => {
 
     const shallowComponent = enzyme.shallow(
       <ExtensionRollup.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         onSelect={mockCallBack}
       />,
     );

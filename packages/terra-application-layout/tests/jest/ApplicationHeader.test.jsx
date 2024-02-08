@@ -9,7 +9,7 @@ describe('ApplicationHeader', () => {
   it('should render default component', () => {
     const testHeader = (
       <ApplicationHeader.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         layoutConfig={{ size: 'large' }}
       />
     );
@@ -22,7 +22,7 @@ describe('ApplicationHeader', () => {
   it('should render props', () => {
     const testHeader = (
       <ApplicationHeader.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         id="test-header"
         layoutConfig={{ size: 'large' }}
         nameConfig={{ title: 'app-test-title' }}
@@ -69,7 +69,7 @@ describe('ApplicationHeader', () => {
   describe('with icons', () => {
     const subject = (
       <ApplicationHeader.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         layoutConfig={{ size: 'large' }}
         applicationLinks={{
           links: [
@@ -105,7 +105,7 @@ describe('ApplicationHeader', () => {
       const testHeader = enzyme.shallow(
         <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
           <ApplicationHeader.WrappedComponent
-            intl={enzyme.mockIntl}
+            intl={enzymeIntl.mockIntl}
             layoutConfig={{ size: 'large' }}
           />
         </ThemeContextProvider>,

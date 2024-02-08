@@ -4,7 +4,7 @@ import DrawerMenu from '../../../src/drawer-menu/_DrawerMenu';
 describe('DrawerMenu', () => {
   it('should render default element', () => {
     const shallowComponent = enzyme.shallow(
-      <DrawerMenu.WrappedComponent intl={enzyme.mockIntl} />,
+      <DrawerMenu.WrappedComponent intl={enzymeIntl.mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
@@ -13,7 +13,7 @@ describe('DrawerMenu', () => {
   it('should render with function callbacks', () => {
     const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         titleConfig={{
           title: 'test-title',
         }}
@@ -42,7 +42,7 @@ describe('DrawerMenu', () => {
   it('should render with navigation and utility item ids', () => {
     const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         titleConfig={{
           title: 'test-title',
         }}
@@ -72,7 +72,7 @@ describe('DrawerMenu', () => {
   it('should render Help utility item when it is the only utility item present', () => {
     const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
-        intl={enzyme.mockIntl}
+        intl={enzymeIntl.mockIntl}
         titleConfig={{
           title: 'test-title',
         }}

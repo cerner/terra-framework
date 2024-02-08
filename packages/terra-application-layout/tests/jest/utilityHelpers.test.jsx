@@ -4,7 +4,7 @@ import utilityHelpers from '../../src/utils/utilityHelpers';
 describe('utilityHelpers', () => {
   describe('getDefaultUtilityItems', () => {
     it('returns the default set of utility items', () => {
-      const result = utilityHelpers.getDefaultUtilityItems(enzyme.mockIntl, { name: 'test', detail: 'test detail' });
+      const result = utilityHelpers.getDefaultUtilityItems(enzymeIntl.mockIntl, { name: 'test', detail: 'test detail' });
 
       const menuItem = result[0];
       expect(menuItem.key).toBe(utilityHelpers.defaultKeys.MENU);
@@ -57,7 +57,7 @@ describe('utilityHelpers', () => {
     });
 
     it('returns the default set merged with custom items', () => {
-      const result = utilityHelpers.getDefaultUtilityItems(enzyme.mockIntl, { name: 'test', detail: 'detail' }, [{
+      const result = utilityHelpers.getDefaultUtilityItems(enzymeIntl.mockIntl, { name: 'test', detail: 'detail' }, [{
         key: 'custom-item',
         title: 'CUSTOM ITEM',
         parentKey: utilityHelpers.defaultKeys.MENU,
