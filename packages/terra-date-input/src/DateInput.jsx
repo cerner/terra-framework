@@ -401,14 +401,6 @@ class DateInput extends React.Component {
     const inputValue = event.target.value;
     const stateValue = this.state.month;
     const maxValue = 12;
-    const currentMonth = moment().format('MM');
-
-    if (inputValue === currentMonth) {
-      const date = moment().format('YYYY-MM-DD');
-      this.setState({ year: moment().year(), month: moment().format('MMMM'), day: moment().date() });
-      this.handleOnChange(event, date);
-      return;
-    }
 
     // Ignore the entry if the value did not change or it is invalid.
     if (inputValue === stateValue || Number(inputValue) > maxValue) {
