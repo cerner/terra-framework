@@ -304,8 +304,11 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                     onClick={null}
                   />
                 </ModalOverlay>
-                <ForwardRef>
+                <ForwardRef
+                  onClickOutside={null}
+                >
                   <ForwardRef
+                    onClickOutside={null}
                     sideCar={[Function]}
                   >
                     <ForwardRef(FocusLockUI)
@@ -1231,6 +1234,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       />
                     </ForwardRef(FocusLockUI)>
                     <RequireSideCar
+                      onClickOutside={null}
                       setLockProps={[Function]}
                       sideCar={
                         Object {
@@ -1246,6 +1250,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       }
                     >
                       <SideCar
+                        onClickOutside={null}
                         setLockProps={[Function]}
                         sideCar={
                           Object {
@@ -1261,6 +1266,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                         }
                       >
                         <Effect
+                          onClickOutside={null}
                           setLockProps={[Function]}
                         >
                           <Component>
