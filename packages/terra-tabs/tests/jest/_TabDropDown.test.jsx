@@ -48,7 +48,7 @@ describe('TabDropDown', () => {
     expect(screen.getByRole('tab', { name: 'Tab 1 Label' })).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: 'Tab 2 Label' })).toBeInTheDocument();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider>
         <TabDropDown
           refCallback={(ref) => { mockRef = ref; }}

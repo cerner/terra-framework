@@ -3,7 +3,7 @@ import Tabs from '../../../src/tabs/_Tabs';
 
 describe('Tabs', () => {
   it('should render default element', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <Tabs />,
     );
 
@@ -11,7 +11,7 @@ describe('Tabs', () => {
   });
 
   it('should render prop data', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <Tabs
         activeTabKey="my-test-key"
         navigationItems={[{ text: 'test-text', key: 'my-test-key' }]}
@@ -25,7 +25,7 @@ describe('Tabs', () => {
   });
 
   it('should render with hasCount set to true when notifications are set to 0', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <Tabs
         activeTabKey="notification-test"
         navigationItems={[{ text: 'sample-text', key: 'notification-test' }]}

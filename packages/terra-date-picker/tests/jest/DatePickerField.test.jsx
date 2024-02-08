@@ -16,7 +16,7 @@ DateUtil.filterInvalidDates.mockImplementation(() => [moment.utc('2017-01-01')])
 
 it('should render a default DatePickerField component', () => {
   const datePickerField = <DatePickerField datePickerId="test-date-picker" name="test-date-picker" label="Label" />;
-  const wrapper = mountWithIntl(datePickerField);
+  const wrapper = enzymeIntl.mountWithIntl(datePickerField);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -59,7 +59,7 @@ it('should render a DatePickerField with props', () => {
     />
   );
 
-  const wrapper = mountWithIntl(datePickerField);
+  const wrapper = enzymeIntl.mountWithIntl(datePickerField);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -99,6 +99,6 @@ it('should render a valid DatePickerField with props', () => {
     />
   );
 
-  const wrapper = mountWithIntl(datePickerField);
+  const wrapper = enzymeIntl.mountWithIntl(datePickerField);
   expect(wrapper).toMatchSnapshot();
 });

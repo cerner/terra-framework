@@ -4,13 +4,13 @@ import ApplicationHeaderLayout from '../../src/ApplicationHeaderLayout';
 
 describe('ApplicationHeaderLayout', () => {
   it('should render without optional props', () => {
-    const result = shallowWithIntl(<ApplicationHeaderLayout />);
+    const result = enzymeIntl.shallowWithIntl(<ApplicationHeaderLayout />);
 
     expect(result).toMatchSnapshot();
   });
 
   it('should render with provided extensions', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         extensions={<div id="test-extensions">Extensions</div>}
       />,
@@ -20,7 +20,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided extensions and navigation', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         extensions={<div id="test-extensions">Extensions</div>}
         navigation={<div id="test-navigation">Navigation</div>}
@@ -31,7 +31,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided extensions, navigation, and logo', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         extensions={<div id="test-extensions">Extensions</div>}
         navigation={<div id="test-navigation">Navigation</div>}
@@ -43,7 +43,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided extensions, navigation, logo, and toggle', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         extensions={<div id="test-extensions">Extensions</div>}
         navigation={<div id="test-navigation">Navigation</div>}
@@ -56,7 +56,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided extensions, navigation, logo, toggle, and utilities', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         extensions={<div id="test-extensions">Extensions</div>}
         navigation={<div id="test-navigation">Navigation</div>}
@@ -70,7 +70,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided navigation, logo, toggle, and utilities', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         navigation={<div id="test-navigation">Navigation</div>}
         logo={<div id="test-logo">Logo</div>}
@@ -83,7 +83,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided logo, toggle, and utilities', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         logo={<div id="test-logo">Logo</div>}
         toggle={<div id="test-toggle">Toggle</div>}
@@ -95,7 +95,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided toggle and utilities', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         toggle={<div id="test-toggle">Toggle</div>}
         utilities={<div id="test-utilities">Utilities</div>}
@@ -106,7 +106,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided utilities', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         utilities={<div id="test-utilities">Utilities</div>}
       />,
@@ -116,7 +116,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided navigation', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         navigation={<div id="test-navigation">Navigation</div>}
       />,
@@ -126,7 +126,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided logo', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         logo={<div id="test-logo">Logo</div>}
       />,
@@ -136,7 +136,7 @@ describe('ApplicationHeaderLayout', () => {
   });
 
   it('should render with provided toggle', () => {
-    const result = shallowWithIntl(
+    const result = enzymeIntl.shallowWithIntl(
       <ApplicationHeaderLayout
         toggle={<div id="test-toggle">Toggle</div>}
       />,
@@ -150,7 +150,7 @@ describe('ApplicationHeaderLayout', () => {
       .mockReturnValue({
         className: 'clinical-lowlight-theme',
       });
-    const wrapper = mountWithIntl(<ApplicationHeaderLayout />);
+    const wrapper = enzymeIntl.mountWithIntl(<ApplicationHeaderLayout />);
     expect(wrapper).toMatchSnapshot();
   });
 });

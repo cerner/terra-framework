@@ -21,7 +21,7 @@ describe('UtilityMenu', () => {
         variant={variant}
       />
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -36,7 +36,7 @@ describe('UtilityMenu', () => {
         variant={variant}
       />
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -51,7 +51,7 @@ describe('UtilityMenu', () => {
         variant={variant}
       />
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -69,7 +69,7 @@ describe('UtilityMenu', () => {
         id="test"
       />
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -84,7 +84,7 @@ describe('UtilityMenu', () => {
         id="test"
       />
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -101,13 +101,13 @@ describe('UtilityMenu', () => {
         id="test"
       />
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper.prop('menuRole')).toBe(menuRole);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('correctly applies the theme context className', () => {
-    const component = shallowWithIntl(
+    const component = enzymeIntl.shallowWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <HeaderUtilityMenu
           initialSelectedKey="key"

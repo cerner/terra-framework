@@ -6,18 +6,18 @@ import CollapsibleMenuViewDivider from '../../src/CollapsibleMenuViewDivider';
 describe('CollapsibleMenuViewDivider', () => {
   // Snapshot Tests
   it('should render a default component', () => {
-    const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider />);
+    const wrapper = enzymeIntl.shallowWithIntl(<CollapsibleMenuViewDivider />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a menu divider in the context of the collapsible menu', () => {
     const context = { isCollapsibleMenuItem: true };
-    const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider />, { context });
+    const wrapper = enzymeIntl.shallowWithIntl(<CollapsibleMenuViewDivider />, { context });
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a chevron right icon', () => {
-    const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider useChevronRightIcon />);
+    const wrapper = enzymeIntl.shallowWithIntl(<CollapsibleMenuViewDivider useChevronRightIcon />);
     expect(wrapper.exists(IconChevronRight)).toBeTruthy;
     expect(wrapper).toMatchSnapshot();
   });
@@ -27,14 +27,14 @@ describe('CollapsibleMenuViewDivider', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = mountWithIntl(<CollapsibleMenuViewDivider />);
+    const wrapper = enzymeIntl.mountWithIntl(<CollapsibleMenuViewDivider />);
     expect(wrapper).toMatchSnapshot();
   });
 
   describe('Collapsible Menu Context', () => {
     it('should not render a menu item', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(<CollapsibleMenuViewDivider />, { context }).dive();
+      const wrapper = enzymeIntl.shallowWithIntl(<CollapsibleMenuViewDivider />, { context }).dive();
       expect(wrapper.exists(<Menu.Divider />)).toBeFalsy();
       expect(wrapper).toMatchSnapshot();
     });

@@ -19,48 +19,48 @@ describe('DateInput', () => {
 
   // Snapshot Tests
   it('should render a default date input', () => {
-    const wrapper = shallowWithIntl(defaultRender);
+    const wrapper = enzymeIntl.shallowWithIntl(defaultRender);
     const testComponent = wrapper.dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with custom attributes', () => {
     const dateInput = <DateInput name="date-input" inputAttributes={{ id: 'terra-date-input' }} />;
-    const wrapper = shallowWithIntl(dateInput);
+    const wrapper = enzymeIntl.shallowWithIntl(dateInput);
     const testComponent = wrapper.dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with a default date', () => {
     const dateInput = <DateInput name="date-input" value="2000-07-04" />;
-    const wrapper = shallowWithIntl(dateInput);
+    const wrapper = enzymeIntl.shallowWithIntl(dateInput);
     const testComponent = wrapper.dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with onChange', () => {
     const dateInput = <DateInput name="date-input" onChange={() => { }} />;
-    const wrapper = shallowWithIntl(dateInput);
+    const wrapper = enzymeIntl.shallowWithIntl(dateInput);
     const testComponent = wrapper.dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with onBlur', () => {
     const dateInput = <DateInput name="date-input" onBlur={() => { }} />;
-    const wrapper = shallowWithIntl(dateInput);
+    const wrapper = enzymeIntl.shallowWithIntl(dateInput);
     const testComponent = wrapper.dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should render a date input with onFocus', () => {
     const dateInput = <DateInput name="date-input" onFocus={() => { }} />;
-    const wrapper = shallowWithIntl(dateInput);
+    const wrapper = enzymeIntl.shallowWithIntl(dateInput);
     const testComponent = wrapper.dive();
     expect(testComponent).toMatchSnapshot();
   });
 
   it('should not have duplicate ids on the page when multiple date inputs are initialized', () => {
-    const wrapper = renderWithIntl(
+    const wrapper = enzymeIntl.renderWithIntl(
       <div>
         <DateInput name="date-input" />
         <DateInput name="date-input-2" />
@@ -74,7 +74,7 @@ describe('DateInput', () => {
 
   it('should render a disabled time input', () => {
     const timeInput = <DateInput name="date-input" disabled />;
-    const wrapper = shallowWithIntl(timeInput);
+    const wrapper = enzymeIntl.shallowWithIntl(timeInput);
     const testComponent = wrapper.dive();
     expect(testComponent).toMatchSnapshot();
   });
@@ -248,7 +248,7 @@ describe('DateInput', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const date = mountWithIntl(
+    const date = enzymeIntl.mountWithIntl(
       <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
         <DateInput name="date-input" value="2000-07-04" />
       </ThemeContextProvider>,
@@ -261,7 +261,7 @@ describe('DateInput', () => {
 
 describe('DateInputField', () => {
   it('correctly applies the theme context className', () => {
-    const date = mountWithIntl(
+    const date = enzymeIntl.mountWithIntl(
       <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
         <DateInputField
           legend="Legend text"

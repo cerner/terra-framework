@@ -10,7 +10,7 @@ describe('Notification Dialog', () => {
   const rejectOnClick = jest.fn();
 
   it('shallow renders an hazard-high notification-dialog', () => {
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
         dialogTitle="Test"
@@ -28,7 +28,7 @@ describe('Notification Dialog', () => {
   });
 
   it('shallow renders an hazard-medium notification-dialog', () => {
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="hazard-medium"
         dialogTitle="Test"
@@ -42,7 +42,7 @@ describe('Notification Dialog', () => {
   });
 
   it('shallow renders an hazard-low notification-dialog', () => {
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="hazard-low"
         dialogTitle="Test"
@@ -56,7 +56,7 @@ describe('Notification Dialog', () => {
   });
 
   it('shallow renders an error notification-dialog', () => {
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="error"
         dialogTitle="Test"
@@ -70,7 +70,7 @@ describe('Notification Dialog', () => {
   });
 
   it('shallow renders an custom notification-dialog', () => {
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="custom"
         dialogTitle="Test"
@@ -85,7 +85,7 @@ describe('Notification Dialog', () => {
   });
 
   it('shallow renders dialog with startMessage, content, and endMessage', () => {
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
         dialogTitle="Test"
@@ -101,7 +101,7 @@ describe('Notification Dialog', () => {
   });
 
   it('shallow renders dialog with reject button first', () => {
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
         dialogTitle="Test"
@@ -125,7 +125,7 @@ describe('Notification Dialog', () => {
         className: 'orion-fusion-theme',
       });
 
-    const dialog = shallowWithIntl(
+    const dialog = enzymeIntl.shallowWithIntl(
       <NotificationDialog
         variant="hazard-high"
         startMessage="This text is used to provide more details."
@@ -159,7 +159,7 @@ describe('Notification Dialog functions as expected', () => {
         </div>
       );
     };
-    dialogExample = mountWithIntl(<Example />);
+    dialogExample = enzymeIntl.mountWithIntl(<Example />);
   });
 
   it('should open the dialog', () => {
@@ -201,7 +201,7 @@ it('correctly applies the theme context className', () => {
   const clickConfirm = () => {
     alert('You clicked confirm'); // eslint-disable-line no-alert
   };
-  const modal = mountWithIntl(
+  const modal = enzymeIntl.mountWithIntl(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       <NotificationDialog
         variant="hazard-high"
@@ -224,7 +224,7 @@ it('correctly applies the theme context className', () => {
 });
 
 it('should throw an error when invalid action props are passed', () => {
-  const dialog = () => shallowWithIntl(
+  const dialog = () => enzymeIntl.shallowWithIntl(
     <NotificationDialog
       variant="hazard-low"
       dialogTitle="Test"

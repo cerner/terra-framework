@@ -18,7 +18,7 @@ describe('TabHeader', () => {
 
     expect(screen.getByText('Test Title', { selector: 'div' })).toHaveAttribute('aria-hidden', 'true');
 
-    const wrapper = mountWithIntl(<TabHeader title="Test Title" />);
+    const wrapper = enzymeIntl.mountWithIntl(<TabHeader title="Test Title" />);
     expect(wrapper).toMatchSnapshot();
   });
 });

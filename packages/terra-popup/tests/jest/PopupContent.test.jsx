@@ -19,14 +19,14 @@ describe('PopupContent', () => {
           {children}
         </PopupContent>
       );
-      const wrapper = shallowWithIntl(subject);
+      const wrapper = enzymeIntl.shallowWithIntl(subject);
 
       it('matches the snapshot', () => {
         expect(wrapper).toMatchSnapshot();
       });
 
       it('correctly applies the theme context className', () => {
-        const result = mountWithIntl(
+        const result = enzymeIntl.mountWithIntl(
           <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
             {subject}
           </ThemeContextProvider>,
@@ -48,12 +48,12 @@ describe('PopupContent', () => {
       );
 
       it('matches the shallow snapshot', () => {
-        const wrapper = shallowWithIntl(subject);
+        const wrapper = enzymeIntl.shallowWithIntl(subject);
         expect(wrapper).toMatchSnapshot();
       });
 
       it('matches the mount snapshot', () => {
-        const wrapper = mountWithIntl(subject);
+        const wrapper = enzymeIntl.mountWithIntl(subject);
         expect(wrapper).toMatchSnapshot();
       });
     });

@@ -21,7 +21,7 @@ describe('Menu', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const tabs = mountWithIntl(
+    const tabs = enzymeIntl.mountWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <Menu
           isOpen

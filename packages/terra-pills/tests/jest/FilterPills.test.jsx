@@ -14,7 +14,7 @@ describe('Rollup Pill', () => {
   });
 
   it('should render pill with the role list when rendered with pills', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FilterPills
         ariaLabel="Filter Pills with labels"
       >
@@ -32,7 +32,7 @@ describe('Rollup Pill', () => {
   });
 
   it('should render pill with the role group when rendered empty', () => {
-    const wrapper = shallowWithIntl(<FilterPills
+    const wrapper = enzymeIntl.shallowWithIntl(<FilterPills
       ariaLabel="Empty Filter Pills"
     />).dive();
     const groupDiv = wrapper.find('div.pills-group');

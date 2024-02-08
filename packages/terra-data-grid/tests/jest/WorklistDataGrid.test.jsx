@@ -74,7 +74,7 @@ describe('WorklistDataGrid', () => {
   it('verifies onCellSelect callback is not triggered when space is pressed on a non-selectable cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -99,7 +99,7 @@ describe('WorklistDataGrid', () => {
   it('verifies onCellSelect callback is not triggered when space is pressed on a masked cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -136,7 +136,7 @@ describe('Row selection', () => {
   it('verifies row selection when space is pressed on a non-selectable cell', () => {
     const mockRowSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -162,7 +162,7 @@ describe('Row selection', () => {
   it('verifies row selection when space is pressed on a masked cell', () => {
     const mockRowSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -186,7 +186,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when space is used to select a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -212,7 +212,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when mouse is used to select a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -238,7 +238,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when space is used to unselect a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -264,7 +264,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when mouse is used to unselect a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -290,7 +290,7 @@ describe('Row selection', () => {
   });
 
   it('verifies callbacks when Shift+Down is used and row selection mode is not enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -314,7 +314,7 @@ describe('Row selection', () => {
   });
 
   it('verifies callbacks when Shift+Down is used and row selection mode is enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -341,7 +341,7 @@ describe('Row selection', () => {
   });
 
   it('verifies callbacks when Shift+Down more than one.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -370,7 +370,7 @@ describe('Row selection', () => {
   });
 
   it('verifies multiple independent ranges can be created with Shift+Down.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -407,7 +407,7 @@ describe('Row selection', () => {
   });
 
   it('verifies callbacks when Shift+Down contracts the range of selected rows.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -438,7 +438,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Click honors the anchor established by row selection using space bar.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -468,7 +468,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Space honors the anchor established by row selection using Mouse.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -498,7 +498,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Click enables row selection when row selection is turned off.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -522,7 +522,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Space enables row selection when row selection is turned off.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -546,7 +546,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Click establishes anchor and selects row when row selection is already enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -576,7 +576,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Space establishes anchor and selects row if row selection is already enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}

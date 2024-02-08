@@ -26,56 +26,56 @@ afterAll(() => {
 
 it('should render a default time input', () => {
   const timeInput = <TimeInput name="time-input" />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with custom attributes', () => {
   const timeInput = <TimeInput name="time-input" inputAttributes={{ id: 'terra-time-input' }} />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with a default time', () => {
   const timeInput = <TimeInput name="time-input" value="10:45" />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with onChange', () => {
   const timeInput = <TimeInput name="time-input" onChange={() => {}} />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with onBlur', () => {
   const timeInput = <TimeInput name="time-input" onBlur={() => {}} />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with onFocus', () => {
   const timeInput = <TimeInput name="time-input" onFocus={() => {}} />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with 12 hour clock set', () => {
   const timeInput = <TimeInput name="time-input" variant="12-hour" />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should ignore invalid times properly', () => {
   const timeInput = <TimeInput name="time-input" value="11:2" />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 
@@ -88,7 +88,7 @@ it('should render a 24 hour timepicker properly on mobile devices', () => {
   window.ontouchstart = 'true';
 
   const timeInput = <TimeInput name="time-input" />;
-  const wrapper = renderWithIntl(timeInput);
+  const wrapper = enzymeIntl.renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
 });
@@ -98,7 +98,7 @@ it('should set the labels with the correct htmlFor a 24 hour timepicker properly
   window.ontouchstart = 'true';
 
   const timeInput = <TimeInput name="time-input" minuteAttributes={{ id: 'id-1' }} hourAttributes={{ id: 'id-2' }} />;
-  const wrapper = renderWithIntl(timeInput);
+  const wrapper = enzymeIntl.renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
 });
@@ -108,7 +108,7 @@ it('should render a 12 hour timepicker meridiem with buttons when viewed on a mo
   window.ontouchstart = 'true';
 
   const timeInput = <TimeInput name="time-input" variant="12-hour" />;
-  const wrapper = renderWithIntl(timeInput);
+  const wrapper = enzymeIntl.renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
 });
@@ -117,7 +117,7 @@ it('should not have duplicate ids on the page when multiple date pickers are ini
   spyOn(window, 'matchMedia').and.returnValue({ matches: true });
   window.ontouchstart = 'true';
 
-  const wrapper = renderWithIntl(
+  const wrapper = enzymeIntl.renderWithIntl(
     <div>
       <TimeInput name="time-input" variant="12-hour" />
       <TimeInput name="time-input-2" variant="12-hour" />
@@ -131,7 +131,7 @@ it('should not have duplicate ids on the page when multiple date pickers are ini
 
 it('should render a disabled time input', () => {
   const timeInput = <TimeInput name="time-input" disabled />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
@@ -139,7 +139,7 @@ it('should render a disabled time input', () => {
 it('should handle focusing on the hour input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_RIGHT;
   const timeInput = <TimeInput name="time-input" disabled />;
-  const wrapper = mountWithIntl(timeInput);
+  const wrapper = enzymeIntl.mountWithIntl(timeInput);
   const testComponent = wrapper.children();
   testComponent.instance().handleHourInputKeyDown(mockEvent);
   expect(mockEvent.preventDefault).toHaveBeenCalled();
@@ -148,7 +148,7 @@ it('should handle focusing on the hour input without error', () => {
 it('should handle focusing on the minute input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_LEFT;
   const timeInput = <TimeInput name="time-input" disabled />;
-  const wrapper = mountWithIntl(timeInput);
+  const wrapper = enzymeIntl.mountWithIntl(timeInput);
   const testComponent = wrapper.children();
   testComponent.instance().setState({ hour: 2 });
   testComponent.instance().handleMinuteInputKeyDown(mockEvent);
@@ -158,7 +158,7 @@ it('should handle focusing on the minute input without error', () => {
 it('should pass in refCallback as the ref prop of the hour input element', () => {
   const refCallback = jest.fn();
   const timeInput = <TimeInput name="time-input" refCallback={refCallback} />;
-  const wrapper = mountWithIntl(timeInput);
+  const wrapper = enzymeIntl.mountWithIntl(timeInput);
   const testComponent = wrapper.children();
   expect(refCallback).toBeCalled();
   expect(testComponent).toMatchSnapshot();
@@ -166,21 +166,21 @@ it('should pass in refCallback as the ref prop of the hour input element', () =>
 
 it('should render a time input with seconds input', () => {
   const timeInput = <TimeInput name="time-input" showSeconds />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with seconds input and a value', () => {
   const timeInput = <TimeInput name="time-input" showSeconds value="12:12:12" />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('should render a time input with seconds input and custom attributes', () => {
   const timeInput = <TimeInput name="time-input" showSeconds inputAttributes={{ id: 'terra-time-input' }} secondAttributes={{ id: 'id-0' }} />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
@@ -188,7 +188,7 @@ it('should render a time input with seconds input and custom attributes', () => 
 it('should handle focusing on the seconds input without error', () => {
   mockEvent.keyCode = KeyCode.KEY_LEFT;
   const timeInput = <TimeInput name="time-input" disabled showSeconds />;
-  const wrapper = mountWithIntl(timeInput);
+  const wrapper = enzymeIntl.mountWithIntl(timeInput);
   const testComponent = wrapper.children();
   testComponent.instance().setState({ hour: 2, minute: 15 });
   testComponent.instance().handleSecondInputKeyDown(mockEvent);
@@ -197,7 +197,7 @@ it('should handle focusing on the seconds input without error', () => {
 
 it('should render a 12 hour clock time input with seconds input', () => {
   const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 });
@@ -207,7 +207,7 @@ it('should render a 24 hour timepicker with seconds properly on mobile devices',
   window.ontouchstart = 'true';
 
   const timeInput = <TimeInput name="time-input" showSeconds />;
-  const wrapper = renderWithIntl(timeInput);
+  const wrapper = enzymeIntl.renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
 });
@@ -217,7 +217,7 @@ it('should set the labels with the correct htmlFor a 24 hour timepicker properly
   window.ontouchstart = 'true';
 
   const timeInput = <TimeInput name="time-input" showSeconds secondAttributes={{ id: 'id-0' }} minuteAttributes={{ id: 'id-1' }} hourAttributes={{ id: 'id-2' }} />;
-  const wrapper = renderWithIntl(timeInput);
+  const wrapper = enzymeIntl.renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
 });
@@ -227,14 +227,14 @@ it('should render a 12 hour timepicker meridiem with buttons and seconds input w
   window.ontouchstart = 'true';
 
   const timeInput = <TimeInput name="time-input" variant="12-hour" showSeconds />;
-  const wrapper = renderWithIntl(timeInput);
+  const wrapper = enzymeIntl.renderWithIntl(timeInput);
   expect(wrapper).toMatchSnapshot();
   delete window.ontouchstart;
 });
 
 it('should ignore invalid times with seconds properly', () => {
   const timeInput = <TimeInput name="time-input" value="11:25:4" showSeconds />;
-  const wrapper = shallowWithIntl(timeInput);
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
   const testComponent = wrapper.dive();
   expect(testComponent).toMatchSnapshot();
 
@@ -329,7 +329,7 @@ it('should validate the validateTime helper method', () => {
 
 it('should validate the getVariantFromLocale helper method', () => {
   const timeInput = <TimeInput name="time-input" variant="12-hour" />;
-  const wrapper = mountWithIntl(timeInput);
+  const wrapper = enzymeIntl.mountWithIntl(timeInput);
   const testComponent = wrapper.children();
 
   if (['ar', 'en', 'en-AU', 'en-CA', 'en-GB', 'en-US', 'es-US'].includes(testComponent.instance().props.intl.locale)) {
@@ -340,7 +340,7 @@ it('should validate the getVariantFromLocale helper method', () => {
 });
 
 it('correctly applies the theme context className', () => {
-  const time = mountWithIntl(
+  const time = enzymeIntl.mountWithIntl(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       <TimeInput name="time-input" />
     </ThemeContextProvider>,

@@ -15,7 +15,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const result = mountWithIntl(modalManager);
+    const result = enzymeIntl.mountWithIntl(modalManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -26,7 +26,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const result = mountWithIntl(modalManager);
+    const result = enzymeIntl.mountWithIntl(modalManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -37,7 +37,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const wrapper = mountWithIntl(modalManager);
+    const wrapper = enzymeIntl.mountWithIntl(modalManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
@@ -64,7 +64,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const wrapper = mountWithIntl(modalManager);
+    const wrapper = enzymeIntl.mountWithIntl(modalManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;

@@ -3,7 +3,7 @@ import React from 'react';
 import TimeClarification from '../../lib/_TimeClarification';
 
 it('should render a default date time picker', () => {
-  const datePicker = shallowWithIntl((
+  const datePicker = enzymeIntl.shallowWithIntl((
     <TimeClarification
       isOpen
       isOffsetButtonHidden
@@ -19,7 +19,7 @@ it('should render a default date time picker', () => {
 });
 
 it('should render a disabled time clarification', () => {
-  const datePicker = shallowWithIntl((
+  const datePicker = enzymeIntl.shallowWithIntl((
     <TimeClarification
       isOpen
       isOffsetButtonHidden
@@ -36,7 +36,7 @@ it('should render a disabled time clarification', () => {
 });
 
 it('should render offset button after daylight savings button clicked', () => {
-  const datePicker = shallowWithIntl((
+  const datePicker = enzymeIntl.shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-08-15T10:30:00"
       isOpen
@@ -55,7 +55,7 @@ it('should render offset button after daylight savings button clicked', () => {
 });
 
 it('should render offset button after standard time button clicked', () => {
-  const datePicker = shallowWithIntl((
+  const datePicker = enzymeIntl.shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-02-15T10:30:00"
       isOpen
@@ -74,7 +74,7 @@ it('should render offset button after standard time button clicked', () => {
 });
 
 it('should render offset button after daylight savings button clicked in the southern hemisphere timezone', () => {
-  const datePicker = shallowWithIntl((
+  const datePicker = enzymeIntl.shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-04-01T02:30:00"
       isOpen
@@ -93,7 +93,7 @@ it('should render offset button after daylight savings button clicked in the sou
 });
 
 it('should render offset button after standard time button clicked in the southern hemisphere timezone', () => {
-  const datePicker = shallowWithIntl((
+  const datePicker = enzymeIntl.shallowWithIntl((
     <TimeClarification
       ambiguousDateTime="2019-10-01T02:30:00"
       isOpen

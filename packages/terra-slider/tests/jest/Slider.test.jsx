@@ -13,7 +13,7 @@ afterAll(() => {
 
 describe('Slider', () => {
   it('should render a default slider with proper required props', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <Slider minimumValue={0} maximumValue={100} label="testLabel" value={30} />,
     ).dive();
     expect(wrapper).toMatchSnapshot();
@@ -24,7 +24,7 @@ describe('Slider', () => {
   });
 
   it('should render a disabled slider', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <Slider isDisabled minimumValue={0} maximumValue={100} label="testLabel" value={50} />,
     ).dive();
     expect(wrapper.find('input').prop('disabled')).toEqual(true);
@@ -32,7 +32,7 @@ describe('Slider', () => {
   });
 
   it('should render a slider with custom min and max labels', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <Slider minimumValue={0} maximumValue={100} label="testLabel" minimumLabel="testMinimumLabel" maximumLabel="testMaximumLabel" value={50} />,
     ).dive();
     expect(wrapper.find('.slider-label').at(0).text()).toEqual('testMinimumLabel');
@@ -41,7 +41,7 @@ describe('Slider', () => {
   });
 
   it('should update slider value correctly ', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <Slider isDisabled minimumValue={0} maximumValue={100} label="testLabel" value={50} />,
     );
     expect(wrapper.dive().find('input').prop('value')).toEqual(50);

@@ -5,7 +5,7 @@ import CollapsibleMenuViewItem from '../../src/CollapsibleMenuViewItem';
 describe('CollapsibleMenuViewItemGroup', () => {
   // Snapshot Tests
   it('should render a default component', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       (
         <CollapsibleMenuViewItemGroup>
           <CollapsibleMenuViewItem text="Testing" />
@@ -18,7 +18,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
 
   // Props
   it('should merge custom props', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       (
         <CollapsibleMenuViewItemGroup className="Testing">
           <CollapsibleMenuViewItem text="Testing" />
@@ -30,7 +30,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
   });
 
   it('should render a selectable button group', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       (
         <CollapsibleMenuViewItemGroup selectedKeys={['key1']}>
           <CollapsibleMenuViewItem text="Testing" key="key1" />
@@ -44,7 +44,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
   describe('Collapsible Menu Context', () => {
     it('should render a menu item group when selectable', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(
+      const wrapper = enzymeIntl.shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup selectedKeys={['key1']}>
             <CollapsibleMenuViewItem text="Testing" key="key1" />
@@ -57,7 +57,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
 
     it('should merge custom props', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(
+      const wrapper = enzymeIntl.shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup className="Testing">
             <CollapsibleMenuViewItem text="Testing" />
@@ -70,7 +70,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
 
     it('should merge custom props when selectable', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(
+      const wrapper = enzymeIntl.shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup className="Testing" selectedKeys={['key1']}>
             <CollapsibleMenuViewItem text="Testing" key="key1" />
@@ -83,7 +83,7 @@ describe('CollapsibleMenuViewItemGroup', () => {
 
     it('should render menu items when selectedKeys is not set', () => {
       const context = { isCollapsibleMenuItem: true };
-      const wrapper = shallowWithIntl(
+      const wrapper = enzymeIntl.shallowWithIntl(
         (
           <CollapsibleMenuViewItemGroup>
             <CollapsibleMenuViewItem text="Testing" />

@@ -60,7 +60,7 @@ describe('HiddenTab', () => {
     expect(mockOnSelect).toHaveBeenCalledWith('tab-1-key', testMetaData);
     mockOnSelect.mockClear();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider>
         <HiddenTab
           id="tab-1"

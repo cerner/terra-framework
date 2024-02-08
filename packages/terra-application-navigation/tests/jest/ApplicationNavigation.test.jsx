@@ -105,7 +105,7 @@ describe('ApplicationNavigation', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const appNav = mountWithIntl(
+    const appNav = enzymeIntl.mountWithIntl(
       <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
         <ApplicationNavigation />
       </ThemeContextProvider>,

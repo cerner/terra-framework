@@ -8,7 +8,7 @@ describe('MoreButton', () => {
     const mockOnSelect = jest.fn();
     const testTabIds = ['tab-1', 'tab-2', 'tab-3', 'addbtn'];
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider>
         <AddButton
           id="addbtn"
