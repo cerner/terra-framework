@@ -19,13 +19,13 @@ describe('ThemeProvider', () => {
   });
 
   it('verify theme name is added to documentElement class list', () => {
-    mount(defaultRender);
+    enzyme.mount(defaultRender);
 
     expect(document.documentElement.classList.contains('cerner-mock-theme')).toBe(true);
   });
 
   it('verifies density is added to documentElement class list', () => {
-    mount(
+    enzyme.mount(
       <ThemeProvider density="compact">
         <p>Child content</p>
       </ThemeProvider>,
@@ -35,7 +35,7 @@ describe('ThemeProvider', () => {
   });
 
   it('verifies both theme name and density are added to documentElement class list', () => {
-    mount(
+    enzyme.mount(
       <ThemeProvider themeName="cerner-mock-theme" density="compact">
         <p>Child content</p>
       </ThemeProvider>,
@@ -47,7 +47,7 @@ describe('ThemeProvider', () => {
   });
 
   it('verifies no classes are added to the documentElement class list when props are not passed', () => {
-    mount(
+    enzyme.mount(
       <ThemeProvider>
         <p>Child content</p>
       </ThemeProvider>,

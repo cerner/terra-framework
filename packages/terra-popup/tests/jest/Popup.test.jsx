@@ -29,7 +29,7 @@ it('should renders with custom overlay class name', () => {
 });
 
 it('correctly applies the theme context className', () => {
-  const result = mount(
+  const result = enzyme.mount(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       <PopupDefaultExample classNameArrow="terra-test-class-arrow" />
     </ThemeContextProvider>,

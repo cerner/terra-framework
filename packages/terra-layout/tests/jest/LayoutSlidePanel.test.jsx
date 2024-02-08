@@ -77,7 +77,7 @@ describe('LayoutSlidePanel', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const layout = mount(
+    const layout = enzyme.mount(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <LayoutSlidePanel
           size="medium"

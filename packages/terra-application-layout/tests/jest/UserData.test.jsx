@@ -32,7 +32,7 @@ describe('UserData', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const testUserData = mount(<UserData
+    const testUserData = enzyme.mount(<UserData
       userName="Test, Person"
       userDetail="Detail For Test"
       userPhoto={<div>Test Photo</div>}

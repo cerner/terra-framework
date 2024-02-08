@@ -132,7 +132,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const component = mount(
+    const component = enzyme.mount(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <HeaderUtilityMenuItem
           itemKey="key"

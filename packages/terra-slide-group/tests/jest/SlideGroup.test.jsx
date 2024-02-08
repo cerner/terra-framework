@@ -55,7 +55,7 @@ it('should render a SlideGroup with animation enabled', () => {
 });
 
 it('correctly applies the theme context className', () => {
-  const tabs = mount(
+  const tabs = enzyme.mount(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       {slideGroup}
     </ThemeContextProvider>,

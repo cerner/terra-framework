@@ -50,7 +50,7 @@ describe('ApplicationHeader', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const testHeader = mount(
+    const testHeader = enzyme.mount(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <ApplicationMenu
           routingStackDelegate={{}}

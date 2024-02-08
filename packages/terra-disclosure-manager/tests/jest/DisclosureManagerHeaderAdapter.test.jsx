@@ -30,7 +30,7 @@ describe('DisclosureManagerHeaderAdapter', () => {
     const testMenu1 = <div>Test 1</div>;
     let wrapper;
     act(() => {
-      wrapper = mount(<DisclosureManagerHeaderAdapter title="Test Title" collapsibleMenuView={testMenu1} />);
+      wrapper = enzyme.mount(<DisclosureManagerHeaderAdapter title="Test Title" collapsibleMenuView={testMenu1} />);
     });
 
     expect(wrapper).toMatchSnapshot();

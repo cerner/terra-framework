@@ -115,7 +115,7 @@ describe('RoutingStack', () => {
       },
     };
 
-    const wrapper = mount(testRoutingStack, { context: mockContext });
+    const wrapper = enzyme.mount(testRoutingStack, { context: mockContext });
     wrapper.setContext(mockContext);
 
     const cComponent = wrapper.find(CComponent).getElements()[0];

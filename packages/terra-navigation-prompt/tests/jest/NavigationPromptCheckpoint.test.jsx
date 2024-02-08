@@ -151,7 +151,7 @@ describe('NavigationPrompt', () => {
       const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
@@ -181,7 +181,7 @@ describe('NavigationPrompt', () => {
       const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
@@ -221,7 +221,7 @@ describe('NavigationPrompt', () => {
       const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
@@ -253,7 +253,7 @@ describe('NavigationPrompt', () => {
       const mockunregister = jest.fn();
       const mockOnPromptChange = jest.fn();
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           onPromptChange={mockOnPromptChange}
           promptRegistration={{
@@ -289,7 +289,7 @@ describe('NavigationPrompt', () => {
     it('should show checkpoint notification dialog when resolvePrompts is executed and resolve on acceptance', async () => {
       expect.assertions(9);
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         >
@@ -331,7 +331,7 @@ describe('NavigationPrompt', () => {
     it('should show checkpoint notification dialog with function-provided values when resolvePrompts is executed and resolve on acceptance', async () => {
       expect.assertions(9);
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         >
@@ -374,7 +374,7 @@ describe('NavigationPrompt', () => {
     it('should show checkpoint notification dialog when resolvePrompts is executed and reject on cancelation', async () => {
       expect.assertions(8);
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         >
@@ -414,7 +414,7 @@ describe('NavigationPrompt', () => {
     it('should not show checkpoint notification dialog when no prompts are registered', async () => {
       expect.assertions(2);
 
-      const wrapper = mount((
+      const wrapper = enzyme.mount((
         <NavigationPromptCheckpoint
           promptRegistration={promptRegistrationDefault}
         />

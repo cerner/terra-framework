@@ -19,7 +19,7 @@ describe('Divider', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = mount(defaultRender);
+    const wrapper = enzyme.mount(defaultRender);
     expect(wrapper).toMatchSnapshot();
   });
 });

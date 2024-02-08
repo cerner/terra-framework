@@ -186,7 +186,7 @@ describe('Aggregator', () => {
       component: <AggregatorItem key="3" />,
     }];
 
-    const wrapper = mount((
+    const wrapper = enzyme.mount((
       <Aggregator
         items={items}
       />

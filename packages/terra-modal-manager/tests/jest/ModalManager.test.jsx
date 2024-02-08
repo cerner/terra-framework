@@ -87,7 +87,7 @@ describe('ModalManager', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const modalManager = mount(
+    const modalManager = enzyme.mount(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <ModalManager>
           <TestContainer />
