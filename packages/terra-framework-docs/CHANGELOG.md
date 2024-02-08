@@ -4,6 +4,10 @@
 
 * Changed
   * Updated `terra-navigation-side-menu` example to use more meaningful labels.
+## 1.64.0 - (February 7, 2024)
+
+* Changed
+  * Minor dependency version bump.
 
 ## 1.63.0 - (February 1, 2024)
 
