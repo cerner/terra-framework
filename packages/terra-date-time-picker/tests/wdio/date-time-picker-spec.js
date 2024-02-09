@@ -713,6 +713,10 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-date-day-input"]')).toHaveValue((`0${today.date()}`).slice(-2));
           expect($('input[name="terra-time-hour-input"]')).toHaveValue((`0${today.hour()}`).slice(-2));
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
+          const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
+          const secondsTimeValue = today.seconds();
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
+          expect(secondsInRange).toBe(true);
         });
       });
 
@@ -769,6 +773,10 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-date-day-input"]')).toHaveValue((`0${today.date()}`).slice(-2));
           expect($('input[name="terra-time-hour-input"]')).toHaveValue((`0${today.hour()}`).slice(-2));
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
+          const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
+          const secondsTimeValue = today.seconds();
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
+          expect(secondsInRange).toBe(true);
         });
       });
 
@@ -814,6 +822,10 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-hour-input"]')).toHaveValue((`0${today.hour()}`).slice(-2));
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
         });
+        const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
+        const secondsTimeValue = today.seconds();
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
+        expect(secondsInRange).toBe(true);
       });
     });
 
@@ -1190,6 +1202,10 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-date-day-input"]')).toHaveValue((`0${today.date()}`).slice(-2));
           expect($('input[name="terra-time-hour-input"]')).toHaveValue((`0${today.hour()}`).slice(-2));
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
+          const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
+          const secondsTimeValue = today.seconds();
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
+          expect(secondsInRange).toBe(true);
         });
       });
 
