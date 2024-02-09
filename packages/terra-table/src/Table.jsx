@@ -184,7 +184,7 @@ const defaultProps = {
   rowHeaderIndex: 0,
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  rowMinimumHeight: '2.5rem',
+  rowMinimumHeight: 'auto',
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
