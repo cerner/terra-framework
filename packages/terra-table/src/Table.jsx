@@ -587,9 +587,10 @@ function Table(props) {
   if (rows && rows.length) {
     firstRowId = rows[0].id;
     lastRowId = rows[rows.length - 1].id;
-  } else if (sections && sections.length && sections[0].rows && sections[0].rows.length) {
-    firstRowId = sections[0].rows[0].id;
-    lastRowId = sections[sections.length - 1].rows[sections[sections.length - 1].rows.length - 1].id;
+  } else if (sections) {
+    const rowData = tableUtils.getFirstAndLastVisibleRowData(sections);
+    firstRowId = rowData.firstRowId;
+    lastRowId = rowData.lastRowId;
   }
 
   // -------------------------------------

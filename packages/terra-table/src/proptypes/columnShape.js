@@ -54,13 +54,11 @@ const columnShape = PropTypes.shape({
   sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
 
   /**
-   * @private
    * The color to be used for highlighting a column.
    */
   columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
 
   /**
-   * @private
    * The information to be conveyed to screen readers about the highlighted column.
    */
   columnHighlightDescription: PropTypes.string,
