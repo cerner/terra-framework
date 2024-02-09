@@ -9,6 +9,8 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import LodashDebounce from 'lodash.debounce';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
@@ -398,22 +400,26 @@ function Table(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 
+  const handleResize = () => {
+    setTableHeight(tableRef.current.offsetHeight - 1);
+
+    const tableContainer = tableContainerRef.current;
+    setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
+                      || tableContainer.scrollHeight > tableContainer.clientHeight);
+  };
+
+  const debouncedHandleResize = LodashDebounce(handleResize, 300);
+
   // useEffect for managing the table height.
   useEffect(() => {
-    const resizeObserver = new ResizeObserver(() => {
-      setTableHeight(tableRef.current.offsetHeight - 1);
-
-      const tableContainer = tableContainerRef.current;
-      setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
-                        || tableContainer.scrollHeight > tableContainer.clientHeight);
-    });
+    const resizeObserver = new ResizeObserver(debouncedHandleResize);
 
     resizeObserver.observe(tableRef.current);
 
     return () => {
       resizeObserver.disconnect();
     };
-  }, [tableRef]);
+  }, [debouncedHandleResize]);
 
   // -------------------------------------
 

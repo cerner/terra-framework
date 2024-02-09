@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added debounce to resize observer.
+
 ## 5.5.0 - (February 1, 2024)
 
 * Added
