@@ -113,7 +113,6 @@ const propTypes = {
 const defaultProps = {
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  rowMinimumHeight: '2.5rem',
   rows: [],
   columns: [],
   hasVisibleColumnHeaders: true,
