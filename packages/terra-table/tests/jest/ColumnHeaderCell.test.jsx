@@ -2,8 +2,6 @@ import React from 'react';
 import IconUp from 'terra-icon/lib/icon/IconUp';
 import IconDown from 'terra-icon/lib/icon/IconDown';
 import IconError from 'terra-icon/lib/icon/IconError';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { IntlProvider } from 'react-intl';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import ColumnContext from '../../src/utils/ColumnContext';
@@ -26,7 +24,7 @@ describe('ColumnHeaderCell', () => {
       isSelectable: true,
     };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -62,7 +60,7 @@ describe('ColumnHeaderCell', () => {
       isSelectable: true,
     };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -99,7 +97,7 @@ describe('ColumnHeaderCell', () => {
       isSelectable: true,
     };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -136,7 +134,7 @@ describe('ColumnHeaderCell', () => {
       isSelectable: true,
     };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -174,7 +172,7 @@ describe('ColumnHeaderCell', () => {
       isSelectable: true,
     };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -215,7 +213,7 @@ describe('ColumnHeaderCell', () => {
 
     const mockClick = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -259,7 +257,7 @@ describe('ColumnHeaderCell', () => {
 
     const mockColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           tableId="test-table"
@@ -300,7 +298,7 @@ describe('ColumnHeaderCell', () => {
       hasError: true,
     };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnContext.Provider value={{ pinnedColumnOffsets: [0] }}>
         <ColumnHeaderCell
           tableId="test-table"
@@ -318,7 +316,7 @@ describe('ColumnHeaderCell', () => {
 
   it('calls a custom column select callback function on mouse down', () => {
     const mockOnColumnSelect = jest.fn();
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
         isSelectable
@@ -332,7 +330,7 @@ describe('ColumnHeaderCell', () => {
 
   it('verifes that the custom column select callback is not called on mouse down when not selectable', () => {
     const mockOnColumnSelect = jest.fn();
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
       />,

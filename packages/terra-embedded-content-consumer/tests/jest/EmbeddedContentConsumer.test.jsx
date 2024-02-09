@@ -1,7 +1,5 @@
 import React from 'react';
 import { Consumer } from 'xfc';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import EmbeddedContentConsumer from '../../lib/EmbeddedContentConsumer';
 
 beforeAll(() => {
@@ -29,7 +27,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mountWithIntl(embeddedContentConsumer);
+    const wrapper = enzymeIntl.mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -61,7 +59,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mountWithIntl(embeddedContentConsumer);
+    const wrapper = enzymeIntl.mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -82,7 +80,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mountWithIntl(embeddedContentConsumer);
+    const wrapper = enzymeIntl.mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -105,7 +103,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mountWithIntl(embeddedContentConsumer);
+    const wrapper = enzymeIntl.mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -127,7 +125,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mountWithIntl(embeddedContentConsumer);
+    const wrapper = enzymeIntl.mountWithIntl(embeddedContentConsumer);
     expect(wrapper).toMatchSnapshot();
 
     frame.unmount();
@@ -157,7 +155,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mountWithIntl(embeddedContentConsumer);
+    const wrapper = enzymeIntl.mountWithIntl(embeddedContentConsumer);
 
     expect(frame).toBeTruthy();
     expect(wrapper.instance().props.src).toBe(src);
@@ -182,7 +180,7 @@ describe(EmbeddedContentConsumer, () => {
     );
 
     Consumer.init();
-    const wrapper = mountWithIntl(embeddedContentConsumer);
+    const wrapper = enzymeIntl.mountWithIntl(embeddedContentConsumer);
 
     expect(wrapper.find('VisuallyHiddenText').at(0).prop('text')).toEqual('Terra.embeddedContentConsumer.beginEmbeddedContent');
     expect(wrapper.find('VisuallyHiddenText').at(1).prop('text')).toEqual('Terra.embeddedContentConsumer.endEmbeddedContent');
@@ -200,7 +198,7 @@ describe(EmbeddedContentConsumer, () => {
         </div>
       );
 
-      const wrapper = shallowWithIntl(embeddedContentConsumer);
+      const wrapper = enzymeIntl.shallowWithIntl(embeddedContentConsumer);
       expect(wrapper).toMatchSnapshot();
     });
 
@@ -214,7 +212,7 @@ describe(EmbeddedContentConsumer, () => {
         </div>
       );
 
-      const wrapper = shallowWithIntl(embeddedContentConsumer);
+      const wrapper = enzymeIntl.shallowWithIntl(embeddedContentConsumer);
       expect(wrapper).toMatchSnapshot();
     });
   });

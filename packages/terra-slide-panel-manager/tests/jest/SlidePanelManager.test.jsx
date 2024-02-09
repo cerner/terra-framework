@@ -1,9 +1,7 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { withDisclosureManager } from 'terra-disclosure-manager';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { v4 as uuidv4 } from 'uuid';
+import { withDisclosureManager } from 'terra-disclosure-manager';
 import SlidePanelManager from '../../src/SlidePanelManager';
 
 const TestContainer = withDisclosureManager(({ id }) => (
@@ -27,7 +25,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const wrapper = mountWithIntl(slidePanelManager);
+    const wrapper = enzymeIntl.mountWithIntl(slidePanelManager);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -38,7 +36,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const slidePanelWrapper = shallowWithIntl(slidePanelManager).dive().dive().dive();
+    const slidePanelWrapper = enzymeIntl.shallowWithIntl(slidePanelManager).dive().dive().dive();
     expect(slidePanelWrapper.prop('panelBehavior')).toEqual('squish');
   });
 
@@ -49,7 +47,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const wrapper = mountWithIntl(slidePanelManager);
+    const wrapper = enzymeIntl.mountWithIntl(slidePanelManager);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -60,7 +58,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const wrapper = mountWithIntl(slidePanelManager);
+    const wrapper = enzymeIntl.mountWithIntl(slidePanelManager);
     expect(wrapper.prop('id')).toEqual('my-slide-panel-manager');
     expect(wrapper.prop('className')).toEqual('test');
     expect(wrapper).toMatchSnapshot();
@@ -72,7 +70,7 @@ describe('SlidePanelManager', () => {
         <TestContainer />
       </SlidePanelManager>
     );
-    const wrapper = mountWithIntl(slidePanelManager);
+    const wrapper = enzymeIntl.mountWithIntl(slidePanelManager);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -83,7 +81,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const wrapper = mountWithIntl(slidePanelManager);
+    const wrapper = enzymeIntl.mountWithIntl(slidePanelManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
@@ -110,7 +108,7 @@ describe('SlidePanelManager', () => {
       </SlidePanelManager>
     );
 
-    const wrapper = mountWithIntl(slidePanelManager);
+    const wrapper = enzymeIntl.mountWithIntl(slidePanelManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;

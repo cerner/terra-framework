@@ -3,7 +3,7 @@ import DrawerMenuFooterButton from '../../../src/drawer-menu/_DrawerMenuFooterBu
 
 describe('DrawerMenuFooterButton', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuFooterButton />,
     );
 
@@ -11,7 +11,7 @@ describe('DrawerMenuFooterButton', () => {
   });
 
   it('should render with data props', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuFooterButton
         text="test-text"
       />,
@@ -23,7 +23,7 @@ describe('DrawerMenuFooterButton', () => {
   it('should render with click callback', () => {
     const mockCallBack = jest.fn();
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuFooterButton
         onClick={mockCallBack}
       />,

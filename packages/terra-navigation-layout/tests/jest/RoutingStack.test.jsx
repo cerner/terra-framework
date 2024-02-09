@@ -21,7 +21,7 @@ const DComponent = () => (
 describe('RoutingStack', () => {
   // Snapshot Tests
   it('should render a default RoutingStack', () => {
-    const wrapper = shallow(<RoutingStack.WrappedComponent />);
+    const wrapper = enzyme.shallow(<RoutingStack.WrappedComponent />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -61,7 +61,7 @@ describe('RoutingStack', () => {
       </RoutingStack.WrappedComponent>
     );
 
-    const wrapper = shallow(testRoutingStack);
+    const wrapper = enzyme.shallow(testRoutingStack);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -115,7 +115,7 @@ describe('RoutingStack', () => {
       },
     };
 
-    const wrapper = mount(testRoutingStack, { context: mockContext });
+    const wrapper = enzyme.mount(testRoutingStack, { context: mockContext });
     wrapper.setContext(mockContext);
 
     const cComponent = wrapper.find(CComponent).getElements()[0];

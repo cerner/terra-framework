@@ -1,12 +1,10 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import InfiniteList, { Item } from '../../src/index';
 import styles from './InfiniteList.test.module.scss';
 
 describe('InfiniteList', () => {
   it('should render a default component', () => {
-    const wrapper = shallowWithIntl(<InfiniteList ariaLabel="Infinite List" />);
+    const wrapper = enzymeIntl.shallowWithIntl(<InfiniteList ariaLabel="Infinite List" />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -18,7 +16,7 @@ describe('InfiniteList', () => {
     };
 
     const component = <InfiniteList ariaLabel="Infinite List" {...infiniteProps} />;
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -42,7 +40,7 @@ describe('InfiniteList', () => {
         </Item>
       </InfiniteList>
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -70,7 +68,7 @@ describe('InfiniteList', () => {
         </Item>
       </InfiniteList>
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -97,7 +95,7 @@ describe('InfiniteList', () => {
         </Item>
       </InfiniteList>
     );
-    const wrapper = shallowWithIntl(component);
+    const wrapper = enzymeIntl.shallowWithIntl(component);
     expect(wrapper).toMatchSnapshot();
   });
 });
