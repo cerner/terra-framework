@@ -127,7 +127,7 @@ exports[`correctly applies the theme context className 1`] = `
                   refCallback={[Function]}
                   required={false}
                   size="2"
-                  type="text"
+                  type="number"
                   value=""
                 />
               }
@@ -150,7 +150,7 @@ exports[`correctly applies the theme context className 1`] = `
                   refCallback={[Function]}
                   required={false}
                   size="2"
-                  type="text"
+                  type="number"
                   value=""
                 />
               }
@@ -180,7 +180,7 @@ exports[`correctly applies the theme context className 1`] = `
                   refCallback={[Function]}
                   required={false}
                   size="4"
-                  type="text"
+                  type="number"
                   value=""
                 />
               }
@@ -203,7 +203,7 @@ exports[`correctly applies the theme context className 1`] = `
                 refCallback={[Function]}
                 required={false}
                 size="2"
-                type="text"
+                type="number"
                 value=""
               >
                 <input
@@ -221,7 +221,7 @@ exports[`correctly applies the theme context className 1`] = `
                   pattern="\\\\d*"
                   required={false}
                   size="2"
-                  type="text"
+                  type="number"
                   value=""
                 />
               </Input>
@@ -248,7 +248,7 @@ exports[`correctly applies the theme context className 1`] = `
                 refCallback={[Function]}
                 required={false}
                 size="2"
-                type="text"
+                type="number"
                 value=""
               >
                 <input
@@ -266,7 +266,7 @@ exports[`correctly applies the theme context className 1`] = `
                   pattern="\\\\d*"
                   required={false}
                   size="2"
-                  type="text"
+                  type="number"
                   value=""
                 />
               </Input>
@@ -293,7 +293,7 @@ exports[`correctly applies the theme context className 1`] = `
                 refCallback={[Function]}
                 required={false}
                 size="4"
-                type="text"
+                type="number"
                 value=""
               >
                 <input
@@ -311,7 +311,7 @@ exports[`correctly applies the theme context className 1`] = `
                   pattern="\\\\d*"
                   required={false}
                   size="4"
-                  type="text"
+                  type="number"
                   value=""
                 />
               </Input>
@@ -400,16 +400,16 @@ exports[`correctly applies the theme context className 1`] = `
         >
           <VisuallyHiddenText
             aria-live="off"
-            text=" 
-            Terra.datePicker.dateFormatLabel 
+            text="
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat.  Terra.datePicker.hotKey "
           >
             <span
               aria-live="off"
               className="visually-hidden-text"
             >
-               
-            Terra.datePicker.dateFormatLabel 
+              
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
             </span>
           </VisuallyHiddenText>
@@ -561,7 +561,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               refCallback={[Function]}
               required={false}
               size="2"
-              type="text"
+              type="number"
               value=""
             />
           }
@@ -584,7 +584,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               refCallback={[Function]}
               required={false}
               size="2"
-              type="text"
+              type="number"
               value=""
             />
           }
@@ -614,7 +614,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               refCallback={[Function]}
               required={false}
               size="4"
-              type="text"
+              type="number"
               value=""
             />
           }
@@ -637,7 +637,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             refCallback={[Function]}
             required={false}
             size="2"
-            type="text"
+            type="number"
             value=""
           >
             <input
@@ -655,7 +655,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               pattern="\\\\d*"
               required={false}
               size="2"
-              type="text"
+              type="number"
               value=""
             />
           </Input>
@@ -682,7 +682,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             refCallback={[Function]}
             required={false}
             size="2"
-            type="text"
+            type="number"
             value=""
           >
             <input
@@ -700,7 +700,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               pattern="\\\\d*"
               required={false}
               size="2"
-              type="text"
+              type="number"
               value=""
             />
           </Input>
@@ -727,7 +727,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
             refCallback={[Function]}
             required={false}
             size="4"
-            type="text"
+            type="number"
             value=""
           >
             <input
@@ -745,7 +745,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
               pattern="\\\\d*"
               required={false}
               size="4"
-              type="text"
+              type="number"
               value=""
             />
           </Input>
@@ -878,16 +878,16 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
     >
       <VisuallyHiddenText
         aria-live="off"
-        text=" 
-            Terra.datePicker.dateFormatLabel 
+        text="
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat.  Terra.datePicker.hotKey "
       >
         <span
           aria-live="off"
           className="visually-hidden-text"
         >
-           
-            Terra.datePicker.dateFormatLabel 
+          
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
         </span>
       </VisuallyHiddenText>
@@ -935,7 +935,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
         name="terra-date-month-undefined"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -952,7 +952,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
         name="terra-date-day-undefined"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -969,7 +969,7 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
         name="terra-date-year-undefined"
         pattern="\\\\d*"
         size="4"
-        type="text"
+        type="number"
         value=""
       />
     </div>
@@ -1012,8 +1012,8 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-       
-            Terra.datePicker.dateFormatLabel 
+      
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
     </span>
     <div
@@ -1059,7 +1059,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
         name="terra-date-month-undefined"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -1076,7 +1076,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
         name="terra-date-day-undefined"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -1093,7 +1093,7 @@ exports[`should render a date input with isInvalid prop 1`] = `
         name="terra-date-year-undefined"
         pattern="\\\\d*"
         size="4"
-        type="text"
+        type="number"
         value=""
       />
     </div>
@@ -1136,8 +1136,8 @@ exports[`should render a date input with isInvalid prop 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-       
-            Terra.datePicker.dateFormatLabel 
+      
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
     </span>
     <div
@@ -1183,7 +1183,7 @@ exports[`should render a default date input 1`] = `
         name="terra-date-month-undefined"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -1200,7 +1200,7 @@ exports[`should render a default date input 1`] = `
         name="terra-date-day-undefined"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -1217,7 +1217,7 @@ exports[`should render a default date input 1`] = `
         name="terra-date-year-undefined"
         pattern="\\\\d*"
         size="4"
-        type="text"
+        type="number"
         value=""
       />
     </div>
@@ -1260,8 +1260,8 @@ exports[`should render a default date input 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-       
-            Terra.datePicker.dateFormatLabel 
+      
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat.  Terra.datePicker.hotKey 
     </span>
     <div
@@ -1423,7 +1423,7 @@ exports[`should render a default date input with all props 1`] = `
               refCallback={[Function]}
               required={false}
               size="2"
-              type="text"
+              type="number"
               value="01"
             />
           }
@@ -1447,7 +1447,7 @@ exports[`should render a default date input with all props 1`] = `
               refCallback={[Function]}
               required={false}
               size="2"
-              type="text"
+              type="number"
               value="01"
             />
           }
@@ -1478,7 +1478,7 @@ exports[`should render a default date input with all props 1`] = `
               refCallback={[Function]}
               required={false}
               size="4"
-              type="text"
+              type="number"
               value="2017"
             />
           }
@@ -1502,7 +1502,7 @@ exports[`should render a default date input with all props 1`] = `
             refCallback={[Function]}
             required={false}
             size="2"
-            type="text"
+            type="number"
             value="01"
           >
             <input
@@ -1521,7 +1521,7 @@ exports[`should render a default date input with all props 1`] = `
               pattern="\\\\d*"
               required={false}
               size="2"
-              type="text"
+              type="number"
               value="01"
             />
           </Input>
@@ -1549,7 +1549,7 @@ exports[`should render a default date input with all props 1`] = `
             refCallback={[Function]}
             required={false}
             size="2"
-            type="text"
+            type="number"
             value="01"
           >
             <input
@@ -1568,7 +1568,7 @@ exports[`should render a default date input with all props 1`] = `
               pattern="\\\\d*"
               required={false}
               size="2"
-              type="text"
+              type="number"
               value="01"
             />
           </Input>
@@ -1596,7 +1596,7 @@ exports[`should render a default date input with all props 1`] = `
             refCallback={[Function]}
             required={false}
             size="4"
-            type="text"
+            type="number"
             value="2017"
           >
             <input
@@ -1615,7 +1615,7 @@ exports[`should render a default date input with all props 1`] = `
               pattern="\\\\d*"
               required={false}
               size="4"
-              type="text"
+              type="number"
               value="2017"
             />
           </Input>
@@ -1750,16 +1750,16 @@ exports[`should render a default date input with all props 1`] = `
     >
       <VisuallyHiddenText
         aria-live="off"
-        text=" 
-            Terra.datePicker.dateFormatLabel 
+        text="
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey "
       >
         <span
           aria-live="off"
           className="visually-hidden-text"
         >
-           
-            Terra.datePicker.dateFormatLabel 
+          
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey 
         </span>
       </VisuallyHiddenText>
