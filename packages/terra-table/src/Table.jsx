@@ -37,6 +37,8 @@ const TableConstants = {
 
 const ROW_SELECTION_COLUMN_ID = 'table-rowSelectionColumn';
 
+const DEBOUNCE_TIMER = 300;
+
 const propTypes = {
   /**
    * An identifier to uniquely identify the table.
@@ -408,7 +410,7 @@ function Table(props) {
                       || tableContainer.scrollHeight > tableContainer.clientHeight);
   };
 
-  const debouncedHandleResize = LodashDebounce(handleResize, 300);
+  const debouncedHandleResize = LodashDebounce(handleResize, DEBOUNCE_TIMER);
 
   // useEffect for managing the table height.
   useEffect(() => {
