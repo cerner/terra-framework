@@ -17,6 +17,7 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the date input.
    * Do not set the name in inputAttribute as it will be ignored.
+   * The `fieldLabel` prop should be utilized to provide a descriptive label for the date input, aiding screen reader accessibility. This label will be read aloud to users relying on screen readers to navigate the interface effectively.
    */
   dateInputAttributes: PropTypes.object,
   /**
@@ -118,6 +119,7 @@ const propTypes = {
   /**
    * Custom input attributes to apply to the time input. Use the name prop to set the name for the time input.
    * Do not set the name in inputAttribute as it will be ignored.
+   * The `fieldLabel` prop should be utilized to provide a descriptive label for the time input, aiding screen reader accessibility. This label will be read aloud to users relying on screen readers to navigate the interface effectively.
    */
   timeInputAttributes: PropTypes.object,
   /**
