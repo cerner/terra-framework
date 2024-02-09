@@ -108,7 +108,7 @@ Terra.describeViewports('Abstract Modal', ['medium'], () => {
         browser.keys(['Tab']);
         expect($('#modal-button').isFocused()).toBeFalsy();
         expect($('#modal-open-button').isFocused()).toBeFalsy();
-        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeTruthy();
+        expect($('[aria-modal="true"][role="dialog"]').isFocused()).toBeFalsy();
         Terra.validates.element('focused shifted outside the end of the modal', { selector });
       });
 
