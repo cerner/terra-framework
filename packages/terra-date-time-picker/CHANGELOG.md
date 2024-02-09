@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the description for dateinputAttributes and timeinputAttributes.
+
 ## 4.105.0 - (February 1, 2024)
 
 * Fixed
