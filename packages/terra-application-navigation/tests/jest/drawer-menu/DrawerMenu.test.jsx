@@ -1,21 +1,19 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mockIntl } from 'terra-enzyme-intl';
 import DrawerMenu from '../../../src/drawer-menu/_DrawerMenu';
 
 describe('DrawerMenu', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
-      <DrawerMenu.WrappedComponent intl={mockIntl} />,
+    const shallowComponent = enzyme.shallow(
+      <DrawerMenu.WrappedComponent intl={enzymeIntl.mockIntl} />,
     );
 
     expect(shallowComponent).toMatchSnapshot();
   });
 
   it('should render with function callbacks', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
-        intl={mockIntl}
+        intl={enzymeIntl.mockIntl}
         titleConfig={{
           title: 'test-title',
         }}
@@ -42,9 +40,9 @@ describe('DrawerMenu', () => {
   });
 
   it('should render with navigation and utility item ids', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
-        intl={mockIntl}
+        intl={enzymeIntl.mockIntl}
         titleConfig={{
           title: 'test-title',
         }}
@@ -72,9 +70,9 @@ describe('DrawerMenu', () => {
   });
 
   it('should render Help utility item when it is the only utility item present', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenu.WrappedComponent
-        intl={mockIntl}
+        intl={enzymeIntl.mockIntl}
         titleConfig={{
           title: 'test-title',
         }}

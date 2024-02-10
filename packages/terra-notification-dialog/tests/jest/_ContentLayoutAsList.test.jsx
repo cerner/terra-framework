@@ -1,11 +1,10 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import ContentLayoutAsList from '../../src/_ContentLayoutAsList';
 
 describe('Content Layout As List', () => {
   it('shallow renders layout with no items', () => {
-    const list = shallowWithIntl(
+    const list = enzymeIntl.shallowWithIntl(
       <ContentLayoutAsList items={[]} />,
     );
 
@@ -13,7 +12,7 @@ describe('Content Layout As List', () => {
   });
 
   it('shallow renders layout with items', () => {
-    const list = shallowWithIntl(
+    const list = enzymeIntl.shallowWithIntl(
       <ContentLayoutAsList items={['item 1', 'item2']} />,
     );
 

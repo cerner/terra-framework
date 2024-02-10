@@ -12,7 +12,7 @@ describe('UserData', () => {
       />
     );
 
-    const result = shallow(testUserData);
+    const result = enzyme.shallow(testUserData);
 
     expect(result).toMatchSnapshot();
   });
@@ -22,7 +22,7 @@ describe('UserData', () => {
       <UserData />
     );
 
-    const result = shallow(testUserData);
+    const result = enzyme.shallow(testUserData);
 
     expect(result).toMatchSnapshot();
   });
@@ -32,7 +32,7 @@ describe('UserData', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const testUserData = mount(<UserData
+    const testUserData = enzyme.mount(<UserData
       userName="Test, Person"
       userDetail="Detail For Test"
       userPhoto={<div>Test Photo</div>}

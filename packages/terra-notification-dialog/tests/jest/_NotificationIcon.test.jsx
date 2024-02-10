@@ -1,11 +1,10 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import NotificationIcon from '../../src/_NotificationIcon';
 
 describe('Notification Icon', () => {
   it('shallow renders hazard-high icon', () => {
-    const icon = shallowWithIntl(
+    const icon = enzymeIntl.shallowWithIntl(
       <NotificationIcon variant="hazard-high" />,
     );
 
@@ -13,7 +12,7 @@ describe('Notification Icon', () => {
   });
 
   it('shallow renders hazard-medium icon', () => {
-    const icon = shallowWithIntl(
+    const icon = enzymeIntl.shallowWithIntl(
       <NotificationIcon variant="hazard-high" />,
     );
 
@@ -21,7 +20,7 @@ describe('Notification Icon', () => {
   });
 
   it('shallow renders hazard-low icon', () => {
-    const icon = shallowWithIntl(
+    const icon = enzymeIntl.shallowWithIntl(
       <NotificationIcon variant="hazard-low" />,
     );
 
@@ -29,7 +28,7 @@ describe('Notification Icon', () => {
   });
 
   it('shallow renders error icon', () => {
-    const icon = shallowWithIntl(
+    const icon = enzymeIntl.shallowWithIntl(
       <NotificationIcon variant="error" />,
     );
 
@@ -37,7 +36,7 @@ describe('Notification Icon', () => {
   });
 
   it('shallow renders custom icon container', () => {
-    const icon = shallowWithIntl(
+    const icon = enzymeIntl.shallowWithIntl(
       <NotificationIcon variant="custom" />,
     );
 
@@ -45,7 +44,7 @@ describe('Notification Icon', () => {
   });
 
   it('shallow renders custom icon container', () => {
-    const icon = shallowWithIntl(
+    const icon = enzymeIntl.shallowWithIntl(
       <NotificationIcon
         variant="custom"
         iconClassName="my-icon-class"
@@ -62,7 +61,7 @@ describe('Notification Icon', () => {
         className: 'orion-fusion-theme',
       });
 
-    const icon = shallowWithIntl(
+    const icon = enzymeIntl.shallowWithIntl(
       <NotificationIcon variant="hazard-high" />,
     );
 
