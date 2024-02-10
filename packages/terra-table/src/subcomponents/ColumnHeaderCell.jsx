@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useCallback,
   useContext,
   useEffect,
   useRef,
-  useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -32,10 +32,10 @@ const propTypes = {
    */
   tableId: PropTypes.string.isRequired,
 
-  hasColumnHeaderActions: PropTypes.bool,
-  isActionCell: PropTypes.bool,
-
-  action: PropTypes.shape(actionShape),
+  /**
+   * Unique identifier for the column
+   */
+  columnId: PropTypes.string.isRequired,
 
   /**
    * String of text to render within the column header cell.
@@ -75,8 +75,23 @@ const propTypes = {
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
-  */
+   */
   isSelectable: PropTypes.bool,
+
+  /**
+   * Boolean value indicating whether or not the column header has additional row for actions.
+   */
+  hasColumnHeaderActions: PropTypes.bool,
+
+  /**
+   * Boolean value indicating whether or not the column header cell is an action cell.
+   */
+  isActionCell: PropTypes.bool,
+
+  /**
+   * Data for action cell.
+   */
+  action: PropTypes.shape(actionShape),
 
   /**
    * Boolean value indicating whether or not the column header is resizable.
@@ -84,8 +99,30 @@ const propTypes = {
   isResizable: PropTypes.bool,
 
   /**
-    * Height of the parent table.
-    */
+   * Boolean value indicating whether or not the column resize handle is active.
+   */
+  isResizeHandleActive: PropTypes.bool,
+
+  /**
+   * A function to be executed upon the resize handler activation to pass its data to parent component.
+   * @param {element} leftNeighborCell - `columnHeaderCellRef.current`
+   * Skip both parameters to indicate that there is no active resize handle at the moment.
+   */
+  resizeHandleStateSetter: PropTypes.func,
+
+  /**
+   * String that specifies the init height for the resize handler to accomodate actions row.
+   */
+  resizeHandlerInitHeight: PropTypes.string,
+
+  /**
+   * A `ref current` for neighbouring the active resize handle element, which needs to get focus on left arrow key event.
+   */
+  activeResizeHandlerNeighborCell: PropTypes.object,
+
+  /**
+   * Height of the parent table.
+   */
   tableHeight: PropTypes.number,
 
   /**
@@ -160,6 +197,11 @@ const ColumnHeaderCell = (props) => {
     isDisplayVisible,
     isSelectable,
     isResizable,
+    isResizeHandleActive,
+    resizeHandleStateSetter,
+    resizeHandlerInitHeight,
+    activeResizeHandlerNeighborCell,
+    columnId,
     tableHeight,
     isResizeActive,
     columnResizeIncrement,
@@ -179,7 +221,13 @@ const ColumnHeaderCell = (props) => {
 
   const columnHeaderCellRef = useRef();
 
-  const [isResizeHandleActive, setResizeHandleActive] = useState(false);
+  const setResizeHandleActive = useCallback((setActive) => {
+    if (setActive) {
+      resizeHandleStateSetter(columnId, columnHeaderCellRef?.current);
+    } else {
+      resizeHandleStateSetter();
+    }
+  }, [columnId, resizeHandleStateSetter]);
 
   const isGridContext = gridContext.role === GridConstants.GRID;
 
@@ -232,7 +280,7 @@ const ColumnHeaderCell = (props) => {
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive && isGridContext) {
-          columnHeaderCellRef.current.focus();
+          activeResizeHandlerNeighborCell?.focus();
           setResizeHandleActive(false);
           event.stopPropagation();
           event.preventDefault();
@@ -292,34 +340,7 @@ const ColumnHeaderCell = (props) => {
     }
   };
 
-  // change z-index of the cell to bring up its handler
-  const zIndexActionCell = (event, up, isPinnedColumn) => {
-    // Not triggered when swapping focus between children
-    if (!event.currentTarget.contains(event.relatedTarget)) {
-      if (event.currentTarget) {
-        const zIndexOffset = isPinnedColumn ? 4 : 1;
-        const zIndex = up ? zIndexOffset + 1 : zIndexOffset;
-        // eslint-disable-next-line no-param-reassign
-        event.currentTarget.style.zIndex = zIndex;
-      }
-    }
-  };
-
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
-  const handleFocus = (event) => {
-    if (isActionCell || hasColumnHeaderActions) {
-      zIndexActionCell(event, true, isPinnedColumn);
-    }
-    if (isActionCell) {
-      distributeFocusWithinActionCell(event);
-    }
-  };
-
-  const handleBlur = (event) => {
-    if (isActionCell || hasColumnHeaderActions) {
-      zIndexActionCell(event, false, isPinnedColumn);
-    }
-  };
 
   return (
   /* eslint-disable react/forbid-dom-props */
@@ -329,7 +350,6 @@ const ColumnHeaderCell = (props) => {
       key={id}
       className={cx('column-header', theme.className, {
         'action-cell': isActionCell,
-        'preceeds-action-cell': hasColumnHeaderActions && !isActionCell,
         selectable: isSelectable,
         pinned: isPinnedColumn,
         'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
@@ -341,8 +361,7 @@ const ColumnHeaderCell = (props) => {
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
-      onFocus={handleFocus}
-      onBlur={handleBlur}
+      onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
     >
       {isActionCell && action?.onCall
         ? (
@@ -366,7 +385,7 @@ const ColumnHeaderCell = (props) => {
             <VisuallyHiddenText text={headerDescription} />
           </div>
         )}
-      { isResizable && (
+      { isResizable && hasColumnHeaderActions && !isActionCell && (
       <ColumnResizeHandle
         columnIndex={columnIndex}
         columnText={displayName}
@@ -375,7 +394,7 @@ const ColumnHeaderCell = (props) => {
         isActive={isResizeHandleActive}
         setIsActive={setResizeHandleActive}
         height={tableHeight}
-        topOffset={isActionCell && `-${headerHeight}`} // TODO check if headerHeight prop always exists
+        resizeHandlerInitHeight={resizeHandlerInitHeight}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}

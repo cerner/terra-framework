@@ -21,33 +21,9 @@
       outline-offset: var(--terra-table-column-header-focus-outline-offset, -5px);
     }
 
-    /*
-     * z-index is being changed dinamically inside the header cell component.
-     * That allows two header cells (in case there is an action cell)
-     * to go up and down reletively to each other in order to show the correct resize handler
-     * above both header cells.
-     * Current z-index pattern is:
-     * ------------------------------------------
-     *                       | regular | z-index: 1
-     * regular column header | focused | z-index: 2
-     *                       | hovered | z-index: 3 !important
-     * ------------------------------------------
-     *                       | regular | z-index: 4
-     * pinned column header  | focused | z-index: 5
-     *                       | hovered | z-index: 6 !important
-    */
-
-    &:hover {
-      z-index: 3 !important;
-    }
-
     &.pinned {
       position: sticky;
-      z-index: 4; // refer to current z-index pattern above
-    }
-
-    &.pinned:hover {
-      z-index: 6 !important; // refer to current z-index pattern above
+      z-index: 2 !important;
     }
 
     &.last-pinned-column {
@@ -107,13 +83,6 @@
 
   .action-cell {
     border-top: none;
-    height: 100%;
-    // padding-top: 2px; // TODO - check padding size for a button to fit on focus border
-    // padding-bottom: 2px; // TODO - check padding size for a button to fit on focus border
-  }
-
-  .preceeds-action-cell {
-    border-bottom: none;
   }
 
   // Hover state for selectable elements

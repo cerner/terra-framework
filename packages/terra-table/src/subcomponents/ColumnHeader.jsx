@@ -1,6 +1,10 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {
+  useState, useCallback, useEffect, useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ResizeObserver from 'resize-observer-polyfill';
 import ColumnHeaderCell from './ColumnHeaderCell';
 import columnShape from '../proptypes/columnShape';
 import styles from './ColumnHeader.module.scss';
@@ -94,14 +98,46 @@ const ColumnHeader = (props) => {
     hasColumnHeaderActions,
   } = props;
 
+  // Header container height observer ---------------
+
+  const headerRef = useRef();
+  const [headerContainerHeight, setHeaderContainerHeight] = useState(0);
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      const heightOffset = hasColumnHeaderActions ? 2 : 1; // needs 2 pixels if actions row exists in headers to avoid scroll
+      setHeaderContainerHeight(headerRef.current.offsetHeight - heightOffset);
+    });
+    resizeObserver.observe(headerRef.current);
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [headerRef]);
+
+  // Active resize handle management -------------------
+
+  // The active column and neighbour cell have to be known to both header and action cells as they share resize handle.
+  const [activeResizeHandlerColumnId, setActiveResizeHandlerColumnId] = useState();
+  const [activeResizeHandlerNeighborCell, setAactiveResizeHandlerNeighborCell] = useState();
+  const resizeHandleStateSetter = useCallback((columnId, leftNeighborCell) => {
+    if (columnId !== activeResizeHandlerColumnId) {
+      setActiveResizeHandlerColumnId(columnId);
+    }
+    if (leftNeighborCell !== activeResizeHandlerNeighborCell) {
+      setAactiveResizeHandlerNeighborCell(leftNeighborCell);
+    }
+  }, [activeResizeHandlerColumnId, activeResizeHandlerNeighborCell]);
+
   // TODO - remove this once actual actions added
   const defaultAction = {
     label: 'action label',
     onCall: () => alert('Action called!'),
   };
 
+  // resizeHandlerInitHeight is needed to adjust the heder column resize handler to accomodate actions header height
+  const resizeHandlerInitHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
+
   return (
-    <thead>
+    <thead ref={headerRef}>
       <tr
         aria-rowindex={1}
         data-row-id={`${tableId}-header-row`}
@@ -110,9 +146,10 @@ const ColumnHeader = (props) => {
       >
         {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
-            key={column.id}
-            id={column.id}
+            key={`${column.id}-headerCell`}
+            id={`${column.id}-headerCell`}
             tableId={tableId}
+            columnId={column.id}
             hasColumnHeaderActions={hasColumnHeaderActions}
             columnIndex={columnIndex}
             displayName={column.displayName}
@@ -122,6 +159,10 @@ const ColumnHeader = (props) => {
             maximumWidth={column.maximumWidth}
             headerHeight={headerHeight}
             isResizable={hasVisibleColumnHeaders && column.isResizable}
+            resizeHandlerInitHeight={resizeHandlerInitHeight}
+            isResizeHandleActive={activeResizeHandlerColumnId === column.id}
+            resizeHandleStateSetter={resizeHandleStateSetter}
+            activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
             isSelectable={hasVisibleColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
             isActive={activeColumnIndex === columnIndex && activeRowIndex === 0} // can be 2 rows in header
@@ -140,35 +181,31 @@ const ColumnHeader = (props) => {
         <tr
           aria-rowindex={2}
           data-row-id={`${tableId}-header-actions-row`}
-          className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
-          // TODO - check if needs height prop
+          className={cx('column-actions-row', { hidden: !hasVisibleColumnHeaders })}
         >
           {columns.map((column, columnIndex) => (
             <ColumnHeaderCell
-              key={`column-${column.id}-action`}
-              id={`column-${column.id}-action`}
+              key={`${column.id}-actionCell`}
+              id={`${column.id}-actionCell`}
               tableId={tableId}
-              // TODO if needs hasColumnHeaderActions prop add here
+              columnId={column.id}
               isActionCell
               action={column.action || (columnIndex % 2 === 0 ? undefined : defaultAction)}
               columnIndex={columnIndex}
-              // TOD - for now displayName is passed as action prop, check if needs change
+              // TODO - currently displayName is passed as action prop, check if needs change
               isDisplayVisible={column.isDisplayVisible}
               width={column.width}
               minimumWidth={column.minimumWidth}
               maximumWidth={column.maximumWidth}
               headerHeight={headerHeight}
               isResizable={hasVisibleColumnHeaders && column.isResizable}
-              // TODO - remove when finished if doesn't need isSelectable prop
-              tableHeight={tableHeight}
+              isResizeHandleActive={activeResizeHandlerColumnId === column.id}
+              resizeHandleStateSetter={resizeHandleStateSetter}
+              activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
+              isSelectable={hasVisibleColumnHeaders && column.isSelectable}
               isActive={activeColumnIndex === columnIndex && activeRowIndex === 1}
               isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
-              columnResizeIncrement={columnResizeIncrement}
-              // TODO - remove when finished if doesn't need hasError prop
-              // TODO - remove when finished if doesn't need sortIndicator prop
-              // TODO - remove when finished if doesn't need onColumnSelect prop
-              onResizeMouseDown={onResizeMouseDown}
-              onResizeHandleChange={onResizeHandleChange}
+              onColumnSelect={onColumnSelect}
             />
           ))}
         </tr>
