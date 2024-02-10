@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added a closeOnOutsideClick property to allow consumers to specify that a dialog can be closed when users click outside its boundaries. 
+
 ## 6.70.0 - (January 22, 2024)
 
 * Added

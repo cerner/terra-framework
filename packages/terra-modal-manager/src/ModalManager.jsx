@@ -26,6 +26,10 @@ const propTypes = {
    */
   disclosureAccessory: PropTypes.element,
   /**
+   * If set to true, the modal will close when a mouse click is triggered outside the modal.
+   */
+  closeOnOutsideClick: PropTypes.bool,
+  /**
    * @private
    * The container to wrap the disclosed content. This should be provided from the application level.
    */
@@ -54,6 +58,10 @@ const widthFromSize = {
   'fusion-large': 700,
 };
 
+const defaultProps = {
+  closeOnOutsideClick: false,
+};
+
 class ModalManager extends React.Component {
   constructor(props) {
     super(props);
@@ -68,7 +76,7 @@ class ModalManager extends React.Component {
 
   renderModal(manager) {
     const {
-      children, disclosureAccessory, withDisclosureContainer, ...customProps
+      children, disclosureAccessory, closeOnOutsideClick, withDisclosureContainer, ...customProps
     } = this.props;
     const theme = this.context;
 
@@ -103,7 +111,7 @@ class ModalManager extends React.Component {
             manager.closeDisclosure();
           }}
           closeOnEsc
-          closeOnOutsideClick={false}
+          closeOnOutsideClick={closeOnOutsideClick}
           ariaLabel={headerDataForPresentedComponent?.title || 'Modal'}
           setModalFocusElementRef={this.setModalFocusElementRef}
         >
@@ -149,5 +157,6 @@ class ModalManager extends React.Component {
 
 ModalManager.propTypes = propTypes;
 ModalManager.contextType = ThemeContext;
+ModalManager.defaultProps = defaultProps;
 
 export default ModalManager;

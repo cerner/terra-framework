@@ -8,7 +8,9 @@ exports[`ModalManager correctly applies the theme context className 1`] = `
     }
   }
 >
-  <ModalManager>
+  <ModalManager
+    closeOnOutsideClick={false}
+  >
     <withDisclosureManager(DisclosureManager)
       render={[Function]}
       supportedDisclosureTypes={
@@ -69,6 +71,7 @@ exports[`ModalManager correctly applies the theme context className 1`] = `
 
 exports[`ModalManager should disclose content in Modal 1`] = `
 <ModalManager
+  closeOnOutsideClick={false}
   intl={
     Object {
       "defaultFormats": Object {},
@@ -520,6 +523,7 @@ exports[`ModalManager should disclose content in Modal wrapped by disclose conta
 exports[`ModalManager should render the ModalManager with custom props 1`] = `
 <ModalManager
   className="test"
+  closeOnOutsideClick={false}
   id="my-modal-manager"
   intl={
     Object {
@@ -636,6 +640,7 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
 
 exports[`ModalManager should render the ModalManager with defaults 1`] = `
 <ModalManager
+  closeOnOutsideClick={false}
   intl={
     Object {
       "defaultFormats": Object {},

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added example to `terra-modal-manager` to show how to consume the new closeOnOutsideClick property.
+
 ## 1.64.0 - (February 7, 2024)
 
 * Changed
