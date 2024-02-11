@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Column actions example added to `terra-worklist-data-grid`.
+
 ## 1.64.0 - (February 7, 2024)
 
 * Changed
