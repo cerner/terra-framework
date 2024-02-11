@@ -145,13 +145,13 @@ const ColumnActions = () => {
         />
       </div>
       <WorklistDataGrid
-        id="pinned-columns-with-row-selection"
+        id="worklist-data-grid-with-column-actions"
         pinnedColumns={cols.slice(0, 3)} // Consumer must specify pinnedColumns prop to display columns that need to pinned (stickied).
         overflowColumns={cols.slice(3)} // Consumer must specify overflowColumns prop to display columns that do not need to be stickied and can scroll horizontally.
         rows={rowData}
         rowHeaderIndex={rowHeaderIndex}
         defaultColumnWidth={180}
-        ariaLabel="Worklist Data Grid with Pinned Columns and Row Selection"
+        ariaLabel="Worklist Data Grid with Column Actions"
         hasSelectableRows={hasSelectableRows} // Prop to turn row selection mode on/off
         onRowSelect={onRowSelect} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects one or more rows.
         onRowSelectAll={onRowSelectAll} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects all rows.
