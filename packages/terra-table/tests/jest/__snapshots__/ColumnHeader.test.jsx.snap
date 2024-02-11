@@ -9,24 +9,30 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-0"
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
-      id="Column-0"
+      id="Column-0-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-0"
+      isResizeHandleActive={false}
+      key="Column-0-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
-      id="Column-1"
+      id="Column-1-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-1"
+      isResizeHandleActive={false}
+      key="Column-1-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
     />
@@ -43,28 +49,34 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-0"
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
-      id="Column-0"
+      id="Column-0-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-0"
+      isResizeHandleActive={false}
+      key="Column-0-headerCell"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
+      resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
-      id="Column-1"
+      id="Column-1-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-1"
+      isResizeHandleActive={false}
+      key="Column-1-headerCell"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
+      resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
     />
@@ -81,24 +93,30 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-0"
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
-      id="Column-0"
+      id="Column-0-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-0"
+      isResizeHandleActive={false}
+      key="Column-0-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
-      id="Column-1"
+      id="Column-1-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-1"
+      isResizeHandleActive={false}
+      key="Column-1-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
     />
@@ -115,23 +133,29 @@ exports[`ColumnHeader renders a default column header 1`] = `
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-0"
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
-      id="Column-0"
+      id="Column-0-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-0"
+      isResizeHandleActive={false}
+      key="Column-0-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
-      id="Column-1"
+      id="Column-1-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-1"
+      isResizeHandleActive={false}
+      key="Column-1-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
   </tr>
@@ -147,23 +171,29 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
     height="3rem"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-0"
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
-      id="Column-0"
+      id="Column-0-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-0"
+      isResizeHandleActive={false}
+      key="Column-0-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
-      id="Column-1"
+      id="Column-1-headerCell"
       isActive={false}
       isResizeActive={false}
-      key="Column-1"
+      isResizeHandleActive={false}
+      key="Column-1-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
   </tr>
@@ -178,27 +208,33 @@ exports[`ColumnHeader verifies that the hasVisibleColumnHeaders prop hides the t
     data-row-id="test-table-header-row"
   >
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-0"
       columnIndex={0}
       displayName=" Vitals"
       headerHeight="3rem"
-      id="Column-0"
+      id="Column-0-headerCell"
       isActive={false}
       isResizable={false}
       isResizeActive={false}
+      isResizeHandleActive={false}
       isSelectable={false}
-      key="Column-0"
+      key="Column-0-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
       columnIndex={1}
       displayName=" Patient"
       headerHeight="3rem"
-      id="Column-1"
+      id="Column-1-headerCell"
       isActive={false}
       isResizable={false}
       isResizeActive={false}
+      isResizeHandleActive={false}
       isSelectable={false}
-      key="Column-1"
+      key="Column-1-headerCell"
+      resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
   </tr>
