@@ -9,7 +9,7 @@ it('should render the provider test template', () => {
     </ProviderTestTemplate>
   );
 
-  const wrapper = render(providerExample);
+  const wrapper = enzyme.render(providerExample);
   expect(wrapper).toMatchSnapshot();
 });
 
@@ -20,6 +20,6 @@ it('should render the provider test template with a custom class name', () => {
     </ProviderTestTemplate>
   );
 
-  const wrapper = render(providerExample);
+  const wrapper = enzyme.render(providerExample);
   expect(wrapper).toMatchSnapshot();
 });

@@ -3,7 +3,7 @@ import DrawerMenuUser from '../../../src/drawer-menu/_DrawerMenuUser';
 
 describe('DrawerMenuUser', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuUser
         userConfig={{
           name: 'user-name',
@@ -18,7 +18,7 @@ describe('DrawerMenuUser', () => {
   });
 
   it('should render with small variant', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuUser
         userConfig={{
           name: 'user-name',
@@ -34,7 +34,7 @@ describe('DrawerMenuUser', () => {
   });
 
   it('should render with large variant', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuUser
         userConfig={{
           name: 'user-name',

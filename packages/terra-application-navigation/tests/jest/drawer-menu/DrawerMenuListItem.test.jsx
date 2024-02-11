@@ -3,7 +3,7 @@ import DrawerMenuListItem from '../../../src/drawer-menu/_DrawerMenuListItem';
 
 describe('DrawerMenuListItem', () => {
   it('should render with required prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuListItem
         text="my text"
         onSelect={jest.fn()}
@@ -14,7 +14,7 @@ describe('DrawerMenuListItem', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuListItem
         notificationCount={1}
         text="my text"
@@ -31,7 +31,7 @@ describe('DrawerMenuListItem', () => {
     const mockCallBack = jest.fn();
     const mockCallBack2 = jest.fn();
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <DrawerMenuListItem
         text="my text"
         onSelect={mockCallBack}

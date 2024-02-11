@@ -7,7 +7,7 @@ const NavigationPrompt = NavigationPromptHOC.WrappedComponent;
 describe('NavigationPrompt', () => {
   describe('render', () => {
     it('should render null', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPrompt
           promptRegistration={{
             registerPrompt: () => {},
@@ -28,7 +28,7 @@ describe('NavigationPrompt', () => {
         test: 'value',
       };
 
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPrompt
           description="TEST PROMPT"
           metaData={testMetaData}
@@ -58,7 +58,7 @@ describe('NavigationPrompt', () => {
         test: 'differentValue',
       };
 
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPrompt
           description="TEST PROMPT"
           metaData={testMetaData}
@@ -100,7 +100,7 @@ describe('NavigationPrompt', () => {
       const mockRegister = jest.fn();
       const mockUnregister = jest.fn();
 
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <NavigationPrompt
           description="TEST PROMPT"
           promptRegistration={{

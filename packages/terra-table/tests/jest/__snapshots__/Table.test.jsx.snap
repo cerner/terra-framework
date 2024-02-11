@@ -176,7 +176,7 @@ exports[`Table verifies row selection column header selection 1`] = `
       ]
     }
     rowHeaderIndex={0}
-    rowMinimumHeight="2.5rem"
+    rowMinimumHeight="auto"
     rowSelectionMode="multiple"
     rows={
       Array [
@@ -794,7 +794,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           key="00000000-0000-0000-0000-000000000000"
           onCellSelect={[Function]}
           rowHeaderIndex={0}
-          rowMinimumHeight="2.5rem"
+          rowMinimumHeight="auto"
           rowSelectionMode="multiple"
           rows={
             Array [
@@ -915,7 +915,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={2}
-              rowMinimumHeight="2.5rem"
+              rowMinimumHeight="auto"
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -927,7 +927,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseLeave={[Function]}
                 style={
                   Object {
-                    "minHeight": "2.5rem",
+                    "minHeight": "auto",
                   }
                 }
               >
@@ -1072,7 +1072,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={2}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1113,7 +1113,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={2}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1135,7 +1135,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -1154,7 +1154,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={2}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1195,7 +1195,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={2}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1214,7 +1214,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -1238,7 +1238,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="1"
                   rowIndex={2}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1279,7 +1279,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="1"
                     rowIndex={2}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1298,7 +1298,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -1359,7 +1359,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={3}
-              rowMinimumHeight="2.5rem"
+              rowMinimumHeight="auto"
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -1371,7 +1371,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseLeave={[Function]}
                 style={
                   Object {
-                    "minHeight": "2.5rem",
+                    "minHeight": "auto",
                   }
                 }
               >
@@ -1515,7 +1515,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={3}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1556,7 +1556,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={3}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1578,7 +1578,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -1597,7 +1597,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={3}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1638,7 +1638,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={3}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1657,7 +1657,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -1677,7 +1677,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="2"
                   rowIndex={3}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1718,7 +1718,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="2"
                     rowIndex={3}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -1737,7 +1737,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -1798,7 +1798,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={4}
-              rowMinimumHeight="2.5rem"
+              rowMinimumHeight="auto"
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -1810,7 +1810,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseLeave={[Function]}
                 style={
                   Object {
-                    "minHeight": "2.5rem",
+                    "minHeight": "auto",
                   }
                 }
               >
@@ -1954,7 +1954,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={4}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -1995,7 +1995,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={4}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2017,7 +2017,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -2036,7 +2036,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={4}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2077,7 +2077,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={4}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2096,7 +2096,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -2116,7 +2116,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="3"
                   rowIndex={4}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2157,7 +2157,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="3"
                     rowIndex={4}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2176,7 +2176,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -2237,7 +2237,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowIndex={5}
-              rowMinimumHeight="2.5rem"
+              rowMinimumHeight="auto"
               rowSelectionMode="multiple"
               tableId="test-terra-table"
             >
@@ -2249,7 +2249,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseLeave={[Function]}
                 style={
                   Object {
-                    "minHeight": "2.5rem",
+                    "minHeight": "auto",
                   }
                 }
               >
@@ -2393,7 +2393,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={5}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2434,7 +2434,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={5}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2456,7 +2456,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -2475,7 +2475,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={5}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2516,7 +2516,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={5}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2535,7 +2535,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >
@@ -2554,7 +2554,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   onCellSelect={[Function]}
                   rowId="4"
                   rowIndex={5}
-                  rowMinimumHeight="2.5rem"
+                  rowMinimumHeight="auto"
                   tableId="test-terra-table"
                 >
                   <Cell
@@ -2595,7 +2595,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     onCellSelect={[Function]}
                     rowId="4"
                     rowIndex={5}
-                    rowMinimumHeight="2.5rem"
+                    rowMinimumHeight="auto"
                     sectionId=""
                     tableId="test-terra-table"
                   >
@@ -2614,7 +2614,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                         className="cell-content"
                         style={
                           Object {
-                            "minHeight": "2.5rem",
+                            "minHeight": "auto",
                           }
                         }
                       >

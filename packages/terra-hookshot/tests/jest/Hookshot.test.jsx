@@ -6,12 +6,12 @@ import {
 
 // Snapshot Tests
 it('should shallow a default component', () => {
-  const hookshot = shallow(<HookshotDefaultExample />);
+  const hookshot = enzyme.shallow(<HookshotDefaultExample />);
   expect(hookshot).toMatchSnapshot();
 });
 
 it('should render a default component', () => {
-  const hookshot = render(<HookshotDefaultExample />);
+  const hookshot = enzyme.render(<HookshotDefaultExample />);
   expect(hookshot).toMatchSnapshot();
 });
 

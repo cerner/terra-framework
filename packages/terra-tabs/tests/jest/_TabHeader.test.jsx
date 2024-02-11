@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -19,7 +18,7 @@ describe('TabHeader', () => {
 
     expect(screen.getByText('Test Title', { selector: 'div' })).toHaveAttribute('aria-hidden', 'true');
 
-    const wrapper = mountWithIntl(<TabHeader title="Test Title" />);
+    const wrapper = enzymeIntl.mountWithIntl(<TabHeader title="Test Title" />);
     expect(wrapper).toMatchSnapshot();
   });
 });

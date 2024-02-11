@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import CompactInteractiveList from '../../src/CompactInteractiveList';
 import rows from './rowsData';
 
@@ -37,7 +35,7 @@ describe('Compact Interactive List', () => {
     ];
 
     it('should match a snapshot', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-fixed-width"
           rows={rows}
@@ -48,7 +46,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('should not apply minimumWidth and maximumWidth to cells and the list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-fixed-width"
           rows={rows}
@@ -69,7 +67,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('should not apply default minimumWidth to fixed width list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-fixed-width"
           rows={rows}
@@ -82,7 +80,7 @@ describe('Compact Interactive List', () => {
 
     it('should not apply columnMaximumWidth and columnMinimumWidth props to fixed columns width', () => {
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list"
           rows={rows}
@@ -131,7 +129,7 @@ describe('Compact Interactive List', () => {
           width: '20px',
         },
       ];
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-minWidth-calculation"
           rows={rows}
@@ -162,7 +160,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-minWidth-calculation"
           rows={rows}
@@ -198,7 +196,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-compare-min-width"
           rows={rows}
@@ -241,7 +239,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-compare-min-width"
           rows={rows}
@@ -280,7 +278,7 @@ describe('Compact Interactive List', () => {
           displayName: 'Col_3',
         },
       ];
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-compare-min-width"
           rows={rows}
@@ -325,7 +323,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 4;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-vertical-flow"
           rows={rows}
@@ -383,7 +381,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 4;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-horisontal-flow"
           rows={rows}
@@ -434,7 +432,7 @@ describe('Compact Interactive List', () => {
         },
       ];
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-width-unitType"
           rows={rows}
@@ -480,7 +478,7 @@ describe('Compact Interactive List', () => {
         },
       ];
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-width-unitType-2"
           rows={rows}
@@ -553,7 +551,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/Left Arrows should move through cells and stop at the visual row end/start', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -604,7 +602,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -647,7 +645,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/left Arrow Keys + metaKey and Right/left Arrow Keys + ctrl + metaKey should take to the end/start of the visual row/list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -688,7 +686,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -778,7 +776,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/Left Arrows should move through cells and stop at the visual row end/start', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -829,7 +827,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -872,7 +870,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/left Arrow Keys + metaKey and Right/left Arrow Keys + ctrl + metaKey should take to the end/start of the visual row/list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -913,7 +911,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -1001,7 +999,7 @@ describe('Compact Interactive List', () => {
         />
       );
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testList, {
           attachTo: document.body,
         },
@@ -1060,7 +1058,7 @@ describe('Compact Interactive List', () => {
       ];
       const mockOnCellSelect = jest.fn();
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-space-key-on-cell"
           rows={newRows}
