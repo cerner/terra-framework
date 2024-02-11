@@ -83,10 +83,12 @@
 
   .action-cell {
     border-top: none;
+    padding: 2px;
+    text-align: left;
   }
 
   // Hover state for selectable elements
-  .selectable:hover {
+  .selectable:hover:not(.action-cell) {
     background-color: var(--terra-table-header-hover-background-color, #daecf6);
     cursor: pointer;
   }

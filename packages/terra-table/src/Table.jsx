@@ -420,7 +420,7 @@ function Table(props) {
     return () => {
       resizeObserver.disconnect();
     };
-  }, [tableRef]);
+  }, [hasColumnHeaderActions, tableRef]);
 
   // -------------------------------------
 

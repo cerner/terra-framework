@@ -78,7 +78,6 @@ const propTypes = {
 
 const defaultProps = {
   hasVisibleColumnHeaders: true,
-  hasColumnHeaderActions: true, // TODO - remove this to accomodate actual actions
 };
 
 const ColumnHeader = (props) => {
@@ -127,12 +126,6 @@ const ColumnHeader = (props) => {
     }
   }, [activeResizeHandlerColumnId, activeResizeHandlerNeighborCell]);
 
-  // TODO - remove this once actual actions added
-  const defaultAction = {
-    label: 'action label',
-    onCall: () => alert('Action called!'),
-  };
-
   // resizeHandlerInitHeight is needed to adjust the heder column resize handler to accomodate actions header height
   const resizeHandlerInitHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
 
@@ -150,7 +143,6 @@ const ColumnHeader = (props) => {
             id={`${column.id}-headerCell`}
             tableId={tableId}
             columnId={column.id}
-            hasColumnHeaderActions={hasColumnHeaderActions}
             columnIndex={columnIndex}
             displayName={column.displayName}
             isDisplayVisible={column.isDisplayVisible}
@@ -190,9 +182,8 @@ const ColumnHeader = (props) => {
               tableId={tableId}
               columnId={column.id}
               isActionCell
-              action={column.action || (columnIndex % 2 === 0 ? undefined : defaultAction)}
+              action={column.action}
               columnIndex={columnIndex}
-              // TODO - currently displayName is passed as action prop, check if needs change
               isDisplayVisible={column.isDisplayVisible}
               width={column.width}
               minimumWidth={column.minimumWidth}

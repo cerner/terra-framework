@@ -8,7 +8,7 @@ import Table, {
   GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex,
 } from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+import WorklistDataGridUtils, { checkForColumnActions } from './utils/WorklistDataGridUtils';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -206,7 +206,8 @@ const DataGrid = forwardRef((props, ref) => {
 
   const [checkResizable, setCheckResizable] = useState(false);
 
-  const hasColumnHeaderActions = true; // TODO add method to calculate if there are actions
+  const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
+
   // eslint-disable-next-line no-nested-ternary
   const firstRowIndex = hasVisibleColumnHeaders ? 0 : (hasColumnHeaderActions ? 2 : 1);
 

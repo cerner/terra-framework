@@ -79,11 +79,6 @@ const propTypes = {
   isSelectable: PropTypes.bool,
 
   /**
-   * Boolean value indicating whether or not the column header has additional row for actions.
-   */
-  hasColumnHeaderActions: PropTypes.bool,
-
-  /**
    * Boolean value indicating whether or not the column header cell is an action cell.
    */
   isActionCell: PropTypes.bool,
@@ -187,7 +182,6 @@ const ColumnHeaderCell = (props) => {
   const {
     id,
     tableId,
-    hasColumnHeaderActions,
     isActionCell,
     action,
     displayName,
@@ -385,7 +379,7 @@ const ColumnHeaderCell = (props) => {
             <VisuallyHiddenText text={headerDescription} />
           </div>
         )}
-      { isResizable && hasColumnHeaderActions && !isActionCell && (
+      { isResizable && !isActionCell && (
       <ColumnResizeHandle
         columnIndex={columnIndex}
         columnText={displayName}
