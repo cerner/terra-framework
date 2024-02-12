@@ -1,6 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 import RollupPill from '../../src/subcomponents/_RollupPill';
 
@@ -15,17 +13,17 @@ describe('Rollup Pill', () => {
   });
 
   it('should render rollup pill with the label "4 more"', () => {
-    const wrapper = mountWithIntl(<RollupPill isCollapsed rollupCount={4} />);
+    const wrapper = enzymeIntl.mountWithIntl(<RollupPill isCollapsed rollupCount={4} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render rollup pill with the label "show less" when isCollapsed is false', () => {
-    const wrapper = mountWithIntl(<RollupPill isCollapsed={false} rollupCount={3} />);
+    const wrapper = enzymeIntl.mountWithIntl(<RollupPill isCollapsed={false} rollupCount={3} />);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render rollup pill with the label "show less" when isCollapsed is true and rollupCount is 0', () => {
-    const wrapper = mountWithIntl(<RollupPill isCollapsed rollupCount={0} />);
+    const wrapper = enzymeIntl.mountWithIntl(<RollupPill isCollapsed rollupCount={0} />);
     expect(wrapper).toMatchSnapshot();
   });
 });

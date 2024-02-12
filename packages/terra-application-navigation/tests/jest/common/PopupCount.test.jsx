@@ -3,7 +3,7 @@ import PopupCount from '../../../src/common/_PopupCount';
 
 describe('PopupCount', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupCount />,
     );
 
@@ -11,7 +11,7 @@ describe('PopupCount', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupCount
         value={1}
       />,

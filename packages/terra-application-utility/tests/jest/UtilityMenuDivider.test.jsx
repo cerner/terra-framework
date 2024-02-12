@@ -5,12 +5,12 @@ describe('Divider', () => {
   const defaultRender = <Divider />;
 
   it('should render a default utility menu divider', () => {
-    const wrapper = shallow(defaultRender);
+    const wrapper = enzyme.shallow(defaultRender);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('it should pass in a custom prop', () => {
-    const wrapper = shallow(<Divider id="testDivider" />);
+    const wrapper = enzyme.shallow(<Divider id="testDivider" />);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -19,7 +19,7 @@ describe('Divider', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = mount(defaultRender);
+    const wrapper = enzyme.mount(defaultRender);
     expect(wrapper).toMatchSnapshot();
   });
 });

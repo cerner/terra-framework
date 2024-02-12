@@ -18,7 +18,7 @@ describe('ApplicationMenuWrapper', () => {
       />
     );
 
-    const result = shallow(testWrapper);
+    const result = enzyme.shallow(testWrapper);
 
     expect(result).toMatchSnapshot();
   });
@@ -53,7 +53,7 @@ describe('ApplicationMenuWrapper', () => {
       />
     );
 
-    const result = shallow(testWrapper);
+    const result = enzyme.shallow(testWrapper);
 
     expect(result).toMatchSnapshot();
   });

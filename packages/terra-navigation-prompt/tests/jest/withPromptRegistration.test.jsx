@@ -9,7 +9,7 @@ describe('withPromptRegistration', () => {
 
     const WrappedComponent = withPromptRegistration(TestComponent);
 
-    const wrapper = mount(<WrappedComponent />);
+    const wrapper = enzyme.mount(<WrappedComponent />);
     expect(wrapper).toMatchSnapshot();
   });
 });

@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
@@ -61,7 +60,7 @@ describe('HiddenTab', () => {
     expect(mockOnSelect).toHaveBeenCalledWith('tab-1-key', testMetaData);
     mockOnSelect.mockClear();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider>
         <HiddenTab
           id="tab-1"

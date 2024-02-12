@@ -1,13 +1,11 @@
 import React from 'react';
 import ActionHeader from 'terra-action-header';
 import Button from 'terra-button';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import FolderTree from '../../src';
 
 describe('basic folder tree', () => {
   it('renders a folder tree with one level of children and no subfolders', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree title="Documents">
         <FolderTree.Item label="Cat" />
         <FolderTree.Item label="Dog" />
@@ -28,7 +26,7 @@ describe('basic folder tree', () => {
   });
 
   it('renders a folder tree item with subitems', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FolderTree.Item
         label="parent folder tree item"
         subfolderItems={[
@@ -48,7 +46,7 @@ describe('basic folder tree', () => {
   });
 
   it('hides folder items when enclosing folder is collapsed', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree title="Documents">
         <FolderTree.Item
           label="Animals"
@@ -66,7 +64,7 @@ describe('basic folder tree', () => {
   });
 
   it('shows folder items when enclosing folder is expanded', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree title="Documents">
         <FolderTree.Item
           label="Animals"
@@ -88,7 +86,7 @@ describe('basic folder tree', () => {
     const onClick = jest.fn();
     const onToggle = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree.Item
         label="Animals"
         onClick={onClick}
@@ -109,7 +107,7 @@ describe('basic folder tree', () => {
   it('triggers the onExpandAll callback', () => {
     const onExpandAll = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FolderTree
         title="Documents"
         onExpandAll={onExpandAll}
@@ -132,7 +130,7 @@ describe('basic folder tree', () => {
   it('triggers the onCollapseAll callback', () => {
     const onCollapseAll = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FolderTree
         title="Documents"
         onCollapseAll={onCollapseAll}

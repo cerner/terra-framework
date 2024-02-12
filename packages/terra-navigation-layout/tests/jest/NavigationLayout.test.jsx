@@ -20,7 +20,7 @@ const ConfigComponent = () => (
 describe('NavigationLayout', () => {
   // Snapshot Tests
   it('should render a default NavigationLayout', () => {
-    const wrapper = shallow(<NavigationLayout.WrappedComponent
+    const wrapper = enzyme.shallow(<NavigationLayout.WrappedComponent
       location={{
         pathname: '/a/b/c',
       }}
@@ -32,7 +32,7 @@ describe('NavigationLayout', () => {
   });
 
   it('should render a NavigationLayout with provided menu text', () => {
-    const wrapper = shallow(<NavigationLayout.WrappedComponent
+    const wrapper = enzyme.shallow(<NavigationLayout.WrappedComponent
       location={{
         pathname: '/a/b/c',
       }}
@@ -60,7 +60,7 @@ describe('NavigationLayout', () => {
       </NavigationLayout.WrappedComponent>
     );
 
-    const wrapper = shallow(component);
+    const wrapper = enzyme.shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -120,12 +120,12 @@ describe('NavigationLayout', () => {
       </NavigationLayout.WrappedComponent>
     );
 
-    const wrapper = shallow(component);
+    const wrapper = enzyme.shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a NavigationLayout with defaulted components and forward relevant config', () => {
-    const wrapper = shallow(<NavigationLayout.WrappedComponent
+    const wrapper = enzyme.shallow(<NavigationLayout.WrappedComponent
       location={{
         pathname: '/a/b/c',
       }}
@@ -178,7 +178,7 @@ describe('NavigationLayout', () => {
   });
 
   it('should render a NavigationLayout without menu if location does not match config entry', () => {
-    const wrapper = shallow(<NavigationLayout.WrappedComponent
+    const wrapper = enzyme.shallow(<NavigationLayout.WrappedComponent
       location={{
         pathname: '/aa',
       }}

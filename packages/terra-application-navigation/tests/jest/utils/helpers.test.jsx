@@ -48,7 +48,7 @@ describe('useAnimatedCount', () => {
 
     // Rendering with initial value, nothing should get executed
     act(() => {
-      wrapper = mount(<HookWrapper value={1} />);
+      wrapper = enzyme.mount(<HookWrapper value={1} />);
     });
 
     expect(wrapper.find('div')).toBeDefined();
