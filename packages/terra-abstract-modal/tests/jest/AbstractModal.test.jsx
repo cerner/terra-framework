@@ -11,13 +11,13 @@ it('should mount an open modal', () => {
   expect(modal).toMatchSnapshot();
 });
 
-it('should mount an open modal with enableFocusLock set to true', () => {
-  const modal = mountWithIntl(<AbstractModalExample enableFocusLock />);
+it('should mount an open modal with shouldTrapFocus set to true', () => {
+  const modal = enzymeIntl.mountWithIntl(<AbstractModalExample shouldTrapFocus />);
   expect(modal).toMatchSnapshot();
 });
 
-it('should mount an open modal with enableFocusLock set to false', () => {
-  const modal = mountWithIntl(<AbstractModalExample enableFocusLock={false} />);
+it('should mount an open modal with shouldTrapFocus set to false', () => {
+  const modal = enzymeIntl.mountWithIntl(<AbstractModalExample shouldTrapFocus={false} />);
   expect(modal).toMatchSnapshot();
 });
 
