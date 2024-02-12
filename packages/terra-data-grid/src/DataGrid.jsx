@@ -5,10 +5,10 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import Table, {
-  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex,
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, checkForColumnActions,
 } from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import WorklistDataGridUtils, { checkForColumnActions } from './utils/WorklistDataGridUtils';
+import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -590,7 +590,6 @@ const DataGrid = forwardRef((props, ref) => {
           onCellSelect={onCellSelect}
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
-          hasColumnHeaderActions={hasColumnHeaderActions}
           isStriped
           rowMinimumHeight={rowMinimumHeight}
         />

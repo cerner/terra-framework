@@ -20,6 +20,7 @@ import validateRowHeaderIndex from './proptypes/validators';
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
 import getFocusableElements from './utils/focusManagement';
+import checkForColumnActions from './utils/actionsUtils';
 
 const cx = classNames.bind(styles);
 
@@ -172,11 +173,6 @@ const propTypes = {
   isStriped: PropTypes.bool,
 
   /**
-   * A Boolean value specifying whether the table has actions in column headers.
-   */
-  hasColumnHeaderActions: PropTypes.bool,
-
-  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -221,7 +217,6 @@ function Table(props) {
     onRowSelectionHeaderSelect,
     hasVisibleColumnHeaders,
     isStriped,
-    hasColumnHeaderActions,
     rowHeaderIndex,
     intl,
     rowMinimumHeight,
@@ -403,6 +398,8 @@ function Table(props) {
     setPinnedColumnOffsets(offsetArray);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
+
+  const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
 
   // useEffect for managing the table height.
   useEffect(() => {
