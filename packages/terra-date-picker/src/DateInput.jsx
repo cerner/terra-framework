@@ -533,10 +533,6 @@ const DatePickerInput = (props) => {
       inputTypeValue = DateUtil.inputTypeString.YEARVALUE;
     }
 
-    if ((day.length === 2 && month.length === 2 && year.length === 4) && event.key.match(/^[0-9]/g)) {
-      event.currentTarget.value = ''; // eslint-disable-line no-param-reassign
-    }
-
     if (day.length === 2 && month.length === 2 && year.length === 4) {
       inputDate = DateUtil.convertToISO8601(`${year}-${month}-${day}`, DateUtil.ISO_EXTENDED_DATE_FORMAT);
       formattedDate = DateUtil.strictFormatISODate(inputDate, momentDateFormat);
