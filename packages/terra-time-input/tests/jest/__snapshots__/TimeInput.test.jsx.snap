@@ -93,25 +93,20 @@ exports[`correctly applies the theme context className 1`] = `
         className="time-input-container orion-fusion-theme"
       >
         <div
-          aria-label="Terra.timeInput.a11yLabelDefault"
           className="time-input"
           role="group"
         >
-          <AccessibleValue
-            readThis="Terra.timeInput.labeledTextValue"
+          <VisuallyHiddenText
+            aria-live="polite"
+            text="Terra.timeInput.labeledTextValue"
           >
-            <VisuallyHiddenText
-              aria-hidden={true}
-              text="Terra.timeInput.labeledTextValue"
+            <span
+              aria-live="polite"
+              className="visually-hidden-text"
             >
-              <span
-                aria-hidden={true}
-                className="visually-hidden-text"
-              >
-                Terra.timeInput.labeledTextValue
-              </span>
-            </VisuallyHiddenText>
-          </AccessibleValue>
+              Terra.timeInput.labeledTextValue
+            </span>
+          </VisuallyHiddenText>
           <input
             name="time-input"
             type="hidden"
@@ -157,7 +152,7 @@ exports[`correctly applies the theme context className 1`] = `
               refCallback={[Function]}
               required={false}
               size="2"
-              type="text"
+              type="number"
               value=""
             >
               <input
@@ -176,7 +171,7 @@ exports[`correctly applies the theme context className 1`] = `
                 pattern="\\\\d*"
                 required={false}
                 size="2"
-                type="text"
+                type="number"
                 value=""
               />
             </Input>
@@ -275,7 +270,7 @@ exports[`correctly applies the theme context className 1`] = `
               refCallback={[Function]}
               required={false}
               size="2"
-              type="text"
+              type="number"
               value=""
             >
               <input
@@ -294,7 +289,7 @@ exports[`correctly applies the theme context className 1`] = `
                 pattern="\\\\d*"
                 required={false}
                 size="2"
-                type="text"
+                type="number"
                 value=""
               />
             </Input>
@@ -343,12 +338,12 @@ exports[`should ignore invalid times properly 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -421,12 +416,12 @@ exports[`should ignore invalid times with seconds properly 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -526,12 +521,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     class="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
       <span
-        aria-hidden="true"
+        aria-live="polite"
         class="visually-hidden-text"
       >
         Terra.timeInput.labeledTextValue
@@ -551,7 +545,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         name="terra-time-hour-time-input"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -577,7 +571,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         name="terra-time-minute-time-input"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -648,12 +642,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     class="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
       <span
-        aria-hidden="true"
+        aria-live="polite"
         class="visually-hidden-text"
       >
         Terra.timeInput.labeledTextValue
@@ -673,7 +666,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         name="terra-time-hour-time-input-2"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -699,7 +692,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         name="terra-time-minute-time-input-2"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -770,12 +763,11 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
     class="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       class="time-input"
       role="group"
     >
       <span
-        aria-hidden="true"
+        aria-live="polite"
         class="visually-hidden-text"
       >
         Terra.timeInput.labeledTextValue
@@ -795,7 +787,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         name="terra-time-hour-time-input-3"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -821,7 +813,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         name="terra-time-minute-time-input-3"
         pattern="\\\\d*"
         size="2"
-        type="text"
+        type="number"
         value=""
       />
       <span
@@ -952,7 +944,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             name="terra-time-hour-time-input"
             pattern="\\\\d*"
             size="2"
-            type="text"
+            type="number"
             value=""
           />,
         ],
@@ -974,25 +966,20 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
     className="time-input-container"
   >
     <div
-      aria-label="Terra.timeInput.a11yLabelDefault"
       className="time-input"
       role="group"
     >
-      <AccessibleValue
-        readThis="Terra.timeInput.labeledTextValue"
+      <VisuallyHiddenText
+        aria-live="polite"
+        text="Terra.timeInput.labeledTextValue"
       >
-        <VisuallyHiddenText
-          aria-hidden={true}
-          text="Terra.timeInput.labeledTextValue"
+        <span
+          aria-live="polite"
+          className="visually-hidden-text"
         >
-          <span
-            aria-hidden={true}
-            className="visually-hidden-text"
-          >
-            Terra.timeInput.labeledTextValue
-          </span>
-        </VisuallyHiddenText>
-      </AccessibleValue>
+          Terra.timeInput.labeledTextValue
+        </span>
+      </VisuallyHiddenText>
       <input
         name="time-input"
         type="hidden"
@@ -1038,7 +1025,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           refCallback={[Function]}
           required={false}
           size="2"
-          type="text"
+          type="number"
           value=""
         >
           <input
@@ -1057,7 +1044,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             pattern="\\\\d*"
             required={false}
             size="2"
-            type="text"
+            type="number"
             value=""
           />
         </Input>
@@ -1156,7 +1143,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           refCallback={[Function]}
           required={false}
           size="2"
-          type="text"
+          type="number"
           value=""
         >
           <input
@@ -1175,7 +1162,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             pattern="\\\\d*"
             required={false}
             size="2"
-            type="text"
+            type="number"
             value=""
           />
         </Input>
@@ -1222,12 +1209,12 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1352,12 +1339,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
     <span
-      aria-hidden="true"
+      aria-live="polite"
       class="visually-hidden-text"
     >
       Terra.timeInput.labeledTextValue
@@ -1377,7 +1363,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1403,7 +1389,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1429,7 +1415,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       name="terra-time-second-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1503,12 +1489,11 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
     <span
-      aria-hidden="true"
+      aria-live="polite"
       class="visually-hidden-text"
     >
       Terra.timeInput.labeledTextValue
@@ -1528,7 +1513,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1554,7 +1539,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1628,12 +1613,11 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
     <span
-      aria-hidden="true"
+      aria-live="polite"
       class="visually-hidden-text"
     >
       Terra.timeInput.labeledTextValue
@@ -1653,7 +1637,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1679,7 +1663,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1710,12 +1694,11 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
     <span
-      aria-hidden="true"
+      aria-live="polite"
       class="visually-hidden-text"
     >
       Terra.timeInput.labeledTextValue
@@ -1735,7 +1718,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1761,7 +1744,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1787,7 +1770,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       name="terra-time-second-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -1818,12 +1801,12 @@ exports[`should render a default time input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1896,12 +1879,12 @@ exports[`should render a disabled time input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="disabled time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -1974,12 +1957,12 @@ exports[`should render a time input with 12 hour clock set 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2080,13 +2063,12 @@ exports[`should render a time input with a default time 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-      value="Terra.timeInput.textValueTwentyFourHourMinute"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2159,12 +2141,12 @@ exports[`should render a time input with custom attributes 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2239,12 +2221,12 @@ exports[`should render a time input with onBlur 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2317,12 +2299,12 @@ exports[`should render a time input with onChange 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2395,12 +2377,12 @@ exports[`should render a time input with onFocus 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2473,12 +2455,12 @@ exports[`should render a time input with seconds input 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2575,13 +2557,12 @@ exports[`should render a time input with seconds input and a value 1`] = `
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
-      value="Terra.timeInput.textValueTwentyFourHourMinuteSecond"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2678,12 +2659,12 @@ exports[`should render a time input with seconds input and custom attributes 1`]
   className="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     className="time-input"
     role="group"
   >
-    <AccessibleValue
-      readThis="Terra.timeInput.labeledTextValue"
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
     />
     <input
       name="time-input"
@@ -2783,12 +2764,11 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
     <span
-      aria-hidden="true"
+      aria-live="polite"
       class="visually-hidden-text"
     >
       Terra.timeInput.labeledTextValue
@@ -2809,7 +2789,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -2836,7 +2816,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -2867,12 +2847,11 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
   class="time-input-container"
 >
   <div
-    aria-label="Terra.timeInput.a11yLabelDefault"
     class="time-input"
     role="group"
   >
     <span
-      aria-hidden="true"
+      aria-live="polite"
       class="visually-hidden-text"
     >
       Terra.timeInput.labeledTextValue
@@ -2893,7 +2872,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       name="terra-time-hour-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -2920,7 +2899,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       name="terra-time-minute-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -2947,7 +2926,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       name="terra-time-second-time-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
