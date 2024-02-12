@@ -13,4 +13,3 @@ const WorklistDataGridUtils = {
 };
 
 export default WorklistDataGridUtils;
-
