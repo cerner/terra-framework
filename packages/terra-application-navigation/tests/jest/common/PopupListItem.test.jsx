@@ -3,7 +3,7 @@ import PopupMenuListItem from '../../../src/common/_PopupMenuListItem';
 
 describe('PopupMenuListItem', () => {
   it('should render with required prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenuListItem
         id="test-menu-item"
         text="my text"
@@ -15,7 +15,7 @@ describe('PopupMenuListItem', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenuListItem
         icon={<div>test</div>}
         notificationCount={1}
@@ -28,7 +28,7 @@ describe('PopupMenuListItem', () => {
   });
 
   it('should render with showSelections', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenuListItem
         text="my text"
         onSelect={jest.fn()}
@@ -41,7 +41,7 @@ describe('PopupMenuListItem', () => {
   });
 
   it('should render without showSelections', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenuListItem
         text="my text"
         onSelect={jest.fn()}
@@ -57,7 +57,7 @@ describe('PopupMenuListItem', () => {
     const mockCallBack2 = jest.fn();
     const mockCallBack3 = jest.fn();
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <PopupMenuListItem
         text="my text"
         onSelect={mockCallBack}

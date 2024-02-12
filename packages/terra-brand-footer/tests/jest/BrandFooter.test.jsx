@@ -6,13 +6,13 @@ describe('BrandFooter', () => {
 
   // Snapshot Tests
   it('should render a default component', () => {
-    const wrapper = shallow(<BrandFooter />);
+    const wrapper = enzyme.shallow(<BrandFooter />);
     expect(wrapper).toMatchSnapshot();
   });
 
   // Prop Tests
   it('should render with provided links', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       sections={[
         {
           links: [
@@ -26,7 +26,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render a section header', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       sections={[
         {
           headerText: 'Cerner Links',
@@ -37,7 +37,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with a section header and provided links', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       sections={[
         {
           headerText: 'Cerner Links',
@@ -52,7 +52,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with multiple link groups', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       sections={[
         {
           headerText: 'Cerner Links',
@@ -74,7 +74,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with provided content left', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       contentLeft={
         <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
@@ -83,7 +83,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with provided content right', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       contentRight={(
         <div>
           <p><small>Powered by</small></p>
@@ -95,7 +95,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with provided content bottom', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       contentBottom={(
         <p>
           <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
@@ -121,7 +121,7 @@ describe('BrandFooter', () => {
         }
       />
     );
-    const wrapper = shallow(component);
+    const wrapper = enzyme.shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -144,7 +144,7 @@ describe('BrandFooter', () => {
 )}
       />
     );
-    const wrapper = shallow(component);
+    const wrapper = enzyme.shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -166,7 +166,7 @@ describe('BrandFooter', () => {
 )}
       />
     );
-    const wrapper = shallow(component);
+    const wrapper = enzyme.shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -197,7 +197,7 @@ describe('BrandFooter', () => {
 )}
       />
     );
-    const wrapper = shallow(component);
+    const wrapper = enzyme.shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -217,12 +217,12 @@ describe('BrandFooter', () => {
       }
       />
     );
-    const wrapper = shallow(component);
+    const wrapper = enzyme.shallow(component);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render with provided links and content right', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       sections={[
         {
           links: [
@@ -242,7 +242,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with provided links and content bottom', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       sections={[
         {
           links: [
@@ -261,7 +261,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with provided links, content left, content bottom and content right', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       sections={[
         {
           links: [
@@ -289,7 +289,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with content bottom and content left', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       contentBottom={(
         <p>
           <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
@@ -303,7 +303,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with content bottom and content right', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       contentBottom={(
         <p>
           <small>Copyright &copy; 2018 Cerner Corporation.  All Rights Reserved.</small>
@@ -320,7 +320,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with content bottom, content right and content left', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       contentLeft={
         <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
@@ -340,7 +340,7 @@ describe('BrandFooter', () => {
   });
 
   it('should render with content right and content left', () => {
-    const wrapper = shallow(<BrandFooter
+    const wrapper = enzyme.shallow(<BrandFooter
       contentLeft={
         <img src="https://github.com/cerner/terra-core/raw/main/terra.png" alt="terra-ui" height="40px" width="40px" />
         }
@@ -356,7 +356,7 @@ describe('BrandFooter', () => {
 
   // Structure Tests
   it('should have the class brand-footer', () => {
-    const wrapper = shallow(defaultRender);
+    const wrapper = enzyme.shallow(defaultRender);
     expect(wrapper.prop('className')).toContain('brand-footer');
   });
 
@@ -365,7 +365,7 @@ describe('BrandFooter', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = shallow(<BrandFooter />);
+    const wrapper = enzyme.shallow(<BrandFooter />);
     expect(wrapper).toMatchSnapshot();
   });
 });

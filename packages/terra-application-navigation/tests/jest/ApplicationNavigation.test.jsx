@@ -1,8 +1,6 @@
 import React from 'react';
 import { ActiveBreakpointContext } from 'terra-breakpoints';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import ApplicationNavigation from '../../src/ApplicationNavigation';
 
 describe('ApplicationNavigation', () => {
@@ -28,7 +26,7 @@ describe('ApplicationNavigation', () => {
   });
 
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ApplicationNavigation />,
     );
 
@@ -38,7 +36,7 @@ describe('ApplicationNavigation', () => {
   it('should render with prop data at large breakpoint', () => {
     breakpointContextValue = 'large';
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ApplicationNavigation
         activeBreakpoint="large"
         titleConfig={{
@@ -74,7 +72,7 @@ describe('ApplicationNavigation', () => {
   it('should render with prop data at medium breakpoint', () => {
     breakpointContextValue = 'medium';
 
-    const shallowComponent = shallow((
+    const shallowComponent = enzyme.shallow((
       <ApplicationNavigation
         titleConfig={{
           title: 'test-title',
@@ -107,7 +105,7 @@ describe('ApplicationNavigation', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const appNav = mountWithIntl(
+    const appNav = enzymeIntl.mountWithIntl(
       <ThemeContextProvider theme={{ className: 'clinical-lowlight-theme' }}>
         <ApplicationNavigation />
       </ThemeContextProvider>,

@@ -3,7 +3,7 @@ import Extension from '../../../src/extensions/_Extension';
 
 describe('Extension', () => {
   it('should render with required prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Extension
         icon={<span>my icon</span>}
         text="my text"
@@ -14,7 +14,7 @@ describe('Extension', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Extension
         icon={<span>my icon</span>}
         notificationCount={1}
@@ -26,7 +26,7 @@ describe('Extension', () => {
   });
 
   it('should render with function callbacks', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Extension
         icon={<span>my icon</span>}
         text="my text"
@@ -42,7 +42,7 @@ describe('Extension', () => {
     const mockCallBack = jest.fn();
     const mockCallBack2 = jest.fn();
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Extension
         icon={<span>my icon</span>}
         text="my text"

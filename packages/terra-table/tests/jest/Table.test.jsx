@@ -1,8 +1,6 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 
 import ColumnHeader from '../../src/subcomponents/ColumnHeader';
@@ -149,7 +147,7 @@ afterAll(() => {
 
 describe('Table', () => {
   it('verifies that the table created has a column header', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Table
           id="test-terra-table"
@@ -168,7 +166,7 @@ describe('Table', () => {
   it('verifies row selection column header selection', () => {
     const mockColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
@@ -195,7 +193,7 @@ describe('Table', () => {
   it('verifies column selection header callback for table context', () => {
     const mockColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
@@ -219,7 +217,7 @@ describe('Table', () => {
   it('verifies column selection via spacebar for table context', () => {
     const mockColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
@@ -243,7 +241,7 @@ describe('Table', () => {
   it('verifies column selection header callback for non-selectable header in table context', () => {
     const mockColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
@@ -267,7 +265,7 @@ describe('Table', () => {
   it('verifies column selection via spacebar for non-selectable header in table context', () => {
     const mockColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
@@ -289,7 +287,7 @@ describe('Table', () => {
   });
 
   it('verifies ARIA attributes for a table with sections', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         overflowColumns={tableSectionData.cols}
@@ -366,7 +364,7 @@ describe('Table', () => {
   });
 
   it('verifies ARIA attributes for a table without sections', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         overflowColumns={tableSectionData.cols}
@@ -424,7 +422,7 @@ describe('Table', () => {
   it('verifies row selection column header not selectable without callback', () => {
     const mockColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         pinnedColumns={tableData.cols.slice(0, 2)}
@@ -448,7 +446,7 @@ describe('Table', () => {
   it('verifies onCellSelect callback is triggered when space is pressed on a masked cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <GridContext.Provider value={{ role: GridConstants.GRID }}>
         <Table
           id="test-terra-table"
@@ -474,7 +472,7 @@ describe('Table', () => {
   it('verifies onCellSelect callback is triggered when space is pressed on a non-selectable cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <GridContext.Provider value={{ role: GridConstants.GRID }}>
         <Table
           id="test-terra-table"
@@ -498,7 +496,7 @@ describe('Table', () => {
   });
 
   it('verifies that the column widths are set properly in the colgroup', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Table
           id="test-terra-table"
@@ -519,7 +517,7 @@ describe('with pinned columns', () => {
   it('sets pinnedColumns as pinned', () => {
     const pinnedColumns = tableData.cols.slice(0, 2);
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         pinnedColumns={pinnedColumns}
@@ -536,7 +534,7 @@ describe('with pinned columns', () => {
   it('sets row selection column as pinned', () => {
     const pinnedColumns = tableData.cols.slice(0, 2);
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <GridContext.Provider value={{ role: GridConstants.GRID }}>
         <Table
           id="test-terra-table"
@@ -555,7 +553,7 @@ describe('with pinned columns', () => {
   });
 
   it('pins row selection column if pinnedColumns is undefined', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <GridContext.Provider value={{ role: GridConstants.GRID }}>
         <Table
           id="sdfdss"
@@ -575,7 +573,7 @@ describe('with pinned columns', () => {
 
 describe('Row Selection', () => {
   it('verifies row selection row selection update', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <Table
           id="test-terra-table"
@@ -603,7 +601,7 @@ describe('Row Selection', () => {
     initialRows[0] = { ...tableData.rows[0] };
     initialRows[0].isSelected = true;
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         overflowColumns={tableData.cols}
@@ -630,7 +628,7 @@ describe('Row Selection', () => {
     const initialRows = [...tableData.rows.slice(0, 1)];
     initialRows[0] = { ...initialRows[0] };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         overflowColumns={tableData.cols}
@@ -653,7 +651,7 @@ describe('Row Selection', () => {
   });
 
   it('verifies row selection all rows unselected update', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         overflowColumns={tableData.cols}
@@ -675,7 +673,7 @@ describe('Row Selection', () => {
     newRows[3] = { ...tableData.rows[3] };
     newRows[3].isSelected = false;
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         overflowColumns={tableData.cols}
@@ -693,7 +691,7 @@ describe('Row Selection', () => {
   });
 
   it('verifies row selection header has proper visually hidden text', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <Table
         id="test-terra-table"
         overflowColumns={tableData.cols}
@@ -717,7 +715,7 @@ describe('Row Selection', () => {
 
 describe('Error handling - prop types', () => {
   it('throws an error if rowHeaderIndex is not an integer', () => {
-    shallowWithIntl(
+    enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Table
           id="test-terra-table"
@@ -732,7 +730,7 @@ describe('Error handling - prop types', () => {
   });
 
   it('throws an error if rowHeaderIndex is not a positive integer', () => {
-    shallowWithIntl(
+    enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Table
           id="test-terra-table"
@@ -746,7 +744,7 @@ describe('Error handling - prop types', () => {
   });
 
   it('throws an error if rowHeaderIndex is greater than the length of pinned columns', () => {
-    shallowWithIntl(
+    enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Table
           id="test-terra-table"

@@ -424,7 +424,7 @@ describe('ApplicationLayout', () => {
         />
       );
 
-      const result = shallow(applicationLayout);
+      const result = enzyme.shallow(applicationLayout);
 
       expect(result).toMatchSnapshot();
     });
@@ -488,7 +488,7 @@ describe('ApplicationLayout', () => {
         />
       );
 
-      const result = shallow(applicationLayout);
+      const result = enzyme.shallow(applicationLayout);
 
       expect(result).toMatchSnapshot();
     });
@@ -561,7 +561,7 @@ describe('ApplicationLayout', () => {
           navigationItems={testNavigationItems}
         />
       );
-      const wrapper = shallow(subject);
+      const wrapper = enzyme.shallow(subject);
 
       it('matches the snapshot', () => {
         expect(wrapper).toMatchSnapshot();
