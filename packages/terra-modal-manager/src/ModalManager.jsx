@@ -37,7 +37,7 @@ const propTypes = {
   /**
    * If set to true, then the outside click will get enabled.
    */
-  closeOnOutsideClick: PropTypes.bool
+  closeOnOutsideClick: PropTypes.bool,
 };
 
 const defaultProps = {
