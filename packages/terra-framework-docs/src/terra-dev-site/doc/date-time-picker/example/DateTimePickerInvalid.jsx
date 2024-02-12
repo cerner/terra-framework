@@ -23,7 +23,7 @@ const DateTimePickerExampleInvalid = () => {
       <Field label="Enter Date/Time" htmlFor="default-invalid" error="Error Message" isInvalid={isInvalid}>
         <DateTimePicker
           ariaLabel='Enter Date/Time'
-          name="date-time-picker-example"
+          name='date-time-picker-example'
           dateInputAttributes={{ id: 'default-invalid' }}
           onChange={handleDateTimeChange}
           isInvalid={isInvalid}

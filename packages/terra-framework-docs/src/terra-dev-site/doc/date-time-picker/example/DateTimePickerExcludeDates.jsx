@@ -18,7 +18,7 @@ const DateTimePickerExampleExcludeDates = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="exclude-dates">
         <DateTimePicker
-          name="date-time-picker-example"
+          name='date-time-picker-example'
           ariaLabel='Enter Date/Time'
           dateInputAttributes={{ id: 'exclude-dates' }}
           onChange={handleDateTimeChange}

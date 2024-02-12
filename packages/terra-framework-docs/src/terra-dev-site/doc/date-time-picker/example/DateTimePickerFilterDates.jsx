@@ -30,7 +30,7 @@ const DateTimePickerExampleFilterDates = () => {
       <Field label="Enter Date/Time" htmlFor="filter-dates">
         <DateTimePicker
           ariaLabel='Enter Date/Time'
-          name="date-time-picker-example"
+          name='date-time-picker-example'
           dateInputAttributes={{ id: 'filter-dates' }}
           onChange={handleDateTimeChange}
           filterDate={isWeekday}
