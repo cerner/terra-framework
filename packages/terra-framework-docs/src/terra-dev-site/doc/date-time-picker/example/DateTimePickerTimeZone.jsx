@@ -27,6 +27,7 @@ function DateTimePickerTimeZone() {
       </p>
       <Field label="Enter Date/Time" htmlFor="timeZone">
         <DateTimePicker
+          ariaLabel='Enter Date/Time'
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'timezone' }}
           onChange={handleDateTimeChange}

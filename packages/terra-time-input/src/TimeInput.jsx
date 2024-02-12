@@ -1053,6 +1053,7 @@ class TimeInput extends React.Component {
             value={timeValue}
           />
           <AccessibleInput
+            {...customProps}
             {...inputAttributes}
             {...hourAttributes}
             /**
@@ -1087,6 +1088,7 @@ class TimeInput extends React.Component {
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
+            {...customProps}
             {...inputAttributes}
             {...minuteAttributes}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
@@ -1109,6 +1111,7 @@ class TimeInput extends React.Component {
           <React.Fragment>
             <TimeSpacer className={cx('time-spacer')} />
             <AccessibleInput
+              {...customProps}
               {...inputAttributes}
               {...secondAttributes}
               refCallback={(inputRef) => { this.secondInput = inputRef; }}

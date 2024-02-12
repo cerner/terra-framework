@@ -18,6 +18,7 @@ const DateTimePickerExample = () => {
       <Field label="Enter Date/Time" htmlFor="default">
         <DateTimePicker
           name="date-time-picker-example"
+          ariaLabel='Enter Date/Time'
           dateInputAttributes={{ id: 'default' }}
           onChange={handleDateTimeChange}
         />

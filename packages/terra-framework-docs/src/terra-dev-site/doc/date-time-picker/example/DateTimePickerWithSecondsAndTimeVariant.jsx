@@ -19,6 +19,7 @@ const DateTimePickerExampleDateWithSecondsAndTimeVariant = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="defaultDateTimeVariant">
         <DateTimePicker
+          ariaLabel='Enter Date/Time'
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'defaultDateTimeVariant' }}
           onChange={handleDateTimeChange}

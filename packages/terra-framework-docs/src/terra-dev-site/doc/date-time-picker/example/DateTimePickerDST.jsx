@@ -72,6 +72,7 @@ const DateTimePickerExampleDST = () => {
         <DateTimePicker
           name="date-time-picker-example"
           dateInputAttributes={{ id: 'dst-picker' }}
+          ariaLabel='Enter Date/Time'
           onChange={handleDateTimeChange}
           value={initialValue}
           initialTimeZone="America/Chicago"

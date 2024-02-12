@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added the `ariaLabel` props for SR announce.
+
 ## 4.105.0 - (February 1, 2024)
 
 * Fixed
