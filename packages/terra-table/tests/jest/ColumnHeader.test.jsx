@@ -13,7 +13,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -45,7 +45,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         activeResizeIndex={0}
@@ -78,7 +78,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -114,7 +114,7 @@ describe('ColumnHeader', () => {
     const mockColumnSelect = jest.fn();
     const mockResizeMouseDown = jest.fn();
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -151,7 +151,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -178,7 +178,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}

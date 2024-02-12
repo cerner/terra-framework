@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import ColumnResizeHandle from '../../src/subcomponents/ColumnResizeHandle';
 import ColumnContext from '../../src/utils/ColumnContext';
 
@@ -20,7 +18,7 @@ describe('ColumnResizeHandle', () => {
     const mockResizeMouseUp = jest.fn();
 
     // Mount component in test to allow event simulation
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnResizeHandle
         columnIndex={0}
         columnText="Vitals"
@@ -48,7 +46,7 @@ describe('ColumnResizeHandle', () => {
 
   it('executes the callback function on MouseDown', () => {
     const mockResizeMouseDown = jest.fn();
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnResizeHandle
         onResizeMouseDown={mockResizeMouseDown}
       />,
@@ -69,7 +67,7 @@ describe('ColumnResizeHandle', () => {
 
   it('executes the callback function on MouseUp', () => {
     const mockResizeMouseUp = jest.fn();
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnResizeHandle
         onResizeMouseUp={mockResizeMouseUp}
       />,
@@ -83,7 +81,7 @@ describe('ColumnResizeHandle', () => {
   });
 
   it('sets widths if isActive is set to be true', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnResizeHandle
         columnIndex={0}
         columnText="Vitals"
@@ -103,7 +101,7 @@ describe('ColumnResizeHandle', () => {
   });
 
   it('sets the appropriate prop values on space keydown', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
         <ColumnResizeHandle />
       </ColumnContext.Provider>,
@@ -118,7 +116,7 @@ describe('ColumnResizeHandle', () => {
   });
 
   it('sets the appropriate prop values on enter keydown', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
         <ColumnResizeHandle />
       </ColumnContext.Provider>,
@@ -133,7 +131,7 @@ describe('ColumnResizeHandle', () => {
   });
 
   it('sets the appropriate prop values on escape keydown', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
         <ColumnResizeHandle />
       </ColumnContext.Provider>,
@@ -148,7 +146,7 @@ describe('ColumnResizeHandle', () => {
 
   it('increases column width with right arrow', () => {
     const mockResizeHandleChange = jest.fn();
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
         <ColumnResizeHandle
           columnIndex={1}
@@ -167,7 +165,7 @@ describe('ColumnResizeHandle', () => {
 
   it('increases column width with left arrow', () => {
     const mockResizeHandleChange = jest.fn();
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnContext.Provider value={{ setColumnHeaderAriaLiveMessage: jest.fn() }}>
         <ColumnResizeHandle
           columnIndex={1}

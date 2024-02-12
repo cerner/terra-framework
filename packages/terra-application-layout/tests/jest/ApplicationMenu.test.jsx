@@ -14,7 +14,7 @@ describe('ApplicationHeader', () => {
       />
     );
 
-    const result = shallow(testHeader);
+    const result = enzyme.shallow(testHeader);
 
     expect(result).toMatchSnapshot();
   });
@@ -44,13 +44,13 @@ describe('ApplicationHeader', () => {
       />
     );
 
-    const result = shallow(testHeader);
+    const result = enzyme.shallow(testHeader);
 
     expect(result).toMatchSnapshot();
   });
 
   it('correctly applies the theme context className', () => {
-    const testHeader = mount(
+    const testHeader = enzyme.mount(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <ApplicationMenu
           routingStackDelegate={{}}

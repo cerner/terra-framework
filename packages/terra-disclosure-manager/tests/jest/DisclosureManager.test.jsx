@@ -19,7 +19,7 @@ describe('DisclosureManager', () => {
       </DisclosureManager.WrappedComponent>
     );
 
-    const wrapper = mount(disclosureManager);
+    const wrapper = enzyme.mount(disclosureManager);
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -38,11 +38,11 @@ describe('DisclosureManager', () => {
       </DisclosureManager.WrappedComponent>
     );
 
-    const wrapper = mount(disclosureManager);
+    const wrapper = enzyme.mount(disclosureManager);
     expect(wrapper).toMatchSnapshot();
   });
 
-  const mountDisclosureManager = (disclosureTypes, renderFunc) => mount((
+  const mountDisclosureManager = (disclosureTypes, renderFunc) => enzyme.mount((
     <DisclosureManager.WrappedComponent
       render={renderFunc}
       supportedDisclosureTypes={disclosureTypes}
@@ -130,7 +130,7 @@ describe('DisclosureManager', () => {
   });
 
   it('renders disclosed content in the disclosure wrapper', () => {
-    const wrapper = mount(
+    const wrapper = enzyme.mount(
       <DisclosureManager.WrappedComponent
         render={(manager) => (
           <div id="content">
@@ -176,7 +176,7 @@ describe('DisclosureManager', () => {
         })
     );
 
-    const wrapper = mount(
+    const wrapper = enzyme.mount(
       <DisclosureManager.WrappedComponent
         render={(manager) => (
           <div id="content">
@@ -223,7 +223,7 @@ describe('DisclosureManager', () => {
         })
     );
 
-    const wrapper = mount(
+    const wrapper = enzyme.mount(
       <DisclosureManager.WrappedComponent
         render={(manager) => (
           <div id="content">
@@ -272,7 +272,7 @@ describe('DisclosureManager', () => {
         })
     );
 
-    const wrapper = mount(
+    const wrapper = enzyme.mount(
       <DisclosureManager.WrappedComponent
         render={(manager) => (
           <div id="content">
@@ -321,7 +321,7 @@ describe('DisclosureManager', () => {
         })
     );
 
-    const wrapper = mount(
+    const wrapper = enzyme.mount(
       <DisclosureManager.WrappedComponent
         render={(manager) => (
           <div id="content">
@@ -806,7 +806,7 @@ describe('DisclosureManager', () => {
   });
 
   it('should provide the disclosure content with restricted nested disclose functionality if trapNestedDisclosureRequests is enabled', () => {
-    const wrapper = mount((
+    const wrapper = enzyme.mount((
       <DisclosureManager.WrappedComponent
         render={manager => (
           <div id="wrapper">
@@ -1027,7 +1027,7 @@ describe('DisclosureManager', () => {
   });
 
   it('should provide registerDismissCheck to disclosed contents', async () => {
-    const wrapper = mount((
+    const wrapper = enzyme.mount((
       <DisclosureManager.WrappedComponent
         render={manager => (
           <div id="wrapper">

@@ -3,7 +3,7 @@ import ToggleCount from '../../../src/header/_ToggleCount';
 
 describe('ToggleCount', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ToggleCount />,
     );
 
@@ -11,7 +11,7 @@ describe('ToggleCount', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ToggleCount
         value={1}
       />,

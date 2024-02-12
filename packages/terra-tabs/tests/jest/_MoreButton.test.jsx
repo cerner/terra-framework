@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom/extend-expect';
@@ -17,7 +16,7 @@ jest.mock('../../src/common-tabs/_TabUtils', () => ({
 describe('MoreButton', () => {
   test('should render a more button with provided props', () => {
     const testTabIds = ['tab-1', 'tab-2', 'tab-3'];
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider>
         <MoreButton
           hiddenIndex={1}

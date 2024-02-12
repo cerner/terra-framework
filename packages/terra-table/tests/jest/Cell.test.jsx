@@ -1,8 +1,6 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import Cell from '../../src/subcomponents/Cell';
@@ -33,7 +31,7 @@ afterAll(() => {
 
 describe('Cell', () => {
   it('verifies that only a row header cell (<th>) is created when isRowHeader prop is true', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -62,7 +60,7 @@ describe('Cell', () => {
   });
 
   it('verifies that only a regular cell(<td>) is created when isRowHeader prop is false', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -91,7 +89,7 @@ describe('Cell', () => {
   });
 
   it('verifies that the cell rendered is marked selectable when isSelectable prop is true', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -119,7 +117,7 @@ describe('Cell', () => {
   });
 
   it('verifies that the cell rendered is marked blank when the cell content is empty', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -143,7 +141,7 @@ describe('Cell', () => {
   });
 
   it('verifies that a selected cell has the correct styles when isSelected prop is true', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -175,7 +173,7 @@ describe('Cell', () => {
   });
 
   it('verifies that a table cell does not have a FocusTrap element', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -200,7 +198,7 @@ describe('Cell', () => {
   it('verifies that a grid cell has a FocusTrap element', () => {
     jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <GridContext.Provider value={{ role: GridConstants.GRID }}>
         <Cell
           rowId="RowID"
@@ -229,7 +227,7 @@ describe('Cell', () => {
   it('verifies that a grid cell without a focusale element does not have visually hidden text', () => {
     jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <GridContext.Provider value={{ role: GridConstants.GRID }}>
         <Cell
           rowId="RowID"
@@ -256,7 +254,7 @@ describe('Cell', () => {
   });
 
   it('verifies that a cell has the correct styles and no content when isMasked prop is true', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -285,7 +283,7 @@ describe('Cell', () => {
   });
 
   it('verifies that a cell has renders that masked label text, when provided', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -315,7 +313,7 @@ describe('Cell', () => {
   });
 
   it('verifies mask takes precedence when cell is masked, selectable and selected', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <IntlProvider locale="en">
         <Cell
           rowId="RowID"
@@ -351,7 +349,7 @@ describe('Cell', () => {
   it('renders a pinned cell', () => {
     jest.spyOn(console, 'error').mockImplementation(); // eslint-disable-line no-console
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <ColumnContext.Provider value={{ pinnedColumnOffsets: [0] }}>
         <Cell
           rowId="RowID"

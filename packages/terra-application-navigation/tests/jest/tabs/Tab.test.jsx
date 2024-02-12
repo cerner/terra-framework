@@ -3,7 +3,7 @@ import Tab from '../../../src/tabs/_Tab';
 
 describe('Tab', () => {
   it('should render with required prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Tab
         text="my text"
       />,
@@ -13,7 +13,7 @@ describe('Tab', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Tab
         notificationCount={1}
         text="my text"
@@ -37,7 +37,7 @@ describe('Tab', () => {
     }) => <div>{`text=${text} hasCount=${hasCount} isActive=${isActive} notificationCount=${notificationCount}`}</div>;
     /* eslint-enable */
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Tab
         notificationCount={1}
         text="my text"
@@ -55,7 +55,7 @@ describe('Tab', () => {
     const mockCallBack = jest.fn();
     const mockCallBack2 = jest.fn();
 
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <Tab
         text="my text"
         onTabSelect={mockCallBack}
