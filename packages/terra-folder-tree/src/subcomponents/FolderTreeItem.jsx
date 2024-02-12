@@ -202,10 +202,9 @@ const FolderTreeItem = ({
         ref={itemNode}
       >
         {radioButton}
-        {/* eslint-disable-next-line react/forbid-dom-props */}
         <span
           className={cx(!isSelectable && 'non-selectable')}
-          style={{ marginLeft: `${level * 14}px` }}
+          style={{ marginLeft: `${level * 14}px` }} // eslint-disable-line react/forbid-dom-props
         >
           <Arrange
             fitStart={(
