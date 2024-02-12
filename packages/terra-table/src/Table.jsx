@@ -1,5 +1,5 @@
 import React, {
-  useState, useContext, useRef, useCallback, useEffect, useMemo,
+  useState, useContext, useRef, useCallback, useEffect, useLayoutEffect, useMemo,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -9,8 +9,6 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import LodashDebounce from 'lodash.debounce';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
@@ -36,8 +34,6 @@ const TableConstants = {
 };
 
 const ROW_SELECTION_COLUMN_ID = 'table-rowSelectionColumn';
-
-const DEBOUNCE_TIMER = 300;
 
 const propTypes = {
   /**
@@ -402,26 +398,22 @@ function Table(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 
-  const handleResize = () => {
-    setTableHeight(tableRef.current.offsetHeight - 1);
+  // useLayoutEffect for managing the table height.
+  useLayoutEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      setTableHeight(tableRef.current.offsetHeight - 1);
 
-    const tableContainer = tableContainerRef.current;
-    setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
-                      || tableContainer.scrollHeight > tableContainer.clientHeight);
-  };
-
-  const debouncedHandleResize = LodashDebounce(handleResize, DEBOUNCE_TIMER);
-
-  // useEffect for managing the table height.
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver(debouncedHandleResize);
+      const tableContainer = tableContainerRef.current;
+      setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
+                        || tableContainer.scrollHeight > tableContainer.clientHeight);
+    });
 
     resizeObserver.observe(tableRef.current);
 
     return () => {
       resizeObserver.disconnect();
     };
-  }, [debouncedHandleResize]);
+  }, [tableRef]);
 
   // -------------------------------------
 

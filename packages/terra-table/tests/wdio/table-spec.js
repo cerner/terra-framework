@@ -143,7 +143,6 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/scrollable-table');
-      browser.pause(300);
     });
 
     it('Validates first scrollable table receives focus', () => {

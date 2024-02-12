@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added debounce to resize observer.
+  * Moved resize observer to useLayoutEffect to fix loop error.
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
