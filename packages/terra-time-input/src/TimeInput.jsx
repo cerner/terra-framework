@@ -21,7 +21,7 @@ const propTypes = {
   /**
    * String that labels the current element. 'aria-label' must be present for accessibility.
    */
-   ariaLabel: PropTypes.string,
+  ariaLabel: PropTypes.string,
   /**
    * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
    * The label is not rendered visually.
