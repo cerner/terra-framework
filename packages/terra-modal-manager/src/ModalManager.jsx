@@ -34,10 +34,15 @@ const propTypes = {
    * If set to true, then the focus lock will get enabled.
    */
   shouldTrapFocus: PropTypes.bool,
+  /**
+   * If set to true, then the outside click will get enabled.
+   */
+  closeOnOutsideClick: PropTypes.bool
 };
 
 const defaultProps = {
   shouldTrapFocus: false,
+  closeOnOutsideClick: false,
 };
 
 const heightFromSize = {
@@ -76,7 +81,7 @@ class ModalManager extends React.Component {
 
   renderModal(manager) {
     const {
-      children, disclosureAccessory, withDisclosureContainer, shouldTrapFocus, ...customProps
+      children, disclosureAccessory, withDisclosureContainer, shouldTrapFocus, closeOnOutsideClick, ...customProps
     } = this.props;
     const theme = this.context;
 
@@ -111,7 +116,7 @@ class ModalManager extends React.Component {
             manager.closeDisclosure();
           }}
           closeOnEsc
-          closeOnOutsideClick={false}
+          closeOnOutsideClick={closeOnOutsideClick}
           ariaLabel={(headerDataForPresentedComponent) ? headerDataForPresentedComponent.title : customProps['aria-label'] || 'Modal'}
           setModalFocusElementRef={this.setModalFocusElementRef}
           shouldTrapFocus={shouldTrapFocus}
