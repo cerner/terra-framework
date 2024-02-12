@@ -2,6 +2,7 @@
 
 exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with given props 1`] = `
 <ModalManager
+  closeOnOutsideClick={false}
   shouldTrapFocus={false}
 >
   <withRouter(NavigationLayout)
@@ -308,6 +309,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
 
 exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with only required props 1`] = `
 <ModalManager
+  closeOnOutsideClick={false}
   shouldTrapFocus={false}
 >
   <withRouter(NavigationLayout)
@@ -424,6 +426,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
 
 exports[`ApplicationLayout Snapshot Tests when given nav items with icons matches the snapshot 1`] = `
 <ModalManager
+  closeOnOutsideClick={false}
   shouldTrapFocus={false}
 >
   <withRouter(NavigationLayout)
