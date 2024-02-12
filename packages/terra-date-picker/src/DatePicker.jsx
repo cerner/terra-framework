@@ -14,14 +14,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * An identifier used by assistive technologies like screen readers to briefly describe this Date input to users.
-   * The label is not rendered visually.
-   *
-   * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
-   * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
-   */
-  a11yLabel: PropTypes.string,
-  /**
    * String that labels the current element. 'aria-label' must be present for accessibility.
    */
   ariaLabel: PropTypes.string,
@@ -410,7 +402,6 @@ class DatePicker extends React.Component {
 
   render() {
     const {
-      a11yLabel,
       ariaLabel,
       disableButtonFocusOnClose,
       excludeDates,
@@ -507,7 +498,6 @@ class DatePicker extends React.Component {
                 shouldShowPicker={!this.isDefaultDateAcceptable && this.state.selectedDate === null}
                 onButtonFocus={this.handleFocus}
                 buttonRefCallback={(buttonRef) => { this.calendarButton = buttonRef; }}
-                a11yLabel={a11yLabel}
                 ariaLabel={ariaLabel}
                 useExternalFormatMask={useExternalFormatMask}
                 initialTimeZone={initialTimeZone}

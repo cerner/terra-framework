@@ -19,10 +19,6 @@ const cx = classNamesBind.bind(styles);
 
 const propTypes = {
   /**
-   * String that labels the current element. 'aria-label' must be present for accessibility.
-   */
-  ariaLabel: PropTypes.string,
-  /**
    * An identifier used by assistive technologies like screen readers to briefly describe this time input to users.
    * The label is not rendered visually.
    *
@@ -870,7 +866,6 @@ class TimeInput extends React.Component {
 
   render() {
     const {
-      ariaLabel,
       a11yLabel,
       atMaxDate,
       atMinDate,
@@ -1072,7 +1067,6 @@ class TimeInput extends React.Component {
              * because they will always follow their labeled hour field. We didn't want to say the a11yLabel too many
              * times.
              */
-            ariaLabel={ariaLabel}
             label={intl.formatMessage({ id: 'Terra.timeInput.hourLabel' }, { a11yLabel: this.a11yLabel })}
             refCallback={(inputRef) => {
               this.hourInput = inputRef;
@@ -1095,9 +1089,8 @@ class TimeInput extends React.Component {
           <AccessibleInput
             {...inputAttributes}
             {...minuteAttributes}
-            ariaLabel={ariaLabel}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' }, { a11yLabel: this.a11yLabel })}
             className={minuteClassNames}
             type="text"
             value={this.state.minute}
@@ -1118,9 +1111,8 @@ class TimeInput extends React.Component {
             <AccessibleInput
               {...inputAttributes}
               {...secondAttributes}
-              ariaLabel={ariaLabel}
               refCallback={(inputRef) => { this.secondInput = inputRef; }}
-              label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              label={intl.formatMessage({ id: 'Terra.timeInput.seconds' }, { a11yLabel: this.a11yLabel })}
               className={secondClassNames}
               type="text"
               value={this.state.second}

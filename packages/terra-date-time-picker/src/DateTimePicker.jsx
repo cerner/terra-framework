@@ -784,7 +784,7 @@ class DateTimePicker extends React.Component {
 
         <div className={cx('date-facade')}>
           <DatePicker
-            a11yLabel={ariaLabel}
+            ariaLabel={ariaLabel}
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             onChange={this.handleDateChange}
             onChangeRaw={this.handleDateChangeRaw}
@@ -813,7 +813,7 @@ class DateTimePicker extends React.Component {
         </div>
         <div className={cx('time-facade')}>
           <TimeInput
-            ariaLabel={ariaLabel}
+            a11yLabel={ariaLabel}
             onBlur={this.handleOnTimeBlur}
             onChange={this.handleTimeChange}
             onFocus={this.handleOnTimeInputFocus}

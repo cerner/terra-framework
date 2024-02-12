@@ -1406,7 +1406,7 @@ exports[`should render a default date input with all props 1`] = `
           day={
             <Input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label=" Terra.datePicker.dayLabel"
+              aria-label="Aria Label text Terra.datePicker.dayLabel"
               aria-required={false}
               className="date-input-day"
               disabled={false}
@@ -1430,7 +1430,7 @@ exports[`should render a default date input with all props 1`] = `
           month={
             <Input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label=" Terra.datePicker.monthLabel"
+              aria-label="Aria Label text Terra.datePicker.monthLabel"
               aria-required={false}
               className="date-input-month"
               disabled={false}
@@ -1461,7 +1461,7 @@ exports[`should render a default date input with all props 1`] = `
           year={
             <Input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label=" Terra.datePicker.yearLabel"
+              aria-label="Aria Label text Terra.datePicker.yearLabel"
               aria-required={false}
               className="date-input-year"
               disabled={false}
@@ -1485,7 +1485,7 @@ exports[`should render a default date input with all props 1`] = `
         >
           <Input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-            aria-label=" Terra.datePicker.monthLabel"
+            aria-label="Aria Label text Terra.datePicker.monthLabel"
             aria-required={false}
             className="date-input-month"
             disabled={false}
@@ -1507,7 +1507,7 @@ exports[`should render a default date input with all props 1`] = `
           >
             <input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label=" Terra.datePicker.monthLabel"
+              aria-label="Aria Label text Terra.datePicker.monthLabel"
               aria-required={false}
               className="form-input date-input-month"
               disabled={false}
@@ -1532,7 +1532,7 @@ exports[`should render a default date input with all props 1`] = `
           </span>
           <Input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-            aria-label=" Terra.datePicker.dayLabel"
+            aria-label="Aria Label text Terra.datePicker.dayLabel"
             aria-required={false}
             className="date-input-day"
             disabled={false}
@@ -1554,7 +1554,7 @@ exports[`should render a default date input with all props 1`] = `
           >
             <input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label=" Terra.datePicker.dayLabel"
+              aria-label="Aria Label text Terra.datePicker.dayLabel"
               aria-required={false}
               className="form-input date-input-day"
               disabled={false}
@@ -1579,7 +1579,7 @@ exports[`should render a default date input with all props 1`] = `
           </span>
           <Input
             aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-            aria-label=" Terra.datePicker.yearLabel"
+            aria-label="Aria Label text Terra.datePicker.yearLabel"
             aria-required={false}
             className="date-input-year"
             disabled={false}
@@ -1601,7 +1601,7 @@ exports[`should render a default date input with all props 1`] = `
           >
             <input
               aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
-              aria-label=" Terra.datePicker.yearLabel"
+              aria-label="Aria Label text Terra.datePicker.yearLabel"
               aria-required={false}
               className="form-input date-input-year"
               disabled={false}
