@@ -18,8 +18,8 @@ const DateTimePickerExampleDateWithSeconds = () => {
       </p>
       <Field label="Enter Date/Time" htmlFor="defaultDateTimeSeconds">
         <DateTimePicker
-          ariaLabel='Enter Date/Time'
-          name='date-time-picker-example'
+          ariaLabel="Enter Date/Time"
+          name="date-time-picker-example"
           dateInputAttributes={{ id: 'defaultDateTimeSeconds' }}
           onChange={handleDateTimeChange}
           value={moment().format()}
