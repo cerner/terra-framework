@@ -123,9 +123,7 @@ const FolderTreeItem = ({
       tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
       className={cx('radio', 'radio-container')}
     />
-  ) : (
-    <div className={cx('radio-container')} />
-  );
+  ) : null;
 
   const itemClassNames = classNames(
     cx(
@@ -205,7 +203,10 @@ const FolderTreeItem = ({
       >
         {radioButton}
         {/* eslint-disable-next-line react/forbid-dom-props */}
-        <span className={cx('placeholder')} style={{ marginLeft: `${level * 14}px` }}>
+        <span
+          className={cx(!isSelectable && 'non-selectable')}
+          style={{ marginLeft: `${level * 14}px` }}
+        >
           <Arrange
             fitStart={(
               <Spacer paddingLeft="medium" paddingRight="medium" isInlineBlock>
