@@ -1,6 +1,5 @@
 import React from 'react';
 /* eslint-disable import/no-extraneous-dependencies */
-import { mountWithIntl, renderWithIntl } from 'terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import { v4 as uuidv4 } from 'uuid';
 import DateInput from '../../lib/DateInput';
@@ -15,23 +14,23 @@ afterAll(() => {
 });
 
 it('should render a default date input', () => {
-  const dateInput = renderWithIntl(<DateInput />);
+  const dateInput = enzymeIntl.renderWithIntl(<DateInput />);
   expect(dateInput).toMatchSnapshot();
 });
 
 it('should render a date input with isInvalid prop', () => {
-  const dateInput = renderWithIntl(<DateInput isInvalid />);
+  const dateInput = enzymeIntl.renderWithIntl(<DateInput isInvalid />);
   expect(dateInput).toMatchSnapshot();
 });
 
 it('should render a date input with isIncomplete and required props', () => {
-  const dateInput = renderWithIntl(<DateInput isIncomplete required />);
+  const dateInput = enzymeIntl.renderWithIntl(<DateInput isIncomplete required />);
   expect(dateInput).toMatchSnapshot();
 });
 
 it('should render a default date input with all props', () => {
   const refCallback = jest.fn();
-  const dateInput = mountWithIntl((
+  const dateInput = enzymeIntl.mountWithIntl((
     <DateInput
       ariaLabel="Aria Label text"
       buttonRefCallback={refCallback}
@@ -53,14 +52,14 @@ it('should render a default date input with all props', () => {
 
 it('should pass in refCallback as the ref prop of the calendar button', () => {
   const refCallback = jest.fn();
-  const dateInput = mountWithIntl(<DateInput buttonRefCallback={refCallback} />);
+  const dateInput = enzymeIntl.mountWithIntl(<DateInput buttonRefCallback={refCallback} />);
   const testComponent = dateInput.children();
   expect(refCallback).toBeCalled();
   expect(testComponent).toMatchSnapshot();
 });
 
 it('correctly applies the theme context className', () => {
-  const date = mountWithIntl(
+  const date = enzymeIntl.mountWithIntl(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       <DateInput />
     </ThemeContextProvider>,

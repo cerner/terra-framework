@@ -42,7 +42,7 @@ describe('Row', () => {
   it('creates a row with the correct number of cells', () => {
     const rowData = tableData.rows[0];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <Row
         rowIndex={99}
         id={rowData.id}
@@ -84,7 +84,7 @@ describe('Row', () => {
 
     const rowData = tableData.rows[rowIndex];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <Row
         rowIndex={rowIndex}
         key={rowIndex}

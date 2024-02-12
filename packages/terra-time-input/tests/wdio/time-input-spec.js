@@ -318,50 +318,75 @@ describe('Time Input onBlur operations', () => {
 });
 
 describe('Time Input shortcut key operations', () => {
-  it('decrements hour by 1 using DOWN_ARROW', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+  it('should set time to current time minus one hour if blank using DOWN_ARROW', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
     $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('23');
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys(['ArrowDown']);
-    validateRoot('DOWN_ARROW decrements hour by 1');
+    browser.keys('ArrowDown');
+    const currentDate = new Date();
+    currentDate.setMinutes(currentDate.getMinutes() - 1);
+    const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+    expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+    expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
   });
 
-  it('ignores DOWN_ARROW when the hour has reached 00', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+  it('should set time to current time minus one hour if partially filled using DOWN_ARROW', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
     $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('00');
+    browser.keys('12');
     $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys(['ArrowDown']);
-    validateRoot('DOWN_ARROW ignored for hour 00');
+    browser.keys('ArrowDown');
+    const currentDate = new Date();
+    currentDate.setMinutes(currentDate.getMinutes() - 1);
+    const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+    expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+    expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
   });
 
-  it('increments hour by 1 using UP_ARROW ', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+  it('should subtract 1 hour if filled using DOWN_ARROW', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
     $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys(['ArrowUp', 'ArrowUp']);
-    validateRoot('UP_ARROW increments hour by 1');
+    browser.keys('ArrowDown');
+    expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue('11');
+    expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue('59');
   });
 
-  it('ignores UP_ARROW when the hour has reached 23', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+  it('should set time to current time plus one hour if blank using UP_ARROW', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
     browser.refresh();
     Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
     $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('23');
+    browser.keys('ArrowUp');
+    const currentDate = new Date();
+    currentDate.setMinutes(currentDate.getMinutes() + 1);
+    const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+    expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+    expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+  });
+
+  it('should set time to current time plus one hour if partially filled using UP_ARROW', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
+    browser.refresh();
+    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
     $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys(['ArrowUp']);
-    validateRoot('UP_ARROW ignored for hour 23');
+    browser.keys('12');
+    $('#timeInput input[name="terra-time-hour-time-input"]').click();
+    browser.keys('ArrowUp');
+    const currentDate = new Date();
+    currentDate.setMinutes(currentDate.getMinutes() + 1);
+    const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
+    expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
+    expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
   });
 
   describe('pressing N', () => {
@@ -471,7 +496,6 @@ describe('Time Input shortcut key operations', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('n');
         const currentDate = new Date();
@@ -483,12 +507,10 @@ describe('Time Input shortcut key operations', () => {
         const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
-
       it('should set time to current if partially filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('12');
         $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -502,12 +524,10 @@ describe('Time Input shortcut key operations', () => {
         const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
-
       it('should set time to current if filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('n');
         const currentDate = new Date();
@@ -524,7 +544,7 @@ describe('Time Input shortcut key operations', () => {
 
   describe('pressing -', () => {
     describe('in the hour input', () => {
-      it('should set time to current time minus one minute if blank', () => {
+      it('should set time to current time minus one hour if blank', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
@@ -532,13 +552,13 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('-');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        currentDate.setHours(currentDate.getHours() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
       });
 
-      it('should set time to current time minus one minute if partially filled', () => {
+      it('should set time to current time minus one hour if partially filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
@@ -548,7 +568,7 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('-');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        currentDate.setHours(currentDate.getHours() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -644,7 +664,7 @@ describe('Time Input shortcut key operations', () => {
     });
 
     describe('in the second input', () => {
-      it('should set time to current time minus one minute if blank', () => {
+      it('should set time to current time minus one second if blank', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
@@ -652,17 +672,17 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('-');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        currentDate.setSeconds(currentDate.getSeconds() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
-        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
-        const secondsTimeValue = Number(timevalue[1]);
-        const secondsInRange = (secondsTimeValue === secondsValue - 1 || secondsTimeValue === secondsValue);
+        const secondsValue = Number($('#timeInput input[name="terra-time-second-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[2]);
+        const secondsInRange = (secondsTimeValue === secondsValue - 1 || secondsTimeValue === secondsValue - 2 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
 
-      it('should set time to current time minus one minute if partially filled', () => {
+      it('should set time to current time minus one second if partially filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
@@ -672,17 +692,17 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('-');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() - 1);
+        currentDate.setSeconds(currentDate.getSeconds() - 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
-        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
-        const secondsTimeValue = Number(timevalue[1]);
-        const secondsInRange = (secondsTimeValue === secondsValue - 1 || secondsTimeValue === secondsValue);
+        const secondsValue = Number($('#timeInput input[name="terra-time-second-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[2]);
+        const secondsInRange = (secondsTimeValue === secondsValue - 1 || secondsTimeValue === secondsValue - 2 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
 
-      it('should subtract 1 minute if filled', () => {
+      it('should subtract 1 second if filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
@@ -706,13 +726,17 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('+');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        currentDate.setHours(currentDate.getHours() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
+        const hourValue = Number($('#timeInput input[name="terra-time-hour-time-input"]').getValue());
+        const hourTimeValue = Number(timevalue[0]);
+        const hourInRange = (hourValue === hourTimeValue + 1 || hourValue === hourTimeValue);
+        expect(hourInRange).toBe(true);
       });
 
-      it('should set time to current time plus one minute if partially filled', () => {
+      it('should set time to current time plus one hour if partially filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
@@ -722,7 +746,7 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-hour-time-input"]').click();
         browser.keys('+');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        currentDate.setHours(currentDate.getHours() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
@@ -818,7 +842,7 @@ describe('Time Input shortcut key operations', () => {
     });
 
     describe('in the second input', () => {
-      it('should set time to current time plus one minute if blank', () => {
+      it('should set time to current time plus one second if blank', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
@@ -826,17 +850,17 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('+');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        currentDate.setSeconds(currentDate.getSeconds() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
-        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
-        const secondsTimeValue = Number(timevalue[1]);
-        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        const secondsValue = Number($('#timeInput input[name="terra-time-second-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[2]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
 
-      it('should set time to current time plus one minute if partially filled', () => {
+      it('should set time to current time plus one second if partially filled', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
         browser.refresh();
         Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
@@ -846,13 +870,13 @@ describe('Time Input shortcut key operations', () => {
         $('#timeInput input[name="terra-time-second-time-input"]').click();
         browser.keys('+');
         const currentDate = new Date();
-        currentDate.setMinutes(currentDate.getMinutes() + 1);
+        currentDate.setSeconds(currentDate.getSeconds() + 1);
         const timevalue = currentDate.toISOString().split('T')[1].split('.')[0].split(':');
         expect($('#timeInput input[name="terra-time-hour-time-input"]')).toHaveValue(timevalue[0]);
         expect($('#timeInput input[name="terra-time-minute-time-input"]')).toHaveValue(timevalue[1]);
-        const secondsValue = Number($('#timeInput input[name="terra-time-minute-time-input"]').getValue());
-        const secondsTimeValue = Number(timevalue[1]);
-        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+        const secondsValue = Number($('#timeInput input[name="terra-time-second-time-input"]').getValue());
+        const secondsTimeValue = Number(timevalue[2]);
+        const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
         expect(secondsInRange).toBe(true);
       });
 

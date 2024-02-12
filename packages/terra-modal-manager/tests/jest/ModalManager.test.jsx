@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { withDisclosureManager } from 'terra-disclosure-manager';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ModalManager from '../../src/ModalManager';
@@ -17,7 +15,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const result = mountWithIntl(modalManager);
+    const result = enzymeIntl.mountWithIntl(modalManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -28,7 +26,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const result = mountWithIntl(modalManager);
+    const result = enzymeIntl.mountWithIntl(modalManager);
     expect(result).toMatchSnapshot();
   });
 
@@ -39,7 +37,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const wrapper = mountWithIntl(modalManager);
+    const wrapper = enzymeIntl.mountWithIntl(modalManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
@@ -66,7 +64,7 @@ describe('ModalManager', () => {
       </ModalManager>
     );
 
-    const wrapper = mountWithIntl(modalManager);
+    const wrapper = enzymeIntl.mountWithIntl(modalManager);
 
     return new Promise((resolve, reject) => {
       const childDisclosureManager = wrapper.find('#test').getElements()[1].props.disclosureManager;
@@ -87,7 +85,7 @@ describe('ModalManager', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const modalManager = mount(
+    const modalManager = enzyme.mount(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <ModalManager>
           <TestContainer />

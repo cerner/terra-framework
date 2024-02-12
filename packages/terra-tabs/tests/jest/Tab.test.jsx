@@ -1,6 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 import Tab from '../../src/common-tabs/_Tab';
 
@@ -16,17 +14,17 @@ afterAll(() => {
 
 describe('Tab', () => {
   it('should render a common tab as disabled when indicated', () => {
-    const wrapper = shallowWithIntl(<Tab label="Label" isDisabled variant="framework" />).dive();
+    const wrapper = enzymeIntl.shallowWithIntl(<Tab label="Label" isDisabled variant="framework" />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a common tab with custom props', () => {
-    const wrapper = shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" />).dive();
+    const wrapper = enzymeIntl.shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
   it('should render a closable tab', () => {
-    const wrapper = shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" isClosable />).dive();
+    const wrapper = enzymeIntl.shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" isClosable />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 
@@ -35,7 +33,7 @@ describe('Tab', () => {
       .mockReturnValue({
         className: 'orion-fusion-theme',
       });
-    const wrapper = shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" />).dive();
+    const wrapper = enzymeIntl.shallowWithIntl(<Tab label="Default" className="customClass" variant="framework" />).dive();
     expect(wrapper).toMatchSnapshot();
   });
 });

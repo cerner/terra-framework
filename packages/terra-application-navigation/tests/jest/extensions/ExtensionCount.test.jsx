@@ -3,7 +3,7 @@ import ExtensionCount from '../../../src/extensions/_ExtensionCount';
 
 describe('ExtensionCount', () => {
   it('should render default element', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ExtensionCount />,
     );
 
@@ -11,7 +11,7 @@ describe('ExtensionCount', () => {
   });
 
   it('should render prop data', () => {
-    const shallowComponent = shallow(
+    const shallowComponent = enzyme.shallow(
       <ExtensionCount
         value={1}
         isRollup
