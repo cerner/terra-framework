@@ -253,7 +253,7 @@ const ColumnHeaderCell = (props) => {
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = () => {
-    onColumnSelect(id);
+    onColumnSelect(columnId);
   };
 
   // Handle column header selection via the space bar.
@@ -267,7 +267,7 @@ const ColumnHeaderCell = (props) => {
           callback();
           break;
         } else if (isSelectable && onColumnSelect) {
-          onColumnSelect(id);
+          onColumnSelect(columnId);
         }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling

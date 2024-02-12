@@ -553,6 +553,7 @@ const DataGrid = forwardRef((props, ref) => {
   // -------------------------------------
 
   const isGridActive = grid.current?.contains(document.activeElement);
+  const isOneOfHeaderRows = focusedRow === 0 || (hasColumnHeaderActions && focusedRow === 1);
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -574,7 +575,7 @@ const DataGrid = forwardRef((props, ref) => {
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
           activeColumnIndex={(isGridActive && focusedRow === 0) ? focusedCol : undefined}
-          isActiveColumnResizing={(focusedRow === 0 || (hasColumnHeaderActions && focusedRow === 1)) && checkResizable}
+          isActiveColumnResizing={isOneOfHeaderRows && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}

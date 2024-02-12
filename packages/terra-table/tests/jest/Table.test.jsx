@@ -179,7 +179,7 @@ describe('Table', () => {
 
     // Find column headers
     const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(0);
-    expect(columnHeaderCell.props().id).toBe('table-rowSelectionColumn');
+    expect(columnHeaderCell.props().id).toBe('table-rowSelectionColumn-headerCell');
 
     // Simulate onMouseDown event on row selection column header
     columnHeaderCell.simulate('mouseDown');
@@ -303,7 +303,7 @@ describe('Table', () => {
 
     // Validate column header id attribute
     const columnHeaderCell = wrapper.find('.column-header').at(0);
-    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0');
+    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0-headerCell');
 
     // Retrieve first section
     const tableSections = wrapper.find(Section);
@@ -380,7 +380,7 @@ describe('Table', () => {
 
     // Validate column header id attribute
     const columnHeaderCell = wrapper.find('.column-header').at(0);
-    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0');
+    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0-headerCell');
 
     // Retrieve first section
     const tableSections = wrapper.find(Section);

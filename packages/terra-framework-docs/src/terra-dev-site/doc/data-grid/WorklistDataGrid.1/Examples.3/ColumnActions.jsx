@@ -126,6 +126,11 @@ const ColumnActions = () => {
     setHasSelectableRows(event.target.checked);
   };
 
+  const onColumnSelect = useCallback((columnId) => {
+    // eslint-disable-next-line no-alert
+    alert(`Column Selection Header for ${columnId} Clicked`);
+  }, []);
+
   const enableRowSelection = useCallback(() => {
     if (!rowSelectionModeRef.current.checked) {
       rowSelectionModeRef.current.checked = true;
@@ -152,6 +157,7 @@ const ColumnActions = () => {
         rowHeaderIndex={rowHeaderIndex}
         defaultColumnWidth={180}
         ariaLabel="Worklist Data Grid with Column Actions"
+        onColumnSelect={onColumnSelect}
         hasSelectableRows={hasSelectableRows} // Prop to turn row selection mode on/off
         onRowSelect={onRowSelect} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects one or more rows.
         onRowSelectAll={onRowSelectAll} // For row selection, consumer must provide a callback that the Worklist Data Grid will call when the user selects all rows.

@@ -17,6 +17,8 @@ afterAll(() => {
 });
 
 describe('ColumnHeaderCell', () => {
+  const mockResizeHandleStateSetter = jest.fn();
+
   it('renders a default column header cell', () => {
     const column = {
       id: 'Column-0',
@@ -31,6 +33,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -67,6 +70,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -104,6 +108,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -141,6 +146,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -179,6 +185,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -221,6 +228,7 @@ describe('ColumnHeaderCell', () => {
           width={100}
           headerHeight="150px"
           {...column}
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           onColumnSelect={mockClick}
         />
       </IntlProvider>,
@@ -265,6 +273,7 @@ describe('ColumnHeaderCell', () => {
           width={100}
           headerHeight="150px"
           {...column}
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           onColumnSelect={mockColumnSelect}
         />
       </IntlProvider>,
@@ -305,6 +314,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </ColumnContext.Provider>,
@@ -319,6 +329,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = enzymeIntl.mountWithIntl(
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
+        resizeHandleStateSetter={mockResizeHandleStateSetter}
         isSelectable
       />,
     );
@@ -333,6 +344,7 @@ describe('ColumnHeaderCell', () => {
     const wrapper = enzymeIntl.mountWithIntl(
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
+        resizeHandleStateSetter={mockResizeHandleStateSetter}
       />,
     );
     wrapper.find('.column-header').simulate('mousedown');

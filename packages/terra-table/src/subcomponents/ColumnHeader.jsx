@@ -193,10 +193,10 @@ const ColumnHeader = (props) => {
               isResizeHandleActive={activeResizeHandlerColumnId === column.id}
               resizeHandleStateSetter={resizeHandleStateSetter}
               activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
-              isSelectable={hasVisibleColumnHeaders && column.isSelectable}
+              // does not need isSelectable prop for actions row
               isActive={activeColumnIndex === columnIndex && activeRowIndex === 1}
               isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
-              onColumnSelect={onColumnSelect}
+              // does not need onColumnSelect prop for actions row
             />
           ))}
         </tr>

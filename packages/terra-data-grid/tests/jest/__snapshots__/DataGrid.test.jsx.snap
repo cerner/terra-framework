@@ -556,30 +556,34 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   height="2.5rem"
                 >
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-0"
                     columnIndex={0}
                     displayName=" Vitals"
                     headerHeight="2.5rem"
-                    id="Column-0"
+                    id="Column-0-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-0"
+                    key="Column-0-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-0"
                       columnIndex={0}
                       displayName=" Vitals"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-0"
+                      id="Column-0-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -611,20 +615,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable pinned"
-                        id="test-terra-data-grid-table-Column-0"
-                        key="Column-0"
+                        id="test-terra-data-grid-table-Column-0-headerCell"
+                        key="Column-0-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -733,7 +739,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -744,30 +750,34 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-1"
                     columnIndex={1}
                     displayName="March 16"
                     headerHeight="2.5rem"
-                    id="Column-1"
+                    id="Column-1-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-1"
+                    key="Column-1-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-1"
                       columnIndex={1}
                       displayName="March 16"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-1"
+                      id="Column-1-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -799,20 +809,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable pinned last-pinned-column"
-                        id="test-terra-data-grid-table-Column-1"
-                        key="Column-1"
+                        id="test-terra-data-grid-table-Column-1-headerCell"
+                        key="Column-1-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -921,7 +933,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -932,30 +944,34 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-2"
                     columnIndex={2}
                     displayName="March 17"
                     headerHeight="2.5rem"
-                    id="Column-2"
+                    id="Column-2-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={false}
-                    key="Column-2"
+                    key="Column-2-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-2"
                       columnIndex={2}
                       displayName="March 17"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-2"
+                      id="Column-2-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -987,20 +1003,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={false}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header"
-                        id="test-terra-data-grid-table-Column-2"
-                        key="Column-2"
+                        id="test-terra-data-grid-table-Column-2-headerCell"
+                        key="Column-2-headerCell"
                         onKeyDown={[Function]}
                         role="columnheader"
                         scope="col"
@@ -1107,7 +1125,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -3235,30 +3253,34 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   height="2.5rem"
                 >
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-0"
                     columnIndex={0}
                     displayName=" Vitals"
                     headerHeight="2.5rem"
-                    id="Column-0"
+                    id="Column-0-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-0"
+                    key="Column-0-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-0"
                       columnIndex={0}
                       displayName=" Vitals"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-0"
+                      id="Column-0-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -3290,20 +3312,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable pinned"
-                        id="test-terra-data-grid-table-Column-0"
-                        key="Column-0"
+                        id="test-terra-data-grid-table-Column-0-headerCell"
+                        key="Column-0-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -3412,7 +3436,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -3423,30 +3447,34 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-1"
                     columnIndex={1}
                     displayName="March 16"
                     headerHeight="2.5rem"
-                    id="Column-1"
+                    id="Column-1-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-1"
+                    key="Column-1-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-1"
                       columnIndex={1}
                       displayName="March 16"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-1"
+                      id="Column-1-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -3478,20 +3506,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable pinned last-pinned-column"
-                        id="test-terra-data-grid-table-Column-1"
-                        key="Column-1"
+                        id="test-terra-data-grid-table-Column-1-headerCell"
+                        key="Column-1-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -3600,7 +3630,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -3611,30 +3641,34 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-2"
                     columnIndex={2}
                     displayName="March 17"
                     headerHeight="2.5rem"
-                    id="Column-2"
+                    id="Column-2-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={false}
-                    key="Column-2"
+                    key="Column-2-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-2"
                       columnIndex={2}
                       displayName="March 17"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-2"
+                      id="Column-2-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -3666,20 +3700,22 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={false}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header"
-                        id="test-terra-data-grid-table-Column-2"
-                        key="Column-2"
+                        id="test-terra-data-grid-table-Column-2-headerCell"
+                        key="Column-2-headerCell"
                         onKeyDown={[Function]}
                         role="columnheader"
                         scope="col"
@@ -3786,7 +3822,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -9274,30 +9310,34 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   height="2.5rem"
                 >
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-0"
                     columnIndex={0}
                     displayName=" Vitals"
                     headerHeight="2.5rem"
-                    id="Column-0"
+                    id="Column-0-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-0"
+                    key="Column-0-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-0"
                       columnIndex={0}
                       displayName=" Vitals"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-0"
+                      id="Column-0-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -9329,20 +9369,22 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable pinned"
-                        id="test-terra-data-grid-table-Column-0"
-                        key="Column-0"
+                        id="test-terra-data-grid-table-Column-0-headerCell"
+                        key="Column-0-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -9451,7 +9493,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -9462,30 +9504,34 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-1"
                     columnIndex={1}
                     displayName="March 16"
                     headerHeight="2.5rem"
-                    id="Column-1"
+                    id="Column-1-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-1"
+                    key="Column-1-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-1"
                       columnIndex={1}
                       displayName="March 16"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-1"
+                      id="Column-1-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -9517,20 +9563,22 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable pinned last-pinned-column"
-                        id="test-terra-data-grid-table-Column-1"
-                        key="Column-1"
+                        id="test-terra-data-grid-table-Column-1-headerCell"
+                        key="Column-1-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -9639,7 +9687,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -9650,30 +9698,34 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-2"
                     columnIndex={2}
                     displayName="March 17"
                     headerHeight="2.5rem"
-                    id="Column-2"
+                    id="Column-2-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={false}
-                    key="Column-2"
+                    key="Column-2-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-2"
                       columnIndex={2}
                       displayName="March 17"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-2"
+                      id="Column-2-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -9705,20 +9757,22 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={false}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header"
-                        id="test-terra-data-grid-table-Column-2"
-                        key="Column-2"
+                        id="test-terra-data-grid-table-Column-2-headerCell"
+                        key="Column-2-headerCell"
                         onKeyDown={[Function]}
                         role="columnheader"
                         scope="col"
@@ -9825,7 +9879,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -11872,30 +11926,34 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   height="2.5rem"
                 >
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-0"
                     columnIndex={0}
                     displayName=" Vitals"
                     headerHeight="2.5rem"
-                    id="Column-0"
+                    id="Column-0-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-0"
+                    key="Column-0-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-0"
                       columnIndex={0}
                       displayName=" Vitals"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-0"
+                      id="Column-0-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -11927,20 +11985,22 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable"
-                        id="test-terra-data-grid-table-Column-0"
-                        key="Column-0"
+                        id="test-terra-data-grid-table-Column-0-headerCell"
+                        key="Column-0-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -12049,7 +12109,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -12060,30 +12120,34 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-1"
                     columnIndex={1}
                     displayName="March 16"
                     headerHeight="2.5rem"
-                    id="Column-1"
+                    id="Column-1-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={true}
-                    key="Column-1"
+                    key="Column-1-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-1"
                       columnIndex={1}
                       displayName="March 16"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-1"
+                      id="Column-1-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -12115,20 +12179,22 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={true}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header selectable"
-                        id="test-terra-data-grid-table-Column-1"
-                        key="Column-1"
+                        id="test-terra-data-grid-table-Column-1-headerCell"
+                        key="Column-1-headerCell"
                         onKeyDown={[Function]}
                         onMouseDown={[Function]}
                         role="columnheader"
@@ -12237,7 +12303,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
@@ -12248,30 +12314,34 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     </ColumnHeaderCell>
                   </InjectIntl(ColumnHeaderCell)>
                   <InjectIntl(ColumnHeaderCell)
+                    columnId="Column-2"
                     columnIndex={2}
                     displayName="March 17"
                     headerHeight="2.5rem"
-                    id="Column-2"
+                    id="Column-2-headerCell"
                     isActive={false}
                     isResizable={true}
                     isResizeActive={false}
+                    isResizeHandleActive={false}
                     isSelectable={false}
-                    key="Column-2"
+                    key="Column-2-headerCell"
                     maximumWidth={300}
                     minimumWidth={60}
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
+                    resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
                     width={200}
                   >
                     <ColumnHeaderCell
+                      columnId="Column-2"
                       columnIndex={2}
                       displayName="March 17"
                       hasError={false}
                       headerHeight="2.5rem"
-                      id="Column-2"
+                      id="Column-2-headerCell"
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -12303,20 +12373,22 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
+                      isResizeHandleActive={false}
                       isSelectable={false}
                       maximumWidth={300}
                       minimumWidth={60}
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
+                      resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
                       width={200}
                     >
                       <th
                         className="column-header"
-                        id="test-terra-data-grid-table-Column-2"
-                        key="Column-2"
+                        id="test-terra-data-grid-table-Column-2-headerCell"
+                        key="Column-2-headerCell"
                         onKeyDown={[Function]}
                         role="columnheader"
                         scope="col"
@@ -12423,7 +12495,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "0px",
+                                  "height": "100%",
                                 }
                               }
                               tabIndex={-1}
