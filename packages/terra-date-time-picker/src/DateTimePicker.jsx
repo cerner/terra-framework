@@ -784,7 +784,7 @@ class DateTimePicker extends React.Component {
 
         <div className={cx('date-facade')}>
           <DatePicker
-            ariaLabel={ariaLabel}
+            a11yLabel={ariaLabel}
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             onChange={this.handleDateChange}
             onChangeRaw={this.handleDateChangeRaw}

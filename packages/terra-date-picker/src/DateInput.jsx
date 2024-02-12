@@ -30,6 +30,14 @@ import styles from './DatePicker.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+   /**
+   * An identifier used by assistive technologies like screen readers to briefly describe this Date input to users.
+   * The label is not rendered visually.
+   *
+   * **BEST PRACTICE FOR ACCESSIBILITY**: you _SHOULD_ set this to match whatever visible label you give in your UI.
+   * Currently this is optional for passivity reasons, but it will become mandatory in a future major version.
+   */
+   a11yLabel: PropTypes.string,
   /**
    * String that labels the current element. 'aria-label' must be present for accessibility.
    */
@@ -145,6 +153,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  a11yLabel: undefined,
   ariaLabel: undefined,
   buttonRefCallback: undefined,
   id: undefined,
@@ -170,6 +179,7 @@ const defaultProps = {
 
 const DatePickerInput = (props) => {
   const {
+    a11yLabel,
     ariaLabel,
     buttonRefCallback,
     firstInputRefCallback,
@@ -732,7 +742,7 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
-      aria-label={`${ariaLabel || ''} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
+      aria-label={`${a11yLabel || ''} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
       aria-describedby={ariaDescriptionIds}
       id={dayInputId}
     />
@@ -763,7 +773,7 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
-      aria-label={`${ariaLabel || ''} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
+      aria-label={`${a11yLabel || ''} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
       aria-describedby={ariaDescriptionIds}
       id={monthInputId}
     />
@@ -794,7 +804,7 @@ const DatePickerInput = (props) => {
       size="4"
       pattern="\d*"
       aria-required={required}
-      aria-label={`${ariaLabel || ''} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
+      aria-label={`${a11yLabel || ''} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
       aria-describedby={ariaDescriptionIds}
       id={yearInputId}
     />
