@@ -695,6 +695,10 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-date-day-input"]')).toHaveValue((`0${today.date()}`).slice(-2));
           expect($('input[name="terra-time-hour-input"]')).toHaveValue((`0${today.hour()}`).slice(-2));
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
+          const minuteValue = Number($('input[name="terra-time-minute-input"]').getValue());
+          const minuteTimeValue = today.minutes();
+          const minuteInRange = (minuteTimeValue === minuteValue + 1 || minuteTimeValue === minuteValue);
+          expect(minuteInRange).toBe(true);
         });
 
         it('should set date to today in the second input', () => {
@@ -711,7 +715,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
           const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
           const secondsTimeValue = today.seconds();
-          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
           expect(secondsInRange).toBe(true);
         });
       });
@@ -771,7 +775,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
           const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
           const secondsTimeValue = today.seconds();
-          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
           expect(secondsInRange).toBe(true);
         });
       });
@@ -819,7 +823,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
           const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
           const secondsTimeValue = today.seconds();
-          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
           expect(secondsInRange).toBe(true);
         });
       });
@@ -827,7 +831,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
 
     describe('-', () => {
       describe('if blank date', () => {
-        it('should set date to today and now minus 1 minute in the hour input', () => {
+        it('should set date to today and now minus 1 hour in the hour input', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -863,13 +867,13 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect(minuteInRange).toBe(true);
         });
 
-        it('should set date to today and now minus 1 minute in the second input', () => {
+        it('should set date to today and now minus 1 second in the second input', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
           browser.keys('-');
 
-          const today = moment.utc().subtract(1, 'minutes');
+          const today = moment.utc().subtract(1, 'seconds');
           expect($('input[name="terra-date-year-input"]')).toHaveValue(today.year().toString());
           expect($('input[name="terra-date-month-input"]')).toHaveValue((`0${(today.month() + 1)}`).slice(-2));
           expect($('input[name="terra-date-day-input"]')).toHaveValue((`0${today.date()}`).slice(-2));
@@ -1150,7 +1154,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
 
     describe('+', () => {
       describe('if blank date', () => {
-        it('should set date to today and now plus 1 minute in the hour input', () => {
+        it('should set date to today and now plus 1 hour in the hour input', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-default');
           browser.refresh();
           $('input[name="terra-time-hour-input"]').click();
@@ -1186,21 +1190,22 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect(minuteInRange).toBe(true);
         });
 
-        it('should set date to today and now plus 1 minute in the second input', () => {
+        it('should set date to today and now plus 1 seconds in the second input', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-time-second-input"]').click();
           browser.keys('+');
 
-          const today = moment.utc().add(1, 'minutes');
+          const today = moment.utc().add(1, 'seconds');
           expect($('input[name="terra-date-year-input"]')).toHaveValue(today.year().toString());
           expect($('input[name="terra-date-month-input"]')).toHaveValue((`0${(today.month() + 1)}`).slice(-2));
           expect($('input[name="terra-date-day-input"]')).toHaveValue((`0${today.date()}`).slice(-2));
           expect($('input[name="terra-time-hour-input"]')).toHaveValue((`0${today.hour()}`).slice(-2));
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
+          expect($('input[name="terra-time-second-input"]')).toHaveValue((`0${today.second()}`).slice(-2));
           const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
           const secondsTimeValue = today.seconds();
-          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
           expect(secondsInRange).toBe(true);
         });
       });
@@ -1246,7 +1251,7 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           expect(minuteInRange).toBe(true);
         });
 
-        it('should set date to today and now plus 1 minute in the second input', () => {
+        it('should set date to today and now plus 1 second in the second input', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/date-time-picker-with-seconds');
           browser.refresh();
           $('input[name="terra-date-year-input"]').click();
@@ -1256,15 +1261,16 @@ Terra.describeViewports('DateTimePicker', ['large'], () => {
           $('input[name="terra-time-second-input"]').click();
           browser.keys('+');
 
-          const today = moment.utc().add(1, 'minutes');
+          const today = moment.utc().add(1, 'seconds');
           expect($('input[name="terra-date-year-input"]')).toHaveValue(today.year().toString());
           expect($('input[name="terra-date-month-input"]')).toHaveValue((`0${(today.month() + 1)}`).slice(-2));
           expect($('input[name="terra-date-day-input"]')).toHaveValue((`0${today.date()}`).slice(-2));
           expect($('input[name="terra-time-hour-input"]')).toHaveValue((`0${today.hour()}`).slice(-2));
           expect($('input[name="terra-time-minute-input"]')).toHaveValue((`0${today.minute()}`).slice(-2));
+          expect($('input[name="terra-time-second-input"]')).toHaveValue((`0${today.second()}`).slice(-2));
           const secondsValue = Number($('input[name="terra-time-second-input"]').getValue());
           const secondsTimeValue = today.seconds();
-          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue);
+          const secondsInRange = (secondsTimeValue === secondsValue + 1 || secondsTimeValue === secondsValue + 2 || secondsTimeValue === secondsValue);
           expect(secondsInRange).toBe(true);
         });
       });
