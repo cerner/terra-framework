@@ -84,13 +84,15 @@
 
   .action-cell {
     border-top: 0 solid; // only one border needed
-    padding: 4px;
+    padding: 2px;
     text-align: left; 
 
     button {
-      :first-child {
-        padding: 1px !important;
-      }
+      outline-offset: -2px !important;
+    }
+
+    button > :first-child {
+      padding: 0 4px !important;
     }
   }
 
