@@ -4,6 +4,7 @@
 
 * Changed
   * Updated selection examples and tests for `terra-folder-tree`.
+  * Updated the `terra-date-time-picker` example for field label.
 
 ## 1.64.0 - (February 7, 2024)
 
