@@ -1,14 +1,10 @@
 import PropTypes from 'prop-types';
+import actionShape from './actionShape';
 
 const SortIndicators = {
   ASCENDING: 'ascending',
   DESCENDING: 'descending',
 };
-
-const actionShape = PropTypes.shape({
-  label: PropTypes.string,
-  onCall: PropTypes.func,
-});
 
 const columnShape = PropTypes.shape({
   /**
@@ -22,7 +18,7 @@ const columnShape = PropTypes.shape({
   /**
    * Object containing data for column action, will be displayed in a row below the header row.
    */
-  action: PropTypes.shape(actionShape),
+  action: PropTypes.shape({ actionShape }),
   /**
    * Boolean value indicating whether or not the column has an error in the data.
    */
@@ -54,4 +50,4 @@ const columnShape = PropTypes.shape({
 });
 
 export default columnShape;
-export { SortIndicators, actionShape };
+export { SortIndicators };

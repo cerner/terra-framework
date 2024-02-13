@@ -68,7 +68,7 @@ const TableRowSelection = () => {
       newCol.action = {
         label: `${col.displayName} action`,
         // eslint-disable-next-line no-alert
-        onCall: () => alert(`${cols[columnIndex].displayName}`),
+        onClick: () => alert(`${col.displayName} action clicked`),
       };
     }
     return newCol;

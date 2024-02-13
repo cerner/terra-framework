@@ -15,7 +15,7 @@ import ColumnContext from './utils/ColumnContext';
 import columnShape from './proptypes/columnShape';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';
-import validateRowHeaderIndex from './proptypes/validators';
+import { validateRowHeaderIndex } from './proptypes/validators';
 
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';

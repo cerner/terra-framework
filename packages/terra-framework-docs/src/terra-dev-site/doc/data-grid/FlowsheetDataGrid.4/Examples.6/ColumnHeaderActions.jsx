@@ -69,7 +69,7 @@ const ColumnHeaderActions = () => {
       col.action = {
         label: `${col.displayName} action`,
         // eslint-disable-next-line no-alert
-        onCall: () => alert(`${cols[columnIndex].displayName} action called`),
+        onClick: () => alert(`${col.displayName} action called`),
       };
     }
   });

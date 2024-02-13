@@ -11,11 +11,12 @@ import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import { IconUp, IconDown, IconError } from 'terra-icon';
 import Button from 'terra-button';
+import { IconUp, IconDown, IconError } from 'terra-icon';
+import { validateAction } from '../proptypes/validators';
 import ColumnResizeHandle from './ColumnResizeHandle';
 import GridContext, { GridConstants } from '../utils/GridContext';
-import { SortIndicators, actionShape } from '../proptypes/columnShape';
+import { SortIndicators } from '../proptypes/columnShape';
 import ColumnContext from '../utils/ColumnContext';
 import styles from './ColumnHeaderCell.module.scss';
 
@@ -80,13 +81,14 @@ const propTypes = {
 
   /**
    * Boolean value indicating whether or not the column header cell is an action cell.
+   * The action cell might be a placeholder cell without actual action button
    */
   isActionCell: PropTypes.bool,
 
   /**
    * Data for action cell.
    */
-  action: PropTypes.shape(actionShape),
+  action: validateAction,
 
   /**
    * Boolean value indicating whether or not the column header is resizable.
@@ -357,15 +359,15 @@ const ColumnHeaderCell = (props) => {
       style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
       onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
     >
-      {isActionCell && action?.onCall
+      {isActionCell && action
         ? (
           <Button
             variant="de-emphasis"
             ref={columnHeaderCellRef}
             isCompact
-            onClick={action?.onCall}
-            onKeyDown={(event) => handleKeyDown(event, action.onCall)}
-            text={action?.label}
+            onClick={action.onClick}
+            onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
+            text={action.label}
           />
         ) : (
           <div

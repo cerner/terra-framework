@@ -67,16 +67,16 @@ const ColumnActions = () => {
     if (columnIndex < 5) {
       col.action = {
         label: `${col.displayName} action`,
-        onCall: () => disclosureManager.disclose({
+        onClick: () => disclosureManager.disclose({
           preferredType: 'panel',
           size: 'small',
           content: {
             component: (
               <DisclosureComponent
-                columnHeader={cols[columnIndex].displayName}
+                columnHeader={col.displayName}
                 rowHeader="Detailed Info"
                 content="According to the Journal of Healthcare Management/American College of Healthcare Executives, a 500-bed hospital loses over $4 million annually due to clinical communication inefficiencies. A unified clinical communication strategy can help health systems begin to close the gap."
-                name={cols[columnIndex].displayName}
+                name={col.displayName}
               />
             ),
           },
