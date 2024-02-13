@@ -224,6 +224,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('clears the date', () => {
+      browser.refresh();
       $('input[name="terra-date-day-date-input-onchange"]').click();
       browser.keys('Delete');
       $('input[name="terra-date-year-date-input-onchange"]').click();
@@ -974,7 +975,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
           expect($('input')).toHaveValue(tomorrow.toISOString().split('T')[0]);
         });
 
-        it('sets yesr to last year if on year input', () => {
+        it('sets year to next year if on year input', () => {
           Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
           $('input[name="terra-date-year-date-input"]').click();
           browser.keys('2005');
