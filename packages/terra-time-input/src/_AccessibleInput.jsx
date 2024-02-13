@@ -7,10 +7,6 @@ import TimeUtil from './TimeUtil';
 
 const propTypes = {
   /**
-   * String that labels the current element. 'aria-label' must be present for accessibility.
-   */
-  ariaLabel: PropTypes.string,
-  /**
    * The initial value of the Input that this component wraps.
    */
   value: PropTypes.string,
@@ -57,7 +53,6 @@ const defaultProps = {
  */
 function AccessibleInput(props) {
   const {
-    ariaLabel,
     value,
     label,
     description,
@@ -73,7 +68,7 @@ function AccessibleInput(props) {
   const descriptionId = `${uuid}-description`;
   return (
     <>
-      {value && <VisuallyHiddenText text={value ? `${ariaLabel || ''} ${label}` : { label }} id={labelId} />}
+      {value && <VisuallyHiddenText text={label} id={labelId} />}
       {/*
       When an input field has a value: Prepend the input with an invisible label so that the label will be read
       when the AT is reading the page ("read-mode"). Use aria-labelled to tie the input field to the label for other
@@ -91,7 +86,7 @@ function AccessibleInput(props) {
         isInvalid={showIsInvalid && isInvalid}
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
-        aria-label={value ? undefined : `${ariaLabel || ''} ${label}`}
+        aria-label={value ? undefined : label}
         aria-describedby={ariaDescribedBy ? `${descriptionId} ${ariaDescribedBy}` : `${descriptionId}`}
         type="number"
       />

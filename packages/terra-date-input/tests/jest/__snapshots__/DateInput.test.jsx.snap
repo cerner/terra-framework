@@ -240,13 +240,13 @@ exports[`DateInput correctly applies the theme context className 1`] = `
         >
           <VisuallyHiddenText
             id="00000000-0000-0000-0000-000000000000-label"
-            text=" Terra.date.input.dayInputLabel"
+            text="Terra.date.input.dayInputLabel"
           >
             <span
               className="visually-hidden-text"
               id="00000000-0000-0000-0000-000000000000-label"
             >
-               Terra.date.input.dayInputLabel
+              Terra.date.input.dayInputLabel
             </span>
           </VisuallyHiddenText>
           <Input
@@ -336,13 +336,13 @@ exports[`DateInput correctly applies the theme context className 1`] = `
         >
           <VisuallyHiddenText
             id="00000000-0000-0000-0000-000000000000-label"
-            text=" Terra.date.input.yearLabel"
+            text="Terra.date.input.yearLabel"
           >
             <span
               className="visually-hidden-text"
               id="00000000-0000-0000-0000-000000000000-label"
             >
-               Terra.date.input.yearLabel
+              Terra.date.input.yearLabel
             </span>
           </VisuallyHiddenText>
           <Input
@@ -531,7 +531,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label=" Terra.date.input.dayInputLabel"
+      aria-label="Terra.date.input.dayInputLabel"
       autocomplete="off"
       class="form-input date-input-day"
       maxlength="2"
@@ -552,7 +552,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label=" Terra.date.input.yearLabel"
+      aria-label="Terra.date.input.yearLabel"
       autocomplete="off"
       class="form-input date-input-year"
       maxlength="4"
@@ -684,7 +684,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label=" Terra.date.input.dayInputLabel"
+      aria-label="Terra.date.input.dayInputLabel"
       autocomplete="off"
       class="form-input date-input-day"
       maxlength="2"
@@ -705,7 +705,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label=" Terra.date.input.yearLabel"
+      aria-label="Terra.date.input.yearLabel"
       autocomplete="off"
       class="form-input date-input-year"
       maxlength="4"
@@ -837,7 +837,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label=" Terra.date.input.dayInputLabel"
+      aria-label="Terra.date.input.dayInputLabel"
       autocomplete="off"
       class="form-input date-input-day"
       maxlength="2"
@@ -858,7 +858,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       aria-describedby="00000000-0000-0000-0000-000000000000-description"
       aria-disabled="false"
       aria-invalid="false"
-      aria-label=" Terra.date.input.yearLabel"
+      aria-label="Terra.date.input.yearLabel"
       autocomplete="off"
       class="form-input date-input-year"
       maxlength="4"
@@ -2456,13 +2456,13 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
               >
                 <VisuallyHiddenText
                   id="00000000-0000-0000-0000-000000000000-label"
-                  text=" Terra.date.input.dayInputLabel"
+                  text="Terra.date.input.dayInputLabel"
                 >
                   <span
                     className="visually-hidden-text"
                     id="00000000-0000-0000-0000-000000000000-label"
                   >
-                     Terra.date.input.dayInputLabel
+                    Terra.date.input.dayInputLabel
                   </span>
                 </VisuallyHiddenText>
                 <Input
@@ -2555,13 +2555,13 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
               >
                 <VisuallyHiddenText
                   id="00000000-0000-0000-0000-000000000000-label"
-                  text=" Terra.date.input.yearLabel"
+                  text="Terra.date.input.yearLabel"
                 >
                   <span
                     className="visually-hidden-text"
                     id="00000000-0000-0000-0000-000000000000-label"
                   >
-                     Terra.date.input.yearLabel
+                    Terra.date.input.yearLabel
                   </span>
                 </VisuallyHiddenText>
                 <Input
