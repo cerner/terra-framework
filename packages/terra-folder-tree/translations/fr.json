@@ -1,0 +1,9 @@
+{
+  "Terra.folder-tree.button.collapse-all": "Réduire tout",
+  "Terra.folder-tree.button.expand-all": "Développer tout",
+  "Terra.folder-tree.button.collapse-all-instructions": "Réduit tous les dossiers de l'arborescence.",
+  "Terra.folder-tree.button.collapse-all-announcement": "Tous les éléments sont réduits.",
+  "Terra.folder-tree.button.expand-all-instructions": "Développe tous les dossiers de l'arborescence.",
+  "Terra.folder-tree.button.expand-all-announcement": "Tous les éléments sont développés.",
+  "Terra.folder-tree.folder-icon": "Dossier"
+}

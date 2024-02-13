@@ -1,0 +1,9 @@
+{
+  "Terra.folder-tree.button.collapse-all": "Recolher tudo",
+  "Terra.folder-tree.button.expand-all": "Expandir tudo",
+  "Terra.folder-tree.button.collapse-all-instructions": "Recolha todas as pastas na árvore.",
+  "Terra.folder-tree.button.collapse-all-announcement": "Todos os itens recolhidos.",
+  "Terra.folder-tree.button.expand-all-instructions": "Expanda todas as pastas na árvore.",
+  "Terra.folder-tree.button.expand-all-announcement": "Todos os itens expandidos.",
+  "Terra.folder-tree.folder-icon": "Pasta"
+}
