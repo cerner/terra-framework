@@ -539,6 +539,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
+              hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
               headerHeight="2.5rem"
               isActiveColumnResizing={false}
@@ -3236,6 +3237,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
+              hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
               headerHeight="2.5rem"
               isActiveColumnResizing={false}
@@ -5921,6 +5923,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   },
                 ]
               }
+              hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
               headerHeight="2.5rem"
               isActiveColumnResizing={false}
@@ -9317,6 +9320,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   },
                 ]
               }
+              hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
               headerHeight="2.5rem"
               isActiveColumnResizing={false}
@@ -11933,6 +11937,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   },
                 ]
               }
+              hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
               headerHeight="2.5rem"
               isActiveColumnResizing={false}

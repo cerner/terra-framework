@@ -331,6 +331,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
+          hasColumnHeaderActions={false}
           hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
