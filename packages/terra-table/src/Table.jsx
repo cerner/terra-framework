@@ -399,6 +399,8 @@ function Table(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 
+  // check if at least one column has a valid action
+  // same check is done in DataGrid, but as Table can be a stand-alone component, it can't relay on passed prop.
   const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
 
   // useEffect for managing the table height.
