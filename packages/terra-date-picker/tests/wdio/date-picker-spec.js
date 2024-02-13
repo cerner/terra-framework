@@ -1174,6 +1174,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     it('Opens the date picker', () => {
+      browser.refresh();
       $('[class*="button"]').click();
 
       Terra.validates.element('uses default minDate', { selector: '[data-terra-date-picker-calendar]' });
