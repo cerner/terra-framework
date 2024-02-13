@@ -1090,7 +1090,7 @@ class TimeInput extends React.Component {
             {...inputAttributes}
             {...minuteAttributes}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' }, { a11yLabel: this.a11yLabel })}
             className={minuteClassNames}
             type="text"
             value={this.state.minute}
@@ -1112,7 +1112,7 @@ class TimeInput extends React.Component {
               {...inputAttributes}
               {...secondAttributes}
               refCallback={(inputRef) => { this.secondInput = inputRef; }}
-              label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              label={intl.formatMessage({ id: 'Terra.timeInput.seconds' }, { a11yLabel: this.a11yLabel })}
               className={secondClassNames}
               type="text"
               value={this.state.second}
