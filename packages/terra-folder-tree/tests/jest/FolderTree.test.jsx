@@ -151,7 +151,7 @@ describe('basic folder tree', () => {
   });
 
   it('renders selectable folder tree items', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree.Item
         label="Selectable folder tree item"
       />,
@@ -162,7 +162,7 @@ describe('basic folder tree', () => {
   });
 
   it('renders selectable folder tree items when selected', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree.Item
         label="Selectable folder tree item"
         isSelected
@@ -174,7 +174,7 @@ describe('basic folder tree', () => {
   });
 
   it('renders non-selectable folder tree items', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree.Item
         label="Non-selectable folder tree item"
         isSelectable={false}
@@ -186,7 +186,7 @@ describe('basic folder tree', () => {
   });
 
   it('renders non-selectable folder tree items when selected', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree.Item
         label="Non-selectable folder tree item"
         isSelectable={false}
