@@ -37,7 +37,7 @@ const TableConstants = {
 
 const ROW_SELECTION_COLUMN_ID = 'table-rowSelectionColumn';
 
-const DEBOUNCE_TIMER = 300;
+const DEBOUNCE_TIMER = 100;
 
 const propTypes = {
   /**
@@ -402,15 +402,15 @@ function Table(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 
-  const handleResize = () => {
+  const handleResize = useCallback(() => {
     setTableHeight(tableRef.current.offsetHeight - 1);
 
     const tableContainer = tableContainerRef.current;
     setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
                       || tableContainer.scrollHeight > tableContainer.clientHeight);
-  };
+  }, [tableRef, tableContainerRef]);
 
-  const debouncedHandleResize = LodashDebounce(handleResize, DEBOUNCE_TIMER);
+  const debouncedHandleResize = useCallback(() => LodashDebounce(handleResize, DEBOUNCE_TIMER), [handleResize]);
 
   // useEffect for managing the table height.
   useEffect(() => {
