@@ -84,7 +84,13 @@
   .action-cell {
     border-top: 0 solid; // only one border needed
     padding: 4px;
-    text-align: left;
+    text-align: left; 
+
+    button {
+      :first-child {
+        padding: 1px !important;
+      }
+    }
   }
 
   // Hover state for selectable elements
