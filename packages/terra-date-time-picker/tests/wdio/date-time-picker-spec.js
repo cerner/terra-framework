@@ -54,7 +54,7 @@ Terra.describeViewports('DateTimePicker', ['tiny', 'large'], () => {
     $('input[name="terra-time-hour-input"]').addValue('02');
     $('input[name="terra-time-minute-input"]').addValue('30');
     $('input[name="terra-time-hour-input"]').clearValue();
-    $('input[name="terra-time-hour-input"]').addValue('03');
+    $('input[name="terra-time-hour-input"]').addValue('02');
 
     Terra.validates.element('re-enter missing hour');
   });
