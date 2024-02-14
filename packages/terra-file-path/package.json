@@ -48,3 +48,12 @@
     "test": "npm run lint && npm run jest"
   }
 }
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]

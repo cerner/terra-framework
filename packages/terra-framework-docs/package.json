@@ -84,3 +84,12 @@
     "terra-toolbar": "^1.27.0"
   }
 }
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]

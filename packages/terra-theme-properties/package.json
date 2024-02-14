@@ -48,3 +48,12 @@
     "precompile": "rm -rf lib"
   }
 }
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]

@@ -39,3 +39,12 @@
     "jest": "jest --config ../../jest.config.js"
   }
 }
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
