@@ -1,0 +1,9 @@
+{
+  "Terra.folder-tree.button.collapse-all": "Dölj allt",
+  "Terra.folder-tree.button.expand-all": "Visa allt",
+  "Terra.folder-tree.button.collapse-all-instructions": "Dölj alla mappar i trädet.",
+  "Terra.folder-tree.button.collapse-all-announcement": "Alla objekt döljs.",
+  "Terra.folder-tree.button.expand-all-instructions": "Visa alla mappar i trädet.",
+  "Terra.folder-tree.button.expand-all-announcement": "Alla objekt visas.",
+  "Terra.folder-tree.folder-icon": "Mapp"
+}
