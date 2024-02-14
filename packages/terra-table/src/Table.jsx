@@ -289,20 +289,21 @@ function Table(props) {
   // check if at least one column has a valid action
   // same check is done in DataGrid, but as Table can be a stand-alone component, it can't relay on passed prop.
   const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
+  // eslint-disable-next-line no-nested-ternary
+  const headerRowCount = hasVisibleColumnHeaders ? (hasColumnHeaderActions ? 2 : 1) : 0;
 
   // Calculate total table row count
   const tableSectionReducer = (rowCount, currentSection) => {
     if (currentSection.id !== defaultSectionRef.current) {
       // eslint-disable-next-line no-param-reassign
-      currentSection.sectionRowIndex = rowCount + (hasColumnHeaderActions ? 2 : 1);
+      currentSection.sectionRowIndex = rowCount + 1;
       return rowCount + currentSection.rows.length + 1;
     }
-
     // eslint-disable-next-line no-param-reassign
-    currentSection.sectionRowIndex = rowCount + (hasColumnHeaderActions ? 1 : 0);
+    currentSection.sectionRowIndex = rowCount;
     return rowCount + currentSection.rows.length;
   };
-  const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
+  const tableRowCount = tableSections.reduce(tableSectionReducer, headerRowCount);
 
   // -------------------------------------
   // functions
