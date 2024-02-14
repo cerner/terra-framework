@@ -46,8 +46,7 @@
     "lint:scss": "stylelint ./src/**/*.scss",
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib"
-  }
-}
+  },
   "files": [
     "lib",
     "src",
@@ -57,3 +56,4 @@
     "NOTICE",
     "README.md"
   ]
+}

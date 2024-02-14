@@ -82,8 +82,7 @@
     "terra-theme-provider": "^4.16.0",
     "terra-time-input": "^4.61.0",
     "terra-toolbar": "^1.27.0"
-  }
-}
+  },
   "files": [
     "lib",
     "src",
@@ -93,3 +92,4 @@
     "NOTICE",
     "README.md"
   ]
+}

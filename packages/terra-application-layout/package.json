@@ -64,8 +64,7 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
-}
+  },
   "files": [
     "lib",
     "src",
@@ -75,3 +74,4 @@
     "NOTICE",
     "README.md"
   ]
+}
