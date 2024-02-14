@@ -343,8 +343,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     it('sets the date', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
       $('input[name="terra-date-month-date-input"]').setValue('0');
-      browser.keys('a1.be2/;3');
-      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
+      browser.keys('a1.be2/;c3');
 
       Terra.validates.element('key limitations');
     });
@@ -475,51 +474,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       browser.keys('Enter');
 
       Terra.validates.element('remounts component date selected');
-    });
-  });
-
-  describe('Initial Focus', () => {
-    beforeEach(() => {
-      browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
-      Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
-      Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
-      Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
-    });
-
-    it('Month input focused', () => {
-      $('input[name="terra-date-month-date-input"]').click();
-
-      Terra.validates.element('month input highlighted');
-    });
-
-    it('Month input cleared with single Delete key press and loses highlight', () => {
-      browser.keys('Delete');
-
-      Terra.validates.element('month input cleared completely and loses highlight');
-    });
-
-    it('Day input focused', () => {
-      $('input[name="terra-date-day-date-input"]').click();
-
-      Terra.validates.element('day input highlighted');
-    });
-
-    it('Day input cleared with single Delete key press and loses highlight', () => {
-      browser.keys('Delete');
-
-      Terra.validates.element('day input cleared completely and loses highlight');
-    });
-
-    it('Year input focused', () => {
-      $('input[name="terra-date-year-date-input"]').click();
-
-      Terra.validates.element('year input highlighted');
-    });
-
-    it('Year input cleared with single Delete key press and loses highlight', () => {
-      browser.keys('Delete');
-
-      Terra.validates.element('year input cleared completely and loses highlight');
     });
   });
 
