@@ -1,0 +1,9 @@
+{
+  "Terra.folder-tree.button.collapse-all": "Alle minimieren",
+  "Terra.folder-tree.button.expand-all": "Alle erweitern",
+  "Terra.folder-tree.button.collapse-all-instructions": "Alle Ordner in der Hierarchie minimieren.",
+  "Terra.folder-tree.button.collapse-all-announcement": "Alle Elemente sind minimiert.",
+  "Terra.folder-tree.button.expand-all-instructions": "Alle Ordner in der Hierarchie erweitern.",
+  "Terra.folder-tree.button.expand-all-announcement": "Alle Elemente sind erweitert.",
+  "Terra.folder-tree.folder-icon": "Ordner"
+}

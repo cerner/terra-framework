@@ -271,7 +271,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             refCallback={[Function]}
             required={false}
             size="2"
-            type="text"
+            type="number"
             value="04"
           >
             <input
@@ -293,7 +293,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               pattern="\\\\d*"
               required={false}
               size="2"
-              type="text"
+              type="number"
               value="04"
             />
           </Input>
@@ -367,7 +367,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             refCallback={[Function]}
             required={false}
             size="4"
-            type="text"
+            type="number"
             value="2000"
           >
             <input
@@ -389,7 +389,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               pattern="\\\\d*"
               required={false}
               size="4"
-              type="text"
+              type="number"
               value="2000"
             />
           </Input>
@@ -538,7 +538,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       name="terra-date-day-date-input"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -559,7 +559,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       name="terra-date-year-date-input"
       pattern="\\\\d*"
       size="4"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -691,7 +691,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       name="terra-date-day-date-input-2"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -712,7 +712,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       name="terra-date-year-date-input-2"
       pattern="\\\\d*"
       size="4"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -844,7 +844,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       name="terra-date-day-date-input-3"
       pattern="\\\\d*"
       size="2"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -865,7 +865,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       name="terra-date-year-date-input-3"
       pattern="\\\\d*"
       size="4"
-      type="text"
+      type="number"
       value=""
     />
     <span
@@ -2487,7 +2487,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   refCallback={[Function]}
                   required={false}
                   size="2"
-                  type="text"
+                  type="number"
                   value="04"
                 >
                   <input
@@ -2509,7 +2509,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     pattern="\\\\d*"
                     required={false}
                     size="2"
-                    type="text"
+                    type="number"
                     value="04"
                   />
                 </Input>
@@ -2586,7 +2586,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   refCallback={[Function]}
                   required={false}
                   size="4"
-                  type="text"
+                  type="number"
                   value="2000"
                 >
                   <input
@@ -2608,7 +2608,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     pattern="\\\\d*"
                     required={false}
                     size="4"
-                    type="text"
+                    type="number"
                     value="2000"
                   />
                 </Input>

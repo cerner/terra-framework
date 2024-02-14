@@ -2,7 +2,7 @@ import React from 'react';
 import Slide from '../../src/Slide';
 
 it('should render a default Slide', () => {
-  const wrapper = shallow((
+  const wrapper = enzyme.shallow((
     <Slide>
       <div>Slide Content</div>
     </Slide>
@@ -11,7 +11,7 @@ it('should render a default Slide', () => {
 });
 
 it('should render a hidden Slide', () => {
-  const wrapper = shallow((
+  const wrapper = enzyme.shallow((
     <Slide isHidden>
       <div>Slide Content</div>
     </Slide>
@@ -21,7 +21,7 @@ it('should render a hidden Slide', () => {
 });
 
 it('should render a nested Slide', () => {
-  const wrapper = shallow((
+  const wrapper = enzyme.shallow((
     <Slide isNested>
       <div>Slide Content</div>
     </Slide>
@@ -35,7 +35,7 @@ it('correctly applies the theme context className', () => {
     .mockReturnValue({
       className: 'orion-fusion-theme',
     });
-  const wrapper = shallow(
+  const wrapper = enzyme.shallow(
     <Slide>
       <div>Slide Content</div>
     </Slide>,

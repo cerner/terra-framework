@@ -13,7 +13,7 @@ const slideGroup = (
 );
 
 it('should render a default SlideGroup', () => {
-  const wrapper = shallow(slideGroup);
+  const wrapper = enzyme.shallow(slideGroup);
 
   const cssTransitions = wrapper.find('CSSTransition');
   expect(cssTransitions.at(0).key()).toBe('1');
@@ -40,7 +40,7 @@ it('should render a default SlideGroup', () => {
 });
 
 it('should render a SlideGroup with animation enabled', () => {
-  const wrapper = shallow(React.cloneElement(slideGroup, { isAnimated: true }));
+  const wrapper = enzyme.shallow(React.cloneElement(slideGroup, { isAnimated: true }));
 
   const cssTransitions = wrapper.find('CSSTransition');
   expect(cssTransitions.at(0).prop('enter')).toBe(true);
@@ -55,7 +55,7 @@ it('should render a SlideGroup with animation enabled', () => {
 });
 
 it('correctly applies the theme context className', () => {
-  const tabs = mount(
+  const tabs = enzyme.mount(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       {slideGroup}
     </ThemeContextProvider>,

@@ -1,6 +1,4 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 import FilterPills from '../../src/FilterPills';
 import Pill from '../../src/subcomponents/_Pill';
@@ -16,7 +14,7 @@ describe('Rollup Pill', () => {
   });
 
   it('should render pill with the role list when rendered with pills', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FilterPills
         ariaLabel="Filter Pills with labels"
       >
@@ -34,7 +32,7 @@ describe('Rollup Pill', () => {
   });
 
   it('should render pill with the role group when rendered empty', () => {
-    const wrapper = shallowWithIntl(<FilterPills
+    const wrapper = enzymeIntl.shallowWithIntl(<FilterPills
       ariaLabel="Empty Filter Pills"
     />).dive();
     const groupDiv = wrapper.find('div.pills-group');

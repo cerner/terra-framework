@@ -1,0 +1,9 @@
+{
+  "Terra.folder-tree.button.collapse-all": "Alles samenvouwen",
+  "Terra.folder-tree.button.expand-all": "Alles uitvouwen",
+  "Terra.folder-tree.button.collapse-all-instructions": "Alle mappen in de boomstructuur samenvouwen.",
+  "Terra.folder-tree.button.collapse-all-announcement": "Alle items zijn samengevouwen.",
+  "Terra.folder-tree.button.expand-all-instructions": "Alle mappen in de boomstructuur uitvouwen.",
+  "Terra.folder-tree.button.expand-all-announcement": "Alle items zijn uitgevouwen.",
+  "Terra.folder-tree.folder-icon": "Map"
+}

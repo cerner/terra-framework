@@ -14,18 +14,18 @@ describe('ThemeProvider', () => {
 
   // Snapshot Tests
   it('should shallow render a theme provider component', () => {
-    const wrapper = shallow(defaultRender);
+    const wrapper = enzyme.shallow(defaultRender);
     expect(wrapper).toMatchSnapshot();
   });
 
   it('verify theme name is added to documentElement class list', () => {
-    mount(defaultRender);
+    enzyme.mount(defaultRender);
 
     expect(document.documentElement.classList.contains('cerner-mock-theme')).toBe(true);
   });
 
   it('verifies density is added to documentElement class list', () => {
-    mount(
+    enzyme.mount(
       <ThemeProvider density="compact">
         <p>Child content</p>
       </ThemeProvider>,
@@ -35,7 +35,7 @@ describe('ThemeProvider', () => {
   });
 
   it('verifies both theme name and density are added to documentElement class list', () => {
-    mount(
+    enzyme.mount(
       <ThemeProvider themeName="cerner-mock-theme" density="compact">
         <p>Child content</p>
       </ThemeProvider>,
@@ -47,7 +47,7 @@ describe('ThemeProvider', () => {
   });
 
   it('verifies no classes are added to the documentElement class list when props are not passed', () => {
-    mount(
+    enzyme.mount(
       <ThemeProvider>
         <p>Child content</p>
       </ThemeProvider>,
@@ -59,7 +59,7 @@ describe('ThemeProvider', () => {
   // Error Handling Test
   it('should throw error for required children', () => {
     try {
-      shallow(<ThemeProvider />);
+      enzyme.shallow(<ThemeProvider />);
     } catch (e) {
       expect(e.message).toContain('The prop `children` is marked as required');
     }

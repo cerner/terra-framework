@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { IntlProvider } from 'react-intl';
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -49,7 +48,7 @@ describe('TabDropDown', () => {
     expect(screen.getByRole('tab', { name: 'Tab 1 Label' })).toBeInTheDocument();
     expect(screen.getByRole('tab', { name: 'Tab 2 Label' })).toBeInTheDocument();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider>
         <TabDropDown
           refCallback={(ref) => { mockRef = ref; }}

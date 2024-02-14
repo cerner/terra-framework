@@ -9,7 +9,7 @@ describe('Layout', () => {
   it('should render a Layout without optional props', () => {
     getBreakpointSize.mockImplementation(() => 'tiny');
 
-    const result = shallow((
+    const result = enzyme.shallow((
       <Layout />
     ));
     expect(result).toMatchSnapshot();
@@ -19,7 +19,7 @@ describe('Layout', () => {
     getBreakpointSize.mockImplementation(() => 'tiny');
     getCustomProps.mockReturnValueOnce({ 'data-test-attr': 'test-val' });
 
-    const result = shallow((
+    const result = enzyme.shallow((
       <Layout />
     ));
     expect(result).toMatchSnapshot();
@@ -37,35 +37,35 @@ describe('Layout', () => {
     it('should render a Layout when tiny', () => {
       getBreakpointSize.mockImplementation(() => 'tiny');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when small', () => {
       getBreakpointSize.mockImplementation(() => 'small');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when medium', () => {
       getBreakpointSize.mockImplementation(() => 'medium');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when large', () => {
       getBreakpointSize.mockImplementation(() => 'large');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when huge', () => {
       getBreakpointSize.mockImplementation(() => 'huge');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
   });
@@ -84,35 +84,35 @@ describe('Layout', () => {
     it('should render a Layout when tiny', () => {
       getBreakpointSize.mockImplementation(() => 'tiny');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when small', () => {
       getBreakpointSize.mockImplementation(() => 'small');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when medium', () => {
       getBreakpointSize.mockImplementation(() => 'medium');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when large', () => {
       getBreakpointSize.mockImplementation(() => 'large');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
 
     it('should render a Layout when huge', () => {
       getBreakpointSize.mockImplementation(() => 'huge');
 
-      const result = shallow(layout);
+      const result = enzyme.shallow(layout);
       expect(result).toMatchSnapshot();
     });
   });

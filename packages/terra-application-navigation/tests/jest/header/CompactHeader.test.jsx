@@ -1,11 +1,9 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import CompactHeader from '../../../src/header/_CompactHeader';
 
 describe('CompactHeader', () => {
   it('should render default element', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <CompactHeader />,
     );
 
@@ -13,7 +11,7 @@ describe('CompactHeader', () => {
   });
 
   it('should render title element', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <CompactHeader
         titleConfig={{
           title: 'test-title',
@@ -26,7 +24,7 @@ describe('CompactHeader', () => {
   });
 
   it('should render with function callbacks', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <CompactHeader
         titleConfig={{
           title: 'test-title',
@@ -48,7 +46,7 @@ describe('CompactHeader', () => {
   });
 
   it('should render with ids for navigation and extension items', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <CompactHeader
         titleConfig={{
           title: 'test-title',
@@ -73,7 +71,7 @@ describe('CompactHeader', () => {
   it('should render with skip callback', () => {
     const mockCallBack = jest.fn();
 
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <CompactHeader
         onSelectSkipToContent={mockCallBack}
       />,
@@ -87,7 +85,7 @@ describe('CompactHeader', () => {
   it('should render with menu callback', () => {
     const mockCallBack = jest.fn();
 
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <CompactHeader
         titleConfig={{
           title: 'test-title',
