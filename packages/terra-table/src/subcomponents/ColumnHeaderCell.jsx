@@ -337,10 +337,47 @@ const ColumnHeaderCell = (props) => {
   };
 
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
+  const CellTag = !isActionCell ? 'th' : 'td';
+
+  // Create cell content
+  let cellContent;
+  if (isActionCell) {
+    if (action) {
+      cellContent = (
+        <Button
+          variant="de-emphasis"
+          ref={columnHeaderCellRef}
+          isCompact
+          onClick={action.onClick}
+          onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
+          text={action.label}
+        />
+      );
+    } else {
+      cellContent = (
+        <span aria-hidden className={cx('display-text', 'hidden')}>
+          {intl.formatMessage({ id: 'Terra.table.noAction' })}
+        </span>
+      );
+    }
+  } else {
+    cellContent = (
+      <div
+        className={cx('header-container')}
+        {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
+        tabIndex={buttonTabIndex}
+      >
+        {errorIcon}
+        <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
+        {sortIndicatorIcon}
+        <VisuallyHiddenText text={headerDescription} />
+      </div>
+    );
+  }
 
   return (
   /* eslint-disable react/forbid-dom-props */
-    <th
+    <CellTag
       ref={!hasButtonElement ? columnHeaderCellRef : undefined}
       id={`${tableId}-${id}`}
       key={id}
@@ -356,31 +393,11 @@ const ColumnHeaderCell = (props) => {
       title={displayName}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
+      // eslint-disable-next-line react/forbid-component-props
+      style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
       onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
     >
-      {isActionCell && action
-        ? (
-          <Button
-            variant="de-emphasis"
-            ref={columnHeaderCellRef}
-            isCompact
-            onClick={action.onClick}
-            onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
-            text={action.label}
-          />
-        ) : (
-          <div
-            className={cx('header-container')}
-            {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
-            tabIndex={buttonTabIndex}
-          >
-            {errorIcon}
-            <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
-            {sortIndicatorIcon}
-            <VisuallyHiddenText text={headerDescription} />
-          </div>
-        )}
+      {cellContent}
       { isResizable && !isActionCell && (
       <ColumnResizeHandle
         columnIndex={columnIndex}
@@ -398,7 +415,7 @@ const ColumnHeaderCell = (props) => {
         onResizeHandleChange={onResizeHandleChange}
       />
       )}
-    </th>
+    </CellTag>
   );
 };
 
