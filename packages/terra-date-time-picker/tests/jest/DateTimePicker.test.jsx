@@ -151,6 +151,15 @@ it('should validate the createSafeDate helper', () => {
   expect(DateTimeUtils.createSafeDate('2019-06-35T16:00:01', 'America/Test')).toEqual(undefined);
 });
 
+it('should render a default date time picker with ariaLabel', () => {
+  const ariaLabel = 'Select date and time';
+  const datePicker = enzymeIntl.shallowWithIntl(
+    <DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" ariaLabel={ariaLabel} />,
+  );
+  expect(datePicker.prop('ariaLabel')).toBe(ariaLabel);
+  expect(datePicker).toMatchSnapshot();
+});
+
 it('correctly applies the theme context className', () => {
   const dateTime = enzymeIntl.shallowWithIntl(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
