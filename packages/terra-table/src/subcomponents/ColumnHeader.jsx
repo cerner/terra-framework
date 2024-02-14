@@ -130,46 +130,49 @@ const ColumnHeader = (props) => {
   const resizeHandlerInitHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
 
   return (
-    <thead ref={headerRef}>
-      <tr
-        aria-rowindex={1}
-        data-row-id={`${tableId}-header-row`}
-        className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
-        height={hasVisibleColumnHeaders ? headerHeight : undefined}
-      >
-        {columns.map((column, columnIndex) => (
-          <ColumnHeaderCell
-            key={`${column.id}-headerCell`}
-            id={`${column.id}-headerCell`}
-            tableId={tableId}
-            columnId={column.id}
-            columnIndex={columnIndex}
-            displayName={column.displayName}
-            isDisplayVisible={column.isDisplayVisible}
-            width={column.width}
-            minimumWidth={column.minimumWidth}
-            maximumWidth={column.maximumWidth}
-            headerHeight={headerHeight}
-            isResizable={hasVisibleColumnHeaders && column.isResizable}
-            resizeHandlerInitHeight={resizeHandlerInitHeight}
-            isResizeHandleActive={activeResizeHandlerColumnId === column.id}
-            resizeHandleStateSetter={resizeHandleStateSetter}
-            activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
-            isSelectable={hasVisibleColumnHeaders && column.isSelectable}
-            tableHeight={tableHeight}
-            isActive={activeColumnIndex === columnIndex && activeRowIndex === 0} // can be 2 rows in header
-            isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
-            columnResizeIncrement={columnResizeIncrement}
-            hasError={column.hasError}
-            sortIndicator={column.sortIndicator}
-            onColumnSelect={onColumnSelect}
-            onResizeMouseDown={onResizeMouseDown}
-            onResizeHandleChange={onResizeHandleChange}
-          />
-        ))}
-      </tr>
-      {/* Actions row */}
-      {hasColumnHeaderActions && hasVisibleColumnHeaders && (
+    <>
+      <thead ref={headerRef}>
+        <tr
+          aria-rowindex={1}
+          data-row-id={`${tableId}-header-row`}
+          className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
+          height={hasVisibleColumnHeaders ? headerHeight : undefined}
+        >
+          {columns.map((column, columnIndex) => (
+            <ColumnHeaderCell
+              key={`${column.id}-headerCell`}
+              id={`${column.id}-headerCell`}
+              tableId={tableId}
+              columnId={column.id}
+              columnIndex={columnIndex}
+              displayName={column.displayName}
+              isDisplayVisible={column.isDisplayVisible}
+              width={column.width}
+              minimumWidth={column.minimumWidth}
+              maximumWidth={column.maximumWidth}
+              headerHeight={headerHeight}
+              isResizable={hasVisibleColumnHeaders && column.isResizable}
+              resizeHandlerInitHeight={resizeHandlerInitHeight}
+              isResizeHandleActive={activeResizeHandlerColumnId === column.id}
+              resizeHandleStateSetter={resizeHandleStateSetter}
+              activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
+              isSelectable={hasVisibleColumnHeaders && column.isSelectable}
+              tableHeight={tableHeight}
+              isActive={activeColumnIndex === columnIndex && activeRowIndex === 0} // can be 2 rows in header
+              isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+              columnResizeIncrement={columnResizeIncrement}
+              hasError={column.hasError}
+              sortIndicator={column.sortIndicator}
+              onColumnSelect={onColumnSelect}
+              onResizeMouseDown={onResizeMouseDown}
+              onResizeHandleChange={onResizeHandleChange}
+            />
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {/* Actions row */}
+        {hasColumnHeaderActions && hasVisibleColumnHeaders && (
         <tr
           aria-rowindex={2}
           data-row-id={`${tableId}-header-actions-row`}
@@ -196,12 +199,12 @@ const ColumnHeader = (props) => {
               // does not need isSelectable prop for actions row
               isActive={activeColumnIndex === columnIndex && activeRowIndex === 1}
               isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
-              // does not need onColumnSelect prop for actions row
             />
           ))}
         </tr>
-      )}
-    </thead>
+        )}
+      </tbody>
+    </>
   );
 };
 
