@@ -355,7 +355,7 @@ const ColumnHeaderCell = (props) => {
       );
     } else {
       cellContent = (
-        <span aria-hidden className={cx('display-text', 'hidden')}>
+        <span className={cx('display-text', 'hidden')}>
           {intl.formatMessage({ id: 'Terra.table.noAction' })}
         </span>
       );
