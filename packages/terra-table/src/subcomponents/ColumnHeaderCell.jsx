@@ -388,9 +388,9 @@ const ColumnHeaderCell = (props) => {
         'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
-      role="columnheader"
-      scope="col"
-      title={displayName}
+      role={!isActionCell ? 'columnheader' : undefined}
+      scope={!isActionCell ? 'col' : undefined}
+      title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-component-props
