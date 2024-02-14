@@ -107,7 +107,7 @@
       }
 
       .chevron {
-        color: var(--terra-navigation-side-menu-item-selected-chevron-color, #1C1F21);
+        color: var(--terra-navigation-side-menu-item-selected-chevron-color, #909496);
       }
 
       &:hover,
@@ -117,7 +117,7 @@
 
         /* stylelint-disable-next-line max-nesting-depth */
         .chevron {
-          color: var(--terra-navigation-side-menu-item-selected-hover-chevron-color, #1C1F21);
+          color: var(--terra-navigation-side-menu-item-selected-hover-chevron-color, #909496);
         }
       }
     }
