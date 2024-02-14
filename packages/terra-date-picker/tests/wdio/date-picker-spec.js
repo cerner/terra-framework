@@ -343,7 +343,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     it('sets the date', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
       $('input[name="terra-date-month-date-input"]').setValue('0');
-      browser.keys('a1.b2/;3');
+      browser.keys('a1.be2/;3');
       Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
 
       Terra.validates.element('key limitations');
@@ -479,7 +479,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
   });
 
   describe('Initial Focus', () => {
-    before(() => {
+    beforeEach(() => {
       browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
       Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
       Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
