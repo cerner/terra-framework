@@ -1038,7 +1038,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
   describe('Auto Prepend and Restrictions', () => {
     describe('Month Input', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
       });
 
@@ -1052,7 +1052,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       it('Reject values greater than 12', () => {
         $('input[name="terra-date-month-date-input"]').click();
-        browser.keys('Delete');
         browser.keys('13');
         Terra.hideInputCaret('input[name="terra-date-month-date-input"]');
 
@@ -1061,7 +1060,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     describe('Day Input', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
       });
 
@@ -1075,7 +1074,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       it('Reject values greater than 31', () => {
         $('input[name="terra-date-day-date-input"]').click();
-        browser.keys('Delete');
         browser.keys('32');
         Terra.hideInputCaret('input[name="terra-date-day-date-input"]');
 
@@ -1084,7 +1082,7 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
     });
 
     describe('Year Input', () => {
-      before(() => {
+      beforeEach(() => {
         browser.url('/#/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
         Terra.hideInputCaret('input[name="terra-date-year-date-input"]');
       });
@@ -1099,7 +1097,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       it('Auto prepend 20 for two digits', () => {
         $('input[name="terra-date-year-date-input"]').click();
-        browser.keys('Delete');
         browser.keys('31');
         browser.keys('Tab');
 
@@ -1108,7 +1105,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       it('Auto append 0 for three digits in the range 190 to 210', () => {
         $('input[name="terra-date-year-date-input"]').click();
-        browser.keys('Delete');
         browser.keys('204');
         browser.keys('Tab');
 
@@ -1117,7 +1113,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
 
       it('Reject values greater than 2100', () => {
         $('input[name="terra-date-year-date-input"]').click();
-        browser.keys('Delete');
         browser.keys('2101');
 
         Terra.validates.element('year input rejected digit 1');
@@ -1126,7 +1121,6 @@ Terra.describeViewports('Date Picker', ['medium'], () => {
       it('Reject values less than 1900', () => {
         browser.keys('Tab');
         $('input[name="terra-date-year-date-input"]').click();
-        browser.keys('Delete');
         browser.keys('1899');
 
         Terra.validates.element('year input rejected digits 99');
