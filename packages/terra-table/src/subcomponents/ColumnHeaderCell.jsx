@@ -337,6 +337,7 @@ const ColumnHeaderCell = (props) => {
   };
 
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
+  const CellTag = !isActionCell ? 'th' : 'td';
 
   // Create cell content
   let cellContent;
@@ -376,7 +377,7 @@ const ColumnHeaderCell = (props) => {
 
   return (
   /* eslint-disable react/forbid-dom-props */
-    <th
+    <CellTag
       ref={!hasButtonElement ? columnHeaderCellRef : undefined}
       id={`${tableId}-${id}`}
       key={id}
@@ -387,8 +388,9 @@ const ColumnHeaderCell = (props) => {
         'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
-      role="columnheader"
-      scope="col"
+      role={!isActionCell ? 'columnheader' : undefined}
+      rowspan={!isActionCell ? '2' : undefined}
+      // scope={!isActionCell ? 'col' : undefined}
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
@@ -414,7 +416,7 @@ const ColumnHeaderCell = (props) => {
         onResizeHandleChange={onResizeHandleChange}
       />
       )}
-    </th>
+    </CellTag>
   );
 };
 
