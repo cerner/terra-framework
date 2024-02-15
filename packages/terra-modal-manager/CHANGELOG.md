@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added 
+  * Added 'shouldTrapFocus' prop to enable/disable the focusLock.
+
 ## 6.70.0 - (January 22, 2024)
 
 * Added

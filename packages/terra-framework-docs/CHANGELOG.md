@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Added
+  * Added shouldTrapFocus to be set to 'true'.
 * Changed
   * Updated the `terra-date-time-picker` example for field label.
 

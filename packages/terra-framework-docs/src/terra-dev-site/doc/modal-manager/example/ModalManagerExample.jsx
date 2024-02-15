@@ -278,6 +278,7 @@ ContentComponent.propTypes = {
 const ModalManagerExample = ({ showDisclosureAccessory }) => (
   <div className={cx('example-wrapper')}>
     <ModalManager
+      shouldTrapFocus
       disclosureAccessory={showDisclosureAccessory ? (
         <div className={cx('disclosure-accessory')}>
           Disclosure Accessory
