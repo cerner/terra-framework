@@ -220,11 +220,15 @@ const FolderTreeItem = ({
                 {itemIcon}
               </Spacer>
             )}
-            fill={<span>{label}</span>}
+            fill={(
+              <span>
+                {`${label},`}
+                <VisuallyHiddenText text={isSelectable ? 'Selectable' : 'Non-selectable'} />
+              </span>
+)}
             alignFitStart="center"
           />
         </span>
-        <VisuallyHiddenText text={isSelectable ? 'Selectable' : 'Non-selectable'} />
       </li>
       {subfolder}
     </>
