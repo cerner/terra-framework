@@ -15,6 +15,7 @@ import styles from './ColumnResizeHandle.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
+  id: PropTypes.string,
   /**
    * The cell's column position in the grid. This is zero based.
    */
@@ -92,6 +93,7 @@ const defaultProps = {
 
 const ColumnResizeHandle = (props) => {
   const {
+    id,
     columnIndex,
     columnResizeIncrement,
     columnText,
@@ -207,6 +209,7 @@ const ColumnResizeHandle = (props) => {
   return (
   // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions
     <div
+      id={id}
       ref={resizeHandleRef}
       draggable
       role={isNavigationEnabled ? null : 'slider'}

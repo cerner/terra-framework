@@ -343,7 +343,6 @@ const ColumnHeaderCell = (props) => {
         <Button
           variant="de-emphasis"
           ref={columnHeaderCellRef}
-          aria-hidden
           isCompact
           onClick={action.onClick}
           onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
@@ -387,7 +386,8 @@ const ColumnHeaderCell = (props) => {
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
-      aria-owns={!isActionCell ? `${tableId}-${columnId}-actionCell` : undefined}
+      // aria-owns={!isActionCell ? `${tableId}-${columnId}-actionCell` : undefined} // This way header owns action
+      aria-owns={isActionCell ? `${tableId}-${columnId}-resizeHandle` : undefined} // Action owns handle
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
@@ -398,6 +398,7 @@ const ColumnHeaderCell = (props) => {
       {cellContent}
       { isResizable && !isActionCell && (
       <ColumnResizeHandle
+        id={`${tableId}-${columnId}-resizeHandle`}
         columnIndex={columnIndex}
         columnText={displayName}
         columnWidth={width}
