@@ -328,12 +328,13 @@ const ColumnHeaderCell = (props) => {
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
 
   // set focus in action cell to either button or resize handler
-  const distributeFocusWithinActionCell = (event) => {
-    if (event.target === columnHeaderCellRef?.current?.childNodes[1]) {
-      columnHeaderCellRef?.current?.childNodes[1].focus();
-    } else {
-      columnHeaderCellRef?.current?.childNodes[0].focus();
-    }
+  const distributeFocusWithinActionCell = () => {
+    columnHeaderCellRef?.current?.childNodes[0].focus();
+    columnHeaderCellRef?.current?.childNodes[0].setAttribute('aria-hidden', false);
+  };
+
+  const onBlur = () => {
+    columnHeaderCellRef?.current?.childNodes[0].setAttribute('aria-hidden', true);
   };
 
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
@@ -345,6 +346,7 @@ const ColumnHeaderCell = (props) => {
     if (action) {
       cellContent = (
         <Button
+          ariaHidden
           variant="de-emphasis"
           ref={columnHeaderCellRef}
           isCompact
@@ -390,13 +392,14 @@ const ColumnHeaderCell = (props) => {
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
-      aria-owns={isResizeHandleActive ? `${columnId}-actionCell` : undefined}
+      aria-owns={`${columnId}-actionCell`}
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-component-props
       style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
       onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
+      onBlur={isActionCell ? onBlur : undefined}
     >
       {cellContent}
       { isResizable && !isActionCell && (
