@@ -346,7 +346,6 @@ const ColumnHeaderCell = (props) => {
     if (action) {
       cellContent = (
         <Button
-          ariaHidden
           variant="de-emphasis"
           ref={columnHeaderCellRef}
           isCompact
