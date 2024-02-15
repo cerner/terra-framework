@@ -88,7 +88,6 @@ exports[`correctly applies the theme context className 1`] = `
                 class="abstract-modal layer-6000 orion-fusion-theme"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -206,7 +205,6 @@ exports[`correctly applies the theme context className 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -356,7 +354,6 @@ exports[`should mount an open modal 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -474,7 +471,6 @@ exports[`should mount an open modal 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -625,7 +621,6 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 class="abstract-modal layer-7000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -743,7 +738,6 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -894,7 +888,6 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 class="abstract-modal layer-8000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -1012,7 +1005,6 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1163,7 +1155,6 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 class="abstract-modal layer-9000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -1281,7 +1272,6 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1432,7 +1422,6 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 class="abstract-modal is-fullscreen layer-6000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -1550,7 +1539,6 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1703,7 +1691,6 @@ exports[`should mount an open modal with custom props 1`] = `
                 id="custom-props"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -1823,7 +1810,6 @@ exports[`should mount an open modal with custom props 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1974,7 +1960,6 @@ exports[`should mount an open modal with modal class name 1`] = `
                 class="abstract-modal layer-6000 modal-custom-class"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -2092,7 +2077,6 @@ exports[`should mount an open modal with modal class name 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -2243,7 +2227,6 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -2361,7 +2344,6 @@ exports[`should mount an open modal with overlay class name 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -2512,7 +2494,6 @@ exports[`should mount an open modal with role 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="alertdialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -2630,7 +2611,6 @@ exports[`should mount an open modal with role 1`] = `
               }
               onKeyDown={[Function]}
               role="alertdialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -2781,7 +2761,6 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -2899,7 +2878,6 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -3062,7 +3040,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                   class="abstract-modal layer-6000"
                   intl="[object Object]"
                   role="dialog"
-                  tabindex="0"
                 >
                   <div
                     class="abstract-modal-container"
@@ -3229,7 +3206,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                           class="abstract-modal layer-6000"
                           intl="[object Object]"
                           role="dialog"
-                          tabindex="0"
                         >
                           <div
                             class="abstract-modal-container"
@@ -3293,7 +3269,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                             class="abstract-modal layer-6000"
                             intl="[object Object]"
                             role="dialog"
-                            tabindex="0"
                           >
                             <div
                               class="abstract-modal-container"
@@ -3357,7 +3332,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                               class="abstract-modal layer-6000"
                               intl="[object Object]"
                               role="dialog"
-                              tabindex="0"
                             >
                               <div
                                 class="abstract-modal-container"
@@ -3409,7 +3383,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                 class="abstract-modal layer-6000"
                                 intl="[object Object]"
                                 role="dialog"
-                                tabindex="0"
                               >
                                 <div
                                   class="abstract-modal-container"
@@ -3474,7 +3447,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                               class="abstract-modal layer-6000"
                               intl="[object Object]"
                               role="dialog"
-                              tabindex="0"
                             >
                               <div
                                 class="abstract-modal-container"
@@ -3535,7 +3507,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                 class="abstract-modal layer-6000"
                                 intl="[object Object]"
                                 role="dialog"
-                                tabindex="0"
                               >
                                 <div
                                   class="abstract-modal-container"
@@ -3596,7 +3567,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                   class="abstract-modal layer-6000"
                                   intl="[object Object]"
                                   role="dialog"
-                                  tabindex="0"
                                 >
                                   <div
                                     class="abstract-modal-container"
@@ -3719,7 +3689,6 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                         }
                         onKeyDown={[Function]}
                         role="dialog"
-                        tabIndex="0"
                       >
                         <div
                           className="abstract-modal-container"
@@ -3937,7 +3906,6 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="-1"
               >
                 <div
                   class="abstract-modal-container"
@@ -4055,7 +4023,6 @@ exports[`should render the correct snapshot for iPads 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="-1"
             >
               <div
                 className="abstract-modal-container"
@@ -4205,7 +4172,6 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="-1"
               >
                 <div
                   class="abstract-modal-container"
@@ -4323,7 +4289,6 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="-1"
             >
               <div
                 className="abstract-modal-container"
@@ -4473,7 +4438,6 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
-                tabindex="-1"
               >
                 <div
                   class="abstract-modal-container"
@@ -4591,7 +4555,6 @@ exports[`should render the correct snapshot for iPods 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="-1"
             >
               <div
                 className="abstract-modal-container"

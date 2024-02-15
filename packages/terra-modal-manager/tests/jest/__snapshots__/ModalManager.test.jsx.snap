@@ -212,7 +212,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       aria-modal="true"
                       class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                       role="dialog"
-                      tabindex="0"
                     >
                       <div
                         class="abstract-modal-container"
@@ -379,7 +378,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               aria-modal="true"
                               class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                               role="dialog"
-                              tabindex="0"
                             >
                               <div
                                 class="abstract-modal-container"
@@ -469,7 +467,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                 aria-modal="true"
                                 class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                                 role="dialog"
-                                tabindex="0"
                               >
                                 <div
                                   class="abstract-modal-container"
@@ -559,7 +556,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                   aria-modal="true"
                                   class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                                   role="dialog"
-                                  tabindex="0"
                                 >
                                   <div
                                     class="abstract-modal-container"
@@ -637,7 +633,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                     aria-modal="true"
                                     class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                                     role="dialog"
-                                    tabindex="0"
                                   >
                                     <div
                                       class="abstract-modal-container"
@@ -728,7 +723,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                   aria-modal="true"
                                   class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                                   role="dialog"
-                                  tabindex="0"
                                 >
                                   <div
                                     class="abstract-modal-container"
@@ -815,7 +809,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                     aria-modal="true"
                                     class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                                     role="dialog"
-                                    tabindex="0"
                                   >
                                     <div
                                       class="abstract-modal-container"
@@ -902,7 +895,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                       aria-modal="true"
                                       class="abstract-modal layer-6000 modal-manager height-870 width-1280"
                                       role="dialog"
-                                      tabindex="0"
                                     >
                                       <div
                                         class="abstract-modal-container"
@@ -1025,7 +1017,6 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                             className="abstract-modal layer-6000 modal-manager height-870 width-1280"
                             onKeyDown={[Function]}
                             role="dialog"
-                            tabIndex="0"
                           >
                             <div
                               className="abstract-modal-container"

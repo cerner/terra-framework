@@ -1014,7 +1014,6 @@ exports[`correctly applies the theme context className 1`] = `
                   aria-modal="true"
                   class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                   role="alertdialog"
-                  tabindex="-1"
                 >
                   <div
                     class="abstract-modal-container"
@@ -1153,7 +1152,6 @@ exports[`correctly applies the theme context className 1`] = `
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                 onKeyDown={[Function]}
                 role="alertdialog"
-                tabIndex="-1"
               >
                 <div
                   className="abstract-modal-container"
