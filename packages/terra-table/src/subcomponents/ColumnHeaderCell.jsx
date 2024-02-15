@@ -393,6 +393,7 @@ const ColumnHeaderCell = (props) => {
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
       aria-owns={!isActionCell ? `${tableId}-${columnId}-actionCell` : undefined}
+      aria-hidden={isActionCell}
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
