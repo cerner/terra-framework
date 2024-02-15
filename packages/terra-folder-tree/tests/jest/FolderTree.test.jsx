@@ -181,7 +181,7 @@ describe('basic folder tree', () => {
       />,
     ).dive();
 
-    expect(wrapper.find('li').prop('aria-selected')).toBe(null);
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
     expect(wrapper.exists('input[type="radio"]')).toBe(false);
   });
 
@@ -194,7 +194,7 @@ describe('basic folder tree', () => {
       />,
     ).dive();
 
-    expect(wrapper.find('li').prop('aria-selected')).toBe(null);
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
     expect(wrapper.find('li').hasClass('selected')).toBe(false);
   });
 });
