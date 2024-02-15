@@ -328,6 +328,7 @@ const ColumnHeaderCell = (props) => {
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
 
   // set focus in action cell to either button or resize handler
+  /*
   const distributeFocusWithinActionCell = () => {
     columnHeaderCellRef?.current?.childNodes[0].focus();
     columnHeaderCellRef?.current?.childNodes[0].setAttribute('aria-hidden', false);
@@ -335,7 +336,7 @@ const ColumnHeaderCell = (props) => {
 
   const onBlur = () => {
     columnHeaderCellRef?.current?.childNodes[0].setAttribute('aria-hidden', true);
-  };
+  }; */
 
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
   const CellTag = !isActionCell ? 'th' : 'td';
@@ -391,14 +392,14 @@ const ColumnHeaderCell = (props) => {
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
-      aria-owns={`${columnId}-actionCell`}
+      aria-owns={!isActionCell ? `${columnId}-actionCell` : undefined}
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-component-props
       style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
-      onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
-      onBlur={isActionCell ? onBlur : undefined}
+      // onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
+      // onBlur={isActionCell ? onBlur : undefined}
     >
       {cellContent}
       { isResizable && !isActionCell && (
