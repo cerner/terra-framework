@@ -194,7 +194,7 @@ const FolderTreeItem = ({
         className={itemClassNames}
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
-        aria-selected={isSelectable ? isSelected : null}
+        aria-selected={isSelected}
         onClick={isFolder ? handleToggle : handleSelect}
         onKeyDown={handleKeyDown}
         data-item-show-focus
