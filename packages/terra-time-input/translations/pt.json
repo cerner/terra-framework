@@ -10,7 +10,7 @@
   "Terra.timeInput.labeledTextValue": "{a11yLabel} {a11yTimeValue}",
   "Terra.timeInput.maskHourMinute": "(hh:mm)",
   "Terra.timeInput.maskHourMinuteSecond": "(hh:mm:ss)",
-  "Terra.timeInput.minutes": "Minutos",
+  "Terra.timeInput.minutes": "{a11yLabel} Minutos",
   "Terra.timeInput.pm": "p.m.",
   "Terra.timeInput.seconds": "Segundos",
   "Terra.timeInput.textValueTwelveHourMinute": "{hour}:{minute} {meridiem}",

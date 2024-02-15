@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added fix for field label SR announce.
+
 ## 4.98.0 - (February 1, 2024)
 
 * Changed
