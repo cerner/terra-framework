@@ -327,16 +327,10 @@ const ColumnHeaderCell = (props) => {
   headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
 
-  // set focus in action cell to the button
+  // set focus to the action button
   const distributeFocusWithinActionCell = () => {
     columnHeaderCellRef?.current?.childNodes[0].focus();
-    // columnHeaderCellRef?.current?.childNodes[0].setAttribute('aria-hidden', false);
   };
-
-  /*
-  const onBlur = () => {
-    columnHeaderCellRef?.current?.childNodes[0].setAttribute('aria-hidden', true);
-  }; */
 
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
   const CellTag = !isActionCell ? 'th' : 'td';
@@ -349,6 +343,7 @@ const ColumnHeaderCell = (props) => {
         <Button
           variant="de-emphasis"
           ref={columnHeaderCellRef}
+          aria-hidden
           isCompact
           onClick={action.onClick}
           onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
@@ -393,14 +388,12 @@ const ColumnHeaderCell = (props) => {
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
       aria-owns={!isActionCell ? `${tableId}-${columnId}-actionCell` : undefined}
-      aria-hidden={isActionCell}
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-component-props
       style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
       onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
-      // onBlur={isActionCell ? onBlur : undefined}
     >
       {cellContent}
       { isResizable && !isActionCell && (
