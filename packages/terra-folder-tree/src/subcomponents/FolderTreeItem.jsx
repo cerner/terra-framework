@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
-import { v4 as uuidv4 } from 'uuid';
 
 import Spacer from 'terra-spacer';
 import Arrange from 'terra-arrange';
@@ -92,8 +91,6 @@ const FolderTreeItem = ({
   const isFolder = subfolderItems?.length > 0;
   const itemNode = useRef();
   const subFolderNode = useRef();
-
-  const itemID = `folder-tree-item-${uuidv4()}`;
 
   const subfolder = isFolder ? (
     <ul
@@ -199,7 +196,6 @@ const FolderTreeItem = ({
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelectable && isSelected}
-        aria-describedby={itemID}
         onClick={isFolder ? handleToggle : handleSelect}
         onKeyDown={handleKeyDown}
         data-item-show-focus
@@ -228,9 +224,9 @@ const FolderTreeItem = ({
             alignFitStart="center"
           />
         </span>
+        <VisuallyHiddenText text={isSelectable ? 'Selectable' : 'Non-selectable'} />
       </li>
       {subfolder}
-      <VisuallyHiddenText id={itemID} text={isSelectable ? 'Selectable' : 'Non-selectable'} />
     </>
   );
 };
