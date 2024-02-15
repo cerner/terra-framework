@@ -188,4 +188,10 @@
     margin-top: var(--terra-date-picker-format-text-margin-top, 0.357em);
     text-align: left;
   }
+  // stylelint-disable property-no-vendor-prefix
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
 }

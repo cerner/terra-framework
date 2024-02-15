@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Added
+  * Added shouldTrapFocus to be set to 'true'.
 * Changed
   * Updated selection examples and tests for `terra-folder-tree`.
   * Updated the `terra-date-time-picker` example for field label.
