@@ -46,5 +46,14 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }

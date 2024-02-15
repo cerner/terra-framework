@@ -41,5 +41,13 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest",
     "jest": "jest --config ../../jest.config.js"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }
