@@ -389,7 +389,6 @@ const ColumnHeaderCell = (props) => {
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
-      rowspan={!isActionCell ? '2' : undefined}
       // scope={!isActionCell ? 'col' : undefined}
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
