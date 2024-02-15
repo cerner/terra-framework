@@ -223,7 +223,13 @@ const FolderTreeItem = ({
             fill={(
               <span>
                 {`${label},`}
-                <VisuallyHiddenText text={isSelectable ? 'Selectable' : 'Non-selectable'} />
+                <VisuallyHiddenText
+                  text={
+                    isSelectable
+                      ? intl.formatMessage({ id: 'Terra.folder-tree.item.selectable-announcement' })
+                      : intl.formatMessage({ id: 'Terra.folder-tree.item.nonselectable-announcement' })
+                  }
+                />
               </span>
 )}
             alignFitStart="center"
