@@ -3,8 +3,9 @@
 ## Unreleased
 
 * Added
+  * Added shouldTrapFocus to be set to 'true'.
   * Column actions example added to `terra-worklist-data-grid`.
-  
+
 * Changed
   * Updated the `terra-date-time-picker` example for field label.
 

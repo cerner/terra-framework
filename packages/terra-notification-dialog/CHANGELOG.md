@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Snapshots updated as per FocusOn implementation.
+
 ## 4.39.0 - (January 22, 2024)
 
 * Changed

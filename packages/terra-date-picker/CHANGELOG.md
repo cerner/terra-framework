@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed date picker to change the focused input field value instead of the day input while pressing `+`, `-` keys.
+
 * Changed
   * Added fix for field label SR announce.
 

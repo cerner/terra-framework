@@ -25,13 +25,14 @@
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-intl": ">=2.9.0, <6.0.0"
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "mutationobserver-shim": "<=0.3.3",
     "prop-types": "^15.5.8",
+    "react-focus-on": "^3.9.1",
     "react-portal": "^4.1.2",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.0.0",
