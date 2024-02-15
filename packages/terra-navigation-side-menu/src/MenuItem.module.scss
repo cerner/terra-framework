@@ -120,6 +120,16 @@
           color: var(--terra-navigation-side-menu-item-selected-hover-chevron-color, #909496);
         }
       }
+
+      &:focus {
+        box-shadow: var(--terra-navigation-side-menu-item-focus-box-shadow, none);
+        outline: var(--terra-navigation-side-menu-focus-outline, 2px dashed #000);
+        outline-offset: var(--terra-navigation-side-menu-focus-outline-offset, -2px);
+  
+        .chevron {
+          color: var(--terra-navigation-side-menu-item-selected-focus-chevron-color, #909496);
+        }
+      }
     }
   }
 
