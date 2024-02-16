@@ -430,7 +430,6 @@ describe('ColumnHeaderCell', () => {
       />,
     );
     wrapper.find('.column-header').simulate('mousedown');
-    console.log(wrapper.find('.column-header').html());
 
     // Validate mock function was called from simulated onMouseDown event
     expect(mockOnColumnSelect).toHaveBeenCalled();
