@@ -1,7 +1,7 @@
 {
   "name": "terra-table",
   "main": "lib/index.js",
-  "version": "5.5.0",
+  "version": "5.6.0",
   "description": "The Terra Table component provides user a way to display data in an accessible table format.",
   "repository": {
     "type": "git",
