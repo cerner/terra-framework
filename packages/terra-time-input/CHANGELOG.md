@@ -2,9 +2,12 @@
 
 ## Unreleased
 
+* Added
+  * Added ariaDescribedBy prop to announce invalid error message.
+
 * Changed
   * Added fix for field label SR announce.
-  
+
 * Changed
   * Changed `up`,`down` key functionality to same as `+`,`-` functionality to make uniform.
   * Changed `terra-time-input` type `number` instead of `text`.

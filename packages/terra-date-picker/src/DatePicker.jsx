@@ -141,6 +141,11 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
+  /**
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  ariaDescribedBy: PropTypes.string,
 };
 
 const defaultProps = {
@@ -165,6 +170,7 @@ const defaultProps = {
   useExternalFormatMask: false,
   required: false,
   selectedDate: undefined,
+  ariaDescribedBy: '',
 };
 
 class DatePicker extends React.Component {
@@ -427,6 +433,7 @@ class DatePicker extends React.Component {
       selectedDate,
       useExternalFormatMask,
       value,
+      ariaDescribedBy,
       ...customProps
     } = this.props;
 
@@ -506,6 +513,7 @@ class DatePicker extends React.Component {
                 maxDate={maxDate}
                 minDate={minDate}
                 filterDate={this.handleFilterDate}
+                ariaDescribedBy={ariaDescribedBy}
               />
             )}
             customInputRef="firstInputRefCallback"

@@ -1162,14 +1162,14 @@ Terra.describeViewports('Date Picker', ['tiny', 'small', 'medium'], () => {
     it('sets default label to calendar button when no date is entered', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/date-picker/date-picker-default');
 
-      expect($('[class*="button"]').getAttribute('aria-label')).toEqual(' Open Calendar');
+      expect($('[class*="button"]').getAttribute('aria-label')).toEqual('Open Calendar');
     });
 
     it('sets the valid date to calendar button label ', () => {
       $('input[name="terra-date-month-date-input"]').setValue('01');
       $('input[name="terra-date-day-date-input"]').setValue('01');
       $('input[name="terra-date-year-date-input"]').setValue('2017');
-      expect($('[class*="button"]').getAttribute('aria-label')).toEqual('Sunday, January 1, 2017 selected. Open Calendar');
+      expect($('[class*="button"]').getAttribute('aria-label')).toEqual('Open Calendar');
     });
   });
 });

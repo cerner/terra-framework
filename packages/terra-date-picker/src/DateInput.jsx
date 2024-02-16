@@ -143,6 +143,11 @@ const propTypes = {
    * A return value of true will be enabled and false will be disabled.
    */
   filterDate: PropTypes.func,
+  /**
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  ariaDescribedBy: PropTypes.string,
 };
 
 const defaultProps = {
@@ -167,6 +172,7 @@ const defaultProps = {
   maxDate: '2100-12-31',
   minDate: '1900-01-01',
   filterDate: undefined,
+  ariaDescribedBy: '',
 };
 
 const DatePickerInput = (props) => {
@@ -195,6 +201,7 @@ const DatePickerInput = (props) => {
     maxDate,
     minDate,
     filterDate,
+    ariaDescribedBy,
     ...customProps
   } = props;
 
@@ -715,8 +722,9 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
+      aria-invalid={isInvalid}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ariaDescriptionIds} ${ariaDescribedBy}`}
       id={dayInputId}
     />
   );
@@ -746,8 +754,9 @@ const DatePickerInput = (props) => {
       size="2"
       pattern="\d*"
       aria-required={required}
+      aria-invalid={isInvalid}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ariaDescriptionIds} ${ariaDescribedBy}`}
       id={monthInputId}
     />
   );
@@ -777,8 +786,9 @@ const DatePickerInput = (props) => {
       size="4"
       pattern="\d*"
       aria-required={required}
+      aria-invalid={isInvalid}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ariaDescriptionIds} ${ariaDescribedBy}`}
       id={yearInputId}
     />
   );
@@ -861,7 +871,7 @@ const DatePickerInput = (props) => {
           onBlur={onBlur}
           onFocus={onButtonFocus}
           refCallback={buttonRefCallback}
-          aria-label={`${calendarDate} ${intl.formatMessage({ id: 'Terra.datePicker.openCalendar' })}`}
+          aria-label={`${intl.formatMessage({ id: 'Terra.datePicker.openCalendar' })}`}
         />
       </div>
       {!useExternalFormatMask && (
@@ -870,7 +880,7 @@ const DatePickerInput = (props) => {
             aria-live={DateUtil.isMac() ? 'polite' : 'off'}
             text={`${invalidEntry}
             ${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })}
-            ${format}. ${inputDate ? `${inputDate},` : ''} ${intl.formatMessage({ id: 'Terra.datePicker.hotKey' })} `}
+            ${format}. ${inputDate ? `${inputDate},` : ''} ${intl.formatMessage({ id: 'Terra.datePicker.hotKey' })}, `}
           />
           <div aria-hidden="true">
             {`(${format})`}
