@@ -2,11 +2,30 @@ import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
 
+const mockAction = jest.fn();
 // Source data for tests
 const dataFile = {
   cols: [
     {
       id: 'Column-0', displayName: ' Vitals', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-2', displayName: 'March 17', isSelectable: false, isResizable: true,
+    },
+  ],
+  colsWithActions: [
+    {
+      id: 'Column-0',
+      displayName: ' Vitals',
+      isSelectable: true,
+      isResizable: true,
+      action: {
+        label: 'action button',
+        onClick: mockAction,
+      },
     },
     {
       id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
@@ -603,5 +622,117 @@ describe('Row selection', () => {
     expect(mockOnCellSelect).not.toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe('Column Header with Actions keyboard navigation', () => {
+  const arrowRightProps = {
+    key: 'ArrowRight', keyCode: 39, which: 39,
+  };
+  const arrowLeftProps = {
+    key: 'ArrowLeft', keyCode: 37, which: 37,
+  };
+  const arrowDownProps = {
+    key: 'ArrowDown', keyCode: 40, which: 40,
+  };
+  const arrowUpProps = {
+    key: 'ArrowUp', keyCode: 38, which: 38,
+  };
+
+  beforeEach(() => {
+    document.getElementsByTagName('html')[0].innerHTML = '';
+  });
+
+  it('Validate LEFT key on resize handle navigates back to cell it came from', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.colsWithActions.slice(0, 2)}
+        overflowColumns={dataFile.colsWithActions.slice(2)}
+        rows={dataFile.rows}
+      />, {
+        attachTo: document.body,
+      },
+    );
+
+    const headerCell = wrapper.find('.header-container').at(0);
+    const actionCell = wrapper.find('.action-cell').at(0);
+    const actionButton = actionCell.find('button');
+    const resizeHandle = wrapper.find('.resize-handle').at(0);
+
+    // step DOWN from header cell should focus on action button
+    headerCell.simulate('keydown', arrowDownProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step RIGHT from action button should focus on resize handle
+    actionButton.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step LEFT from resize handle should focus back on action button
+    resizeHandle.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step UP from action button to header cell
+    actionButton.simulate('keydown', arrowUpProps);
+    expect(document.activeElement).toBe(headerCell.instance());
+
+    // step RIGHT from header cell should focus on resize handle
+    headerCell.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step LEFT from resize handle should focus back on header cell
+    resizeHandle.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(headerCell.instance());
+  });
+
+  it('Validate RIGHT key on resize handle navigates to the next column keeping the row', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.colsWithActions.slice(0, 2)}
+        overflowColumns={dataFile.colsWithActions.slice(2)}
+        rows={dataFile.rows}
+      />, {
+        attachTo: document.body,
+      },
+    );
+
+    const headerCell = wrapper.find('.header-container').at(0);
+    const headerCell2 = wrapper.find('.header-container').at(1);
+    const actionButton = wrapper.find('.action-cell').at(0).find('button');
+    const actionButton2 = wrapper.find('.action-cell').at(1); // There is no button inside placeholder cell
+    const resizeHandle = wrapper.find('.resize-handle').at(0);
+
+    // step DOWN from header cell should focus on action button
+    headerCell.simulate('keydown', arrowDownProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step RIGHT from action button should focus on resize handle
+    actionButton.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step RIGHT from resize handle should focus on action placeholder cell in the second column
+    resizeHandle.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(actionButton2.instance());
+
+    // step LEFT from second col action placeholder should focus on first col action button
+    actionButton2.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step UP from action button to header cell
+    actionButton.simulate('keydown', arrowUpProps);
+    expect(document.activeElement).toBe(headerCell.instance());
+
+    // step RIGHT from header cell should focus on resize handle
+    headerCell.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step RIGHT from resize handle should focus on second col header cell
+    resizeHandle.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(headerCell2.instance());
+
+    // step LEFT from headerCell in second col should focus back on header cell in the first col
+    headerCell2.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(headerCell.instance());
   });
 });
