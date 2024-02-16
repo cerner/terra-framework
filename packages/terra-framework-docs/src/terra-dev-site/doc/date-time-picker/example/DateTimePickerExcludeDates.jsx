@@ -19,6 +19,7 @@ const DateTimePickerExampleExcludeDates = () => {
       <Field label="Enter Date/Time" htmlFor="exclude-dates">
         <DateTimePicker
           name="date-time-picker-example"
+          ariaLabel="Enter Date/Time"
           dateInputAttributes={{ id: 'exclude-dates' }}
           onChange={handleDateTimeChange}
           excludeDates={[moment().subtract(1, 'days').format(), moment().add(1, 'days').format()]}

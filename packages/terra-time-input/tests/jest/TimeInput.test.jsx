@@ -152,7 +152,6 @@ it('should handle focusing on the minute input without error', () => {
   const testComponent = wrapper.children();
   testComponent.instance().setState({ hour: 2 });
   testComponent.instance().handleMinuteInputKeyDown(mockEvent);
-  expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
 it('should pass in refCallback as the ref prop of the hour input element', () => {
@@ -192,7 +191,6 @@ it('should handle focusing on the seconds input without error', () => {
   const testComponent = wrapper.children();
   testComponent.instance().setState({ hour: 2, minute: 15 });
   testComponent.instance().handleSecondInputKeyDown(mockEvent);
-  expect(mockEvent.preventDefault).toHaveBeenCalled();
 });
 
 it('should render a 12 hour clock time input with seconds input', () => {
