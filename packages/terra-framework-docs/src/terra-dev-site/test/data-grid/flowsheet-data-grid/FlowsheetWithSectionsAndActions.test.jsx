@@ -83,7 +83,7 @@ const FlowsheetWithSectionsAndActions = () => {
     if (columnIndex < 5) {
       // eslint-disable-next-line no-param-reassign
       col.action = {
-        label: `${col.displayName} action`,
+        label: columnIndex > 0 ? `${col.displayName} action` : undefined, // skip one label to te
         // eslint-disable-next-line no-alert
         onClick: () => alert(`${col.displayName} action called`),
       };

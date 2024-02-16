@@ -342,7 +342,6 @@ const ColumnHeaderCell = (props) => {
       cellContent = (
         <Button
           variant="de-emphasis"
-          ref={columnHeaderCellRef}
           isCompact
           onClick={action.onClick}
           onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
