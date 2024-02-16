@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added debounce to resize observer.
+  * Added timeout to resize observer.
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.

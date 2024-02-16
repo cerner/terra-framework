@@ -9,8 +9,6 @@ import classNames from 'classnames/bind';
 import ResizeObserver from 'resize-observer-polyfill';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import LodashDebounce from 'lodash.debounce';
 import Section from './subcomponents/Section';
 import ColumnHeader from './subcomponents/ColumnHeader';
 import ColumnContext from './utils/ColumnContext';
@@ -36,8 +34,6 @@ const TableConstants = {
 };
 
 const ROW_SELECTION_COLUMN_ID = 'table-rowSelectionColumn';
-
-const DEBOUNCE_TIMER = 100;
 
 const propTypes = {
   /**
@@ -231,6 +227,8 @@ function Table(props) {
   const activeColumnPageX = useRef(0);
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
+  const resizingDelayTimer = useRef(null);
+  const resizeTimer = 100;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
@@ -402,26 +400,26 @@ function Table(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 
-  const handleResize = useCallback(() => {
-    setTableHeight(tableRef.current.offsetHeight - 1);
-
-    const tableContainer = tableContainerRef.current;
-    setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
-                      || tableContainer.scrollHeight > tableContainer.clientHeight);
-  }, [tableRef, tableContainerRef]);
-
-  const debouncedHandleResize = useCallback(() => LodashDebounce(handleResize, DEBOUNCE_TIMER), [handleResize]);
-
-  // useEffect for managing the table height.
   useEffect(() => {
-    const resizeObserver = new ResizeObserver(debouncedHandleResize);
+    const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(resizingDelayTimer.current);
+      resizingDelayTimer.current = setTimeout(() => {
+        if (tableRef.current) {
+          setTableHeight(tableRef.current.offsetHeight - 1);
+
+          const tableContainer = tableContainerRef.current;
+          setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
+                        || tableContainer.scrollHeight > tableContainer.clientHeight);
+        }
+      }, resizeTimer);
+    });
 
     resizeObserver.observe(tableRef.current);
 
     return () => {
       resizeObserver.disconnect();
     };
-  }, [debouncedHandleResize]);
+  }, [tableRef]);
 
   // -------------------------------------
 
