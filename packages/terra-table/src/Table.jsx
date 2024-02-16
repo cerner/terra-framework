@@ -286,7 +286,7 @@ function Table(props) {
     return [{ id: defaultSectionRef.current, rows }];
   }, [rows, sections]);
 
-  // check if at least one column has a valid action
+  // check if at least one column has an action prop
   // same check is done in DataGrid, but as Table can be a stand-alone component, it can't relay on passed prop.
   const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
   // eslint-disable-next-line no-nested-ternary

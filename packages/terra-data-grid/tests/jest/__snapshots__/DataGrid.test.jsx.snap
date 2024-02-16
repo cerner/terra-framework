@@ -671,6 +671,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-0-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -685,6 +686,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             columnText=" Vitals"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-0-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -729,6 +731,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -865,6 +868,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-1-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -879,6 +883,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             columnText="March 16"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-1-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -923,6 +928,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -1057,6 +1063,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-2-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -1071,6 +1078,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             columnText="March 17"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-2-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -1115,6 +1123,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -3369,6 +3378,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-0-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -3383,6 +3393,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             columnText=" Vitals"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-0-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -3427,6 +3438,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -3563,6 +3575,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-1-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -3577,6 +3590,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             columnText="March 16"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-1-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -3621,6 +3635,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -3755,6 +3770,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-2-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -3769,6 +3785,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                             columnText="March 17"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-2-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -3813,6 +3830,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -6169,6 +6187,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-0-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -6183,6 +6202,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             columnText=" Vitals"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-0-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -6227,6 +6247,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -6363,6 +6384,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-1-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -6377,6 +6399,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             columnText="March 16"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-1-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -6421,6 +6444,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -6555,6 +6579,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-2-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -6569,6 +6594,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             columnText="March 17"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-2-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -6613,6 +6639,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -9452,6 +9479,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-0-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -9466,6 +9494,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             columnText=" Vitals"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-0-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -9510,6 +9539,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -9646,6 +9676,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-1-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -9660,6 +9691,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             columnText="March 16"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-1-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -9704,6 +9736,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -9838,6 +9871,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-2-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -9852,6 +9886,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             columnText="March 17"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-2-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -9896,6 +9931,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -12069,6 +12105,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                           columnText=" Vitals"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-0-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -12083,6 +12120,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             columnText=" Vitals"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-0-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -12127,6 +12165,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -12263,6 +12302,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                           columnText="March 16"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-1-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -12277,6 +12317,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             columnText="March 16"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-1-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -12321,6 +12362,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}
@@ -12455,6 +12497,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                           columnText="March 17"
                           columnWidth={200}
                           height={0}
+                          id="test-terra-data-grid-table-Column-2-resizeHandle"
                           isActive={false}
                           maximumWidth={300}
                           minimumWidth={60}
@@ -12469,6 +12512,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             columnText="March 17"
                             columnWidth={200}
                             height={0}
+                            id="test-terra-data-grid-table-Column-2-resizeHandle"
                             intl={
                               Object {
                                 "defaultFormats": Object {},
@@ -12513,6 +12557,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               aria-valuetext={null}
                               className="resize-handle"
                               draggable={true}
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
                               onBlur={[Function]}
                               onClick={[Function]}
                               onFocus={[Function]}

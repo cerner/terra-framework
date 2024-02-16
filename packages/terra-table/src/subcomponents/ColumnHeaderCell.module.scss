@@ -42,7 +42,7 @@
       bottom: -1px;
       width: 6px;
       box-shadow: var(--terra-table-last-pinned-header-box-shadow, 2px -1px 6px #808080); 
-      clip-path: inset(0 -6px 0 0); // second position -6px must be consistant with third position (6px) in box-shadow prop, rest should be 0.
+      clip-path: inset(0 -6px 0 0); // second position -6px must be consistent with third position (6px) in box-shadow prop, rest should be 0.
     }
 
     .header-container {

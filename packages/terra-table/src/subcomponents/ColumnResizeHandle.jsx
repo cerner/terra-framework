@@ -41,7 +41,7 @@ const propTypes = {
   height: PropTypes.number.isRequired,
 
   /**
-   * String that specifies the init height for the resize handler to accomodate actions row.
+   * String that specifies the init height for the resize handler to accommodate actions row.
    */
   resizeHandlerInitHeight: PropTypes.string,
 
