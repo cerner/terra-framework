@@ -135,11 +135,11 @@ const propTypes = {
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
-   /**
+  /**
    * If invalid error text is used, provide a string containing the IDs for error html element.
    * ID must be htmlFor prop value with error text.
    */
-   ariaDescribedBy: PropTypes.string,
+  ariaDescribedBy: PropTypes.string,
 };
 
 const defaultProps = {

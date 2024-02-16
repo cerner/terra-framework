@@ -815,7 +815,6 @@ const DatePickerInput = (props) => {
   if (DateUtil.isValidDate(value, momentDateFormat)) {
     inputDate = `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}`;
   }
-  let calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : '';
 
   // Check if date is excluded or out of range or not included or filtered
   let invalidEntry = '';
@@ -824,7 +823,6 @@ const DatePickerInput = (props) => {
       || DateUtil.isDateNotIncluded(DateUtil.createSafeDate(dateValue, initialTimeZone), props.includeDates)
       || (props.filterDate && !props.filterDate(DateUtil.createSafeDate(dateValue, initialTimeZone)))) {
     invalidEntry = `${intl.formatMessage({ id: 'Terra.datePicker.invalidDate' })}.`;
-    calendarDate = '';
   }
 
   return (
