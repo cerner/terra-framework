@@ -92,6 +92,10 @@ const FolderTreeItem = ({
   const itemNode = useRef();
   const subFolderNode = useRef();
 
+  const selectableAnnouncement = isSelectable
+  ? intl.formatMessage({ id: 'Terra.folder-tree.item.selectable-announcement' })
+  : intl.formatMessage({ id: 'Terra.folder-tree.item.nonselectable-announcement' })
+
   const subfolder = isFolder ? (
     <ul
       className={cx('subfolder')}
@@ -222,13 +226,9 @@ const FolderTreeItem = ({
             )}
             fill={(
               <span>
-                {`${label},`}
+                {label}
                 <VisuallyHiddenText
-                  text={
-                    isSelectable
-                      ? intl.formatMessage({ id: 'Terra.folder-tree.item.selectable-announcement' })
-                      : intl.formatMessage({ id: 'Terra.folder-tree.item.nonselectable-announcement' })
-                  }
+                  text={", " + selectableAnnouncement}
                 />
               </span>
 )}
