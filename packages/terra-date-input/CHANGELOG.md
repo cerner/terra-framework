@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.51.1 - (February 16, 2024)
+
 * Fixed
   * Fixed the text color issue of month select list options.
   * Fixed the screen reader issue where it announced a different date than the one displayed.
