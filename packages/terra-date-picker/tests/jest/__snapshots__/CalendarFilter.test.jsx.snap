@@ -2,6 +2,7 @@
 
 exports[`should render a calendar filter with default date 1`] = `
 <DatePicker
+  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
@@ -47,6 +48,7 @@ exports[`should render a calendar filter with default date 1`] = `
 
 exports[`should render a calendar filter with excluded dates 1`] = `
 <DatePicker
+  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
@@ -96,6 +98,7 @@ exports[`should render a calendar filter with excluded dates 1`] = `
 
 exports[`should render a calendar filter with filtered dates 1`] = `
 <DatePicker
+  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
@@ -141,6 +144,7 @@ exports[`should render a calendar filter with filtered dates 1`] = `
 
 exports[`should render a calendar filter with included dates 1`] = `
 <DatePicker
+  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
@@ -190,6 +194,7 @@ exports[`should render a calendar filter with included dates 1`] = `
 
 exports[`should render a calendar filter with min and max dates 1`] = `
 <DatePicker
+  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
@@ -234,6 +239,7 @@ exports[`should render a calendar filter with min and max dates 1`] = `
 
 exports[`should render a calendar filter with onChange 1`] = `
 <DatePicker
+  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
@@ -279,6 +285,7 @@ exports[`should render a calendar filter with onChange 1`] = `
 
 exports[`should render a controlled calendar filter 1`] = `
 <DatePicker
+  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}

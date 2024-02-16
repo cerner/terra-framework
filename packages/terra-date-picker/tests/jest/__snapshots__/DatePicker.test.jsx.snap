@@ -39,6 +39,7 @@ exports[`correctly applies the theme context className 1`] = `
     name="date-input"
   >
     <DatePicker
+      ariaDescribedBy=""
       disableButtonFocusOnClose={false}
       disabled={false}
       intl={
@@ -88,6 +89,7 @@ exports[`correctly applies the theme context className 1`] = `
             allowSameDay={true}
             customInput={
               <InjectIntl(DatePickerInput)
+                ariaDescribedBy=""
                 buttonRefCallback={[Function]}
                 excludeDates={
                   Array [
@@ -151,6 +153,7 @@ exports[`correctly applies the theme context className 1`] = `
               allowSameDay={true}
               customInput={
                 <InjectIntl(DatePickerInput)
+                  ariaDescribedBy=""
                   buttonRefCallback={[Function]}
                   excludeDates={
                     Array [
@@ -246,6 +249,7 @@ exports[`correctly applies the theme context className 1`] = `
                 className="react-datepicker-input-container"
               >
                 <InjectIntl(DatePickerInput)
+                  ariaDescribedBy=""
                   buttonRefCallback={[Function]}
                   className=""
                   disabled={false}
@@ -279,6 +283,7 @@ exports[`correctly applies the theme context className 1`] = `
                   value="01/01/2017"
                 >
                   <DatePickerInput
+                    ariaDescribedBy=""
                     buttonRefCallback={[Function]}
                     className=""
                     disabled={false}
@@ -380,7 +385,8 @@ exports[`correctly applies the theme context className 1`] = `
                             dateFormatOrder="MDY"
                             day={
                               <Input
-                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                                aria-invalid={false}
                                 aria-label="Terra.datePicker.dayLabel"
                                 aria-required={false}
                                 className="date-input-day"
@@ -403,7 +409,8 @@ exports[`correctly applies the theme context className 1`] = `
                             }
                             month={
                               <Input
-                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                                aria-invalid={false}
                                 aria-label="Terra.datePicker.monthLabel"
                                 aria-required={false}
                                 className="date-input-month"
@@ -433,7 +440,8 @@ exports[`correctly applies the theme context className 1`] = `
                             }
                             year={
                               <Input
-                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                                aria-invalid={false}
                                 aria-label="Terra.datePicker.yearLabel"
                                 aria-required={false}
                                 className="date-input-year"
@@ -456,7 +464,8 @@ exports[`correctly applies the theme context className 1`] = `
                             }
                           >
                             <Input
-                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                              aria-invalid={false}
                               aria-label="Terra.datePicker.monthLabel"
                               aria-required={false}
                               className="date-input-month"
@@ -477,7 +486,8 @@ exports[`correctly applies the theme context className 1`] = `
                               value="01"
                             >
                               <input
-                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                                aria-invalid={false}
                                 aria-label="Terra.datePicker.monthLabel"
                                 aria-required={false}
                                 className="form-input orion-fusion-theme date-input-month"
@@ -501,7 +511,8 @@ exports[`correctly applies the theme context className 1`] = `
                               /
                             </span>
                             <Input
-                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                              aria-invalid={false}
                               aria-label="Terra.datePicker.dayLabel"
                               aria-required={false}
                               className="date-input-day"
@@ -522,7 +533,8 @@ exports[`correctly applies the theme context className 1`] = `
                               value="01"
                             >
                               <input
-                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                                aria-invalid={false}
                                 aria-label="Terra.datePicker.dayLabel"
                                 aria-required={false}
                                 className="form-input orion-fusion-theme date-input-day"
@@ -546,7 +558,8 @@ exports[`correctly applies the theme context className 1`] = `
                               /
                             </span>
                             <Input
-                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                              aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                              aria-invalid={false}
                               aria-label="Terra.datePicker.yearLabel"
                               aria-required={false}
                               className="date-input-year"
@@ -567,7 +580,8 @@ exports[`correctly applies the theme context className 1`] = `
                               value="2017"
                             >
                               <input
-                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000"
+                                aria-describedby="terra-date-picker-description-format-00000000-0000-0000-0000-000000000000 "
+                                aria-invalid={false}
                                 aria-label="Terra.datePicker.yearLabel"
                                 aria-required={false}
                                 className="form-input orion-fusion-theme date-input-year"
@@ -588,7 +602,7 @@ exports[`correctly applies the theme context className 1`] = `
                           </DateInputLayout>
                         </div>
                         <Button
-                          aria-label=" Terra.datePicker.openCalendar"
+                          aria-label="Terra.datePicker.openCalendar"
                           className="button"
                           data-terra-open-calendar-button={true}
                           icon={
@@ -613,7 +627,7 @@ exports[`correctly applies the theme context className 1`] = `
                         >
                           <button
                             aria-disabled={false}
-                            aria-label=" Terra.datePicker.openCalendar"
+                            aria-label="Terra.datePicker.openCalendar"
                             className="button neutral compact orion-fusion-theme button"
                             data-terra-open-calendar-button={true}
                             disabled={false}
@@ -675,7 +689,7 @@ exports[`correctly applies the theme context className 1`] = `
                           aria-live="off"
                           text="Terra.datePicker.invalidDate.
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey "
+            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey, "
                         >
                           <span
                             aria-live="off"
@@ -683,7 +697,7 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             Terra.datePicker.invalidDate.
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey 
+            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey, 
                           </span>
                         </VisuallyHiddenText>
                         <div
@@ -717,6 +731,7 @@ exports[`should render a controlled date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -793,6 +808,7 @@ exports[`should render a date picker with disabled dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -868,6 +884,7 @@ exports[`should render a date picker with filtered dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -943,6 +960,7 @@ exports[`should render a date picker with included dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1018,6 +1036,7 @@ exports[`should render a date picker with min and max dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1093,6 +1112,7 @@ exports[`should render a date picker with onBlur 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1168,6 +1188,7 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1243,6 +1264,7 @@ exports[`should render a date picker with onChange 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1318,6 +1340,7 @@ exports[`should render a date picker with onChangeRaw 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1393,6 +1416,7 @@ exports[`should render a date picker with onFocus 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1468,6 +1492,7 @@ exports[`should render a date picker with onRequestClose 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1544,6 +1569,7 @@ exports[`should render a date picker with onSelect 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1619,6 +1645,7 @@ exports[`should render a default date input and date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1694,6 +1721,7 @@ exports[`should render a default date input with custom input attributes 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1774,6 +1802,7 @@ exports[`should render a disabled date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
@@ -1849,6 +1878,7 @@ exports[`should render a required date input and date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
+          ariaDescribedBy=""
           buttonRefCallback={[Function]}
           excludeDates={
             Array [
