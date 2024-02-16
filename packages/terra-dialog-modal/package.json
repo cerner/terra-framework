@@ -1,37 +1,45 @@
 {
   "name": "terra-dialog-modal",
-  "main": "lib/DialogModal.js",
   "version": "3.101.0",
   "description": "The Dialog Modal allows dynamic height modals. It's limited use case, as dynamic heights break with more complicated DOM structures. If content is too complicated, the terra-modal-manager should be used. The components is placed at an 8000 z-index. The dialog supports release and request focus props similar to terra-popup and terra-date-picker, so it can be presented from another modal with focus.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-dialog-modal"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-dialog-modal",
-    "DialogModal",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "DialogModal",
+    "Framework",
+    "Terra",
+    "terra-dialog-modal",
+    "UI"
+  ],
+  "main": "lib/DialogModal.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.45.0",
     "terra-theme-context": "^1.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "devDependencies": {
     "terra-action-footer": "^2.0.0",
@@ -53,13 +61,5 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

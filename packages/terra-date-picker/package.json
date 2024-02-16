@@ -1,31 +1,35 @@
 {
   "name": "terra-date-picker",
-  "main": "lib/DatePicker.js",
   "version": "4.98.0",
   "description": "The terra-date-picker component provides users a way to enter or select a date from the date picker.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-date-picker"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-date-picker",
-    "DatePicker",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "DatePicker",
+    "Terra",
+    "terra-date-picker",
+    "UI"
+  ],
+  "main": "lib/DatePicker.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "focus-trap-react": "^6.0.0",
@@ -45,6 +49,11 @@
     "terra-visually-hidden-text": "^2.0.0",
     "uuid": "3.4.0"
   },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
+  },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
@@ -57,14 +66,5 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }
