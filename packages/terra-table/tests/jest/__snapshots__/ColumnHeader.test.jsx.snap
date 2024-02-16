@@ -1,5 +1,83 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`ColumnHeader renders a column header with actions row 1`] = `
+<thead>
+  <tr
+    aria-rowindex={1}
+    className="column-header-row"
+    data-row-id="test-table-header-row"
+    height="3rem"
+  >
+    <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-0"
+      columnIndex={0}
+      displayName=" Vitals"
+      headerHeight="3rem"
+      id="Column-0-headerCell"
+      isActive={false}
+      isResizeActive={false}
+      isResizeHandleActive={false}
+      key="Column-0-headerCell"
+      resizeHandleStateSetter={[Function]}
+      resizeHandlerInitHeight="0px"
+      tableId="test-table"
+    />
+    <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
+      columnIndex={1}
+      displayName=" Patient"
+      headerHeight="3rem"
+      id="Column-1-headerCell"
+      isActive={false}
+      isResizeActive={false}
+      isResizeHandleActive={false}
+      key="Column-1-headerCell"
+      resizeHandleStateSetter={[Function]}
+      resizeHandlerInitHeight="0px"
+      tableId="test-table"
+    />
+  </tr>
+  <tr
+    aria-rowindex={2}
+    className="column-actions-row"
+    data-row-id="test-table-header-actions-row"
+  >
+    <Memo(InjectIntl(ColumnHeaderCell))
+      action={
+        Object {
+          "label": "action-button",
+          "onClick": [MockFunction],
+        }
+      }
+      columnId="Column-0"
+      columnIndex={0}
+      headerHeight="3rem"
+      id="Column-0-actionCell"
+      isActionCell={true}
+      isActive={false}
+      isResizeActive={false}
+      isResizeHandleActive={false}
+      key="Column-0-actionCell"
+      resizeHandleStateSetter={[Function]}
+      tableId="test-table"
+    />
+    <Memo(InjectIntl(ColumnHeaderCell))
+      columnId="Column-1"
+      columnIndex={1}
+      headerHeight="3rem"
+      id="Column-1-actionCell"
+      isActionCell={true}
+      isActive={false}
+      isResizeActive={false}
+      isResizeHandleActive={false}
+      key="Column-1-actionCell"
+      resizeHandleStateSetter={[Function]}
+      tableId="test-table"
+    />
+  </tr>
+</thead>
+`;
+
 exports[`ColumnHeader renders a column header with an active resize column 1`] = `
 <thead>
   <tr
