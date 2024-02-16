@@ -1,37 +1,45 @@
 {
   "name": "terra-navigation-prompt",
-  "main": "lib/index.js",
   "version": "1.83.0",
   "description": "The NavigationPrompt and NavigationPromptCheckpoint components allow for the detection and management of components with unsaved state.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-navigation-prompt"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-navigation-prompt",
-    "Navigation",
-    "Prompt",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Framework",
+    "Navigation",
+    "Prompt",
+    "Terra",
+    "terra-navigation-prompt",
+    "UI"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-notification-dialog": "^4.40.0",
     "uuid": "3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -41,13 +49,5 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest",
     "jest": "jest --config ../../jest.config.js"
-  },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

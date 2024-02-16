@@ -1,32 +1,36 @@
 {
   "name": "terra-folder-tree",
-  "main": "lib/index.js",
   "version": "1.0.0-alpha.8",
   "description": "Terra Folder Tree is a vertical menu that displays files and folders in a hierarchical tree structure.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-folder-tree"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-folder-tree",
-    "folder-tree",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "folder-tree",
+    "Framework",
+    "Terra",
+    "terra-folder-tree",
+    "UI"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
@@ -41,6 +45,11 @@
     "terra-visually-hidden-text": "^2.37.0",
     "uuid": "3.4.0"
   },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
+  },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
     "clean:lib": "rm -rf lib",
@@ -54,14 +63,5 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

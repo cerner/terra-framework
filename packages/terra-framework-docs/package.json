@@ -2,34 +2,37 @@
   "name": "@cerner/terra-framework-docs",
   "version": "1.65.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
-  "main": "index.js",
-  "publishConfig": {
-    "access": "public"
-  },
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-framework-docs"
   },
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
+  },
+  "homepage": "https://github.com/cerner/terra-framework",
+  "license": "Apache-2.0",
   "keywords": [
     "Cerner",
     "Terra",
     "terra-framework-docs"
   ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/cerner/terra-framework/issues"
+  "publishConfig": {
+    "access": "public"
   },
   "engines": {
     "node": ">=10.13.0"
   },
-  "homepage": "https://github.com/cerner/terra-framework",
-  "scripts": {
-    "compile": "babel --root-mode upward src --out-dir lib --copy-files",
-    "lint": "eslint --ext .js,.jsx .",
-    "precompile": "rm -rf lib"
-  },
+  "main": "index.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "@cerner/terra-docs": "^1.7.0",
     "@cerner/terra-pills": "^1.18.0",
@@ -83,12 +86,9 @@
     "terra-time-input": "^4.62.0",
     "terra-toolbar": "^1.27.0"
   },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  "scripts": {
+    "compile": "babel --root-mode upward src --out-dir lib --copy-files",
+    "lint": "eslint --ext .js,.jsx .",
+    "precompile": "rm -rf lib"
+  }
 }

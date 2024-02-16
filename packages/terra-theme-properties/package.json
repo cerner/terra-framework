@@ -1,34 +1,35 @@
 {
   "name": "terra-theme-properties",
-  "main": "lib/index.js",
   "version": "0.3.0",
   "description": "Terra Theme Properties provides named theme variables for UX-defined styles.",
+  "author": "Oracle Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-theme-properties"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-theme-properties",
-    "theme-properties",
-    "UI"
-  ],
-  "files": [
-    "lib",
-    "CHANGELOG.md",
-    "NOTICE",
-    "LICENSE",
-    "README.md"
-  ],
-  "author": "Oracle Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Framework",
+    "Terra",
+    "terra-theme-properties",
+    "theme-properties",
+    "UI"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "devDependencies": {
     "@babel/cli": "^7.22.10",
     "@babel/core": "^7.22.10",
@@ -46,13 +47,5 @@
     "lint:scss": "stylelint ./src/**/*.scss",
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib"
-  },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }
