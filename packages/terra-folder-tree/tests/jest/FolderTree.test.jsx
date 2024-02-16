@@ -40,9 +40,9 @@ describe('basic folder tree', () => {
     const subfolder = wrapper.find('.subfolder');
 
     expect(subfolder.find('span.fill.fill-block').length).toBe(3);
-    expect(subfolder.find('span.fill.fill-block').at(0).text()).toBe('item 1,Terra.folder-tree.item.selectable-announcement');
-    expect(subfolder.find('span.fill.fill-block').at(1).text()).toBe('item 2,Terra.folder-tree.item.selectable-announcement');
-    expect(subfolder.find('span.fill.fill-block').at(2).text()).toBe('item 3,Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('span.fill.fill-block').at(0).text()).toBe('item 1, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('span.fill.fill-block').at(1).text()).toBe('item 2, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('span.fill.fill-block').at(2).text()).toBe('item 3, Terra.folder-tree.item.selectable-announcement');
   });
 
   it('hides folder items when enclosing folder is collapsed', () => {
