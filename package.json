@@ -1,29 +1,29 @@
 {
   "name": "terra-framework",
+  "private": true,
   "version": "0.1.0",
   "description": "terra-framework",
-  "author": "Cerner Corporation",
+  "engines": {
+    "node": "10 || 12 || 14",
+    "npm": "9"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git"
   },
-  "bugs": {
-    "url": "https://github.com/cerner/terra-framework/issues"
-  },
-  "license": "Apache-2.0",
+  "workspaces": [
+    "packages/*"
+  ],
   "keywords": [
     "Cerner",
     "Terra",
     "Terra Framework",
     "terra-framework"
   ],
-  "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "engines": {
-    "node": "10 || 12 || 14",
-    "npm": "9"
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
   },
   "browserslist": [
     "extends @cerner/browserslist-config-terra"
@@ -31,8 +31,8 @@
   "eslintConfig": {
     "extends": "@cerner/terra",
     "globals": {
-      "enzyme": "readonly",
-      "enzymeIntl": "readonly"
+      "enzyme":"readonly",
+      "enzymeIntl":"readonly"
     },
     "rules": {
       "react/forbid-prop-types": "off"
@@ -59,6 +59,49 @@
         }
       }
     ]
+  },
+  "scripts": {
+    "clean": "npm run clean:root && npm run clean:lib",
+    "clean:lib": "rm -rf packages/**/lib",
+    "clean:root": "$(lerna clean --yes || true) && echo 'removing ./node_modules' && rm -rf node_modules && echo 'removed ./node_modules'",
+    "clean:install": "npm run clean && time npm install",
+    "clean:containers": "echo 'stopping containers:' && docker stop $(docker ps -a -q) && echo 'removing containers:' && docker rm $(docker ps -a -q)",
+    "clean:obsolete-snapshots": "npm test -- -u",
+    "compile": "npm run clean:lib && npm run compile:build",
+    "compile:build": "lerna run compile",
+    "compile:src": "lerna run compile",
+    "compile:fusion": "rm -rf ./build; NODE_ENV=production THEME=orion-fusion-theme webpack --mode=production --config webpack.config.js",
+    "compile:lowlight": "rm -rf ./build; NODE_ENV=production THEME=clinical-lowlight-theme webpack --mode=production --config webpack.config.js",
+    "compile:default": "rm -rf ./build; NODE_ENV=production webpack --mode=production --config webpack.config.js",
+    "danger": "danger ci",
+    "deploy": "npm run compile:prod && gh-pages -d build",
+    "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
+    "docs": "node scripts/root-readme-updater/index.js",
+    "docs:peerDependencies": "node scripts/peer-dependency-generator/index.js",
+    "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
+    "jest": "jest",
+    "jest:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
+    "jest:no-coverage": "jest --no-coverage",
+    "lint": "npm run lint:js && npm run lint:scss:no-warnings && npm run lint:package-json",
+    "lint:js": "eslint --ext .js,.jsx . --max-warnings 0",
+    "lint:js:fix": "eslint --ext .js,.jsx . --fix",
+    "lint:package-json": "terra package-json-lint",
+    "lint:scss": "stylelint 'packages/**/src/**/*.scss'",
+    "lint:scss:no-warnings": "stylelint 'packages/**/src/**/*.scss' --quiet",
+    "prepare-for-release": "terra prepare-for-release",
+    "postinstall": "npm run compile",
+    "start": "webpack serve",
+    "start-heroku": "terra express-server --port $PORT --site build",
+    "start-prod": "webpack serve --env disableHotReloading --mode=production",
+    "start-static": "npm run compile:prod && terra express-server --site build",
+    "test": "npm run lint && npm run jest && npm run wdio",
+    "test:docker": "npm run lint && npm run jest && npm run wdio:docker",
+    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme redwood-theme",
+    "wdio:default": "terra wdio",
+    "wdio:lowlight": "NODE_OPTIONS=--max-old-space-size=2048 terra wdio --themes clinical-lowlight-theme",
+    "wdio:fusion": "terra wdio --themes orion-fusion-theme",
+    "wdio:redwood": "terra wdio --themes redwood-theme",
+    "wdio:docker": "terra wdio --disableSeleniumService=true --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme"
   },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
@@ -112,48 +155,5 @@
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.1.4",
     "xfc": "^1.12.0"
-  },
-  "scripts": {
-    "clean": "npm run clean:root && npm run clean:lib",
-    "clean:lib": "rm -rf packages/**/lib",
-    "clean:root": "$(lerna clean --yes || true) && echo 'removing ./node_modules' && rm -rf node_modules && echo 'removed ./node_modules'",
-    "clean:install": "npm run clean && time npm install",
-    "clean:containers": "echo 'stopping containers:' && docker stop $(docker ps -a -q) && echo 'removing containers:' && docker rm $(docker ps -a -q)",
-    "clean:obsolete-snapshots": "npm test -- -u",
-    "compile": "npm run clean:lib && npm run compile:build",
-    "compile:build": "lerna run compile",
-    "compile:src": "lerna run compile",
-    "compile:fusion": "rm -rf ./build; NODE_ENV=production THEME=orion-fusion-theme webpack --mode=production --config webpack.config.js",
-    "compile:lowlight": "rm -rf ./build; NODE_ENV=production THEME=clinical-lowlight-theme webpack --mode=production --config webpack.config.js",
-    "compile:default": "rm -rf ./build; NODE_ENV=production webpack --mode=production --config webpack.config.js",
-    "danger": "danger ci",
-    "deploy": "npm run compile:prod && gh-pages -d build",
-    "dependency-markdown": "node scripts/dependency-markdown-generator/DependencyMarkdownGenerator.js",
-    "docs": "node scripts/root-readme-updater/index.js",
-    "docs:peerDependencies": "node scripts/peer-dependency-generator/index.js",
-    "heroku-postbuild": "npm install --only=dev && npm run compile:prod",
-    "jest": "jest",
-    "jest:debug": "node --inspect-brk node_modules/.bin/jest --runInBand",
-    "jest:no-coverage": "jest --no-coverage",
-    "lint": "npm run lint:js && npm run lint:scss:no-warnings && npm run lint:package-json",
-    "lint:js": "eslint --ext .js,.jsx . --max-warnings 0",
-    "lint:js:fix": "eslint --ext .js,.jsx . --fix",
-    "lint:package-json": "terra package-json-lint",
-    "lint:scss": "stylelint 'packages/**/src/**/*.scss'",
-    "lint:scss:no-warnings": "stylelint 'packages/**/src/**/*.scss' --quiet",
-    "prepare-for-release": "terra prepare-for-release",
-    "postinstall": "npm run compile",
-    "start": "webpack serve",
-    "start-heroku": "terra express-server --port $PORT --site build",
-    "start-prod": "webpack serve --env disableHotReloading --mode=production",
-    "start-static": "npm run compile:prod && terra express-server --site build",
-    "test": "npm run lint && npm run jest && npm run wdio",
-    "test:docker": "npm run lint && npm run jest && npm run wdio:docker",
-    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme redwood-theme",
-    "wdio:default": "terra wdio",
-    "wdio:lowlight": "NODE_OPTIONS=--max-old-space-size=2048 terra wdio --themes clinical-lowlight-theme",
-    "wdio:fusion": "terra wdio --themes orion-fusion-theme",
-    "wdio:redwood": "terra wdio --themes redwood-theme",
-    "wdio:docker": "terra wdio --disableSeleniumService=true --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme"
   }
 }

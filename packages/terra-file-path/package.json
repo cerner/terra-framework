@@ -1,46 +1,37 @@
 {
   "name": "terra-file-path",
+  "main": "lib/FilePath.js",
   "version": "1.6.0",
   "description": "Terra File Path is a horizontal menu that indicates where the user is. It is also more commonly known as a breadcrumb component.",
-  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-file-path"
   },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-file-path",
+    "file-path",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "license": "Apache-2.0",
-  "keywords": [
-    "Cerner",
-    "file-path",
-    "Framework",
-    "Terra",
-    "terra-file-path",
-    "UI"
-  ],
-  "main": "lib/FilePath.js",
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ],
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
     "terra-collapsible-menu-view": "^6.89.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
@@ -55,5 +46,14 @@
     "lint": "npm run lint:js && npm run lint:scss",
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }

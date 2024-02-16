@@ -1,36 +1,32 @@
 {
   "name": "terra-navigation-side-menu",
+  "main": "lib/NavigationSideMenu.js",
   "version": "2.49.0",
   "description": "A structual component for nesting navigational items within the content section of the terra-menu-layout.",
-  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-navigation-side-menu"
   },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "terra-navigation-side-menu",
+    "NavigationSideMenu",
+    "Navigation",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "license": "Apache-2.0",
-  "keywords": [
-    "Cerner",
-    "Navigation",
-    "NavigationSideMenu",
-    "Terra",
-    "terra-navigation-side-menu",
-    "UI"
-  ],
-  "main": "lib/NavigationSideMenu.js",
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ],
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
@@ -40,11 +36,6 @@
     "terra-icon": "^3.19.0",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.0.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -58,5 +49,14 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }

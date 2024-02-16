@@ -1,35 +1,32 @@
 {
   "name": "terra-layout",
+  "main": "lib/Layout.js",
   "version": "4.39.0",
   "description": "Provides a responsive starting point for the positioning of application components.",
-  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-layout"
   },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-layout",
+    "Layout",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "license": "Apache-2.0",
-  "keywords": [
-    "Cerner",
-    "Framework",
-    "Layout",
-    "Terra",
-    "terra-layout",
-    "UI"
-  ],
-  "main": "lib/Layout.js",
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ],
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-router-dom": "^5.0.0"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "lodash.debounce": "^4.0.8",
@@ -38,11 +35,6 @@
     "terra-content-container": "^3.0.0",
     "terra-overlay": "^3.0.0",
     "terra-theme-context": "^1.9.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "react-router-dom": "^5.0.0",
@@ -61,5 +53,13 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }

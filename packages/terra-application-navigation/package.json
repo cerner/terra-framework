@@ -1,36 +1,36 @@
 {
   "name": "terra-application-navigation",
+  "main": "lib/ApplicationNavigation.js",
   "version": "1.76.0",
   "description": "The Terra Application Navigation is a responsive, themeable layout for building applications. ApplicationNavigation is comprised of selectable navigation and utility elements with selection callbacks.",
-  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-application-navigation"
   },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-application-navigation",
+    "ApplicationNavigation",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "license": "Apache-2.0",
-  "keywords": [
-    "ApplicationNavigation",
-    "Cerner",
-    "Framework",
-    "Terra",
-    "terra-application-navigation",
-    "UI"
-  ],
-  "main": "lib/ApplicationNavigation.js",
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ],
+  "devDependencies": {
+    "terra-application": "^1.48.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5",
+    "terra-application": "^1.0.0"
+  },
   "dependencies": {
     "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
@@ -53,15 +53,6 @@
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.0.0"
   },
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5",
-    "terra-application": "^1.0.0"
-  },
-  "devDependencies": {
-    "terra-application": "^1.48.0"
-  },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
@@ -74,5 +65,14 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }

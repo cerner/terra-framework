@@ -1,43 +1,35 @@
 {
   "name": "terra-application-name",
+  "main": "lib/ApplicationName.js",
   "version": "3.44.0",
   "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
-  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-application-name"
   },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-application-name",
+    "ApplicationName",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "license": "Apache-2.0",
-  "keywords": [
-    "ApplicationName",
-    "Cerner",
-    "Framework",
-    "Terra",
-    "terra-application-name",
-    "UI"
-  ],
-  "main": "lib/ApplicationName.js",
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ],
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-theme-context": "^1.9.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
   },
   "devDependencies": {
     "terra-application-header-layout": "^3.40.0",
@@ -56,5 +48,13 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }

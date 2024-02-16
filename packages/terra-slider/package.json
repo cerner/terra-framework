@@ -1,47 +1,38 @@
 {
   "name": "terra-slider",
+  "main": "lib/Slider.js",
   "version": "1.2.0",
   "description": "Terra Slider component provides users a way to select a value from a given range by sliding a thumb along a bar to track the value.",
-  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-slider"
   },
+  "keywords": [
+    "Cerner",
+    "Terra",
+    "Framework",
+    "terra-slider",
+    "slider",
+    "UI"
+  ],
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "license": "Apache-2.0",
-  "keywords": [
-    "Cerner",
-    "Framework",
-    "slider",
-    "Terra",
-    "terra-slider",
-    "UI"
-  ],
-  "main": "lib/Slider.js",
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ],
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
+  },
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.0.0",
     "uuid": "3.4.0"
-  },
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
@@ -60,5 +51,14 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }

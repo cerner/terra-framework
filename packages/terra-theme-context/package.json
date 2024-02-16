@@ -1,42 +1,34 @@
 {
   "name": "terra-theme-context",
+  "main": "lib/ThemeContext.js",
   "version": "1.9.0",
   "description": "A react context to provide the current theme.",
-  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-theme-context"
   },
-  "bugs": {
-    "url": "https://github.com/cerner/terra-framework/issues"
-  },
-  "homepage": "https://github.com/cerner/terra-framework#readme",
-  "license": "Apache-2.0",
   "keywords": [
     "Cerner",
-    "Framework",
     "Terra",
+    "Framework",
     "terra-theme-context",
     "TerraThemeContext",
     "UI"
   ],
-  "main": "lib/ThemeContext.js",
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8"
+  "author": "Cerner Corporation",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/cerner/terra-framework/issues"
   },
+  "homepage": "https://github.com/cerner/terra-framework#readme",
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
+  },
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "prop-types": "^15.5.8"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
@@ -46,5 +38,13 @@
     "precompile": "rm -rf lib",
     "test": "npm run lint && npm run jest",
     "jest": "jest --config ../../jest.config.js"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }
