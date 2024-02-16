@@ -15,7 +15,11 @@ import styles from './ColumnResizeHandle.module.scss';
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  id: PropTypes.string,
+  /**
+   * Required string representing a unique identifier for the column resize handle.
+   */
+  id: PropTypes.string.isRequired,
+
   /**
    * The cell's column position in the grid. This is zero based.
    */

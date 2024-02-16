@@ -328,8 +328,8 @@ const ColumnHeaderCell = (props) => {
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
 
   // set focus to the action button
-  const distributeFocusWithinActionCell = () => {
-    columnHeaderCellRef?.current?.childNodes[0].focus();
+  const focusActionCell = () => {
+    columnHeaderCellRef?.current?.childNodes[0]?.focus();
   };
 
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
@@ -371,6 +371,8 @@ const ColumnHeaderCell = (props) => {
     );
   }
 
+  const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
+
   return (
   /* eslint-disable react/forbid-dom-props */
     <CellTag
@@ -386,19 +388,18 @@ const ColumnHeaderCell = (props) => {
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
-      // aria-owns={!isActionCell ? `${tableId}-${columnId}-actionCell` : undefined} // This way header owns action
-      aria-owns={isActionCell ? `${tableId}-${columnId}-resizeHandle` : undefined} // Action owns handle
+      aria-owns={isActionCell ? resizeHandleId : undefined} // Action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus when it comes from action cell
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-component-props
       style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
-      onFocus={isActionCell ? distributeFocusWithinActionCell : undefined}
+      onFocus={isActionCell ? focusActionCell : undefined}
     >
       {cellContent}
       { isResizable && !isActionCell && (
       <ColumnResizeHandle
-        id={`${tableId}-${columnId}-resizeHandle`}
+        id={resizeHandleId}
         columnIndex={columnIndex}
         columnText={displayName}
         columnWidth={width}
