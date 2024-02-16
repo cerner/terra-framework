@@ -7,6 +7,10 @@
 
 * Added
   * Added `isSelectable` prop to FolderTreeItem.
+
+## 1.0.0-alpha.8 - (February 16, 2024)
+
+* Added
   * Added translations.
 
 ## 1.0.0-alpha.7 - (February 7, 2024)

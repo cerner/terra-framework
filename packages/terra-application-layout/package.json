@@ -1,7 +1,7 @@
 {
   "name": "terra-application-layout",
   "main": "lib/ApplicationLayout.js",
-  "version": "5.80.0",
+  "version": "5.81.0",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "repository": {
     "type": "git",
@@ -39,7 +39,7 @@
     "terra-application-utility": "^2.55.0",
     "terra-breakpoints": "^2.19.0",
     "terra-icon": "^3.19.0",
-    "terra-modal-manager": "^6.70.0",
+    "terra-modal-manager": "^6.71.0",
     "terra-navigation-layout": "^5.40.0",
     "terra-navigation-side-menu": "^2.49.0",
     "terra-popup": "^6.74.0",
@@ -64,5 +64,14 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  }
+  },
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
 }
