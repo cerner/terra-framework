@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the `terra-date-time-picker` timezone example.
+
 * Added
   * Added shouldTrapFocus to be set to 'true'.
 * Changed

@@ -802,7 +802,6 @@ class DatePicker extends React.Component {
         initialTimeZone={this.props.initialTimeZone}
       >
         {this.props.children}
-        <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} />
       </Calendar>
     );
   }
