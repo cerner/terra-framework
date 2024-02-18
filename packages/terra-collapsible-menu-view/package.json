@@ -1,31 +1,35 @@
 {
   "name": "terra-collapsible-menu-view",
-  "main": "lib/index.js",
   "version": "6.89.0",
   "description": "The collapsible menu view is a mechanism that can be used in toolbar scenarios where actionable items will be displayed face-up and flex based on the space available. Any items that can not fit in the available space will be rolled into an ellipsis menu.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-collapsible-menu-view"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-collapsible-menu-view",
-    "CollapsibleMenuView",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "CollapsibleMenuView",
+    "Terra",
+    "terra-collapsible-menu-view",
+    "UI"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
@@ -40,6 +44,11 @@
     "terra-mixins": "^1.0.0",
     "terra-theme-context": "^1.9.0"
   },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
+  },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
     "lint": "npm run lint:js && npm run lint:scss",
@@ -52,14 +61,5 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

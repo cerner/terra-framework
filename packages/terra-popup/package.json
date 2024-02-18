@@ -1,31 +1,35 @@
 {
   "name": "terra-popup",
-  "main": "lib/Popup.js",
   "version": "6.74.0",
   "description": "The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-popup"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-popup",
-    "Popup",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Popup",
+    "Terra",
+    "terra-popup",
+    "UI"
+  ],
+  "main": "lib/Popup.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
@@ -37,6 +41,11 @@
     "terra-hookshot": "^5.41.0",
     "terra-mixins": "^1.0.0",
     "terra-theme-context": "^1.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "devDependencies": {
     "terra-disclosure-manager": "^4.43.0",
@@ -54,14 +63,5 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

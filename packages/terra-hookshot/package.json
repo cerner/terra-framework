@@ -1,33 +1,37 @@
 {
   "name": "terra-hookshot",
-  "main": "lib/Hookshot.js",
   "version": "5.41.0",
   "description": "The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-hookshot"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-hookshot",
-    "Hookshot",
-    "Position",
-    "Attached",
-    "Portal",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Attached",
+    "Cerner",
+    "Hookshot",
+    "Portal",
+    "Position",
+    "Terra",
+    "terra-hookshot",
+    "UI"
+  ],
+  "main": "lib/Hookshot.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classlist-polyfill": "^1.2.0",
     "classnames": "^2.2.5",
@@ -36,6 +40,10 @@
     "react-onclickoutside": "^6.7.1",
     "react-portal": "^4.1.2",
     "resize-observer-polyfill": "^1.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "devDependencies": {
     "terra-button": "^3.3.0",
@@ -53,13 +61,5 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

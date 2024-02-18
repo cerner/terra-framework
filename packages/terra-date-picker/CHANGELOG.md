@@ -6,6 +6,8 @@
   * Fixed the invalid case for SR announcement.
   * Changed the SR announcement for changing date from calender.
 
+## 4.98.1 - (February 16, 2024)
+
 * Fixed
   * Fixed date picker to change the focused input field value instead of the day input while pressing `+`, `-` keys.
 

@@ -3247,7 +3247,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                         "assignSyncMedium": [Function],
                         "options": Object {
                           "async": true,
-                          "ssr": false,
+                          "ssr": true,
                         },
                         "read": [Function],
                         "useMedium": [Function],
@@ -3310,7 +3310,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                           "assignSyncMedium": [Function],
                           "options": Object {
                             "async": true,
-                            "ssr": false,
+                            "ssr": true,
                           },
                           "read": [Function],
                           "useMedium": [Function],
