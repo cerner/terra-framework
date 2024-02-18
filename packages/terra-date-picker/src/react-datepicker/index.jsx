@@ -801,7 +801,9 @@ class DatePicker extends React.Component {
         isCalendarOpenedViaKeyboard={this.state.isCalendarOpenedViaKeyboard}
         initialTimeZone={this.props.initialTimeZone}
       >
+         <VisuallyHiddenText aria-atomic="true" aria-live="assertive" refCallback={(ref) => { this.visuallyHiddenText = ref; }} className={cx('react-datepicker-visuallyhiddentext')}>
         {this.props.children}
+      </VisuallyHiddenText>
       </Calendar>
     );
   }

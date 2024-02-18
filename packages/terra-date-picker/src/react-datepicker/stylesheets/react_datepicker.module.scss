@@ -38,6 +38,10 @@
   .react-datepicker-arrow[data-align-arrow='bottom']::after {
     border-top-color: $datepicker-background-color;
   }
+  
+  .react-datepicker-visuallyhiddentext {
+    display:none;
+  }
 
   .react-datepicker-header {
     background-color: $datepicker-background-color;
