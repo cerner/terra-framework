@@ -1,36 +1,44 @@
 {
   "name": "terra-slide-group",
-  "main": "lib/SlideGroup.js",
   "version": "4.34.0",
   "description": "A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-slide-group"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-slide-group",
-    "SlideGroup",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "SlideGroup",
+    "Terra",
+    "terra-slide-group",
+    "UI"
+  ],
+  "main": "lib/SlideGroup.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "react-transition-group": "^4.0.0",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.36.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

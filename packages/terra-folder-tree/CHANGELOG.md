@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.0-alpha.8 - (February 16, 2024)
+
 * Added
   * Added translations
 

@@ -1,47 +1,56 @@
 {
   "name": "terra-notification-dialog",
-  "main": "lib/NotificationDialog.js",
-  "version": "4.39.0",
+  "version": "4.40.0",
   "description": "`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9001. It is a common component to be used for confirmation/acceptance criteria style dialogs.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-notification-dialog"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-notification-dialog",
-    "NotificationDialog",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Framework",
+    "NotificationDialog",
+    "Terra",
+    "terra-notification-dialog",
+    "UI"
+  ],
+  "main": "lib/NotificationDialog.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "dependencies": {
+    "classnames": "^2.2.5",
+    "focus-trap-react": "^6.0.0",
+    "prop-types": "^15.5.8",
+    "terra-abstract-modal": "^3.46.0",
+    "terra-button": "^3.3.0",
+    "terra-mixins": "^1.0.0",
+    "terra-theme-context": "^1.9.0"
+  },
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-intl": "^2.8.0 || 3 || 4 || 5",
     "terra-breakpoints": "^2.19.0"
   },
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "focus-trap-react": "^6.0.0",
-    "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^3.45.0",
-    "terra-button": "^3.3.0",
-    "terra-mixins": "^1.0.0",
-    "terra-theme-context": "^1.9.0"
-  },
   "devDependencies": {
     "terra-breakpoints": "^2.19.0",
     "terra-disclosure-manager": "^4.43.0",
     "terra-icon": "^3.19.0",
-    "terra-modal-manager": "^6.70.0",
+    "terra-modal-manager": "^6.71.0",
     "terra-popup": "^6.74.0"
   },
   "scripts": {

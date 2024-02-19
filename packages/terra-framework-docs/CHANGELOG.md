@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.65.0 - (February 16, 2024)
+
 * Added
   * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
 

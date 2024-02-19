@@ -5,6 +5,8 @@
 * Added
   * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
 
+## 4.106.0 - (February 16, 2024)
+
 * Changed
   * Added the `ariaLabel` prop for SR announcement.
 
