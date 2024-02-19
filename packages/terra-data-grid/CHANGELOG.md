@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.13.0 - (February 16, 2024)
+
 * Changed
  * Removed the default rowMinimumHeight from FlowsheetDataGrid so that the `terra-table` default value is used.  
 

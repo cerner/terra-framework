@@ -5,6 +5,8 @@
 * Added
   * Added timeout to resize observer.
 
+## 5.6.0 - (February 16, 2024)
+
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
 
