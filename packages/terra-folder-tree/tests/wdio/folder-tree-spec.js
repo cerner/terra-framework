@@ -17,7 +17,7 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
     it('does not select a non-selectable folder tree item on mouse click', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/folder-tree-selection');
 
-      $('span=Projects - 2023').click();
+      $('[role="treeitem"]:nth-of-type(2)').click();
       Terra.validates.screenshot('non-selectable item mouse', { selector: '#folder-tree-selection' });
     });
 
@@ -54,15 +54,15 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
     it('expands a collapsed folder via mouse click', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
 
-      $('span=Projects - Level 1').click();
+      $('[role="treeitem"]:nth-of-type(1)').click();
       Terra.validates.screenshot('expanded folder', { selector: '#expand-collapse-folder-tree' });
     });
 
     it('collapses an expanded folder via mouse click', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
 
-      $('span=Projects - Level 1').click();
-      $('span=Projects - Level 1').click();
+      $('[role="treeitem"]:nth-of-type(1)').click();
+      $('[role="treeitem"]:nth-of-type(1)').click();
       Terra.validates.screenshot('collapsed folder', { selector: '#expand-collapse-folder-tree' });
     });
 
