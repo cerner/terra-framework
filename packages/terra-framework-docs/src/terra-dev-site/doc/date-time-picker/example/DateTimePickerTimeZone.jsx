@@ -23,7 +23,6 @@ function DateTimePickerTimeZone() {
         {dateTime}
       </p>
       <Fieldset
-        type="checkbox"
         legend={`Initial Timezone: ${timeZone}`}
       >
         <Field label="Enter Date/Time" htmlFor="timeZone">
