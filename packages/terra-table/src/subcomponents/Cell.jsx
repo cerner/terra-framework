@@ -308,12 +308,18 @@ function Cell(props) {
     );
   }
 
+  // Determine table cell header attribute values
+  const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
+  const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId} ` : '';
+  const columnHeaderId = `${tableId}-${columnId}`;
+
   return (
     <CellTag
       id={isRowHeader ? `${tableId}-rowheader-${rowId}` : undefined}
       ref={isGridContext ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
+      headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
       {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
