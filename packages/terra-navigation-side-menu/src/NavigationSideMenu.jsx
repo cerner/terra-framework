@@ -179,7 +179,7 @@ class NavigationSideMenu extends Component {
     // To add focus to the first sub menu item
     if (node && this.needsFocus) {
       const subMenuNodes = node.querySelectorAll('[data-menu-item]');
-      if (subMenuNodes) {
+      if (subMenuNodes && subMenuNodes.length) {
         subMenuNodes[0].focus();
       }
     }
