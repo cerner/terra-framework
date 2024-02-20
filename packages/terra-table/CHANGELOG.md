@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.7.0 - (February 20, 2024)
+
 * Added
   * Added timeout to resize observer.
 
