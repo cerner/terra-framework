@@ -1,27 +1,35 @@
 {
   "name": "terra-form-validation",
-  "main": "lib/FormValidationUtil.js",
-  "version": "1.97.0",
+  "version": "1.98.0",
   "description": "Form Validation Examples for Terra",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-form-validation"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-form-validation",
-    "FormValidation",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "FormValidation",
+    "Framework",
+    "Terra",
+    "terra-form-validation",
+    "UI"
+  ],
+  "main": "lib/FormValidationUtil.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "peerDependencies": {
     "final-form": "^4.6.0",
     "react": "^16.8.5",
@@ -33,8 +41,8 @@
     "prop-types": "^15.5.8",
     "react-final-form": ">=5.0.2 <7.0.0",
     "terra-button": "^3.3.0",
-    "terra-date-input": "^1.51.0",
-    "terra-date-picker": "^4.98.0",
+    "terra-date-input": "^1.51.1",
+    "terra-date-picker": "^4.98.1",
     "terra-form-checkbox": "^4.8.0",
     "terra-form-field": "^4.5.0",
     "terra-form-input": "^4.4.0",

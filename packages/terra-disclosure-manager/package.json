@@ -1,33 +1,41 @@
 {
   "name": "terra-disclosure-manager",
-  "main": "lib/DisclosureManager.js",
   "version": "4.43.0",
   "description": "A stateful component used to manage disclosure presentation.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-disclosure-manager"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-disclosure-manager",
-    "DisclosureManager",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "DisclosureManager",
+    "Framework",
+    "Terra",
+    "terra-disclosure-manager",
+    "UI"
+  ],
+  "main": "lib/DisclosureManager.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
+  "dependencies": {
+    "prop-types": "^15.5.8"
+  },
   "peerDependencies": {
     "react": "^16.8.5",
     "react-dom": "^16.8.5"
-  },
-  "dependencies": {
-    "prop-types": "^15.5.8"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

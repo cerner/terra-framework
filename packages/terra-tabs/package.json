@@ -1,31 +1,35 @@
 {
   "name": "terra-tabs",
-  "main": "lib/Tabs.js",
   "version": "7.17.0",
   "description": "Tabs are containers used to organize content. They allow for quick switching between groups of contextually related content. Content is divided into different containers and each container is viewable one at a time. The user can switch between containers by selecting the corresponding tab control. Tabs are meant for organizing content that doesn’t need to be compared or accessed simultaneously or if the user needs quick access through a group of contextually related content. Tabs are not intended for navigation.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-tabs"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-tabs",
-    "Tabs",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": ">=2.8.0, <6.0.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Tabs",
+    "Terra",
+    "terra-tabs",
+    "UI"
+  ],
+  "main": "lib/Tabs.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
@@ -42,6 +46,11 @@
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.36.0",
     "uuid": "3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

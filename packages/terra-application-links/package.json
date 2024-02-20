@@ -1,33 +1,36 @@
 {
   "name": "terra-application-links",
-  "main": "lib/ApplicationLinks.js",
   "version": "6.74.0",
   "description": "This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-application-links"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-application-links",
-    "ApplicationLinks",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": ">=2.8.0, <6.0.0",
-    "react-router-dom": "^5.0.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "ApplicationLinks",
+    "Cerner",
+    "Framework",
+    "Terra",
+    "terra-application-links",
+    "UI"
+  ],
+  "main": "lib/ApplicationLinks.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
@@ -36,6 +39,12 @@
     "terra-icon": "^3.19.0",
     "terra-popup": "^6.74.0",
     "terra-theme-context": "^1.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5",
+    "react-router-dom": "^5.0.0"
   },
   "devDependencies": {
     "react-router-dom": "^5.0.0"

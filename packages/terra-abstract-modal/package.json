@@ -1,41 +1,51 @@
 {
   "name": "terra-abstract-modal",
-  "main": "lib/AbstractModal.js",
-  "version": "3.45.0",
+  "version": "3.46.0",
   "description": "The abstract modal is a structural component that provides the ability to display portal'd content in a layer above the app.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-abstract-modal"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-abstract-modal",
-    "Abstract",
-    "Modal",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": ">=2.9.0, <6.0.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Abstract",
+    "Cerner",
+    "Modal",
+    "Terra",
+    "terra-abstract-modal",
+    "UI"
+  ],
+  "main": "lib/AbstractModal.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "mutationobserver-shim": "<=0.3.3",
     "prop-types": "^15.5.8",
+    "react-focus-on": "^3.9.1",
     "react-portal": "^4.1.2",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.0.0",
     "wicg-inert": "^3.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "devDependencies": {
     "terra-icon": "^3.19.0"

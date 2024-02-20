@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.46.0 - (February 16, 2024)
+
+* Added
+  * Added FocusOn to confine focus within the modal popup.
+
 ## 3.45.0 - (December 18, 2023)
 
 * Changed

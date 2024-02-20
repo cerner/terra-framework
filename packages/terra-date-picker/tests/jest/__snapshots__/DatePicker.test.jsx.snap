@@ -397,7 +397,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 refCallback={[Function]}
                                 required={false}
                                 size="2"
-                                type="text"
+                                type="number"
                                 value="01"
                               />
                             }
@@ -420,7 +420,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 refCallback={[Function]}
                                 required={false}
                                 size="2"
-                                type="text"
+                                type="number"
                                 value="01"
                               />
                             }
@@ -450,7 +450,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 refCallback={[Function]}
                                 required={false}
                                 size="4"
-                                type="text"
+                                type="number"
                                 value="2017"
                               />
                             }
@@ -473,7 +473,7 @@ exports[`correctly applies the theme context className 1`] = `
                               refCallback={[Function]}
                               required={false}
                               size="2"
-                              type="text"
+                              type="number"
                               value="01"
                             >
                               <input
@@ -491,7 +491,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 pattern="\\\\d*"
                                 required={false}
                                 size="2"
-                                type="text"
+                                type="number"
                                 value="01"
                               />
                             </Input>
@@ -518,7 +518,7 @@ exports[`correctly applies the theme context className 1`] = `
                               refCallback={[Function]}
                               required={false}
                               size="2"
-                              type="text"
+                              type="number"
                               value="01"
                             >
                               <input
@@ -536,7 +536,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 pattern="\\\\d*"
                                 required={false}
                                 size="2"
-                                type="text"
+                                type="number"
                                 value="01"
                               />
                             </Input>
@@ -563,7 +563,7 @@ exports[`correctly applies the theme context className 1`] = `
                               refCallback={[Function]}
                               required={false}
                               size="4"
-                              type="text"
+                              type="number"
                               value="2017"
                             >
                               <input
@@ -581,7 +581,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 pattern="\\\\d*"
                                 required={false}
                                 size="4"
-                                type="text"
+                                type="number"
                                 value="2017"
                               />
                             </Input>
@@ -673,16 +673,16 @@ exports[`correctly applies the theme context className 1`] = `
                       >
                         <VisuallyHiddenText
                           aria-live="off"
-                          text="Terra.datePicker.invalidDate. 
-            Terra.datePicker.dateFormatLabel 
+                          text="Terra.datePicker.invalidDate.
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey "
                         >
                           <span
                             aria-live="off"
                             className="visually-hidden-text"
                           >
-                            Terra.datePicker.invalidDate. 
-            Terra.datePicker.dateFormatLabel 
+                            Terra.datePicker.invalidDate.
+            Terra.datePicker.dateFormatLabel
             Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey 
                           </span>
                         </VisuallyHiddenText>

@@ -1,32 +1,36 @@
 {
   "name": "terra-application-utility",
-  "main": "lib/ApplicationUtility.js",
   "version": "2.55.0",
   "description": "The Utility is used to disclose a utility menu. There are two versions - a header version and menu version. These should be used with the corresponding `terra-application-header-layout` and `terra-application-menu-layout` components.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-application-utility"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-application-utility",
-    "ApplicationUtility",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": ">=2.8.0, <6.0.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "ApplicationUtility",
+    "Cerner",
+    "Framework",
+    "Terra",
+    "terra-application-utility",
+    "UI"
+  ],
+  "main": "lib/ApplicationUtility.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
@@ -35,6 +39,11 @@
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.19.0",
     "terra-theme-context": "^1.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "devDependencies": {
     "terra-application-header-layout": "^3.40.0",

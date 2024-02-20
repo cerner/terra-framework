@@ -2,8 +2,10 @@
 
 ## Unreleased
 
-* Changed
-  * Added fix for field label SR announce.
+## 4.62.0 - (February 16, 2024)
+
+* Fixed
+  * Added fix for field label screenreader announcement.
   
 * Changed
   * Changed `up`,`down` key functionality to same as `+`,`-` functionality to make uniform.
