@@ -1,12 +1,34 @@
+/* eslint-disable no-alert */
 import React, { useState, useCallback, useEffect } from 'react';
 import { WorklistDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
   cols: [
-    { id: 'Column-0', displayName: 'Patient' },
+    {
+      id: 'Column-0',
+      displayName: 'Patient',
+      action: {
+        label: 'Patient action',
+        onClick: () => alert('Patient action called'),
+      },
+    },
     { id: 'Column-1', displayName: 'Location' },
-    { id: 'Column-2', displayName: 'Illness Severity' },
-    { id: 'Column-3', displayName: 'Visit' },
+    {
+      id: 'Column-2',
+      displayName: 'Illness Severity',
+      action: {
+        label: 'Illness Severity action',
+        onClick: () => alert('Illness Severity action called'),
+      },
+    },
+    {
+      id: 'Column-3',
+      displayName: 'Visit',
+      action: {
+        label: 'Visit action',
+        onClick: () => alert('Visit action called'),
+      },
+    },
     { id: 'Column-4', displayName: 'Allergy' },
     { id: 'Column-5', displayName: 'Primary Contact' },
     { id: 'Column-6', displayName: 'Generic Order Counts' },
@@ -60,18 +82,6 @@ const WorklistDataGridColumnActions = () => {
   useEffect(() => {
     setRowData(gridDataJSON.rows);
   }, []);
-
-  // Add actions to first 5 columns
-  cols.forEach((col, columnIndex) => {
-    if (columnIndex < 5) {
-      // eslint-disable-next-line no-param-reassign
-      col.action = {
-        label: `${col.displayName} action`,
-        // eslint-disable-next-line no-alert
-        onClick: () => alert(`${col.displayName} action called`),
-      };
-    }
-  });
 
   const onCellSelect = useCallback((rowId, columnId) => {
     if (rowId && columnId) {
