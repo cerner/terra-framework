@@ -1055,7 +1055,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-1 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-1 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -1144,7 +1144,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -1226,7 +1226,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column blank"
-                      headers="test-terra-table-rowheader-1 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1310,7 +1310,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell masked"
-                      headers="test-terra-table-rowheader-1 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-1 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1499,7 +1499,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-2 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-2 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -1587,7 +1587,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-2"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -1669,7 +1669,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column"
-                      headers="test-terra-table-rowheader-2 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-2 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1749,7 +1749,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell masked"
-                      headers="test-terra-table-rowheader-2 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-2 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1938,7 +1938,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-3 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-3 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2026,7 +2026,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-3"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -2108,7 +2108,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column"
-                      headers="test-terra-table-rowheader-3 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-3 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -2188,7 +2188,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell masked"
-                      headers="test-terra-table-rowheader-3 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-3 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -2377,7 +2377,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-4 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-4 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2465,7 +2465,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned highlighted"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-4"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -2547,7 +2547,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column highlighted"
-                      headers="test-terra-table-rowheader-4 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-4 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -2626,7 +2626,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell highlighted"
-                      headers="test-terra-table-rowheader-4 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-4 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={

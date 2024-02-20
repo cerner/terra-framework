@@ -348,10 +348,10 @@ describe('Table', () => {
 
     // Validate cells of the first row
     const row1Cell1 = section1Row1.find('.cell').at(0);
-    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-Column-0');
+    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-Column-0-headerCell');
     expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
     const row1Cell2 = section1Row1.find('.cell').at(1);
-    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-rowheader-1 test-terra-table-Column-1');
+    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
 
     // Retrieve second section
     const section2 = tableSections.at(1);
@@ -376,10 +376,10 @@ describe('Table', () => {
 
     // Validate cells of the first row
     const section2Row1Cell1 = section2Row1.find('.cell').at(0);
-    expect(section2Row1Cell1.props().headers).toBe('test-terra-table-section-1 test-terra-table-Column-0');
+    expect(section2Row1Cell1.props().headers).toBe('test-terra-table-section-1 test-terra-table-Column-0-headerCell');
     expect(section2Row1Cell1.props().id).toBe('test-terra-table-rowheader-3');
     const section2Row1Cell2 = section2Row1.find('.cell').at(1);
-    expect(section2Row1Cell2.props().headers).toBe('test-terra-table-section-1 test-terra-table-rowheader-3 test-terra-table-Column-1');
+    expect(section2Row1Cell2.props().headers).toBe('test-terra-table-section-1 test-terra-table-rowheader-3 test-terra-table-Column-1-headerCell');
   });
 
   it('verifies ARIA rowcount and rowindex attributes for a table with header actions (with sections)', () => {
@@ -516,17 +516,17 @@ describe('Table', () => {
 
     // Validate cells of the first row
     const row1Cell1 = row1.find('.cell').at(0);
-    expect(row1Cell1.props().headers).toBe('test-terra-table-Column-0');
+    expect(row1Cell1.props().headers).toBe('test-terra-table-Column-0-headerCell');
     expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
     const row1Cell2 = row1.find('.cell').at(1);
-    expect(row1Cell2.props().headers).toBe('test-terra-table-rowheader-1 test-terra-table-Column-1');
+    expect(row1Cell2.props().headers).toBe('test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
 
     // Validate cells of the second row
     const row2Cell1 = row2.find('.cell').at(0);
-    expect(row2Cell1.props().headers).toBe('test-terra-table-Column-0');
+    expect(row2Cell1.props().headers).toBe('test-terra-table-Column-0-headerCell');
     expect(row2Cell1.props().id).toBe('test-terra-table-rowheader-2');
     const row2Cell2 = row2.find('.cell').at(1);
-    expect(row2Cell2.props().headers).toBe('test-terra-table-rowheader-2 test-terra-table-Column-1');
+    expect(row2Cell2.props().headers).toBe('test-terra-table-rowheader-2 test-terra-table-Column-1-headerCell');
   });
 
   it('verifies ARIA rowcount and rowindex attributes for a table with header actions (no sections)', () => {

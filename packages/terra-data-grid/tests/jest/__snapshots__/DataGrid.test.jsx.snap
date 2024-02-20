@@ -1376,7 +1376,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -1472,7 +1472,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable blank"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -1570,7 +1570,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -1728,7 +1728,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -1824,7 +1824,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -1918,7 +1918,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2076,7 +2076,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -2172,7 +2172,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2266,7 +2266,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2424,7 +2424,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned selectable highlighted"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -2520,7 +2520,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2613,7 +2613,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -4083,7 +4083,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -4179,7 +4179,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable blank"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -4277,7 +4277,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -4435,7 +4435,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -4531,7 +4531,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -4625,7 +4625,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -4783,7 +4783,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -4879,7 +4879,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -4973,7 +4973,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -5131,7 +5131,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <th
                           className="cell pinned selectable highlighted"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5227,7 +5227,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell pinned last-pinned-column selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -5320,7 +5320,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       >
                         <td
                           className="cell selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -6955,7 +6955,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
-                              headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-table-rowSelectionColumn"
+                              headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -7059,7 +7059,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -7157,7 +7157,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable blank"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -7257,7 +7257,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -7469,7 +7469,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
-                              headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-table-rowSelectionColumn"
+                              headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -7573,7 +7573,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -7671,7 +7671,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -7767,7 +7767,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -7979,7 +7979,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
-                              headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-table-rowSelectionColumn"
+                              headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -8083,7 +8083,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -8181,7 +8181,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -8277,7 +8277,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -8489,7 +8489,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
-                              headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-table-rowSelectionColumn"
+                              headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -8593,7 +8593,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned selectable highlighted"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -8691,7 +8691,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -8786,7 +8786,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -10184,7 +10184,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -10280,7 +10280,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable blank"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -10378,7 +10378,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -10536,7 +10536,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -10632,7 +10632,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -10726,7 +10726,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -10884,7 +10884,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -10980,7 +10980,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -11074,7 +11074,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -11232,7 +11232,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned selectable highlighted"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -11328,7 +11328,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -11421,7 +11421,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -12810,7 +12810,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -12906,7 +12906,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable blank"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -13004,7 +13004,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -13162,7 +13162,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -13258,7 +13258,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -13352,7 +13352,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -13510,7 +13510,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell selectable"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -13606,7 +13606,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -13700,7 +13700,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell masked"
-                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -13858,7 +13858,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell selectable highlighted"
-                          headers="test-terra-data-grid-table-Column-0"
+                          headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -13954,7 +13954,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -14047,7 +14047,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable highlighted"
-                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2"
+                          headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={

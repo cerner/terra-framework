@@ -1444,7 +1444,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -1542,7 +1542,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -1642,7 +1642,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -1803,7 +1803,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -1901,7 +1901,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -1997,7 +1997,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -2158,7 +2158,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -2256,7 +2256,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -2352,7 +2352,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -2513,7 +2513,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -2611,7 +2611,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -2706,7 +2706,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -4448,7 +4448,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -4554,7 +4554,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -4654,7 +4654,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -4756,7 +4756,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -4969,7 +4969,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -5075,7 +5075,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -5175,7 +5175,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -5273,7 +5273,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -5486,7 +5486,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -5592,7 +5592,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -5692,7 +5692,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -5790,7 +5790,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -6003,7 +6003,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -6109,7 +6109,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -6209,7 +6209,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -6306,7 +6306,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -8048,7 +8048,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -8154,7 +8154,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -8254,7 +8254,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -8356,7 +8356,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -8569,7 +8569,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -8675,7 +8675,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -8775,7 +8775,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -8873,7 +8873,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -9086,7 +9086,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -9192,7 +9192,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -9292,7 +9292,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -9390,7 +9390,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -9603,7 +9603,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -9709,7 +9709,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -9809,7 +9809,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -9906,7 +9906,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -11446,7 +11446,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -11544,7 +11544,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -11644,7 +11644,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -11805,7 +11805,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -11903,7 +11903,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -11999,7 +11999,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -12160,7 +12160,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -12258,7 +12258,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -12354,7 +12354,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -12515,7 +12515,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -12613,7 +12613,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -12708,7 +12708,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -14450,7 +14450,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -14556,7 +14556,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -14656,7 +14656,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -14758,7 +14758,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -14971,7 +14971,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -15077,7 +15077,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -15177,7 +15177,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -15275,7 +15275,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -15488,7 +15488,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -15594,7 +15594,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -15694,7 +15694,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -15792,7 +15792,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -16005,7 +16005,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -16111,7 +16111,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -16211,7 +16211,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -16308,7 +16308,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -18050,7 +18050,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -18156,7 +18156,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -18256,7 +18256,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -18358,7 +18358,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -18571,7 +18571,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -18677,7 +18677,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -18777,7 +18777,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -18875,7 +18875,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -19088,7 +19088,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -19194,7 +19194,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -19294,7 +19294,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -19392,7 +19392,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -19605,7 +19605,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -19711,7 +19711,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -19811,7 +19811,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -19908,7 +19908,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -21674,7 +21674,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -21780,7 +21780,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -21880,7 +21880,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -21982,7 +21982,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -22195,7 +22195,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -22301,7 +22301,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -22401,7 +22401,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -22499,7 +22499,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -22712,7 +22712,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -22818,7 +22818,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -22918,7 +22918,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -23016,7 +23016,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -23229,7 +23229,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -23335,7 +23335,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -23435,7 +23435,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -23532,7 +23532,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -25258,7 +25258,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -25364,7 +25364,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -25464,7 +25464,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -25566,7 +25566,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -25779,7 +25779,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -25885,7 +25885,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -25985,7 +25985,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -26083,7 +26083,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -26296,7 +26296,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -26402,7 +26402,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -26502,7 +26502,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -26600,7 +26600,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -26813,7 +26813,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -26919,7 +26919,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -27019,7 +27019,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -27116,7 +27116,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -28675,7 +28675,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -28773,7 +28773,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -28873,7 +28873,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -29034,7 +29034,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -29132,7 +29132,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -29228,7 +29228,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -29389,7 +29389,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -29487,7 +29487,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -29583,7 +29583,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -29744,7 +29744,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -29842,7 +29842,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -29937,7 +29937,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -31683,7 +31683,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -31789,7 +31789,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -31889,7 +31889,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -31991,7 +31991,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -32204,7 +32204,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -32310,7 +32310,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -32410,7 +32410,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -32508,7 +32508,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -32721,7 +32721,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -32827,7 +32827,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -32927,7 +32927,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -33025,7 +33025,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -33238,7 +33238,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -33344,7 +33344,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -33444,7 +33444,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -33541,7 +33541,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -35283,7 +35283,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -35389,7 +35389,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -35489,7 +35489,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -35591,7 +35591,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -35804,7 +35804,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -35910,7 +35910,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -36010,7 +36010,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -36108,7 +36108,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -36321,7 +36321,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -36427,7 +36427,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -36527,7 +36527,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -36625,7 +36625,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -36838,7 +36838,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -36944,7 +36944,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -37044,7 +37044,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -37141,7 +37141,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -38863,7 +38863,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -38969,7 +38969,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -39069,7 +39069,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -39171,7 +39171,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -39384,7 +39384,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -39490,7 +39490,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -39590,7 +39590,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -39688,7 +39688,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -39901,7 +39901,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -40007,7 +40007,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -40107,7 +40107,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -40205,7 +40205,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -40418,7 +40418,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -40524,7 +40524,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -40624,7 +40624,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -40721,7 +40721,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -42443,7 +42443,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -42549,7 +42549,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -42649,7 +42649,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -42751,7 +42751,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -42964,7 +42964,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -43070,7 +43070,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -43170,7 +43170,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -43268,7 +43268,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -43481,7 +43481,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -43587,7 +43587,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -43687,7 +43687,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -43785,7 +43785,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -43998,7 +43998,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -44104,7 +44104,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -44204,7 +44204,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -44301,7 +44301,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -46023,7 +46023,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -46129,7 +46129,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -46229,7 +46229,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -46331,7 +46331,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -46544,7 +46544,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -46650,7 +46650,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -46750,7 +46750,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -46848,7 +46848,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -47061,7 +47061,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -47167,7 +47167,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -47267,7 +47267,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -47365,7 +47365,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -47578,7 +47578,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -47684,7 +47684,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -47784,7 +47784,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -47881,7 +47881,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -49603,7 +49603,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -49709,7 +49709,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -49809,7 +49809,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -49911,7 +49911,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -50124,7 +50124,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -50230,7 +50230,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -50330,7 +50330,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -50428,7 +50428,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -50641,7 +50641,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -50747,7 +50747,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -50847,7 +50847,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -50945,7 +50945,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -51158,7 +51158,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -51264,7 +51264,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -51364,7 +51364,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -51461,7 +51461,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -53181,7 +53181,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -53287,7 +53287,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -53387,7 +53387,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -53489,7 +53489,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -53702,7 +53702,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -53808,7 +53808,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -53908,7 +53908,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -54006,7 +54006,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -54219,7 +54219,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -54325,7 +54325,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -54425,7 +54425,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -54523,7 +54523,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -54736,7 +54736,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -54842,7 +54842,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -54942,7 +54942,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -55039,7 +55039,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -56759,7 +56759,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -56865,7 +56865,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -56965,7 +56965,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -57067,7 +57067,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -57280,7 +57280,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -57386,7 +57386,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -57486,7 +57486,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -57584,7 +57584,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -57797,7 +57797,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -57903,7 +57903,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -58003,7 +58003,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -58101,7 +58101,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -58314,7 +58314,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               >
                                 <td
                                   className="cell pinned"
-                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn"
+                                  headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-table-rowSelectionColumn-headerCell"
                                   onKeyDown={[Function]}
                                   onMouseDown={[Function]}
                                   style={
@@ -58420,7 +58420,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -58520,7 +58520,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -58617,7 +58617,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -60124,7 +60124,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -60222,7 +60222,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -60322,7 +60322,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -60483,7 +60483,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -60581,7 +60581,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -60677,7 +60677,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -60838,7 +60838,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -60936,7 +60936,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -61032,7 +61032,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -61193,7 +61193,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -61291,7 +61291,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -61386,7 +61386,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -62893,7 +62893,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-1"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -62991,7 +62991,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable blank"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -63091,7 +63091,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-1 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -63252,7 +63252,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-2"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -63350,7 +63350,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -63446,7 +63446,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-2 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -63607,7 +63607,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned selectable"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-3"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -63705,7 +63705,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -63801,7 +63801,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell masked"
-                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-3 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -63962,7 +63962,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <th
                               className="cell pinned selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-Column-0"
+                              headers="test-terra-worklist-data-grid-table-Column-0-headerCell"
                               id="test-terra-worklist-data-grid-table-rowheader-4"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -64060,7 +64060,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell pinned last-pinned-column selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-1-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
@@ -64155,7 +64155,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           >
                             <td
                               className="cell selectable highlighted"
-                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2"
+                              headers="test-terra-worklist-data-grid-table-rowheader-4 test-terra-worklist-data-grid-table-Column-2-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
                               style={
