@@ -413,7 +413,7 @@ export default class Calendar extends React.Component {
       isMonthChanged: true,
       date: getStartOfMonth(addMonths(cloneDate(this.state.date), 1)),
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(getStartOfMonth(addMonths(cloneDate(this.state.date), 1)));
+    this.props.setPreSelection(getStartOfMonth(addMonths(cloneDate(this.state.date), 1)),"month",addMonths(cloneDate(this.state.date), 1));
     // To check if button is pressed using mouse or keyboard
     if(event.target.type === undefined) {
       this.setState({ calendarIsKeyboardFocused : false});
@@ -426,7 +426,7 @@ export default class Calendar extends React.Component {
       isMonthChanged: true,
       date: getStartOfMonth(subtractMonths(cloneDate(this.state.date), 1))
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(getStartOfMonth(subtractMonths(cloneDate(this.state.date), 1)));
+    this.props.setPreSelection(getStartOfMonth(subtractMonths(cloneDate(this.state.date), 1)),"month",subtractMonths(cloneDate(this.state.date), 1));
     // To check if button is pressed using mouse or keyboard
     if(event.target.type === undefined) {
       this.setState({ calendarIsKeyboardFocused : false});
@@ -464,7 +464,7 @@ export default class Calendar extends React.Component {
       isMonthChanged: true,
       date: getStartOfMonth(setYear(cloneDate(this.state.date), year))
     })
-    this.props.setPreSelection(getStartOfMonth(setYear(cloneDate(this.state.date), year)));
+    this.props.setPreSelection(getStartOfMonth(setYear(cloneDate(this.state.date), year)),"year",year);
   }
 
   changeMonth = (month) => {
@@ -472,7 +472,7 @@ export default class Calendar extends React.Component {
       isMonthChanged: true,
       date: getStartOfMonth(setMonth(cloneDate(this.state.date), month))
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(getStartOfMonth(setMonth(cloneDate(this.state.date), month)));
+    this.props.setPreSelection(getStartOfMonth(setMonth(cloneDate(this.state.date), month)),"month",month);
   }
 
   header = (date = this.state.date) => {

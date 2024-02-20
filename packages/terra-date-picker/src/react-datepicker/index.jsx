@@ -34,7 +34,8 @@ import {
   parseDate,
   safeDateFormat,
   getHightLightDaysMap,
-  getLocalizedDateForScreenReader
+  getLocalizedDateForScreenReader,
+  getMonthFromDate
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
 import styles from './stylesheets/react_datepicker.module.scss'
@@ -582,12 +583,14 @@ class DatePicker extends React.Component {
     }
   }
 
-  setPreSelection = (date) => {
+  setPreSelection = (date,type,value) => {
     const isValidDateSelection = date ? isDayInRange(date, this.props.minDate, this.props.maxDate) : true
     if (isValidDateSelection) {
       this.setState({
         preSelection: date
       })
+      type === "month" ? this.updateAriaLiveStatus(getMonthFromDate(date, this.props)) :
+      type === "year" ? this.updateAriaLiveStatus(value, this.props) :
       this.updateAriaLiveStatus(getLocalizedDateForScreenReader(date, this.props));
     }
   }
