@@ -446,7 +446,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                             "assignSyncMedium": [Function],
                             "options": Object {
                               "async": true,
-                              "ssr": false,
+                              "ssr": true,
                             },
                             "read": [Function],
                             "useMedium": [Function],
@@ -535,7 +535,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               "assignSyncMedium": [Function],
                               "options": Object {
                                 "async": true,
-                                "ssr": false,
+                                "ssr": true,
                               },
                               "read": [Function],
                               "useMedium": [Function],

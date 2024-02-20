@@ -1,36 +1,44 @@
 {
   "name": "terra-application-menu-layout",
-  "main": "lib/ApplicationMenuLayout.js",
   "version": "3.32.0",
   "description": "This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-application-menu-layout"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-application-menu-layout",
-    "Application",
-    "Menu",
-    "Layout",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Application",
+    "Cerner",
+    "Framework",
+    "Layout",
+    "Menu",
+    "Terra",
+    "terra-application-menu-layout",
+    "UI"
+  ],
+  "main": "lib/ApplicationMenuLayout.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

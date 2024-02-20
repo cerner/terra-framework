@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+## 1.66.0 - (February 20, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.65.0 - (February 16, 2024)
+
 * Added
   * Added shouldTrapFocus to be set to 'true'.
   * Column actions example added to `terra-worklist-data-grid`.

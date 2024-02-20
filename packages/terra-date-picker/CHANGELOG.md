@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.98.1 - (February 16, 2024)
+
 * Fixed
   * Fixed date picker to change the focused input field value instead of the day input while pressing `+`, `-` keys.
 
