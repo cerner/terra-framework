@@ -164,7 +164,7 @@ function Section(props) {
               className={cx('section-header')}
               text={text}
               isOpen={hasSectionButton ? !isCollapsed : undefined}
-              isTitleFixed
+              isTitleSticky
               onClick={hasSectionButton ? handleClick : undefined}
             />
           </th>

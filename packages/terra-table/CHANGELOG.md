@@ -11,6 +11,7 @@
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
+  * Changed flowsheet data grid sections to have sticky title.
 
 ## 5.5.0 - (February 1, 2024)
 
