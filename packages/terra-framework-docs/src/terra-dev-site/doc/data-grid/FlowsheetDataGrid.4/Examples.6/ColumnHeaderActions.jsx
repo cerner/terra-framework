@@ -1,11 +1,27 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
 const ColumnHeaderActions = () => {
   const gridDataJSON = {
     cols: [
-      { id: 'Column-0', displayName: 'Vitals' },
-      { id: 'Column-1', displayName: 'March 16' },
+      {
+        id: 'Column-0',
+        displayName: 'Vitals',
+        action: {
+          label: 'Vitals action',
+          // eslint-disable-next-line no-alert
+          onClick: () => alert('Vitals action called'),
+        },
+      },
+      {
+        id: 'Column-1',
+        displayName: 'March 16',
+        action: {
+          label: 'March 16 action',
+          // eslint-disable-next-line no-alert
+          onClick: () => alert('March 16 action called'),
+        },
+      },
       { id: 'Column-2', displayName: 'March 17' },
       { id: 'Column-3', displayName: 'March 18' },
     ],
@@ -59,129 +75,13 @@ const ColumnHeaderActions = () => {
   };
 
   const { cols, rows } = gridDataJSON;
-  const [rowData, setRowData] = useState(rows);
-  const [selectedRow, setSelectedRow] = useState(undefined);
-
-  // Add actions to first 2 columns
-  cols.forEach((col, columnIndex) => {
-    if (columnIndex < 2) {
-      // eslint-disable-next-line no-param-reassign
-      col.action = {
-        label: `${col.displayName} action`,
-        // eslint-disable-next-line no-alert
-        onClick: () => alert(`${col.displayName} action called`),
-      };
-    }
-  });
-
-  const clearSelectedRow = useCallback(() => {
-    if (selectedRow) {
-      setSelectedRow(undefined);
-    }
-  }, [selectedRow]);
-
-  const onRowSelect = useCallback((rowToSelect) => {
-    const { rowId, isMetaPressed } = rowToSelect; // Contains rowId and sectionId
-    if (rowId) {
-      const rowIndex = rowData.findIndex(e => e.id === rowId);
-
-      const newRowData = [...rowData];
-
-      // Remove current selections
-      for (let row = 0; row < rowData.length; row += 1) {
-        if (!isMetaPressed) {
-          newRowData[row].isSelected = false;
-        }
-        for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
-          if (!isMetaPressed) {
-            newRowData[row].cells[cell].isSelected = false;
-          }
-        }
-      }
-
-      if (selectedRow !== rowId) {
-        newRowData[rowIndex].isSelected = true;
-        setSelectedRow(rowId);
-      } else if (!isMetaPressed) {
-        newRowData[rowIndex].isSelected = false;
-        clearSelectedRow();
-      }
-
-      setRowData(newRowData);
-    }
-  }, [clearSelectedRow, rowData, selectedRow]);
-
-  const onCellSelect = useCallback((selectedCell) => {
-    if (selectedCell.rowId && selectedCell.columnId) {
-      const rowIndex = rowData.findIndex(e => e.id === selectedCell.rowId);
-      const columnIndex = cols.findIndex(e => e.id === selectedCell.columnId);
-      let otherSelectionsExist = false;
-
-      // Remove cell selections, excluding current cell
-      const newRowData = [...rowData];
-      for (let row = 0; row < rowData.length; row += 1) {
-        if (!selectedCell.isMetaPressed) newRowData[row].isSelected = false;
-        for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
-          const currentCell = rowData[row].cells[cell];
-          if (currentCell.isSelected && !(row === rowIndex && cell === columnIndex) && !selectedCell.isMetaPressed) {
-            currentCell.isSelected = false;
-            otherSelectionsExist = true;
-          }
-        }
-      }
-
-      // If the current cell is the only selected cell, toggle it to unselected. Otherwise, set it to selected.
-      newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected || otherSelectionsExist;
-      clearSelectedRow();
-      setRowData(newRowData);
-    }
-  }, [cols, rowData, clearSelectedRow]);
-
-  const onClearSelectedCells = useCallback(() => {
-    // Remove current selections
-    const newRowData = [...rowData];
-    for (let row = 0; row < rowData.length; row += 1) {
-      for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
-        newRowData[row].cells[cell].isSelected = false;
-      }
-    }
-
-    clearSelectedRow();
-    setRowData(newRowData);
-  }, [clearSelectedRow, rowData]);
-
-  const onCellRangeSelect = useCallback((cells) => {
-    const newRowData = [...rowData];
-
-    // Remove current selections
-    for (let row = 0; row < rowData.length; row += 1) {
-      newRowData[row].isSelected = false;
-      for (let cell = 0; cell < rowData[row].cells.length; cell += 1) {
-        newRowData[row].cells[cell].isSelected = false;
-      }
-    }
-
-    cells.forEach((cell) => {
-      const rowIndex = rowData.findIndex(e => e.id === cell.rowId);
-      const columnIndex = cols.findIndex(e => e.id === cell.columnId);
-
-      newRowData[rowIndex].cells[columnIndex].isSelected = true;
-    });
-
-    clearSelectedRow();
-    setRowData(newRowData);
-  }, [clearSelectedRow, cols, rowData]);
 
   return (
     <FlowsheetDataGrid
       id="column-header-actions-flowsheet-data-grid"
       columns={cols}
-      rows={rowData}
+      rows={rows}
       ariaLabel="Flowsheet Data Grid"
-      onCellSelect={onCellSelect}
-      onClearSelectedCells={onClearSelectedCells}
-      onCellRangeSelect={onCellRangeSelect}
-      onRowSelect={onRowSelect}
     />
   );
 };

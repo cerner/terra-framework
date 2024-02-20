@@ -16,7 +16,7 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
-   * Object containing data for column action, will be displayed in a row below the header row.
+   * Object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.
    */
   action: PropTypes.shape({ actionShape }),
   /**
