@@ -5,6 +5,11 @@
 * Changed
   * Updated the `terra-date-time-picker` timezone example.
 
+## 1.66.0 - (February 20, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.65.0 - (February 16, 2024)
 
 * Added
