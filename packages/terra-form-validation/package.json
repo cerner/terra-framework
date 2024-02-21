@@ -1,27 +1,35 @@
 {
   "name": "terra-form-validation",
-  "main": "lib/FormValidationUtil.js",
   "version": "1.98.0",
   "description": "Form Validation Examples for Terra",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-form-validation"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-form-validation",
-    "FormValidation",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "FormValidation",
+    "Framework",
+    "Terra",
+    "terra-form-validation",
+    "UI"
+  ],
+  "main": "lib/FormValidationUtil.js",
+  "files": [
+    "lib",
+    "src",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "peerDependencies": {
     "final-form": "^4.6.0",
     "react": "^16.8.5",
@@ -51,13 +59,5 @@
     "precompile": "rm -rf lib",
     "test": "npm run jest",
     "jest": "jest --config ../../jest.config.js"
-  },
-  "files": [
-    "lib",
-    "src",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

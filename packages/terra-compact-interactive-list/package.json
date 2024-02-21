@@ -1,33 +1,37 @@
 {
   "name": "terra-compact-interactive-list",
-  "main": "lib/index.js",
   "version": "1.4.0",
   "description": "The Terra Compact Interactive List component provides users a way to render a collection of interactive data in a list format into a single tab stop.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-compact-interactive-list"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-compact-interactive-list",
-    "compact-interactive-list",
-    "List",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "compact-interactive-list",
+    "Framework",
+    "List",
+    "Terra",
+    "terra-compact-interactive-list",
+    "UI"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
@@ -35,6 +39,11 @@
     "terra-icon": "^3.58.0",
     "terra-table": "^5.6.0",
     "terra-theme-context": "^1.9.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
@@ -53,14 +62,5 @@
     "wdio-lowlight": "cd ../.. && terra wdio --themes clinical-lowlight-theme",
     "wdio-fusion": "cd ../.. && terra wdio --themes orion-fusion-theme",
     "wdio": "npm run wdio-default && npm run wdio-lowlight && npm run wdio-fusion"
-  },
-  "files": [
-    "lib",
-    "src",
-    "translations",
-    "CHANGELOG.md",
-    "LICENSE",
-    "NOTICE",
-    "README.md"
-  ]
+  }
 }

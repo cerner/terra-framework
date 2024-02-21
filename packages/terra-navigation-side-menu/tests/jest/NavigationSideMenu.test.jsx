@@ -45,6 +45,27 @@ describe('Layout', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should render a NavigationSideMenu with ariaLabel', () => {
+    const result = enzymeIntl.mountWithIntl((
+      <NavigationSideMenu
+        menuItems={[
+          { key: 'menu', text: 'Test Menu', childKeys: ['test1', 'test2', 'test3', 'test4'] },
+          { key: 'test1', text: 'Test Menu 1' },
+          { key: 'test2', text: 'Test Menu 2' },
+          { key: 'test3', text: 'Test Menu 3' },
+          { key: 'test4', text: 'Test Menu 4' },
+        ]}
+        onChange={() => {}}
+        routingStackBack={() => {}}
+        selectedMenuKey="menu"
+        ariaLabel="Sub Menu List"
+      />
+    ));
+    const navElement = result.find('nav');
+    expect(navElement.prop('aria-label')).toEqual('Sub Menu List');
+    expect(result).toMatchSnapshot();
+  });
+
   it('correctly applies the theme context className', () => {
     const result = enzymeIntl.mountWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
