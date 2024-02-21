@@ -68,6 +68,13 @@ const propTypes = {
    * Column index for cell that can receive tab focus.
    */
   activeColumnIndex: PropTypes.number,
+
+  /**
+   * @private
+   * Row index for cell that can receive tab focus.
+   */
+  activeRowIndex: PropTypes.number,
+
   /**
    * @private
    * Specifies if resize handle should be active.
@@ -199,6 +206,7 @@ function Table(props) {
     ariaLabelledBy,
     ariaLabel,
     activeColumnIndex,
+    activeRowIndex,
     isActiveColumnResizing,
     columnResizeIncrement,
     rows,
@@ -596,6 +604,7 @@ function Table(props) {
             tableId={id}
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
+            activeRowIndex={activeRowIndex}
             columns={tableColumns}
             hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
