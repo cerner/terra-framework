@@ -387,7 +387,7 @@ const ColumnHeaderCell = (props) => {
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
-      aria-owns={isActionCell ? resizeHandleId : undefined} // Action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus when it comes from action cell
+      aria-owns={isResizeHandleActive ? resizeHandleId : undefined} // Action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus when it comes from action cell
       title={!isActionCell ? displayName : action?.label}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
