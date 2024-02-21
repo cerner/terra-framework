@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.65.0",
+  "version": "1.66.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "author": "Cerner Corporation",
   "repository": {
@@ -47,7 +47,7 @@
     "terra-collapsible-menu-view": "^6.89.0",
     "terra-compact-interactive-list": "^1.4.0",
     "terra-content-container": "^3.0.0",
-    "terra-data-grid": "^1.13.0",
+    "terra-data-grid": "^1.14.0",
     "terra-date-input": "^1.51.1",
     "terra-date-picker": "^4.98.1",
     "terra-date-time-picker": "^4.106.0",
@@ -78,7 +78,7 @@
     "terra-slide-panel-manager": "^5.90.0",
     "terra-slider": "^1.2.0",
     "terra-spacer": "^3.59.0",
-    "terra-table": "^5.6.0",
+    "terra-table": "^5.7.0",
     "terra-tabs": "^7.17.0",
     "terra-text": "^4.49.0",
     "terra-theme-context": "^1.9.0",

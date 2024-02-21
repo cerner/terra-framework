@@ -697,7 +697,7 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             Terra.datePicker.invalidDate.
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey, 
+            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey,
                           </span>
                         </VisuallyHiddenText>
                         <div

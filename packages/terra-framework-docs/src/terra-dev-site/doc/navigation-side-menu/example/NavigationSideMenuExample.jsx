@@ -45,21 +45,22 @@ class NavigationSideMenuDefault extends React.Component {
         <NavigationSideMenu
           id="test-menu"
           menuItems={[
-            { key: 'menu', text: 'Menu', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'] },
+            { key: 'menu', text: 'Hospital Details', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'] },
             {
-              key: 'submenu1', text: 'Sub Menu 1', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1',
+              key: 'submenu1', text: 'Hospital services', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1',
             },
-            { key: 'submenu2', text: 'Sub Menu 2' },
-            { key: 'submenu3', text: 'Sub Menu 3' },
-            { key: 'submenu4', text: 'Sub Menu 4' },
-            { key: 'subsubmenu1', text: 'Sub-Sub Menu 1', id: 'test-item-2' },
-            { key: 'subsubmenu2', text: 'Sub-Sub Menu 2' },
-            { key: 'subsubmenu3', text: 'Sub-Sub Menu 3' },
+            { key: 'submenu2', text: 'Hospital events' },
+            { key: 'submenu3', text: 'Hospital Accommodations' },
+            { key: 'submenu4', text: 'Hospital Careers' },
+            { key: 'subsubmenu1', text: 'Imaging', id: 'test-item-2' },
+            { key: 'subsubmenu2', text: 'Laboratory' },
+            { key: 'subsubmenu3', text: 'Rehabilitation services' },
           ]}
           onChange={this.handleOnChange}
           routingStackBack={this.fakeRoutingBack}
           selectedMenuKey={this.state.selectedMenuKey}
           selectedChildKey={this.state.selectedChildKey}
+          ariaLabel="Sub Menu List"
         />
       );
     }

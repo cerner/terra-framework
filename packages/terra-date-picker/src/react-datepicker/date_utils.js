@@ -376,3 +376,20 @@ export function getLocalizedDateForScreenReader (date, props) {
 
   return localizedDateLabel;
 }
+
+export function getMonthFromDate(date, props) {
+  const { intl, locale } = props;
+  let month = '';
+
+  if (date && date.isValid()) {
+    const localizedDate = localizeDate(date, locale);
+    month = localizedDate.format('MMMM');
+  }
+
+  return month;
+}
+
+export const dateValues = {
+  MONTH: 'month',
+  YEAR: 'year',
+};

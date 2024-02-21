@@ -227,6 +227,8 @@ function Table(props) {
   const activeColumnPageX = useRef(0);
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
+  const resizingDelayTimer = useRef(null);
+  const resizeTimer = 100;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
 
@@ -398,14 +400,18 @@ function Table(props) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 
-  // useEffect for managing the table height.
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
-      setTableHeight(tableRef.current.offsetHeight - 1);
+      clearTimeout(resizingDelayTimer.current);
+      resizingDelayTimer.current = setTimeout(() => {
+        if (tableRef.current) {
+          setTableHeight(tableRef.current.offsetHeight - 1);
 
-      const tableContainer = tableContainerRef.current;
-      setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
+          const tableContainer = tableContainerRef.current;
+          setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
                         || tableContainer.scrollHeight > tableContainer.clientHeight);
+        }
+      }, resizeTimer);
     });
 
     resizeObserver.observe(tableRef.current);
