@@ -39,9 +39,9 @@ exports[`correctly applies the theme context className 1`] = `
     name="date-input"
   >
     <DatePicker
-      ariaDescribedBy=""
       disableButtonFocusOnClose={false}
       disabled={false}
+      errorId=""
       intl={
         Object {
           "defaultFormats": Object {},
@@ -89,8 +89,8 @@ exports[`correctly applies the theme context className 1`] = `
             allowSameDay={true}
             customInput={
               <InjectIntl(DatePickerInput)
-                ariaDescribedBy=""
                 buttonRefCallback={[Function]}
+                errorId=""
                 excludeDates={
                   Array [
                     "2017-01-01T00:00:00.000Z",
@@ -153,8 +153,8 @@ exports[`correctly applies the theme context className 1`] = `
               allowSameDay={true}
               customInput={
                 <InjectIntl(DatePickerInput)
-                  ariaDescribedBy=""
                   buttonRefCallback={[Function]}
+                  errorId=""
                   excludeDates={
                     Array [
                       "2017-01-01T00:00:00.000Z",
@@ -249,10 +249,10 @@ exports[`correctly applies the theme context className 1`] = `
                 className="react-datepicker-input-container"
               >
                 <InjectIntl(DatePickerInput)
-                  ariaDescribedBy=""
                   buttonRefCallback={[Function]}
                   className=""
                   disabled={false}
+                  errorId=""
                   excludeDates={
                     Array [
                       "2017-01-01T00:00:00.000Z",
@@ -283,10 +283,10 @@ exports[`correctly applies the theme context className 1`] = `
                   value="01/01/2017"
                 >
                   <DatePickerInput
-                    ariaDescribedBy=""
                     buttonRefCallback={[Function]}
                     className=""
                     disabled={false}
+                    errorId=""
                     excludeDates={
                       Array [
                         "2017-01-01T00:00:00.000Z",
@@ -697,7 +697,7 @@ exports[`correctly applies the theme context className 1`] = `
                           >
                             Terra.datePicker.invalidDate.
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey,
+            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey, 
                           </span>
                         </VisuallyHiddenText>
                         <div
@@ -731,8 +731,8 @@ exports[`should render a controlled date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -808,8 +808,8 @@ exports[`should render a date picker with disabled dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -884,8 +884,8 @@ exports[`should render a date picker with filtered dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -960,8 +960,8 @@ exports[`should render a date picker with included dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1036,8 +1036,8 @@ exports[`should render a date picker with min and max dates 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1112,8 +1112,8 @@ exports[`should render a date picker with onBlur 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1188,8 +1188,8 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1264,8 +1264,8 @@ exports[`should render a date picker with onChange 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1340,8 +1340,8 @@ exports[`should render a date picker with onChangeRaw 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1416,8 +1416,8 @@ exports[`should render a date picker with onFocus 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1492,8 +1492,8 @@ exports[`should render a date picker with onRequestClose 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1569,8 +1569,8 @@ exports[`should render a date picker with onSelect 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1645,8 +1645,8 @@ exports[`should render a default date input and date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1721,8 +1721,8 @@ exports[`should render a default date input with custom input attributes 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1802,8 +1802,8 @@ exports[`should render a disabled date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",
@@ -1878,8 +1878,8 @@ exports[`should render a required date input and date picker 1`] = `
       allowSameDay={true}
       customInput={
         <InjectIntl(DatePickerInput)
-          ariaDescribedBy=""
           buttonRefCallback={[Function]}
+          errorId=""
           excludeDates={
             Array [
               "2017-01-01T00:00:00.000Z",

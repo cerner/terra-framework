@@ -281,10 +281,10 @@ exports[`should render a DatePickerField with props 1`] = `
           value="2017-04-09"
         >
           <DatePicker
-            ariaDescribedBy=""
             ariaLabel="Label Test"
             disableButtonFocusOnClose={false}
             disabled={true}
+            errorId=""
             excludeDates={
               Array [
                 "2017-04-03",
@@ -354,9 +354,9 @@ exports[`should render a DatePickerField with props 1`] = `
                   allowSameDay={true}
                   customInput={
                     <InjectIntl(DatePickerInput)
-                      ariaDescribedBy=""
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
+                      errorId=""
                       excludeDates={
                         Array [
                           "2017-01-01T00:00:00.000Z",
@@ -428,9 +428,9 @@ exports[`should render a DatePickerField with props 1`] = `
                     allowSameDay={true}
                     customInput={
                       <InjectIntl(DatePickerInput)
-                        ariaDescribedBy=""
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
+                        errorId=""
                         excludeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -534,11 +534,11 @@ exports[`should render a DatePickerField with props 1`] = `
                       className="react-datepicker-input-container"
                     >
                       <InjectIntl(DatePickerInput)
-                        ariaDescribedBy=""
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={true}
+                        errorId=""
                         excludeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -576,11 +576,11 @@ exports[`should render a DatePickerField with props 1`] = `
                         value="04/09/2017"
                       >
                         <DatePickerInput
-                          ariaDescribedBy=""
                           ariaLabel="Label Test"
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={true}
+                          errorId=""
                           excludeDates={
                             Array [
                               "2017-01-01T00:00:00.000Z",
@@ -1193,10 +1193,10 @@ exports[`should render a default DatePickerField component 1`] = `
           useExternalFormatMask={true}
         >
           <DatePicker
-            ariaDescribedBy=""
             ariaLabel="Label"
             disableButtonFocusOnClose={false}
             disabled={false}
+            errorId=""
             id="test-date-picker"
             inputAttributes={
               Object {
@@ -1250,9 +1250,9 @@ exports[`should render a default DatePickerField component 1`] = `
                   allowSameDay={true}
                   customInput={
                     <InjectIntl(DatePickerInput)
-                      ariaDescribedBy=""
                       ariaLabel="Label"
                       buttonRefCallback={[Function]}
+                      errorId=""
                       excludeDates={
                         Array [
                           "2017-01-01T00:00:00.000Z",
@@ -1321,9 +1321,9 @@ exports[`should render a default DatePickerField component 1`] = `
                     allowSameDay={true}
                     customInput={
                       <InjectIntl(DatePickerInput)
-                        ariaDescribedBy=""
                         ariaLabel="Label"
                         buttonRefCallback={[Function]}
+                        errorId=""
                         excludeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -1424,11 +1424,11 @@ exports[`should render a default DatePickerField component 1`] = `
                       className="react-datepicker-input-container"
                     >
                       <InjectIntl(DatePickerInput)
-                        ariaDescribedBy=""
                         ariaLabel="Label"
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={false}
+                        errorId=""
                         excludeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -1465,11 +1465,11 @@ exports[`should render a default DatePickerField component 1`] = `
                         value="01/01/2017"
                       >
                         <DatePickerInput
-                          ariaDescribedBy=""
                           ariaLabel="Label"
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={false}
+                          errorId=""
                           excludeDates={
                             Array [
                               "2017-01-01T00:00:00.000Z",
@@ -2171,10 +2171,10 @@ exports[`should render a valid DatePickerField with props 1`] = `
           useExternalFormatMask={true}
         >
           <DatePicker
-            ariaDescribedBy=""
             ariaLabel="Label Test"
             disableButtonFocusOnClose={false}
             disabled={true}
+            errorId=""
             excludeDates={
               Array [
                 "2017-04-03",
@@ -2242,9 +2242,9 @@ exports[`should render a valid DatePickerField with props 1`] = `
                   allowSameDay={true}
                   customInput={
                     <InjectIntl(DatePickerInput)
-                      ariaDescribedBy=""
                       ariaLabel="Label Test"
                       buttonRefCallback={[Function]}
+                      errorId=""
                       excludeDates={
                         Array [
                           "2017-01-01T00:00:00.000Z",
@@ -2314,9 +2314,9 @@ exports[`should render a valid DatePickerField with props 1`] = `
                     allowSameDay={true}
                     customInput={
                       <InjectIntl(DatePickerInput)
-                        ariaDescribedBy=""
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
+                        errorId=""
                         excludeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -2418,11 +2418,11 @@ exports[`should render a valid DatePickerField with props 1`] = `
                       className="react-datepicker-input-container"
                     >
                       <InjectIntl(DatePickerInput)
-                        ariaDescribedBy=""
                         ariaLabel="Label Test"
                         buttonRefCallback={[Function]}
                         className=""
                         disabled={true}
+                        errorId=""
                         excludeDates={
                           Array [
                             "2017-01-01T00:00:00.000Z",
@@ -2460,11 +2460,11 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         value="01/01/2017"
                       >
                         <DatePickerInput
-                          ariaDescribedBy=""
                           ariaLabel="Label Test"
                           buttonRefCallback={[Function]}
                           className=""
                           disabled={true}
+                          errorId=""
                           excludeDates={
                             Array [
                               "2017-01-01T00:00:00.000Z",

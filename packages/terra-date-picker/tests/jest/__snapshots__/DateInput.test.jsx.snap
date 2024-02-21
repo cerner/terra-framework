@@ -37,7 +37,7 @@ exports[`correctly applies the theme context className 1`] = `
 >
   <InjectIntl(DatePickerInput)>
     <DatePickerInput
-      ariaDescribedBy=""
+      errorId=""
       intl={
         Object {
           "defaultFormats": Object {},
@@ -418,9 +418,9 @@ exports[`correctly applies the theme context className 1`] = `
               aria-live="off"
               className="visually-hidden-text"
             >
-
+              
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey,
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey, 
             </span>
           </VisuallyHiddenText>
           <div
@@ -437,7 +437,6 @@ exports[`correctly applies the theme context className 1`] = `
 
 exports[`should pass in refCallback as the ref prop of the calendar button 1`] = `
 <DatePickerInput
-  ariaDescribedBy=""
   buttonRefCallback={
     [MockFunction] {
       "calls": Array [
@@ -482,6 +481,7 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
       ],
     }
   }
+  errorId=""
   intl={
     Object {
       "defaultFormats": Object {},
@@ -906,9 +906,9 @@ exports[`should pass in refCallback as the ref prop of the calendar button 1`] =
           aria-live="off"
           className="visually-hidden-text"
         >
-
+          
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey,
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey, 
         </span>
       </VisuallyHiddenText>
       <div
@@ -1035,9 +1035,9 @@ exports[`should render a date input with isIncomplete and required props 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-
+      
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey,
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey, 
     </span>
     <div
       aria-hidden="true"
@@ -1162,9 +1162,9 @@ exports[`should render a date input with isInvalid prop 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-
+      
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey,
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey, 
     </span>
     <div
       aria-hidden="true"
@@ -1289,9 +1289,9 @@ exports[`should render a default date input 1`] = `
       aria-live="off"
       class="visually-hidden-text"
     >
-
+      
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey,
+            Terra.datePicker.dateFormat.  Terra.datePicker.hotKey, 
     </span>
     <div
       aria-hidden="true"
@@ -1304,7 +1304,6 @@ exports[`should render a default date input 1`] = `
 
 exports[`should render a default date input with all props 1`] = `
 <DatePickerInput
-  ariaDescribedBy=""
   ariaLabel="Aria Label text"
   buttonRefCallback={
     [MockFunction] {
@@ -1350,6 +1349,7 @@ exports[`should render a default date input with all props 1`] = `
       ],
     }
   }
+  errorId=""
   inputAttributes={Object {}}
   intl={
     Object {
@@ -1797,9 +1797,9 @@ exports[`should render a default date input with all props 1`] = `
           aria-live="off"
           className="visually-hidden-text"
         >
-
+          
             Terra.datePicker.dateFormatLabel
-            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey,
+            Terra.datePicker.dateFormat. Sunday, January 1, 2017, Terra.datePicker.hotKey, 
         </span>
       </VisuallyHiddenText>
       <div

@@ -2,10 +2,10 @@
 
 exports[`should render a calendar filter with default date 1`] = `
 <DatePicker
-  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
+  errorId=""
   intl={
     Object {
       "defaultFormats": Object {},
@@ -48,10 +48,10 @@ exports[`should render a calendar filter with default date 1`] = `
 
 exports[`should render a calendar filter with excluded dates 1`] = `
 <DatePicker
-  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
+  errorId=""
   excludeDates={
     Array [
       "2020-04-01",
@@ -98,10 +98,10 @@ exports[`should render a calendar filter with excluded dates 1`] = `
 
 exports[`should render a calendar filter with filtered dates 1`] = `
 <DatePicker
-  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
+  errorId=""
   filterDate={[Function]}
   intl={
     Object {
@@ -144,10 +144,10 @@ exports[`should render a calendar filter with filtered dates 1`] = `
 
 exports[`should render a calendar filter with included dates 1`] = `
 <DatePicker
-  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
+  errorId=""
   includeDates={
     Array [
       "2020-04-01",
@@ -194,10 +194,10 @@ exports[`should render a calendar filter with included dates 1`] = `
 
 exports[`should render a calendar filter with min and max dates 1`] = `
 <DatePicker
-  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
+  errorId=""
   intl={
     Object {
       "defaultFormats": Object {},
@@ -239,10 +239,10 @@ exports[`should render a calendar filter with min and max dates 1`] = `
 
 exports[`should render a calendar filter with onChange 1`] = `
 <DatePicker
-  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
+  errorId=""
   intl={
     Object {
       "defaultFormats": Object {},
@@ -285,10 +285,10 @@ exports[`should render a calendar filter with onChange 1`] = `
 
 exports[`should render a controlled calendar filter 1`] = `
 <DatePicker
-  ariaDescribedBy=""
   calendarClassName="calendar-filter"
   disableButtonFocusOnClose={false}
   disabled={false}
+  errorId=""
   intl={
     Object {
       "defaultFormats": Object {},
