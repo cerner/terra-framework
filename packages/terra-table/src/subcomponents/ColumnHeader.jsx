@@ -190,6 +190,7 @@ const ColumnHeader = (props) => {
               maximumWidth={column.maximumWidth}
               headerHeight={headerHeight}
               isResizable={hasVisibleColumnHeaders && column.isResizable}
+              activeRowIndex={activeRowIndex}
               isResizeHandleActive={activeResizeHandlerColumnId === column.id}
               resizeHandleStateSetter={resizeHandleStateSetter}
               activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
