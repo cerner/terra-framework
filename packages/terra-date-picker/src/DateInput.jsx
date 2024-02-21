@@ -714,6 +714,7 @@ const DatePickerInput = (props) => {
       maxLength="2"
       size="2"
       pattern="\d*"
+      aria-invalid={isInvalid}
       aria-required={required}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
       aria-describedby={ariaDescriptionIds}
@@ -745,6 +746,7 @@ const DatePickerInput = (props) => {
       maxLength="2"
       size="2"
       pattern="\d*"
+      aria-invalid={isInvalid}
       aria-required={required}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
       aria-describedby={ariaDescriptionIds}
@@ -776,6 +778,7 @@ const DatePickerInput = (props) => {
       maxLength="4"
       size="4"
       pattern="\d*"
+      aria-invalid={isInvalid}
       aria-required={required}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
       aria-describedby={ariaDescriptionIds}

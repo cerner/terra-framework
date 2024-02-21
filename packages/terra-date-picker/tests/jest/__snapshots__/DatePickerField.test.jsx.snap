@@ -683,6 +683,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   day={
                                     <Input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
+                                      aria-invalid={true}
                                       aria-label="Label Test Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="date-input-day"
@@ -706,6 +707,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   month={
                                     <Input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
+                                      aria-invalid={true}
                                       aria-label="Label Test Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="date-input-month"
@@ -736,6 +738,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   year={
                                     <Input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
+                                      aria-invalid={true}
                                       aria-label="Label Test Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="date-input-year"
@@ -759,6 +762,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                 >
                                   <Input
                                     aria-describedby="test-date-picker-error test-date-picker-help"
+                                    aria-invalid={true}
                                     aria-label="Label Test Terra.datePicker.monthLabel"
                                     aria-required={true}
                                     className="date-input-month"
@@ -780,6 +784,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
+                                      aria-invalid={true}
                                       aria-label="Label Test Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="form-input date-input-month"
@@ -804,6 +809,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-error test-date-picker-help"
+                                    aria-invalid={true}
                                     aria-label="Label Test Terra.datePicker.dayLabel"
                                     aria-required={true}
                                     className="date-input-day"
@@ -825,6 +831,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
+                                      aria-invalid={true}
                                       aria-label="Label Test Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="form-input date-input-day"
@@ -849,6 +856,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-error test-date-picker-help"
+                                    aria-invalid={true}
                                     aria-label="Label Test Terra.datePicker.yearLabel"
                                     aria-required={true}
                                     className="date-input-year"
@@ -870,6 +878,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-error test-date-picker-help"
+                                      aria-invalid={true}
                                       aria-label="Label Test Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="form-input date-input-year"
@@ -1557,6 +1566,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   day={
                                     <Input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Terra.datePicker.dayLabel"
                                       aria-required={false}
                                       className="date-input-day"
@@ -1580,6 +1590,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   month={
                                     <Input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Terra.datePicker.monthLabel"
                                       aria-required={false}
                                       className="date-input-month"
@@ -1610,6 +1621,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   year={
                                     <Input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Terra.datePicker.yearLabel"
                                       aria-required={false}
                                       className="date-input-year"
@@ -1633,6 +1645,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                 >
                                   <Input
                                     aria-describedby="test-date-picker-help"
+                                    aria-invalid={false}
                                     aria-label="Label Terra.datePicker.monthLabel"
                                     aria-required={false}
                                     className="date-input-month"
@@ -1654,6 +1667,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Terra.datePicker.monthLabel"
                                       aria-required={false}
                                       className="form-input date-input-month"
@@ -1678,6 +1692,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-help"
+                                    aria-invalid={false}
                                     aria-label="Label Terra.datePicker.dayLabel"
                                     aria-required={false}
                                     className="date-input-day"
@@ -1699,6 +1714,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Terra.datePicker.dayLabel"
                                       aria-required={false}
                                       className="form-input date-input-day"
@@ -1723,6 +1739,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-help"
+                                    aria-invalid={false}
                                     aria-label="Label Terra.datePicker.yearLabel"
                                     aria-required={false}
                                     className="date-input-year"
@@ -1744,6 +1761,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Terra.datePicker.yearLabel"
                                       aria-required={false}
                                       className="form-input date-input-year"
@@ -2539,6 +2557,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   day={
                                     <Input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Test Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="date-input-day"
@@ -2562,6 +2581,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   month={
                                     <Input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Test Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="date-input-month"
@@ -2592,6 +2612,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   year={
                                     <Input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Test Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="date-input-year"
@@ -2615,6 +2636,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                 >
                                   <Input
                                     aria-describedby="test-date-picker-help"
+                                    aria-invalid={false}
                                     aria-label="Label Test Terra.datePicker.monthLabel"
                                     aria-required={true}
                                     className="date-input-month"
@@ -2636,6 +2658,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Test Terra.datePicker.monthLabel"
                                       aria-required={true}
                                       className="form-input date-input-month"
@@ -2660,6 +2683,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-help"
+                                    aria-invalid={false}
                                     aria-label="Label Test Terra.datePicker.dayLabel"
                                     aria-required={true}
                                     className="date-input-day"
@@ -2681,6 +2705,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Test Terra.datePicker.dayLabel"
                                       aria-required={true}
                                       className="form-input date-input-day"
@@ -2705,6 +2730,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   </span>
                                   <Input
                                     aria-describedby="test-date-picker-help"
+                                    aria-invalid={false}
                                     aria-label="Label Test Terra.datePicker.yearLabel"
                                     aria-required={true}
                                     className="date-input-year"
@@ -2726,6 +2752,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                   >
                                     <input
                                       aria-describedby="test-date-picker-help"
+                                      aria-invalid={false}
                                       aria-label="Label Test Terra.datePicker.yearLabel"
                                       aria-required={true}
                                       className="form-input date-input-year"
