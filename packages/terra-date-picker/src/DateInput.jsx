@@ -144,10 +144,11 @@ const propTypes = {
    */
   filterDate: PropTypes.func,
   /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
    * If invalid error text is used, provide a string containing the IDs for error html element.
    * ID must be htmlFor prop value with error text.
    */
-  ariaDescribedBy: PropTypes.string,
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -172,7 +173,7 @@ const defaultProps = {
   maxDate: '2100-12-31',
   minDate: '1900-01-01',
   filterDate: undefined,
-  ariaDescribedBy: '',
+  errorId: '',
 };
 
 const DatePickerInput = (props) => {
@@ -201,7 +202,7 @@ const DatePickerInput = (props) => {
     maxDate,
     minDate,
     filterDate,
-    ariaDescribedBy,
+    errorId,
     ...customProps
   } = props;
 
@@ -724,7 +725,7 @@ const DatePickerInput = (props) => {
       aria-required={required}
       aria-invalid={isInvalid}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
-      aria-describedby={`${ariaDescriptionIds} ${ariaDescribedBy}`}
+      aria-describedby={`${ariaDescriptionIds} ${errorId}`}
       id={dayInputId}
     />
   );
@@ -756,7 +757,7 @@ const DatePickerInput = (props) => {
       aria-required={required}
       aria-invalid={isInvalid}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
-      aria-describedby={`${ariaDescriptionIds} ${ariaDescribedBy}`}
+      aria-describedby={`${ariaDescriptionIds} ${errorId}`}
       id={monthInputId}
     />
   );
@@ -788,7 +789,7 @@ const DatePickerInput = (props) => {
       aria-required={required}
       aria-invalid={isInvalid}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
-      aria-describedby={`${ariaDescriptionIds} ${ariaDescribedBy}`}
+      aria-describedby={`${ariaDescriptionIds} ${errorId}`}
       id={yearInputId}
     />
   );

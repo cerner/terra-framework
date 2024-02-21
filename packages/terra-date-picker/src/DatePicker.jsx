@@ -142,10 +142,11 @@ const propTypes = {
    */
   value: PropTypes.string,
   /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
    * If invalid error text is used, provide a string containing the IDs for error html element.
    * ID must be htmlFor prop value with error text.
    */
-  ariaDescribedBy: PropTypes.string,
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -170,7 +171,7 @@ const defaultProps = {
   useExternalFormatMask: false,
   required: false,
   selectedDate: undefined,
-  ariaDescribedBy: '',
+  errorId: '',
 };
 
 class DatePicker extends React.Component {
@@ -433,7 +434,7 @@ class DatePicker extends React.Component {
       selectedDate,
       useExternalFormatMask,
       value,
-      ariaDescribedBy,
+      errorId,
       ...customProps
     } = this.props;
 
@@ -513,7 +514,7 @@ class DatePicker extends React.Component {
                 maxDate={maxDate}
                 minDate={minDate}
                 filterDate={this.handleFilterDate}
-                ariaDescribedBy={ariaDescribedBy}
+                errorId={errorId}
               />
             )}
             customInputRef="firstInputRefCallback"

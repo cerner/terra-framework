@@ -136,10 +136,11 @@ const propTypes = {
    */
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
   /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
    * If invalid error text is used, provide a string containing the IDs for error html element.
    * ID must be htmlFor prop value with error text.
    */
-  ariaDescribedBy: PropTypes.string,
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -165,7 +166,7 @@ const defaultProps = {
   value: undefined,
   timeVariant: DateTimeUtils.FORMAT_24_HOUR,
   initialTimeZone: DateTimeUtils.getLocalTimeZone(),
-  ariaDescribedBy: '',
+  errorId: '',
 };
 
 class DateTimePicker extends React.Component {
@@ -763,7 +764,7 @@ class DateTimePicker extends React.Component {
       timeInputAttributes,
       value,
       timeVariant,
-      ariaDescribedBy,
+      errorId,
       ...customProps
     } = this.props;
 
@@ -816,7 +817,7 @@ class DateTimePicker extends React.Component {
             required={required}
             initialTimeZone={this.initialTimeZone}
             isDefaultDateAcceptable
-            ariaDescribedBy={ariaDescribedBy}
+            errorId={errorId}
           />
         </div>
         <div className={cx('time-facade')}>
@@ -838,7 +839,7 @@ class DateTimePicker extends React.Component {
             required={required}
             atMaxDate={atMaxDate}
             atMinDate={atMinDate}
-            ariaDescribedBy={ariaDescribedBy}
+            errorId={errorId}
           />
 
           {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}

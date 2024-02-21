@@ -27,7 +27,7 @@ const DateTimePickerExampleInvalid = () => {
           dateInputAttributes={{ id: 'default-invalid' }}
           onChange={handleDateTimeChange}
           isInvalid={isInvalid}
-          ariaDescribedBy="default-invalid-error"
+          errorId="default-invalid-error"
         />
       </Field>
     </div>
