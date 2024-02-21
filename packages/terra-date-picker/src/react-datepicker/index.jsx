@@ -591,7 +591,7 @@ class DatePicker extends React.Component {
         preSelection: date
       })
       type === dateValues.MONTH ? this.updateAriaLiveStatus(getMonthFromDate(date, this.props)) :
-      type === dateValues.YEAR ? this.updateAriaLiveStatus(value, this.props) :
+      type === dateValues.YEAR ? this.updateAriaLiveStatus(value) :
       this.updateAriaLiveStatus(getLocalizedDateForScreenReader(date, this.props));
     }
   }
