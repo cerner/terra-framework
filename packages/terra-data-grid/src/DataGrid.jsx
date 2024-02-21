@@ -329,6 +329,11 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
+  // callBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+  const triggerFocus = useCallback(() => (
+    setFocusedRowCol(focusedRow, focusedCol, true)
+  ), [setFocusedRowCol, focusedRow, focusedCol]);
+
   // -------------------------------------
   // event handlers
 
@@ -578,7 +583,9 @@ const DataGrid = forwardRef((props, ref) => {
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
           activeColumnIndex={(isGridActive && focusedRow === 0) ? focusedCol : undefined}
-          activeRowIndex={focusedRow}
+          focusedRowIndex={focusedRow}
+          focusedColIndex={focusedCol}
+          triggerFocus={triggerFocus}
           isActiveColumnResizing={isOneOfHeaderRows && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}

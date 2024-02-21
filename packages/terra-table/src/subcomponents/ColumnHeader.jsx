@@ -31,15 +31,22 @@ const propTypes = {
   * Number that specifies the height of the table in pixels.
   */
   tableHeight: PropTypes.number,
-  /**
-   * Column index for cell that can receive tab focus.
-   */
-  activeColumnIndex: PropTypes.number,
 
   /**
    * Row index for cell that can receive tab focus.
    */
-  activeRowIndex: PropTypes.number,
+  focusedRowIndex: PropTypes.number,
+
+  /**
+   * Column index for cell that can receive tab focus.
+   */
+  focusedColIndex: PropTypes.number,
+
+  /**
+   * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+   */
+  triggerFocus: PropTypes.func,
+
   /**
    * Specifies if resize handle should be active.
    */
@@ -83,8 +90,9 @@ const defaultProps = {
 const ColumnHeader = (props) => {
   const {
     tableId,
-    activeColumnIndex,
-    activeRowIndex,
+    focusedColIndex,
+    focusedRowIndex,
+    triggerFocus,
     isActiveColumnResizing,
     columnResizeIncrement,
     columns,
@@ -157,8 +165,9 @@ const ColumnHeader = (props) => {
             activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
             isSelectable={hasVisibleColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
-            isActive={activeColumnIndex === columnIndex && activeRowIndex === 0} // can be 2 rows in header
-            isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+            triggerFocus={triggerFocus}
+            isActive={focusedColIndex === columnIndex && focusedRowIndex === 0} // can be 2 rows in header
+            isResizeActive={focusedColIndex === columnIndex && isActiveColumnResizing}
             columnResizeIncrement={columnResizeIncrement}
             hasError={column.hasError}
             sortIndicator={column.sortIndicator}
@@ -190,13 +199,13 @@ const ColumnHeader = (props) => {
               maximumWidth={column.maximumWidth}
               headerHeight={headerHeight}
               isResizable={hasVisibleColumnHeaders && column.isResizable}
-              activeRowIndex={activeRowIndex}
+              activeRowIndex={focusedRowIndex}
               isResizeHandleActive={activeResizeHandlerColumnId === column.id}
               resizeHandleStateSetter={resizeHandleStateSetter}
               activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
               // does not need isSelectable prop for actions row
-              isActive={activeColumnIndex === columnIndex && activeRowIndex === 1}
-              isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+              isActive={focusedColIndex === columnIndex && focusedRowIndex === 1}
+              isResizeActive={focusedColIndex === columnIndex && isActiveColumnResizing}
             />
           ))}
         </tr>

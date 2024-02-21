@@ -39,6 +39,11 @@ const propTypes = {
   columnId: PropTypes.string.isRequired,
 
   /**
+   * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+   */
+  triggerFocus: PropTypes.func,
+
+  /**
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
@@ -201,7 +206,7 @@ const ColumnHeaderCell = (props) => {
     isResizeHandleActive,
     resizeHandleStateSetter,
     resizeHandlerInitHeight,
-    activeResizeHandlerNeighborCell,
+    triggerFocus,
     columnId,
     tableHeight,
     isResizeActive,
@@ -282,8 +287,10 @@ const ColumnHeaderCell = (props) => {
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive && isGridContext) {
-          activeResizeHandlerNeighborCell?.focus();
           setResizeHandleActive(false);
+          if (triggerFocus) {
+            triggerFocus();
+          }
           event.stopPropagation();
           event.preventDefault();
         }
