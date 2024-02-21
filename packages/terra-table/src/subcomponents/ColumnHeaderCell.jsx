@@ -123,11 +123,6 @@ const propTypes = {
   resizeHandlerInitHeight: PropTypes.string,
 
   /**
-   * A `ref current` for neighbouring the active resize handle element, which needs to get focus on left arrow key event.
-   */
-  activeResizeHandlerNeighborCell: PropTypes.object,
-
-  /**
    * Height of the parent table.
    */
   tableHeight: PropTypes.number,
@@ -230,7 +225,7 @@ const ColumnHeaderCell = (props) => {
 
   const setResizeHandleActive = useCallback((setActive) => {
     if (setActive) {
-      resizeHandleStateSetter(columnId, columnHeaderCellRef?.current);
+      resizeHandleStateSetter(columnId);
     } else {
       resizeHandleStateSetter();
     }

@@ -124,15 +124,11 @@ const ColumnHeader = (props) => {
 
   // The active column and neighbour cell have to be known to both header and action cells as they share resize handle.
   const [activeResizeHandlerColumnId, setActiveResizeHandlerColumnId] = useState();
-  const [activeResizeHandlerNeighborCell, setAactiveResizeHandlerNeighborCell] = useState();
-  const resizeHandleStateSetter = useCallback((columnId, leftNeighborCell) => {
+  const resizeHandleStateSetter = useCallback((columnId) => {
     if (columnId !== activeResizeHandlerColumnId) {
       setActiveResizeHandlerColumnId(columnId);
     }
-    if (leftNeighborCell !== activeResizeHandlerNeighborCell) {
-      setAactiveResizeHandlerNeighborCell(leftNeighborCell);
-    }
-  }, [activeResizeHandlerColumnId, activeResizeHandlerNeighborCell]);
+  }, [activeResizeHandlerColumnId]);
 
   // resizeHandlerInitHeight is needed to adjust the heder column resize handler to accommodate actions header height
   const resizeHandlerInitHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
@@ -162,7 +158,6 @@ const ColumnHeader = (props) => {
             resizeHandlerInitHeight={resizeHandlerInitHeight}
             isResizeHandleActive={activeResizeHandlerColumnId === column.id}
             resizeHandleStateSetter={resizeHandleStateSetter}
-            activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
             isSelectable={hasVisibleColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
             triggerFocus={triggerFocus}
@@ -202,7 +197,6 @@ const ColumnHeader = (props) => {
               activeRowIndex={focusedRowIndex}
               isResizeHandleActive={activeResizeHandlerColumnId === column.id}
               resizeHandleStateSetter={resizeHandleStateSetter}
-              activeResizeHandlerNeighborCell={activeResizeHandlerNeighborCell}
               // does not need isSelectable prop for actions row
               isActive={focusedColIndex === columnIndex && focusedRowIndex === 1}
               isResizeActive={focusedColIndex === columnIndex && isActiveColumnResizing}

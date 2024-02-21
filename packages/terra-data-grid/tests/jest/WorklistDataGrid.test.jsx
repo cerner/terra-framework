@@ -715,8 +715,12 @@ describe('Column Header with Actions keyboard navigation', () => {
     resizeHandle.simulate('keydown', arrowRightProps);
     expect(document.activeElement).toBe(actionButton2.instance());
 
-    // step LEFT from second col action placeholder should focus on first col action button
+    // step LEFT from second col action placeholder should focus on resize handle
     actionButton2.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step LEFT from resize handle should focus on first action button
+    resizeHandle.simulate('keydown', arrowLeftProps);
     expect(document.activeElement).toBe(actionButton.instance());
 
     // step UP from action button to header cell
@@ -731,7 +735,7 @@ describe('Column Header with Actions keyboard navigation', () => {
     resizeHandle.simulate('keydown', arrowRightProps);
     expect(document.activeElement).toBe(headerCell2.instance());
 
-    // step LEFT from headerCell in second col should focus back on header cell in the first col
+    // step LEFT from headerCell in second col should focus back on resize handle
     headerCell2.simulate('keydown', arrowLeftProps);
     expect(document.activeElement).toBe(resizeHandle.instance());
   });

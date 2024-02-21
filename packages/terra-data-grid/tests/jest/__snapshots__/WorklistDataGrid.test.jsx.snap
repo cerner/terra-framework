@@ -278,9 +278,10 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={1}
+          focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -390,11 +391,13 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={1}
+            focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -532,6 +535,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -574,7 +578,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -606,6 +609,8 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                       },
                     ]
                   }
+                  focusedColIndex={1}
+                  focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -615,6 +620,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -643,6 +649,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -693,6 +700,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -840,6 +848,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -890,6 +899,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -1037,6 +1047,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -1087,6 +1098,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -3093,9 +3105,10 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={2}
+          focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -3206,11 +3219,13 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={2}
+            focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -3349,6 +3364,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -3399,7 +3415,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -3441,6 +3456,8 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       },
                     ]
                   }
+                  focusedColIndex={2}
+                  focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -3450,6 +3467,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -3479,6 +3497,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -3529,6 +3548,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -3589,6 +3609,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -3639,6 +3660,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -3786,6 +3808,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -3836,6 +3859,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -3983,6 +4007,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -4033,6 +4058,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -6696,9 +6722,10 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={2}
+          focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -6809,11 +6836,13 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={2}
+            focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -6952,6 +6981,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -7002,7 +7032,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -7044,6 +7073,8 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       },
                     ]
                   }
+                  focusedColIndex={2}
+                  focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -7053,6 +7084,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -7082,6 +7114,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -7132,6 +7165,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -7192,6 +7226,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -7242,6 +7277,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -7389,6 +7425,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -7439,6 +7476,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -7586,6 +7624,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -7636,6 +7675,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -10289,9 +10329,10 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -10401,11 +10442,13 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -10543,6 +10586,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -10585,7 +10629,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -10617,6 +10660,8 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -10626,6 +10671,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -10640,7 +10686,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         displayName=" Vitals"
                         headerHeight="2.5rem"
                         id="Column-0-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isResizable={true}
                         isResizeActive={false}
                         isResizeHandleActive={false}
@@ -10654,6 +10700,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -10690,7 +10737,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
@@ -10704,6 +10751,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -10851,6 +10899,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -10901,6 +10950,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -11048,6 +11098,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -11098,6 +11149,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -13104,9 +13156,10 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -13217,11 +13270,13 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -13360,6 +13415,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -13410,7 +13466,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -13452,6 +13507,8 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -13461,6 +13518,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -13475,7 +13533,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -13490,6 +13548,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -13526,7 +13585,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -13540,6 +13599,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -13600,6 +13660,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -13650,6 +13711,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -13797,6 +13859,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -13847,6 +13910,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -13994,6 +14058,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -14044,6 +14109,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -16707,9 +16773,10 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={1}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={2}
+          focusedRowIndex={1}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -16820,11 +16887,13 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={1}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={2}
+            focusedRowIndex={1}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -16963,6 +17032,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -17013,7 +17083,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={1}
                   columns={
                     Array [
                       Object {
@@ -17055,6 +17124,8 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       },
                     ]
                   }
+                  focusedColIndex={2}
+                  focusedRowIndex={1}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -17064,6 +17135,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -17093,6 +17165,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -17143,6 +17216,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -17203,6 +17277,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -17253,6 +17328,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -17400,6 +17476,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -17450,6 +17527,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -17597,6 +17675,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -17647,6 +17726,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -20334,9 +20414,10 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={2}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={2}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -20447,11 +20528,13 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={2}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={2}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -20590,6 +20673,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -20640,7 +20724,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={2}
                   columns={
                     Array [
                       Object {
@@ -20682,6 +20765,8 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={2}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -20691,6 +20776,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -20720,6 +20806,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -20770,6 +20857,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -20830,6 +20918,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -20880,6 +20969,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -21027,6 +21117,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -21077,6 +21168,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -21224,6 +21316,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -21274,6 +21367,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -23921,9 +24015,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={2}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={2}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -24034,11 +24129,13 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={2}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={2}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -24177,6 +24274,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -24227,7 +24325,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={2}
                   columns={
                     Array [
                       Object {
@@ -24269,6 +24366,8 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={2}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -24278,6 +24377,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -24307,6 +24407,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -24357,6 +24458,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -24417,6 +24519,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -24467,6 +24570,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -24614,6 +24718,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -24664,6 +24769,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -24811,6 +24917,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -24861,6 +24968,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -27533,9 +27641,10 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={2}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={1}
+          focusedRowIndex={2}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -27645,11 +27754,13 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={2}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={1}
+            focusedRowIndex={2}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -27787,6 +27898,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -27829,7 +27941,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={2}
                   columns={
                     Array [
                       Object {
@@ -27861,6 +27972,8 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
+                  focusedColIndex={1}
+                  focusedRowIndex={2}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -27870,6 +27983,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -27898,6 +28012,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -27948,6 +28063,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -28095,6 +28211,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -28145,6 +28262,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -28292,6 +28410,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -28342,6 +28461,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -30352,9 +30472,10 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -30465,11 +30586,13 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -30608,6 +30731,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -30658,7 +30782,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -30700,6 +30823,8 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -30709,6 +30834,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -30738,6 +30864,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -30788,6 +30915,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -30848,6 +30976,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -30898,6 +31027,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -31045,6 +31175,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -31095,6 +31226,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -31242,6 +31374,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -31292,6 +31425,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -33955,9 +34089,10 @@ exports[`Row selection verifies multiple independent ranges can be created with 
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={4}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={4}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -34068,11 +34203,13 @@ exports[`Row selection verifies multiple independent ranges can be created with 
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={4}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={4}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -34211,6 +34348,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -34261,7 +34399,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={4}
                   columns={
                     Array [
                       Object {
@@ -34303,6 +34440,8 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={4}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -34312,6 +34451,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -34341,6 +34481,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -34391,6 +34532,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -34451,6 +34593,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -34501,6 +34644,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -34648,6 +34792,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -34698,6 +34843,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -34845,6 +34991,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -34895,6 +35042,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -37538,9 +37686,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={2}
+          focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -37651,11 +37800,13 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={2}
+            focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -37794,6 +37945,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -37844,7 +37996,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -37886,6 +38037,8 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
+                  focusedColIndex={2}
+                  focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -37895,6 +38048,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -37924,6 +38078,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -37974,6 +38129,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -38034,6 +38190,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -38084,6 +38241,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -38231,6 +38389,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -38281,6 +38440,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -38428,6 +38588,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -38478,6 +38639,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -41121,9 +41283,10 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={4}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={2}
+          focusedRowIndex={4}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -41234,11 +41397,13 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={4}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={2}
+            focusedRowIndex={4}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -41377,6 +41542,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -41427,7 +41593,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={4}
                   columns={
                     Array [
                       Object {
@@ -41469,6 +41634,8 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
+                  focusedColIndex={2}
+                  focusedRowIndex={4}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -41478,6 +41645,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -41507,6 +41675,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -41557,6 +41726,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -41617,6 +41787,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -41667,6 +41838,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -41814,6 +41986,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -41864,6 +42037,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -42011,6 +42185,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -42061,6 +42236,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -44704,9 +44880,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -44817,11 +44994,13 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -44960,6 +45139,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -45010,7 +45190,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -45052,6 +45231,8 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -45061,6 +45242,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -45075,7 +45257,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -45090,6 +45272,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -45126,7 +45309,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -45140,6 +45323,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -45200,6 +45384,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -45250,6 +45435,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -45397,6 +45583,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -45447,6 +45634,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -45594,6 +45782,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -45644,6 +45833,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -48287,9 +48477,10 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -48400,11 +48591,13 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -48543,6 +48736,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -48593,7 +48787,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -48635,6 +48828,8 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -48644,6 +48839,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -48658,7 +48854,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -48673,6 +48869,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -48709,7 +48906,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -48723,6 +48920,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -48783,6 +48981,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -48833,6 +49032,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -48980,6 +49180,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -49030,6 +49231,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -49177,6 +49379,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -49227,6 +49430,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -51868,9 +52072,10 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -51981,11 +52186,13 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -52124,6 +52331,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -52174,7 +52382,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -52216,6 +52423,8 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -52225,6 +52434,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -52239,7 +52449,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -52254,6 +52464,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -52290,7 +52501,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -52304,6 +52515,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -52364,6 +52576,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -52414,6 +52627,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -52561,6 +52775,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -52611,6 +52826,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -52758,6 +52974,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -52808,6 +53025,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -55449,9 +55667,10 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -55562,11 +55781,13 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -55705,6 +55926,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -55755,7 +55977,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -55797,6 +56018,8 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -55806,6 +56029,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -55820,7 +56044,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -55835,6 +56059,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={40}
                       >
                         <ColumnHeaderCell
@@ -55871,7 +56096,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -55885,6 +56110,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={40}
                         >
                           <th
@@ -55945,6 +56171,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -55995,6 +56222,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -56142,6 +56370,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -56192,6 +56421,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -56339,6 +56569,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -56389,6 +56620,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -59009,9 +59241,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -59121,11 +59354,13 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -59263,6 +59498,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -59305,7 +59541,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -59337,6 +59572,8 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -59346,6 +59583,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -59360,7 +59598,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         displayName=" Vitals"
                         headerHeight="2.5rem"
                         id="Column-0-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isResizable={true}
                         isResizeActive={false}
                         isResizeHandleActive={false}
@@ -59374,6 +59612,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -59410,7 +59649,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
@@ -59424,6 +59663,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -59571,6 +59811,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -59621,6 +59862,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -59768,6 +60010,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -59818,6 +60061,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -61781,9 +62025,10 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         tabIndex={0}
       >
         <InjectIntl(Table)
-          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
+          focusedColIndex={0}
+          focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
           isActiveColumnResizing={false}
@@ -61893,11 +62138,13 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
               },
             ]
           }
+          triggerFocus={[Function]}
         >
           <Table
-            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
+            focusedColIndex={0}
+            focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
             intl={
@@ -62035,6 +62282,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 },
               ]
             }
+            triggerFocus={[Function]}
           >
             <div
               className="table-container"
@@ -62077,7 +62325,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   />
                 </colgroup>
                 <ColumnHeader
-                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -62109,6 +62356,8 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
+                  focusedColIndex={0}
+                  focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
                   headerHeight="2.5rem"
@@ -62118,6 +62367,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   onResizeMouseDown={[Function]}
                   tableHeight={0}
                   tableId="test-terra-worklist-data-grid-table"
+                  triggerFocus={[Function]}
                 >
                   <thead>
                     <tr
@@ -62132,7 +62382,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         displayName=" Vitals"
                         headerHeight="2.5rem"
                         id="Column-0-headerCell"
-                        isActive={false}
+                        isActive={true}
                         isResizable={true}
                         isResizeActive={false}
                         isResizeHandleActive={false}
@@ -62146,6 +62396,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -62182,7 +62433,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               "timeZone": null,
                             }
                           }
-                          isActive={false}
+                          isActive={true}
                           isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
@@ -62196,6 +62447,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -62343,6 +62595,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -62393,6 +62646,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
@@ -62540,6 +62794,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         resizeHandleStateSetter={[Function]}
                         tableHeight={0}
                         tableId="test-terra-worklist-data-grid-table"
+                        triggerFocus={[Function]}
                         width={200}
                       >
                         <ColumnHeaderCell
@@ -62590,6 +62845,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                           resizeHandleStateSetter={[Function]}
                           tableHeight={0}
                           tableId="test-terra-worklist-data-grid-table"
+                          triggerFocus={[Function]}
                           width={200}
                         >
                           <th
