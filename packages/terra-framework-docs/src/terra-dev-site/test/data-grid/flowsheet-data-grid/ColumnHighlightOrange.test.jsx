@@ -67,7 +67,7 @@ const ColumnHighlightOrange = () => {
 
   return (
     <FlowsheetDataGrid
-      id="terra-flowsheet-data-grid-column-highlight"
+      id="terra-flowsheet-data-grid-column-highlight-orange"
       columns={cols}
       rows={rows}
       ariaLabel="Flowsheet Data Grid"
