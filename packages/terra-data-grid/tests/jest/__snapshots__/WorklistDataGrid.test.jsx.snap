@@ -278,6 +278,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -391,6 +392,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
           }
         >
           <Table
+            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -572,6 +574,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -3090,6 +3093,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -3204,6 +3208,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
           }
         >
           <Table
+            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -3394,6 +3399,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -6690,6 +6696,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -6804,6 +6811,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
           }
         >
           <Table
+            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -6994,6 +7002,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -10280,6 +10289,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -10393,6 +10403,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -10574,6 +10585,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -13092,6 +13104,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -13206,6 +13219,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -13396,6 +13410,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -16692,6 +16707,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={1}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -16806,6 +16822,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
           }
         >
           <Table
+            activeRowIndex={1}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -16996,6 +17013,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={1}
                   columns={
                     Array [
                       Object {
@@ -20316,6 +20334,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={2}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -20430,6 +20449,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
           }
         >
           <Table
+            activeRowIndex={2}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -20620,6 +20640,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={2}
                   columns={
                     Array [
                       Object {
@@ -23900,6 +23921,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={2}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -24014,6 +24036,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           }
         >
           <Table
+            activeRowIndex={2}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -24204,6 +24227,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={2}
                   columns={
                     Array [
                       Object {
@@ -27509,6 +27533,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={2}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -27622,6 +27647,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           }
         >
           <Table
+            activeRowIndex={2}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -27803,6 +27829,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={2}
                   columns={
                     Array [
                       Object {
@@ -30325,6 +30352,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -30439,6 +30467,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
           }
         >
           <Table
+            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -30629,6 +30658,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -33925,6 +33955,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={4}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -34039,6 +34070,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
           }
         >
           <Table
+            activeRowIndex={4}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -34229,6 +34261,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={4}
                   columns={
                     Array [
                       Object {
@@ -37505,6 +37538,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={3}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -37619,6 +37653,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           }
         >
           <Table
+            activeRowIndex={3}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -37809,6 +37844,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={3}
                   columns={
                     Array [
                       Object {
@@ -41085,6 +41121,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={4}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -41199,6 +41236,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           }
         >
           <Table
+            activeRowIndex={4}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -41389,6 +41427,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={4}
                   columns={
                     Array [
                       Object {
@@ -44665,6 +44704,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -44779,6 +44819,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -44969,6 +45010,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -48245,6 +48287,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -48359,6 +48402,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -48549,6 +48593,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -51823,6 +51868,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -51937,6 +51983,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -52127,6 +52174,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -55401,6 +55449,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -55515,6 +55564,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -55705,6 +55755,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -58958,6 +59009,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -59071,6 +59123,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -59252,6 +59305,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {
@@ -61727,6 +61781,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         tabIndex={0}
       >
         <InjectIntl(Table)
+          activeRowIndex={0}
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
           hasVisibleColumnHeaders={true}
@@ -61840,6 +61895,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           }
         >
           <Table
+            activeRowIndex={0}
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
             hasVisibleColumnHeaders={true}
@@ -62021,6 +62077,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   />
                 </colgroup>
                 <ColumnHeader
+                  activeRowIndex={0}
                   columns={
                     Array [
                       Object {

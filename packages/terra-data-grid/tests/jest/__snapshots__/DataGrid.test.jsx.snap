@@ -170,6 +170,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     tabIndex={0}
   >
     <InjectIntl(Table)
+      activeRowIndex={0}
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       hasVisibleColumnHeaders={true}
@@ -305,6 +306,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       }
     >
       <Table
+        activeRowIndex={0}
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         hasVisibleColumnHeaders={true}
@@ -508,6 +510,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               />
             </colgroup>
             <ColumnHeader
+              activeRowIndex={0}
               columns={
                 Array [
                   Object {
@@ -2877,6 +2880,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     tabIndex={0}
   >
     <InjectIntl(Table)
+      activeRowIndex={0}
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       hasVisibleColumnHeaders={true}
@@ -3012,6 +3016,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       }
     >
       <Table
+        activeRowIndex={0}
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         hasVisibleColumnHeaders={true}
@@ -3215,6 +3220,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               />
             </colgroup>
             <ColumnHeader
+              activeRowIndex={0}
               columns={
                 Array [
                   Object {
@@ -5574,6 +5580,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     tabIndex={0}
   >
     <InjectIntl(Table)
+      activeRowIndex={0}
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       hasVisibleColumnHeaders={true}
@@ -5699,6 +5706,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       }
     >
       <Table
+        activeRowIndex={0}
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         hasVisibleColumnHeaders={true}
@@ -5900,6 +5908,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               />
             </colgroup>
             <ColumnHeader
+              activeRowIndex={0}
               columns={
                 Array [
                   Object {
@@ -9026,6 +9035,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     tabIndex={0}
   >
     <InjectIntl(Table)
+      activeRowIndex={0}
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       hasVisibleColumnHeaders={true}
@@ -9137,6 +9147,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       }
     >
       <Table
+        activeRowIndex={0}
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         hasVisibleColumnHeaders={true}
@@ -9316,6 +9327,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               />
             </colgroup>
             <ColumnHeader
+              activeRowIndex={0}
               columns={
                 Array [
                   Object {
@@ -11658,6 +11670,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
     tabIndex={0}
   >
     <InjectIntl(Table)
+      activeRowIndex={0}
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
       hasVisibleColumnHeaders={true}
@@ -11766,6 +11779,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       }
     >
       <Table
+        activeRowIndex={0}
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
         hasVisibleColumnHeaders={true}
@@ -11942,6 +11956,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               />
             </colgroup>
             <ColumnHeader
+              activeRowIndex={0}
               columns={
                 Array [
                   Object {

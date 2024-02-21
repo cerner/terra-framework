@@ -340,14 +340,14 @@ describe('ColumnHeaderCell', () => {
     const actionCellId = 'Column-0-actionCell';
     const tableId = 'test-table';
     const columnId = 'Column-0';
-    const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
+    // const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
 
     const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           id={actionCellId}
-          tableId="test-table"
-          columnId="Column-0"
+          tableId={tableId}
+          columnId={columnId}
           columnIndex={0}
           isActionCell
           action={action}
@@ -371,7 +371,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('auto');
     expect(columnHeader.props().title).toBe(action.label);
-    expect(columnHeader.props()['aria-owns']).toEqual(resizeHandleId);
+    expect(columnHeader.props()['aria-owns']).toBeFalsy();
 
     const columnHeaderButtons = columnHeader.find('button');
     expect(columnHeaderButtons).toHaveLength(1);
@@ -383,14 +383,14 @@ describe('ColumnHeaderCell', () => {
     const actionCellId = 'Column-0-actionCell';
     const tableId = 'test-table';
     const columnId = 'Column-0';
-    const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
+    // const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
 
     const wrapper = enzymeIntl.mountWithIntl(
       <IntlProvider locale="en">
         <ColumnHeaderCell
           id={actionCellId}
-          tableId="test-table"
-          columnId="Column-0"
+          tableId={tableId}
+          columnId={columnId}
           columnIndex={0}
           isActionCell
           width={100}
@@ -413,8 +413,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('auto');
     expect(columnHeader.props().title).toBeUndefined();
-    expect(columnHeader.props()['aria-owns']).toEqual(resizeHandleId);
-    // check aria-owns
+    expect(columnHeader.props()['aria-owns']).toBeFalsy();
 
     const columnHeaderButtons = columnHeader.find('button');
     expect(columnHeaderButtons).toHaveLength(0);
