@@ -326,18 +326,12 @@ const ColumnHeaderCell = (props) => {
   }
 
   // Determine if button element is required for column header
-  const hasButtonElement = isSelectable && displayName;
+  const hasButtonElement = (isSelectable && displayName) || (isActionCell && action);
 
   // Format header description for screenreader
   let headerDescription = displayName;
   headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
-
-  // set focus to the action button
-  const focusActionCell = () => {
-    columnHeaderCellRef?.current?.childNodes[0]?.focus();
-  };
-
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
   const CellTag = !isActionCell ? 'th' : 'td';
 
@@ -349,6 +343,7 @@ const ColumnHeaderCell = (props) => {
         <Button
           variant="de-emphasis"
           isCompact
+          refCallback={columnHeaderCellRef}
           onClick={action.onClick}
           onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
           text={action.label}
@@ -400,7 +395,6 @@ const ColumnHeaderCell = (props) => {
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
       // eslint-disable-next-line react/forbid-component-props
       style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
-      onFocus={isActionCell ? focusActionCell : undefined}
     >
       {cellContent}
       { isResizable && !isActionCell && (

@@ -733,6 +733,6 @@ describe('Column Header with Actions keyboard navigation', () => {
 
     // step LEFT from headerCell in second col should focus back on header cell in the first col
     headerCell2.simulate('keydown', arrowLeftProps);
-    expect(document.activeElement).toBe(headerCell.instance());
+    expect(document.activeElement).toBe(resizeHandle.instance());
   });
 });

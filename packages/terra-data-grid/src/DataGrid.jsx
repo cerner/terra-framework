@@ -263,14 +263,15 @@ const DataGrid = forwardRef((props, ref) => {
         }
 
         // Set focus to column header button, if it exists
-        if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
-          focusedCell = focusedCell.querySelector('[role="button"]');
+        const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
+        if (isHeaderRow && !focusedCell.hasAttribute('tabindex')) {
+          focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button');
         }
       }
 
       focusedCell?.focus();
     }
-  }, [displayedColumns, isSection, isRowSelectionCell]);
+  }, [displayedColumns, isSection, isRowSelectionCell, hasColumnHeaderActions]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
