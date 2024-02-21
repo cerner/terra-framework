@@ -35,7 +35,8 @@ import {
   safeDateFormat,
   getHightLightDaysMap,
   getLocalizedDateForScreenReader,
-  getMonthFromDate
+  getMonthFromDate,
+  dateValues
 } from './date_utils'
 import onClickOutside from 'react-onclickoutside'
 import styles from './stylesheets/react_datepicker.module.scss'
@@ -589,8 +590,8 @@ class DatePicker extends React.Component {
       this.setState({
         preSelection: date
       })
-      type === "month" ? this.updateAriaLiveStatus(getMonthFromDate(date, this.props)) :
-      type === "year" ? this.updateAriaLiveStatus(value, this.props) :
+      type === dateValues.MONTH ? this.updateAriaLiveStatus(getMonthFromDate(date, this.props)) :
+      type === dateValues.YEAR ? this.updateAriaLiveStatus(value, this.props) :
       this.updateAriaLiveStatus(getLocalizedDateForScreenReader(date, this.props));
     }
   }

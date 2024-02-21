@@ -388,3 +388,8 @@ export function getMonthFromDate(date, props) {
 
   return month;
 }
+
+export const dateValues = {
+  MONTH: 'month',
+  YEAR: 'year',
+};
