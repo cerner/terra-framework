@@ -210,7 +210,7 @@ const DataGrid = forwardRef((props, ref) => {
   const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
 
   // eslint-disable-next-line no-nested-ternary
-  const firstRowIndex = hasVisibleColumnHeaders ? 0 : (hasColumnHeaderActions ? 2 : 1);
+  const firstRowIndex = hasVisibleColumnHeaders ? 0 : 1;
 
   // if columns are not visible then set the first selectable row index to 1 or 2
   const [focusedRow, setFocusedRow] = useState(firstRowIndex);
