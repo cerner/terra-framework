@@ -1,49 +1,58 @@
 import React from 'react';
+import classNames from 'classnames/bind';
+
+import { IconDocuments } from 'terra-icon';
 import FolderTree from 'terra-folder-tree';
+
+import styles from './BasicFolderTree.module.scss';
+
+const cx = classNames.bind(styles);
 
 const data = {
   title: 'Documents',
   items: [
+    { id: 'item-1-level-1', label: 'Information', icon: <IconDocuments /> },
     {
-      id: 'item-1-level-1',
-      label: 'Projects - Level 1',
+      id: 'item-2-level-1', label: 'Projects - 2023', icon: <IconDocuments />, isSelectable: false,
+    },
+    {
+      id: 'item-3-level-1',
+      label: 'Projects - 2023',
+      isSelectable: false,
       items: [
-        { id: 'item-1-level-2', label: 'Important Document 1' },
+        { id: 'item-1-level-2-1', label: 'Project Data - October', icon: <IconDocuments /> },
+        { id: 'item-2-level-2-1', label: 'Project Data - November', icon: <IconDocuments /> },
+        { id: 'item-3-level-2-1', label: 'Project Data - December', icon: <IconDocuments /> },
         {
-          id: 'item-2-level-2',
-          label: 'Projects - Level 2',
+          id: 'item-4-level-2-1',
+          label: 'Tests',
+          isSelectable: false,
           items: [
-            {
-              id: 'item-1-level-3',
-              label: 'Projects - Level 3',
-              items: [
-                {
-                  id: 'item-1-level-4',
-                  label: 'Projects - Level 4',
-                  items: [
-                    { id: 'item-1-level-5', label: 'Important Document 4' },
-                    { id: 'item-1-level-5', label: 'Important Document 5' },
-                  ],
-                },
-                { id: 'item-2-level-4', label: 'Important Document 3' },
-              ],
-            },
-            { id: 'item-2-level-3', label: 'Important Document 2' },
+            { id: 'item-1-level-3-1', label: 'Very Very Very Very Very Very Very Long Name Test', icon: <IconDocuments /> },
+            { id: 'item-2-level-3-1', label: 'Even Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooonger Name Test', icon: <IconDocuments /> },
           ],
         },
+      ],
+    },
+    { id: 'item-4-level-1', label: 'Projects - 2024', icon: <IconDocuments /> },
+    {
+      id: 'item-5-level-1',
+      label: 'Projects - 2024',
+      isSelectable: false,
+      items: [
+        { id: 'item-1-level-2-2', label: 'Project Data - January', icon: <IconDocuments /> },
       ],
     },
   ],
 };
 
 const folderExpandedState = {
-  'item-1-level-1': false,
-  'item-2-level-2': false,
-  'item-1-level-3': false,
-  'item-1-level-4': false,
+  'item-3-level-1': false,
+  'item-4-level-2-1': false,
+  'item-5-level-1': false,
 };
 
-const ExpandCollapseFolderTree = () => {
+const FolderTreeSelection = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
   const [expandedItems, setExpandedItems] = React.useState(folderExpandedState);
 
@@ -84,6 +93,7 @@ const ExpandCollapseFolderTree = () => {
             icon={item.icon}
             subfolderItems={buildFolderTreeItems(item.items)}
             isExpanded={expandedItems[item.id]}
+            isSelectable={item.isSelectable}
             isSelected={selectedKey === item.id}
             onSelect={() => { setSelectedKey(item.id); }}
             onToggle={() => { handleExpandCollapseKeys(item.id); }}
@@ -97,9 +107,9 @@ const ExpandCollapseFolderTree = () => {
   };
 
   return (
-    <div id="expand-collapse-folder-tree">
+    <div className={cx('content-wrapper')}>
       <FolderTree
-        title="Documents"
+        title={data.title}
         onExpandAll={handleExpandAll}
         onCollapseAll={handleCollapseAll}
       >
@@ -109,4 +119,4 @@ const ExpandCollapseFolderTree = () => {
   );
 };
 
-export default ExpandCollapseFolderTree;
+export default FolderTreeSelection;

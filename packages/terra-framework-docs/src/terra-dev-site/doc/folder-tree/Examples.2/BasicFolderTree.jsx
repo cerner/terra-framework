@@ -25,7 +25,7 @@ const data = {
           label: 'Tests',
           items: [
             { id: 'item-1-level-3-1', label: 'Very Very Very Very Very Very Very Long Name Test', icon: <IconDocuments /> },
-            { id: 'item-1-level-2-1', label: 'Even Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooonger Name Test', icon: <IconDocuments /> },
+            { id: 'item-2-level-3-1', label: 'Even Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooonger Name Test', icon: <IconDocuments /> },
           ],
         },
       ],
@@ -89,7 +89,7 @@ const BasicFolderTree = () => {
             subfolderItems={buildFolderTreeItems(item.items)}
             isExpanded={expandedItems[item.id]}
             isSelected={selectedKey === item.id}
-            onClick={() => { setSelectedKey(item.id); }}
+            onSelect={() => { setSelectedKey(item.id); }}
             onToggle={() => { handleExpandCollapseKeys(item.id); }}
           />,
         );

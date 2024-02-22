@@ -14,18 +14,55 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       Terra.validates.screenshot('basic folder tree selected', { selector: '#basic-folder-tree' });
     });
 
+    it('does not select a non-selectable folder tree item on mouse click', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/folder-tree-selection');
+
+      $('[role="treeitem"]:nth-of-type(2)').click();
+      Terra.validates.screenshot('non-selectable item mouse', { selector: '#folder-tree-selection' });
+    });
+
+    it('does not select a non-selectable folder tree item on key press', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/folder-tree-selection');
+
+      browser.keys('Tab');
+      browser.keys('Tab');
+      browser.keys('Tab');
+      browser.keys('ArrowDown');
+      browser.keys('Enter');
+      Terra.validates.screenshot('non-selectable item keyboard', { selector: '#folder-tree-selection' });
+    });
+
+    it('expands a non-selectable, expandable folder tree item on mouse click', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/folder-tree-selection');
+
+      $('[role="treeitem"]:nth-of-type(3)').click();
+      Terra.validates.screenshot('expand non-selectable item mouse', { selector: '#folder-tree-selection' });
+    });
+
+    it('expands a non-selectable, expandable folder tree item on key press', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/folder-tree-selection');
+
+      browser.keys('Tab');
+      browser.keys('Tab');
+      browser.keys('Tab');
+      browser.keys('ArrowDown');
+      browser.keys('ArrowDown');
+      browser.keys('ArrowRight');
+      Terra.validates.screenshot('expand non-selectable item keyboard', { selector: '#folder-tree-selection' });
+    });
+
     it('expands a collapsed folder via mouse click', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
 
-      $('span=Projects - Level 1').click();
+      $('[role="treeitem"]:nth-of-type(1)').click();
       Terra.validates.screenshot('expanded folder', { selector: '#expand-collapse-folder-tree' });
     });
 
     it('collapses an expanded folder via mouse click', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/expand-collapse-folder-tree');
 
-      $('span=Projects - Level 1').click();
-      $('span=Projects - Level 1').click();
+      $('[role="treeitem"]:nth-of-type(1)').click();
+      $('[role="treeitem"]:nth-of-type(1)').click();
       Terra.validates.screenshot('collapsed folder', { selector: '#expand-collapse-folder-tree' });
     });
 

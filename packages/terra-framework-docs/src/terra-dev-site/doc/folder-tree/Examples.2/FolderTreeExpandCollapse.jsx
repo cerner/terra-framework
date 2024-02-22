@@ -88,7 +88,7 @@ const FolderTreeExpandCollapse = () => {
             subfolderItems={buildFolderTreeItems(item.items)}
             isExpanded={expandedItems[item.id]}
             isSelected={selectedKey === item.id}
-            onClick={() => { setSelectedKey(item.id); }}
+            onSelect={() => { setSelectedKey(item.id); }}
             onToggle={() => { handleExpandCollapseKeys(item.id); }}
           />,
         );
