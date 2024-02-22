@@ -185,7 +185,7 @@ function WorklistDataGrid(props) {
 
     if (gridReceivedFocus.current) {
       let newFocusCell = dataGridFuncRef.current.getFocusedCell();
-      newFocusCell = { row: newFocusCell.row, col: Math.max(newFocusCell.col, 0) };
+      newFocusCell = { row: newFocusCell.row, col: Math.max(newFocusCell.col + (hasSelectableRows ? 1 : -1), 0) };
       dataGridFuncRef.current.setFocusedRowCol(newFocusCell.row, newFocusCell.col, gridHasFocus);
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
