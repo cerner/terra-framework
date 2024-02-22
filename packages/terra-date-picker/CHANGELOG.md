@@ -2,6 +2,17 @@
 
 ## Unreleased
 
+## 4.99.0 - (February 22, 2024)
+
+* Added
+  * Added visual focus dashed border for `terra-date-picker`.
+  * Removed selected date information on focus of picker button.
+  * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
+
+* Changed
+  * Fixed the invalid case for SR announcement.
+  * Changed the SR announcement for changing date from calender.
+
 ## 4.98.1 - (February 16, 2024)
 
 * Fixed

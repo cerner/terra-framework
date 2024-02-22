@@ -8,7 +8,7 @@
     border-bottom: var(--terra-folder-tree-item-border-bottom, 1px solid #dedfe0);
     display: flex;
     margin: 0;
-    min-height: var(--terra-folder-tree-item-min-height, 2.92857rem);
+    min-height: var(--terra-folder-tree-item-min-height, 48px);
     overflow-wrap: anywhere;
     padding: 0;
     width: 100%;
@@ -35,13 +35,17 @@
     padding: 0;
   }
 
-  .radio {
+  .non-selectable {
+    padding-left: 48px;
+  }
+
+  .radio:hover {
+    cursor: pointer;
+  }
+
+  .radio-container {
     height: 14px;
     margin: 17px;
     width: 14px;
-
-    :hover {
-      cursor: pointer;
-    }
   }
 }

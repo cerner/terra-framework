@@ -28,9 +28,9 @@
     width: 8em;
 
     &.is-focused {
-      border-color: var(--terra-date-picker-input-focus-border-color, #26a2e5);
+      background-color: var(--terra-date-picker-input-focus-background-color, #fff);
+      outline: var(--terra-date-picker-input-focus-border-outline, 2px dashed #000);
       box-shadow: var(--terra-date-picker-input-focus-box-shadow, none);
-      outline: none;
       z-index: 1;
     }
 
@@ -118,8 +118,7 @@
       }
 
       &.initial-focus {
-        background-color: transparent;
-        border: var(--terra-date-picker-input-date-component-initial-focus-border, 2px dashed #000);
+        background-color: var(--terra-date-picker-input-date-component-focused-input-background-color, rgba(139, 194, 249, 0.3));
         box-shadow: none;
       }
     }
@@ -162,9 +161,8 @@
     }
 
     &:focus {
-      border-color: var(--terra-date-picker-button-focus-border-color, #26a2e5);
-      box-shadow: var(--terra-date-picker-button-focus-box-shadow, 0 0 1px 3px rgba(76, 178, 233, 0.5), 0 0 7px 4px rgba(76, 178, 233, 0.35));
-      outline: none;
+      outline: var(--terra-date-picker-input-focus-border-outline, 2px dashed #000);
+      box-shadow: var(--terra-date-picker-button-focus-box-shadow, none);
       z-index: 2;
     }
 

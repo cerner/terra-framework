@@ -40,9 +40,9 @@ describe('basic folder tree', () => {
     const subfolder = wrapper.find('.subfolder');
 
     expect(subfolder.find('span.fill.fill-block').length).toBe(3);
-    expect(subfolder.find('span.fill.fill-block').at(0).text()).toBe('item 1');
-    expect(subfolder.find('span.fill.fill-block').at(1).text()).toBe('item 2');
-    expect(subfolder.find('span.fill.fill-block').at(2).text()).toBe('item 3');
+    expect(subfolder.find('span.fill.fill-block').at(0).text()).toBe('item 1, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('span.fill.fill-block').at(1).text()).toBe('item 2, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('span.fill.fill-block').at(2).text()).toBe('item 3, Terra.folder-tree.item.selectable-announcement');
   });
 
   it('hides folder items when enclosing folder is collapsed', () => {
@@ -83,13 +83,13 @@ describe('basic folder tree', () => {
   });
 
   it('does not trigger expand/collapse on folder selection', () => {
-    const onClick = jest.fn();
+    const onSelect = jest.fn();
     const onToggle = jest.fn();
 
     const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree.Item
         label="Animals"
-        onClick={onClick}
+        onSelect={onSelect}
         onToggle={onToggle}
         subfolderItems={[
           (<FolderTree.Item label="Dog" />),
@@ -100,7 +100,7 @@ describe('basic folder tree', () => {
     const radioButton = wrapper.find('.radio');
     radioButton.simulate('change');
 
-    expect(onClick).toHaveBeenCalled();
+    expect(onSelect).toHaveBeenCalled();
     expect(onToggle).not.toHaveBeenCalled();
   });
 
@@ -148,5 +148,53 @@ describe('basic folder tree', () => {
 
     collapseAllButton.simulate('click');
     expect(onCollapseAll).toHaveBeenCalled();
+  });
+
+  it('renders selectable folder tree items', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Selectable folder tree item"
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
+    expect(wrapper.exists('input[type="radio"]')).toBe(true);
+  });
+
+  it('renders selectable folder tree items when selected', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Selectable folder tree item"
+        isSelected
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(true);
+    expect(wrapper.find('li').hasClass('selected')).toBe(true);
+  });
+
+  it('renders non-selectable folder tree items', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Non-selectable folder tree item"
+        isSelectable={false}
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
+    expect(wrapper.exists('input[type="radio"]')).toBe(false);
+  });
+
+  it('renders non-selectable folder tree items when selected', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Non-selectable folder tree item"
+        isSelectable={false}
+        isSelected
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
+    expect(wrapper.find('li').hasClass('selected')).toBe(false);
   });
 });

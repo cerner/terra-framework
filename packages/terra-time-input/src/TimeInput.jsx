@@ -115,6 +115,12 @@ const propTypes = {
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   variant: PropTypes.oneOf([TimeUtil.FORMAT_12_HOUR, TimeUtil.FORMAT_24_HOUR]),
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -136,6 +142,7 @@ const defaultProps = {
   showSeconds: false,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
+  errorId: '',
 };
 
 class TimeInput extends React.Component {
@@ -887,6 +894,7 @@ class TimeInput extends React.Component {
       showSeconds,
       value,
       variant,
+      errorId,
       ...customProps
     } = this.props;
 
@@ -1084,6 +1092,7 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             description={`${hourDescription()}, ${hotKeyDescription}`}
+            errorId={errorId}
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
@@ -1104,6 +1113,7 @@ class TimeInput extends React.Component {
             pattern="\d*"
             // description: Like the hour descriptions, but for the minute input.
             description={`${minuteDescription}, ${hotKeyDescription}`}
+            errorId={errorId}
           />
           {showSeconds && (
           <React.Fragment>
@@ -1126,6 +1136,7 @@ class TimeInput extends React.Component {
               pattern="\d*"
               // description: Like the hour descriptions, but for the second input.
               description={`${secondDescription}, ${hotKeyDescription}`}
+              errorId={errorId}
             />
           </React.Fragment>
           )}

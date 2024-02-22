@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.66.0",
+  "version": "1.67.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "author": "Cerner Corporation",
   "repository": {
@@ -48,9 +48,9 @@
     "terra-compact-interactive-list": "^1.4.0",
     "terra-content-container": "^3.0.0",
     "terra-data-grid": "^1.14.0",
-    "terra-date-input": "^1.51.1",
-    "terra-date-picker": "^4.98.1",
-    "terra-date-time-picker": "^4.106.0",
+    "terra-date-input": "^1.52.0",
+    "terra-date-picker": "^4.99.0",
+    "terra-date-time-picker": "^4.107.0",
     "terra-disclosure-manager": "^4.43.0",
     "terra-embedded-content-consumer": "^3.43.0",
     "terra-file-path": "^1.6.0",
@@ -69,7 +69,7 @@
     "terra-modal-manager": "^6.71.0",
     "terra-navigation-layout": "^5.40.0",
     "terra-navigation-prompt": "^1.83.0",
-    "terra-navigation-side-menu": "^2.49.0",
+    "terra-navigation-side-menu": "^2.50.0",
     "terra-notification-dialog": "^4.40.0",
     "terra-popup": "^6.74.0",
     "terra-section-header": "^2.0.0",
@@ -83,7 +83,7 @@
     "terra-text": "^4.49.0",
     "terra-theme-context": "^1.9.0",
     "terra-theme-provider": "^4.16.0",
-    "terra-time-input": "^4.62.0",
+    "terra-time-input": "^4.63.0",
     "terra-toolbar": "^1.27.0"
   },
   "scripts": {

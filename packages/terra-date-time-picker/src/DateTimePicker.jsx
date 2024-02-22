@@ -135,6 +135,12 @@ const propTypes = {
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -160,6 +166,7 @@ const defaultProps = {
   value: undefined,
   timeVariant: DateTimeUtils.FORMAT_24_HOUR,
   initialTimeZone: DateTimeUtils.getLocalTimeZone(),
+  errorId: '',
 };
 
 class DateTimePicker extends React.Component {
@@ -757,6 +764,7 @@ class DateTimePicker extends React.Component {
       timeInputAttributes,
       value,
       timeVariant,
+      errorId,
       ...customProps
     } = this.props;
 
@@ -809,6 +817,7 @@ class DateTimePicker extends React.Component {
             required={required}
             initialTimeZone={this.initialTimeZone}
             isDefaultDateAcceptable
+            errorId={errorId}
           />
         </div>
         <div className={cx('time-facade')}>
@@ -830,6 +839,7 @@ class DateTimePicker extends React.Component {
             required={required}
             atMaxDate={atMaxDate}
             atMinDate={atMinDate}
+            errorId={errorId}
           />
 
           {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}

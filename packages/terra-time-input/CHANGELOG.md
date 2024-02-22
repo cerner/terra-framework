@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+## 4.63.0 - (February 22, 2024)
+
+* Added
+  * Added ariaDescribedBy prop to announce invalid error message.
+
+* Changed
+  * Added fix for field label SR announce.
+
 ## 4.62.0 - (February 16, 2024)
 
 * Fixed
