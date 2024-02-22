@@ -76,12 +76,6 @@ const propTypes = {
   focusedRowIndex: PropTypes.number,
 
   /**
-   * @private
-   * Column index for cell that can receive tab focus.
-   */
-  focusedColIndex: PropTypes.number,
-
-  /**
    * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
    */
   triggerFocus: PropTypes.func,
@@ -218,7 +212,6 @@ function Table(props) {
     ariaLabel,
     activeColumnIndex,
     focusedRowIndex,
-    focusedColIndex,
     triggerFocus,
     isActiveColumnResizing,
     columnResizeIncrement,
@@ -618,7 +611,6 @@ function Table(props) {
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
             focusedRowIndex={focusedRowIndex}
-            focusedColIndex={focusedColIndex}
             triggerFocus={triggerFocus}
             columns={tableColumns}
             hasVisibleColumnHeaders={hasVisibleColumnHeaders}

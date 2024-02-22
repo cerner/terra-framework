@@ -280,7 +280,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={1}
           focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -396,7 +395,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={1}
             focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -609,7 +607,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                       },
                     ]
                   }
-                  focusedColIndex={1}
                   focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -3107,7 +3104,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={2}
           focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -3224,7 +3220,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={2}
             focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -3456,7 +3451,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       },
                     ]
                   }
-                  focusedColIndex={2}
                   focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -6724,7 +6718,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={2}
           focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -6841,7 +6834,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={2}
             focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -7073,7 +7065,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       },
                     ]
                   }
-                  focusedColIndex={2}
                   focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -10331,7 +10322,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -10447,7 +10437,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -10660,7 +10649,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -10686,7 +10674,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                         displayName=" Vitals"
                         headerHeight="2.5rem"
                         id="Column-0-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isResizable={true}
                         isResizeActive={false}
                         isResizeHandleActive={false}
@@ -10737,7 +10725,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
@@ -13158,7 +13146,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -13275,7 +13262,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -13507,7 +13493,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -13533,7 +13518,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -13585,7 +13570,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -16775,7 +16760,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={2}
           focusedRowIndex={1}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -16892,7 +16876,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={2}
             focusedRowIndex={1}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -17124,7 +17107,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       },
                     ]
                   }
-                  focusedColIndex={2}
                   focusedRowIndex={1}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -20416,7 +20398,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={2}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -20533,7 +20514,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={2}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -20765,7 +20745,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={2}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -24017,7 +23996,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={2}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -24134,7 +24112,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={2}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -24366,7 +24343,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={2}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -27643,7 +27619,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={1}
           focusedRowIndex={2}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -27759,7 +27734,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={1}
             focusedRowIndex={2}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -27972,7 +27946,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       },
                     ]
                   }
-                  focusedColIndex={1}
                   focusedRowIndex={2}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -30474,7 +30447,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -30591,7 +30563,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -30823,7 +30794,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -34091,7 +34061,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={4}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -34208,7 +34177,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={4}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -34440,7 +34408,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={4}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -37688,7 +37655,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={2}
           focusedRowIndex={3}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -37805,7 +37771,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={2}
             focusedRowIndex={3}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -38037,7 +38002,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  focusedColIndex={2}
                   focusedRowIndex={3}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -41285,7 +41249,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={2}
           focusedRowIndex={4}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -41402,7 +41365,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={2}
             focusedRowIndex={4}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -41634,7 +41596,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       },
                     ]
                   }
-                  focusedColIndex={2}
                   focusedRowIndex={4}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -44882,7 +44843,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -44999,7 +44959,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -45231,7 +45190,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -45257,7 +45215,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -45309,7 +45267,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -48479,7 +48437,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -48596,7 +48553,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -48828,7 +48784,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -48854,7 +48809,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -48906,7 +48861,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -52074,7 +52029,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -52191,7 +52145,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -52423,7 +52376,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -52449,7 +52401,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -52501,7 +52453,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -55669,7 +55621,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -55786,7 +55737,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -56018,7 +55968,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -56044,7 +55993,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                         displayName="Terra.table.row-selection-header-display"
                         headerHeight="2.5rem"
                         id="table-rowSelectionColumn-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isDisplayVisible={false}
                         isResizable={false}
                         isResizeActive={false}
@@ -56096,7 +56045,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={false}
                           isResizable={false}
                           isResizeActive={false}
@@ -59243,7 +59192,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -59359,7 +59307,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -59572,7 +59519,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -59598,7 +59544,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         displayName=" Vitals"
                         headerHeight="2.5rem"
                         id="Column-0-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isResizable={true}
                         isResizeActive={false}
                         isResizeHandleActive={false}
@@ -59649,7 +59595,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}
@@ -62027,7 +61973,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
           defaultColumnWidth={200}
-          focusedColIndex={0}
           focusedRowIndex={0}
           hasVisibleColumnHeaders={true}
           id="test-terra-worklist-data-grid-table"
@@ -62143,7 +62088,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           <Table
             columnHeaderHeight="2.5rem"
             defaultColumnWidth={200}
-            focusedColIndex={0}
             focusedRowIndex={0}
             hasVisibleColumnHeaders={true}
             id="test-terra-worklist-data-grid-table"
@@ -62356,7 +62300,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                       },
                     ]
                   }
-                  focusedColIndex={0}
                   focusedRowIndex={0}
                   hasColumnHeaderActions={false}
                   hasVisibleColumnHeaders={true}
@@ -62382,7 +62325,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                         displayName=" Vitals"
                         headerHeight="2.5rem"
                         id="Column-0-headerCell"
-                        isActive={true}
+                        isActive={false}
                         isResizable={true}
                         isResizeActive={false}
                         isResizeHandleActive={false}
@@ -62433,7 +62376,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               "timeZone": null,
                             }
                           }
-                          isActive={true}
+                          isActive={false}
                           isDisplayVisible={true}
                           isResizable={true}
                           isResizeActive={false}

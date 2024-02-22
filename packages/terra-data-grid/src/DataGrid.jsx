@@ -582,9 +582,8 @@ const DataGrid = forwardRef((props, ref) => {
           sections={sections}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
-          activeColumnIndex={(isGridActive && focusedRow === 0) ? focusedCol : undefined}
+          activeColumnIndex={(isGridActive && (focusedRow === 0 || (hasColumnHeaderActions && focusedRow === 1))) ? focusedCol : undefined}
           focusedRowIndex={focusedRow}
-          focusedColIndex={focusedCol}
           triggerFocus={triggerFocus}
           isActiveColumnResizing={isOneOfHeaderRows && checkResizable}
           columnResizeIncrement={columnResizeIncrement}

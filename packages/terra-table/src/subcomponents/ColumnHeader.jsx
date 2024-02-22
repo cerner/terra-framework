@@ -33,14 +33,14 @@ const propTypes = {
   tableHeight: PropTypes.number,
 
   /**
+   * Column index for cell that can receive tab focus.
+   */
+  activeColumnIndex: PropTypes.number,
+
+  /**
    * Row index for cell that can receive tab focus.
    */
   focusedRowIndex: PropTypes.number,
-
-  /**
-   * Column index for cell that can receive tab focus.
-   */
-  focusedColIndex: PropTypes.number,
 
   /**
    * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
@@ -90,7 +90,7 @@ const defaultProps = {
 const ColumnHeader = (props) => {
   const {
     tableId,
-    focusedColIndex,
+    activeColumnIndex,
     focusedRowIndex,
     triggerFocus,
     isActiveColumnResizing,
@@ -161,8 +161,8 @@ const ColumnHeader = (props) => {
             isSelectable={hasVisibleColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
             triggerFocus={triggerFocus}
-            isActive={focusedColIndex === columnIndex && focusedRowIndex === 0} // can be 2 rows in header
-            isResizeActive={focusedColIndex === columnIndex && isActiveColumnResizing}
+            isActive={activeColumnIndex === columnIndex && focusedRowIndex === 0} // can be 2 rows in header
+            isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
             columnResizeIncrement={columnResizeIncrement}
             hasError={column.hasError}
             sortIndicator={column.sortIndicator}
@@ -198,8 +198,8 @@ const ColumnHeader = (props) => {
               isResizeHandleActive={activeResizeHandlerColumnId === column.id}
               resizeHandleStateSetter={resizeHandleStateSetter}
               // does not need isSelectable prop for actions row
-              isActive={focusedColIndex === columnIndex && focusedRowIndex === 1}
-              isResizeActive={focusedColIndex === columnIndex && isActiveColumnResizing}
+              isActive={activeColumnIndex === columnIndex && focusedRowIndex === 1}
+              isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
             />
           ))}
         </tr>

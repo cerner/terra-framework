@@ -172,7 +172,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      focusedColIndex={0}
       focusedRowIndex={0}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
@@ -310,7 +309,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
-        focusedColIndex={0}
         focusedRowIndex={0}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
@@ -545,7 +543,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
-              focusedColIndex={0}
               focusedRowIndex={0}
               hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
@@ -571,7 +568,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     displayName=" Vitals"
                     headerHeight="2.5rem"
                     id="Column-0-headerCell"
-                    isActive={true}
+                    isActive={false}
                     isResizable={true}
                     isResizeActive={false}
                     isResizeHandleActive={false}
@@ -622,7 +619,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           "timeZone": null,
                         }
                       }
-                      isActive={true}
+                      isActive={false}
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
@@ -2894,7 +2891,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      focusedColIndex={0}
       focusedRowIndex={0}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
@@ -3032,7 +3028,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
-        focusedColIndex={0}
         focusedRowIndex={0}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
@@ -3267,7 +3262,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
-              focusedColIndex={0}
               focusedRowIndex={0}
               hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
@@ -3293,7 +3287,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     displayName=" Vitals"
                     headerHeight="2.5rem"
                     id="Column-0-headerCell"
-                    isActive={true}
+                    isActive={false}
                     isResizable={true}
                     isResizeActive={false}
                     isResizeHandleActive={false}
@@ -3344,7 +3338,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                           "timeZone": null,
                         }
                       }
-                      isActive={true}
+                      isActive={false}
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
@@ -5606,7 +5600,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      focusedColIndex={0}
       focusedRowIndex={0}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
@@ -5734,7 +5727,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
-        focusedColIndex={0}
         focusedRowIndex={0}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
@@ -5977,7 +5969,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              focusedColIndex={0}
               focusedRowIndex={0}
               hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
@@ -6003,7 +5994,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     displayName="Terra.table.row-selection-header-display"
                     headerHeight="2.5rem"
                     id="table-rowSelectionColumn-headerCell"
-                    isActive={true}
+                    isActive={false}
                     isDisplayVisible={false}
                     isResizable={false}
                     isResizeActive={false}
@@ -6055,7 +6046,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           "timeZone": null,
                         }
                       }
-                      isActive={true}
+                      isActive={false}
                       isDisplayVisible={false}
                       isResizable={false}
                       isResizeActive={false}
@@ -9075,7 +9066,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      focusedColIndex={0}
       focusedRowIndex={0}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
@@ -9189,7 +9179,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
-        focusedColIndex={0}
         focusedRowIndex={0}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
@@ -9400,7 +9389,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   },
                 ]
               }
-              focusedColIndex={0}
               focusedRowIndex={0}
               hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
@@ -9426,7 +9414,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     displayName=" Vitals"
                     headerHeight="2.5rem"
                     id="Column-0-headerCell"
-                    isActive={true}
+                    isActive={false}
                     isResizable={true}
                     isResizeActive={false}
                     isResizeHandleActive={false}
@@ -9477,7 +9465,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                           "timeZone": null,
                         }
                       }
-                      isActive={true}
+                      isActive={false}
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
@@ -11722,7 +11710,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
       defaultColumnWidth={200}
-      focusedColIndex={0}
       focusedRowIndex={0}
       hasVisibleColumnHeaders={true}
       id="test-terra-data-grid-table"
@@ -11833,7 +11820,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       <Table
         columnHeaderHeight="2.5rem"
         defaultColumnWidth={200}
-        focusedColIndex={0}
         focusedRowIndex={0}
         hasVisibleColumnHeaders={true}
         id="test-terra-data-grid-table"
@@ -12041,7 +12027,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   },
                 ]
               }
-              focusedColIndex={0}
               focusedRowIndex={0}
               hasColumnHeaderActions={false}
               hasVisibleColumnHeaders={true}
@@ -12067,7 +12052,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     displayName=" Vitals"
                     headerHeight="2.5rem"
                     id="Column-0-headerCell"
-                    isActive={true}
+                    isActive={false}
                     isResizable={true}
                     isResizeActive={false}
                     isResizeHandleActive={false}
@@ -12118,7 +12103,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                           "timeZone": null,
                         }
                       }
-                      isActive={true}
+                      isActive={false}
                       isDisplayVisible={true}
                       isResizable={true}
                       isResizeActive={false}
