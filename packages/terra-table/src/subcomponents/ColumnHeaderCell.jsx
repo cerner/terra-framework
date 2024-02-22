@@ -337,6 +337,10 @@ const ColumnHeaderCell = (props) => {
   const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
   const CellTag = !isActionCell ? 'th' : 'td';
 
+  const setColumnHeaderCellRef = (node) => {
+    columnHeaderCellRef.current = node;
+  };
+
   // Create cell content
   let cellContent;
   if (isActionCell) {
@@ -345,7 +349,7 @@ const ColumnHeaderCell = (props) => {
         <Button
           variant="de-emphasis"
           isCompact
-          refCallback={columnHeaderCellRef}
+          refCallback={setColumnHeaderCellRef}
           onClick={action.onClick}
           onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
           text={action.label}

@@ -18,6 +18,7 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-0-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       resizeHandlerInitHeight="0px"
       tableId="test-table"
@@ -32,6 +33,7 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-1-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       resizeHandlerInitHeight="0px"
       tableId="test-table"
@@ -58,6 +60,7 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-0-actionCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
@@ -71,6 +74,7 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-1-actionCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
@@ -96,6 +100,7 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-0-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
@@ -110,6 +115,7 @@ exports[`ColumnHeader renders a column header with an active resize column 1`] =
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-1-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
@@ -138,6 +144,7 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
       key="Column-0-headerCell"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
@@ -154,6 +161,7 @@ exports[`ColumnHeader renders a column header with callbacks 1`] = `
       key="Column-1-headerCell"
       onColumnSelect={[MockFunction]}
       onResizeMouseDown={[MockFunction]}
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
@@ -180,6 +188,7 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-0-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
@@ -194,6 +203,7 @@ exports[`ColumnHeader renders a column header with tableHeight prop 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-1-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableHeight={500}
       tableId="test-table"
@@ -220,6 +230,7 @@ exports[`ColumnHeader renders a default column header 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-0-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
@@ -233,6 +244,7 @@ exports[`ColumnHeader renders a default column header 1`] = `
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-1-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
@@ -258,6 +270,7 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-0-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
@@ -271,6 +284,7 @@ exports[`ColumnHeader verifies that the column headers are not hidden when the h
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-1-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
@@ -297,6 +311,7 @@ exports[`ColumnHeader verifies that the hasVisibleColumnHeaders prop hides the t
       isResizeHandleActive={false}
       isSelectable={false}
       key="Column-0-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
@@ -312,6 +327,7 @@ exports[`ColumnHeader verifies that the hasVisibleColumnHeaders prop hides the t
       isResizeHandleActive={false}
       isSelectable={false}
       key="Column-1-headerCell"
+      ownsResizeHandle={false}
       resizeHandleStateSetter={[Function]}
       tableId="test-table"
     />
