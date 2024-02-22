@@ -602,7 +602,7 @@ exports[`correctly applies the theme context className 1`] = `
                           </DateInputLayout>
                         </div>
                         <Button
-                          aria-label="Terra.datePicker.openCalendar"
+                          aria-label=" Terra.datePicker.openCalendar"
                           className="button"
                           data-terra-open-calendar-button={true}
                           icon={
@@ -627,7 +627,7 @@ exports[`correctly applies the theme context className 1`] = `
                         >
                           <button
                             aria-disabled={false}
-                            aria-label="Terra.datePicker.openCalendar"
+                            aria-label=" Terra.datePicker.openCalendar"
                             className="button neutral compact orion-fusion-theme button"
                             data-terra-open-calendar-button={true}
                             disabled={false}
