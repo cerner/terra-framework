@@ -582,7 +582,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -634,7 +633,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -642,7 +640,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-0-resizeHandle"
                         className="column-header selectable pinned"
                         id="test-terra-data-grid-table-Column-0-headerCell"
                         key="Column-0-headerCell"
@@ -784,7 +781,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -836,7 +832,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -844,7 +839,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-1-resizeHandle"
                         className="column-header selectable pinned last-pinned-column"
                         id="test-terra-data-grid-table-Column-1-headerCell"
                         key="Column-1-headerCell"
@@ -986,7 +980,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -1038,7 +1031,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -1046,7 +1038,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-2-resizeHandle"
                         className="column-header"
                         id="test-terra-data-grid-table-Column-2-headerCell"
                         key="Column-2-headerCell"
@@ -3313,7 +3304,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -3365,7 +3355,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -3373,7 +3362,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-0-resizeHandle"
                         className="column-header selectable pinned"
                         id="test-terra-data-grid-table-Column-0-headerCell"
                         key="Column-0-headerCell"
@@ -3515,7 +3503,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -3567,7 +3554,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -3575,7 +3561,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-1-resizeHandle"
                         className="column-header selectable pinned last-pinned-column"
                         id="test-terra-data-grid-table-Column-1-headerCell"
                         key="Column-1-headerCell"
@@ -3717,7 +3702,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -3769,7 +3753,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -3777,7 +3760,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-2-resizeHandle"
                         className="column-header"
                         id="test-terra-data-grid-table-Column-2-headerCell"
                         key="Column-2-headerCell"
@@ -6033,7 +6015,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -6085,7 +6066,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -6093,7 +6073,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       width={40}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-table-rowSelectionColumn-resizeHandle"
                         className="column-header selectable pinned"
                         id="test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                         key="table-rowSelectionColumn-headerCell"
@@ -6151,7 +6130,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -6203,7 +6181,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -6211,7 +6188,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-0-resizeHandle"
                         className="column-header selectable pinned"
                         id="test-terra-data-grid-table-Column-0-headerCell"
                         key="Column-0-headerCell"
@@ -6353,7 +6329,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -6405,7 +6380,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -6413,7 +6387,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-1-resizeHandle"
                         className="column-header selectable pinned last-pinned-column"
                         id="test-terra-data-grid-table-Column-1-headerCell"
                         key="Column-1-headerCell"
@@ -6555,7 +6528,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -6607,7 +6579,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -6615,7 +6586,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-2-resizeHandle"
                         className="column-header"
                         id="test-terra-data-grid-table-Column-2-headerCell"
                         key="Column-2-headerCell"
@@ -9467,7 +9437,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -9519,7 +9488,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -9527,7 +9495,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-0-resizeHandle"
                         className="column-header selectable pinned"
                         id="test-terra-data-grid-table-Column-0-headerCell"
                         key="Column-0-headerCell"
@@ -9669,7 +9636,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -9721,7 +9687,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -9729,7 +9694,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-1-resizeHandle"
                         className="column-header selectable pinned last-pinned-column"
                         id="test-terra-data-grid-table-Column-1-headerCell"
                         key="Column-1-headerCell"
@@ -9871,7 +9835,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -9923,7 +9886,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -9931,7 +9893,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-2-resizeHandle"
                         className="column-header"
                         id="test-terra-data-grid-table-Column-2-headerCell"
                         key="Column-2-headerCell"
@@ -12117,7 +12078,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -12169,7 +12129,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -12177,7 +12136,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-0-resizeHandle"
                         className="column-header selectable"
                         id="test-terra-data-grid-table-Column-0-headerCell"
                         key="Column-0-headerCell"
@@ -12319,7 +12277,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -12371,7 +12328,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -12379,7 +12335,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-1-resizeHandle"
                         className="column-header selectable"
                         id="test-terra-data-grid-table-Column-1-headerCell"
                         key="Column-1-headerCell"
@@ -12521,7 +12476,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     onColumnSelect={[Function]}
                     onResizeHandleChange={[Function]}
                     onResizeMouseDown={[Function]}
-                    ownsResizeHandle={true}
                     resizeHandleStateSetter={[Function]}
                     tableHeight={0}
                     tableId="test-terra-data-grid-table"
@@ -12573,7 +12527,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       onColumnSelect={[Function]}
                       onResizeHandleChange={[Function]}
                       onResizeMouseDown={[Function]}
-                      ownsResizeHandle={true}
                       resizeHandleStateSetter={[Function]}
                       tableHeight={0}
                       tableId="test-terra-data-grid-table"
@@ -12581,7 +12534,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       width={200}
                     >
                       <th
-                        aria-owns="test-terra-data-grid-table-Column-2-resizeHandle"
                         className="column-header"
                         id="test-terra-data-grid-table-Column-2-headerCell"
                         key="Column-2-headerCell"
