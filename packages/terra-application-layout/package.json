@@ -1,6 +1,6 @@
 {
   "name": "terra-application-layout",
-  "version": "5.81.0",
+  "version": "5.82.0",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "author": "Cerner Corporation",
   "repository": {
@@ -44,7 +44,7 @@
     "terra-icon": "^3.19.0",
     "terra-modal-manager": "^6.71.0",
     "terra-navigation-layout": "^5.40.0",
-    "terra-navigation-side-menu": "^2.49.0",
+    "terra-navigation-side-menu": "^2.50.0",
     "terra-popup": "^6.74.0",
     "terra-theme-context": "^1.9.0"
   },

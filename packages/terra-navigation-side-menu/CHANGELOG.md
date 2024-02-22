@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.50.0 - (February 22, 2024)
+
 * Added
   * Added dashed focus border for navigation menu items.
   * Keyboard navigation with arrow keys
