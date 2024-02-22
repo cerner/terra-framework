@@ -143,6 +143,12 @@ const propTypes = {
    * A return value of true will be enabled and false will be disabled.
    */
   filterDate: PropTypes.func,
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -167,6 +173,7 @@ const defaultProps = {
   maxDate: '2100-12-31',
   minDate: '1900-01-01',
   filterDate: undefined,
+  errorId: '',
 };
 
 const DatePickerInput = (props) => {
@@ -195,6 +202,7 @@ const DatePickerInput = (props) => {
     maxDate,
     minDate,
     filterDate,
+    errorId,
     ...customProps
   } = props;
 
@@ -717,7 +725,7 @@ const DatePickerInput = (props) => {
       aria-invalid={isInvalid}
       aria-required={required}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.dayLabel' })}`}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ariaDescriptionIds} ${errorId}`}
       id={dayInputId}
     />
   );
@@ -749,7 +757,7 @@ const DatePickerInput = (props) => {
       aria-invalid={isInvalid}
       aria-required={required}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.monthLabel' })}`}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ariaDescriptionIds} ${errorId}`}
       id={monthInputId}
     />
   );
@@ -781,7 +789,7 @@ const DatePickerInput = (props) => {
       aria-invalid={isInvalid}
       aria-required={required}
       aria-label={`${ariaLabel ? `${ariaLabel} ${intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}` : intl.formatMessage({ id: 'Terra.datePicker.yearLabel' })}`}
-      aria-describedby={ariaDescriptionIds}
+      aria-describedby={`${ariaDescriptionIds} ${errorId}`}
       id={yearInputId}
     />
   );
@@ -808,6 +816,7 @@ const DatePickerInput = (props) => {
   if (DateUtil.isValidDate(value, momentDateFormat)) {
     inputDate = `${getLocalizedDateForScreenReader(DateUtil.createSafeDate(dateValue, initialTimeZone), { intl, locale: intl.locale })}`;
   }
+
   let calendarDate = inputDate ? `${inputDate} ${intl.formatMessage({ id: 'Terra.datePicker.selected' })}` : '';
 
   // Check if date is excluded or out of range or not included or filtered
@@ -873,7 +882,7 @@ const DatePickerInput = (props) => {
             aria-live={DateUtil.isMac() ? 'polite' : 'off'}
             text={`${invalidEntry}
             ${intl.formatMessage({ id: 'Terra.datePicker.dateFormatLabel' })}
-            ${format}. ${inputDate ? `${inputDate},` : ''} ${intl.formatMessage({ id: 'Terra.datePicker.hotKey' })} `}
+            ${format}. ${inputDate ? `${inputDate},` : ''} ${intl.formatMessage({ id: 'Terra.datePicker.hotKey' })}, `}
           />
           <div aria-hidden="true">
             {`(${format})`}

@@ -13,6 +13,9 @@
 ## 1.65.0 - (February 16, 2024)
 
 * Added
+  * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
+
+* Added
   * Added shouldTrapFocus to be set to 'true'.
 * Changed
   * Updated `terra-navigation-side-menu` example to use more meaningful labels.

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
+
 ## 4.106.0 - (February 16, 2024)
 
 * Changed
@@ -55,7 +58,7 @@
 ## 4.96.0 - (September 21, 2023)
 
 * Fixed
-  * Fixed error that occurs when date format is called upon null reference 
+  * Fixed error that occurs when date format is called upon null reference
     when time transitions from DST to ST.
 
 ## 4.95.0 - (September 19, 2023)
