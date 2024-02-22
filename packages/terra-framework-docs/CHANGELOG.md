@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.67.0 - (February 22, 2024)
+
 * Changed
   * Updated the `terra-date-time-picker` timezone example.
 

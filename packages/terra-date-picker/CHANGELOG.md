@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.99.0 - (February 22, 2024)
+
 * Added
   * Added visual focus dashed border for `terra-date-picker`.
   * Removed selected date information on focus of picker button.

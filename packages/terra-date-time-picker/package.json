@@ -1,6 +1,6 @@
 {
   "name": "terra-date-time-picker",
-  "version": "4.106.0",
+  "version": "4.107.0",
   "description": "The DateTimePicker component has a date picker for selecting date and a time input for entering time",
   "author": "Cerner Corporation",
   "repository": {
@@ -37,9 +37,9 @@
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.46.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.98.1",
+    "terra-date-picker": "^4.99.0",
     "terra-theme-context": "^1.9.0",
-    "terra-time-input": "^4.62.0"
+    "terra-time-input": "^4.63.0"
   },
   "peerDependencies": {
     "react": "^16.8.5",
