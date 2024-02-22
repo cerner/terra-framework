@@ -15,11 +15,11 @@
     }
   }
 
-  .row-topmost:not(.row-placeholder) {
+  .row-topmost {
     border-top: var(--terra-compact-interactive-list-row-border-top, 1px solid #dedfe0);
   }
 
-  .row-leftmost:not(.row-placeholder) {
+  .row-leftmost {
     border-left: var(--terra-compact-interactive-list-row-border-left, 1px solid #dedfe0);
   }
 }

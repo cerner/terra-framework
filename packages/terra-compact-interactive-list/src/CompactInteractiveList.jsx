@@ -278,10 +278,20 @@ const CompactInteractiveList = (props) => {
   // map rows differently depending on vertical or horizontal orientation
   const mapRows = () => {
     const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
-    const result = [...rows];
-    // add placeholder rows to the end.
-    for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
-      result.push({ id: `placeholder-row-${i - rows.length + 1}` });
+    let result = [];
+    result = [...rows];
+    if (flowHorizontally) {
+      // all placeholder rows go in the end.
+      for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
+        result.push({ id: `placeholder-row-${i - rows.length + 1}` });
+      }
+    } else {
+      // inject placeholders to specific positions so that they all appear in the last row.
+      let position = rows.length;
+      for (let i = placeholdersNumber; i > 0; i -= 1) {
+        result.splice(position, 0, { id: `placeholder-row-${i}` });
+        position -= rowsPerColumn - 1;
+      }
     }
     return result;
   };
