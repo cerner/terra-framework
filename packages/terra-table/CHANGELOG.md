@@ -34,6 +34,7 @@
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
+  * Updated lowlight light zebra strap color to darker grey to improve colour contrast.
   
 * Added
   * Added support for orange and green column highlighting.
