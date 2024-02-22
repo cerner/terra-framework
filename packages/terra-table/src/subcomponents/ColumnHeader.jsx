@@ -155,6 +155,7 @@ const ColumnHeader = (props) => {
             maximumWidth={column.maximumWidth}
             headerHeight={headerHeight}
             isResizable={hasVisibleColumnHeaders && column.isResizable}
+            ownsResizeHandle={focusedRowIndex === 0}
             resizeHandlerInitHeight={resizeHandlerInitHeight}
             isResizeHandleActive={activeResizeHandlerColumnId === column.id}
             resizeHandleStateSetter={resizeHandleStateSetter}
@@ -194,7 +195,7 @@ const ColumnHeader = (props) => {
               maximumWidth={column.maximumWidth}
               headerHeight={headerHeight}
               isResizable={hasVisibleColumnHeaders && column.isResizable}
-              activeRowIndex={focusedRowIndex}
+              ownsResizeHandle={focusedRowIndex === 1}
               isResizeHandleActive={activeResizeHandlerColumnId === column.id}
               resizeHandleStateSetter={resizeHandleStateSetter}
               // does not need isSelectable prop for actions row
