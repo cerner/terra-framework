@@ -347,7 +347,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         role="grid"
         style={
           Object {
-            "flexDirection": "row",
             "width": "280px",
           }
         }
@@ -1819,7 +1818,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         role="grid"
         style={
           Object {
-            "flexDirection": "row",
             "minWidth": "500px",
             "width": "100%",
           }

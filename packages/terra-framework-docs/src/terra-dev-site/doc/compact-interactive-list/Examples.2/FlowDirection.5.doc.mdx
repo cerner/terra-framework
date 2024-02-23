@@ -9,19 +9,8 @@ By default, the items in the [Compact Interactive List](/components/cerner-terra
 
 <VerticalFlow />
 
-#### Usage
-
-* The [rowHeight](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is required for the list items to use vertical flow. If not set, the default value is used.
-* The items are distributed evenly between all columns but the last one. The last column accommodates the remainder after the number of items is divided by the number of columns.
-* Note: If the number of rows is divisible by the [numberOfColumns](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) value minus 1 without a remainder, the last column will be empty.
-
 ### Horizontal Flow
 
 If the [flowHorizontally](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is set to **true**, the flow direction changes to read from left to right before moving to a new line. *This isn't a common way to use this component and is not recommended for most purposes.*
 
 <HorizontalFlow />
-
-#### Usage
-
-* The horizontal flow does not require setting the [rowHeight](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property.
-* All empty spaces are distributed in the last row.

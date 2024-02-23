@@ -81,30 +81,16 @@ const cols = [
   },
 ];
 
-const RowHeight = () => (
-  <>
-    <p>Vertical flow</p>
-    <CompactInteractiveList
-      id="compact-interactive-list-row-heigh-vertical"
-      ariaLabel="Compact Interactive List"
-      rows={rows}
-      columns={cols}
-      numberOfColumns={2}
-      rowHeaderIndex={1}
-      rowHeight="50px"
-    />
-    <p>Horizontal flow</p>
-    <CompactInteractiveList
-      id="compact-interactive-list-row-heigh-horizontal"
-      ariaLabel="Compact Interactive List"
-      rows={rows}
-      columns={cols}
-      numberOfColumns={2}
-      rowHeaderIndex={1}
-      rowHeight="50px"
-      flowHorizontally
-    />
-  </>
+const RowHeightVerticalFlow = () => (
+  <CompactInteractiveList
+    id="compact-interactive-list-row-height-vertical"
+    ariaLabel="Compact Interactive List"
+    rows={rows}
+    columns={cols}
+    numberOfColumns={2}
+    rowHeaderIndex={1}
+    rowHeight="50px"
+  />
 );
 
-export default RowHeight;
+export default RowHeightVerticalFlow;

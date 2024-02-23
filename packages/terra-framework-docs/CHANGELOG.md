@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-compact-interactive-list` documentation to reflect that `rowHeight` property is no longer required for vertical flow.
+
 ## 1.67.0 - (February 22, 2024)
 
 * Changed

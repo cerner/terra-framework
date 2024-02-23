@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Row height grows to accommodate the content in vertical flow.
+
 ## 1.4.0 - (February 16, 2024)
 
 * Changed
