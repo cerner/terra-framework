@@ -72,8 +72,7 @@ Terra.describeViewports('Menu', ['medium'], () => {
     browser.keys('Escape');
     $('#selectable-menu-button').click();
 
-    Terra.validates.element('selected item', { selector: '#root', rules: ignoredA11y })
-   
+    Terra.validates.element('selected item', { selector: '#root', rules: ignoredA11y });
   });
 
   it('displays a Menu with a submenu', () => {

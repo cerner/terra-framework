@@ -7,15 +7,19 @@ class SelectableMenu extends React.Component {
   constructor(props) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
+    this.handleOnChange = this.handleOnChange.bind(this);
     this.handleRequestClose = this.handleRequestClose.bind(this);
     this.setButtonNode = this.setButtonNode.bind(this);
     this.getButtonNode = this.getButtonNode.bind(this);
-    this.handleOnChange = this.handleOnChange.bind(this);
     this.state = { open: false, groupSelectedIndex: undefined };
   }
 
   handleButtonClick() {
     this.setState({ open: true });
+  }
+
+  handleOnChange(event, index) {
+    this.setState({ groupSelectedIndex: index });
   }
 
   handleRequestClose() {
@@ -28,10 +32,6 @@ class SelectableMenu extends React.Component {
 
   getButtonNode() {
     return this.buttonNode;
-  }
-
-  handleOnChange(event, index) {
-    this.setState({ groupSelectedIndex: index });
   }
 
   render() {
