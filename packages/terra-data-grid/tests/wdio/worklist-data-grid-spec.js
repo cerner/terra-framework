@@ -520,7 +520,7 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
     it('validates resize handle focus', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-column-actions');
       navigateToCell(1, 1);
-      Terra.validates.element('column-action-resize-handle-focus');
+      Terra.validates.element('column-action-focus-on-resize-handle');
     });
 
     it('validates action placeholder focus', () => {
