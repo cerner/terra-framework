@@ -69,7 +69,6 @@
     "lerna": "6",
     "postcss": "8",
     "stylelint": "15",
-    "terra-aggregate-translations": "1",
     "terra-enzyme-intl": "3",
     "webpack": "5",
     "webpack-cli": "4",
