@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed menu height issue when it has more items than viewport height.
+
 ## 6.84.1 - (February 7, 2024)
 
 * Fixed

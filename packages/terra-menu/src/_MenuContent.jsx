@@ -187,7 +187,7 @@ class MenuContent extends React.Component {
     if (this.props.index > 0 && this.listNode) {
       const bufHeight = ((this.context.name || this.context.className) === 'orion-fusion-theme') || MenuUtils.isSafari() ? 20 : 10;
       const submenuHeight = this.listNode.clientHeight + this.listNode.parentNode.parentNode.parentNode.firstChild.clientHeight + bufHeight;
-      return submenuHeight > window.innerHeight ? this.props.fixedHeight : submenuHeight;
+      return submenuHeight;
     }
 
     return 0;
