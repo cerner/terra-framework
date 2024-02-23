@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-menu` test for selectable menu to retain selection state when using `isToggled` prop after closing and re-sopening the menu.
+
 ## 1.67.0 - (February 22, 2024)
 
 * Changed

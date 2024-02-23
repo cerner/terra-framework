@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed `MenuItemGroup` to retain selection state when menu is closed and re-opened and `isToggled` prop is used.
+
 ## 6.84.1 - (February 7, 2024)
 
 * Fixed
