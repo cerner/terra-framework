@@ -28,37 +28,9 @@
   "browserslist": [
     "extends @cerner/browserslist-config-terra"
   ],
-  "eslintConfig": {
-    "extends": "@cerner/terra",
-    "globals": {
-      "enzyme": "readonly",
-      "enzymeIntl": "readonly"
-    },
-    "rules": {
-      "react/forbid-prop-types": "off"
-    }
-  },
   "package-json-lint": {
     "extends": "@cerner/package-json-lint-config-terra/package-json-lint.config.js",
     "projectType": "module"
-  },
-  "stylelint": {
-    "extends": "@cerner/stylelint-config-terra",
-    "rules": {
-      "scss/at-mixin-pattern": "^(terra-)[a-z]+([a-z0-9-]+[a-z0-9]+)?$"
-    },
-    "overrides": [
-      {
-        "files": [
-          "packages/terra-theme-properties/**/*.scss",
-          "packages/**/redwood-theme/**/*.scss"
-        ],
-        "rules": {
-          "terra/custom-property-name": false,
-          "terra/custom-property-namespace": false
-        }
-      }
-    ]
   },
   "peerDependencies": {
     "react": "16",
@@ -90,7 +62,7 @@
     "enzyme": "3",
     "enzyme-adapter-react-16": "1",
     "enzyme-to-json": "3",
-    "eslint": "4",
+    "eslint": "7",
     "gh-pages": "2",
     "glob": "7",
     "jest": "27",
