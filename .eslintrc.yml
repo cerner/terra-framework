@@ -1,0 +1,6 @@
+extends: "@cerner/terra"
+globals:
+  enzyme: readonly
+  enzymeIntl: readonly
+rules:
+  react/forbid-prop-types: off
