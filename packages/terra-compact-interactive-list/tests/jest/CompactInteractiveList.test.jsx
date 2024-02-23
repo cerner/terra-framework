@@ -303,7 +303,7 @@ describe('Compact Interactive List', () => {
       expect(cellElements.at(2).props().style.maxWidth).toEqual('800px');
     });
 
-    it('should flow rows vertically by default', () => {
+    it('verifies vertical flow order by default', () => {
       const respCols = [
         {
           id: 'Column-0',
@@ -337,34 +337,34 @@ describe('Compact Interactive List', () => {
       expect(rowElements.at(0).props().role).toEqual('row');
       expect(rowElements.at(0).props()['aria-hidden']).toBeNull();
 
-      expect(rowElements.at(1).props().id).toEqual(rows[1].id);
+      expect(rowElements.at(1).props().id).toEqual(rows[2].id);
       expect(rowElements.at(1).props().role).toEqual('row');
       expect(rowElements.at(1).props()['aria-hidden']).toBeNull();
 
-      expect(rowElements.at(2).props().id).toEqual(rows[2].id);
+      expect(rowElements.at(2).props().id).toEqual(rows[3].id);
       expect(rowElements.at(2).props()['aria-hidden']).toBeNull();
       expect(rowElements.at(2).props().role).toEqual('row');
 
-      expect(rowElements.at(3).props().id).toEqual(`placeholder-row-${1}`);
-      expect(rowElements.at(3).props()['aria-hidden']).toBeTruthy();
-      expect(rowElements.at(3).props().role).toBeFalsy();
+      expect(rowElements.at(3).props().id).toEqual(rows[4].id);
+      expect(rowElements.at(3).props()['aria-hidden']).toBeNull();
+      expect(rowElements.at(3).props().role).toEqual('row');
 
-      expect(rowElements.at(4).props().id).toEqual(rows[3].id);
+      expect(rowElements.at(4).props().id).toEqual(rows[1].id);
       expect(rowElements.at(4).props()['aria-hidden']).toBeNull();
       expect(rowElements.at(4).props().role).toEqual('row');
 
-      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${2}`);
+      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${1}`);
       expect(rowElements.at(5).props()['aria-hidden']).toBeTruthy();
       expect(rowElements.at(5).props().role).toBeFalsy();
 
-      expect(rowElements.at(6).props().id).toEqual(rows[4].id);
-      expect(rowElements.at(6).props()['aria-hidden']).toBeNull();
-      expect(rowElements.at(6).props().role).toEqual('row');
+      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${2}`);
+      expect(rowElements.at(6).props()['aria-hidden']).toBeTruthy();
+      expect(rowElements.at(6).props().role).toBeFalsy();
 
       expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${3}`);
     });
 
-    it('should flow horizontally if flowHorizontally prop is set', () => {
+    it('verifies horizontal flow order when flowHorizontally prop is set', () => {
       const respCols = [
         {
           id: 'Column-0',
@@ -386,7 +386,7 @@ describe('Compact Interactive List', () => {
       const numberOfColumns = 4;
       const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-horisontal-flow"
+          id="compact-interactive-list-horizontal-flow"
           rows={rows}
           columns={respCols}
           numberOfColumns={numberOfColumns}
@@ -574,34 +574,34 @@ describe('Compact Interactive List', () => {
       expect(document.activeElement).toBe(cellElements.at(2).instance());
       // move one cell to the right, should enter a new row and a new visual column
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(9).instance());
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
       // move two cells to the right to reach the end of the row
       list.simulate('keyDown', arrowRightProps);
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
       // should not move to the right as the row end reached
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
 
       // Move one row down to start testing left arrow
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      expect(document.activeElement).toBe(cellElements.at(11).instance());
 
       // Testing LEFT ARROW
       // move one cell to the left, same row
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(13).instance());
+      expect(document.activeElement).toBe(cellElements.at(10).instance());
       // move 2 cell to the left to break to the previous visual column
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(5).instance());
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
       // move 2 cell to the left to reach the first visual column start
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
       // should not move anymore as the start of the visual row has been reached
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
@@ -619,25 +619,25 @@ describe('Compact Interactive List', () => {
       // Testing DOWN ARROW
       // move one cell down, same sematic column
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
       // move two cells down, should break to the next visual column
       list.simulate('keyDown', arrowDownProps);
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(9).instance());
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
       // move one cells down to reach the end of the visual column and the list
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(12).instance());
+      expect(document.activeElement).toBe(cellElements.at(9).instance());
       // should not move as the end of the list has been reached
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(12).instance());
+      expect(document.activeElement).toBe(cellElements.at(9).instance());
 
       // Testing UP ARROW
       // move one cell up, same visual column
       list.simulate('keyDown', arrowUpProps);
-      expect(document.activeElement).toBe(cellElements.at(9).instance());
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
       // move one cell up, break to the previous visual column
       list.simulate('keyDown', arrowUpProps);
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
       // move 2 cell3 up to reach the first visual row in the list
       list.simulate('keyDown', arrowUpProps);
       list.simulate('keyDown', arrowUpProps);
@@ -664,21 +664,21 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', {
         ...arrowRightProps, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
 
       // Testing RIGHT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
       // should focus the last cell in the last list element
       list.simulate('keyDown', {
         ...arrowRightProps, ctrlKey: true, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(8).instance());
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
 
       // Testing LEFT ARROW + META_KEY (CMD on mac or HOME for windows)
       // should focus the first cell in the current visual row
       list.simulate('keyDown', {
         ...arrowLeftProps, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
 
       // Testing LEFT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
       // should focus the first cell in the first list element
@@ -703,19 +703,19 @@ describe('Compact Interactive List', () => {
       // Testing END_KEY
       // should focus the last cell in the current visual row
       list.simulate('keyDown', endKeyProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
 
       // Testing END_KEY + CTRL + META_KEY
       // should focus the last cell in the last list element
       list.simulate('keyDown', {
         ...endKeyProps, ctrlKey: true, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(8).instance());
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
 
       // Testing HOME_KEY
       // should focus the first cell in the current visual row
       list.simulate('keyDown', homeKeyProps);
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
 
       // Testing HOME_KEY + CTRL + META_KEY
       // should focus the first cell in the first list element
@@ -1088,6 +1088,124 @@ describe('Compact Interactive List', () => {
       cellElements.at(1).simulate('keyDown', spaceKeyProps);
       cellElements.at(1).simulate('mouseDown');
       expect(mockOnCellSelect).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('rowHeight', () => {
+    const cols = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '100px',
+      },
+      {
+        id: 'Column-1',
+        displayName: 'Col_2',
+        width: '200px',
+      },
+      {
+        id: 'Column-2',
+        displayName: 'Col_3',
+        width: '100px',
+      },
+    ];
+
+    beforeEach(() => {
+      document.getElementsByTagName('html')[0].innerHTML = '';
+    });
+
+    beforeAll(() => {
+      // Define offsetHeight for HTML elements
+      Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+        configurable: true,
+        value: 44,
+      });
+      // Define offsetWidth for HTML elements
+      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+        configurable: true, value: 100,
+      });
+    });
+
+    it('should not have rowHeight by default for vertical flow', () => {
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).props().style.height).toBeUndefined();
+    });
+
+    it('should apply rowHeight for vertical (default) flow if provided', () => {
+      const rowHeight = '52px';
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+          rowHeight={rowHeight}
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).props().style.height).toEqual(rowHeight);
+    });
+
+    it('should not have rowHeight by default for horizontal flow', () => {
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+          flowHorizontally
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).props().style.height).toBeUndefined();
+    });
+
+    it('should apply rowHeight for for horizontal flow if provided', () => {
+      const rowHeight = '52px';
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+          rowHeight={rowHeight}
+          flowHorizontally
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).props().style.height).toEqual(rowHeight);
     });
   });
 });

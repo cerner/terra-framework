@@ -140,7 +140,6 @@ const CellContent = () => {
       onCellSelect={onCellSelect}
       onClearSelection={onClearSelection}
       rowHeaderIndex={1}
-      rowHeight="50px"
     />
   );
 };

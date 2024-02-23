@@ -105,7 +105,6 @@ const InconsistentWidthUnits = () => {
       rows={rows}
       columns={cols}
       numberOfColumns={getNumberOfColumns(activeBreakpoint)}
-      flowHorizontally
       columnMaximumWidth="10em"
       columnMinimumWidth="20em"
       rowHeaderIndex={1}

@@ -11,6 +11,7 @@
   .compact-interactive-list {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: row;
   }
 
   .hidden {
