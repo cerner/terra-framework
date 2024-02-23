@@ -60,6 +60,11 @@
       }
     ]
   },
+  "peerDependencies": {
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2"
+  },
   "devDependencies": {
     "@babel/cli": "^7.5.0",
     "@babel/core": "^7.5.0",
@@ -93,9 +98,6 @@
     "ky": "^0.12.0",
     "lerna": "^6.4.1",
     "postcss": "^8.4.31",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.9.0",
     "regenerator-runtime": "^0.13.2",
     "stylelint": "^15.0.0",
     "terra-aggregate-translations": "^1.0.0",
