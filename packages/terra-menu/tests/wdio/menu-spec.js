@@ -65,6 +65,17 @@ Terra.describeViewports('Menu', ['medium'], () => {
     Terra.validates.element('selectable', { selector: '#root', rules: ignoredA11y });
   });
 
+  it('retains selected item on closing and re-opening Menu-Selectable ', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-menu');
+    $('#selectable-menu-button').click();
+    $('.TestGroupItem2').click();
+    browser.keys('Escape');
+    $('#selectable-menu-button').click();
+
+    Terra.validates.element('selected item', { selector: '#root', rules: ignoredA11y })
+   
+  });
+
   it('displays a Menu with a submenu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
     $('#sub-menu-button').click();
