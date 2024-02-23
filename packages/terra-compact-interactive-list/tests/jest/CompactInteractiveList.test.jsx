@@ -345,19 +345,22 @@ describe('Compact Interactive List', () => {
       expect(rowElements.at(2).props()['aria-hidden']).toBeNull();
       expect(rowElements.at(2).props().role).toEqual('row');
 
-      expect(rowElements.at(3).props().id).toEqual(rows[3].id);
-      expect(rowElements.at(3).props()['aria-hidden']).toBeNull();
-      expect(rowElements.at(3).props().role).toEqual('row');
+      expect(rowElements.at(3).props().id).toEqual(`placeholder-row-${1}`);
+      expect(rowElements.at(3).props()['aria-hidden']).toBeTruthy();
+      expect(rowElements.at(3).props().role).toBeFalsy();
 
-      expect(rowElements.at(4).props().id).toEqual(rows[4].id);
+      expect(rowElements.at(4).props().id).toEqual(rows[3].id);
       expect(rowElements.at(4).props()['aria-hidden']).toBeNull();
       expect(rowElements.at(4).props().role).toEqual('row');
 
-      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${1}`);
+      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${2}`);
       expect(rowElements.at(5).props()['aria-hidden']).toBeTruthy();
       expect(rowElements.at(5).props().role).toBeFalsy();
 
-      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${2}`);
+      expect(rowElements.at(6).props().id).toEqual(rows[4].id);
+      expect(rowElements.at(6).props()['aria-hidden']).toBeNull();
+      expect(rowElements.at(6).props().role).toEqual('row');
+
       expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${3}`);
     });
 
@@ -668,14 +671,14 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', {
         ...arrowRightProps, ctrlKey: true, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
 
       // Testing LEFT ARROW + META_KEY (CMD on mac or HOME for windows)
       // should focus the first cell in the current visual row
       list.simulate('keyDown', {
         ...arrowLeftProps, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
 
       // Testing LEFT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
       // should focus the first cell in the first list element
@@ -707,12 +710,12 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', {
         ...endKeyProps, ctrlKey: true, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
 
       // Testing HOME_KEY
       // should focus the first cell in the current visual row
       list.simulate('keyDown', homeKeyProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
 
       // Testing HOME_KEY + CTRL + META_KEY
       // should focus the first cell in the first list element
