@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* Added `boundingRef` prop for bounded flowsheet data grids.
+
 ## 1.14.0 - (February 20, 2024)
 
 * Changed

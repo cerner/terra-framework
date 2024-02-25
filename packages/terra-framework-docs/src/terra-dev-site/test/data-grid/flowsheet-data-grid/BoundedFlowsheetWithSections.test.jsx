@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useState, useRef } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
@@ -75,6 +75,7 @@ const gridDataJSON = {
 };
 
 const BoundedFlowsheetWithSections = () => {
+  const boundingRef = useRef(null);
   const [tableSections, setTableSections] = useState(gridDataJSON.sections);
 
   const handleSectionSelect = (sectionId) => {
@@ -147,7 +148,7 @@ const BoundedFlowsheetWithSections = () => {
 
   return (
   // eslint-disable-next-line react/forbid-dom-props
-    <div style={{ height: '150px', width: '700px' }}>
+    <div style={{ height: '150px', width: '700px' }} ref={boundingRef}>
       <FlowsheetDataGrid
         id="flowsheet-with-sections-bounded"
         columns={gridDataJSON.cols}
@@ -155,6 +156,7 @@ const BoundedFlowsheetWithSections = () => {
         onCellSelect={onCellSelect}
         onSectionSelect={handleSectionSelect}
         onCellRangeSelect={handleCellRangeSelection}
+        boundingRef={boundingRef}
       />
     </div>
   );
