@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added an example and test file for a large submenu in the `terra-menu`.
+
 ## 1.67.0 - (February 22, 2024)
 
 * Changed
