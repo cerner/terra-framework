@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+   * Column actions support added.
+
 ## 1.14.0 - (February 20, 2024)
 
 * Changed
@@ -10,10 +13,7 @@
 ## 1.13.0 - (February 16, 2024)
 
 * Changed
- * Removed the default rowMinimumHeight from FlowsheetDataGrid so that the `terra-table` default value is used.
-
-* Added
-  * Column actions support added.
+  * Removed the default rowMinimumHeight from FlowsheetDataGrid so that the `terra-table` default value is used. 
 
 ## 1.12.0 - (February 1, 2024)
 
