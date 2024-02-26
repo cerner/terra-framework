@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Column actions added.
+
 ## 5.7.0 - (February 20, 2024)
 
 * Added
@@ -11,9 +14,6 @@
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
-
-* Added
-  * Column actions added.
 
 ## 5.5.0 - (February 1, 2024)
 
