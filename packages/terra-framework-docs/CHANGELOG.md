@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-menu` test for selectable menu to retain selection state when using `isToggled` prop after closing and re-opening the menu.
+
 * Added
   * Column actions example added to `terra-worklist-data-grid`.
 
