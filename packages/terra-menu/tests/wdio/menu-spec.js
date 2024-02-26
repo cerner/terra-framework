@@ -77,6 +77,13 @@ Terra.describeViewports('Menu', ['medium'], () => {
     browser.keys('Escape');
   });
 
+  it('displays a large submenu', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/large-sub-menu');
+    $('#large-sub-menu-button').click();
+    $('.TesSubMenu').click();
+    Terra.validates.element('Large sub menu', { selector: '#root', rules: ignoredA11y });
+  });
+
   it('focuses on back button in submenu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
     $('#sub-menu-button').click();
