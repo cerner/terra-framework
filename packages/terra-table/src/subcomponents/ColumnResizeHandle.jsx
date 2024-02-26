@@ -225,7 +225,7 @@ const ColumnResizeHandle = (props) => {
       aria-label={isActive && isNavigationEnabled ? intl.formatMessage({ id: 'Terra.table.resize-handle-template' }, { columnText }) : null}
       aria-valuetext={!isNavigationEnabled ? intl.formatMessage({ id: 'Terra.table.resize-handle-value-text' }, { columnWidth }) : null}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{ height: resizeHandlerInitHeight || '100%' }}
+      style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}
