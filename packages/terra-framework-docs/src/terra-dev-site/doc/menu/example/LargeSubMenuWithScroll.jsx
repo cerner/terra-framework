@@ -14,7 +14,7 @@ const propTypes = {
   boundingRef: PropTypes.func,
 };
 
-class LargeMenu extends React.Component {
+class LargeSubMenuWithScroll extends React.Component {
   constructor(props) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -427,6 +427,6 @@ class LargeMenu extends React.Component {
   }
 }
 
-LargeMenu.propTypes = propTypes;
+LargeSubMenuWithScroll.propTypes = propTypes;
 
-export default LargeMenu;
+export default LargeSubMenuWithScroll;

@@ -3,7 +3,7 @@ import Menu from 'terra-menu';
 import Button from 'terra-button';
 import IconCaretDown from 'terra-icon/lib/icon/IconCaretDown';
 
-class LargeSubMenu extends React.Component {
+class LargeSubMenuWithScroll extends React.Component {
   constructor(props) {
     super(props);
     this.handleButtonClick = this.handleButtonClick.bind(this);
@@ -103,4 +103,4 @@ class LargeSubMenu extends React.Component {
   }
 }
 
-export default LargeSubMenu;
+export default LargeSubMenuWithScroll;
