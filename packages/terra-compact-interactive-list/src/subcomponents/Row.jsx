@@ -18,6 +18,11 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
+   * The row's position in the table. This is zero based.
+   */
+  rowIndex: PropTypes.number,
+
+  /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
   cells: PropTypes.arrayOf(cellShape),
@@ -108,6 +113,7 @@ const propTypes = {
 const Row = (props) => {
   const {
     id,
+    rowIndex,
     cells,
     columns,
     columnMinimumWidth,
@@ -148,6 +154,7 @@ const Row = (props) => {
     <div
       id={id}
       data-row-id={id}
+      aria-rowindex={rowIndex + 1}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}

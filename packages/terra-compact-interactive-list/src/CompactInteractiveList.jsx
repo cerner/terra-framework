@@ -274,13 +274,13 @@ const CompactInteractiveList = (props) => {
     const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
     let result = [];
     if (flowHorizontally) {
-      result = [...rows];
+      result = rows.map((row, index) => ({ ...row, rowIndex: index }));
     } else {
       for (let i = 0; i < numberOfRows; i += 1) {
         let x = numberOfColumns - placeholdersNumber;
         for (let j = i; j < rows.length; j += numberOfRows - (x >= 0 ? 0 : 1)) {
           if (result.length < rows.length) {
-            result.push(rows[j]);
+            result.push({ ...rows[j], rowIndex: j });
             if (x >= 0) { x -= 1; }
           }
         }
@@ -317,7 +317,7 @@ const CompactInteractiveList = (props) => {
         </div>
         {mappedRows.map((row, index) => (
           <Row
-            rowIndex={index}
+            rowIndex={row.rowIndex}
             key={row.id}
             id={row.id}
             cells={row.cells}
