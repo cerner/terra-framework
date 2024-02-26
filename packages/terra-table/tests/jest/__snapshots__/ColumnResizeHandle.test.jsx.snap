@@ -98,7 +98,7 @@ exports[`ColumnResizeHandle renders a default column resize handle when isActive
       role={null}
       style={
         Object {
-          "height": "100%",
+          "height": "200px",
         }
       }
       tabIndex={0}

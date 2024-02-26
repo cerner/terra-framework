@@ -751,7 +751,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -950,7 +950,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -1147,7 +1147,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -3470,7 +3470,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -3669,7 +3669,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -3866,7 +3866,7 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -6293,7 +6293,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -6492,7 +6492,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -6689,7 +6689,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -9597,7 +9597,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -9796,7 +9796,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -9993,7 +9993,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -12235,7 +12235,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -12434,7 +12434,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}
@@ -12631,7 +12631,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                               role={null}
                               style={
                                 Object {
-                                  "height": "100%",
+                                  "height": "0px",
                                 }
                               }
                               tabIndex={-1}

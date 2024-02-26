@@ -815,7 +815,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -1014,7 +1014,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -1211,7 +1211,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -3772,7 +3772,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -3971,7 +3971,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -4168,7 +4168,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -7386,7 +7386,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -7585,7 +7585,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -7782,7 +7782,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -10857,7 +10857,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -11056,7 +11056,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -11253,7 +11253,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -13814,7 +13814,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -14013,7 +14013,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -14210,7 +14210,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -17428,7 +17428,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -17627,7 +17627,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -17824,7 +17824,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -21066,7 +21066,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -21265,7 +21265,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -21462,7 +21462,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -24664,7 +24664,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -24863,7 +24863,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -25060,7 +25060,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -28154,7 +28154,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -28353,7 +28353,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -28550,7 +28550,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -31115,7 +31115,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -31314,7 +31314,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -31511,7 +31511,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -34729,7 +34729,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -34928,7 +34928,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -35125,7 +35125,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -38323,7 +38323,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -38522,7 +38522,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -38719,7 +38719,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -41917,7 +41917,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -42116,7 +42116,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -42313,7 +42313,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -45511,7 +45511,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -45710,7 +45710,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -45907,7 +45907,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -49105,7 +49105,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -49304,7 +49304,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -49501,7 +49501,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -52697,7 +52697,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -52896,7 +52896,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -53093,7 +53093,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -56289,7 +56289,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -56488,7 +56488,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -56685,7 +56685,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -59727,7 +59727,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -59926,7 +59926,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -60123,7 +60123,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -62508,7 +62508,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -62707,7 +62707,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
@@ -62904,7 +62904,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                   role={null}
                                   style={
                                     Object {
-                                      "height": "100%",
+                                      "height": "0px",
                                     }
                                   }
                                   tabIndex={-1}
