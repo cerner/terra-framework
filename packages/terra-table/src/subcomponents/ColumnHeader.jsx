@@ -130,7 +130,7 @@ const ColumnHeader = (props) => {
     }
   }, [activeResizeHandlerColumnId]);
 
-  // resizeHandlerInitHeight is needed to adjust the heder column resize handler to accommodate actions header height
+  // resizeHandlerInitHeight is needed to adjust the header column resize handler to accommodate actions header height
   const resizeHandlerInitHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
 
   return (
