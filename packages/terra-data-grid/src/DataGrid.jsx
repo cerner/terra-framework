@@ -206,7 +206,7 @@ const DataGrid = forwardRef((props, ref) => {
   const [checkResizable, setCheckResizable] = useState(false);
 
   // check if at least one column has an action prop
-  // same check is done in Table, but as Table can be a stand-alone component, it can't relay on a passed prop.
+  // same check is done in Table, but as Table can be a stand-alone component, it can't rely on a passed prop.
   const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
 
   // eslint-disable-next-line no-nested-ternary
