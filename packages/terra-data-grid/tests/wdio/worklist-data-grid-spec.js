@@ -519,13 +519,18 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
 
     it('validates resize handle focus', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-column-actions');
-      navigateToCell(1, 1);
+      browser.keys(['Tab']);
+      browser.keys(['ArrowDown']);
+      browser.keys(['ArrowRight']);
       Terra.validates.element('column-action-focus-on-resize-handle');
     });
 
     it('validates action placeholder focus', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-column-actions');
-      navigateToCell(1, 2);
+      browser.keys(['Tab']);
+      browser.keys(['ArrowDown']);
+      browser.keys(['ArrowRight']); // Resize handle
+      browser.keys(['ArrowRight']); // Action header cell in column 2
       Terra.validates.element('column-action-placeholder-focus');
     });
   });
