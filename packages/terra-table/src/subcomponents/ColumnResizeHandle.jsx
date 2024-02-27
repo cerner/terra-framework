@@ -41,9 +41,9 @@ const propTypes = {
   height: PropTypes.number.isRequired,
 
   /**
-   * String that specifies the init height for the resize handler to accommodate actions row.
+   * String that specifies the initial height for the resize handler to accommodate actions row.
    */
-  resizeHandlerInitHeight: PropTypes.string,
+  initialHeight: PropTypes.string,
 
   /**
    * Numeric increment in pixels to adjust column width when resizing via the keyboard.
@@ -107,7 +107,7 @@ const ColumnResizeHandle = (props) => {
     isActive,
     maximumWidth,
     minimumWidth,
-    resizeHandlerInitHeight,
+    initialHeight,
     onResizeHandleChange,
     onResizeMouseDown,
     onResizeMouseUp,
@@ -154,7 +154,7 @@ const ColumnResizeHandle = (props) => {
 
   const onMouseLeave = () => {
     if (document.activeElement !== resizeHandleRef.current) {
-      resizeHandleRef.current.style.height = resizeHandlerInitHeight || '100%';
+      resizeHandleRef.current.style.height = initialHeight || '100%';
     }
   };
 

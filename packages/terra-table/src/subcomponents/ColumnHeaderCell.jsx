@@ -118,9 +118,9 @@ const propTypes = {
   resizeHandleStateSetter: PropTypes.func,
 
   /**
-   * String that specifies the init height for the resize handler to accommodate actions row.
+   * String that specifies the initial height for the resize handler to accommodate actions row.
    */
-  resizeHandlerInitHeight: PropTypes.string,
+  initialHeight: PropTypes.string,
 
   /**
    * Height of the parent table.
@@ -200,7 +200,7 @@ const ColumnHeaderCell = (props) => {
     isResizable,
     isResizeHandleActive,
     resizeHandleStateSetter,
-    resizeHandlerInitHeight,
+    initialHeight,
     triggerFocus,
     columnId,
     tableHeight,
@@ -413,7 +413,7 @@ const ColumnHeaderCell = (props) => {
         isActive={isResizeHandleActive}
         setIsActive={setResizeHandleActive}
         height={tableHeight}
-        resizeHandlerInitHeight={resizeHandlerInitHeight}
+        initialHeight={initialHeight}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}

@@ -19,7 +19,7 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       isResizeHandleActive={false}
       key="Column-0-headerCell"
       resizeHandleStateSetter={[Function]}
-      resizeHandlerInitHeight="0px"
+      initialHeight="0px"
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -33,7 +33,7 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       isResizeHandleActive={false}
       key="Column-1-headerCell"
       resizeHandleStateSetter={[Function]}
-      resizeHandlerInitHeight="0px"
+      initialHeight="0px"
       tableId="test-table"
     />
   </tr>

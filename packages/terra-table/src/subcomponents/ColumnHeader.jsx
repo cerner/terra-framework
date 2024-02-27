@@ -130,8 +130,8 @@ const ColumnHeader = (props) => {
     }
   }, [activeResizeHandlerColumnId]);
 
-  // resizeHandlerInitHeight is needed to adjust the header column resize handler to accommodate actions header height
-  const resizeHandlerInitHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
+  // Is needed to adjust the header column resize handler to accommodate actions header height
+  const initialHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
 
   return (
     <thead ref={headerRef}>
@@ -155,7 +155,7 @@ const ColumnHeader = (props) => {
             maximumWidth={column.maximumWidth}
             headerHeight={headerHeight}
             isResizable={hasVisibleColumnHeaders && column.isResizable}
-            resizeHandlerInitHeight={resizeHandlerInitHeight}
+            initialHeight={initialHeight}
             isResizeHandleActive={activeResizeHandlerColumnId === column.id}
             resizeHandleStateSetter={resizeHandleStateSetter}
             isSelectable={hasVisibleColumnHeaders && column.isSelectable}
