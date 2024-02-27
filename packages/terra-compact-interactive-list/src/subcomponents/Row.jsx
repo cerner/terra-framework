@@ -159,6 +159,9 @@ const Row = (props) => {
       id={id}
       data-row-id={id}
       role={activeRow && 'row'}
+      aria-rowindex={rowIndex + 2}
+      // eslint-disable-next-line jsx-a11y/aria-props
+      aria-rowindextext={stringRowIndexText}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
