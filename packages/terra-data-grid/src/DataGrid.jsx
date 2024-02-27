@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import Table, {
-  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, checkForColumnActions,
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions,
 } from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
@@ -207,7 +207,7 @@ const DataGrid = forwardRef((props, ref) => {
 
   // check if at least one column has an action prop
   // same check is done in Table, but as Table can be a stand-alone component, it can't rely on a passed prop.
-  const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
+  const hasColumnHeaderActions = hasColumnActions(pinnedColumns) || hasColumnActions(overflowColumns);
 
   // eslint-disable-next-line no-nested-ternary
   const firstRowIndex = hasVisibleColumnHeaders ? 0 : 1;

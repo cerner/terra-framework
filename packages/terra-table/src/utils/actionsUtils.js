@@ -3,6 +3,6 @@
  * @param {PropTypes.arrayOf(columnShape)} columns - array of data grid columns
  * @returns bool
  */
-const checkForColumnActions = (columns) => (!!columns.find(column => column.action));
+const hasColumnActions = (columns) => (!!columns.find(column => column.action));
 
-export default checkForColumnActions;
+export default hasColumnActions;

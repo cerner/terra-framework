@@ -20,7 +20,7 @@ import { validateRowHeaderIndex } from './proptypes/validators';
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
 import getFocusableElements from './utils/focusManagement';
-import checkForColumnActions from './utils/actionsUtils';
+import hasColumnActions from './utils/actionsUtils';
 
 const cx = classNames.bind(styles);
 
@@ -304,7 +304,7 @@ function Table(props) {
 
   // check if at least one column has an action prop
   // same check is done in DataGrid, but as Table can be a stand-alone component, it can't relay on passed prop.
-  const hasColumnHeaderActions = checkForColumnActions(pinnedColumns) || checkForColumnActions(overflowColumns);
+  const hasColumnHeaderActions = hasColumnActions(pinnedColumns) || hasColumnActions(overflowColumns);
   // eslint-disable-next-line no-nested-ternary
   const headerRowCount = hasVisibleColumnHeaders ? (hasColumnHeaderActions ? 2 : 1) : 0;
 
