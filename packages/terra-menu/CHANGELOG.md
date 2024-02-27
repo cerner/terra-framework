@@ -3,7 +3,8 @@
 ## Unreleased
 
 * Fixed
-  * Fixes sub-menu height issue when it exceeds viewport size.
+  * Fixed sub-menu height issue when it exceeds viewport size.
+  * Fixed `MenuItemGroup` to retain selection state when menu is closed and re-opened and `isToggled` prop is used.
 
 ## 6.84.1 - (February 7, 2024)
 
