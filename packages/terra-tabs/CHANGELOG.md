@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added the fix for changing the props not rerendering component.
+
 ## 7.17.0 - (February 7, 2024)
 
 * Changed

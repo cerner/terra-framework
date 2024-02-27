@@ -172,7 +172,7 @@ class Tabs extends React.Component {
     });
 
     // Allow dynamic addition of tabs.
-    if (this.state.visibleTabData.length !== this.props.tabData.length) {
+    if ((this.state.visibleTabData.length !== this.props.tabData.length) || (this.state.visibleTabData !== this.props.tabData)) {
       // eslint-disable-next-line react/no-did-update-set-state
       this.setState({ visibleTabData: this.props.tabData });
     } else {
