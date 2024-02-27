@@ -1954,6 +1954,112 @@ exports[`should render a disabled time input 1`] = `
 </div>
 `;
 
+exports[`should render a error message 1`] = `
+<div
+  className="time-input-container"
+>
+  <div
+    className="time-input"
+    role="group"
+  >
+    <VisuallyHiddenText
+      aria-live="polite"
+      text="Terra.timeInput.labeledTextValue"
+    />
+    <input
+      name="time-input"
+      type="hidden"
+      value=""
+    />
+    <AccessibleInput
+      ariaDescribedBy="default-invalid-error"
+      className="time-input-hour"
+      description="Terra.timeInput.hourDescriptionTwelve, Terra.timePicker.hotKey"
+      disabled={false}
+      isInvalid={false}
+      label="Terra.timeInput.hourLabel"
+      maxLength="2"
+      name="terra-time-hour-time-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      pattern="\\\\d*"
+      refCallback={[Function]}
+      required={false}
+      showIsInvalid={false}
+      size="2"
+      type="text"
+      value=""
+    />
+    <InjectIntl(TimeSpacer)
+      className="time-spacer"
+    />
+    <AccessibleInput
+      ariaDescribedBy="default-invalid-error"
+      className="time-input-minute"
+      description="Terra.timeInput.descriptionMinute, Terra.timePicker.hotKey"
+      disabled={false}
+      isInvalid={false}
+      label="Terra.timeInput.minutes"
+      maxLength="2"
+      name="terra-time-minute-time-input"
+      onBlur={[Function]}
+      onChange={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      pattern="\\\\d*"
+      refCallback={[Function]}
+      required={false}
+      showIsInvalid={false}
+      size="2"
+      type="text"
+      value=""
+    />
+  </div>
+  <ButtonGroup
+    className="meridiem-button-group"
+    isBlock={false}
+    isMultiSelect={false}
+    onChange={[Function]}
+    selectedKeys={
+      Array [
+        "Terra.timeInput.am",
+      ]
+    }
+  >
+    <ButtonGroupButton
+      className="meridiem-button"
+      isDisabled={false}
+      key="Terra.timeInput.am"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      text="Terra.timeInput.am"
+    />
+    <ButtonGroupButton
+      className="meridiem-button"
+      isDisabled={false}
+      key="Terra.timeInput.pm"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      text="Terra.timeInput.pm"
+    />
+  </ButtonGroup>
+  <div
+    aria-hidden={true}
+    className="format-text"
+  >
+    Terra.timeInput.maskHourMinute
+  </div>
+  <VisuallyHiddenText
+    aria-atomic="true"
+    aria-live="assertive"
+    aria-relevant="all"
+    refCallback={[Function]}
+  />
+</div>
+`;
+
 exports[`should render a time input with 12 hour clock set 1`] = `
 <div
   className="time-input-container"
