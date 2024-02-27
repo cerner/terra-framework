@@ -16,6 +16,7 @@ const propTypes = {
    * String identifier of the row in which the Cell will be rendered.
    */
   rowId: PropTypes.string.isRequired,
+  rowIndex: PropTypes.number,
 
   rowIndexText: PropTypes.string,
 
@@ -72,6 +73,7 @@ const propTypes = {
 const Cell = (props) => {
   const {
     rowId,
+    rowIndex,
     rowIndexText,
     children,
     column,
@@ -164,6 +166,7 @@ const Cell = (props) => {
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       role={isRowHeader ? 'rowheader' : 'gridcell'}
+      aria-rowindex={rowIndex}
       // eslint-disable-next-line jsx-a11y/aria-props
       aria-rowindextext={rowIndexText}
       ref={cellRef}

@@ -158,9 +158,6 @@ const Row = (props) => {
     <div
       id={id}
       data-row-id={id}
-      aria-rowindex={rowIndex + 2}
-      // eslint-disable-next-line jsx-a11y/aria-props
-      aria-rowindextext={stringRowIndexText}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
@@ -170,6 +167,7 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
+          rowIndex={rowIndex + 2}
           rowIndexText={stringRowIndexText}
           isSelected={cellData.isSelected}
           rowId={id}
