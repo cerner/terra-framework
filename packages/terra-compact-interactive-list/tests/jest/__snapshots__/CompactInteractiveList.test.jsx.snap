@@ -353,6 +353,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         tabIndex={0}
       >
         <div
+          aria-rowindex={1}
           className="hidden"
           role="row"
         >
@@ -439,7 +440,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         >
           <div
             aria-hidden={null}
-            aria-rowindex={1}
+            aria-rowindex={2}
+            aria-rowindextext="Row 2"
             className="row row-topmost row-leftmost"
             data-row-id="row_1"
             id="row_1"
@@ -674,7 +676,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         >
           <div
             aria-hidden={null}
-            aria-rowindex={2}
+            aria-rowindex={3}
+            aria-rowindextext="Row 3"
             className="row row-leftmost"
             data-row-id="row_2"
             id="row_2"
@@ -906,7 +909,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         >
           <div
             aria-hidden={null}
-            aria-rowindex={3}
+            aria-rowindex={4}
+            aria-rowindextext="Row 4"
             className="row row-leftmost"
             data-row-id="row_3"
             id="row_3"
@@ -1128,7 +1132,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         >
           <div
             aria-hidden={null}
-            aria-rowindex={4}
+            aria-rowindex={5}
+            aria-rowindextext="Row 5"
             className="row row-leftmost"
             data-row-id="row_4"
             id="row_4"
@@ -1302,7 +1307,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         >
           <div
             aria-hidden={null}
-            aria-rowindex={5}
+            aria-rowindex={6}
+            aria-rowindextext="Row 6"
             className="row row-leftmost"
             data-row-id="row_5"
             id="row_5"
@@ -1830,6 +1836,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         tabIndex={0}
       >
         <div
+          aria-rowindex={1}
           className="hidden"
           role="row"
         >
@@ -1915,7 +1922,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         >
           <div
             aria-hidden={null}
-            aria-rowindex={1}
+            aria-rowindex={2}
+            aria-rowindextext="Row 2"
             className="row row-topmost row-leftmost"
             data-row-id="row_1"
             id="row_1"
@@ -2140,7 +2148,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         >
           <div
             aria-hidden={null}
-            aria-rowindex={4}
+            aria-rowindex={5}
+            aria-rowindextext="Row 5"
             className="row row-topmost"
             data-row-id="row_4"
             id="row_4"
@@ -2314,7 +2323,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         >
           <div
             aria-hidden={null}
-            aria-rowindex={2}
+            aria-rowindex={3}
+            aria-rowindextext="Row 3"
             className="row row-leftmost"
             data-row-id="row_2"
             id="row_2"
@@ -2546,7 +2556,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         >
           <div
             aria-hidden={null}
-            aria-rowindex={5}
+            aria-rowindex={6}
+            aria-rowindextext="Row 6"
             className="row"
             data-row-id="row_5"
             id="row_5"
@@ -2778,7 +2789,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         >
           <div
             aria-hidden={null}
-            aria-rowindex={3}
+            aria-rowindex={4}
+            aria-rowindextext="Row 4"
             className="row row-leftmost"
             data-row-id="row_3"
             id="row_3"
@@ -2987,6 +2999,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           <div
             aria-hidden={true}
             aria-rowindex={NaN}
+            aria-rowindextext="Row NaN"
             className="row row-placeholder"
             data-row-id="placeholder-row-1"
             id="placeholder-row-1"
