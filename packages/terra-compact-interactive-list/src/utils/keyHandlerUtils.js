@@ -90,7 +90,7 @@ export const handleUpKey = (focusedCell, numberOfColumns, flowHorizontally, rows
     }
     return { row: newRow, cell };
   }
-  // moving focus ove visual row up
+  // moving focus one visual row up
   return { row: row - numberOfColumns, cell };
 };
 
