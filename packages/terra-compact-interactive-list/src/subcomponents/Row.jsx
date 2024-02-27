@@ -154,7 +154,7 @@ const Row = (props) => {
     <div
       id={id}
       data-row-id={id}
-      aria-rowindex={rowIndex + 1}
+      aria-rowindex={rowIndex + 2} // + 1 for header row and + 1 as prop is zero based while aria-rowindex should start from 1
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
