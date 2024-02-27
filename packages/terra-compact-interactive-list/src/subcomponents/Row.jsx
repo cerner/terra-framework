@@ -22,6 +22,8 @@ const propTypes = {
    */
   rowIndex: PropTypes.number,
 
+  rowIndexText: PropTypes.number,
+
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
    */
@@ -114,6 +116,7 @@ const Row = (props) => {
   const {
     id,
     rowIndex,
+    rowIndexText,
     cells,
     columns,
     columnMinimumWidth,
@@ -149,7 +152,7 @@ const Row = (props) => {
   }
 
   const activeRow = cells && cells.length > 0;
-  const rowIndexText = `Row ${rowIndex + 1}`;
+  const stringRowIndexText = `Magic row ${rowIndexText + 1}`;
 
   return (
     <div
@@ -157,7 +160,7 @@ const Row = (props) => {
       data-row-id={id}
       aria-rowindex={rowIndex + 2}
       // eslint-disable-next-line jsx-a11y/aria-props
-      aria-rowindextext={rowIndexText}
+      aria-rowindextext={stringRowIndexText}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
@@ -167,7 +170,7 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
-          rowIndexText={rowIndexText}
+          rowIndexText={stringRowIndexText}
           isSelected={cellData.isSelected}
           rowId={id}
           isRowHeader={index === rowHeaderIndex}
