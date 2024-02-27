@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-   * Column actions support added.
+   * Added support for column actions.
 
 ## 1.14.0 - (February 20, 2024)
 
