@@ -313,7 +313,7 @@ const CompactInteractiveList = (props) => {
         onFocus={onFocus}
       >
         {/* eslint-disable-next-line jsx-a11y/aria-props */}
-        <div role="row" aria-rowindextext="Header row" className={cx('hidden')}>
+        <div role="row" aria-rowindex={1} aria-rowindextext="Header row" className={cx('hidden')}>
           {columns.map((column) => (<span key={column.id} role="columnheader">{column.displayName}</span>))}
         </div>
         {mappedRows.map((row, index) => (

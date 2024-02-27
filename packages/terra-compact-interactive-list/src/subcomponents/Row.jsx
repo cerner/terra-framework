@@ -155,6 +155,7 @@ const Row = (props) => {
     <div
       id={id}
       data-row-id={id}
+      aria-rowindex={rowIndex + 2}
       // eslint-disable-next-line jsx-a11y/aria-props
       aria-rowindextext={rowIndexText}
       role={activeRow && 'row'}
@@ -166,6 +167,7 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
+          rowIndexText={rowIndexText}
           isSelected={cellData.isSelected}
           rowId={id}
           isRowHeader={index === rowHeaderIndex}

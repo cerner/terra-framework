@@ -17,6 +17,8 @@ const propTypes = {
    */
   rowId: PropTypes.string.isRequired,
 
+  rowIndexText: PropTypes.string,
+
   /**
    * Boolean indicating that the cell is a row header.
    */
@@ -70,6 +72,7 @@ const propTypes = {
 const Cell = (props) => {
   const {
     rowId,
+    rowIndexText,
     children,
     column,
     columnMinimumWidth,
@@ -161,6 +164,8 @@ const Cell = (props) => {
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       role={isRowHeader ? 'rowheader' : 'gridcell'}
+      // eslint-disable-next-line jsx-a11y/aria-props
+      aria-rowindextext={rowIndexText}
       ref={cellRef}
       className={className}
       tabIndex={isSelectableCell ? -1 : null}
