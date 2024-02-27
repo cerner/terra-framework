@@ -73,6 +73,13 @@ it('should render a time input with 12 hour clock set', () => {
   expect(testComponent).toMatchSnapshot();
 });
 
+it('should render a error message', () => {
+  const timeInput = <TimeInput name="time-input" variant="12-hour" errorId="default-invalid-error" />;
+  const wrapper = enzymeIntl.shallowWithIntl(timeInput);
+  const testComponent = wrapper.dive();
+  expect(testComponent).toMatchSnapshot();
+});
+
 it('should ignore invalid times properly', () => {
   const timeInput = <TimeInput name="time-input" value="11:2" />;
   const wrapper = enzymeIntl.shallowWithIntl(timeInput);
