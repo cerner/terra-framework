@@ -16,8 +16,15 @@ const propTypes = {
    * String identifier of the row in which the Cell will be rendered.
    */
   rowId: PropTypes.string.isRequired,
+
+  /**
+   * The row's position in the table. First data row has index 2, as index 1 is for header row.
+   */
   rowIndex: PropTypes.number,
 
+  /**
+   * A human readable text alternative of aria-rowindex.
+   */
   rowIndexText: PropTypes.string,
 
   /**
@@ -166,9 +173,9 @@ const Cell = (props) => {
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
     <div
       role={isRowHeader ? 'rowheader' : 'gridcell'}
-      aria-rowindex={rowIndex}
+      aria-rowindex={rowIndex} // needed as the aria-rowindextext should only be included in addition to, not as a replacement of, the aria-rowindex
       // eslint-disable-next-line jsx-a11y/aria-props
-      aria-rowindextext={rowIndexText}
+      aria-rowindextext={rowIndexText} // authors may place aria-rowindextext on all of the accessibility children of each row.
       ref={cellRef}
       className={className}
       tabIndex={isSelectableCell ? -1 : null}

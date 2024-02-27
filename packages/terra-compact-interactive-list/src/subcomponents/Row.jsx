@@ -18,11 +18,14 @@ const propTypes = {
   id: PropTypes.string.isRequired,
 
   /**
-   * The row's position in the table. This is zero based.
+   * The row's position in the table. First data row has index 2, as index 1 is for header row.
    */
   rowIndex: PropTypes.number,
 
-  rowIndexText: PropTypes.number,
+  /**
+   * A human readable text alternative of aria-rowindex.
+   */
+  rowIndexText: PropTypes.string,
 
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
@@ -152,16 +155,15 @@ const Row = (props) => {
   }
 
   const activeRow = cells && cells.length > 0;
-  const stringRowIndexText = `Magic row ${rowIndexText + 1}`;
 
   return (
     <div
       id={id}
       data-row-id={id}
       role={activeRow && 'row'}
-      aria-rowindex={rowIndex + 2}
+      aria-rowindex={rowIndex} // needed as the aria-rowindextext should only be included in addition to, not as a replacement of, the aria-rowindex
       // eslint-disable-next-line jsx-a11y/aria-props
-      aria-rowindextext={stringRowIndexText}
+      aria-rowindextext={rowIndexText} // authors should place aria-rowindextext on each row
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
@@ -170,8 +172,8 @@ const Row = (props) => {
       {activeRow && cells.map((cellData, index) => (
         <Cell
           key={`row-${id}-col-${columns[index].id}`}
-          rowIndex={rowIndex + 2}
-          rowIndexText={stringRowIndexText}
+          rowIndex={rowIndex}
+          rowIndexText={rowIndexText}
           isSelected={cellData.isSelected}
           rowId={id}
           isRowHeader={index === rowHeaderIndex}
