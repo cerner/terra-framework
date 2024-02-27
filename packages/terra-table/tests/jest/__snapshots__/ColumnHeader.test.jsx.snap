@@ -14,12 +14,12 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       displayName=" Vitals"
       headerHeight="3rem"
       id="Column-0-headerCell"
+      initialHeight="0px"
       isActive={false}
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-0-headerCell"
       resizeHandleStateSetter={[Function]}
-      initialHeight="0px"
       tableId="test-table"
     />
     <Memo(InjectIntl(ColumnHeaderCell))
@@ -28,12 +28,12 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
       displayName=" Patient"
       headerHeight="3rem"
       id="Column-1-headerCell"
+      initialHeight="0px"
       isActive={false}
       isResizeActive={false}
       isResizeHandleActive={false}
       key="Column-1-headerCell"
       resizeHandleStateSetter={[Function]}
-      initialHeight="0px"
       tableId="test-table"
     />
   </tr>
