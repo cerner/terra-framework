@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.0.0-alpha.9 - (February 27, 2024)
+
 * Breaking Changes
   * Renamed `onClick` prop to `onSelect`.
 
