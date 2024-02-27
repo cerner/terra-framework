@@ -294,8 +294,8 @@ const CompactInteractiveList = (props) => {
   };
 
   const mappedRows = mapRows();
-  const checkIfRowIsLeftMost = (index) => (index % numberOfColumns === 0);
-  const checkIfRowIsTopMost = (index) => (index < numberOfColumns);
+  const isLeftmost = (index) => (index % numberOfColumns === 0);
+  const isTopMost = (index) => (index < numberOfColumns);
 
   return (
     <div className={cx('compact-interactive-list-container', theme.className)}>
@@ -334,8 +334,8 @@ const CompactInteractiveList = (props) => {
             onCellSelect={onCellSelect}
             setFocusedCell={setFocusedCell}
             rowHeight={calculatedRowHeight}
-            isTopmost={checkIfRowIsTopMost(index)}
-            isLeftmost={checkIfRowIsLeftMost(index)}
+            isTopmost={isTopMost(index)}
+            isLeftmost={isLeftmost(index)}
             rowHeaderIndex={rowHeaderIndex}
           />
         ))}
