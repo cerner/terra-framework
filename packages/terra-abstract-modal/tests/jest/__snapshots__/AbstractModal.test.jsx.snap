@@ -3608,7 +3608,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
    overflow: hidden !important;
    padding-right: 1024px !important;
   }
-  body {
+  body[data-scroll-locked] {
     overflow: hidden !important;
     overscroll-behavior: contain;
     position: relative !important;
@@ -3618,26 +3618,26 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
     margin-left:0;
     margin-top:0;
     margin-right: 1024px !important;
-    
+
   }
-  
+
   .right-scroll-bar-position {
     right: 1024px !important;
   }
-  
+
   .width-before-scroll-bar {
     margin-right: 1024px !important;
   }
-  
+
   .right-scroll-bar-position .right-scroll-bar-position {
     right: 0 !important;
   }
-  
+
   .width-before-scroll-bar .width-before-scroll-bar {
     margin-right: 0 !important;
   }
-  
-  body {
+
+  body[data-scroll-locked] {
     --removed-body-scroll-bar-size: 1024px;
   }
 "
