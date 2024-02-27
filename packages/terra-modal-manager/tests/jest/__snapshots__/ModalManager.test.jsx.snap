@@ -963,7 +963,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
    overflow: hidden !important;
    padding-right: 1024px !important;
   }
-  body[data-scroll-locked] {
+  body {
     overflow: hidden !important;
     overscroll-behavior: contain;
     position: relative !important;
@@ -992,7 +992,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
     margin-right: 0 !important;
   }
   
-  body[data-scroll-locked] {
+  body {
     --removed-body-scroll-bar-size: 1024px;
   }
 "
