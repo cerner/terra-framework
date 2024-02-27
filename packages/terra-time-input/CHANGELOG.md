@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed error message reading issue.
+
 ## 4.63.0 - (February 22, 2024)
 
 * Added
@@ -14,7 +17,7 @@
 
 * Fixed
   * Added fix for field label screenreader announcement.
-  
+
 * Changed
   * Changed `up`,`down` key functionality to same as `+`,`-` functionality to make uniform.
   * Changed `terra-time-input` type `number` instead of `text`.
