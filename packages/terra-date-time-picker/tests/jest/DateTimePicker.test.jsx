@@ -63,7 +63,7 @@ it('should render a date time picker with a default date and time', () => {
 });
 
 it('should render a error message', () => {
-  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input"  errorId="default-invalid-error" />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" errorId="default-invalid-error" />);
   expect(datePicker).toMatchSnapshot();
 });
 
