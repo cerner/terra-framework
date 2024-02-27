@@ -149,14 +149,14 @@ const Row = (props) => {
   }
 
   const activeRow = cells && cells.length > 0;
+  const rowIndexText = `Row ${rowIndex + 1}`;
 
   return (
     <div
       id={id}
       data-row-id={id}
-      aria-rowindex={rowIndex + 2} // + 1 for header row and + 1 as prop is zero based while aria-rowindex should start from 1
       // eslint-disable-next-line jsx-a11y/aria-props
-      aria-rowindextext={`Row ${rowIndex + 2}`}
+      aria-rowindextext={rowIndexText}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
