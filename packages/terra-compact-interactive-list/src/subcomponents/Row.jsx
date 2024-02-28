@@ -161,9 +161,9 @@ const Row = (props) => {
       id={id}
       data-row-id={id}
       role={activeRow && 'row'}
-      aria-rowindex={rowIndex} // needed as the aria-rowindextext should only be included in addition to, not as a replacement of, the aria-rowindex
+      aria-rowindex={activeRow ? rowIndex : undefined} // needed as the aria-rowindextext should only be included in addition to, not as a replacement of, the aria-rowindex
       // eslint-disable-next-line jsx-a11y/aria-props
-      aria-rowindextext={rowIndexText} // authors should place aria-rowindextext on each row
+      aria-rowindextext={activeRow ? rowIndexText : undefined} // authors should place aria-rowindextext on each row
       aria-hidden={activeRow ? null : true}
       className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props

@@ -473,14 +473,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={true}
               key="row-row_1-col-Column-0"
               rowId="row_1"
-              rowIndex={4}
-              rowIndexText="Row Row 11"
+              rowIndex={2}
+              rowIndexText="Row 1"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={4}
-                aria-rowindextext="Row Row 11"
+                aria-rowindex={2}
+                aria-rowindextext="Row 1"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -542,14 +542,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_1-col-Column-1"
               rowId="row_1"
-              rowIndex={4}
-              rowIndexText="Row Row 11"
+              rowIndex={2}
+              rowIndexText="Row 1"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={4}
-                aria-rowindextext="Row Row 11"
+                aria-rowindex={2}
+                aria-rowindextext="Row 1"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -578,14 +578,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_1-col-Column-2"
               rowId="row_1"
-              rowIndex={4}
-              rowIndexText="Row Row 11"
+              rowIndex={2}
+              rowIndexText="Row 1"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={4}
-                aria-rowindextext="Row Row 11"
+                aria-rowindex={2}
+                aria-rowindextext="Row 1"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -722,14 +722,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={true}
               key="row-row_2-col-Column-0"
               rowId="row_2"
-              rowIndex={5}
-              rowIndexText="Row Row 21"
+              rowIndex={3}
+              rowIndexText="Row 2"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={5}
-                aria-rowindextext="Row Row 21"
+                aria-rowindex={3}
+                aria-rowindextext="Row 2"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -788,14 +788,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_2-col-Column-1"
               rowId="row_2"
-              rowIndex={5}
-              rowIndexText="Row Row 21"
+              rowIndex={3}
+              rowIndexText="Row 2"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={5}
-                aria-rowindextext="Row Row 21"
+                aria-rowindex={3}
+                aria-rowindextext="Row 2"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -824,14 +824,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_2-col-Column-2"
               rowId="row_2"
-              rowIndex={5}
-              rowIndexText="Row Row 21"
+              rowIndex={3}
+              rowIndexText="Row 2"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={5}
-                aria-rowindextext="Row Row 21"
+                aria-rowindex={3}
+                aria-rowindextext="Row 2"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -968,14 +968,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={true}
               key="row-row_3-col-Column-0"
               rowId="row_3"
-              rowIndex={6}
-              rowIndexText="Row Row 31"
+              rowIndex={4}
+              rowIndexText="Row 3"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={6}
-                aria-rowindextext="Row Row 31"
+                aria-rowindex={4}
+                aria-rowindextext="Row 3"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1034,14 +1034,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_3-col-Column-1"
               rowId="row_3"
-              rowIndex={6}
-              rowIndexText="Row Row 31"
+              rowIndex={4}
+              rowIndexText="Row 3"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={6}
-                aria-rowindextext="Row Row 31"
+                aria-rowindex={4}
+                aria-rowindextext="Row 3"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1070,14 +1070,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_3-col-Column-2"
               rowId="row_3"
-              rowIndex={6}
-              rowIndexText="Row Row 31"
+              rowIndex={4}
+              rowIndexText="Row 3"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={6}
-                aria-rowindextext="Row Row 31"
+                aria-rowindex={4}
+                aria-rowindextext="Row 3"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1204,14 +1204,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={true}
               key="row-row_4-col-Column-0"
               rowId="row_4"
-              rowIndex={7}
-              rowIndexText="Row Row 41"
+              rowIndex={5}
+              rowIndexText="Row 4"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={7}
-                aria-rowindextext="Row Row 41"
+                aria-rowindex={5}
+                aria-rowindextext="Row 4"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1241,14 +1241,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_4-col-Column-1"
               rowId="row_4"
-              rowIndex={7}
-              rowIndexText="Row Row 41"
+              rowIndex={5}
+              rowIndexText="Row 4"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={7}
-                aria-rowindextext="Row Row 41"
+                aria-rowindex={5}
+                aria-rowindextext="Row 4"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1277,14 +1277,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_4-col-Column-2"
               rowId="row_4"
-              rowIndex={7}
-              rowIndexText="Row Row 41"
+              rowIndex={5}
+              rowIndexText="Row 4"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={7}
-                aria-rowindextext="Row Row 41"
+                aria-rowindex={5}
+                aria-rowindextext="Row 4"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1392,14 +1392,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={true}
               key="row-row_5-col-Column-0"
               rowId="row_5"
-              rowIndex={8}
-              rowIndexText="Row Row 51"
+              rowIndex={6}
+              rowIndexText="Row 5"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={8}
-                aria-rowindextext="Row Row 51"
+                aria-rowindex={6}
+                aria-rowindextext="Row 5"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1458,14 +1458,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_5-col-Column-1"
               rowId="row_5"
-              rowIndex={8}
-              rowIndexText="Row Row 51"
+              rowIndex={6}
+              rowIndexText="Row 5"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={8}
-                aria-rowindextext="Row Row 51"
+                aria-rowindex={6}
+                aria-rowindextext="Row 5"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1494,14 +1494,14 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               isRowHeader={false}
               key="row-row_5-col-Column-2"
               rowId="row_5"
-              rowIndex={8}
-              rowIndexText="Row Row 51"
+              rowIndex={6}
+              rowIndexText="Row 5"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={8}
-                aria-rowindextext="Row Row 51"
+                aria-rowindex={6}
+                aria-rowindextext="Row 5"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -1894,7 +1894,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
       className="compact-interactive-list-container"
     >
       <div
-        aria-rowcount={7}
+        aria-rowcount={6}
         className="compact-interactive-list"
         id="compact-interactive-list-minWidth-calculation"
         onFocus={[Function]}
@@ -2027,14 +2027,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={true}
               key="row-row_1-col-Column-0"
               rowId="row_1"
-              rowIndex={4}
-              rowIndexText="Row Row 11"
+              rowIndex={2}
+              rowIndexText="Row 1"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={4}
-                aria-rowindextext="Row Row 11"
+                aria-rowindex={2}
+                aria-rowindextext="Row 1"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2096,14 +2096,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_1-col-Column-1"
               rowId="row_1"
-              rowIndex={4}
-              rowIndexText="Row Row 11"
+              rowIndex={2}
+              rowIndexText="Row 1"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={4}
-                aria-rowindextext="Row Row 11"
+                aria-rowindex={2}
+                aria-rowindextext="Row 1"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2133,14 +2133,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_1-col-Column-2"
               rowId="row_1"
-              rowIndex={4}
-              rowIndexText="Row Row 11"
+              rowIndex={2}
+              rowIndexText="Row 1"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={4}
-                aria-rowindextext="Row Row 11"
+                aria-rowindex={2}
+                aria-rowindextext="Row 1"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2266,14 +2266,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={true}
               key="row-row_4-col-Column-0"
               rowId="row_4"
-              rowIndex={5}
-              rowIndexText="Row Row 41"
+              rowIndex={3}
+              rowIndexText="Row 4"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={5}
-                aria-rowindextext="Row Row 41"
+                aria-rowindex={3}
+                aria-rowindextext="Row 4"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2303,14 +2303,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_4-col-Column-1"
               rowId="row_4"
-              rowIndex={5}
-              rowIndexText="Row Row 41"
+              rowIndex={3}
+              rowIndexText="Row 4"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={5}
-                aria-rowindextext="Row Row 41"
+                aria-rowindex={3}
+                aria-rowindextext="Row 4"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2340,14 +2340,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_4-col-Column-2"
               rowId="row_4"
-              rowIndex={5}
-              rowIndexText="Row Row 41"
+              rowIndex={3}
+              rowIndexText="Row 4"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={5}
-                aria-rowindextext="Row Row 41"
+                aria-rowindex={3}
+                aria-rowindextext="Row 4"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2454,14 +2454,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={true}
               key="row-row_2-col-Column-0"
               rowId="row_2"
-              rowIndex={6}
-              rowIndexText="Row Row 21"
+              rowIndex={4}
+              rowIndexText="Row 2"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={6}
-                aria-rowindextext="Row Row 21"
+                aria-rowindex={4}
+                aria-rowindextext="Row 2"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2520,14 +2520,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_2-col-Column-1"
               rowId="row_2"
-              rowIndex={6}
-              rowIndexText="Row Row 21"
+              rowIndex={4}
+              rowIndexText="Row 2"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={6}
-                aria-rowindextext="Row Row 21"
+                aria-rowindex={4}
+                aria-rowindextext="Row 2"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2557,14 +2557,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_2-col-Column-2"
               rowId="row_2"
-              rowIndex={6}
-              rowIndexText="Row Row 21"
+              rowIndex={4}
+              rowIndexText="Row 2"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={6}
-                aria-rowindextext="Row Row 21"
+                aria-rowindex={4}
+                aria-rowindextext="Row 2"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2700,14 +2700,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={true}
               key="row-row_5-col-Column-0"
               rowId="row_5"
-              rowIndex={7}
-              rowIndexText="Row Row 51"
+              rowIndex={5}
+              rowIndexText="Row 5"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={7}
-                aria-rowindextext="Row Row 51"
+                aria-rowindex={5}
+                aria-rowindextext="Row 5"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2766,14 +2766,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_5-col-Column-1"
               rowId="row_5"
-              rowIndex={7}
-              rowIndexText="Row Row 51"
+              rowIndex={5}
+              rowIndexText="Row 5"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={7}
-                aria-rowindextext="Row Row 51"
+                aria-rowindex={5}
+                aria-rowindextext="Row 5"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2803,14 +2803,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_5-col-Column-2"
               rowId="row_5"
-              rowIndex={7}
-              rowIndexText="Row Row 51"
+              rowIndex={5}
+              rowIndexText="Row 5"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={7}
-                aria-rowindextext="Row Row 51"
+                aria-rowindex={5}
+                aria-rowindextext="Row 5"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -2946,14 +2946,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={true}
               key="row-row_3-col-Column-0"
               rowId="row_3"
-              rowIndex={8}
-              rowIndexText="Row Row 31"
+              rowIndex={6}
+              rowIndexText="Row 3"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={8}
-                aria-rowindextext="Row Row 31"
+                aria-rowindex={6}
+                aria-rowindextext="Row 3"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -3012,14 +3012,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_3-col-Column-1"
               rowId="row_3"
-              rowIndex={8}
-              rowIndexText="Row Row 31"
+              rowIndex={6}
+              rowIndexText="Row 3"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={8}
-                aria-rowindextext="Row Row 31"
+                aria-rowindex={6}
+                aria-rowindextext="Row 3"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -3049,14 +3049,14 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               isRowHeader={false}
               key="row-row_3-col-Column-2"
               rowId="row_3"
-              rowIndex={8}
-              rowIndexText="Row Row 31"
+              rowIndex={6}
+              rowIndexText="Row 3"
               setFocusedCell={[Function]}
               widthUnit="px"
             >
               <div
-                aria-rowindex={8}
-                aria-rowindextext="Row Row 31"
+                aria-rowindex={6}
+                aria-rowindextext="Row 3"
                 className="cell"
                 onKeyDown={[Function]}
                 onMouseDown={[Function]}
@@ -3144,8 +3144,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         >
           <div
             aria-hidden={true}
-            aria-rowindex={7}
-            aria-rowindextext="Row NaN"
             className="row row-placeholder"
             data-row-id="placeholder-row-1"
             id="placeholder-row-1"
