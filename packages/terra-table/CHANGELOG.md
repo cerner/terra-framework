@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.9.0 - (February 28, 2024)
+
 * Added
   * Column actions added.
 

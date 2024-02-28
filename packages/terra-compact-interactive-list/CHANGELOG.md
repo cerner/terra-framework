@@ -5,6 +5,11 @@
 * Fixed
   * Added check for cell element existence before focusing.
 
+## 1.6.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.5.0 - (February 28, 2024)
 
 * Changed
