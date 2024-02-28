@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.16.0 - (February 28, 2024)
+
+* Added
+   * Added support for column actions.
+
 ## 1.15.0 - (February 28, 2024)
 
 * Added `boundingRef` prop for bounded flowsheet data grids.
@@ -14,7 +19,7 @@
 ## 1.13.0 - (February 16, 2024)
 
 * Changed
- * Removed the default rowMinimumHeight from FlowsheetDataGrid so that the `terra-table` default value is used.  
+  * Removed the default rowMinimumHeight from FlowsheetDataGrid so that the `terra-table` default value is used. 
 
 ## 1.12.0 - (February 1, 2024)
 

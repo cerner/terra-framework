@@ -1,9 +1,9 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {
   useCallback,
   useContext,
   useEffect,
   useRef,
-  useState,
 } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
@@ -11,8 +11,9 @@ import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import Button from 'terra-button';
 import { IconUp, IconDown, IconError } from 'terra-icon';
-
+import { validateAction } from '../proptypes/validators';
 import ColumnResizeHandle from './ColumnResizeHandle';
 import GridContext, { GridConstants } from '../utils/GridContext';
 import { SortIndicators } from '../proptypes/columnShape';
@@ -31,6 +32,16 @@ const propTypes = {
    * Unique identifier for the parent table
    */
   tableId: PropTypes.string.isRequired,
+
+  /**
+   * Unique identifier for the column
+   */
+  columnId: PropTypes.string.isRequired,
+
+  /**
+   * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+   */
+  triggerFocus: PropTypes.func,
 
   /**
    * String of text to render within the column header cell.
@@ -64,14 +75,30 @@ const propTypes = {
   isActive: PropTypes.bool,
 
   /**
+   * Boolean that specifies that header cell owns a resize handle.
+   */
+  ownsResizeHandle: PropTypes.bool,
+
+  /**
    * Boolean value indicating whether or not the header cell text is displayed in the cell.
    */
   isDisplayVisible: PropTypes.bool,
 
   /**
    * Boolean value indicating whether or not the column header is selectable.
-  */
+   */
   isSelectable: PropTypes.bool,
+
+  /**
+   * Boolean value indicating whether or not the column header cell is an action cell.
+   * The action cell might be a placeholder cell without actual action button
+   */
+  isActionCell: PropTypes.bool,
+
+  /**
+   * Data for action cell.
+   */
+  action: validateAction,
 
   /**
    * Boolean value indicating whether or not the column header is resizable.
@@ -79,8 +106,25 @@ const propTypes = {
   isResizable: PropTypes.bool,
 
   /**
-    * Height of the parent table.
-    */
+   * Boolean value indicating whether or not the column resize handle is active.
+   */
+  isResizeHandleActive: PropTypes.bool,
+
+  /**
+   * A function to be executed upon the resize handler activation to pass its data to parent component.
+   * @param {element} leftNeighborCell - `columnHeaderCellRef.current`
+   * Skip both parameters to indicate that there is no active resize handle at the moment.
+   */
+  resizeHandleStateSetter: PropTypes.func,
+
+  /**
+   * String that specifies the initial height for the resize handler to accommodate actions row.
+   */
+  initialHeight: PropTypes.string,
+
+  /**
+   * Height of the parent table.
+   */
   tableHeight: PropTypes.number,
 
   /**
@@ -145,6 +189,8 @@ const ColumnHeaderCell = (props) => {
   const {
     id,
     tableId,
+    isActionCell,
+    action,
     displayName,
     sortIndicator,
     hasError,
@@ -152,6 +198,11 @@ const ColumnHeaderCell = (props) => {
     isDisplayVisible,
     isSelectable,
     isResizable,
+    isResizeHandleActive,
+    resizeHandleStateSetter,
+    initialHeight,
+    triggerFocus,
+    columnId,
     tableHeight,
     isResizeActive,
     columnResizeIncrement,
@@ -164,6 +215,7 @@ const ColumnHeaderCell = (props) => {
     columnIndex,
     onResizeMouseDown,
     onResizeHandleChange,
+    ownsResizeHandle,
   } = props;
 
   const columnContext = useContext(ColumnContext);
@@ -171,7 +223,13 @@ const ColumnHeaderCell = (props) => {
 
   const columnHeaderCellRef = useRef();
 
-  const [isResizeHandleActive, setResizeHandleActive] = useState(false);
+  const setResizeHandleActive = useCallback((setActive) => {
+    if (setActive) {
+      resizeHandleStateSetter(columnId);
+    } else {
+      resizeHandleStateSetter();
+    }
+  }, [columnId, resizeHandleStateSetter]);
 
   const isGridContext = gridContext.role === GridConstants.GRID;
 
@@ -203,25 +261,31 @@ const ColumnHeaderCell = (props) => {
 
   // Handle column header selection via the mouse click.
   const handleMouseDown = () => {
-    onColumnSelect(id);
+    onColumnSelect(columnId);
   };
 
   // Handle column header selection via the space bar.
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event, callback) => {
     const key = event.keyCode;
     switch (key) {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
-        if (isSelectable && onColumnSelect) {
-          onColumnSelect(id);
+        if (callback) {
+          // for action button
+          callback();
+          break;
+        } else if (isSelectable && onColumnSelect) {
+          onColumnSelect(columnId);
         }
         event.stopPropagation();
         event.preventDefault(); // prevent the default scrolling
         break;
       case KeyCode.KEY_LEFT:
         if (isResizable && isResizeHandleActive && isGridContext) {
-          columnHeaderCellRef.current.focus();
           setResizeHandleActive(false);
+          if (triggerFocus) {
+            triggerFocus();
+          }
           event.stopPropagation();
           event.preventDefault();
         }
@@ -264,32 +328,42 @@ const ColumnHeaderCell = (props) => {
   }
 
   // Determine if button element is required for column header
-  const hasButtonElement = isSelectable && displayName;
+  const hasButtonElement = (isSelectable && displayName) || (isActionCell && action);
 
   // Format header description for screenreader
   let headerDescription = displayName;
   headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
+  const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
+  const CellTag = !isActionCell ? 'th' : 'td';
 
-  return (
-  /* eslint-disable react/forbid-dom-props */
-    <th
-      ref={!hasButtonElement ? columnHeaderCellRef : undefined}
-      id={`${tableId}-${id}`}
-      key={id}
-      className={cx('column-header', theme.className, {
-        selectable: isSelectable,
-        pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
-        'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
-      })}
-      tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
-      role="columnheader"
-      scope="col"
-      title={displayName}
-      onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
-      onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
-      style={{ width: `${width}px`, height: headerHeight, left: cellLeftEdge }} // eslint-disable-line react/forbid-dom-props
-    >
+  const setColumnHeaderCellRef = (node) => {
+    columnHeaderCellRef.current = node;
+  };
+
+  // Create cell content
+  let cellContent;
+  if (isActionCell) {
+    if (action) {
+      cellContent = (
+        <Button
+          variant="de-emphasis"
+          isCompact
+          refCallback={setColumnHeaderCellRef}
+          onClick={action.onClick}
+          onKeyDown={(event) => handleKeyDown(event, action?.onClick)}
+          text={action.label}
+        />
+      );
+    } else {
+      cellContent = (
+        <span className={cx('display-text', 'hidden')}>
+          {intl.formatMessage({ id: 'Terra.table.noAction' })}
+        </span>
+      );
+    }
+  } else {
+    cellContent = (
       <div
         className={cx('header-container')}
         {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
@@ -300,8 +374,38 @@ const ColumnHeaderCell = (props) => {
         {sortIndicatorIcon}
         <VisuallyHiddenText text={headerDescription} />
       </div>
-      { isResizable && (
+    );
+  }
+
+  const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
+
+  return (
+  /* eslint-disable react/forbid-dom-props */
+    <CellTag
+      ref={!hasButtonElement ? columnHeaderCellRef : undefined}
+      id={`${tableId}-${id}`}
+      key={id}
+      className={cx('column-header', theme.className, {
+        'action-cell': isActionCell,
+        selectable: isSelectable,
+        pinned: isPinnedColumn,
+        'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
+      })}
+      tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
+      role={!isActionCell ? 'columnheader' : undefined}
+      scope={!isActionCell ? 'col' : undefined}
+      // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
+      aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
+      title={!isActionCell ? displayName : action?.label}
+      onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
+      onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
+      // eslint-disable-next-line react/forbid-component-props
+      style={{ width: `${width}px`, height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
+    >
+      {cellContent}
+      { isResizable && !isActionCell && (
       <ColumnResizeHandle
+        id={resizeHandleId}
         columnIndex={columnIndex}
         columnText={displayName}
         columnWidth={width}
@@ -309,6 +413,7 @@ const ColumnHeaderCell = (props) => {
         isActive={isResizeHandleActive}
         setIsActive={setResizeHandleActive}
         height={tableHeight}
+        initialHeight={initialHeight}
         minimumWidth={minimumWidth}
         maximumWidth={maximumWidth}
         onResizeMouseDown={onResizeHandleMouseDown}
@@ -316,7 +421,7 @@ const ColumnHeaderCell = (props) => {
         onResizeHandleChange={onResizeHandleChange}
       />
       )}
-    </th>
+    </CellTag>
   );
 };
 

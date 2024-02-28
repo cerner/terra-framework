@@ -1,3 +1,5 @@
+/* stylelint-disable terra/custom-property-pseudo-selectors */
+/* stylelint-disable selector-max-compound-selectors */
 @import '../clinical-lowlight-theme/ColumnHeaderCell.module';
 @import '../orion-fusion-theme/ColumnHeaderCell.module';
 
@@ -28,7 +30,19 @@
 
     &.last-pinned-column {
       border-right: var(--terra-table-last-pinned-header-border-right, 2px solid #808080);
-      box-shadow: var(--terra-table-last-pinned-header-box-shadow, 2px -1px 6px #808080);
+    }
+
+    // after element is needed for box-shadow to be applied to only right side
+    // with 2 cells in header it can't show up on top and bottom
+    &.last-pinned-column::after {
+      content: "";
+      position: absolute;
+      top:0;
+      right:0;
+      bottom: -1px;
+      width: 6px;
+      box-shadow: var(--terra-table-last-pinned-header-box-shadow, 2px -1px 6px #808080); 
+      clip-path: inset(0 -6px 0 0); // second position -6px must be consistent with third position (6px) in box-shadow prop, rest should be 0.
     }
 
     .header-container {
@@ -68,8 +82,22 @@
     }
   }
 
+  .action-cell {
+    border-top: 0 solid; // only one border needed
+    padding: 2px;
+    text-align: left; 
+
+    button {
+      outline-offset: -2px !important;
+    }
+
+    button > :first-child {
+      padding: 0 4px !important;
+    }
+  }
+
   // Hover state for selectable elements
-  .selectable:hover {
+  .selectable:hover:not(.action-cell) {
     background-color: var(--terra-table-header-hover-background-color, #daecf6);
     cursor: pointer;
   }

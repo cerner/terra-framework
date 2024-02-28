@@ -5,6 +5,11 @@
 * Changed
   * Updated vertical flow to allow height grows to fit content.
 
+## 1.6.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.5.0 - (February 28, 2024)
 
 * Changed

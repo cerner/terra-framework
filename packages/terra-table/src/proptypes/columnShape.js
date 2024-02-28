@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import actionShape from './actionShape';
 
 const SortIndicators = {
   ASCENDING: 'ascending',
@@ -14,6 +15,10 @@ const columnShape = PropTypes.shape({
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
+  /**
+   * Object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.
+   */
+  action: PropTypes.shape({ actionShape }),
   /**
    * Boolean value indicating whether or not the column has an error in the data.
    */

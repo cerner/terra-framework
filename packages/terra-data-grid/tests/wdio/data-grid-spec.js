@@ -331,7 +331,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab']); // navigate to first column
       browser.keys(['ArrowRight']); // navigate to first column resize handle
 
-      expect($('tr.column-header-row').$('//th[1]/div[2]').isFocused()).toBe(true);
+      expect($('[class*="column-header-row"]').$('//th[1]/div[2]').isFocused()).toBe(true);
       Terra.validates.element('column-resize-handle-focused', { selector: columnResizingGridSelector });
     });
 
@@ -347,7 +347,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'ArrowRight']);
       browser.keys(['Enter', 'ArrowRight', 'ArrowRight']);
 
-      expect($('tr.column-header-row').$('//th[1]').getCSSProperty('width').parsed.value).toBe(220);
+      expect($('[class*="column-header-row"]').$('//th[1]').getCSSProperty('width').parsed.value).toBe(220);
       Terra.validates.element('column-resize-increase-keyboard', options);
     });
 
@@ -363,7 +363,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'ArrowRight']);
       browser.keys(['Enter', 'ArrowLeft', 'ArrowLeft']);
 
-      expect($('tr.column-header-row').$('//th[1]').getCSSProperty('width').parsed.value).toBe(180);
+      expect($('[class*="column-header-row"]').$('//th[1]').getCSSProperty('width').parsed.value).toBe(180);
       Terra.validates.element('column-resize-decrease-keyboard', options);
     });
 
@@ -375,8 +375,8 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Escape']);
       browser.keys(['ArrowLeft']);
 
-      expect($('tr.column-header-row').$('//th[2]/div[@role="button"]').isFocused()).toBe(true);
-      expect($('tr.column-header-row').$('//th[2]').getCSSProperty('width').parsed.value).toBe(180);
+      expect($('[class*="column-header-row"]').$('//th[2]/div[@role="button"]').isFocused()).toBe(true);
+      expect($('[class*="column-header-row"]').$('//th[2]').getCSSProperty('width').parsed.value).toBe(180);
     });
 
     it('returns focus to the header cell if resize handle is selected and tabbed out and back into the table', () => {
@@ -385,7 +385,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['ArrowRight', 'ArrowRight']); // navigate to column-header-2
       browser.keys(['Shift', 'Tab', 'Shift', 'Tab']); // tab back out and back into the grid
 
-      expect($('tr.column-header-row').$('//th[2]/div[@role="button"]').isFocused()).toBe(true);
+      expect($('[class*="column-header-row"]').$('//th[2]/div[@role="button"]').isFocused()).toBe(true);
     });
 
     it('resumes column navigation after tabbing out and back into the table', () => {
@@ -394,7 +394,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Shift', 'Tab', 'Shift', 'Tab']); // tab back out and back into the grid
       browser.keys(['ArrowRight']); // navigate to column-header-2's resize handle
 
-      expect($('tr.column-header-row').$('//th[2]/div[2]').isFocused()).toBe(true);
+      expect($('[class*="column-header-row"]').$('//th[2]/div[2]').isFocused()).toBe(true);
     });
 
     it('does not focus on column resize handle if it is disabled', () => {
@@ -402,14 +402,14 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab']);
       browser.keys(Array(5).fill('ArrowRight')); // navigate to 2nd column resize handle
 
-      expect($('tr.column-header-row').$('//th[4]/div[@role="button"]').isFocused()).toBe(true);
+      expect($('[class*="column-header-row"]').$('//th[4]/div[@role="button"]').isFocused()).toBe(true);
     });
 
     it('focuses on the resize handle in the column header when navigating right from the column header', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/default-data-grid');
 
       browser.keys(['Tab', 'ArrowRight']); // Focus is on (0,0)
-      expect(browser.$('tr.column-header-row th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-0-resize-handle-focused', { selector: defaultSelector });
     });
@@ -418,10 +418,10 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/default-data-grid');
 
       browser.keys(['Tab', 'ArrowRight', 'ArrowRight']); // Focus is on (0,1)
-      expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(2) div[role=button]').isFocused()).toBe(true);
 
       browser.keys(['ArrowLeft']);
-      expect(browser.$('tr.column-header-row th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-0-resize-handle-focused', { selector: defaultSelector });
     });
@@ -430,10 +430,10 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/default-data-grid');
       browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus on resize handle in (0,1)
 
-      expect(browser.$('tr.column-header-row th:nth-child(2) div[class*=resize-handle]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(2) div[class*=resize-handle]').isFocused()).toBe(true);
 
       browser.keys(['ArrowLeft']);
-      expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(2) div[role=button]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-1-focused', { selector: defaultSelector });
     });
@@ -442,10 +442,10 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/default-data-grid');
 
       browser.keys(['Tab', 'ArrowRight']); // Focus is on the (0,0) resize handle
-      expect(browser.$('tr.column-header-row th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(1) div[class*=resize-handle]').isFocused()).toBe(true);
 
       browser.keys(['ArrowRight']);
-      expect(browser.$('tr.column-header-row th:nth-child(2) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(2) div[role=button]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-1-focused', { selector: defaultSelector });
     });
@@ -454,10 +454,10 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-column-resizing');
 
       browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus is on the (0,1) resize handle
-      expect(browser.$('tr.column-header-row th:nth-child(2) div[class*=resize-handle]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(2) div[class*=resize-handle]').isFocused()).toBe(true);
 
       browser.keys(['ArrowRight']);
-      expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(3) div[role=button]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-2-focused', { selector: columnResizingGridSelector });
     });
@@ -466,10 +466,10 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-column-resizing');
 
       browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus is on (0,3)
-      expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(3) div[role=button]').isFocused()).toBe(true);
 
       browser.keys(['ArrowRight']);
-      expect(browser.$('tr.column-header-row th:nth-child(4) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(4) div[role=button]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-3-focused', { selector: columnResizingGridSelector });
     });
@@ -478,10 +478,10 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-with-column-resizing');
 
       browser.keys(['Tab', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'ArrowRight']); // Focus is on (0,4)
-      expect(browser.$('tr.column-header-row th:nth-child(4) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(4) div[role=button]').isFocused()).toBe(true);
 
       browser.keys(['ArrowLeft']);
-      expect(browser.$('tr.column-header-row th:nth-child(3) div[role=button]').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(3) div[role=button]').isFocused()).toBe(true);
 
       Terra.validates.element('column-header-0-2-focused', { selector: columnResizingGridSelector });
     });

@@ -53,7 +53,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
 
       it('renders a default flowsheet data grid', () => {
         browser.keys(['Tab']); // Cell 0,0 gets focus
-        expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
         Terra.validates.element('default-flowsheet-data-grid', { selector: '#default-terra-flowsheet-data-grid-table' });
       });
     });
@@ -155,7 +155,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(-3, 0);
       releaseShiftKey();
 
-      expect(browser.$('tr.column-header-row th:nth-child(2)').isFocused()).toBe(true);
+      expect(browser.$('[class*="column-header-row"] th:nth-child(2)').isFocused()).toBe(true);
       Terra.validates.element('selection-arrows-range-3-1-to-1-1-focus-0-1', { selector: cellSelectionSelector });
     });
 
