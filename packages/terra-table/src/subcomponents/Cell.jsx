@@ -112,6 +112,12 @@ const propTypes = {
    * With this property the height of the cell will grow to fit the cell content.
    */
   rowMinimumHeight: PropTypes.string,
+
+  /**
+   * A zero-based index indicating which column represents the row header.
+   * Index can be set to -1 if row headers are not required.
+   */
+  rowHeaderIndex: PropTypes.number,
 };
 
 const defaultProps = {
@@ -141,6 +147,7 @@ function Cell(props) {
     height,
     intl,
     rowMinimumHeight,
+    rowHeaderIndex,
   } = props;
 
   const cellRef = useRef();
@@ -310,7 +317,7 @@ function Cell(props) {
 
   // Determine table cell header attribute values
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
-  const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId} ` : '';
+  const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const columnHeaderId = `${tableId}-${columnId}-headerCell`;
 
   return (

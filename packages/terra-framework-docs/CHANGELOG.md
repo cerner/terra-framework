@@ -4,6 +4,7 @@
 
 * Added
   * Added examples and tests for a large menu in the `terra-menu`.
+  * Added examples for `table-table` with no row headers.
 
 ## 1.70.0 - (February 29, 2024)
 

@@ -85,6 +85,7 @@ const propTypes = {
 
   /**
    * A zero-based index indicating which column represents the row header.
+   * Index can be set to -1 if row headers are not required.
    */
   rowHeaderIndex: PropTypes.number,
 };
@@ -171,11 +172,12 @@ function Row(props) {
             isMasked={cellData.isMasked}
             maskedLabel={cellData.maskedLabel}
             isSelectable={cellData.isSelectable}
-            isRowHeader={cellColumnIndex === (rowHeaderIndex + columnIndexOffSet)}
+            isRowHeader={rowHeaderIndex !== -1 && cellColumnIndex === (rowHeaderIndex + columnIndexOffSet)}
             isHighlighted={isHovered || isSelected}
             onCellSelect={onCellSelect}
             height={height}
             rowMinimumHeight={rowMinimumHeight}
+            rowHeaderIndex={rowHeaderIndex}
           >
             {cellData.content}
           </Cell>

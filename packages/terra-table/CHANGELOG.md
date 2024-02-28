@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added support for table with no row headers.
+
 ## 5.9.0 - (February 28, 2024)
 
 * Added

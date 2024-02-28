@@ -126,6 +126,7 @@ const propTypes = {
 
   /**
    * A number indicating the index of the column that represents the row header. The index is based on 0 and cannot exceed one less than the number of columns on the table.
+   * Index can be set to -1 if row headers are not required.
    */
   rowHeaderIndex: validateRowHeaderIndex,
 
