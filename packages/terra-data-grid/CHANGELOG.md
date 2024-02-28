@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.16.0 - (February 28, 2024)
+
 * Added
    * Added support for column actions.
 
