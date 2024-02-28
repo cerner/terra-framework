@@ -16,6 +16,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * Required string representing a unique identifier for the column resize handle.
+   */
+  id: PropTypes.string.isRequired,
+
+  /**
    * The cell's column position in the grid. This is zero based.
    */
   columnIndex: PropTypes.number,
@@ -36,16 +41,23 @@ const propTypes = {
   height: PropTypes.number.isRequired,
 
   /**
+   * String that specifies the initial height for the resize handler to accommodate actions row.
+   */
+  initialHeight: PropTypes.string,
+
+  /**
    * Numeric increment in pixels to adjust column width when resizing via the keyboard.
    */
   columnResizeIncrement: PropTypes.number,
+
   /**
-     * Control is the active element
-     */
+   * Control is the active element
+   */
   isActive: PropTypes.bool,
+
   /**
-     * Handler function to update isActive for parent.
-     */
+   * Handler function to update isActive for parent.
+   */
   setIsActive: PropTypes.func,
 
   /**
@@ -85,6 +97,7 @@ const defaultProps = {
 
 const ColumnResizeHandle = (props) => {
   const {
+    id,
     columnIndex,
     columnResizeIncrement,
     columnText,
@@ -94,6 +107,7 @@ const ColumnResizeHandle = (props) => {
     isActive,
     maximumWidth,
     minimumWidth,
+    initialHeight,
     onResizeHandleChange,
     onResizeMouseDown,
     onResizeMouseUp,
@@ -140,7 +154,7 @@ const ColumnResizeHandle = (props) => {
 
   const onMouseLeave = () => {
     if (document.activeElement !== resizeHandleRef.current) {
-      resizeHandleRef.current.style.height = '100%';
+      resizeHandleRef.current.style.height = initialHeight || '100%';
     }
   };
 
@@ -199,6 +213,7 @@ const ColumnResizeHandle = (props) => {
   return (
   // eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-static-element-interactions
     <div
+      id={id}
       ref={resizeHandleRef}
       draggable
       role={isNavigationEnabled ? null : 'slider'}
@@ -209,7 +224,8 @@ const ColumnResizeHandle = (props) => {
       aria-valuemax={isActive ? maximumWidth : null}
       aria-label={isActive && isNavigationEnabled ? intl.formatMessage({ id: 'Terra.table.resize-handle-template' }, { columnText }) : null}
       aria-valuetext={!isNavigationEnabled ? intl.formatMessage({ id: 'Terra.table.resize-handle-value-text' }, { columnWidth }) : null}
-      style={{ height: `${height}px` }} // eslint-disable-line react/forbid-dom-props
+      // eslint-disable-next-line react/forbid-dom-props
+      style={{ height: `${height}px` }}
       onMouseDown={onMouseDown}
       onMouseUp={onMouseUp}
       onMouseEnter={fitToTable}

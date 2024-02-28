@@ -153,7 +153,7 @@ const CompactInteractiveList = (props) => {
   }, [listRef, focusedCell, columns]);
 
   const focusCell = ({ row, cell }) => {
-    // add 1 to the row number to accomodate for hidden header
+    // add 1 to the row number to accommodate for hidden header
     const focusedCellElement = listRef.current.children[row + 1].children[cell];
     const interactiveChildren = getFocusableElements(focusedCellElement);
     if (interactiveChildren?.length > 0 && interactiveChildren[0]) {

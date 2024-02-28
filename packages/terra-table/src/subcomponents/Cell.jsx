@@ -311,7 +311,7 @@ function Cell(props) {
   // Determine table cell header attribute values
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
   const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId} ` : '';
-  const columnHeaderId = `${tableId}-${columnId}`;
+  const columnHeaderId = `${tableId}-${columnId}-headerCell`;
 
   return (
     <CellTag

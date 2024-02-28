@@ -331,6 +331,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               },
             ]
           }
+          hasColumnHeaderActions={false}
           hasVisibleColumnHeaders={true}
           headerHeight="2.5rem"
           onColumnSelect={[Function]}
@@ -347,31 +348,35 @@ exports[`Table verifies row selection column header selection 1`] = `
               height="2.5rem"
             >
               <InjectIntl(ColumnHeaderCell)
+                columnId="table-rowSelectionColumn"
                 columnIndex={0}
                 displayName="Terra.table.row-selection-header-display"
                 headerHeight="2.5rem"
-                id="table-rowSelectionColumn"
+                id="table-rowSelectionColumn-headerCell"
                 isActive={false}
                 isDisplayVisible={false}
                 isResizable={false}
                 isResizeActive={false}
+                isResizeHandleActive={false}
                 isSelectable={false}
-                key="table-rowSelectionColumn"
+                key="table-rowSelectionColumn-headerCell"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
+                resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={40}
               >
                 <ColumnHeaderCell
+                  columnId="table-rowSelectionColumn"
                   columnIndex={0}
                   displayName="Terra.table.row-selection-header-display"
                   hasError={false}
                   headerHeight="2.5rem"
-                  id="table-rowSelectionColumn"
+                  id="table-rowSelectionColumn-headerCell"
                   intl={
                     Object {
                       "defaultFormats": Object {},
@@ -403,20 +408,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isDisplayVisible={false}
                   isResizable={false}
                   isResizeActive={false}
+                  isResizeHandleActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
+                  resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={40}
                 >
                   <th
                     className="column-header pinned"
-                    id="test-terra-table-table-rowSelectionColumn"
-                    key="table-rowSelectionColumn"
+                    id="test-terra-table-table-rowSelectionColumn-headerCell"
+                    key="table-rowSelectionColumn-headerCell"
                     role="columnheader"
                     scope="col"
                     style={
@@ -451,29 +458,33 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </ColumnHeaderCell>
               </InjectIntl(ColumnHeaderCell)>
               <InjectIntl(ColumnHeaderCell)
+                columnId="Column-0"
                 columnIndex={1}
                 displayName=" Vitals"
                 headerHeight="2.5rem"
-                id="Column-0"
+                id="Column-0-headerCell"
                 isActive={false}
                 isResizeActive={false}
+                isResizeHandleActive={false}
                 isSelectable={true}
-                key="Column-0"
+                key="Column-0-headerCell"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
+                resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={200}
               >
                 <ColumnHeaderCell
+                  columnId="Column-0"
                   columnIndex={1}
                   displayName=" Vitals"
                   hasError={false}
                   headerHeight="2.5rem"
-                  id="Column-0"
+                  id="Column-0-headerCell"
                   intl={
                     Object {
                       "defaultFormats": Object {},
@@ -505,20 +516,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
+                  isResizeHandleActive={false}
                   isSelectable={true}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
+                  resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={200}
                 >
                   <th
                     className="column-header selectable pinned"
-                    id="test-terra-table-Column-0"
-                    key="Column-0"
+                    id="test-terra-table-Column-0-headerCell"
+                    key="Column-0-headerCell"
                     onKeyDown={[Function]}
                     onMouseDown={[Function]}
                     role="columnheader"
@@ -557,28 +570,32 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </ColumnHeaderCell>
               </InjectIntl(ColumnHeaderCell)>
               <InjectIntl(ColumnHeaderCell)
+                columnId="Column-1"
                 columnIndex={2}
                 displayName="March 16"
                 headerHeight="2.5rem"
-                id="Column-1"
+                id="Column-1-headerCell"
                 isActive={false}
                 isResizeActive={false}
-                key="Column-1"
+                isResizeHandleActive={false}
+                key="Column-1-headerCell"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
+                resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={200}
               >
                 <ColumnHeaderCell
+                  columnId="Column-1"
                   columnIndex={2}
                   displayName="March 16"
                   hasError={false}
                   headerHeight="2.5rem"
-                  id="Column-1"
+                  id="Column-1-headerCell"
                   intl={
                     Object {
                       "defaultFormats": Object {},
@@ -610,20 +627,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
+                  isResizeHandleActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
+                  resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={200}
                 >
                   <th
                     className="column-header pinned last-pinned-column"
-                    id="test-terra-table-Column-1"
-                    key="Column-1"
+                    id="test-terra-table-Column-1-headerCell"
+                    key="Column-1-headerCell"
                     role="columnheader"
                     scope="col"
                     style={
@@ -658,29 +677,33 @@ exports[`Table verifies row selection column header selection 1`] = `
                 </ColumnHeaderCell>
               </InjectIntl(ColumnHeaderCell)>
               <InjectIntl(ColumnHeaderCell)
+                columnId="Column-2"
                 columnIndex={3}
                 displayName="March 17"
                 headerHeight="2.5rem"
-                id="Column-2"
+                id="Column-2-headerCell"
                 isActive={false}
                 isResizeActive={false}
+                isResizeHandleActive={false}
                 isSelectable={false}
-                key="Column-2"
+                key="Column-2-headerCell"
                 maximumWidth={300}
                 minimumWidth={60}
                 onColumnSelect={[Function]}
                 onResizeHandleChange={[Function]}
                 onResizeMouseDown={[Function]}
+                resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
                 width={200}
               >
                 <ColumnHeaderCell
+                  columnId="Column-2"
                   columnIndex={3}
                   displayName="March 17"
                   hasError={false}
                   headerHeight="2.5rem"
-                  id="Column-2"
+                  id="Column-2-headerCell"
                   intl={
                     Object {
                       "defaultFormats": Object {},
@@ -712,20 +735,22 @@ exports[`Table verifies row selection column header selection 1`] = `
                   isDisplayVisible={true}
                   isResizable={false}
                   isResizeActive={false}
+                  isResizeHandleActive={false}
                   isSelectable={false}
                   maximumWidth={300}
                   minimumWidth={60}
                   onColumnSelect={[Function]}
                   onResizeHandleChange={[Function]}
                   onResizeMouseDown={[Function]}
+                  resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
                   width={200}
                 >
                   <th
                     className="column-header"
-                    id="test-terra-table-Column-2"
-                    key="Column-2"
+                    id="test-terra-table-Column-2-headerCell"
+                    key="Column-2-headerCell"
                     role="columnheader"
                     scope="col"
                     style={
@@ -1030,7 +1055,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-1 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-1 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -1119,7 +1144,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-1"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -1201,7 +1226,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column blank"
-                      headers="test-terra-table-rowheader-1 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1285,7 +1310,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell masked"
-                      headers="test-terra-table-rowheader-1 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-1 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1474,7 +1499,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-2 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-2 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -1562,7 +1587,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-2"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -1644,7 +1669,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column"
-                      headers="test-terra-table-rowheader-2 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-2 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1724,7 +1749,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell masked"
-                      headers="test-terra-table-rowheader-2 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-2 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -1913,7 +1938,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-3 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-3 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2001,7 +2026,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-3"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -2083,7 +2108,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column"
-                      headers="test-terra-table-rowheader-3 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-3 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -2163,7 +2188,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell masked"
-                      headers="test-terra-table-rowheader-3 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-3 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -2352,7 +2377,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned"
-                          headers="test-terra-table-rowheader-4 test-terra-table-table-rowSelectionColumn"
+                          headers="test-terra-table-rowheader-4 test-terra-table-table-rowSelectionColumn-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
@@ -2440,7 +2465,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <th
                       className="cell pinned highlighted"
-                      headers="test-terra-table-Column-0"
+                      headers="test-terra-table-Column-0-headerCell"
                       id="test-terra-table-rowheader-4"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
@@ -2522,7 +2547,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell pinned last-pinned-column highlighted"
-                      headers="test-terra-table-rowheader-4 test-terra-table-Column-1"
+                      headers="test-terra-table-rowheader-4 test-terra-table-Column-1-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
@@ -2601,7 +2626,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   >
                     <td
                       className="cell highlighted"
-                      headers="test-terra-table-rowheader-4 test-terra-table-Column-2"
+                      headers="test-terra-table-rowheader-4 test-terra-table-Column-2-headerCell"
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
