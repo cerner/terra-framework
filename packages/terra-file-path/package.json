@@ -1,6 +1,6 @@
 {
   "name": "terra-file-path",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "Terra File Path is a horizontal menu that indicates where the user is. It is also more commonly known as a breadcrumb component.",
   "author": "Cerner Corporation",
   "repository": {
@@ -35,7 +35,7 @@
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
-    "terra-collapsible-menu-view": "^6.89.0"
+    "terra-collapsible-menu-view": "^6.90.0"
   },
   "peerDependencies": {
     "react": "^16.8.5",

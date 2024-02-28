@@ -1092,7 +1092,7 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             description={`${hourDescription()}, ${hotKeyDescription}`}
-            errorId={errorId}
+            ariaDescribedBy={errorId}
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
@@ -1113,7 +1113,7 @@ class TimeInput extends React.Component {
             pattern="\d*"
             // description: Like the hour descriptions, but for the minute input.
             description={`${minuteDescription}, ${hotKeyDescription}`}
-            errorId={errorId}
+            ariaDescribedBy={errorId}
           />
           {showSeconds && (
           <React.Fragment>
@@ -1136,7 +1136,7 @@ class TimeInput extends React.Component {
               pattern="\d*"
               // description: Like the hour descriptions, but for the second input.
               description={`${secondDescription}, ${hotKeyDescription}`}
-              errorId={errorId}
+              ariaDescribedBy={errorId}
             />
           </React.Fragment>
           )}

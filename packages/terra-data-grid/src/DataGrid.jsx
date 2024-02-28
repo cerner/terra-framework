@@ -145,6 +145,10 @@ const propTypes = {
    * With this property the height of the cell will grow to fit the cell content.
    */
   rowMinimumHeight: PropTypes.string,
+  /**
+   * Bounding container for the grid, will use window if no value provided.
+   */
+  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -182,6 +186,7 @@ const DataGrid = forwardRef((props, ref) => {
     rows,
     sections,
     rowMinimumHeight,
+    boundingRef,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -602,6 +607,7 @@ const DataGrid = forwardRef((props, ref) => {
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
           rowMinimumHeight={rowMinimumHeight}
+          boundingRef={boundingRef}
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />

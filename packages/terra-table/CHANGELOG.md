@@ -5,6 +5,14 @@
 * Added
   * Column actions added.
 
+## 5.8.0 - (February 28, 2024)
+
+* Added
+  * Added `boundingRef` prop for bounded table.
+
+* Changed
+  * Changed flowsheet data grid sections to have sticky title.
+
 ## 5.7.0 - (February 20, 2024)
 
 * Added
