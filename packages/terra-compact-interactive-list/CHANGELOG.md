@@ -5,6 +5,11 @@
 * Changed
   * Updated vertical flow to allow height grows to fit content.
 
+## 1.6.1 - (February 29, 2024)
+
+* Fixed
+  * Added check for cell element existence before focusing.
+
 ## 1.6.0 - (February 28, 2024)
 
 * Changed

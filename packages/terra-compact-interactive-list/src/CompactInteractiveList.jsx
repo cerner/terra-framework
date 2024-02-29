@@ -154,14 +154,16 @@ const CompactInteractiveList = (props) => {
 
   const focusCell = ({ row, cell }) => {
     // add 1 to the row number to accommodate for hidden header
-    const focusedCellElement = listRef.current.children[row + 1].children[cell];
-    const interactiveChildren = getFocusableElements(focusedCellElement);
-    if (interactiveChildren?.length > 0 && interactiveChildren[0]) {
-      // currently a cell can have only one interact-able element in it, which gets auto-focused.
-      interactiveChildren[0].focus();
-    } else {
-      // cell gets focus if there is no interact-able elements in it.
-      focusedCellElement.focus();
+    const focusedCellElement = listRef.current?.children[row + 1]?.children[cell];
+    if (focusedCellElement) {
+      const interactiveChildren = getFocusableElements(focusedCellElement);
+      if (interactiveChildren?.length > 0 && interactiveChildren[0]) {
+        // currently a cell can have only one interact-able element in it, which gets auto-focused.
+        interactiveChildren[0].focus();
+      } else {
+        // cell gets focus if there is no interact-able elements in it.
+        focusedCellElement.focus();
+      }
     }
   };
 
