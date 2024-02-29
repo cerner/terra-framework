@@ -10,6 +10,7 @@ import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import ERRORS from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
 import Table from '../../src/Table';
+import Cell from '../../src/subcomponents/Cell';
 
 // Source data for tests
 const tableData = {
@@ -182,19 +183,21 @@ describe('Table', () => {
     expect(columnHeader).toHaveLength(1);
   });
 
-  // it('verifies that the table created has no row headers', () => {
-  //   const wrapper = enzymeIntl.mountWithIntl(
-  //     <Table
-  //       id="test-terra-table"
-  //       pinnedColumns={tableData.cols.slice(0, 2)}
-  //       overflowColumns={tableData.cols.slice(2)}
-  //       rows={tableData.rows}
-  //       rowHeaderIndex={-1}
-  //     />,
-  //   );
-  //
-  //   const firstRow = wrapper.find(Row).at(0);
-  // });
+  it('verifies that the table created has no row headers', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        rows={tableData.rows}
+        rowHeaderIndex={-1}
+      />,
+    );
+
+    const firstRow = wrapper.find(Row).at(0);
+    const firstCell = firstRow.find(Cell).at(0);
+    expect(firstCell.props().isRowHeader).toEqual(false);
+  });
 
   it('verifies row selection column header selection', () => {
     const mockColumnSelect = jest.fn();
