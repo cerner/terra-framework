@@ -7,6 +7,19 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
   hasError={true}
   headerHeight="150px"
   id="Column-0"
+  resizeHandleStateSetter={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "type": "return",
+          "value": undefined,
+        },
+      ],
+    }
+  }
   sortIndicator="ascending"
   tableId="test-table"
   width={100}
@@ -49,6 +62,19 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     isResizable={false}
     isResizeActive={false}
     isSelectable={false}
+    resizeHandleStateSetter={
+      [MockFunction] {
+        "calls": Array [
+          Array [],
+        ],
+        "results": Array [
+          Object {
+            "type": "return",
+            "value": undefined,
+          },
+        ],
+      }
+    }
     sortIndicator="ascending"
     tableId="test-table"
     width={100}

@@ -15,11 +15,12 @@ import ColumnContext from './utils/ColumnContext';
 import columnShape from './proptypes/columnShape';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';
-import validateRowHeaderIndex from './proptypes/validators';
+import { validateRowHeaderIndex } from './proptypes/validators';
 
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
 import getFocusableElements from './utils/focusManagement';
+import hasColumnActions from './utils/actionsUtils';
 
 const cx = classNames.bind(styles);
 
@@ -67,6 +68,18 @@ const propTypes = {
    * Column index for cell that can receive tab focus.
    */
   activeColumnIndex: PropTypes.number,
+
+  /**
+   * @private
+   * Row index for cell that can receive tab focus.
+   */
+  focusedRowIndex: PropTypes.number,
+
+  /**
+   * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+   */
+  triggerFocus: PropTypes.func,
+
   /**
    * @private
    * Specifies if resize handle should be active.
@@ -176,6 +189,10 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * Bounding container for table, will use window if no value provided.
+   */
+  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -198,6 +215,8 @@ function Table(props) {
     ariaLabelledBy,
     ariaLabel,
     activeColumnIndex,
+    focusedRowIndex,
+    triggerFocus,
     isActiveColumnResizing,
     columnResizeIncrement,
     rows,
@@ -219,6 +238,7 @@ function Table(props) {
     rowHeaderIndex,
     intl,
     rowMinimumHeight,
+    boundingRef,
   } = props;
 
   // Manage column resize
@@ -287,6 +307,12 @@ function Table(props) {
     return [{ id: defaultSectionRef.current, rows }];
   }, [rows, sections]);
 
+  // check if at least one column has an action prop
+  // same check is done in DataGrid, but as Table can be a stand-alone component, it can't relay on passed prop.
+  const hasColumnHeaderActions = hasColumnActions(pinnedColumns) || hasColumnActions(overflowColumns);
+  // eslint-disable-next-line no-nested-ternary
+  const headerRowCount = hasVisibleColumnHeaders ? (hasColumnHeaderActions ? 2 : 1) : 0;
+
   // Calculate total table row count
   const tableSectionReducer = (rowCount, currentSection) => {
     if (currentSection.id !== defaultSectionRef.current) {
@@ -294,12 +320,11 @@ function Table(props) {
       currentSection.sectionRowIndex = rowCount + 1;
       return rowCount + currentSection.rows.length + 1;
     }
-
     // eslint-disable-next-line no-param-reassign
     currentSection.sectionRowIndex = rowCount;
     return rowCount + currentSection.rows.length;
   };
-  const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
+  const tableRowCount = tableSections.reduce(tableSectionReducer, headerRowCount);
 
   // -------------------------------------
   // functions
@@ -405,7 +430,8 @@ function Table(props) {
       clearTimeout(resizingDelayTimer.current);
       resizingDelayTimer.current = setTimeout(() => {
         if (tableRef.current) {
-          setTableHeight(tableRef.current.offsetHeight - 1);
+          const heightOffset = hasColumnHeaderActions ? 2 : 1; // needs 2 pixels if actions row exists in headers to avoid scroll
+          setTableHeight(tableRef.current.offsetHeight - heightOffset);
 
           const tableContainer = tableContainerRef.current;
           setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
@@ -419,7 +445,7 @@ function Table(props) {
     return () => {
       resizeObserver.disconnect();
     };
-  }, [tableRef]);
+  }, [hasColumnHeaderActions, tableRef]);
 
   // -------------------------------------
 
@@ -589,6 +615,8 @@ function Table(props) {
             tableId={id}
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
+            focusedRowIndex={focusedRowIndex}
+            triggerFocus={triggerFocus}
             columns={tableColumns}
             hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
@@ -597,6 +625,7 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
             onResizeHandleChange={onResizeHandleChange}
+            hasColumnHeaderActions={hasColumnHeaderActions}
           />
           {tableSections.map((section) => (
             <Section
@@ -617,6 +646,7 @@ function Table(props) {
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
               rowMinimumHeight={rowMinimumHeight}
+              boundingRef={boundingRef}
             />
           ))}
         </ColumnContext.Provider>

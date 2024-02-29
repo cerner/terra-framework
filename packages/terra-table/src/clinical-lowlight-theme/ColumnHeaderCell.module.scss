@@ -12,6 +12,7 @@
     // Pinned Columns Divider
     --terra-table-last-pinned-header-border-right: 2px solid #181b1d;
     --terra-table-last-pinned-header-box-shadow: 2px -1px 6px #181b1d;
+    --terra-table-last-pinned-header-clip-path: inset(0 -6px 0 0); // second position -6px must be consistent with third position (6px) in box-shadow prop
 
     // Hover
     --terra-table-header-hover-background-color: #0c0f10;

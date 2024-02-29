@@ -5,8 +5,18 @@
 * Added
   * Added examples and tests for a large menu in the `terra-menu`.
 
+## 1.69.0 - (February 28, 2024)
+
+* Added
+  * Column actions example added to `terra-worklist-data-grid`.
+
+## 1.68.0 - (February 28, 2024)
+
 * Changed
   * Updated `terra-menu` test for selectable menu to retain selection state when using `isToggled` prop after closing and re-opening the menu.
+
+* Added
+  * Added example for bounded `terra-flowsheet-data-grid` with sections.
 
 ## 1.67.0 - (February 22, 2024)
 
