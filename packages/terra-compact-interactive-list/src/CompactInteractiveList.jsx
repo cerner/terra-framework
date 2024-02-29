@@ -298,14 +298,12 @@ const CompactInteractiveList = (props) => {
   const mappedRows = mapRows();
   const isLeftmost = (index) => (index % numberOfColumns === 0);
   const isTopmost = (index) => (index < numberOfColumns);
-  const rowCount = rows?.length + 1;
 
   return (
     <div className={cx('compact-interactive-list-container', theme.className)}>
       <div
         id={id}
         role="grid"
-        aria-rowcount={rowCount}
         ref={listRef}
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
@@ -321,9 +319,6 @@ const CompactInteractiveList = (props) => {
             <span
               key={column.id}
               role="columnheader"
-              aria-rowindex={1} // needed as the aria-rowindextext should only be included in addition to, not as a replacement of, the aria-rowindex
-              // eslint-disable-next-line jsx-a11y/aria-props
-              aria-rowindextext="Header row" // authors should place aria-rowindextext on each row
             >
               {column.displayName}
             </span>
@@ -332,8 +327,6 @@ const CompactInteractiveList = (props) => {
         </div>
         {mappedRows.map((row, index) => (
           <Row
-            rowIndex={index + 2} // +1 for header row and +1 as index is zero-based
-            rowIndexText={`Row ${row.rowIndex + 1}`} // does not account for hidden header row, the first data row will be 'Row 1'
             key={row.id}
             id={row.id}
             cells={row.cells}
