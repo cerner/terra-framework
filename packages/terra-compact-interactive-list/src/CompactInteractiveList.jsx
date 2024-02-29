@@ -314,7 +314,7 @@ const CompactInteractiveList = (props) => {
         onKeyDown={handleKeyDown}
         onFocus={onFocus}
       >
-        <div role="row" aria-rowindex={1} className={cx('hidden')}>
+        <div role="row" className={cx('hidden')}>
           {columns.map((column) => (
             <span
               key={column.id}
