@@ -316,10 +316,7 @@ const CompactInteractiveList = (props) => {
       >
         <div role="row" className={cx('hidden')}>
           {columns.map((column) => (
-            <span
-              key={column.id}
-              role="columnheader"
-            >
+            <span key={column.id} role="columnheader">
               {column.displayName}
             </span>
           ))}
