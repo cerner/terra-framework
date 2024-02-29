@@ -353,7 +353,6 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         tabIndex={0}
       >
         <div
-          aria-rowindex={1}
           className="hidden"
           role="row"
         >
@@ -1821,7 +1820,6 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         tabIndex={0}
       >
         <div
-          aria-rowindex={1}
           className="hidden"
           role="row"
         >
