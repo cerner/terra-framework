@@ -788,7 +788,6 @@ exports[`Table verifies row selection column header selection 1`] = `
           </thead>
         </ColumnHeader>
         <Section
-          boundingRef={[Function]}
           displayedColumns={
             Array [
               Object {

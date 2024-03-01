@@ -134,7 +134,6 @@ function Section(props) {
     rows,
     onSectionSelect,
     rowMinimumHeight,
-    boundingRef,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -143,7 +142,6 @@ function Section(props) {
   const isGridContext = gridContext.role === GridConstants.GRID;
 
   const hasSectionButton = isCollapsible && onSectionSelect;
-  const boundedWidth = isCollapsible && boundingRef && boundingRef.current ? boundingRef.current.clientWidth - 50 : null;
 
   const handleClick = useCallback(() => {
     onSectionSelect(id);
@@ -173,7 +171,6 @@ function Section(props) {
               text={text}
               isOpen={hasSectionButton ? !isCollapsed : undefined}
               onClick={hasSectionButton ? handleClick : undefined}
-              boundedWidth={boundedWidth}
               isTitleSticky
             />
           </th>

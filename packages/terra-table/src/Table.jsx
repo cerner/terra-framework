@@ -642,7 +642,6 @@ function Table(props) {
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
               rowMinimumHeight={rowMinimumHeight}
-              boundingRef={handleContainerRef}
             />
           ))}
         </ColumnContext.Provider>
