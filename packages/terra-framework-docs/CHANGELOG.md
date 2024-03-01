@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples and tests for a large menu in the `terra-menu`.
+
 ## 1.70.0 - (February 29, 2024)
 
 * Changed
