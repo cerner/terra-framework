@@ -102,11 +102,6 @@ const propTypes = {
    * Function that is called when a collapsible section is selected. Parameters: `onSectionSelect(sectionId)`
    */
   onSectionSelect: PropTypes.func,
-  /**
-   * Bounding container for the table, will use window if no value provided.
-   * We use this in order to calculate the offset needed to make the section headers sticky horizontally.
-   */
-  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
