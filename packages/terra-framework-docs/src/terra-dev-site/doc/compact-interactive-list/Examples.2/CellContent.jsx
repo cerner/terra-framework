@@ -140,7 +140,6 @@ const CellContent = () => {
       onCellSelect={onCellSelect} // a callback function for cell selection
       onClearSelection={onClearSelection}
       rowHeaderIndex={1}
-      rowHeight="50px"
     />
   );
 };

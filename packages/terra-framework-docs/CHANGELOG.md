@@ -19,6 +19,7 @@
 
 * Changed
   * Updated `terra-menu` test for selectable menu to retain selection state when using `isToggled` prop after closing and re-opening the menu.
+  * Updated `terra-compact-interactive-list` documentation to reflect that `rowHeight` property is no longer required for vertical flow.
 
 * Added
   * Added example for bounded `terra-flowsheet-data-grid` with sections.

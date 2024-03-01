@@ -146,7 +146,6 @@ const WidthBreakpoints = () => {
         rows={rows}
         columns={cols}
         numberOfColumns={numberOfColumns}
-        rowHeight="80px"
         rowHeaderIndex={1}
       />
     </>

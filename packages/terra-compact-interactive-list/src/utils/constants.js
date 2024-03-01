@@ -16,11 +16,6 @@ export const DefaultListValues = {
     [widthUnitTypes.EM]: '10em',
     [widthUnitTypes.REM]: '10rem',
   },
-  rowDefaultHeight: {
-    [widthUnitTypes.PX]: '40px',
-    [widthUnitTypes.EM]: '3.5em',
-    [widthUnitTypes.REM]: '3.5rem',
-  },
 };
 
 export const alignTypes = {

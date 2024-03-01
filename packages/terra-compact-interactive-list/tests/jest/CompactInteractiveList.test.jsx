@@ -54,16 +54,16 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toBeUndefined();
+      expect(list.prop('style').minWidth).toBeUndefined();
 
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(0).props().style.width).toEqual('40px');
-      expect(cellElements.at(0).props().style.minWidth).toBeUndefined();
-      expect(cellElements.at(0).props().style.maxWidth).toBeUndefined();
+      expect(cellElements.at(0).prop('style').width).toEqual('40px');
+      expect(cellElements.at(0).prop('style').minWidth).toBeUndefined();
+      expect(cellElements.at(0).prop('style').maxWidth).toBeUndefined();
 
-      expect(cellElements.at(1).props().style.width).toEqual('200px');
-      expect(cellElements.at(1).props().style.minWidth).toBeUndefined();
-      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
+      expect(cellElements.at(1).prop('style').width).toEqual('200px');
+      expect(cellElements.at(1).prop('style').minWidth).toBeUndefined();
+      expect(cellElements.at(1).prop('style').maxWidth).toBeUndefined();
     });
 
     it('should not apply default minimumWidth to fixed width list', () => {
@@ -75,7 +75,7 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toBeUndefined();
+      expect(list.prop('style').minWidth).toBeUndefined();
     });
 
     it('should not apply columnMaximumWidth and columnMinimumWidth props to fixed columns width', () => {
@@ -92,20 +92,20 @@ describe('Compact Interactive List', () => {
       );
       const list = wrapper.find('.compact-interactive-list');
       // columnMinimumWidth and columnMaximumWidth should NOT be applied to fixed width lists
-      expect(list.props().style.minWidth).toBeUndefined();
-      expect(list.props().style.maxWidth).toBeUndefined();
+      expect(list.prop('style').minWidth).toBeUndefined();
+      expect(list.prop('style').maxWidth).toBeUndefined();
       // the width should be equal to the sum of all columns width multiplied by numberOfColumns
-      expect(list.props().style.width).toEqual('560px');
+      expect(list.prop('style').width).toEqual('560px');
 
       // cells should have width, but no maximumWidth or minimumWidth properties.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(0).props().style.width).toEqual('40px');
-      expect(cellElements.at(0).props().style.minWidth).toBeUndefined();
-      expect(cellElements.at(0).props().style.maxWidth).toBeUndefined();
+      expect(cellElements.at(0).prop('style').width).toEqual('40px');
+      expect(cellElements.at(0).prop('style').minWidth).toBeUndefined();
+      expect(cellElements.at(0).prop('style').maxWidth).toBeUndefined();
 
-      expect(cellElements.at(1).props().style.width).toEqual('200px');
-      expect(cellElements.at(1).props().style.minWidth).toBeUndefined();
-      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
+      expect(cellElements.at(1).prop('style').width).toEqual('200px');
+      expect(cellElements.at(1).prop('style').minWidth).toBeUndefined();
+      expect(cellElements.at(1).prop('style').maxWidth).toBeUndefined();
     });
   });
 
@@ -169,13 +169,13 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toEqual('500px');
+      expect(list.prop('style').minWidth).toEqual('500px');
 
       // responsive cells should have default minimumWidth properties.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeUndefined();
-      expect(cellElements.at(1).props().style.minWidth).toEqual('60px'); // Default value in px
-      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
+      expect(cellElements.at(1).prop('style').width).toBeUndefined();
+      expect(cellElements.at(1).prop('style').minWidth).toEqual('60px'); // Default value in px
+      expect(cellElements.at(1).prop('style').maxWidth).toBeUndefined();
     });
 
     it('should calculate list min and max width based on columnMinimumWidth and columnMaximumWidth props', () => {
@@ -207,14 +207,14 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toEqual('1200px');
-      expect(list.props().style.maxWidth).toEqual('2000px');
+      expect(list.prop('style').minWidth).toEqual('1200px');
+      expect(list.prop('style').maxWidth).toEqual('2000px');
 
       // responsive cells should have minimumWidth and maximumWidth properties set correctly.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeUndefined();
-      expect(cellElements.at(1).props().style.minWidth).toEqual('500px');
-      expect(cellElements.at(1).props().style.maxWidth).toEqual('900px');
+      expect(cellElements.at(1).prop('style').width).toBeUndefined();
+      expect(cellElements.at(1).prop('style').minWidth).toEqual('500px');
+      expect(cellElements.at(1).prop('style').maxWidth).toEqual('900px');
     });
 
     it('should calculate list minWidth based on column level minimumWidth, compare to default and apply the bigger one', () => {
@@ -249,15 +249,15 @@ describe('Compact Interactive List', () => {
       );
       const list = wrapper.find('.compact-interactive-list');
       // compare to default value of 10em and choose 46em as it's bigger
-      expect(list.props().style.minWidth).toEqual('46em');
+      expect(list.prop('style').minWidth).toEqual('46em');
       // maxWidth should be calculated based on maximumWidth set on column level
-      expect(list.props().style.maxWidth).toEqual('86em');
+      expect(list.prop('style').maxWidth).toEqual('86em');
 
       // responsive cells should have minimumWidth and maximumWidth properties set correctly.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeUndefined();
-      expect(cellElements.at(1).props().style.minWidth).toEqual('10em');
-      expect(cellElements.at(1).props().style.maxWidth).toEqual('30em');
+      expect(cellElements.at(1).prop('style').width).toBeUndefined();
+      expect(cellElements.at(1).prop('style').minWidth).toEqual('10em');
+      expect(cellElements.at(1).prop('style').maxWidth).toEqual('30em');
     });
 
     it('column minimumWidth prop should take precedence over columnMinimumWidth prop', () => {
@@ -289,21 +289,21 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toEqual('950px');
-      expect(list.props().style.maxWidth).toEqual('1750px');
+      expect(list.prop('style').minWidth).toEqual('950px');
+      expect(list.prop('style').maxWidth).toEqual('1750px');
 
       // responsive cells should have minimumWidth and maximumWidth properties set correctly.
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(1).props().style.width).toBeUndefined();
-      expect(cellElements.at(1).props().style.minWidth).toEqual('500px');
-      expect(cellElements.at(1).props().style.maxWidth).toEqual('900px');
+      expect(cellElements.at(1).prop('style').width).toBeUndefined();
+      expect(cellElements.at(1).prop('style').minWidth).toEqual('500px');
+      expect(cellElements.at(1).prop('style').maxWidth).toEqual('900px');
 
-      expect(cellElements.at(2).props().style.width).toBeUndefined();
-      expect(cellElements.at(2).props().style.minWidth).toEqual('400px');
-      expect(cellElements.at(2).props().style.maxWidth).toEqual('800px');
+      expect(cellElements.at(2).prop('style').width).toBeUndefined();
+      expect(cellElements.at(2).prop('style').minWidth).toEqual('400px');
+      expect(cellElements.at(2).prop('style').maxWidth).toEqual('800px');
     });
 
-    it('should flow rows vertically by default', () => {
+    it('verifies vertical flow order by default', () => {
       const respCols = [
         {
           id: 'Column-0',
@@ -333,35 +333,38 @@ describe('Compact Interactive List', () => {
       );
       const rowElements = wrapper.find('.row');
       expect(rowElements.length).toEqual(8);
-      expect(rowElements.at(0).props().id).toEqual(rows[0].id);
-      expect(rowElements.at(0).props().role).toEqual('row');
-      expect(rowElements.at(0).props()['aria-hidden']).toBeNull();
+      expect(rowElements.at(0).prop('id')).toEqual(rows[0].id);
+      expect(rowElements.at(0).prop('role')).toEqual('row');
+      expect(rowElements.at(0).prop('aria-hidden')).toBeNull();
 
-      expect(rowElements.at(1).props().id).toEqual(rows[1].id);
-      expect(rowElements.at(1).props().role).toEqual('row');
-      expect(rowElements.at(1).props()['aria-hidden']).toBeNull();
+      expect(rowElements.at(1).prop('id')).toEqual(rows[2].id);
+      expect(rowElements.at(1).prop('role')).toEqual('row');
+      expect(rowElements.at(1).prop('aria-hidden')).toBeNull();
 
-      expect(rowElements.at(2).props().id).toEqual(rows[2].id);
-      expect(rowElements.at(2).props()['aria-hidden']).toBeNull();
-      expect(rowElements.at(2).props().role).toEqual('row');
+      expect(rowElements.at(2).prop('id')).toEqual(rows[3].id);
+      expect(rowElements.at(2).prop('aria-hidden')).toBeNull();
+      expect(rowElements.at(2).prop('role')).toEqual('row');
 
-      expect(rowElements.at(3).props().id).toEqual(rows[3].id);
-      expect(rowElements.at(3).props()['aria-hidden']).toBeNull();
-      expect(rowElements.at(3).props().role).toEqual('row');
+      expect(rowElements.at(3).prop('id')).toEqual(rows[4].id);
+      expect(rowElements.at(3).prop('aria-hidden')).toBeNull();
+      expect(rowElements.at(3).prop('role')).toEqual('row');
 
-      expect(rowElements.at(4).props().id).toEqual(rows[4].id);
-      expect(rowElements.at(4).props()['aria-hidden']).toBeNull();
-      expect(rowElements.at(4).props().role).toEqual('row');
+      expect(rowElements.at(4).prop('id')).toEqual(rows[1].id);
+      expect(rowElements.at(4).prop('aria-hidden')).toBeNull();
+      expect(rowElements.at(4).prop('role')).toEqual('row');
 
-      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${1}`);
-      expect(rowElements.at(5).props()['aria-hidden']).toBeTruthy();
-      expect(rowElements.at(5).props().role).toBeFalsy();
+      expect(rowElements.at(5).prop('id')).toEqual(`placeholder-row-${1}`);
+      expect(rowElements.at(5).prop('aria-hidden')).toBeTruthy();
+      expect(rowElements.at(5).prop('role')).toBeFalsy();
 
-      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${2}`);
-      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${3}`);
+      expect(rowElements.at(6).prop('id')).toEqual(`placeholder-row-${2}`);
+      expect(rowElements.at(6).prop('aria-hidden')).toBeTruthy();
+      expect(rowElements.at(6).prop('role')).toBeFalsy();
+
+      expect(rowElements.at(7).prop('id')).toEqual(`placeholder-row-${3}`);
     });
 
-    it('should flow horizontally if flowHorizontally prop is set', () => {
+    it('verifies horizontal flow order when flowHorizontally prop is set', () => {
       const respCols = [
         {
           id: 'Column-0',
@@ -383,7 +386,7 @@ describe('Compact Interactive List', () => {
       const numberOfColumns = 4;
       const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
-          id="compact-interactive-list-horisontal-flow"
+          id="compact-interactive-list-horizontal-flow"
           rows={rows}
           columns={respCols}
           numberOfColumns={numberOfColumns}
@@ -391,20 +394,20 @@ describe('Compact Interactive List', () => {
         />,
       );
       const rowElements = wrapper.find('.row');
-      expect(rowElements.at(0).props().id).toEqual(rows[0].id);
-      expect(rowElements.at(0).props().role).toEqual('row');
-      expect(rowElements.at(0).props()['aria-hidden']).toBeNull();
+      expect(rowElements.at(0).prop('id')).toEqual(rows[0].id);
+      expect(rowElements.at(0).prop('role')).toEqual('row');
+      expect(rowElements.at(0).prop('aria-hidden')).toBeNull();
 
-      expect(rowElements.at(1).props().id).toEqual(rows[1].id);
-      expect(rowElements.at(2).props().id).toEqual(rows[2].id);
-      expect(rowElements.at(3).props().id).toEqual(rows[3].id);
-      expect(rowElements.at(4).props().id).toEqual(rows[4].id);
-      expect(rowElements.at(5).props().id).toEqual(`placeholder-row-${1}`);
-      expect(rowElements.at(6).props().id).toEqual(`placeholder-row-${2}`);
+      expect(rowElements.at(1).prop('id')).toEqual(rows[1].id);
+      expect(rowElements.at(2).prop('id')).toEqual(rows[2].id);
+      expect(rowElements.at(3).prop('id')).toEqual(rows[3].id);
+      expect(rowElements.at(4).prop('id')).toEqual(rows[4].id);
+      expect(rowElements.at(5).prop('id')).toEqual(`placeholder-row-${1}`);
+      expect(rowElements.at(6).prop('id')).toEqual(`placeholder-row-${2}`);
 
-      expect(rowElements.at(7).props().id).toEqual(`placeholder-row-${3}`);
-      expect(rowElements.at(7).props().role).toBeUndefined();
-      expect(rowElements.at(7).props()['aria-hidden']).toEqual(true);
+      expect(rowElements.at(7).prop('id')).toEqual(`placeholder-row-${3}`);
+      expect(rowElements.at(7).prop('role')).toBeUndefined();
+      expect(rowElements.at(7).prop('aria-hidden')).toEqual(true);
     });
   });
 
@@ -441,23 +444,23 @@ describe('Compact Interactive List', () => {
         />,
       );
       const cellElements = wrapper.find('.cell');
-      expect(cellElements.at(0).props().style.width).toEqual('60px');
+      expect(cellElements.at(0).prop('style').width).toEqual('60px');
       // PX will be considered unitType as first column width is in PX.
       // Second semantic column width will be removed per EM inconsistent with PX unit type.
       // That will make it responsive column with minWidth and maxWidth having effect.
-      expect(cellElements.at(1).props().style.width).toBeUndefined();
+      expect(cellElements.at(1).prop('style').width).toBeUndefined();
       // Second semantic column maxWidth will be used as its unitType is PM.
-      expect(cellElements.at(1).props().style.maxWidth).toEqual('200px');
+      expect(cellElements.at(1).prop('style').maxWidth).toEqual('200px');
       // Second semantic column minWidth will be disregarded per EM inconsistent with PX unit type, the default px walue used instead.
-      expect(cellElements.at(1).props().style.minWidth).toEqual('60px');
+      expect(cellElements.at(1).prop('style').minWidth).toEqual('60px');
 
       // Third semantic column width will be removed per EM inconsistent with PX unit type.
       // That will make it responsive column with minWidth and maxWidth having effect.
-      expect(cellElements.at(2).props().style.width).toBeUndefined();
+      expect(cellElements.at(2).prop('style').width).toBeUndefined();
       // Second semantic column maxWidth will be disregarded as it's in EM.
-      expect(cellElements.at(2).props().style.maxWidth).toBeUndefined();
+      expect(cellElements.at(2).prop('style').maxWidth).toBeUndefined();
       // Second semantic column minWidth will be applied as it's in PX.
-      expect(cellElements.at(2).props().style.minWidth).toEqual('40px');
+      expect(cellElements.at(2).prop('style').minWidth).toEqual('40px');
     });
 
     it('should disregard columnMinimumWidth and columnMaximumWidth props with inconsistent unitType', () => {
@@ -489,13 +492,13 @@ describe('Compact Interactive List', () => {
         />,
       );
       const list = wrapper.find('.compact-interactive-list');
-      expect(list.props().style.minWidth).toEqual('500px'); // default minWidth
-      expect(list.props().style.maxWidth).toBeUndefined();
+      expect(list.prop('style').minWidth).toEqual('500px'); // default minWidth
+      expect(list.prop('style').maxWidth).toBeUndefined();
 
       const cellElements = wrapper.find('.cell');
       // PX will be considered unitType as first column width is PX.
-      expect(cellElements.at(1).props().style.maxWidth).toBeUndefined();
-      expect(cellElements.at(1).props().style.minWidth).toEqual('60px'); // default px value
+      expect(cellElements.at(1).prop('style').maxWidth).toBeUndefined();
+      expect(cellElements.at(1).prop('style').minWidth).toEqual('60px'); // default px value
     });
   });
 
@@ -571,34 +574,34 @@ describe('Compact Interactive List', () => {
       expect(document.activeElement).toBe(cellElements.at(2).instance());
       // move one cell to the right, should enter a new row and a new visual column
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(9).instance());
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
       // move two cells to the right to reach the end of the row
       list.simulate('keyDown', arrowRightProps);
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
       // should not move to the right as the row end reached
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
 
       // Move one row down to start testing left arrow
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      expect(document.activeElement).toBe(cellElements.at(11).instance());
 
       // Testing LEFT ARROW
       // move one cell to the left, same row
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(13).instance());
+      expect(document.activeElement).toBe(cellElements.at(10).instance());
       // move 2 cell to the left to break to the previous visual column
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(5).instance());
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
       // move 2 cell to the left to reach the first visual column start
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
       // should not move anymore as the start of the visual row has been reached
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
@@ -616,25 +619,25 @@ describe('Compact Interactive List', () => {
       // Testing DOWN ARROW
       // move one cell down, same sematic column
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
       // move two cells down, should break to the next visual column
       list.simulate('keyDown', arrowDownProps);
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(9).instance());
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
       // move one cells down to reach the end of the visual column and the list
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(12).instance());
+      expect(document.activeElement).toBe(cellElements.at(9).instance());
       // should not move as the end of the list has been reached
       list.simulate('keyDown', arrowDownProps);
-      expect(document.activeElement).toBe(cellElements.at(12).instance());
+      expect(document.activeElement).toBe(cellElements.at(9).instance());
 
       // Testing UP ARROW
       // move one cell up, same visual column
       list.simulate('keyDown', arrowUpProps);
-      expect(document.activeElement).toBe(cellElements.at(9).instance());
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
       // move one cell up, break to the previous visual column
       list.simulate('keyDown', arrowUpProps);
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
       // move 2 cell3 up to reach the first visual row in the list
       list.simulate('keyDown', arrowUpProps);
       list.simulate('keyDown', arrowUpProps);
@@ -661,7 +664,7 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', {
         ...arrowRightProps, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
 
       // Testing RIGHT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
       // should focus the last cell in the last list element
@@ -675,7 +678,7 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', {
         ...arrowLeftProps, metaKey: true,
       });
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
 
       // Testing LEFT ARROW + CTRL + META_KEY (CMD on mac or HOME for windows)
       // should focus the first cell in the first list element
@@ -700,7 +703,7 @@ describe('Compact Interactive List', () => {
       // Testing END_KEY
       // should focus the last cell in the current visual row
       list.simulate('keyDown', endKeyProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      expect(document.activeElement).toBe(cellElements.at(5).instance());
 
       // Testing END_KEY + CTRL + META_KEY
       // should focus the last cell in the last list element
@@ -712,7 +715,7 @@ describe('Compact Interactive List', () => {
       // Testing HOME_KEY
       // should focus the first cell in the current visual row
       list.simulate('keyDown', homeKeyProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
 
       // Testing HOME_KEY + CTRL + META_KEY
       // should focus the first cell in the first list element
@@ -1085,6 +1088,124 @@ describe('Compact Interactive List', () => {
       cellElements.at(1).simulate('keyDown', spaceKeyProps);
       cellElements.at(1).simulate('mouseDown');
       expect(mockOnCellSelect).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('rowHeight', () => {
+    const cols = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '100px',
+      },
+      {
+        id: 'Column-1',
+        displayName: 'Col_2',
+        width: '200px',
+      },
+      {
+        id: 'Column-2',
+        displayName: 'Col_3',
+        width: '100px',
+      },
+    ];
+
+    beforeEach(() => {
+      document.getElementsByTagName('html')[0].innerHTML = '';
+    });
+
+    beforeAll(() => {
+      // Define offsetHeight for HTML elements
+      Object.defineProperty(HTMLElement.prototype, 'offsetHeight', {
+        configurable: true,
+        value: 44,
+      });
+      // Define offsetWidth for HTML elements
+      Object.defineProperty(HTMLElement.prototype, 'offsetWidth', {
+        configurable: true, value: 100,
+      });
+    });
+
+    it('should not have rowHeight by default for vertical flow', () => {
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).prop('style').height).toBeUndefined();
+    });
+
+    it('should apply rowHeight for vertical (default) flow if provided', () => {
+      const rowHeight = '52px';
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+          rowHeight={rowHeight}
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).prop('style').height).toEqual(rowHeight);
+    });
+
+    it('should not have rowHeight by default for horizontal flow', () => {
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+          flowHorizontally
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).prop('style').height).toBeUndefined();
+    });
+
+    it('should apply rowHeight for for horizontal flow if provided', () => {
+      const rowHeight = '52px';
+      const testList = (
+        <CompactInteractiveList
+          id="compact-interactive-list-space-key-on-cell"
+          rows={rows}
+          columns={cols}
+          numberOfColumns={2}
+          rowHeight={rowHeight}
+          flowHorizontally
+        />
+      );
+
+      const wrapper = enzymeIntl.mountWithIntl(
+        testList, {
+          attachTo: document.body,
+        },
+      );
+      const rowElements = wrapper.find('.row');
+      expect(rowElements.at(0).prop('style').height).toEqual(rowHeight);
     });
   });
 });

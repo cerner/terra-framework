@@ -249,9 +249,8 @@ const CompactInteractiveList = (props) => {
   // calculate row width based on the width of its columns
   const getRowWidthSum = (total, column) => total + column.width;
   const rowWidth = isResponsive ? null : conversionedColumns.reduce(getRowWidthSum, 0);
-  const rowsPerColumn = Math.ceil(rows.length / numberOfColumns);
 
-  const calculatedRowHeight = flowHorizontally ? null : getValueUnitTypePair(rowHeight || DefaultListValues.rowDefaultHeight[widthUnit]);
+  const calculatedRowHeight = rowHeight ? getValueUnitTypePair(rowHeight) : null;
   // calculate list width based on the semantic row width and number of columns
   const listWidth = `${rowWidth * numberOfColumns}${widthUnit}`;
   // calculate list min width or use default
@@ -260,12 +259,7 @@ const CompactInteractiveList = (props) => {
   // defining styles to apply to the list
   const style = {
     width: isResponsive ? width : listWidth,
-    flexDirection: flowHorizontally ? 'row' : 'column',
   };
-  if (!flowHorizontally) {
-    // needs height if flown vertically
-    style.height = `${calculatedRowHeight?.value * rowsPerColumn}${calculatedRowHeight?.unitType}`;
-  }
   if (listMinWidth) {
     // assign minWidth to the list only if such exists (list must be responsive)
     style.minWidth = `${listMinWidth}${widthUnit}`;
@@ -280,8 +274,21 @@ const CompactInteractiveList = (props) => {
   // map rows differently depending on vertical or horizontal orientation
   const mapRows = () => {
     const placeholdersNumber = isResponsive ? (numberOfRows * numberOfColumns) - rows.length : 0;
-    const result = [...rows];
-    // add placeholder rows to the end.
+    let result = [];
+    if (flowHorizontally) {
+      result = [...rows];
+    } else {
+      for (let i = 0; i < numberOfRows; i += 1) {
+        let x = numberOfColumns - placeholdersNumber;
+        for (let j = i; j < rows.length; j += numberOfRows - (x >= 0 ? 0 : 1)) {
+          if (result.length < rows.length) {
+            result.push({ ...rows[j] });
+            if (x >= 0) { x -= 1; }
+          }
+        }
+      }
+    }
+    // add placeholder rows
     for (let i = rows.length; i < rows.length + placeholdersNumber; i += 1) {
       result.push({ id: `placeholder-row-${i - rows.length + 1}` });
     }
@@ -289,8 +296,8 @@ const CompactInteractiveList = (props) => {
   };
 
   const mappedRows = mapRows();
-  const checkIfRowIsLeftMost = (index) => (flowHorizontally ? index % numberOfColumns === 0 : index < rowsPerColumn);
-  const checkIfRowIsTopMost = (index) => (flowHorizontally ? index < numberOfColumns : index % rowsPerColumn === 0);
+  const isLeftmost = (index) => (index % numberOfColumns === 0);
+  const isTopmost = (index) => (index < numberOfColumns);
 
   return (
     <div className={cx('compact-interactive-list-container', theme.className)}>
@@ -308,11 +315,15 @@ const CompactInteractiveList = (props) => {
         onFocus={onFocus}
       >
         <div role="row" className={cx('hidden')}>
-          {columns.map((column) => (<span key={column.id} role="columnheader">{column.displayName}</span>))}
+          {columns.map((column) => (
+            <span key={column.id} role="columnheader">
+              {column.displayName}
+            </span>
+          ))}
+          {/* aria-rowindex needs to ba assigned to all cells  */}
         </div>
         {mappedRows.map((row, index) => (
           <Row
-            rowIndex={index}
             key={row.id}
             id={row.id}
             cells={row.cells}
@@ -328,10 +339,9 @@ const CompactInteractiveList = (props) => {
             widthUnit={widthUnit}
             onCellSelect={onCellSelect}
             setFocusedCell={setFocusedCell}
-            flowHorizontally={flowHorizontally}
             rowHeight={calculatedRowHeight}
-            isTopmost={checkIfRowIsTopMost(index)}
-            isLeftmost={checkIfRowIsLeftMost(index)}
+            isTopmost={isTopmost(index)}
+            isLeftmost={isLeftmost(index)}
             rowHeaderIndex={rowHeaderIndex}
           />
         ))}

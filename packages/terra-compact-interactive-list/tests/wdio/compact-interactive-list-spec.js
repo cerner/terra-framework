@@ -84,4 +84,16 @@ Terra.describeViewports('CompactInteractiveList', ['medium', 'large'], () => {
       Terra.validates.element('focused-button-in-cell', { selector: '#compact-interactive-list-cell-content' });
     });
   });
+
+  describe('rowHeight', () => {
+    it('should render rows of specific height for vertical flow', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/compact-interactive-list/row-height-vertical-flow');
+      Terra.validates.element('row-height-vertical-flow', { selector: '#compact-interactive-list-row-height-vertical' });
+    });
+
+    it('should render rows of specific height for horizontal flow', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/compact-interactive-list/row-height-horizontal-flow');
+      Terra.validates.element('row-height-horizontal-flow', { selector: '#compact-interactive-list-row-height-horizontal' });
+    });
+  });
 });

@@ -85,12 +85,6 @@ const propTypes = {
   ]).isRequired,
 
   /**
-   * By default the items go from top to bottom, then break to the next column.
-   * If flowHorizontally prop is set to true, items will flow left to right, then break to the next row.
-   */
-  flowHorizontally: PropTypes.bool,
-
-  /**
    * A valid css string, px, em, or rem supported.
    */
   rowHeight: unitShape,
@@ -126,7 +120,6 @@ const Row = (props) => {
     widthUnit,
     onCellSelect,
     setFocusedCell,
-    flowHorizontally,
     rowHeight,
     isTopmost,
     isLeftmost,
@@ -137,11 +130,7 @@ const Row = (props) => {
 
   const style = {};
   if (isResponsive) {
-    if (flowHorizontally) {
-      style.flex = `1 1 ${Math.min(100 / numberOfColumns)}%`;
-    } else {
-      style.width = `${Math.min(100 / numberOfColumns)}%`;
-    }
+    style.flex = `1 1 ${Math.min(100 / numberOfColumns)}%`;
     if (rowMaximumWidth) {
       style.maxWidth = `${rowMaximumWidth}${widthUnit}`;
     }
