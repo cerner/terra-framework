@@ -63,6 +63,29 @@ describe('Row', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('creates a row with no row header', () => {
+    const rowData = tableData.rows[0];
+
+    const wrapper = enzyme.shallow(
+      <Row
+        rowIndex={99}
+        id={rowData.id}
+        tableId="test-table"
+        height="25px"
+        cells={rowData.cells}
+        rowSelectionMode={tableData.rows[0].hasSelectableRows ? 'multiple' : undefined}
+        displayedColumns={tableData.cols}
+        rowHeaderIndex={-1}
+        onCellSelect={jest.fn}
+        onRowSelect={jest.fn}
+      />,
+    );
+
+    const tableRow = wrapper.find('tr.row');
+    const renderedCells = tableRow.find(Cell);
+    expect(renderedCells.get(0).props.isRowHeader).toEqual(false);
+  });
+
   it('verifies the cell is created with the right props', () => {
     const rowIndex = 2;
 

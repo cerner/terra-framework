@@ -10,6 +10,7 @@ import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import ERRORS from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
 import Table from '../../src/Table';
+import Cell from '../../src/subcomponents/Cell';
 
 // Source data for tests
 const tableData = {
@@ -182,6 +183,22 @@ describe('Table', () => {
     expect(columnHeader).toHaveLength(1);
   });
 
+  it('verifies that the table created has no row headers', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        rows={tableData.rows}
+        rowHeaderIndex={-1}
+      />,
+    );
+
+    const firstRow = wrapper.find(Row).at(0);
+    const firstCell = firstRow.find(Cell).at(0);
+    expect(firstCell.props().isRowHeader).toEqual(false);
+  });
+
   it('verifies row selection column header selection', () => {
     const mockColumnSelect = jest.fn();
 
@@ -340,6 +357,7 @@ describe('Table', () => {
 
     // Validate rows of the first section
     const section1Row1 = section1.find('.row').at(0);
+
     expect(section1Row1.props()['aria-rowindex']).toBe(3);
     expect(section1Row1.props()['data-row-id']).toBe('1');
     const section1Row2 = section1.find('.row').at(1);
@@ -910,12 +928,12 @@ describe('Error handling - prop types', () => {
         <Table
           id="test-terra-table"
           rows={tableData.rows}
-          rowHeaderIndex={-1}
+          rowHeaderIndex={-2}
         />
       </IntlProvider>,
     ).dive();
 
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_ZERO)); // eslint-disable-line no-console
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_MINUS_ONE)); // eslint-disable-line no-console
   });
 
   it('throws an error if rowHeaderIndex is greater than the length of pinned columns', () => {
