@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Fix for month/year SR redundant reading in Jaws.
+
 ## 4.100.0 - (February 28, 2024)
 
 * Changed
