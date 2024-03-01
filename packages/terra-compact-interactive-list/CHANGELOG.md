@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.6.1 - (February 29, 2024)
+
 * Fixed
   * Added check for cell element existence before focusing.
 
