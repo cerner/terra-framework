@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Table now uses its own container ref for calculating the offset while scrolling horizontally. `boundingRef` is no longer necessary for the scrolling behavior.
+
 ## 5.10.0 - (March 1, 2024)
 
 * Added

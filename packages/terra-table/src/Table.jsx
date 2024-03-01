@@ -190,10 +190,6 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-  /**
-   * Bounding container for table, will use window if no value provided.
-   */
-  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -239,7 +235,6 @@ function Table(props) {
     rowHeaderIndex,
     intl,
     rowMinimumHeight,
-    boundingRef,
   } = props;
 
   // Manage column resize
@@ -647,7 +642,7 @@ function Table(props) {
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
               rowMinimumHeight={rowMinimumHeight}
-              boundingRef={boundingRef}
+              boundingRef={handleContainerRef}
             />
           ))}
         </ColumnContext.Provider>

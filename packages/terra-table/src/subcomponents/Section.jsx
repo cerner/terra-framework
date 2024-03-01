@@ -104,6 +104,7 @@ const propTypes = {
   onSectionSelect: PropTypes.func,
   /**
    * Bounding container for the table, will use window if no value provided.
+   * We use this in order to calculate the offset needed to make the section headers sticky horizontally.
    */
   boundingRef: PropTypes.func,
 };
@@ -143,7 +144,6 @@ function Section(props) {
 
   const hasSectionButton = isCollapsible && onSectionSelect;
   const boundedWidth = isCollapsible && boundingRef && boundingRef.current ? boundingRef.current.clientWidth - 50 : null;
-  const titlePosition = boundingRef ? { isTitleSticky: true } : { isTitleFixed: true };
 
   const handleClick = useCallback(() => {
     onSectionSelect(id);
@@ -174,7 +174,7 @@ function Section(props) {
               isOpen={hasSectionButton ? !isCollapsed : undefined}
               onClick={hasSectionButton ? handleClick : undefined}
               boundedWidth={boundedWidth}
-              {...titlePosition}
+              isTitleSticky
             />
           </th>
         </tr>

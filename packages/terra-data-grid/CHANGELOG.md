@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * `boundingRef` is no longer necessary the section header's sticky behavior. The calculation now uses the table's container ref for calculating the offset.
+
 ## 1.17.0 - (March 1, 2024)
 
 * Changed
