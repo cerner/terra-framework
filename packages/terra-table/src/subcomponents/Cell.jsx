@@ -358,14 +358,11 @@ function Cell(props) {
       headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
-      {...(isRowHeader && {
-        scope: 'row',
-        role: 'rowheader',
-      })}
       onMouseDown={onCellSelect ? onMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props
       style={{ left: cellLeftEdge }}
+      {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
     >
       {cellContentComponent}
       {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.table.cell-interactable' })} />}
