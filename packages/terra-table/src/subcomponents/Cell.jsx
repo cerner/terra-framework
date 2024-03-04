@@ -150,8 +150,6 @@ function Cell(props) {
     tableId,
   } = props;
 
-  // ----- refs & states variables -----
-
   const cellRef = useRef();
 
   const theme = useContext(ThemeContext);
@@ -163,8 +161,6 @@ function Cell(props) {
 
   const isGridContext = gridContext.role === GridConstants.GRID;
 
-  // ----- Utility functions -----
-
   /**
    * Determine if cell has focusable elements
    */
@@ -172,12 +168,6 @@ function Cell(props) {
     const focusableElements = getFocusableElements(cellRef.current);
     return focusableElements.length > 0;
   };
-
-  useEffect(() => {
-    if (isGridContext) {
-      setIsInteractable(hasFocusableElements());
-    }
-  }, [isGridContext]);
 
   /**
    *
@@ -217,9 +207,13 @@ function Cell(props) {
     }
   };
 
-  // ----- Event handlers -----
+  useEffect(() => {
+    if (isGridContext) {
+      setIsInteractable(hasFocusableElements());
+    }
+  }, [isGridContext]);
 
-  const onMouseDown = ((event) => {
+  const onMouseDown = (event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
@@ -232,7 +226,7 @@ function Cell(props) {
         isCellSelectable: (!isMasked && isSelectable),
       });
     }
-  });
+  };
 
   const handleKeyDown = (event) => {
     const key = event.keyCode;
@@ -283,8 +277,6 @@ function Cell(props) {
     }
   };
 
-  // ----- Cell content setup -----
-
   // Create cell content for masked and blank cells
   let cellContent;
   if (isMasked) {
@@ -328,8 +320,6 @@ function Cell(props) {
     );
   }
 
-  // ----- Rendering constants -----
-
   // Determine table cell header attribute values
   const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
   const CellTag = isRowHeader ? 'th' : 'td';
@@ -346,8 +336,6 @@ function Cell(props) {
     highlighted: isHighlighted,
     blank: !children,
   }, theme.className);
-
-  // ----- Rendering -----
 
   return (
     <CellTag
