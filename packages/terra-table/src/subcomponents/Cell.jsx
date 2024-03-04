@@ -309,14 +309,7 @@ function Cell(props) {
   } : { minHeight: rowMinimumHeight };
 
   // eslint-disable-next-line react/forbid-dom-props
-  let cellContentComponent = (
-    <div
-      className={cx('cell-content', theme.className)}
-      style={{ ...heightProperties }}
-    >
-      {cellContent}
-    </div>
-  );
+  let cellContentComponent = (<div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>);
 
   // Render FocusTrap container when within a grid context
   if (isGridContext) {
