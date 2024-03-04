@@ -277,4 +277,11 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('resizable-table', '#resizable-terra-table');
     });
   });
+
+  describe('Table with no row headers', () => {
+    it('Validates table with no row headers', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-without-row-header');
+      Terra.validates.element('table-without-row-header', '#table-without-row-header');
+    });
+  });
 });

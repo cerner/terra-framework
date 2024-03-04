@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.86.0 - (March 1, 2024)
+
+* Fixed
+  * Fixed sub-menu height issue when it exceeds viewport size.
+
 ## 6.85.0 - (February 28, 2024)
 
 * Fixed
@@ -26,7 +31,7 @@
 
 * Fixed
   * Fixed the issue with `contentWidth` as auto value.
-  
+
 * Changed
   * Allow menu/sub-menu to dynamically set height based on menu items.
 

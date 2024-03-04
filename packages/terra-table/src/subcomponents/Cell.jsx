@@ -22,12 +22,6 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * @private
-   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-
-  /**
    * String identifier of the row in which the Cell will be rendered.
    */
   rowId: PropTypes.string.isRequired,
@@ -112,38 +106,52 @@ const propTypes = {
    * With this property the height of the cell will grow to fit the cell content.
    */
   rowMinimumHeight: PropTypes.string,
+
+  /**
+   * A zero-based index indicating which column represents the row header.
+   * Index can be set to -1 if row headers are not required.
+   */
+  rowHeaderIndex: PropTypes.number,
+
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
 };
 
 const defaultProps = {
+  isMasked: false,
   isRowHeader: false,
   isSelectable: false,
-  isMasked: false,
   sectionId: '',
 };
 
 function Cell(props) {
   const {
-    rowId,
-    columnId,
-    rowIndex,
-    columnIndex,
-    sectionId,
-    tableId,
     ariaLabel,
+    children,
+    columnId,
+    columnIndex,
+    height,
+    intl,
+    isHighlighted,
     isMasked,
-    maskedLabel,
     isRowHeader,
     isSelectable,
     isSelected,
-    isHighlighted,
-    children,
+    maskedLabel,
     onCellSelect,
-    height,
-    intl,
+    rowHeaderIndex,
+    rowId,
+    rowIndex,
     rowMinimumHeight,
+    sectionId,
+    tableId,
   } = props;
 
   const cellRef = useRef();
+
   const theme = useContext(ThemeContext);
   const gridContext = useContext(GridContext);
   const columnContext = useContext(ColumnContext);
@@ -160,30 +168,6 @@ function Cell(props) {
     const focusableElements = getFocusableElements(cellRef.current);
     return focusableElements.length > 0;
   };
-
-  useEffect(() => {
-    if (isGridContext) {
-      setIsInteractable(hasFocusableElements());
-    }
-  }, [isGridContext]);
-
-  /**
-   * Handles the onDeactivate callback for FocusTrap component
-   */
-  const deactivateFocusTrap = () => {
-    setIsFocusTrapEnabled(false);
-    if (gridContext.setCellAriaLiveMessage) {
-      gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.resume-navigation' }));
-    }
-  };
-
-  const onMouseDown = ((event) => {
-    if (!isFocusTrapEnabled) {
-      onCellSelect({
-        sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isMetaPressed: event.metaKey || event.ctrlKey, isCellSelectable: (!isMasked && isSelectable),
-      });
-    }
-  });
 
   /**
    *
@@ -211,6 +195,37 @@ function Cell(props) {
     }
 
     return false;
+  };
+
+  /**
+   * Handles the onDeactivate callback for FocusTrap component
+   */
+  const deactivateFocusTrap = () => {
+    setIsFocusTrapEnabled(false);
+    if (gridContext.setCellAriaLiveMessage) {
+      gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.resume-navigation' }));
+    }
+  };
+
+  useEffect(() => {
+    if (isGridContext) {
+      setIsInteractable(hasFocusableElements());
+    }
+  }, [isGridContext]);
+
+  const onMouseDown = (event) => {
+    if (!isFocusTrapEnabled) {
+      onCellSelect({
+        sectionId,
+        rowId,
+        rowIndex: (rowIndex - 1),
+        columnId,
+        columnIndex,
+        isShiftPressed: event.shiftKey,
+        isMetaPressed: event.metaKey || event.ctrlKey,
+        isCellSelectable: (!isMasked && isSelectable),
+      });
+    }
   };
 
   const handleKeyDown = (event) => {
@@ -241,7 +256,14 @@ function Cell(props) {
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
             onCellSelect({
-              sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isMetaPressed: event.metaKey || event.ctrlKey, isCellSelectable: (!isMasked && isSelectable),
+              sectionId,
+              rowId,
+              rowIndex: (rowIndex - 1),
+              columnId,
+              columnIndex,
+              isShiftPressed: event.shiftKey,
+              isMetaPressed: event.metaKey || event.ctrlKey,
+              isCellSelectable: (!isMasked && isSelectable),
             });
           }
 
@@ -273,6 +295,38 @@ function Cell(props) {
     cellContent = children;
   }
 
+  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
+  const heightProperties = (height) ? {
+    height,
+  } : { minHeight: rowMinimumHeight };
+
+  // eslint-disable-next-line react/forbid-dom-props
+  let cellContentComponent = (<div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>);
+
+  // Render FocusTrap container when within a grid context
+  if (isGridContext) {
+    cellContentComponent = (
+      <FocusTrap
+        active={isFocusTrapEnabled}
+        focusTrapOptions={{
+          returnFocusOnDeactivate: true,
+          clickOutsideDeactivates: true,
+          escapeDeactivates: false,
+          onDeactivate: deactivateFocusTrap,
+        }}
+      >
+        {cellContentComponent}
+      </FocusTrap>
+    );
+  }
+
+  // Determine table cell header attribute values
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const CellTag = isRowHeader ? 'th' : 'td';
+  const columnHeaderId = `${tableId}-${columnId}-headerCell`;
+  const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
+  const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
+
   const className = cx('cell', {
     masked: isMasked,
     pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
@@ -283,36 +337,6 @@ function Cell(props) {
     blank: !children,
   }, theme.className);
 
-  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
-
-  const CellTag = isRowHeader ? 'th' : 'td';
-
-  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
-  const heightProperties = (height) ? {
-    height,
-  } : { minHeight: rowMinimumHeight };
-
-  // eslint-disable-next-line react/forbid-dom-props
-  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>;
-  // Render FocusTrap container when within a grid context
-  if (isGridContext) {
-    cellContentComponent = (
-      <FocusTrap
-        active={isFocusTrapEnabled}
-        focusTrapOptions={{
-          returnFocusOnDeactivate: true, clickOutsideDeactivates: true, escapeDeactivates: false, onDeactivate: deactivateFocusTrap,
-        }}
-      >
-        {cellContentComponent}
-      </FocusTrap>
-    );
-  }
-
-  // Determine table cell header attribute values
-  const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
-  const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId} ` : '';
-  const columnHeaderId = `${tableId}-${columnId}-headerCell`;
-
   return (
     <CellTag
       id={isRowHeader ? `${tableId}-rowheader-${rowId}` : undefined}
@@ -322,11 +346,11 @@ function Cell(props) {
       headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
-      {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
       onMouseDown={onCellSelect ? onMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props
       style={{ left: cellLeftEdge }}
+      {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
     >
       {cellContentComponent}
       {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.table.cell-interactable' })} />}
