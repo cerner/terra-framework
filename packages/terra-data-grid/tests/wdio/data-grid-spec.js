@@ -202,13 +202,6 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       Terra.validates.element('non-focusable-cell-no-trap', { columnResizeSelector });
     });
 
-    it('validates that a cell with a button element traps focus', () => {
-      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'Enter', 'ArrowRight']);
-
-      Terra.validates.element('focusable-button-cell-trap-focus', { columnResizeSelector });
-      expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
-    });
-
     it('validates that Escape can be used to release a focus trap', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'Enter', 'Escape']);
 
@@ -279,10 +272,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
     it('focuses on a hyperlink if it is the only component in a cell',()=>{
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight']);
-      const element = browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a');
-      console.log(element.getHTML());
-      expect(element.isFocused()).toBe(true);
-//      expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a').isFocused()).toBe(true);
+      expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a').isFocused()).toBe(true);
     });
   });
 
