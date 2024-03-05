@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added accessibility label for navigation back button.
+
 ## 2.50.0 - (February 22, 2024)
 
 * Added
