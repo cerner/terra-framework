@@ -21,6 +21,7 @@ import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
 import getFocusableElements from './utils/focusManagement';
 import hasColumnActions from './utils/actionsUtils';
+import tableUtils from './utils/tableUtils';
 
 const cx = classNames.bind(styles);
 

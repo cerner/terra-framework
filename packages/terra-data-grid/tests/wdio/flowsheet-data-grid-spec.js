@@ -86,21 +86,21 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       it('renders a flowsheet with default column highlight', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-highlight-orange');
         browser.keys(['Tab']); // Cell 0,0 gets focus
-        expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
         Terra.validates.element('flowsheet-data-grid-column-highlight', { selector: '#terra-flowsheet-data-grid-column-highlight-orange' });
       });
 
       it('renders a flowsheet data grid with green column highlight', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-highlight-green');
         browser.keys(['Tab']); // Cell 0,0 gets focus
-        expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
         Terra.validates.element('flowsheet-data-grid-column-highlight-green', { selector: '#terra-flowsheet-data-grid-column-highlight-green' });
       });
 
       it('renders a flowsheet data grid with orange and green column highlight', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/multi-column-highlight');
         browser.keys(['Tab']); // Cell 0,0 gets focus
-        expect(browser.$('tr.column-header-row th:nth-child(1)').isFocused()).toBe(true);
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
         Terra.validates.element('flowsheet-data-grid-multi-column-highlight', { selector: '#terra-flowsheet-data-grid-multi-column-highlight' });
       });
 

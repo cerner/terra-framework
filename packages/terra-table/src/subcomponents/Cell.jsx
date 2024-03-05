@@ -119,7 +119,7 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-  /** 
+  /**
    * @private
    * Id of the first row in table
    */
@@ -348,6 +348,15 @@ function Cell(props) {
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
 
+  let columnHighlight = {};
+  if (columnHighlightColor) {
+    columnHighlight = {
+      [`column-highlight-${columnHighlightColor.toLowerCase()}`]: true,
+      [`first-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === firstRowId,
+      [`last-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === lastRowId,
+    };
+  }
+
   const className = cx('cell', {
     masked: isMasked,
     pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
@@ -356,6 +365,7 @@ function Cell(props) {
     selected: isSelected && !isMasked,
     highlighted: isHighlighted,
     blank: !children,
+    ...columnHighlight,
   }, theme.className);
 
   return (

@@ -112,11 +112,11 @@ const propTypes = {
   */
   firstRowId: PropTypes.string,
 
-   /**
+  /**
     * @private
     * Id of the last row in table
     */
-   lastRowId: PropTypes.string,
+  lastRowId: PropTypes.string,
 };
 
 const defaultProps = {
