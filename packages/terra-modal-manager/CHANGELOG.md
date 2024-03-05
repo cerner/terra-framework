@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.73.0 - (March 5, 2024)
+
 * Changed
   * Revert changes for focus trappping.
 
