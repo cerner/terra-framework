@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Revert examples utilizing `focusOn` implementation.
+
 ## 4.41.0 - (February 28, 2024)
 
 * Changed
