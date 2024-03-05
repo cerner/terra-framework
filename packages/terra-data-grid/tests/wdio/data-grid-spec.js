@@ -270,6 +270,16 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[1]/div/button').isFocused()).toBe(true);
     });
 
+    it.only('clicks the button instead of diving in if it is the only component in the cell',()=>{
+      const modal = browser.$('[aria-modal="true"]');
+      expect(modal.isDisplayed()).toBe(false);
+
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'Enter']);
+
+      expect(modal.isDisplayed()).toBe(true);
+      expect(browser.$('/html/body/div[2]/div[2]/div/div/div/div[4]/div/button').isFocused()).toBe(true);
+    });
+
     it('focuses on a hyperlink if it is the only component in a cell',()=>{
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight']);
       expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a').isFocused()).toBe(true);
