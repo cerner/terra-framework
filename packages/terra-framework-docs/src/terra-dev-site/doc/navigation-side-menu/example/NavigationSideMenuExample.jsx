@@ -22,7 +22,12 @@ class NavigationSideMenuDefault extends React.Component {
   }
 
   resetMenuState() {
-    this.setState({ selectedMenuKey: 'menu', selectedChildKey: undefined });
+    this.setState({ selectedMenuKey: 'menu', selectedChildKey: undefined }, () => {
+      const backButtonRef = document.querySelectorAll('[role="menuitem"]');
+      if (backButtonRef && backButtonRef.length) {
+        backButtonRef[0].focus();
+      }
+    });
   }
 
   fakeRoutingBack() {
