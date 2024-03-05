@@ -76,7 +76,7 @@ const ModalContainer = () => {
 
 const ModalManagerExample = () => (
   <div className={cx('example-wrapper')}>
-    <ModalManager shouldTrapFocus>
+    <ModalManager>
       <ModalContainer />
     </ModalManager>
   </div>
