@@ -175,13 +175,11 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
     it('validates that a Tab key press inside the grid as last focusable element wraps', () => {
       const testScript = 'document.getElementById("next-focus-button").style.display="none"';
       browser.execute(testScript);
-
       browser.pause(250);
-
       browser.keys(['Tab', 'Tab', 'Tab']);
 
       Terra.validates.element('data-grid-focusable-elements-wrap', { columnResizeSelector });
-      expect(browser.$('#previous-focus-button').isFocused()).toBe(true);;
+      expect(browser.$('#previous-focus-button').isFocused()).toBe(true);
     });
 
     it('validates that a Shift+Tab key press while inside the grid will skip to the previous focusable element outside the grid', () => {
@@ -222,13 +220,6 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('focusable-input-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
-    });
-
-    it('validates that a cell with an anchor element with href traps focus', () => {
-      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
-
-      Terra.validates.element('focusable-anchor-cell-trap-focus', { columnResizeSelector });
-      expect(browser.$$('a:focus')).toBeElementsArrayOfSize(1);
     });
 
     it('validates that a cell with multiple focusable elements traps focus', () => {
@@ -280,6 +271,19 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       Terra.validates.element('data-grid-focusable-select-retains-focus', { columnResizeSelector });
       expect(browser.$('#specialties').isFocused()).toBe(true);
     });
+
+    it('focuses on a button if it is the only component in a cell',()=>{
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight']);
+      expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[1]/div/button').isFocused()).toBe(true);
+    });
+
+    it('focuses on a hyperlink if it is the only component in a cell',()=>{
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight']);
+      const element = browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a');
+      console.log(element.getHTML());
+      expect(element.isFocused()).toBe(true);
+//      expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a').isFocused()).toBe(true);
+    });
   });
 
   describe('with pinned columns', () => {
@@ -311,15 +315,13 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
     it('validates that focused cells scroll into view when beneath sticky column header', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-sticky-header');
-
       browser.keys(['Tab']);
 
       const testScript = 'document.querySelector(\'div[class*="data-grid-container"\').scrollBy(0,25)';
       browser.execute(testScript);
-
       browser.keys(['ArrowDown']);
-
       browser.pause(250);
+
       Terra.validates.element('sticky-header-scroll-fix', { selector: stickyHeaderSelector });
     });
   });
