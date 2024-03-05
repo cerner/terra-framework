@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.11.0 - (March 5, 2024)
+
 * Changed
   * Removed padding from section header cell to eliminate gaps between sections.
 
