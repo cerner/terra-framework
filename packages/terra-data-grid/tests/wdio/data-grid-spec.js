@@ -162,14 +162,14 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab']);
 
       Terra.validates.element('data-grid-initial-focus', { columnResizeSelector });
-      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused());
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);;
     });
 
     it('validates that a Tab key press inside the grid will skip focusable cell elements', () => {
       browser.keys(['Tab', 'Tab', 'Tab']);
 
       Terra.validates.element('data-grid-skip-focusable-elements-next', { columnResizeSelector });
-      expect(browser.$('#next-focus-button').isFocused());
+      expect(browser.$('#next-focus-button').isFocused()).toBe(true);
     });
 
     it('validates that a Tab key press inside the grid as last focusable element wraps', () => {
@@ -181,21 +181,21 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab', 'Tab']);
 
       Terra.validates.element('data-grid-focusable-elements-wrap', { columnResizeSelector });
-      expect(browser.$('#previous-focus-button').isFocused());
+      expect(browser.$('#previous-focus-button').isFocused()).toBe(true);;
     });
 
     it('validates that a Shift+Tab key press while inside the grid will skip to the previous focusable element outside the grid', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('data-grid-skip-focusable-elements-previous', { columnResizeSelector });
-      expect(browser.$('#previous-focus-button').isFocused());
+      expect(browser.$('#previous-focus-button').isFocused()).toBe(true);
     });
 
     it('validates that the proper element is selected when Shift+Tab is used to give focus to the grid', () => {
       browser.keys(['Tab', 'Tab', 'Tab', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('data-grid-return-focus', { columnResizeSelector });
-      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused());
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);;
     });
 
     it('validates that a cell with no focusable elements does not trap focus', () => {
