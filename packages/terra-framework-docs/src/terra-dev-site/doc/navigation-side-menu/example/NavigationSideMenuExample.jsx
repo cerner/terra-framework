@@ -20,8 +20,7 @@ class NavigationSideMenuDefault extends React.Component {
   }
 
   render() {
-    let content;
-    content = (
+    const content = (
       <NavigationSideMenu
         id="test-menu"
         menuItems={[
