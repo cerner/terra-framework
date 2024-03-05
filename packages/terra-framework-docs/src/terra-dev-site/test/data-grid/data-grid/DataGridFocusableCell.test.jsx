@@ -5,7 +5,6 @@ import Button from 'terra-button';
 import Hyperlink from 'terra-hyperlink';
 import NotificationDialog from 'terra-notification-dialog';
 
-
 const DataGridFocusableCell = () => {
   const rowHeaderIndex = 0;
 

@@ -162,7 +162,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab']);
 
       Terra.validates.element('data-grid-initial-focus', { columnResizeSelector });
-      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);;
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);
     });
 
     it('validates that a Tab key press inside the grid will skip focusable cell elements', () => {
@@ -193,7 +193,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab', 'Tab', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('data-grid-return-focus', { columnResizeSelector });
-      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);;
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);
     });
 
     it('validates that a cell with no focusable elements does not trap focus', () => {
@@ -265,12 +265,12 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       expect(browser.$('#specialties').isFocused()).toBe(true);
     });
 
-    it('focuses on a button if it is the only component in a cell',()=>{
+    it('focuses on a button if it is the only component in a cell', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight']);
       expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[1]/div/button').isFocused()).toBe(true);
     });
 
-    it.only('clicks the button instead of diving in if it is the only component in the cell',()=>{
+    it.only('clicks the button instead of diving in if it is the only component in the cell', () => {
       const modal = browser.$('[aria-modal="true"]');
       expect(modal.isDisplayed()).toBe(false);
 
@@ -280,7 +280,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       expect(browser.$('/html/body/div[2]/div[2]/div/div/div/div[4]/div/button').isFocused()).toBe(true);
     });
 
-    it('focuses on a hyperlink if it is the only component in a cell',()=>{
+    it('focuses on a hyperlink if it is the only component in a cell', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight']);
       expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a').isFocused()).toBe(true);
     });

@@ -227,7 +227,7 @@ function Cell(props) {
     }
   }, [isGridContext]);
 
-  const handleFocus = (event) => {
+  const handleFocus = () => {
     const element = hasSingleButtonOrHyperlinkElement();
 
     if (element) {
