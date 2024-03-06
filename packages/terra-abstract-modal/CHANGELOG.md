@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Breaking Changes
+  * Re-introduced changes made in `v3.46.0`.
+  * Drop support for IE11 due to changes made to focus trapping.
+
 ## 3.48.0 - (March 5, 2024)
 
 * Changed
