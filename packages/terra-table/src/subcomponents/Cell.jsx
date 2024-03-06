@@ -170,19 +170,6 @@ function Cell(props) {
   };
 
   /**
-  *
-  * @returns the button or hyperlink element if the current cell only has a single instance of either. Otherwise, it returns null;
-  */
-  const hasSingleButtonOrHyperlinkElement = () => {
-    const allFocusableElements = getFocusableElements(cellRef.current);
-    const focusableButtonsAndHyperlinks = getFocusableButtonsOrHyperlinks(cellRef.current);
-    if (allFocusableElements.length === 1 && focusableButtonsAndHyperlinks.length === 1) {
-      return focusableButtonsAndHyperlinks[0];
-    }
-    return null;
-  };
-
-  /**
    *
    * @param {HTMLElement} element - The element to check if it is a text input
    * @returns True if the element is a editable field.  Otherwise, false.
@@ -226,14 +213,6 @@ function Cell(props) {
     }
   }, [isGridContext]);
 
-  const handleFocus = () => {
-    const element = hasSingleButtonOrHyperlinkElement();
-
-    if (element) {
-      element.focus();
-    }
-  };
-
   const handleMouseDown = (event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
@@ -267,11 +246,12 @@ function Cell(props) {
           // Lock focus into component
           if (isGridContext && hasFocusableElements()) {
             // If the current cell has only a single button or hyperlink component, do not enable focus trap
-            if (hasSingleButtonOrHyperlinkElement()) {
+            if (getFocusableElements(cellRef.current).length === 1 && (!cellRef.current.hasAttribute('tabindex') || cellRef.current.getElementsByTagName('button').length === 1 || cellRef.current.getElementsByTagName('a').length === 1)) {
               break;
             }
 
             setIsFocusTrapEnabled(true);
+
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
             }
@@ -372,7 +352,6 @@ function Cell(props) {
       headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
-      onFocus={handleFocus}
       onMouseDown={onCellSelect ? handleMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props
