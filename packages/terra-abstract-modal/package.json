@@ -35,6 +35,7 @@
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "mutationobserver-shim": "<=0.3.3",
+    "promise-polyfill": "^8.3.0",
     "prop-types": "^15.5.8",
     "react-focus-on": "^3.9.1",
     "react-portal": "^4.1.2",
