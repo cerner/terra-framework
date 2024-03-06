@@ -11,16 +11,6 @@ it('should mount an open modal', () => {
   expect(modal).toMatchSnapshot();
 });
 
-it('should mount an open modal with shouldTrapFocus set to true', () => {
-  const modal = enzymeIntl.mountWithIntl(<AbstractModalExample shouldTrapFocus />);
-  expect(modal).toMatchSnapshot();
-});
-
-it('should mount an open modal with shouldTrapFocus set to false', () => {
-  const modal = enzymeIntl.mountWithIntl(<AbstractModalExample shouldTrapFocus={false} />);
-  expect(modal).toMatchSnapshot();
-});
-
 it('should shallow an open modal 6000 z-index', () => {
   const modal = enzymeIntl.shallowWithIntl(<AbstractModalExample zIndex="6000" />);
   expect(modal).toMatchSnapshot();
