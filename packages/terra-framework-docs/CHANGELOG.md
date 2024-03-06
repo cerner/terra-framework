@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.72.0 - (March 5, 2024)
+
+* Changed
+  * Removed `shouldTrapFocus` attributes from examples.
+
 ## 1.71.0 - (March 1, 2024)
 
 * Added

@@ -70,7 +70,6 @@ exports[`correctly applies the theme context className 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -88,6 +87,7 @@ exports[`correctly applies the theme context className 1`] = `
                 class="abstract-modal layer-6000 orion-fusion-theme"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -159,7 +159,6 @@ exports[`correctly applies the theme context className 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -205,6 +204,7 @@ exports[`correctly applies the theme context className 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -336,7 +336,6 @@ exports[`should mount an open modal 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -354,6 +353,7 @@ exports[`should mount an open modal 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -425,7 +425,6 @@ exports[`should mount an open modal 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -471,6 +470,7 @@ exports[`should mount an open modal 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -603,7 +603,6 @@ exports[`should mount an open modal 7000 z-index 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="7000"
     >
       <Portal
@@ -621,6 +620,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 class="abstract-modal layer-7000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -692,7 +692,6 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="7000"
           >
             <ModalOverlay
@@ -738,6 +737,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -870,7 +870,6 @@ exports[`should mount an open modal 8000 z-index 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="8000"
     >
       <Portal
@@ -888,6 +887,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 class="abstract-modal layer-8000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -959,7 +959,6 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="8000"
           >
             <ModalOverlay
@@ -1005,6 +1004,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1137,7 +1137,6 @@ exports[`should mount an open modal 9000 z-index 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="9000"
     >
       <Portal
@@ -1155,6 +1154,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 class="abstract-modal layer-9000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -1226,7 +1226,6 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="9000"
           >
             <ModalOverlay
@@ -1272,6 +1271,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1404,7 +1404,6 @@ exports[`should mount an open modal set to fullscreen 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -1422,6 +1421,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 class="abstract-modal is-fullscreen layer-6000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -1493,7 +1493,6 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -1539,6 +1538,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1672,7 +1672,6 @@ exports[`should mount an open modal with custom props 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -1691,6 +1690,7 @@ exports[`should mount an open modal with custom props 1`] = `
                 id="custom-props"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -1763,7 +1763,6 @@ exports[`should mount an open modal with custom props 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -1810,6 +1809,7 @@ exports[`should mount an open modal with custom props 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -1942,7 +1942,6 @@ exports[`should mount an open modal with modal class name 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -1960,6 +1959,7 @@ exports[`should mount an open modal with modal class name 1`] = `
                 class="abstract-modal layer-6000 modal-custom-class"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -2031,7 +2031,6 @@ exports[`should mount an open modal with modal class name 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -2077,6 +2076,7 @@ exports[`should mount an open modal with modal class name 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -2209,7 +2209,6 @@ exports[`should mount an open modal with overlay class name 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -2227,6 +2226,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -2298,7 +2298,6 @@ exports[`should mount an open modal with overlay class name 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -2344,6 +2343,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -2476,7 +2476,6 @@ exports[`should mount an open modal with role 1`] = `
       onRequestClose={[Function]}
       role="alertdialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -2494,6 +2493,7 @@ exports[`should mount an open modal with role 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="alertdialog"
+                tabindex="0"
               >
                 <div
                   class="abstract-modal-container"
@@ -2565,7 +2565,6 @@ exports[`should mount an open modal with role 1`] = `
             onRequestClose={[Function]}
             role="alertdialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -2611,6 +2610,7 @@ exports[`should mount an open modal with role 1`] = `
               }
               onKeyDown={[Function]}
               role="alertdialog"
+              tabIndex="0"
             >
               <div
                 className="abstract-modal-container"
@@ -2658,1152 +2658,6 @@ exports[`should mount an open modal with role 1`] = `
                 </FormattedMessage>
               </div>
             </div>
-          </ForwardRef>
-        </Portal>
-      </Portal>
-    </AbstractModal>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      Open Modal
-    </button>
-  </div>
-</ModalExample>
-`;
-
-exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
-<ModalExample
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  shouldTrapFocus={false}
->
-  <div>
-    <AbstractModal
-      ariaLabel="Terra Modal"
-      classNameModal={null}
-      classNameOverlay={null}
-      closeOnEsc={true}
-      closeOnOutsideClick={true}
-      intl={
-        Object {
-          "defaultFormats": Object {},
-          "defaultLocale": "en",
-          "formatDate": [Function],
-          "formatHTMLMessage": [Function],
-          "formatMessage": [Function],
-          "formatNumber": [Function],
-          "formatPlural": [Function],
-          "formatRelative": [Function],
-          "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
-            "getDateTimeFormat": [Function],
-            "getMessageFormat": [Function],
-            "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
-          },
-          "locale": "en",
-          "messages": null,
-          "now": [Function],
-          "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
-        }
-      }
-      isCalledFromNotificationDialog={false}
-      isFullscreen={false}
-      isOpen={true}
-      onRequestClose={[Function]}
-      role="dialog"
-      rootSelector="#root"
-      shouldTrapFocus={false}
-      zIndex="6000"
-    >
-      <Portal
-        isOpened={true}
-      >
-        <Portal
-          containerInfo={
-            <div>
-              <div
-                class="overlay layer-6000"
-              />
-              <div
-                aria-label="Terra Modal"
-                aria-modal="true"
-                class="abstract-modal layer-6000"
-                intl="[object Object]"
-                role="dialog"
-              >
-                <div
-                  class="abstract-modal-container"
-                  data-terra-abstract-modal-begin="true"
-                  tabindex="-1"
-                >
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.BeginModalDialog
-                  </span>
-                  <div>
-                    <h1>
-                      Terra Modal
-                    </h1>
-                    <button
-                      type="button"
-                    >
-                      Close Modal
-                    </button>
-                  </div>
-                  <span
-                    class="visually-hidden-text"
-                  >
-                    Terra.AbstractModal.EndModalDialog
-                  </span>
-                </div>
-              </div>
-            </div>
-          }
-        >
-          <ForwardRef
-            aria-modal="true"
-            ariaLabel="Terra Modal"
-            classNameModal={null}
-            classNameOverlay={null}
-            closeOnOutsideClick={true}
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
-            isCalledFromNotificationDialog={false}
-            isFullscreen={false}
-            isScrollable={false}
-            onKeyDown={[Function]}
-            onRequestClose={[Function]}
-            role="dialog"
-            rootSelector="#root"
-            shouldTrapFocus={false}
-            zIndex="6000"
-          >
-            <ModalOverlay
-              className={null}
-              onClick={[Function]}
-              zIndex="6000"
-            >
-              <div
-                className="overlay layer-6000"
-                onClick={[Function]}
-              />
-            </ModalOverlay>
-            <div
-              aria-label="Terra Modal"
-              aria-modal="true"
-              className="abstract-modal layer-6000"
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onKeyDown={[Function]}
-              role="dialog"
-            >
-              <div
-                className="abstract-modal-container"
-                data-terra-abstract-modal-begin={true}
-                tabIndex="-1"
-              >
-                <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-                <div>
-                  <h1>
-                    Terra Modal
-                  </h1>
-                  <button
-                    onClick={[Function]}
-                    type="button"
-                  >
-                    Close Modal
-                  </button>
-                </div>
-                <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
-                >
-                  <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
-                  >
-                    <span
-                      className="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </VisuallyHiddenText>
-                </FormattedMessage>
-              </div>
-            </div>
-          </ForwardRef>
-        </Portal>
-      </Portal>
-    </AbstractModal>
-    <button
-      onClick={[Function]}
-      type="button"
-    >
-      Open Modal
-    </button>
-  </div>
-</ModalExample>
-`;
-
-exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
-<ModalExample
-  intl={
-    Object {
-      "defaultFormats": Object {},
-      "defaultLocale": "en",
-      "formatDate": [Function],
-      "formatHTMLMessage": [Function],
-      "formatMessage": [Function],
-      "formatNumber": [Function],
-      "formatPlural": [Function],
-      "formatRelative": [Function],
-      "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
-        "getDateTimeFormat": [Function],
-        "getMessageFormat": [Function],
-        "getNumberFormat": [Function],
-        "getPluralFormat": [Function],
-        "getRelativeFormat": [Function],
-      },
-      "locale": "en",
-      "messages": null,
-      "now": [Function],
-      "onError": [Function],
-      "textComponent": "span",
-      "timeZone": null,
-    }
-  }
-  shouldTrapFocus={true}
->
-  <div>
-    <AbstractModal
-      ariaLabel="Terra Modal"
-      classNameModal={null}
-      classNameOverlay={null}
-      closeOnEsc={true}
-      closeOnOutsideClick={true}
-      intl={
-        Object {
-          "defaultFormats": Object {},
-          "defaultLocale": "en",
-          "formatDate": [Function],
-          "formatHTMLMessage": [Function],
-          "formatMessage": [Function],
-          "formatNumber": [Function],
-          "formatPlural": [Function],
-          "formatRelative": [Function],
-          "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
-            "getDateTimeFormat": [Function],
-            "getMessageFormat": [Function],
-            "getNumberFormat": [Function],
-            "getPluralFormat": [Function],
-            "getRelativeFormat": [Function],
-          },
-          "locale": "en",
-          "messages": null,
-          "now": [Function],
-          "onError": [Function],
-          "textComponent": "span",
-          "timeZone": null,
-        }
-      }
-      isCalledFromNotificationDialog={false}
-      isFullscreen={false}
-      isOpen={true}
-      onRequestClose={[Function]}
-      role="dialog"
-      rootSelector="#root"
-      shouldTrapFocus={true}
-      zIndex="6000"
-    >
-      <Portal
-        isOpened={true}
-      >
-        <Portal
-          containerInfo={
-            <div>
-              <div
-                aria-hidden="true"
-                class="overlay layer-6000"
-                data-focus-on-hidden="true"
-              />
-              <div
-                aria-hidden="true"
-                data-focus-guard="true"
-                data-focus-on-hidden="true"
-                style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                tabindex="0"
-              />
-              <div
-                data-focus-lock-disabled="false"
-              >
-                <div
-                  aria-label="Terra Modal"
-                  aria-modal="true"
-                  class="abstract-modal layer-6000"
-                  intl="[object Object]"
-                  role="dialog"
-                >
-                  <div
-                    class="abstract-modal-container"
-                    data-terra-abstract-modal-begin="true"
-                    tabindex="-1"
-                  >
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.BeginModalDialog
-                    </span>
-                    <div>
-                      <h1>
-                        Terra Modal
-                      </h1>
-                      <button
-                        type="button"
-                      >
-                        Close Modal
-                      </button>
-                    </div>
-                    <span
-                      class="visually-hidden-text"
-                    >
-                      Terra.AbstractModal.EndModalDialog
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div
-                aria-hidden="true"
-                data-focus-guard="true"
-                data-focus-on-hidden="true"
-                style="width: 1px; height: 0px; padding: 0px; overflow: hidden; position: fixed; top: 1px; left: 1px;"
-                tabindex="0"
-              />
-            </div>
-          }
-        >
-          <ForwardRef
-            aria-modal="true"
-            ariaLabel="Terra Modal"
-            classNameModal={null}
-            classNameOverlay={null}
-            closeOnOutsideClick={true}
-            intl={
-              Object {
-                "defaultFormats": Object {},
-                "defaultLocale": "en",
-                "formatDate": [Function],
-                "formatHTMLMessage": [Function],
-                "formatMessage": [Function],
-                "formatNumber": [Function],
-                "formatPlural": [Function],
-                "formatRelative": [Function],
-                "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
-                  "getDateTimeFormat": [Function],
-                  "getMessageFormat": [Function],
-                  "getNumberFormat": [Function],
-                  "getPluralFormat": [Function],
-                  "getRelativeFormat": [Function],
-                },
-                "locale": "en",
-                "messages": null,
-                "now": [Function],
-                "onError": [Function],
-                "textComponent": "span",
-                "timeZone": null,
-              }
-            }
-            isCalledFromNotificationDialog={false}
-            isFullscreen={false}
-            isScrollable={false}
-            onKeyDown={[Function]}
-            onRequestClose={[Function]}
-            role="dialog"
-            rootSelector="#root"
-            shouldTrapFocus={true}
-            zIndex="6000"
-          >
-            <ModalOverlay
-              className={null}
-              onClick={[Function]}
-              zIndex="6000"
-            >
-              <div
-                className="overlay layer-6000"
-                onClick={[Function]}
-              />
-            </ModalOverlay>
-            <ForwardRef
-              onClickOutside={[Function]}
-            >
-              <ForwardRef
-                onClickOutside={[Function]}
-                sideCar={[Function]}
-              >
-                <ForwardRef(FocusLockUI)
-                  as={
-                    Object {
-                      "$$typeof": Symbol(react.forward_ref),
-                      "classNames": Object {
-                        "fullWidth": "width-before-scroll-bar",
-                        "zeroRight": "right-scroll-bar-position",
-                      },
-                      "defaultProps": Object {
-                        "enabled": true,
-                        "inert": false,
-                        "removeScrollBar": true,
-                      },
-                      "render": [Function],
-                    }
-                  }
-                  disabled={false}
-                  lockProps={
-                    Object {
-                      "allowPinchZoom": undefined,
-                      "as": undefined,
-                      "enabled": true,
-                      "gapMode": undefined,
-                      "inert": undefined,
-                      "onMouseDown": [Function],
-                      "onTouchStart": [Function],
-                      "shards": undefined,
-                      "sideCar": [Function],
-                      "style": undefined,
-                    }
-                  }
-                  onActivation={[Function]}
-                  onDeactivation={[Function]}
-                  returnFocus={true}
-                  sideCar={[Function]}
-                >
-                  <div
-                    data-focus-guard={true}
-                    key="guard-first"
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                  <RequireSideCar
-                    autoFocus={true}
-                    crossFrame={true}
-                    disabled={false}
-                    id={Object {}}
-                    observed={
-                      <div
-                        data-focus-lock-disabled="false"
-                      >
-                        <div
-                          aria-label="Terra Modal"
-                          aria-modal="true"
-                          class="abstract-modal layer-6000"
-                          intl="[object Object]"
-                          role="dialog"
-                        >
-                          <div
-                            class="abstract-modal-container"
-                            data-terra-abstract-modal-begin="true"
-                            tabindex="-1"
-                          >
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.BeginModalDialog
-                            </span>
-                            <div>
-                              <h1>
-                                Terra Modal
-                              </h1>
-                              <button
-                                type="button"
-                              >
-                                Close Modal
-                              </button>
-                            </div>
-                            <span
-                              class="visually-hidden-text"
-                            >
-                              Terra.AbstractModal.EndModalDialog
-                            </span>
-                          </div>
-                        </div>
-                      </div>
-                    }
-                    onActivation={[Function]}
-                    onDeactivation={[Function]}
-                    persistentFocus={false}
-                    returnFocus={[Function]}
-                    shards={Array []}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": true,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
-                  >
-                    <SideCar
-                      autoFocus={true}
-                      crossFrame={true}
-                      disabled={false}
-                      id={Object {}}
-                      observed={
-                        <div
-                          data-focus-lock-disabled="false"
-                        >
-                          <div
-                            aria-label="Terra Modal"
-                            aria-modal="true"
-                            class="abstract-modal layer-6000"
-                            intl="[object Object]"
-                            role="dialog"
-                          >
-                            <div
-                              class="abstract-modal-container"
-                              data-terra-abstract-modal-begin="true"
-                              tabindex="-1"
-                            >
-                              <span
-                                class="visually-hidden-text"
-                              >
-                                Terra.AbstractModal.BeginModalDialog
-                              </span>
-                              <div>
-                                <h1>
-                                  Terra Modal
-                                </h1>
-                                <button
-                                  type="button"
-                                >
-                                  Close Modal
-                                </button>
-                              </div>
-                              <span
-                                class="visually-hidden-text"
-                              >
-                                Terra.AbstractModal.EndModalDialog
-                              </span>
-                            </div>
-                          </div>
-                        </div>
-                      }
-                      onActivation={[Function]}
-                      onDeactivation={[Function]}
-                      persistentFocus={false}
-                      returnFocus={[Function]}
-                      shards={Array []}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": true,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    >
-                      <SideEffect(FocusWatcher)
-                        autoFocus={true}
-                        crossFrame={true}
-                        disabled={false}
-                        id={Object {}}
-                        observed={
-                          <div
-                            data-focus-lock-disabled="false"
-                          >
-                            <div
-                              aria-label="Terra Modal"
-                              aria-modal="true"
-                              class="abstract-modal layer-6000"
-                              intl="[object Object]"
-                              role="dialog"
-                            >
-                              <div
-                                class="abstract-modal-container"
-                                data-terra-abstract-modal-begin="true"
-                                tabindex="-1"
-                              >
-                                <span
-                                  class="visually-hidden-text"
-                                >
-                                  Terra.AbstractModal.BeginModalDialog
-                                </span>
-                                <div>
-                                  <h1>
-                                    Terra Modal
-                                  </h1>
-                                  <button
-                                    type="button"
-                                  >
-                                    Close Modal
-                                  </button>
-                                </div>
-                                <span
-                                  class="visually-hidden-text"
-                                >
-                                  Terra.AbstractModal.EndModalDialog
-                                </span>
-                              </div>
-                            </div>
-                          </div>
-                        }
-                        onActivation={[Function]}
-                        onDeactivation={[Function]}
-                        persistentFocus={false}
-                        returnFocus={[Function]}
-                        shards={Array []}
-                      >
-                        <FocusWatcher
-                          autoFocus={true}
-                          crossFrame={true}
-                          disabled={false}
-                          id={Object {}}
-                          observed={
-                            <div
-                              data-focus-lock-disabled="false"
-                            >
-                              <div
-                                aria-label="Terra Modal"
-                                aria-modal="true"
-                                class="abstract-modal layer-6000"
-                                intl="[object Object]"
-                                role="dialog"
-                              >
-                                <div
-                                  class="abstract-modal-container"
-                                  data-terra-abstract-modal-begin="true"
-                                  tabindex="-1"
-                                >
-                                  <span
-                                    class="visually-hidden-text"
-                                  >
-                                    Terra.AbstractModal.BeginModalDialog
-                                  </span>
-                                  <div>
-                                    <h1>
-                                      Terra Modal
-                                    </h1>
-                                    <button
-                                      type="button"
-                                    >
-                                      Close Modal
-                                    </button>
-                                  </div>
-                                  <span
-                                    class="visually-hidden-text"
-                                  >
-                                    Terra.AbstractModal.EndModalDialog
-                                  </span>
-                                </div>
-                              </div>
-                            </div>
-                          }
-                          onActivation={[Function]}
-                          onDeactivation={[Function]}
-                          persistentFocus={false}
-                          returnFocus={[Function]}
-                          shards={Array []}
-                        />
-                      </SideEffect(FocusWatcher)>
-                    </SideCar>
-                  </RequireSideCar>
-                  <ForwardRef
-                    data-focus-lock-disabled={false}
-                    enabled={true}
-                    inert={false}
-                    onBlur={[Function]}
-                    onFocus={[Function]}
-                    onMouseDown={[Function]}
-                    onTouchStart={[Function]}
-                    removeScrollBar={true}
-                    sideCar={[Function]}
-                  >
-                    <RequireSideCar
-                      allowPinchZoom={false}
-                      inert={false}
-                      lockRef={
-                        Object {
-                          "current": <div
-                            data-focus-lock-disabled="false"
-                          >
-                            <div
-                              aria-label="Terra Modal"
-                              aria-modal="true"
-                              class="abstract-modal layer-6000"
-                              intl="[object Object]"
-                              role="dialog"
-                            >
-                              <div
-                                class="abstract-modal-container"
-                                data-terra-abstract-modal-begin="true"
-                                tabindex="-1"
-                              >
-                                <span
-                                  class="visually-hidden-text"
-                                >
-                                  Terra.AbstractModal.BeginModalDialog
-                                </span>
-                                <div>
-                                  <h1>
-                                    Terra Modal
-                                  </h1>
-                                  <button
-                                    type="button"
-                                  >
-                                    Close Modal
-                                  </button>
-                                </div>
-                                <span
-                                  class="visually-hidden-text"
-                                >
-                                  Terra.AbstractModal.EndModalDialog
-                                </span>
-                              </div>
-                            </div>
-                          </div>,
-                        }
-                      }
-                      removeScrollBar={true}
-                      setCallbacks={[Function]}
-                      sideCar={
-                        Object {
-                          "assignMedium": [Function],
-                          "assignSyncMedium": [Function],
-                          "options": Object {
-                            "async": true,
-                            "ssr": false,
-                          },
-                          "read": [Function],
-                          "useMedium": [Function],
-                        }
-                      }
-                    >
-                      <SideCar
-                        allowPinchZoom={false}
-                        inert={false}
-                        lockRef={
-                          Object {
-                            "current": <div
-                              data-focus-lock-disabled="false"
-                            >
-                              <div
-                                aria-label="Terra Modal"
-                                aria-modal="true"
-                                class="abstract-modal layer-6000"
-                                intl="[object Object]"
-                                role="dialog"
-                              >
-                                <div
-                                  class="abstract-modal-container"
-                                  data-terra-abstract-modal-begin="true"
-                                  tabindex="-1"
-                                >
-                                  <span
-                                    class="visually-hidden-text"
-                                  >
-                                    Terra.AbstractModal.BeginModalDialog
-                                  </span>
-                                  <div>
-                                    <h1>
-                                      Terra Modal
-                                    </h1>
-                                    <button
-                                      type="button"
-                                    >
-                                      Close Modal
-                                    </button>
-                                  </div>
-                                  <span
-                                    class="visually-hidden-text"
-                                  >
-                                    Terra.AbstractModal.EndModalDialog
-                                  </span>
-                                </div>
-                              </div>
-                            </div>,
-                          }
-                        }
-                        removeScrollBar={true}
-                        setCallbacks={[Function]}
-                        sideCar={
-                          Object {
-                            "assignMedium": [Function],
-                            "assignSyncMedium": [Function],
-                            "options": Object {
-                              "async": true,
-                              "ssr": false,
-                            },
-                            "read": [Function],
-                            "useMedium": [Function],
-                          }
-                        }
-                      >
-                        <RemoveScrollSideCar
-                          allowPinchZoom={false}
-                          inert={false}
-                          lockRef={
-                            Object {
-                              "current": <div
-                                data-focus-lock-disabled="false"
-                              >
-                                <div
-                                  aria-label="Terra Modal"
-                                  aria-modal="true"
-                                  class="abstract-modal layer-6000"
-                                  intl="[object Object]"
-                                  role="dialog"
-                                >
-                                  <div
-                                    class="abstract-modal-container"
-                                    data-terra-abstract-modal-begin="true"
-                                    tabindex="-1"
-                                  >
-                                    <span
-                                      class="visually-hidden-text"
-                                    >
-                                      Terra.AbstractModal.BeginModalDialog
-                                    </span>
-                                    <div>
-                                      <h1>
-                                        Terra Modal
-                                      </h1>
-                                      <button
-                                        type="button"
-                                      >
-                                        Close Modal
-                                      </button>
-                                    </div>
-                                    <span
-                                      class="visually-hidden-text"
-                                    >
-                                      Terra.AbstractModal.EndModalDialog
-                                    </span>
-                                  </div>
-                                </div>
-                              </div>,
-                            }
-                          }
-                          removeScrollBar={true}
-                          setCallbacks={[Function]}
-                        >
-                          <RemoveScrollBar>
-                            <Sheet
-                              styles="
-  .with-scroll-bars-hidden {
-   overflow: hidden !important;
-   padding-right: 1024px !important;
-  }
-  body[data-scroll-locked] {
-    overflow: hidden !important;
-    overscroll-behavior: contain;
-    position: relative !important;
-    padding-left: 8px;
-    padding-top: 8px;
-    padding-right: 8px;
-    margin-left:0;
-    margin-top:0;
-    margin-right: 1024px !important;
-    
-  }
-  
-  .right-scroll-bar-position {
-    right: 1024px !important;
-  }
-  
-  .width-before-scroll-bar {
-    margin-right: 1024px !important;
-  }
-  
-  .right-scroll-bar-position .right-scroll-bar-position {
-    right: 0 !important;
-  }
-  
-  .width-before-scroll-bar .width-before-scroll-bar {
-    margin-right: 0 !important;
-  }
-  
-  body[data-scroll-locked] {
-    --removed-body-scroll-bar-size: 1024px;
-  }
-"
-                            />
-                          </RemoveScrollBar>
-                        </RemoveScrollSideCar>
-                      </SideCar>
-                    </RequireSideCar>
-                    <div
-                      data-focus-lock-disabled={false}
-                      onBlur={[Function]}
-                      onFocus={[Function]}
-                      onMouseDown={[Function]}
-                      onScrollCapture={[Function]}
-                      onTouchMoveCapture={[Function]}
-                      onTouchStart={[Function]}
-                      onWheelCapture={[Function]}
-                    >
-                      <div
-                        aria-label="Terra Modal"
-                        aria-modal="true"
-                        className="abstract-modal layer-6000"
-                        intl={
-                          Object {
-                            "defaultFormats": Object {},
-                            "defaultLocale": "en",
-                            "formatDate": [Function],
-                            "formatHTMLMessage": [Function],
-                            "formatMessage": [Function],
-                            "formatNumber": [Function],
-                            "formatPlural": [Function],
-                            "formatRelative": [Function],
-                            "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
-                              "getDateTimeFormat": [Function],
-                              "getMessageFormat": [Function],
-                              "getNumberFormat": [Function],
-                              "getPluralFormat": [Function],
-                              "getRelativeFormat": [Function],
-                            },
-                            "locale": "en",
-                            "messages": null,
-                            "now": [Function],
-                            "onError": [Function],
-                            "textComponent": "span",
-                            "timeZone": null,
-                          }
-                        }
-                        onKeyDown={[Function]}
-                        role="dialog"
-                      >
-                        <div
-                          className="abstract-modal-container"
-                          data-terra-abstract-modal-begin={true}
-                          tabIndex="-1"
-                        >
-                          <FormattedMessage
-                            id="Terra.AbstractModal.BeginModalDialog"
-                            values={Object {}}
-                          >
-                            <VisuallyHiddenText
-                              text="Terra.AbstractModal.BeginModalDialog"
-                            >
-                              <span
-                                className="visually-hidden-text"
-                              >
-                                Terra.AbstractModal.BeginModalDialog
-                              </span>
-                            </VisuallyHiddenText>
-                          </FormattedMessage>
-                          <div>
-                            <h1>
-                              Terra Modal
-                            </h1>
-                            <button
-                              onClick={[Function]}
-                              type="button"
-                            >
-                              Close Modal
-                            </button>
-                          </div>
-                          <FormattedMessage
-                            id="Terra.AbstractModal.EndModalDialog"
-                            values={Object {}}
-                          >
-                            <VisuallyHiddenText
-                              text="Terra.AbstractModal.EndModalDialog"
-                            >
-                              <span
-                                className="visually-hidden-text"
-                              >
-                                Terra.AbstractModal.EndModalDialog
-                              </span>
-                            </VisuallyHiddenText>
-                          </FormattedMessage>
-                        </div>
-                      </div>
-                    </div>
-                  </ForwardRef>
-                  <div
-                    data-focus-guard={true}
-                    style={
-                      Object {
-                        "height": "0px",
-                        "left": "1px",
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "fixed",
-                        "top": "1px",
-                        "width": "1px",
-                      }
-                    }
-                    tabIndex={0}
-                  />
-                </ForwardRef(FocusLockUI)>
-                <RequireSideCar
-                  onClickOutside={[Function]}
-                  setLockProps={[Function]}
-                  sideCar={
-                    Object {
-                      "assignMedium": [Function],
-                      "assignSyncMedium": [Function],
-                      "options": Object {
-                        "async": true,
-                        "ssr": false,
-                      },
-                      "read": [Function],
-                      "useMedium": [Function],
-                    }
-                  }
-                >
-                  <SideCar
-                    onClickOutside={[Function]}
-                    setLockProps={[Function]}
-                    sideCar={
-                      Object {
-                        "assignMedium": [Function],
-                        "assignSyncMedium": [Function],
-                        "options": Object {
-                          "async": true,
-                          "ssr": false,
-                        },
-                        "read": [Function],
-                        "useMedium": [Function],
-                      }
-                    }
-                  >
-                    <Effect
-                      onClickOutside={[Function]}
-                      setLockProps={[Function]}
-                    >
-                      <Component>
-                        <Sheet
-                          styles="
- [data-focus-on-hidden] {
-   pointer-events: none !important;
- }
-"
-                        />
-                      </Component>
-                    </Effect>
-                  </SideCar>
-                </RequireSideCar>
-              </ForwardRef>
-            </ForwardRef>
           </ForwardRef>
         </Portal>
       </Portal>
@@ -3888,7 +2742,6 @@ exports[`should render the correct snapshot for iPads 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -3906,6 +2759,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="-1"
               >
                 <div
                   class="abstract-modal-container"
@@ -3977,7 +2831,6 @@ exports[`should render the correct snapshot for iPads 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -4023,6 +2876,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="-1"
             >
               <div
                 className="abstract-modal-container"
@@ -4154,7 +3008,6 @@ exports[`should render the correct snapshot for iPhones 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -4172,6 +3025,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="-1"
               >
                 <div
                   class="abstract-modal-container"
@@ -4243,7 +3097,6 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -4289,6 +3142,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="-1"
             >
               <div
                 className="abstract-modal-container"
@@ -4420,7 +3274,6 @@ exports[`should render the correct snapshot for iPods 1`] = `
       onRequestClose={[Function]}
       role="dialog"
       rootSelector="#root"
-      shouldTrapFocus={false}
       zIndex="6000"
     >
       <Portal
@@ -4438,6 +3291,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 class="abstract-modal layer-6000"
                 intl="[object Object]"
                 role="dialog"
+                tabindex="-1"
               >
                 <div
                   class="abstract-modal-container"
@@ -4509,7 +3363,6 @@ exports[`should render the correct snapshot for iPods 1`] = `
             onRequestClose={[Function]}
             role="dialog"
             rootSelector="#root"
-            shouldTrapFocus={false}
             zIndex="6000"
           >
             <ModalOverlay
@@ -4555,6 +3408,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
               }
               onKeyDown={[Function]}
               role="dialog"
+              tabIndex="-1"
             >
               <div
                 className="abstract-modal-container"
@@ -4657,7 +3511,6 @@ exports[`should shallow an open modal 1`] = `
     onRequestClose={[Function]}
     role="dialog"
     rootSelector="#root"
-    shouldTrapFocus={false}
     zIndex="6000"
   >
     <div>
@@ -4722,7 +3575,6 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
     onRequestClose={[Function]}
     role="dialog"
     rootSelector="#root"
-    shouldTrapFocus={false}
     zIndex="6000"
   >
     <div>
@@ -4787,7 +3639,6 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
     onRequestClose={[Function]}
     role="dialog"
     rootSelector="#root"
-    shouldTrapFocus={false}
     zIndex="7000"
   >
     <div>
@@ -4852,7 +3703,6 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
     onRequestClose={[Function]}
     role="dialog"
     rootSelector="#root"
-    shouldTrapFocus={false}
     zIndex="8000"
   >
     <div>
@@ -4917,7 +3767,6 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
     onRequestClose={[Function]}
     role="dialog"
     rootSelector="#root"
-    shouldTrapFocus={false}
     zIndex="9000"
   >
     <div>

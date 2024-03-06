@@ -1,6 +1,6 @@
 {
   "name": "terra-application-navigation",
-  "version": "1.77.0",
+  "version": "1.78.0",
   "description": "The Terra Application Navigation is a responsive, themeable layout for building applications. ApplicationNavigation is comprised of selectable navigation and utility elements with selection callbacks.",
   "author": "Cerner Corporation",
   "repository": {
@@ -49,7 +49,7 @@
     "terra-icon": "^3.19.0",
     "terra-image": "^3.0.0",
     "terra-overlay": "^3.0.0",
-    "terra-popup": "^6.75.0",
+    "terra-popup": "^6.76.0",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.0.0"
   },
