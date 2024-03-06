@@ -4,11 +4,14 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
+
 import Table, {
   GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions,
 } from 'terra-table';
+import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -252,7 +255,9 @@ const DataGrid = forwardRef((props, ref) => {
       columnId: displayedColumns[newColIndex].id,
     };
 
-    if (makeActiveElement) {
+    if (!makeActiveElement) {
+  return;
+    }
       let focusedCell;
       if (isSection(newRowIndex)) {
         [focusedCell] = grid.current.rows[newRowIndex].cells;
@@ -260,22 +265,36 @@ const DataGrid = forwardRef((props, ref) => {
         if (!focusedCell.hasAttribute('tabindex')) {
           focusedCell = grid.current.rows[newRowIndex].querySelector('button');
         }
-      } else {
+        focusedCell?.focus();
+return;
+      }
+    focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+
+      // if there are multiple focusable elements, set focus on the cell
+    if(getFocusableElements(focusedCell).length !== 1) {
+      focusedCell?.focus();
+return;
+    }
+//      else {
         // Set focus on input field (checkbox) of row selection cells.
         focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
         if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
           [focusedCell] = focusedCell.getElementsByTagName('input');
+          focusedCell?.focus();
+          return;
         }
 
-        // Set focus to column header button, if it exists
-        const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
-        if (isHeaderRow && !focusedCell.hasAttribute('tabindex')) {
-          focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button');
-        }
-      }
+        // Set focus to a single header button, if it exists
+        if (!focusedCell.hasAttribute('tabindex') || focusedCell.getElementsByTagName('button').length === 1 || focusedCell.getElementsByTagName('a').length === 1) {
 
+          focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button') || focusedCell.querySelector('a');
+          focusedCell?.focus();
+          return;
+        }
+//      }
       focusedCell?.focus();
-    }
+        return;
+//    }
   }, [displayedColumns, isSection, isRowSelectionCell, hasColumnHeaderActions]);
 
   // The focus is handled by the DataGrid. However, there are times
@@ -598,11 +617,11 @@ const DataGrid = forwardRef((props, ref) => {
           columnHeaderHeight={columnHeaderHeight}
           rowHeight={rowHeight}
           rowHeaderIndex={rowHeaderIndex}
+          onCellSelect={onCellSelect}
           onColumnResize={onColumnResize}
           onColumnSelect={onColumnSelect}
           onSectionSelect={onSectionSelect}
           onRowSelectionHeaderSelect={onRowSelectionHeaderSelect}
-          onCellSelect={onCellSelect}
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
