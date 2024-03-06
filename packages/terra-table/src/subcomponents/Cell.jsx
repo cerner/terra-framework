@@ -16,7 +16,6 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ColumnContext from '../utils/ColumnContext';
 import GridContext, { GridConstants } from '../utils/GridContext';
 import getFocusableElements from '../utils/focusManagement';
-import getFocusableButtonsOrHyperlinks from '../utils/focusableButton';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
