@@ -256,46 +256,45 @@ const DataGrid = forwardRef((props, ref) => {
     };
 
     if (!makeActiveElement) {
-  return;
+      return;
     }
-      let focusedCell;
-      if (isSection(newRowIndex)) {
-        [focusedCell] = grid.current.rows[newRowIndex].cells;
+    let focusedCell;
+    if (isSection(newRowIndex)) {
+      [focusedCell] = grid.current.rows[newRowIndex].cells;
 
-        if (!focusedCell.hasAttribute('tabindex')) {
-          focusedCell = grid.current.rows[newRowIndex].querySelector('button');
-        }
-        focusedCell?.focus();
-return;
+      if (!focusedCell.hasAttribute('tabindex')) {
+        focusedCell = grid.current.rows[newRowIndex].querySelector('button');
       }
+      focusedCell?.focus();
+      return;
+    }
     focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
 
-      // if there are multiple focusable elements, set focus on the cell
-    if(getFocusableElements(focusedCell).length !== 1) {
+    // if there are multiple focusable elements, set focus on the cell
+    if (getFocusableElements(focusedCell).length !== 1) {
       focusedCell?.focus();
-return;
+      return;
     }
-//      else {
-        // Set focus on input field (checkbox) of row selection cells.
-        focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
-        if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-          [focusedCell] = focusedCell.getElementsByTagName('input');
-          focusedCell?.focus();
-          return;
-        }
-
-        // Set focus to a single header button, if it exists
-        if (!focusedCell.hasAttribute('tabindex') || focusedCell.getElementsByTagName('button').length === 1 || focusedCell.getElementsByTagName('a').length === 1) {
-
-          focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button') || focusedCell.querySelector('a');
-          focusedCell?.focus();
-          return;
-        }
-//      }
+    //      else {
+    // Set focus on input field (checkbox) of row selection cells.
+    focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+      [focusedCell] = focusedCell.getElementsByTagName('input');
       focusedCell?.focus();
-        return;
-//    }
-  }, [displayedColumns, isSection, isRowSelectionCell, hasColumnHeaderActions]);
+      return;
+    }
+
+    // Set focus to a single header button, if it exists
+    if (!focusedCell.hasAttribute('tabindex') || focusedCell.getElementsByTagName('button').length === 1 || focusedCell.getElementsByTagName('a').length === 1) {
+      focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button') || focusedCell.querySelector('a');
+      focusedCell?.focus();
+      return;
+    }
+    //      }
+    focusedCell?.focus();
+
+    //    }
+  }, [displayedColumns, isSection, isRowSelectionCell]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
