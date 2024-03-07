@@ -274,7 +274,6 @@ const DataGrid = forwardRef((props, ref) => {
     focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
 
     // If there are multiple focusable elements, set focus on the cell
-    console.log(getFocusableElements(focusedCell).length);
     if (getFocusableElements(focusedCell).length > 1) {
       focusedCell?.focus();
       return;
