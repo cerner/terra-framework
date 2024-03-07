@@ -289,7 +289,7 @@ const DataGrid = forwardRef((props, ref) => {
 
     // Set focus to a single header button or hyperlink if they are the only content in cell
     if (!focusedCell.hasAttribute('tabindex') || focusedCell.getElementsByTagName('button').length === 1 || focusedCell.getElementsByTagName('a').length === 1) {
-      focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button') || focusedCell.querySelector('a');
+      focusedCell = focusedCell.querySelector('a, button, [role="button"]');
       focusedCell?.focus();
       return;
     }
@@ -617,11 +617,11 @@ const DataGrid = forwardRef((props, ref) => {
           columnHeaderHeight={columnHeaderHeight}
           rowHeight={rowHeight}
           rowHeaderIndex={rowHeaderIndex}
-          onCellSelect={onCellSelect}
           onColumnResize={onColumnResize}
           onColumnSelect={onColumnSelect}
           onSectionSelect={onSectionSelect}
           onRowSelectionHeaderSelect={onRowSelectionHeaderSelect}
+          onCellSelect={onCellSelect}
           rowSelectionMode={hasSelectableRows ? 'multiple' : undefined}
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
