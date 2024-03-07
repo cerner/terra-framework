@@ -3,10 +3,7 @@
 ## Unreleased
 
 * Changes
-  * Added back screenshots utilizing `focusOn`.
-
-* Breaking Changes
-  * Drop support for IE11 due to changes made to `terra-abstract-modal` around focus.
+  * Added back screenshots utilizing `focusOn` from `4.40.0`.
 
 ## 4.42.0 - (March 5, 2024)
 

@@ -2,9 +2,9 @@
 
 ## Unreleased
 
-* Breaking Changes
+* Changes
   * Re-introduced changes made in `v3.46.0`.
-  * Drop support for IE11 due to changes made to focus trapping.
+  * Added promise polyfill to make component compatible with IE11.
 
 ## 3.48.0 - (March 5, 2024)
 

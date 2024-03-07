@@ -5,9 +5,6 @@
 * Changes
   * Re-introduced `shouldTrapFocus` changes made from `6.71.0`.
 
-* Breaking Changes
-  * Drop support for IE due to focus trapping changes made in `terra-abstract-modal`.
-
 ## 6.73.0 - (March 5, 2024)
 
 * Changed
