@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Re-introduced `shouldTrapFocus` examples from `1.72.0`.
+
 * Added
   * Added orange and green column highlighting examples for `flowsheet-data-grid`
 
