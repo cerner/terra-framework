@@ -196,14 +196,12 @@ function Cell(props) {
   * @returns True if the element only has a single button or hyperlink. Otherwise, false.
   */
   const hasOnlySingleButtonOrHyperlink = (node) => {
-
     const focusableElements = getFocusableElements(node);
     if (focusableElements.length > 1) {
       return false;
     }
 
-    const buttonOrHyperlinkElements = focusableElements.filter(element =>!element.getAttribute('tabindex') && window.getComputedStyle(element).visibility !== 'hidden');
-
+    const buttonOrHyperlinkElements = focusableElements.filter(element => !element.getAttribute('tabindex') && window.getComputedStyle(element).visibility !== 'hidden');
     return buttonOrHyperlinkElements.length === 1;
   };
 
