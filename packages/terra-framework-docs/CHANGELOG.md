@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.73.0 - (March 7, 2024)
+
 * Changed
   * Re-introduced `shouldTrapFocus` examples from `1.72.0`.
 

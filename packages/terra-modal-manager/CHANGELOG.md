@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.74.0 - (March 7, 2024)
+
 * Changes
   * Re-introduced `shouldTrapFocus` changes made from `6.71.0`.
 

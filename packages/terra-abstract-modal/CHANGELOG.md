@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.49.0 - (March 7, 2024)
+
 * Changes
   * Re-introduced changes made in `v3.46.0`.
   * Added promise polyfill to make component compatible with IE11.

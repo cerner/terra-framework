@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.19.0 - (March 7, 2024)
+
 * Added
   * Added support for orange and green column highlighting.
 
