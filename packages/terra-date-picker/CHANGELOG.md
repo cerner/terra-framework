@@ -2,6 +2,14 @@
 
 ## Unreleased
 
+* Fixed
+  * Date picker displays incorrectly in firefox.
+
+## 4.102.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 4.101.0 - (March 1, 2024)
 
 * Changed

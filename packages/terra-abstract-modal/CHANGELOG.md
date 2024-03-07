@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.48.0 - (March 5, 2024)
+
+* Changed
+  * Reverted FocusOn changes. This will be released in a 4.0.0 release.
+
 ## 3.47.0 - (February 28, 2024)
 
 * Changed
