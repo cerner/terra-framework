@@ -5,8 +5,6 @@ import classNames from 'classnames';
 import classNamesBind from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-// Polyfill because react-focus-on uses native promise which isn't available in IE11
-import 'promise-polyfill/src/polyfill';
 import { FocusOn } from 'react-focus-on';
 import ModalOverlay from './_ModalOverlay';
 import { hideModalDomUpdates, showModalDomUpdates } from './inertHelpers';
