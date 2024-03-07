@@ -170,6 +170,23 @@ function Cell(props) {
   };
 
   /**
+  * Determine if a cell only has a single button or hyperlink
+  * @param {HTMLElement} element - The element to check if it contains only a button or hyperlink
+  * @returns True if the element only has a single button or hyperlink. Otherwise, false.
+  */
+  const hasOnlySingleButtonOrHyperlink = (node) => {
+
+    const focusableElements = getFocusableElements(node);
+    if (focusableElements.length > 1) {
+      return false;
+    }
+
+    const buttonOrHyperlinkElements = focusableElements.filter(element =>!element.getAttribute('tabindex') && window.getComputedStyle(element).visibility !== 'hidden');
+
+    return buttonOrHyperlinkElements.length === 1;
+  };
+
+  /**
    *
    * @param {HTMLElement} element - The element to check if it is a text input
    * @returns True if the element is a editable field.  Otherwise, false.
@@ -246,7 +263,7 @@ function Cell(props) {
           // Lock focus into component
           if (isGridContext && hasFocusableElements()) {
             // If the current cell has only a single button or hyperlink component, do not enable focus trap
-            if (getFocusableElements(cellRef.current).length === 1 && (!cellRef.current.hasAttribute('tabindex') || cellRef.current.getElementsByTagName('button').length === 1 || cellRef.current.getElementsByTagName('a').length === 1)) {
+            if (hasOnlySingleButtonOrHyperlink(cellRef.current)) {
               break;
             }
 
