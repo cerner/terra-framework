@@ -285,7 +285,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
     });
   });
 
-  describe.only('Time Input onBlur operations', () => {
+  describe('Time Input onBlur operations', () => {
     describe('Time Input onBlur', () => {
       it('clicks the hour input and onBlur is not triggered', () => {
         browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/focus-blur');
@@ -318,7 +318,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
     });
   });
 
-  describe('Time Input shortcut key operations', () => {
+  describe.only('Time Input shortcut key operations', () => {
     it('should set time to current time minus one hour if blank using DOWN_ARROW', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
       browser.refresh();
