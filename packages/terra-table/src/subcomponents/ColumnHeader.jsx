@@ -169,6 +169,8 @@ const ColumnHeader = (props) => {
             onColumnSelect={onColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
             onResizeHandleChange={onResizeHandleChange}
+            columnHighlightColor={column.columnHighlightColor}
+            columnHighlightDescription={column.columnHighlightDescription}
           />
         ))}
       </tr>
