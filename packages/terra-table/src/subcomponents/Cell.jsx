@@ -16,6 +16,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ColumnContext from '../utils/ColumnContext';
 import GridContext, { GridConstants } from '../utils/GridContext';
 import getFocusableElements from '../utils/focusManagement';
+import { ColumnHighlightColor } from '../proptypes/columnShape';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -118,6 +119,23 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * @private
+   * Id of the first row in table
+   */
+  firstRowId: PropTypes.string,
+
+  /**
+   * @private
+   * Id of the last row in table
+   */
+  lastRowId: PropTypes.string,
+
+  /**
+   * @private
+   * The color to be used for highlighting a column.
+   */
+  columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
 };
 
 const defaultProps = {
@@ -148,6 +166,9 @@ function Cell(props) {
     rowMinimumHeight,
     sectionId,
     tableId,
+    firstRowId,
+    lastRowId,
+    columnHighlightColor,
   } = props;
 
   const cellRef = useRef();
@@ -350,6 +371,15 @@ function Cell(props) {
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
 
+  let columnHighlight = {};
+  if (columnHighlightColor) {
+    columnHighlight = {
+      [`column-highlight-${columnHighlightColor.toLowerCase()}`]: true,
+      [`first-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === firstRowId,
+      [`last-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === lastRowId,
+    };
+  }
+
   const className = cx('cell', {
     masked: isMasked,
     pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
@@ -358,6 +388,7 @@ function Cell(props) {
     selected: isSelected && !isMasked,
     highlighted: isHighlighted,
     blank: !children,
+    ...columnHighlight,
   }, theme.className);
 
   return (

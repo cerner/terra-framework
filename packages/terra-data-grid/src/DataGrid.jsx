@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 
 import Table, {
-  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions,
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions, ColumnHighlightColor,
 } from 'terra-table';
 import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
@@ -274,7 +274,6 @@ const DataGrid = forwardRef((props, ref) => {
     focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
 
     // If there are multiple focusable elements, set focus on the cell
-    console.log(getFocusableElements(focusedCell).length);
     if (getFocusableElements(focusedCell).length > 1) {
       focusedCell?.focus();
       return;
@@ -638,3 +637,4 @@ DataGrid.defaultProps = defaultProps;
 DataGrid.propTypes = propTypes;
 
 export default DataGrid;
+export { ColumnHighlightColor };
