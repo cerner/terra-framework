@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Internal focus trap update for terra-data-grid.
+
 ## 5.11.0 - (March 5, 2024)
 
 * Changed

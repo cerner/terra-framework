@@ -6,6 +6,7 @@
 
 * Changed
   * Removed `shouldTrapFocus` attributes from examples.
+  * Updated datagrid documentation with the changes in cell focus behavior.
 
 ## 1.71.0 - (March 1, 2024)
 

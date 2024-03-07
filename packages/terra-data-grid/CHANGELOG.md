@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated focus behavior so that cells with only a button or hyperlink will focus on those components directly without need for dive-in or focus trap.
+
 ## 1.18.0 - (March 5, 2024)
 
 * Changed
