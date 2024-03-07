@@ -37,9 +37,9 @@
     "prop-types": "^15.5.8",
     "terra-abstract-modal": "^3.49.0",
     "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.103.0",
+    "terra-date-picker": "^4.102.1",
     "terra-theme-context": "^1.9.0",
-    "terra-time-input": "^4.65.0"
+    "terra-time-input": "^4.64.1"
   },
   "peerDependencies": {
     "react": "^16.8.5",

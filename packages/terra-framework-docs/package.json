@@ -49,7 +49,7 @@
     "terra-content-container": "^3.0.0",
     "terra-data-grid": "^1.19.0",
     "terra-date-input": "^1.54.0",
-    "terra-date-picker": "^4.103.0",
+    "terra-date-picker": "^4.102.1",
     "terra-date-time-picker": "^4.111.0",
     "terra-disclosure-manager": "^4.43.0",
     "terra-embedded-content-consumer": "^3.43.0",
@@ -83,7 +83,7 @@
     "terra-text": "^4.49.0",
     "terra-theme-context": "^1.9.0",
     "terra-theme-provider": "^4.16.0",
-    "terra-time-input": "^4.65.0",
+    "terra-time-input": "^4.64.1",
     "terra-toolbar": "^1.27.0"
   },
   "scripts": {

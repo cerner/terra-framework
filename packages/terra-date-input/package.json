@@ -40,7 +40,7 @@
     "terra-icon": "^3.19.0",
     "terra-mixins": "^1.0.0",
     "terra-theme-context": "^1.9.0",
-    "terra-time-input": "^4.65.0",
+    "terra-time-input": "^4.64.1",
     "terra-visually-hidden-text": "^2.0.0",
     "uuid": "3.4.0"
   },
