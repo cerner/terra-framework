@@ -3,97 +3,96 @@ const validateRoot = (testName) => Terra.validates.element(testName);
 
 Terra.describeViewports('Time Input', ['medium'], () => {
   describe('display', () => {
+    it('works with a label', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/accessibility');
+      validateElement('default with a label');
+    });
 
-  it('works with a label', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/accessibility');
-    validateElement('default with a label');
-  });
+    it('displays default with no time provided', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
+      validateElement('default no time');
+    });
 
-  it('displays default with no time provided', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-    validateElement('default no time');
-  });
+    it('displays default with time provided', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
+      validateElement('default with time');
+    });
 
-  it('displays default with time provided', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-    validateElement('default with time');
-  });
+    it('displays second with no time provided', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
+      validateElement('seconds no time');
+    });
 
-  it('displays second with no time provided', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
-    validateElement('seconds no time');
-  });
+    it('displays second with time provided', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
+      validateElement('second with time');
+    });
 
-  it('displays second with time provided', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
-    validateElement('second with time');
-  });
+    it('displays invalid time provided', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-provided-time');
+      validateElement('invalid time');
+    });
 
-  it('displays invalid time provided', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-provided-time');
-    validateElement('invalid time');
-  });
+    it('displays invalid time input', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-time');
+      validateElement('invalid input');
+    });
 
-  it('displays invalid time input', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-time');
-    validateElement('invalid input');
-  });
+    it('displays invalid mobile time input', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-invalid');
+      validateElement('invalid mobile input');
+    });
 
-  it('displays invalid mobile time input', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-invalid');
-    validateElement('invalid mobile input');
-  });
+    it('displays incomplete time input', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/incomplete-time');
+      validateElement('incomplete input');
+    });
 
-  it('displays incomplete time input', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/incomplete-time');
-    validateElement('incomplete input');
-  });
+    it('displays incomplete mobile time input', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-incomplete');
+      validateElement('incomplete mobile');
+    });
 
-  it('displays incomplete mobile time input', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-incomplete');
-    validateElement('incomplete mobile');
-  });
+    it('displays invalid and incomplete time input', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-incomplete-time');
+      validateElement('invalid and incomplete');
+    });
 
-  it('displays invalid and incomplete time input', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/invalid-incomplete-time');
-    validateElement('invalid and incomplete');
-  });
+    it('displays invalid and incomplete mobile time input', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-invalid-incomplete');
+      validateElement('invalid and incomplete mobile');
+    });
 
-  it('displays invalid and incomplete mobile time input', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/mobile-invalid-incomplete');
-    validateElement('invalid and incomplete mobile');
-  });
+    it('displays focus hour styles', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      validateElement('focus hour styles');
+    });
 
-  it('displays focus hour styles', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-    validateElement('focus hour styles');
-  });
+    it('displays focus time component styles', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/incomplete-time');
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      validateElement('focus time component styles');
+    });
 
-  it('displays focus time component styles', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/incomplete-time');
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-    validateElement('focus time component styles');
-  });
+    it('displays focus minute styles', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
+      browser.refresh();
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      Terra.hideInputCaret('#timeInput input[name=\'terra-time-minute-time-input\']');
+      validateElement('focus minute styles');
+    });
 
-  it('displays focus minute styles', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-    browser.refresh();
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    Terra.hideInputCaret('#timeInput input[name=\'terra-time-minute-time-input\']');
-    validateElement('focus minute styles');
-  });
+    it('displays focus second styles', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
+      browser.refresh();
+      $('#timeInput input[name="terra-time-second-time-input"]').click();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-  it('displays focus second styles', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
-    browser.refresh();
-    $('#timeInput input[name="terra-time-second-time-input"]').click();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-    validateElement('focus second styles');
-  });
+      validateElement('focus second styles');
+    });
   });
 
   describe.only('Time input onChange operations', () => {
@@ -285,12 +284,6 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       validateRoot('onChange not triggered for minute with one digit');
     });
   });
-
-
-});
-
-Terra.describeViewports('Time input onChange operations', ['medium'], () => {
-
 });
 
 describe('Time Input onBlur operations', () => {
