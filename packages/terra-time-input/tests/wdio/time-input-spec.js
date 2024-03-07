@@ -79,7 +79,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('displays focus minute styles', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-      browser.refresh();
+
       $('#timeInput input[name="terra-time-minute-time-input"]').click();
       Terra.hideInputCaret('#timeInput input[name=\'terra-time-minute-time-input\']');
       validateElement('focus minute styles');
@@ -87,7 +87,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('displays focus second styles', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
-      browser.refresh();
+
       $('#timeInput input[name="terra-time-second-time-input"]').click();
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
@@ -107,7 +107,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('prepends 0 on single digit hour', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -118,7 +118,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('prepends 0 on hour input of 3 or more', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -128,7 +128,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('displays time input does not prepend 0 on hour input less than 3', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -138,7 +138,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('displays time input does not accept hour input greater than 23', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -148,7 +148,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('prepends 0 on single digit minute', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -159,7 +159,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('prepends 0 on minute input of 6 or more', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -169,7 +169,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('does not prepend 0 on minute input less than 6', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -179,7 +179,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('does not accept minute input greater than 59', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -189,7 +189,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('Pressing DELETE in minute with no value focuses to hour', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
@@ -200,7 +200,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('prepends 0 on single digit second', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -211,7 +211,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('prepends 0 on second input of 6 or more', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -221,7 +221,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('does not prepend 0 on second input less than 6', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -231,7 +231,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('does not accept second input greater than 59', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -241,7 +241,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('Pressing DELETE in second with no value focuses to minute', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -252,7 +252,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('Triggers an onChange for onBlur on the minute input', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -262,7 +262,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('Does not trigger onChange for an hour with just one digit', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -274,7 +274,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('Does not trigger onChange for a minute with just one digit', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -321,7 +321,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
   describe.only('Time Input shortcut key operations', () => {
     it('should set time to current time minus one hour if blank using DOWN_ARROW', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -335,7 +335,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('should set time to current time minus one hour if partially filled using DOWN_ARROW', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -351,7 +351,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('should subtract 1 hour if filled using DOWN_ARROW', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -362,7 +362,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('should set time to current time plus one hour if blank using UP_ARROW', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -376,7 +376,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     it('should set time to current time plus one hour if partially filled using UP_ARROW', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-      browser.refresh();
+
       Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
       $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -394,7 +394,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the hour input', () => {
         it('should set time to current if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -407,7 +407,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -425,7 +425,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -443,7 +443,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the minute input', () => {
         it('should set time to current if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -459,7 +459,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -477,7 +477,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -495,7 +495,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the second input', () => {
         it('should set time to current if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
           $('#timeInput input[name="terra-time-second-time-input"]').click();
           browser.keys('n');
@@ -510,7 +510,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
         });
         it('should set time to current if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
           $('#timeInput input[name="terra-time-second-time-input"]').click();
           browser.keys('12');
@@ -527,7 +527,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
         });
         it('should set time to current if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
           $('#timeInput input[name="terra-time-second-time-input"]').click();
           browser.keys('n');
@@ -547,7 +547,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the hour input', () => {
         it('should set time to current time minus one hour if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -561,7 +561,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current time minus one hour if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -577,7 +577,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should subtract 1 minute if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -590,7 +590,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the minute input', () => {
         it('should set time to current time minus one minute if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -608,7 +608,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current time minus one minute if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -624,7 +624,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should roll over the hour if minute is at 00', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -639,7 +639,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should roll over to 23 if hour and minute is at 00:00', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -654,7 +654,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should subtract 1 minute if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -667,7 +667,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the second input', () => {
         it('should set time to current time minus one second if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
           $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -685,7 +685,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current time minus one second if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
           $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -705,7 +705,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should subtract 1 second if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
           $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -721,7 +721,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the hour input', () => {
         it('should set time to current time plus one hour if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -739,7 +739,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current time plus one hour if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -755,7 +755,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should add 1 minute if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -768,7 +768,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the minute input', () => {
         it('should set time to current time plus one minute if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -786,7 +786,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current time plus one minute if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -802,7 +802,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should roll over the hour if minute is at 59', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -817,7 +817,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should roll over the hour to 00 if hour and minute is at 23:59', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-hour-time-input"]').click();
@@ -832,7 +832,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should add 1 minute if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/default-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
 
           $('#timeInput input[name="terra-time-minute-time-input"]').click();
@@ -845,7 +845,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
       describe('in the second input', () => {
         it('should set time to current time plus one second if blank', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
           $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -863,7 +863,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should set time to current time plus one second if partially filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
           $('#timeInput input[name="terra-time-second-time-input"]').click();
@@ -883,7 +883,7 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
         it('should add 1 minute if filled', () => {
           browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/second-time');
-          browser.refresh();
+
           Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
           $('#timeInput input[name="terra-time-second-time-input"]').click();
