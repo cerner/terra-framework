@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added support for orange and green column highlighting.
+
 * Changed
   * Updated focus behavior so that cells with only a button or hyperlink will focus on those components directly without need for dive-in or focus trap.
 
