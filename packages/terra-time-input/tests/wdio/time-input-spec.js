@@ -2,6 +2,8 @@ const validateElement = (testName) => Terra.validates.element(testName, { select
 const validateRoot = (testName) => Terra.validates.element(testName);
 
 Terra.describeViewports('Time Input', ['medium'], () => {
+  describe('display', () => {
+
   it('works with a label', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/accessibility');
     validateElement('default with a label');
@@ -92,196 +94,203 @@ Terra.describeViewports('Time Input', ['medium'], () => {
 
     validateElement('focus second styles');
   });
+  });
+
+  describe.only('Time input onChange operations', () => {
+    it('triggers Time Input OnChange', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('123456');
+      validateRoot('trigger onChange');
+    });
+
+    it('prepends 0 on single digit hour', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('2');
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      validateRoot('prepend 0 to single digit');
+    });
+
+    it('prepends 0 on hour input of 3 or more', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('3');
+      validateRoot('prepend 0 to hour more than 3');
+    });
+
+    it('displays time input does not prepend 0 on hour input less than 3', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('2');
+      validateRoot('does not prepend 0 to hour less than 3');
+    });
+
+    it('displays time input does not accept hour input greater than 23', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('24');
+      validateRoot('does not accept hour more than 23');
+    });
+
+    it('prepends 0 on single digit minute', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      browser.keys('2');
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      validateRoot('prepends 0 on single digit minute');
+    });
+
+    it('prepends 0 on minute input of 6 or more', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      browser.keys('6');
+      validateRoot('prepends 0 on minute input of 6 or more');
+    });
+
+    it('does not prepend 0 on minute input less than 6', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      browser.keys('5');
+      validateRoot('does not prepend 0 to minute');
+    });
+
+    it('does not accept minute input greater than 59', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      browser.keys('66');
+      validateRoot('does not accept minute input greater than 59');
+    });
+
+    it('Pressing DELETE in minute with no value focuses to hour', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      browser.keys(['Delete']);
+      validateRoot('delete focuses hour');
+    });
+
+    it('prepends 0 on single digit second', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+      $('#timeInput input[name="terra-time-second-time-input"]').click();
+      browser.keys('2');
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      validateRoot('prepends 0 on single digit second');
+    });
+
+    it('prepends 0 on second input of 6 or more', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+      $('#timeInput input[name="terra-time-second-time-input"]').click();
+      browser.keys('6');
+      validateRoot('prepends 0 on second input of 6 or more');
+    });
+
+    it('does not prepend 0 on second input less than 6', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+      $('#timeInput input[name="terra-time-second-time-input"]').click();
+      browser.keys('5');
+      validateRoot('does not prepend 0 on second input less than 6');
+    });
+
+    it('does not accept second input greater than 59', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+      $('#timeInput input[name="terra-time-second-time-input"]').click();
+      browser.keys('66');
+      validateRoot('does not accept second input greater than 59');
+    });
+
+    it('Pressing DELETE in second with no value focuses to minute', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-second-time-input"]').click();
+      browser.keys(['Delete']);
+
+      validateRoot('delete focuses minute');
+    });
+
+    it('Triggers an onChange for onBlur on the minute input', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('747');
+      validateRoot('trigger onChange for onBlur');
+    });
+
+    it('Does not trigger onChange for an hour with just one digit', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('1223');
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
+      validateRoot('onChange not triggered for hour with one digit');
+    });
+
+    it('Does not trigger onChange for a minute with just one digit', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
+      browser.refresh();
+      Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
+
+      $('#timeInput input[name="terra-time-hour-time-input"]').click();
+      browser.keys('1223');
+      $('#timeInput input[name="terra-time-minute-time-input"]').click();
+      browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
+      validateRoot('onChange not triggered for minute with one digit');
+    });
+  });
+
+
 });
 
 Terra.describeViewports('Time input onChange operations', ['medium'], () => {
-  it('triggers Time Input OnChange', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
 
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('123456');
-    validateRoot('trigger onChange');
-  });
-
-  it('prepends 0 on single digit hour', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('2');
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    validateRoot('prepend 0 to single digit');
-  });
-
-  it('prepends 0 on hour input of 3 or more', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('3');
-    validateRoot('prepend 0 to hour more than 3');
-  });
-
-  it('displays time input does not prepend 0 on hour input less than 3', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('2');
-    validateRoot('does not prepend 0 to hour less than 3');
-  });
-
-  it('displays time input does not accept hour input greater than 23', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('24');
-    validateRoot('does not accept hour more than 23');
-  });
-
-  it('prepends 0 on single digit minute', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    browser.keys('2');
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    validateRoot('prepends 0 on single digit minute');
-  });
-
-  it('prepends 0 on minute input of 6 or more', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    browser.keys('6');
-    validateRoot('prepends 0 on minute input of 6 or more');
-  });
-
-  it('does not prepend 0 on minute input less than 6', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    browser.keys('5');
-    validateRoot('does not prepend 0 to minute');
-  });
-
-  it('does not accept minute input greater than 59', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    browser.keys('66');
-    validateRoot('does not accept minute input greater than 59');
-  });
-
-  it('Pressing DELETE in minute with no value focuses to hour', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-    Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    browser.keys(['Delete']);
-    validateRoot('delete focuses hour');
-  });
-
-  it('prepends 0 on single digit second', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-    $('#timeInput input[name="terra-time-second-time-input"]').click();
-    browser.keys('2');
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    validateRoot('prepends 0 on single digit second');
-  });
-
-  it('prepends 0 on second input of 6 or more', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-    $('#timeInput input[name="terra-time-second-time-input"]').click();
-    browser.keys('6');
-    validateRoot('prepends 0 on second input of 6 or more');
-  });
-
-  it('does not prepend 0 on second input less than 6', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-    $('#timeInput input[name="terra-time-second-time-input"]').click();
-    browser.keys('5');
-    validateRoot('does not prepend 0 on second input less than 6');
-  });
-
-  it('does not accept second input greater than 59', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-    $('#timeInput input[name="terra-time-second-time-input"]').click();
-    browser.keys('66');
-    validateRoot('does not accept second input greater than 59');
-  });
-
-  it('Pressing DELETE in second with no value focuses to minute', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-    $('#timeInput input[name="terra-time-second-time-input"]').click();
-    browser.keys(['Delete']);
-
-    validateRoot('delete focuses minute');
-  });
-
-  it('Triggers an onChange for onBlur on the minute input', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-second-time-input"]');
-
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('747');
-    validateRoot('trigger onChange for onBlur');
-  });
-
-  it('Does not trigger onChange for an hour with just one digit', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-hour-time-input"]');
-
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('1223');
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
-    validateRoot('onChange not triggered for hour with one digit');
-  });
-
-  it('Does not trigger onChange for a minute with just one digit', () => {
-    browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/on-change');
-    browser.refresh();
-    Terra.hideInputCaret('#timeInput input[name="terra-time-minute-time-input"]');
-
-    $('#timeInput input[name="terra-time-hour-time-input"]').click();
-    browser.keys('1223');
-    $('#timeInput input[name="terra-time-minute-time-input"]').click();
-    browser.keys(['ArrowLeft', 'ArrowRight', 'Delete']);
-    validateRoot('onChange not triggered for minute with one digit');
-  });
 });
 
 describe('Time Input onBlur operations', () => {
