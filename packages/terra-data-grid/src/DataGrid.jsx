@@ -274,13 +274,13 @@ const DataGrid = forwardRef((props, ref) => {
     focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
 
     // If there are multiple focusable elements, set focus on the cell
-    if (getFocusableElements(focusedCell).length !== 1) {
+    console.log(getFocusableElements(focusedCell).length);
+    if (getFocusableElements(focusedCell).length > 1) {
       focusedCell?.focus();
       return;
     }
 
     // Set focus on input field (checkbox) of row selection cells.
-    focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
     if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length === 1) {
       [focusedCell] = focusedCell.getElementsByTagName('input');
       focusedCell?.focus();
