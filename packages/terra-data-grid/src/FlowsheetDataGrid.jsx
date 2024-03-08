@@ -8,7 +8,7 @@ import * as KeyCode from 'keycode-js';
 
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { sectionShape, rowShape, columnShape } from 'terra-table';
-import DataGrid from './DataGrid';
+import DataGrid, { ColumnHighlightColor } from './DataGrid';
 import styles from './FlowsheetDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -433,3 +433,4 @@ FlowsheetDataGrid.propTypes = propTypes;
 FlowsheetDataGrid.defaultProps = defaultProps;
 
 export default injectIntl(FlowsheetDataGrid);
+export { ColumnHighlightColor };

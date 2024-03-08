@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import Table, {
-  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions,
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions, ColumnHighlightColor,
 } from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
@@ -242,10 +242,12 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    focusedCellRef.current = {
-      rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
-      columnId: displayedColumns[newColIndex].id,
-    };
+    if (newColIndex < displayedColumns.length) {
+      focusedCellRef.current = {
+        rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
+        columnId: displayedColumns[newColIndex].id,
+      };
+    }
 
     if (makeActiveElement) {
       let focusedCell;
@@ -613,3 +615,4 @@ DataGrid.defaultProps = defaultProps;
 DataGrid.propTypes = propTypes;
 
 export default DataGrid;
+export { ColumnHighlightColor };

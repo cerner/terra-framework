@@ -21,6 +21,7 @@ import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
 import getFocusableElements from './utils/focusManagement';
 import hasColumnActions from './utils/actionsUtils';
+import tableUtils from './utils/tableUtils';
 
 const cx = classNames.bind(styles);
 
@@ -575,6 +576,19 @@ function Table(props) {
     marginRight: hasResizableCol ? `${TableConstants.TABLE_MARGIN_RIGHT}px` : '0',
   };
 
+  // Set first and last row Ids
+  let firstRowId;
+  let lastRowId;
+
+  if (rows && rows.length) {
+    firstRowId = rows[0].id;
+    lastRowId = rows[rows.length - 1].id;
+  } else if (sections) {
+    const rowData = tableUtils.getFirstAndLastVisibleRowData(sections);
+    firstRowId = rowData.firstRowId;
+    lastRowId = rowData.lastRowId;
+  }
+
   // -------------------------------------
 
   return (
@@ -642,6 +656,9 @@ function Table(props) {
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
               rowMinimumHeight={rowMinimumHeight}
+              boundingRef={tableContainerRef}
+              firstRowId={firstRowId}
+              lastRowId={lastRowId}
             />
           ))}
         </ColumnContext.Provider>

@@ -1,3 +1,5 @@
+// React-focus-on uses native promises which isn't available in IE11
+import 'promise-polyfill/dist/polyfill.min';
 import React, {
   useLayoutEffect, useEffect, useRef, useCallback,
 } from 'react';

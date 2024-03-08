@@ -5,6 +5,19 @@
 * Changed
   * `boundingRef` is no longer necessary the section header's sticky behavior. The calculation now uses the table's container ref for calculating the offset.
 
+## 1.19.0 - (March 8, 2024)
+
+* Added
+  * Added support for orange and green column highlighting.
+
+* Fixed
+  * Fixes column index out of bounds in row selection mode.
+
+## 1.18.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.17.0 - (March 1, 2024)
 
 * Changed

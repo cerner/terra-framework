@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+## 1.73.0 - (March 8, 2024)
+
+* Changed
+  * Re-introduced `shouldTrapFocus` examples from `1.72.0`.
+
+* Added
+  * Added orange and green column highlighting examples for `flowsheet-data-grid`
+
+## 1.72.0 - (March 5, 2024)
+
+* Changed
+  * Removed `shouldTrapFocus` attributes from examples.
+
 ## 1.71.0 - (March 1, 2024)
 
 * Added
@@ -44,7 +57,6 @@
 
 * Added
   * Added shouldTrapFocus to be set to 'true'.
-
 * Changed
   * Updated `terra-navigation-side-menu` example to use more meaningful labels.
   * Updated the `terra-date-time-picker` example for field label.
