@@ -52,7 +52,7 @@
     "@cerner/stylelint-config-terra": "5",
     "@cerner/terra-cli": "1",
     "@cerner/terra-dev-site": "7",
-    "@cerner/terra-functional-testing": "file:../terra-toolkit/packages/terra-functional-testing/cerner-terra-functional-testing-4.6.0.tgz",
+    "@cerner/terra-functional-testing": "4",
     "@cerner/terra-open-source-scripts": "1",
     "@cerner/webpack-config-terra": "3",
     "@testing-library/jest-dom": "5",
