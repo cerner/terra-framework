@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.
+
 ## 1.71.0 - (March 1, 2024)
 
 * Added
