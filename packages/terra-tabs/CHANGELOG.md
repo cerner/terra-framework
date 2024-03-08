@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.20.1 - (March 8, 2024)
+
 * Fixed
   * Fixes component re-render with updated icon.
 
