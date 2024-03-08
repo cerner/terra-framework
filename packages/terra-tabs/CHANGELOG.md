@@ -2,7 +2,7 @@
 
 ## Unreleased
 
-* Changed
+* Fixed
   * Fixes component re-render with updated icon.
 
 ## 7.17.0 - (February 7, 2024)
