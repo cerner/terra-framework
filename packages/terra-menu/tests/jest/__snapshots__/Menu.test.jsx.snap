@@ -253,6 +253,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                               >
                                 <li
                                   aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
+                                  aria-disabled="false"
                                   class="item orion-fusion-theme"
                                   data-terra-menu-interactive-item="true"
                                   role="menuitem"
@@ -619,6 +620,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                   >
                                                     <li
                                                       aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
+                                                      aria-disabled={false}
                                                       className="item orion-fusion-theme"
                                                       data-terra-menu-interactive-item={true}
                                                       isTabFocusDisabled={false}
