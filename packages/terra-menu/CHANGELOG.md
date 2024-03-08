@@ -5,6 +5,16 @@
 * Changed
   * Focus and keyDown events propagation stopped for component being used inside `terra-compact-interactive-list` cells.
 
+## 6.88.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.87.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.86.0 - (March 1, 2024)
 
 * Fixed
