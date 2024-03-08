@@ -8,7 +8,7 @@ import * as KeyCode from 'keycode-js';
 
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { sectionShape, rowShape, columnShape } from 'terra-table';
-import DataGrid from './DataGrid';
+import DataGrid, { ColumnHighlightColor } from './DataGrid';
 import styles from './FlowsheetDataGrid.module.scss';
 
 const cx = classNames.bind(styles);
@@ -108,6 +108,10 @@ const propTypes = {
    * Boolean to show/hide column headers. By default, it is set to `true` and column headers are visible.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
+  /**
+   * Bounding container for the flowsheet grid, will use window if no value provided.
+   */
+  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -137,6 +141,7 @@ function FlowsheetDataGrid(props) {
     intl,
     hasVisibleColumnHeaders,
     rowMinimumHeight,
+    boundingRef,
   } = props;
 
   const anchorCell = useRef(null);
@@ -423,6 +428,7 @@ function FlowsheetDataGrid(props) {
         hasVisibleColumnHeaders={hasVisibleColumnHeaders}
         ref={dataGridFuncRef}
         rowMinimumHeight={rowMinimumHeight}
+        boundingRef={boundingRef}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>
@@ -433,3 +439,4 @@ FlowsheetDataGrid.propTypes = propTypes;
 FlowsheetDataGrid.defaultProps = defaultProps;
 
 export default injectIntl(FlowsheetDataGrid);
+export { ColumnHighlightColor };

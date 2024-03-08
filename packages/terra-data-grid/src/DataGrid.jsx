@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import Table, {
-  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex,
+  GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions, ColumnHighlightColor,
 } from 'terra-table';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
@@ -145,6 +145,10 @@ const propTypes = {
    * With this property the height of the cell will grow to fit the cell content.
    */
   rowMinimumHeight: PropTypes.string,
+  /**
+   * Bounding container for the grid, will use window if no value provided.
+   */
+  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -182,6 +186,7 @@ const DataGrid = forwardRef((props, ref) => {
     rows,
     sections,
     rowMinimumHeight,
+    boundingRef,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -205,8 +210,15 @@ const DataGrid = forwardRef((props, ref) => {
 
   const [checkResizable, setCheckResizable] = useState(false);
 
-  // if columns are not visible then set the first selectable row index to 1
-  const [focusedRow, setFocusedRow] = useState(hasVisibleColumnHeaders ? 0 : 1);
+  // check if at least one column has an action prop
+  // same check is done in Table, but as Table can be a stand-alone component, it can't rely on a passed prop.
+  const hasColumnHeaderActions = hasColumnActions(pinnedColumns) || hasColumnActions(overflowColumns);
+
+  // eslint-disable-next-line no-nested-ternary
+  const firstRowIndex = hasVisibleColumnHeaders ? 0 : 1;
+
+  // if columns are not visible then set the first selectable row index to 1 or 2
+  const [focusedRow, setFocusedRow] = useState(firstRowIndex);
   const [focusedCol, setFocusedCol] = useState(0);
 
   // Aria live region message management
@@ -235,10 +247,12 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    focusedCellRef.current = {
-      rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
-      columnId: displayedColumns[newColIndex].id,
-    };
+    if (newColIndex < displayedColumns.length) {
+      focusedCellRef.current = {
+        rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
+        columnId: displayedColumns[newColIndex].id,
+      };
+    }
 
     if (makeActiveElement) {
       let focusedCell;
@@ -256,14 +270,15 @@ const DataGrid = forwardRef((props, ref) => {
         }
 
         // Set focus to column header button, if it exists
-        if (newRowIndex === 0 && !focusedCell.hasAttribute('tabindex')) {
-          focusedCell = focusedCell.querySelector('[role="button"]');
+        const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
+        if (isHeaderRow && !focusedCell.hasAttribute('tabindex')) {
+          focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button');
         }
       }
 
       focusedCell?.focus();
     }
-  }, [displayedColumns, isSection, isRowSelectionCell]);
+  }, [displayedColumns, isSection, isRowSelectionCell, hasColumnHeaderActions]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
@@ -320,6 +335,11 @@ const DataGrid = forwardRef((props, ref) => {
 
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
+
+  // callBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+  const triggerFocus = useCallback(() => (
+    setFocusedRowCol(focusedRow, focusedCol, true)
+  ), [setFocusedRowCol, focusedRow, focusedCol]);
 
   // -------------------------------------
   // event handlers
@@ -426,7 +446,7 @@ const DataGrid = forwardRef((props, ref) => {
         } else {
           // Left key
           nextCol -= 1;
-          setCheckResizable(cellCoordinates.row === 0);
+          setCheckResizable(cellCoordinates.row === 0 || (hasColumnHeaderActions && cellCoordinates.row === 1));
         }
         break;
       case KeyCode.KEY_RIGHT:
@@ -486,7 +506,7 @@ const DataGrid = forwardRef((props, ref) => {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
-    if (nextCol < 0 || nextRow < (hasVisibleColumnHeaders ? 0 : 1)) {
+    if (nextCol < 0 || nextRow < (firstRowIndex)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -548,6 +568,7 @@ const DataGrid = forwardRef((props, ref) => {
   // -------------------------------------
 
   const isGridActive = grid.current?.contains(document.activeElement);
+  const isOneOfHeaderRows = focusedRow === 0 || (hasColumnHeaderActions && focusedRow === 1);
 
   return (
     // eslint-disable-next-line jsx-a11y/no-static-element-interactions
@@ -568,8 +589,10 @@ const DataGrid = forwardRef((props, ref) => {
           sections={sections}
           ariaLabelledBy={ariaLabelledBy}
           ariaLabel={ariaLabel}
-          activeColumnIndex={(isGridActive && focusedRow === 0) ? focusedCol : undefined}
-          isActiveColumnResizing={focusedRow === 0 && checkResizable}
+          activeColumnIndex={(isGridActive && (focusedRow === 0 || (hasColumnHeaderActions && focusedRow === 1))) ? focusedCol : undefined}
+          focusedRowIndex={focusedRow}
+          triggerFocus={triggerFocus}
+          isActiveColumnResizing={isOneOfHeaderRows && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
           overflowColumns={overflowColumns}
@@ -586,6 +609,7 @@ const DataGrid = forwardRef((props, ref) => {
           hasVisibleColumnHeaders={hasVisibleColumnHeaders}
           isStriped
           rowMinimumHeight={rowMinimumHeight}
+          boundingRef={boundingRef}
         />
       </GridContext.Provider>
       <VisuallyHiddenText aria-live="polite" aria-atomic="true" text={cellAriaLiveMessage} />
@@ -597,3 +621,4 @@ DataGrid.defaultProps = defaultProps;
 DataGrid.propTypes = propTypes;
 
 export default DataGrid;
+export { ColumnHighlightColor };

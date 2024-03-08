@@ -38,7 +38,7 @@ export const checkIfRowHasResponsiveColumns = (columns) => columns.reduce(checkI
  */
 export const converseColumnTypes = (columns, defaultType) => {
   let unitType;
-  // get unitType and check it's consistant across columns
+  // get unitType and check it's consistent across columns
 
   let i = 0;
   while (!unitType && i < columns?.length) {

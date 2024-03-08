@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+* Changes
+  * Re-introduced `shouldTrapFocus` changes made from `6.71.0`.
+
+## 6.73.0 - (March 5, 2024)
+
+* Changed
+  * Revert changes for focus trappping.
+
+## 6.72.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.71.0 - (February 16, 2024)
 
 * Added 

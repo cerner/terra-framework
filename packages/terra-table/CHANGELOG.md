@@ -2,6 +2,29 @@
 
 ## Unreleased
 
+## 5.11.0 - (March 5, 2024)
+
+* Changed
+  * Removed padding from section header cell to eliminate gaps between sections.
+
+## 5.10.0 - (March 1, 2024)
+
+* Added
+  * Added support for table with no row headers.
+
+## 5.9.0 - (February 28, 2024)
+
+* Added
+  * Column actions added.
+
+## 5.8.0 - (February 28, 2024)
+
+* Added
+  * Added `boundingRef` prop for bounded table.
+
+* Changed
+  * Changed flowsheet data grid sections to have sticky title.
+
 ## 5.7.0 - (February 20, 2024)
 
 * Added
@@ -11,6 +34,10 @@
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
+  * Updated lowlight light zebra strap color to darker grey to improve colour contrast.
+  
+* Added
+  * Added support for orange and green column highlighting.
 
 ## 5.5.0 - (February 1, 2024)
 

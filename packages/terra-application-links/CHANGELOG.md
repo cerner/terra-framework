@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 6.76.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.75.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.74.0 - (January 22, 2024)
 
 * Changed

@@ -5,6 +5,21 @@
 * Fixed
   * Fixes component re-render with updated icon.
 
+## 7.20.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.19.0 - (March 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.18.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 7.17.0 - (February 7, 2024)
 
 * Changed

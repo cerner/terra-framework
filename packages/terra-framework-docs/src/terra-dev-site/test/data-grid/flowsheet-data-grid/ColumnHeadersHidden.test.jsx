@@ -61,6 +61,18 @@ const ColumnHeadersHidden = () => {
   const { cols, rows } = gridDataJSON;
   const [rowData, setRowData] = useState(rows);
 
+  // Add actions to first 3 columns, should be hidden the same way it normaly hides headers
+  cols.forEach((col, columnIndex) => {
+    if (columnIndex < 3) {
+      // eslint-disable-next-line no-param-reassign
+      col.action = {
+        label: `${col.displayName} action`,
+        // eslint-disable-next-line no-alert
+        onClick: () => alert(`${cols[columnIndex].displayName} action called`),
+      };
+    }
+  });
+
   const onCellSelect = useCallback((selectedCell) => {
     if (selectedCell.rowId && selectedCell.columnId) {
       const rowIndex = rowData.findIndex(e => e.id === selectedCell.rowId);

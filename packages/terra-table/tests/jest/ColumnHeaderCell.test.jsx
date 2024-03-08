@@ -17,6 +17,8 @@ afterAll(() => {
 });
 
 describe('ColumnHeaderCell', () => {
+  const mockResizeHandleStateSetter = jest.fn();
+
   it('renders a default column header cell', () => {
     const column = {
       id: 'Column-0',
@@ -31,13 +33,20 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
     );
 
-    const columnHeader = wrapper.find('.column-header.selectable');
-    expect(columnHeader).toHaveLength(1);
+    const headerCell = wrapper.find('th');
+    expect(headerCell).toHaveLength(1);
+    expect(wrapper.find('td')).toHaveLength(0);
+    const columnHeader = headerCell.at(0);
+
+    // const columnHeader = wrapper.find('.column-header.selectable');
+    expect(columnHeader.hasClass('column-header')).toBeTruthy();
+    expect(columnHeader.hasClass('selectable')).toBeTruthy();
     expect(columnHeader.key()).toBe('Column-0');
     expect(columnHeader.props().id).toBe('test-table-Column-0');
     expect(columnHeader.props().role).toBe('columnheader');
@@ -46,6 +55,7 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
+    expect(columnHeader.props()['aria-owns']).toBeUndefined();
 
     const headerContainer = columnHeader.find('.header-container[role="button"]');
     expect(headerContainer.find('.display-text').text().trim()).toBe('Vitals');
@@ -67,6 +77,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -104,6 +115,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -141,6 +153,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -179,6 +192,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </IntlProvider>,
@@ -221,6 +235,7 @@ describe('ColumnHeaderCell', () => {
           width={100}
           headerHeight="150px"
           {...column}
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           onColumnSelect={mockClick}
         />
       </IntlProvider>,
@@ -265,6 +280,7 @@ describe('ColumnHeaderCell', () => {
           width={100}
           headerHeight="150px"
           {...column}
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           onColumnSelect={mockColumnSelect}
         />
       </IntlProvider>,
@@ -305,6 +321,7 @@ describe('ColumnHeaderCell', () => {
           columnIndex={0}
           width={100}
           headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
           {...column}
         />
       </ColumnContext.Provider>,
@@ -314,11 +331,100 @@ describe('ColumnHeaderCell', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('renders a column action <td> cell with action button', () => {
+    const action = {
+      label: 'action',
+      onClick: jest.fn(),
+    };
+
+    const actionCellId = 'Column-0-actionCell';
+    const tableId = 'test-table';
+    const columnId = 'Column-0';
+    // const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
+
+    const wrapper = enzymeIntl.mountWithIntl(
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          id={actionCellId}
+          tableId={tableId}
+          columnId={columnId}
+          columnIndex={0}
+          isActionCell
+          action={action}
+          width={100}
+          headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
+        />
+      </IntlProvider>,
+    );
+
+    const normalCell = wrapper.find('td');
+    expect(normalCell).toHaveLength(1);
+    expect(wrapper.find('th')).toHaveLength(0);
+    const columnHeader = normalCell.at(0);
+    expect(columnHeader.hasClass('column-header')).toBeTruthy();
+    expect(columnHeader.key()).toBe(actionCellId);
+    expect(columnHeader.props().id).toBe(`test-table-${actionCellId}`);
+    expect(columnHeader.props().role).toBeUndefined();
+    expect(columnHeader.props().scope).toBeUndefined();
+    expect(columnHeader.props().tabIndex).toEqual(undefined);
+    expect(columnHeader.props().style.width).toBe('100px');
+    expect(columnHeader.props().style.height).toBe('auto');
+    expect(columnHeader.props().title).toBe(action.label);
+    expect(columnHeader.props()['aria-owns']).toBeFalsy();
+
+    const columnHeaderButtons = columnHeader.find('button');
+    expect(columnHeaderButtons).toHaveLength(1);
+    expect(columnHeaderButtons.at(0).hasClass('compact')).toBeTruthy();
+    expect(columnHeaderButtons.at(0).text().trim()).toBe(action.label);
+  });
+
+  it('renders a placeholder <td> column action cell without a button', () => {
+    const actionCellId = 'Column-0-actionCell';
+    const tableId = 'test-table';
+    const columnId = 'Column-0';
+    // const resizeHandleId = `${tableId}-${columnId}-resizeHandle`;
+
+    const wrapper = enzymeIntl.mountWithIntl(
+      <IntlProvider locale="en">
+        <ColumnHeaderCell
+          id={actionCellId}
+          tableId={tableId}
+          columnId={columnId}
+          columnIndex={0}
+          isActionCell
+          width={100}
+          headerHeight="150px"
+          resizeHandleStateSetter={mockResizeHandleStateSetter}
+        />
+      </IntlProvider>,
+    );
+
+    const normalCell = wrapper.find('td');
+    expect(normalCell).toHaveLength(1);
+    expect(wrapper.find('th')).toHaveLength(0);
+    const columnHeader = normalCell.at(0);
+    expect(columnHeader.hasClass('column-header')).toBeTruthy();
+    expect(columnHeader.key()).toBe(actionCellId);
+    expect(columnHeader.props().id).toBe(`test-table-${actionCellId}`);
+    expect(columnHeader.props().role).toBeUndefined();
+    expect(columnHeader.props().scope).toBeUndefined();
+    expect(columnHeader.props().tabIndex).toBeUndefined(); // needs isGridContext to be -1
+    expect(columnHeader.props().style.width).toBe('100px');
+    expect(columnHeader.props().style.height).toBe('auto');
+    expect(columnHeader.props().title).toBeUndefined();
+    expect(columnHeader.props()['aria-owns']).toBeFalsy();
+
+    const columnHeaderButtons = columnHeader.find('button');
+    expect(columnHeaderButtons).toHaveLength(0);
+  });
+
   it('calls a custom column select callback function on mouse down', () => {
     const mockOnColumnSelect = jest.fn();
     const wrapper = enzymeIntl.mountWithIntl(
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
+        resizeHandleStateSetter={mockResizeHandleStateSetter}
         isSelectable
       />,
     );
@@ -333,11 +439,46 @@ describe('ColumnHeaderCell', () => {
     const wrapper = enzymeIntl.mountWithIntl(
       <ColumnHeaderCell
         onColumnSelect={mockOnColumnSelect}
+        resizeHandleStateSetter={mockResizeHandleStateSetter}
       />,
     );
     wrapper.find('.column-header').simulate('mousedown');
 
     // Validate mock function was called from simulated onMouseDown event
     expect(mockOnColumnSelect).not.toHaveBeenCalled();
+  });
+
+  it('calls action onClick method on action button click', () => {
+    const action = {
+      label: 'action button',
+      onClick: jest.fn(),
+    };
+
+    const wrapper = enzymeIntl.mountWithIntl(
+      <ColumnHeaderCell
+        isActionCell
+        action={action}
+        resizeHandleStateSetter={mockResizeHandleStateSetter}
+      />,
+    );
+    wrapper.find('.button').simulate('click');
+    expect(action.onClick).toHaveBeenCalled();
+  });
+
+  it('does not call action onClick method on header mouse down', () => {
+    const action = {
+      label: 'action button',
+      onClick: jest.fn(),
+    };
+
+    const wrapper = enzymeIntl.mountWithIntl(
+      <ColumnHeaderCell
+        isActionCell
+        action={action}
+        resizeHandleStateSetter={mockResizeHandleStateSetter}
+      />,
+    );
+    wrapper.find('.column-header').simulate('mousedown');
+    expect(action.onClick).not.toHaveBeenCalled();
   });
 });
