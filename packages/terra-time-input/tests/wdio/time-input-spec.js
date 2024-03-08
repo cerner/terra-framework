@@ -1,6 +1,6 @@
 const validateElement = (testName) => Terra.validates.element(testName, { selector: '#timeInput' });
 const validateRoot = (testName) => Terra.validates.element(testName);
-// test
+
 Terra.describeViewports('Time Input', ['medium'], () => {
   it('works with a label', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/time-input/time-input/accessibility');
