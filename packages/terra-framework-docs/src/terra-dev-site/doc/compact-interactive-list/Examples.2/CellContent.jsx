@@ -4,6 +4,7 @@ import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
 } from 'terra-icon';
 import Button from 'terra-button';
+import BasicMenu from '../../menu/example/BasicMenu';
 import Hyperlink from 'terra-hyperlink';
 
 // eslint-disable-next-line no-alert
@@ -43,7 +44,7 @@ const rows = [
     cells: [
       { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
-      { content: buttonCell },
+      { content: <BasicMenu /> },
       { content: <FeaturedIcon /> },
     ],
   },
@@ -52,7 +53,7 @@ const rows = [
     cells: [
       { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
-      { content: anchorCell },
+      { content: buttonCell },
       { content: <FeaturedIcon /> },
     ],
   },
@@ -105,7 +106,7 @@ const cols = [
   {
     id: 'Column-2',
     displayName: 'Details',
-    width: '150px',
+    width: '210px',
     align: alignTypes.RIGHT,
     isSelectable: true,
   },

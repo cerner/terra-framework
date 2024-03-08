@@ -12,7 +12,7 @@ import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
-import MenuUtils from './_MenuUtils';
+import MenuUtils, { stopPropagation } from './_MenuUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -383,7 +383,7 @@ class MenuItem extends React.Component {
             role={role}
             aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
-            aria-disabled={isDisabled}
+            onFocus={stopPropagation}
           >
             {content}
           </li>

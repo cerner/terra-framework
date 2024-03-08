@@ -1,5 +1,11 @@
 import React from 'react';
 
+const stopPropagation = (event) => {
+  // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
+  // currently needed for Menu Button support in `terra-compact-interactive-list`
+  event.stopPropagation();
+};
+
 const isFullScreen = (isHeightBounded, isWidthBounded, boundingFrame, popupWidth) => {
   const width = popupWidth;
   let maxWidth;
@@ -61,3 +67,4 @@ const MenuUtils = {
 };
 
 export default MenuUtils;
+export { stopPropagation };

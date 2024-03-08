@@ -11,7 +11,7 @@ import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 import { v4 as uuidv4 } from 'uuid';
-import MenuUtils from './_MenuUtils';
+import MenuUtils, { stopPropagation } from './_MenuUtils';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
 
@@ -163,6 +163,9 @@ class MenuContent extends React.Component {
   }
 
   onKeyDown(event) {
+    // stop event propagation in case Menu oppened inside the layout component that has its own key navigation.
+    // removing next line would affect Menu Button support in `terra-compact-interactive-list`
+    event.stopPropagation();
     const focusableMenuItems = this.contentNode.querySelectorAll('li[tabindex="0"]');
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_UP || event.nativeEvent.keyCode === KeyCode.KEY_END) {
@@ -177,6 +180,7 @@ class MenuContent extends React.Component {
   }
 
   onKeyDownBackButton(event) {
+    // event.stopPropagation() is not needed here, as it already stopped on onKeyDown
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
       event.preventDefault();
       this.props.onRequestBack();
@@ -279,6 +283,7 @@ class MenuContent extends React.Component {
   wrapOnKeyDown(item, index, isDisabled) {
     const { onKeyDown } = item.props;
     return ((event) => {
+      // event.stopPropagation() is not needed here, as it will be stopped on onKeyDown
       const shiftTabClicked = (event.shiftKey && event.nativeEvent.keyCode === KeyCode.KEY_TAB);
       const tabClicked = (event.nativeEvent.keyCode === KeyCode.KEY_TAB);
       if (!(shiftTabClicked || tabClicked)) {
@@ -456,6 +461,7 @@ class MenuContent extends React.Component {
         aria-modal="true"
         role="dialog"
         onKeyDown={this.onKeyDown}
+        onFocus={stopPropagation}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
           <List className={cx('list')} role="menu" data-submenu={isSubMenu} refCallback={this.setListNode}>

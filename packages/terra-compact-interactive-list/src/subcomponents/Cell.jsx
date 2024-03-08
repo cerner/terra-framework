@@ -128,15 +128,12 @@ const Cell = (props) => {
     }
   };
 
-  const handleMouseDown = (event) => {
+  const handleMouseDown = () => {
     setFocusedCell({ rowId, columnId: id });
     if (isSelectableCell) {
       if (onCellSelect && column.isSelectable !== false) {
         onCellSelect({ rowId, columnId: id });
       }
-    } else {
-      // allows clickable elements inside non-nselactable cells to be clicked, but not the cell itself
-      event.preventDefault();
     }
   };
 
