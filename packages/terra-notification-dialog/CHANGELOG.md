@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.43.0 - (March 8, 2024)
+
 * Changes
   * Added back screenshots utilizing `focusOn` from `4.40.0`.
 
