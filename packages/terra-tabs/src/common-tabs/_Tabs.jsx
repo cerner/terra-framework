@@ -135,7 +135,6 @@ class Tabs extends React.Component {
     this.resetCache();
     this.state = {
       visibleTabData: this.props.tabData,
-      isDragged: false,
     };
     this.isNewTabCreated = false;
   }
@@ -161,34 +160,35 @@ class Tabs extends React.Component {
     const currTab = this.props.tabData.find((tab) => tab.isSelected === true);
     const prevtabKeys = [];
     const prevtabLabels = [];
+    const prevtabIcons = [];
     prevProps.tabData.forEach(child => {
       prevtabKeys.push(child.id);
       prevtabLabels.push(child.label);
+      prevtabIcons.push(child.icon);
     });
     const curtabKeys = [];
     const curtabLabels = [];
+    const curtabIcons = [];
     this.props.tabData.forEach(child => {
       curtabKeys.push(child.id);
       curtabLabels.push(child.label);
+      curtabIcons.push(child.icon);
     });
-
-    if(this.state.visibleTabData !== this.props.tabData && !this.state.isDragged) {
-      console.log("this.state.isDragged",this.state.isDragged);
-      this.setState({ visibleTabData: this.props.tabData});
-    }
 
     // Allow dynamic addition of tabs.
     if (this.state.visibleTabData.length !== this.props.tabData.length) {
       // eslint-disable-next-line react/no-did-update-set-state
-      this.setState({ visibleTabData: this.props.tabData});
+      this.setState({ visibleTabData: this.props.tabData });
     } else {
       let isTabEqual = false;
       for (let i = 0; i < curtabKeys.length; i += 1) {
         const prevKey = prevtabKeys[i];
         const prevLabel = prevtabLabels[i];
+        const prevIcon = prevtabIcons[i];
         const curKey = curtabKeys[i];
         const curLabel = curtabLabels[i];
-        if (prevKey !== curKey || prevLabel !== curLabel) {
+        const curIcon = curtabIcons[i];
+        if (prevKey !== curKey || prevLabel !== curLabel || prevIcon !== curIcon) {
           isTabEqual = true;
         }
       }
@@ -378,9 +378,6 @@ class Tabs extends React.Component {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
     result.splice(endIndex, 0, removed);
-    if(list !== result) {
-      this.setState({isDragged : true});
-    }
     return result;
   };
 
