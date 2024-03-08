@@ -383,6 +383,7 @@ class MenuItem extends React.Component {
             role={role}
             aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
+            aria-disabled={isDisabled}
             onFocus={stopPropagation}
           >
             {content}
