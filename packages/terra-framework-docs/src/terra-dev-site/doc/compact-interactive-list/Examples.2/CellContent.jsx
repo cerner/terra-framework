@@ -4,8 +4,8 @@ import {
   IconFeaturedOff, IconFeatured, IconMultipleResultsNormal, IconMultipleResultsNotNormal, IconMultipleResultsCritical,
 } from 'terra-icon';
 import Button from 'terra-button';
-import BasicMenu from '../../menu/example/BasicMenu';
 import Hyperlink from 'terra-hyperlink';
+import BasicMenu from '../../menu/example/BasicMenu';
 
 // eslint-disable-next-line no-alert
 const buttonCell = <Button text="Learn more" />;
