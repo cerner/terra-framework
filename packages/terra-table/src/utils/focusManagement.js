@@ -2,7 +2,7 @@ const getFocusableElements = (parentElement) => {
   // add all elements we want to include in our selection
   const focusableElementSelector = "a[href]:not([tabindex='-1']), area[href]:not([tabindex='-1']), input:not([disabled]):not([tabindex='-1']), "
       + "select:not([disabled]):not([tabindex='-1']), textarea:not([disabled]):not([tabindex='-1']), button:not([disabled]):not([tabindex='-1']), "
-      + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1']), div[role='button']";
+      + "iframe:not([tabindex='-1']), [tabindex]:not([tabindex='-1']), [contentEditable=true]:not([tabindex='-1'])";
 
   const focusableElements = [...parentElement.querySelectorAll(`${focusableElementSelector}`)].filter(
     element => !element.hasAttribute('disabled')

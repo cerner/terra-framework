@@ -280,15 +280,17 @@ const DataGrid = forwardRef((props, ref) => {
     }
 
     // Set focus on input field (checkbox) of row selection cells.
-    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length === 1) {
-      [focusedCell] = focusedCell.getElementsByTagName('input');
+    const rowSelectionCheckbox = focusedCell.querySelector('input');
+    if (isRowSelectionCell(newColIndex) && rowSelectionCheckbox) {
+      focusedCell = rowSelectionCheckbox;
       focusedCell?.focus();
       return;
     }
 
     // Set focus to a single header button or hyperlink if they are the only content in cell
-    if (!focusedCell.hasAttribute('tabindex') || focusedCell.getElementsByTagName('button').length === 1 || focusedCell.getElementsByTagName('a').length === 1) {
-      focusedCell = focusedCell.querySelector('a, button, [role="button"]');
+    const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
+    if (!focusedCell.hasAttribute('tabindex') || cellButtonOrHyperlink) {
+      focusedCell = cellButtonOrHyperlink;
       focusedCell?.focus();
       return;
     }

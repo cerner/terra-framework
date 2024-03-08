@@ -201,8 +201,7 @@ function Cell(props) {
       return false;
     }
 
-    const buttonOrHyperlinkElements = focusableElements.filter(element => !element.getAttribute('tabindex') && window.getComputedStyle(element).visibility !== 'hidden');
-    return buttonOrHyperlinkElements.length === 1;
+    return node.querySelector('a, button');
   };
 
   /**
