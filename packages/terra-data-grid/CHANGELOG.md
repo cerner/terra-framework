@@ -5,6 +5,9 @@
 * Added
   * Added support for orange and green column highlighting.
 
+* Fixed
+  * Fixes column index out of bounds in row selection mode.
+
 ## 1.18.0 - (March 5, 2024)
 
 * Changed
