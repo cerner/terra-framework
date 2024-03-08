@@ -250,10 +250,12 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    focusedCellRef.current = {
-      rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
-      columnId: displayedColumns[newColIndex].id,
-    };
+    if (newColIndex < displayedColumns.length) {
+      focusedCellRef.current = {
+        rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
+        columnId: displayedColumns[newColIndex].id,
+      };
+    }
 
     if (!makeActiveElement) {
       return;

@@ -2,11 +2,16 @@
 
 ## Unreleased
 
+* Changed
+  * Updated focus behavior so that cells with only a button or hyperlink will focus on those components directly without need for dive-in or focus trap.
+
+## 1.19.0 - (March 8, 2024)
+
 * Added
   * Added support for orange and green column highlighting.
 
-* Changed
-  * Updated focus behavior so that cells with only a button or hyperlink will focus on those components directly without need for dive-in or focus trap.
+* Fixed
+  * Fixes column index out of bounds in row selection mode.
 
 ## 1.18.0 - (March 5, 2024)
 
