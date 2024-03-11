@@ -10,6 +10,7 @@ import GridContext, { GridConstants } from '../../src/utils/GridContext';
 import ERRORS from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
 import Table from '../../src/Table';
+import Cell from '../../src/subcomponents/Cell';
 
 // Source data for tests
 const tableData = {
@@ -55,10 +56,29 @@ const tableData = {
   ],
 };
 
+// valid action
+const action = {
+  label: 'Column-action',
+  onClick: jest.fn(),
+};
+
 const tableSectionData = {
   cols: [
     {
       id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', isSelectable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'Location', isSelectable: true,
+    },
+    { id: 'Column-2', displayName: 'Illness Severity', isSelectable: true },
+    { id: 'Column-3', displayName: 'Visit' },
+    { id: 'Column-4', displayName: 'Allergy' },
+    { id: 'Column-5', displayName: 'Primary Contact' },
+
+  ],
+  colsWithActions: [
+    {
+      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', isSelectable: true, action,
     },
     {
       id: 'Column-1', displayName: 'Location', isSelectable: true,
@@ -163,6 +183,22 @@ describe('Table', () => {
     expect(columnHeader).toHaveLength(1);
   });
 
+  it('verifies that the table created has no row headers', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        pinnedColumns={tableData.cols.slice(0, 2)}
+        overflowColumns={tableData.cols.slice(2)}
+        rows={tableData.rows}
+        rowHeaderIndex={-1}
+      />,
+    );
+
+    const firstRow = wrapper.find(Row).at(0);
+    const firstCell = firstRow.find(Cell).at(0);
+    expect(firstCell.props().isRowHeader).toEqual(false);
+  });
+
   it('verifies row selection column header selection', () => {
     const mockColumnSelect = jest.fn();
 
@@ -179,7 +215,7 @@ describe('Table', () => {
 
     // Find column headers
     const columnHeaderCell = wrapper.find(ColumnHeaderCell).at(0);
-    expect(columnHeaderCell.props().id).toBe('table-rowSelectionColumn');
+    expect(columnHeaderCell.props().id).toBe('table-rowSelectionColumn-headerCell');
 
     // Simulate onMouseDown event on row selection column header
     columnHeaderCell.simulate('mouseDown');
@@ -303,7 +339,7 @@ describe('Table', () => {
 
     // Validate column header id attribute
     const columnHeaderCell = wrapper.find('.column-header').at(0);
-    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0');
+    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0-headerCell');
 
     // Retrieve first section
     const tableSections = wrapper.find(Section);
@@ -321,6 +357,7 @@ describe('Table', () => {
 
     // Validate rows of the first section
     const section1Row1 = section1.find('.row').at(0);
+
     expect(section1Row1.props()['aria-rowindex']).toBe(3);
     expect(section1Row1.props()['data-row-id']).toBe('1');
     const section1Row2 = section1.find('.row').at(1);
@@ -329,10 +366,10 @@ describe('Table', () => {
 
     // Validate cells of the first row
     const row1Cell1 = section1Row1.find('.cell').at(0);
-    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-Column-0');
+    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-Column-0-headerCell');
     expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
     const row1Cell2 = section1Row1.find('.cell').at(1);
-    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-rowheader-1 test-terra-table-Column-1');
+    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
 
     // Retrieve second section
     const section2 = tableSections.at(1);
@@ -357,10 +394,101 @@ describe('Table', () => {
 
     // Validate cells of the first row
     const section2Row1Cell1 = section2Row1.find('.cell').at(0);
-    expect(section2Row1Cell1.props().headers).toBe('test-terra-table-section-1 test-terra-table-Column-0');
+    expect(section2Row1Cell1.props().headers).toBe('test-terra-table-section-1 test-terra-table-Column-0-headerCell');
     expect(section2Row1Cell1.props().id).toBe('test-terra-table-rowheader-3');
     const section2Row1Cell2 = section2Row1.find('.cell').at(1);
-    expect(section2Row1Cell2.props().headers).toBe('test-terra-table-section-1 test-terra-table-rowheader-3 test-terra-table-Column-1');
+    expect(section2Row1Cell2.props().headers).toBe('test-terra-table-section-1 test-terra-table-rowheader-3 test-terra-table-Column-1-headerCell');
+  });
+
+  it('verifies ARIA rowcount and rowindex attributes for a table with header actions (with sections)', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableSectionData.colsWithActions}
+        sections={tableSectionData.sections}
+      />,
+    );
+
+    // Validate table properties
+    const table = wrapper.find('table');
+    expect(table.props()['aria-rowcount']).toBe(8);
+
+    // Retrieve first section
+    const tableSections = wrapper.find(Section);
+    const section1 = tableSections.at(0);
+
+    // Validate section header rowindex was increased by one per actions header
+    const section1HeaderRow = section1.find('.header-row');
+    expect(section1HeaderRow.props()['aria-rowindex']).toBe(3);
+
+    // Validate that aria-rowindexes of the first section were increased by 1 per action row
+    const section1Row1 = section1.find('.row').at(0);
+    expect(section1Row1.props()['aria-rowindex']).toBe(4);
+    expect(section1Row1.props()['data-row-id']).toBe('1');
+    const section1Row2 = section1.find('.row').at(1);
+    expect(section1Row2.props()['aria-rowindex']).toBe(5);
+    expect(section1Row2.props()['data-row-id']).toBe('2');
+
+    // Retrieve second section
+    const section2 = tableSections.at(1);
+
+    // Validate section header rowindex was increased by one per actions header
+    const section2HeaderRow = section2.find('.header-row');
+    expect(section2HeaderRow.props()['aria-rowindex']).toBe(6);
+
+    // Validate that aria-rowindexes of the second section were increased by 1 per action row
+    const section2Row1 = section2.find('.row').at(0);
+    expect(section2Row1.props()['aria-rowindex']).toBe(7);
+    expect(section2Row1.props()['data-row-id']).toBe('3');
+    const section2Row2 = section2.find('.row').at(1);
+    expect(section2Row2.props()['aria-rowindex']).toBe(8);
+    expect(section2Row2.props()['data-row-id']).toBe('4');
+  });
+
+  it('verifies ARIA rowcount and rowindex attributes for a table with hidden headers (with sections)', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableSectionData.colsWithActions}
+        sections={tableSectionData.sections}
+        hasVisibleColumnHeaders={false}
+      />,
+    );
+
+    // Validate table properties
+    const table = wrapper.find('table');
+    expect(table.props()['aria-rowcount']).toBe(6);
+
+    // Retrieve first section
+    const tableSections = wrapper.find(Section);
+    const section1 = tableSections.at(0);
+
+    // Validate section header rowindex was decreased by one per hidden header
+    const section1HeaderRow = section1.find('.header-row');
+    expect(section1HeaderRow.props()['aria-rowindex']).toBe(1);
+
+    // Validate that aria-rowindexes of the first section were was decreased by one per hidden header
+    const section1Row1 = section1.find('.row').at(0);
+    expect(section1Row1.props()['aria-rowindex']).toBe(2);
+    expect(section1Row1.props()['data-row-id']).toBe('1');
+    const section1Row2 = section1.find('.row').at(1);
+    expect(section1Row2.props()['aria-rowindex']).toBe(3);
+    expect(section1Row2.props()['data-row-id']).toBe('2');
+
+    // Retrieve second section
+    const section2 = tableSections.at(1);
+
+    // Validate section header rowindex was was decreased by one per hidden header
+    const section2HeaderRow = section2.find('.header-row');
+    expect(section2HeaderRow.props()['aria-rowindex']).toBe(4);
+
+    // Validate that aria-rowindexes of the second section were was decreased by one per hidden header
+    const section2Row1 = section2.find('.row').at(0);
+    expect(section2Row1.props()['aria-rowindex']).toBe(5);
+    expect(section2Row1.props()['data-row-id']).toBe('3');
+    const section2Row2 = section2.find('.row').at(1);
+    expect(section2Row2.props()['aria-rowindex']).toBe(6);
+    expect(section2Row2.props()['data-row-id']).toBe('4');
   });
 
   it('verifies ARIA attributes for a table without sections', () => {
@@ -380,7 +508,7 @@ describe('Table', () => {
 
     // Validate column header id attribute
     const columnHeaderCell = wrapper.find('.column-header').at(0);
-    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0');
+    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0-headerCell');
 
     // Retrieve first section
     const tableSections = wrapper.find(Section);
@@ -406,17 +534,82 @@ describe('Table', () => {
 
     // Validate cells of the first row
     const row1Cell1 = row1.find('.cell').at(0);
-    expect(row1Cell1.props().headers).toBe('test-terra-table-Column-0');
+    expect(row1Cell1.props().headers).toBe('test-terra-table-Column-0-headerCell');
     expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
     const row1Cell2 = row1.find('.cell').at(1);
-    expect(row1Cell2.props().headers).toBe('test-terra-table-rowheader-1 test-terra-table-Column-1');
+    expect(row1Cell2.props().headers).toBe('test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
 
     // Validate cells of the second row
     const row2Cell1 = row2.find('.cell').at(0);
-    expect(row2Cell1.props().headers).toBe('test-terra-table-Column-0');
+    expect(row2Cell1.props().headers).toBe('test-terra-table-Column-0-headerCell');
     expect(row2Cell1.props().id).toBe('test-terra-table-rowheader-2');
     const row2Cell2 = row2.find('.cell').at(1);
-    expect(row2Cell2.props().headers).toBe('test-terra-table-rowheader-2 test-terra-table-Column-1');
+    expect(row2Cell2.props().headers).toBe('test-terra-table-rowheader-2 test-terra-table-Column-1-headerCell');
+  });
+
+  it('verifies ARIA rowcount and rowindex attributes for a table with header actions (no sections)', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableSectionData.colsWithActions}
+        rows={tableData.rows}
+      />,
+    );
+
+    // Validate aria-rowcount was increased by 1 per action row
+    const table = wrapper.find('table');
+    expect(table.props()['aria-rowcount']).toBe(6);
+
+    // Retrieve first section
+    const tableSections = wrapper.find(Section);
+    const section1 = tableSections.at(0);
+
+    // Validate that aria-rowindexes were increased by 1 per action row
+    const row1 = section1.find('.row').at(0);
+    expect(row1.props()['aria-rowindex']).toBe(3);
+    expect(row1.props()['data-row-id']).toBe('1');
+    const row2 = section1.find('.row').at(1);
+    expect(row2.props()['aria-rowindex']).toBe(4);
+    expect(row2.props()['data-row-id']).toBe('2');
+    const row3 = section1.find('.row').at(2);
+    expect(row3.props()['aria-rowindex']).toBe(5);
+    expect(row3.props()['data-row-id']).toBe('3');
+    const row4 = section1.find('.row').at(3);
+    expect(row4.props()['aria-rowindex']).toBe(6);
+    expect(row4.props()['data-row-id']).toBe('4');
+  });
+
+  it('verifies ARIA rowcount and rowindex attributes for a table with hidden headers (no sections)', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableSectionData.colsWithActions}
+        rows={tableData.rows}
+        hasVisibleColumnHeaders={false}
+      />,
+    );
+
+    // Validate aria-rowcount was decreased by one per hidden header
+    const table = wrapper.find('table');
+    expect(table.props()['aria-rowcount']).toBe(4);
+
+    // Retrieve first section
+    const tableSections = wrapper.find(Section);
+    const section1 = tableSections.at(0);
+
+    // Validate that aria-rowindexes were decreased by one per hidden header
+    const row1 = section1.find('.row').at(0);
+    expect(row1.props()['aria-rowindex']).toBe(1);
+    expect(row1.props()['data-row-id']).toBe('1');
+    const row2 = section1.find('.row').at(1);
+    expect(row2.props()['aria-rowindex']).toBe(2);
+    expect(row2.props()['data-row-id']).toBe('2');
+    const row3 = section1.find('.row').at(2);
+    expect(row3.props()['aria-rowindex']).toBe(3);
+    expect(row3.props()['data-row-id']).toBe('3');
+    const row4 = section1.find('.row').at(3);
+    expect(row4.props()['aria-rowindex']).toBe(4);
+    expect(row4.props()['data-row-id']).toBe('4');
   });
 
   it('verifies row selection column header not selectable without callback', () => {
@@ -735,12 +928,12 @@ describe('Error handling - prop types', () => {
         <Table
           id="test-terra-table"
           rows={tableData.rows}
-          rowHeaderIndex={-1}
+          rowHeaderIndex={-2}
         />
       </IntlProvider>,
     ).dive();
 
-    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_ZERO)); // eslint-disable-line no-console
+    expect(console.error).toHaveBeenCalledWith(expect.stringContaining(ERRORS.ROW_HEADER_INDEX_LESS_THAN_MINUS_ONE)); // eslint-disable-line no-console
   });
 
   it('throws an error if rowHeaderIndex is greater than the length of pinned columns', () => {

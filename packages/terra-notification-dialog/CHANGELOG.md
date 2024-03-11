@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 4.43.0 - (March 8, 2024)
+
+* Changes
+  * Added back screenshots utilizing `focusOn` from `4.40.0`.
+
+## 4.42.0 - (March 5, 2024)
+
+* Changed
+  * Revert examples utilizing `focusOn` implementation.
+
+## 4.41.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 4.40.0 - (February 16, 2024)
 
 * Updated

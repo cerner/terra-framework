@@ -2,6 +2,36 @@
 
 ## Unreleased
 
+## 1.9.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.8.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.7.0 - (March 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.6.1 - (February 29, 2024)
+
+* Fixed
+  * Added check for cell element existence before focusing.
+
+## 1.6.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.5.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.4.0 - (February 16, 2024)
 
 * Changed

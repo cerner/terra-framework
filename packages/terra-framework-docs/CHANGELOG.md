@@ -2,8 +2,42 @@
 
 ## Unreleased
 
+## 1.73.0 - (March 8, 2024)
+
+* Changed
+  * Re-introduced `shouldTrapFocus` examples from `1.72.0`.
+
+* Added
+  * Added orange and green column highlighting examples for `flowsheet-data-grid`
+
+## 1.72.0 - (March 5, 2024)
+
+* Changed
+  * Removed `shouldTrapFocus` attributes from examples.
+
+## 1.71.0 - (March 1, 2024)
+
+* Added
+  * Added examples and tests for a large menu in the `terra-menu`.
+  * Added examples for `table-table` with no row headers.
+
+## 1.70.0 - (February 29, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.69.0 - (February 28, 2024)
+
+* Added
+  * Column actions example added to `terra-worklist-data-grid`.
+
+## 1.68.0 - (February 28, 2024)
+
 * Changed
   * Updated `terra-menu` test for selectable menu to retain selection state when using `isToggled` prop after closing and re-opening the menu.
+
+* Added
+  * Added example for bounded `terra-flowsheet-data-grid` with sections.
 
 ## 1.67.0 - (February 22, 2024)
 
@@ -23,7 +57,6 @@
 
 * Added
   * Added shouldTrapFocus to be set to 'true'.
-
 * Changed
   * Updated `terra-navigation-side-menu` example to use more meaningful labels.
   * Updated the `terra-date-time-picker` example for field label.

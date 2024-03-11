@@ -2,6 +2,21 @@
 
 ## Unreleased
 
+## 5.85.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.84.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.83.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 5.82.0 - (February 22, 2024)
 
 * Changed

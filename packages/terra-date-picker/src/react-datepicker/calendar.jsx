@@ -465,7 +465,6 @@ export default class Calendar extends React.Component {
       isMonthChanged: true,
       date: getStartOfMonth(setYear(cloneDate(this.state.date), year))
     })
-    this.props.setPreSelection(getStartOfMonth(setYear(cloneDate(this.state.date), year)),dateValues.YEAR,year);
   }
 
   changeMonth = (month) => {
@@ -473,7 +472,6 @@ export default class Calendar extends React.Component {
       isMonthChanged: true,
       date: getStartOfMonth(setMonth(cloneDate(this.state.date), month))
     }, () => this.handleMonthChange(this.state.date))
-    this.props.setPreSelection(getStartOfMonth(setMonth(cloneDate(this.state.date), month)),dateValues.MONTH,month);
   }
 
   header = (date = this.state.date) => {

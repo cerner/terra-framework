@@ -2,6 +2,23 @@
 
 ## Unreleased
 
+## 6.88.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.87.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.86.0 - (March 1, 2024)
+
+* Fixed
+  * Fixed sub-menu height issue when it exceeds viewport size.
+
+## 6.85.0 - (February 28, 2024)
+
 * Fixed
   * Fixed `MenuItemGroup` to retain selection state when menu is closed and re-opened and `isToggled` prop is used.
 
@@ -24,7 +41,7 @@
 
 * Fixed
   * Fixed the issue with `contentWidth` as auto value.
-  
+
 * Changed
   * Allow menu/sub-menu to dynamically set height based on menu items.
 
