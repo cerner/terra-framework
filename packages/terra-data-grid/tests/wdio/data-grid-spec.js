@@ -270,7 +270,7 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[1]/div/button').isFocused()).toBe(true);
     });
 
-    it.only('clicks the button instead of diving in if it is the only component in the cell', () => {
+    it('clicks the button instead of diving in if it is the only component in the cell', () => {
       const modal = browser.$('[aria-modal="true"]');
       expect(modal.isDisplayed()).toBe(false);
 
