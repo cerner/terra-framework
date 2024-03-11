@@ -84,7 +84,8 @@
     "terra-theme-context": "^1.9.0",
     "terra-theme-provider": "^4.16.0",
     "terra-time-input": "^4.63.0",
-    "terra-toolbar": "^1.27.0"
+    "terra-toolbar": "^1.27.0",
+    "terra-clinical-header": "^3.30.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SlidePanel from 'terra-slide-panel';
+import Header from 'terra-clinical-header';
+import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import classNames from 'classnames/bind';
 import styles from './DefaultSlidePanel.module.scss';
 
@@ -37,40 +39,23 @@ const mainContentForSlidePanel = togglePanelHandler => (
   </div>
 );
 
-const panelContentForSlidePanel = (togglePanelHandler, toggleFullscreenHandler) => (
-  <div>
-    <header className={cx('header-content')}>
-      <h3 className={cx('heading')}>Panel Content</h3>
-      <button id="panelToggleBtn" type="button" onClick={togglePanelHandler} className={cx('extension-button')}>Panel Toggle Panel</button>
-      <button type="button" onClick={toggleFullscreenHandler} className={cx('extension-button')}>Toggle Fullscreen</button>
-    </header>
-    <div className={cx('content-wrapper')}>
-      <p>This is the panel content area of the slide panel.</p>
-      <p>
-        {'Focus is moved to the toggle button in the main container when the panel is closed via the componentDidUpdate lifecycle hook in '}
-        <a href="https://github.com/cerner/terra-framework/blob/main/packages/terra-slide-panel/src/terra-dev-site/doc/example/DefaultSlidePanel.jsx">the example code</a>
-        .
-      </p>
-      <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
-        <li>Item 4</li>
-        <li>Item 5</li>
-        <li>Item 6</li>
-        <li>Item 7</li>
-        <li>Item 8</li>
-        <li>Item 9</li>
-        <li>Item 10</li>
-        <li>Item 11</li>
-        <li>Item 12</li>
-        <li>Item 13</li>
-        <li>Item 14</li>
-        <li>Item 15</li>
-      </ul>
-    </div>
-  </div>
-);
+const panelContentForSlidePanel = (togglePanelHandler, toggleFullscreenHandler) => {
+  const collapseMenu = (
+    <CollapsibleMenuView>
+      <CollapsibleMenuView.Item text="Print" key="print" />
+      <CollapsibleMenuView.Item text="Bookmark" key="bookmark" />
+      <CollapsibleMenuView.Item text="Trash" key="trash" />
+      <CollapsibleMenuView.Item text="Close" key="Close" />
+      <CollapsibleMenuView.Item text="Save" key="Save" />
+    </CollapsibleMenuView>
+  );
+  return (
+    <Header
+      startContent={collapseMenu}
+      level={1}
+    />
+  );
+};
 
 class DefaultSlidePanel extends React.Component {
   constructor(props) {
