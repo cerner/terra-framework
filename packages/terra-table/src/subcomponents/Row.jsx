@@ -88,18 +88,6 @@ const propTypes = {
    * Index can be set to -1 if row headers are not required.
    */
   rowHeaderIndex: PropTypes.number,
-
-  /**
-   * @private
-   * Id of the first row in table
-   */
-  firstRowId: PropTypes.string,
-
-  /**
-   * @private
-   * Id of the last row in table
-   */
-  lastRowId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -123,8 +111,6 @@ function Row(props) {
     rowHeaderIndex,
     onCellSelect,
     rowMinimumHeight,
-    firstRowId,
-    lastRowId,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -192,9 +178,6 @@ function Row(props) {
             height={height}
             rowMinimumHeight={rowMinimumHeight}
             rowHeaderIndex={rowHeaderIndex}
-            firstRowId={firstRowId}
-            lastRowId={lastRowId}
-            columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
           >
             {cellData.content}
           </Cell>

@@ -1183,12 +1183,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
-              firstRowId="1"
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
               key="00000000-0000-0000-0000-000000000000"
-              lastRowId="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowMinimumHeight="auto"
@@ -1315,11 +1313,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="1"
                   isTableStriped={true}
                   key="1"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
@@ -1339,12 +1335,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
                       key="1_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -1355,7 +1349,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1387,7 +1380,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -1441,12 +1433,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -1457,7 +1447,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1489,7 +1478,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -1544,13 +1532,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -1561,7 +1547,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1593,7 +1578,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -1687,11 +1671,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="2"
                   isTableStriped={true}
                   key="2"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
@@ -1711,12 +1693,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="2_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -1727,7 +1707,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1759,7 +1738,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -1813,12 +1791,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -1829,7 +1805,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1861,7 +1836,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -1912,13 +1886,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -1929,7 +1901,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -1961,7 +1932,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -2055,11 +2025,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="3"
                   isTableStriped={true}
                   key="3"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
@@ -2079,12 +2047,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="3_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -2095,7 +2061,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2127,7 +2092,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -2181,12 +2145,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -2197,7 +2159,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2229,7 +2190,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -2280,13 +2240,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -2297,7 +2255,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2329,7 +2286,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -2422,12 +2378,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
                   key="4"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
@@ -2447,12 +2401,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
                       key="4_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -2463,7 +2415,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2495,7 +2446,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -2549,12 +2499,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -2565,7 +2513,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2597,7 +2544,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -2648,12 +2594,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -2664,7 +2608,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -2696,7 +2639,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -3984,12 +3926,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                   },
                 ]
               }
-              firstRowId="1"
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
               key="00000000-0000-0000-0000-000000000000"
-              lastRowId="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowMinimumHeight="auto"
@@ -4116,11 +4056,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="1"
                   isTableStriped={true}
                   key="1"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
@@ -4140,12 +4078,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
                       key="1_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -4156,7 +4092,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4188,7 +4123,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -4242,12 +4176,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -4258,7 +4190,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4290,7 +4221,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -4345,13 +4275,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -4362,7 +4290,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4394,7 +4321,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -4488,11 +4414,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="2"
                   isTableStriped={true}
                   key="2"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
@@ -4512,12 +4436,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="2_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -4528,7 +4450,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4560,7 +4481,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -4614,12 +4534,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -4630,7 +4548,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4662,7 +4579,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -4713,13 +4629,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -4730,7 +4644,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4762,7 +4675,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -4856,11 +4768,9 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="3"
                   isTableStriped={true}
                   key="3"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
@@ -4880,12 +4790,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="3_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -4896,7 +4804,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -4928,7 +4835,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -4982,12 +4888,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -4998,7 +4902,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5030,7 +4933,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -5081,13 +4983,11 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -5098,7 +4998,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5130,7 +5029,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -5223,12 +5121,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
                   key="4"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
@@ -5248,12 +5144,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
                       key="4_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -5264,7 +5158,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5296,7 +5189,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -5350,12 +5242,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -5366,7 +5256,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5398,7 +5287,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -5449,12 +5337,10 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -5465,7 +5351,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -5497,7 +5382,6 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -6897,12 +6781,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   },
                 ]
               }
-              firstRowId="1"
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
               key="00000000-0000-0000-0000-000000000000"
-              lastRowId="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowMinimumHeight="auto"
@@ -7038,11 +6920,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="1"
                   isTableStriped={true}
                   key="1"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
@@ -7210,13 +7090,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
                       isSelected={false}
                       key="1_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -7227,7 +7105,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7260,7 +7137,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={true}
                         isSelectable={false}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -7314,13 +7190,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="1_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -7331,7 +7205,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7364,7 +7237,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -7419,14 +7291,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="1_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -7437,7 +7307,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7470,7 +7339,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -7572,11 +7440,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="2"
                   isTableStriped={true}
                   key="2"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
@@ -7744,13 +7610,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       isSelected={false}
                       key="2_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -7761,7 +7625,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7794,7 +7657,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={true}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -7848,13 +7710,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="2_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -7865,7 +7725,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -7898,7 +7757,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -7949,14 +7807,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="2_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -7967,7 +7823,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8000,7 +7855,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -8102,11 +7956,9 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="3"
                   isTableStriped={true}
                   key="3"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
@@ -8274,13 +8126,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       isSelected={false}
                       key="3_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -8291,7 +8141,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8324,7 +8173,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={true}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -8378,13 +8226,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="3_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -8395,7 +8241,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8428,7 +8273,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -8479,14 +8323,12 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="3_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -8497,7 +8339,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8530,7 +8371,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -8631,12 +8471,10 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
                   key="4"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
@@ -8804,13 +8642,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
                       isSelected={false}
                       key="4_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -8821,7 +8657,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8854,7 +8689,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={true}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -8908,13 +8742,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="4_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -8925,7 +8757,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -8958,7 +8789,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -9009,13 +8839,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={3}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       isSelected={false}
                       key="4_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -9026,7 +8854,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={3}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -9059,7 +8886,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         isRowHeader={false}
                         isSelectable={true}
                         isSelected={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -10275,12 +10101,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   },
                 ]
               }
-              firstRowId="1"
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
               key="00000000-0000-0000-0000-000000000000"
-              lastRowId="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowMinimumHeight="auto"
@@ -10407,11 +10231,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="1"
                   isTableStriped={true}
                   key="1"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
@@ -10431,12 +10253,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
                       key="1_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -10447,7 +10267,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10479,7 +10298,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -10533,12 +10351,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -10549,7 +10365,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10581,7 +10396,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -10636,13 +10450,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -10653,7 +10465,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10685,7 +10496,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -10779,11 +10589,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="2"
                   isTableStriped={true}
                   key="2"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
@@ -10803,12 +10611,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="2_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -10819,7 +10625,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10851,7 +10656,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -10905,12 +10709,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -10921,7 +10723,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -10953,7 +10754,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -11004,13 +10804,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -11021,7 +10819,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11053,7 +10850,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -11147,11 +10943,9 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="3"
                   isTableStriped={true}
                   key="3"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
@@ -11171,12 +10965,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="3_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -11187,7 +10979,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11219,7 +11010,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -11273,12 +11063,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -11289,7 +11077,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11321,7 +11108,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -11372,13 +11158,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -11389,7 +11173,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11421,7 +11204,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -11514,12 +11296,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
                   key="4"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
@@ -11539,12 +11319,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
                       key="4_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -11555,7 +11333,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11587,7 +11364,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -11641,12 +11417,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -11657,7 +11431,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11689,7 +11462,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -11740,12 +11512,10 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -11756,7 +11526,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -11788,7 +11557,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -12995,12 +12763,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   },
                 ]
               }
-              firstRowId="1"
               id="00000000-0000-0000-0000-000000000000"
               isHidden={true}
               isTableStriped={true}
               key="00000000-0000-0000-0000-000000000000"
-              lastRowId="4"
               onCellSelect={[Function]}
               rowHeaderIndex={0}
               rowMinimumHeight="auto"
@@ -13127,11 +12893,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="1"
                   isTableStriped={true}
                   key="1"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={2}
@@ -13151,12 +12915,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={false}
                       key="1_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -13167,7 +12929,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13199,7 +12960,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={false}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -13253,12 +13013,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -13269,7 +13027,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13301,7 +13058,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -13356,13 +13112,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="1_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="1"
@@ -13373,7 +13127,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13405,7 +13158,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="1"
@@ -13499,11 +13251,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="2"
                   isTableStriped={true}
                   key="2"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={3}
@@ -13523,12 +13273,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="2_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -13539,7 +13287,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13571,7 +13318,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -13625,12 +13371,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -13641,7 +13385,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13673,7 +13416,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -13724,13 +13466,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="2_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="2"
@@ -13741,7 +13481,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13773,7 +13512,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="2"
@@ -13867,11 +13605,9 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="3"
                   isTableStriped={true}
                   key="3"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={4}
@@ -13891,12 +13627,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={true}
                       isSelectable={true}
                       key="3_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -13907,7 +13641,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -13939,7 +13672,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -13993,12 +13725,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={false}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -14009,7 +13739,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -14041,7 +13770,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -14092,13 +13820,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={false}
                       isMasked={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="3_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="3"
@@ -14109,7 +13835,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -14141,7 +13866,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={true}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="3"
@@ -14234,12 +13958,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       },
                     ]
                   }
-                  firstRowId="1"
                   id="4"
                   isSelected={true}
                   isTableStriped={true}
                   key="4"
-                  lastRowId="4"
                   onCellSelect={[Function]}
                   rowHeaderIndex={0}
                   rowIndex={5}
@@ -14259,12 +13981,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-0"
                       columnIndex={0}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={true}
                       isSelectable={true}
                       key="4_Column-0"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -14275,7 +13995,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-0"
                         columnIndex={0}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -14307,7 +14026,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={true}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -14361,12 +14079,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-1"
                       columnIndex={1}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-1"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -14377,7 +14093,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-1"
                         columnIndex={1}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -14409,7 +14124,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"
@@ -14460,12 +14174,10 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                     <InjectIntl(Cell)
                       columnId="Column-2"
                       columnIndex={2}
-                      firstRowId="1"
                       isHighlighted={true}
                       isRowHeader={false}
                       isSelectable={true}
                       key="4_Column-2"
-                      lastRowId="4"
                       onCellSelect={[Function]}
                       rowHeaderIndex={0}
                       rowId="4"
@@ -14476,7 +14188,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       <Cell
                         columnId="Column-2"
                         columnIndex={2}
-                        firstRowId="1"
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -14508,7 +14219,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         isMasked={false}
                         isRowHeader={false}
                         isSelectable={true}
-                        lastRowId="4"
                         onCellSelect={[Function]}
                         rowHeaderIndex={0}
                         rowId="4"

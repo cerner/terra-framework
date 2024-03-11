@@ -36,36 +36,6 @@
     background: var(--terra-table-highlight-mask-background, repeating-linear-gradient(-45deg, #cfd2d3, #cfd2d3 3px, #cbe7fa 3px, #cbe7fa 6px));
   }
 
-  .column-highlight-orange {
-    background-color: var(--terra-table-cell-highlighted-orange-background-color, rgba(250, 203, 170, 0.38));
-    box-shadow: var(--terra-table-cell-highlighted-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318);
-  }
-
-  .column-highlight-green {
-    background-color: var(--terra-table-cell-highlighted-green-background-color, rgba(87, 146, 47, 0.15));
-    box-shadow: var(--terra-table-cell-highlighted-green-box-shadow, inset 1px 0 0 0 #57922f, inset -1px 0 0 0 #57922f);
-  }
-
-  .first-highlight-orange {
-    background-color: var(--terra-table-cell-highlighted-orange-background-color, rgba(250, 203, 170, 0.38));
-    box-shadow: var(--terra-table-cell-highlighted-orange-first-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318, inset 0 1px 0 0 #c97318);
-  }
-
-  .first-highlight-green {
-    background-color: var(--terra-table-cell-highlighted-green-background-color, rgba(87, 146, 47, 0.15));
-    box-shadow: var(--terra-table-cell-highlighted-green-first-box-shadow, inset 1px 0 0 0 #57922f, inset -1px 0 0 0 #57922f, inset 0 1px 0 0 #57922f);
-  }
-
-  .last-highlight-orange {
-    background-color: var(--terra-table-cell-highlighted-orange-background-color, rgba(250, 203, 170, 0.38));
-    box-shadow: var(--terra-table-cell-highlighted-orange-last-box-shadow, inset 1px 0 0 0 #c97318, inset -1px 0 0 0 #c97318, inset 0 -1px 0 0 #c97318);
-  }
-
-  .last-highlight-green {
-    background-color: var(--terra-table-cell-highlighted-green-background-color, rgba(87, 146, 47, 0.15));
-    box-shadow: var(--terra-table-cell-highlighted-green-last-box-shadow, inset 1px 0 0 0 #57922f, inset -1px 0 0 0 #57922f, inset 0 -1px 0 0 #57922f);
-  }
-
   .cell-content {
     overflow: hidden;
     overflow-wrap: break-word;

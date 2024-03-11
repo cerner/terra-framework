@@ -1,5 +1,3 @@
-// React-focus-on uses native promises which isn't available in IE11
-import 'promise-polyfill/dist/polyfill.min';
 import React, {
   useLayoutEffect, useEffect, useRef, useCallback,
 } from 'react';
@@ -80,10 +78,6 @@ const propTypes = {
    * If set to true, the AbstractModal is rendered inside a NotificationDialog.
    */
   isCalledFromNotificationDialog: PropTypes.bool,
-  /**
-   * If set to true, then the focus lock will get enabled.
-   */
-  shouldTrapFocus: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -96,7 +90,6 @@ const defaultProps = {
   rootSelector: '#root',
   zIndex: '6000',
   isCalledFromNotificationDialog: false,
-  shouldTrapFocus: false,
 };
 
 const AbstractModal = (props) => {
@@ -116,7 +109,6 @@ const AbstractModal = (props) => {
     onRequestClose,
     zIndex,
     isCalledFromNotificationDialog,
-    shouldTrapFocus,
     ...customProps
   } = props;
 
@@ -182,7 +174,6 @@ const AbstractModal = (props) => {
         ref={modalElementRef}
         onKeyDown={handleKeydown}
         isCalledFromNotificationDialog={isCalledFromNotificationDialog}
-        shouldTrapFocus={shouldTrapFocus}
       >
         {children}
       </ModalContent>

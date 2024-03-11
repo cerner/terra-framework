@@ -101,22 +101,4 @@
     background-color: var(--terra-table-header-hover-background-color, #daecf6);
     cursor: pointer;
   }
-
-  // Style column header highlight icon
-  .highlight-icon-svg {
-    height: 20px;
-    width: 20px;
-  }
-
-  // Style column header highlight circle icon
-  .highlight-icon-circle {
-    fill: var(--terra-table-column-header-highlighted-green-circle-fill, #57922f);
-  }
-
-  // Style column header highlight square icon
-  .highlight-icon-square {
-    fill: var(--terra-table-column-header-highlighted-orange-square-fill, #c97318);
-    height: 6px;
-    width: 6px;
-  }
 }

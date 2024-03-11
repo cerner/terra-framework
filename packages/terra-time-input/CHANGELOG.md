@@ -2,11 +2,6 @@
 
 ## Unreleased
 
-## 4.65.0 - (March 8, 2024)
-
-* Fixed
-  * Time input displays incorrectly in firefox.
-
 ## 4.64.0 - (February 28, 2024)
 
 * Fixed

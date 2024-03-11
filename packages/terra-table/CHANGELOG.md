@@ -2,11 +2,6 @@
 
 ## Unreleased
 
-## 5.12.0 - (March 8, 2024)
-
-* Changed
-  * Minor dependency version bump.
-
 ## 5.11.0 - (March 5, 2024)
 
 * Changed
@@ -39,10 +34,6 @@
 
 * Changed
   * Changed the default rowMinimumHeight value to auto to fit the row contents.
-  * Updated lowlight light zebra strap color to darker grey to improve colour contrast.
-  
-* Added
-  * Added support for orange and green column highlighting.
 
 ## 5.5.0 - (February 1, 2024)
 

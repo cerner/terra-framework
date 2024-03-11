@@ -1,4 +1,4 @@
 import WorklistDataGrid from './WorklistDataGrid';
-import FlowsheetDataGrid, { ColumnHighlightColor } from './FlowsheetDataGrid';
+import FlowsheetDataGrid from './FlowsheetDataGrid';
 
-export { WorklistDataGrid, FlowsheetDataGrid, ColumnHighlightColor };
+export { WorklistDataGrid, FlowsheetDataGrid };

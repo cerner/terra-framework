@@ -32,7 +32,7 @@ describe('ModalManager', () => {
 
   it('should disclose content in Modal', () => {
     const modalManager = (
-      <ModalManager shouldTrapFocus>
+      <ModalManager>
         <TestContainer id="test" />
       </ModalManager>
     );
@@ -59,7 +59,7 @@ describe('ModalManager', () => {
 
   it('should disclose content in Modal wrapped by disclose container', () => {
     const modalManager = (
-      <ModalManager shouldTrapFocus withDisclosureContainer={(wrappedContent) => (<div id="disclosure-container">{wrappedContent}</div>)}>
+      <ModalManager withDisclosureContainer={(wrappedContent) => (<div id="disclosure-container">{wrappedContent}</div>)}>
         <TestContainer id="test" />
       </ModalManager>
     );

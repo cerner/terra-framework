@@ -1,6 +1,6 @@
 {
   "name": "terra-date-input",
-  "version": "1.54.0",
+  "version": "1.53.0",
   "description": "The DateInput allows for easy data entry of known dates like birthdays, anniversaries, etc. The display of the DateInput is localized based on the locale but can be customized via the `displayFormat` prop. The DateInput uses the ISO 8601 format for date values (YYYY-MM-DD).",
   "author": "Cerner Corporation",
   "repository": {
@@ -40,7 +40,7 @@
     "terra-icon": "^3.19.0",
     "terra-mixins": "^1.0.0",
     "terra-theme-context": "^1.9.0",
-    "terra-time-input": "^4.65.0",
+    "terra-time-input": "^4.64.0",
     "terra-visually-hidden-text": "^2.0.0",
     "uuid": "3.4.0"
   },
