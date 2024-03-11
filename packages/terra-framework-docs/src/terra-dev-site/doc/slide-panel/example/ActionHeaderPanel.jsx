@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import SlidePanel from 'terra-slide-panel';
-import Header from 'terra-clinical-header';
+import ActionHeader from 'terra-action-header';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 import classNames from 'classnames/bind';
 import styles from './DefaultSlidePanel.module.scss';
@@ -50,14 +50,16 @@ const panelContentForSlidePanel = (togglePanelHandler, toggleFullscreenHandler) 
     </CollapsibleMenuView>
   );
   return (
-    <Header
-      startContent={collapseMenu}
+    <ActionHeader
       level={1}
-    />
+      onClose={() => console.log('Test')}
+    >
+      {collapseMenu}
+    </ActionHeader>
   );
 };
 
-class DefaultSlidePanel extends React.Component {
+class ActionHeaderPanel extends React.Component {
   constructor(props) {
     super(props);
 
@@ -105,7 +107,7 @@ class DefaultSlidePanel extends React.Component {
   }
 }
 
-DefaultSlidePanel.propTypes = {
+ActionHeaderPanel.propTypes = {
   panelBehavior: PropTypes.oneOf(['overlay', 'squish']),
   panelPosition: PropTypes.oneOf(['start', 'end']),
   panelSize: PropTypes.oneOf(['small', 'large']),
@@ -114,4 +116,4 @@ DefaultSlidePanel.propTypes = {
   fill: PropTypes.bool,
 };
 
-export default DefaultSlidePanel;
+export default ActionHeaderPanel;
