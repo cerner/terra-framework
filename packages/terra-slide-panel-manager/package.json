@@ -1,6 +1,6 @@
 {
   "name": "terra-slide-panel-manager",
-  "version": "5.93.0",
+  "version": "5.94.0",
   "description": "A DisclosureManager implementation that presents disclosed content using a SlidePanel.",
   "author": "Cerner Corporation",
   "repository": {
@@ -45,7 +45,7 @@
     "terra-disclosure-manager": "^4.16.0"
   },
   "devDependencies": {
-    "terra-collapsible-menu-view": "^6.92.0"
+    "terra-collapsible-menu-view": "^6.93.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

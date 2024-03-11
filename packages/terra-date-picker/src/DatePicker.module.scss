@@ -192,4 +192,8 @@
     -webkit-appearance: none;
     margin: 0;
   }
+  // stylelint-disable selector-no-qualifying-type
+  input[type=number] {
+    -moz-appearance:textfield;
+  }
 }
