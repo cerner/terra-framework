@@ -3,6 +3,7 @@ import { Badge } from 'terra-slide-panel/package.json?dev-site-package';
 import SlidePanelPropsTable from 'terra-slide-panel/src/SlidePanel?dev-site-props-table';
 
 import DefaultSlidePanel from './example/DefaultSlidePanel?dev-site-example';
+import ActionHeaderPanel from './example/ActionHeaderPanel?dev-site-example';
 import SlidePanelOverlay from '../../test/slide-panel/SlidePanelOverlay.test?dev-site-example';
 import SlidePanelSquish from '../../test/slide-panel/SlidePanelSquish.test?dev-site-example';
 import SlidePanelStart from '../../test/slide-panel/SlidePanelStart.test?dev-site-example';
@@ -24,7 +25,7 @@ The Terra SlidePanel component is a progressive disclosure mechanism that allows
 - Install with [npmjs](https://www.npmjs.com):
   - `npm install terra-slide-panel`
 
-<!-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
+< !-- AUTO-GENERATED-CONTENT:START Peer Dependencies -->
 ## Peer Dependencies
 
 This component requires the following peer dependencies be installed in your app for the component to properly function.
@@ -34,7 +35,7 @@ This component requires the following peer dependencies be installed in your app
 | react | ^16.8.5 |
 | react-dom | ^16.8.5 |
 
-<!-- AUTO-GENERATED-CONTENT:END -->
+< !-- AUTO-GENERATED-CONTENT:END -->
 
 ## Usage
 ``` jsx
@@ -47,7 +48,8 @@ import SlidePanel from 'terra-slide-panel';
 * [Mobile Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#mobile-support)
 
 ## Examples 
-<DefaultSlidePanel  title='SlidePanel - Controlled Demo' />
+<DefaultSlidePanel  title='SlidePanel - Clinical Header' />
+<ActionHeaderPanel title='SlidePanel - Action Header' />
 <SlidePanelOverlay title='SlidePanel - Behavior - Overlay' />
 <SlidePanelSquish title='SlidePanel - Behavior - Squish' />
 <SlidePanelStart title='SlidePanel - Position - Start' />
