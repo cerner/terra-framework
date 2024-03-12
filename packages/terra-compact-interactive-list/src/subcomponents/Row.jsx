@@ -109,6 +109,12 @@ const propTypes = {
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: PropTypes.number,
+
+  /**
+   * A Boolean value indicating whether the visual column borders are displayed.
+   * Setting the value to false hides the column borders.
+   */
+  hasVisibleBorders: PropTypes.bool,
 };
 
 const Row = (props) => {
@@ -131,6 +137,7 @@ const Row = (props) => {
     isTopmost,
     isLeftmost,
     rowHeaderIndex,
+    hasVisibleBorders,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -161,7 +168,7 @@ const Row = (props) => {
       data-row-id={id}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
-      className={cx('row', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
+      className={cx('row', !hasVisibleBorders && 'borderless', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
     >

@@ -85,3 +85,15 @@ Terra.describeViewports('CompactInteractiveList', ['medium', 'large'], () => {
     });
   });
 });
+
+Terra.describeViewports('CompactInteractiveList', ['medium',], () => {
+  describe('borderless', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/compact-interactive-list/borderless');
+    });
+
+    it('should render correctly', () => {
+      Terra.validates.element('borderless');
+    });
+  });
+});

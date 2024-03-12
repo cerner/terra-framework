@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `hasVisibleBorders` prop.
+
 ## 1.9.0 - (March 8, 2024)
 
 * Changed

@@ -71,7 +71,7 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '350px',
+    maximumWidth: '350px',
   },
   {
     id: 'Column-2',
@@ -81,17 +81,16 @@ const cols = [
   },
 ];
 
-const FixedWidthColumns = () => (
+const Borderless = () => (
   <CompactInteractiveList
-    id="compact-interactive-list-fixed-width-columns"
+    id="compact-interactive-list-borderless"
     ariaLabel="Compact Interactive List"
     rows={rows}
     columns={cols}
     numberOfColumns={2}
-    columnMinimumWidth="20px" // should have no effect on fixed columns
-    columnMaximumWidth="200px" // should have no effect on fixed columns
     rowHeaderIndex={1}
+    hasVisibleBorders={false}
   />
 );
 
-export default FixedWidthColumns;
+export default Borderless;
