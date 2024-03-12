@@ -180,7 +180,6 @@ class MenuContent extends React.Component {
   }
 
   onKeyDownBackButton(event) {
-    // event.stopPropagation() is not needed here, as it already stopped on onKeyDown
     if (event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
       event.preventDefault();
       this.props.onRequestBack();
@@ -283,7 +282,6 @@ class MenuContent extends React.Component {
   wrapOnKeyDown(item, index, isDisabled) {
     const { onKeyDown } = item.props;
     return ((event) => {
-      // event.stopPropagation() is not needed here, as it will be stopped on onKeyDown
       const shiftTabClicked = (event.shiftKey && event.nativeEvent.keyCode === KeyCode.KEY_TAB);
       const tabClicked = (event.nativeEvent.keyCode === KeyCode.KEY_TAB);
       if (!(shiftTabClicked || tabClicked)) {
