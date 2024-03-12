@@ -185,6 +185,7 @@ function Section(props) {
               isOpen={hasSectionButton ? !isCollapsed : undefined}
               onClick={hasSectionButton ? handleClick : undefined}
               isTitleSticky
+              boundedWidth={(boundingRef?.current?.clientWidth - 35)}
             />
           </th>
         </tr>
