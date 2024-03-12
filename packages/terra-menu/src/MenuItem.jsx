@@ -12,7 +12,7 @@ import ThemeContext from 'terra-theme-context';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import styles from './MenuItem.module.scss';
-import MenuUtils, { stopPropagation } from './_MenuUtils';
+import MenuUtils from './_MenuUtils';
 
 const cx = classNamesBind.bind(styles);
 
@@ -384,7 +384,9 @@ class MenuItem extends React.Component {
             aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
-            onFocus={stopPropagation}
+            // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
+            // added for Menu Button support in terra-compact-interactive-list.
+            onFocus={event => event.stopPropagation()}
           >
             {content}
           </li>

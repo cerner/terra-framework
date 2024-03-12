@@ -11,7 +11,7 @@ import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 import { v4 as uuidv4 } from 'uuid';
-import MenuUtils, { stopPropagation } from './_MenuUtils';
+import MenuUtils from './_MenuUtils';
 import MenuItem from './MenuItem';
 import styles from './Menu.module.scss';
 
@@ -461,7 +461,9 @@ class MenuContent extends React.Component {
         aria-modal="true"
         role="dialog"
         onKeyDown={this.onKeyDown}
-        onFocus={stopPropagation}
+        // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
+        // added for Menu Button support in terra-compact-interactive-list.
+        onFocus={event => event.stopPropagation()}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
           <List className={cx('list')} role="menu" data-submenu={isSubMenu} refCallback={this.setListNode}>
