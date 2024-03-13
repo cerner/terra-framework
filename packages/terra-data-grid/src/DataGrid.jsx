@@ -262,6 +262,7 @@ const DataGrid = forwardRef((props, ref) => {
     }
 
     let focusedCell;
+
     if (isSection(newRowIndex)) {
       [focusedCell] = grid.current.rows[newRowIndex].cells;
 
@@ -274,8 +275,9 @@ const DataGrid = forwardRef((props, ref) => {
 
     focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
 
+    const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
     // If there are multiple focusable elements, set focus on the cell
-    if (getFocusableElements(focusedCell).length > 1) {
+    if (getFocusableElements(focusedCell).length > 1 && !isHeaderRow) {
       focusedCell?.focus();
       return;
     }
@@ -284,10 +286,6 @@ const DataGrid = forwardRef((props, ref) => {
     const rowSelectionCheckbox = focusedCell.querySelector('input');
     if (isRowSelectionCell(newColIndex) && rowSelectionCheckbox) {
       focusedCell = rowSelectionCheckbox;
-    // Set focus on input field (checkbox) of row selection cells.
-    focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
-    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-      [focusedCell] = focusedCell.getElementsByTagName('input');
       focusedCell?.focus();
       return;
     }
@@ -296,10 +294,6 @@ const DataGrid = forwardRef((props, ref) => {
     const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
     if (!focusedCell.hasAttribute('tabindex') || cellButtonOrHyperlink) {
       focusedCell = cellButtonOrHyperlink;
-    // Set focus to column header button, if it exists
-    const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
-    if (isHeaderRow && !focusedCell.hasAttribute('tabindex')) {
-      focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button');
       focusedCell?.focus();
       return;
     }
