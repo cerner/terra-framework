@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added `hasVisibleBorders` prop.
+  * Added `hasVisibleBorders` prop to hide visual borders if needed.
 
 ## 1.9.0 - (March 8, 2024)
 

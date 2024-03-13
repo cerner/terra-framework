@@ -168,7 +168,14 @@ const Row = (props) => {
       data-row-id={id}
       role={activeRow && 'row'}
       aria-hidden={activeRow ? null : true}
-      className={cx('row', !hasVisibleBorders && 'borderless', isTopmost && 'row-topmost', isLeftmost && 'row-leftmost', !activeRow && 'row-placeholder', theme.className)}
+      className={cx(
+        'row',
+        { borderless: !hasVisibleBorders },
+        { 'row-topmost': isTopmost },
+        { 'row-leftmost': isLeftmost },
+        { 'row-placeholder': !activeRow },
+        theme.className,
+      )}
       // eslint-disable-next-line react/forbid-dom-props
       style={style}
     >
