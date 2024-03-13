@@ -245,7 +245,7 @@ function Cell(props) {
         isShiftPressed: event.shiftKey,
         isMetaPressed: event.metaKey || event.ctrlKey,
         isCellSelectable: (!isMasked && isSelectable),
-      });
+      }, event);
     }
   };
 
@@ -285,7 +285,7 @@ function Cell(props) {
               isShiftPressed: event.shiftKey,
               isMetaPressed: event.metaKey || event.ctrlKey,
               isCellSelectable: (!isMasked && isSelectable),
-            });
+            }, event);
           }
 
           // Allow default behavior if the event target is an editable field
