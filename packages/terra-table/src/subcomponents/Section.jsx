@@ -156,6 +156,9 @@ function Section(props) {
 
   const hasSectionButton = isCollapsible && onSectionSelect;
 
+  // To make the title sticky horizontally, we need to assign a fixed width with some manual offset
+  const boundedWidth = boundingRef?.current?.clientWidth - 40;
+
   const handleClick = useCallback(() => {
     onSectionSelect(id);
   }, [id, onSectionSelect]);
@@ -185,7 +188,7 @@ function Section(props) {
               isOpen={hasSectionButton ? !isCollapsed : undefined}
               onClick={hasSectionButton ? handleClick : undefined}
               isTitleSticky
-              boundedWidth={(boundingRef?.current?.clientWidth - 35)}
+              boundedWidth={(boundedWidth)}
             />
           </th>
         </tr>

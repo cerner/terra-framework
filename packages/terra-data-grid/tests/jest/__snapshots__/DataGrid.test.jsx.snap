@@ -1161,6 +1161,371 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               </thead>
             </ColumnHeader>
             <Section
+              boundingRef={
+                Object {
+                  "current": <div
+                    class="table-container"
+                  >
+                    <table
+                      aria-rowcount="5"
+                      class="table"
+                      id="test-terra-data-grid-table"
+                      role="grid"
+                      style="margin-right: 15px;"
+                    >
+                      <colgroup>
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                      </colgroup>
+                      <thead>
+                        <tr
+                          aria-rowindex="1"
+                          class="column-header-row"
+                          data-row-id="test-terra-data-grid-table-header-row"
+                          height="2.5rem"
+                        >
+                          <th
+                            class="column-header selectable pinned"
+                            id="test-terra-data-grid-table-Column-0-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 0px;"
+                            title=" Vitals"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                 Vitals
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                 Vitals
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header selectable pinned last-pinned-column"
+                            id="test-terra-data-grid-table-Column-1-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 200px;"
+                            title="March 16"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 16
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 16
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header"
+                            id="test-terra-data-grid-table-Column-2-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem;"
+                            tabindex="-1"
+                            title="March 17"
+                          >
+                            <div
+                              class="header-container"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 17
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 17
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody />
+                      <tbody
+                        class="section"
+                      >
+                        <tr
+                          aria-rowindex="2"
+                          class="row striped-table-row"
+                          data-row-id="1"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-1"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Heart Rate Monitored (bpm)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable blank"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.blank
+                              </span>
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="3"
+                          class="row striped-table-row"
+                          data-row-id="2"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-2"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Temperature Oral (degC)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              36.7
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="4"
+                          class="row striped-table-row"
+                          data-row-id="3"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-3"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Cardiac Index (L/min/m2)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              2.25
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="5"
+                          class="row selected striped-table-row"
+                          data-row-id="4"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable highlighted"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-4"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Oxygen Flow Rate (L/min)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              63
+                            </div>
+                          </td>
+                          <td
+                            class="cell selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              47
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-mode-region"
+                    />
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-region"
+                    >
+                      Terra.table.row-selection-template
+                    </span>
+                    <span
+                      aria-atomic="true"
+                      aria-live="polite"
+                      class="visually-hidden-text column-header-region"
+                    />
+                  </div>,
+                }
+              }
               displayedColumns={
                 Array [
                   Object {
@@ -3962,6 +4327,371 @@ exports[`DataGrid verifies onCellSelect callback is triggered when space is pres
               </thead>
             </ColumnHeader>
             <Section
+              boundingRef={
+                Object {
+                  "current": <div
+                    class="table-container"
+                  >
+                    <table
+                      aria-rowcount="5"
+                      class="table"
+                      id="test-terra-data-grid-table"
+                      role="grid"
+                      style="margin-right: 15px;"
+                    >
+                      <colgroup>
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                      </colgroup>
+                      <thead>
+                        <tr
+                          aria-rowindex="1"
+                          class="column-header-row"
+                          data-row-id="test-terra-data-grid-table-header-row"
+                          height="2.5rem"
+                        >
+                          <th
+                            class="column-header selectable pinned"
+                            id="test-terra-data-grid-table-Column-0-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 0px;"
+                            title=" Vitals"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                 Vitals
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                 Vitals
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header selectable pinned last-pinned-column"
+                            id="test-terra-data-grid-table-Column-1-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 200px;"
+                            title="March 16"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 16
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 16
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header"
+                            id="test-terra-data-grid-table-Column-2-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem;"
+                            tabindex="-1"
+                            title="March 17"
+                          >
+                            <div
+                              class="header-container"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 17
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 17
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody />
+                      <tbody
+                        class="section"
+                      >
+                        <tr
+                          aria-rowindex="2"
+                          class="row striped-table-row"
+                          data-row-id="1"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-1"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Heart Rate Monitored (bpm)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable blank"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.blank
+                              </span>
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="3"
+                          class="row striped-table-row"
+                          data-row-id="2"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-2"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Temperature Oral (degC)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              36.7
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="4"
+                          class="row striped-table-row"
+                          data-row-id="3"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-3"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Cardiac Index (L/min/m2)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              2.25
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="5"
+                          class="row selected striped-table-row"
+                          data-row-id="4"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable highlighted"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-4"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Oxygen Flow Rate (L/min)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              63
+                            </div>
+                          </td>
+                          <td
+                            class="cell selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              47
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-mode-region"
+                    />
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-region"
+                    >
+                      Terra.table.row-selection-template
+                    </span>
+                    <span
+                      aria-atomic="true"
+                      aria-live="polite"
+                      class="visually-hidden-text column-header-region"
+                    />
+                  </div>,
+                }
+              }
               displayedColumns={
                 Array [
                   Object {
@@ -6867,6 +7597,473 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               </thead>
             </ColumnHeader>
             <Section
+              boundingRef={
+                Object {
+                  "current": <div
+                    class="table-container"
+                  >
+                    <table
+                      aria-rowcount="5"
+                      class="table"
+                      id="test-terra-data-grid-table"
+                      role="grid"
+                      style="margin-right: 15px;"
+                    >
+                      <colgroup>
+                        <col
+                          style="width: 40px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                      </colgroup>
+                      <thead>
+                        <tr
+                          aria-rowindex="1"
+                          class="column-header-row"
+                          data-row-id="test-terra-data-grid-table-header-row"
+                          height="2.5rem"
+                        >
+                          <th
+                            class="column-header selectable pinned"
+                            id="test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 40px; height: 2.5rem; left: 0px;"
+                            title="Terra.table.row-selection-header-display"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text hidden"
+                              >
+                                Terra.table.row-selection-header-display
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                Terra.table.row-selection-header-display
+                              </span>
+                            </div>
+                          </th>
+                          <th
+                            class="column-header selectable pinned"
+                            id="test-terra-data-grid-table-Column-0-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 40px;"
+                            title=" Vitals"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                 Vitals
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                 Vitals
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header selectable pinned last-pinned-column"
+                            id="test-terra-data-grid-table-Column-1-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 240px;"
+                            title="March 16"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 16
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 16
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header"
+                            id="test-terra-data-grid-table-Column-2-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem;"
+                            tabindex="-1"
+                            title="March 17"
+                          >
+                            <div
+                              class="header-container"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 17
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 17
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody />
+                      <tbody
+                        class="section"
+                      >
+                        <tr
+                          aria-rowindex="2"
+                          class="row selectable striped-table-row"
+                          data-row-id="1"
+                          style="min-height: auto;"
+                        >
+                          <td
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                            >
+                              <input
+                                aria-label="Terra.table.row-index"
+                                class="input"
+                                readonly=""
+                                tabindex="-1"
+                                type="checkbox"
+                              />
+                            </div>
+                          </td>
+                          <th
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-1"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 40px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Heart Rate Monitored (bpm)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable blank"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 240px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.blank
+                              </span>
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="3"
+                          class="row selectable striped-table-row"
+                          data-row-id="2"
+                          style="min-height: auto;"
+                        >
+                          <td
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                            >
+                              <input
+                                aria-label="Terra.table.row-index"
+                                class="input"
+                                readonly=""
+                                tabindex="-1"
+                                type="checkbox"
+                              />
+                            </div>
+                          </td>
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-2"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 40px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Temperature Oral (degC)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 240px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              36.7
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="4"
+                          class="row selectable striped-table-row"
+                          data-row-id="3"
+                          style="min-height: auto;"
+                        >
+                          <td
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                            >
+                              <input
+                                aria-label="Terra.table.row-index"
+                                class="input"
+                                readonly=""
+                                tabindex="-1"
+                                type="checkbox"
+                              />
+                            </div>
+                          </td>
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-3"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 40px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Cardiac Index (L/min/m2)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 240px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              2.25
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="5"
+                          class="row selected selectable striped-table-row"
+                          data-row-id="4"
+                          style="min-height: auto;"
+                        >
+                          <td
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                            >
+                              <input
+                                aria-label="Terra.table.row-index"
+                                checked=""
+                                class="input highlighted"
+                                readonly=""
+                                tabindex="-1"
+                                type="checkbox"
+                              />
+                            </div>
+                          </td>
+                          <th
+                            class="cell pinned selectable highlighted"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-4"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 40px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Oxygen Flow Rate (L/min)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 240px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              63
+                            </div>
+                          </td>
+                          <td
+                            class="cell selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              47
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-mode-region"
+                    />
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-region"
+                    >
+                      Terra.table.row-selection-template
+                    </span>
+                    <span
+                      aria-atomic="true"
+                      aria-live="polite"
+                      class="visually-hidden-text column-header-region"
+                    />
+                  </div>,
+                }
+              }
               displayedColumns={
                 Array [
                   Object {
@@ -10253,6 +11450,371 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               </thead>
             </ColumnHeader>
             <Section
+              boundingRef={
+                Object {
+                  "current": <div
+                    class="table-container"
+                  >
+                    <table
+                      aria-rowcount="5"
+                      class="table"
+                      id="test-terra-data-grid-table"
+                      role="grid"
+                      style="margin-right: 15px;"
+                    >
+                      <colgroup>
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                      </colgroup>
+                      <thead>
+                        <tr
+                          aria-rowindex="1"
+                          class="column-header-row"
+                          data-row-id="test-terra-data-grid-table-header-row"
+                          height="2.5rem"
+                        >
+                          <th
+                            class="column-header selectable pinned"
+                            id="test-terra-data-grid-table-Column-0-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 0px;"
+                            title=" Vitals"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                 Vitals
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                 Vitals
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header selectable pinned last-pinned-column"
+                            id="test-terra-data-grid-table-Column-1-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem; left: 200px;"
+                            title="March 16"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 16
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 16
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header"
+                            id="test-terra-data-grid-table-Column-2-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem;"
+                            tabindex="-1"
+                            title="March 17"
+                          >
+                            <div
+                              class="header-container"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 17
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 17
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody />
+                      <tbody
+                        class="section"
+                      >
+                        <tr
+                          aria-rowindex="2"
+                          class="row striped-table-row"
+                          data-row-id="1"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-1"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Heart Rate Monitored (bpm)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable blank"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.blank
+                              </span>
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="3"
+                          class="row striped-table-row"
+                          data-row-id="2"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-2"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Temperature Oral (degC)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              36.7
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="4"
+                          class="row striped-table-row"
+                          data-row-id="3"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-3"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Cardiac Index (L/min/m2)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              2.25
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="5"
+                          class="row selected striped-table-row"
+                          data-row-id="4"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell pinned selectable highlighted"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-4"
+                            role="rowheader"
+                            scope="row"
+                            style="left: 0px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Oxygen Flow Rate (L/min)
+                            </div>
+                          </th>
+                          <td
+                            class="cell pinned last-pinned-column selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
+                            style="left: 200px;"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              63
+                            </div>
+                          </td>
+                          <td
+                            class="cell selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              47
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-mode-region"
+                    />
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-region"
+                    >
+                      Terra.table.row-selection-template
+                    </span>
+                    <span
+                      aria-atomic="true"
+                      aria-live="polite"
+                      class="visually-hidden-text column-header-region"
+                    />
+                  </div>,
+                }
+              }
               displayedColumns={
                 Array [
                   Object {
@@ -12973,6 +14535,367 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               </thead>
             </ColumnHeader>
             <Section
+              boundingRef={
+                Object {
+                  "current": <div
+                    class="table-container"
+                  >
+                    <table
+                      aria-rowcount="5"
+                      class="table"
+                      id="test-terra-data-grid-table"
+                      role="grid"
+                      style="margin-right: 15px;"
+                    >
+                      <colgroup>
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                        <col
+                          style="width: 200px;"
+                        />
+                      </colgroup>
+                      <thead>
+                        <tr
+                          aria-rowindex="1"
+                          class="column-header-row"
+                          data-row-id="test-terra-data-grid-table-header-row"
+                          height="2.5rem"
+                        >
+                          <th
+                            class="column-header selectable"
+                            id="test-terra-data-grid-table-Column-0-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem;"
+                            title=" Vitals"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                 Vitals
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                 Vitals
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-0-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header selectable"
+                            id="test-terra-data-grid-table-Column-1-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem;"
+                            title="March 16"
+                          >
+                            <div
+                              class="header-container"
+                              role="button"
+                              tabindex="-1"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 16
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 16
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-1-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                          <th
+                            class="column-header"
+                            id="test-terra-data-grid-table-Column-2-headerCell"
+                            role="columnheader"
+                            scope="col"
+                            style="width: 200px; height: 2.5rem;"
+                            tabindex="-1"
+                            title="March 17"
+                          >
+                            <div
+                              class="header-container"
+                            >
+                              <span
+                                aria-hidden="true"
+                                class="display-text"
+                              >
+                                March 17
+                              </span>
+                              <span
+                                class="visually-hidden-text"
+                              >
+                                March 17
+                              </span>
+                            </div>
+                            <div
+                              aria-hidden="true"
+                              class="resize-handle"
+                              draggable="true"
+                              id="test-terra-data-grid-table-Column-2-resizeHandle"
+                              style="height: 0px;"
+                              tabindex="-1"
+                            />
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody />
+                      <tbody
+                        class="section"
+                      >
+                        <tr
+                          aria-rowindex="2"
+                          class="row striped-table-row"
+                          data-row-id="1"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-1"
+                            role="rowheader"
+                            scope="row"
+                            style=""
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Heart Rate Monitored (bpm)
+                            </div>
+                          </th>
+                          <td
+                            class="cell selectable blank"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.blank
+                              </span>
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="3"
+                          class="row striped-table-row"
+                          data-row-id="2"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-2"
+                            role="rowheader"
+                            scope="row"
+                            style=""
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Temperature Oral (degC)
+                            </div>
+                          </th>
+                          <td
+                            class="cell selectable"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              36.7
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="4"
+                          class="row striped-table-row"
+                          data-row-id="3"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell selectable"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-3"
+                            role="rowheader"
+                            scope="row"
+                            style=""
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Cardiac Index (L/min/m2)
+                            </div>
+                          </th>
+                          <td
+                            class="cell selectable"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              2.25
+                            </div>
+                          </td>
+                          <td
+                            class="cell masked"
+                            headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              <span
+                                class="no-data-cell"
+                              >
+                                Terra.table.maskedCell
+                              </span>
+                            </div>
+                          </td>
+                        </tr>
+                        <tr
+                          aria-rowindex="5"
+                          class="row selected striped-table-row"
+                          data-row-id="4"
+                          style="min-height: auto;"
+                        >
+                          <th
+                            class="cell selectable highlighted"
+                            headers="test-terra-data-grid-table-Column-0-headerCell"
+                            id="test-terra-data-grid-table-rowheader-4"
+                            role="rowheader"
+                            scope="row"
+                            style=""
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              Oxygen Flow Rate (L/min)
+                            </div>
+                          </th>
+                          <td
+                            class="cell selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              63
+                            </div>
+                          </td>
+                          <td
+                            class="cell selectable highlighted"
+                            headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
+                            tabindex="-1"
+                          >
+                            <div
+                              class="cell-content"
+                              style="min-height: auto;"
+                            >
+                              47
+                            </div>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-mode-region"
+                    />
+                    <span
+                      aria-live="polite"
+                      class="visually-hidden-text row-selection-region"
+                    >
+                      Terra.table.row-selection-template
+                    </span>
+                    <span
+                      aria-atomic="true"
+                      aria-live="polite"
+                      class="visually-hidden-text column-header-region"
+                    />
+                  </div>,
+                }
+              }
               displayedColumns={
                 Array [
                   Object {
