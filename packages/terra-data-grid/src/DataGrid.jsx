@@ -287,7 +287,7 @@ const DataGrid = forwardRef((props, ref) => {
     // Set focus to a single header button or hyperlink if they are the only content in cell
     const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
     if ((isHeaderRow && !focusedCell.hasAttribute('tabindex')) || cellButtonOrHyperlink) {
-      focusedCell = focusedCell.querySelector('a, button, [role="button"]') || focusedCell.querySelector('button');
+      focusedCell = focusedCell.querySelector('a, button, [role="button"]');
       focusedCell?.focus();
       return;
     }
