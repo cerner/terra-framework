@@ -47,6 +47,7 @@ class CollapsibleMenuViewDemo extends React.Component {
 
   render() {
     return (
+      <div id="collapsible-menu-view-test">
       <CollapsibleMenuView>
         <CollapsibleMenuView.Toggle
           text="Toggle Item 1"
@@ -151,6 +152,7 @@ class CollapsibleMenuViewDemo extends React.Component {
         <CollapsibleMenuView.Item text="Button 7" className="Button7" key="button7" />
         <CollapsibleMenuView.Item text="Button 8" className="Button8" key="button8" />
       </CollapsibleMenuView>
+      </div>
     );
   }
 }
