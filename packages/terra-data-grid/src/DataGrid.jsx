@@ -262,7 +262,6 @@ const DataGrid = forwardRef((props, ref) => {
     }
 
     let focusedCell;
-
     if (isSection(newRowIndex)) {
       [focusedCell] = grid.current.rows[newRowIndex].cells;
 
@@ -285,6 +284,10 @@ const DataGrid = forwardRef((props, ref) => {
     const rowSelectionCheckbox = focusedCell.querySelector('input');
     if (isRowSelectionCell(newColIndex) && rowSelectionCheckbox) {
       focusedCell = rowSelectionCheckbox;
+    // Set focus on input field (checkbox) of row selection cells.
+    focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
+    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
+      [focusedCell] = focusedCell.getElementsByTagName('input');
       focusedCell?.focus();
       return;
     }
@@ -293,12 +296,16 @@ const DataGrid = forwardRef((props, ref) => {
     const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
     if (!focusedCell.hasAttribute('tabindex') || cellButtonOrHyperlink) {
       focusedCell = cellButtonOrHyperlink;
+    // Set focus to column header button, if it exists
+    const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
+    if (isHeaderRow && !focusedCell.hasAttribute('tabindex')) {
+      focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button');
       focusedCell?.focus();
       return;
     }
 
     focusedCell?.focus();
-  }, [displayedColumns, isSection, isRowSelectionCell]);
+  }, [displayedColumns, isSection, isRowSelectionCell, hasColumnHeaderActions]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
