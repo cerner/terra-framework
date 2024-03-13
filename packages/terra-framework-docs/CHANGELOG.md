@@ -5,6 +5,9 @@
 * Added
   * Added an example of a `compact-interactive-list` with no borders.
 
+* Changed
+  * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.
+
 ## 1.73.0 - (March 8, 2024)
 
 * Changed
