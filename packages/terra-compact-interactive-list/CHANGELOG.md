@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Updated to support `terra-menu` component as a cell content.
+
 ## 1.9.0 - (March 8, 2024)
 
 * Changed

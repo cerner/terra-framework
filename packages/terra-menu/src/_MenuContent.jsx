@@ -163,6 +163,9 @@ class MenuContent extends React.Component {
   }
 
   onKeyDown(event) {
+    // stop event propagation in case Menu oppened inside the layout component that has its own key navigation.
+    // removing next line would affect Menu Button support in `terra-compact-interactive-list`
+    event.stopPropagation();
     const focusableMenuItems = this.contentNode.querySelectorAll('li[tabindex="0"]');
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_UP || event.nativeEvent.keyCode === KeyCode.KEY_END) {
@@ -456,6 +459,9 @@ class MenuContent extends React.Component {
         aria-modal="true"
         role="dialog"
         onKeyDown={this.onKeyDown}
+        // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
+        // added for Menu Button support in terra-compact-interactive-list.
+        onFocus={event => event.stopPropagation()}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
           <List className={cx('list')} role="menu" data-submenu={isSubMenu} refCallback={this.setListNode}>
