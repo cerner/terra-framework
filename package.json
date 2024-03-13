@@ -72,8 +72,8 @@
     "terra-enzyme-intl": "3",
     "webpack": "5",
     "webpack-cli": "4",
-    "webpack-dev-server": "^4",
-    "webpack-merge": "^5",
+    "webpack-dev-server": "4",
+    "webpack-merge": "5",
     "xfc": "1"
   },
   "scripts": {
