@@ -275,9 +275,19 @@ const DataGrid = forwardRef((props, ref) => {
 
     focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
 
-    const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
     // If there are multiple focusable elements, set focus on the cell
-    if (getFocusableElements(focusedCell).length > 1 && !isHeaderRow) {
+    if (getFocusableElements(focusedCell).length > 1) {
+      focusedCell?.focus();
+      return;
+    }
+
+    // Check if cell is in header row (for focusing on resize handles)
+    const isHeaderRow = newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1);
+
+    // Set focus to a single header button or hyperlink if they are the only content in cell
+    const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
+    if ((isHeaderRow && !focusedCell.hasAttribute('tabindex')) || cellButtonOrHyperlink) {
+      focusedCell = focusedCell.querySelector('a, button, [role="button"]') || focusedCell.querySelector('button');
       focusedCell?.focus();
       return;
     }
@@ -286,14 +296,6 @@ const DataGrid = forwardRef((props, ref) => {
     const rowSelectionCheckbox = focusedCell.querySelector('input');
     if (isRowSelectionCell(newColIndex) && rowSelectionCheckbox) {
       focusedCell = rowSelectionCheckbox;
-      focusedCell?.focus();
-      return;
-    }
-
-    // Set focus to a single header button or hyperlink if they are the only content in cell
-    const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
-    if (!focusedCell.hasAttribute('tabindex') || cellButtonOrHyperlink) {
-      focusedCell = cellButtonOrHyperlink;
       focusedCell?.focus();
       return;
     }
