@@ -1,11 +1,13 @@
 import React from 'react';
-import IconTable from 'terra-icon/lib/icon/IconTable';
-import IconFlowsheet from 'terra-icon/lib/icon/IconFlowsheet';
-import IconVisualization from 'terra-icon/lib/icon/IconVisualization';
-import IconSend from 'terra-icon/lib/icon/IconSend';
-import IconPrinter from 'terra-icon/lib/icon/IconPrinter';
-import IconFolder from 'terra-icon/lib/icon/IconFolder';
-import IconTrash from 'terra-icon/lib/icon/IconTrash';
+import {
+  IconTable,
+  IconFlowsheet,
+  IconVisualization,
+  IconSend,
+  IconPrinter,
+  IconFolder,
+  IconTrash,
+} from 'terra-icon';
 import CollapsibleMenuView from 'terra-collapsible-menu-view';
 
 class CollapsibleMenuViewDemo extends React.Component {
