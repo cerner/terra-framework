@@ -4,11 +4,14 @@ import React, {
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import * as KeyCode from 'keycode-js';
+
 import Table, {
   GridConstants, GridContext, sectionShape, rowShape, columnShape, validateRowHeaderIndex, hasColumnActions, ColumnHighlightColor,
 } from 'terra-table';
+import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
+
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
 
@@ -260,6 +263,7 @@ const DataGrid = forwardRef((props, ref) => {
     }
 
     let focusedCell;
+
     if (isSection(newRowIndex)) {
       [focusedCell] = grid.current.rows[newRowIndex].cells;
 
@@ -270,18 +274,29 @@ const DataGrid = forwardRef((props, ref) => {
       return;
     }
 
-    // Set focus on input field (checkbox) of row selection cells.
     focusedCell = grid.current.rows[newRowIndex].cells[newColIndex];
-    if (isRowSelectionCell(newColIndex) && focusedCell.getElementsByTagName('input').length > 0) {
-      [focusedCell] = focusedCell.getElementsByTagName('input');
+
+    // If there are multiple focusable elements, set focus on the cell
+    if (getFocusableElements(focusedCell).length > 1) {
       focusedCell?.focus();
       return;
     }
 
-    // Set focus to column header button, if it exists
-    const isHeaderRow = (newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1));
-    if (isHeaderRow && !focusedCell.hasAttribute('tabindex')) {
-      focusedCell = focusedCell.querySelector('[role="button"]') || focusedCell.querySelector('button');
+    // Check if cell is in header row (for focusing on resize handles)
+    const isHeaderRow = newRowIndex === 0 || (hasColumnHeaderActions && newRowIndex === 1);
+
+    // Set focus to a single header button or hyperlink if they are the only content in cell
+    const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
+    if ((isHeaderRow && !focusedCell.hasAttribute('tabindex')) || cellButtonOrHyperlink) {
+      focusedCell = focusedCell.querySelector('a, button, [role="button"]');
+      focusedCell?.focus();
+      return;
+    }
+
+    // Set focus on input field (checkbox) of row selection cells.
+    const rowSelectionCheckbox = focusedCell.querySelector('input');
+    if (isRowSelectionCell(newColIndex) && rowSelectionCheckbox) {
+      focusedCell = rowSelectionCheckbox;
       focusedCell?.focus();
       return;
     }

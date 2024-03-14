@@ -162,53 +162,44 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       browser.keys(['Tab', 'Tab']);
 
       Terra.validates.element('data-grid-initial-focus', { columnResizeSelector });
-      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused());
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);
     });
 
     it('validates that a Tab key press inside the grid will skip focusable cell elements', () => {
       browser.keys(['Tab', 'Tab', 'Tab']);
 
       Terra.validates.element('data-grid-skip-focusable-elements-next', { columnResizeSelector });
-      expect(browser.$('#next-focus-button').isFocused());
+      expect(browser.$('#next-focus-button').isFocused()).toBe(true);
     });
 
     it('validates that a Tab key press inside the grid as last focusable element wraps', () => {
       const testScript = 'document.getElementById("next-focus-button").style.display="none"';
       browser.execute(testScript);
-
       browser.pause(250);
-
       browser.keys(['Tab', 'Tab', 'Tab']);
 
       Terra.validates.element('data-grid-focusable-elements-wrap', { columnResizeSelector });
-      expect(browser.$('#previous-focus-button').isFocused());
+      expect(browser.$('#previous-focus-button').isFocused()).toBe(true);
     });
 
     it('validates that a Shift+Tab key press while inside the grid will skip to the previous focusable element outside the grid', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowDown', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('data-grid-skip-focusable-elements-previous', { columnResizeSelector });
-      expect(browser.$('#previous-focus-button').isFocused());
+      expect(browser.$('#previous-focus-button').isFocused()).toBe(true);
     });
 
     it('validates that the proper element is selected when Shift+Tab is used to give focus to the grid', () => {
       browser.keys(['Tab', 'Tab', 'Tab', 'Shift', 'Tab', 'Shift']);
 
       Terra.validates.element('data-grid-return-focus', { columnResizeSelector });
-      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused());
+      expect(browser.$('[role="grid"] thead tr:nth-of-type(1) th:nth-of-type(1) div[role=button]').isFocused()).toBe(true);
     });
 
     it('validates that a cell with no focusable elements does not trap focus', () => {
       browser.keys(['Tab', 'Tab', 'ArrowDown', 'Enter', 'ArrowRight']);
 
       Terra.validates.element('non-focusable-cell-no-trap', { columnResizeSelector });
-    });
-
-    it('validates that a cell with a button element traps focus', () => {
-      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'Enter', 'ArrowRight']);
-
-      Terra.validates.element('focusable-button-cell-trap-focus', { columnResizeSelector });
-      expect(browser.$$('button:focus')).toBeElementsArrayOfSize(1);
     });
 
     it('validates that Escape can be used to release a focus trap', () => {
@@ -222,13 +213,6 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
       Terra.validates.element('focusable-input-cell-trap-focus', { columnResizeSelector });
       expect(browser.$$('input:focus')).toBeElementsArrayOfSize(1);
-    });
-
-    it('validates that a cell with an anchor element with href traps focus', () => {
-      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight', 'Enter', 'ArrowRight']);
-
-      Terra.validates.element('focusable-anchor-cell-trap-focus', { columnResizeSelector });
-      expect(browser.$$('a:focus')).toBeElementsArrayOfSize(1);
     });
 
     it('validates that a cell with multiple focusable elements traps focus', () => {
@@ -280,6 +264,26 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       Terra.validates.element('data-grid-focusable-select-retains-focus', { columnResizeSelector });
       expect(browser.$('#specialties').isFocused()).toBe(true);
     });
+
+    it('focuses on a button if it is the only component in a cell', () => {
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight']);
+      expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[1]/div/button').isFocused()).toBe(true);
+    });
+
+    it('clicks the button instead of diving in if it is the only component in the cell', () => {
+      const modal = browser.$('[aria-modal="true"]');
+      expect(modal.isDisplayed()).toBe(false);
+
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'Enter']);
+
+      expect(modal.isDisplayed()).toBe(true);
+      expect(browser.$('/html/body/div[2]/div[2]/div/div/div/div[4]/div/button').isFocused()).toBe(true);
+    });
+
+    it('focuses on a hyperlink if it is the only component in a cell', () => {
+      browser.keys(['Tab', 'Tab', 'ArrowDown', 'ArrowRight', 'ArrowRight', 'ArrowRight']);
+      expect(browser.$('//*[@id="default-terra-data-grid-focusable-cell-table"]/tbody[2]/tr[1]/td[3]/div/a').isFocused()).toBe(true);
+    });
   });
 
   describe('with pinned columns', () => {
@@ -311,15 +315,13 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
 
     it('validates that focused cells scroll into view when beneath sticky column header', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-sticky-header');
-
       browser.keys(['Tab']);
 
       const testScript = 'document.querySelector(\'div[class*="data-grid-container"\').scrollBy(0,25)';
       browser.execute(testScript);
-
       browser.keys(['ArrowDown']);
-
       browser.pause(250);
+
       Terra.validates.element('sticky-header-scroll-fix', { selector: stickyHeaderSelector });
     });
   });

@@ -191,6 +191,20 @@ function Cell(props) {
   };
 
   /**
+  * Determine if a cell only has a single button or hyperlink
+  * @param {HTMLElement} element - The element to check if it contains only a button or hyperlink
+  * @returns True if the element only has a single button or hyperlink. Otherwise, false.
+  */
+  const hasOnlySingleButtonOrHyperlink = (node) => {
+    const focusableElements = getFocusableElements(node);
+    if (focusableElements.length > 1) {
+      return false;
+    }
+
+    return node.querySelector('a, button');
+  };
+
+  /**
    *
    * @param {HTMLElement} element - The element to check if it is a text input
    * @returns True if the element is a editable field.  Otherwise, false.
@@ -234,7 +248,7 @@ function Cell(props) {
     }
   }, [isGridContext]);
 
-  const onMouseDown = (event) => {
+  const handleMouseDown = (event) => {
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
@@ -266,7 +280,13 @@ function Cell(props) {
         case KeyCode.KEY_RETURN:
           // Lock focus into component
           if (isGridContext && hasFocusableElements()) {
+            // If the current cell has only a single button or hyperlink component, do not enable focus trap
+            if (hasOnlySingleButtonOrHyperlink(cellRef.current)) {
+              break;
+            }
+
             setIsFocusTrapEnabled(true);
+
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
             }
@@ -377,7 +397,7 @@ function Cell(props) {
       headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
-      onMouseDown={onCellSelect ? onMouseDown : undefined}
+      onMouseDown={onCellSelect ? handleMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props
       style={{ left: cellLeftEdge }}

@@ -1,9 +1,11 @@
 # Changelog
 
 ## Unreleased
-
 * Added
   * Added `event` object to `onCellSelect` callback.
+
+* Changed
+  * Internal focus trap update for terra-data-grid.
 
 ## 5.12.0 - (March 8, 2024)
 

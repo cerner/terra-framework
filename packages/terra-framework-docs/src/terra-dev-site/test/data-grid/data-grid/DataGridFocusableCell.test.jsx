@@ -1,6 +1,8 @@
 /* eslint-disable react/forbid-dom-props */
 import React, { useState } from 'react';
 import DataGrid from 'terra-data-grid/lib/DataGrid';
+import Button from 'terra-button';
+import Hyperlink from 'terra-hyperlink';
 import NotificationDialog from 'terra-notification-dialog';
 
 const DataGridFocusableCell = () => {
@@ -16,11 +18,11 @@ const DataGridFocusableCell = () => {
     setIsOpen(true);
   };
 
-  const buttonCell = <button type="button" aria-label="Alert" onClick={handleButtonOpenModal}>Alert</button>;
+  const buttonCell = <Button text="Alert" aria-label="Alert" onClick={handleButtonOpenModal} />;
   // eslint-disable-next-line react/forbid-dom-props
   const inputCell = <input id="input-cell" type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
   const inputCell2 = <input type="text" aria-label="Text Input" style={{ width: '100px', height: '25px', display: 'inline' }} />;
-  const anchorCell = <a href="https://www.oracle.com/" aria-label="Visit Oracle">Visit Oracle</a>;
+  const anchorCell = <Hyperlink href="https://www.oracle.com/" text="Visit Oracle" />;
   const textAreaCell = <textarea id="textarea-cell" name="textArea" aria-label="Text Area" rows="1" cols="15" value="Text Area" />;
   const selectCell = (
     <select name="specialties" id="specialties" aria-label="Select Specialty">
