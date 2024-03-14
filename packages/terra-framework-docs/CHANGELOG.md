@@ -4,6 +4,7 @@
 
 * Changed
   * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.
+  * Updated `Worklist Data Grid Focusable Cell` example to have consistent column numbering with screenreader announcements.
 
 ## 1.73.0 - (March 8, 2024)
 
