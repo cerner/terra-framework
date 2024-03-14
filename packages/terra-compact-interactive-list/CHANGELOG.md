@@ -5,6 +5,9 @@
 * Added
   * Added `hasVisibleBorders` prop to hide visual borders if needed.
 
+* Changed
+  * Updated to support `terra-menu` component as a cell content.
+
 ## 1.9.0 - (March 8, 2024)
 
 * Changed

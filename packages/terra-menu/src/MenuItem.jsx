@@ -384,6 +384,9 @@ class MenuItem extends React.Component {
             aria-selected={(isMacOs && toggleable) ? markAsToggled : undefined}
             tabIndex="0"
             aria-disabled={isDisabled}
+            // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
+            // added for Menu Button support in terra-compact-interactive-list.
+            onFocus={event => event.stopPropagation()}
           >
             {content}
           </li>
