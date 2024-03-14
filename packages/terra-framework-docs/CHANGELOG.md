@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added an example of a `compact-interactive-list` with no borders.
+
 * Changed
   * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.
 
