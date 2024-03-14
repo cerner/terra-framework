@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `event` object to `onCellSelect` callback.
+
 * Changed
   * Updated focus behavior so that cells with only a button or hyperlink will focus on those components directly without need for dive-in or focus trap.
 

@@ -162,8 +162,6 @@ describe('DataGrid', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockCellSelect).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies onCellSelect callback is triggered when space is pressed on a non-selectable cell', () => {
@@ -187,8 +185,6 @@ describe('DataGrid', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockCellSelect).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 });
 

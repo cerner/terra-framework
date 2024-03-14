@@ -71,6 +71,7 @@ const propTypes = {
   /**
    * Callback function that is called when a selectable cell is selected. Parameters:
    * @param {object} selectedCell object containing rowId, columnId and sectionId, all as strings.
+   * @param {object} event JavaScript event object.
    */
   onCellSelect: PropTypes.func,
 
@@ -293,7 +294,7 @@ function FlowsheetDataGrid(props) {
     }
   }, [rowsToSearch, flowsheetSections, columns, onCellRangeSelect]);
 
-  const handleCellSelection = useCallback((selectionDetails) => {
+  const handleCellSelection = useCallback((selectionDetails, event) => {
     // Call onRowSelect for row header column
     if (selectionDetails.columnIndex === 0) {
       if (onRowSelect) {
@@ -308,7 +309,7 @@ function FlowsheetDataGrid(props) {
         columnId: selectionDetails.columnId,
         sectionId: selectionDetails.sectionId,
         isMetaPressed: selectionDetails.isMetaPressed,
-      });
+      }, event);
     }
   }, [onCellSelect, onRowSelect, selectCellRange]);
 
