@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * `boundingRef` is no longer necessary the section header's sticky behavior. The calculation now uses the table's container ref for calculating the offset.
+  * `boundingRef` is no longer necessary for the section header's sticky behavior. The calculation now uses the table's container ref for calculating the offset.
 
 * Added
   * Added `event` object to `onCellSelect` callback.
