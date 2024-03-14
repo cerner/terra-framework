@@ -40,18 +40,18 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String that will be used to identify the table. If multiple tables are on the same page, each table should have
+   * String that will be used to identify the list. If multiple lists are on the same page, each list should have
    * a unique id.
    */
   id: PropTypes.string.isRequired,
 
   /**
-   * String that identifies the element (or elements) that labels the table.
+   * String that identifies the element (or elements) that labels the list.
    */
   ariaLabelledBy: PropTypes.string,
 
   /**
-   * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
+   * String that labels the list for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
 
