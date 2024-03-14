@@ -6,7 +6,7 @@ const ignoredA11y = {
 Terra.describeViewports('Responsive', ['tiny', 'small', 'medium', 'huge', 'large', 'enormous'], () => {
   it('should display responsive default', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/collapsible-menu-view/default-collapsible-menu-view');
-    Terra.validates.element('responsive');
+    Terra.validates.element('responsive', { selector: '#collapsible-menu-view-test' });
   });
 });
 

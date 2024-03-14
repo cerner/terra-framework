@@ -5,8 +5,9 @@ import {
 } from 'terra-icon';
 import Button from 'terra-button';
 import Hyperlink from 'terra-hyperlink';
+import MenuButton from './MenuButton';
 
-// eslint-disable-next-line no-alert
+const menuButton = <MenuButton />;
 const buttonCell = <Button text="Learn more" />;
 const anchorCell = <Hyperlink href="https://www.cerner.com" text="Documents" />;
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
@@ -43,7 +44,7 @@ const rows = [
     cells: [
       { content: iconResultsNormal },
       { content: 'Discern Care Set (1)' },
-      { content: buttonCell },
+      { content: menuButton },
       { content: <FeaturedIcon /> },
     ],
   },
@@ -52,7 +53,7 @@ const rows = [
     cells: [
       { content: iconResultsNormal },
       { content: 'Initial observation Care/Day High Severity 99220 (2)' },
-      { content: anchorCell },
+      { content: buttonCell },
       { content: <FeaturedIcon /> },
     ],
   },
@@ -96,7 +97,7 @@ const cols = [
   {
     id: 'Column-1',
     displayName: 'Service name',
-    width: '250px', // will be used as a css flexBasis
+    width: '210px', // will be used as a css flexBasis
     flexGrow: true, // makes the column grow or shrink
     maximumWidth: '350px',
     minimumWidth: '100px',
@@ -105,7 +106,7 @@ const cols = [
   {
     id: 'Column-2',
     displayName: 'Details',
-    width: '150px',
+    width: '210px',
     align: alignTypes.RIGHT,
     isSelectable: true,
   },
@@ -140,7 +141,7 @@ const CellContent = () => {
       onCellSelect={onCellSelect}
       onClearSelection={onClearSelection}
       rowHeaderIndex={1}
-      rowHeight="50px"
+      rowHeight="60px"
     />
   );
 };
