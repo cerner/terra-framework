@@ -143,6 +143,7 @@ const propTypes = {
    * @private
    * @param {string} rowId rowId
    * @param {string} columnId columnId
+   * @param {object} event event
    */
   onCellSelect: PropTypes.func,
 
@@ -326,14 +327,14 @@ function Table(props) {
   // -------------------------------------
   // functions
 
-  const handleCellSelection = useCallback((selectionDetails) => {
+  const handleCellSelection = useCallback((selectionDetails, event) => {
     if (!isGridContext && onRowSelect) {
       onRowSelect({ sectionId: selectionDetails.sectionId, rowId: selectionDetails.rowId });
       return;
     }
 
     if (onCellSelect) {
-      onCellSelect(selectionDetails);
+      onCellSelect(selectionDetails, event);
     }
   }, [isGridContext, onCellSelect, onRowSelect]);
 
