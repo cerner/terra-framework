@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `event` object to `onCellSelect` callback.
+
 ## 1.19.0 - (March 8, 2024)
 
 * Added

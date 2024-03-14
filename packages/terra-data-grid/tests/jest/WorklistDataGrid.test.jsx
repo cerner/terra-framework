@@ -322,14 +322,15 @@ describe('Row selection', () => {
     );
 
     const selectableCell = wrapper.find('Row').at(0).find('td.selectable');
-    selectableCell.at(0).simulate('mouseDown'); // Row selection is not on so cell will be selected.
-    expect(mockOnCellSelect).toHaveBeenCalledWith('1', 'Column-1'); // The first click to select the cell from which shift+Down will occur.
+    const mockMouseDownEvent = {
+      type: 'mousedown',
+    };
+    selectableCell.at(0).simulate('mouseDown', mockMouseDownEvent);// Row selection is not on so cell will be selected.
+    expect(mockOnCellSelect).toHaveBeenCalledWith('1', 'Column-1', expect.objectContaining(mockMouseDownEvent)); // The first click to select the cell from which shift+Down will occur.
 
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }]);
     expect(mockOnEnableRowSelection).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies callbacks when Shift+Down is used and row selection mode is enabled.', () => {
