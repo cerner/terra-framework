@@ -2,11 +2,12 @@
 
 ## Unreleased
 
-* Changed
-  * Table now uses its own container ref for calculating the offset while scrolling horizontally. `boundingRef` is no longer necessary for the scrolling behavior.
-
 * Added
   * Added `event` object to `onCellSelect` callback.
+
+* Changed
+  * Table now uses its own container ref for calculating the offset while scrolling horizontally. `boundingRef` is no longer necessary for the scrolling behavior.
+  * Internal focus trap update for terra-data-grid.
 
 ## 5.12.0 - (March 8, 2024)
 

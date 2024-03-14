@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added an example of a `compact-interactive-list` with no borders.
+
 * Changed
   * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.
 
@@ -17,6 +20,7 @@
 
 * Changed
   * Removed `shouldTrapFocus` attributes from examples.
+  * Updated datagrid documentation with the changes in cell focus behavior.
 
 ## 1.71.0 - (March 1, 2024)
 
