@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Changed
-  * Table now uses its own container ref for calculating the offset while scrolling horizontally. `boundingRef` is no longer necessary for the scrolling behavior.
+* Removed
+  * `boundingRef` is no longer necessary for the section header's sticky behavior for tables. This change is still passive in nature as it doesn't change any functionality for consumers.
 
 ## 5.13.0 - (March 14, 2024)
 
