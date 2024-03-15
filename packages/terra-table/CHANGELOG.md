@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 5.13.0 - (March 14, 2024)
+
 * Added
   * Added `event` object to `onCellSelect` callback.
 

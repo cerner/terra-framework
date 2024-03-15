@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.74.0 - (March 14, 2024)
+
 * Added
   * Added an example of a `compact-interactive-list` with no borders.
 

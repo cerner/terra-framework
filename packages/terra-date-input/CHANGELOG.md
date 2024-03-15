@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.55.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.54.0 - (March 8, 2024)
 
 * Changed
