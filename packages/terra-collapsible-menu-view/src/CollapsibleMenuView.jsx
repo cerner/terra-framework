@@ -89,6 +89,9 @@ class CollapsibleMenuView extends React.Component {
     this.resizeObserver = new ResizeObserver(() => {
       if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
+          // if (this.menuButton && this.hiddenStartIndex == -1) {
+          //   this.resetCache();
+          // }
           this.forceUpdate();
         });
       }
@@ -101,9 +104,6 @@ class CollapsibleMenuView extends React.Component {
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize();
-    } else {
-      // Resetting the cache so that all elements will be rendered face-up for width calculations
-      this.resetCache();
     }
   }
 

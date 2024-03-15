@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Updated
-  * Corrected the get width from bounding client rect instead of resize observer to avoid infinite loop.
+  * Corrected to get width from bounding client rect instead of resize observer to avoid infinite loop.
 
 ## 6.94.0 - (March 14, 2024)
 
