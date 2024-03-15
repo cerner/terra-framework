@@ -64,7 +64,7 @@ const propTypes = {
    * Object containing intl APIs
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
-  
+
   /**
    * @private
    * Allows to reset cache and elements will be rendered face-up for width calculations.
@@ -97,7 +97,7 @@ class CollapsibleMenuView extends React.Component {
       if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
           // Resetting the cache so that all elements will be rendered face-up for width calculations
-          this.props.allowResetCache && this.resetCache();
+          if (this.props.allowResetCache) { this.resetCache(); }
           this.forceUpdate();
         });
       }
