@@ -64,11 +64,18 @@ const propTypes = {
    * Object containing intl APIs
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+  
+  /**
+   * @private
+   * Allows to reset cache and elements will be rendered face-up for width calculations.
+   */
+  allowResetCache: PropTypes.bool,
 };
 
 const defaultProps = {
   alwaysCollapsedMenuItems: [],
   isStartAligned: false,
+  allowResetCache: true,
 };
 
 const prepopulatedBaseDivider = <CollapsibleMenuViewDivider key="prepopulatedBaseDivider" />;
@@ -89,7 +96,8 @@ class CollapsibleMenuView extends React.Component {
     this.resizeObserver = new ResizeObserver(() => {
       if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
-          this.resetCache();
+          // Resetting the cache so that all elements will be rendered face-up for width calculations
+          this.props.allowResetCache && this.resetCache();
           this.forceUpdate();
         });
       }
@@ -207,6 +215,7 @@ class CollapsibleMenuView extends React.Component {
       useHorizontalIcon,
       isReversedChildrenOrder,
       menuIconText,
+      allowResetCache,
       ...customProps
     } = this.props;
     const theme = this.context;
