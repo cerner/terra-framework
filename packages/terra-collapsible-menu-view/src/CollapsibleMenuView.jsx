@@ -86,7 +86,7 @@ class CollapsibleMenuView extends React.Component {
   }
 
   componentDidMount() {
-    this.resizeObserver = new ResizeObserver((entries) => {
+    this.resizeObserver = new ResizeObserver(() => {
       if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
           this.forceUpdate();
@@ -120,7 +120,7 @@ class CollapsibleMenuView extends React.Component {
     const { width } = this.container.getBoundingClientRect();
     const childrenArray = React.Children.toArray(this.props.children);
     const menuButtonWidth = childrenArray.length > 1 ? this.menuButton.getBoundingClientRect().width : 0;
-    let availableWidth = width - menuButtonWidth;
+    const availableWidth = width - menuButtonWidth;
     let hiddenStartIndex = -1;
     let calcWidth = 0;
     let menuHidden = true;
