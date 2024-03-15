@@ -192,10 +192,6 @@ const propTypes = {
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-  /**
-   * Bounding container for table, will use window if no value provided.
-   */
-  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -241,16 +237,19 @@ function Table(props) {
     rowHeaderIndex,
     intl,
     rowMinimumHeight,
-    boundingRef,
   } = props;
 
   // Manage column resize
   const [tableHeight, setTableHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
+
+  // Set an initial width so that the component intially renders sticky behavior correctly. This gets modified later through screen resize events
+  const [boundedWidth, setBoundedWidth] = useState(1000);
   const activeColumnPageX = useRef(0);
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
   const resizingDelayTimer = useRef(null);
+  const screenResizeTimer = useRef(null);
   const resizeTimer = 100;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
@@ -449,6 +448,25 @@ function Table(props) {
       resizeObserver.disconnect();
     };
   }, [hasColumnHeaderActions, tableRef]);
+
+  useEffect(() => {
+    // Resize handler to control the width of the sticky headers. This value needs to be responsive to window resizing.
+    const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(screenResizeTimer.current);
+      screenResizeTimer.current = setTimeout(() => {
+        const containerWidth = tableContainerRef?.current?.clientWidth;
+
+        // An offset is necessary in order to prevent the fixed width from being too large and bleeding outside the container.
+        setBoundedWidth(Math.min(containerWidth || 0, tableRef?.current?.clientWidth || 0) - 25);
+      }, resizeTimer);
+    });
+
+    resizeObserver.observe(tableContainerRef.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [tableContainerRef, tableRef]);
 
   // -------------------------------------
 
@@ -662,7 +680,7 @@ function Table(props) {
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
               rowMinimumHeight={rowMinimumHeight}
-              boundingRef={boundingRef}
+              boundingWidth={boundedWidth}
               firstRowId={firstRowId}
               lastRowId={lastRowId}
             />

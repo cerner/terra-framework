@@ -1265,6 +1265,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               </thead>
             </ColumnHeader>
             <Section
+              boundingWidth={1000}
               displayedColumns={
                 Array [
                   Object {
@@ -4651,6 +4652,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               </thead>
             </ColumnHeader>
             <Section
+              boundingWidth={1000}
               displayedColumns={
                 Array [
                   Object {
@@ -7371,6 +7373,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               </thead>
             </ColumnHeader>
             <Section
+              boundingWidth={1000}
               displayedColumns={
                 Array [
                   Object {
