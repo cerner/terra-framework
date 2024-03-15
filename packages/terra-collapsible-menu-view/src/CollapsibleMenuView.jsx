@@ -117,6 +117,8 @@ class CollapsibleMenuView extends React.Component {
     if (!this.container) {
       return;
     }
+    // NOTE: get width from bounding client rect instead of resize observer.
+    // resize observer provides undefined value when wrapped with other components.
     const { width } = this.container.getBoundingClientRect();
     const childrenArray = React.Children.toArray(this.props.children);
     const menuButtonWidth = childrenArray.length > 1 ? this.menuButton.getBoundingClientRect().width : 0;
