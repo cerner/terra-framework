@@ -104,9 +104,10 @@ const propTypes = {
    */
   onSectionSelect: PropTypes.func,
   /**
-   * Bounding container for the table, will use window if no value provided.
+   * Width to assign for the section header in order to enable sticky behavior.
+   * This should be a dynamic size based on the current screen width and the state of the table container's client width.
    */
-  boundingRef: PropTypes.func,
+  boundingWidth: PropTypes.number,
   /**
    * @private
    * Id of the first row in table
@@ -145,7 +146,7 @@ function Section(props) {
     rows,
     onSectionSelect,
     rowMinimumHeight,
-    boundingRef,
+    boundingWidth,
     firstRowId,
     lastRowId,
   } = props;
@@ -156,9 +157,6 @@ function Section(props) {
   const isGridContext = gridContext.role === GridConstants.GRID;
 
   const hasSectionButton = isCollapsible && onSectionSelect;
-
-  // To make the title sticky horizontally, we need to assign a fixed width with some manual offset
-  const boundedWidth = boundingRef?.current?.clientWidth - 40;
 
   const handleClick = useCallback(() => {
     onSectionSelect(id);
@@ -189,7 +187,7 @@ function Section(props) {
               isOpen={hasSectionButton ? !isCollapsed : undefined}
               onClick={hasSectionButton ? handleClick : undefined}
               isTitleSticky
-              boundedWidth={(boundedWidth)}
+              boundedWidth={boundingWidth}
             />
           </th>
         </tr>
