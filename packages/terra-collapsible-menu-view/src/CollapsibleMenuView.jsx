@@ -89,6 +89,7 @@ class CollapsibleMenuView extends React.Component {
     this.resizeObserver = new ResizeObserver(() => {
       if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
+          this.resetCache();
           this.forceUpdate();
         });
       }
@@ -101,8 +102,6 @@ class CollapsibleMenuView extends React.Component {
     if (this.isCalculating) {
       this.isCalculating = false;
       this.handleResize();
-    } else {
-      this.resetCache();
     }
   }
 
@@ -174,8 +173,8 @@ class CollapsibleMenuView extends React.Component {
     }
 
     if (this.menuHidden !== menuHidden || this.hiddenStartIndex !== hiddenStartIndex) {
-      this.menuHidden = (this.menuHidden) ? this.menuHidden : menuHidden;
-      this.hiddenStartIndex = (this.hiddenStartIndex != -1) ? this.hiddenStartIndex : hiddenStartIndex;
+      this.menuHidden = menuHidden;
+      this.hiddenStartIndex = hiddenStartIndex;
       this.forceUpdate();
     }
   }
