@@ -89,7 +89,7 @@ class CollapsibleMenuView extends React.Component {
     this.resizeObserver = new ResizeObserver(() => {
       if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
-          if (this.menuButton && this.hiddenStartIndex == -1) {
+          if (this.menuButton && this.hiddenStartIndex === -1) {
             this.resetCache();
           }
           this.forceUpdate();
