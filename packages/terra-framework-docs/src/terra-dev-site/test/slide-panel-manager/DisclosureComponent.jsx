@@ -126,7 +126,7 @@ class DisclosureComponent extends React.Component {
           <DisclosureManagerHeaderAdapter
             title={`Disclosure - ${identifier}`}
             collapsibleMenuView={(
-              <CollapsibleMenuView>
+              <CollapsibleMenuView allowResetCache={false}>
                 <CollapsibleMenuView.Item
                   text="Header Button 1"
                   key="button_1"
