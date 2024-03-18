@@ -2,6 +2,7 @@
 
 exports[`CollapsibleMenuView should render a default component 1`] = `
 <CollapsibleMenuView
+  allowResetCache={true}
   alwaysCollapsedMenuItems={Array []}
   intl={
     Object {
@@ -80,6 +81,7 @@ exports[`CollapsibleMenuView should render a default component 1`] = `
 
 exports[`CollapsibleMenuView should render a fixed menu width 1`] = `
 <CollapsibleMenuView
+  allowResetCache={true}
   alwaysCollapsedMenuItems={
     Array [
       <CollapsibleMenuViewItem
@@ -155,6 +157,7 @@ exports[`CollapsibleMenuView should render a fixed menu width 1`] = `
 
 exports[`CollapsibleMenuView should render a start aligned component 1`] = `
 <CollapsibleMenuView
+  allowResetCache={true}
   alwaysCollapsedMenuItems={
     Array [
       <CollapsibleMenuViewItem
