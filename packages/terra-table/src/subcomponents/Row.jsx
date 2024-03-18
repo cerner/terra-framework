@@ -196,6 +196,7 @@ function Row(props) {
             firstRowId={firstRowId}
             lastRowId={lastRowId}
             columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
+            rowSelectionMode={rowSelectionMode}
           >
             {cellData.content}
           </Cell>

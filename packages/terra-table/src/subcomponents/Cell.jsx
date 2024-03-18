@@ -136,6 +136,12 @@ const propTypes = {
    * The color to be used for highlighting a column.
    */
   columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
+
+  /**
+   * Enables row selection capabilities for the table.
+   * Use 'single' for single row selection and 'multiple' for multi-row selection.
+   */
+  rowSelectionMode: PropTypes.string,
 };
 
 const defaultProps = {
@@ -169,6 +175,7 @@ function Cell(props) {
     firstRowId,
     lastRowId,
     columnHighlightColor,
+    rowSelectionMode,
   } = props;
 
   const cellRef = useRef();
@@ -249,6 +256,9 @@ function Cell(props) {
   }, [isGridContext]);
 
   const handleMouseDown = (event) => {
+    if (rowSelectionMode && event.button === 2) {
+      return;
+    }
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
