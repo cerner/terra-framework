@@ -128,6 +128,9 @@ class CollapsibleMenuView extends React.Component {
     const { width } = this.container.getBoundingClientRect();
     const childrenArray = React.Children.toArray(this.props.children);
     const menuButtonWidth = childrenArray.length > 1 ? this.menuButton.getBoundingClientRect().width : 0;
+    const ContainerStyle = window.getComputedStyle(this.container, null);
+    const containerMargin = parseFloat(ContainerStyle.getPropertyValue('margin'));
+    console.log(containerMargin, 'containerMargin');
     const availableWidth = Math.abs(width - menuButtonWidth);
     let hiddenStartIndex = -1;
     let calcWidth = 0;
@@ -141,7 +144,7 @@ class CollapsibleMenuView extends React.Component {
 
         if (calcWidth > availableWidth) {
           // If last child fits in the available space, leave it face up
-          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth < availableWidth) {
+          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth <= availableWidth) {
             break;
           }
 
@@ -164,7 +167,7 @@ class CollapsibleMenuView extends React.Component {
 
         if (calcWidth > availableWidth) {
           // If last child fits in the available space, leave it face up
-          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth < availableWidth) {
+          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth <= availableWidth) {
             break;
           }
 
