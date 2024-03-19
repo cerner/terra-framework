@@ -27,6 +27,10 @@ const ApplicationLinksPropType = PropTypes.shape({
      */
     icon: PropTypes.node,
   })),
+  /**
+   * Custom function when tab is clicked
+   */
+  onTabClick: PropTypes.func,
 });
 
 const ApplicationLinks = {

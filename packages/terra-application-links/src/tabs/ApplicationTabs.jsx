@@ -54,6 +54,10 @@ const propTypes = {
   staticContext: PropTypes.object,
 
   hasIcons: PropTypes.bool,
+  /**
+   * Custom function when tab is clicked
+   */
+  onTabClick: PropTypes.func,
 };
 
 const defaultProps = {
@@ -150,6 +154,7 @@ class ApplicationTabs extends React.Component {
       history,
       staticContext,
       hasIcons,
+      onTabClick,
       ...customProps
     } = this.props;
 
@@ -166,6 +171,7 @@ class ApplicationTabs extends React.Component {
         icon: link.icon,
         location,
         history,
+        onTabClick,
       };
 
       if (this.hiddenStartIndex < 0) {
