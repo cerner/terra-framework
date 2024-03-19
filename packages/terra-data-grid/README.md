@@ -3,13 +3,6 @@
 [![NPM version](https://badgen.net/npm/v/terra-data-grid)](https://www.npmjs.com/package/terra-data-grid)
 [![Build Status](https://badgen.net/travis/cerner/terra-framework)](https://travis-ci.com/cerner/terra-framework)
 
----
-### Notice
-
-> Terra Data Grid is currently under alpha release. There may be breaking changes between releases until it is stable with the 1.0 release.
-
----
-
 The terra-data-grid package contains the **Worklist Data Grid** and **Flowsheet Data Grid** components that allow users to navigate grid information using directional navigation keys.
 
 - [Getting Started](#getting-started)
