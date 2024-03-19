@@ -182,7 +182,7 @@ Terra.describeViewports('SlidePanelManager- Behaviors', ['large'], () => {
     it('Disclosure - Minimize', () => {
       $('#root-component .disclose-large').click();
 
-      browser.pause(1000);
+      browser.pause(500);
       $('[class*="slide-group"] #DemoContainer-1 .maximize').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .maximize').click();
 
@@ -208,7 +208,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
     it('presents the close button within the managed header', () => {
       $('#root-component .disclose-large').click();
 
-      $('[class*="right-buttons"] > *:first-child').waitForDisplayed({ timeout: 1000 });
+      $('[class*="right-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
       Terra.validates.element('close button', { selector });
       $('[class*="right-buttons"] > *:first-child').click();
     });
@@ -216,7 +216,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
     it('closes the disclosure when the close button is pressed', () => {
       $('#root-component .disclose-large').click();
 
-      $('[class*="right-buttons"] > *:first-child').waitForDisplayed({ timeout: 1000 });
+      $('[class*="right-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
       $('[class*="right-buttons"] > *:first-child').click();
       Terra.validates.element('after selecting close', { selector });
     });
@@ -237,7 +237,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .disclose-large').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .disclose-large').click();
 
-      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 1000 });
+      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
       Terra.validates.element('back button', { selector });
     });
 
@@ -246,7 +246,7 @@ Terra.describeViewports('SlidePanelManager - Managed Header', ['large'], () => {
       $('[class*="slide-group"] #DemoContainer-1 .disclose-large').waitForDisplayed({ timeout: 1000 });
       $('[class*="slide-group"] #DemoContainer-1 .disclose-large').click();
 
-      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 1000 });
+      $('[class*="left-buttons"] > *:first-child').waitForDisplayed({ timeout: 500 });
       $('[class*="left-buttons"] > *:first-child').click();
       Terra.validates.element('after selecting back', { selector });
     });
