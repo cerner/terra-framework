@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+* Removed
+  * Removed the `boundingRef` prop in favor of using the table's container ref for calculating the offset. is no longer needed for the section header's sticky behavior. This change is still passive in nature as it doesn't change any functionality for consumers.
+
+
+## 1.20.0 - (March 14, 2024)
+
+* Added
+  * Added `event` object to `onCellSelect` callback.
+
+* Changed
+  * Updated focus behavior so that cells with only a button or hyperlink will focus on those components directly without need for dive-in or focus trap.
+
 ## 1.19.0 - (March 8, 2024)
 
 * Added

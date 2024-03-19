@@ -5,6 +5,11 @@
 * Changed
   * Added accessibility label for navigation back button.
 
+## 2.51.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 2.50.0 - (February 22, 2024)
 
 * Added

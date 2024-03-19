@@ -72,8 +72,8 @@
     "terra-enzyme-intl": "3",
     "webpack": "5",
     "webpack-cli": "4",
-    "webpack-dev-server": "^4",
-    "webpack-merge": "^5",
+    "webpack-dev-server": "4",
+    "webpack-merge": "5",
     "xfc": "1"
   },
   "scripts": {
@@ -112,7 +112,7 @@
     "start-static": "npm run compile:prod && terra express-server --site build",
     "test": "npm run lint && npm run jest && npm run wdio",
     "test:docker": "npm run lint && npm run jest && npm run wdio:docker",
-    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme redwood-theme",
+    "wdio": "terra wdio --themes terra-default-theme clinical-lowlight-theme orion-fusion-theme",
     "wdio:default": "terra wdio",
     "wdio:lowlight": "NODE_OPTIONS=--max-old-space-size=2048 terra wdio --themes clinical-lowlight-theme",
     "wdio:fusion": "terra wdio --themes orion-fusion-theme",

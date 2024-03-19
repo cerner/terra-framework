@@ -40,18 +40,18 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String that will be used to identify the table. If multiple tables are on the same page, each table should have
+   * String that will be used to identify the list. If multiple lists are on the same page, each list should have
    * a unique id.
    */
   id: PropTypes.string.isRequired,
 
   /**
-   * String that identifies the element (or elements) that labels the table.
+   * String that identifies the element (or elements) that labels the list.
    */
   ariaLabelledBy: PropTypes.string,
 
   /**
-   * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
+   * String that labels the list for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
 
@@ -112,6 +112,12 @@ const propTypes = {
    * A zero-based index indicating which column represents the row header.
    */
   rowHeaderIndex: validateRowHeaderIndex,
+
+  /**
+   * A Boolean value indicating whether the visual column borders are displayed.
+   * Setting the value to false hides the column borders.
+   */
+  hasVisibleBorders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -119,6 +125,7 @@ const defaultProps = {
   numberOfColumns: 1,
   width: '100%',
   rowHeaderIndex: 0,
+  hasVisibleBorders: true,
 };
 
 const CompactInteractiveList = (props) => {
@@ -137,6 +144,7 @@ const CompactInteractiveList = (props) => {
     onCellSelect,
     onClearSelection,
     rowHeaderIndex,
+    hasVisibleBorders,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -333,6 +341,7 @@ const CompactInteractiveList = (props) => {
             isTopmost={checkIfRowIsTopMost(index)}
             isLeftmost={checkIfRowIsLeftMost(index)}
             rowHeaderIndex={rowHeaderIndex}
+            hasVisibleBorders={hasVisibleBorders}
           />
         ))}
       </div>
