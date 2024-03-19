@@ -1,7 +1,7 @@
 /* eslint-disable react/forbid-dom-props */
 import React, { useState } from 'react';
-import DataGrid from 'terra-data-grid/lib/DataGrid';
 import Button from 'terra-button';
+import DataGrid from 'terra-data-grid/lib/DataGrid';
 import Hyperlink from 'terra-hyperlink';
 import NotificationDialog from 'terra-notification-dialog';
 
