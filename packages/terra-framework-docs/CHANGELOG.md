@@ -5,6 +5,11 @@
 * Changed
   * Updated `Worklist Data Grid Focusable Cell` example to have consistent column numbering with screenreader announcements.
 
+## 1.75.0 - (March 19, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.74.0 - (March 14, 2024)
 
 * Added
