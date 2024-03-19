@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `Worklist Data Grid Focusable Cell` example to have consistent column numbering with screenreader announcements.
+
 ## 1.75.0 - (March 19, 2024)
 
 * Changed
@@ -17,11 +20,11 @@
 
 ## 1.73.0 - (March 8, 2024)
 
-* Changed
-  * Re-introduced `shouldTrapFocus` examples from `1.72.0`.
-
 * Added
   * Added orange and green column highlighting examples for `flowsheet-data-grid`
+
+* Changed
+  * Re-introduced `shouldTrapFocus` examples from `1.72.0`.
 
 ## 1.72.0 - (March 5, 2024)
 
