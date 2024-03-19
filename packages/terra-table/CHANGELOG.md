@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.14.0 - (March 19, 2024)
+
 * Removed
   * `boundingRef` is no longer necessary for the section header's sticky behavior for tables. This change is still passive in nature as it doesn't change any functionality for consumers.
 
