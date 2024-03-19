@@ -138,6 +138,7 @@ const propTypes = {
   columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
 
   /**
+   * @private
    * Enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
