@@ -257,7 +257,7 @@ function Cell(props) {
   }, [isGridContext]);
 
   const handleMouseDown = (event) => {
-    if (rowSelectionMode && event.button === 2) {
+    if (rowSelectionMode && (event.button === 2 || hasFocusableElements())) {
       return;
     }
     if (!isFocusTrapEnabled) {
@@ -307,6 +307,9 @@ function Cell(props) {
           break;
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
+            if (rowSelectionMode && hasFocusableElements()) {
+              return;
+            }
             onCellSelect({
               sectionId,
               rowId,
@@ -402,7 +405,7 @@ function Cell(props) {
   return (
     <CellTag
       id={isRowHeader ? `${tableId}-rowheader-${rowId}` : undefined}
-      ref={isGridContext ? cellRef : undefined}
+      ref={isGridContext || rowSelectionMode ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
       headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}

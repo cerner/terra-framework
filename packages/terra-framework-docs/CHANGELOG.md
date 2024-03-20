@@ -4,6 +4,7 @@
 
 * Changed
   * Updated `terra-navigation-side-menu` example.
+  * Updated single row selection example of `terra-table`.
 
 ## 1.75.0 - (March 19, 2024)
 
