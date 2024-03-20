@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 1.0.0-alpha.10 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.0.0-alpha.9 - (February 28, 2024)
 
 * Breaking Changes

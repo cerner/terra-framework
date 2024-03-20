@@ -1,6 +1,8 @@
 import React, { useCallback, useState, useRef } from 'react';
 import { FlowsheetDataGrid } from 'terra-data-grid';
 
+// TODO: This is an obsolete test suite. Should be removed after a sync with Team Fiji
+
 const gridDataJSON = {
   cols: [
     {

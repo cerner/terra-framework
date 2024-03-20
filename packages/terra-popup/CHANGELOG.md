@@ -5,6 +5,11 @@
 * Added
   * `hookshotContentPosition` prop to control positioning strategy for the popup and popup content when used with Hookshot.
 
+## 6.78.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.77.0 - (March 8, 2024)
 
 * Changed

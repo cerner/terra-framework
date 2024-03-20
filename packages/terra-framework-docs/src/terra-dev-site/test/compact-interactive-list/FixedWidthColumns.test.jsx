@@ -88,8 +88,8 @@ const FixedWidthColumns = () => (
     rows={rows}
     columns={cols}
     numberOfColumns={2}
-    columnMinimumWidth="20px" // should have no effect of fixed columns
-    columnMaximumWidth="200px" // should have no effect of fixed columns
+    columnMinimumWidth="20px" // should have no effect on fixed columns
+    columnMaximumWidth="200px" // should have no effect on fixed columns
     rowHeaderIndex={1}
   />
 );

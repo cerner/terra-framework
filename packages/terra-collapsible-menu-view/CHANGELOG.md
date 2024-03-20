@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 6.95.0 - (March 19, 2024)
+
+* Updated
+  * Corrected to get width from bounding client rect instead of resize observer to avoid infinite loop.
+
+## 6.94.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.93.0 - (March 8, 2024)
 
 * Changed

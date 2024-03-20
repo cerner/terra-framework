@@ -71,6 +71,7 @@ const propTypes = {
   /**
    * Callback function that is called when a selectable cell is selected. Parameters:
    * @param {object} selectedCell object containing rowId, columnId and sectionId, all as strings.
+   * @param {object} event JavaScript event object.
    */
   onCellSelect: PropTypes.func,
 
@@ -108,10 +109,6 @@ const propTypes = {
    * Boolean to show/hide column headers. By default, it is set to `true` and column headers are visible.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
-  /**
-   * Bounding container for the flowsheet grid, will use window if no value provided.
-   */
-  boundingRef: PropTypes.func,
 };
 
 const defaultProps = {
@@ -141,7 +138,6 @@ function FlowsheetDataGrid(props) {
     intl,
     hasVisibleColumnHeaders,
     rowMinimumHeight,
-    boundingRef,
   } = props;
 
   const anchorCell = useRef(null);
@@ -293,7 +289,7 @@ function FlowsheetDataGrid(props) {
     }
   }, [rowsToSearch, flowsheetSections, columns, onCellRangeSelect]);
 
-  const handleCellSelection = useCallback((selectionDetails) => {
+  const handleCellSelection = useCallback((selectionDetails, event) => {
     // Call onRowSelect for row header column
     if (selectionDetails.columnIndex === 0) {
       if (onRowSelect) {
@@ -308,7 +304,7 @@ function FlowsheetDataGrid(props) {
         columnId: selectionDetails.columnId,
         sectionId: selectionDetails.sectionId,
         isMetaPressed: selectionDetails.isMetaPressed,
-      });
+      }, event);
     }
   }, [onCellSelect, onRowSelect, selectCellRange]);
 
@@ -428,7 +424,6 @@ function FlowsheetDataGrid(props) {
         hasVisibleColumnHeaders={hasVisibleColumnHeaders}
         ref={dataGridFuncRef}
         rowMinimumHeight={rowMinimumHeight}
-        boundingRef={boundingRef}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>

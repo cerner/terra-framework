@@ -5,6 +5,8 @@
 * Added
   * `hookshotContentPosition` prop to control positioning strategy for the menu content when used with Hookshot.
 
+## 6.89.0 - (March 14, 2024)
+
 * Changed
   * Focus and keyDown events propagation stopped for component being used inside `terra-compact-interactive-list` cells.
 

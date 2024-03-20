@@ -8,18 +8,18 @@
     display: flex;
     position: relative;
 
-    &:not(.row-placeholder) {
+    &:not(.row-placeholder):not(.borderless) {
       background-color: var(--terra-compact-interactive-list-row-background-color, #fefffe);
       border-bottom: var(--terra-compact-interactive-list-row-border-bottom, 1px solid #dedfe0);
       border-right: var(--terra-compact-interactive-list-row-border-right, 1px solid #dedfe0);
     }
   }
 
-  .row-topmost:not(.row-placeholder) {
+  .row-topmost:not(.row-placeholder):not(.borderless) {
     border-top: var(--terra-compact-interactive-list-row-border-top, 1px solid #dedfe0);
   }
 
-  .row-leftmost:not(.row-placeholder) {
+  .row-leftmost:not(.row-placeholder):not(.borderless) {
     border-left: var(--terra-compact-interactive-list-row-border-left, 1px solid #dedfe0);
   }
 }
