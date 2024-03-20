@@ -574,7 +574,7 @@ class Tabs extends React.Component {
       }
     });
 
-    if (this.showMoreButton && this.dropdownRef.current) {
+    if (this.showMoreButton && this.dropdownRef.current && this.isOpen) {
       this.positionDropDown();
     }
 
