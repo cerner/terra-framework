@@ -151,6 +151,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
         header={
           <React.Fragment>
             <InjectIntl(ActionHeader)
+              backButtonA11yLabel="Test Menu"
               className="side-menu-action-header"
               data-navigation-side-menu-action-header={true}
               onBack={[Function]}
@@ -221,12 +222,14 @@ exports[`Layout correctly applies the theme context className 1`] = `
             className="header"
           >
             <InjectIntl(ActionHeader)
+              backButtonA11yLabel="Test Menu"
               className="side-menu-action-header"
               data-navigation-side-menu-action-header={true}
               onBack={[Function]}
               text="Test Menu"
             >
               <ActionHeader
+                backButtonA11yLabel="Test Menu"
                 className="side-menu-action-header"
                 data-navigation-side-menu-action-header={true}
                 intl={
@@ -283,7 +286,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isIconOnly={true}
                         isReversed={false}
                         onClick={[Function]}
-                        text="Terra.actionHeader.back"
+                        text="Test Menu"
                         type="button"
                         variant="utility"
                       />
@@ -342,7 +345,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           isIconOnly={true}
                           isReversed={false}
                           onClick={[Function]}
-                          text="Terra.actionHeader.back"
+                          text="Test Menu"
                           type="button"
                           variant="utility"
                         />
@@ -375,13 +378,13 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             isIconOnly={true}
                             isReversed={false}
                             onClick={[Function]}
-                            text="Terra.actionHeader.back"
+                            text="Test Menu"
                             type="button"
                             variant="utility"
                           >
                             <button
                               aria-disabled={false}
-                              aria-label="Terra.actionHeader.back"
+                              aria-label="Test Menu"
                               className="button utility orion-fusion-theme header-button back-button"
                               data-terra-action-header="back-button"
                               disabled={false}
@@ -391,7 +394,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                               onKeyDown={[Function]}
                               onKeyUp={[Function]}
                               onMouseDown={[Function]}
-                              title="Terra.actionHeader.back"
+                              title="Test Menu"
                               type="button"
                             >
                               <span
@@ -951,6 +954,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
       header={
         <React.Fragment>
           <InjectIntl(ActionHeader)
+            backButtonA11yLabel="Test Menu"
             className="side-menu-action-header"
             data-navigation-side-menu-action-header={true}
             onBack={[Function]}
@@ -1022,12 +1026,14 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
           className="header"
         >
           <InjectIntl(ActionHeader)
+            backButtonA11yLabel="Test Menu"
             className="side-menu-action-header"
             data-navigation-side-menu-action-header={true}
             onBack={[Function]}
             text="Test Menu"
           >
             <ActionHeader
+              backButtonA11yLabel="Test Menu"
               className="side-menu-action-header"
               data-navigation-side-menu-action-header={true}
               intl={
@@ -1084,7 +1090,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       isIconOnly={true}
                       isReversed={false}
                       onClick={[Function]}
-                      text="Terra.actionHeader.back"
+                      text="Test Menu"
                       type="button"
                       variant="utility"
                     />
@@ -1143,7 +1149,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                         isIconOnly={true}
                         isReversed={false}
                         onClick={[Function]}
-                        text="Terra.actionHeader.back"
+                        text="Test Menu"
                         type="button"
                         variant="utility"
                       />
@@ -1176,13 +1182,13 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           isIconOnly={true}
                           isReversed={false}
                           onClick={[Function]}
-                          text="Terra.actionHeader.back"
+                          text="Test Menu"
                           type="button"
                           variant="utility"
                         >
                           <button
                             aria-disabled={false}
-                            aria-label="Terra.actionHeader.back"
+                            aria-label="Test Menu"
                             className="button utility header-button back-button"
                             data-terra-action-header="back-button"
                             disabled={false}
@@ -1192,7 +1198,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                             onKeyDown={[Function]}
                             onKeyUp={[Function]}
                             onMouseDown={[Function]}
-                            title="Terra.actionHeader.back"
+                            title="Test Menu"
                             type="button"
                           >
                             <span

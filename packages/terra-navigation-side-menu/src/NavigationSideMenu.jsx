@@ -268,6 +268,7 @@ class NavigationSideMenu extends Component {
             onBack={onBack}
             text={currentItem ? currentItem.text : null}
             data-navigation-side-menu-action-header
+            backButtonA11yLabel={currentItem ? currentItem.text : null}
           />
           {toolbar}
         </Fragment>

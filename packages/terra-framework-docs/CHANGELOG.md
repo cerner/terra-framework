@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-navigation-side-menu` example.
+
 ## 1.75.0 - (March 19, 2024)
 
 * Changed
