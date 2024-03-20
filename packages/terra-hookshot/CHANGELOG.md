@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Added
-  * `position` prop to specify the CSS position property value to be applied to the hookshot content.
+* Changed
+  * Implemented dynamic content positioning in HookshotContent: Overrides content position with hookshotContentPosition from customProps or defaults to 'absolute' if not provided.
 
 ## 5.41.0 - (July 31, 2023)
 

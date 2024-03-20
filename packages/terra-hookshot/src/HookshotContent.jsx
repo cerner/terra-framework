@@ -34,10 +34,6 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
-  /**
-   * Specifies the CSS position property value to be applied to the content element.
-   */
-  position: PropTypes.string,
 };
 
 class HookshotContent extends React.Component {
@@ -177,7 +173,6 @@ class HookshotContent extends React.Component {
       onOutsideClick,
       onResize,
       refCallback,
-      position,
       ...customProps
     } = this.props;
 
@@ -191,6 +186,10 @@ class HookshotContent extends React.Component {
     delete customProps.stopPropagation;
     // Delete the closePortal prop that comes from react-portal.
     delete customProps.closePortal;
+
+    // If hookshotContentPosition exists in customProps the position will be overriden.
+    // If hookshotContentPosition does not exist position will be set to `absolute`
+    const { position } = { position: customProps.hookshotContentPosition || 'absolute' };
 
     return (
       <div

@@ -82,11 +82,6 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
-  /**
-   * Determines the positioning strategy for the popup content when used with Hookshot.
-   * @type {string}
-   */
-  hookshotContentPosition: PropTypes.string,
 };
 
 const defaultProps = {
@@ -98,7 +93,6 @@ const defaultProps = {
   isHeightAutomatic: false,
   isWidthAutomatic: false,
   popupContentRole: 'dialog',
-  hookshotContentPosition: '',
 };
 
 class PopupContent extends React.Component {
@@ -198,7 +192,6 @@ class PopupContent extends React.Component {
       onContentResize,
       popupContentRole,
       refCallback,
-      hookshotContentPosition,
       ...customProps
     } = this.props;
 
@@ -244,7 +237,6 @@ class PopupContent extends React.Component {
             onResize={this.handleOnResize}
             refCallback={refCallback}
             role={popupContentRole || null}
-            position={hookshotContentPosition}
           >
             {arrowContent}
             {/* eslint-disable-next-line react/forbid-dom-props */}

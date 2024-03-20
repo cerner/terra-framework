@@ -105,11 +105,6 @@ const propTypes = {
    * Callback function to handle click events on the popup.
    */
   onClick: PropTypes.func,
-  /**
-   * Determines the positioning strategy for the Popup when used with Hookshot.
-   * @type {string}
-   */
-  hookshotContentPosition: PropTypes.string,
 };
 
 const defaultProps = {
@@ -126,7 +121,6 @@ const defaultProps = {
   isHeaderDisabled: false,
   isOpen: false,
   popupContentRole: 'dialog',
-  hookshotContentPosition: '',
 };
 
 class Popup extends React.Component {
@@ -289,7 +283,7 @@ class Popup extends React.Component {
       onRequestClose,
       targetRef,
       targetAttachment,
-      hookshotContentPosition,
+      ...customProps
     } = this.props;
     /* eslint-enable no-unused-vars */
 
@@ -310,7 +304,7 @@ class Popup extends React.Component {
     if (showArrow) {
       cOffset = PopupUtils.getContentOffset(cAttachment, tAttachment, this.props.targetRef(), PopupArrow.Opts.arrowSize, cornerSize);
     }
-    const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow, hookshotContentPosition);
+    const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow, customProps.hookshotContentPosition);
 
     return (
       <React.Fragment>
