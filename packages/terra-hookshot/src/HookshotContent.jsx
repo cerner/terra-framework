@@ -34,6 +34,10 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
+  /**
+   * Specifies the CSS position property value to be applied to the content element.
+   */
+  position: PropTypes.string,
 };
 
 class HookshotContent extends React.Component {
@@ -173,6 +177,7 @@ class HookshotContent extends React.Component {
       onOutsideClick,
       onResize,
       refCallback,
+      position,
       ...customProps
     } = this.props;
 
@@ -191,6 +196,8 @@ class HookshotContent extends React.Component {
       <div
         {...customProps}
         className={cx(['content', customProps.className])}
+        // eslint-disable-next-line react/forbid-dom-props
+        style={{ position }}
         ref={(element) => { this.contentNode = element; if (refCallback) { refCallback(element); } }}
       >
         {children}

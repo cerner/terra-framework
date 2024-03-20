@@ -41,6 +41,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
     contentHeightMax={-1}
     contentWidth={640}
     contentWidthMax={-1}
+    hookshotContentPosition=""
     isFocusedDisabled={false}
     isHeaderDisabled={false}
     isHeightAutomatic={false}
@@ -74,6 +75,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
           onEsc={[MockFunction]}
           onResize={[Function]}
           outsideClickIgnoreClass="ignore-react-onclickoutside"
+          position=""
           preventDefault={false}
           role="dialog"
           stopPropagation={false}
@@ -93,6 +95,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
             onEsc={[MockFunction]}
             onResize={[Function]}
             outsideClickIgnoreClass="ignore-react-onclickoutside"
+            position=""
             preventDefault={false}
             role="dialog"
             stopPropagation={false}
@@ -101,6 +104,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
             <div
               className="content content orion-fusion-theme"
               data-terra-popup-content={true}
+              position=""
               role="dialog"
               tabIndex="0"
             >
@@ -181,6 +185,7 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
       onEsc={[MockFunction]}
       onResize={[Function]}
       outsideClickIgnoreClass="ignore-react-onclickoutside"
+      position=""
       preventDefault={false}
       role="dialog"
       stopPropagation={false}
@@ -213,6 +218,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
   contentHeightMax={640}
   contentWidth={640}
   contentWidthMax={640}
+  hookshotContentPosition=""
   intl={
     Object {
       "defaultFormats": Object {},
@@ -255,6 +261,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             class="content content"
             data-terra-popup-content="true"
             intl="[object Object]"
+            position=""
             role="dialog"
             tabindex="0"
           >
@@ -369,6 +376,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
         onEsc={[MockFunction]}
         onResize={[Function]}
         outsideClickIgnoreClass="ignore-react-onclickoutside"
+        position=""
         preventDefault={false}
         refCallback={
           [MockFunction] {
@@ -378,6 +386,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   class="content content"
                   data-terra-popup-content="true"
                   intl="[object Object]"
+                  position=""
                   role="dialog"
                   tabindex="0"
                 >
@@ -484,6 +493,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           onEsc={[MockFunction]}
           onResize={[Function]}
           outsideClickIgnoreClass="ignore-react-onclickoutside"
+          position=""
           preventDefault={false}
           refCallback={
             [MockFunction] {
@@ -493,6 +503,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                     class="content content"
                     data-terra-popup-content="true"
                     intl="[object Object]"
+                    position=""
                     role="dialog"
                     tabindex="0"
                   >
@@ -588,6 +599,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                 "timeZone": null,
               }
             }
+            position=""
             role="dialog"
             tabIndex="0"
           >
@@ -756,6 +768,7 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
       onEsc={[MockFunction]}
       onResize={[Function]}
       outsideClickIgnoreClass="ignore-react-onclickoutside"
+      position=""
       preventDefault={false}
       refCallback={[MockFunction]}
       role="dialog"

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * `position` prop to specify the CSS position property value to be applied to the hookshot content.
+
 ## 5.41.0 - (July 31, 2023)
 
 * Changed

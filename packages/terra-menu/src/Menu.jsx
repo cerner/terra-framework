@@ -68,6 +68,12 @@ const propTypes = {
    * The default value will be updated to `false` in the next major release.
    */
   showHeader: PropTypes.bool,
+  /**
+   * Determines the positioning strategy for the menu content when used with Hookshot.
+   * @type {string}
+   * @default 'fixed'
+   */
+  hookshotContentPosition: PropTypes.string,
 };
 
 const defaultProps = {
@@ -76,6 +82,7 @@ const defaultProps = {
   contentWidth: '240',
   headerTitle: '',
   showHeader: true,
+  hookshotContentPosition: 'fixed',
 };
 
 class Menu extends React.Component {
@@ -149,6 +156,7 @@ class Menu extends React.Component {
       isArrowDisplayed,
       contentWidth,
       showHeader,
+      hookshotContentPosition,
       ...customProps
     } = this.props;
     const arrowClass = cx([
@@ -196,6 +204,7 @@ class Menu extends React.Component {
         isOpen={isOpen}
         onRequestClose={onRequestClose}
         targetRef={targetRef}
+        hookshotContentPosition={hookshotContentPosition}
         isHeaderDisabled
         isContentFocusDisabled
       >
