@@ -90,7 +90,6 @@ class SlidePanel extends React.Component {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
     this.mainNode = React.createRef();
-    this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNode = this.setDisclosingNode.bind(this);
     this.mainAriaDescribedByID = `detail-panel-warning-${uuidv4()}`;
   }
@@ -98,7 +97,7 @@ class SlidePanel extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       // Save the disclosing node for returning focus when panel is closed
-      this.setDisclosingNode(this.lastClicked);
+      this.setDisclosingNode(document.activeElement);
       this.panelNode.focus();
       return;
     }
@@ -120,10 +119,6 @@ class SlidePanel extends React.Component {
       this.props.setSlidePanelRef(node);
     }
     this.panelNode = node;
-  }
-
-  setLastClicked(event) {
-    this.lastClicked = event.target;
   }
 
   setDisclosingNode(node) {
@@ -189,8 +184,6 @@ class SlidePanel extends React.Component {
         aria-hidden={isOpen && isFullscreen ? 'true' : 'false'}
         ref={this.mainNode}
         role="main"
-        onClick={this.setLastClicked}
-        onKeyUp={this.setLastClicked}
       >
         <VisuallyHiddenText
           tabIndex="-1"

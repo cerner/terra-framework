@@ -12,8 +12,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with a fullscr
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -50,8 +48,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with an open s
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -88,8 +84,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with fill 1`] 
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -126,8 +120,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with main cont
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -167,8 +159,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with main cont
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -211,8 +201,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panel con
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -253,8 +241,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelAria
     aria-label="Main content area"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -291,8 +277,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelBeha
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -329,8 +313,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelBeha
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -367,8 +349,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelPosi
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -417,8 +397,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelPosi
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -443,8 +421,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelSize
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -481,8 +457,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelSize
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -521,8 +495,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with the given
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -661,8 +633,6 @@ exports[`When custom props are used correctly applies the theme context classNam
           aria-hidden="false"
           className="main"
           key="main"
-          onClick={[Function]}
-          onKeyUp={[Function]}
           role="main"
           tabIndex="-1"
         >
@@ -716,8 +686,6 @@ exports[`When custom props are used sets aria-hidden to true on main content div
     aria-hidden="true"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
@@ -755,8 +723,6 @@ exports[`When custom props are used should override user provided attributes tha
     aria-hidden="false"
     className="main"
     key="main"
-    onClick={[Function]}
-    onKeyUp={[Function]}
     role="main"
     tabIndex="-1"
   >
