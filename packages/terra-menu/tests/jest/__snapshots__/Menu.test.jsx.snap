@@ -204,6 +204,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                   <div
                     class="content content orion-fusion-theme"
                     data-terra-popup-content="true"
+                    hookshotcontentposition="fixed"
                     role="dialog"
                     style="position: fixed;"
                   >
@@ -323,11 +324,11 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       ]
                     }
                     excludeScrollbar={false}
+                    hookshotContentPosition="fixed"
                     onContentResize={[Function]}
                     onEsc={[Function]}
                     onResize={[Function]}
                     outsideClickIgnoreClass="ignore-react-onclickoutside"
-                    position="fixed"
                     preventDefault={false}
                     refCallback={[Function]}
                     role="dialog"
@@ -345,11 +346,11 @@ exports[`Menu correctly applies the theme context className 1`] = `
                           "touchstart",
                         ]
                       }
+                      hookshotContentPosition="fixed"
                       onContentResize={[Function]}
                       onEsc={[Function]}
                       onResize={[Function]}
                       outsideClickIgnoreClass="ignore-react-onclickoutside"
-                      position="fixed"
                       preventDefault={false}
                       refCallback={[Function]}
                       role="dialog"
@@ -359,6 +360,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       <div
                         className="content content orion-fusion-theme"
                         data-terra-popup-content={true}
+                        hookshotContentPosition="fixed"
                         role="dialog"
                         style={
                           Object {

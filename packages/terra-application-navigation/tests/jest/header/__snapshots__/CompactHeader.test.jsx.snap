@@ -638,7 +638,6 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               contentAttachment="top center"
               contentHeight="auto"
               contentWidth="320"
-              hookshotContentPosition=""
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
               isHeaderDisabled={false}
@@ -1029,7 +1028,6 @@ exports[`CompactHeader should render with ids for navigation and extension items
               contentAttachment="top center"
               contentHeight="auto"
               contentWidth="320"
-              hookshotContentPosition=""
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
               isHeaderDisabled={false}
