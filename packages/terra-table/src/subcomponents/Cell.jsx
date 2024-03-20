@@ -377,7 +377,7 @@ function Cell(props) {
 
   let columnHighlight = {};
   // Column highlighting is not supported for multiple column spans
-  if (columnHighlightColor && !columnSpan) {
+  if (columnHighlightColor && (!columnSpan || columnSpan == 1) ) {
     columnHighlight = {
       [`column-highlight-${columnHighlightColor.toLowerCase()}`]: true,
       [`first-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === firstRowId,

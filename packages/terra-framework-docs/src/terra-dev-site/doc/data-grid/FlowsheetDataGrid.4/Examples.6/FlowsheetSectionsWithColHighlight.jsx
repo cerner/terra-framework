@@ -15,6 +15,7 @@ const gridDataJSON = {
       isSelectable: true,
       columnHighlightColor: ColumnHighlightColor.ORANGE,
       columnHighlightDescription: 'Most recent time',
+      columnSpan: 1,
     },
     { id: 'Column-3', displayName: 'Visit' },
     { id: 'Column-4', displayName: 'Allergy' },
