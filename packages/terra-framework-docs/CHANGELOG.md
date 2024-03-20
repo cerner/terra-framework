@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples for column span support in  Flowsheet Data Grid and `terra-table`.
+
 * Changed
   * Updated `terra-navigation-side-menu` example.
 

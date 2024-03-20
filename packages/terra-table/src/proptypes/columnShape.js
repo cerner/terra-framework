@@ -20,7 +20,7 @@ const columnShape = PropTypes.shape({
    * String of text to render within the column header cell.
    */
   displayName: PropTypes.string,
-   /**
+  /**
    * Number that specifies the column span value.
    */
   columnSpan: PropTypes.number,

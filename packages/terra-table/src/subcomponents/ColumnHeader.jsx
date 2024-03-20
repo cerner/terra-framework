@@ -174,8 +174,7 @@ const ColumnHeader = (props) => {
             columnHighlightColor={column.columnHighlightColor}
             columnHighlightDescription={column.columnHighlightDescription}
           />
-        )
-        )}
+        ))}
       </tr>
       {/* Actions row */}
       {hasColumnHeaderActions && hasVisibleColumnHeaders && (

@@ -328,18 +328,18 @@ function Table(props) {
   };
   const tableRowCount = tableSections.reduce(tableSectionReducer, headerRowCount);
 
-  // Create new displayedColumns object to pass to Section sub component to account for column spans 
-  let displayedColumnsWithColumnSpan = [];
-  let index=0;
+  // Create new displayedColumns object to pass to Section sub component to account for column spans
+  const displayedColumnsWithColumnSpan = [];
+  let i = 0;
   displayedColumns.forEach((column) => {
-    displayedColumnsWithColumnSpan[index] = column;
-    index++;
-    if(column.columnSpan > 1) {
+    displayedColumnsWithColumnSpan[i] = column;
+    i += 1;
+    if (column.columnSpan > 1) {
       let counter = column.columnSpan;
-      while(counter > 1) {
-        displayedColumnsWithColumnSpan[index] = { id: `${column.id}_${counter-1}`};
-        counter--;
-        index++;
+      while (counter > 1) {
+        displayedColumnsWithColumnSpan[i] = { id: `${column.id}_${counter - 1}` };
+        counter -= 1;
+        i += 1;
       }
     }
   });
@@ -483,7 +483,6 @@ function Table(props) {
       resizeObserver.disconnect();
     };
   }, [tableContainerRef, tableRef]);
-
 
   // -------------------------------------
 
