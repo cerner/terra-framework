@@ -141,6 +141,7 @@ const ColumnHeader = (props) => {
         className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
         height={hasVisibleColumnHeaders ? headerHeight : undefined}
       >
+
         {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
             key={`${column.id}-headerCell`}
@@ -148,6 +149,7 @@ const ColumnHeader = (props) => {
             tableId={tableId}
             columnId={column.id}
             columnIndex={columnIndex}
+            columnSpan={column.columnSpan}
             displayName={column.displayName}
             isDisplayVisible={column.isDisplayVisible}
             width={column.width}
@@ -172,7 +174,8 @@ const ColumnHeader = (props) => {
             columnHighlightColor={column.columnHighlightColor}
             columnHighlightDescription={column.columnHighlightDescription}
           />
-        ))}
+        )
+        )}
       </tr>
       {/* Actions row */}
       {hasColumnHeaderActions && hasVisibleColumnHeaders && (

@@ -153,6 +153,11 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
+   * The cell's column span in the grid. This by default is 1.
+   */
+  columnSpan: PropTypes.number,
+
+  /**
    * Function that is called when a selectable header cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
@@ -195,6 +200,7 @@ const defaultProps = {
   isDisplayVisible: true,
   isResizable: false,
   isResizeActive: false,
+  columnSpan: 1,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -225,6 +231,7 @@ const ColumnHeaderCell = (props) => {
     onColumnSelect,
     intl,
     columnIndex,
+    columnSpan,
     onResizeMouseDown,
     onResizeHandleChange,
     ownsResizeHandle,
@@ -421,6 +428,7 @@ const ColumnHeaderCell = (props) => {
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
       aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
       title={!isActionCell ? displayName : action?.label}
+      colspan={columnSpan}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
           // eslint-disable-next-line react/forbid-component-props

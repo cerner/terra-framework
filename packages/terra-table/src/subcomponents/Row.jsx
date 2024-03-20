@@ -139,7 +139,7 @@ function Row(props) {
   const heightProperties = (height) ? {
     height,
   } : { minHeight: rowMinimumHeight };
-
+  
   return (
     <tr
       aria-rowindex={rowIndex}
@@ -174,6 +174,7 @@ function Row(props) {
       {cells.map((cellData, index) => {
         const cellColumnIndex = index + columnIndexOffSet;
         const columnId = displayedColumns[cellColumnIndex].id;
+        
         return (
           <Cell
             rowId={id}
