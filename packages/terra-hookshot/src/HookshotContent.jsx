@@ -188,8 +188,7 @@ class HookshotContent extends React.Component {
     delete customProps.closePortal;
 
     // If hookshotContentPosition exists in customProps the position will be overriden.
-    // If hookshotContentPosition does not exist position will be set to `absolute`
-    const { position } = { position: customProps.hookshotContentPosition || 'absolute' };
+    const { position } = { position: customProps.hookshotContentPosition };
 
     return (
       <div

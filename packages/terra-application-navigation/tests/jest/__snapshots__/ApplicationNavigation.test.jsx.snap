@@ -243,6 +243,7 @@ exports[`ApplicationNavigation correctly applies the theme context className 1`]
         contentAttachment="top right"
         contentHeight="auto"
         contentWidth="320"
+        hookshotContentPosition=""
         isArrowDisplayed={true}
         isContentFocusDisabled={true}
         isHeaderDisabled={true}
@@ -310,6 +311,7 @@ exports[`ApplicationNavigation should render default element 1`] = `
     contentAttachment="top right"
     contentHeight="auto"
     contentWidth="320"
+    hookshotContentPosition=""
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
     isHeaderDisabled={true}
@@ -447,6 +449,7 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     contentAttachment="top right"
     contentHeight="auto"
     contentWidth="320"
+    hookshotContentPosition=""
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
     isHeaderDisabled={true}
@@ -676,6 +679,7 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     contentAttachment="top right"
     contentHeight="auto"
     contentWidth="320"
+    hookshotContentPosition=""
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
     isHeaderDisabled={true}

@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Implemented dynamic content positioning in HookshotContent: Overrides content position with hookshotContentPosition from customProps or defaults to 'absolute' if not provided.
+  * Implemented dynamic content positioning in HookshotContent: Overrides content position with hookshotContentPosition from customProps.
 
 ## 5.41.0 - (July 31, 2023)
 
