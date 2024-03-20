@@ -174,6 +174,7 @@ function Row(props) {
       {cells.map((cellData, index) => {
         const cellColumnIndex = index + columnIndexOffSet;
         const columnId = displayedColumns[cellColumnIndex].id;
+        const columnSpan = displayedColumns[cellColumnIndex].columnSpan;
         
         return (
           <Cell
@@ -197,6 +198,7 @@ function Row(props) {
             firstRowId={firstRowId}
             lastRowId={lastRowId}
             columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
+            columnSpan={columnSpan}
           >
             {cellData.content}
           </Cell>

@@ -153,7 +153,7 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
-   * The cell's column span in the grid. This by default is 1.
+   * The column span value for a column. This by default is 1.
    */
   columnSpan: PropTypes.number,
 
@@ -337,10 +337,13 @@ const ColumnHeaderCell = (props) => {
 
   // Add column highlight indicator based on color
   let columnHighlightIcon;
-  if (columnHighlightColor === ColumnHighlightColor.GREEN) {
-    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
-  } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
-    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><rect className={cx('highlight-icon-square')} x="110%" y="7.5" transform="translate(-8)" /></svg>;
+  // Column highlighting is supported for single column spans only
+  if (columnSpan == 1){
+    if (columnHighlightColor === ColumnHighlightColor.GREEN) {
+      columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
+    } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
+      columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><rect className={cx('highlight-icon-square')} x="110%" y="7.5" transform="translate(-8)" /></svg>;
+    }
   }
 
   // Retrieve current theme from context
@@ -428,7 +431,7 @@ const ColumnHeaderCell = (props) => {
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
       aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
       title={!isActionCell ? displayName : action?.label}
-      colspan={columnSpan}
+      colSpan={columnSpan}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
           // eslint-disable-next-line react/forbid-component-props

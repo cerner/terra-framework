@@ -16,7 +16,7 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ColumnContext from '../utils/ColumnContext';
 import GridContext, { GridConstants } from '../utils/GridContext';
 import getFocusableElements from '../utils/focusManagement';
-import { ColumnHighlightColor } from '../proptypes/columnShape';
+import { ColumnHighlightColor, columnSpan } from '../proptypes/columnShape';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
@@ -136,6 +136,12 @@ const propTypes = {
    * The color to be used for highlighting a column.
    */
   columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
+
+   /**
+   * @private
+   * The column span value for a column.
+   */
+   columnSpan: PropTypes.number
 };
 
 const defaultProps = {
@@ -169,6 +175,7 @@ function Cell(props) {
     firstRowId,
     lastRowId,
     columnHighlightColor,
+    columnSpan
   } = props;
 
   const cellRef = useRef();
@@ -369,7 +376,8 @@ function Cell(props) {
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
 
   let columnHighlight = {};
-  if (columnHighlightColor) {
+  // Column highlighting is not supported for multiple column spans
+  if (columnHighlightColor && !columnSpan) {
     columnHighlight = {
       [`column-highlight-${columnHighlightColor.toLowerCase()}`]: true,
       [`first-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === firstRowId,
