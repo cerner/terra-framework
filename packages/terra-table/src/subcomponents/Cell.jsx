@@ -142,6 +142,12 @@ const propTypes = {
    * The column span value for a column.
    */
   columnSpan: PropTypes.number,
+  
+  /**
+   * Enables row selection capabilities for the table.
+   * Use 'single' for single row selection and 'multiple' for multi-row selection.
+   */
+  rowSelectionMode: PropTypes.string,
 };
 
 const defaultProps = {
@@ -176,6 +182,7 @@ function Cell(props) {
     lastRowId,
     columnHighlightColor,
     columnSpan,
+    rowSelectionMode,
   } = props;
 
   const cellRef = useRef();
@@ -256,6 +263,9 @@ function Cell(props) {
   }, [isGridContext]);
 
   const handleMouseDown = (event) => {
+    if (rowSelectionMode && (event.button === 2 || hasFocusableElements())) {
+      return;
+    }
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
@@ -303,6 +313,9 @@ function Cell(props) {
           break;
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
+            if (rowSelectionMode && hasFocusableElements()) {
+              return;
+            }
             onCellSelect({
               sectionId,
               rowId,
@@ -399,7 +412,7 @@ function Cell(props) {
   return (
     <CellTag
       id={isRowHeader ? `${tableId}-rowheader-${rowId}` : undefined}
-      ref={isGridContext ? cellRef : undefined}
+      ref={isGridContext || rowSelectionMode ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
       headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}

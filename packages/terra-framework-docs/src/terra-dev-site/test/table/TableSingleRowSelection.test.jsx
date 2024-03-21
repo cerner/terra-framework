@@ -14,7 +14,7 @@ const tableDataJSON = {
       cells: [
         { content: 'Fleck, Arthur' },
         { content: '1007-MTN' },
-        { content: 'Unstable' },
+        { content: <button id="button" type="button" aria-label="Alert">Alert</button> },
       ],
     },
     {
