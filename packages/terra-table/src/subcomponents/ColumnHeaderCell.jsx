@@ -153,7 +153,7 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
-   * The column span value for a column. This by default is 1.
+   * The column span value for a column.
    */
   columnSpan: PropTypes.number,
 
