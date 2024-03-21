@@ -2,7 +2,9 @@
 
 ## Unreleased
 
-* Updated
+## 7.22.0 - (March 21, 2024)
+
+* Changed
    * Position dropdown element only after it is opened to prevent additional white space getting added.
 
 ## 7.21.0 - (March 14, 2024)
