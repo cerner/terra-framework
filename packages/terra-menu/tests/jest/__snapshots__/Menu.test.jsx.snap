@@ -76,6 +76,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
       contentHeight="auto"
       contentWidth="240"
       headerTitle=""
+      hookshotPostionFixed={true}
       isArrowDisplayed={false}
       isContentFocusDisabled={true}
       isHeaderDisabled={true}

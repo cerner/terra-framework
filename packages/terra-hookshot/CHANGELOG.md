@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added conditional class to the HookshotContent component based on the prop `hookshotPostionFixed`
+
 ## 5.41.0 - (July 31, 2023)
 
 * Changed
