@@ -102,6 +102,11 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
               className="content content orion-fusion-theme"
               data-terra-popup-content={true}
               role="dialog"
+              style={
+                Object {
+                  "position": "absolute",
+                }
+              }
               tabIndex="0"
             >
               <div
@@ -256,6 +261,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             data-terra-popup-content="true"
             intl="[object Object]"
             role="dialog"
+            style="position: absolute;"
             tabindex="0"
           >
             <div
@@ -379,6 +385,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   data-terra-popup-content="true"
                   intl="[object Object]"
                   role="dialog"
+                  style="position: absolute;"
                   tabindex="0"
                 >
                   <div
@@ -494,6 +501,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                     data-terra-popup-content="true"
                     intl="[object Object]"
                     role="dialog"
+                    style="position: absolute;"
                     tabindex="0"
                   >
                     <div
@@ -589,6 +597,11 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
               }
             }
             role="dialog"
+            style={
+              Object {
+                "position": "absolute",
+              }
+            }
             tabIndex="0"
           >
             <div

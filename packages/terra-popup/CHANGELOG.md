@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `...customProps` to allow accepting and passing additional props to the Popup component.
+
 ## 6.78.0 - (March 14, 2024)
 
 * Changed

@@ -51,6 +51,7 @@ Cerner Corporation
 - Kol Kheang [@kolkheang]
 - Aaron Johnson [@zxeleven]
 - Serhii Pavlov [@sPavl0v]
+- Avijit Das [@adavijit]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -103,3 +104,4 @@ Cerner Corporation
 [@kolkheang]: https://github.com/kolkheang
 [@zxeleven]: https://github.com/zxeleven
 [@sPavl0v]: https://github.com/sPavl0v
+[@adavijit]: https://github.com/adavijit

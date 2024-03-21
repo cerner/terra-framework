@@ -104,7 +104,7 @@ exports[`correctly applies the theme context className 1`] = `
                       class="content content orion-fusion-theme"
                       data-terra-popup-content="true"
                       role="dialog"
-                      style="transform: translate3d(0px, 0px, 0px); opacity: 1;"
+                      style="position: absolute; transform: translate3d(0px, 0px, 0px); opacity: 1;"
                       tabindex="0"
                     >
                       <div
@@ -193,6 +193,11 @@ exports[`correctly applies the theme context className 1`] = `
                           className="content content orion-fusion-theme"
                           data-terra-popup-content={true}
                           role="dialog"
+                          style={
+                            Object {
+                              "position": "absolute",
+                            }
+                          }
                           tabIndex="0"
                         >
                           <div

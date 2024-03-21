@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * `hookshotContentPosition` prop to control positioning strategy for the menu content when used with Hookshot.
+
 ## 6.89.0 - (March 14, 2024)
 
 * Changed

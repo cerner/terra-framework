@@ -187,9 +187,13 @@ class HookshotContent extends React.Component {
     // Delete the closePortal prop that comes from react-portal.
     delete customProps.closePortal;
 
+    const { position } = { position: customProps.hookshotContentPosition || 'absolute' };
+
     return (
       <div
         {...customProps}
+        // eslint-disable-next-line react/forbid-dom-props
+        style={{ position }}
         className={cx(['content', customProps.className])}
         ref={(element) => { this.contentNode = element; if (refCallback) { refCallback(element); } }}
       >
