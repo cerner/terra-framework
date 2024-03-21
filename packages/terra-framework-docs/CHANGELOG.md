@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.76.0 - (March 21, 2024)
+
 * Changed
   * Updated `terra-navigation-side-menu` example.
   * Updated single row selection example of `terra-table`.
