@@ -426,7 +426,7 @@ const ColumnHeaderCell = (props) => {
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
-      scope={!isActionCell ? (columnSpan > 1 ? 'colgroup': 'col') : undefined}
+      scope={!isActionCell ? 'col' : undefined}
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
       aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
       title={!isActionCell ? displayName : action?.label}

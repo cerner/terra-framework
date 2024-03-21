@@ -8,7 +8,7 @@ const tableData = {
     { id: 'Column-2', displayName: 'Illness Severity' },
     { id: 'Column-3', displayName: 'Visit Details', columnSpan: 2 },
     { id: 'Column-4', displayName: 'Allergy' },
-    { id: 'Column-5', displayName: 'Primary Contact'},
+    { id: 'Column-5', displayName: 'Primary Contact' },
     { id: 'Column-6', displayName: 'Generic Order Counts' },
     { id: 'Column-7', displayName: 'Patient Age' },
     { id: 'Column-8', displayName: 'Medication History' },

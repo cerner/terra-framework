@@ -23,7 +23,6 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
-
   describe('Empty Table', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-no-rows');
