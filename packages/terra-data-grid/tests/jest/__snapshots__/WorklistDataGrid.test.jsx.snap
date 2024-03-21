@@ -4624,6 +4624,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -4669,6 +4670,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -4730,6 +4732,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -4775,6 +4778,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -4838,6 +4842,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -4883,6 +4888,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -5165,6 +5171,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -5210,6 +5217,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -5271,6 +5279,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -5316,6 +5325,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -5375,6 +5385,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -5420,6 +5431,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -5702,6 +5714,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -5747,6 +5760,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -5808,6 +5822,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -5853,6 +5868,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -5912,6 +5928,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -5957,6 +5974,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -6239,6 +6257,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -6284,6 +6303,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -6345,6 +6365,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -6390,6 +6411,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -6448,6 +6470,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -6493,6 +6516,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -8321,6 +8345,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -8366,6 +8391,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -8427,6 +8453,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -8472,6 +8499,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -8535,6 +8563,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -8580,6 +8609,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -8862,6 +8892,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -8907,6 +8938,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -8968,6 +9000,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -9013,6 +9046,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -9072,6 +9106,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -9117,6 +9152,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -9399,6 +9435,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -9444,6 +9481,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -9505,6 +9543,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -9550,6 +9589,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -9609,6 +9649,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -9654,6 +9695,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -9936,6 +9978,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -9981,6 +10024,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -10042,6 +10086,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -10087,6 +10132,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -10145,6 +10191,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -10190,6 +10237,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -14915,6 +14963,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -14960,6 +15009,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -15021,6 +15071,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -15066,6 +15117,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -15129,6 +15181,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -15174,6 +15227,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -15456,6 +15510,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -15501,6 +15556,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -15562,6 +15618,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -15607,6 +15664,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -15666,6 +15724,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -15711,6 +15770,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -15993,6 +16053,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -16038,6 +16099,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -16099,6 +16161,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -16144,6 +16207,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -16203,6 +16267,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -16248,6 +16313,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -16530,6 +16596,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -16575,6 +16642,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -16636,6 +16704,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -16681,6 +16750,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -16739,6 +16809,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -16784,6 +16855,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -18612,6 +18684,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -18657,6 +18730,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -18718,6 +18792,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -18763,6 +18838,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -18826,6 +18902,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -18871,6 +18948,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -19153,6 +19231,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -19198,6 +19277,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -19259,6 +19339,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -19304,6 +19385,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -19363,6 +19445,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -19408,6 +19491,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -19690,6 +19774,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -19735,6 +19820,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -19796,6 +19882,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -19841,6 +19928,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -19900,6 +19988,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -19945,6 +20034,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -20227,6 +20317,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -20272,6 +20363,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -20333,6 +20425,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -20378,6 +20471,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -20436,6 +20530,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -20481,6 +20576,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -22333,6 +22429,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -22378,6 +22475,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -22439,6 +22537,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -22484,6 +22583,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -22547,6 +22647,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -22592,6 +22693,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -22874,6 +22976,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -22919,6 +23022,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -22980,6 +23084,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -23025,6 +23130,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -23084,6 +23190,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -23129,6 +23236,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -23411,6 +23519,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -23456,6 +23565,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -23517,6 +23627,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -23562,6 +23673,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -23621,6 +23733,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -23666,6 +23779,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -23948,6 +24062,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -23993,6 +24108,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -24054,6 +24170,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -24099,6 +24216,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -24157,6 +24275,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -24202,6 +24321,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -26014,6 +26134,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -26059,6 +26180,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -26120,6 +26242,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -26165,6 +26288,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -26228,6 +26352,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -26273,6 +26398,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -26555,6 +26681,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -26600,6 +26727,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -26661,6 +26789,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -26706,6 +26835,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -26765,6 +26895,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -26810,6 +26941,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -27092,6 +27224,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -27137,6 +27270,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -27198,6 +27332,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -27243,6 +27378,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -27302,6 +27438,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -27347,6 +27484,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -27629,6 +27767,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -27674,6 +27813,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -27735,6 +27875,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -27780,6 +27921,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -27838,6 +27980,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -27883,6 +28026,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -29715,6 +29859,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -29760,6 +29905,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -29821,6 +29967,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -29866,6 +30013,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -29929,6 +30077,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -29974,6 +30123,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -30256,6 +30406,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -30301,6 +30452,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -30362,6 +30514,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -30407,6 +30560,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -30466,6 +30620,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -30511,6 +30666,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -30793,6 +30949,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -30838,6 +30995,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -30899,6 +31057,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -30944,6 +31103,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -31003,6 +31163,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -31048,6 +31209,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -31330,6 +31492,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -31375,6 +31538,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -31436,6 +31600,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -31481,6 +31646,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -31539,6 +31705,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -31584,6 +31751,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -33412,6 +33580,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -33457,6 +33626,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -33518,6 +33688,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -33563,6 +33734,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -33626,6 +33798,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -33671,6 +33844,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -33953,6 +34127,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -33998,6 +34173,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -34059,6 +34235,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -34104,6 +34281,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -34163,6 +34341,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -34208,6 +34387,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -34490,6 +34670,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -34535,6 +34716,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -34596,6 +34778,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -34641,6 +34824,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -34700,6 +34884,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -34745,6 +34930,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -35027,6 +35213,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -35072,6 +35259,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -35133,6 +35321,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -35178,6 +35367,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -35236,6 +35426,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -35281,6 +35472,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -37089,6 +37281,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -37134,6 +37327,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -37195,6 +37389,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -37240,6 +37435,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -37303,6 +37499,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -37348,6 +37545,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -37630,6 +37828,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -37675,6 +37874,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -37736,6 +37936,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -37781,6 +37982,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -37840,6 +38042,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -37885,6 +38088,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -38167,6 +38371,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -38212,6 +38417,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -38273,6 +38479,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -38318,6 +38525,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -38377,6 +38585,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -38422,6 +38631,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -38704,6 +38914,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -38749,6 +38960,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -38810,6 +39022,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -38855,6 +39068,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -38913,6 +39127,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -38958,6 +39173,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -40766,6 +40982,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -40811,6 +41028,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -40872,6 +41090,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -40917,6 +41136,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -40980,6 +41200,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -41025,6 +41246,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -41307,6 +41529,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -41352,6 +41575,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -41413,6 +41637,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -41458,6 +41683,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -41517,6 +41743,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -41562,6 +41789,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -41844,6 +42072,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -41889,6 +42118,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -41950,6 +42180,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -41995,6 +42226,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -42054,6 +42286,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -42099,6 +42332,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -42381,6 +42615,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -42426,6 +42661,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -42487,6 +42723,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -42532,6 +42769,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -42590,6 +42828,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -42635,6 +42874,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -44443,6 +44683,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -44488,6 +44729,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -44549,6 +44791,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -44594,6 +44837,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -44657,6 +44901,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -44702,6 +44947,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -44984,6 +45230,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -45029,6 +45276,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -45090,6 +45338,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -45135,6 +45384,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -45194,6 +45444,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -45239,6 +45490,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -45521,6 +45773,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -45566,6 +45819,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -45627,6 +45881,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -45672,6 +45927,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -45731,6 +45987,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -45776,6 +46033,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -46058,6 +46316,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -46103,6 +46362,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -46164,6 +46424,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -46209,6 +46470,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -46267,6 +46529,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -46312,6 +46575,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -48120,6 +48384,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -48165,6 +48430,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -48226,6 +48492,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -48271,6 +48538,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -48334,6 +48602,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -48379,6 +48648,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -48661,6 +48931,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -48706,6 +48977,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -48767,6 +49039,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -48812,6 +49085,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -48871,6 +49145,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -48916,6 +49191,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -49198,6 +49474,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -49243,6 +49520,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -49304,6 +49582,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -49349,6 +49628,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -49408,6 +49688,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -49453,6 +49734,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -49735,6 +50017,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -49780,6 +50063,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -49841,6 +50125,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -49886,6 +50171,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -49944,6 +50230,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -49989,6 +50276,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -51795,6 +52083,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -51840,6 +52129,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -51901,6 +52191,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -51946,6 +52237,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -52009,6 +52301,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -52054,6 +52347,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -52336,6 +52630,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -52381,6 +52676,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -52442,6 +52738,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -52487,6 +52784,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -52546,6 +52844,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -52591,6 +52890,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -52873,6 +53173,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -52918,6 +53219,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -52979,6 +53281,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -53024,6 +53327,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -53083,6 +53387,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -53128,6 +53433,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -53410,6 +53716,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -53455,6 +53762,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -53516,6 +53824,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -53561,6 +53870,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -53619,6 +53929,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -53664,6 +53975,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -55470,6 +55782,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -55515,6 +55828,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -55576,6 +55890,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -55621,6 +55936,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -55684,6 +56000,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="1"
                           rowIndex={2}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -55729,6 +56046,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="1"
                             rowIndex={2}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -56011,6 +56329,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -56056,6 +56375,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -56117,6 +56437,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -56162,6 +56483,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -56221,6 +56543,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="2"
                           rowIndex={3}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -56266,6 +56589,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="2"
                             rowIndex={3}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -56548,6 +56872,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -56593,6 +56918,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -56654,6 +56980,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -56699,6 +57026,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -56758,6 +57086,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="3"
                           rowIndex={4}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -56803,6 +57132,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="3"
                             rowIndex={4}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -57085,6 +57415,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -57130,6 +57461,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -57191,6 +57523,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -57236,6 +57569,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >
@@ -57294,6 +57628,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                           rowId="4"
                           rowIndex={5}
                           rowMinimumHeight="auto"
+                          rowSelectionMode="multiple"
                           tableId="test-terra-worklist-data-grid-table"
                         >
                           <Cell
@@ -57339,6 +57674,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                             rowId="4"
                             rowIndex={5}
                             rowMinimumHeight="auto"
+                            rowSelectionMode="multiple"
                             sectionId=""
                             tableId="test-terra-worklist-data-grid-table"
                           >

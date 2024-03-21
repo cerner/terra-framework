@@ -259,6 +259,16 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       browser.$$('tbody tr')[0].$$('td')[0].click();
       Terra.validates.element('row-single-selection-cell-click', { selector: rowSelectionTableSelector });
     });
+
+    it('validates right click on a selectable row does not select row', () => {
+      browser.$$('tbody tr')[0].$$('td')[0].click({ button: 'right' });
+      Terra.validates.element('row-single-selection-cell-right-click', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates click on an interactive element in cell does not select row', () => {
+      $('#button').click();
+      Terra.validates.element('row-single-selection-cell-interactive-element-click', { selector: rowSelectionTableSelector });
+    });
   });
 
   describe('Table with Large Text Data', () => {
