@@ -2,13 +2,15 @@
 
 ## Unreleased
 
+## 5.15.0 - (March 21, 2024)
+
+* Changed
+  * Prevent right click from selecting row in row selection mode.
+
 ## 5.14.0 - (March 19, 2024)
 
 * Removed
   * `boundingRef` is no longer necessary for the section header's sticky behavior for tables. This change is still passive in nature as it doesn't change any functionality for consumers.
-
-* Changed
-  * Prevent right click from selecting row in row selection mode.
 
 ## 5.13.0 - (March 14, 2024)
 
