@@ -142,7 +142,7 @@ const propTypes = {
    * The column span value for a column.
    */
   columnSpan: PropTypes.number,
-  
+
   /**
    * Enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
