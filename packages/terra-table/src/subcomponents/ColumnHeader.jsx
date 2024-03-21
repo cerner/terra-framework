@@ -192,6 +192,7 @@ const ColumnHeader = (props) => {
               isActionCell
               action={column.action}
               columnIndex={columnIndex}
+              columnSpan={column.columnSpan}
               isDisplayVisible={column.isDisplayVisible}
               width={column.width}
               minimumWidth={column.minimumWidth}
