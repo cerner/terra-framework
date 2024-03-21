@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * `hookshotPostionFixed` prop to set the position as `fixed` for the menu when used with HookshotContent.
+  * Fixes white space issue in large menu by setting hookshot position to fixed
 
 ## 6.89.0 - (March 14, 2024)
 
