@@ -328,6 +328,22 @@ function Table(props) {
   };
   const tableRowCount = tableSections.reduce(tableSectionReducer, headerRowCount);
 
+  // Create new displayedColumns object to pass to Section sub component to account for column spans
+  const displayedColumnsWithColumnSpan = [];
+  let i = 0;
+  displayedColumns.forEach((column) => {
+    displayedColumnsWithColumnSpan[i] = column;
+    i += 1;
+    if (column.columnSpan > 1) {
+      let counter = column.columnSpan;
+      while (counter > 1) {
+        displayedColumnsWithColumnSpan[i] = { id: `${column.id}_${counter - 1}` };
+        counter -= 1;
+        i += 1;
+      }
+    }
+  });
+
   // -------------------------------------
   // functions
 
@@ -675,7 +691,7 @@ function Table(props) {
               rows={section.rows}
               rowHeight={rowHeight}
               rowSelectionMode={rowSelectionMode}
-              displayedColumns={displayedColumns}
+              displayedColumns={displayedColumnsWithColumnSpan}
               rowHeaderIndex={rowHeaderIndex}
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}

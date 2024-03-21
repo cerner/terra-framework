@@ -42,6 +42,7 @@ See the following example of a default table:
   * [Headerless Table](/components/cerner-terra-framework-docs/table/examples/table-without-headers)
   * [Column Sorting](/components/cerner-terra-framework-docs/table/examples/sortable-table)
   * [Column Error Indicator](/components/cerner-terra-framework-docs/table/examples/table-column-states)
+  * [Column Span](/components/cerner-terra-framework-docs/table/examples/table-column-span)
 
 ## Examples
 |Link to Example| Description|
@@ -56,6 +57,7 @@ See the following example of a default table:
 |[Multiple Row Selection](/components/cerner-terra-framework-docs/table/examples/table-multiple-row-selection)|An example demonstrating a table with multiple row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property.|
 |[Table with Sections](/components/cerner-terra-framework-docs/table/examples/table-with-sections)|An example demonstrating how to create a table with sections.|
 |[Table Without Headers](/components/cerner-terra-framework-docs/table/examples/table-without-headers)|An example demonstrating how to hide table column headers. The column headers still exist in the Document Object Model (DOM) for accessibility.|
+|[Table with Column Span](/components/cerner-terra-framework-docs/table/examples/table-column-span)| An example demonstrating a table with column span.|
 
 ## Accessibility
 ### Keyboard Interactions
@@ -137,6 +139,7 @@ A column specifies the information to render a cell in the header row of the Wor
 |**maximumWidth**|Number|Optional|None|A number that specifies the maximum column width in pixels.|
 |**width**|number|Optional|None|A number that specifies the width of the column in pixels. If not provided, the Worklist Data Grid component's default column width is used.|
 |**sortIndicator**|Custom|Optional|None|A string indicating which sorting indicator is rendered (`ascending` or `descending`). A sorting indicator is rendered only if a value is provided.
+|**columnSpan**|number|Optional|None|A number that specifies the column span value for a column.|
 
 ### Section
 <Notice variant="important" ariaLevel="2">

@@ -139,6 +139,11 @@ const propTypes = {
 
   /**
    * @private
+   * The column span value for a column.
+   */
+  columnSpan: PropTypes.number,
+
+  /**
    * Enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
@@ -176,6 +181,7 @@ function Cell(props) {
     firstRowId,
     lastRowId,
     columnHighlightColor,
+    columnSpan,
     rowSelectionMode,
   } = props;
 
@@ -378,12 +384,13 @@ function Cell(props) {
   // Determine table cell header attribute values
   const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
   const CellTag = isRowHeader ? 'th' : 'td';
-  const columnHeaderId = `${tableId}-${columnId}-headerCell`;
+  const columnHeaderId = `${tableId}-${columnId.split('_')[0]}-headerCell`;
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
 
   let columnHighlight = {};
-  if (columnHighlightColor) {
+  // Column highlighting is not supported for multiple column spans
+  if (columnHighlightColor && (!columnSpan || columnSpan === 1)) {
     columnHighlight = {
       [`column-highlight-${columnHighlightColor.toLowerCase()}`]: true,
       [`first-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === firstRowId,

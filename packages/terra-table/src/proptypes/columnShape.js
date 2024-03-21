@@ -21,6 +21,10 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
+   * Number that specifies the column span value.
+   */
+  columnSpan: PropTypes.number,
+  /**
    * Object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.
    */
   action: PropTypes.shape({ actionShape }),

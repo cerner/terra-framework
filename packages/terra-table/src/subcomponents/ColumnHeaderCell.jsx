@@ -153,6 +153,11 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
+   * The column span value for a column.
+   */
+  columnSpan: PropTypes.number,
+
+  /**
    * Function that is called when a selectable header cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
@@ -225,6 +230,7 @@ const ColumnHeaderCell = (props) => {
     onColumnSelect,
     intl,
     columnIndex,
+    columnSpan,
     onResizeMouseDown,
     onResizeHandleChange,
     ownsResizeHandle,
@@ -330,10 +336,13 @@ const ColumnHeaderCell = (props) => {
 
   // Add column highlight indicator based on color
   let columnHighlightIcon;
-  if (columnHighlightColor === ColumnHighlightColor.GREEN) {
-    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
-  } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
-    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><rect className={cx('highlight-icon-square')} x="110%" y="7.5" transform="translate(-8)" /></svg>;
+  // Column highlighting is supported for single column spans only
+  if (!columnSpan || columnSpan === 1) {
+    if (columnHighlightColor === ColumnHighlightColor.GREEN) {
+      columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
+    } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
+      columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><rect className={cx('highlight-icon-square')} x="110%" y="7.5" transform="translate(-8)" /></svg>;
+    }
   }
 
   // Retrieve current theme from context
@@ -421,6 +430,7 @@ const ColumnHeaderCell = (props) => {
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
       aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
       title={!isActionCell ? displayName : action?.label}
+      colSpan={columnSpan}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
           // eslint-disable-next-line react/forbid-component-props
