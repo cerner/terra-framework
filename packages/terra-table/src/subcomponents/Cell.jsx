@@ -213,34 +213,6 @@ function Cell(props) {
   };
 
   /**
-   *
-   * @param {HTMLElement} element - The element to check if it is a text input
-   * @returns True if the element is a editable field.  Otherwise, false.
-   */
-  const isEditableField = (element) => {
-    const { tagName } = element;
-
-    // Check if text input field
-    if (tagName.toLowerCase() === 'input') {
-      const validTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
-      const inputType = element.type;
-      return validTypes.indexOf(inputType) >= 0;
-    }
-
-    // Check if textarea or select element
-    if (['textarea', 'select'].indexOf(tagName.toLowerCase()) >= 0) {
-      return true;
-    }
-
-    // Check if content editable div
-    if (element.hasAttribute('contentEditable') && element.getAttribute('contentEditable') !== false) {
-      return true;
-    }
-
-    return false;
-  };
-
-  /**
    * Handles the onDeactivate callback for FocusTrap component
    */
   const deactivateFocusTrap = () => {
@@ -322,9 +294,9 @@ function Cell(props) {
             }, event);
           }
 
-          // Allow default behavior if the event target is an editable field
-          if (!isEditableField(targetElement)) {
-            event.preventDefault(); // prevent the default scrolling
+          // Prevent scrolling when table cell element has focus
+          if (['td', 'th'].indexOf(targetElement.tagName.toLowerCase()) >= 0) {
+            event.preventDefault();
           }
           break;
         default:
