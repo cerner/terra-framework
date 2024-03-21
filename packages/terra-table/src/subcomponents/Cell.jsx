@@ -371,7 +371,7 @@ function Cell(props) {
   // Determine table cell header attribute values
   const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
   const CellTag = isRowHeader ? 'th' : 'td';
-  const columnHeaderId = `${tableId}-${columnId}-headerCell`;
+  const columnHeaderId = `${tableId}-${columnId.split('_')[0]}-headerCell`;
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
 

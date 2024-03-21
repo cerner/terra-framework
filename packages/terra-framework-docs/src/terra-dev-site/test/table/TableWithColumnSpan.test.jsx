@@ -52,7 +52,7 @@ const tableData = {
 
 const TableColumnSpan = () => (
   <Table
-    id="my-table-id"
+    id="table-with-column-span"
     overflowColumns={tableData.cols}
     rows={tableData.rows}
     ariaLabel="Table"

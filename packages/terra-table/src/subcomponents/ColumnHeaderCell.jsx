@@ -200,7 +200,6 @@ const defaultProps = {
   isDisplayVisible: true,
   isResizable: false,
   isResizeActive: false,
-  columnSpan: 1,
 };
 
 const ColumnHeaderCell = (props) => {
@@ -338,7 +337,7 @@ const ColumnHeaderCell = (props) => {
   // Add column highlight indicator based on color
   let columnHighlightIcon;
   // Column highlighting is supported for single column spans only
-  if (columnSpan === 1) {
+  if (!columnSpan || columnSpan === 1) {
     if (columnHighlightColor === ColumnHighlightColor.GREEN) {
       columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
     } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
@@ -427,7 +426,7 @@ const ColumnHeaderCell = (props) => {
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
-      scope={!isActionCell ? 'col' : undefined}
+      scope={!isActionCell ? (columnSpan > 1 ? 'colgroup': 'col') : undefined}
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
       aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
       title={!isActionCell ? displayName : action?.label}
