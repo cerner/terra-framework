@@ -193,7 +193,6 @@ class HookshotContent extends React.Component {
     return (
       <div
         {...customProps}
-        // eslint-disable-next-line react/forbid-dom-props
         className={cx(['content', customProps.className, { 'fixed-position': hookshotPostionFixed }])}
         ref={(element) => { this.contentNode = element; if (refCallback) { refCallback(element); } }}
       >
