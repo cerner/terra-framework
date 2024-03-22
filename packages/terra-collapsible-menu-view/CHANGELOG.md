@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Updated
+  * Updated to compare calculated width with available width to render collapsible menu items within available space.
+
 ## 6.95.0 - (March 19, 2024)
 
 * Updated
