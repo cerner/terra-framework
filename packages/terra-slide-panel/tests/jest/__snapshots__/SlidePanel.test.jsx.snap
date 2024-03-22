@@ -8,20 +8,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with a fullscr
   data-slide-panel-panel-size="small"
 >
   <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
-  <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
     className="panel"
@@ -44,20 +30,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with an open s
   data-slide-panel-panel-size="small"
 >
   <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
-  <div
     aria-hidden="false"
     aria-label="Terra.slidePanel.defaultPanelLabel"
     className="panel"
@@ -79,20 +51,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with fill 1`] 
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
-  <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
   <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
@@ -197,20 +155,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panel con
   data-slide-panel-panel-size="small"
 >
   <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
-  <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
     className="panel"
@@ -249,6 +193,9 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelAria
       tabIndex="-1"
       text="Terra.slidePanel.discloseWarning"
     />
+    <p>
+      Main Content
+    </p>
   </div>
   <div
     aria-hidden="true"
@@ -273,20 +220,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelBeha
   data-slide-panel-panel-size="small"
 >
   <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
-  <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
     className="panel"
@@ -309,20 +242,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelBeha
   data-slide-panel-panel-size="small"
 >
   <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
-  <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
     className="panel"
@@ -344,20 +263,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelPosi
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
-  <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
   <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
@@ -392,20 +297,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelPosi
       text="Terra.slidePanel.defaultPanelLabel"
     />
   </div>
-  <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
 </div>
 `;
 
@@ -416,20 +307,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelSize
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="large"
 >
-  <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
   <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
@@ -452,20 +329,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with panelSize
   data-slide-panel-panel-position="end"
   data-slide-panel-panel-size="small"
 >
-  <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
   <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
@@ -490,20 +353,6 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with the given
   data-test-attr="ahoy thar"
   id="my-slide-panel"
 >
-  <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
   <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
@@ -629,28 +478,6 @@ exports[`When custom props are used correctly applies the theme context classNam
         data-slide-panel-panel-size="small"
       >
         <div
-          aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-          aria-hidden="false"
-          className="main"
-          key="main"
-          role="main"
-          tabIndex="-1"
-        >
-          <VisuallyHiddenText
-            id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-            tabIndex="-1"
-            text="Terra.slidePanel.discloseWarning"
-          >
-            <span
-              className="visually-hidden-text"
-              id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-              tabIndex="-1"
-            >
-              Terra.slidePanel.discloseWarning
-            </span>
-          </VisuallyHiddenText>
-        </div>
-        <div
           aria-hidden="true"
           aria-label="Terra.slidePanel.defaultPanelLabel"
           className="panel"
@@ -694,6 +521,9 @@ exports[`When custom props are used sets aria-hidden to true on main content div
       tabIndex="-1"
       text="Terra.slidePanel.discloseWarning"
     />
+    <p>
+      Main Content
+    </p>
   </div>
   <div
     aria-hidden="false"
@@ -718,20 +548,6 @@ exports[`When custom props are used should override user provided attributes tha
   data-slide-panel-panel-size="small"
   data-test-attr="ahoy thar"
 >
-  <div
-    aria-describedby="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-    aria-hidden="false"
-    className="main"
-    key="main"
-    role="main"
-    tabIndex="-1"
-  >
-    <VisuallyHiddenText
-      id="detail-panel-warning-00000000-0000-0000-0000-000000000000"
-      tabIndex="-1"
-      text="Terra.slidePanel.discloseWarning"
-    />
-  </div>
   <div
     aria-hidden="true"
     aria-label="Terra.slidePanel.defaultPanelLabel"
