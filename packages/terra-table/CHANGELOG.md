@@ -4,6 +4,8 @@
 
 * Added
   * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element.
+  
+## 5.16.0 - (March 25, 2024)
 
 * Fixed
   * Fixed an issue where the click event for buttons inside table cells was not triggered by the spacebar.
