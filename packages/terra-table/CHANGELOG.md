@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Added
-  * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element.
+  * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element (terra-data-grid only).
 
 * Fixed
   * Fixed an issue where the click event for buttons inside table cells was not triggered by the spacebar.
