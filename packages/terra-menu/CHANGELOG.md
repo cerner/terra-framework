@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixes white space issue in large menu by setting hookshot position to fixed
+
 ## 6.89.0 - (March 14, 2024)
 
 * Changed

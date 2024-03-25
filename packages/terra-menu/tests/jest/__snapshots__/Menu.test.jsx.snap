@@ -76,6 +76,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
       contentHeight="auto"
       contentWidth="240"
       headerTitle=""
+      hookshotPostionFixed={true}
       isArrowDisplayed={false}
       isContentFocusDisabled={true}
       isHeaderDisabled={true}
@@ -200,7 +201,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               <div>
                 <div>
                   <div
-                    class="content content orion-fusion-theme"
+                    class="content content orion-fusion-theme fixed-position"
                     data-terra-popup-content="true"
                     role="dialog"
                   >
@@ -286,6 +287,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               contentWidth={240}
               contentWidthMax={1024}
               disableOnClickOutside={true}
+              hookshotPostionFixed={true}
               isFocusedDisabled={true}
               isHeaderDisabled={true}
               isHeightAutomatic={true}
@@ -319,6 +321,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       ]
                     }
                     excludeScrollbar={false}
+                    hookshotPostionFixed={true}
                     onContentResize={[Function]}
                     onEsc={[Function]}
                     onResize={[Function]}
@@ -340,6 +343,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                           "touchstart",
                         ]
                       }
+                      hookshotPostionFixed={true}
                       onContentResize={[Function]}
                       onEsc={[Function]}
                       onResize={[Function]}
@@ -351,7 +355,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       tabIndex={null}
                     >
                       <div
-                        className="content content orion-fusion-theme"
+                        className="content content orion-fusion-theme fixed-position"
                         data-terra-popup-content={true}
                         role="dialog"
                         tabIndex={null}
