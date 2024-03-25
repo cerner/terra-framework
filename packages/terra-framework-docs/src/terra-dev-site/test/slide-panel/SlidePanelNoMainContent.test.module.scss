@@ -3,26 +3,26 @@
       position: relative;
     }
 
-    .panel-container {
-        & > div:first-child {
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            right: 0;
-            left: 0;
-        }
+    .panel-container > div:first-child {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
     }
 
     .header-content {
       background-color: #d3d3d3;
+
       p {
         width: auto;
         display: inline-block;
         margin: 0 !important;
       }
-      & > :not(:last-child){
-        margin-right: 5px;
-      }
+    }
+
+    .header-content > :not(:last-child){
+      margin-right: 5px;
     }
   
     .header-content h3 {
