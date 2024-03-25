@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.42.0 - (March 25, 2024)
+
 * Changed
   * Allow hookshot position to be fixed
 

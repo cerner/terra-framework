@@ -1,6 +1,6 @@
 {
   "name": "terra-application-layout",
-  "version": "5.87.0",
+  "version": "5.88.0",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "author": "Cerner Corporation",
   "repository": {
@@ -36,7 +36,7 @@
     "prop-types": "^15.5.8",
     "react-router-dom": "^5.0.0",
     "terra-application-header-layout": "^3.40.0",
-    "terra-application-links": "^6.78.0",
+    "terra-application-links": "^6.79.0",
     "terra-application-menu-layout": "^3.32.0",
     "terra-application-name": "^3.44.0",
     "terra-application-utility": "^2.56.0",
@@ -44,8 +44,8 @@
     "terra-icon": "^3.19.0",
     "terra-modal-manager": "^6.75.0",
     "terra-navigation-layout": "^5.40.0",
-    "terra-navigation-side-menu": "^2.52.0",
-    "terra-popup": "^6.78.0",
+    "terra-navigation-side-menu": "^2.53.0",
+    "terra-popup": "^6.79.0",
     "terra-theme-context": "^1.9.0"
   },
   "peerDependencies": {
