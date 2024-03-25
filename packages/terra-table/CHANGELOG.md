@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.16.0 - (March 25, 2024)
+
 * Fixed
   * Fixed an issue where the click event for buttons inside table cells was not triggered by the spacebar.
   

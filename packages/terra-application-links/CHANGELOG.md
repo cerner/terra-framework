@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.79.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.78.0 - (March 14, 2024)
 
 * Changed
