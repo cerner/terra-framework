@@ -107,6 +107,15 @@ describe('When a SlidePanel is rendered', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render a SlidePanel without main content if mainContent prop was not provided', () => {
+    const slidePanel = (
+      <SlidePanel />
+    );
+    const wrapper = enzymeIntl.shallowWithIntl(slidePanel).dive();
+    const mainContent = wrapper.find('.main');
+    expect(mainContent.length).toBe(0);
+  });
+
   it('should render a SlidePanel with panel content', () => {
     const slidePanel = (
       <SlidePanel
