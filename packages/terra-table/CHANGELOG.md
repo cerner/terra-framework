@@ -3,8 +3,8 @@
 ## Unreleased
 
 * Added
-  * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element.
-  
+  * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element (terra-data-grid only).
+
 ## 5.16.0 - (March 25, 2024)
 
 * Fixed
