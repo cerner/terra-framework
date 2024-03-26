@@ -24,6 +24,7 @@ const PlaceholderListItem = ({
       className={classNames}
       onClick={onSelect}
       onKeyDown={keyDown}
+      role="tab"
     >
       {children}
     </li>
