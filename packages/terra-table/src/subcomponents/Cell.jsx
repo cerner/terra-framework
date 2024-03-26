@@ -229,9 +229,14 @@ function Cell(props) {
 
   useEffect(() => {
     if (isGridContext) {
-      setIsInteractable(hasFocusableElements());
+      const autoFocusableElement = getAutoFocusableElement();
+      if (autoFocusableElement !== null) {
+        autoFocusableElement.ariaLabel = `${autoFocusableElement.textContent}. ${intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' })}`;
+      } else {
+        setIsInteractable(hasFocusableElements());
+      }
     }
-  }, [isGridContext]);
+  }, [intl, isGridContext]);
 
   const handleMouseDown = (event) => {
     if (rowSelectionMode && (event.button === 2 || hasFocusableElements())) {
@@ -274,10 +279,10 @@ function Cell(props) {
               autoFocusableElement.focus();
             } else {
               setIsFocusTrapEnabled(true);
+            }
 
-              if (gridContext.setCellAriaLiveMessage) {
-                gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
-              }
+            if (gridContext.setCellAriaLiveMessage) {
+              gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
             }
 
             event.stopPropagation();
@@ -288,6 +293,10 @@ function Cell(props) {
           // Handle escape key event when the cell content is auto focusable
           if (isGridContext && targetElement !== cellRef.current && hasOnlySingleButtonOrHyperlink()) {
             cellRef.current.focus();
+
+            if (gridContext.setCellAriaLiveMessage) {
+              gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.resume-navigation' }));
+            }
           }
           break;
         case KeyCode.KEY_SPACE:
