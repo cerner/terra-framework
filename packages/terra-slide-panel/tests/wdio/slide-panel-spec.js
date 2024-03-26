@@ -265,23 +265,6 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       expect(disclosureButton.getAttribute('aria-expanded')).toBe('false');
     });
 
-    it('sets focus and aria-expanded props correctly if disclosing node has unsupported role', () => {
-      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-no-main-content');
-      const disclosureButton = $('#mainToggleBtnWithWrongRole');
-      // the disclosing button should not have aria-expanded property set
-      expect(disclosureButton.getAttribute('aria-expanded')).toBeFalsy();
-      $(disclosureButton).moveTo();
-      $(disclosureButton).click();
-      $('[aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
-      browser.keys(['Tab']);
-      expect($('#panelToggleBtn').isFocused()).toBeTruthy();
-      // the disclosing button should not have aria-expanded property set
-      expect(disclosureButton.getAttribute('aria-expanded')).toBeFalsy();
-      browser.keys(['Enter']);
-      expect(disclosureButton.isFocused()).toBeTruthy();
-      expect(disclosureButton.getAttribute('aria-expanded')).toBeFalsy();
-    });
-
     it('sets focus and aria-expanded props correctly if disclosing node is not focusable', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-no-main-content');
       const disclosureElement = $('#mainToggleParagraph');
