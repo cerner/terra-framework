@@ -85,32 +85,6 @@ const defaultProps = {
   panelSize: 'small',
 };
 
-/**
- * This method ensures that aria-expanded attribute is allowed with the node role to avoid accessibility violations.
- * More info on associated roles can be found here: https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-expanded#associated_roles
- * @param {HTMLElement} node - a node to check
- * @returns true if node's role is compatible with aria-expanded attribute
- */
-const roleIsCompartible = (node) => {
-  const role = node.getAttribute('role');
-  return (
-    role === 'application'
-    || role === 'button'
-    || role === 'checkbox'
-    || role === 'combobox'
-    || role === 'gridcell'
-    || role === 'link'
-    || role === 'listbox'
-    || role === 'menuitem'
-    || role === 'row'
-    || role === 'rowheader'
-    || role === 'tab'
-    || role === 'treeitem'
-    || role === null
-    || role === undefined
-  );
-};
-
 class SlidePanel extends React.Component {
   constructor(props) {
     super(props);
@@ -131,10 +105,7 @@ class SlidePanel extends React.Component {
     if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       if (this.disclosingNode?.focus) {
         // Return focus to the disclosing element
-        if (this.disclosingNode.getAttribute('aria-expanded')) {
-          // Set aria-expanded attribute to false for nodes that had that attribute only
-          this.disclosingNode.setAttribute('aria-expanded', 'false');
-        }
+        this.disclosingNode.setAttribute('aria-expanded', 'false');
         this.disclosingNode.focus();
         return;
       }
@@ -156,10 +127,7 @@ class SlidePanel extends React.Component {
 
   setDisclosingNode(node) {
     if (node) {
-      if (roleIsCompartible(node)) {
-        // Set aria-expanded attribute to true for nodes with associated roles or no role only
-        node.setAttribute('aria-expanded', 'true');
-      }
+      node.setAttribute('aria-expanded', 'true');
       this.disclosingNode = node;
     }
   }
