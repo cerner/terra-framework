@@ -200,17 +200,22 @@ function Cell(props) {
 
   /**
   * Determine if a cell only has a single button or hyperlink
-  * @param {HTMLElement} element - The element to check if it contains only a button or hyperlink
-  * @returns True if the element only has a single button or hyperlink. Otherwise, false.
+  * @returns The auto focusable button or anchor element. If there is no auto focusable element, null is returned.
   */
-  const hasOnlySingleButtonOrHyperlink = (node) => {
-    const focusableElements = getFocusableElements(node);
+  const getAutoFocusableElement = () => {
+    const focusableElements = getFocusableElements(cellRef.current);
     if (focusableElements.length > 1) {
-      return false;
+      return null;
     }
 
-    return node.querySelector('a, button');
+    return cellRef.current.querySelector('a, button');
   };
+
+  /**
+  * Determine if a cell only has a single button or hyperlink
+  * @returns True if the element only has a single button or hyperlink. Otherwise, false.
+  */
+  const hasOnlySingleButtonOrHyperlink = () => getAutoFocusableElement() !== null;
 
   /**
    * Handles the onDeactivate callback for FocusTrap component
@@ -224,9 +229,19 @@ function Cell(props) {
 
   useEffect(() => {
     if (isGridContext) {
-      setIsInteractable(hasFocusableElements());
+      const autoFocusableElement = getAutoFocusableElement();
+      if (autoFocusableElement !== null) {
+        // Update aria live region when auto focusable element is given focus
+        autoFocusableElement.addEventListener('focus', () => {
+          if (gridContext.setCellAriaLiveMessage) {
+            gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
+          }
+        });
+      } else {
+        setIsInteractable(hasFocusableElements());
+      }
     }
-  }, [isGridContext]);
+  }, [gridContext, intl, isGridContext]);
 
   const handleMouseDown = (event) => {
     if (rowSelectionMode && (event.button === 2 || hasFocusableElements())) {
@@ -262,19 +277,33 @@ function Cell(props) {
       switch (key) {
         case KeyCode.KEY_RETURN:
           // Lock focus into component
-          if (isGridContext && hasFocusableElements()) {
+          if (isGridContext && targetElement === cellRef.current && hasFocusableElements()) {
             // If the current cell has only a single button or hyperlink component, do not enable focus trap
-            if (hasOnlySingleButtonOrHyperlink(cellRef.current)) {
-              break;
+            const autoFocusableElement = getAutoFocusableElement();
+            if (autoFocusableElement !== null) {
+              autoFocusableElement.focus();
+            } else {
+              setIsFocusTrapEnabled(true);
             }
 
-            setIsFocusTrapEnabled(true);
-
+            // Update aria live region when cell user "dives into" cell
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
             }
+
             event.stopPropagation();
             event.preventDefault();
+          }
+          break;
+        case KeyCode.KEY_ESCAPE:
+          // Handle escape key event when the cell content is auto focusable
+          if (isGridContext && targetElement !== cellRef.current && hasOnlySingleButtonOrHyperlink()) {
+            cellRef.current.focus();
+
+            // Update aria live region when focus is returned to table cell element
+            if (gridContext.setCellAriaLiveMessage) {
+              gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.resume-navigation' }));
+            }
           }
           break;
         case KeyCode.KEY_SPACE:
