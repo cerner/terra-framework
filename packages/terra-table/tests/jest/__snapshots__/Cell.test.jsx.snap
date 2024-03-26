@@ -261,6 +261,11 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
           >
             Button
           </button>
+          <button
+            type="button"
+          >
+            Button 2
+          </button>
         </div>
       </FocusTrap>
       <VisuallyHiddenText

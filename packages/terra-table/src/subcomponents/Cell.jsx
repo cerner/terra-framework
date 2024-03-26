@@ -231,12 +231,17 @@ function Cell(props) {
     if (isGridContext) {
       const autoFocusableElement = getAutoFocusableElement();
       if (autoFocusableElement !== null) {
-        autoFocusableElement.ariaLabel = `${autoFocusableElement.textContent}. ${intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' })}`;
+        // Update aria live region when auto focusable element is given focus
+        autoFocusableElement.addEventListener('focus', () => {
+          if (gridContext.setCellAriaLiveMessage) {
+            gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
+          }
+        });
       } else {
         setIsInteractable(hasFocusableElements());
       }
     }
-  }, [intl, isGridContext]);
+  }, [gridContext, intl, isGridContext]);
 
   const handleMouseDown = (event) => {
     if (rowSelectionMode && (event.button === 2 || hasFocusableElements())) {
@@ -281,6 +286,7 @@ function Cell(props) {
               setIsFocusTrapEnabled(true);
             }
 
+            // Update aria live region when cell user "dives into" cell
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
             }
@@ -294,6 +300,7 @@ function Cell(props) {
           if (isGridContext && targetElement !== cellRef.current && hasOnlySingleButtonOrHyperlink()) {
             cellRef.current.focus();
 
+            // Update aria live region when focus is returned to table cell element
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.resume-navigation' }));
             }

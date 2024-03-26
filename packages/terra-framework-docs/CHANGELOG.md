@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the `terra-data-grid` and `terra-table` focusable cell examples to remove confusion caused by column header names.
+
 ## 1.77.0 - (March 25, 2024)
 
 * Changed
