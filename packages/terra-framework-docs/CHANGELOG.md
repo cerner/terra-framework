@@ -16,6 +16,9 @@
   * Updated `terra-navigation-side-menu` example.
   * Updated single row selection example of `terra-table`.
 
+* Added
+  * Added test example for `terra-slide-panel` with no `mainContent` prop.
+
 ## 1.75.0 - (March 19, 2024)
 
 * Changed
@@ -24,7 +27,7 @@
 ## 1.74.0 - (March 14, 2024)
 
 * Added
-  * Added an example of a `compact-interactive-list` with no borders.
+  * Added an example for `terra-compact-interactive-list` with no borders.
 
 * Changed
   * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.

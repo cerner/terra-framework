@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated capturing the disclosing node to accommodate for cases with no `mainContent`.
+
 ## 3.47.0 - (December 18, 2023)
 
 * Changed

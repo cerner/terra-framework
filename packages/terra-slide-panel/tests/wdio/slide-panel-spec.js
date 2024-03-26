@@ -65,10 +65,15 @@ Terra.describeViewports('Slide panel', ['large'], () => {
   describe('Toggle the slide panel click', () => {
     it('Opens panel and focuses on panel', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
-      $('#test-toggle').click();
+      const disclosingButton = $('#test-toggle');
+      // the disclosing button should not have aria-expanded property yet
+      expect(disclosingButton.getAttribute('aria-expanded')).toBeFalsy();
+      disclosingButton.click();
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.pause(150);
       expect($('[aria-label="Panel content area"]').isFocused()).toBeTruthy();
+      // the disclosing button should have aria-expanded property set to true
+      expect(disclosingButton.getAttribute('aria-expanded')).toBe('true');
 
       // On Tab Press focuses on the button inside the panel
       browser.keys(['Tab']);
@@ -80,17 +85,25 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
 
       browser.keys(['Tab']);
-      expect($('#test-toggle').isFocused()).toBeTruthy();
+      const disclosingButton = $('#test-toggle');
+      // the disclosing button should not have aria-expanded property yet
+      expect(disclosingButton.getAttribute('aria-expanded')).toBeFalsy();
+      expect(disclosingButton.isFocused()).toBeTruthy();
       browser.keys(['Enter']);
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.pause(150);
 
       browser.keys(['Tab']);
       expect($('#focus-button').isFocused()).toBeTruthy();
+      // the disclosing button should have aria-expanded property set to true
+      expect(disclosingButton.getAttribute('aria-expanded')).toBe('true');
+
       browser.keys(['Enter']);
       $('#test-slide [aria-label="Panel content area"][aria-hidden="true"]').waitForExist();
 
       expect($('#test-toggle').isFocused()).toBeTruthy();
+      // the disclosing button should have aria-expanded property set to false
+      expect(disclosingButton.getAttribute('aria-expanded')).toBe('false');
 
       browser.pause(150);
 
@@ -199,28 +212,73 @@ Terra.describeViewports('Slide panel', ['large'], () => {
   describe('Non-focusable element used to disclose slide panel', () => {
     it('does not focus SVG when it is the disclosing node', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-svg-toggle');
-      $('#test-click-svg').moveTo();
-      $('#test-click-svg').click();
+      const disclosingElement = $('#test-click-svg');
+      // the disclosing non-focusable element should not have aria-expanded property set
+      expect(disclosingElement.getAttribute('aria-expanded')).toBeFalsy();
+      $(disclosingElement).moveTo();
+      $(disclosingElement).click();
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.keys(['Tab']);
       expect($('#focus-button').isFocused()).toBeTruthy();
+      // the disclosing non-focusable element should not have aria-expanded property set
+      expect(disclosingElement.getAttribute('aria-expanded')).toBeFalsy();
       browser.keys(['Enter']);
 
-      expect($('body').isFocused()).toBeTruthy();
-      expect($('#test-click-svg').isFocused()).toBeFalsy();
+      expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
+      expect($(disclosingElement).isFocused()).toBeFalsy();
     });
 
     it('focuses main node when disclosing node has undefined focus', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-svg-toggle');
-      $('#test-p-click').moveTo();
-      $('#test-p-click').click();
+      const disclosingElement = $('#test-p-click');
+      // the disclosing non-focusable element should not have aria-expanded property set
+      expect(disclosingElement.getAttribute('aria-expanded')).toBeFalsy();
+      disclosingElement.moveTo();
+      disclosingElement.click();
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.keys(['Tab']);
       expect($('#focus-button').isFocused()).toBeTruthy();
+      // the disclosing non-focusable element should not have aria-expanded property set
+      expect(disclosingElement.getAttribute('aria-expanded')).toBeFalsy();
       browser.keys(['Enter']);
 
       expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
       expect($('#test-click-svg').isFocused()).toBeFalsy();
+    });
+  });
+
+  describe('Slide panel with no mainContent prop passed', () => {
+    it('sets focus and aria-expanded props correctly if disclosing node is a regular button', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-no-main-content');
+      const disclosureButton = $('#mainToggleBtn');
+      // the disclosing button should not have aria-expanded property set
+      expect(disclosureButton.getAttribute('aria-expanded')).toBeFalsy();
+      $(disclosureButton).moveTo();
+      $(disclosureButton).click();
+      $('[aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
+      browser.keys(['Tab']);
+      expect($('#panelToggleBtn').isFocused()).toBeTruthy();
+      // the disclosing button should have aria-expanded property set
+      expect(disclosureButton.getAttribute('aria-expanded')).toBe('true');
+      browser.keys(['Enter']);
+      expect(disclosureButton.isFocused()).toBeTruthy();
+      expect(disclosureButton.getAttribute('aria-expanded')).toBe('false');
+    });
+
+    it('sets focus and aria-expanded props correctly if disclosing node is not focusable', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-no-main-content');
+      const disclosureElement = $('#mainToggleParagraph');
+      // the disclosing button should not have aria-expanded property set
+      expect(disclosureElement.getAttribute('aria-expanded')).toBeFalsy();
+      $(disclosureElement).moveTo();
+      $(disclosureElement).click();
+      $('[aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
+      browser.keys(['Tab']);
+      expect($('#panelToggleBtn').isFocused()).toBeTruthy();
+      // the disclosing button should not have aria-expanded property set
+      expect(disclosureElement.getAttribute('aria-expanded')).toBeFalsy();
+      browser.keys(['Enter']);
+      expect(disclosureElement.isFocused()).toBeFalsy();
     });
   });
 });
