@@ -54,6 +54,16 @@ const propTypes = {
   level: PropTypes.number,
   /**
    * @private
+   * The position of the item among its sibling items in the same group (subfolder).
+   */
+  posInSet: PropTypes.number,
+  /**
+   * @private
+   * Number of sibling items in the same group (subfolder).
+   */
+  setSize: PropTypes.number,
+  /**
+   * @private
    * Ref to the parent folder of the current item.
    */
   parentRef: PropTypes.oneOfType([
@@ -83,6 +93,8 @@ const FolderTreeItem = ({
   level,
   onSelect,
   onToggle,
+  posInSet,
+  setSize,
   subfolderItems,
   parentRef,
   intl,
@@ -103,11 +115,13 @@ const FolderTreeItem = ({
       hidden={!isExpanded}
       ref={subFolderNode}
     >
-      {subfolderItems.map((item) => (
+      {subfolderItems.map((item, index) => (
         <FolderTreeItem
           {...item.props}
           intl={intl}
           level={level + 1}
+          setSize={subfolderItems.length}
+          posInSet={index + 1}
           parentRef={itemNode}
         />
       ))}
@@ -201,6 +215,8 @@ const FolderTreeItem = ({
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelectable && isSelected}
         onClick={isFolder ? handleToggle : handleSelect}
+        aria-posinset={posInSet}
+        aria-setsize={setSize}
         onKeyDown={handleKeyDown}
         data-item-show-focus
         tabIndex={-1}
@@ -231,7 +247,7 @@ const FolderTreeItem = ({
                   text={`, ${selectableAnnouncement}`}
                 />
               </span>
-)}
+            )}
             alignFitStart="center"
           />
         </span>
