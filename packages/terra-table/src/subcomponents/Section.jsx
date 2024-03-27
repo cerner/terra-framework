@@ -11,6 +11,8 @@ import GridContext, { GridConstants } from '../utils/GridContext';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
+import SubSection from './Subsection';
+import subsectionShape from '../proptypes/subsectionShape';
 import columnShape from '../proptypes/columnShape';
 import styles from './Section.module.scss';
 
@@ -57,6 +59,11 @@ const propTypes = {
    * An array of row objects to be rendered within the section.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+   * An array of subsection objects to be rendered within the section.
+   */
+  subsections: PropTypes.arrayOf(subsectionShape),
 
   /**
    * Enables row selection capabilities for the table.
@@ -144,6 +151,7 @@ function Section(props) {
     rowHeight,
     rowHeaderIndex,
     rows,
+    subsections,
     onSectionSelect,
     rowMinimumHeight,
     boundingWidth,
@@ -161,6 +169,87 @@ function Section(props) {
   const handleClick = useCallback(() => {
     onSectionSelect(id);
   }, [id, onSectionSelect]);
+
+  if(subsections) {
+    return (
+      <>
+        <tbody>
+          {/* Render section rows */}
+          {!isHidden && (
+          <tr
+            aria-rowindex={sectionRowIndex}
+            className={cx('header-row', theme.className)}
+            data-section-id={id}
+          >
+            <th
+              id={`${tableId}-${id}`}
+              className={cx('header-cell')}
+              align="left"
+              colSpan={displayedColumns.length}
+              role="columnheader"
+              scope="col"
+              tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
+            >
+              <SectionHeader
+                className={cx('section-header')}
+                text={text}
+                isOpen={hasSectionButton ? !isCollapsed : undefined}
+                onClick={hasSectionButton ? handleClick : undefined}
+                isTitleSticky
+                boundedWidth={boundingWidth}
+              />
+            </th>
+          </tr>
+          )}
+        </tbody>
+        {!isCollapsed && subsections.map((subsection) => (
+          <>
+            <tbody className={cx('subsection-header', {
+              collapsed: isCollapsed,
+              collapsible: isCollapsible,
+            }, theme.className)}
+            >
+              <SubSection
+                id={subsection.id}
+                tableId={tableId}
+                subSectionRowIndex={subsection.subSectionRowIndex}
+                text={subsection.text}
+                displayedColumns={displayedColumns}
+              />
+            </tbody>
+            <tbody className={cx('subsection', {
+              collapsed: isCollapsed,
+              collapsible: isCollapsible,
+            }, theme.className)}
+            >
+              {/* Render section rows */}
+              {!isCollapsed && subsection.rows.map((row, rowIndex) => (
+                <Row
+                  rowIndex={subsection.subSectionRowIndex + (rowIndex + 1)}
+                  key={row.id}
+                  height={rowHeight}
+                  id={row.id}
+                  sectionId={!isHidden ? id : undefined}
+                  tableId={tableId}
+                  cells={row.cells}
+                  ariaLabel={row.ariaLabel}
+                  rowSelectionMode={rowSelectionMode}
+                  displayedColumns={displayedColumns}
+                  rowHeaderIndex={rowHeaderIndex}
+                  onCellSelect={onCellSelect}
+                  isSelected={row.isSelected}
+                  isTableStriped={isTableStriped}
+                  rowMinimumHeight={rowMinimumHeight}
+                  firstRowId={firstRowId}
+                  lastRowId={lastRowId}
+                />
+              ))}
+            </tbody>
+          </>
+        ))}
+      </>
+    );
+  }
 
   return (
     <>

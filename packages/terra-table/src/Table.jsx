@@ -316,10 +316,18 @@ function Table(props) {
   const headerRowCount = hasVisibleColumnHeaders ? (hasColumnHeaderActions ? 2 : 1) : 0;
 
   // Calculate total table row count
+  const subSectionReducer = (rowCount, currentSubsection) => {
+    // eslint-disable-next-line no-param-reassign
+    currentSubsection.subSectionRowIndex = rowCount + 1;
+    return rowCount + currentSubsection.rows.length + 1;
+  }
   const tableSectionReducer = (rowCount, currentSection) => {
     if (currentSection.id !== defaultSectionRef.current) {
       // eslint-disable-next-line no-param-reassign
       currentSection.sectionRowIndex = rowCount + 1;
+      if(currentSection.subsections) {
+        return currentSection.subsections.reduce(subSectionReducer, rowCount);
+      }
       return rowCount + currentSection.rows.length + 1;
     }
     // eslint-disable-next-line no-param-reassign
@@ -361,7 +369,12 @@ function Table(props) {
   // useEffect for row updates
   useEffect(() => {
     const previousSelectedRows = [...selectedRows.current];
-    const selectableRows = tableSections.flatMap(section => (section.rows.map(row => (row))));
+    const selectableRows = tableSections.flatMap(section => {
+      if(section.subsections) {
+        return section.subsections.flatMap(subsection => (subsection.rows.map(row => (row))))
+      }
+      return section.rows.map(row => (row));
+    });
     selectedRows.current = selectableRows.filter((row) => row.isSelected).map(row => (row.id));
 
     if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
@@ -673,6 +686,7 @@ function Table(props) {
               isTableStriped={isStriped}
               text={section.text}
               rows={section.rows}
+              subsections={section.subsections}
               rowHeight={rowHeight}
               rowSelectionMode={rowSelectionMode}
               displayedColumns={displayedColumns}
