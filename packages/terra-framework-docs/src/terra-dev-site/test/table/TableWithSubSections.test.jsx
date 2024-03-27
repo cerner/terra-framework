@@ -123,7 +123,7 @@ const TableWithSections = () => {
 
   return (
     <Table
-      id="table-with-sections"
+      id="table-with-sub-sections"
       pinnedColumns={tableData.cols.slice(0, 2)}
       overflowColumns={tableData.cols.slice(2)}
       sections={tableSections}
