@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * "Skip to content" button's logic that adds and removes `tabindex` attribute for the main element was removed to fix unexpected focus behavior for users using screen readers.
+
 ## 3.40.0 - (December 18, 2023)
 
 * Changed
