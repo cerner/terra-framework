@@ -56,12 +56,12 @@ const propTypes = {
    * @private
    * The position of the item among its sibling items in the same group (subfolder).
    */
-  posInSet: PropTypes.number,
+  ariaPosInSet: PropTypes.number,
   /**
    * @private
    * Number of sibling items in the same group (subfolder).
    */
-  setSize: PropTypes.number,
+  ariaSetSize: PropTypes.number,
   /**
    * @private
    * Ref to the parent folder of the current item.
@@ -93,8 +93,8 @@ const FolderTreeItem = ({
   level,
   onSelect,
   onToggle,
-  posInSet,
-  setSize,
+  ariaPosInSet,
+  ariaSetSize,
   subfolderItems,
   parentRef,
   intl,
@@ -120,8 +120,8 @@ const FolderTreeItem = ({
           {...item.props}
           intl={intl}
           level={level + 1}
-          setSize={subfolderItems.length}
-          posInSet={index + 1}
+          ariaSetSize={subfolderItems.length}
+          ariaPosInSet={index + 1}
           parentRef={itemNode}
         />
       ))}
@@ -215,8 +215,8 @@ const FolderTreeItem = ({
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelectable && isSelected}
         onClick={isFolder ? handleToggle : handleSelect}
-        aria-posinset={posInSet}
-        aria-setsize={setSize}
+        aria-posinset={ariaPosInSet}
+        aria-setsize={ariaSetSize}
         onKeyDown={handleKeyDown}
         data-item-show-focus
         tabIndex={-1}
