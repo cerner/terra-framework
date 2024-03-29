@@ -309,6 +309,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
+                "isResizable": undefined,
                 "isSelectable": true,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
@@ -317,6 +318,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
+                "isResizable": undefined,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 200,
@@ -324,6 +326,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
+                "isResizable": undefined,
                 "isSelectable": false,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
@@ -368,7 +371,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
-                width={40}
+                width={false}
               >
                 <ColumnHeaderCell
                   columnId="table-rowSelectionColumn"
@@ -418,7 +421,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
-                  width={40}
+                  width={false}
                 >
                   <th
                     className="column-header pinned"
@@ -430,7 +433,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
                       }
                     }
                     title="Terra.table.row-selection-header-display"
@@ -476,7 +478,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
-                width={200}
               >
                 <ColumnHeaderCell
                   columnId="Column-0"
@@ -526,7 +527,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
-                  width={200}
                 >
                   <th
                     className="column-header selectable pinned"
@@ -540,7 +540,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 40,
-                        "width": "200px",
                       }
                     }
                     title=" Vitals"
@@ -587,7 +586,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
-                width={200}
               >
                 <ColumnHeaderCell
                   columnId="Column-1"
@@ -637,7 +635,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
-                  width={200}
                 >
                   <th
                     className="column-header pinned last-pinned-column"
@@ -649,7 +646,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 240,
-                        "width": "200px",
                       }
                     }
                     title="March 16"
@@ -695,7 +691,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
-                width={200}
               >
                 <ColumnHeaderCell
                   columnId="Column-2"
@@ -745,7 +740,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
-                  width={200}
                 >
                   <th
                     className="column-header"
@@ -757,7 +751,6 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
                       }
                     }
                     title="March 17"
