@@ -326,7 +326,7 @@ function Table(props) {
       // eslint-disable-next-line no-param-reassign
       currentSection.sectionRowIndex = rowCount + 1;
       if(currentSection.subsections) {
-        return currentSection.subsections.reduce(subSectionReducer, rowCount);
+        return currentSection.subsections.reduce(subSectionReducer, rowCount + 1);
       }
       return rowCount + currentSection.rows.length + 1;
     }

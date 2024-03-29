@@ -27,7 +27,7 @@ const propTypes = {
   /**
    * The subsection's row index position in the table.
    */
-   subSectionRowIndex: PropTypes.number,
+  subSectionRowIndex: PropTypes.number,
 
   /**
    * A text string to render within the section header.

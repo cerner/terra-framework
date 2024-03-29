@@ -4,18 +4,17 @@
 :local {
   .subsection {
     background-color: #dedfe0;
-    font-size: 0.808571428571rem;
-    font-weight: 700;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    border-bottom: 1px solid #c8cacb;
-    padding-left: 1.2142857143rem;
+    font-size: var(--terra-table-subsection-font-size, 0.808571428571rem);
+    font-weight: var(--terra-table-subsection-font-weight, 700);
+    font-family: var(--terra-table-subsection-font-family, "Helvetica Neue", Helvetica, Arial, sans-serif);
+    border-bottom:  var(--terra-table-subsection-border-bottom, 1px solid #c8cacb);
     padding-top: 0.3571428571rem;
     padding-bottom: 0.3571428571rem;
     margin: 0;
 
     .sticky {
       position: sticky;
-      left: 18px;
+      left: 1.2142857143rem;
     }
   }
 
