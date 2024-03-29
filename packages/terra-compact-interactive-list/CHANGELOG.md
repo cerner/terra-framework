@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated to have no row headers if list has only one semantic column.
+
 ## 1.14.0 - (March 29, 2024)
 
 * Changed
