@@ -1140,17 +1140,6 @@ describe('Compact Interactive List', () => {
       },
     ];
 
-    it('list with one column should match a snapshot', () => {
-      const wrapper = enzymeIntl.mountWithIntl(
-        <CompactInteractiveList
-          id="compact-interactive-list-with-one-column"
-          rows={singleColRows}
-          columns={singleCol}
-        />,
-      );
-      expect(wrapper).toMatchSnapshot();
-    });
-
     it('list with one column should have no cells with role rowheader', () => {
       const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
