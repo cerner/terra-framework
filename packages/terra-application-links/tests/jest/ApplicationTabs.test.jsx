@@ -11,6 +11,11 @@ it('should render ApplicationTabs with links and alignment', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
+it('should render ApplicationTabs with links and alignment and onTabClick handler', () => {
+  const wrapper = enzyme.shallow(<div><ApplicationTabs links={testLinkConfig} alignment="start" onTabClick={() => {}} /></div>);
+  expect(wrapper).toMatchSnapshot();
+});
+
 it('should render ApplicationTabs with icons', () => {
   const subject = (
     <div>
