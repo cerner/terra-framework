@@ -5,6 +5,7 @@
 * Changed
   * Updated the `terra-data-grid` and `terra-table` focusable cell examples to remove confusion caused by column header names.
   * Updated `terra-compact-interactive-list` examples to remove redundant button announcement.
+  * Updated `terra-folder-tree` expand/collapse examples to be consistent with screenreader announcements.
 
 ## 1.77.0 - (March 25, 2024)
 
