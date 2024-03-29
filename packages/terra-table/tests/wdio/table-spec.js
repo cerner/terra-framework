@@ -192,7 +192,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     it('Validates with closed sections', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-collapsible-sections-and-sub-sections');
       Terra.validates.element('table-with-collasped-sub-sections', { selector: tableWithSubSectionsSelector });
-    })
+    });
   });
 
   describe('With row selection', () => {

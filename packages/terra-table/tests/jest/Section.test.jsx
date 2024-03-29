@@ -124,9 +124,8 @@ describe('Section', () => {
       />,
     );
 
-    const subSectionReducer = (rowCount, currentSubsection) => {
-      return rowCount + currentSubsection.rows.length;
-    }
+    const subSectionReducer = (rowCount, currentSubsection) => rowCount + currentSubsection.rows.length;
+
     // The number of rows should match the given data.
     expect(wrapper.find(Row)).toHaveLength(tableData.subsections.reduce(subSectionReducer, 0));
   });

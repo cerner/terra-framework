@@ -320,12 +320,12 @@ function Table(props) {
     // eslint-disable-next-line no-param-reassign
     currentSubsection.subSectionRowIndex = rowCount + 1;
     return rowCount + currentSubsection.rows.length + 1;
-  }
+  };
   const tableSectionReducer = (rowCount, currentSection) => {
     if (currentSection.id !== defaultSectionRef.current) {
       // eslint-disable-next-line no-param-reassign
       currentSection.sectionRowIndex = rowCount + 1;
-      if(currentSection.subsections) {
+      if (currentSection.subsections) {
         return currentSection.subsections.reduce(subSectionReducer, rowCount + 1);
       }
       return rowCount + currentSection.rows.length + 1;
@@ -370,8 +370,8 @@ function Table(props) {
   useEffect(() => {
     const previousSelectedRows = [...selectedRows.current];
     const selectableRows = tableSections.flatMap(section => {
-      if(section.subsections) {
-        return section.subsections.flatMap(subsection => (subsection.rows.map(row => (row))))
+      if (section.subsections) {
+        return section.subsections.flatMap(subsection => (subsection.rows.map(row => (row))));
       }
       return section.rows.map(row => (row));
     });

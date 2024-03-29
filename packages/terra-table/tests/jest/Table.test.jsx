@@ -233,7 +233,7 @@ const tableSubSectionData = {
             },
           ],
         },
-      ]
+      ],
     },
   ],
 };
@@ -534,7 +534,7 @@ describe('Table', () => {
     expect(sectionHeader1.at(2).props().colSpan).toBe(tableSectionData.cols.length);
     expect(sectionHeader1.at(2).props().scope).toBe('col');
 
-    // Validate rows of the first subsection 
+    // Validate rows of the first subsection
     const section1Row1 = section1.find('.row').at(0);
 
     expect(section1Row1.props()['aria-rowindex']).toBe(4);
@@ -550,7 +550,7 @@ describe('Table', () => {
     const row1Cell2 = section1Row1.find('.cell').at(1);
     expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
 
-    // Validate rows of the second subsection 
+    // Validate rows of the second subsection
     const section1Row3 = section1.find('.row').at(2);
 
     expect(section1Row3.props()['aria-rowindex']).toBe(7);

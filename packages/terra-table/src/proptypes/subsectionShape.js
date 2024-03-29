@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import rowShape from './rowShape';
-import subsectionShape from './subsectionShape';
 
 const sectionShape = PropTypes.shape({
   /**

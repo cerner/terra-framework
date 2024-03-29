@@ -11,7 +11,7 @@ import GridContext, { GridConstants } from '../utils/GridContext';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
-import SubSection from './Subsection';
+import SubSection from './SubSection';
 import subsectionShape from '../proptypes/subsectionShape';
 import columnShape from '../proptypes/columnShape';
 import styles from './Section.module.scss';
@@ -170,7 +170,7 @@ function Section(props) {
     onSectionSelect(id);
   }, [id, onSectionSelect]);
 
-  if(subsections) {
+  if (subsections) {
     return (
       <>
         <tbody>
