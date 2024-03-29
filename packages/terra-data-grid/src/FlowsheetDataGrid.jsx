@@ -196,20 +196,41 @@ function FlowsheetDataGrid(props) {
 
     const newSections = [...sections];
     newSections.forEach((section, sectionIndex) => {
-      const newRows = [...section.rows];
-      newRows.forEach((row, rowIndex) => {
-        const newCells = [...row.cells];
-        newCells.forEach((cell, cellIndex) => {
-          newCells[cellIndex].isSelectable = cell.isSelectable !== false;
-          // Cell content has no result and is not a row header (first column), set content to "No result".
-          if (contentHasNoResult(cell.content) && cellIndex !== 0) {
-            newCells[cellIndex].content = noResultCellContent;
-          }
-        });
+      if(section.subsections) {
+        const newSubSections = [...section.subsections]
+        newSubSections.forEach((subsection, subsectionIndex) => {
+          const newRows = [...subsection.rows];
+          newRows.forEach((row, rowIndex) => {
+            const newCells = [...row.cells];
+            newCells.forEach((cell, cellIndex) => {
+              newCells[cellIndex].isSelectable = cell.isSelectable !== false;
+              // Cell content has no result and is not a row header (first column), set content to "No result".
+              if (contentHasNoResult(cell.content) && cellIndex !== 0) {
+                newCells[cellIndex].content = noResultCellContent;
+              }
+            });
 
-        newRows[rowIndex].cells = newCells;
-      });
-      newSections[sectionIndex].rows = newRows;
+            newRows[rowIndex].cells = newCells;
+          });
+          newSubSections[subsectionIndex].rows = newRows;
+        });
+        newSections[sectionIndex].subsections = newSubSections;
+      } else {
+        const newRows = [...section.rows];
+        newRows.forEach((row, rowIndex) => {
+          const newCells = [...row.cells];
+          newCells.forEach((cell, cellIndex) => {
+            newCells[cellIndex].isSelectable = cell.isSelectable !== false;
+            // Cell content has no result and is not a row header (first column), set content to "No result".
+            if (contentHasNoResult(cell.content) && cellIndex !== 0) {
+              newCells[cellIndex].content = noResultCellContent;
+            }
+          });
+
+          newRows[rowIndex].cells = newCells;
+        });
+        newSections[sectionIndex].rows = newRows;
+      }
     });
 
     return newSections;
@@ -217,10 +238,20 @@ function FlowsheetDataGrid(props) {
 
   const rowsToSearch = useMemo(() => {
     if (flowsheetSections) {
-      return flowsheetSections.flatMap(section => section.rows.map(row => ({
-        ...row,
-        sectionId: section.id,
-      })));
+      return flowsheetSections.flatMap(section => {
+        if (section.subsections) {
+          return section.subsections.flatMap(subsection => {
+            return subsection.rows.map(row => ({
+              ...row,
+              sectionId: section.id,
+            }))
+          });
+        }
+        return section.rows.map(row => ({
+          ...row,
+          sectionId: section.id,
+        }))
+      });
     }
     return flowsheetRows;
   }, [flowsheetSections, flowsheetRows]);
@@ -229,7 +260,9 @@ function FlowsheetDataGrid(props) {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
 
+    console.log(rowsToSearch);
     rowsToSearch.forEach((row) => {
+      console.log(row);
       row.cells.forEach((cell, cellIndex) => {
         if (cell.isSelected) {
           newSelectedCells.push({ rowId: row.id, columnId: columns[cellIndex].id });
