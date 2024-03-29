@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.17.0 - (March 29, 2024)
+
 * Added
   * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element (terra-data-grid only).
 
