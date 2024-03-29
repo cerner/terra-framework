@@ -110,7 +110,7 @@ const propTypes = {
 
   /**
    * A zero-based index indicating which column represents the row header.
-   * Omitted if there is only one semantic column in the list, in this case the list will have no row headers.
+   * If there is only one semantic column in the list, the list will have no row headers and the rowHeaderIndex will be ignored.
    */
   rowHeaderIndex: validateRowHeaderIndex,
 
