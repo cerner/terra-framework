@@ -110,6 +110,7 @@ const propTypes = {
 
   /**
    * A zero-based index indicating which column represents the row header.
+   * Omitted if there is only one semantic column in the list, in this case the list will have no row headers.
    */
   rowHeaderIndex: validateRowHeaderIndex,
 
@@ -340,7 +341,7 @@ const CompactInteractiveList = (props) => {
             rowHeight={calculatedRowHeight}
             isTopmost={checkIfRowIsTopMost(index)}
             isLeftmost={checkIfRowIsLeftMost(index)}
-            rowHeaderIndex={rowHeaderIndex}
+            rowHeaderIndex={columns?.length > 1 ? rowHeaderIndex : undefined}
             hasVisibleBorders={hasVisibleBorders}
           />
         ))}

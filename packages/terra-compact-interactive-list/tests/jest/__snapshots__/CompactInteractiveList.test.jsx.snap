@@ -3076,3 +3076,634 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
   </CompactInteractiveList>
 </InjectIntl(CompactInteractiveList)>
 `;
+
+exports[`Compact Interactive List row headers list with one column should match a snapshot 1`] = `
+<InjectIntl(CompactInteractiveList)
+  columns={
+    Array [
+      Object {
+        "displayName": "Col_1",
+        "id": "Column-0",
+        "width": "40px",
+      },
+    ]
+  }
+  id="compact-interactive-list-with-one-column"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  rows={
+    Array [
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Discern Care Set (1)",
+          },
+        ],
+        "id": "row_1",
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Initial observation Care/Day High Severity 99220 (2)",
+          },
+        ],
+        "id": "row_2",
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Arterial Sheath Care (3)",
+          },
+        ],
+        "id": "row_3",
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
+          },
+        ],
+        "id": "row_4",
+      },
+      Object {
+        "cells": Array [
+          Object {
+            "content": "Arterial Sheath Care (5)",
+          },
+        ],
+        "id": "row_5",
+      },
+    ]
+  }
+>
+  <CompactInteractiveList
+    columns={
+      Array [
+        Object {
+          "displayName": "Col_1",
+          "id": "Column-0",
+          "width": "40px",
+        },
+      ]
+    }
+    hasVisibleBorders={true}
+    id="compact-interactive-list-with-one-column"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    numberOfColumns={1}
+    rowHeaderIndex={0}
+    rows={
+      Array [
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Discern Care Set (1)",
+            },
+          ],
+          "id": "row_1",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Initial observation Care/Day High Severity 99220 (2)",
+            },
+          ],
+          "id": "row_2",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Arterial Sheath Care (3)",
+            },
+          ],
+          "id": "row_3",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
+            },
+          ],
+          "id": "row_4",
+        },
+        Object {
+          "cells": Array [
+            Object {
+              "content": "Arterial Sheath Care (5)",
+            },
+          ],
+          "id": "row_5",
+        },
+      ]
+    }
+    width="100%"
+  >
+    <div
+      className="compact-interactive-list-container"
+    >
+      <div
+        className="compact-interactive-list"
+        id="compact-interactive-list-with-one-column"
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        role="grid"
+        style={
+          Object {
+            "flexDirection": "column",
+            "height": "200px",
+            "width": "40px",
+          }
+        }
+        tabIndex={0}
+      >
+        <div
+          className="hidden"
+          role="row"
+        >
+          <span
+            key="Column-0"
+            role="columnheader"
+          >
+            Col_1
+          </span>
+        </div>
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Discern Care Set (1)",
+              },
+            ]
+          }
+          columnMinimumWidth={60}
+          columns={
+            Array [
+              Object {
+                "displayName": "Col_1",
+                "id": "Column-0",
+                "width": 40,
+              },
+            ]
+          }
+          hasVisibleBorders={true}
+          id="row_1"
+          isLeftmost={true}
+          isResponsive={false}
+          isTopmost={true}
+          key="row_1"
+          numberOfColumns={1}
+          rowHeight={
+            Object {
+              "unitType": "px",
+              "value": 40,
+            }
+          }
+          rowIndex={0}
+          rowMaximumWidth={null}
+          rowMinimumWidth={null}
+          rowWidth={40}
+          setFocusedCell={[Function]}
+          widthUnit="px"
+        >
+          <div
+            aria-hidden={null}
+            className="row row-topmost row-leftmost"
+            data-row-id="row_1"
+            id="row_1"
+            role="row"
+            style={
+              Object {
+                "height": "40px",
+                "width": "40px",
+              }
+            }
+          >
+            <Memo(Cell)
+              column={
+                Object {
+                  "displayName": "Col_1",
+                  "id": "Column-0",
+                  "width": 40,
+                }
+              }
+              columnMinimumWidth={60}
+              isRowHeader={false}
+              key="row-row_1-col-Column-0"
+              rowId="row_1"
+              setFocusedCell={[Function]}
+              widthUnit="px"
+            >
+              <div
+                className="cell"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="gridcell"
+                style={
+                  Object {
+                    "justifyContent": "left",
+                    "textAlign": "left",
+                    "width": "40px",
+                  }
+                }
+                tabIndex={-1}
+              >
+                Discern Care Set (1)
+              </div>
+            </Memo(Cell)>
+          </div>
+        </Memo(Row)>
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Initial observation Care/Day High Severity 99220 (2)",
+              },
+            ]
+          }
+          columnMinimumWidth={60}
+          columns={
+            Array [
+              Object {
+                "displayName": "Col_1",
+                "id": "Column-0",
+                "width": 40,
+              },
+            ]
+          }
+          hasVisibleBorders={true}
+          id="row_2"
+          isLeftmost={true}
+          isResponsive={false}
+          isTopmost={false}
+          key="row_2"
+          numberOfColumns={1}
+          rowHeight={
+            Object {
+              "unitType": "px",
+              "value": 40,
+            }
+          }
+          rowIndex={1}
+          rowMaximumWidth={null}
+          rowMinimumWidth={null}
+          rowWidth={40}
+          setFocusedCell={[Function]}
+          widthUnit="px"
+        >
+          <div
+            aria-hidden={null}
+            className="row row-leftmost"
+            data-row-id="row_2"
+            id="row_2"
+            role="row"
+            style={
+              Object {
+                "height": "40px",
+                "width": "40px",
+              }
+            }
+          >
+            <Memo(Cell)
+              column={
+                Object {
+                  "displayName": "Col_1",
+                  "id": "Column-0",
+                  "width": 40,
+                }
+              }
+              columnMinimumWidth={60}
+              isRowHeader={false}
+              key="row-row_2-col-Column-0"
+              rowId="row_2"
+              setFocusedCell={[Function]}
+              widthUnit="px"
+            >
+              <div
+                className="cell"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="gridcell"
+                style={
+                  Object {
+                    "justifyContent": "left",
+                    "textAlign": "left",
+                    "width": "40px",
+                  }
+                }
+                tabIndex={-1}
+              >
+                Initial observation Care/Day High Severity 99220 (2)
+              </div>
+            </Memo(Cell)>
+          </div>
+        </Memo(Row)>
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Arterial Sheath Care (3)",
+              },
+            ]
+          }
+          columnMinimumWidth={60}
+          columns={
+            Array [
+              Object {
+                "displayName": "Col_1",
+                "id": "Column-0",
+                "width": 40,
+              },
+            ]
+          }
+          hasVisibleBorders={true}
+          id="row_3"
+          isLeftmost={true}
+          isResponsive={false}
+          isTopmost={false}
+          key="row_3"
+          numberOfColumns={1}
+          rowHeight={
+            Object {
+              "unitType": "px",
+              "value": 40,
+            }
+          }
+          rowIndex={2}
+          rowMaximumWidth={null}
+          rowMinimumWidth={null}
+          rowWidth={40}
+          setFocusedCell={[Function]}
+          widthUnit="px"
+        >
+          <div
+            aria-hidden={null}
+            className="row row-leftmost"
+            data-row-id="row_3"
+            id="row_3"
+            role="row"
+            style={
+              Object {
+                "height": "40px",
+                "width": "40px",
+              }
+            }
+          >
+            <Memo(Cell)
+              column={
+                Object {
+                  "displayName": "Col_1",
+                  "id": "Column-0",
+                  "width": 40,
+                }
+              }
+              columnMinimumWidth={60}
+              isRowHeader={false}
+              key="row-row_3-col-Column-0"
+              rowId="row_3"
+              setFocusedCell={[Function]}
+              widthUnit="px"
+            >
+              <div
+                className="cell"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="gridcell"
+                style={
+                  Object {
+                    "justifyContent": "left",
+                    "textAlign": "left",
+                    "width": "40px",
+                  }
+                }
+                tabIndex={-1}
+              >
+                Arterial Sheath Care (3)
+              </div>
+            </Memo(Cell)>
+          </div>
+        </Memo(Row)>
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
+              },
+            ]
+          }
+          columnMinimumWidth={60}
+          columns={
+            Array [
+              Object {
+                "displayName": "Col_1",
+                "id": "Column-0",
+                "width": 40,
+              },
+            ]
+          }
+          hasVisibleBorders={true}
+          id="row_4"
+          isLeftmost={true}
+          isResponsive={false}
+          isTopmost={false}
+          key="row_4"
+          numberOfColumns={1}
+          rowHeight={
+            Object {
+              "unitType": "px",
+              "value": 40,
+            }
+          }
+          rowIndex={3}
+          rowMaximumWidth={null}
+          rowMinimumWidth={null}
+          rowWidth={40}
+          setFocusedCell={[Function]}
+          widthUnit="px"
+        >
+          <div
+            aria-hidden={null}
+            className="row row-leftmost"
+            data-row-id="row_4"
+            id="row_4"
+            role="row"
+            style={
+              Object {
+                "height": "40px",
+                "width": "40px",
+              }
+            }
+          >
+            <Memo(Cell)
+              column={
+                Object {
+                  "displayName": "Col_1",
+                  "id": "Column-0",
+                  "width": 40,
+                }
+              }
+              columnMinimumWidth={60}
+              isRowHeader={false}
+              key="row-row_4-col-Column-0"
+              rowId="row_4"
+              setFocusedCell={[Function]}
+              widthUnit="px"
+            >
+              <div
+                className="cell"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="gridcell"
+                style={
+                  Object {
+                    "justifyContent": "left",
+                    "textAlign": "left",
+                    "width": "40px",
+                  }
+                }
+                tabIndex={-1}
+              >
+                Sbsq Observation Care/Day High Severity 99226 (4)
+              </div>
+            </Memo(Cell)>
+          </div>
+        </Memo(Row)>
+        <Memo(Row)
+          cells={
+            Array [
+              Object {
+                "content": "Arterial Sheath Care (5)",
+              },
+            ]
+          }
+          columnMinimumWidth={60}
+          columns={
+            Array [
+              Object {
+                "displayName": "Col_1",
+                "id": "Column-0",
+                "width": 40,
+              },
+            ]
+          }
+          hasVisibleBorders={true}
+          id="row_5"
+          isLeftmost={true}
+          isResponsive={false}
+          isTopmost={false}
+          key="row_5"
+          numberOfColumns={1}
+          rowHeight={
+            Object {
+              "unitType": "px",
+              "value": 40,
+            }
+          }
+          rowIndex={4}
+          rowMaximumWidth={null}
+          rowMinimumWidth={null}
+          rowWidth={40}
+          setFocusedCell={[Function]}
+          widthUnit="px"
+        >
+          <div
+            aria-hidden={null}
+            className="row row-leftmost"
+            data-row-id="row_5"
+            id="row_5"
+            role="row"
+            style={
+              Object {
+                "height": "40px",
+                "width": "40px",
+              }
+            }
+          >
+            <Memo(Cell)
+              column={
+                Object {
+                  "displayName": "Col_1",
+                  "id": "Column-0",
+                  "width": 40,
+                }
+              }
+              columnMinimumWidth={60}
+              isRowHeader={false}
+              key="row-row_5-col-Column-0"
+              rowId="row_5"
+              setFocusedCell={[Function]}
+              widthUnit="px"
+            >
+              <div
+                className="cell"
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="gridcell"
+                style={
+                  Object {
+                    "justifyContent": "left",
+                    "textAlign": "left",
+                    "width": "40px",
+                  }
+                }
+                tabIndex={-1}
+              >
+                Arterial Sheath Care (5)
+              </div>
+            </Memo(Cell)>
+          </div>
+        </Memo(Row)>
+      </div>
+    </div>
+  </CompactInteractiveList>
+</InjectIntl(CompactInteractiveList)>
+`;
