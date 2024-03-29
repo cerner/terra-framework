@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.78.0 - (March 29, 2024)
+
 * Changed
   * Updated the `terra-data-grid` and `terra-table` focusable cell examples to remove confusion caused by column header names.
   * Updated `terra-compact-interactive-list` examples to remove redundant button announcement.

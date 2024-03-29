@@ -1,6 +1,9 @@
 # Changelog
 
 ## Unreleased
+
+## 4.40.0 - (March 29, 2024)
+
 * Changed
   * `tabindex` attribute with value `-1` was added to the main element (`data-terra-layout-main`) to fix unexpected focus behavior for users using screen readers.
 

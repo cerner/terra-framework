@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 7.24.0 - (March 29, 2024)
+
 * Fixed
   * Fixes dropdown list overflow and reset left position value after close.
 
