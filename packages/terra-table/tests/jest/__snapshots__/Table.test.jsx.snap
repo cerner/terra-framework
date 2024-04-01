@@ -371,7 +371,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
-                width={false}
+                width={40}
               >
                 <ColumnHeaderCell
                   columnId="table-rowSelectionColumn"
@@ -421,7 +421,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
-                  width={false}
+                  width={40}
                 >
                   <th
                     className="column-header pinned"
@@ -478,6 +478,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
+                width={200}
               >
                 <ColumnHeaderCell
                   columnId="Column-0"
@@ -527,6 +528,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
+                  width={200}
                 >
                   <th
                     className="column-header selectable pinned"
@@ -586,6 +588,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
+                width={200}
               >
                 <ColumnHeaderCell
                   columnId="Column-1"
@@ -635,6 +638,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
+                  width={200}
                 >
                   <th
                     className="column-header pinned last-pinned-column"
@@ -691,6 +695,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 resizeHandleStateSetter={[Function]}
                 tableHeight={0}
                 tableId="test-terra-table"
+                width={200}
               >
                 <ColumnHeaderCell
                   columnId="Column-2"
@@ -740,6 +745,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                   resizeHandleStateSetter={[Function]}
                   tableHeight={0}
                   tableId="test-terra-table"
+                  width={200}
                 >
                   <th
                     className="column-header"

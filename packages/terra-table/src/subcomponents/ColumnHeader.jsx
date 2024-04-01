@@ -150,7 +150,7 @@ const ColumnHeader = (props) => {
             columnIndex={columnIndex}
             displayName={column.displayName}
             isDisplayVisible={column.isDisplayVisible}
-            width={column.isResizable && column.width}
+            width={column.width}
             minimumWidth={column.minimumWidth}
             maximumWidth={column.maximumWidth}
             headerHeight={headerHeight}
