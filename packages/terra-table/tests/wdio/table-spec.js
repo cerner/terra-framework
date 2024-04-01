@@ -184,13 +184,15 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
   describe('Table with SubSections', () => {
     const tableWithSubSectionsSelector = '#table-with-sub-sections';
 
-    it('Validates a table with subsections', () => {
+    it('validates a table with subsections', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-sub-sections');
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).not.toExist();
       Terra.validates.element('table-with-sub-sections', { selector: tableWithSubSectionsSelector });
     });
 
-    it('Validates with closed sections', () => {
+    it('validates with closed sections', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-collapsible-sections-and-sub-sections');
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).toHaveChildren(2);
       Terra.validates.element('table-with-collasped-sub-sections', { selector: tableWithSubSectionsSelector });
     });
   });
