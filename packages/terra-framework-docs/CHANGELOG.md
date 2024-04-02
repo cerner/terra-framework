@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed the `onRowSelectionHeaderSelect` logic from the Table Row Selection example
+
 ## 1.78.0 - (March 29, 2024)
 
 * Changed
