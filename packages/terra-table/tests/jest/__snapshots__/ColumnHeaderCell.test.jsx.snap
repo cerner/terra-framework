@@ -80,6 +80,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     width={100}
   >
     <th
+      aria-sort="ascending"
       className="column-header pinned last-pinned-column"
       id="test-table-Column-0"
       key="Column-0"

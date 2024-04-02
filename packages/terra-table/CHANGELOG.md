@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Added `aria-sort` to Column Header Cells when a `sortIndicator` is provided to the column header.
+
 ## 5.17.0 - (March 29, 2024)
 
 * Added
