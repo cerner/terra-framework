@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed action header row so that it is properly fixed to the top of the table.
+
 ## 5.17.0 - (March 29, 2024)
 
 * Added
