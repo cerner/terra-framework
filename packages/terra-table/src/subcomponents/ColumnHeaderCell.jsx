@@ -391,9 +391,15 @@ const ColumnHeaderCell = (props) => {
         className={cx('header-container')}
         {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
         tabIndex={buttonTabIndex}
+        aria-sort={sortIndicator}
       >
         {errorIcon}
-        <span aria-hidden className={cx('display-text', { hidden: !isDisplayVisible })}>{displayName}</span>
+        <span
+          aria-hidden
+          className={cx('display-text', { hidden: !isDisplayVisible })}
+        >
+          {displayName}
+        </span>
         {sortIndicatorIcon}
         <VisuallyHiddenText text={headerDescription} />
         {columnHighlightIcon}
@@ -418,7 +424,6 @@ const ColumnHeaderCell = (props) => {
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
-      aria-sort={sortIndicator}
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
       aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
       title={!isActionCell ? displayName : action?.label}
