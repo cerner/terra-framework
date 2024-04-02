@@ -68,9 +68,15 @@ const propTypes = {
    * The default value will be updated to `false` in the next major release.
    */
   showHeader: PropTypes.bool,
+  /**
+   * @private
+   * Prop to set role on menu & popup content
+   */
+  contentRole: PropTypes.string,
 };
 
 const defaultProps = {
+  contentRole: 'dialog',
   isArrowDisplayed: false,
   isOpen: false,
   contentWidth: '240',
@@ -149,6 +155,7 @@ class Menu extends React.Component {
       isArrowDisplayed,
       contentWidth,
       showHeader,
+      contentRole,
       ...customProps
     } = this.props;
     const arrowClass = cx([
@@ -176,6 +183,7 @@ class Menu extends React.Component {
         isFocused={index === visiblePage}
         headerTitle={this.props.headerTitle}
         showHeader={showHeader}
+        menuContentRole={contentRole}
       >
         {item.props.children || item.props.subMenuItems}
       </MenuContent>
@@ -196,6 +204,7 @@ class Menu extends React.Component {
         isOpen={isOpen}
         onRequestClose={onRequestClose}
         targetRef={targetRef}
+        popupContentRole={contentRole}
         hookshotPostionFixed
         isHeaderDisabled
         isContentFocusDisabled

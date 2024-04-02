@@ -364,6 +364,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               aria-hidden="false"
               className="main"
               key="main"
+              onClick={[Function]}
+              onKeyUp={[Function]}
               role="main"
               tabIndex="-1"
             >
@@ -861,6 +863,8 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
               aria-hidden="false"
               className="main"
               key="main"
+              onClick={[Function]}
+              onKeyUp={[Function]}
               role="main"
               tabIndex="-1"
             >
@@ -1126,6 +1130,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
               aria-hidden="false"
               className="main"
               key="main"
+              onClick={[Function]}
+              onKeyUp={[Function]}
               role="main"
               tabIndex="-1"
             >
@@ -1384,6 +1390,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
               aria-hidden="false"
               className="main"
               key="main"
+              onClick={[Function]}
+              onKeyUp={[Function]}
               role="main"
               tabIndex="-1"
             >
@@ -1642,6 +1650,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
               aria-hidden="false"
               className="main"
               key="main"
+              onClick={[Function]}
+              onKeyUp={[Function]}
               role="main"
               tabIndex="-1"
             >

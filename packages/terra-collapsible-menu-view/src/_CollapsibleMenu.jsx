@@ -119,6 +119,7 @@ class CollapsibleMenu extends React.Component {
           isOpen={this.state.isOpen}
           targetRef={this.getButtonNode}
           contentWidth={contentWidth}
+          contentRole="menuitem"
         >
           {this.wrapChildrenOnClick(children)}
         </Menu>

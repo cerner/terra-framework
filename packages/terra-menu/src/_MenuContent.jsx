@@ -92,6 +92,11 @@ const propTypes = {
    * Should the menu display Header Title (first-tier).
    */
   showHeader: PropTypes.bool,
+  /**
+   * @private
+   * Prop to set role on popup content
+   */
+  menuContentRole: PropTypes.string,
 };
 
 const defaultProps = {
@@ -451,13 +456,13 @@ class MenuContent extends React.Component {
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
     return (
+      // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         ref={this.handleContainerRef}
         className={contentClass}
         style={{ height: menuHeight, width: contentWidth, position: contentPosition }}
         tabIndex="-1"
-        aria-modal="true"
-        role="dialog"
+        role={this.props.menuContentRole}
         onKeyDown={this.onKeyDown}
         // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
         // added for Menu Button support in terra-compact-interactive-list.
