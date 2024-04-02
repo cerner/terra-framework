@@ -2,13 +2,25 @@
 
 ## Unreleased
 
+## 5.17.0 - (March 29, 2024)
+
+* Added
+  * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element (terra-data-grid only).
+
+## 5.16.0 - (March 25, 2024)
+
+* Fixed
+  * Fixed an issue where the click event for buttons inside table cells was not triggered by the spacebar.
+  
+## 5.15.0 - (March 21, 2024)
+
+* Changed
+  * Prevent right click from selecting row in row selection mode.
+
 ## 5.14.0 - (March 19, 2024)
 
 * Removed
   * `boundingRef` is no longer necessary for the section header's sticky behavior for tables. This change is still passive in nature as it doesn't change any functionality for consumers.
-
-* Changed
-  * Prevent right click from selecting row in row selection mode.
 
 ## 5.13.0 - (March 14, 2024)
 

@@ -79,6 +79,7 @@ const TabDropDown = ({
       disableOnClickOutside();
       document.removeEventListener('keydown', handleKeyDown);
       dropDownRef.current.scrollTop = 0;
+      dropDownRef.current.style.left = 0;
     }
 
     return (() => {

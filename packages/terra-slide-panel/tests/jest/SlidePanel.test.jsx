@@ -107,6 +107,15 @@ describe('When a SlidePanel is rendered', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('should render a SlidePanel without main content if mainContent prop was not provided', () => {
+    const slidePanel = (
+      <SlidePanel />
+    );
+    const wrapper = enzymeIntl.shallowWithIntl(slidePanel).dive();
+    const mainContent = wrapper.find('.main');
+    expect(mainContent.length).toBe(0);
+  });
+
   it('should render a SlidePanel with panel content', () => {
     const slidePanel = (
       <SlidePanel
@@ -138,7 +147,7 @@ describe('When a SlidePanel is rendered', () => {
   });
 
   it('should render a SlidePanel with panelAriaLabel and mainAriaLabel specified', () => {
-    const slidePanel = <SlidePanel panelAriaLabel="Panel content area" mainAriaLabel="Main content area" />;
+    const slidePanel = <SlidePanel panelAriaLabel="Panel content area" mainContent={<p>Main Content</p>} mainAriaLabel="Main content area" />;
     const wrapper = enzymeIntl.shallowWithIntl(slidePanel).dive();
 
     const panelDiv = wrapper.find('.panel');
@@ -163,7 +172,7 @@ describe('When a SlidePanel is rendered', () => {
   });
 
   it('should contain a Visually Hidden Text as the aria-describedby target', () => {
-    const slidePanel = <SlidePanel />;
+    const slidePanel = <SlidePanel mainContent={<p>Main Content</p>} />;
     const wrapper = enzymeIntl.shallowWithIntl(slidePanel).dive();
 
     const mainDiv = wrapper.find('#detail-panel-warning-00000000-0000-0000-0000-000000000000').prop('text');
@@ -171,7 +180,7 @@ describe('When a SlidePanel is rendered', () => {
   });
 
   it('should set the text property of Visually Hidden Text from ./translations', () => {
-    const slidePanel = <IntlProvider locale="en" messages={translationsFile}><SlidePanel /></IntlProvider>;
+    const slidePanel = <IntlProvider locale="en" messages={translationsFile}><SlidePanel mainContent={<p>Main Content</p>} /></IntlProvider>;
     const wrapper = enzymeIntl.shallowWithIntl(slidePanel).dive().dive();
 
     const mainDiv = wrapper.find('#detail-panel-warning-00000000-0000-0000-0000-000000000000').prop('text');
@@ -202,7 +211,7 @@ describe('When custom props are used', () => {
   });
 
   it('sets aria-hidden to true on main content div when isOpen and isFullscreen props are both true', () => {
-    const slidePanel = <SlidePanel isOpen isFullscreen />;
+    const slidePanel = <SlidePanel mainContent={<p>Main Content</p>} isOpen isFullscreen />;
     const wrapper = enzymeIntl.shallowWithIntl(slidePanel).dive();
 
     const mainDiv = wrapper.find('.main');

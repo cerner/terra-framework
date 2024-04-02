@@ -499,7 +499,7 @@ describe('Compact Interactive List', () => {
     });
   });
 
-  describe('Keyboard navigation, vertical flow', () => {
+  describe('keyboard navigation, vertical flow', () => {
     const cols = [
       {
         id: 'Column-0',
@@ -723,7 +723,7 @@ describe('Compact Interactive List', () => {
     });
   });
 
-  describe('Keyboard navigation, horizontal flow', () => {
+  describe('keyboard navigation, horizontal flow', () => {
     const cols = [
       {
         id: 'Column-0',
@@ -1085,6 +1085,138 @@ describe('Compact Interactive List', () => {
       cellElements.at(1).simulate('keyDown', spaceKeyProps);
       cellElements.at(1).simulate('mouseDown');
       expect(mockOnCellSelect).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('row headers', () => {
+    const cols = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '40px',
+        minimumWidth: '20px',
+      },
+      {
+        id: 'Column-1',
+        displayName: 'Col_2',
+        width: '200px',
+        maximumWidth: '300px',
+      },
+      {
+        id: 'Column-2',
+        displayName: 'Col_3',
+        width: '40px',
+      },
+    ];
+
+    const singleColRows = [
+      {
+        id: 'row_1',
+        cells: [{ content: 'Discern Care Set (1)' }],
+      },
+      {
+        id: 'row_2',
+        cells: [{ content: 'Initial observation Care/Day High Severity 99220 (2)' }],
+      },
+      {
+        id: 'row_3',
+        cells: [{ content: 'Arterial Sheath Care (3)' }],
+      },
+      {
+        id: 'row_4',
+        cells: [{ content: 'Sbsq Observation Care/Day High Severity 99226 (4)' }],
+      },
+      {
+        id: 'row_5',
+        cells: [{ content: 'Arterial Sheath Care (5)' }],
+      },
+    ];
+
+    const singleCol = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '40px',
+      },
+    ];
+
+    it('list with one column should have no cells with role rowheader', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-one-column"
+          rows={singleColRows}
+          columns={singleCol}
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.length).toEqual(1);
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('gridcell');
+    });
+
+    it('rowHeaderIndex prop should have no effect on list with one column', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-one-column"
+          rows={singleColRows}
+          columns={singleCol}
+          rowHeaderIndex={0} // has no effect, no rowheader
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.length).toEqual(1);
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('gridcell');
+    });
+
+    it('list with more than one column should default to fist cell being a rowheader', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-more-than-one-column"
+          rows={rows}
+          columns={cols}
+          // no rowHeaderIndex prop should default to 0
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('rowheader');
+      expect(firstRowCellElements.at(1).prop('role')).toEqual('gridcell');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('rowheader');
+      expect(secondRowCellElements.at(1).prop('role')).toEqual('gridcell');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('rowheader');
+      expect(thirdRowCellElements.at(1).prop('role')).toEqual('gridcell');
+    });
+
+    it('rowHeaderIndex prop should set a rowheader in lists with more than one column', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-rowHeaderIndex"
+          rows={rows}
+          columns={cols}
+          rowHeaderIndex={1} // makes second cell is a rowheader
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      expect(firstRowCellElements.at(1).prop('role')).toEqual('rowheader');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      expect(secondRowCellElements.at(1).prop('role')).toEqual('rowheader');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      expect(thirdRowCellElements.at(1).prop('role')).toEqual('rowheader');
     });
   });
 });

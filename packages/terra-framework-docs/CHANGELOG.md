@@ -2,9 +2,26 @@
 
 ## Unreleased
 
+## 1.78.0 - (March 29, 2024)
+
+* Changed
+  * Updated the `terra-data-grid` and `terra-table` focusable cell examples to remove confusion caused by column header names.
+  * Updated `terra-compact-interactive-list` examples to remove redundant button announcement.
+  * Updated `terra-folder-tree` expand/collapse examples to be consistent with screenreader announcements.
+
+## 1.77.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.76.0 - (March 21, 2024)
+
 * Changed
   * Updated `terra-navigation-side-menu` example.
   * Updated single row selection example of `terra-table`.
+
+* Added
+  * Added test example for `terra-slide-panel` with no `mainContent` prop.
 
 ## 1.75.0 - (March 19, 2024)
 
@@ -14,7 +31,7 @@
 ## 1.74.0 - (March 14, 2024)
 
 * Added
-  * Added an example of a `compact-interactive-list` with no borders.
+  * Added an example for `terra-compact-interactive-list` with no borders.
 
 * Changed
   * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.
