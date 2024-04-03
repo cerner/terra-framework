@@ -203,19 +203,15 @@ function Section(props) {
         </tbody>
         {!isCollapsed && subsections.map((subsection) => (
           <>
-            <tbody className={cx('subsection-header', {
-              collapsed: isCollapsed,
-              collapsible: isCollapsible,
-            }, theme.className)}
-            >
-              <SubSection
-                id={subsection.id}
-                tableId={tableId}
-                subSectionRowIndex={subsection.subSectionRowIndex}
-                text={subsection.text}
-                displayedColumns={displayedColumns}
-              />
-            </tbody>
+            <SubSection
+              id={subsection.id}
+              tableId={tableId}
+              subSectionRowIndex={subsection.subSectionRowIndex}
+              text={subsection.text}
+              displayedColumns={displayedColumns}
+              isCollapsed={isCollapsed}
+              isCollapsible={isCollapsible}
+            />
             <tbody className={cx('subsection', {
               collapsed: isCollapsed,
               collapsible: isCollapsible,

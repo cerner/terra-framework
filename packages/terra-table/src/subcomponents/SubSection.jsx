@@ -37,6 +37,17 @@ const propTypes = {
    * All columns currently displayed.
    */
   displayedColumns: PropTypes.arrayOf(columnShape),
+
+  /**
+   * A boolean indicating whether or not the the subsection is collapsible. If true, the DataGrid's `onRequestSectionCollapse`
+   * function will be called upon selection of the subsection header, and an icon indicating collapsibility will be rendered within the seaction header.
+   */
+  isCollapsible: PropTypes.bool,
+
+  /**
+     * A boolean indicating whether or not the subsection is collapsed. If true, the DataGrid will not render the contents of the subsection.
+     */
+  isCollapsed: PropTypes.bool,
 };
 
 function Section(props) {
@@ -46,6 +57,8 @@ function Section(props) {
     subSectionRowIndex,
     text,
     displayedColumns,
+    isCollapsible,
+    isCollapsed,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -55,31 +68,38 @@ function Section(props) {
 
   return (
     <>
-      <tr
-        aria-rowindex={subSectionRowIndex}
-        className={cx('header-row', theme.className)}
-        data-section-id={id}
+      <tbody className={cx('subsection-header', {
+        collapsed: isCollapsed,
+        collapsible: isCollapsible,
+      }, theme.className)}
       >
-        <th
-          id={`${tableId}-${id}`}
-          className={cx('header-cell')}
-          align="left"
-          colSpan={displayedColumns.length}
-          role="columnheader"
-          scope="col"
-          tabIndex={isGridContext ? -1 : undefined}
+
+        <tr
+          aria-rowindex={subSectionRowIndex}
+          className={cx('header-row', theme.className)}
+          data-section-id={id}
         >
-          <h3
-            className={cx('subsection')}
+          <th
+            id={`${tableId}-${id}`}
+            className={cx('header-cell')}
+            align="left"
+            colSpan={displayedColumns.length}
+            role="columnheader"
+            scope="col"
+            tabIndex={isGridContext ? -1 : undefined}
           >
-            <span
-              className={cx('sticky')}
+            <h3
+              className={cx('subsection')}
             >
-              {text}
-            </span>
-          </h3>
-        </th>
-      </tr>
+              <span
+                className={cx('sticky')}
+              >
+                {text}
+              </span>
+            </h3>
+          </th>
+        </tr>
+      </tbody>
     </>
   );
 }
