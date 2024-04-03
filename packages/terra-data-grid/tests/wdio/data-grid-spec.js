@@ -323,6 +323,13 @@ Terra.describeViewports('DataGrid', ['medium', 'large'], () => {
       Terra.validates.element('sticky-header-scroll', { selector: stickyHeaderSelector });
     });
 
+    it('verifies that the table column header with action row is fixed when scrolling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-sticky-header-with-actions');
+      navigateToCell(2, 1);
+      moveCurrentPositionBy(6, 0);
+      Terra.validates.element('sticky-header-with-actions-scroll', { selector: '#terra-data-grid-sticky-with-actions-table' });
+    });
+
     it('validates that focused cells scroll into view when beneath sticky column header', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/data-grid/data-grid-sticky-header');
       browser.keys(['Tab']);

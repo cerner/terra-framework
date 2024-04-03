@@ -5,6 +5,9 @@
 * Changed
   * Removed `sortIndicator` from the first column of Table With Sections example.
 
+* Added
+  * Added examples and tests for `terra-table` to demonstrate auto layout.
+
 ## 1.78.0 - (March 29, 2024)
 
 * Changed

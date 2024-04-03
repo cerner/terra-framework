@@ -29,7 +29,7 @@ const columnShape = PropTypes.shape({
    */
   hasError: PropTypes.bool,
   /**
-   * Boolean value indicating whether or not the column header is resizable.
+   * Boolean value indicating whether or not the column header is resizable. This value is ignored when for a table with auto layout enabled.
    */
   isResizable: PropTypes.bool,
   /**
@@ -45,9 +45,14 @@ const columnShape = PropTypes.shape({
    */
   maximumWidth: PropTypes.number,
   /**
-   * A number (in px) specifying the width of the column. If not provided, the Table's default column width will be used.
+   * The width can be either a numeric or string value.
+   * When a number is provided, it is the number (in px) specifying the width of the column. If not provided, the Table's default column width will be used.
+   * when a string is provided, it specifies the default column width and can be any valid CSS width value
    */
-  width: PropTypes.number,
+  width: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
   /* A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * One of `ascending`, `descending`.
    */
