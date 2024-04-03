@@ -424,7 +424,7 @@ const ColumnHeaderCell = (props) => {
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
           // eslint-disable-next-line react/forbid-component-props
-      style={{ height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge }}
+      style={{ height: isActionCell ? 'auto' : headerHeight, left: cellLeftEdge, top: isActionCell ? headerHeight : undefined }}
     >
       {cellContent}
       { isResizable && !isActionCell && (
