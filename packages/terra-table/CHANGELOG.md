@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added the ability to configure the table to use auto table layout.
+
 * Fixed
   * Fixed action header row so that it is properly fixed to the top of the table.
 

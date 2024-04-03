@@ -34,6 +34,7 @@ See the following example of a default table:
 
   ### Features
 
+  * [Auto Layout](/components/cerner-terra-framework-docs/table/examples/auto-layout-table)
   * [Zebra Striping](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)
   * [Pinned Columns](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)
   * [Sections](/components/cerner-terra-framework-docs/table/examples/table-with-sections)
@@ -47,6 +48,7 @@ See the following example of a default table:
 |Link to Example| Description|
 |-|-|
 |[Default Table](/components/cerner-terra-framework-docs/table/examples/default-table)|An example demonstrating a basic table populated with tabular information and no interactive elements.|
+|[Auto Layout Table](/components/cerner-terra-framework-docs/table/examples/auto-layout-table)|An example demonstrating a basic with tabular information and no interactive elements using the auto layout for column widths.|
 |[Zebra Striped Table](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)|An example demonstrating the ability to enable zebra striping for table rows.|
 |[Pinned Columns](/components/cerner-terra-framework-docs/table/examples/pinned-columns)|An example demonstrating pinned columns (frozen leftmost columns) and overflow columns.|
 |[Sortable Table](/components/cerner-terra-framework-docs/table/examples/sortable-table)|An example demonstrating how to enable sorting on a table. Heading cells of sortable columns are interactive and include an icon indicating sort direction.|
@@ -131,11 +133,11 @@ A column specifies the information to render a cell in the header row of the Wor
 |**displayName**|String|Optional|None|A string of text to render in the column header cell.|
 |**action**|object|optional|none|An object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.
 |**hasError**|Bool|Optional|None|A Boolean value indicating whether the column information has an error.|
-|**isResizable**|Bool|Optional|None|A Boolean value indicating whether the column header is resizable.|
+|**isResizable**|Bool|Optional|None|A Boolean value indicating whether the column header is resizable. This value is ignored when for a table with auto layout enabled.|
 |**isSelectable**|Bool|Optional|None|A Boolean value indicating whether the column header is selectable.|
 |**minimumWidth**|Number|Optional|None|A number that specifies the minimum column width in pixels.|
 |**maximumWidth**|Number|Optional|None|A number that specifies the maximum column width in pixels.|
-|**width**|number|Optional|None|A number that specifies the width of the column in pixels. If not provided, the Worklist Data Grid component's default column width is used.|
+|**width**|unionOf: [type: 'number',type: 'string',],|Optional|None|The width can be either a numeric or string value. When a number is provided, it is the number (in px) specifying the width of the column. If not provided, the Table's default column width will be used. When a string is provided, it specifies the default column width and can be any valid CSS width value|
 |**sortIndicator**|Custom|Optional|None|A string indicating which sorting indicator is rendered (`ascending` or `descending`). A sorting indicator is rendered only if a value is provided.
 
 ### Section

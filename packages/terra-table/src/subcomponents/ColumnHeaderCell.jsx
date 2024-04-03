@@ -138,9 +138,9 @@ const propTypes = {
   columnResizeIncrement: PropTypes.number,
 
   /**
-   * String that specifies the default width for columns in the grid. Any valid CSS width value is accepted.
+   * The number (in px) specifying the width of the column.
    */
-  width: PropTypes.number.isRequired,
+  width: PropTypes.number,
 
   /**
    * String that specifies the column height. Any valid CSS height value accepted.

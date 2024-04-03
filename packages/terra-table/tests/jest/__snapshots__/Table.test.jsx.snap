@@ -309,6 +309,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
+                "isResizable": undefined,
                 "isSelectable": true,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
@@ -317,6 +318,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
+                "isResizable": undefined,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 200,
@@ -324,6 +326,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
+                "isResizable": undefined,
                 "isSelectable": false,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
