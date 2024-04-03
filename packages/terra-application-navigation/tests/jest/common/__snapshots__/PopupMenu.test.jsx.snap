@@ -38,6 +38,7 @@ exports[`PopupMenu should render prop data 1`] = `
           isCompact={false}
           isDisabled={false}
           isIconOnly={false}
+          isLeftAligned={false}
           isReversed={false}
           onClick={[MockFunction]}
           onKeyDown={[Function]}
