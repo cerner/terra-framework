@@ -712,7 +712,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -729,9 +729,11 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -911,7 +913,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                               Object {
                                 "height": "2.5rem",
                                 "left": 200,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -928,9 +930,11 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -1109,7 +1113,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -1125,9 +1129,11 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -3638,7 +3644,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -3654,9 +3660,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -3752,7 +3760,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -3769,9 +3777,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -3951,7 +3961,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -3968,9 +3978,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -4149,7 +4161,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -4165,9 +4177,11 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -7359,7 +7373,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -7375,9 +7389,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -7473,7 +7489,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -7490,9 +7506,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -7672,7 +7690,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -7689,9 +7707,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -7870,7 +7890,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -7886,9 +7906,11 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -11051,7 +11073,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -11068,9 +11090,11 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -11250,7 +11274,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                               Object {
                                 "height": "2.5rem",
                                 "left": 200,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -11267,9 +11291,11 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -11448,7 +11474,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -11464,9 +11490,11 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -13977,7 +14005,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -13993,9 +14021,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -14091,7 +14121,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -14108,9 +14138,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -14290,7 +14322,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -14307,9 +14339,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -14488,7 +14522,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -14504,9 +14538,11 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -17698,7 +17734,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -17714,9 +17750,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -17812,7 +17850,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -17829,9 +17867,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -18011,7 +18051,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -18028,9 +18068,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -18209,7 +18251,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -18225,9 +18267,11 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -21443,7 +21487,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -21459,9 +21503,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -21557,7 +21603,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -21574,9 +21620,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -21756,7 +21804,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -21773,9 +21821,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -21954,7 +22004,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -21970,9 +22020,11 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -25148,7 +25200,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -25164,9 +25216,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -25262,7 +25316,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -25279,9 +25333,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -25461,7 +25517,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -25478,9 +25534,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -25659,7 +25717,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -25675,9 +25733,11 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -28873,7 +28933,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -28889,9 +28949,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -28987,7 +29049,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -29004,9 +29066,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -29186,7 +29250,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -29203,9 +29267,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -29384,7 +29450,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -29400,9 +29466,11 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -32594,7 +32662,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -32610,9 +32678,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -32708,7 +32778,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -32725,9 +32795,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -32907,7 +32979,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -32924,9 +32996,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -33105,7 +33179,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -33121,9 +33195,11 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -36295,7 +36371,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -36311,9 +36387,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -36409,7 +36487,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -36426,9 +36504,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -36608,7 +36688,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -36625,9 +36705,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -36806,7 +36888,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -36822,9 +36904,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -39996,7 +40080,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -40012,9 +40096,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -40110,7 +40196,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -40127,9 +40213,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -40309,7 +40397,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -40326,9 +40414,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -40507,7 +40597,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -40523,9 +40613,11 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -43697,7 +43789,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -43713,9 +43805,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -43811,7 +43905,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -43828,9 +43922,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -44010,7 +44106,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -44027,9 +44123,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -44208,7 +44306,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -44224,9 +44322,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -47398,7 +47498,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -47414,9 +47514,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -47512,7 +47614,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -47529,9 +47631,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -47711,7 +47815,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -47728,9 +47832,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -47909,7 +48015,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -47925,9 +48031,11 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -51097,7 +51205,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -51113,9 +51221,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -51211,7 +51321,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -51228,9 +51338,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -51410,7 +51522,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -51427,9 +51539,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -51608,7 +51722,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -51624,9 +51738,11 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -54796,7 +54912,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "40px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -54812,9 +54928,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 Terra.table.row-selection-header-display
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="Terra.table.row-selection-header-display"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   Terra.table.row-selection-header-display
@@ -54910,7 +55028,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               Object {
                                 "height": "2.5rem",
                                 "left": 40,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -54927,9 +55045,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -55109,7 +55229,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               Object {
                                 "height": "2.5rem",
                                 "left": 240,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -55126,9 +55246,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -55307,7 +55429,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -55323,9 +55445,11 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -58455,7 +58579,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -58472,9 +58596,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -58654,7 +58780,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               Object {
                                 "height": "2.5rem",
                                 "left": 200,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -58671,9 +58797,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -58852,7 +58980,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -58868,9 +58996,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17
@@ -61319,7 +61449,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               Object {
                                 "height": "2.5rem",
                                 "left": 0,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title=" Vitals"
@@ -61336,9 +61466,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                  Vitals
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text=" Vitals"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                    Vitals
@@ -61518,7 +61650,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               Object {
                                 "height": "2.5rem",
                                 "left": 200,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             title="March 16"
@@ -61535,9 +61667,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                 March 16
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 16"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 16
@@ -61716,7 +61850,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                               Object {
                                 "height": "2.5rem",
                                 "left": null,
-                                "width": "200px",
+                                "top": undefined,
                               }
                             }
                             tabIndex={-1}
@@ -61732,9 +61866,11 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                                 March 17
                               </span>
                               <VisuallyHiddenText
+                                aria-live="polite"
                                 text="March 17"
                               >
                                 <span
+                                  aria-live="polite"
                                   className="visually-hidden-text"
                                 >
                                   March 17

@@ -637,7 +637,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           Object {
                             "height": "2.5rem",
                             "left": 0,
-                            "width": "40px",
+                            "top": undefined,
                           }
                         }
                         title="Terra.table.row-selection-header-display"
@@ -654,9 +654,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             Terra.table.row-selection-header-display
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text="Terra.table.row-selection-header-display"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                               Terra.table.row-selection-header-display
@@ -752,7 +754,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           Object {
                             "height": "2.5rem",
                             "left": 40,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         title=" Vitals"
@@ -769,9 +771,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                              Vitals
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text=" Vitals"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                                Vitals
@@ -951,7 +955,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           Object {
                             "height": "2.5rem",
                             "left": 240,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         title="March 16"
@@ -968,9 +972,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             March 16
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text="March 16"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                               March 16
@@ -1149,7 +1155,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           Object {
                             "height": "2.5rem",
                             "left": null,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         tabIndex={-1}
@@ -1165,9 +1171,11 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                             March 17
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text="March 17"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                               March 17
@@ -4163,7 +4171,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                           Object {
                             "height": "2.5rem",
                             "left": 0,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         title=" Vitals"
@@ -4180,9 +4188,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                              Vitals
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text=" Vitals"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                                Vitals
@@ -4362,7 +4372,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                           Object {
                             "height": "2.5rem",
                             "left": 200,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         title="March 16"
@@ -4379,9 +4389,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             March 16
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text="March 16"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                               March 16
@@ -4560,7 +4572,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                           Object {
                             "height": "2.5rem",
                             "left": null,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         tabIndex={-1}
@@ -4576,9 +4588,11 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                             March 17
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text="March 17"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                               March 17
@@ -6884,7 +6898,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                           Object {
                             "height": "2.5rem",
                             "left": null,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         title=" Vitals"
@@ -6901,9 +6915,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                              Vitals
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text=" Vitals"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                                Vitals
@@ -7083,7 +7099,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                           Object {
                             "height": "2.5rem",
                             "left": null,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         title="March 16"
@@ -7100,9 +7116,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             March 16
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text="March 16"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                               March 16
@@ -7281,7 +7299,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                           Object {
                             "height": "2.5rem",
                             "left": null,
-                            "width": "200px",
+                            "top": undefined,
                           }
                         }
                         tabIndex={-1}
@@ -7297,9 +7315,11 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                             March 17
                           </span>
                           <VisuallyHiddenText
+                            aria-live="polite"
                             text="March 17"
                           >
                             <span
+                              aria-live="polite"
                               className="visually-hidden-text"
                             >
                               March 17
