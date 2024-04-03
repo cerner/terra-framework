@@ -105,7 +105,6 @@ class SlidePanel extends React.Component {
     if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       if (this.disclosingNode?.focus) {
         // Return focus to the disclosing element
-        this.disclosingNode.setAttribute('aria-expanded', 'false');
         this.disclosingNode.focus();
         return;
       }
@@ -127,7 +126,6 @@ class SlidePanel extends React.Component {
 
   setDisclosingNode(node) {
     if (node) {
-      node.setAttribute('aria-expanded', 'true');
       this.disclosingNode = node;
     }
   }
