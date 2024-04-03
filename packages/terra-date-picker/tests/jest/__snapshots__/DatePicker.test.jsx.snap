@@ -615,6 +615,7 @@ exports[`correctly applies the theme context className 1`] = `
                           isCompact={true}
                           isDisabled={false}
                           isIconOnly={true}
+                          isLeftAligned={false}
                           isReversed={false}
                           onBlur={[Function]}
                           onClick={[Function]}
