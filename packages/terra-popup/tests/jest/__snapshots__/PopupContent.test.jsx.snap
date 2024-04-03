@@ -639,6 +639,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                           isCompact={false}
                           isDisabled={false}
                           isIconOnly={true}
+                          isLeftAligned={false}
                           isReversed={false}
                           onClick={[MockFunction]}
                           text="Terra.popup.header.close"
