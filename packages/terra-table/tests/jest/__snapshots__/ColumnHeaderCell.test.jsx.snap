@@ -90,7 +90,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         Object {
           "height": "150px",
           "left": 0,
-          "width": "100px",
+          "top": undefined,
         }
       }
       title="Vitals"

@@ -2,6 +2,12 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-compact-interactive-list` examples to provide a meaningful name to the column with icons.
+
+* Added
+  * Added examples and tests for `terra-table` to demonstrate auto layout.
+
 ## 1.78.0 - (March 29, 2024)
 
 * Changed

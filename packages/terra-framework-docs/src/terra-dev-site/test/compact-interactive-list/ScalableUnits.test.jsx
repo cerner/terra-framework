@@ -64,7 +64,7 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Icon',
+    displayName: 'Status',
     maximumWidth: '4.5em',
     align: alignTypes.CENTER,
   },
