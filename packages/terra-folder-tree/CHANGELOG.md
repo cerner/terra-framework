@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed an issue where folder tree items could not receive focus after data was updated.
+
 ## 1.0.0 - (March 29, 2024)
 
 * Fixed
