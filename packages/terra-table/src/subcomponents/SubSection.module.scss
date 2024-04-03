@@ -10,8 +10,8 @@
     font-weight: var(--terra-table-subsection-font-weight, 700);
     font-family: var(--terra-table-subsection-font-family, "Helvetica Neue", Helvetica, Arial, sans-serif);
     border-bottom:  var(--terra-table-subsection-border-bottom, 1px solid #c8cacb);
-    padding-top: 0.3571428571rem;
-    padding-bottom: 0.3571428571rem;
+    padding-top: var(--terra-table-subsection-padding-top, 0.3571428571rem);
+    padding-bottom: var(--terra-table-subsection-padding-bottom, 0.3571428571rem);
     margin: 0;
 
     .sticky {
