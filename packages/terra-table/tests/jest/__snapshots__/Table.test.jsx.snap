@@ -309,6 +309,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": " Vitals",
                 "id": "Column-0",
+                "isResizable": undefined,
                 "isSelectable": true,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
@@ -317,6 +318,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": "March 16",
                 "id": "Column-1",
+                "isResizable": undefined,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
                 "width": 200,
@@ -324,6 +326,7 @@ exports[`Table verifies row selection column header selection 1`] = `
               Object {
                 "displayName": "March 17",
                 "id": "Column-2",
+                "isResizable": undefined,
                 "isSelectable": false,
                 "maximumWidth": 300,
                 "minimumWidth": 60,
@@ -430,7 +433,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 0,
-                        "width": "40px",
+                        "top": undefined,
                       }
                     }
                     title="Terra.table.row-selection-header-display"
@@ -540,7 +543,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 40,
-                        "width": "200px",
+                        "top": undefined,
                       }
                     }
                     title=" Vitals"
@@ -649,7 +652,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": 240,
-                        "width": "200px",
+                        "top": undefined,
                       }
                     }
                     title="March 16"
@@ -757,7 +760,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       Object {
                         "height": "2.5rem",
                         "left": null,
-                        "width": "200px",
+                        "top": undefined,
                       }
                     }
                     title="March 17"

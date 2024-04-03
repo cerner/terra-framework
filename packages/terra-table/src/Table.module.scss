@@ -19,6 +19,11 @@
     border-spacing: 0;
     table-layout: fixed;
     width: 1px;
+
+    &.auto-layout {
+      table-layout: auto;
+      width: 100%;
+    }
   }
 
   /* stylelint-disable selector-max-compound-selectors */
