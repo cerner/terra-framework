@@ -1,4 +1,4 @@
-import React, { useState, useCallback } from 'react';
+import React, { useState } from 'react';
 
 import { IconDocuments } from 'terra-icon';
 import FolderTree from 'terra-folder-tree';
@@ -86,13 +86,13 @@ const FolderTreeReload = () => {
   const [expandedItems, setExpandedItems] = useState(folderExpandedState);
   const [isReloaded, setReloaded] = useState(false);
 
-  const handleExpandCollapseKeys = useCallback((key) => {
+  const handleExpandCollapseKeys = (key) => {
     const newExpandedItems = {
       ...expandedItems,
       [key]: !expandedItems[key],
     };
     setExpandedItems(newExpandedItems);
-  }, [expandedItems]);
+  };
 
   const handleExpandAll = () => {
     const newExpandedItems = {
@@ -103,14 +103,14 @@ const FolderTreeReload = () => {
     setExpandedItems(newExpandedItems);
   };
 
-  const handleCollapseAll = useCallback(() => {
+  const handleCollapseAll = () => {
     const newExpandedItems = {
       ...expandedItems,
     };
     Object.keys(newExpandedItems).forEach(v => { newExpandedItems[v] = false; });
 
     setExpandedItems(newExpandedItems);
-  }, [expandedItems]);
+  };
 
   const buildFolderTreeItems = (items) => {
     if (items) {
@@ -136,13 +136,19 @@ const FolderTreeReload = () => {
     return null;
   };
 
-  const reloadItems = useCallback(() => {
+  const reloadItems = () => {
     setReloaded(true);
-  }, []);
+
+    setExpandedItems({
+      'reload-item-3-level-1': false,
+      'reload-item-4-level-2-1': false,
+      'reload-item-5-level-1': false,
+    });
+  };
 
   return (
     <>
-      <button id="reload-data-button" type="button" onClick={reloadItems}> Reloa Data</button>
+      <button id="reload-data-button" type="button" onClick={reloadItems}> Reload Data</button>
       <br />
       <div id="folder-tree-reload">
         <FolderTree
