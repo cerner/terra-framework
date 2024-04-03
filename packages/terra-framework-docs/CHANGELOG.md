@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Removed `sortIndicator` from the first column of Table With Sections example.
   * Updated `terra-compact-interactive-list` examples to provide a meaningful name to the column with icons.
 
 * Added
