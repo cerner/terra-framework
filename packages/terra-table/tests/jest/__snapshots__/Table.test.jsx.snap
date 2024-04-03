@@ -448,9 +448,11 @@ exports[`Table verifies row selection column header selection 1`] = `
                         Terra.table.row-selection-header-display
                       </span>
                       <VisuallyHiddenText
+                        aria-live="polite"
                         text="Terra.table.row-selection-header-display"
                       >
                         <span
+                          aria-live="polite"
                           className="visually-hidden-text"
                         >
                           Terra.table.row-selection-header-display
@@ -560,9 +562,11 @@ exports[`Table verifies row selection column header selection 1`] = `
                          Vitals
                       </span>
                       <VisuallyHiddenText
+                        aria-live="polite"
                         text=" Vitals"
                       >
                         <span
+                          aria-live="polite"
                           className="visually-hidden-text"
                         >
                            Vitals
@@ -667,9 +671,11 @@ exports[`Table verifies row selection column header selection 1`] = `
                         March 16
                       </span>
                       <VisuallyHiddenText
+                        aria-live="polite"
                         text="March 16"
                       >
                         <span
+                          aria-live="polite"
                           className="visually-hidden-text"
                         >
                           March 16
@@ -775,9 +781,11 @@ exports[`Table verifies row selection column header selection 1`] = `
                         March 17
                       </span>
                       <VisuallyHiddenText
+                        aria-live="polite"
                         text="March 17"
                       >
                         <span
+                          aria-live="polite"
                           className="visually-hidden-text"
                         >
                           March 17

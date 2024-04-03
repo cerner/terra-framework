@@ -80,7 +80,6 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     width={100}
   >
     <th
-      aria-sort="ascending"
       className="column-header pinned last-pinned-column"
       id="test-table-Column-0"
       key="Column-0"
@@ -171,9 +170,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
           </IconBase>
         </IconUp>
         <VisuallyHiddenText
+          aria-live="polite"
           text="Vitals, Terra.table.columnError, Terra.table.sort-ascending"
         >
           <span
+            aria-live="polite"
             className="visually-hidden-text"
           >
             Vitals, Terra.table.columnError, Terra.table.sort-ascending
