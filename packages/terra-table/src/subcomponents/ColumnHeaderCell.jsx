@@ -391,7 +391,6 @@ const ColumnHeaderCell = (props) => {
         className={cx('header-container')}
         {...hasButtonElement && { ref: columnHeaderCellRef, role: 'button' }}
         tabIndex={buttonTabIndex}
-        aria-sort={sortIndicator}
       >
         {errorIcon}
         <span
@@ -401,7 +400,7 @@ const ColumnHeaderCell = (props) => {
           {displayName}
         </span>
         {sortIndicatorIcon}
-        <VisuallyHiddenText text={headerDescription} />
+        <VisuallyHiddenText aria-live="polite" text={headerDescription} />
         {columnHighlightIcon}
       </div>
     );
