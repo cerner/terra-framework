@@ -201,17 +201,17 @@ function Section(props) {
   );
 
   const rowProps = {
+    displayedColumns,
+    firstRowId,
     height: rowHeight,
+    isTableStriped,
+    lastRowId,
+    onCellSelect,
+    rowHeaderIndex,
+    rowMinimumHeight,
+    rowSelectionMode,
     sectionId: !isHidden ? id : undefined,
     tableId,
-    rowSelectionMode,
-    displayedColumns,
-    rowHeaderIndex,
-    onCellSelect,
-    isTableStriped,
-    rowMinimumHeight,
-    firstRowId,
-    lastRowId,
   };
 
   if (subsections) {
@@ -240,15 +240,6 @@ function Section(props) {
                   scope="col"
                   tabIndex={isGridContext ? -1 : undefined}
                 >
-                  {/* <h3
-                    className={cx('subsection')}
-                  >
-                    <span
-                      className={cx('sticky')}
-                    >
-                      {subsection.text}
-                    </span>
-                  </h3> */}
 
                   <SectionHeader
                     className={cx('subsection')}
@@ -275,6 +266,7 @@ function Section(props) {
                   cells={row.cells}
                   ariaLabel={row.ariaLabel}
                   isSelected={row.isSelected}
+                  subsectionId={!isHidden ? subsection.id : undefined}
                   {...rowProps}
                 />
               ))}
