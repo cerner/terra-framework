@@ -10,6 +10,7 @@
 
 * Added
   * Added examples and tests for `terra-table` to demonstrate auto layout.
+  * Added test for `terra-folder-tree` to cover focus management after updating its children.
 
 ## 1.78.0 - (March 29, 2024)
 
