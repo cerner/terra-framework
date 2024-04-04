@@ -160,5 +160,16 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
 
       Terra.validates.screenshot('wrapped label folder tree', { selector: '#wrapped-label-folder-tree' });
     });
+
+    it('gains focus after updating the children', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/folder-tree-reload');
+
+      $('#reload-data-button').click();
+      browser.keys('Tab');
+      browser.keys('Tab');
+      browser.keys('Tab');
+
+      Terra.validates.screenshot('reload-focus', { selector: '#folder-tree-reload' });
+    });
   });
 });
