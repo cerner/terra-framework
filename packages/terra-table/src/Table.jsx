@@ -106,6 +106,7 @@ const propTypes = {
 
   /**
    * A number indicating the default column width in pixels. This value is used if no overriding width value is provided on a per-column basis.
+   * This value is ignored if the isAutoLayout property is set to true.
    */
   defaultColumnWidth: PropTypes.number,
 
@@ -188,6 +189,11 @@ const propTypes = {
   isStriped: PropTypes.bool,
 
   /**
+   * A Boolean value specifying whether the auto table layout is used to render the table.
+   */
+  isAutoLayout: PropTypes.bool,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -234,6 +240,7 @@ function Table(props) {
     onRowSelectionHeaderSelect,
     hasVisibleColumnHeaders,
     isStriped,
+    isAutoLayout,
     rowHeaderIndex,
     intl,
     rowMinimumHeight,
@@ -274,12 +281,17 @@ function Table(props) {
   const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets]);
 
   // Initialize column width properties
-  const initializeColumn = (column) => ({
-    ...column,
-    width: column.width || defaultColumnWidth,
-    minimumWidth: column.minimumWidth || defaultColumnMinimumWidth,
-    maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
-  });
+  const initializeColumn = (column) => {
+    const columnWidth = column.width || (!isAutoLayout ? defaultColumnWidth : undefined);
+
+    return ({
+      ...column,
+      width: columnWidth, // Default column width should only apply to a fixed table layout
+      minimumWidth: column.minimumWidth || defaultColumnMinimumWidth,
+      maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
+      isResizable: column.isResizable && typeof columnWidth === 'number' && !isAutoLayout,
+    });
+  };
 
   const hasSelectableRows = rowSelectionMode === RowSelectionModes.MULTIPLE;
   const displayedColumns = useMemo(() => {
@@ -644,7 +656,7 @@ function Table(props) {
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
         style={tableStyle} // eslint-disable-line react/forbid-dom-props
-        className={cx('table', { headerless: !hasVisibleColumnHeaders })}
+        className={cx('table', { headerless: !hasVisibleColumnHeaders, 'auto-layout': isAutoLayout })}
         onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
@@ -654,7 +666,7 @@ function Table(props) {
           <colgroup>
             {tableColumns.map((column) => (
               // eslint-disable-next-line react/forbid-dom-props
-              <col key={column.id} style={{ width: `${column.width}px` }} />
+              <col key={column.id} style={{ width: typeof column.width === 'number' ? `${column.width}px` : column.width }} />
             ))}
           </colgroup>
 

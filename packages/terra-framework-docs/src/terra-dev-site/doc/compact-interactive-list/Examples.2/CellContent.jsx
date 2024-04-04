@@ -89,7 +89,7 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Icon',
+    displayName: 'Status',
     width: '50px',
     align: alignTypes.CENTER,
     isSelectable: true,

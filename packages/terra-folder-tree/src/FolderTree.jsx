@@ -164,7 +164,7 @@ const FolderTree = ({
   useEffect(() => {
     const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
     listItems[0].tabIndex = 0;
-  }, []);
+  }, [children]);
 
   useEffect(() => {
     const listItems = listNode.current.querySelectorAll('[data-item-show-focus=true]');
