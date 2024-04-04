@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated the cell component auto focus logic to be configured by the grid context.
+
 ## 5.18.0 - (April 4, 2024)
 
 * Added

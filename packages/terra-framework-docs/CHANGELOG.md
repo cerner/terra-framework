@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
+
 ## 1.79.0 - (April 4, 2024)
 
 * Changed

@@ -203,6 +203,10 @@ function Cell(props) {
   * @returns The auto focusable button or anchor element. If there is no auto focusable element, null is returned.
   */
   const getAutoFocusableElement = () => {
+    if (!gridContext.isAutoFocusEnabled) {
+      return null;
+    }
+
     const focusableElements = getFocusableElements(cellRef.current);
     if (focusableElements.length > 1) {
       return null;
@@ -241,6 +245,7 @@ function Cell(props) {
         setIsInteractable(hasFocusableElements());
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gridContext, intl, isGridContext]);
 
   const handleMouseDown = (event) => {
