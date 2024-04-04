@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.49.0 - (April 4, 2024)
+
 * Changed
   * Stopped adding `aria-expanded` attribute to the disclosing node.
 

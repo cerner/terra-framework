@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 5.18.0 - (April 4, 2024)
+
 * Added
   * Added the ability to configure the table to use auto table layout.
 
