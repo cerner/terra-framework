@@ -240,7 +240,7 @@ function Section(props) {
                   scope="col"
                   tabIndex={isGridContext ? -1 : undefined}
                 >
-                  <h3
+                  {/* <h3
                     className={cx('subsection')}
                   >
                     <span
@@ -248,7 +248,15 @@ function Section(props) {
                     >
                       {subsection.text}
                     </span>
-                  </h3>
+                  </h3> */}
+
+                  <SectionHeader
+                    className={cx('subsection')}
+                    text={subsection.text}
+                    isTitleSticky
+                    boundedWidth={boundingWidth}
+                    level={3}
+                  />
 
                 </th>
               </tr>
