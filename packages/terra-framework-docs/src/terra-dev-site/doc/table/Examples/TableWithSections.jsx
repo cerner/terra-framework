@@ -4,7 +4,7 @@ import Table from 'terra-table';
 const tableData = {
   cols: [
     {
-      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', isSelectable: true,
+      id: 'Column-0', displayName: 'Patient', isSelectable: true,
     },
     {
       id: 'Column-1', displayName: 'Location', isSelectable: true,
