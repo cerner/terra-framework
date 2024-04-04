@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+* (flowsheet-data-grid only) Added support for subsections.
+
 ## 5.18.0 - (April 4, 2024)
 
 * Added

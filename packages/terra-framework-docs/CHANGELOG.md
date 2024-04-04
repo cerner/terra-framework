@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added documentation for subsections in `terra-table`.
+
 ## 1.79.0 - (April 4, 2024)
 
 * Changed
