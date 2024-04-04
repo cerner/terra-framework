@@ -32,4 +32,29 @@
       /* stylelint-enable selector-max-compound-selectors */
     }
   }
+
+  h3 {
+    font-size: var(--terra-table-subsection-header-font-size, 8.08571428571rem);
+    font-size: var(--terra-section-header-font-size, 0.8808571428571rem);
+  }
+
+  .subsection {
+    background-color: red;
+    // background-color: #dedfe0;
+    // font-size: var(--terra-section-header-font-size, 0.8808571428571rem);
+    font-size: var(--terra-table-subsection-font-size, 0.808571428571rem);
+    // font-size: var(--terra-table-subsection-font-size, 8rem);
+    font-weight: var(--terra-table-subsection-font-weight, 700);
+    border-bottom:  var(--terra-table-subsection-border-bottom, 1px solid #c8cacb);
+    padding-top: var(--terra-table-subsection-padding-top, 0.3571428571rem);
+    padding-bottom: var(--terra-table-subsection-padding-bottom, 0.3571428571rem);
+    margin: 0;
+
+    .sticky {
+      position: sticky;
+      left: 1.2142857143rem;
+    }
+
+
+  }
 }

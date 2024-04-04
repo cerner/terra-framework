@@ -10,7 +10,6 @@ import GridContext, { GridConstants } from '../utils/GridContext';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
-import SubSection from './SubSection';
 import subsectionShape from '../proptypes/subsectionShape';
 import columnShape from '../proptypes/columnShape';
 import styles from './Section.module.scss';
@@ -221,16 +220,39 @@ function Section(props) {
         {sectionHeader}
         {!isCollapsed && subsections.map((subsection) => (
           <>
-            <SubSection
-              id={subsection.id}
-              tableId={tableId}
-              subSectionRowIndex={subsection.subSectionRowIndex}
-              text={subsection.text}
-              displayedColumns={displayedColumns}
-              isCollapsed={isCollapsed}
-              isCollapsible={isCollapsible}
-            />
+            <tbody className={cx('subsection-header', {
+              collapsed: isCollapsed,
+              collapsible: isCollapsible,
+            }, theme.className)}
+            >
 
+              <tr
+                aria-rowindex={subsection.subSectionRowIndex}
+                className={cx('header-row', theme.className)}
+                data-section-id={id}
+              >
+                <th
+                  id={`${tableId}-${id}`}
+                  className={cx('header-cell')}
+                  align="left"
+                  colSpan={displayedColumns.length}
+                  role="columnheader"
+                  scope="col"
+                  tabIndex={isGridContext ? -1 : undefined}
+                >
+                  <h3
+                    className={cx('subsection')}
+                  >
+                    <span
+                      className={cx('sticky')}
+                    >
+                      {subsection.text}
+                    </span>
+                  </h3>
+
+                </th>
+              </tr>
+            </tbody>
             <tbody className={cx('subsection', {
               collapsed: isCollapsed,
               collapsible: isCollapsible,
