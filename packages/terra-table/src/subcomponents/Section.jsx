@@ -201,6 +201,20 @@ function Section(props) {
     </tbody>
   );
 
+  const rowProps = {
+    height: rowHeight,
+    sectionId: !isHidden ? id : undefined,
+    tableId,
+    rowSelectionMode,
+    displayedColumns,
+    rowHeaderIndex,
+    onCellSelect,
+    isTableStriped,
+    rowMinimumHeight,
+    firstRowId,
+    lastRowId,
+  };
+
   if (subsections) {
     return (
       <>
@@ -216,6 +230,7 @@ function Section(props) {
               isCollapsed={isCollapsed}
               isCollapsible={isCollapsible}
             />
+
             <tbody className={cx('subsection', {
               collapsed: isCollapsed,
               collapsible: isCollapsible,
@@ -226,21 +241,11 @@ function Section(props) {
                 <Row
                   rowIndex={subsection.subSectionRowIndex + (rowIndex + 1)}
                   key={row.id}
-                  height={rowHeight}
                   id={row.id}
-                  sectionId={!isHidden ? id : undefined}
-                  tableId={tableId}
                   cells={row.cells}
                   ariaLabel={row.ariaLabel}
-                  rowSelectionMode={rowSelectionMode}
-                  displayedColumns={displayedColumns}
-                  rowHeaderIndex={rowHeaderIndex}
-                  onCellSelect={onCellSelect}
                   isSelected={row.isSelected}
-                  isTableStriped={isTableStriped}
-                  rowMinimumHeight={rowMinimumHeight}
-                  firstRowId={firstRowId}
-                  lastRowId={lastRowId}
+                  {...rowProps}
                 />
               ))}
             </tbody>
@@ -263,21 +268,11 @@ function Section(props) {
           <Row
             rowIndex={sectionRowIndex + (rowIndex + 1)}
             key={row.id}
-            height={rowHeight}
             id={row.id}
-            sectionId={!isHidden ? id : undefined}
-            tableId={tableId}
             cells={row.cells}
             ariaLabel={row.ariaLabel}
-            rowSelectionMode={rowSelectionMode}
-            displayedColumns={displayedColumns}
-            rowHeaderIndex={rowHeaderIndex}
-            onCellSelect={onCellSelect}
             isSelected={row.isSelected}
-            isTableStriped={isTableStriped}
-            rowMinimumHeight={rowMinimumHeight}
-            firstRowId={firstRowId}
-            lastRowId={lastRowId}
+            {...rowProps}
           />
         ))}
       </tbody>
