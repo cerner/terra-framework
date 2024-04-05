@@ -47,10 +47,10 @@ const propTypes = {
    */
   sectionId: PropTypes.string,
 
-    /**
+  /**
    * An identifier for the subsection.
    */
-    subsectionId: PropTypes.string,
+  subsectionId: PropTypes.string,
 
   /**
    * Unique identifier for the parent table
@@ -388,7 +388,7 @@ function Cell(props) {
   const columnHeaderId = `${tableId}-${columnId}-headerCell`;
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
-  const subsectionHeaderId = sectionId ? `${tableId}-${sectionId}-${subsectionId} ` : '';
+  const subsectionHeaderId = subsectionId ? `${tableId}-${sectionId}-${subsectionId} ` : '';
 
   let columnHighlight = {};
   if (columnHighlightColor) {

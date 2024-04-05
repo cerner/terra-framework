@@ -232,7 +232,7 @@ function Section(props) {
                 data-section-id={id}
               >
                 <th
-                  id={`${tableId}-${id}`}
+                  id={`${tableId}-${id}-${subsection.id}`}
                   className={cx('header-cell')}
                   align="left"
                   colSpan={displayedColumns.length}
