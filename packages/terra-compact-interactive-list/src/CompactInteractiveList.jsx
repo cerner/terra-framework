@@ -159,7 +159,8 @@ const CompactInteractiveList = (props) => {
     if (listRef?.current && focusedCell?.current) {
       focusedCell.current = getFocusedCellIds(listRef?.current, columns, { row: 0, cell: 0 });
     }
-  }, [listRef, focusedCell, columns]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const focusCell = ({ row, cell }) => {
     // add 1 to the row number to accommodate for hidden header

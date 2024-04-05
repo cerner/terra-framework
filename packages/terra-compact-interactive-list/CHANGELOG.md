@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Changed to put focus on first item only on initial render.
+
 ## 1.15.0 - (April 4, 2024)
 
 * Changed
