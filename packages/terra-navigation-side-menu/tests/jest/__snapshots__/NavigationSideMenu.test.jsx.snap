@@ -136,7 +136,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
         aria-atomic="true"
         aria-live="assertive"
         aria-relevant="additions text"
-        refCallback={[Function]}
       >
         <span
           aria-atomic="true"
@@ -150,13 +149,23 @@ exports[`Layout correctly applies the theme context className 1`] = `
         fill={true}
         header={
           <React.Fragment>
-            <InjectIntl(ActionHeader)
-              backButtonA11yLabel="Test Menu"
-              className="side-menu-action-header"
-              data-navigation-side-menu-action-header={true}
-              onBack={[Function]}
-              text="Test Menu"
-            />
+            <div
+              className="side-navigation-menu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex="0"
+              type="button"
+            >
+              <span
+                className="header-icon back"
+              />
+              <h1
+                className="title"
+              >
+                Test Menu
+              </h1>
+            </div>
           </React.Fragment>
         }
         intl={
@@ -221,261 +230,23 @@ exports[`Layout correctly applies the theme context className 1`] = `
           <div
             className="header"
           >
-            <InjectIntl(ActionHeader)
-              backButtonA11yLabel="Test Menu"
-              className="side-menu-action-header"
-              data-navigation-side-menu-action-header={true}
-              onBack={[Function]}
-              text="Test Menu"
+            <div
+              className="side-navigation-menu"
+              onClick={[Function]}
+              onKeyDown={[Function]}
+              role="menuitem"
+              tabIndex="0"
+              type="button"
             >
-              <ActionHeader
-                backButtonA11yLabel="Test Menu"
-                className="side-menu-action-header"
-                data-navigation-side-menu-action-header={true}
-                intl={
-                  Object {
-                    "defaultFormats": Object {},
-                    "defaultLocale": "en",
-                    "formatDate": [Function],
-                    "formatHTMLMessage": [Function],
-                    "formatMessage": [Function],
-                    "formatNumber": [Function],
-                    "formatPlural": [Function],
-                    "formatRelative": [Function],
-                    "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
-                      "getDateTimeFormat": [Function],
-                      "getMessageFormat": [Function],
-                      "getNumberFormat": [Function],
-                      "getPluralFormat": [Function],
-                      "getRelativeFormat": [Function],
-                    },
-                    "locale": "en",
-                    "messages": null,
-                    "now": [Function],
-                    "onError": [Function],
-                    "textComponent": "span",
-                    "timeZone": null,
-                  }
-                }
-                onBack={[Function]}
-                text="Test Menu"
+              <span
+                className="header-icon back"
+              />
+              <h1
+                className="title"
               >
-                <InjectIntl(ActionHeaderContainer)
-                  className="side-menu-action-header"
-                  data-navigation-side-menu-action-header={true}
-                  endContent={null}
-                  id="2"
-                  level={1}
-                  startContent={
-                    <div
-                      className="left-buttons orion-fusion-theme"
-                    >
-                      <Button
-                        className="header-button back-button"
-                        data-terra-action-header="back-button"
-                        icon={
-                          <span
-                            className="header-icon back"
-                          />
-                        }
-                        isBlock={false}
-                        isCompact={false}
-                        isDisabled={false}
-                        isIconOnly={true}
-                        isLeftAligned={false}
-                        isReversed={false}
-                        onClick={[Function]}
-                        text="Test Menu"
-                        type="button"
-                        variant="utility"
-                      />
-                    </div>
-                  }
-                  text="Test Menu"
-                >
-                  <ActionHeaderContainer
-                    className="side-menu-action-header"
-                    data-navigation-side-menu-action-header={true}
-                    endContent={null}
-                    id="2"
-                    intl={
-                      Object {
-                        "defaultFormats": Object {},
-                        "defaultLocale": "en",
-                        "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
-                        "formatMessage": [Function],
-                        "formatNumber": [Function],
-                        "formatPlural": [Function],
-                        "formatRelative": [Function],
-                        "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
-                          "getDateTimeFormat": [Function],
-                          "getMessageFormat": [Function],
-                          "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
-                        },
-                        "locale": "en",
-                        "messages": null,
-                        "now": [Function],
-                        "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
-                      }
-                    }
-                    level={1}
-                    startContent={
-                      <div
-                        className="left-buttons orion-fusion-theme"
-                      >
-                        <Button
-                          className="header-button back-button"
-                          data-terra-action-header="back-button"
-                          icon={
-                            <span
-                              className="header-icon back"
-                            />
-                          }
-                          isBlock={false}
-                          isCompact={false}
-                          isDisabled={false}
-                          isIconOnly={true}
-                          isLeftAligned={false}
-                          isReversed={false}
-                          onClick={[Function]}
-                          text="Test Menu"
-                          type="button"
-                          variant="utility"
-                        />
-                      </div>
-                    }
-                    text="Test Menu"
-                  >
-                    <div
-                      className="flex-header orion-fusion-theme side-menu-action-header"
-                      data-navigation-side-menu-action-header={true}
-                      id="2"
-                    >
-                      <div
-                        className="flex-end"
-                      >
-                        <div
-                          className="left-buttons orion-fusion-theme"
-                        >
-                          <Button
-                            className="header-button back-button"
-                            data-terra-action-header="back-button"
-                            icon={
-                              <span
-                                className="header-icon back"
-                              />
-                            }
-                            isBlock={false}
-                            isCompact={false}
-                            isDisabled={false}
-                            isIconOnly={true}
-                            isLeftAligned={false}
-                            isReversed={false}
-                            onClick={[Function]}
-                            text="Test Menu"
-                            type="button"
-                            variant="utility"
-                          >
-                            <button
-                              aria-disabled={false}
-                              aria-label="Test Menu"
-                              className="button utility orion-fusion-theme header-button back-button"
-                              data-terra-action-header="back-button"
-                              disabled={false}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              title="Test Menu"
-                              type="button"
-                            >
-                              <span
-                                className="button-label-win icon-only"
-                              >
-                                <span
-                                  className="icon"
-                                >
-                                  <span
-                                    className="header-icon back icon-svg"
-                                  />
-                                </span>
-                              </span>
-                            </button>
-                          </Button>
-                        </div>
-                      </div>
-                      <div
-                        className="flex-fill"
-                      >
-                        <div
-                          className="title-container"
-                        >
-                          <h1
-                            className="title"
-                          >
-                            Test Menu
-                          </h1>
-                        </div>
-                      </div>
-                      <div
-                        className="hidden-label"
-                      >
-                        <VisuallyHiddenText
-                          aria-hidden={true}
-                          id="terra-action-header-close-button-2"
-                          text="Terra.actionHeader.close.description"
-                        >
-                          <span
-                            aria-hidden={true}
-                            className="visually-hidden-text"
-                            id="terra-action-header-close-button-2"
-                          >
-                            Terra.actionHeader.close.description
-                          </span>
-                        </VisuallyHiddenText>
-                        <VisuallyHiddenText
-                          aria-hidden={true}
-                          id="terra-action-header-maximize-button-2"
-                          text="Terra.actionHeader.maximize.description"
-                        >
-                          <span
-                            aria-hidden={true}
-                            className="visually-hidden-text"
-                            id="terra-action-header-maximize-button-2"
-                          >
-                            Terra.actionHeader.maximize.description
-                          </span>
-                        </VisuallyHiddenText>
-                        <VisuallyHiddenText
-                          aria-hidden={true}
-                          id="terra-action-header-minimize-button-2"
-                          text="Terra.actionHeader.minimize.description"
-                        >
-                          <span
-                            aria-hidden={true}
-                            className="visually-hidden-text"
-                            id="terra-action-header-minimize-button-2"
-                          >
-                            Terra.actionHeader.minimize.description
-                          </span>
-                        </VisuallyHiddenText>
-                      </div>
-                    </div>
-                  </ActionHeaderContainer>
-                </InjectIntl(ActionHeaderContainer)>
-              </ActionHeader>
-            </InjectIntl(ActionHeader)>
+                Test Menu
+              </h1>
+            </div>
           </div>
           <div
             className="main"
@@ -500,6 +271,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="0"
                       text="Test Menu 1"
                     >
                       <MenuItem
@@ -535,6 +307,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="0"
                         text="Test Menu 1"
                       >
                         <li
@@ -566,6 +339,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test2"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 2"
                     >
                       <MenuItem
@@ -601,6 +375,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="-1"
                         text="Test Menu 2"
                       >
                         <li
@@ -614,7 +389,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -632,6 +407,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test3"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 3"
                     >
                       <MenuItem
@@ -667,6 +443,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="-1"
                         text="Test Menu 3"
                       >
                         <li
@@ -680,7 +457,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -698,6 +475,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test4"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 4"
                     >
                       <MenuItem
@@ -733,6 +511,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="-1"
                         text="Test Menu 4"
                       >
                         <li
@@ -746,7 +525,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -941,7 +720,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
       aria-atomic="true"
       aria-live="assertive"
       aria-relevant="additions text"
-      refCallback={[Function]}
     >
       <span
         aria-atomic="true"
@@ -956,13 +734,23 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
       fill={true}
       header={
         <React.Fragment>
-          <InjectIntl(ActionHeader)
-            backButtonA11yLabel="Test Menu"
-            className="side-menu-action-header"
-            data-navigation-side-menu-action-header={true}
-            onBack={[Function]}
-            text="Test Menu"
-          />
+          <div
+            className="side-navigation-menu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="0"
+            type="button"
+          >
+            <span
+              className="header-icon back"
+            />
+            <h1
+              className="title"
+            >
+              Test Menu
+            </h1>
+          </div>
         </React.Fragment>
       }
       intl={
@@ -1028,261 +816,23 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
         <div
           className="header"
         >
-          <InjectIntl(ActionHeader)
-            backButtonA11yLabel="Test Menu"
-            className="side-menu-action-header"
-            data-navigation-side-menu-action-header={true}
-            onBack={[Function]}
-            text="Test Menu"
+          <div
+            className="side-navigation-menu"
+            onClick={[Function]}
+            onKeyDown={[Function]}
+            role="menuitem"
+            tabIndex="0"
+            type="button"
           >
-            <ActionHeader
-              backButtonA11yLabel="Test Menu"
-              className="side-menu-action-header"
-              data-navigation-side-menu-action-header={true}
-              intl={
-                Object {
-                  "defaultFormats": Object {},
-                  "defaultLocale": "en",
-                  "formatDate": [Function],
-                  "formatHTMLMessage": [Function],
-                  "formatMessage": [Function],
-                  "formatNumber": [Function],
-                  "formatPlural": [Function],
-                  "formatRelative": [Function],
-                  "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
-                    "getDateTimeFormat": [Function],
-                    "getMessageFormat": [Function],
-                    "getNumberFormat": [Function],
-                    "getPluralFormat": [Function],
-                    "getRelativeFormat": [Function],
-                  },
-                  "locale": "en",
-                  "messages": null,
-                  "now": [Function],
-                  "onError": [Function],
-                  "textComponent": "span",
-                  "timeZone": null,
-                }
-              }
-              onBack={[Function]}
-              text="Test Menu"
+            <span
+              className="header-icon back"
+            />
+            <h1
+              className="title"
             >
-              <InjectIntl(ActionHeaderContainer)
-                className="side-menu-action-header"
-                data-navigation-side-menu-action-header={true}
-                endContent={null}
-                id="1"
-                level={1}
-                startContent={
-                  <div
-                    className="left-buttons"
-                  >
-                    <Button
-                      className="header-button back-button"
-                      data-terra-action-header="back-button"
-                      icon={
-                        <span
-                          className="header-icon back"
-                        />
-                      }
-                      isBlock={false}
-                      isCompact={false}
-                      isDisabled={false}
-                      isIconOnly={true}
-                      isLeftAligned={false}
-                      isReversed={false}
-                      onClick={[Function]}
-                      text="Test Menu"
-                      type="button"
-                      variant="utility"
-                    />
-                  </div>
-                }
-                text="Test Menu"
-              >
-                <ActionHeaderContainer
-                  className="side-menu-action-header"
-                  data-navigation-side-menu-action-header={true}
-                  endContent={null}
-                  id="1"
-                  intl={
-                    Object {
-                      "defaultFormats": Object {},
-                      "defaultLocale": "en",
-                      "formatDate": [Function],
-                      "formatHTMLMessage": [Function],
-                      "formatMessage": [Function],
-                      "formatNumber": [Function],
-                      "formatPlural": [Function],
-                      "formatRelative": [Function],
-                      "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
-                        "getDateTimeFormat": [Function],
-                        "getMessageFormat": [Function],
-                        "getNumberFormat": [Function],
-                        "getPluralFormat": [Function],
-                        "getRelativeFormat": [Function],
-                      },
-                      "locale": "en",
-                      "messages": null,
-                      "now": [Function],
-                      "onError": [Function],
-                      "textComponent": "span",
-                      "timeZone": null,
-                    }
-                  }
-                  level={1}
-                  startContent={
-                    <div
-                      className="left-buttons"
-                    >
-                      <Button
-                        className="header-button back-button"
-                        data-terra-action-header="back-button"
-                        icon={
-                          <span
-                            className="header-icon back"
-                          />
-                        }
-                        isBlock={false}
-                        isCompact={false}
-                        isDisabled={false}
-                        isIconOnly={true}
-                        isLeftAligned={false}
-                        isReversed={false}
-                        onClick={[Function]}
-                        text="Test Menu"
-                        type="button"
-                        variant="utility"
-                      />
-                    </div>
-                  }
-                  text="Test Menu"
-                >
-                  <div
-                    className="flex-header side-menu-action-header"
-                    data-navigation-side-menu-action-header={true}
-                    id="1"
-                  >
-                    <div
-                      className="flex-end"
-                    >
-                      <div
-                        className="left-buttons"
-                      >
-                        <Button
-                          className="header-button back-button"
-                          data-terra-action-header="back-button"
-                          icon={
-                            <span
-                              className="header-icon back"
-                            />
-                          }
-                          isBlock={false}
-                          isCompact={false}
-                          isDisabled={false}
-                          isIconOnly={true}
-                          isLeftAligned={false}
-                          isReversed={false}
-                          onClick={[Function]}
-                          text="Test Menu"
-                          type="button"
-                          variant="utility"
-                        >
-                          <button
-                            aria-disabled={false}
-                            aria-label="Test Menu"
-                            className="button utility header-button back-button"
-                            data-terra-action-header="back-button"
-                            disabled={false}
-                            onBlur={[Function]}
-                            onClick={[Function]}
-                            onFocus={[Function]}
-                            onKeyDown={[Function]}
-                            onKeyUp={[Function]}
-                            onMouseDown={[Function]}
-                            title="Test Menu"
-                            type="button"
-                          >
-                            <span
-                              className="button-label-win icon-only"
-                            >
-                              <span
-                                className="icon"
-                              >
-                                <span
-                                  className="header-icon back icon-svg"
-                                />
-                              </span>
-                            </span>
-                          </button>
-                        </Button>
-                      </div>
-                    </div>
-                    <div
-                      className="flex-fill"
-                    >
-                      <div
-                        className="title-container"
-                      >
-                        <h1
-                          className="title"
-                        >
-                          Test Menu
-                        </h1>
-                      </div>
-                    </div>
-                    <div
-                      className="hidden-label"
-                    >
-                      <VisuallyHiddenText
-                        aria-hidden={true}
-                        id="terra-action-header-close-button-1"
-                        text="Terra.actionHeader.close.description"
-                      >
-                        <span
-                          aria-hidden={true}
-                          className="visually-hidden-text"
-                          id="terra-action-header-close-button-1"
-                        >
-                          Terra.actionHeader.close.description
-                        </span>
-                      </VisuallyHiddenText>
-                      <VisuallyHiddenText
-                        aria-hidden={true}
-                        id="terra-action-header-maximize-button-1"
-                        text="Terra.actionHeader.maximize.description"
-                      >
-                        <span
-                          aria-hidden={true}
-                          className="visually-hidden-text"
-                          id="terra-action-header-maximize-button-1"
-                        >
-                          Terra.actionHeader.maximize.description
-                        </span>
-                      </VisuallyHiddenText>
-                      <VisuallyHiddenText
-                        aria-hidden={true}
-                        id="terra-action-header-minimize-button-1"
-                        text="Terra.actionHeader.minimize.description"
-                      >
-                        <span
-                          aria-hidden={true}
-                          className="visually-hidden-text"
-                          id="terra-action-header-minimize-button-1"
-                        >
-                          Terra.actionHeader.minimize.description
-                        </span>
-                      </VisuallyHiddenText>
-                    </div>
-                  </div>
-                </ActionHeaderContainer>
-              </InjectIntl(ActionHeaderContainer)>
-            </ActionHeader>
-          </InjectIntl(ActionHeader)>
+              Test Menu
+            </h1>
+          </div>
         </div>
         <div
           className="main"
@@ -1308,6 +858,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     key="test1"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    tabIndex="0"
                     text="Test Menu 1"
                   >
                     <MenuItem
@@ -1343,6 +894,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       isSelected={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="0"
                       text="Test Menu 1"
                     >
                       <li
@@ -1374,6 +926,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     key="test2"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    tabIndex="-1"
                     text="Test Menu 2"
                   >
                     <MenuItem
@@ -1409,6 +962,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       isSelected={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 2"
                     >
                       <li
@@ -1422,7 +976,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <div
                             className="title"
@@ -1440,6 +994,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     key="test3"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    tabIndex="-1"
                     text="Test Menu 3"
                   >
                     <MenuItem
@@ -1475,6 +1030,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       isSelected={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 3"
                     >
                       <li
@@ -1488,7 +1044,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <div
                             className="title"
@@ -1506,6 +1062,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     key="test4"
                     onClick={[Function]}
                     onKeyDown={[Function]}
+                    tabIndex="-1"
                     text="Test Menu 4"
                   >
                     <MenuItem
@@ -1541,6 +1098,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       isSelected={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 4"
                     >
                       <li
@@ -1554,7 +1112,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <div
                             className="title"
