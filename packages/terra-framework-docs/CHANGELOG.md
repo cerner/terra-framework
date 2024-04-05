@@ -4,6 +4,9 @@
 
 * Added
   * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
+  
+* Changed
+  * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
 
 ## 1.79.0 - (April 4, 2024)
 
