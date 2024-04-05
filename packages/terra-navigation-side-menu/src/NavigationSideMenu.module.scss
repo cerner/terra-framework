@@ -55,22 +55,22 @@
 
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       height: 1rem;
-      vertical-align: var(--terra-navigation-menu-icon-ms-vertical-align, -0.17285rem);
+      vertical-align: var(--terra-navigation-side-menu-icon-ms-vertical-align, -0.17285rem);
     }
 
     &.back {
-      background-image: var(--terra-navigation-menu-back-background-image, inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>'));
+      background-image: var(--terra-navigation-side-menu-back-background-image, inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>'));
 
       &:hover {
-        background-image: var(--terra-navigation-menu-back-hover-background-image, inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>'));
+        background-image: var(--terra-navigation-side-menu-back-hover-background-image, inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>'));
       }
     }
   }
 
   .title {
-    color: var(--terra-navigation-menu-header-color);
-    font-size: var(--terra-navigation-menu-font-size, 1.10714rem);
-    font-weight: var(--terra-navigation-menu-font-weight, 500);
+    color: var(--terra-navigation-side-menu-header-color);
+    font-size: var(--terra-navigation-side-menu-font-size, 1.10714rem);
+    font-weight: var(--terra-navigation-side-menu-font-weight, 500);
     hyphens: auto;
     margin: 5px;
     overflow-wrap: break-word; /* Modern browsers */
