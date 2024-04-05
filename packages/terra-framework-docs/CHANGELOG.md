@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
+
 ## 1.79.0 - (April 4, 2024)
 
 * Changed
