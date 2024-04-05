@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Removed dialog role to fix axe a11y violation.
+
 ## 6.91.0 - (April 4, 2024)
 
 * Changed
