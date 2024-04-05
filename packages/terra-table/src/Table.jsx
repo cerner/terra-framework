@@ -253,6 +253,7 @@ function Table(props) {
   const resizeTimer = 100;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
+  const [pinnedColumnHeaderOffsets, setPinnedColumnHeaderOffsets] = useState([0]);
 
   const tableContainerRef = useRef();
   const tableRef = useRef();
@@ -271,7 +272,7 @@ function Table(props) {
   // Aria live region message management
   const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
 
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets]);
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, pinnedColumnHeaderOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets, pinnedColumnHeaderOffsets]);
 
   // Initialize column width properties
   const initializeColumn = (column) => ({
@@ -296,7 +297,27 @@ function Table(props) {
     return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
 
-  const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
+    // Create new displayedColumns object to pass to Section sub component to account for column spans
+    const displayedColumnsWithColumnSpan = [];
+    let i = 0;
+    displayedColumns.forEach((column) => {
+      if (column.columnSpan > 1) {
+        displayedColumnsWithColumnSpan[i] = {...column,  id: `${column.id}-0`, columnSpanIndex: 0};
+        i += 1;
+        let counter = column.columnSpan;
+        while (counter > 1) {
+          displayedColumnsWithColumnSpan[i] = { id: `${column.id}-${column.columnSpan - counter + 1}`, columnSpanIndex: `${column.columnSpan - counter + 1}`};
+          counter -= 1;
+          i += 1;
+        }
+      }
+      else {
+        displayedColumnsWithColumnSpan[i] = column;
+        i += 1;
+      }
+    });
+
+  const [tableColumns, setTableColumns] = useState(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
 
   const defaultSectionRef = useRef(uuidv4());
 
@@ -328,22 +349,6 @@ function Table(props) {
   };
   const tableRowCount = tableSections.reduce(tableSectionReducer, headerRowCount);
 
-  // Create new displayedColumns object to pass to Section sub component to account for column spans
-  const displayedColumnsWithColumnSpan = [];
-  let i = 0;
-  displayedColumns.forEach((column) => {
-    displayedColumnsWithColumnSpan[i] = column;
-    i += 1;
-    if (column.columnSpan > 1) {
-      let counter = column.columnSpan;
-      while (counter > 1) {
-        displayedColumnsWithColumnSpan[i] = { id: `${column.id}_${counter - 1}` };
-        counter -= 1;
-        i += 1;
-      }
-    }
-  });
-
   // -------------------------------------
   // functions
 
@@ -370,7 +375,7 @@ function Table(props) {
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === RowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
-    setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
+    setTableColumns(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowSelectionMode]);
 
@@ -411,7 +416,7 @@ function Table(props) {
 
   // useEffect for row displayed columns
   useEffect(() => {
-    setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
+    setTableColumns(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinnedColumns, overflowColumns]);
 
@@ -439,7 +444,28 @@ function Table(props) {
         offsetArray.push(cumulativeOffset);
       });
     }
-    setPinnedColumnOffsets(offsetArray);
+    setPinnedColumnHeaderOffsets(offsetArray);
+
+    // create new offset array object copy
+    let cellOffsetArray = [];
+    let i=0;
+    offsetArray.forEach((item) => {
+      cellOffsetArray[i] = item;
+      i += 1;
+    })
+    
+    // account for column spans in first pinned for offset calculation
+    if(pinnedColumns.length > 0 && pinnedColumns[0].columnSpan > 1){
+      let counter = pinnedColumns[0].columnSpan;
+      while (counter > 1) {
+      cumulativeOffset += pinnedColumns[0].width;
+      cellOffsetArray.push(cumulativeOffset);
+      counter -= 1;
+      }
+    }
+
+    setPinnedColumnOffsets(cellOffsetArray);
+    
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 
@@ -655,7 +681,7 @@ function Table(props) {
           value={columnContextValue}
         >
           <colgroup>
-            {tableColumns.map((column) => (
+            {displayedColumnsWithColumnSpan.map((column) => (
               // eslint-disable-next-line react/forbid-dom-props
               <col key={column.id} style={{ width: `${column.width}px` }} />
             ))}

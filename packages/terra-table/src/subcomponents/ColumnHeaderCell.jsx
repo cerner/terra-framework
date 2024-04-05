@@ -366,7 +366,7 @@ const ColumnHeaderCell = (props) => {
   headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
   headerDescription += columnHighlightDescription ? `, ${columnHighlightDescription}` : '';
-  const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
+  const isPinnedColumn = columnIndex < columnContext.pinnedColumnHeaderOffsets.length;
   const CellTag = !isActionCell ? 'th' : 'td';
 
   const setColumnHeaderCellRef = (node) => {
@@ -375,7 +375,7 @@ const ColumnHeaderCell = (props) => {
 
   // Create cell content
   let cellContent;
-  if (isActionCell) {
+  if (isActionCell && !(columnSpan > 1)) {
     if (action) {
       cellContent = (
         <Button
@@ -422,7 +422,7 @@ const ColumnHeaderCell = (props) => {
         'action-cell': isActionCell,
         selectable: isSelectable,
         pinned: isPinnedColumn,
-        'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
+        'last-pinned-column': columnIndex === columnContext.pinnedColumnHeaderOffsets.length - 1,
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}

@@ -64,9 +64,8 @@ const CellSelection = () => {
   const onCellSelect = useCallback((selectedCell) => {
     if (selectedCell.rowId && selectedCell.columnId) {
       const rowIndex = rowData.findIndex(e => e.id === selectedCell.rowId);
-      const columnIndex = cols.findIndex(e => e.id === selectedCell.columnId);
+      const { columnIndex } = selectedCell;
       let otherSelectionsExist = false;
-
       // Remove cell selections, excluding current cell
       const newRowData = [...rowData];
       for (let row = 0; row < rowData.length; row += 1) {
@@ -83,7 +82,7 @@ const CellSelection = () => {
       newRowData[rowIndex].cells[columnIndex].isSelected = !rowData[rowIndex].cells[columnIndex].isSelected || otherSelectionsExist;
       setRowData(newRowData);
     }
-  }, [cols, rowData]);
+  }, [rowData]);
 
   const onClearSelectedCells = useCallback(() => {
     // Remove current selections
@@ -109,13 +108,13 @@ const CellSelection = () => {
 
     cells.forEach((cell) => {
       const rowIndex = rowData.findIndex(e => e.id === cell.rowId);
-      const columnIndex = cols.findIndex(e => e.id === cell.columnId);
+      const { columnIndex } = cell;
 
       newRowData[rowIndex].cells[columnIndex].isSelected = true;
     });
 
     setRowData(newRowData);
-  }, [cols, rowData]);
+  }, [rowData]);
 
   return (
     <FlowsheetDataGrid
