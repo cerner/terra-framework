@@ -298,7 +298,7 @@ class NavigationSideMenu extends Component {
     let header;
     if (onBack || !currentItem.isRootMenu) {
       header = (
-        /* eslint-disable jsx-a11y/aria-required-parent */
+        /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
         <Fragment>
           <div
             className={cx('side-navigation-menu')}
