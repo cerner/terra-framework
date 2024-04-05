@@ -60,6 +60,7 @@ const WorklistDataGridAutoFocusableCell = () => {
         rowHeaderIndex={rowHeaderIndex}
         rowHeight="50px"
         ariaLabel="Worklist Data Grid"
+        isAutoFocusEnabled
       />
     </>
   );
