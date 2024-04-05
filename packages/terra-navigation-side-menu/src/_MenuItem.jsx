@@ -39,6 +39,10 @@ const propTypes = {
    * */
   text: PropTypes.string,
   /**
+   * tabIndex for the menu item.
+   * */
+  tabIndex: PropTypes.string,
+  /**
    * @private
    * Menu container Ref for menu items
    * */
@@ -52,7 +56,14 @@ class MenuItem extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.textRender = this.textRender.bind(this);
     this.handleMenuItemRef = this.handleMenuItemRef.bind(this);
+    this.setTabIndex = this.setTabIndex.bind(this);
   }
+
+  setTabIndex = (node, value) => {
+    if (node) {
+      node.setAttribute('tabIndex', value);
+    }
+  };
 
   handleKeyDown(event) {
     const MenuContainerRef = this.props.getMenuContainerRef();
@@ -63,6 +74,8 @@ class MenuItem extends React.Component {
     if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
       const nextIndex = currentIndex < lastIndex ? currentIndex + 1 : 0;
       if (listMenuItems && listMenuItems[nextIndex]) {
+        this.setTabIndex(listMenuItems[currentIndex], '-1');
+        this.setTabIndex(listMenuItems[nextIndex], '0');
         listMenuItems[nextIndex].focus();
       }
       if (this.props.onKeyDown) {
@@ -84,11 +97,23 @@ class MenuItem extends React.Component {
       }
       const previousIndex = currentIndex > 0 ? currentIndex - 1 : lastIndex;
       if (listMenuItems && listMenuItems[previousIndex]) {
+        this.setTabIndex(listMenuItems[currentIndex], '-1');
+        this.setTabIndex(listMenuItems[previousIndex], '0');
         listMenuItems[previousIndex].focus();
       }
       if (this.props.onKeyUp) {
         this.props.onKeyUp(event);
       }
+      event.preventDefault();
+    }
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT && this.props.hasChevron) {
+      this.props.onKeyDown(event, this.props['data-menu-item']);
+      event.preventDefault();
+    }
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
+      this.props.onKeyDown(event, this.props['data-menu-item']);
       event.preventDefault();
     }
   }
@@ -140,7 +165,7 @@ class MenuItem extends React.Component {
           role="menuitem"
           ref={this.handleMenuItemRef}
           {...customProps}
-          tabIndex="0"
+          tabIndex={this.props.tabIndex}
           className={itemClassNames}
           onKeyDown={this.handleKeyDown}
           aria-haspopup={hasChevron}
