@@ -297,25 +297,24 @@ function Table(props) {
     return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
 
-    // Create new displayedColumns object to pass to Section sub component to account for column spans
-    const displayedColumnsWithColumnSpan = [];
-    let i = 0;
-    displayedColumns.forEach((column) => {
-      if (column.columnSpan > 1) {
-        displayedColumnsWithColumnSpan[i] = {...column,  id: `${column.id}-0`, columnSpanIndex: 0};
-        i += 1;
-        let counter = column.columnSpan;
-        while (counter > 1) {
-          displayedColumnsWithColumnSpan[i] = { id: `${column.id}-${column.columnSpan - counter + 1}`, columnSpanIndex: `${column.columnSpan - counter + 1}`};
-          counter -= 1;
-          i += 1;
-        }
-      }
-      else {
-        displayedColumnsWithColumnSpan[i] = column;
+  // Create new displayedColumns object to pass to Section sub component to account for column spans
+  const displayedColumnsWithColumnSpan = [];
+  let i = 0;
+  displayedColumns.forEach((column) => {
+    if (column.columnSpan > 1) {
+      displayedColumnsWithColumnSpan[i] = { ...column, id: `${column.id}-0`, columnSpanIndex: 0 };
+      i += 1;
+      let counter = column.columnSpan;
+      while (counter > 1) {
+        displayedColumnsWithColumnSpan[i] = { id: `${column.id}-${column.columnSpan - counter + 1}`, columnSpanIndex: `${column.columnSpan - counter + 1}` };
+        counter -= 1;
         i += 1;
       }
-    });
+    } else {
+      displayedColumnsWithColumnSpan[i] = column;
+      i += 1;
+    }
+  });
 
   const [tableColumns, setTableColumns] = useState(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
 
@@ -446,26 +445,26 @@ function Table(props) {
     }
     setPinnedColumnHeaderOffsets(offsetArray);
 
-    // create new offset array object copy
-    let cellOffsetArray = [];
-    let i=0;
+    // create new offset array object copy from offsetArray for cell offsets
+    const cellOffsetArray = [];
+    let index = 0;
     offsetArray.forEach((item) => {
-      cellOffsetArray[i] = item;
-      i += 1;
-    })
-    
+      cellOffsetArray[index] = item;
+      index += 1;
+    });
+
     // account for column spans in first pinned for offset calculation
-    if(pinnedColumns.length > 0 && pinnedColumns[0].columnSpan > 1){
+    if (pinnedColumns.length > 0 && pinnedColumns[0].columnSpan > 1) {
       let counter = pinnedColumns[0].columnSpan;
       while (counter > 1) {
-      cumulativeOffset += pinnedColumns[0].width;
-      cellOffsetArray.push(cumulativeOffset);
-      counter -= 1;
+        cumulativeOffset += pinnedColumns[0].width;
+        cellOffsetArray.push(cumulativeOffset);
+        counter -= 1;
       }
     }
 
     setPinnedColumnOffsets(cellOffsetArray);
-    
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableColumns]);
 

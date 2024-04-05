@@ -143,38 +143,38 @@ const ColumnHeader = (props) => {
       >
 
         {columns.filter((column) => (column.columnSpan > 1 || !(column.columnSpanIndex))).map((column, columnIndex) => (
-              <ColumnHeaderCell
-                key={`${column.id}-headerCell`}
-                id={`${column.id}-headerCell`}
-                tableId={tableId}
-                columnId={column.id}
-                columnIndex={columnIndex}
-                columnSpan={column.columnSpan}
-                displayName={column.displayName}
-                isDisplayVisible={column.isDisplayVisible}
-                width={column.width}
-                minimumWidth={column.minimumWidth}
-                maximumWidth={column.maximumWidth}
-                headerHeight={headerHeight}
-                isResizable={hasVisibleColumnHeaders && column.isResizable}
-                initialHeight={initialHeight}
-                isResizeHandleActive={activeResizeHandlerColumnId === column.id}
-                resizeHandleStateSetter={resizeHandleStateSetter}
-                isSelectable={hasVisibleColumnHeaders && column.isSelectable}
-                tableHeight={tableHeight}
-                triggerFocus={triggerFocus}
-                isActive={activeColumnIndex === columnIndex && focusedRowIndex === 0} // can be 2 rows in header
-                isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
-                columnResizeIncrement={columnResizeIncrement}
-                hasError={column.hasError}
-                sortIndicator={column.sortIndicator}
-                onColumnSelect={onColumnSelect}
-                onResizeMouseDown={onResizeMouseDown}
-                onResizeHandleChange={onResizeHandleChange}
-                columnHighlightColor={column.columnHighlightColor}
-                columnHighlightDescription={column.columnHighlightDescription}
-              />
-            ))}
+          <ColumnHeaderCell
+            key={`${column.id}-headerCell`}
+            id={`${column.id}-headerCell`}
+            tableId={tableId}
+            columnId={column.id}
+            columnIndex={columnIndex}
+            columnSpan={column.columnSpan}
+            displayName={column.displayName}
+            isDisplayVisible={column.isDisplayVisible}
+            width={column.width}
+            minimumWidth={column.minimumWidth}
+            maximumWidth={column.maximumWidth}
+            headerHeight={headerHeight}
+            isResizable={hasVisibleColumnHeaders && column.isResizable}
+            initialHeight={initialHeight}
+            isResizeHandleActive={activeResizeHandlerColumnId === column.id}
+            resizeHandleStateSetter={resizeHandleStateSetter}
+            isSelectable={hasVisibleColumnHeaders && column.isSelectable}
+            tableHeight={tableHeight}
+            triggerFocus={triggerFocus}
+            isActive={activeColumnIndex === columnIndex && focusedRowIndex === 0} // can be 2 rows in header
+            isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+            columnResizeIncrement={columnResizeIncrement}
+            hasError={column.hasError}
+            sortIndicator={column.sortIndicator}
+            onColumnSelect={onColumnSelect}
+            onResizeMouseDown={onResizeMouseDown}
+            onResizeHandleChange={onResizeHandleChange}
+            columnHighlightColor={column.columnHighlightColor}
+            columnHighlightDescription={column.columnHighlightDescription}
+          />
+        ))}
       </tr>
       {/* Actions row */}
       {hasColumnHeaderActions && hasVisibleColumnHeaders && (
