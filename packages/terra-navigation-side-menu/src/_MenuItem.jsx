@@ -39,6 +39,7 @@ const propTypes = {
    * */
   text: PropTypes.string,
   /**
+   * @private
    * tabIndex for the menu item.
    * */
   tabIndex: PropTypes.string,
@@ -58,12 +59,6 @@ class MenuItem extends React.Component {
     this.handleMenuItemRef = this.handleMenuItemRef.bind(this);
     this.setTabIndex = this.setTabIndex.bind(this);
   }
-
-  setTabIndex = (node, value) => {
-    if (node) {
-      node.setAttribute('tabIndex', value);
-    }
-  };
 
   handleKeyDown(event) {
     const MenuContainerRef = this.props.getMenuContainerRef();
@@ -108,12 +103,12 @@ class MenuItem extends React.Component {
     }
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT && this.props.hasChevron) {
-      this.props.onKeyDown(event, this.props['data-menu-item']);
+      this.props.onKeyDown(event);
       event.preventDefault();
     }
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
-      this.props.onKeyDown(event, this.props['data-menu-item']);
+      this.props.onKeyDown(event);
       event.preventDefault();
     }
   }
@@ -121,6 +116,12 @@ class MenuItem extends React.Component {
   handleMenuItemRef(node) {
     this.contentNode = node;
   }
+
+  setTabIndex = (node, value) => {
+    if (node) {
+      node.setAttribute('tabIndex', value);
+    }
+  };
 
   textRender() {
     const { intl, isSelected, text } = this.props;

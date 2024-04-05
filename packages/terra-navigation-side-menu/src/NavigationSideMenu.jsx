@@ -127,12 +127,12 @@ class NavigationSideMenu extends Component {
       return processMenuItems(nextProps.menuItems);
     }
     if (nextProps.selectedMenuKey !== prevState.selectedKey) {
-      return { navigatedKey: nextProps.selectedMenuKey }
+      return { navigatedKey: nextProps.selectedMenuKey };
     }
     return null;
   }
 
-  handleBackClick(event, key) {
+  handleBackClick(event) {
     const parentKey = this.state.parents[this.state.navigatedKey];
     const prevNavigatedValue = this.state.navigatedKey;
     if (parentKey) {
@@ -210,15 +210,15 @@ class NavigationSideMenu extends Component {
     }
   };
 
-  backButtonRef = (node) => {
-    this.backButtonContainer = node;
-  };
-
   getMenuContainerRef = () => this.menuContainer;
 
   setVisuallyHiddenComponent(node) {
     this.visuallyHiddenComponent = node;
   }
+
+  backButtonRef = (node) => {
+    this.backButtonContainer = node;
+  };
 
   buildListItem(key, keys) {
     const item = this.state.items[key];
@@ -239,7 +239,7 @@ class NavigationSideMenu extends Component {
     return (
       <MenuItem
         id={item.id}
-        tabIndex={(tabIndex == 0) ? "0" : "-1"}
+        tabIndex={(tabIndex === 0) ? '0' : '-1'}
         hasChevron={item.hasSubMenu || (item.childKeys && item.childKeys.length > 0)}
         isSelected={key === this.props.selectedChildKey}
         text={item.text}
@@ -254,7 +254,7 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <nav role="navigation" aria-label={this.props.ariaLabel}><ul role="menu" ref={(refobj) => this.handleMenuListRef(refobj)} className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key =>  this.buildListItem(key, currentItem.childKeys))}</ul></nav>;
+      return <nav role="navigation" aria-label={this.props.ariaLabel}><ul role="menu" ref={(refobj) => this.handleMenuListRef(refobj)} className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key, currentItem.childKeys))}</ul></nav>;
     }
     return null;
   }
@@ -298,15 +298,17 @@ class NavigationSideMenu extends Component {
     let header;
     if (onBack || !currentItem.isRootMenu) {
       header = (
+        /* eslint-disable jsx-a11y/aria-required-parent */
         <Fragment>
           <div
             className={cx('side-navigation-menu')}
-            role="menuitem"
+            role="none"
             ref={(obj) => this.backButtonRef(obj)}
             type="button"
-            tabIndex={(onBack) ? "0" : "-1"}
+            tabIndex={(onBack) ? '0' : '-1'}
             onKeyDown={(event) => this.handleHeaderBackClick(event)}
-            onClick={(event) => this.handleBackClick(event)}>
+            onClick={(event) => this.handleBackClick(event)}
+          >
             {(onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
             <h1 className={cx('title')}>{currentItem ? currentItem.text : null}</h1>
           </div>

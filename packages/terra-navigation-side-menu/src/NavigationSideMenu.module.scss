@@ -29,7 +29,7 @@
   .side-navigation-menu {
     align-items: center;
     background-color: var(--terra-navigation-side-menu-action-header-background-color, #f4f4f4);
-    border-bottom-color: var(--terra-navigation-side-menu-action-header-border-bottom-color, #dedfe0);
+    border-bottom-color: var(--terra-navigation-side-menu-action-header-border-bottom-color, 1px solid #dedfe0);
     box-shadow: var(--terra-navigation-side-menu-action-header-box-shadow);
     color: var(--terra-navigation-side-menu-action-header-color);
     display: flex;
