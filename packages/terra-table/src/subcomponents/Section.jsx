@@ -220,7 +220,7 @@ function Section(props) {
         {sectionHeader}
         {!isCollapsed && subsections.map((subsection) => (
           <>
-            <tbody className={cx('subsection-header', {
+            <tbody className={cx('subsection', {
               collapsed: isCollapsed,
               collapsible: isCollapsible,
             }, theme.className)}
@@ -242,7 +242,7 @@ function Section(props) {
                 >
 
                   <SectionHeader
-                    className={cx('subsection')}
+                    className={cx('subsection-header')}
                     text={subsection.text}
                     isTitleSticky
                     boundedWidth={boundingWidth}
@@ -252,7 +252,7 @@ function Section(props) {
                 </th>
               </tr>
             </tbody>
-            <tbody className={cx('subsection', {
+            <tbody className={cx('subsection-rows', {
               collapsed: isCollapsed,
               collapsible: isCollapsible,
             }, theme.className)}
