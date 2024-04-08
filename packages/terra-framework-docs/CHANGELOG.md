@@ -2,6 +2,19 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
+
+## 1.79.0 - (April 4, 2024)
+
+* Changed
+  * Removed `sortIndicator` from the first column of Table With Sections example.
+  * Updated `terra-compact-interactive-list` examples to provide a meaningful name to the column with icons.
+
+* Added
+  * Added examples and tests for `terra-table` to demonstrate auto layout.
+  * Added test for `terra-folder-tree` to cover focus management after updating its children.
+
 ## 1.78.0 - (March 29, 2024)
 
 * Changed
