@@ -302,12 +302,10 @@ function Table(props) {
   let i = 0;
   displayedColumns.forEach((column) => {
     if (column.columnSpan > 1) {
-      displayedColumnsWithColumnSpan[i] = { ...column, id: `${column.id}-0`, columnSpanIndex: 0 };
+      displayedColumnsWithColumnSpan[i] = { ...column, columnSpanIndex: 0 };
       i += 1;
-      let counter = column.columnSpan;
-      while (counter > 1) {
-        displayedColumnsWithColumnSpan[i] = { id: `${column.id}-${column.columnSpan - counter + 1}`, columnSpanIndex: `${column.columnSpan - counter + 1}` };
-        counter -= 1;
+      for (let counter = column.columnSpan; counter > 1; counter -= 1) {
+        displayedColumnsWithColumnSpan[i] = { id: `${column.id}`, columnSpanIndex: `${column.columnSpan - counter + 1}` };
         i += 1;
       }
     } else {
@@ -422,7 +420,9 @@ function Table(props) {
   // useEffect to calculate pinned column offsets
   useEffect(() => {
     const offsetArray = [];
+    const cellOffsetArray = [];
     let cumulativeOffset = 0;
+    let cellCumulativeOffset = 0;
     let lastPinnedColumnIndex;
 
     // if table has selectable rows but no pinned columns, then set the offset of the first column to 0
@@ -430,39 +430,37 @@ function Table(props) {
       lastPinnedColumnIndex = 0;
       offsetArray.push(cumulativeOffset);
       setPinnedColumnOffsets(offsetArray);
+      setPinnedColumnHeaderOffsets(offsetArray);
       return;
     }
 
     if (pinnedColumns.length > 0) {
       offsetArray.push(cumulativeOffset);
-
+      cellOffsetArray.push(cellCumulativeOffset);
       lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
+
+      if (pinnedColumns[0].columnSpan > 1) {
+        for (let c = pinnedColumns[0].columnSpan; c > 1; c -= 1) {
+          cellCumulativeOffset += tableColumns[tableColumns.findIndex((col) => col.id === pinnedColumns[0].id)].width;
+          cellOffsetArray.push(cellCumulativeOffset);
+        }
+      }
 
       tableColumns.slice(0, lastPinnedColumnIndex).forEach((pinnedColumn) => {
         cumulativeOffset += pinnedColumn.width;
+        cellCumulativeOffset += pinnedColumn.width;
+        if (pinnedColumn.columnSpan > 1) {
+          for (let c = pinnedColumn.columnSpan; c > 1; c -= 1) {
+            cellCumulativeOffset += pinnedColumn.width;
+            cellOffsetArray.push(cellCumulativeOffset);
+          }
+        }
+        cellOffsetArray.push(cellCumulativeOffset);
+
         offsetArray.push(cumulativeOffset);
       });
     }
     setPinnedColumnHeaderOffsets(offsetArray);
-
-    // create new offset array object copy from offsetArray for cell offsets
-    const cellOffsetArray = [];
-    let index = 0;
-    offsetArray.forEach((item) => {
-      cellOffsetArray[index] = item;
-      index += 1;
-    });
-
-    // account for column spans in first pinned for offset calculation
-    if (pinnedColumns.length > 0 && pinnedColumns[0].columnSpan > 1) {
-      let counter = pinnedColumns[0].columnSpan;
-      while (counter > 1) {
-        cumulativeOffset += pinnedColumns[0].width;
-        cellOffsetArray.push(cumulativeOffset);
-        counter -= 1;
-      }
-    }
-
     setPinnedColumnOffsets(cellOffsetArray);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -653,9 +651,7 @@ function Table(props) {
     firstRowId = rowData.firstRowId;
     lastRowId = rowData.lastRowId;
   }
-
   // -------------------------------------
-
   return (
     <div
       ref={handleContainerRef}
@@ -680,9 +676,9 @@ function Table(props) {
           value={columnContextValue}
         >
           <colgroup>
-            {displayedColumnsWithColumnSpan.map((column) => (
+            {tableColumns.map((column) => (
               // eslint-disable-next-line react/forbid-dom-props
-              <col key={column.id} style={{ width: `${column.width}px` }} />
+              <col key={column.columnSpanIndex ? `${column.id}_${column.columnSpanIndex}` : column.id} style={{ width: `${column.width}px` }} />
             ))}
           </colgroup>
 

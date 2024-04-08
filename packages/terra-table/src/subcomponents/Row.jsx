@@ -174,7 +174,7 @@ function Row(props) {
       {cells.map((cellData, index) => {
         const cellColumnIndex = index + columnIndexOffSet;
         const columnId = displayedColumns[cellColumnIndex].id;
-        const { columnSpan } = displayedColumns[cellColumnIndex];
+        const { columnSpan, columnSpanIndex } = displayedColumns[cellColumnIndex];
 
         return (
           <Cell
@@ -184,7 +184,7 @@ function Row(props) {
             columnIndex={cellColumnIndex}
             sectionId={sectionId}
             tableId={tableId}
-            key={`${id}_${columnId}`}
+            key={columnSpanIndex ? `${id}_${columnId}_${columnSpanIndex}` : `${id}_${columnId}`}
             isSelected={!rowSelectionMode && cellData.isSelected}
             isMasked={cellData.isMasked}
             maskedLabel={cellData.maskedLabel}

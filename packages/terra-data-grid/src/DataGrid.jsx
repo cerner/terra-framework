@@ -189,25 +189,25 @@ const DataGrid = forwardRef((props, ref) => {
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
-
   // Create new displayedColumns object to account for column spans
-  const displayedColumnsWithColumnSpan = [];
-  let i = 0;
-  displayedColumns.forEach((column) => {
-    if (column.columnSpan > 1) {
-      displayedColumnsWithColumnSpan[i] = { ...column, id: `${column.id}-0`, columnSpanIndex: 0 };
-      i += 1;
-      let counter = column.columnSpan;
-      while (counter > 1) {
-        displayedColumnsWithColumnSpan[i] = { id: `${column.id}-${column.columnSpan - counter + 1}`, columnSpanIndex: `${column.columnSpan - counter + 1}` };
-        counter -= 1;
+  const displayedColumnsWithColumnSpan = useMemo(() => {
+    let i = 0;
+    const newDisplayedColumns = [];
+    displayedColumns.forEach((column) => {
+      if (column.columnSpan > 1) {
+        newDisplayedColumns[i] = { ...column, columnSpanIndex: 0 };
+        i += 1;
+        for (let counter = column.columnSpan; counter > 1; counter -= 1) {
+          newDisplayedColumns[i] = { id: `${column.id}`, columnSpanIndex: `${column.columnSpan - counter + 1}` };
+          i += 1;
+        }
+      } else {
+        newDisplayedColumns[i] = column;
         i += 1;
       }
-    } else {
-      displayedColumnsWithColumnSpan[i] = column;
-      i += 1;
-    }
-  });
+    });
+    return newDisplayedColumns;
+  }, [displayedColumns]);
 
   // By default, all grid-based components have selectable cells.
   const dataGridRows = useMemo(() => (rows.map((row) => ({
@@ -339,7 +339,7 @@ const DataGrid = forwardRef((props, ref) => {
     if (!isSection(toCell.row)) {
     // Obtain coordinate rectangles for grid container, column header, and new cell selection
       const gridContainerRect = tableContainerRef.current.getBoundingClientRect();
-      const columnHeaderRect = grid.current.rows[0].cells[toCell.col].getBoundingClientRect();
+      const columnHeaderRect = grid.current.rows[0].getBoundingClientRect();
       const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
 
       // Calculate horizontal scroll offset for right boundary

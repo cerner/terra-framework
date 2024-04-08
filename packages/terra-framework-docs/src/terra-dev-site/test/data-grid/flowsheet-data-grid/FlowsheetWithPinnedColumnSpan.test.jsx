@@ -3,8 +3,8 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 
 const gridDataJSON = {
   cols: [
-    { id: 'Column-0', displayName: 'Vitals' },
-    { id: 'Column-1', displayName: 'March 16', columnSpan: 2 },
+    { id: 'Column-0', displayName: 'Vitals', columnSpan: 2 },
+    { id: 'Column-1', displayName: 'March 16' },
     { id: 'Column-2', displayName: 'March 17', columnSpan: 2 },
     { id: 'Column-3', displayName: 'March 18', columnSpan: 3 },
   ],
@@ -12,8 +12,8 @@ const gridDataJSON = {
     {
       id: '1',
       cells: [
-        { content: 'Heart Rate Monitored (bpm)' },
-        { content: '68' },
+        { content: 'Heart Rate Monitored' },
+        { content: '(bpm)' },
         { content: '69' },
         { content: '66' },
         { content: '68' },
@@ -25,8 +25,8 @@ const gridDataJSON = {
     {
       id: '2',
       cells: [
-        { content: 'Temperature Oral (degC)' },
-        { content: '36.7' },
+        { content: 'Temperature Oral' },
+        { content: '(degC)' },
         { content: '36.9' },
         { content: '36.7' },
         { content: '37' },
@@ -38,8 +38,8 @@ const gridDataJSON = {
     {
       id: '3',
       cells: [
-        { content: 'Cardiac Index (L/min/m2)' },
-        { content: '2.25' },
+        { content: 'Cardiac Index' },
+        { content: '(L/min/m2)' },
         { content: '2.28' },
         { content: '2.25' },
         { content: '2.8' },
@@ -51,8 +51,8 @@ const gridDataJSON = {
     {
       id: '4',
       cells: [
-        { content: 'ICP (mmHg)' },
-        { content: '11' },
+        { content: 'ICP' },
+        { content: '(mmHg)' },
         { content: '12' },
         { content: '11' },
         { content: '12' },
@@ -64,8 +64,8 @@ const gridDataJSON = {
     {
       id: '5',
       cells: [
-        { content: 'CPP (mmHg)' },
-        { content: '63' },
+        { content: 'CPP' },
+        { content: '(mmHg)' },
         { content: '47' },
         { content: '63' },
         { content: '48' },
@@ -77,7 +77,7 @@ const gridDataJSON = {
   ],
 };
 
-const FlowsheetDataGridWithColumnSpan = () => {
+const FlowsheetDataGridWithPinnedColumnSpan = () => {
   const { cols, rows } = gridDataJSON;
 
   const [rowData, setRowData] = useState(rows);
@@ -138,7 +138,7 @@ const FlowsheetDataGridWithColumnSpan = () => {
 
   return (
     <FlowsheetDataGrid
-      id="flowsheet-with-column-span"
+      id="flowsheet-with-pinned-column-span"
       columns={cols}
       rows={rowData}
       ariaLabel="Flowsheet Data Grid"
@@ -149,4 +149,4 @@ const FlowsheetDataGridWithColumnSpan = () => {
   );
 };
 
-export default FlowsheetDataGridWithColumnSpan;
+export default FlowsheetDataGridWithPinnedColumnSpan;

@@ -349,7 +349,7 @@ const ColumnHeaderCell = (props) => {
   const theme = useContext(ThemeContext);
 
   // Calculate cell left position for pinned columns due to their sticky position style
-  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnHeaderOffsets.length) ? columnContext.pinnedColumnHeaderOffsets[columnIndex] : null;
 
   // For tables, we want elements to be tabbable when selectable, but not anytime else.
   let buttonTabIndex = isSelectable ? 0 : undefined;

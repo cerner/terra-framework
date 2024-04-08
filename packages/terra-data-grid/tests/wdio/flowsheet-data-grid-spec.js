@@ -70,6 +70,18 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       });
     });
 
+    describe('flowsheet data grid with pinned column span', () => {
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-pinned-column-span');
+      });
+
+      it('renders a flowsheet data grid with a pinned column span', () => {
+        browser.keys(['Tab']); // Cell 0,0 gets focus
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
+        Terra.validates.element('flowsheet-with-pinned-column-span', { selector: '#flowsheet-with-pinned-column-span' });
+      });
+    });
+
     describe('flowsheet data grid with no column headers', () => {
       before(() => {
         browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-headers-hidden');
