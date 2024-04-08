@@ -308,7 +308,7 @@ describe('ColumnHeaderCell', () => {
     };
 
     const wrapper = enzymeIntl.mountWithIntl(
-      <ColumnContext.Provider value={{ pinnedColumnOffsets: [0] }}>
+      <ColumnContext.Provider value={{ pinnedColumnOffsets: [0], pinnedColumnHeaderOffsets: [0] }}>
         <ColumnHeaderCell
           tableId="test-table"
           columnIndex={0}
