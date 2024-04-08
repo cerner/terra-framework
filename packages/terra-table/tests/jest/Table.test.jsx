@@ -526,11 +526,11 @@ describe('Table', () => {
     expect(sectionHeader1.at(0).props().colSpan).toBe(tableSectionData.cols.length);
     expect(sectionHeader1.at(0).props().scope).toBe('col');
     // Validate table header element of the first subsection
-    expect(sectionHeader1.at(1).props().id).toBe('test-terra-table-subsection-0');
+    expect(sectionHeader1.at(1).props().id).toBe('test-terra-table-section-0-subsection-0');
     expect(sectionHeader1.at(1).props().colSpan).toBe(tableSectionData.cols.length);
     expect(sectionHeader1.at(1).props().scope).toBe('col');
     // Validate table header element of the 2nd subsection
-    expect(sectionHeader1.at(2).props().id).toBe('test-terra-table-subsection-1');
+    expect(sectionHeader1.at(2).props().id).toBe('test-terra-table-section-0-subsection-1');
     expect(sectionHeader1.at(2).props().colSpan).toBe(tableSectionData.cols.length);
     expect(sectionHeader1.at(2).props().scope).toBe('col');
 
@@ -545,10 +545,10 @@ describe('Table', () => {
 
     // Validate cells of the first row
     const row1Cell1 = section1Row1.find('.cell').at(0);
-    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-Column-0-headerCell');
+    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-section-0-subsection-0 test-terra-table-Column-0-headerCell');
     expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
     const row1Cell2 = section1Row1.find('.cell').at(1);
-    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
+    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-section-0-subsection-0 test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
 
     // Validate rows of the second subsection
     const section1Row3 = section1.find('.row').at(2);
