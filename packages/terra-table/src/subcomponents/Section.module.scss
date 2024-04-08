@@ -36,9 +36,8 @@
   .subsection {
     --terra-section-header-font-size: 0.808571428571rem;
 
-    background-color: var(--terra-subsection-background-color, #dedfe0);
+    background-color: var(--terra-table-subsection-background-color, #dedfe0);
     border-bottom:  var(--terra-table-subsection-border-bottom, 1px solid #c8cacb);
-    font-size: var(--terra-section-header-font-size, 0.808571428571rem);
     font-weight: var(--terra-table-subsection-font-weight, 700);
     margin: 0;
     padding-top: var(--terra-table-subsection-padding-top, 0.3571428571rem);
@@ -70,7 +69,7 @@
         }
         
         .section-header:focus-within {
-          --terra-section-header-focus-within-outline-offset: -5px;
+          --terra-table-section-header-focus-within-outline-offset: -5px;
         }
         /* stylelint-enable selector-max-compound-selectors */
       }
