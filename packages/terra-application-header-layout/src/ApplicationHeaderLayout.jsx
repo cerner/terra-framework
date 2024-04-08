@@ -88,9 +88,7 @@ const ApplicationHeaderLayout = ({
     const mainContainer = document.querySelector(['[data-terra-layout-main]']);
 
     if (mainContainer) {
-      mainContainer.setAttribute('tabindex', '-1');
       mainContainer.focus();
-      mainContainer.removeAttribute('tabindex');
     }
   };
 

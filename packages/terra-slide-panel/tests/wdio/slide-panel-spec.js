@@ -65,7 +65,8 @@ Terra.describeViewports('Slide panel', ['large'], () => {
   describe('Toggle the slide panel click', () => {
     it('Opens panel and focuses on panel', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
-      $('#test-toggle').click();
+      const disclosingButton = $('#test-toggle');
+      disclosingButton.click();
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.pause(150);
       expect($('[aria-label="Panel content area"]').isFocused()).toBeTruthy();
@@ -80,18 +81,19 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-toggle');
 
       browser.keys(['Tab']);
-      expect($('#test-toggle').isFocused()).toBeTruthy();
+      const disclosingButton = $('#test-toggle');
+      expect(disclosingButton.isFocused()).toBeTruthy();
       browser.keys(['Enter']);
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.pause(150);
 
       browser.keys(['Tab']);
       expect($('#focus-button').isFocused()).toBeTruthy();
+
       browser.keys(['Enter']);
       $('#test-slide [aria-label="Panel content area"][aria-hidden="true"]').waitForExist();
 
       expect($('#test-toggle').isFocused()).toBeTruthy();
-
       browser.pause(150);
 
       Terra.validates.element('toggle button focused', { selector: '#root' });
@@ -199,21 +201,23 @@ Terra.describeViewports('Slide panel', ['large'], () => {
   describe('Non-focusable element used to disclose slide panel', () => {
     it('does not focus SVG when it is the disclosing node', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-svg-toggle');
-      $('#test-click-svg').moveTo();
-      $('#test-click-svg').click();
+      const disclosingElement = $('#test-click-svg');
+      $(disclosingElement).moveTo();
+      $(disclosingElement).click();
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.keys(['Tab']);
       expect($('#focus-button').isFocused()).toBeTruthy();
       browser.keys(['Enter']);
 
-      expect($('body').isFocused()).toBeTruthy();
-      expect($('#test-click-svg').isFocused()).toBeFalsy();
+      expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
+      expect($(disclosingElement).isFocused()).toBeFalsy();
     });
 
     it('focuses main node when disclosing node has undefined focus', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-svg-toggle');
-      $('#test-p-click').moveTo();
-      $('#test-p-click').click();
+      const disclosingElement = $('#test-p-click');
+      disclosingElement.moveTo();
+      disclosingElement.click();
       $('#test-slide [aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
       browser.keys(['Tab']);
       expect($('#focus-button').isFocused()).toBeTruthy();
@@ -221,6 +225,32 @@ Terra.describeViewports('Slide panel', ['large'], () => {
 
       expect($('[aria-label="Main content area"]').isFocused()).toBeTruthy();
       expect($('#test-click-svg').isFocused()).toBeFalsy();
+    });
+  });
+
+  describe('Slide panel with no mainContent prop passed', () => {
+    it('sets focus correctly if disclosing node is a regular button', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-no-main-content');
+      const disclosureButton = $('#mainToggleBtn');
+      $(disclosureButton).moveTo();
+      $(disclosureButton).click();
+      $('[aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
+      browser.keys(['Tab']);
+      expect($('#panelToggleBtn').isFocused()).toBeTruthy();
+      browser.keys(['Enter']);
+      expect(disclosureButton.isFocused()).toBeTruthy();
+    });
+
+    it('sets focus correctly if disclosing node is not focusable', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/slide-panel/slide-panel-no-main-content');
+      const disclosureElement = $('#mainToggleParagraph');
+      $(disclosureElement).moveTo();
+      $(disclosureElement).click();
+      $('[aria-label="Panel content area"][aria-hidden="false"]').waitForExist();
+      browser.keys(['Tab']);
+      expect($('#panelToggleBtn').isFocused()).toBeTruthy();
+      browser.keys(['Enter']);
+      expect(disclosureElement.isFocused()).toBeFalsy();
     });
   });
 });

@@ -206,45 +206,26 @@ function Cell(props) {
 
   /**
   * Determine if a cell only has a single button or hyperlink
-  * @param {HTMLElement} element - The element to check if it contains only a button or hyperlink
-  * @returns True if the element only has a single button or hyperlink. Otherwise, false.
+  * @returns The auto focusable button or anchor element. If there is no auto focusable element, null is returned.
   */
-  const hasOnlySingleButtonOrHyperlink = (node) => {
-    const focusableElements = getFocusableElements(node);
-    if (focusableElements.length > 1) {
-      return false;
+  const getAutoFocusableElement = () => {
+    if (!gridContext.isAutoFocusEnabled) {
+      return null;
     }
 
-    return node.querySelector('a, button');
+    const focusableElements = getFocusableElements(cellRef.current);
+    if (focusableElements.length > 1) {
+      return null;
+    }
+
+    return cellRef.current.querySelector('a, button');
   };
 
   /**
-   *
-   * @param {HTMLElement} element - The element to check if it is a text input
-   * @returns True if the element is a editable field.  Otherwise, false.
-   */
-  const isEditableField = (element) => {
-    const { tagName } = element;
-
-    // Check if text input field
-    if (tagName.toLowerCase() === 'input') {
-      const validTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
-      const inputType = element.type;
-      return validTypes.indexOf(inputType) >= 0;
-    }
-
-    // Check if textarea or select element
-    if (['textarea', 'select'].indexOf(tagName.toLowerCase()) >= 0) {
-      return true;
-    }
-
-    // Check if content editable div
-    if (element.hasAttribute('contentEditable') && element.getAttribute('contentEditable') !== false) {
-      return true;
-    }
-
-    return false;
-  };
+  * Determine if a cell only has a single button or hyperlink
+  * @returns True if the element only has a single button or hyperlink. Otherwise, false.
+  */
+  const hasOnlySingleButtonOrHyperlink = () => getAutoFocusableElement() !== null;
 
   /**
    * Handles the onDeactivate callback for FocusTrap component
@@ -258,9 +239,20 @@ function Cell(props) {
 
   useEffect(() => {
     if (isGridContext) {
-      setIsInteractable(hasFocusableElements());
+      const autoFocusableElement = getAutoFocusableElement();
+      if (autoFocusableElement !== null) {
+        // Update aria live region when auto focusable element is given focus
+        autoFocusableElement.addEventListener('focus', () => {
+          if (gridContext.setCellAriaLiveMessage) {
+            gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
+          }
+        });
+      } else {
+        setIsInteractable(hasFocusableElements());
+      }
     }
-  }, [isGridContext]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gridContext, intl, isGridContext]);
 
   const handleMouseDown = (event) => {
     if (rowSelectionMode && (event.button === 2 || hasFocusableElements())) {
@@ -296,19 +288,33 @@ function Cell(props) {
       switch (key) {
         case KeyCode.KEY_RETURN:
           // Lock focus into component
-          if (isGridContext && hasFocusableElements()) {
+          if (isGridContext && targetElement === cellRef.current && hasFocusableElements()) {
             // If the current cell has only a single button or hyperlink component, do not enable focus trap
-            if (hasOnlySingleButtonOrHyperlink(cellRef.current)) {
-              break;
+            const autoFocusableElement = getAutoFocusableElement();
+            if (autoFocusableElement !== null) {
+              autoFocusableElement.focus();
+            } else {
+              setIsFocusTrapEnabled(true);
             }
 
-            setIsFocusTrapEnabled(true);
-
+            // Update aria live region when cell user "dives into" cell
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
             }
+
             event.stopPropagation();
             event.preventDefault();
+          }
+          break;
+        case KeyCode.KEY_ESCAPE:
+          // Handle escape key event when the cell content is auto focusable
+          if (isGridContext && targetElement !== cellRef.current && hasOnlySingleButtonOrHyperlink()) {
+            cellRef.current.focus();
+
+            // Update aria live region when focus is returned to table cell element
+            if (gridContext.setCellAriaLiveMessage) {
+              gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.resume-navigation' }));
+            }
           }
           break;
         case KeyCode.KEY_SPACE:
@@ -328,9 +334,9 @@ function Cell(props) {
             }, event);
           }
 
-          // Allow default behavior if the event target is an editable field
-          if (!isEditableField(targetElement)) {
-            event.preventDefault(); // prevent the default scrolling
+          // Prevent scrolling when table cell element has focus
+          if (['td', 'th'].indexOf(targetElement.tagName.toLowerCase()) >= 0) {
+            event.preventDefault();
           }
           break;
         default:

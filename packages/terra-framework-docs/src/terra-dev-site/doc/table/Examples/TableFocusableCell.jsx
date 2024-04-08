@@ -30,9 +30,9 @@ const TableFocusableCell = () => {
   const tableDataJSON = {
     cols: [
       { id: 'Column-0', displayName: 'Patient' },
-      { id: 'Column-1', displayName: 'Column 1' },
-      { id: 'Column-2', displayName: 'Column 2' },
-      { id: 'Column-3', displayName: 'Column 3' },
+      { id: 'Column-1', displayName: 'Action A' },
+      { id: 'Column-2', displayName: 'Action B' },
+      { id: 'Column-3', displayName: 'Action C' },
     ],
     rows: [
       {

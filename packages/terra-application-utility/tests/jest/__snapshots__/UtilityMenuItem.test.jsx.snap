@@ -97,6 +97,7 @@ exports[`UtilityMenuItem should render with a content location 1`] = `
   isCompact={false}
   isDisabled={false}
   isIconOnly={false}
+  isLeftAligned={false}
   isReversed={false}
   onClick={[Function]}
   onKeyDown={[Function]}

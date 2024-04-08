@@ -301,4 +301,11 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
       Terra.validates.element('table-without-row-header', '#table-without-row-header');
     });
   });
+
+  describe('Auto Layoyut Table', () => {
+    it('Validates the auto layout table', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/auto-layout-table');
+      Terra.validates.element('auto-layout-table', '#auto-layout-table');
+    });
+  });
 });

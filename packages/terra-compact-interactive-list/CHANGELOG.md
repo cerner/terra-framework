@@ -2,6 +2,29 @@
 
 ## Unreleased
 
+* Changed
+  * Changed to avoid focus being set to the first cell on multiple re-renders.
+
+## 1.15.0 - (April 4, 2024)
+
+* Changed
+  * Updated to have no row headers if list has only one semantic column.
+
+## 1.14.0 - (March 29, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.13.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.12.0 - (March 21, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.11.0 - (March 19, 2024)
 
 * Changed

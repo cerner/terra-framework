@@ -4,6 +4,27 @@
 
 * Added
   * Added column span functionality to FlowsheetDataGrid.
+  * Added `isAutoFocusEnabled` prop to allow auto focus of interactable elements when the only interactable element is a button or hyperlink.
+
+## 1.25.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.24.0 - (March 29, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.23.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.22.0 - (March 21, 2024)
+
+* Changed
+  * Minor dependency version bump.
 
 ## 1.21.0 - (March 19, 2024)
 

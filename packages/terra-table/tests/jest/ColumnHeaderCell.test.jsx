@@ -52,7 +52,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
     expect(columnHeader.props()['aria-owns']).toBeUndefined();
@@ -90,7 +89,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
 
@@ -128,7 +126,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
 
@@ -166,7 +163,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
 
@@ -205,7 +201,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBe('columnheader');
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
 
@@ -249,7 +244,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props().onMouseDown).toBeDefined();
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
 
@@ -294,7 +288,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().scope).toBe('col');
     expect(columnHeader.props().tabIndex).toEqual(undefined);
     expect(columnHeader.props().onMouseDown).toBeUndefined();
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('150px');
     expect(columnHeader.props().title).toBe('Vitals');
 
@@ -368,7 +361,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBeUndefined();
     expect(columnHeader.props().scope).toBeUndefined();
     expect(columnHeader.props().tabIndex).toEqual(undefined);
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('auto');
     expect(columnHeader.props().title).toBe(action.label);
     expect(columnHeader.props()['aria-owns']).toBeFalsy();
@@ -410,7 +402,6 @@ describe('ColumnHeaderCell', () => {
     expect(columnHeader.props().role).toBeUndefined();
     expect(columnHeader.props().scope).toBeUndefined();
     expect(columnHeader.props().tabIndex).toBeUndefined(); // needs isGridContext to be -1
-    expect(columnHeader.props().style.width).toBe('100px');
     expect(columnHeader.props().style.height).toBe('auto');
     expect(columnHeader.props().title).toBeUndefined();
     expect(columnHeader.props()['aria-owns']).toBeFalsy();

@@ -210,6 +210,7 @@ describe('Cell', () => {
           key="key"
         >
           <button type="button">Button</button>
+          <button type="button">Button 2</button>
         </Cell>
       </GridContext.Provider>, { attachTo: document.body },
     );
