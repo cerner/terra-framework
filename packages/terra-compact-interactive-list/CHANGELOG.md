@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Changed to put focus on first item only on initial render.
+  * Changed to avoid focus being set to the first cell on multiple re-renders.
 
 ## 1.15.0 - (April 4, 2024)
 
