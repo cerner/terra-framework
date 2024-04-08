@@ -110,6 +110,7 @@ const DataGridFocusableCell = () => {
           rows={rows}
           rowHeaderIndex={rowHeaderIndex}
           ariaLabel="Data Grid"
+          isAutoFocusEnabled
         />
       </div>
       <button id="next-focus-button" type="button" aria-label="Next Element">Test Next</button>

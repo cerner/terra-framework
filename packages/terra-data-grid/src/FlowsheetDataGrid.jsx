@@ -109,6 +109,11 @@ const propTypes = {
    * Boolean to show/hide column headers. By default, it is set to `true` and column headers are visible.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
+
+  /**
+   * Determines if focus is moved to the interactive element of a cell when a single button or hyperlink element is the only interactive element.
+   */
+  isAutoFocusEnabled: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -138,6 +143,7 @@ function FlowsheetDataGrid(props) {
     intl,
     hasVisibleColumnHeaders,
     rowMinimumHeight,
+    isAutoFocusEnabled,
   } = props;
 
   const anchorCell = useRef(null);
@@ -424,6 +430,7 @@ function FlowsheetDataGrid(props) {
         hasVisibleColumnHeaders={hasVisibleColumnHeaders}
         ref={dataGridFuncRef}
         rowMinimumHeight={rowMinimumHeight}
+        isAutoFocusEnabled={isAutoFocusEnabled}
       />
       <VisuallyHiddenText aria-live="polite" text={cellSelectionAriaLiveMessage} />
     </div>

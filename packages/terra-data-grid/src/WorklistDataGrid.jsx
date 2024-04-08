@@ -124,6 +124,11 @@ const propTypes = {
    * rendered to allow for row selection to occur.
    */
   hasSelectableRows: PropTypes.bool,
+
+  /**
+   * Determines if focus is moved to the interactive element of a cell when a single button or hyperlink element is the only interactive element.
+   */
+  isAutoFocusEnabled: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -158,6 +163,7 @@ function WorklistDataGrid(props) {
     onEnableRowSelection,
     hasSelectableRows,
     rowHeaderIndex,
+    isAutoFocusEnabled,
   } = props;
 
   const inShiftUpDownMode = useRef(false);
@@ -388,6 +394,7 @@ function WorklistDataGrid(props) {
         onClearSelection={handleClearSelection}
         onRangeSelection={onRangeSelection}
         hasSelectableRows={hasSelectableRows}
+        isAutoFocusEnabled={isAutoFocusEnabled}
         ref={dataGridFuncRef}
       />
     </div>

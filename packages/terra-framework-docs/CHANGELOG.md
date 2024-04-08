@@ -4,7 +4,8 @@
 
 * Added
   * Added documentation for subsections in `terra-table`.
-
+  * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
+  
 * Changed
   * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
 

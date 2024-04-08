@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `isAutoFocusEnabled` prop to allow auto focus of interactable elements when the only interactable element is a button or hyperlink.
+
 ## 1.25.0 - (April 4, 2024)
 
 * Changed
