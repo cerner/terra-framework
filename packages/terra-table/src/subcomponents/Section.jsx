@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import SectionHeader from 'terra-section-header';
 import ThemeContext from 'terra-theme-context';
 import GridContext, { GridConstants } from '../utils/GridContext';
+import { SUBSECTION_HEADER_LEVEL } from '../utils/constants';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
@@ -246,7 +247,7 @@ function Section(props) {
                     text={subsection.text}
                     isTitleSticky
                     boundedWidth={boundingWidth}
-                    level={3}
+                    level={SUBSECTION_HEADER_LEVEL}
                   />
 
                 </th>

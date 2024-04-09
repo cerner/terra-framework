@@ -7,7 +7,7 @@ import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import Section from '../../src/subcomponents/Section';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
-import ERRORS from '../../src/utils/constants';
+import { ERRORS } from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
 import Table from '../../src/Table';
 import Cell from '../../src/subcomponents/Cell';
