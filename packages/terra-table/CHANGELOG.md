@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * (flowsheet-data-grid only) Added support for subsections.
+
 * Changed
   * Updated the cell component auto focus logic to be configured by the grid context.
 

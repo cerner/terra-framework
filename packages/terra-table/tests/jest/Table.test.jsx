@@ -7,7 +7,7 @@ import ColumnHeader from '../../src/subcomponents/ColumnHeader';
 import ColumnHeaderCell from '../../src/subcomponents/ColumnHeaderCell';
 import Section from '../../src/subcomponents/Section';
 import GridContext, { GridConstants } from '../../src/utils/GridContext';
-import ERRORS from '../../src/utils/constants';
+import { ERRORS } from '../../src/utils/constants';
 import Row from '../../src/subcomponents/Row';
 import Table from '../../src/Table';
 import Cell from '../../src/subcomponents/Cell';
@@ -145,6 +145,97 @@ const tableSectionData = {
       },
     ],
   }],
+};
+
+const tableSubSectionData = {
+  cols: [
+    {
+      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', isSelectable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'Location', isSelectable: true,
+    },
+    { id: 'Column-2', displayName: 'Illness Severity', isSelectable: true },
+    { id: 'Column-3', displayName: 'Visit' },
+    { id: 'Column-4', displayName: 'Allergy' },
+    { id: 'Column-5', displayName: 'Primary Contact' },
+  ],
+  colsWithActions: [
+    {
+      id: 'Column-0', displayName: 'Patient', sortIndicator: 'ascending', isSelectable: true, action,
+    },
+    {
+      id: 'Column-1', displayName: 'Location', isSelectable: true,
+    },
+    { id: 'Column-2', displayName: 'Illness Severity', isSelectable: true },
+    { id: 'Column-3', displayName: 'Visit' },
+    { id: 'Column-4', displayName: 'Allergy' },
+    { id: 'Column-5', displayName: 'Primary Contact' },
+  ],
+  sections: [
+    {
+      id: 'section-0',
+      text: 'Test Section',
+      subsections: [
+        {
+          id: 'subsection-0',
+          text: 'Test SubSection',
+          rows: [
+            {
+              id: '1',
+              cells: [
+                { content: 'Fleck, Arthur' },
+                { content: '1007-MTN' },
+                { content: 'Unstable' },
+                { content: 'Inpatient, 2 months' },
+                { content: '' },
+                { content: 'Quinzell, Harleen' },
+              ],
+            },
+            {
+              id: '2',
+              cells: [
+                { content: 'Wayne, Bruce' },
+                { content: '1007-MTN-DR' },
+                { content: 'Stable' },
+                { content: 'Outpatient, 2 days' },
+                { content: 'Phytochemicals' },
+                { content: 'Grayson, Richard' },
+              ],
+            },
+          ],
+        },
+        {
+          id: 'subsection-1',
+          text: 'Test SubSection #2',
+          rows: [
+            {
+              id: '3',
+              cells: [
+                { content: 'Parker, Peter' },
+                { content: '1007-MTN' },
+                { content: 'Unstable' },
+                { content: 'Inpatient, 2 months' },
+                { content: '' },
+                { content: 'Octopus, Doctor' },
+              ],
+            },
+            {
+              id: '4',
+              cells: [
+                { content: 'Stark, Tony' },
+                { content: '1007-MTN-DR' },
+                { content: 'Stable' },
+                { content: 'Outpatient, 2 days' },
+                { content: 'Phytochemicals' },
+                { content: 'America, Captain' },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+  ],
 };
 
 let mockSpyUuid;
@@ -398,6 +489,75 @@ describe('Table', () => {
     expect(section2Row1Cell1.props().id).toBe('test-terra-table-rowheader-3');
     const section2Row1Cell2 = section2Row1.find('.cell').at(1);
     expect(section2Row1Cell2.props().headers).toBe('test-terra-table-section-1 test-terra-table-rowheader-3 test-terra-table-Column-1-headerCell');
+  });
+
+  it('verifies ARIA attributes for a table with subsections', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <Table
+        id="test-terra-table"
+        overflowColumns={tableSubSectionData.cols}
+        sections={tableSubSectionData.sections}
+      />,
+    );
+
+    // Validate table properties
+    const table = wrapper.find('table');
+    expect(table.props().id).toBe('test-terra-table');
+    expect(table.props().role).toBe('table');
+    expect(table.props()['aria-rowcount']).toBe(8);
+
+    // Validate column header id attribute
+    const columnHeaderCell = wrapper.find('.column-header').at(0);
+    expect(columnHeaderCell.props().id).toBe('test-terra-table-Column-0-headerCell');
+
+    // Retrieve first section
+    const tableSections = wrapper.find(Section);
+    const section1 = tableSections.at(0);
+
+    // Validate section header row of the first section
+    const section1HeaderRow = section1.find('.header-row');
+    expect(section1HeaderRow.at(0).props()['aria-rowindex']).toBe(2);
+    expect(section1HeaderRow.at(1).props()['aria-rowindex']).toBe(3);
+    expect(section1HeaderRow.at(2).props()['aria-rowindex']).toBe(6);
+
+    // Validate table header element of the first section
+    const sectionHeader1 = section1HeaderRow.find('th');
+    expect(sectionHeader1.at(0).props().id).toBe('test-terra-table-section-0');
+    expect(sectionHeader1.at(0).props().colSpan).toBe(tableSectionData.cols.length);
+    expect(sectionHeader1.at(0).props().scope).toBe('col');
+    // Validate table header element of the first subsection
+    expect(sectionHeader1.at(1).props().id).toBe('test-terra-table-section-0-subsection-0');
+    expect(sectionHeader1.at(1).props().colSpan).toBe(tableSectionData.cols.length);
+    expect(sectionHeader1.at(1).props().scope).toBe('col');
+    // Validate table header element of the 2nd subsection
+    expect(sectionHeader1.at(2).props().id).toBe('test-terra-table-section-0-subsection-1');
+    expect(sectionHeader1.at(2).props().colSpan).toBe(tableSectionData.cols.length);
+    expect(sectionHeader1.at(2).props().scope).toBe('col');
+
+    // Validate rows of the first subsection
+    const section1Row1 = section1.find('.row').at(0);
+
+    expect(section1Row1.props()['aria-rowindex']).toBe(4);
+    expect(section1Row1.props()['data-row-id']).toBe('1');
+    const section1Row2 = section1.find('.row').at(1);
+    expect(section1Row2.props()['aria-rowindex']).toBe(5);
+    expect(section1Row2.props()['data-row-id']).toBe('2');
+
+    // Validate cells of the first row
+    const row1Cell1 = section1Row1.find('.cell').at(0);
+    expect(row1Cell1.props().headers).toBe('test-terra-table-section-0 test-terra-table-section-0-subsection-0 test-terra-table-Column-0-headerCell');
+    expect(row1Cell1.props().id).toBe('test-terra-table-rowheader-1');
+    const row1Cell2 = section1Row1.find('.cell').at(1);
+    expect(row1Cell2.props().headers).toBe('test-terra-table-section-0 test-terra-table-section-0-subsection-0 test-terra-table-rowheader-1 test-terra-table-Column-1-headerCell');
+
+    // Validate rows of the second subsection
+    const section1Row3 = section1.find('.row').at(2);
+
+    expect(section1Row3.props()['aria-rowindex']).toBe(7);
+    expect(section1Row3.props()['data-row-id']).toBe('3');
+    const section1Row4 = section1.find('.row').at(3);
+    expect(section1Row4.props()['aria-rowindex']).toBe(8);
+    expect(section1Row4.props()['data-row-id']).toBe('4');
   });
 
   it('verifies ARIA rowcount and rowindex attributes for a table with header actions (with sections)', () => {
