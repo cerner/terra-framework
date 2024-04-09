@@ -37,15 +37,7 @@
         border-bottom:  var(--terra-table-subsection-border-bottom, 1px solid #c8cacb);
         left: var(--terra-table-subsection-header-padding-left, 1.2142857143rem);
       }
-
       /* stylelint-enable selector-max-compound-selectors */
     }
-  }
-
-  .subsection-rows {
-    font-weight: var(--terra-table-subsection-font-weight, 700);
-    margin: 0;
-    padding-bottom: var(--terra-table-subsection-padding-bottom, 0.3571428571rem);
-    padding-top: var(--terra-table-subsection-padding-top, 0.3571428571rem);
   }
 }

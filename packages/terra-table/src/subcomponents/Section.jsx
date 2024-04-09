@@ -221,12 +221,7 @@ function Section(props) {
         {sectionHeader}
         {!isCollapsed && subsections.map((subsection) => (
           <>
-            <tbody className={cx('subsection', {
-              collapsed: isCollapsed,
-              collapsible: isCollapsible,
-            }, theme.className)}
-            >
-
+            <tbody>
               <tr
                 aria-rowindex={subsection.subSectionRowIndex}
                 className={cx('header-row', theme.className)}
@@ -253,11 +248,7 @@ function Section(props) {
                 </th>
               </tr>
             </tbody>
-            <tbody className={cx('subsection-rows', {
-              collapsed: isCollapsed,
-              collapsible: isCollapsible,
-            }, theme.className)}
-            >
+            <tbody>
               {/* Render subsection rows */}
               {!isCollapsed && subsection.rows.map((row, rowIndex) => (
                 <Row
