@@ -4,12 +4,7 @@
     --terra-table-cell-border-right: 1px solid #181b1d;
     --terra-table-section-focus-outline: 3px dashed #fff;
 
-    /* stylelint-disable selector-max-compound-selectors */
-    &.header-row {
-      .header-cell .subsection-header-row {
-        --terra-section-header-background: #161616;
-        --terra-table-subsection-border-bottom: #161616;
-      }
-    }
+    --terra-table-subsection-border-bottom: #161616;
+    --terra-section-header-background: #161616;
   }
 }
