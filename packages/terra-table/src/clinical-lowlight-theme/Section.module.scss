@@ -4,17 +4,12 @@
     --terra-table-cell-border-right: 1px solid #181b1d;
     --terra-table-section-focus-outline: 3px dashed #fff;
 
-//    --terra-table-subsection-border-bottom: #161616;
-//    --terra-table-subsection-background-color:  #161616;
-
-    &.header-cell {
-      &.section-header {
-        &.subsection {
-          --terra-section-header-font-size: 0.808571428571rem;
-          --terra-section-header-background: #161616 !important;
+    /* stylelint-disable selector-max-compound-selectors */
+    &.header-row {
+      .header-cell {
+        .subsection {
+          --terra-section-header-background: #161616;
           --terra-table-subsection-border-bottom: #161616;
-          background-color: #161616;
-          padding-left: var(--terra-table-subsection-header-padding-left, 1.2142857143rem);
         }
       }
     }
