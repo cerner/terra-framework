@@ -92,6 +92,7 @@ const propTypes = {
    * Callback function that is called when a selectable cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
+   * @param {number} columnSpanIndex columnSpanIndex
    * @param {object} event event
    */
   onCellSelect: PropTypes.func,
@@ -472,9 +473,13 @@ const DataGrid = forwardRef((props, ref) => {
     switch (key) {
       case KeyCode.KEY_UP:
         nextRow -= 1;
+        console.log("nextRow Up ", nextRow);
+        console.log("nextCol Up", nextCol);
         break;
       case KeyCode.KEY_DOWN:
         nextRow += 1;
+        console.log("nextRow Down ", nextRow);
+        console.log("nextCol Down", nextCol);
         break;
       case KeyCode.KEY_LEFT:
         if (event.metaKey) {

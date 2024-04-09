@@ -93,7 +93,7 @@ const propTypes = {
   isHighlighted: PropTypes.bool,
 
   /**
-   * Callback function that will be called when this cell is selected.
+   * Callback function that will be called when a cell is selected.
    */
   onCellSelect: PropTypes.func,
 
@@ -144,6 +144,12 @@ const propTypes = {
   columnSpan: PropTypes.number,
 
   /**
+   * @private
+   * The column span index value for a column.
+   */
+  columnSpanIndex: PropTypes.number,
+
+  /**
    * Enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
@@ -182,6 +188,7 @@ function Cell(props) {
     lastRowId,
     columnHighlightColor,
     columnSpan,
+    columnSpanIndex,
     rowSelectionMode,
   } = props;
 
@@ -265,6 +272,8 @@ function Cell(props) {
         rowIndex: (rowIndex - 1),
         columnId,
         columnIndex,
+        columnSpan,
+        columnSpanIndex,
         isShiftPressed: event.shiftKey,
         isMetaPressed: event.metaKey || event.ctrlKey,
         isCellSelectable: (!isMasked && isSelectable),
@@ -328,6 +337,7 @@ function Cell(props) {
               rowIndex: (rowIndex - 1),
               columnId,
               columnIndex,
+              columnSpanIndex,
               isShiftPressed: event.shiftKey,
               isMetaPressed: event.metaKey || event.ctrlKey,
               isCellSelectable: (!isMasked && isSelectable),
@@ -390,13 +400,12 @@ function Cell(props) {
   // Determine table cell header attribute values
   const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
   const CellTag = isRowHeader ? 'th' : 'td';
-  const columnHeaderId = `${tableId}-${columnId.split('_')[0]}-headerCell`;
+  const columnHeaderId = `${tableId}-${columnId}-headerCell`;
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
 
   let columnHighlight = {};
-  // Column highlighting is not supported for multiple column spans
-  if (columnHighlightColor && (!columnSpan || columnSpan === 1)) {
+  if (columnHighlightColor) {
     columnHighlight = {
       [`column-highlight-${columnHighlightColor.toLowerCase()}`]: true,
       [`first-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === firstRowId,

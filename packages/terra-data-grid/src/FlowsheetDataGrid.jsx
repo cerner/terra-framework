@@ -70,7 +70,7 @@ const propTypes = {
 
   /**
    * Callback function that is called when a selectable cell is selected. Parameters:
-   * @param {object} selectedCell object containing rowId, columnId and sectionId, all as strings.
+   * @param {object} selectedCell object containing rowId, columnId, columnSpanIndex and sectionId.
    * @param {object} event JavaScript event object.
    */
   onCellSelect: PropTypes.func,
@@ -270,7 +270,7 @@ function FlowsheetDataGrid(props) {
     rowsToSearch.forEach((row) => {
       row.cells.forEach((cell, cellIndex) => {
         if (cell.isSelected) {
-          newSelectedCells.push({ rowId: row.id, columnId: displayedColumnsWithColumnSpan[cellIndex].id });
+          newSelectedCells.push({ rowId: row.id, columnId: displayedColumnsWithColumnSpan[cellIndex].id, columnSpanIndex: displayedColumnsWithColumnSpan[cellIndex].columnSpanIndex });
         }
       });
     });

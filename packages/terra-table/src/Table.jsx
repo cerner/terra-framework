@@ -144,6 +144,7 @@ const propTypes = {
    * @private
    * @param {string} rowId rowId
    * @param {string} columnId columnId
+   * @param {number} columnSpanIndex columnSpanIndex
    * @param {object} event event
    */
   onCellSelect: PropTypes.func,
@@ -314,10 +315,11 @@ function Table(props) {
   let i = 0;
   displayedColumns.forEach((column) => {
     if (column.columnSpan > 1) {
-      displayedColumnsWithColumnSpan[i] = { ...column, columnSpanIndex: 0 };
+      // Column highlighting is not supported for multiple column spans
+      displayedColumnsWithColumnSpan[i] = { ...column, columnSpanIndex: 0, columnHighlightColor: undefined};
       i += 1;
       for (let counter = column.columnSpan; counter > 1; counter -= 1) {
-        displayedColumnsWithColumnSpan[i] = { id: `${column.id}`, columnSpanIndex: `${column.columnSpan - counter + 1}` };
+        displayedColumnsWithColumnSpan[i] = { id: `${column.id}`, columnSpanIndex: (column.columnSpan - counter + 1) };
         i += 1;
       }
     } else {
