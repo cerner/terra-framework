@@ -243,7 +243,7 @@ function Section(props) {
                 >
 
                   <SectionHeader
-                    className={cx('subsection')}
+                    className={cx('subsection-header-row')}
                     text={subsection.text}
                     isTitleSticky
                     boundedWidth={boundingWidth}
