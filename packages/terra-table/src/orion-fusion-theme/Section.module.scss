@@ -4,7 +4,6 @@
     --terra-table-cell-border-right: 1px solid #c8cacb;
 
     /* stylelint-disable selector-max-compound-selectors */
-    /* stylelint-disable max-nesting-depth */
     &.header-row {
       .header-cell:focus .section-header,
       .header-cell .section-header:focus-within {
