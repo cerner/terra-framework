@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed accessibility issue in AccessibleInput.
+
 ## 4.66.0 - (March 14, 2024)
 
 * Changed
