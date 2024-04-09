@@ -1,6 +1,6 @@
 {
   "name": "terra-aggregator",
-  "version": "4.76.0",
+  "version": "4.77.0",
   "description": "The Aggregator provides focus-based mechanisms for managing actions across disparate components.",
   "author": "Cerner Corporation",
   "repository": {

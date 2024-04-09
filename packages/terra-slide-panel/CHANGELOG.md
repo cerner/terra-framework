@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 3.49.0 - (April 4, 2024)
+
+* Changed
+  * Stopped adding `aria-expanded` attribute to the disclosing node.
+
+## 3.48.0 - (March 29, 2024)
+
+* Changed
+  * Updated capturing the disclosing node to accommodate for cases with no `mainContent`.
+
 ## 3.47.0 - (December 18, 2023)
 
 * Changed

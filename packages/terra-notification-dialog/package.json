@@ -1,6 +1,6 @@
 {
   "name": "terra-notification-dialog",
-  "version": "4.44.0",
+  "version": "4.46.0",
   "description": "`terra-notification-dialog` is a notification dialog component built over the `terra-abstract-modal`. It has the highest z-index of 9001. It is a common component to be used for confirmation/acceptance criteria style dialogs.",
   "author": "Cerner Corporation",
   "repository": {
@@ -50,8 +50,8 @@
     "terra-breakpoints": "^2.19.0",
     "terra-disclosure-manager": "^4.43.0",
     "terra-icon": "^3.19.0",
-    "terra-modal-manager": "^6.75.0",
-    "terra-popup": "^6.78.0"
+    "terra-modal-manager": "^6.76.0",
+    "terra-popup": "^6.80.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

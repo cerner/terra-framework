@@ -105,6 +105,7 @@ exports[`MoreButton should render a add button with provided props and selection
         isCompact={false}
         isDisabled={false}
         isIconOnly={true}
+        isLeftAligned={false}
         isReversed={false}
         onKeyDown={[Function]}
         tabIndex="-1"

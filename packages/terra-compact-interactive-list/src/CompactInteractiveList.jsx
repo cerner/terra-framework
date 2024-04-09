@@ -110,6 +110,7 @@ const propTypes = {
 
   /**
    * A zero-based index indicating which column represents the row header.
+   * If there is only one semantic column in the list, the list will have no row headers and the rowHeaderIndex will be ignored.
    */
   rowHeaderIndex: validateRowHeaderIndex,
 
@@ -158,7 +159,8 @@ const CompactInteractiveList = (props) => {
     if (listRef?.current && focusedCell?.current) {
       focusedCell.current = getFocusedCellIds(listRef?.current, columns, { row: 0, cell: 0 });
     }
-  }, [listRef, focusedCell, columns]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const focusCell = ({ row, cell }) => {
     // add 1 to the row number to accommodate for hidden header
@@ -340,7 +342,7 @@ const CompactInteractiveList = (props) => {
             rowHeight={calculatedRowHeight}
             isTopmost={checkIfRowIsTopMost(index)}
             isLeftmost={checkIfRowIsLeftMost(index)}
-            rowHeaderIndex={rowHeaderIndex}
+            rowHeaderIndex={columns?.length > 1 ? rowHeaderIndex : undefined}
             hasVisibleBorders={hasVisibleBorders}
           />
         ))}

@@ -13,19 +13,19 @@ const data = {
   items: [
     {
       id: 'item-1-level-1',
-      label: 'Projects - Level 1',
+      label: 'Projects - Level 0',
       items: [
         {
           id: 'item-1-level-2',
-          label: 'Projects - Level 2',
+          label: 'Projects - Level 1',
           items: [
             {
               id: 'item-1-level-3',
-              label: 'Projects - Level 3',
+              label: 'Projects - Level 2',
               items: [
                 {
                   id: 'item-1-level-4',
-                  label: 'Projects - Level 4',
+                  label: 'Projects - Level 3',
                   items: [
                     { id: 'item-1-level-5', label: 'Nested Document', icon: <IconDocuments /> },
                   ],

@@ -41,8 +41,14 @@ describe('basic folder tree', () => {
 
     expect(subfolder.find('span.fill.fill-block').length).toBe(3);
     expect(subfolder.find('span.fill.fill-block').at(0).text()).toBe('item 1, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('li[role="treeitem"]').at(0).prop('aria-setsize')).toBe(3);
+    expect(subfolder.find('li[role="treeitem"]').at(0).prop('aria-posinset')).toBe(1);
     expect(subfolder.find('span.fill.fill-block').at(1).text()).toBe('item 2, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('li[role="treeitem"]').at(1).prop('aria-setsize')).toBe(3);
+    expect(subfolder.find('li[role="treeitem"]').at(1).prop('aria-posinset')).toBe(2);
     expect(subfolder.find('span.fill.fill-block').at(2).text()).toBe('item 3, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('li[role="treeitem"]').at(2).prop('aria-setsize')).toBe(3);
+    expect(subfolder.find('li[role="treeitem"]').at(2).prop('aria-posinset')).toBe(3);
   });
 
   it('hides folder items when enclosing folder is collapsed', () => {

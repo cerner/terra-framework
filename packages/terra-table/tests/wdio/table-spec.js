@@ -181,17 +181,19 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
-  describe('Table with SubSections', () => {
+  describe('Table with subsections', () => {
     const tableWithSubSectionsSelector = '#table-with-sub-sections';
 
-    it('Validates a table with subsections', () => {
+    it('validates a table with subsections', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-sub-sections');
-      Terra.validates.element('table-with-sub-sections', { selector: tableWithSubSectionsSelector });
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).not.toExist();
+      Terra.validates.element('table-with-subsections', { selector: tableWithSubSectionsSelector });
     });
 
-    it('Validates with closed sections', () => {
+    it('validates a table with with collapsed sections', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-collapsible-sections-and-sub-sections');
-      Terra.validates.element('table-with-collasped-sub-sections', { selector: tableWithSubSectionsSelector });
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).toHaveChildren(2);
+      Terra.validates.element('table-with-collasped-subsections', { selector: tableWithSubSectionsSelector });
     });
   });
 
@@ -306,6 +308,13 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     it('Validates table with no row headers', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-without-row-header');
       Terra.validates.element('table-without-row-header', '#table-without-row-header');
+    });
+  });
+
+  describe('Auto Layoyut Table', () => {
+    it('Validates the auto layout table', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/auto-layout-table');
+      Terra.validates.element('auto-layout-table', '#auto-layout-table');
     });
   });
 });

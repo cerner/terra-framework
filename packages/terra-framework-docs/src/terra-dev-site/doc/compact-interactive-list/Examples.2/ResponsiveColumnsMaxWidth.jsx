@@ -9,7 +9,7 @@ const FeaturedIcon = () => {
   const [isFeatured, setIsFeatured] = useState(false);
   const onButtonClick = () => setIsFeatured(!isFeatured);
   return (
-    isFeatured ? <Button variant="utility" text="Featured button" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Featured off button" icon={<IconFeaturedOff />} onClick={onButtonClick} />
+    isFeatured ? <Button variant="utility" text="Unfavorite item" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Favorite item" icon={<IconFeaturedOff />} onClick={onButtonClick} />
   );
 };
 
@@ -63,7 +63,7 @@ const rows = [
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Icon',
+    displayName: 'Status',
     width: '60px',
     align: alignTypes.CENTER,
   },
