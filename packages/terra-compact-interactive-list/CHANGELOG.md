@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Changed to avoid focus being set to the first cell on multiple re-renders.
+
 ## 1.15.0 - (April 4, 2024)
 
 * Changed
