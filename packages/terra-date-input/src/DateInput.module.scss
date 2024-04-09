@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable max-nesting-depth */
 @import '~terra-mixins/lib/Mixins';
 
 // Themes
@@ -75,7 +77,6 @@
         }
 
         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-          /* stylelint-disable-next-line max-nesting-depth */
           &:hover {
             background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
           }
@@ -100,7 +101,6 @@
         background-color: var(--terra-date-input-month-incomplete-background-color, #ffc);
 
         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-          /* stylelint-disable-next-line max-nesting-depth */
           &:hover {
             background-color: var(--terra-date-input-month-incomplete-hover-background-color, #ffc);
           }
@@ -181,7 +181,6 @@
         color: var(--terra-date-input-month-select-disabled-color, #1c1f21);
 
         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-          /* stylelint-disable-next-line max-nesting-depth */
           &:hover {
             color: var(--terra-date-input-month-select-disabled-hover-color, #1c1f21);
             cursor: default;
@@ -198,7 +197,6 @@
         box-shadow: var(--terra-date-input-month-select-error-box-shadow, 0 0 0 1px #e50000);
 
         @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-          /* stylelint-disable-next-line max-nesting-depth */  
           &:hover {
             border: var(--terra-date-input-month-select-error-hover-border, 1px solid #e50000);
           }
