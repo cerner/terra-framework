@@ -336,11 +336,11 @@ const ColumnHeaderCell = (props) => {
 
   // Add column highlight indicator based on color
   let columnHighlightIcon;
-    if (columnHighlightColor === ColumnHighlightColor.GREEN) {
-      columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
-    } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
-      columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><rect className={cx('highlight-icon-square')} x="110%" y="7.5" transform="translate(-8)" /></svg>;
-    }
+  if (columnHighlightColor === ColumnHighlightColor.GREEN) {
+    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><circle className={cx('highlight-icon-circle')} r="3" cx="110%" cy="11" transform="translate(-5)" /></svg>;
+  } else if (columnHighlightColor === ColumnHighlightColor.ORANGE) {
+    columnHighlightIcon = <svg className={cx('highlight-icon-svg')} xmlns="http://www.w3.org/2000/svg"><rect className={cx('highlight-icon-square')} x="110%" y="7.5" transform="translate(-8)" /></svg>;
+  }
 
   // Retrieve current theme from context
   const theme = useContext(ThemeContext);

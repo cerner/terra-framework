@@ -132,7 +132,6 @@ const ColumnHeader = (props) => {
 
   // Is needed to adjust the header column resize handler to accommodate actions header height
   const initialHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
-
   return (
     <thead ref={headerRef}>
       <tr
@@ -142,7 +141,7 @@ const ColumnHeader = (props) => {
         height={hasVisibleColumnHeaders ? headerHeight : undefined}
       >
 
-        {columns.filter((column) => (column.columnSpan > 1 || !(column.columnSpanIndex))).map((column, columnIndex) => (
+        {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
             key={`${column.id}-headerCell`}
             id={`${column.id}-headerCell`}

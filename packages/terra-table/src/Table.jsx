@@ -316,7 +316,7 @@ function Table(props) {
   displayedColumns.forEach((column) => {
     if (column.columnSpan > 1) {
       // Column highlighting is not supported for multiple column spans
-      displayedColumnsWithColumnSpan[i] = { ...column, columnSpanIndex: 0, columnHighlightColor: undefined};
+      displayedColumnsWithColumnSpan[i] = { ...column, columnSpanIndex: 0, columnHighlightColor: undefined };
       i += 1;
       for (let counter = column.columnSpan; counter > 1; counter -= 1) {
         displayedColumnsWithColumnSpan[i] = { id: `${column.id}`, columnSpanIndex: (column.columnSpan - counter + 1) };
@@ -702,7 +702,7 @@ function Table(props) {
             activeColumnIndex={activeColumnIndex}
             focusedRowIndex={focusedRowIndex}
             triggerFocus={triggerFocus}
-            columns={tableColumns}
+            columns={displayedColumns}
             hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
             columnResizeIncrement={columnResizeIncrement}
