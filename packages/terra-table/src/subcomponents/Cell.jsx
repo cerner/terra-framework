@@ -261,6 +261,7 @@ function Cell(props) {
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
+        subsectionId,
         rowId,
         rowIndex: (rowIndex - 1),
         columnId,
@@ -324,6 +325,7 @@ function Cell(props) {
             }
             onCellSelect({
               sectionId,
+              subsectionId,
               rowId,
               rowIndex: (rowIndex - 1),
               columnId,
