@@ -29,17 +29,25 @@
       .section-header:focus-within {
         --terra-section-header-focus-within-outline-offset: -5px;
       }
+
+      .subsection {
+        --terra-section-header-font-size: 0.808571428571rem;
+        --terra-section-header-background: #dedfe0;
+
+        padding-left: var(--terra-table-subsection-header-padding-left, 1.2142857143rem);
+      }
+
       /* stylelint-enable selector-max-compound-selectors */
     }
   }
 
   .subsection-header {
-    --terra-section-header-font-size: 0.808571428571rem;
-    --terra-section-header-background: #dedfe0;
+//    --terra-section-header-font-size: 0.808571428571rem;
+//    --terra-section-header-background: #dedfe0;
 
-    padding-left: var(--terra-table-subsection-header-padding-left, 1.2142857143rem);
-    background-color: var(--terra-table-subsection-background-color, #dedfe0);
+//    background-color: var(--terra-table-subsection-background-color, #dedfe0);
     border-bottom:  var(--terra-table-subsection-border-bottom, 1px solid #c8cacb);
+    padding-left: var(--terra-table-subsection-header-padding-left, 1.2142857143rem);
   }
 
   .subsection-rows {
