@@ -277,6 +277,7 @@ class NavigationSideMenu extends Component {
             tabIndex={(onBack) ? '0' : '-1'}
             onKeyDown={onBack}
             onClick={onBack}
+            data-navigation-side-menu-action-header
           >
             {(onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
             <h1 className={cx('title')}>{currentItem ? currentItem.text : null}</h1>
