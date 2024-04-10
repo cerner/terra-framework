@@ -90,8 +90,8 @@ Terra.describeViewports('ApplicationLayout', ['small'], () => {
 
   describe('Renders primary nav menu when small', () => {
     it('Renders primary nav menu when small', () => {
-      $('[data-routing-menu] [data-navigation-side-menu-action-header] button').waitForDisplayed();
-      $('[data-routing-menu] [data-navigation-side-menu-action-header] button').click();
+      $('[data-routing-menu] [data-navigation-side-menu-action-header]').waitForDisplayed();
+      $('[data-routing-menu] [data-navigation-side-menu-action-header]').click();
       $('[data-routing-menu]').waitForDisplayed();
 
       Terra.validates.element('renders primary nav menu when small', { selector: '#application-layout-test' });
