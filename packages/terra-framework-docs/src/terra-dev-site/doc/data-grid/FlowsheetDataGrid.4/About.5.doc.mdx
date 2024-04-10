@@ -136,6 +136,33 @@ A column specifies the data to render a cell in the header row of the Flowsheet 
 |**columnHighlightColor**|`enum: ["green", "orange"]`|optional|none|The color to be used for highlighting a column.|
 |**columnHighlightDescription**|string|optional|none|The information to be conveyed to screen readers about the highlighted column.|
 
+### Section
+<Notice variant="important" ariaLevel="2">
+Due to poor support in Apple VoiceOver for spanned table headings, Table component sections are not currently recommended for applications used on Apple devices.
+</Notice>
+
+A section defines the rows rendered in the section.
+
+|       Name        |  Type  |                    Required                     | Default Value |                                                     Description                                                     |
+| ----------------- | ------ | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **id**            | String | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the section in the grid.                                                         |
+| **isCollapsible** | Bool   | Optional                                        | False         | A Boolean value indicating whether the the section is collapsible.                                                  |
+| **isCollapsed**   | Bool   | Optional                                        | False         | A Boolean value indicating whether the section is collapsed. If true, the contents of the section is not displayed. |
+| **text**          | String | Optional                                        | None          | A text string to render in the section header.                                                                      |
+| **rows**          | Array  | Optional                                        | []            | An array of row objects to be rendered in the section.                                                              |
+| **subsections**   | Array  | Optional                                        | []            | An array of subsections objects to be rendered within the section.                                                  |
+
+#### Subsection
+
+Subsections objects are virtually identical to section objects.
+
+|       Name        |  Type  |                    Required                     | Default Value |                                                        Description                                                        |
+| ----------------- | ------ | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **id**            | String | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the subsection in the grid.                                                            |
+| **text**          | String | Optional                                        | None          | A text string to render in the subsection header.                                                                         |
+| **rows**          | Array  | Optional                                        | []            | An array of row objects to be rendered in the subsection.                                                                 |
+
+
 ### Rows
 Rows define the cells rendered in the row and the row's selection properties.
 The order in which the rows are provided is the order in which they are rendered.
