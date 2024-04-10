@@ -4,6 +4,7 @@ import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import ApplicationTabs from '../../src/tabs/ApplicationTabs';
 import testLinkConfig from './testLinkConfig';
 import testLinksWithIconsConfig from './testLinksWithIconsConfig';
+import { BrowserRouter } from 'react-router-dom';
 
 // Snapshot tests
 it('should render ApplicationTabs with links and alignment', () => {
@@ -11,9 +12,17 @@ it('should render ApplicationTabs with links and alignment', () => {
   expect(wrapper).toMatchSnapshot();
 });
 
-it('should render ApplicationTabs with links and alignment and onTabClick handler', () => {
-  const wrapper = enzyme.shallow(<div><ApplicationTabs links={testLinkConfig} alignment="start" onTabClick={() => {}} /></div>);
-  expect(wrapper).toMatchSnapshot();
+it('should trigger onTabClick handler', () => {
+  const onTabClickHandler = jest.fn();
+  const wrapper = enzymeIntl.mountWithIntl(
+    <BrowserRouter>
+      <ApplicationTabs links={testLinkConfig} alignment="start" onTabClick={onTabClickHandler} />
+    </BrowserRouter>
+  );
+
+  wrapper.find('.tab').first().simulate('click');
+
+  expect(onTabClickHandler).toHaveBeenCalled();
 });
 
 it('should render ApplicationTabs with icons', () => {
