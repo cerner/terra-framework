@@ -112,13 +112,12 @@ class NavigationSideMenu extends Component {
     this.handleItemClick = this.handleItemClick.bind(this);
     this.updateAriaLiveContent = this.updateAriaLiveContent.bind(this);
     this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
+
     const { items, parents } = processMenuItems(props.menuItems);
     this.state = {
       items,
       parents,
       prevPropsMenuItem: props.menuItems,
-      selectedKey: props.selectedMenuKey,
-      navigatedKey: props.selectedMenuKey,
     };
   }
 
@@ -126,50 +125,25 @@ class NavigationSideMenu extends Component {
     if (nextProps.menuItems !== prevState.prevPropsMenuItem) {
       return processMenuItems(nextProps.menuItems);
     }
-    if (nextProps.selectedMenuKey !== prevState.selectedKey) {
-      return { navigatedKey: nextProps.selectedMenuKey };
-    }
     return null;
   }
 
   handleBackClick(event) {
-    const parentKey = this.state.parents[this.state.navigatedKey];
-    const prevNavigatedValue = this.state.navigatedKey;
+    const parentKey = this.state.parents[this.props.selectedMenuKey];
     if (parentKey) {
-      this.setState({ navigatedKey: parentKey }, () => {
-        const parentItem = this.menuContainer.querySelectorAll(`[data-menu-item="${prevNavigatedValue}"]`);
-        if (parentItem && parentItem.length) {
-          parentItem[0].focus();
-        }
-      });
+      this.props.onChange(
+        event,
+        {
+          selectedMenuKey: parentKey,
+          selectedChildKey: this.props.selectedMenuKey,
+          metaData: this.state.items[parentKey].metaData,
+        },
+      );
     }
-    event.preventDefault();
-  }
-
-  handleHeaderBackClick(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
-      this.handleBackClick(event);
-    }
-  }
-
-  handleRightMove(event, key) {
-    this.setState({ navigatedKey: key }, () => {
-      if (this.backButtonContainer) {
-        this.backButtonContainer.focus();
-      }
-    });
   }
 
   handleItemClick(event, key) {
     const selectedItem = this.state.items[key];
-    if (selectedItem && selectedItem.childKeys && selectedItem.childKeys.length) {
-      this.setState({ navigatedKey: key }, () => {
-        if (this.backButtonContainer) {
-          this.backButtonContainer.focus();
-        }
-      });
-      return;
-    }
 
     if (this.state.items[key] && this.state.items[key].text) {
       this.updateAriaLiveContent(this.state.items[key].text);
@@ -228,12 +202,6 @@ class NavigationSideMenu extends Component {
         event.preventDefault();
         this.handleItemClick(event, key);
       }
-      if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT && (item.hasSubMenu || (item.childKeys && item.childKeys.length > 0))) {
-        this.handleRightMove(event, key);
-      }
-      if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
-        this.handleBackClick(event, key);
-      }
     };
 
     return (
@@ -281,7 +249,7 @@ class NavigationSideMenu extends Component {
       toolbar,
       ...customProps
     } = this.props;
-    const currentItem = this.state.items[this.state.navigatedKey];
+    const currentItem = this.state.items[selectedMenuKey];
     const theme = this.context;
     let sideMenuContentContainerClassNames = cx([
       'side-menu-content-container',
@@ -289,12 +257,13 @@ class NavigationSideMenu extends Component {
     ]);
 
     let onBack;
-    const parentKey = this.state.parents[this.state.navigatedKey];
+    const parentKey = this.state.parents[selectedMenuKey];
     if (parentKey) {
-      onBack = this.handleHeaderBackClick;
+      onBack = this.handleBackClick;
     } else {
       onBack = routingStackBack;
     }
+
     let header;
     if (onBack || !currentItem.isRootMenu) {
       header = (
@@ -306,8 +275,8 @@ class NavigationSideMenu extends Component {
             ref={(obj) => this.backButtonRef(obj)}
             type="button"
             tabIndex={(onBack) ? '0' : '-1'}
-            onKeyDown={(event) => this.handleHeaderBackClick(event)}
-            onClick={(event) => this.handleBackClick(event)}
+            onKeyDown={onBack}
+            onClick={onBack}
           >
             {(onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
             <h1 className={cx('title')}>{currentItem ? currentItem.text : null}</h1>
@@ -325,6 +294,7 @@ class NavigationSideMenu extends Component {
           aria-atomic="true"
           aria-live="assertive"
           aria-relevant="additions text"
+          refCallback={this.setVisuallyHiddenComponent}
         />
         <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
           {this.buildListContent(currentItem)}
