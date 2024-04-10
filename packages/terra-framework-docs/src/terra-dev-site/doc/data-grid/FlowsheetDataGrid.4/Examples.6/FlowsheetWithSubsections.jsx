@@ -187,13 +187,26 @@ const FlowsheetWithSubsections = () => {
     const newSections = getClearedSections();
     const selectedSection = newSections.find(section => section.id === cells[0].sectionId);
 
-    selectedSection.rows = selectedSection.rows.map(row => ({
-      ...row,
-      cells: row.cells.map((cell, cellIndex) => ({
-        ...cell,
-        isSelected: columnIndexesToUpdate.has(cellIndex) && rowsToUpdate.has(row.id),
-      })),
-    }));
+    if (selectedSection.subsections) {
+      selectedSection.subsections = selectedSection.subsections.map(subsection => ({
+        ...subsection,
+        rows: subsection.rows.map(row => ({
+          ...row,
+          cells: row.cells.map((cell, cellIndex) => ({
+            ...cell,
+            isSelected: columnIndexesToUpdate.has(cellIndex) && rowsToUpdate.has(row.id),
+          })),
+        })),
+      }));
+    } else {
+      selectedSection.rows = selectedSection.rows.map(row => ({
+        ...row,
+        cells: row.cells.map((cell, cellIndex) => ({
+          ...cell,
+          isSelected: columnIndexesToUpdate.has(cellIndex) && rowsToUpdate.has(row.id),
+        })),
+      }));
+    }
 
     setTableSections(newSections);
   }, [getClearedSections]);

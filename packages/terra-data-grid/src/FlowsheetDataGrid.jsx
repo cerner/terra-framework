@@ -256,6 +256,7 @@ function FlowsheetDataGrid(props) {
         return section.subsections.flatMap(subsection => subsection.rows.map(row => ({
           ...row,
           sectionId: section.id,
+          subsectionId: subsection.id,
         })));
       });
     }
@@ -286,7 +287,7 @@ function FlowsheetDataGrid(props) {
     }
   }, [intl, rowsToSearch, columns, setCellSelectionAriaLiveMessage]);
 
-  const selectCellRange = useCallback((rowId, columnId, sectionId) => {
+  const selectCellRange = useCallback((rowId, columnId, sectionId, subsectionId) => {
     if (anchorCell.current === null) {
       return;
     }
@@ -305,8 +306,17 @@ function FlowsheetDataGrid(props) {
 
     if (flowsheetSections) {
       const selectedSection = flowsheetSections.find(section => section.id === sectionId);
-      const sectionTopBound = rowsToSearch.findIndex(row => row.sectionId === sectionId);
-      const sectionBottomBound = sectionTopBound + selectedSection.rows.length - 1;
+      let sectionTopBound = 0;
+      let sectionBottomBound = 0;
+
+      if (subsectionId) {
+        const selectedSubsection = selectedSection.subsections.find(subsection => subsection.id === subsectionId);
+        sectionTopBound = rowsToSearch.findIndex(row => row.subsectionId === subsectionId);
+        sectionBottomBound = sectionTopBound + selectedSubsection.rows.length - 1;
+      } else {
+        sectionTopBound = rowsToSearch.findIndex(row => row.sectionId === sectionId);
+        sectionBottomBound = sectionTopBound + selectedSection.rows.length - 1;
+      }
 
       rowIndexTopBound = anchorRowIndex <= sectionTopBound ? sectionTopBound : rowIndexTopBound;
       rowIndexBottomBound = anchorRowIndex >= sectionBottomBound ? sectionBottomBound : rowIndexBottomBound;
@@ -333,7 +343,7 @@ function FlowsheetDataGrid(props) {
         onRowSelect({ rowId: selectionDetails.rowId, sectionId: selectionDetails.sectionId, isMetaPressed: selectionDetails.isMetaPressed });
       }
     } else if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
-      selectCellRange(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.sectionId);
+      selectCellRange(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.sectionId, selectionDetails.subsectionId);
     } else if (onCellSelect) {
       anchorCell.current = { rowId: selectionDetails.rowId, columnId: selectionDetails.columnId, sectionId: selectionDetails.sectionId };
       onCellSelect({
@@ -413,7 +423,7 @@ function FlowsheetDataGrid(props) {
     const nextColumnId = columns[nextColumnIndex].id;
     const nextRowId = gridRef.rows[nextRowIndex].getAttribute('data-row-id');
 
-    if (!gridRef.rows[nextRowIndex].hasAttribute('data-section-id')) {
+    if (!gridRef.rows[nextRowIndex].hasAttribute('data-section-id') || !gridRef.rows[nextRowIndex].hasAttribute('data-subsection-id')) {
       let nextSectionId = '';
 
       for (let rowIdx = nextRowIndex; rowIdx > 0; rowIdx -= 1) {
