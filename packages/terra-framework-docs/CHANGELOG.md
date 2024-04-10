@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added an example of css styling needed for text truncation in auto layout in `terra-table`.
+
 ## 1.80.0 - (April 10, 2024)
 
 * Added
