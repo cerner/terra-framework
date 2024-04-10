@@ -48,6 +48,11 @@ const propTypes = {
   sectionId: PropTypes.string,
 
   /**
+   * An identifier for the subsection.
+   */
+  subsectionId: PropTypes.string,
+
+  /**
    * Unique identifier for the parent table
    */
   tableId: PropTypes.string.isRequired,
@@ -172,6 +177,7 @@ function Cell(props) {
     rowIndex,
     rowMinimumHeight,
     sectionId,
+    subsectionId,
     tableId,
     firstRowId,
     lastRowId,
@@ -203,6 +209,10 @@ function Cell(props) {
   * @returns The auto focusable button or anchor element. If there is no auto focusable element, null is returned.
   */
   const getAutoFocusableElement = () => {
+    if (!gridContext.isAutoFocusEnabled) {
+      return null;
+    }
+
     const focusableElements = getFocusableElements(cellRef.current);
     if (focusableElements.length > 1) {
       return null;
@@ -241,6 +251,7 @@ function Cell(props) {
         setIsInteractable(hasFocusableElements());
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gridContext, intl, isGridContext]);
 
   const handleMouseDown = (event) => {
@@ -250,6 +261,7 @@ function Cell(props) {
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
+        subsectionId,
         rowId,
         rowIndex: (rowIndex - 1),
         columnId,
@@ -313,6 +325,7 @@ function Cell(props) {
             }
             onCellSelect({
               sectionId,
+              subsectionId,
               rowId,
               rowIndex: (rowIndex - 1),
               columnId,
@@ -382,6 +395,7 @@ function Cell(props) {
   const columnHeaderId = `${tableId}-${columnId}-headerCell`;
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
+  const subsectionHeaderId = subsectionId ? `${tableId}-${sectionId}-${subsectionId} ` : '';
 
   let columnHighlight = {};
   if (columnHighlightColor) {
@@ -409,7 +423,7 @@ function Cell(props) {
       ref={isGridContext || rowSelectionMode ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
-      headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
+      headers={`${sectionHeaderId}${subsectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
       onMouseDown={onCellSelect ? handleMouseDown : undefined}

@@ -2,6 +2,7 @@
   .orion-fusion-theme {
     --terra-table-cell-border-left: 1px solid #c8cacb;
     --terra-table-cell-border-right: 1px solid #c8cacb;
+    --terra-section-header-font-size: 1rem;
 
     /* stylelint-disable selector-max-compound-selectors */
     &.header-row {
@@ -15,6 +16,5 @@
         --terra-table-section-focus-outline: none;
       }
     }
-    /* stylelint-enable selector-max-compound-selectors */
   }
 }

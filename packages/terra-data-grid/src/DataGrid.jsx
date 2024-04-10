@@ -149,6 +149,11 @@ const propTypes = {
    * With this property the height of the cell will grow to fit the cell content.
    */
   rowMinimumHeight: PropTypes.string,
+
+  /**
+   * Determines if focus is moved to the interactive element of a cell when a single button or hyperlink element is the only interactive element.
+   */
+  isAutoFocusEnabled: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -186,6 +191,7 @@ const DataGrid = forwardRef((props, ref) => {
     rows,
     sections,
     rowMinimumHeight,
+    isAutoFocusEnabled,
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
@@ -228,7 +234,8 @@ const DataGrid = forwardRef((props, ref) => {
     setCellAriaLiveMessage,
     tableRef: grid,
     tableContainerRef,
-  }), [grid, tableContainerRef]);
+    isAutoFocusEnabled,
+  }), [grid, isAutoFocusEnabled, tableContainerRef]);
 
   // -------------------------------------
   // functions
@@ -282,7 +289,7 @@ const DataGrid = forwardRef((props, ref) => {
 
     // Set focus to a single header button or hyperlink if they are the only content in cell
     const cellButtonOrHyperlink = focusedCell.querySelector('a, button');
-    if ((isHeaderRow && !focusedCell.hasAttribute('tabindex')) || cellButtonOrHyperlink) {
+    if ((isHeaderRow && !focusedCell.hasAttribute('tabindex')) || (isAutoFocusEnabled && cellButtonOrHyperlink)) {
       focusedCell = focusedCell.querySelector('a, button, [role="button"]');
       focusedCell?.focus();
       return;
@@ -297,7 +304,7 @@ const DataGrid = forwardRef((props, ref) => {
     }
 
     focusedCell?.focus();
-  }, [displayedColumns, isSection, isRowSelectionCell, hasColumnHeaderActions]);
+  }, [displayedColumns, isSection, hasColumnHeaderActions, isAutoFocusEnabled, isRowSelectionCell]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
