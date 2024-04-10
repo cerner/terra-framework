@@ -1,10 +1,10 @@
 import React from 'react';
 
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
+import { BrowserRouter } from 'react-router-dom';
 import ApplicationTabs from '../../src/tabs/ApplicationTabs';
 import testLinkConfig from './testLinkConfig';
 import testLinksWithIconsConfig from './testLinksWithIconsConfig';
-import { BrowserRouter } from 'react-router-dom';
 
 // Snapshot tests
 it('should render ApplicationTabs with links and alignment', () => {
@@ -17,7 +17,7 @@ it('should trigger onTabClick handler', () => {
   const wrapper = enzymeIntl.mountWithIntl(
     <BrowserRouter>
       <ApplicationTabs links={testLinkConfig} alignment="start" onTabClick={onTabClickHandler} />
-    </BrowserRouter>
+    </BrowserRouter>,
   );
 
   wrapper.find('.tab').first().simulate('click');
