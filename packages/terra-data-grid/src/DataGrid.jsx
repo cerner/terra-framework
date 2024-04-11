@@ -200,16 +200,16 @@ const DataGrid = forwardRef((props, ref) => {
   const displayedColumnsWithColumnSpan = useMemo(() => {
     let i = 0;
     const newDisplayedColumns = [];
-    displayedColumns.forEach((column) => {
+    displayedColumns.forEach((column, columnHeaderIndex) => {
       if (column.columnSpan > 1) {
-        newDisplayedColumns[i] = { ...column, columnSpanIndex: 0 };
+        newDisplayedColumns[i] = { ...column, columnSpanIndex: 0, columnHeaderIndex };
         i += 1;
         for (let counter = column.columnSpan; counter > 1; counter -= 1) {
-          newDisplayedColumns[i] = { id: `${column.id}`, columnSpanIndex: `${column.columnSpan - counter + 1}` };
+          newDisplayedColumns[i] = { ...column, columnSpanIndex: `${column.columnSpan - counter + 1}`, columnHeaderIndex };
           i += 1;
         }
       } else {
-        newDisplayedColumns[i] = column;
+        newDisplayedColumns[i] = { ...column, columnHeaderIndex };
         i += 1;
       }
     });
@@ -473,9 +473,25 @@ const DataGrid = forwardRef((props, ref) => {
     switch (key) {
       case KeyCode.KEY_UP:
         nextRow -= 1;
+
+        // Select proper header cell column
+        if (nextRow === 0 || (hasColumnHeaderActions && nextRow === 1)) {
+          nextCol = displayedColumnsWithColumnSpan[nextCol].columnHeaderIndex;
+        }
         break;
       case KeyCode.KEY_DOWN:
         nextRow += 1;
+
+        // Select starting cell for column header when navigating to table body
+        if (cellCoordinates.row === 0 || (hasColumnHeaderActions && cellCoordinates.row === 1)) {
+          let startCellIndex = 0;
+          for (let headerIndex = 0; headerIndex < cellCoordinates.col; headerIndex += 1) {
+            startCellIndex += displayedColumns[headerIndex].columnSpan || 1;
+          }
+
+          nextCol = startCellIndex;
+        }
+
         break;
       case KeyCode.KEY_LEFT:
         if (event.metaKey) {
