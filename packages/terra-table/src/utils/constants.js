@@ -7,4 +7,9 @@ const ERRORS = {
   ACTION_ONCLICK_IS_NOT_A_FUNCTION: 'Column action onClick property type is not a function.',
 };
 
-export default ERRORS;
+const SUBSECTION_HEADER_LEVEL = 3;
+
+export {
+  ERRORS,
+  SUBSECTION_HEADER_LEVEL,
+};

@@ -34,6 +34,11 @@ const propTypes = {
   sectionId: PropTypes.string,
 
   /**
+   * An identifier for the subsection.
+   */
+  subsectionId: PropTypes.string,
+
+  /**
    * String that specifies height of the row. Any valid CSS width value is accepted.
   */
   height: PropTypes.string,
@@ -117,6 +122,7 @@ function Row(props) {
     id,
     tableId,
     sectionId,
+    subsectionId,
     isSelected,
     isTableStriped,
     cells,
@@ -184,6 +190,7 @@ function Row(props) {
             rowIndex={rowIndex}
             columnIndex={cellColumnIndex}
             sectionId={sectionId}
+            subsectionId={subsectionId}
             tableId={tableId}
             key={columnSpanIndex ? `${id}_${columnId}_${columnSpanIndex}` : `${id}_${columnId}`}
             isSelected={!rowSelectionMode && cellData.isSelected}

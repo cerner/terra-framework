@@ -188,6 +188,22 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
+  describe('Table with subsections', () => {
+    const tableWithSubSectionsSelector = '#table-with-sub-sections';
+
+    it('validates a table with subsections', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-sub-sections');
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).not.toExist();
+      Terra.validates.element('table-with-subsections', { selector: tableWithSubSectionsSelector });
+    });
+
+    it('validates a table with with collapsed sections', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-collapsible-sections-and-sub-sections');
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).toHaveChildren(2);
+      Terra.validates.element('table-with-collasped-subsections', { selector: tableWithSubSectionsSelector });
+    });
+  });
+
   describe('With row selection', () => {
     const rowSelectionTableSelector = '#table-with-row-selections';
 

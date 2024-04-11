@@ -4,6 +4,10 @@
 
 * Added
   * Added examples for column span support in  Flowsheet Data Grid and `terra-table`.
+
+## 1.80.0 - (April 10, 2024)
+
+  * Added documentation for subsections in `terra-table`.
   * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
   
 * Changed

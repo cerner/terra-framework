@@ -5,6 +5,11 @@
 * Added
   * Added column span functionality to support it in FlowsheetDataGrid.
   
+## 5.19.0 - (April 10, 2024)
+
+* Added
+  * (flowsheet-data-grid only) Added support for subsections.
+
 * Changed
   * Updated the cell component auto focus logic to be configured by the grid context.
 
