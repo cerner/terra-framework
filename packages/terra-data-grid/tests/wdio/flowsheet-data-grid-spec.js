@@ -366,7 +366,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       browser.url('raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-subsections');
     });
 
-    it('validate Flowsheet section UI', () => {
+    it('validate Flowsheet subsection UI', () => {
       Terra.validates.element('flowsheet-with-subsections', { selector: subsectionSelector });
     });
 
@@ -400,7 +400,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('flowsheet-with-subsections-multi-cell-select-top-anchor', { selector: subsectionSelector });
     });
 
-    it('validates multi-cell select across sections and the anchor section on bottom', () => {
+    it('validates multi-cell select across subsections and the anchor subsection on bottom', () => {
       navigateToCell(7, 2, subsectionSelector);
       browser.keys(['Space']);
 
@@ -412,7 +412,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('flowsheet-with-subsections-multi-cell-select-bottom-anchor', { selector: subsectionSelector });
     });
 
-    it('validates range selection within sections', () => {
+    it('validates range selection within a subsection', () => {
       navigateToCell(3, 1, subsectionSelector);
       holdDownShiftKey();
       moveCurrentPositionBy(1, 1);
@@ -421,7 +421,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('flowsheet-with-subsections-multi-cell-select', { selector: subsectionSelector });
     });
 
-    it('validates range selection across sections and the anchor section on top', () => {
+    it('validates range selection across subsections and the anchor subsection on top', () => {
       navigateToCell(3, 1, subsectionSelector);
       holdDownShiftKey();
       moveCurrentPositionBy(4, 1);
@@ -430,7 +430,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('flowsheet-with-subsections-multi-cell-select-top-anchor2', { selector: subsectionSelector });
     });
 
-    it('validates range selection across sections and the anchor section on bottom', () => {
+    it('validates range selection across subsections and the anchor subsection on bottom', () => {
       navigateToCell(7, 2, subsectionSelector);
       holdDownShiftKey();
       moveCurrentPositionBy(-4, -1);

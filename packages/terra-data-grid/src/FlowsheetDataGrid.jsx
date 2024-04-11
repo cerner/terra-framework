@@ -423,7 +423,7 @@ function FlowsheetDataGrid(props) {
     const nextColumnId = columns[nextColumnIndex].id;
     const nextRowId = gridRef.rows[nextRowIndex].getAttribute('data-row-id');
 
-    if (!gridRef.rows[nextRowIndex].hasAttribute('data-section-id') || !gridRef.rows[nextRowIndex].hasAttribute('data-subsection-id')) {
+    if (!gridRef.rows[nextRowIndex].hasAttribute('data-section-id') && !gridRef.rows[nextRowIndex].hasAttribute('data-subsection-id')) {
       let nextSectionId = '';
       let nextSubsectionId = '';
 

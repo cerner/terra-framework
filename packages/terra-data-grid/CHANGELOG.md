@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added subsection support to the FlowsheetDataGrid component.
+
 ## 1.26.0 - (April 10, 2024)
 
 * Added
