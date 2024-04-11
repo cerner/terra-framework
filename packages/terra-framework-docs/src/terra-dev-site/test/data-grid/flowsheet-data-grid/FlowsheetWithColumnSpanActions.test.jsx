@@ -4,15 +4,21 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 const gridDataJSON = {
   cols: [
     { id: 'Column-0', displayName: 'Vitals' },
-    { id: 'Column-1', displayName: 'March 16', columnSpan: 2,
-    action: {
+    {
+      id: 'Column-1',
+      displayName: 'March 16',
+      columnSpan: 2,
+      action: {
         label: 'Vitals action',
         // eslint-disable-next-line no-alert
         onClick: () => alert('Vitals action called'),
       },
     },
-    { id: 'Column-2', displayName: 'March 17', columnSpan: 2,
-    action: {
+    {
+      id: 'Column-2',
+      displayName: 'March 17',
+      columnSpan: 2,
+      action: {
         label: 'March 16 action',
         // eslint-disable-next-line no-alert
         onClick: () => alert('March 16 action called'),

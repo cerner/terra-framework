@@ -105,6 +105,12 @@ const propTypes = {
   overflowColumns: PropTypes.arrayOf(columnShape),
 
   /**
+   * @private
+   * Columns with Column Span information.
+   */
+  displayedColumnsWithColumnSpan: PropTypes.arrayOf(columnShape),
+
+  /**
    * A number indicating the default column width in pixels. This value is used if no overriding width value is provided on a per-column basis.
    * This value is ignored if the isAutoLayout property is set to true.
    */
@@ -208,6 +214,7 @@ const defaultProps = {
   rowMinimumHeight: 'auto',
   pinnedColumns: [],
   overflowColumns: [],
+  displayedColumnsWithColumnSpan: [],
   rows: [],
   hasVisibleColumnHeaders: true,
 };
@@ -229,6 +236,7 @@ function Table(props) {
     sections,
     pinnedColumns,
     overflowColumns,
+    displayedColumnsWithColumnSpan,
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
@@ -309,24 +317,6 @@ function Table(props) {
 
     return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
-
-  // Create new displayedColumns object to pass to Section sub component to account for column spans
-  const displayedColumnsWithColumnSpan = [];
-  let i = 0;
-  displayedColumns.forEach((column) => {
-    if (column.columnSpan > 1) {
-      // Column highlighting is not supported for multiple column spans
-      displayedColumnsWithColumnSpan[i] = { ...column, columnSpanIndex: 0, columnHighlightColor: undefined };
-      i += 1;
-      for (let counter = column.columnSpan; counter > 1; counter -= 1) {
-        displayedColumnsWithColumnSpan[i] = { id: `${column.id}`, columnSpanIndex: (column.columnSpan - counter + 1) };
-        i += 1;
-      }
-    } else {
-      displayedColumnsWithColumnSpan[i] = column;
-      i += 1;
-    }
-  });
 
   const [tableColumns, setTableColumns] = useState(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
 

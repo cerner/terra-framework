@@ -202,10 +202,14 @@ const DataGrid = forwardRef((props, ref) => {
     const newDisplayedColumns = [];
     displayedColumns.forEach((column, columnHeaderIndex) => {
       if (column.columnSpan > 1) {
-        newDisplayedColumns[i] = { ...column, columnSpanIndex: 0, columnHeaderIndex };
+        newDisplayedColumns[i] = {
+          ...column, columnSpanIndex: 0, columnHeaderIndex, columnHighlightColor: undefined,
+        };
         i += 1;
         for (let counter = column.columnSpan; counter > 1; counter -= 1) {
-          newDisplayedColumns[i] = { ...column, columnSpanIndex: `${column.columnSpan - counter + 1}`, columnHeaderIndex };
+          newDisplayedColumns[i] = {
+            ...column, columnSpanIndex: (column.columnSpan - counter + 1), columnHeaderIndex, columnHighlightColor: undefined,
+          };
           i += 1;
         }
       } else {
@@ -348,17 +352,7 @@ const DataGrid = forwardRef((props, ref) => {
     // Obtain coordinate rectangles for grid container, column header, and new cell selection
       const gridContainerRect = tableContainerRef.current.getBoundingClientRect();
       const columnHeaderRect = grid.current.rows[0].getBoundingClientRect();
-
-      // Set new cell column index value to be within Column Header and Column Header actions bounding indexes 
-      if(toCell.row === 0 && hasVisibleColumnHeaders && toCell.col > displayedColumns.length) {
-        toCell.col = displayedColumns.length - 1;
-      }
-      if(toCell.row === 1 && hasColumnHeaderActions && toCell.col > displayedColumns.length ) {
-        toCell.col = displayedColumns.length - 1;
-      }
-
       const nextCellRect = grid.current.rows[toCell.row].cells[toCell.col].getBoundingClientRect();
-      
 
       // Calculate horizontal scroll offset for right boundary
       if (nextCellRect.right > gridContainerRect.right) {
@@ -543,7 +537,13 @@ const DataGrid = forwardRef((props, ref) => {
         }
         break;
       case KeyCode.KEY_END:
-        nextCol = displayedColumnsWithColumnSpan.length - 1; // Col are zero based.
+        if (nextRow === 0 || (hasColumnHeaderActions && nextRow === 1)) {
+          nextCol = displayedColumns.length -1;
+        }
+        else {
+          nextCol = displayedColumnsWithColumnSpan.length - 1; // Col are zero based.
+        }
+        
         if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
@@ -666,6 +666,7 @@ const DataGrid = forwardRef((props, ref) => {
           isActiveColumnResizing={isOneOfHeaderRows && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
+          displayedColumnsWithColumnSpan={displayedColumnsWithColumnSpan}
           overflowColumns={overflowColumns}
           defaultColumnWidth={defaultColumnWidth}
           columnHeaderHeight={columnHeaderHeight}
