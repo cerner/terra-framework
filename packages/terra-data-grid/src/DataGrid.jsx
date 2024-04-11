@@ -475,7 +475,8 @@ const DataGrid = forwardRef((props, ref) => {
         nextRow -= 1;
 
         // Select proper header cell column
-        if (nextRow === 0 || (hasColumnHeaderActions && nextRow === 1)) {
+        if ((nextRow === 0 || (hasColumnHeaderActions && nextRow === 1))
+            && !(cellCoordinates.row === 1 && hasColumnHeaderActions)) { // Account for navigation to column header and action header rows
           nextCol = displayedColumnsWithColumnSpan[nextCol].columnHeaderIndex;
         }
         break;
@@ -483,7 +484,7 @@ const DataGrid = forwardRef((props, ref) => {
         nextRow += 1;
 
         // Select starting cell for column header when navigating to table body
-        if (cellCoordinates.row === 0 || (hasColumnHeaderActions && cellCoordinates.row === 1)) {
+        if ((cellCoordinates.row === 0 && !hasColumnHeaderActions) || (hasColumnHeaderActions && cellCoordinates.row === 1)) { // Account for navigation from column header and action header rows
           let startCellIndex = 0;
           for (let headerIndex = 0; headerIndex < cellCoordinates.col; headerIndex += 1) {
             startCellIndex += displayedColumns[headerIndex].columnSpan || 1;
