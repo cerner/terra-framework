@@ -170,7 +170,6 @@ function FlowsheetDataGrid(props) {
         for (let counter = column.columnSpan; counter > 1; counter -= 1) {
           newDisplayedColumns[i] = {
             ...column,
-            id: `${column.id}`,
             columnSpanIndex: (column.columnSpan - counter + 1),
           };
           i += 1;

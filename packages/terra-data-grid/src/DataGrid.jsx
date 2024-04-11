@@ -235,7 +235,7 @@ const DataGrid = forwardRef((props, ref) => {
   const tableContainerRef = useRef();
   const handleFocus = useRef(true);
 
-  const focusedCellRef = useRef({ rowId: '', columnId: '' });
+  const focusedCellRef = useRef({ rowId: '', columnId: '', columnSpanIndex: '' });
 
   const [checkResizable, setCheckResizable] = useState(false);
 
@@ -281,6 +281,7 @@ const DataGrid = forwardRef((props, ref) => {
       focusedCellRef.current = {
         rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
         columnId: displayedColumnsWithColumnSpan[newColIndex].id,
+        columnSpanIndex: displayedColumnsWithColumnSpan[newColIndex].columnSpanIndex,
       };
     }
 
@@ -624,7 +625,7 @@ const DataGrid = forwardRef((props, ref) => {
 
         // Check for last focused column ID. If found set the index. Otherwise set it to the last focused column or last index.
         if (focusedCellRef.current.columnId) {
-          newColumnIndex = displayedColumnsWithColumnSpan.findIndex(column => column.id === focusedCellRef.current.columnId);
+          newColumnIndex = displayedColumnsWithColumnSpan.findIndex(column => (column.id === focusedCellRef.current.columnId && (column.columnSpanIndex  && (column.columnSpanIndex === focusedCellRef.current.columnSpanIndex))));
           newColumnIndex = newColumnIndex === -1
             ? Math.min(focusedCol, displayedColumnsWithColumnSpan.length - 1)
             : newColumnIndex;
