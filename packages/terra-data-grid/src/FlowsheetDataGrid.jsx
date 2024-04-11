@@ -295,7 +295,6 @@ function FlowsheetDataGrid(props) {
     const anchorRowIndex = rowsToSearch.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = anchorCell.current.columnIndex;
     const rowIndex = rowsToSearch.findIndex(row => row.id === rowId);
-    // const columnIndex = displayedColumnsWithColumnSpan.findIndex(col => col.id === columnId);
 
     // Determine the boundaries of selected region.
     let rowIndexTopBound = Math.min(anchorRowIndex, rowIndex);
