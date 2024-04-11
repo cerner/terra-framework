@@ -347,7 +347,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(4, 1);
       releaseShiftKey();
 
-      Terra.validates.element('flowsheet-with-sections-multi-cell-select-top-anchor', { selector: sectionSelector });
+      Terra.validates.element('flowsheet-with-sections-multi-cell-select-top-anchor2', { selector: sectionSelector });
     });
 
     it('validates range selection across sections and the anchor section on bottom', () => {
@@ -356,7 +356,87 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       moveCurrentPositionBy(-4, -1);
       releaseShiftKey();
 
-      Terra.validates.element('flowsheet-with-sections-multi-cell-select-bottom-anchor', { selector: sectionSelector });
+      Terra.validates.element('flowsheet-with-sections-multi-cell-select-bottom-anchor2', { selector: sectionSelector });
+    });
+  });
+
+  describe('Subsections', () => {
+    const subsectionSelector = '#flowsheet-with-subsections';
+    beforeEach(() => {
+      browser.url('raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-subsections');
+    });
+
+    it('validate Flowsheet section UI', () => {
+      Terra.validates.element('flowsheet-with-subsections', { selector: subsectionSelector });
+    });
+
+    it('validates multi-cell select within subsections', () => {
+      browser.keys(['Tab', 'ArrowDown', 'ArrowDown']);
+
+      Terra.validates.element('flowsheet-with-subsections-first-subsection', { selector: subsectionSelector });
+    });
+
+    it('validates multi-cell select within subsections', () => {
+      navigateToCell(3, 1, subsectionSelector);
+      browser.keys(['Space']);
+
+      moveCurrentPositionBy(1, 1, subsectionSelector);
+      holdDownShiftKey();
+      browser.keys(['Space']);
+      releaseShiftKey();
+
+      Terra.validates.element('flowsheet-with-subsections-multi-cell-select', { selector: subsectionSelector });
+    });
+
+    it('validates multi-cell select across subsections and the anchor section on top', () => {
+      navigateToCell(3, 1, subsectionSelector);
+      browser.keys(['Space']);
+
+      moveCurrentPositionBy(4, 1, subsectionSelector);
+      holdDownShiftKey();
+      browser.keys(['Space']);
+      releaseShiftKey();
+
+      Terra.validates.element('flowsheet-with-subsections-multi-cell-select-top-anchor', { selector: subsectionSelector });
+    });
+
+    it('validates multi-cell select across sections and the anchor section on bottom', () => {
+      navigateToCell(7, 2, subsectionSelector);
+      browser.keys(['Space']);
+
+      moveCurrentPositionBy(-4, -1, subsectionSelector);
+      holdDownShiftKey();
+      browser.keys(['Space']);
+      releaseShiftKey();
+
+      Terra.validates.element('flowsheet-with-subsections-multi-cell-select-bottom-anchor', { selector: subsectionSelector });
+    });
+
+    it('validates range selection within sections', () => {
+      navigateToCell(3, 1, subsectionSelector);
+      holdDownShiftKey();
+      moveCurrentPositionBy(1, 1);
+      releaseShiftKey();
+
+      Terra.validates.element('flowsheet-with-subsections-multi-cell-select', { selector: subsectionSelector });
+    });
+
+    it('validates range selection across sections and the anchor section on top', () => {
+      navigateToCell(3, 1, subsectionSelector);
+      holdDownShiftKey();
+      moveCurrentPositionBy(4, 1);
+      releaseShiftKey();
+
+      Terra.validates.element('flowsheet-with-subsections-multi-cell-select-top-anchor2', { selector: subsectionSelector });
+    });
+
+    it('validates range selection across sections and the anchor section on bottom', () => {
+      navigateToCell(7, 2, subsectionSelector);
+      holdDownShiftKey();
+      moveCurrentPositionBy(-4, -1);
+      releaseShiftKey();
+
+      Terra.validates.element('flowsheet-with-subsections-multi-cell-select-bottom-anchor2', { selector: subsectionSelector });
     });
   });
 });

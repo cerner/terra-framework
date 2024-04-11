@@ -226,6 +226,7 @@ function Section(props) {
                 aria-rowindex={subsection.subSectionRowIndex}
                 className={cx('header-row', theme.className)}
                 data-subsection-id={subsection.id}
+                data-subsection-section-id={id}
               >
                 <th
                   id={`${tableId}-${id}-${subsection.id}`}

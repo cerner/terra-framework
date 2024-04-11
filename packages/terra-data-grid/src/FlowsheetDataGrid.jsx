@@ -425,15 +425,21 @@ function FlowsheetDataGrid(props) {
 
     if (!gridRef.rows[nextRowIndex].hasAttribute('data-section-id') || !gridRef.rows[nextRowIndex].hasAttribute('data-subsection-id')) {
       let nextSectionId = '';
+      let nextSubsectionId = '';
 
       for (let rowIdx = nextRowIndex; rowIdx > 0; rowIdx -= 1) {
-        const currentSectionId = gridRef.rows[rowIdx].getAttribute('data-section-id');
-        if (currentSectionId) {
-          nextSectionId = currentSectionId;
+        if (gridRef.rows[rowIdx].hasAttribute('data-section-id')) {
+          nextSectionId = gridRef.rows[rowIdx].getAttribute('data-section-id');
+          break;
+        }
+
+        if (gridRef.rows[rowIdx].hasAttribute('data-subsection-id')) {
+          nextSubsectionId = gridRef.rows[rowIdx].getAttribute('data-subsection-id');
+          nextSectionId = gridRef.rows[rowIdx].getAttribute('data-subsection-section-id');
           break;
         }
       }
-      selectCellRange(nextRowId, nextColumnId, nextSectionId);
+      selectCellRange(nextRowId, nextColumnId, nextSectionId, nextSubsectionId);
     }
   }, [flowsheetSections, columns, selectCellRange]);
 
