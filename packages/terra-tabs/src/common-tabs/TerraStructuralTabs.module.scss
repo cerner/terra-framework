@@ -114,7 +114,7 @@
       &.is-vertical {
         background-image: var(--terra-tabs-structural-vertical-background-image, linear-gradient(to bottom, #dedfe0, #dedfe0));
         background-size: var(--terra-tabs-structural-vertical-background-size, 0 1px);
-        border-width: var(--terra-tabs-structural-vertical-border-width, 0 0 1px 0);
+        border-width: var(--terra-tabs-structural-vertical-border-width, 0 1px 1px 0);
         min-width: 2.571rem;
       }
 
