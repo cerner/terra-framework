@@ -130,6 +130,7 @@ const TableSingleRowSelectionAndCollapsibleSections = () => {
         }
       });
 
+      // eslint-disable-next-line no-param-reassign
       section.rows = sectionRowData;
     });
 
