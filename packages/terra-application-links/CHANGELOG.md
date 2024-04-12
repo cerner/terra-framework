@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `onTabClick` property to ApplicationLinks interface.
+
 ## 6.80.0 - (April 4, 2024)
 
 * Changed
