@@ -150,6 +150,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
       },
     ]
   }
+  tableBodyColumns={Array []}
 >
   <div
     className="data-grid-container"
@@ -281,6 +282,34 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
             ],
             "id": "4",
             "isSelected": true,
+          },
+        ]
+      }
+      tableBodyColumns={
+        Array [
+          Object {
+            "id": "table-rowSelectionColumn",
+            "isResizable": false,
+            "isSelectable": true,
+            "width": 40,
+          },
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+            "isResizable": true,
+            "isSelectable": true,
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+            "isResizable": true,
+            "isSelectable": true,
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isResizable": true,
+            "isSelectable": false,
           },
         ]
       }
@@ -436,6 +465,34 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               ],
               "id": "4",
               "isSelected": true,
+            },
+          ]
+        }
+        tableBodyColumns={
+          Array [
+            Object {
+              "id": "table-rowSelectionColumn",
+              "isResizable": false,
+              "isSelectable": true,
+              "width": 40,
+            },
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+              "isResizable": true,
+              "isSelectable": true,
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+              "isResizable": true,
+              "isSelectable": true,
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isResizable": true,
+              "isSelectable": false,
             },
           ]
         }
@@ -1269,9 +1326,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
-                    "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
-                    "isDisplayVisible": false,
                     "isResizable": false,
                     "isSelectable": true,
                     "width": 40,
@@ -1410,9 +1465,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
                         "isSelectable": true,
                         "width": 40,
@@ -1950,9 +2003,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
                         "isSelectable": true,
                         "width": 40,
@@ -2486,9 +2537,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
                         "isSelectable": true,
                         "width": 40,
@@ -3021,9 +3070,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
                         "isSelectable": true,
                         "width": 40,
@@ -3723,6 +3770,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
       },
     ]
   }
+  tableBodyColumns={Array []}
 >
   <div
     className="data-grid-container"
@@ -3840,6 +3888,28 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
             ],
             "id": "4",
             "isSelected": true,
+          },
+        ]
+      }
+      tableBodyColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+            "isResizable": true,
+            "isSelectable": true,
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+            "isResizable": true,
+            "isSelectable": true,
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isResizable": true,
+            "isSelectable": false,
           },
         ]
       }
@@ -3981,6 +4051,28 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               ],
               "id": "4",
               "isSelected": true,
+            },
+          ]
+        }
+        tableBodyColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+              "isResizable": true,
+              "isSelectable": true,
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+              "isResizable": true,
+              "isSelectable": true,
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isResizable": true,
+              "isSelectable": false,
             },
           ]
         }
@@ -6450,6 +6542,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
       },
     ]
   }
+  tableBodyColumns={Array []}
 >
   <div
     className="data-grid-container"
@@ -6564,6 +6657,28 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
             ],
             "id": "4",
             "isSelected": true,
+          },
+        ]
+      }
+      tableBodyColumns={
+        Array [
+          Object {
+            "displayName": " Vitals",
+            "id": "Column-0",
+            "isResizable": true,
+            "isSelectable": true,
+          },
+          Object {
+            "displayName": "March 16",
+            "id": "Column-1",
+            "isResizable": true,
+            "isSelectable": true,
+          },
+          Object {
+            "displayName": "March 17",
+            "id": "Column-2",
+            "isResizable": true,
+            "isSelectable": false,
           },
         ]
       }
@@ -6702,6 +6817,28 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               ],
               "id": "4",
               "isSelected": true,
+            },
+          ]
+        }
+        tableBodyColumns={
+          Array [
+            Object {
+              "displayName": " Vitals",
+              "id": "Column-0",
+              "isResizable": true,
+              "isSelectable": true,
+            },
+            Object {
+              "displayName": "March 16",
+              "id": "Column-1",
+              "isResizable": true,
+              "isSelectable": true,
+            },
+            Object {
+              "displayName": "March 17",
+              "id": "Column-2",
+              "isResizable": true,
+              "isSelectable": false,
             },
           ]
         }

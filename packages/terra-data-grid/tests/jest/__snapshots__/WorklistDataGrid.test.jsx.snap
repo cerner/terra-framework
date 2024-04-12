@@ -268,6 +268,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -387,6 +388,28 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -530,6 +553,28 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -3175,6 +3220,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -3295,6 +3341,34 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -3439,6 +3513,34 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -4269,11 +4371,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -4411,11 +4511,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -4958,11 +5056,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -5501,11 +5597,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -6043,11 +6137,9 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -6896,6 +6988,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -7016,6 +7109,34 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -7160,6 +7281,34 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -7990,11 +8139,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -8132,11 +8279,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -8679,11 +8824,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -9222,11 +9365,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -9764,11 +9905,9 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -10607,6 +10746,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -10726,6 +10866,28 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -10869,6 +11031,28 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -13514,6 +13698,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -13634,6 +13819,34 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -13778,6 +13991,34 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -14608,11 +14849,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -14750,11 +14989,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -15297,11 +15534,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -15840,11 +16075,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -16382,11 +16615,9 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -17235,6 +17466,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -17355,6 +17587,34 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -17499,6 +17759,34 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -18329,11 +18617,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -18471,11 +18757,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -19018,11 +19302,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -19561,11 +19843,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -20103,11 +20383,9 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -20980,6 +21258,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -21100,6 +21379,34 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -21244,6 +21551,34 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -22074,11 +22409,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -22216,11 +22549,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -22763,11 +23094,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -23306,11 +23635,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -23848,11 +24175,9 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -24685,6 +25010,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -24805,6 +25131,34 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -24949,6 +25303,34 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -25779,11 +26161,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -25921,11 +26301,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -26468,11 +26846,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -27011,11 +27387,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -27553,11 +27927,9 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -28410,6 +28782,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -28530,6 +28903,34 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -28674,6 +29075,34 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -29504,11 +29933,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -29646,11 +30073,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -30193,11 +30618,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -30736,11 +31159,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -31278,11 +31699,9 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -32131,6 +32550,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -32251,6 +32671,34 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -32395,6 +32843,34 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -33225,11 +33701,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -33367,11 +33841,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -33914,11 +34386,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -34457,11 +34927,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -34999,11 +35467,9 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -35832,6 +36298,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -35952,6 +36419,34 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -36096,6 +36591,34 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -36926,11 +37449,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -37068,11 +37589,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -37615,11 +38134,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -38158,11 +38675,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -38700,11 +39215,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -39533,6 +40046,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -39653,6 +40167,34 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -39797,6 +40339,34 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -40627,11 +41197,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -40769,11 +41337,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -41316,11 +41882,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -41859,11 +42423,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -42401,11 +42963,9 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -43234,6 +43794,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -43354,6 +43915,34 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -43498,6 +44087,34 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -44328,11 +44945,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -44470,11 +45085,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -45017,11 +45630,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -45560,11 +46171,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -46102,11 +46711,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -46935,6 +47542,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -47055,6 +47663,34 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -47199,6 +47835,34 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -48029,11 +48693,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -48171,11 +48833,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -48718,11 +49378,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -49261,11 +49919,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -49803,11 +50459,9 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -50634,6 +51288,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -50754,6 +51409,34 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -50898,6 +51581,34 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -51728,11 +52439,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -51870,11 +52579,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -52417,11 +53124,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -52960,11 +53665,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -53502,11 +54205,9 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -54333,6 +55034,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -54453,6 +55155,34 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "id": "table-rowSelectionColumn",
+                "isResizable": false,
+                "isSelectable": true,
+                "width": 40,
+              },
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -54597,6 +55327,34 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "id": "table-rowSelectionColumn",
+                  "isResizable": false,
+                  "isSelectable": true,
+                  "width": 40,
+                },
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -55427,11 +56185,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                   displayedColumns={
                     Array [
                       Object {
-                        "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
-                        "isDisplayVisible": false,
                         "isResizable": false,
-                        "isSelectable": false,
+                        "isSelectable": true,
                         "width": 40,
                       },
                       Object {
@@ -55569,11 +56325,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -56116,11 +56870,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -56659,11 +57411,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -57201,11 +57951,9 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                       displayedColumns={
                         Array [
                           Object {
-                            "displayName": "Terra.table.row-selection-header-display",
                             "id": "table-rowSelectionColumn",
-                            "isDisplayVisible": false,
                             "isResizable": false,
-                            "isSelectable": false,
+                            "isSelectable": true,
                             "width": 40,
                           },
                           Object {
@@ -58011,6 +58759,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -58130,6 +58879,28 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -58273,6 +59044,28 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }
@@ -60875,6 +61668,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
           },
         ]
       }
+      tableBodyColumns={Array []}
     >
       <div
         className="data-grid-container"
@@ -60994,6 +61788,28 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                 ],
                 "id": "4",
                 "isSelected": true,
+              },
+            ]
+          }
+          tableBodyColumns={
+            Array [
+              Object {
+                "displayName": " Vitals",
+                "id": "Column-0",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 16",
+                "id": "Column-1",
+                "isResizable": true,
+                "isSelectable": true,
+              },
+              Object {
+                "displayName": "March 17",
+                "id": "Column-2",
+                "isResizable": true,
+                "isSelectable": false,
               },
             ]
           }
@@ -61137,6 +61953,28 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                   ],
                   "id": "4",
                   "isSelected": true,
+                },
+              ]
+            }
+            tableBodyColumns={
+              Array [
+                Object {
+                  "displayName": " Vitals",
+                  "id": "Column-0",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 16",
+                  "id": "Column-1",
+                  "isResizable": true,
+                  "isSelectable": true,
+                },
+                Object {
+                  "displayName": "March 17",
+                  "id": "Column-2",
+                  "isResizable": true,
+                  "isSelectable": false,
                 },
               ]
             }

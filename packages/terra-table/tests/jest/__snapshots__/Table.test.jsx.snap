@@ -243,6 +243,7 @@ exports[`Table verifies row selection column header selection 1`] = `
         },
       ]
     }
+    tableBodyColumns={Array []}
   >
     <div
       className="table-container"
