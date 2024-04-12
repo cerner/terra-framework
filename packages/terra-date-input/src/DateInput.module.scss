@@ -163,6 +163,7 @@
         color: var(--terra-date-input-month-select-focus-color);
         outline: var(--terra-date-input-month-select-focus-outline, 2px dashed #000);
         outline-offset: var(--terra-date-input-month-select-focus-outline-offset, 1px);
+        box-shadow: var(--terra-date-input-month-select-focus-box-shadow, none);
       }
 
       &.is-placeholder {
@@ -206,7 +207,8 @@
         &:focus,
         &.focused {
           outline: var(--terra-date-input-month-select-error-focus-outline, 2px dashed #000);
-          outline-offset: var(--terra-date-input-month-select-error-focus-outline-offset, 1px);
+          outline-offset: var(--terra-date-input-month-select-error-focus-outline-offset, 2px);
+          box-shadow: var(--terra-date-input-month-select-error-focus-box-shadow, 0 0 0 1px #e50000);
         }
 
         &.disabled {
@@ -255,7 +257,7 @@
     .date-input-day {
       // Hide number spinner in Firefox
       -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
-      border: var(--terra-date-input-date-input-day-border, 1px solid #dedfe0);
+      border: var(--terra-date-input-border, 1px solid #dedfe0);
       max-width: var(--terra-date-input-date-input-day-max-width, 2.5rem);
       z-index: 1;
 
@@ -268,19 +270,21 @@
 
       &:focus,
       &.is-focused {
-        border: var(--terra-date-input-date-input-day-focus-border, 1px solid #dedfe0);
-        outline: var(--terra-date-input-date-input-day-focus-outline, 2px dashed #000);
-        outline-offset: var(--terra-date-input-date-input-day-focus-outline-offset, 1px);
+        border: var(--terra-date-input-focus-border, 1px solid #dedfe0);
+        outline: var(--terra-date-input-focus-outline, 2px dashed #000);
+        outline-offset: var(--terra-date-input-focus-outline-offset, 1px);
+        box-shadow: var(--terra-date-input-focus-box-shadow, none);
       }
 
       &.error {
-        border: var(--terra-date-input-date-input-day-error-border, 1px solid #e50000);
-        box-shadow: var(--terra-date-input-date-input-day-error-box-shadow, 0 0 0 1px #e50000);
+        border: var(--terra-date-input-error-border, 1px solid #e50000);
+        box-shadow: var(--terra-date-input-error-box-shadow, 0 0 0 1px #e50000);
 
         &:focus,
         &.is-focused {
-          outline: var(--terra-date-input-date-input-day-error-focus-outline, 2px dashed #000);
-          outline-offset: var(--terra-date-input-date-input-day-error-focus-outline-offset, 1px);
+          outline: var(--terra-date-input-error-focus-outline, 2px dashed #000);
+          outline-offset: var(--terra-date-input-error-focus-outline-offset, 2px);
+          box-shadow: var(--terra-date-input-error-focus-box-shadow, 0 0 0 1px #e50000);
         }      
       }
     }
@@ -288,7 +292,7 @@
     .date-input-year {
       // Hide number spinner in Firefox
       -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
-      border: var(--terra-date-input-date-input-year-border, 1px solid #dedfe0);
+      border: var(--terra-date-input-border, 1px solid #dedfe0);
       max-width: var(--terra-date-input-date-input-year-max-width, 3.8rem);
       z-index: 1;
 
@@ -301,19 +305,21 @@
       
       &:focus,
       &.is-focused {
-        border: var(--terra-date-input-date-input-year-focus-border, 1px solid #dedfe0);
-        outline: var(--terra-date-input-date-input-year-focus-outline, 2px dashed #000);
-        outline-offset: var(--terra-date-input-date-input-year-focus-outline-offset, 1px);
+        border: var(--terra-date-input-focus-border, 1px solid #dedfe0);
+        outline: var(--terra-date-input-focus-outline, 2px dashed #000);
+        outline-offset: var(--terra-date-input-focus-outline-offset, 1px);
+        box-shadow: var(--terra-date-input-focus-box-shadow, none);
       }
 
       &.error {
-        border: var(--terra-date-input-date-input-year-error-border, 1px solid #e50000);
-        box-shadow: var(--terra-date-input-date-input-year-error-box-shadow, 0 0 0 1px #e50000);
+        border: var(--terra-date-input-error-border, 1px solid #e50000);
+        box-shadow: var(--terra-date-input-error-box-shadow, 0 0 0 1px #e50000);
       
         &:focus,
         &.is-focused {
-          outline: var(--terra-date-input-date-input-year-error-focus-outline, 2px dashed #000);
-          outline-offset: var(--terra-date-input-date-input-year-error-focus-outline-offset, 1px);
+          outline: var(--terra-date-input-error-focus-outline, 2px dashed #000);
+          outline-offset: var(--terra-date-input-error-focus-outline-offset, 2px);
+          box-shadow: var(--terra-date-input-error-focus-box-shadow, 0 0 0 1px #e50000);
         }      
       }
     }
