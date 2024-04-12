@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated subsection logic to properly support grid implementations.
+
 ## 5.19.0 - (April 10, 2024)
 
 * Added

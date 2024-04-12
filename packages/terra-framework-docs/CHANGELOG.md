@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples and tests for subsections in the FlowsheetDataGrid.
+
 ## 1.80.0 - (April 10, 2024)
 
 * Added

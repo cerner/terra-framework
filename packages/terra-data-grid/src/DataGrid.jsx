@@ -245,7 +245,7 @@ const DataGrid = forwardRef((props, ref) => {
   ), [displayedColumns, hasSelectableRows]);
 
   const isSection = useCallback((rowIndex) => (
-    grid.current.rows[rowIndex].hasAttribute('data-section-id')
+    grid.current.rows[rowIndex].hasAttribute('data-section-id') || grid.current.rows[rowIndex].hasAttribute('data-subsection-id')
   ), []);
 
   const setFocusedRowCol = useCallback((newRowIndex, newColIndex, makeActiveElement) => {
