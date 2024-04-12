@@ -57,6 +57,11 @@ const propTypes = {
   overflowColumns: PropTypes.arrayOf(columnShape),
 
   /**
+   * Table body columns information.
+   */
+  tableBodyColumns: PropTypes.arrayOf(columnShape),
+
+  /**
    * Number indicating the default column width in px. This value will be used if no overriding width value is provided on a per-column basis.
    */
   defaultColumnWidth: PropTypes.number,
@@ -163,6 +168,7 @@ const defaultProps = {
   columnHeaderHeight: '2.5rem',
   pinnedColumns: [],
   overflowColumns: [],
+  tableBodyColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
 };
@@ -187,6 +193,7 @@ const DataGrid = forwardRef((props, ref) => {
     onSectionSelect,
     overflowColumns,
     pinnedColumns,
+    tableBodyColumns,
     rowHeaderIndex,
     rowHeight,
     rows,
@@ -196,30 +203,7 @@ const DataGrid = forwardRef((props, ref) => {
   } = props;
 
   const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
-  // Create new displayedColumns object to account for column spans
-  const displayedColumnsWithColumnSpan = useMemo(() => {
-    let i = 0;
-    const newDisplayedColumns = [];
-    displayedColumns.forEach((column, columnHeaderIndex) => {
-      if (column.columnSpan > 1) {
-        newDisplayedColumns[i] = {
-          ...column, columnSpanIndex: 0, columnHeaderIndex, columnHighlightColor: undefined,
-        };
-        i += 1;
-        for (let counter = column.columnSpan; counter > 1; counter -= 1) {
-          newDisplayedColumns[i] = {
-            ...column, columnSpanIndex: (column.columnSpan - counter + 1), columnHeaderIndex, columnHighlightColor: undefined,
-          };
-          i += 1;
-        }
-      } else {
-        newDisplayedColumns[i] = { ...column, columnHeaderIndex };
-        i += 1;
-      }
-    });
-    return newDisplayedColumns;
-  }, [displayedColumns]);
-
+  const tableColumns = tableBodyColumns.length > 0 ? tableBodyColumns : displayedColumns;
   // By default, all grid-based components have selectable cells.
   const dataGridRows = useMemo(() => (rows.map((row) => ({
     ...row,
@@ -265,8 +249,8 @@ const DataGrid = forwardRef((props, ref) => {
   // functions
 
   const isRowSelectionCell = useCallback((columnIndex) => (
-    hasSelectableRows && columnIndex < displayedColumnsWithColumnSpan.length && displayedColumnsWithColumnSpan[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
-  ), [displayedColumnsWithColumnSpan, hasSelectableRows]);
+    hasSelectableRows && columnIndex < tableColumns.length && tableColumns[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
+  ), [tableColumns, hasSelectableRows]);
 
   const isSection = useCallback((rowIndex) => (
     grid.current.rows[rowIndex].hasAttribute('data-section-id')
@@ -277,11 +261,11 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    if (newColIndex < displayedColumnsWithColumnSpan.length) {
+    if (newColIndex < tableColumns.length) {
       focusedCellRef.current = {
         rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
-        columnId: displayedColumnsWithColumnSpan[newColIndex].id,
-        columnSpanIndex: displayedColumnsWithColumnSpan[newColIndex].columnSpanIndex,
+        columnId: tableColumns[newColIndex].id,
+        columnSpanIndex: tableColumns[newColIndex].columnSpanIndex,
       };
     }
 
@@ -329,7 +313,7 @@ const DataGrid = forwardRef((props, ref) => {
     }
 
     focusedCell?.focus();
-  }, [displayedColumnsWithColumnSpan, isSection, hasColumnHeaderActions, isAutoFocusEnabled, isRowSelectionCell]);
+  }, [tableColumns, isSection, hasColumnHeaderActions, isAutoFocusEnabled, isRowSelectionCell]);
 
   // The focus is handled by the DataGrid. However, there are times
   // when the other components may want to change the currently focus
@@ -482,7 +466,7 @@ const DataGrid = forwardRef((props, ref) => {
         // Select proper header cell column
         if ((nextRow === 0 || (hasColumnHeaderActions && nextRow === 1))
             && !(cellCoordinates.row === 1 && hasColumnHeaderActions)) { // Account for navigation to column header and action header rows
-          nextCol = displayedColumnsWithColumnSpan[nextCol].columnHeaderIndex;
+          nextCol = tableColumns[nextCol].columnHeaderIndex;
         }
         break;
       case KeyCode.KEY_DOWN:
@@ -520,7 +504,7 @@ const DataGrid = forwardRef((props, ref) => {
         if (event.metaKey) {
           // Mac: Cmd + Right
           // Win: End
-          nextCol = displayedColumnsWithColumnSpan.length - 1;
+          nextCol = tableColumns.length - 1;
 
           if (event.ctrlKey) {
             // Mac: Ctrl + Cmd + Right
@@ -540,12 +524,11 @@ const DataGrid = forwardRef((props, ref) => {
         break;
       case KeyCode.KEY_END:
         if (nextRow === 0 || (hasColumnHeaderActions && nextRow === 1)) {
-          nextCol = displayedColumns.length -1;
+          nextCol = displayedColumns.length - 1;
+        } else {
+          nextCol = tableColumns.length - 1; // Col are zero based.
         }
-        else {
-          nextCol = displayedColumnsWithColumnSpan.length - 1; // Col are zero based.
-        }
-        
+
         if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
@@ -575,7 +558,7 @@ const DataGrid = forwardRef((props, ref) => {
       onCellRangeSelect(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
 
-    if (nextRow >= gridRowCount || nextCol >= displayedColumnsWithColumnSpan.length) {
+    if (nextRow >= gridRowCount || nextCol >= tableColumns.length) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
@@ -625,9 +608,9 @@ const DataGrid = forwardRef((props, ref) => {
 
         // Check for last focused column ID. If found set the index. Otherwise set it to the last focused column or last index.
         if (focusedCellRef.current.columnId) {
-          newColumnIndex = displayedColumnsWithColumnSpan.findIndex(column => (column.id === focusedCellRef.current.columnId && (column.columnSpanIndex  && (column.columnSpanIndex === focusedCellRef.current.columnSpanIndex))));
+          newColumnIndex = tableColumns.findIndex(column => (column.id === focusedCellRef.current.columnId && (column.columnSpanIndex && (column.columnSpanIndex === focusedCellRef.current.columnSpanIndex))));
           newColumnIndex = newColumnIndex === -1
-            ? Math.min(focusedCol, displayedColumnsWithColumnSpan.length - 1)
+            ? Math.min(focusedCol, tableColumns.length - 1)
             : newColumnIndex;
         }
 
@@ -668,7 +651,7 @@ const DataGrid = forwardRef((props, ref) => {
           isActiveColumnResizing={isOneOfHeaderRows && checkResizable}
           columnResizeIncrement={columnResizeIncrement}
           pinnedColumns={pinnedColumns}
-          displayedColumnsWithColumnSpan={displayedColumnsWithColumnSpan}
+          tableBodyColumns={tableColumns}
           overflowColumns={overflowColumns}
           defaultColumnWidth={defaultColumnWidth}
           columnHeaderHeight={columnHeaderHeight}

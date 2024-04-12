@@ -105,10 +105,9 @@ const propTypes = {
   overflowColumns: PropTypes.arrayOf(columnShape),
 
   /**
-   * @private
-   * Columns with Column Span information.
+   * Table body columns information.
    */
-  displayedColumnsWithColumnSpan: PropTypes.arrayOf(columnShape),
+  tableBodyColumns: PropTypes.arrayOf(columnShape),
 
   /**
    * A number indicating the default column width in pixels. This value is used if no overriding width value is provided on a per-column basis.
@@ -214,7 +213,7 @@ const defaultProps = {
   rowMinimumHeight: 'auto',
   pinnedColumns: [],
   overflowColumns: [],
-  displayedColumnsWithColumnSpan: [],
+  tableBodyColumns: [],
   rows: [],
   hasVisibleColumnHeaders: true,
 };
@@ -236,7 +235,7 @@ function Table(props) {
     sections,
     pinnedColumns,
     overflowColumns,
-    displayedColumnsWithColumnSpan,
+    tableBodyColumns,
     onColumnResize,
     defaultColumnWidth,
     columnHeaderHeight,
@@ -318,7 +317,7 @@ function Table(props) {
     return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
 
-  const [tableColumns, setTableColumns] = useState(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
+  const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   const defaultSectionRef = useRef(uuidv4());
 
@@ -384,7 +383,7 @@ function Table(props) {
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === RowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
-    setTableColumns(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
+    setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowSelectionMode]);
 
@@ -430,7 +429,7 @@ function Table(props) {
 
   // useEffect for row displayed columns
   useEffect(() => {
-    setTableColumns(displayedColumnsWithColumnSpan.map((column) => initializeColumn(column)));
+    setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinnedColumns, overflowColumns]);
 
@@ -695,7 +694,7 @@ function Table(props) {
           <colgroup>
             {tableColumns.map((column) => (
               // eslint-disable-next-line react/forbid-dom-props
-              <col key={column.columnSpanIndex ? `${column.id}_${column.columnSpanIndex}` : column.id} style={{ width: typeof column.width === 'number' ? `${column.width}px` : column.width }} />
+              <col span={column.columnSpan} key={column.id} style={{ width: typeof column.width === 'number' ? `${column.width}px` : column.width }} />
             ))}
           </colgroup>
 
@@ -705,7 +704,7 @@ function Table(props) {
             activeColumnIndex={activeColumnIndex}
             focusedRowIndex={focusedRowIndex}
             triggerFocus={triggerFocus}
-            columns={displayedColumns}
+            columns={tableColumns}
             hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
             columnResizeIncrement={columnResizeIncrement}
@@ -730,7 +729,7 @@ function Table(props) {
               subsections={section.subsections}
               rowHeight={rowHeight}
               rowSelectionMode={rowSelectionMode}
-              displayedColumns={displayedColumnsWithColumnSpan}
+              displayedColumns={tableBodyColumns.length > 0 ? tableBodyColumns : displayedColumns}
               rowHeaderIndex={rowHeaderIndex}
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
