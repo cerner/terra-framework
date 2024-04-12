@@ -43,11 +43,6 @@ const propTypes = {
    * tabIndex for the menu item.
    * */
   tabIndex: PropTypes.string,
-  /**
-   * @private
-   * Menu container Ref for menu items
-   * */
-  getMenuContainerRef: PropTypes.func,
 };
 
 class MenuItem extends React.Component {
@@ -57,71 +52,25 @@ class MenuItem extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
     this.textRender = this.textRender.bind(this);
     this.handleMenuItemRef = this.handleMenuItemRef.bind(this);
-    this.setTabIndex = this.setTabIndex.bind(this);
   }
 
   handleKeyDown(event) {
-    const MenuContainerRef = this.props.getMenuContainerRef();
-    const listMenuItems = MenuContainerRef && MenuContainerRef.querySelectorAll('[data-menu-item]');
-    const currentIndex = Array.from(listMenuItems).indexOf(event.target);
-    const lastIndex = listMenuItems.length - 1;
-
-    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
-      const nextIndex = currentIndex < lastIndex ? currentIndex + 1 : 0;
-      if (listMenuItems && listMenuItems[nextIndex]) {
-        this.setTabIndex(listMenuItems[currentIndex], '-1');
-        this.setTabIndex(listMenuItems[nextIndex], '0');
-        listMenuItems[nextIndex].focus();
-      }
-      if (this.props.onKeyDown) {
-        this.props.onKeyDown(event);
-      }
-      event.preventDefault();
-    }
-
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       // Add active state to FF browsers
       this.setState({ active: true });
       this.props.onKeyDown(event);
     }
 
-    if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
-      // Remove active state from FF broswers
-      if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
-        this.setState({ active: false });
+    if (event && event.nativeEvent) {
+      if (this.props.onKeyDown) {
+        this.props.onKeyDown(event);
       }
-      const previousIndex = currentIndex > 0 ? currentIndex - 1 : lastIndex;
-      if (listMenuItems && listMenuItems[previousIndex]) {
-        this.setTabIndex(listMenuItems[currentIndex], '-1');
-        this.setTabIndex(listMenuItems[previousIndex], '0');
-        listMenuItems[previousIndex].focus();
-      }
-      if (this.props.onKeyUp) {
-        this.props.onKeyUp(event);
-      }
-      event.preventDefault();
-    }
-
-    if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT && this.props.hasChevron) {
-      this.props.onKeyDown(event);
-      event.preventDefault();
-    }
-
-    if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
-      this.props.onKeyDown(event);
-      event.preventDefault();
     }
   }
 
   handleMenuItemRef(node) {
     this.contentNode = node;
   }
-
-  setTabIndex = (node, value) => {
-    if (node) {
-      node.setAttribute('tabIndex', value);
-    }
-  };
 
   textRender() {
     const { intl, isSelected, text } = this.props;
