@@ -133,7 +133,7 @@ class NavigationSideMenu extends Component {
 
   handleBackClick(event) {
     const parentKey = this.state.parents[this.props.selectedMenuKey];
-    this.focusedKey = this.props.selectedMenuKey;
+    this.focusKey = this.props.selectedMenuKey;
     if (parentKey) {
       this.props.onChange(
         event,
@@ -205,14 +205,14 @@ class NavigationSideMenu extends Component {
     this.handleItemClick(event, key);
   }
 
-  handleLeftMove(event, key) {
+  handleLeftMove(event) {
     this.handleBackClick(event);
   }
 
   handleMenuListRef = (node) => {
     this.menuContainer = node;
-    if (node && this.focusedKey) {
-      const subMenuNodes = node.querySelectorAll(`[data-menu-item="${this.focusedKey}"]`);
+    if (node && this.focusKey) {
+      const subMenuNodes = node.querySelectorAll(`[data-menu-item="${this.focusKey}"]`);
       if (subMenuNodes && subMenuNodes.length) {
         subMenuNodes[0].focus();
       }
@@ -271,6 +271,12 @@ class NavigationSideMenu extends Component {
     this.visuallyHiddenComponent = node;
   }
 
+  setTabIndex = (node, value) => {
+    if (node) {
+      node.setAttribute('tabIndex', value);
+    }
+  };
+
   backButtonRef = (node) => {
     this.backButtonContainer = node;
     if (node && this.setHeaderFocus) {
@@ -304,16 +310,10 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return currentItem.childKeys.map(key => this.buildListItem(key, currentItem.childKeys))
+      return currentItem.childKeys.map(key => this.buildListItem(key, currentItem.childKeys));
     }
     return null;
   }
-
-  setTabIndex = (node, value) => {
-    if (node) {
-      node.setAttribute('tabIndex', value);
-    }
-  };
 
   updateAriaLiveContent(item) {
     const { intl } = this.props;

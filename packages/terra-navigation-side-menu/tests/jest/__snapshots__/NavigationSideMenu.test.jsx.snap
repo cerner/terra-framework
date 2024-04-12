@@ -148,27 +148,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
       <ContentContainer
         className="side-menu-content-container orion-fusion-theme"
         fill={true}
-        header={
-          <React.Fragment>
-            <div
-              className="side-navigation-menu"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="none"
-              tabIndex="0"
-              type="button"
-            >
-              <span
-                className="header-icon back"
-              />
-              <h1
-                className="title"
-              >
-                Test Menu
-              </h1>
-            </div>
-          </React.Fragment>
-        }
         intl={
           Object {
             "defaultFormats": Object {},
@@ -229,27 +208,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
           }
         >
           <div
-            className="header"
-          >
-            <div
-              className="side-navigation-menu"
-              onClick={[Function]}
-              onKeyDown={[Function]}
-              role="none"
-              tabIndex="0"
-              type="button"
-            >
-              <span
-                className="header-icon back"
-              />
-              <h1
-                className="title"
-              >
-                Test Menu
-              </h1>
-            </div>
-          </div>
-          <div
             className="main"
           >
             <Scroll
@@ -265,9 +223,30 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     className="side-menu-list"
                     role="menu"
                   >
+                    <li
+                      role="none"
+                    >
+                      <div
+                        className="side-navigation-menu"
+                        data-navigation-side-menu={true}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="0"
+                        type="button"
+                      >
+                        <span
+                          className="header-icon back"
+                        />
+                        <h1
+                          className="title"
+                        >
+                          Test Menu
+                        </h1>
+                      </div>
+                    </li>
                     <InjectIntl(MenuItem)
                       data-menu-item="test1"
-                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test1"
                       onClick={[Function]}
@@ -277,7 +256,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test1"
-                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -318,7 +296,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test1"
-                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
@@ -335,7 +312,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     </InjectIntl(MenuItem)>
                     <InjectIntl(MenuItem)
                       data-menu-item="test2"
-                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test2"
                       onClick={[Function]}
@@ -345,7 +321,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test2"
-                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -386,7 +361,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test2"
-                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
@@ -403,7 +377,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     </InjectIntl(MenuItem)>
                     <InjectIntl(MenuItem)
                       data-menu-item="test3"
-                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test3"
                       onClick={[Function]}
@@ -413,7 +386,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test3"
-                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -454,7 +426,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test3"
-                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
@@ -471,7 +442,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     </InjectIntl(MenuItem)>
                     <InjectIntl(MenuItem)
                       data-menu-item="test4"
-                      getMenuContainerRef={[Function]}
                       isSelected={false}
                       key="test4"
                       onClick={[Function]}
@@ -481,7 +451,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     >
                       <MenuItem
                         data-menu-item="test4"
-                        getMenuContainerRef={[Function]}
                         intl={
                           Object {
                             "defaultFormats": Object {},
@@ -522,7 +491,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test4"
-                            getMenuContainerRef={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
@@ -734,27 +702,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
       ariaLabel="Sub Menu List"
       className="side-menu-content-container"
       fill={true}
-      header={
-        <React.Fragment>
-          <div
-            className="side-navigation-menu"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="none"
-            tabIndex="0"
-            type="button"
-          >
-            <span
-              className="header-icon back"
-            />
-            <h1
-              className="title"
-            >
-              Test Menu
-            </h1>
-          </div>
-        </React.Fragment>
-      }
       intl={
         Object {
           "defaultFormats": Object {},
@@ -816,27 +763,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
         }
       >
         <div
-          className="header"
-        >
-          <div
-            className="side-navigation-menu"
-            onClick={[Function]}
-            onKeyDown={[Function]}
-            role="none"
-            tabIndex="0"
-            type="button"
-          >
-            <span
-              className="header-icon back"
-            />
-            <h1
-              className="title"
-            >
-              Test Menu
-            </h1>
-          </div>
-        </div>
-        <div
           className="main"
         >
           <Scroll
@@ -853,9 +779,30 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   className="side-menu-list"
                   role="menu"
                 >
+                  <li
+                    role="none"
+                  >
+                    <div
+                      className="side-navigation-menu"
+                      data-navigation-side-menu={true}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                      tabIndex="0"
+                      type="button"
+                    >
+                      <span
+                        className="header-icon back"
+                      />
+                      <h1
+                        className="title"
+                      >
+                        Test Menu
+                      </h1>
+                    </div>
+                  </li>
                   <InjectIntl(MenuItem)
                     data-menu-item="test1"
-                    getMenuContainerRef={[Function]}
                     isSelected={false}
                     key="test1"
                     onClick={[Function]}
@@ -865,7 +812,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   >
                     <MenuItem
                       data-menu-item="test1"
-                      getMenuContainerRef={[Function]}
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -906,7 +852,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                         <div
                           className="menu-item"
                           data-menu-item="test1"
-                          getMenuContainerRef={[Function]}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
@@ -923,7 +868,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   </InjectIntl(MenuItem)>
                   <InjectIntl(MenuItem)
                     data-menu-item="test2"
-                    getMenuContainerRef={[Function]}
                     isSelected={false}
                     key="test2"
                     onClick={[Function]}
@@ -933,7 +877,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   >
                     <MenuItem
                       data-menu-item="test2"
-                      getMenuContainerRef={[Function]}
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -974,7 +917,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                         <div
                           className="menu-item"
                           data-menu-item="test2"
-                          getMenuContainerRef={[Function]}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
@@ -991,7 +933,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   </InjectIntl(MenuItem)>
                   <InjectIntl(MenuItem)
                     data-menu-item="test3"
-                    getMenuContainerRef={[Function]}
                     isSelected={false}
                     key="test3"
                     onClick={[Function]}
@@ -1001,7 +942,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   >
                     <MenuItem
                       data-menu-item="test3"
-                      getMenuContainerRef={[Function]}
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -1042,7 +982,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                         <div
                           className="menu-item"
                           data-menu-item="test3"
-                          getMenuContainerRef={[Function]}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
@@ -1059,7 +998,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   </InjectIntl(MenuItem)>
                   <InjectIntl(MenuItem)
                     data-menu-item="test4"
-                    getMenuContainerRef={[Function]}
                     isSelected={false}
                     key="test4"
                     onClick={[Function]}
@@ -1069,7 +1007,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                   >
                     <MenuItem
                       data-menu-item="test4"
-                      getMenuContainerRef={[Function]}
                       intl={
                         Object {
                           "defaultFormats": Object {},
@@ -1110,7 +1047,6 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                         <div
                           className="menu-item"
                           data-menu-item="test4"
-                          getMenuContainerRef={[Function]}
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
