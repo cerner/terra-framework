@@ -36,9 +36,9 @@
     z-index: 1;
 
     &:focus {
-      box-shadow: var(--terra-navigation-side-menu-item-focus-box-shadow, none);
-      outline: var(--terra-navigation-side-menu-focus-outline, 2px dashed #000);
-      outline-offset: var(--terra-navigation-side-menu-focus-outline-offset, -2px);
+      box-shadow: var(--terra-navigation-side-menu-header-focus-box-shadow, none);
+      outline: var(--terra-navigation-side-menu-header-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-navigation-side-menu-header-focus-outline-offset, -2px);
     }
   }
 
