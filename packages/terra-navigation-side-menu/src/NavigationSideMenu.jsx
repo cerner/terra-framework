@@ -150,7 +150,13 @@ class NavigationSideMenu extends Component {
 
   handleBackKeydown(event) {
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
-      this.handleBackClick(event);
+      const parentKey = this.state.parents[this.props.selectedMenuKey];
+      if (parentKey) {
+        this.handleBackClick(event);
+      } else if (this.props.routingStackBack) {
+        this.props.routingStackBack();
+        return;
+      }
     }
     if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
       const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
@@ -362,7 +368,7 @@ class NavigationSideMenu extends Component {
             ref={(obj) => this.backButtonRef(obj)}
             type="button"
             tabIndex={(this.onBack) ? '0' : '-1'}
-            onKeyDown={(this.onBack) ? this.handleBackKeydown : this.onBack}
+            onKeyDown={this.handleBackKeydown}
             onClick={this.onBack}
             data-navigation-side-menu
           >

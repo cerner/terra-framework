@@ -50,6 +50,17 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
       browser.keys(['Tab', 'ArrowDown']);
       Terra.validates.element('first menu item focused', { selector: '#root' });
     });
+
+    it('Navigate to submenu with right arrow', () => {
+      browser.keys(['ArrowRight']);
+      Terra.validates.element('submenu header focused with right arrow', { selector: '#root' });
+    });
+
+    it('Navigate to menu item with left arrow', () => {
+      browser.keys(['ArrowDown', 'ArrowLeft']);
+      Terra.validates.element('first menu item focused with left arrow', { selector: '#root' });
+    });
+
     it('should focus on second menu item', () => {
       browser.keys(['ArrowDown']);
       Terra.validates.element('second menu item focused', { selector: '#root' });
