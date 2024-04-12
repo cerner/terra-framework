@@ -287,6 +287,24 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
+  describe('With single row selection and collapsible sections', () => {
+    const rowSelectionTableSelector = '#table-with-single-row-selection';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-single-row-selection-and-collapsible-sections');
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[1].$$('td')[0].click();
+
+      browser.$$('tbody tr')[0].$$('th button')[0].click();
+
+      browser.$$('tbody tr')[3].$$('td')[0].click();
+
+      Terra.validates.element('row-single-selection-with-collapsible-sections', { selector: rowSelectionTableSelector });
+    });
+  });
+
   describe('Table with Large Text Data', () => {
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-large-data');

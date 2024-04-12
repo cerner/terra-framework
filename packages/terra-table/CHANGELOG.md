@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed an exception case when using collapsible sections with single selection mode.
+
 * Changed
   * Updated subsection logic to properly support grid implementations.
 
