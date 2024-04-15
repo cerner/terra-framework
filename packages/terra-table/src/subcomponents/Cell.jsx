@@ -435,6 +435,7 @@ function Cell(props) {
       headers={`${sectionHeaderId}${subsectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
+      data-cell-column-id={`${columnId}-${columnSpanIndex}`}
       onMouseDown={onCellSelect ? handleMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props

@@ -309,19 +309,26 @@ function Table(props) {
     return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
 
-  const getTableBodyColumns = () => displayedColumns.reduce(
-    (columns, currentColumn) => {
-      for (let columnSpanIndex = 0; columnSpanIndex < (currentColumn.columnSpan || 1); columnSpanIndex += 1) {
-        columns.push({ ...currentColumn, columnSpanIndex });
-      }
+  const tableBodyColumns = useMemo(() => {
+    const columnData = displayedColumns.reduce(
+      (columns, currentColumn, columnHeaderIndex) => {
+        for (let columnSpanIndex = 0; columnSpanIndex < (currentColumn.columnSpan || 1); columnSpanIndex += 1) {
+          columns.push({ ...currentColumn, columnSpanIndex, columnHeaderIndex });
+        }
 
-      return columns;
-    },
-    [],
-  );
+        return columns;
+      },
+      [],
+    );
+
+    if (gridContext.tableBodyColumnsRef) {
+      gridContext.tableBodyColumnsRef.current = columnData;
+    }
+
+    return columnData;
+  }, [displayedColumns, gridContext.tableBodyColumnsRef]);
 
   const [tableHeaderColumns, setTableHeaderColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
-  const [tableBodyColumns, setTableBodyColumns] = useState(getTableBodyColumns());
 
   const defaultSectionRef = useRef(uuidv4());
 
@@ -388,7 +395,6 @@ function Table(props) {
     setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === RowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
     setTableHeaderColumns(displayedColumns.map((column) => initializeColumn(column)));
-    setTableBodyColumns(getTableBodyColumns());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowSelectionMode]);
 
@@ -435,7 +441,6 @@ function Table(props) {
   // useEffect for row displayed columns
   useEffect(() => {
     setTableHeaderColumns(displayedColumns.map((column) => initializeColumn(column)));
-    setTableBodyColumns(getTableBodyColumns());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinnedColumns, overflowColumns]);
 
