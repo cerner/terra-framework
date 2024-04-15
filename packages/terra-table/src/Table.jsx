@@ -456,7 +456,7 @@ function Table(props) {
       lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
       if (pinnedColumns[0].columnSpan > 1) {
-        for (let c = pinnedColumns[0].columnSpan; c > 1; c -= 1) {
+        for (let counter = pinnedColumns[0].columnSpan; counter > 1; counter -= 1) {
           cellCumulativeOffset += tableColumns[tableColumns.findIndex((col) => col.id === pinnedColumns[0].id)].width;
           cellOffsetArray.push(cellCumulativeOffset);
         }

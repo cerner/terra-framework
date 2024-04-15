@@ -181,7 +181,7 @@ function Row(props) {
       {cells.map((cellData, index) => {
         const cellColumnIndex = index + columnIndexOffSet;
         const columnId = displayedColumns[cellColumnIndex].id;
-        const { columnSpan, columnSpanIndex } = displayedColumns[cellColumnIndex];
+        const columnSpanIndex = displayedColumns[cellColumnIndex].columnSpanIndex ? displayedColumns[cellColumnIndex].columnSpanIndex : undefined;
 
         return (
           <Cell
@@ -206,7 +206,6 @@ function Row(props) {
             firstRowId={firstRowId}
             lastRowId={lastRowId}
             columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
-            columnSpan={columnSpan}
             columnSpanIndex={columnSpanIndex}
             rowSelectionMode={rowSelectionMode}
           >

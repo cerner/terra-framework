@@ -144,12 +144,6 @@ const propTypes = {
 
   /**
    * @private
-   * The column span value for a column.
-   */
-  columnSpan: PropTypes.number,
-
-  /**
-   * @private
    * The column span index value for a column.
    */
   columnSpanIndex: PropTypes.number,
@@ -193,7 +187,6 @@ function Cell(props) {
     firstRowId,
     lastRowId,
     columnHighlightColor,
-    columnSpan,
     columnSpanIndex,
     rowSelectionMode,
   } = props;
@@ -279,7 +272,6 @@ function Cell(props) {
         rowIndex: (rowIndex - 1),
         columnId,
         columnIndex,
-        columnSpan,
         columnSpanIndex,
         isShiftPressed: event.shiftKey,
         isMetaPressed: event.metaKey || event.ctrlKey,
