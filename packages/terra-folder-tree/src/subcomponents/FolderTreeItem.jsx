@@ -136,7 +136,7 @@ const FolderTreeItem = ({
   const radioButton = isSelectable ? (
     <label
       className={cx('radio-target')}
-      onClick={(e) => {e.stopPropagation();}} // Prevent triggering expand/collapse during selection
+      onClick={(e) => { e.stopPropagation(); }} // Prevent triggering expand/collapse during selection
     >
       <input
         type="radio"

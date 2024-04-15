@@ -17,7 +17,7 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
     it('selects a folder tree item via mouse click outside the main radio button', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
 
-      $$('input[type="radio"]')[2].click({x: 17, y: 17});
+      $('input[type="radio"]')[2].click({ x: 17, y: 17 });
       $('h3').moveTo({ xOffset: 0, yOffset: 0 });
       Terra.validates.screenshot('selected outside radio', { selector: '#basic-folder-tree' });
     });
