@@ -144,7 +144,6 @@ const propTypes = {
    * @private
    * @param {string} rowId rowId
    * @param {string} columnId columnId
-   * @param {number} columnSpanIndex columnSpanIndex
    * @param {object} event event
    */
   onCellSelect: PropTypes.func,
@@ -260,7 +259,7 @@ function Table(props) {
   const screenResizeTimer = useRef(null);
   const resizeTimer = 100;
 
-  const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([]);
+  const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
   const [pinnedColumnHeaderOffsets, setPinnedColumnHeaderOffsets] = useState([0]);
 
   const tableContainerRef = useRef();
@@ -310,19 +309,26 @@ function Table(props) {
     return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
 
-  const getTableBodyColumns = () => displayedColumns.reduce(
-    (columns, currentColumn) => {
-      for (let columnSpanIndex = 0; columnSpanIndex < (currentColumn.columnSpan || 1); columnSpanIndex += 1) {
-        columns.push({ ...currentColumn, columnSpanIndex });
-      }
+  const tableBodyColumns = useMemo(() => {
+    const columnData = displayedColumns.reduce(
+      (columns, currentColumn, columnHeaderIndex) => {
+        for (let columnSpanIndex = 0; columnSpanIndex < (currentColumn.columnSpan || 1); columnSpanIndex += 1) {
+          columns.push({ ...currentColumn, columnSpanIndex, columnHeaderIndex });
+        }
 
-      return columns;
-    },
-    [],
-  );
+        return columns;
+      },
+      [],
+    );
+
+    if (gridContext.tableBodyColumnsRef) {
+      gridContext.tableBodyColumnsRef.current = columnData;
+    }
+
+    return columnData;
+  }, [displayedColumns, gridContext.tableBodyColumnsRef]);
 
   const [tableHeaderColumns, setTableHeaderColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
-  const [tableBodyColumns, setTableBodyColumns] = useState(getTableBodyColumns());
 
   const defaultSectionRef = useRef(uuidv4());
 
@@ -389,7 +395,6 @@ function Table(props) {
     setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === RowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
     setTableHeaderColumns(displayedColumns.map((column) => initializeColumn(column)));
-    setTableBodyColumns(getTableBodyColumns());
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowSelectionMode]);
 
@@ -436,7 +441,6 @@ function Table(props) {
   // useEffect for row displayed columns
   useEffect(() => {
     setTableHeaderColumns(displayedColumns.map((column) => initializeColumn(column)));
-    setTableBodyColumns(getTableBodyColumns());
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinnedColumns, overflowColumns]);
 
@@ -458,27 +462,24 @@ function Table(props) {
     }
 
     if (pinnedColumns.length > 0) {
-      headerOffsetArray.push(cumulativeHeaderOffset);
-      cellOffsetArray.push(cumulativeCellOffset);
-
       lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
-      tableHeaderColumns.slice(0, lastPinnedColumnIndex).forEach((pinnedColumn) => {
-        cumulativeHeaderOffset += pinnedColumn.width;
+      tableHeaderColumns.slice(0, lastPinnedColumnIndex + 1).forEach((pinnedColumn) => {
         headerOffsetArray.push(cumulativeHeaderOffset);
 
         const currentColumnSpan = pinnedColumn.columnSpan || 1;
 
         for (let columnSpanIndex = 0; columnSpanIndex < currentColumnSpan; columnSpanIndex += 1) {
-          cumulativeCellOffset += (pinnedColumn.width / currentColumnSpan);
           cellOffsetArray.push(cumulativeCellOffset);
+          cumulativeCellOffset += (pinnedColumn.width / currentColumnSpan);
         }
+
+        cumulativeHeaderOffset += pinnedColumn.width;
       });
     }
 
     setPinnedColumnHeaderOffsets(headerOffsetArray);
     setPinnedColumnOffsets(cellOffsetArray);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tableHeaderColumns]);
 

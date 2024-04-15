@@ -114,31 +114,6 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
       ]
     }
     sections={null}
-    tableBodyColumns={
-      Array [
-        Object {
-          "columnHeaderIndex": 0,
-          "displayName": "Vitals",
-          "id": "Column-0",
-          "isResizable": false,
-          "isSelectable": false,
-        },
-        Object {
-          "columnHeaderIndex": 1,
-          "displayName": "March 16",
-          "id": "Column-1",
-          "isResizable": false,
-          "isSelectable": false,
-        },
-        Object {
-          "columnHeaderIndex": 2,
-          "displayName": "March 17",
-          "id": "Column-2",
-          "isResizable": false,
-          "isSelectable": false,
-        },
-      ]
-    }
   />
   <VisuallyHiddenText
     aria-live="polite"
@@ -305,31 +280,6 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
       ]
     }
     sections={null}
-    tableBodyColumns={
-      Array [
-        Object {
-          "columnHeaderIndex": 0,
-          "displayName": "Vitals",
-          "id": "Column-0",
-          "isResizable": false,
-          "isSelectable": false,
-        },
-        Object {
-          "columnHeaderIndex": 1,
-          "displayName": "March 16",
-          "id": "Column-1",
-          "isResizable": false,
-          "isSelectable": false,
-        },
-        Object {
-          "columnHeaderIndex": 2,
-          "displayName": "March 17",
-          "id": "Column-2",
-          "isResizable": false,
-          "isSelectable": false,
-        },
-      ]
-    }
   />
   <VisuallyHiddenText
     aria-live="polite"

@@ -151,22 +151,12 @@ function FlowsheetDataGrid(props) {
   const [cellSelectionAriaLiveMessage, setCellSelectionAriaLiveMessage] = useState(null);
   const inShiftDirectionalMode = useRef(false);
   const dataGridFuncRef = useRef();
+  let tableBodyColumnsRef;
   const flowsheetColumns = useMemo(() => columns.map(column => ({
     ...column,
     isSelectable: false,
     isResizable: false,
   })), [columns]);
-
-  const tableBodyColumns = flowsheetColumns.reduce(
-    (columns, currentColumn) => {
-      for (let columnSpanIndex = 0; columnSpanIndex < (currentColumn.columnSpan || 1); columnSpanIndex += 1) {
-        columns.push({ ...currentColumn, columnSpanIndex });
-      }
-
-      return columns;
-    },
-    [],
-  );
 
   const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
   const overflowColumns = flowsheetColumns.length > 1 ? flowsheetColumns.slice(1) : [];
@@ -245,11 +235,12 @@ function FlowsheetDataGrid(props) {
   useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
+    tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
 
     rowsToSearch.forEach((row) => {
       row.cells.forEach((cell, cellIndex) => {
         if (cell.isSelected) {
-          newSelectedCells.push({ rowId: row.id, columnId: tableBodyColumns[cellIndex].id, columnSpanIndex: tableBodyColumns[cellIndex].columnSpanIndex });
+          newSelectedCells.push({ rowId: row.id, columnId: tableBodyColumnsRef[cellIndex].id, columnSpanIndex: tableBodyColumnsRef[cellIndex].columnSpanIndex });
         }
       });
     });
@@ -264,7 +255,7 @@ function FlowsheetDataGrid(props) {
     } else if (selectedCells.current.length) {
       setCellSelectionAriaLiveMessage(intl.formatMessage({ id: 'Terra.flowsheetDataGrid.cells-selected' }, { cellCount: selectedCells.current.length }));
     }
-  }, [intl, rowsToSearch, tableBodyColumns, setCellSelectionAriaLiveMessage]);
+  }, [intl, rowsToSearch, setCellSelectionAriaLiveMessage]);
 
   const selectCellRange = useCallback((rowId, columnId, columnIndex, sectionId) => {
     if (anchorCell.current === null) {
@@ -274,6 +265,7 @@ function FlowsheetDataGrid(props) {
     const anchorRowIndex = rowsToSearch.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = anchorCell.current.columnIndex;
     const rowIndex = rowsToSearch.findIndex(row => row.id === rowId);
+    tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
 
     // Determine the boundaries of selected region.
     let rowIndexTopBound = Math.min(anchorRowIndex, rowIndex);
@@ -293,7 +285,7 @@ function FlowsheetDataGrid(props) {
     for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
       const rowIdToSelect = rowsToSearch[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
-        const columnIdToSelect = tableBodyColumns[colIdx].id;
+        const columnIdToSelect = tableBodyColumnsRef[colIdx].id;
         cellsToSelect.push({
           rowId: rowIdToSelect, columnId: columnIdToSelect, columnIndex: colIdx, sectionId,
         });
@@ -303,7 +295,7 @@ function FlowsheetDataGrid(props) {
     if (onCellRangeSelect) {
       onCellRangeSelect(cellsToSelect);
     }
-  }, [rowsToSearch, flowsheetSections, tableBodyColumns, onCellRangeSelect]);
+  }, [rowsToSearch, flowsheetSections, onCellRangeSelect]);
 
   const handleCellSelection = useCallback((selectionDetails, event) => {
     // Call onRowSelect for row header column
@@ -334,6 +326,7 @@ function FlowsheetDataGrid(props) {
     }
 
     const gridRef = dataGridFuncRef.current.getGridRef();
+    tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
 
     let anchorSectionId = '';
     if (flowsheetSections) {
@@ -352,7 +345,7 @@ function FlowsheetDataGrid(props) {
       if (anchorCell.current === null && !gridRef.rows[rowIndex].hasAttribute('data-section-id')) {
         anchorCell.current = {
           rowId: gridRef.rows[rowIndex].getAttribute('data-row-id'),
-          columnId: tableBodyColumns[columnIndex].id,
+          columnId: tableBodyColumnsRef[columnIndex].id,
           columnIndex,
           sectionId: anchorSectionId,
         };
@@ -388,11 +381,11 @@ function FlowsheetDataGrid(props) {
 
     if (nextColumnIndex <= 0) {
       nextColumnIndex = 1;
-    } else if (nextColumnIndex >= tableBodyColumns.length) {
-      nextColumnIndex = tableBodyColumns.length - 1;
+    } else if (nextColumnIndex >= tableBodyColumnsRef.length) {
+      nextColumnIndex = tableBodyColumnsRef.length - 1;
     }
 
-    const nextColumnId = tableBodyColumns[nextColumnIndex].id;
+    const nextColumnId = tableBodyColumnsRef[nextColumnIndex].id;
     const nextRowId = gridRef.rows[nextRowIndex].getAttribute('data-row-id');
 
     if (!gridRef.rows[nextRowIndex].hasAttribute('data-section-id')) {
@@ -407,7 +400,7 @@ function FlowsheetDataGrid(props) {
       }
       selectCellRange(nextRowId, nextColumnId, nextColumnIndex, nextSectionId);
     }
-  }, [flowsheetSections, tableBodyColumns, selectCellRange]);
+  }, [flowsheetSections, selectCellRange]);
 
   const handleKeyUp = (event) => {
     const key = event.keyCode;

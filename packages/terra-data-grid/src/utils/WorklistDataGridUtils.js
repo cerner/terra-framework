@@ -2,7 +2,7 @@
  * The Object representation of the row selection column.
  */
 const ROW_SELECTION_COLUMN = {
-  id: 'table-rowSelectionColumn',
+  id: 'WorklistDataGrid-rowSelectionColumn',
   width: 40,
   isSelectable: true,
   isResizable: false,

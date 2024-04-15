@@ -10,7 +10,6 @@ import Table, {
 } from 'terra-table';
 import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
-import WorklistDataGridUtils from './utils/WorklistDataGridUtils';
 
 import styles from './DataGrid.module.scss';
 import './_elementPolyfill';
@@ -92,7 +91,6 @@ const propTypes = {
    * Callback function that is called when a selectable cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
-   * @param {number} columnSpanIndex columnSpanIndex
    * @param {object} event event
    */
   onCellSelect: PropTypes.func,
@@ -195,8 +193,6 @@ const DataGrid = forwardRef((props, ref) => {
     isAutoFocusEnabled,
   } = props;
 
-  const displayedColumns = (hasSelectableRows ? [WorklistDataGridUtils.ROW_SELECTION_COLUMN] : []).concat(pinnedColumns).concat(overflowColumns);
-
   // By default, all grid-based components have selectable cells.
   const dataGridRows = useMemo(() => (rows.map((row) => ({
     ...row,
@@ -210,9 +206,10 @@ const DataGrid = forwardRef((props, ref) => {
   const grid = useRef();
   const gridContainerRef = useRef();
   const tableContainerRef = useRef();
+  const tableBodyColumnsRef = useRef();
   const handleFocus = useRef(true);
 
-  const focusedCellRef = useRef({ rowId: '', columnId: '', columnSpanIndex: '' });
+  const focusedCellRef = useRef({ rowId: '', columnId: '' });
 
   const [checkResizable, setCheckResizable] = useState(false);
 
@@ -235,6 +232,7 @@ const DataGrid = forwardRef((props, ref) => {
     setCellAriaLiveMessage,
     tableRef: grid,
     tableContainerRef,
+    tableBodyColumnsRef,
     isAutoFocusEnabled,
   }), [grid, isAutoFocusEnabled, tableContainerRef]);
 
@@ -242,11 +240,11 @@ const DataGrid = forwardRef((props, ref) => {
   // functions
 
   const isRowSelectionCell = useCallback((columnIndex) => (
-    hasSelectableRows && columnIndex < grid.current.rows[rowIndex].cells.length && grid.current.rows[rowIndex].cells[columnIndex].id === WorklistDataGridUtils.ROW_SELECTION_COLUMN.id
+    hasSelectableRows && columnIndex === 0
   ), [hasSelectableRows]);
 
   const isSection = useCallback((rowIndex) => (
-    grid.current.rows[rowIndex].hasAttribute('data-section-id')
+    grid.current.rows[rowIndex].hasAttribute('data-section-id') || grid.current.rows[rowIndex].hasAttribute('data-subsection-id')
   ), []);
 
   const setFocusedRowCol = useCallback((newRowIndex, newColIndex, makeActiveElement) => {
@@ -254,11 +252,10 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    if (newColIndex < grid.current.rows[newRowIndex].cells.length) {
+    if (newColIndex < grid.current.rows[newRowIndex].length) {
       focusedCellRef.current = {
         rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
-        columnId: grid.current.rows[newRowIndex].cells[newColIndex].id,
-        columnSpanIndex: grid.current.rows[newRowIndex].cells[newColIndex].columnSpanIndex,
+        columnId: grid.current.rows[newRowIndex].cells[newColIndex].getAttribute('data-cell-column-id'),
       };
     }
 
@@ -318,6 +315,7 @@ const DataGrid = forwardRef((props, ref) => {
       setFocusedRowCol,
       getFocusedCell() { return { row: focusedRow, col: focusedCol }; },
       getGridRef() { return grid.current; },
+      getTableBodyColumnsRef() { return tableBodyColumnsRef.current; },
     }),
     // eslint-disable-next-line react-hooks/exhaustive-deps
     [focusedCol, focusedRow],
@@ -360,6 +358,7 @@ const DataGrid = forwardRef((props, ref) => {
         tableContainerRef.current.scrollBy(0, scrollOffsetY);
       }
     }
+
     setFocusedRowCol(toCell.row, toCell.col, true);
   };
 
@@ -458,9 +457,10 @@ const DataGrid = forwardRef((props, ref) => {
 
         // Select proper header cell column
         if ((nextRow === 0 || (hasColumnHeaderActions && nextRow === 1))
-            && !(cellCoordinates.row === 1 && hasColumnHeaderActions)) { // Account for navigation to column header and action header rows
-          nextCol = grid.current.rows[rowIndex].cells[nextCol].columnHeaderIndex;
+                && !(cellCoordinates.row === 1 && hasColumnHeaderActions)) { // Account for navigation to column header and action header rows
+          nextCol = tableBodyColumnsRef.current[nextCol].columnHeaderIndex;
         }
+
         break;
       case KeyCode.KEY_DOWN:
         nextRow += 1;
@@ -469,7 +469,7 @@ const DataGrid = forwardRef((props, ref) => {
         if ((cellCoordinates.row === 0 && !hasColumnHeaderActions) || (hasColumnHeaderActions && cellCoordinates.row === 1)) { // Account for navigation from column header and action header rows
           let startCellIndex = 0;
           for (let headerIndex = 0; headerIndex < cellCoordinates.col; headerIndex += 1) {
-            startCellIndex += displayedColumns[headerIndex].columnSpan || 1;
+            startCellIndex += grid.current.rows[0].cells[headerIndex].colSpan || 1;
           }
 
           nextCol = startCellIndex;
@@ -516,12 +516,7 @@ const DataGrid = forwardRef((props, ref) => {
         }
         break;
       case KeyCode.KEY_END:
-        if (nextRow === 0 || (hasColumnHeaderActions && nextRow === 1)) {
-          nextCol = displayedColumns.length - 1;
-        } else {
-          nextCol = grid.current.rows[nextRow].cells.length - 1; // Col are zero based.
-        }
-
+        nextCol = grid.current.rows[nextRow].cells.length - 1; // Col are zero based.
         if (event.ctrlKey) {
           // Though rows are zero based, the header is the first row so the rowsLength will
           // always be one more than then actual number of data rows.
