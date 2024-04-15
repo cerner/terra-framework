@@ -157,34 +157,16 @@ function FlowsheetDataGrid(props) {
     isResizable: false,
   })), [columns]);
 
-  const tableBodyColumns = useMemo(() => {
-    let i = 0;
-    const newDisplayedColumns = [];
-    flowsheetColumns.forEach((column, columnHeaderIndex) => {
-      if (column.columnSpan > 1) {
-        newDisplayedColumns[i] = {
-          ...column,
-          columnSpanIndex: 0,
-          columnHeaderIndex,
-          columnHighlightColor: undefined,
-        };
-        i += 1;
-        for (let counter = column.columnSpan; counter > 1; counter -= 1) {
-          newDisplayedColumns[i] = {
-            ...column,
-            columnSpanIndex: (column.columnSpan - counter + 1),
-            columnHeaderIndex,
-            columnHighlightColor: undefined,
-          };
-          i += 1;
-        }
-      } else {
-        newDisplayedColumns[i] = { ...column, columnHeaderIndex };
-        i += 1;
+  const tableBodyColumns = flowsheetColumns.reduce(
+    (columns, currentColumn) => {
+      for (let columnSpanIndex = 0; columnSpanIndex < (currentColumn.columnSpan || 1); columnSpanIndex += 1) {
+        columns.push({ ...currentColumn, columnSpanIndex });
       }
-    });
-    return newDisplayedColumns;
-  }, [flowsheetColumns]);
+
+      return columns;
+    },
+    [],
+  );
 
   const pinnedColumns = flowsheetColumns.length ? [flowsheetColumns[0]] : [];
   const overflowColumns = flowsheetColumns.length > 1 ? flowsheetColumns.slice(1) : [];
@@ -452,7 +434,6 @@ function FlowsheetDataGrid(props) {
         rowHeight={rowHeight}
         rowHeaderIndex={0}
         pinnedColumns={pinnedColumns}
-        tableBodyColumns={tableBodyColumns}
         overflowColumns={overflowColumns}
         defaultColumnWidth={defaultColumnWidth}
         columnHeaderHeight={columnHeaderHeight}

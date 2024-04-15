@@ -99,7 +99,10 @@ const RowSelection = () => {
     }
   }, [clearSelectedRow, rowData, selectedRow]);
 
-  const onCellSelect = useCallback((rowId, columnId, isMetaPressed) => {
+  const onCellSelect = useCallback((selectedCell) => {
+    const rowId = selectedCell.rowId;
+    const columnId = selectedCell.columnId;
+    const isMetaPressed = selectedCell.isMetaPressed;
     if (rowId && columnId) {
       const rowIndex = rowData.findIndex(e => e.id === rowId);
       const columnIndex = cols.findIndex(e => e.id === columnId);
