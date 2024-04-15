@@ -151,7 +151,6 @@ function FlowsheetDataGrid(props) {
   const [cellSelectionAriaLiveMessage, setCellSelectionAriaLiveMessage] = useState(null);
   const inShiftDirectionalMode = useRef(false);
   const dataGridFuncRef = useRef();
-  let tableBodyColumnsRef;
   const flowsheetColumns = useMemo(() => columns.map(column => ({
     ...column,
     isSelectable: false,
@@ -267,7 +266,7 @@ function FlowsheetDataGrid(props) {
   useEffect(() => {
     const previousSelectedCells = [...selectedCells.current];
     const newSelectedCells = [];
-    tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
+    const tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
 
     rowsToSearch.forEach((row) => {
       row.cells.forEach((cell, cellIndex) => {
@@ -297,7 +296,7 @@ function FlowsheetDataGrid(props) {
     const anchorRowIndex = rowsToSearch.findIndex(row => row.id === anchorCell.current.rowId);
     const anchorColumnIndex = anchorCell.current.columnIndex;
     const rowIndex = rowsToSearch.findIndex(row => row.id === rowId);
-    tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
+    const tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
 
     // Determine the boundaries of selected region.
     let rowIndexTopBound = Math.min(anchorRowIndex, rowIndex);
@@ -368,7 +367,7 @@ function FlowsheetDataGrid(props) {
     }
 
     const gridRef = dataGridFuncRef.current.getGridRef();
-    tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
+    const tableBodyColumnsRef = dataGridFuncRef.current.getTableBodyColumnsRef();
 
     let anchorSectionId = '';
     if (flowsheetSections) {
