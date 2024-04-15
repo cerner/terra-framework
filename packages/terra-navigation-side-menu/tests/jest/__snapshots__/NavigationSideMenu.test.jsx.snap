@@ -251,7 +251,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
-                      tabIndex="0"
+                      tabIndex="-1"
                       text="Test Menu 1"
                     >
                       <MenuItem
@@ -286,7 +286,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
-                        tabIndex="0"
+                        tabIndex="-1"
                         text="Test Menu 1"
                       >
                         <li
@@ -299,7 +299,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             onClick={[Function]}
                             onKeyDown={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -807,7 +807,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     key="test1"
                     onClick={[Function]}
                     onKeyDown={[Function]}
-                    tabIndex="0"
+                    tabIndex="-1"
                     text="Test Menu 1"
                   >
                     <MenuItem
@@ -842,7 +842,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       isSelected={false}
                       onClick={[Function]}
                       onKeyDown={[Function]}
-                      tabIndex="0"
+                      tabIndex="-1"
                       text="Test Menu 1"
                     >
                       <li
@@ -855,7 +855,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           onClick={[Function]}
                           onKeyDown={[Function]}
                           role="menuitem"
-                          tabIndex="0"
+                          tabIndex="-1"
                         >
                           <div
                             className="title"
