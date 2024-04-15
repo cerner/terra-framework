@@ -259,7 +259,7 @@ function Table(props) {
   const screenResizeTimer = useRef(null);
   const resizeTimer = 100;
 
-  const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([]);
+  const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
   const [pinnedColumnHeaderOffsets, setPinnedColumnHeaderOffsets] = useState([0]);
 
   const tableContainerRef = useRef();
@@ -462,21 +462,19 @@ function Table(props) {
     }
 
     if (pinnedColumns.length > 0) {
-      headerOffsetArray.push(cumulativeHeaderOffset);
-      cellOffsetArray.push(cumulativeCellOffset);
-
       lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
-      tableHeaderColumns.slice(0, lastPinnedColumnIndex).forEach((pinnedColumn) => {
-        cumulativeHeaderOffset += pinnedColumn.width;
+      tableHeaderColumns.slice(0, lastPinnedColumnIndex + 1).forEach((pinnedColumn) => {
         headerOffsetArray.push(cumulativeHeaderOffset);
 
         const currentColumnSpan = pinnedColumn.columnSpan || 1;
 
         for (let columnSpanIndex = 0; columnSpanIndex < currentColumnSpan; columnSpanIndex += 1) {
-          cumulativeCellOffset += (pinnedColumn.width / currentColumnSpan);
           cellOffsetArray.push(cumulativeCellOffset);
+          cumulativeCellOffset += (pinnedColumn.width / currentColumnSpan);
         }
+
+        cumulativeHeaderOffset += pinnedColumn.width;
       });
     }
 
