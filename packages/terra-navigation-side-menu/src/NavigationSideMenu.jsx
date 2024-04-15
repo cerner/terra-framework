@@ -149,7 +149,7 @@ class NavigationSideMenu extends Component {
   }
 
   handleBackKeydown(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
       const parentKey = this.state.parents[this.props.selectedMenuKey];
       if (parentKey) {
         this.handleBackClick(event);
@@ -309,7 +309,7 @@ class NavigationSideMenu extends Component {
         onClick={(event) => { this.handleItemClick(event, key); }}
         onKeyDown={onKeyDown}
         data-menu-item={key}
-        tabIndex={(tabIndex === 0) ? '0' : '-1'}
+        tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
       />
     );
   }
