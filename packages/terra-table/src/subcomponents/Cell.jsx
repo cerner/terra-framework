@@ -148,6 +148,12 @@ const propTypes = {
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
   rowSelectionMode: PropTypes.string,
+
+  /**
+   * @private
+   * The column span index value for a column.
+   */
+  columnSpanIndex: PropTypes.number,
 };
 
 const defaultProps = {
@@ -183,6 +189,7 @@ function Cell(props) {
     lastRowId,
     columnHighlightColor,
     rowSelectionMode,
+    columnSpanIndex,
   } = props;
 
   const cellRef = useRef();
@@ -266,6 +273,7 @@ function Cell(props) {
         rowIndex: (rowIndex - 1),
         columnId,
         columnIndex,
+        columnSpanIndex,
         isShiftPressed: event.shiftKey,
         isMetaPressed: event.metaKey || event.ctrlKey,
         isCellSelectable: (!isMasked && isSelectable),
@@ -330,6 +338,7 @@ function Cell(props) {
               rowIndex: (rowIndex - 1),
               columnId,
               columnIndex,
+              columnSpanIndex,
               isShiftPressed: event.shiftKey,
               isMetaPressed: event.metaKey || event.ctrlKey,
               isCellSelectable: (!isMasked && isSelectable),

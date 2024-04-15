@@ -148,6 +148,7 @@ const ColumnHeader = (props) => {
             tableId={tableId}
             columnId={column.id}
             columnIndex={columnIndex}
+            columnSpan={column.columnSpan}
             displayName={column.displayName}
             isDisplayVisible={column.isDisplayVisible}
             width={column.width}
@@ -187,6 +188,7 @@ const ColumnHeader = (props) => {
               id={`${column.id}-actionCell`}
               tableId={tableId}
               columnId={column.id}
+              columnSpan={column.columnSpan}
               isActionCell
               action={column.action}
               columnIndex={columnIndex}

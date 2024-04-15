@@ -186,6 +186,7 @@ function Row(props) {
             columnId={columnId}
             rowIndex={rowIndex}
             columnIndex={cellColumnIndex}
+            columnSpanIndex={displayedColumns[cellColumnIndex].columnSpanIndex}
             sectionId={sectionId}
             subsectionId={subsectionId}
             tableId={tableId}
