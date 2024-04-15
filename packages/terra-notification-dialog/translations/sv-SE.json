@@ -1,6 +1,6 @@
 {
-  "Terra.notification.dialog.hazard-low":	"Information",
-  "Terra.notification.dialog.error":	"Fel",
-  "Terra.notification.dialog.hazard-medium":	"Obs!",
-  "Terra.notification.dialog.hazard-high":	"Varning"
+  "Terra.notification.dialog.hazard-low": "Information",
+  "Terra.notification.dialog.error": "Fel",
+  "Terra.notification.dialog.hazard-medium": "Obs!",
+  "Terra.notification.dialog.hazard-high": "Varning"
 }
