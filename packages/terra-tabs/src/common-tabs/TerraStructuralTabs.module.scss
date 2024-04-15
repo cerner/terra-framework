@@ -121,11 +121,9 @@
 
       &.is-active-vertical {
         background-color: var(--terra-tabs-structural-vertical-active-background-color, #fff);
-        background-size: var(--terra-tabs-structural-vertical-active-background-size, 100% 1px);
-        border-bottom: 1px solid;
-        border-image: linear-gradient(#006fc3, #006fc3) 0 100%;
-        border-left: 2px solid;
-        border-width: 0 0 1px 2px;
+        background-image: var(--terra-tabs-structural-background-image, linear-gradient(to bottom, #006fc3, #006fc3));
+        background-size: 2px;
+        border-width: 0 1px 1px 2px;
         box-shadow: var(--terra-tabs-structural-vertical-active-box-shadow, none);
         color: var(--terra-tabs-structural-vertical-active-color, #000);
         font-weight: var(--terra-tabs-structural-vertical-active-font-weight, normal);
