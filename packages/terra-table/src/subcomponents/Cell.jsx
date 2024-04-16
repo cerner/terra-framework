@@ -48,6 +48,11 @@ const propTypes = {
   sectionId: PropTypes.string,
 
   /**
+   * An identifier for the subsection.
+   */
+  subsectionId: PropTypes.string,
+
+  /**
    * Unique identifier for the parent table
    */
   tableId: PropTypes.string.isRequired,
@@ -172,6 +177,7 @@ function Cell(props) {
     rowIndex,
     rowMinimumHeight,
     sectionId,
+    subsectionId,
     tableId,
     firstRowId,
     lastRowId,
@@ -255,6 +261,7 @@ function Cell(props) {
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
+        subsectionId,
         rowId,
         rowIndex: (rowIndex - 1),
         columnId,
@@ -318,6 +325,7 @@ function Cell(props) {
             }
             onCellSelect({
               sectionId,
+              subsectionId,
               rowId,
               rowIndex: (rowIndex - 1),
               columnId,
@@ -387,6 +395,7 @@ function Cell(props) {
   const columnHeaderId = `${tableId}-${columnId}-headerCell`;
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
+  const subsectionHeaderId = subsectionId ? `${tableId}-${sectionId}-${subsectionId} ` : '';
 
   let columnHighlight = {};
   if (columnHighlightColor) {
@@ -414,7 +423,7 @@ function Cell(props) {
       ref={isGridContext || rowSelectionMode ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
-      headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
+      headers={`${sectionHeaderId}${subsectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
       onMouseDown={onCellSelect ? handleMouseDown : undefined}

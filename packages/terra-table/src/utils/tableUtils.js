@@ -15,7 +15,12 @@ const getFirstAndLastVisibleRowData = (sections) => {
     return rowData;
   }
 
-  const findNotEmptyOrCollapsed = section => section.rows.length > 0 && !section.isCollapsed;
+  const findNotEmptyOrCollapsed = section => {
+    if (section.subsections) {
+      return section.subsections.length > 0 && !section.isCollapsed;
+    }
+    return section.rows.length > 0 && !section.isCollapsed;
+  };
   const visibleSections = sections.filter(findNotEmptyOrCollapsed);
 
   if (visibleSections.length < 1) {

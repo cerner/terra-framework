@@ -1,4 +1,3 @@
-// TODO: fix linter error
 /* eslint-disable jsx-a11y/control-has-associated-label */
 
 import React, { useCallback, useContext } from 'react';
@@ -8,9 +7,11 @@ import PropTypes from 'prop-types';
 import SectionHeader from 'terra-section-header';
 import ThemeContext from 'terra-theme-context';
 import GridContext, { GridConstants } from '../utils/GridContext';
+import { SUBSECTION_HEADER_LEVEL } from '../utils/constants';
 
 import Row from './Row';
 import rowShape from '../proptypes/rowShape';
+import subsectionShape from '../proptypes/subsectionShape';
 import columnShape from '../proptypes/columnShape';
 import styles from './Section.module.scss';
 
@@ -57,6 +58,11 @@ const propTypes = {
    * An array of row objects to be rendered within the section.
    */
   rows: PropTypes.arrayOf(rowShape),
+
+  /**
+   * An array of subsection objects to be rendered within the section.
+   */
+  subsections: PropTypes.arrayOf(subsectionShape),
 
   /**
    * Enables row selection capabilities for the table.
@@ -144,6 +150,7 @@ function Section(props) {
     rowHeight,
     rowHeaderIndex,
     rows,
+    subsections,
     onSectionSelect,
     rowMinimumHeight,
     boundingWidth,
@@ -162,37 +169,110 @@ function Section(props) {
     onSectionSelect(id);
   }, [id, onSectionSelect]);
 
+  const sectionHeader = (
+    <tbody>
+      {/* Render section rows */}
+      {!isHidden && (
+      <tr
+        aria-rowindex={sectionRowIndex}
+        className={cx('header-row', theme.className)}
+        data-section-id={id}
+      >
+        <th
+          id={`${tableId}-${id}`}
+          className={cx('header-cell')}
+          align="left"
+          colSpan={displayedColumns.length}
+          role="columnheader"
+          scope="col"
+          tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
+        >
+          <SectionHeader
+            className={cx('section-header')}
+            text={text}
+            isOpen={hasSectionButton ? !isCollapsed : undefined}
+            onClick={hasSectionButton ? handleClick : undefined}
+            isTitleSticky
+            boundedWidth={boundingWidth}
+          />
+        </th>
+      </tr>
+      )}
+    </tbody>
+  );
+
+  const rowProps = {
+    displayedColumns,
+    firstRowId,
+    height: rowHeight,
+    isTableStriped,
+    lastRowId,
+    onCellSelect,
+    rowHeaderIndex,
+    rowMinimumHeight,
+    rowSelectionMode,
+    sectionId: !isHidden ? id : undefined,
+    tableId,
+  };
+
+  if (subsections) {
+    return (
+      <>
+        {sectionHeader}
+        {!isCollapsed && subsections.map((subsection) => (
+          <>
+            <tbody>
+              <tr
+                aria-rowindex={subsection.subSectionRowIndex}
+                className={cx('header-row', theme.className)}
+                data-subsection-id={subsection.id}
+                data-subsection-section-id={id}
+              >
+                <th
+                  id={`${tableId}-${id}-${subsection.id}`}
+                  className={cx('header-cell')}
+                  align="left"
+                  colSpan={displayedColumns.length}
+                  role="columnheader"
+                  scope="col"
+                  tabIndex={isGridContext ? -1 : undefined}
+                >
+
+                  <SectionHeader
+                    className={cx('subsection-header')}
+                    text={subsection.text}
+                    isTitleSticky
+                    boundedWidth={boundingWidth}
+                    level={SUBSECTION_HEADER_LEVEL}
+                  />
+
+                </th>
+              </tr>
+            </tbody>
+            <tbody>
+              {/* Render subsection rows */}
+              {!isCollapsed && subsection.rows.map((row, rowIndex) => (
+                <Row
+                  rowIndex={subsection.subSectionRowIndex + (rowIndex + 1)}
+                  key={row.id}
+                  id={row.id}
+                  cells={row.cells}
+                  ariaLabel={row.ariaLabel}
+                  isSelected={row.isSelected}
+                  subsectionId={!isHidden ? subsection.id : undefined}
+                  {...rowProps}
+                />
+              ))}
+            </tbody>
+          </>
+        ))}
+      </>
+    );
+  }
+
   return (
     <>
-      <tbody>
-        {/* Render section rows */}
-        {!isHidden && (
-        <tr
-          aria-rowindex={sectionRowIndex}
-          className={cx('header-row', theme.className)}
-          data-section-id={id}
-        >
-          <th
-            id={`${tableId}-${id}`}
-            className={cx('header-cell')}
-            align="left"
-            colSpan={displayedColumns.length}
-            role="columnheader"
-            scope="col"
-            tabIndex={isGridContext && !hasSectionButton ? -1 : undefined}
-          >
-            <SectionHeader
-              className={cx('section-header')}
-              text={text}
-              isOpen={hasSectionButton ? !isCollapsed : undefined}
-              onClick={hasSectionButton ? handleClick : undefined}
-              isTitleSticky
-              boundedWidth={boundingWidth}
-            />
-          </th>
-        </tr>
-        )}
-      </tbody>
+      {sectionHeader}
       <tbody className={cx('section', {
         collapsed: isCollapsed,
         collapsible: isCollapsible,
@@ -203,21 +283,11 @@ function Section(props) {
           <Row
             rowIndex={sectionRowIndex + (rowIndex + 1)}
             key={row.id}
-            height={rowHeight}
             id={row.id}
-            sectionId={!isHidden ? id : undefined}
-            tableId={tableId}
             cells={row.cells}
             ariaLabel={row.ariaLabel}
-            rowSelectionMode={rowSelectionMode}
-            displayedColumns={displayedColumns}
-            rowHeaderIndex={rowHeaderIndex}
-            onCellSelect={onCellSelect}
             isSelected={row.isSelected}
-            isTableStriped={isTableStriped}
-            rowMinimumHeight={rowMinimumHeight}
-            firstRowId={firstRowId}
-            lastRowId={lastRowId}
+            {...rowProps}
           />
         ))}
       </tbody>

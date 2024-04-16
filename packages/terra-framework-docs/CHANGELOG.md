@@ -2,7 +2,15 @@
 
 ## Unreleased
 
+## 1.81.0 - (April 15, 2024)
+
 * Added
+  * Added examples and tests for subsections in the FlowsheetDataGrid.
+
+## 1.80.0 - (April 10, 2024)
+
+* Added
+  * Added documentation for subsections in `terra-table`.
   * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
   
 * Changed

@@ -1,4 +1,4 @@
-import ERRORS from '../utils/constants';
+import { ERRORS } from '../utils/constants';
 
 // eslint-disable-next-line consistent-return
 const validateRowHeaderIndex = (props) => {
