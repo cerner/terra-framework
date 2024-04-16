@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added column span functionality to support it in FlowsheetDataGrid.
+  
 ## 5.20.0 - (April 15, 2024)
 
 * Changed

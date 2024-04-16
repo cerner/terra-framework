@@ -98,7 +98,7 @@ const propTypes = {
   isHighlighted: PropTypes.bool,
 
   /**
-   * Callback function that will be called when this cell is selected.
+   * Callback function that will be called when a cell is selected.
    */
   onCellSelect: PropTypes.func,
 
@@ -144,6 +144,11 @@ const propTypes = {
 
   /**
    * @private
+   * The column span index value for a column.
+   */
+  columnSpanIndex: PropTypes.number,
+
+  /**
    * Enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
@@ -182,6 +187,7 @@ function Cell(props) {
     firstRowId,
     lastRowId,
     columnHighlightColor,
+    columnSpanIndex,
     rowSelectionMode,
   } = props;
 
@@ -266,6 +272,7 @@ function Cell(props) {
         rowIndex: (rowIndex - 1),
         columnId,
         columnIndex,
+        columnSpanIndex,
         isShiftPressed: event.shiftKey,
         isMetaPressed: event.metaKey || event.ctrlKey,
         isCellSelectable: (!isMasked && isSelectable),
@@ -330,6 +337,7 @@ function Cell(props) {
               rowIndex: (rowIndex - 1),
               columnId,
               columnIndex,
+              columnSpanIndex,
               isShiftPressed: event.shiftKey,
               isMetaPressed: event.metaKey || event.ctrlKey,
               isCellSelectable: (!isMasked && isSelectable),
@@ -426,6 +434,7 @@ function Cell(props) {
       headers={`${sectionHeaderId}${subsectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
+      data-cell-column-id={`${columnId}-${columnSpanIndex}`}
       onMouseDown={onCellSelect ? handleMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props

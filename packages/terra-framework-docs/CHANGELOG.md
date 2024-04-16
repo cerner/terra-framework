@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added examples for column span support in  Flowsheet Data Grid and `terra-table`.
+
 ## 1.81.0 - (April 15, 2024)
 
 * Added
