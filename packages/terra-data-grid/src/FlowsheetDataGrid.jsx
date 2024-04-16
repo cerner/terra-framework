@@ -288,7 +288,7 @@ function FlowsheetDataGrid(props) {
     }
   }, [intl, rowsToSearch, setCellSelectionAriaLiveMessage]);
 
-  const selectCellRange = useCallback((rowId, columnId, columnIndex, sectionId, subsectionId, columnSpanIndex) => {
+  const selectCellRange = useCallback((rowId, columnId, columnIndex, sectionId, subsectionId) => {
     if (anchorCell.current === null) {
       return;
     }
@@ -328,7 +328,7 @@ function FlowsheetDataGrid(props) {
         const { columnSpanIndex } = tableBodyColumnsRef[colIdx];
         const columnIdToSelect = tableBodyColumnsRef[colIdx].id;
         cellsToSelect.push({
-          rowId: rowIdToSelect, columnId: columnIdToSelect, columnIndex: colIdx, sectionId, columnSpanIndex
+          rowId: rowIdToSelect, columnId: columnIdToSelect, columnIndex: colIdx, sectionId, columnSpanIndex,
         });
       }
     }
