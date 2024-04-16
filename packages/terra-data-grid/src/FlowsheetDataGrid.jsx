@@ -325,9 +325,10 @@ function FlowsheetDataGrid(props) {
     for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
       const rowIdToSelect = rowsToSearch[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
+        const columnSpanIndex = tableBodyColumnsRef[colIdx].columnSpanIndex;
         const columnIdToSelect = tableBodyColumnsRef[colIdx].id;
         cellsToSelect.push({
-          rowId: rowIdToSelect, columnId: columnIdToSelect, columnIndex: colIdx, sectionId,
+          rowId: rowIdToSelect, columnId: columnIdToSelect, columnSpanIndex, columnIndex: colIdx, sectionId,
         });
       }
     }
@@ -344,7 +345,7 @@ function FlowsheetDataGrid(props) {
         onRowSelect({ rowId: selectionDetails.rowId, sectionId: selectionDetails.sectionId, isMetaPressed: selectionDetails.isMetaPressed });
       }
     } else if (selectionDetails.isShiftPressed && anchorCell.current !== null) {
-      selectCellRange(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.columnIndex, selectionDetails.sectionId, selectionDetails.subsectionId);
+      selectCellRange(selectionDetails.rowId, selectionDetails.columnId, selectionDetails.columnIndex, selectionDetails.columnSpanIndex, selectionDetails.sectionId, selectionDetails.subsectionId);
     } else if (onCellSelect) {
       anchorCell.current = {
         rowId: selectionDetails.rowId, columnId: selectionDetails.columnId, columnIndex: selectionDetails.columnIndex, sectionId: selectionDetails.sectionId,
@@ -353,6 +354,7 @@ function FlowsheetDataGrid(props) {
         rowId: selectionDetails.rowId,
         columnId: selectionDetails.columnId,
         columnIndex: selectionDetails.columnIndex,
+        columnSpanIndex: selectionDetails.columnSpanIndex,
         sectionId: selectionDetails.sectionId,
         subsectionId: selectionDetails.subsectionId,
         isMetaPressed: selectionDetails.isMetaPressed,
