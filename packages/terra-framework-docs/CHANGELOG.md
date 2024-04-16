@@ -12,6 +12,7 @@
 
 ## 1.80.0 - (April 10, 2024)
 
+* Added
   * Added documentation for subsections in `terra-table`.
   * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
   
@@ -41,40 +42,6 @@
   * Minor dependency version bump.
 
 ## 1.76.0 - (March 21, 2024)
-
-* Added
-
-  * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
-  
-* Changed
-  * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
-
-## 1.79.0 - (April 4, 2024)
-
-* Changed
-  * Removed `sortIndicator` from the first column of Table With Sections example.
-  * Updated `terra-compact-interactive-list` examples to provide a meaningful name to the column with icons.
-
-* Added
-  * Added examples and tests for `terra-table` to demonstrate auto layout.
-  * Added test for `terra-folder-tree` to cover focus management after updating its children.
-
-## 1.78.0 - (March 29, 2024)
-
-* Changed
-  * Updated the `terra-data-grid` and `terra-table` focusable cell examples to remove confusion caused by column header names.
-  * Updated `terra-compact-interactive-list` examples to remove redundant button announcement.
-  * Updated `terra-folder-tree` expand/collapse examples to be consistent with screenreader announcements.
-
-## 1.77.0 - (March 25, 2024)
-
-* Changed
-  * Minor dependency version bump.
-
-## 1.76.0 - (March 21, 2024)
-
-* Added
-  * Added examples for column span support in  Flowsheet Data Grid and `terra-table`.
 
 * Changed
   * Updated `terra-navigation-side-menu` example.
