@@ -9,9 +9,9 @@ const gridDataJSON = {
       displayName: 'March 16',
       columnSpan: 2,
       action: {
-        label: 'Vitals action',
+        label: 'March 16 action',
         // eslint-disable-next-line no-alert
-        onClick: () => alert('Vitals action called'),
+        onClick: () => alert('March 16 action called'),
       },
     },
     {
@@ -19,9 +19,9 @@ const gridDataJSON = {
       displayName: 'March 17',
       columnSpan: 2,
       action: {
-        label: 'March 16 action',
+        label: 'March 17 action',
         // eslint-disable-next-line no-alert
-        onClick: () => alert('March 16 action called'),
+        onClick: () => alert('March 17 action called'),
       },
     },
     { id: 'Column-3', displayName: 'March 18', columnSpan: 3 },
