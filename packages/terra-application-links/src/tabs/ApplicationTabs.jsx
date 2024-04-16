@@ -36,6 +36,10 @@ const propTypes = {
     icon: PropTypes.icon,
   })),
   /**
+   * The click callback of the tab.
+   */
+  onTabClick: PropTypes.func,
+  /**
    * The location as provided by the `withRouter()` HOC.
    */
   location: PropTypes.object.isRequired,
@@ -150,6 +154,7 @@ class ApplicationTabs extends React.Component {
       history,
       staticContext,
       hasIcons,
+      onTabClick,
       ...customProps
     } = this.props;
 
@@ -165,6 +170,7 @@ class ApplicationTabs extends React.Component {
         externalLink: link.externalLink,
         icon: link.icon,
         location,
+        onTabClick,
         history,
       };
 
