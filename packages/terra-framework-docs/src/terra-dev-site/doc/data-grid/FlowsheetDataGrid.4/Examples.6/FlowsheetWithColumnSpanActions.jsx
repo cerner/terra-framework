@@ -4,8 +4,26 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 const gridDataJSON = {
   cols: [
     { id: 'Column-0', displayName: 'Vitals' },
-    { id: 'Column-1', displayName: 'March 16', columnSpan: 2 },
-    { id: 'Column-2', displayName: 'March 17', columnSpan: 2 },
+    {
+      id: 'Column-1',
+      displayName: 'March 16',
+      columnSpan: 2,
+      action: {
+        label: 'Vitals action',
+        // eslint-disable-next-line no-alert
+        onClick: () => alert('Vitals action called'),
+      },
+    },
+    {
+      id: 'Column-2',
+      displayName: 'March 17',
+      columnSpan: 2,
+      action: {
+        label: 'March 16 action',
+        // eslint-disable-next-line no-alert
+        onClick: () => alert('March 16 action called'),
+      },
+    },
     { id: 'Column-3', displayName: 'March 18', columnSpan: 3 },
     { id: 'Column-4', displayName: 'March 19' },
     { id: 'Column-5', displayName: 'March 20' },
@@ -101,7 +119,7 @@ const gridDataJSON = {
   ],
 };
 
-const FlowsheetDataGridWithColumnSpan = () => {
+const FlowsheetWithColumnSpan = () => {
   const { cols, rows } = gridDataJSON;
 
   const [rowData, setRowData] = useState(rows);
@@ -162,7 +180,7 @@ const FlowsheetDataGridWithColumnSpan = () => {
 
   return (
     <FlowsheetDataGrid
-      id="flowsheet-with-column-span"
+      id="flowsheet-with-column-span-actions"
       columns={cols}
       rows={rowData}
       ariaLabel="Flowsheet Data Grid"
@@ -173,4 +191,4 @@ const FlowsheetDataGridWithColumnSpan = () => {
   );
 };
 
-export default FlowsheetDataGridWithColumnSpan;
+export default FlowsheetWithColumnSpan;

@@ -101,7 +101,7 @@ const gridDataJSON = {
   ],
 };
 
-const FlowsheetDataGridWithColumnSpan = () => {
+const FlowsheetWithColumnSpan = () => {
   const { cols, rows } = gridDataJSON;
 
   const [rowData, setRowData] = useState(rows);
@@ -162,7 +162,7 @@ const FlowsheetDataGridWithColumnSpan = () => {
 
   return (
     <FlowsheetDataGrid
-      id="flowsheet-with-column-span"
+      id="default-terra-flowsheet-data-grid"
       columns={cols}
       rows={rowData}
       ariaLabel="Flowsheet Data Grid"
@@ -173,4 +173,4 @@ const FlowsheetDataGridWithColumnSpan = () => {
   );
 };
 
-export default FlowsheetDataGridWithColumnSpan;
+export default FlowsheetWithColumnSpan;

@@ -25,6 +25,10 @@ const gridDataJSON = {
       },
     },
     { id: 'Column-3', displayName: 'March 18', columnSpan: 3 },
+    { id: 'Column-4', displayName: 'March 19' },
+    { id: 'Column-5', displayName: 'March 20' },
+    { id: 'Column-6', displayName: 'March 21' },
+    { id: 'Column-7', displayName: 'March 22' },
   ],
   rows: [
     {
@@ -38,6 +42,10 @@ const gridDataJSON = {
         { content: '69' },
         { content: '67' },
         { content: '69' },
+        { content: '68' },
+        { content: '69' },
+        { content: '67' },
+        { content: '69' },
       ],
     },
     {
@@ -46,6 +54,10 @@ const gridDataJSON = {
         { content: 'Temperature Oral (degC)' },
         { content: '36.7' },
         { content: '36.9' },
+        { content: '36.7' },
+        { content: '37' },
+        { content: '36.7' },
+        { content: '37' },
         { content: '36.7' },
         { content: '37' },
         { content: '36.7' },
@@ -64,6 +76,10 @@ const gridDataJSON = {
         { content: '2.25' },
         { content: '2.8' },
         { content: '2.25' },
+        { content: '2.8' },
+        { content: '2.25' },
+        { content: '2.8' },
+        { content: '2.25' },
       ],
     },
     {
@@ -77,12 +93,20 @@ const gridDataJSON = {
         { content: '13' },
         { content: '14' },
         { content: '13' },
+        { content: '12' },
+        { content: '13' },
+        { content: '14' },
+        { content: '13' },
       ],
     },
     {
       id: '5',
       cells: [
         { content: 'CPP (mmHg)' },
+        { content: '63' },
+        { content: '47' },
+        { content: '63' },
+        { content: '48' },
         { content: '63' },
         { content: '47' },
         { content: '63' },
@@ -156,7 +180,7 @@ const FlowsheetDataGridWithColumnSpan = () => {
 
   return (
     <FlowsheetDataGrid
-      id="flowsheet-with-column-span"
+      id="flowsheet-with-column-span-actions"
       columns={cols}
       rows={rowData}
       ariaLabel="Flowsheet Data Grid"
