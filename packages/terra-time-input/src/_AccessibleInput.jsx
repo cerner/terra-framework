@@ -86,7 +86,7 @@ function AccessibleInput(props) {
         isInvalid={showIsInvalid && isInvalid}
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
-        aria-label={value ? label : undefined}
+        aria-label={value ? undefined : label}
         aria-describedby={ariaDescribedBy ? `${descriptionId} ${ariaDescribedBy}` : `${descriptionId}`}
         type="number"
       />

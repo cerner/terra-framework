@@ -789,61 +789,60 @@ class DateTimePicker extends React.Component {
           name={name}
           value={dateTime?.isValid() ? dateTime.format() : ''}
         />
-
-        <div className={cx('date-facade')}>
-          <DatePicker
-            ariaLabel={ariaLabel}
-            onCalendarButtonClick={this.handleOnCalendarButtonClick}
-            onChange={this.handleDateChange}
-            onChangeRaw={this.handleDateChangeRaw}
-            onSelect={this.handleOnSelect}
-            onClickOutside={onClickOutside}
-            onRequestClose={onRequestClose}
-            onBlur={this.handleOnDateBlur}
-            onFocus={this.handleOnDateInputFocus}
-            excludeDates={excludeDates}
-            filterDate={filterDate}
-            includeDates={includeDates}
-            inputAttributes={dateInputAttributes}
-            maxDate={DateUtil.getMaxDate(maxDate)}
-            minDate={DateUtil.getMinDate(minDate)}
-            selectedDate={dateValue}
-            value={dateValue}
-            name="input"
-            disabled={disabled}
-            disableButtonFocusOnClose
-            isIncomplete={isIncomplete}
-            isInvalid={isInvalid}
-            required={required}
-            initialTimeZone={this.initialTimeZone}
-            isDefaultDateAcceptable
-            errorId={errorId}
-          />
+        <div role="group" aria-label={ariaLabel}>
+          <div className={cx('date-facade')}>
+            <DatePicker
+              onCalendarButtonClick={this.handleOnCalendarButtonClick}
+              onChange={this.handleDateChange}
+              onChangeRaw={this.handleDateChangeRaw}
+              onSelect={this.handleOnSelect}
+              onClickOutside={onClickOutside}
+              onRequestClose={onRequestClose}
+              onBlur={this.handleOnDateBlur}
+              onFocus={this.handleOnDateInputFocus}
+              excludeDates={excludeDates}
+              filterDate={filterDate}
+              includeDates={includeDates}
+              inputAttributes={dateInputAttributes}
+              maxDate={DateUtil.getMaxDate(maxDate)}
+              minDate={DateUtil.getMinDate(minDate)}
+              selectedDate={dateValue}
+              value={dateValue}
+              name="input"
+              disabled={disabled}
+              disableButtonFocusOnClose
+              isIncomplete={isIncomplete}
+              isInvalid={isInvalid}
+              required={required}
+              initialTimeZone={this.initialTimeZone}
+              isDefaultDateAcceptable
+              errorId={errorId}
+            />
+          </div>
+          <div className={cx('time-facade')}>
+            <TimeInput
+              onBlur={this.handleOnTimeBlur}
+              onChange={this.handleTimeChange}
+              onFocus={this.handleOnTimeInputFocus}
+              inputAttributes={timeInputAttributes}
+              name="input"
+              value={this.timeValue}
+              disabled={disabled}
+              variant={timeVariant}
+              refCallback={(inputRef) => { this.hourInput = inputRef; }}
+              showSeconds={showSeconds}
+              isIncomplete={isIncomplete}
+              isInvalid={isInvalid}
+              isInvalidMeridiem={isInvalidMeridiem}
+              required={required}
+              atMaxDate={atMaxDate}
+              atMinDate={atMinDate}
+              errorId={errorId}
+            />
+            {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}
+          </div>
         </div>
-        <div className={cx('time-facade')}>
-          <TimeInput
-            a11yLabel={ariaLabel}
-            onBlur={this.handleOnTimeBlur}
-            onChange={this.handleTimeChange}
-            onFocus={this.handleOnTimeInputFocus}
-            inputAttributes={timeInputAttributes}
-            name="input"
-            value={this.timeValue}
-            disabled={disabled}
-            variant={timeVariant}
-            refCallback={(inputRef) => { this.hourInput = inputRef; }}
-            showSeconds={showSeconds}
-            isIncomplete={isIncomplete}
-            isInvalid={isInvalid}
-            isInvalidMeridiem={isInvalidMeridiem}
-            required={required}
-            atMaxDate={atMaxDate}
-            atMinDate={atMinDate}
-            errorId={errorId}
-          />
 
-          {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}
-        </div>
       </div>
     );
   }
