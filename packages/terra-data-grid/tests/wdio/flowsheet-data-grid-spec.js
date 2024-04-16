@@ -77,7 +77,7 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
         holdDownShiftKey();
         browser.keys(['Space']);
         releaseShiftKey();
-  
+
         Terra.validates.element('column-span-space-range-1-1-to-3-2', { selector: columnSpanSelector });
       });
 
@@ -86,18 +86,18 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
         holdDownShiftKey();
         clickCell(4, 2, columnSpanSelector);
         releaseShiftKey();
-  
+
         Terra.validates.element('column-span-click-range-3-1-to-4-2', { selector: columnSpanSelector });
       });
 
       it('clears selection with Esc key', () => {
         clickCell(3, 1, columnSpanSelector);
         browser.keys(['Escape']);
-  
+
         expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
         Terra.validates.element('column-span-cell-3-1-focused', { selector: columnSpanSelector });
       });
-  
+
       it('selects multiple non contiguous cells when Ctrl key is held down', () => {
         holdDownCtrlKey();
         clickCell(3, 1, columnSpanSelector);
