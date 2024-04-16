@@ -1,31 +1,22 @@
 /* eslint-disable react/forbid-dom-props */
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import Table from 'terra-table';
 
 const longText = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.';
-
-const TruncatedText = () => (
-  <div style={{
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    top: 0,
-    bottom: 0,
-    display: 'flex',
-    alignItems: 'center',
-    padding: '0 7px',
-  }}
-  >
-    <div style={{
-      overflow: 'hidden',
-      textOverflow: 'ellipsis',
-      whiteSpace: 'nowrap',
-    }}
-    >
-      {longText}
-    </div>
-  </div>
-);
+const TruncatedText = () => {
+  const cellContentRef = useRef(null);
+  useEffect(() => {
+    if (cellContentRef.current) {
+      const cell = cellContentRef.current.parentElement;
+      const td = cell?.parentElement;
+      if (cell && td) {
+        cell.setAttribute('style', 'white-space: nowrap; text-overflow: ellipsis; overflow: hidden;');
+        td.setAttribute('style', 'max-width: 1px;');
+      }
+    }
+  }, [cellContentRef]);
+  return (<span ref={cellContentRef}>{longText}</span>);
+};
 
 const tableData = {
   cols: [
