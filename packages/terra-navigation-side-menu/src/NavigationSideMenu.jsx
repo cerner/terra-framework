@@ -360,7 +360,6 @@ class NavigationSideMenu extends Component {
     let header;
     if (this.onBack || !currentItem.isRootMenu) {
       header = (
-        /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
         <li role="none">
           <div
             className={cx('side-navigation-menu')}
