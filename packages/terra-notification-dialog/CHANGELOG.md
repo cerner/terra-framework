@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
- * Headers Swedish old translations replaced to match the new translations used elsewhere.
+ * Fixed Swedish translations for headers with new translations used elsewhere.
 
 ## 4.46.0 - (April 4, 2024)
 
