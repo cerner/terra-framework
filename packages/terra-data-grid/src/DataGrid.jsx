@@ -252,10 +252,10 @@ const DataGrid = forwardRef((props, ref) => {
     setFocusedRow(newRowIndex);
     setFocusedCol(newColIndex);
 
-    if (newColIndex < grid.current.rows[newRowIndex].length) {
+    if (newColIndex < tableBodyColumnsRef.current.length) {
       focusedCellRef.current = {
         rowId: grid.current.rows[newRowIndex].getAttribute('data-row-id'),
-        columnId: grid.current.rows[newRowIndex].cells[newColIndex].getAttribute('data-cell-column-id'),
+        columnId: tableBodyColumnsRef.current[newColIndex].id,
       };
     }
 
@@ -546,7 +546,7 @@ const DataGrid = forwardRef((props, ref) => {
       onCellRangeSelect(cellCoordinates.row, cellCoordinates.col, event.keyCode);
     }
 
-    if (nextRow >= gridRowCount || nextCol >= grid.current.rows[nextRow].cells.length) {
+    if (nextRow >= gridRowCount || (!isSection(nextRow) && nextCol >= grid.current.rows[nextRow].cells.length)) {
       event.preventDefault(); // prevent the page from moving with the arrow keys.
       return;
     }
