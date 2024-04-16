@@ -325,7 +325,7 @@ function FlowsheetDataGrid(props) {
     for (let rowIdx = rowIndexTopBound; rowIdx <= rowIndexBottomBound; rowIdx += 1) {
       const rowIdToSelect = rowsToSearch[rowIdx].id;
       for (let colIdx = columnIndexLeftBound; colIdx <= columnIndexRightBound; colIdx += 1) {
-        const columnSpanIndex = tableBodyColumnsRef[colIdx].columnSpanIndex;
+        const { columnSpanIndex } = tableBodyColumnsRef[colIdx];
         const columnIdToSelect = tableBodyColumnsRef[colIdx].id;
         cellsToSelect.push({
           rowId: rowIdToSelect, columnId: columnIdToSelect, columnSpanIndex, columnIndex: colIdx, sectionId,
