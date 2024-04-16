@@ -6,7 +6,9 @@ const tableData = {
     { id: 'Column-0', displayName: 'Patient', isResizable: true },
     { id: 'Column-1', displayName: 'Location', isResizable: true },
     { id: 'Column-2', displayName: 'Illness Severity', isResizable: true },
-    { id: 'Column-3', displayName: 'Visit Details', columnSpan: 2, isResizable: true },
+    {
+      id: 'Column-3', displayName: 'Visit Details', columnSpan: 2, isResizable: true,
+    },
     { id: 'Column-4', displayName: 'Allergy' },
     { id: 'Column-5', displayName: 'Primary Contact' },
     { id: 'Column-6', displayName: 'Generic Order Counts' },
