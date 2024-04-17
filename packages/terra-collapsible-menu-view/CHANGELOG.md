@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Set aria-haspopup value to boolean.
+
 ## 6.97.0 - (April 4, 2024)
 
 * Changed
