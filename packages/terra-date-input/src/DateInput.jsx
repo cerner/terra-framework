@@ -670,7 +670,11 @@ class DateInput extends React.Component {
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         label={label}
         description={`${intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
-        className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
+        className={cx(
+          'date-input-day',
+          { 'is-focused': this.state.dayIsFocused },
+          { error: this.props.isInvalid },
+        )}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
         maxLength="2"
@@ -715,7 +719,11 @@ class DateInput extends React.Component {
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
         description={`${this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
-        className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
+        className={cx(
+          'date-input-year',
+          { 'is-focused': this.state.yearIsFocused },
+          { error: this.props.isInvalid },
+        )}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
         maxLength="4"

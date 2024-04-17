@@ -2,6 +2,25 @@
 
 :local {
   .orion-fusion-theme {
+
+    // Input
+    --terra-date-input-border: 1px solid #dedfe0;
+    // Input Focus
+    --terra-date-input-focus-border: 1px solid #dedfe0;
+    --terra-date-input-focus-outline: 1px solid #4cb2e9;
+    --terra-date-input-focus-outline-offset: 0;
+    --terra-date-input-focus-box-shadow: 0 0 8px #a6d9f4;
+    // Input Error
+    --terra-date-input-error-border: 1px solid #dedfe0;
+    --terra-date-input-error-outline: none;
+    --terra-date-input-error-outline-offset: 0;
+    --terra-date-input-error-box-shadow: none;
+    // Input Error Focus
+    --terra-date-input-error-focus-border: 1px solid #dedfe0;
+    --terra-date-input-error-focus-outline: 1px solid #4cb2e9;
+    --terra-date-input-error-focus-outline-offset: 0;
+    --terra-date-input-error-focus-box-shadow: 0 0 8px #a6d9f4;
+
     // Month Select
     --terra-date-input-month-background-color: #fff;
     --terra-date-input-month-background-image: none;
@@ -22,8 +41,6 @@
     --terra-date-input-month-select-padding-left: 0.3571rem;
     --terra-date-input-month-select-padding-right: 1.42857rem;
     --terra-date-input-month-select-padding-top: 0;
-    --terra-date-input-day-focus-outline: 1px solid #4cb2e9;
-    --terra-date-input-year-focus-outline: 1px solid #4cb2e9;
 
     // Month Select Placeholder Text
     --terra-date-input-month-select-placeholder-color: #767676;
@@ -39,6 +56,8 @@
     --terra-date-input-month-focus-background-size: auto;
     --terra-date-input-month-select-focus-color: inherit;
     --terra-date-input-month-select-focus-outline: 1px solid #4cb2e9;
+    --terra-date-input-month-select-focus-outline-offset: 0;
+    --terra-date-input-month-select-focus-box-shadow: 0 0 8px #a6d9f4;
     --terra-date-input-month-focus-ltr-box-shadow: 0 0 8px #a6d9f4;
     --terra-date-input-month-focus-rtl-box-shadow: 0 0 8px #a6d9f4;
 
@@ -65,7 +84,10 @@
     // Month Select Error - Focus
     --terra-date-input-month-error-focus-background-color: #fff;
     --terra-date-input-month-error-focus-background-size: auto;
-    --terra-date-input-month-select-error-focus-outline: 1px solid #dedfe0;
+    --terra-date-input-month-select-error-focus-border: 1px solid #dedfe0;
+    --terra-date-input-month-select-error-focus-outline: 1px solid #4cb2e9;
+    --terra-date-input-month-select-error-focus-outline-offset: 0;
+    --terra-date-input-month-select-error-focus-box-shadow: 0 0 8px #a6d9f4;
 
     // Month Select Error - Disabled
     --terra-date-input-month-error-disabled-background-color: #f4f4f4;
