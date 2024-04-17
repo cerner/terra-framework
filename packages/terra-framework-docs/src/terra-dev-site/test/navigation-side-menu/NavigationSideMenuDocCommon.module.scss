@@ -8,8 +8,9 @@
 
   .content-wrapper {
     height: 768px;
+    overflow: scroll;
     position: relative;
-    width: 300px;
+    max-width: 300px;
   }
 
   .toolbar {
