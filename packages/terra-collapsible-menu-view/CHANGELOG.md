@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 6.98.0 - (April 17, 2024)
-
 * Fixed
   * Set aria-haspopup value to boolean.
 

@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 4.47.0 - (April 17, 2024)
-
 * Fixed
  * Fixed Swedish translations for headers with new translations used elsewhere.
 
