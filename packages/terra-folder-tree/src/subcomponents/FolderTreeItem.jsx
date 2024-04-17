@@ -140,7 +140,6 @@ const FolderTreeItem = ({
       onClick={(e) => { e.stopPropagation(); }} // Prevent triggering expand/collapse during selection
     >
       <input
-        id="ugh"
         type="radio"
         checked={isSelected}
         onChange={onSelect}
