@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixes right border for vertical tabs not extending till last tab.
+
 ## 7.26.0 - (April 10, 2024)
 
 * Changed
