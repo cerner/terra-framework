@@ -14,7 +14,7 @@ Terra.describeViewports('Date Time Picker Twelve Hour Mobile', ['tiny'], () => {
 
   it('displays Date Time Picker Twelve Hour Mobile - Clicking Meridiem updates the time', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-time-picker/twelve-hour/date-time-picker-value-12-hour-mobile');
-    $('//*[@id="datetimeValueProvided"]/div[2]/div/div[2]/button[1]').click();
+    $('//*[@id="datetimeValueProvided"]/div/div[2]/div/div[2]/button[1]').click();
     Terra.validates.element('click meridiem');
   });
 
