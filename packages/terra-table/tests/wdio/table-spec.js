@@ -6,6 +6,13 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
+  describe('Table with Column Span', () => {
+    it('Validates the table is rendered with column spans', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-column-span');
+      Terra.validates.element('table-with-column-span', '#table-with-column-span');
+    });
+  });
+
   describe('No Interaction Table', () => {
     it('Validates the default table is not interactable', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/no-interaction-table');

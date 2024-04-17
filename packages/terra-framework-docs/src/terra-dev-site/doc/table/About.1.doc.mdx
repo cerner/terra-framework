@@ -43,21 +43,23 @@ See the following example of a default table:
   * [Headerless Table](/components/cerner-terra-framework-docs/table/examples/table-without-headers)
   * [Column Sorting](/components/cerner-terra-framework-docs/table/examples/sortable-table)
   * [Column Error Indicator](/components/cerner-terra-framework-docs/table/examples/table-column-states)
+  * [Column Span](/components/cerner-terra-framework-docs/table/examples/table-column-span)
 
 ## Examples
-|                                                Link to Example                                                |                                                                                 Description                                                                                 |
-| ------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Default Table](/components/cerner-terra-framework-docs/table/examples/default-table)                         | An example demonstrating a basic table populated with tabular information and no interactive elements.                                                                      |
-| [Auto Layout Table](/components/cerner-terra-framework-docs/table/examples/auto-layout-table)                 | An example demonstrating a basic with tabular information and no interactive elements using the auto layout for column widths.                                              |
-| [Zebra Striped Table](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)             | An example demonstrating the ability to enable zebra striping for table rows.                                                                                               |
-| [Pinned Columns](/components/cerner-terra-framework-docs/table/examples/pinned-columns)                       | An example demonstrating pinned columns (frozen leftmost columns) and overflow columns.                                                                                     |
-| [Sortable Table](/components/cerner-terra-framework-docs/table/examples/sortable-table)                       | An example demonstrating how to enable sorting on a table. Heading cells of sortable columns are interactive and include an icon indicating sort direction.                 |
-| [Table Column States](/components/cerner-terra-framework-docs/table/examples/table-column-states)             | An example demonstrating column states and interactions such as an error or sort. Header cells include an icon that represents the state of the information in the column.  |
-| [Table with Focusable Cells](/components/cerner-terra-framework-docs/table/examples/table-focusable-cell)     | An example demonstrating tab stop behavior on a table with interactive elements. Each tabbable element on a table is a separate tab stop.                                   |
-| [Single Row Selection](/components/cerner-terra-framework-docs/table/examples/table-single-row-selection)     | An example demonstrating a table with single row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property.   |
-| [Multiple Row Selection](/components/cerner-terra-framework-docs/table/examples/table-multiple-row-selection) | An example demonstrating a table with multiple row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property. |
-| [Table with Sections](/components/cerner-terra-framework-docs/table/examples/table-with-sections)             | An example demonstrating how to create a table with sections.                                                                                                               |
-| [Table Without Headers](/components/cerner-terra-framework-docs/table/examples/table-without-headers)         | An example demonstrating how to hide table column headers. The column headers still exist in the Document Object Model (DOM) for accessibility.                             |
+|Link to Example| Description|
+|-|-|
+|[Default Table](/components/cerner-terra-framework-docs/table/examples/default-table)|An example demonstrating a basic table populated with tabular information and no interactive elements.|
+|[Auto Layout Table](/components/cerner-terra-framework-docs/table/examples/auto-layout-table)|An example demonstrating a basic with tabular information and no interactive elements using the auto layout for column widths.|
+|[Zebra Striped Table](/components/cerner-terra-framework-docs/table/examples/zebra-striped-table)|An example demonstrating the ability to enable zebra striping for table rows.|
+|[Pinned Columns](/components/cerner-terra-framework-docs/table/examples/pinned-columns)|An example demonstrating pinned columns (frozen leftmost columns) and overflow columns.|
+|[Sortable Table](/components/cerner-terra-framework-docs/table/examples/sortable-table)|An example demonstrating how to enable sorting on a table. Heading cells of sortable columns are interactive and include an icon indicating sort direction.|
+|[Table Column States](/components/cerner-terra-framework-docs/table/examples/table-column-states)|An example demonstrating column states and interactions such as an error or sort. Header cells include an icon that represents the state of the information in the column.|
+|[Table with Focusable Cells](/components/cerner-terra-framework-docs/table/examples/table-focusable-cell)|An example demonstrating tab stop behavior on a table with interactive elements. Each tabbable element on a table is a separate tab stop.|
+|[Single Row Selection](/components/cerner-terra-framework-docs/table/examples/table-single-row-selection)|An example demonstrating a table with single row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property.|
+|[Multiple Row Selection](/components/cerner-terra-framework-docs/table/examples/table-multiple-row-selection)|An example demonstrating a table with multiple row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property.|
+|[Table with Sections](/components/cerner-terra-framework-docs/table/examples/table-with-sections)|An example demonstrating how to create a table with sections.|
+|[Table Without Headers](/components/cerner-terra-framework-docs/table/examples/table-without-headers)|An example demonstrating how to hide table column headers. The column headers still exist in the Document Object Model (DOM) for accessibility.|
+|[Table with Column Span](/components/cerner-terra-framework-docs/table/examples/table-column-span)| An example demonstrating a table with column span.|
 
 ## Accessibility
 ### Keyboard Interactions
@@ -139,6 +141,7 @@ A column specifies the information to render a cell in the header row of the Wor
 | **maximumWidth**  | Number                                     | Optional                                        | None          | A number that specifies the maximum column width in pixels.                                                                                                                                                                                                                                                      |
 | **width**         | unionOf: [type: 'number',type: 'string',], | Optional                                        | None          | The width can be either a numeric or string value. When a number is provided, it is the number (in px) specifying the width of the column. If not provided, the Table's default column width will be used. When a string is provided, it specifies the default column width and can be any valid CSS width value |
 | **sortIndicator** | Custom                                     | Optional                                        | None          | A string indicating which sorting indicator is rendered (`ascending` or `descending`). A sorting indicator is rendered only if a value is provided.                                                                                                                                                              |
+| **columnSpan**    | number                                     | Optional                                        | None          | A number that specifies the column span value for a column.                                                                                                                                                                                                                                                      |
 
 ### Section
 <Notice variant="important" ariaLevel="2">

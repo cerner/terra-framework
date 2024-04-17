@@ -85,6 +85,7 @@ const propTypes = {
    * Callback function that will be called when a cell in the row is selected.
    * @param {string} rowId rowId
    * @param {string} columnId columnId
+   * @param {number} columnSpanIndex columnSpanIndex
    * @param {object} event event
    */
   onCellSelect: PropTypes.func,
@@ -180,6 +181,8 @@ function Row(props) {
       {cells.map((cellData, index) => {
         const cellColumnIndex = index + columnIndexOffSet;
         const columnId = displayedColumns[cellColumnIndex].id;
+        const columnSpanIndex = displayedColumns[cellColumnIndex].columnSpanIndex ? displayedColumns[cellColumnIndex].columnSpanIndex : undefined;
+
         return (
           <Cell
             rowId={id}
@@ -189,7 +192,7 @@ function Row(props) {
             sectionId={sectionId}
             subsectionId={subsectionId}
             tableId={tableId}
-            key={`${id}_${columnId}`}
+            key={columnSpanIndex ? `${id}_${columnId}_${columnSpanIndex}` : `${id}_${columnId}`}
             isSelected={!rowSelectionMode && cellData.isSelected}
             isMasked={cellData.isMasked}
             maskedLabel={cellData.maskedLabel}
@@ -203,6 +206,7 @@ function Row(props) {
             firstRowId={firstRowId}
             lastRowId={lastRowId}
             columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
+            columnSpanIndex={columnSpanIndex}
             rowSelectionMode={rowSelectionMode}
           >
             {cellData.content}

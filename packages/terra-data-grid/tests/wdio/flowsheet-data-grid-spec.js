@@ -58,6 +58,80 @@ Terra.describeViewports('FlowsheetDataGrid', ['medium', 'large'], () => {
       });
     });
 
+    describe('flowsheet data grid with column span', () => {
+      const columnSpanSelector = '#flowsheet-with-column-span';
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-column-span');
+      });
+
+      it('renders a flowsheet data grid with column span', () => {
+        browser.keys(['Tab']); // Cell 0,0 gets focus
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
+        Terra.validates.element('flowsheet-with-column-span', { selector: columnSpanSelector });
+      });
+
+      it('validates that Shift+Space selects a range of cells starting at the first selected cell', () => {
+        navigateToCell(1, 1);
+        browser.keys(['Space']);
+        moveCurrentPositionBy(2, 1);
+        holdDownShiftKey();
+        browser.keys(['Space']);
+        releaseShiftKey();
+
+        Terra.validates.element('column-span-space-range-1-1-to-3-2', { selector: columnSpanSelector });
+      });
+
+      it('validates that Shift+Click selects a range of cells starting at the first selected cell', () => {
+        clickCell(3, 1, columnSpanSelector);
+        holdDownShiftKey();
+        clickCell(4, 2, columnSpanSelector);
+        releaseShiftKey();
+
+        Terra.validates.element('column-span-click-range-3-1-to-4-2', { selector: columnSpanSelector });
+      });
+
+      it('clears selection with Esc key', () => {
+        clickCell(3, 1, columnSpanSelector);
+        browser.keys(['Escape']);
+
+        expect(browser.$('[role="grid"] tbody tr:nth-of-type(3) td:nth-of-type(1)').isFocused()).toBe(true);
+        Terra.validates.element('column-span-cell-3-1-focused', { selector: columnSpanSelector });
+      });
+
+      it('selects multiple non contiguous cells when Ctrl key is held down', () => {
+        holdDownCtrlKey();
+        clickCell(3, 1, columnSpanSelector);
+        clickCell(4, 2, columnSpanSelector);
+        clickCell(5, 3, columnSpanSelector);
+        releaseCtrlKey();
+        Terra.validates.element('column-span-non-contiguous-cells-selected', { selector: columnSpanSelector });
+      });
+    });
+
+    describe('flowsheet data grid with pinned column span', () => {
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-pinned-column-span');
+      });
+
+      it('renders a flowsheet data grid with a pinned column span', () => {
+        browser.keys(['Tab']); // Cell 0,0 gets focus
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
+        Terra.validates.element('flowsheet-with-pinned-column-span', { selector: '#flowsheet-with-pinned-column-span' });
+      });
+    });
+
+    describe('flowsheet data grid with column span actions', () => {
+      before(() => {
+        browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/flowsheet-with-column-span-actions');
+      });
+
+      it('renders a flowsheet data grid with column spans and actions', () => {
+        browser.keys(['Tab']); // Cell 0,0 gets focus
+        expect(browser.$('[class*="column-header-row"] th:nth-child(1)').isFocused()).toBe(true);
+        Terra.validates.element('flowsheet-with-column-span-actions', { selector: '#flowsheet-with-column-span-actions' });
+      });
+    });
+
     describe('flowsheet data grid with no column headers', () => {
       before(() => {
         browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/column-headers-hidden');

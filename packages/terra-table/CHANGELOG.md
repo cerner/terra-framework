@@ -5,6 +5,13 @@
 * Fixed
   * Fixed an exception case when using collapsible sections with single selection mode.
 
+## 5.21.0 - (April 17, 2024)
+
+* Added
+  * Added column span functionality to support it in FlowsheetDataGrid.
+  
+## 5.20.0 - (April 15, 2024)
+
 * Changed
   * Updated subsection logic to properly support grid implementations.
 

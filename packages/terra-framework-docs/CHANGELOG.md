@@ -2,8 +2,18 @@
 
 ## Unreleased
 
+## 1.82.0 - (April 17, 2024)
+
+* Added
+  * Added examples for column span support in  Flowsheet Data Grid and `terra-table`.
+
+## 1.81.0 - (April 15, 2024)
+
 * Added
   * Added examples and tests for subsections in the FlowsheetDataGrid.
+
+* Changed
+  * Updated `terra-tabs` vertical tabs example to fix custom label display.
 
 ## 1.80.0 - (April 10, 2024)
 

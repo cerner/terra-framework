@@ -5,6 +5,11 @@
 * Added
   * Added test for `terra-table` to cover exception occurring with collapsible sections and single row select mode.
 
+## 6.92.0 - (April 17, 2024)
+
+* Changed
+  * Removed dialog role to fix axe a11y violation.
+
 ## 6.91.0 - (April 4, 2024)
 
 * Changed

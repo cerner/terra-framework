@@ -315,6 +315,8 @@ describe('Single cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
@@ -337,6 +339,8 @@ describe('Single cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockKeyDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
@@ -359,6 +363,8 @@ describe('Single cell selection', () => {
       rowId: '4',
       columnId: 'Column-2',
       sectionId: '',
+      columnIndex: 2,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
@@ -381,6 +387,8 @@ describe('Single cell selection', () => {
       rowId: '4',
       columnId: 'Column-2',
       sectionId: '',
+      columnIndex: 2,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockKeyDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
@@ -413,20 +421,34 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
     ]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
@@ -451,22 +473,35 @@ describe('Multi-cell selection', () => {
     expect(mockOnCellSelect).toHaveBeenCalledWith({
       rowId: '3',
       columnId: 'Column-2',
+      columnIndex: 2,
       sectionId: '',
       isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
@@ -488,14 +523,20 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     // Would go past last row
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
     ]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
@@ -503,10 +544,18 @@ describe('Multi-cell selection', () => {
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
@@ -528,11 +577,15 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
 
     // Would select row header
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
-    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{ rowId: '3', columnId: 'Column-1', sectionId: '' }]);
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{
+      rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+    }]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
@@ -540,9 +593,15 @@ describe('Multi-cell selection', () => {
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: '' },
-      { rowId: '2', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
     ]);
   });
 
@@ -564,15 +623,25 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
@@ -594,15 +663,25 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
@@ -624,15 +703,25 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockKeyDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
@@ -654,15 +743,25 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
+      columnIndex: 1,
+      isMetaPressed: undefined,
     }, expect.objectContaining(mockKeyDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 });
@@ -720,10 +819,18 @@ describe('Flowsheet with Sections', () => {
     selectableCell.simulate('mouseDown', { shiftKey: true });
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 
@@ -746,10 +853,18 @@ describe('Flowsheet with Sections', () => {
     selectableCell.simulate('mouseDown', { shiftKey: true });
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '3', columnId: 'Column-2', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-2', sectionId: 'section-1' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
     ]);
   });
 
@@ -772,10 +887,18 @@ describe('Flowsheet with Sections', () => {
     selectableCell.simulate('mouseDown', { shiftKey: true });
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 
@@ -800,10 +923,18 @@ describe('Flowsheet with Sections', () => {
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(2);
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 
@@ -831,10 +962,18 @@ describe('Flowsheet with Sections', () => {
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '3', columnId: 'Column-2', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-2', sectionId: 'section-1' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
     ]);
   });
 
@@ -862,10 +1001,18 @@ describe('Flowsheet with Sections', () => {
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 });
