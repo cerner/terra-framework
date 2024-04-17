@@ -133,13 +133,14 @@ const FolderTreeItem = ({
     ? <IconCaretDown height="8px" width="8px" style={{ verticalAlign: 'baseline' }} /> // eslint-disable-line react/forbid-component-props
     : <IconCaretRight height="8px" width="8px" style={{ verticalAlign: 'baseline' }} />; // eslint-disable-line react/forbid-component-props
 
-  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions */
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/label-has-associated-control */
   const radioButton = isSelectable ? (
     <label
       className={cx('radio-target')}
       onClick={(e) => { e.stopPropagation(); }} // Prevent triggering expand/collapse during selection
     >
       <input
+        id="ugh"
         type="radio"
         checked={isSelected}
         onChange={onSelect}
