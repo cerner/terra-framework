@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.92.0 - (April 17, 2024)
+
 * Changed
   * Removed dialog role to fix axe a11y violation.
 
