@@ -3,6 +3,9 @@
 ## Unreleased
 
 * Changed
+  * Updated `terra-navigation-side-menu` example styles.
+
+* Changed
   * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
 
 ## 1.79.0 - (April 4, 2024)
