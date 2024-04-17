@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed the accessibility issue in `DateTimePicker` component.
+
 ## 4.114.0 - (April 4, 2024)
 
 * Changed
