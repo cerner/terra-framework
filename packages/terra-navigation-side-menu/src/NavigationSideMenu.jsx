@@ -149,28 +149,33 @@ class NavigationSideMenu extends Component {
   }
 
   handleBackKeydown(event) {
-    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN || event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
-      const parentKey = this.state.parents[this.props.selectedMenuKey];
-      if (parentKey) {
-        this.handleBackClick(event);
-      } else if (this.props.routingStackBack) {
-        this.props.routingStackBack();
-        return;
-      }
-    }
-    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
-      const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
-      if (listMenuItems && listMenuItems.length) {
-        listMenuItems[0].focus();
-      }
-      event.preventDefault();
-    }
-    if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
-      const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
-      if (listMenuItems && listMenuItems.length) {
-        listMenuItems[listMenuItems.length - 1].focus();
-      }
-      event.preventDefault();
+    const key = event.nativeEvent.keyCode;
+    switch (key) {
+      case KeyCode.KEY_SPACE:
+      case KeyCode.KEY_RETURN:
+      case KeyCode.KEY_LEFT:
+      case KeyCode.KEY_ESCAPE:
+        const parentKey = this.state.parents[this.props.selectedMenuKey];
+        if (parentKey) {
+          this.handleBackClick(event);
+        } else if (this.props.routingStackBack) {
+          this.props.routingStackBack();
+          return;
+        }
+        break;
+      case KeyCode.KEY_DOWN:
+      case KeyCode.KEY_UP:
+        const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
+        if (listMenuItems && listMenuItems.length) {
+          if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
+            listMenuItems[0].focus();
+          } else {
+            listMenuItems[listMenuItems.length - 1].focus();
+          }
+        }
+        event.preventDefault();
+        break;
+      default:
     }
   }
 
