@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Enlarged radio button click target for selectable folder tree items.
+
 ## 1.1.0 - (April 10, 2024)
 
 * Fixed
