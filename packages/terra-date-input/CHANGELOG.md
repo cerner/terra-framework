@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.55.1 - (April 18, 2024)
+
 * Fixed
   * Fixed focus style to not be overridden by form-input focus styling.
 

@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.93.0 - (April 18, 2024)
+
 * Added
   * Added test for `terra-table` to cover exception occurring with collapsible sections and single row select mode.
 
