@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 5.101.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 5.100.0 - (April 17, 2024)
 
 * Changed
