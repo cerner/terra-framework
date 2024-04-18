@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Fixed
-  * Fixed the accessibility issue in `DateTimePicker` component.
+  * Fixed the accessibility issue to allow announcement as a single group label.
 
 ## 4.114.0 - (April 4, 2024)
 
