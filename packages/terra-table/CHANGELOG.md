@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed an exception case when using collapsible sections with single selection mode.
+
 ## 5.21.0 - (April 17, 2024)
 
 * Added

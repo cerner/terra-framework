@@ -419,15 +419,21 @@ function Table(props) {
       let selectionUpdateAriaMessage = '';
 
       if (rowSelectionsAdded.length === 1) {
-        const selectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsAdded[0]}']`).getAttribute('aria-rowindex');
-        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.row-selection-template' }, { row: selectedRowLabel });
+        const selectedRowElement = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsAdded[0]}']`);
+        if (selectedRowElement) {
+          const selectedRowLabel = selectedRowElement.getAttribute('aria-rowindex');
+          selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.row-selection-template' }, { row: selectedRowLabel });
+        }
       } else if (rowSelectionsAdded.length > 1) {
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
       }
 
       if (rowSelectionsRemoved.length === 1) {
-        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('aria-rowindex');
-        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
+        const unselectedRowElement = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`);
+        if (unselectedRowElement) {
+          const unselectedRowLabel = unselectedRowElement.getAttribute('aria-rowindex');
+          selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
+        }
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
       }
