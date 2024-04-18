@@ -154,17 +154,17 @@ class NavigationSideMenu extends Component {
       case KeyCode.KEY_SPACE:
       case KeyCode.KEY_RETURN:
       case KeyCode.KEY_LEFT:
-      case KeyCode.KEY_ESCAPE:
+      case KeyCode.KEY_ESCAPE: {
         const parentKey = this.state.parents[this.props.selectedMenuKey];
         if (parentKey) {
           this.handleBackClick(event);
         } else if (this.props.routingStackBack) {
           this.props.routingStackBack();
-          return;
         }
         break;
+      }
       case KeyCode.KEY_DOWN:
-      case KeyCode.KEY_UP:
+      case KeyCode.KEY_UP: {
         const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
         if (listMenuItems && listMenuItems.length) {
           if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
@@ -175,6 +175,7 @@ class NavigationSideMenu extends Component {
         }
         event.preventDefault();
         break;
+      }
       default:
     }
   }
