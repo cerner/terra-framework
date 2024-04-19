@@ -780,6 +780,8 @@ class DateTimePicker extends React.Component {
         {...customProps}
         className={cx('date-time-picker', theme.className)}
         ref={this.dateTimePickerContainer}
+        role="group"
+        aria-label={ariaLabel}
       >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -789,59 +791,57 @@ class DateTimePicker extends React.Component {
           name={name}
           value={dateTime?.isValid() ? dateTime.format() : ''}
         />
-        <div role="group" aria-label={ariaLabel}>
-          <div className={cx('date-facade')}>
-            <DatePicker
-              onCalendarButtonClick={this.handleOnCalendarButtonClick}
-              onChange={this.handleDateChange}
-              onChangeRaw={this.handleDateChangeRaw}
-              onSelect={this.handleOnSelect}
-              onClickOutside={onClickOutside}
-              onRequestClose={onRequestClose}
-              onBlur={this.handleOnDateBlur}
-              onFocus={this.handleOnDateInputFocus}
-              excludeDates={excludeDates}
-              filterDate={filterDate}
-              includeDates={includeDates}
-              inputAttributes={dateInputAttributes}
-              maxDate={DateUtil.getMaxDate(maxDate)}
-              minDate={DateUtil.getMinDate(minDate)}
-              selectedDate={dateValue}
-              value={dateValue}
-              name="input"
-              disabled={disabled}
-              disableButtonFocusOnClose
-              isIncomplete={isIncomplete}
-              isInvalid={isInvalid}
-              required={required}
-              initialTimeZone={this.initialTimeZone}
-              isDefaultDateAcceptable
-              errorId={errorId}
-            />
-          </div>
-          <div className={cx('time-facade')}>
-            <TimeInput
-              onBlur={this.handleOnTimeBlur}
-              onChange={this.handleTimeChange}
-              onFocus={this.handleOnTimeInputFocus}
-              inputAttributes={timeInputAttributes}
-              name="input"
-              value={this.timeValue}
-              disabled={disabled}
-              variant={timeVariant}
-              refCallback={(inputRef) => { this.hourInput = inputRef; }}
-              showSeconds={showSeconds}
-              isIncomplete={isIncomplete}
-              isInvalid={isInvalid}
-              isInvalidMeridiem={isInvalidMeridiem}
-              required={required}
-              atMaxDate={atMaxDate}
-              atMinDate={atMinDate}
-              errorId={errorId}
-            />
+        <div className={cx('date-facade')}>
+          <DatePicker
+            onCalendarButtonClick={this.handleOnCalendarButtonClick}
+            onChange={this.handleDateChange}
+            onChangeRaw={this.handleDateChangeRaw}
+            onSelect={this.handleOnSelect}
+            onClickOutside={onClickOutside}
+            onRequestClose={onRequestClose}
+            onBlur={this.handleOnDateBlur}
+            onFocus={this.handleOnDateInputFocus}
+            excludeDates={excludeDates}
+            filterDate={filterDate}
+            includeDates={includeDates}
+            inputAttributes={dateInputAttributes}
+            maxDate={DateUtil.getMaxDate(maxDate)}
+            minDate={DateUtil.getMinDate(minDate)}
+            selectedDate={dateValue}
+            value={dateValue}
+            name="input"
+            disabled={disabled}
+            disableButtonFocusOnClose
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            required={required}
+            initialTimeZone={this.initialTimeZone}
+            isDefaultDateAcceptable
+            errorId={errorId}
+          />
+        </div>
+        <div className={cx('time-facade')}>
+          <TimeInput
+            onBlur={this.handleOnTimeBlur}
+            onChange={this.handleTimeChange}
+            onFocus={this.handleOnTimeInputFocus}
+            inputAttributes={timeInputAttributes}
+            name="input"
+            value={this.timeValue}
+            disabled={disabled}
+            variant={timeVariant}
+            refCallback={(inputRef) => { this.hourInput = inputRef; }}
+            showSeconds={showSeconds}
+            isIncomplete={isIncomplete}
+            isInvalid={isInvalid}
+            isInvalidMeridiem={isInvalidMeridiem}
+            required={required}
+            atMaxDate={atMaxDate}
+            atMinDate={atMinDate}
+            errorId={errorId}
+          />
 
-            {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}
-          </div>
+          {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}
         </div>
       </div>
     );
