@@ -17,6 +17,52 @@ exports[`correctly applies the theme context className 1`] = `
 </ContextProvider>
 `;
 
+exports[`renders DateTimePicker with correct ARIA attributes 1`] = `
+<DateTimePicker
+  ariaLabel="Enter Date/Time"
+  disabled={false}
+  errorId=""
+  initialTimeZone="America/Chicago"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  isIncomplete={false}
+  isInvalid={false}
+  isInvalidMeridiem={false}
+  maxDate="2100-12-31"
+  minDate="1900-01-01"
+  name="date-time-input"
+  required={false}
+  role="group"
+  showSeconds={false}
+  timeVariant="24-hour"
+/>
+`;
+
 exports[`should render a date time picker with a default date and time 1`] = `
 <DateTimePicker
   disabled={false}
