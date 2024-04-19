@@ -14,6 +14,28 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       Terra.validates.screenshot('basic folder tree selected', { selector: '#basic-folder-tree' });
     });
 
+    it('selects a folder tree item via mouse click outside the main radio button', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
+
+      browser.$$('input[type="radio"]')[2].click({ x: 23 }); // click 23 pixels to the right
+      $('h3').moveTo({ xOffset: 0, yOffset: 0 });
+      Terra.validates.screenshot('selected outside radio', { selector: '#basic-folder-tree' });
+
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
+      browser.$$('input[type="radio"]')[2].click({ x: -23 }); // click 23 pixels to the left
+      $('h3').moveTo({ xOffset: 0, yOffset: 0 });
+      Terra.validates.screenshot('selected outside radio', { selector: '#basic-folder-tree' });
+
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
+      browser.$$('input[type="radio"]')[2].click({ y: 23 }); // click 23 pixels below
+      $('h3').moveTo({ xOffset: 0, yOffset: 0 });
+      Terra.validates.screenshot('selected outside radio', { selector: '#basic-folder-tree' });
+
+      browser.$$('input[type="radio"]')[2].click({ y: -23 }); // click 23 pixels above
+      $('h3').moveTo({ xOffset: 0, yOffset: 0 });
+      Terra.validates.screenshot('selected outside radio', { selector: '#basic-folder-tree' });
+    });
+
     it('does not select a non-selectable folder tree item on mouse click', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/folder-tree-selection');
 
