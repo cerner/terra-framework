@@ -206,6 +206,7 @@ class NavigationSideMenu extends Component {
         },
       );
     }
+    this.focusKey = key;
     if (selectedItem && selectedItem.childKeys && selectedItem.childKeys.length) {
       this.setHeaderFocus = true;
     } else {
