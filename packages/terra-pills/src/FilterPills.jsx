@@ -94,6 +94,8 @@ const FilterPills = (props) => {
   const isPillDeleted = useRef(false);
   const isRollUpRemoved = useRef(false);
   const removedLabel = useRef();
+  const resizingDelayTimer = useRef(null);
+  const resizeTimer = 100;
 
   // Identifies the number of pills that needs to be hidden/rolled up
   const generateRollUp = useCallback(() => {
@@ -214,16 +216,18 @@ const FilterPills = (props) => {
   }, [children, isCollapsible, resetTabIndex, handleFocusOnRollUpTrigger, handlePillDeletion, generateRollUp]);
 
   useLayoutEffect(() => {
-    let observer = new ResizeObserver((entries) => {
-      handleResize(entries);
-    });
+    const debounceResize = (entries) => {
+      clearTimeout(resizingDelayTimer.current);
+      resizingDelayTimer.current = setTimeout(() => {
+        if (resizingDelayTimer.current) handleResize(entries);
+      }, resizeTimer);
+    };
+    const observer = new ResizeObserver(debounceResize);
     observer.observe(filterPillsRef.current.parentNode);
-
     return () => {
       observer.disconnect();
-      observer = null;
     };
-  }, [children, handleResize]);
+  }, [children, filterPillsRef, handleResize]);
 
   const focusNextNode = (pills, rollUpPill) => {
     const rollUpPillId = rollUpPill ? rollUpPill.getAttribute('id') : null;
