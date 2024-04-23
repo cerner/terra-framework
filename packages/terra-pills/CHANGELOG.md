@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixed `terra-pills` Infinite loop in ResizeObserver callback with debounce.
+
 ## 1.24.0 - (April 4, 2024)
 
 * Changed
