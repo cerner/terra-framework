@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixes for deselection of tab within more button.
+  * More button dropdown left position reset to zero when negative.
+
 ## 7.27.0 - (April 18, 2024)
 
 * Changed
