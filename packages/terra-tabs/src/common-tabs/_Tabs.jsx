@@ -414,7 +414,7 @@ class Tabs extends React.Component {
       offset = parentOffset + leftEdge + widthDelta;
     }
 
-    this.dropdownRef.current.style.left = `${offset}px`;
+    this.dropdownRef.current.style.left = (offset > 0) ? `${offset}px` : '0px';
     // Dropdown menu gets truncated when the left edge is less than or equal to zero. setting min-width will help to fix this issue.
     if (!leftEdge) {
       this.dropdownRef.current.style.minWidth = `${moreRect.width}px`;
@@ -439,7 +439,7 @@ class Tabs extends React.Component {
       if (this.isOpen) {
         const updatedTabData = this.state.visibleTabData.map((tab) => ({
           ...tab,
-          isSelected: tab.id === itemKey,
+          isSelected: tab.itemKey === itemKey,
         }));
         this.setState({ visibleTabData: updatedTabData }, () => {
           onSelect(itemKey, metaData);
