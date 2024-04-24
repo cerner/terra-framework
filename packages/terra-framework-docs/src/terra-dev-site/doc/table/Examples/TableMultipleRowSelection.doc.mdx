@@ -10,16 +10,17 @@ When creating a table that supports multiple row selections, the consumer must s
 This example demonstrates a table with full support for multiple row selections.
 Because the component is an accessible table, each row selection checkbox is a tab stop.
 
-<Notice variant="important" ariaLevel="2">
-This example demonstrates that the column header cell in the select box column can receive focus and trigger a callback. It can be used to support sorting of the table by selected and unselected rows. However, if sorting or another action is required, to comply with accessibility guidelines, a visual indication of the action must be provided in the column header cell. Cerner UX design standards do not currently support an icon to communicate column sortability. If your workflow requires support for sorting the checkbox column, work with a UX Designer to create a solution that meets accessibility requirements.
-</Notice>
-
 ### Required Properties
 * rowSelectionMode
 * onRowSelect
 * onRowSelectionHeaderSelect
 
 ## Row Selection Interactions
+
+<Notice variant="important" ariaLevel="2">
+This example demonstrates that the column header cell in the select box column can receive focus and trigger a callback. It can be used to support sorting of the table by selected and unselected rows. However, if sorting or another action is required, to comply with accessibility guidelines, a visual indication of the action must be provided in the column header cell. Cerner UX design standards do not currently support an icon to communicate column sortability. If your workflow requires support for sorting the checkbox column, work with a UX Designer to create a solution that meets accessibility requirements.
+</Notice>
+
 For this example, you can perform the following actions to achieve row-centric outcomes:
 
 |Outcome|Action|
