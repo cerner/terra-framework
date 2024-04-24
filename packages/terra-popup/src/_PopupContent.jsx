@@ -237,6 +237,8 @@ class PopupContent extends React.Component {
             onResize={this.handleOnResize}
             refCallback={refCallback}
             role={popupContentRole || null}
+            onKeyDown={event => event.stopPropagation()} // Added for Popup support in terra-compact-interactive-list. As focus trap doesn't stop key press event propagation to the CIL cell, it interferes with cell key press event handler.
+            onFocus={event => event.stopPropagation()} // Added for Popup support in terra-compact-interactive-list. As popup semantically is not a CIL cell child, its focus event interferes with cell focus.
           >
             {arrowContent}
             {/* eslint-disable-next-line react/forbid-dom-props */}
