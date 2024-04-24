@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.
+
 ## 1.84.0 - (April 23, 2024)
 
 * Changed
