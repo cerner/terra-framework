@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.
+
 * Added
   * Added a note about accessibility requirements for sorting or another action to the Multiple Row Selection example in `terra-table`.
 
