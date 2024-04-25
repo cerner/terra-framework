@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Key board navigation updated to wrap to the next/previous line at the end/start of a visual row.
+  * Keyboard navigation updated to wrap to the next/previous line at the end/start of a visual row.
 
 ## 1.20.0 - (April 23, 2024)
 
