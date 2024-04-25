@@ -16,6 +16,60 @@ const propTypes = {
    * Content to be displayed as the name
    */
   name: PropTypes.string,
+  /**
+   * The heading level for the title of the folder tree.
+   */
+  headerLevel: PropTypes.number,
+  /**
+   * The list of items to be displayed as content in the Folder Tree component.
+   */
+  children: PropTypes.node,
+  /**
+   * The title of the folder tree.
+   */
+  title: PropTypes.string.isRequired,
+  /**
+   * The callback function for expand all event.
+   */
+  onExpandAll: PropTypes.func,
+  /**
+   * The callback function for collapse all event.
+   */
+  onCollapseAll: PropTypes.func,
+  /**
+   * @private
+   * intl object programmatically imported through injectIntl from react-intl.
+   * */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * String that labels the navigation menu for screen readers.
+   */
+  ariaLabel: PropTypes.string,
+  /**
+   * An array of configuration for each menu item.
+   */
+  /**
+   * Callback function when a menu endpoint is reached.
+   * returns (event, { selectedMenuKey: String, selectedChildKey: String, metaData: Object})
+   */
+  onChange: PropTypes.func.isRequired,
+  /**
+   * Delegate prop showParent function that is provided by the terra-navigation-layout.
+   */
+  routingStackBack: PropTypes.func,
+  /**
+   * Key of the currently selected child item on the selected menu page.
+   * This is used when traveling back up the menu stack or when the child is an end point.
+   */
+  selectedChildKey: PropTypes.string,
+  /**
+   * Key of the currently selected menu page.
+   */
+  selectedMenuKey: PropTypes.string.isRequired,
+  /**
+   * An optional toolbar to display below the side menu action header
+   */
+  toolbar: PropTypes.element,
 };
 
 const defaultProps = {
