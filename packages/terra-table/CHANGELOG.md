@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Made the tabindex 0 for the first column header of grid components.
+
 ## 5.21.1 - (April 18, 2024)
 
 * Fixed

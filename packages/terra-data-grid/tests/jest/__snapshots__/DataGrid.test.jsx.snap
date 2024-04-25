@@ -157,7 +157,6 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
-    tabIndex={0}
   >
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
@@ -645,7 +644,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         <div
                           className="header-container"
                           role="button"
-                          tabIndex={-1}
+                          tabIndex={0}
                         >
                           <span
                             aria-hidden={true}
@@ -3786,7 +3785,6 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
-    tabIndex={0}
   >
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
@@ -4227,7 +4225,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                         <div
                           className="header-container"
                           role="button"
-                          tabIndex={-1}
+                          tabIndex={0}
                         >
                           <span
                             aria-hidden={true}
@@ -6555,7 +6553,6 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
     onFocus={[Function]}
     onKeyDown={[Function]}
     onMouseDown={[Function]}
-    tabIndex={0}
   >
     <InjectIntl(Table)
       columnHeaderHeight="2.5rem"
@@ -6990,7 +6987,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                         <div
                           className="header-container"
                           role="button"
-                          tabIndex={-1}
+                          tabIndex={0}
                         >
                           <span
                             aria-hidden={true}
