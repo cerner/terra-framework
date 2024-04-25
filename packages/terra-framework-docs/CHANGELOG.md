@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added a note about accessibility requirements for sorting or another action to the Multiple Row Selection example in `terra-table`.
+
 ## 1.84.0 - (April 23, 2024)
 
 * Changed
