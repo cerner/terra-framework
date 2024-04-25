@@ -4,6 +4,11 @@
 
 * Changed
   * Limit scrolling on focus by moving the tab index to the first column header cell.
+  
+## 1.30.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
 
 ## 1.29.0 - (April 18, 2024)
 
