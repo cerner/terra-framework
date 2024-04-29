@@ -37,7 +37,7 @@ const FeaturedIcon = () => {
   const onButtonClick = () => setIsFeatured(!isFeatured);
   return (
     isFeatured
-      ? <Button variant="utility" text="Unfavorite item" icon={<IconFeatured />} onClick={onButtonClick} /> 
+      ? <Button variant="utility" text="Unfavorite item" icon={<IconFeatured />} onClick={onButtonClick} />
       : <Button variant="utility" text="Favorite item" icon={<IconFeaturedOff />} onClick={onButtonClick} />
   );
 };
