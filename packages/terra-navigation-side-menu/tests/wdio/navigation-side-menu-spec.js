@@ -47,9 +47,20 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
     before(() => browser.url('/#/raw/tests/cerner-terra-framework-docs/navigation-side-menu/navigation-side-menu-default'));
 
     it('Navigates to first menu item', () => {
-      browser.keys(['Tab', 'Tab']);
+      browser.keys(['Tab', 'ArrowDown']);
       Terra.validates.element('first menu item focused', { selector: '#root' });
     });
+
+    it('Navigate to submenu with right arrow', () => {
+      browser.keys(['ArrowRight']);
+      Terra.validates.element('submenu header focused with right arrow', { selector: '#root' });
+    });
+
+    it('Navigate to menu item with left arrow', () => {
+      browser.keys(['ArrowDown', 'ArrowLeft']);
+      Terra.validates.element('first menu item focused with left arrow', { selector: '#root' });
+    });
+
     it('should focus on second menu item', () => {
       browser.keys(['ArrowDown']);
       Terra.validates.element('second menu item focused', { selector: '#root' });

@@ -26,11 +26,56 @@
     padding-top: var(--terra-navigation-side-menu-list-padding-top, 0.125rem);
   }
 
-  .side-menu-action-header {
+  .side-navigation-menu {
+    align-items: center;
     background-color: var(--terra-navigation-side-menu-action-header-background-color, #f4f4f4);
-    border-bottom-color: var(--terra-navigation-side-menu-action-header-border-bottom-color, #dedfe0);
+    border-bottom-color: var(--terra-navigation-side-menu-action-header-border-bottom-color, 1px solid #dedfe0);
     box-shadow: var(--terra-navigation-side-menu-action-header-box-shadow);
     color: var(--terra-navigation-side-menu-action-header-color);
+    display: flex;
     z-index: 1;
+
+    &:focus {
+      box-shadow: var(--terra-navigation-side-menu-header-focus-box-shadow, none);
+      outline: var(--terra-navigation-side-menu-header-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-navigation-side-menu-header-focus-outline-offset, -2px);
+    }
+  }
+
+  .header-icon {
+    background-repeat: no-repeat;
+    background-size: auto;
+    display: inline-block;
+    height: 1rem;
+    margin-left: 10px;
+    position: relative;
+    top: 0;
+    vertical-align: -0.14285rem;
+    width: 1rem; // needed for different icon size in alternate themes
+
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      height: 1rem;
+      vertical-align: var(--terra-navigation-side-menu-icon-ms-vertical-align, -0.17285rem);
+    }
+
+    &.back {
+      background-image: var(--terra-navigation-side-menu-back-background-image, inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>'));
+
+      &:hover {
+        background-image: var(--terra-navigation-side-menu-back-hover-background-image, inline-svg('<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>'));
+      }
+    }
+  }
+
+  .title {
+    color: var(--terra-navigation-side-menu-header-color);
+    font-size: var(--terra-navigation-side-menu-font-size, 1.10714rem);
+    font-weight: var(--terra-navigation-side-menu-font-weight, 500);
+    hyphens: auto;
+    margin: 5px;
+    overflow-wrap: break-word; /* Modern browsers */
+    padding: 0.28571rem;
+    width: 100%;
+    word-wrap: break-word; /* For IE 10 and IE 11 */
   }
 }
