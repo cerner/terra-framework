@@ -5,6 +5,7 @@ import DrillIn from '../../../DrillIn';
 
 const DefaultDrillIn = () => {
   const [selectedKey, setSelectedKey] = React.useState('');
+  const [selectedChildKey, setSelectedChildKey] = React.useState(undefined);
   const [expandedItems, setExpandedItems] = React.useState({
     projects: false,
     tests: false,
@@ -36,6 +37,11 @@ const DefaultDrillIn = () => {
     setExpandedItems(newExpandedItems);
   };
 
+  const handleOnChange = (event, changeData) => {
+    setSelectedKey(changeData.selectedMenuKey);
+    setSelectedChildKey(changeData.selectedChildKey);
+  };
+
   return (
     <div id="basic-folder-tree">
       <DrillIn
@@ -43,6 +49,10 @@ const DefaultDrillIn = () => {
         key="documents"
         onExpandAll={handleExpandAll}
         onCollapseAll={handleCollapseAll}
+        onChange={handleOnChange}
+        selectedMenuKey={selectedKey}
+        selectedChildKey={selectedChildKey}
+        ariaLabel="Sub Menu List"
       >
         <DrillIn.Item
           label="info.txt"
@@ -50,6 +60,7 @@ const DefaultDrillIn = () => {
           key="info"
           isSelected={selectedKey === 'info'}
           onSelect={() => { setSelectedKey('info'); }}
+          child
         />
         <DrillIn.Item
           label="projects_2023.txt"

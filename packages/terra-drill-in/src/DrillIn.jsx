@@ -76,32 +76,13 @@ const defaultProps = {
   name: 'default',
 };
 
-const navMenu = (
-  <NavigationSideMenu
-    id="test-menu"
-    menuItems={[
-      { key: 'menu', text: 'Hospital Details', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'] },
-      {
-        key: 'submenu1', text: 'Hospital services', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1',
-      },
-      { key: 'submenu2', text: 'Hospital events' },
-      { key: 'submenu3', text: 'Hospital Accommodations' },
-      { key: 'submenu4', text: 'Hospital Careers' },
-      { key: 'subsubmenu1', text: 'Imaging', id: 'test-item-2' },
-      { key: 'subsubmenu2', text: 'Laboratory' },
-      { key: 'subsubmenu3', text: 'Rehabilitation services' },
-    ]}
-    onChange={() => {}}
-    selectedMenuKey="menu"
-    ariaLabel="Sub Menu List"
-  />
-);
-
 class DrillIn extends Component {
   constructor(props) {
     super(props);
     this.buildFolderTreeItems = this.buildFolderTreeItems.bind(this);
+    this.buildSideMenuItems = this.buildSideMenuItems.bind(this);
     this.folderTree = this.folderTree.bind(this);
+    this.navMenu = this.navMenu.bind(this);
 
     this.state = {
       size: 'medium',
@@ -140,6 +121,44 @@ class DrillIn extends Component {
     >
       {this.buildFolderTreeItems(this.props.children)}
     </FolderTree>
+  );
+
+  buildSideMenuItems = (items) => {
+    if (items) {
+      const menuItems = [];
+      items.forEach(item => {
+        menuItems.push({
+          key: item.key,
+          text: item.label,
+          id: item.id,
+          childKeys: this.buildSideMenuItems(item.props.subfolderItems),
+        });
+      });
+      return menuItems;
+    }
+
+    return null;
+  }
+
+  navMenu = () => (
+    <NavigationSideMenu
+      // menuItems={[
+      //   { key: 'menu', text: 'Hospital Details', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'] },
+      //   {
+      //     key: 'submenu1', text: 'Hospital services', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1',
+      //   },
+      //   { key: 'submenu2', text: 'Hospital events' },
+      //   { key: 'submenu3', text: 'Hospital Accommodations' },
+      //   { key: 'submenu4', text: 'Hospital Careers' },
+      //   { key: 'subsubmenu1', text: 'Imaging', id: 'test-item-2' },
+      //   { key: 'subsubmenu2', text: 'Laboratory' },
+      //   { key: 'subsubmenu3', text: 'Rehabilitation services' },
+      // ]}
+      menuItems={this.buildSideMenuItems(this.props.children)}
+      onChange={this.props.onChange}
+      selectedMenuKey={this.props.selectedMenuKey}
+      ariaLabel={this.props.ariaLabel}
+    />
   );
 
   render() {
