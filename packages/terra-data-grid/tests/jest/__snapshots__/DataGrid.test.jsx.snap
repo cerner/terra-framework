@@ -1269,6 +1269,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "columnHeaderIndex": 0,
+                    "columnSpanIndex": 0,
                     "displayName": "Terra.table.row-selection-header-display",
                     "id": "table-rowSelectionColumn",
                     "isDisplayVisible": false,
@@ -1277,18 +1279,24 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                     "width": 40,
                   },
                   Object {
+                    "columnHeaderIndex": 1,
+                    "columnSpanIndex": 0,
                     "displayName": " Vitals",
                     "id": "Column-0",
                     "isResizable": true,
                     "isSelectable": true,
                   },
                   Object {
+                    "columnHeaderIndex": 2,
+                    "columnSpanIndex": 0,
                     "displayName": "March 16",
                     "id": "Column-1",
                     "isResizable": true,
                     "isSelectable": true,
                   },
                   Object {
+                    "columnHeaderIndex": 3,
+                    "columnSpanIndex": 0,
                     "displayName": "March 17",
                     "id": "Column-2",
                     "isResizable": true,
@@ -1410,6 +1418,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
@@ -1418,18 +1428,24 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "width": 40,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 3,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -1560,6 +1576,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
+                              data-cell-column-id="table-rowSelectionColumn-undefined"
                               headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -1672,6 +1689,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
@@ -1778,6 +1796,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable blank"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -1886,6 +1905,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -1950,6 +1970,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
@@ -1958,18 +1980,24 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "width": 40,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 3,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -2100,6 +2128,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
+                              data-cell-column-id="table-rowSelectionColumn-undefined"
                               headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -2212,6 +2241,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned selectable"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
@@ -2318,6 +2348,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -2422,6 +2453,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -2486,6 +2518,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
@@ -2494,18 +2528,24 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "width": 40,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 3,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -2636,6 +2676,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
+                              data-cell-column-id="table-rowSelectionColumn-undefined"
                               headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -2748,6 +2789,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned selectable"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
@@ -2854,6 +2896,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -2958,6 +3001,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -3021,6 +3065,8 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": "Terra.table.row-selection-header-display",
                         "id": "table-rowSelectionColumn",
                         "isDisplayVisible": false,
@@ -3029,18 +3075,24 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                         "width": 40,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 3,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -3172,6 +3224,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                           >
                             <td
                               className="cell pinned"
+                              data-cell-column-id="table-rowSelectionColumn-undefined"
                               headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-table-rowSelectionColumn-headerCell"
                               onKeyDown={[Function]}
                               onMouseDown={[Function]}
@@ -3284,6 +3337,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <th
                           className="cell pinned selectable highlighted"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
@@ -3390,6 +3444,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell pinned last-pinned-column selectable highlighted"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -3493,6 +3548,7 @@ exports[`DataGrid verifies row selection column header selection 1`] = `
                       >
                         <td
                           className="cell selectable highlighted"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -4680,18 +4736,24 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
               displayedColumns={
                 Array [
                   Object {
+                    "columnHeaderIndex": 0,
+                    "columnSpanIndex": 0,
                     "displayName": " Vitals",
                     "id": "Column-0",
                     "isResizable": true,
                     "isSelectable": true,
                   },
                   Object {
+                    "columnHeaderIndex": 1,
+                    "columnSpanIndex": 0,
                     "displayName": "March 16",
                     "id": "Column-1",
                     "isResizable": true,
                     "isSelectable": true,
                   },
                   Object {
+                    "columnHeaderIndex": 2,
+                    "columnSpanIndex": 0,
                     "displayName": "March 17",
                     "id": "Column-2",
                     "isResizable": true,
@@ -4812,18 +4874,24 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -4914,6 +4982,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
@@ -5016,6 +5085,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable blank"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5120,6 +5190,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5184,18 +5255,24 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -5286,6 +5363,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned selectable"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
@@ -5388,6 +5466,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5488,6 +5567,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5552,18 +5632,24 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -5654,6 +5740,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned selectable"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
@@ -5756,6 +5843,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5856,6 +5944,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -5919,18 +6008,24 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -6022,6 +6117,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <th
                           className="cell pinned selectable highlighted"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
@@ -6124,6 +6220,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell pinned last-pinned-column selectable highlighted"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -6223,6 +6320,7 @@ exports[`DataGrid verifies that the grid created is consistent with the rows and
                       >
                         <td
                           className="cell selectable highlighted"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -7401,18 +7499,24 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
               displayedColumns={
                 Array [
                   Object {
+                    "columnHeaderIndex": 0,
+                    "columnSpanIndex": 0,
                     "displayName": " Vitals",
                     "id": "Column-0",
                     "isResizable": true,
                     "isSelectable": true,
                   },
                   Object {
+                    "columnHeaderIndex": 1,
+                    "columnSpanIndex": 0,
                     "displayName": "March 16",
                     "id": "Column-1",
                     "isResizable": true,
                     "isSelectable": true,
                   },
                   Object {
+                    "columnHeaderIndex": 2,
+                    "columnSpanIndex": 0,
                     "displayName": "March 17",
                     "id": "Column-2",
                     "isResizable": true,
@@ -7533,18 +7637,24 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -7635,6 +7745,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-1"
                           onKeyDown={[Function]}
@@ -7737,6 +7848,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable blank"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -7841,6 +7953,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-1 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -7905,18 +8018,24 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -8007,6 +8126,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell selectable"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-2"
                           onKeyDown={[Function]}
@@ -8109,6 +8229,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -8209,6 +8330,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-2 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -8273,18 +8395,24 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -8375,6 +8503,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell selectable"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-3"
                           onKeyDown={[Function]}
@@ -8477,6 +8606,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -8577,6 +8707,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell masked"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-3 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -8640,18 +8771,24 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                   displayedColumns={
                     Array [
                       Object {
+                        "columnHeaderIndex": 0,
+                        "columnSpanIndex": 0,
                         "displayName": " Vitals",
                         "id": "Column-0",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 1,
+                        "columnSpanIndex": 0,
                         "displayName": "March 16",
                         "id": "Column-1",
                         "isResizable": true,
                         "isSelectable": true,
                       },
                       Object {
+                        "columnHeaderIndex": 2,
+                        "columnSpanIndex": 0,
                         "displayName": "March 17",
                         "id": "Column-2",
                         "isResizable": true,
@@ -8743,6 +8880,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <th
                           className="cell selectable highlighted"
+                          data-cell-column-id="Column-0-undefined"
                           headers="test-terra-data-grid-table-Column-0-headerCell"
                           id="test-terra-data-grid-table-rowheader-4"
                           onKeyDown={[Function]}
@@ -8845,6 +8983,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable highlighted"
+                          data-cell-column-id="Column-1-undefined"
                           headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-1-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
@@ -8944,6 +9083,7 @@ exports[`DataGrid verifies the rows are created with the right props 1`] = `
                       >
                         <td
                           className="cell selectable highlighted"
+                          data-cell-column-id="Column-2-undefined"
                           headers="test-terra-data-grid-table-rowheader-4 test-terra-data-grid-table-Column-2-headerCell"
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}

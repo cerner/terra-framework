@@ -133,16 +133,23 @@ const FolderTreeItem = ({
     ? <IconCaretDown height="8px" width="8px" style={{ verticalAlign: 'baseline' }} /> // eslint-disable-line react/forbid-component-props
     : <IconCaretRight height="8px" width="8px" style={{ verticalAlign: 'baseline' }} />; // eslint-disable-line react/forbid-component-props
 
+  /* eslint-disable jsx-a11y/click-events-have-key-events, jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/label-has-associated-control */
   const radioButton = isSelectable ? (
-    <input
-      type="radio"
-      checked={isSelected}
-      onChange={onSelect}
-      aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
-      tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
-      className={cx('radio', 'radio-container')}
-    />
+    <label
+      className={cx('radio-target')}
+      onClick={(e) => { e.stopPropagation(); }} // Prevent triggering expand/collapse during selection
+    >
+      <input
+        type="radio"
+        checked={isSelected}
+        onChange={onSelect}
+        aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
+        tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
+        className={cx('radio', 'radio-container')}
+      />
+    </label>
   ) : null;
+  /* eslint-enable */
 
   const itemClassNames = classNames(
     cx(

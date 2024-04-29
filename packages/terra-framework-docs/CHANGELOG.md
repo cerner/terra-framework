@@ -4,7 +4,40 @@
 
 * Changed
   * Updated `terra-navigation-side-menu` example styles.
+  * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.
 
+* Added
+  * Added a note about accessibility requirements for sorting or another action to the Multiple Row Selection example in `terra-table`.
+
+## 1.84.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.83.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.82.0 - (April 17, 2024)
+
+* Added
+  * Added examples for column span support in  Flowsheet Data Grid and `terra-table`.
+
+## 1.81.0 - (April 15, 2024)
+
+* Added
+  * Added examples and tests for subsections in the FlowsheetDataGrid.
+
+* Changed
+  * Updated `terra-tabs` vertical tabs example to fix custom label display.
+
+## 1.80.0 - (April 10, 2024)
+
+* Added
+  * Added documentation for subsections in `terra-table`.
+  * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
+  
 * Changed
   * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
 

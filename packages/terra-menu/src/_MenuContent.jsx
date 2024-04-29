@@ -451,13 +451,12 @@ class MenuContent extends React.Component {
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
     return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         ref={this.handleContainerRef}
         className={contentClass}
         style={{ height: menuHeight, width: contentWidth, position: contentPosition }}
         tabIndex="-1"
-        aria-modal="true"
-        role="dialog"
         onKeyDown={this.onKeyDown}
         // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
         // added for Menu Button support in terra-compact-interactive-list.

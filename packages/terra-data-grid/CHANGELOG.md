@@ -2,6 +2,32 @@
 
 ## Unreleased
 
+## 1.30.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.29.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.28.0 - (April 17, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.27.0 - (April 15, 2024)
+
+* Added
+  * Added subsection support to the FlowsheetDataGrid component.
+
+## 1.26.0 - (April 10, 2024)
+
+* Added
+  * Added column span functionality to FlowsheetDataGrid.
+  * Added `isAutoFocusEnabled` prop to allow auto focus of interactable elements when the only interactable element is a button or hyperlink.
+
 ## 1.25.0 - (April 4, 2024)
 
 * Changed

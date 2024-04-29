@@ -153,6 +153,11 @@ const propTypes = {
   columnIndex: PropTypes.number,
 
   /**
+   * The column span value for a column.
+   */
+  columnSpan: PropTypes.number,
+
+  /**
    * Function that is called when a selectable header cell is selected. Parameters:
    * @param {string} rowId rowId
    * @param {string} columnId columnId
@@ -225,6 +230,7 @@ const ColumnHeaderCell = (props) => {
     onColumnSelect,
     intl,
     columnIndex,
+    columnSpan,
     onResizeMouseDown,
     onResizeHandleChange,
     ownsResizeHandle,
@@ -340,7 +346,7 @@ const ColumnHeaderCell = (props) => {
   const theme = useContext(ThemeContext);
 
   // Calculate cell left position for pinned columns due to their sticky position style
-  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnHeaderOffsets.length) ? columnContext.pinnedColumnHeaderOffsets[columnIndex] : null;
 
   // For tables, we want elements to be tabbable when selectable, but not anytime else.
   let buttonTabIndex = isSelectable ? 0 : undefined;
@@ -357,7 +363,7 @@ const ColumnHeaderCell = (props) => {
   headerDescription += errorIcon ? `, ${intl.formatMessage({ id: 'Terra.table.columnError' })}` : '';
   headerDescription += sortDescription ? `, ${sortDescription}` : '';
   headerDescription += columnHighlightDescription ? `, ${columnHighlightDescription}` : '';
-  const isPinnedColumn = columnIndex < columnContext.pinnedColumnOffsets.length;
+  const isPinnedColumn = columnIndex < columnContext.pinnedColumnHeaderOffsets.length;
   const CellTag = !isActionCell ? 'th' : 'td';
 
   const setColumnHeaderCellRef = (node) => {
@@ -413,7 +419,7 @@ const ColumnHeaderCell = (props) => {
         'action-cell': isActionCell,
         selectable: isSelectable,
         pinned: isPinnedColumn,
-        'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
+        'last-pinned-column': columnIndex === columnContext.pinnedColumnHeaderOffsets.length - 1,
       })}
       tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
       role={!isActionCell ? 'columnheader' : undefined}
@@ -421,6 +427,7 @@ const ColumnHeaderCell = (props) => {
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
       aria-owns={ownsResizeHandle ? resizeHandleId : undefined}
       title={!isActionCell ? displayName : action?.label}
+      colSpan={columnSpan}
       onMouseDown={isSelectable && onColumnSelect ? handleMouseDown : undefined}
       onKeyDown={(isSelectable || isResizable) ? handleKeyDown : undefined}
           // eslint-disable-next-line react/forbid-component-props

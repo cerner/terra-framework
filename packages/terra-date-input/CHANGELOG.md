@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.56.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.55.1 - (April 18, 2024)
+
+* Fixed
+  * Fixed focus style to not be overridden by form-input focus styling.
+
 ## 1.55.0 - (March 14, 2024)
 
 * Changed

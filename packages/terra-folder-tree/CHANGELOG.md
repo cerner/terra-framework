@@ -2,6 +2,18 @@
 
 ## Unreleased
 
+## 1.3.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.2.0 - (April 18, 2024)
+
+* Changed
+  * Enlarged radio button click target for selectable folder tree items.
+
+## 1.1.0 - (April 10, 2024)
+
 * Fixed
   * Fixed an issue where folder tree items could not receive focus after data was updated.
 

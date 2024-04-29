@@ -2,6 +2,34 @@
 
 ## Unreleased
 
+## 5.22.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.21.1 - (April 18, 2024)
+
+* Fixed
+  * Fixed an exception case when using collapsible sections with single selection mode.
+
+## 5.21.0 - (April 17, 2024)
+
+* Added
+  * Added column span functionality to support it in FlowsheetDataGrid.
+  
+## 5.20.0 - (April 15, 2024)
+
+* Changed
+  * Updated subsection logic to properly support grid implementations.
+
+## 5.19.0 - (April 10, 2024)
+
+* Added
+  * (flowsheet-data-grid only) Added support for subsections.
+
+* Changed
+  * Updated the cell component auto focus logic to be configured by the grid context.
+
 ## 5.18.0 - (April 4, 2024)
 
 * Added

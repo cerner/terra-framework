@@ -116,56 +116,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
         onClick={[Function]}
         onFocus={[MockFunction]}
         onKeyDown={[Function]}
-        onMouseDown={
-          [MockFunction] {
-            "calls": Array [
-              Array [
-                Class {
-                  "_dispatchInstances": null,
-                  "_dispatchListeners": null,
-                  "_targetInst": null,
-                  "altKey": null,
-                  "bubbles": null,
-                  "button": null,
-                  "buttons": null,
-                  "cancelable": null,
-                  "clientX": null,
-                  "clientY": null,
-                  "ctrlKey": null,
-                  "currentTarget": [Function],
-                  "defaultPrevented": null,
-                  "detail": null,
-                  "dispatchConfig": null,
-                  "eventPhase": null,
-                  "getModifierState": [Function],
-                  "isDefaultPrevented": [Function],
-                  "isPropagationStopped": [Function],
-                  "isTrusted": null,
-                  "metaKey": null,
-                  "movementX": [Function],
-                  "movementY": [Function],
-                  "nativeEvent": null,
-                  "pageX": null,
-                  "pageY": null,
-                  "relatedTarget": [Function],
-                  "screenX": null,
-                  "screenY": null,
-                  "shiftKey": null,
-                  "target": null,
-                  "timeStamp": [Function],
-                  "type": null,
-                  "view": null,
-                },
-              ],
-            ],
-            "results": Array [
-              Object {
-                "type": "return",
-                "value": undefined,
-              },
-            ],
-          }
-        }
+        onMouseDown={[MockFunction]}
         role="tab"
         tabIndex={-1}
       >

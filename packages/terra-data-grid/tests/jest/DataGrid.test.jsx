@@ -87,8 +87,7 @@ describe('DataGrid', () => {
   });
 
   it('verifies the rows are created with the right props', () => {
-    const verifyRow = (rowIndex, rowComponent, data, overflowColumns) => {
-      expect(rowComponent.props.displayedColumns).toEqual(overflowColumns);
+    const verifyRow = (rowIndex, rowComponent, data) => {
       expect(rowComponent.props.rowSelectionMode).toBeUndefined();
       expect(rowComponent.key).toEqual(data.id);
       expect(rowComponent.props.onCellSelect).toBeDefined();

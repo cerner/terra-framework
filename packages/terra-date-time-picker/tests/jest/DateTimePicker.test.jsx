@@ -173,3 +173,14 @@ it('correctly applies the theme context className', () => {
   );
   expect(dateTime).toMatchSnapshot();
 });
+
+it('renders DateTimePicker with correct ARIA attributes', () => {
+  const ariaLabel = 'Enter Date/Time';
+  const role = 'group';
+  const dateTime = enzymeIntl.shallowWithIntl(
+    <DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" ariaLabel={ariaLabel} role={role} />,
+  );
+  expect(dateTime.prop('ariaLabel')).toBe(ariaLabel);
+  expect(dateTime.prop('role')).toBe(role);
+  expect(dateTime).toMatchSnapshot();
+});

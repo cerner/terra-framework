@@ -48,6 +48,11 @@ const propTypes = {
   sectionId: PropTypes.string,
 
   /**
+   * An identifier for the subsection.
+   */
+  subsectionId: PropTypes.string,
+
+  /**
    * Unique identifier for the parent table
    */
   tableId: PropTypes.string.isRequired,
@@ -93,7 +98,7 @@ const propTypes = {
   isHighlighted: PropTypes.bool,
 
   /**
-   * Callback function that will be called when this cell is selected.
+   * Callback function that will be called when a cell is selected.
    */
   onCellSelect: PropTypes.func,
 
@@ -139,6 +144,11 @@ const propTypes = {
 
   /**
    * @private
+   * The column span index value for a column.
+   */
+  columnSpanIndex: PropTypes.number,
+
+  /**
    * Enables row selection capabilities for the table.
    * Use 'single' for single row selection and 'multiple' for multi-row selection.
    */
@@ -172,10 +182,12 @@ function Cell(props) {
     rowIndex,
     rowMinimumHeight,
     sectionId,
+    subsectionId,
     tableId,
     firstRowId,
     lastRowId,
     columnHighlightColor,
+    columnSpanIndex,
     rowSelectionMode,
   } = props;
 
@@ -203,6 +215,10 @@ function Cell(props) {
   * @returns The auto focusable button or anchor element. If there is no auto focusable element, null is returned.
   */
   const getAutoFocusableElement = () => {
+    if (!gridContext.isAutoFocusEnabled) {
+      return null;
+    }
+
     const focusableElements = getFocusableElements(cellRef.current);
     if (focusableElements.length > 1) {
       return null;
@@ -241,6 +257,7 @@ function Cell(props) {
         setIsInteractable(hasFocusableElements());
       }
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [gridContext, intl, isGridContext]);
 
   const handleMouseDown = (event) => {
@@ -250,10 +267,12 @@ function Cell(props) {
     if (!isFocusTrapEnabled) {
       onCellSelect({
         sectionId,
+        subsectionId,
         rowId,
         rowIndex: (rowIndex - 1),
         columnId,
         columnIndex,
+        columnSpanIndex,
         isShiftPressed: event.shiftKey,
         isMetaPressed: event.metaKey || event.ctrlKey,
         isCellSelectable: (!isMasked && isSelectable),
@@ -313,10 +332,12 @@ function Cell(props) {
             }
             onCellSelect({
               sectionId,
+              subsectionId,
               rowId,
               rowIndex: (rowIndex - 1),
               columnId,
               columnIndex,
+              columnSpanIndex,
               isShiftPressed: event.shiftKey,
               isMetaPressed: event.metaKey || event.ctrlKey,
               isCellSelectable: (!isMasked && isSelectable),
@@ -382,6 +403,7 @@ function Cell(props) {
   const columnHeaderId = `${tableId}-${columnId}-headerCell`;
   const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
+  const subsectionHeaderId = subsectionId ? `${tableId}-${sectionId}-${subsectionId} ` : '';
 
   let columnHighlight = {};
   if (columnHighlightColor) {
@@ -409,9 +431,10 @@ function Cell(props) {
       ref={isGridContext || rowSelectionMode ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
-      headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
+      headers={`${sectionHeaderId}${subsectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
+      data-cell-column-id={`${columnId}-${columnSpanIndex}`}
       onMouseDown={onCellSelect ? handleMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props

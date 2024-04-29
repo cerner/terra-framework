@@ -199,6 +199,7 @@ class Menu extends React.Component {
         hookshotPostionFixed
         isHeaderDisabled
         isContentFocusDisabled
+        popupContentRole={null}
       >
         {slides}
       </Popup>

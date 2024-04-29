@@ -2,6 +2,30 @@
 
 ## Unreleased
 
+* Fixed
+  * Fixes for deselection of tab within more button.
+  * More button dropdown left position reset to zero when negative.
+
+## 7.28.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.27.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.26.1 - (April 17, 2024)
+
+* Fixed
+  * Fixes right border for vertical tabs not extending till last tab.
+
+## 7.26.0 - (April 10, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 7.25.0 - (April 4, 2024)
 
 * Changed

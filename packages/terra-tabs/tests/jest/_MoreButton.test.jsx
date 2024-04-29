@@ -2,7 +2,7 @@
 import React from 'react';
 import { IntlProvider } from 'react-intl';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
+import { Simulate } from 'react-dom/test-utils';
 import '@testing-library/jest-dom/extend-expect';
 
 import MoreButton from '../../src/common-tabs/_MoreButton';
@@ -49,13 +49,13 @@ describe('MoreButton', () => {
     expect(buttonElement).toBeInTheDocument();
     expect(buttonElement).toHaveStyle({ 'z-index': '0' });
 
-    userEvent.click(buttonElement);
+    Simulate.click(buttonElement);
 
     expect(mockOnSelect).toHaveBeenCalled();
     mockOnSelect.mockClear();
 
     buttonElement.focus();
-    userEvent.type(buttonElement, '{arrowright}', { skipClick: true });
+    Simulate.keyDown(buttonElement, { key: 'ArrowRight', keyCode: 39 });
     expect(mockOnSelect).not.toHaveBeenCalledWith();
     expect(TabUtils.handleMoreButtonArrows).toHaveBeenCalledWith(expect.anything(), 1, testTabIds);
     mockOnSelect.mockClear();
@@ -88,13 +88,13 @@ describe('MoreButton', () => {
     expect(buttonElement).toHaveClass('is-active');
     expect(buttonElement).toHaveStyle({ 'z-index': '100' });
 
-    userEvent.click(buttonElement);
+    Simulate.click(buttonElement);
 
     expect(mockOnSelect).toHaveBeenCalled();
     mockOnSelect.mockClear();
 
     buttonElement.focus();
-    userEvent.type(buttonElement, '{arrowright}', { skipClick: true });
+    Simulate.keyDown(buttonElement, { key: 'ArrowRight', keyCode: 39 });
     expect(mockOnSelect).not.toHaveBeenCalledWith();
     expect(TabUtils.handleMoreButtonArrows).toHaveBeenCalledWith(expect.anything(), 1, testTabIds);
     mockOnSelect.mockClear();

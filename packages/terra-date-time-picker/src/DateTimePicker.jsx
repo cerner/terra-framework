@@ -780,6 +780,8 @@ class DateTimePicker extends React.Component {
         {...customProps}
         className={cx('date-time-picker', theme.className)}
         ref={this.dateTimePickerContainer}
+        role="group"
+        aria-label={ariaLabel}
       >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -789,10 +791,8 @@ class DateTimePicker extends React.Component {
           name={name}
           value={dateTime?.isValid() ? dateTime.format() : ''}
         />
-
         <div className={cx('date-facade')}>
           <DatePicker
-            ariaLabel={ariaLabel}
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
             onChange={this.handleDateChange}
             onChangeRaw={this.handleDateChangeRaw}
@@ -822,7 +822,6 @@ class DateTimePicker extends React.Component {
         </div>
         <div className={cx('time-facade')}>
           <TimeInput
-            a11yLabel={ariaLabel}
             onBlur={this.handleOnTimeBlur}
             onChange={this.handleTimeChange}
             onFocus={this.handleOnTimeInputFocus}

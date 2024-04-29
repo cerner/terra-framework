@@ -43,6 +43,7 @@ See the following example of a default table:
   * [Headerless Table](/components/cerner-terra-framework-docs/table/examples/table-without-headers)
   * [Column Sorting](/components/cerner-terra-framework-docs/table/examples/sortable-table)
   * [Column Error Indicator](/components/cerner-terra-framework-docs/table/examples/table-column-states)
+  * [Column Span](/components/cerner-terra-framework-docs/table/examples/table-column-span)
 
 ## Examples
 |Link to Example| Description|
@@ -58,14 +59,15 @@ See the following example of a default table:
 |[Multiple Row Selection](/components/cerner-terra-framework-docs/table/examples/table-multiple-row-selection)|An example demonstrating a table with multiple row selection mode. Consumers control the selection state with the **onRowSelect** callback and **isSelected** row property.|
 |[Table with Sections](/components/cerner-terra-framework-docs/table/examples/table-with-sections)|An example demonstrating how to create a table with sections.|
 |[Table Without Headers](/components/cerner-terra-framework-docs/table/examples/table-without-headers)|An example demonstrating how to hide table column headers. The column headers still exist in the Document Object Model (DOM) for accessibility.|
+|[Table with Column Span](/components/cerner-terra-framework-docs/table/examples/table-column-span)| An example demonstrating a table with column span.|
 
 ## Accessibility
 ### Keyboard Interactions
 
-|Keys|Description|
-|---|---|
-|HOME| Selects the first element on the table when the currently active element is not editable.|
-|END | Selects the last element on the table when the currently active element is not editable.|
+| Keys |                                        Description                                        |
+| ---- | ----------------------------------------------------------------------------------------- |
+| HOME | Selects the first element on the table when the currently active element is not editable. |
+| END  | Selects the last element on the table when the currently active element is not editable.  |
 
 ### Assistive Technology Support
 #### WAI ARIA Roles and States
@@ -112,33 +114,34 @@ In addition, ensure that you memoize callback functions using methods such as th
 ### Table Constants
 Enumeration: TableConstants
 
-|Constant|Type|Description|
-|---|---|---|
-|**ROW_SELECTION_COLUMN_WIDTH**|Number|The width of the row selection column.|
-|**TABLE_MARGIN_RIGHT**|Number|The margin right of the table to allow resizing of the last column.|
+|            Constant            |  Type  |                             Description                             |
+| ------------------------------ | ------ | ------------------------------------------------------------------- |
+| **ROW_SELECTION_COLUMN_WIDTH** | Number | The width of the row selection column.                              |
+| **TABLE_MARGIN_RIGHT**         | Number | The margin right of the table to allow resizing of the last column. |
 
 Enumeration: RowSelectionModes
 
-|Constant|Type|Description|
-|---|---|---|
-|**SINGLE**|String|Single row selection mode.|
-|**MULTIPLE**|String|Multiple row selection mode.|
+|   Constant   |  Type  |         Description          |
+| ------------ | ------ | ---------------------------- |
+| **SINGLE**   | String | Single row selection mode.   |
+| **MULTIPLE** | String | Multiple row selection mode. |
 
 ### Column
 A column specifies the information to render a cell in the header row of the Worklist Data Grid component.
 
-|Name|Type|Required|Default Value|Description|
-|---|---|---|---|---|
-|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the column in the grid.|
-|**displayName**|String|Optional|None|A string of text to render in the column header cell.|
-|**action**|object|optional|none|An object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.
-|**hasError**|Bool|Optional|None|A Boolean value indicating whether the column information has an error.|
-|**isResizable**|Bool|Optional|None|A Boolean value indicating whether the column header is resizable. This value is ignored when for a table with auto layout enabled.|
-|**isSelectable**|Bool|Optional|None|A Boolean value indicating whether the column header is selectable.|
-|**minimumWidth**|Number|Optional|None|A number that specifies the minimum column width in pixels.|
-|**maximumWidth**|Number|Optional|None|A number that specifies the maximum column width in pixels.|
-|**width**|unionOf: [type: 'number',type: 'string',],|Optional|None|The width can be either a numeric or string value. When a number is provided, it is the number (in px) specifying the width of the column. If not provided, the Table's default column width will be used. When a string is provided, it specifies the default column width and can be any valid CSS width value|
-|**sortIndicator**|Custom|Optional|None|A string indicating which sorting indicator is rendered (`ascending` or `descending`). A sorting indicator is rendered only if a value is provided.
+|       Name        |                    Type                    |                    Required                     | Default Value |                                                                                                                                                   Description                                                                                                                                                    |
+| ----------------- | ------------------------------------------ | ----------------------------------------------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**            | String                                     | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the column in the grid.                                                                                                                                                                                                                                                       |
+| **displayName**   | String                                     | Optional                                        | None          | A string of text to render in the column header cell.                                                                                                                                                                                                                                                            |
+| **action**        | object                                     | optional                                        | none          | An object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.                                                                                                                                                            |
+| **hasError**      | Bool                                       | Optional                                        | None          | A Boolean value indicating whether the column information has an error.                                                                                                                                                                                                                                          |
+| **isResizable**   | Bool                                       | Optional                                        | None          | A Boolean value indicating whether the column header is resizable. This value is ignored when for a table with auto layout enabled.                                                                                                                                                                              |
+| **isSelectable**  | Bool                                       | Optional                                        | None          | A Boolean value indicating whether the column header is selectable.                                                                                                                                                                                                                                              |
+| **minimumWidth**  | Number                                     | Optional                                        | None          | A number that specifies the minimum column width in pixels.                                                                                                                                                                                                                                                      |
+| **maximumWidth**  | Number                                     | Optional                                        | None          | A number that specifies the maximum column width in pixels.                                                                                                                                                                                                                                                      |
+| **width**         | unionOf: [type: 'number',type: 'string',], | Optional                                        | None          | The width can be either a numeric or string value. When a number is provided, it is the number (in px) specifying the width of the column. If not provided, the Table's default column width will be used. When a string is provided, it specifies the default column width and can be any valid CSS width value |
+| **sortIndicator** | Custom                                     | Optional                                        | None          | A string indicating which sorting indicator is rendered (`ascending` or `descending`). A sorting indicator is rendered only if a value is provided.                                                                                                                                                              |
+| **columnSpan**    | number                                     | Optional                                        | None          | A number that specifies the column span value for a column.                                                                                                                                                                                                                                                      |
 
 ### Section
 <Notice variant="important" ariaLevel="2">
@@ -147,32 +150,43 @@ Due to poor support in Apple VoiceOver for spanned table headings, Table compone
 
 A section defines the rows rendered in the section.
 
-|Name|Type|Required|Default Value|Description|
-|---|---|---|---|---|
-|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the section in the grid.|
-|**isCollapsible**|Bool|Optional|False|A Boolean value indicating whether the the section is collapsible.|
-|**isCollapsed**|Bool|Optional|False|A Boolean value indicating whether the section is collapsed. If true, the contents of the section is not displayed.|
-|**text**|String|Optional|None|A text string to render in the section header.|
-|**rows**|Array|Optional|[]|An array of row objects to be rendered in the section.|
+|       Name        |  Type  |                    Required                     | Default Value |                                                     Description                                                     |
+| ----------------- | ------ | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **id**            | String | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the section in the grid.                                                         |
+| **isCollapsible** | Bool   | Optional                                        | False         | A Boolean value indicating whether the the section is collapsible.                                                  |
+| **isCollapsed**   | Bool   | Optional                                        | False         | A Boolean value indicating whether the section is collapsed. If true, the contents of the section is not displayed. |
+| **text**          | String | Optional                                        | None          | A text string to render in the section header.                                                                      |
+| **rows**          | Array  | Optional                                        | []            | An array of row objects to be rendered in the section.                                                              |
+| **subsections**   | Array  | Optional                                        | []            | An array of subsections objects to be rendered within the section.                                                  |
+
+### Subsection
+
+Subsections objects are virtually identical to section objects.
+
+|       Name        |  Type  |                    Required                     | Default Value |                                                        Description                                                        |
+| ----------------- | ------ | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **id**            | String | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the subsection in the grid.                                                            |
+| **text**          | String | Optional                                        | None          | A text string to render in the subsection header.                                                                         |
+| **rows**          | Array  | Optional                                        | []            | An array of row objects to be rendered in the subsection.                                                                 |
 
 ### Row
 A row defines the cells rendered in the row.
 
-|Name|Type|Required|Default Value|Description|
-|---|---|---|---|---|
-|**id**|String|<span style={{color:'#d53040'}}>Required</span>|None|An identifier to uniquely identify the row in the grid.|
-|**cells**|Array|Optional|[]|An array of cell objects that define the content to be rendered in the row. Cells are rendered in the order given and are expected to match the column order.|
-|**isSelected**|Bool|Optional|None|A Boolean value indicating whether the row is rendered as selected.|
-|**ariaLabel**|String|Optional|None|A string identifier used to describe the row contents. This value is used for accessibility when announcing the row selection or deselection.|
+|      Name      |  Type  |                    Required                     | Default Value |                                                                          Description                                                                          |
+| -------------- | ------ | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**         | String | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the row in the grid.                                                                                                       |
+| **cells**      | Array  | Optional                                        | []            | An array of cell objects that define the content to be rendered in the row. Cells are rendered in the order given and are expected to match the column order. |
+| **isSelected** | Bool   | Optional                                        | None          | A Boolean value indicating whether the row is rendered as selected.                                                                                           |
+| **ariaLabel**  | String | Optional                                        | None          | A string identifier used to describe the row contents. This value is used for accessibility when announcing the row selection or deselection.                 |
 
 ### Cell
 A cell defines the content rendered at the intersection of a row and a column.
 
-|Name|Type|Required|Default Value|Description|
-|---|---|---|---|---|
-|**content**|Content|Optional|None|The content to render in the cell.|
-|**isMasked**|Bool|Optional|None|A Boolean value indicating whether the cell content is masked.|
-|**maskedLabel**|Bool|Optional|None|A Boolean value that provides a custom string for screen readers to read masked cells. This value is only applied if the cell is masked.|
+|      Name       |  Type   | Required | Default Value |                                                               Description                                                                |
+| --------------- | ------- | -------- | ------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| **content**     | Content | Optional | None          | The content to render in the cell.                                                                                                       |
+| **isMasked**    | Bool    | Optional | None          | A Boolean value indicating whether the cell content is masked.                                                                           |
+| **maskedLabel** | Bool    | Optional | None          | A Boolean value that provides a custom string for screen readers to read masked cells. This value is only applied if the cell is masked. |
 
 ## Terra Standards
 * [Cross-Browser Support](https://engineering.cerner.com/terra-ui/about/terra-ui/component-standards#cross-browser-support)

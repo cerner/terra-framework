@@ -2,6 +2,34 @@
 
 ## Unreleased
 
+* Changed
+  * Keyboard navigation updated to wrap to the next/previous line at the end/start of a visual row.
+
+## 1.20.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.19.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.18.0 - (April 17, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.17.0 - (April 15, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.16.0 - (April 10, 2024)
+
+* Changed
+  * Changed to avoid focus being set to the first cell on multiple re-renders.
+
 ## 1.15.0 - (April 4, 2024)
 
 * Changed

@@ -1,3 +1,5 @@
+/* stylelint-disable selector-max-compound-selectors */
+/* stylelint-disable max-nesting-depth */
 @import '~terra-mixins/lib/Mixins';
 
 // Themes
@@ -9,306 +11,333 @@
     display: flex;
     flex-wrap: wrap;
     position: relative;
-  }
 
-  .month-select-wrapper {
-    background-color: var(--terra-date-input-month-background-color, #fff);
-    background-image: var(--terra-date-input-month-background-image);
-    background-position: var(--terra-date-input-month-background-position);
-    background-repeat: var(--terra-date-input-month-background-repeat);
-    background-size: var(--terra-date-input-month-background-size);
-    border-radius: var(--terra-date-input-month-border-radius, 3px);
-    display: inline-block;
-    position: relative;
-    transition-duration: var(--terra-date-input-month-transition-duration);
-    transition-property: background-size;
-    transition-timing-function: var(--terra-date-input-month-transition-timing-function);
-
-    &::after {
-      background-image: var(--terra-date-input-month-after-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: contain;
-      content: '';
-      display: inline-block; // IE 10
-      height: var(--terra-date-input-month-after-arrow-icon-height, 0.715rem);
-      margin-top: -0.3rem;
-      pointer-events: none;
-      position: absolute;
-      right: 0.7em;
-      top: 50%;
-      width: var(--terra-date-input-month-after-arrow-icon-width, 1rem);
-    }
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        background-color: var(--terra-date-input-month-hover-background-color, #fff);
-      }
-    }
-
-    &.focused {
-      background-color: var(--terra-date-input-month-focus-background-color, #fff);
-      background-size: var(--terra-date-input-month-focus-background-size);
-
-      [dir=ltr] & {
-        box-shadow: var(--terra-date-input-month-focus-ltr-box-shadow);
-      }
-
-      [dir=rtl] & {
-        box-shadow: var(--terra-date-input-month-focus-rtl-box-shadow);
-      }
-    }
-
-    &.disabled {
-      background-color: var(--terra-date-input-month-disabled-background-color, rgba(111, 116, 119, 0.2));
-      opacity: var(--terra-date-input-month-disabled-opacity, 0.25);
+    .month-select-wrapper {
+      background-color: var(--terra-date-input-month-background-color, #fff);
+      background-image: var(--terra-date-input-month-background-image);
+      background-position: var(--terra-date-input-month-background-position);
+      background-repeat: var(--terra-date-input-month-background-repeat);
+      background-size: var(--terra-date-input-month-background-size);
+      border-radius: var(--terra-date-input-month-border-radius, 3px);
+      display: inline-block;
+      position: relative;
+      transition-duration: var(--terra-date-input-month-transition-duration);
+      transition-property: background-size;
+      transition-timing-function: var(--terra-date-input-month-transition-timing-function);
 
       &::after {
-        background-image: var(--terra-date-input-month-after-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
+        background-image: var(--terra-date-input-month-after-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        content: '';
+        display: inline-block; // IE 10
+        height: var(--terra-date-input-month-after-arrow-icon-height, 0.715rem);
+        margin-top: -0.3rem;
+        pointer-events: none;
+        position: absolute;
+        right: 0.7em;
+        top: 50%;
+        width: var(--terra-date-input-month-after-arrow-icon-width, 1rem);
       }
-    }
-
-    &.error {
-      background-color: var(--terra-date-input-month-error-background-color, #fff);
-      background-image: var(--terra-date-input-month-error-background-image);
-
-      &::after {
-        background-image: var(--terra-date-input-month-after-error-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
-      }
-
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        /* stylelint-disable-next-line max-nesting-depth */
         &:hover {
-          background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
+          background-color: var(--terra-date-input-month-hover-background-color, #fff);
         }
       }
 
       &.focused {
-        background-color: var(--terra-date-input-month-error-focus-background-color, #fff);
-        background-size: var(--terra-date-input-month-error-focus-background-size);
-      }
+        background-color: var(--terra-date-input-month-focus-background-color, #fff);
+        background-size: var(--terra-date-input-month-focus-background-size);
 
-      &.disabled {
-        background-color: var(--terra-date-input-month-error-disabled-background-color, rgba(111, 116, 119, 0.2));
-        opacity: var(--terra-date-input-month-error-disabled-opacity, 0.25);
-      }
+        [dir=ltr] & {
+          box-shadow: var(--terra-date-input-month-focus-ltr-box-shadow);
+        }
 
-      &.disabled::after {
-        background-image: var(--terra-date-input-month-after-error-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#bfbfbf" d="M48 12L24 36 0 12h48z"/></svg>'));
-      }
-    }
-
-    &.incomplete {
-      background-color: var(--terra-date-input-month-incomplete-background-color, #ffc);
-
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        /* stylelint-disable-next-line max-nesting-depth */
-        &:hover {
-          background-color: var(--terra-date-input-month-incomplete-hover-background-color, #ffc);
+        [dir=rtl] & {
+          box-shadow: var(--terra-date-input-month-focus-rtl-box-shadow);
         }
       }
 
-      &.focused {
-        background-color: var(--terra-date-input-month-incomplete-focus-background-color, #ffc);
-      }
-
       &.disabled {
-        background-color: var(--terra-date-input-month-incomplete-disabled-background-color, #ffc);
+        background-color: var(--terra-date-input-month-disabled-background-color, rgba(111, 116, 119, 0.2));
+        opacity: var(--terra-date-input-month-disabled-opacity, 0.25);
+
+        &::after {
+          background-image: var(--terra-date-input-month-after-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
+        }
+      }
+
+      &.error {
+        background-color: var(--terra-date-input-month-error-background-color, #fff);
+        background-image: var(--terra-date-input-month-error-background-image);
+
+        &::after {
+          background-image: var(--terra-date-input-month-after-error-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path d="M48 12L24 36 0 12h48z"/></svg>'));
+        }
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+          &:hover {
+            background-color: var(--terra-date-input-month-error-hover-background-color, #fff);
+          }
+        }
+
+        &.focused {
+          background-color: var(--terra-date-input-month-error-focus-background-color, #fff);
+          background-size: var(--terra-date-input-month-error-focus-background-size);
+        }
+
+        &.disabled {
+          background-color: var(--terra-date-input-month-error-disabled-background-color, rgba(111, 116, 119, 0.2));
+          opacity: var(--terra-date-input-month-error-disabled-opacity, 0.25);
+        }
+
+        &.disabled::after {
+          background-image: var(--terra-date-input-month-after-error-disabled-arrow-icon-background-image, inline-svg('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="is-bidi"><path fill="#bfbfbf" d="M48 12L24 36 0 12h48z"/></svg>'));
+        }
+      }
+
+      &.incomplete {
+        background-color: var(--terra-date-input-month-incomplete-background-color, #ffc);
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+          &:hover {
+            background-color: var(--terra-date-input-month-incomplete-hover-background-color, #ffc);
+          }
+        }
+
+        &.focused {
+          background-color: var(--terra-date-input-month-incomplete-focus-background-color, #ffc);
+        }
+
+        &.disabled {
+          background-color: var(--terra-date-input-month-incomplete-disabled-background-color, #ffc);
+        }
       }
     }
-  }
 
-  .month-select {
-    appearance: none;
-    background-color: rgba(0, 0, 0, 0);
-    border: var(--terra-date-input-month-select-border, 1px solid #dedfe0);
-    border-radius: 3px;
-    color: var(--terra-date-input-month-select-color);
-    cursor: pointer;
-    font-size: var(--terra-date-input-month-select-font-size, 1.143rem); // 16px allows correct zoom on iOS
-    height: var(--terra-date-input-month-select-height, 2.143rem); // 30px
-    margin: 0 0.92857rem 0 0;
-    outline: 0;
-    overflow: hidden;
-    padding-bottom: var(--terra-date-input-month-select-padding-bottom, 0);
-    padding-left: var(--terra-date-input-month-select-padding-left, 0.3571rem);
-    padding-right: var(--terra-date-input-month-select-padding-right, 1.42857rem);
-    padding-top: var(--terra-date-input-month-select-padding-top, 0);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 100%;
-
-    // Hide the arrow in IE 10 and IE 11
-    &::-ms-expand {
-      display: none;
-    }
-
-    &::-ms-value {
-      // For visual consistency with other platforms/browsers,
-      // suppress the default white text on blue background highlight given to
-      // the selected option text when the (still closed) <select> receives focus
-      // in IE and (under certain conditions) Edge.
+    .month-select {
+      appearance: none;
       background-color: rgba(0, 0, 0, 0);
-      color: var(--terra-date-input-month-select-color, inherit); // stylelint-disable-line terra/custom-property-no-duplicate-declaration
-    }
+      border: var(--terra-date-input-month-select-border, 1px solid #dedfe0);
+      border-radius: 3px;
+      color: var(--terra-date-input-month-select-color);
+      cursor: pointer;
+      font-size: var(--terra-date-input-month-select-font-size, 1.143rem); // 16px allows correct zoom on iOS
+      height: var(--terra-date-input-month-select-height, 2.143rem); // 30px
+      margin: 0 0.92857rem 0 0;
+      outline: 0;
+      overflow: hidden;
+      padding-bottom: var(--terra-date-input-month-select-padding-bottom, 0);
+      padding-left: var(--terra-date-input-month-select-padding-left, 0.3571rem);
+      padding-right: var(--terra-date-input-month-select-padding-right, 1.42857rem);
+      padding-top: var(--terra-date-input-month-select-padding-top, 0);
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%;
 
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-      &:hover {
-        border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
-        color: var(--terra-date-input-month-select-hover-color);
+      // Hide the arrow in IE 10 and IE 11
+      &::-ms-expand {
+        display: none;
       }
-    }
 
-    // .focused needed for Safari Mobile
-    &:focus,
-    &.focused {
-      border: 0;
-      color: var(--terra-date-input-month-select-focus-color);
-      outline: var(--terra-date-input-month-select-focus-outline, 2px dashed #000);
-      outline-offset: 1px;
-    }
-
-    &.is-placeholder {
-      color: var(--terra-date-input-month-select-placeholder-color, rgba(21, 33, 41, 0.62));
-      font-style: var(--terra-date-input-month-select-placeholder-font-style, italic);
-    }
-
-    option:not([value='']) {
-      color: #1c1f21;
-      font-style: normal;
-      text-shadow: 0 0 0 #1c1f21;
-    }
-
-    &.disabled {
-      border: var(--terra-date-input-month-select-disabled-border, 1px solid #868a8c);
-      color: var(--terra-date-input-month-select-disabled-color, #1c1f21);
+      &::-ms-value {
+        // For visual consistency with other platforms/browsers,
+        // suppress the default white text on blue background highlight given to
+        // the selected option text when the (still closed) <select> receives focus
+        // in IE and (under certain conditions) Edge.
+        background-color: rgba(0, 0, 0, 0);
+        color: var(--terra-date-input-month-select-color, inherit); // stylelint-disable-line terra/custom-property-no-duplicate-declaration
+      }
 
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        /* stylelint-disable-next-line max-nesting-depth */
         &:hover {
-          color: var(--terra-date-input-month-select-disabled-hover-color, #1c1f21);
-          cursor: default;
-        }
-      }
-
-      &.is-placeholder {
-        color: var(--terra-date-input-month-select-disabled-placeholder-color, rgba(21, 33, 41, 0.62));
-      }
-    }
-
-    &.error {
-      border: var(--terra-date-input-month-select-error-border, 1px solid #e50000);
-      box-shadow: var(--terra-date-input-month-select-error-box-shadow, 0 0 0 1px #e50000);
-
-      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
-        /* stylelint-disable-next-line max-nesting-depth */  
-        &:hover {
-          border: var(--terra-date-input-month-select-error-hover-border, 1px solid #e50000);
+          border: var(--terra-date-input-month-select-hover-border, 1px solid #dedfe0);
+          color: var(--terra-date-input-month-select-hover-color);
         }
       }
 
       // .focused needed for Safari Mobile
       &:focus,
       &.focused {
-        outline: var(--terra-date-input-month-select-error-focus-outline, 2px dashed #000);
-        outline-offset: 1px;
-      }
-
-      &.disabled {
-        border: var(--terra-date-input-month-select-error-disabled-border, 1px solid #e50000);
-        color: var(--terra-date-input-month-select-error-disabled-color, rgba(0, 0, 0, 0.25));
-      }
-
-      &.disabled.is-placeholder {
-        color: var(--terra-date-input-month-select-error-disabled-placeholder-color, rgba(21, 33, 41, 0.62));
-      }
-    }
-  }
-
-  // Hide select dotted outline that appears on focus/hover in Firefox
-  // @supports for -moz prefix targets Firefox ≥ 16
-  @supports (-moz-appearance:meterbar) {
-    .month-select {
-      &:hover {
-        color: transparent; // Setting this to transparent prevents dotted outline
-        /* stylelint-disable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
-        text-shadow: 0 0 0 var(--terra-date-input-month-select-hover-color, #1c1f21);
-        /* stylelint-enable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
-      }
-
-      &:focus,
-      &.focused {
-        color: transparent; // Setting this to transparent prevents dotted outline
-        /* stylelint-disable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
-        text-shadow: 0 0 0 var(--terra-date-input-month-select-focus-color, #1c1f21);
-        /* stylelint-enable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
+        color: var(--terra-date-input-month-select-focus-color);
+        outline: var(--terra-date-input-month-select-focus-outline, 2px dashed #000);
+        outline-offset: var(--terra-date-input-month-select-focus-outline-offset, 1px);
+        box-shadow: var(--terra-date-input-month-select-focus-box-shadow, none);
       }
 
       &.is-placeholder {
-        color: transparent;
-        /* stylelint-disable terra/custom-property-name*/
-        text-shadow: 0 0 0 var(--terra-date-input-month-select-placeholder-color, rgba(21, 33, 41, 0.62));
-        /* stylelint-enable terra/custom-property-name*/
+        color: var(--terra-date-input-month-select-placeholder-color, rgba(21, 33, 41, 0.62));
+        font-style: var(--terra-date-input-month-select-placeholder-font-style, italic);
+      }
+
+      option:not([value='']) {
+        color: #1c1f21;
+        font-style: normal;
+        text-shadow: 0 0 0 #1c1f21;
+      }
+
+      &.disabled {
+        border: var(--terra-date-input-month-select-disabled-border, 1px solid #868a8c);
+        color: var(--terra-date-input-month-select-disabled-color, #1c1f21);
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+          &:hover {
+            color: var(--terra-date-input-month-select-disabled-hover-color, #1c1f21);
+            cursor: default;
+          }
+        }
+
+        &.is-placeholder {
+          color: var(--terra-date-input-month-select-disabled-placeholder-color, rgba(21, 33, 41, 0.62));
+        }
+      }
+
+      &.error {
+        border: var(--terra-date-input-month-select-error-border, 1px solid #e50000);
+        box-shadow: var(--terra-date-input-month-select-error-box-shadow, 0 0 0 1px #e50000);
+
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none), (hover: hover) and (pointer: fine) {
+          &:hover {
+            border: var(--terra-date-input-month-select-error-hover-border, 1px solid #e50000);
+          }
+        }
+
+        // .focused needed for Safari Mobile
+        &:focus,
+        &.focused {
+          outline: var(--terra-date-input-month-select-error-focus-outline, 2px dashed #000);
+          outline-offset: var(--terra-date-input-month-select-error-focus-outline-offset, 2px);
+          box-shadow: var(--terra-date-input-month-select-error-focus-box-shadow, 0 0 0 1px #e50000);
+        }
+
+        &.disabled {
+          border: var(--terra-date-input-month-select-error-disabled-border, 1px solid #e50000);
+          color: var(--terra-date-input-month-select-error-disabled-color, rgba(0, 0, 0, 0.25));
+        }
+
+        &.disabled.is-placeholder {
+          color: var(--terra-date-input-month-select-error-disabled-placeholder-color, rgba(21, 33, 41, 0.62));
+        }
       }
     }
-  }
 
-  .month-select {
-    max-width: var(--terra-date-input-month-select-max-width, 24rem);
-  }
+    // Hide select dotted outline that appears on focus/hover in Firefox
+    // @supports for -moz prefix targets Firefox ≥ 16
+    @supports (-moz-appearance:meterbar) {
+      .month-select {
+        &:hover {
+          color: transparent; // Setting this to transparent prevents dotted outline
+          /* stylelint-disable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
+          text-shadow: 0 0 0 var(--terra-date-input-month-select-hover-color, #1c1f21);
+          /* stylelint-enable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
+        }
 
-  .date-input-day {
-    // Hide number spinner in Firefox
-    -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
-    max-width: var(--terra-date-input-date-input-day-max-width, 2.5rem);
-    z-index: 1;
+        &:focus,
+        &.focused {
+          color: transparent; // Setting this to transparent prevents dotted outline
+          /* stylelint-disable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
+          text-shadow: 0 0 0 var(--terra-date-input-month-select-focus-color, #1c1f21);
+          /* stylelint-enable terra/custom-property-name, terra/custom-property-no-duplicate-declaration */
+        }
 
-    // Hide number spinner in Chrome/Safari
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
-      margin: 0;
+        &.is-placeholder {
+          color: transparent;
+          /* stylelint-disable terra/custom-property-name*/
+          text-shadow: 0 0 0 var(--terra-date-input-month-select-placeholder-color, rgba(21, 33, 41, 0.62));
+          /* stylelint-enable terra/custom-property-name*/
+        }
+      }
     }
 
-    &.is-focused {
-      border: 0;
-      outline: var(--terra-date-input-day-focus-outline, 2px dashed #000);
-      outline-offset: 1px;
+    .month-select {
+      max-width: var(--terra-date-input-month-select-max-width, 24rem);
     }
-  }
 
-  .date-input-year {
-    // Hide number spinner in Firefox
-    -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
-    max-width: var(--terra-date-input-date-input-year-max-width, 3.8rem);
-    z-index: 1;
+    .date-input-day {
+      // Hide number spinner in Firefox
+      -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
+      border: var(--terra-date-input-border, 1px solid #dedfe0);
+      max-width: var(--terra-date-input-date-input-day-max-width, 2.5rem);
+      z-index: 1;
 
-    // Hide number spinner in Chrome/Safari
-    &::-webkit-inner-spin-button,
-    &::-webkit-outer-spin-button {
-      appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
-      margin: 0;
+      // Hide number spinner in Chrome/Safari
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+        margin: 0;
+      }
+
+      &:focus,
+      &.is-focused {
+        border: var(--terra-date-input-focus-border, 1px solid #dedfe0);
+        outline: var(--terra-date-input-focus-outline, 2px dashed #000);
+        outline-offset: var(--terra-date-input-focus-outline-offset, 1px);
+        box-shadow: var(--terra-date-input-focus-box-shadow, none);
+      }
+
+      &.error {
+        border: var(--terra-date-input-error-border, 1px solid #e50000);
+        box-shadow: var(--terra-date-input-error-box-shadow, 0 0 0 1px #e50000);
+
+        &:focus,
+        &.is-focused {
+          outline: var(--terra-date-input-error-focus-outline, 2px dashed #000);
+          outline-offset: var(--terra-date-input-error-focus-outline-offset, 2px);
+          box-shadow: var(--terra-date-input-error-focus-box-shadow, 0 0 0 1px #e50000);
+        }      
+      }
     }
-    
-    &.is-focused {
-      border: 0;
-      outline: var(--terra-date-input-year-focus-outline, 2px dashed #000);
-      outline-offset: 1px;
+
+    .date-input-year {
+      // Hide number spinner in Firefox
+      -moz-appearance: textfield; /* stylelint-disable-line property-no-vendor-prefix, plugin/no-unsupported-browser-features */
+      border: var(--terra-date-input-border, 1px solid #dedfe0);
+      max-width: var(--terra-date-input-date-input-year-max-width, 3.8rem);
+      z-index: 1;
+
+      // Hide number spinner in Chrome/Safari
+      &::-webkit-inner-spin-button,
+      &::-webkit-outer-spin-button {
+        appearance: none; /* stylelint-disable-line plugin/no-unsupported-browser-features */
+        margin: 0;
+      }
+      
+      &:focus,
+      &.is-focused {
+        border: var(--terra-date-input-focus-border, 1px solid #dedfe0);
+        outline: var(--terra-date-input-focus-outline, 2px dashed #000);
+        outline-offset: var(--terra-date-input-focus-outline-offset, 1px);
+        box-shadow: var(--terra-date-input-focus-box-shadow, none);
+      }
+
+      &.error {
+        border: var(--terra-date-input-error-border, 1px solid #e50000);
+        box-shadow: var(--terra-date-input-error-box-shadow, 0 0 0 1px #e50000);
+      
+        &:focus,
+        &.is-focused {
+          outline: var(--terra-date-input-error-focus-outline, 2px dashed #000);
+          outline-offset: var(--terra-date-input-error-focus-outline-offset, 2px);
+          box-shadow: var(--terra-date-input-error-focus-box-shadow, 0 0 0 1px #e50000);
+        }      
+      }
     }
-  }
 
-  // Gutters
-  .month-select-wrapper,
-  .date-input-day {
-    margin-right: var(--terra-date-input-gutters-margin-right, 0.3571rem);
-  }
+    // Gutters
+    .month-select-wrapper,
+    .date-input-day {
+      margin-right: var(--terra-date-input-gutters-margin-right, 0.3571rem);
+    }
 
-  .format-text {
-    color: var(--terra-date-input-format-text-color, rgba(0, 0, 0, 0.55));
-    flex: 1 1 100%;
-    font-size: var(--terra-date-input-format-text-font-size, 0.857rem);
-    font-weight: var(--terra-date-input-format-text-font-weight, normal);
-    line-height: 1.25;
-    margin-top: var(--terra-date-input-format-text-margin-top, 0.357em);
-    text-align: left;
+    .format-text {
+      color: var(--terra-date-input-format-text-color, rgba(0, 0, 0, 0.55));
+      flex: 1 1 100%;
+      font-size: var(--terra-date-input-format-text-font-size, 0.857rem);
+      font-weight: var(--terra-date-input-format-text-font-weight, normal);
+      line-height: 1.25;
+      margin-top: var(--terra-date-input-format-text-margin-top, 0.357em);
+      text-align: left;
+    }
   }
 }

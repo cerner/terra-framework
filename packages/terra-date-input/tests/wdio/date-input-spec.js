@@ -17,6 +17,12 @@ Terra.describeViewports('Date Input', ['medium'], () => {
   it('should be invalid', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/date-input/invalid-date-input');
     Terra.validates.element('invalid input');
+    $('select[name="terra-date-month-date-input"]').click();
+    Terra.validates.element('invalid input focus month styles');
+    $('input[name="terra-date-day-date-input"]').click();
+    Terra.validates.element('invalid input focus day styles');
+    $('input[name="terra-date-year-date-input"]').click();
+    Terra.validates.element('invalid input focus year styles');
   });
 
   it('should display incomplete input', () => {

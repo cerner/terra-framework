@@ -65,7 +65,7 @@ describe('CollapsibleMenuViewItem', () => {
         <CollapsibleMenuViewItem text="Default Item 2" key="defaultItem2" />,
       ]}
     />);
-    expect(wrapper.find('Button').prop('aria-haspopup')).toEqual('dialog');
+    expect(wrapper.find('Button').prop('aria-haspopup')).toBe(true);
   });
 
   it('should render a disabled button when isDisabled is set', () => {
