@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { injectIntl } from 'react-intl';
 import classNames from 'classnames/bind';
-import ActionHeader from 'terra-action-header';
 import ContentContainer from 'terra-content-container';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
@@ -110,6 +109,9 @@ class NavigationSideMenu extends Component {
     super(props);
 
     this.handleBackClick = this.handleBackClick.bind(this);
+    this.handleBackKeydown = this.handleBackKeydown.bind(this);
+    this.handleEvents = this.handleEvents.bind(this);
+    this.setTabIndex = this.setTabIndex.bind(this);
     this.handleItemClick = this.handleItemClick.bind(this);
     this.updateAriaLiveContent = this.updateAriaLiveContent.bind(this);
     this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
@@ -131,6 +133,7 @@ class NavigationSideMenu extends Component {
 
   handleBackClick(event) {
     const parentKey = this.state.parents[this.props.selectedMenuKey];
+    this.focusKey = this.props.selectedMenuKey;
     if (parentKey) {
       this.props.onChange(
         event,
@@ -140,6 +143,40 @@ class NavigationSideMenu extends Component {
           metaData: this.state.items[parentKey].metaData,
         },
       );
+    }
+    this.setHeaderFocus = false;
+    event.preventDefault();
+  }
+
+  handleBackKeydown(event) {
+    const key = event.nativeEvent.keyCode;
+    switch (key) {
+      case KeyCode.KEY_SPACE:
+      case KeyCode.KEY_RETURN:
+      case KeyCode.KEY_LEFT:
+      case KeyCode.KEY_ESCAPE: {
+        const parentKey = this.state.parents[this.props.selectedMenuKey];
+        if (parentKey) {
+          this.handleBackClick(event);
+        } else if (this.props.routingStackBack) {
+          this.props.routingStackBack();
+        }
+        break;
+      }
+      case KeyCode.KEY_DOWN:
+      case KeyCode.KEY_UP: {
+        const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
+        if (listMenuItems && listMenuItems.length) {
+          if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
+            listMenuItems[0].focus();
+          } else {
+            listMenuItems[listMenuItems.length - 1].focus();
+          }
+        }
+        event.preventDefault();
+        break;
+      }
+      default:
     }
   }
 
@@ -151,8 +188,6 @@ class NavigationSideMenu extends Component {
     }
 
     if (selectedItem.childKeys && selectedItem.childKeys.length) {
-      // Add focus on the first item in sub menu
-      this.needsFocus = true;
       this.props.onChange(
         event,
         {
@@ -162,7 +197,6 @@ class NavigationSideMenu extends Component {
         },
       );
     } else {
-      this.needsFocus = false;
       this.props.onChange(
         event,
         {
@@ -172,32 +206,104 @@ class NavigationSideMenu extends Component {
         },
       );
     }
+    this.focusKey = key;
+    if (selectedItem && selectedItem.childKeys && selectedItem.childKeys.length) {
+      this.setHeaderFocus = true;
+    } else {
+      this.setHeaderFocus = false;
+    }
+  }
+
+  handleRightMove(event, key) {
+    this.handleItemClick(event, key);
+  }
+
+  handleLeftMove(event) {
+    this.handleBackClick(event);
   }
 
   handleMenuListRef = (node) => {
     this.menuContainer = node;
-    // To add focus to the first sub menu item
-    if (node && this.needsFocus) {
-      const subMenuNodes = node.querySelectorAll('[data-menu-item]');
+    if (node && this.focusKey) {
+      const subMenuNodes = node.querySelectorAll(`[data-menu-item="${this.focusKey}"]`);
       if (subMenuNodes && subMenuNodes.length) {
         subMenuNodes[0].focus();
       }
     }
   };
 
-  getMenuContainerRef = () => this.menuContainer;
+  handleEvents = (event, item, key) => {
+    const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
+    const currentIndex = Array.from(listMenuItems).indexOf(event.target);
+    const lastIndex = listMenuItems.length - 1;
+    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
+      event.preventDefault();
+      this.handleItemClick(event, key);
+    }
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
+      const nextIndex = currentIndex < lastIndex ? currentIndex + 1 : 0;
+      if (currentIndex === lastIndex && this.onBack) {
+        if (this.backButtonContainer) {
+          this.backButtonContainer.focus();
+        }
+      } else if (listMenuItems && listMenuItems[nextIndex]) {
+        this.setTabIndex(listMenuItems[currentIndex], '-1');
+        this.setTabIndex(listMenuItems[nextIndex], '0');
+        listMenuItems[nextIndex].focus();
+      }
+      event.preventDefault();
+    }
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
+      const previousIndex = currentIndex > 0 ? currentIndex - 1 : lastIndex;
+      if (currentIndex === 0 && this.onBack) {
+        if (this.backButtonContainer) {
+          this.backButtonContainer.focus();
+        }
+      } else if (listMenuItems && listMenuItems[previousIndex]) {
+        this.setTabIndex(listMenuItems[currentIndex], '-1');
+        this.setTabIndex(listMenuItems[previousIndex], '0');
+        listMenuItems[previousIndex].focus();
+      }
+      event.preventDefault();
+    }
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_RIGHT && (item.hasSubMenu || (item.childKeys && item.childKeys.length > 0))) {
+      this.handleRightMove(event, key);
+      event.preventDefault();
+    }
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_LEFT) {
+      this.handleLeftMove(event, key);
+      event.preventDefault();
+    }
+  };
 
   setVisuallyHiddenComponent(node) {
     this.visuallyHiddenComponent = node;
   }
 
-  buildListItem(key) {
-    const item = this.state.items[key];
-    const onKeyDown = (event) => {
-      if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
-        event.preventDefault();
-        this.handleItemClick(event, key);
+  setTabIndex = (node, value) => {
+    if (node) {
+      node.setAttribute('tabIndex', value);
+    }
+  };
+
+  backButtonRef = (node) => {
+    this.backButtonContainer = node;
+    if (node && this.setHeaderFocus) {
+      if (this.backButtonContainer) {
+        this.backButtonContainer.focus();
       }
+    }
+  };
+
+  buildListItem(key, keys) {
+    const item = this.state.items[key];
+    const tabIndex = Array.from(keys).indexOf(key);
+    const onKeyDown = (event) => {
+      this.handleEvents(event, item, key);
     };
 
     return (
@@ -209,15 +315,15 @@ class NavigationSideMenu extends Component {
         key={key}
         onClick={(event) => { this.handleItemClick(event, key); }}
         onKeyDown={onKeyDown}
-        getMenuContainerRef={this.getMenuContainerRef}
         data-menu-item={key}
+        tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
       />
     );
   }
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return <nav role="navigation" aria-label={this.props.ariaLabel}><ul role="menu" ref={(refobj) => this.handleMenuListRef(refobj)} className={cx(['side-menu-list'])}>{currentItem.childKeys.map(key => this.buildListItem(key))}</ul></nav>;
+      return currentItem.childKeys.map(key => this.buildListItem(key, currentItem.childKeys));
     }
     return null;
   }
@@ -251,27 +357,32 @@ class NavigationSideMenu extends Component {
       theme.className,
     ]);
 
-    let onBack;
     const parentKey = this.state.parents[selectedMenuKey];
     if (parentKey) {
-      onBack = this.handleBackClick;
+      this.onBack = this.handleBackClick;
     } else {
-      onBack = routingStackBack;
+      this.onBack = routingStackBack;
     }
 
     let header;
-    if (onBack || !currentItem.isRootMenu) {
+    if (this.onBack || !currentItem.isRootMenu) {
       header = (
-        <Fragment>
-          <ActionHeader
-            className={cx('side-menu-action-header')}
-            onBack={onBack}
-            text={currentItem ? currentItem.text : null}
-            data-navigation-side-menu-action-header
-            backButtonA11yLabel={currentItem ? currentItem.text : null}
-          />
+        <li role="none">
+          <div
+            className={cx('side-navigation-menu')}
+            role="menuitem"
+            ref={(obj) => this.backButtonRef(obj)}
+            type="button"
+            tabIndex={(this.onBack) ? '0' : '-1'}
+            onKeyDown={this.handleBackKeydown}
+            onClick={this.onBack}
+            data-navigation-side-menu
+          >
+            {(this.onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
+            <h1 className={cx('title')}>{currentItem ? currentItem.text : null}</h1>
+          </div>
           {toolbar}
-        </Fragment>
+        </li>
       );
     } else {
       sideMenuContentContainerClassNames = cx(['side-menu-content-container', 'is-root']);
@@ -285,8 +396,13 @@ class NavigationSideMenu extends Component {
           aria-relevant="additions text"
           refCallback={this.setVisuallyHiddenComponent}
         />
-        <ContentContainer {...customProps} header={header} fill className={sideMenuContentContainerClassNames}>
-          {this.buildListContent(currentItem)}
+        <ContentContainer {...customProps} fill className={sideMenuContentContainerClassNames}>
+          <nav role="navigation" aria-label={this.props.ariaLabel}>
+            <ul role="menu" ref={(refobj) => this.handleMenuListRef(refobj)} className={cx(['side-menu-list'])}>
+              {header}
+              {this.buildListContent(currentItem, header)}
+            </ul>
+          </nav>
         </ContentContainer>
       </Fragment>
     );

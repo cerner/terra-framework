@@ -1,3 +1,5 @@
+@import '~terra-mixins/lib/Mixins';
+
 :local {
   .clinical-lowlight-theme {
     --terra-navigation-side-menu-action-header-background-color: #141719;
@@ -12,6 +14,12 @@
     --terra-navigation-side-menu-list-background-color: #222a2e;
     --terra-navigation-side-menu-list-padding-bottom: 0.125rem;
     --terra-navigation-side-menu-list-padding-top: 0.125rem;
+    --terra-navigation-side-menu-header-color: #b2b5b6;
+    --terra-navigation-side-menu-header-focus-box-shadow: none;
+    --terra-navigation-side-menu-header-focus-outline: 2px dashed #b2b5b6;
+    --terra-navigation-side-menu-header-focus-outline-offset: -2px;
 
+    @include terra-inline-svg-var('--terra-navigation-side-menu-back-background-image', '<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#c5c5c6" d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>');
+    @include terra-inline-svg-var('--terra-navigation-side-menu-back-hover-background-image', '<svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="#c5c5c6" d="M48 21H10.6L27.3 3.9 23.5.1 0 24l23.5 23.9 3.8-3.8L10.6 27H48z"></path></svg>');
   }
 }

@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-navigation-side-menu` example styles.
+  * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.
+
+* Added
+  * Added a note about accessibility requirements for sorting or another action to the Multiple Row Selection example in `terra-table`.
+
 ## 1.84.0 - (April 23, 2024)
 
 * Changed

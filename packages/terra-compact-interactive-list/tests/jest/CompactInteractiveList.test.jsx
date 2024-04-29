@@ -576,29 +576,42 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', arrowRightProps);
       list.simulate('keyDown', arrowRightProps);
       expect(document.activeElement).toBe(cellElements.at(11).instance());
-      // should not move to the right as the row end reached
+      // wrap to the beginning of the second visual row
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
-
-      // Move one row down to start testing left arrow
-      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      // move to the end of the second visual row
+      list.simulate('keyDown', endKeyProps);
       expect(document.activeElement).toBe(cellElements.at(14).instance());
+      // wrap to the beginning of the last (third) visual row
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      // move to the end of the last visual row
+      list.simulate('keyDown', endKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
+      // stay at the end of the last visual row, as there is nowhere to wrap
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
 
       // Testing LEFT ARROW
       // move one cell to the left, same row
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(13).instance());
-      // move 2 cell to the left to break to the previous visual column
+      expect(document.activeElement).toBe(cellElements.at(7).instance());
+      // move 2 cell to the left to break to the previous visual row
+      list.simulate('keyDown', arrowLeftProps);
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      // move 3 cell to the left to enter previous semantic column
+      list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       expect(document.activeElement).toBe(cellElements.at(5).instance());
-      // move 2 cell to the left to reach the first visual column start
+      // move up to reach the first row, then home to reach the first cell in first row
+      list.simulate('keyDown', arrowUpProps);
+      list.simulate('keyDown', homeKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+      // left arrow should not move focus anywhere
       list.simulate('keyDown', arrowLeftProps);
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
-      // should not move anymore as the start of the visual row has been reached
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
@@ -801,29 +814,42 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', arrowRightProps);
       list.simulate('keyDown', arrowRightProps);
       expect(document.activeElement).toBe(cellElements.at(5).instance());
-      // should not move to the right as the row end reached
+      // should move to the first cell of the next visual row
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(5).instance());
-
-      // Move one row down to start testing left arrow
-      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      // move to the end of the visual row
+      list.simulate('keyDown', endKeyProps);
       expect(document.activeElement).toBe(cellElements.at(11).instance());
+      // should move to the first cell of the next visual row
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
+      // move to the end of the visual row again
+      list.simulate('keyDown', endKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      // should NOT move to the right from here as there is nowhere to move
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
 
       // Testing LEFT ARROW
       // move one cell to the left, same row
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(10).instance());
-      // move 2 cell to the left to break to the previous visual column
+      expect(document.activeElement).toBe(cellElements.at(13).instance());
+      // move 2 cell to the left to break to the previous visual row
+      list.simulate('keyDown', arrowLeftProps);
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      // move 3 cell to the left to break into previous semantic row
+      list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       expect(document.activeElement).toBe(cellElements.at(8).instance());
-      // move 2 cell to the left to reach the first visual column start
+      // move up to reach the first row, then home to reach the first cell in first row
+      list.simulate('keyDown', arrowUpProps);
+      list.simulate('keyDown', homeKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+      // left arrow should not move focus anywhere
       list.simulate('keyDown', arrowLeftProps);
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
-      // should not move anymore as the start of the visual row has been reached
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
