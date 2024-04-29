@@ -97,39 +97,6 @@ const navMenu = (
   />
 );
 
-const data = {
-  title: 'Documents',
-  items: [
-    { id: 'item-1-level-1', label: 'Information', icon: <IconDocuments /> },
-    { id: 'item-2-level-1', label: 'Projects - 2023', icon: <IconDocuments /> },
-    {
-      id: 'item-3-level-1',
-      label: 'Projects - 2023',
-      items: [
-        { id: 'item-1-level-2-1', label: 'Project Data - October', icon: <IconDocuments /> },
-        { id: 'item-2-level-2-1', label: 'Project Data - November', icon: <IconDocuments /> },
-        { id: 'item-3-level-2-1', label: 'Project Data - December', icon: <IconDocuments /> },
-        {
-          id: 'item-4-level-2-1',
-          label: 'Tests',
-          items: [
-            { id: 'item-1-level-3-1', label: 'Very Very Very Very Very Very Very Long Name Test', icon: <IconDocuments /> },
-            { id: 'item-2-level-3-1', label: 'Even Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooonger Name Test', icon: <IconDocuments /> },
-          ],
-        },
-      ],
-    },
-    { id: 'item-4-level-1', label: 'Projects - 2024', icon: <IconDocuments /> },
-    {
-      id: 'item-5-level-1',
-      label: 'Projects - 2024',
-      items: [
-        { id: 'item-1-level-2-2', label: 'Project Data - January', icon: <IconDocuments /> },
-      ],
-    },
-  ],
-};
-
 class DrillIn extends Component {
   constructor(props) {
     super(props);
@@ -148,13 +115,14 @@ class DrillIn extends Component {
       items.forEach(item => {
         elements.push(
           <FolderTree.Item
-            key={item.id}
-            label={item.label}
-            icon={item.icon}
-            subfolderItems={this.buildFolderTreeItems(item.items)}
-                // isExpanded={expandedItems[item.id]}
-            isSelected={this.state.selectedKey === item.id}
-            onSelect={() => { this.setState({ selectedKey: item.id }); }}
+            key={item.id || item.key}
+            label={item.props.label}
+            icon={item.props.icon}
+            subfolderItems={this.buildFolderTreeItems(item.props.subfolderItems)}
+            isExpanded={item.props.isExpanded}
+            isSelected={item.props.isSelected}
+            onSelect={item.props.onSelect}
+            onToggle={item.props.onToggle}
           />,
         );
       });
@@ -166,11 +134,11 @@ class DrillIn extends Component {
 
   folderTree = () => (
     <FolderTree
-      title="title"
-        // onExpandAll={handleExpandAll}
-        // onCollapseAll={handleCollapseAll}
+      title={this.props.title}
+      onExpandAll={this.props.onExpandAll}
+      onCollapseAll={this.props.onCollapseAll}
     >
-      {this.buildFolderTreeItems(data.items)}
+      {this.buildFolderTreeItems(this.props.children)}
     </FolderTree>
   );
 
