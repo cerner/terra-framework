@@ -40,9 +40,9 @@ const propTypes = {
   text: PropTypes.string,
   /**
    * @private
-   * Menu container Ref for menu items
+   * tabIndex for the menu item.
    * */
-  getMenuContainerRef: PropTypes.func,
+  tabIndex: PropTypes.string,
 };
 
 class MenuItem extends React.Component {
@@ -55,41 +55,16 @@ class MenuItem extends React.Component {
   }
 
   handleKeyDown(event) {
-    const MenuContainerRef = this.props.getMenuContainerRef();
-    const listMenuItems = MenuContainerRef && MenuContainerRef.querySelectorAll('[data-menu-item]');
-    const currentIndex = Array.from(listMenuItems).indexOf(event.target);
-    const lastIndex = listMenuItems.length - 1;
-
-    if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
-      const nextIndex = currentIndex < lastIndex ? currentIndex + 1 : 0;
-      if (listMenuItems && listMenuItems[nextIndex]) {
-        listMenuItems[nextIndex].focus();
-      }
-      if (this.props.onKeyDown) {
-        this.props.onKeyDown(event);
-      }
-      event.preventDefault();
-    }
-
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       // Add active state to FF browsers
       this.setState({ active: true });
       this.props.onKeyDown(event);
     }
 
-    if (event.nativeEvent.keyCode === KeyCode.KEY_UP) {
-      // Remove active state from FF broswers
-      if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
-        this.setState({ active: false });
+    if (event && event.nativeEvent) {
+      if (this.props.onKeyDown) {
+        this.props.onKeyDown(event);
       }
-      const previousIndex = currentIndex > 0 ? currentIndex - 1 : lastIndex;
-      if (listMenuItems && listMenuItems[previousIndex]) {
-        listMenuItems[previousIndex].focus();
-      }
-      if (this.props.onKeyUp) {
-        this.props.onKeyUp(event);
-      }
-      event.preventDefault();
     }
   }
 
@@ -140,7 +115,7 @@ class MenuItem extends React.Component {
           role="menuitem"
           ref={this.handleMenuItemRef}
           {...customProps}
-          tabIndex="0"
+          tabIndex={this.props.tabIndex}
           className={itemClassNames}
           onKeyDown={this.handleKeyDown}
           aria-haspopup={hasChevron}

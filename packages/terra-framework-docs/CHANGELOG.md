@@ -3,6 +3,7 @@
 ## Unreleased
 
 * Changed
+  * Updated `terra-navigation-side-menu` example styles.
   * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.
 
 * Added
