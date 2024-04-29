@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-compact-interactive-list` documentation for `terra-popup` supported in a cell.
+
 ## 1.84.0 - (April 23, 2024)
 
 * Changed
