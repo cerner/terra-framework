@@ -152,6 +152,54 @@ Terra.describeViewports('CompactInteractiveList', ['medium'], () => {
       Terra.validates.element('focus-on-submenu-first-item', { selector: '#compact-interactive-list-cell-content' });
     });
   });
+
+  describe('cell with popup, keyboard navigation', () => {
+    it('should focus on popup buton', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/compact-interactive-list/cell-content');
+      browser.keys(['Tab', 'End', 'ArrowLeft']);
+      Terra.validates.element('popup-closed-focus-on-cell-button', { selector: '#compact-interactive-list-cell-content' });
+    });
+
+    it('should open popup on Enter', () => {
+      browser.keys(['Enter']);
+      Terra.validates.element('popup-open-no-visible-focus', { selector: '#compact-interactive-list-cell-content' });
+    });
+
+    it('should move to the first interactive element on tab', () => {
+      browser.keys(['Tab']);
+      Terra.validates.element('popup-open-focus-on-first-checkbox-unselected', { selector: '#compact-interactive-list-cell-content' });
+    });
+
+    it('should move to the second interactive item on tab, should select checkbox on Space', () => {
+      browser.keys(['Tab', 'Space']);
+      Terra.validates.element('popup-open-focus-on-second-checkbox-selected', { selector: '#compact-interactive-list-cell-content' });
+    });
+
+    it('should close on Esc button, should not shift from the cell if arrow keys were pressed when open', () => {
+      browser.keys(['ArrowLeft', 'Escape']);
+      Terra.validates.element('popup-closed-focus-on-cell-button', { selector: '#compact-interactive-list-cell-content' });
+    });
+  });
+
+  describe('cell with popup, mouse interactions', () => {
+    it('should open popup on click', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/compact-interactive-list/cell-content');
+      $('#popup-button').click();
+      Terra.validates.element('popup-open-no-visible-focus', { selector: '#compact-interactive-list-cell-content' });
+    });
+
+    it('should select interactive item on click', () => {
+      $('#vitals-collection').click();
+      Terra.validates.element('popup-open-focus-on-second-checkbox-selected', { selector: '#compact-interactive-list-cell-content' });
+    });
+
+    it('should close popup on click outside', () => {
+      // current test closes popup but does not add focus outline to the button (as it should), probably due to the issue in terra-button.
+      // if terra-button outline starts showing after update in terra-button, the screenshot update will be needed.
+      $('[class*="popup-overlay"]').click();
+      Terra.validates.element('popup-closed-per-click-on-overlay', { selector: '#compact-interactive-list-cell-content' });
+    });
+  });
 });
 
 Terra.describeViewports('CompactInteractiveList', ['medium'], () => {
