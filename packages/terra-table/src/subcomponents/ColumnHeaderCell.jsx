@@ -350,13 +350,22 @@ const ColumnHeaderCell = (props) => {
 
   // For tables, we want elements to be tabbable when selectable, but not anytime else.
   let buttonTabIndex = isSelectable ? 0 : undefined;
-  if (isGridContext) {
-    // For grids, we only want 1 tab stop. We then define the focus behavior in DataGrid.
-    buttonTabIndex = isSelectable && displayName ? -1 : undefined;
-  }
 
   // Determine if button element is required for column header
   const hasButtonElement = (isSelectable && displayName) || (isActionCell && action);
+
+  let cellTabIndex;
+
+  if (isGridContext) {
+    if (columnIndex === 0 && !isActionCell) {
+      buttonTabIndex = isSelectable && displayName ? 0 : undefined;
+      cellTabIndex = !hasButtonElement ? 0 : undefined;
+    } else {
+      // For grids, we only want 1 tab stop. We then define the focus behavior in DataGrid.
+      buttonTabIndex = isSelectable && displayName ? -1 : undefined;
+      cellTabIndex = !hasButtonElement ? -1 : undefined;
+    }
+  }
 
   // Format header description for screenreader
   let headerDescription = displayName;
@@ -421,7 +430,7 @@ const ColumnHeaderCell = (props) => {
         pinned: isPinnedColumn,
         'last-pinned-column': columnIndex === columnContext.pinnedColumnHeaderOffsets.length - 1,
       })}
-      tabIndex={isGridContext && !hasButtonElement ? -1 : undefined}
+      tabIndex={cellTabIndex}
       role={!isActionCell ? 'columnheader' : undefined}
       scope={!isActionCell ? 'col' : undefined}
           // action Cell has to own a corresponding resize handle to avoid a double announcement on handle focus
