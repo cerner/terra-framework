@@ -2,7 +2,6 @@ import React from 'react';
 import { IconDocuments } from 'terra-icon';
 import DrillIn from '../../../DrillIn';
 
-
 const data = {
   title: 'Documents',
   items: [
@@ -102,17 +101,17 @@ const BasicFolderTree = () => {
   };
 
   return (
-      <DrillIn
-        title={data.title}
-        onExpandAll={handleExpandAll}
-        onCollapseAll={handleCollapseAll}
-        selectedMenuKey={selectedKey}
-        selectedChildKey={selectedChildKey}
-        onChange={handleOnChange}
-        ariaLabel="Sub Menu List"
-      >
-        {buildFolderTreeItems(data.items)}
-      </DrillIn>
+    <DrillIn
+      title={data.title}
+      onExpandAll={handleExpandAll}
+      onCollapseAll={handleCollapseAll}
+      selectedMenuKey={selectedKey}
+      selectedChildKey={selectedChildKey}
+      onChange={handleOnChange}
+      ariaLabel="Sub Menu List"
+    >
+      {buildFolderTreeItems(data.items)}
+    </DrillIn>
   );
 };
 

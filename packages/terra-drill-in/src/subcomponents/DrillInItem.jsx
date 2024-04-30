@@ -97,6 +97,12 @@ const DrillInItem = ({
     isSelected={isSelected}
     onSelect={onSelect}
     onToggle={onToggle}
+    isSelectable={isSelectable}
+    level={level}
+    ariaPosInSet={ariaPosInSet}
+    ariaSetSize={ariaSetSize}
+    parentRef={parentRef}
+    intl={intl}
   />
 );
 

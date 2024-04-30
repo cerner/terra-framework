@@ -6,7 +6,6 @@ import ThemeContext from 'terra-theme-context';
 import NavigationSideMenu from 'terra-navigation-side-menu';
 import FolderTree from 'terra-folder-tree';
 import ResponsiveElement from 'terra-responsive-element';
-import { IconDocuments } from 'terra-icon';
 import styles from './DrillIn.module.scss';
 
 const cx = classNamesBind.bind(styles);
@@ -84,10 +83,7 @@ class DrillIn extends Component {
     this.folderTree = this.folderTree.bind(this);
     this.navMenu = this.navMenu.bind(this);
 
-    this.state = {
-      size: 'medium',
-      selectedKey: 'menu',
-    };
+    this.state = { size: 'medium' };
   }
 
   buildFolderTreeItems = (items) => {
@@ -118,6 +114,7 @@ class DrillIn extends Component {
       title={this.props.title}
       onExpandAll={this.props.onExpandAll}
       onCollapseAll={this.props.onCollapseAll}
+      headerLevel={this.props.headerLevel}
     >
       {this.buildFolderTreeItems(this.props.children)}
     </FolderTree>
@@ -165,16 +162,15 @@ class DrillIn extends Component {
   }
 
   navMenu = () => (
-    // eslint-disable-next-line react/forbid-dom-props
-    <div style={{ height: '500px', width: '300px' }}>
-      <NavigationSideMenu
-        menuItems={this.buildSideMenuItems(this.props.children)}
-        onChange={this.props.onChange}
-        selectedMenuKey={this.props.selectedMenuKey}
-        selectedChildKey={this.props.selectedChildKey}
-        ariaLabel={this.props.ariaLabel}
-      />
-    </div>
+    <NavigationSideMenu
+      menuItems={this.buildSideMenuItems(this.props.children)}
+      onChange={this.props.onChange}
+      selectedMenuKey={this.props.selectedMenuKey}
+      selectedChildKey={this.props.selectedChildKey}
+      ariaLabel={this.props.ariaLabel}
+      routingStackBack={this.props.routingStackBack}
+      toolbar={this.props.toolbar}
+    />
   );
 
   render() {
