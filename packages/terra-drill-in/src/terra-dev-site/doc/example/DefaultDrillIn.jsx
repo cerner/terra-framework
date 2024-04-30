@@ -43,7 +43,8 @@ const folderExpandedState = {
 };
 
 const BasicFolderTree = () => {
-  const [selectedKey, setSelectedKey] = React.useState('');
+  const [selectedKey, setSelectedKey] = React.useState('menu');
+  const [selectedChildKey, setSelectedChildKey] = React.useState(undefined);
   const [expandedItems, setExpandedItems] = React.useState(folderExpandedState);
 
   const handleExpandCollapseKeys = (key) => {
@@ -72,6 +73,11 @@ const BasicFolderTree = () => {
     setExpandedItems(newExpandedItems);
   };
 
+  const handleOnChange = (event, changeData) => {
+    setSelectedKey(changeData.selectedMenuKey);
+    setSelectedChildKey(changeData.selectedChildKey);
+  };
+
   const buildFolderTreeItems = (items) => {
     if (items) {
       const elements = [];
@@ -96,13 +102,17 @@ const BasicFolderTree = () => {
   };
 
   return (
-    <DrillIn
-      title={data.title}
-      onExpandAll={handleExpandAll}
-      onCollapseAll={handleCollapseAll}
-    >
-      {buildFolderTreeItems(data.items)}
-    </DrillIn>
+      <DrillIn
+        title={data.title}
+        onExpandAll={handleExpandAll}
+        onCollapseAll={handleCollapseAll}
+        selectedMenuKey={selectedKey}
+        selectedChildKey={selectedChildKey}
+        onChange={handleOnChange}
+        ariaLabel="Sub Menu List"
+      >
+        {buildFolderTreeItems(data.items)}
+      </DrillIn>
   );
 };
 

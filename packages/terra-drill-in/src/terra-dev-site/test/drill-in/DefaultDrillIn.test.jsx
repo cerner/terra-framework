@@ -4,7 +4,7 @@ import { IconDocuments } from 'terra-icon';
 import DrillIn from '../../../DrillIn';
 
 const DefaultDrillIn = () => {
-  const [selectedKey, setSelectedKey] = React.useState('');
+  const [selectedKey, setSelectedKey] = React.useState('menu');
   const [selectedChildKey, setSelectedChildKey] = React.useState(undefined);
   const [expandedItems, setExpandedItems] = React.useState({
     projects: false,

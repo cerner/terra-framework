@@ -125,40 +125,55 @@ class DrillIn extends Component {
 
   buildSideMenuItems = (items) => {
     if (items) {
-      const menuItems = [];
+      const menuItems = [{key: 'menu', text: this.props.title, childKeys: items.map(k => k.key)}];
+      const submenuItems = [];
       items.forEach(item => {
         menuItems.push({
           key: item.key,
-          text: item.label,
+          text: item.props.label,
           id: item.id,
-          childKeys: this.buildSideMenuItems(item.props.subfolderItems),
+          childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
         });
+        if (item && item.props.subfolderItems) {
+          let submenuitems = this.buildSideMenuSubItems(item.props.subfolderItems);
+          submenuitems.map(s => submenuItems.push(s));
+        }
       });
-      return menuItems;
+      return menuItems.concat(submenuItems);
     }
+    return null;
+  }
 
+  buildSideMenuSubItems = (items) => {
+    if (items) {
+      const submenuItems = [];
+      items.forEach(item => {
+        submenuItems.push({
+          key: item.key,
+          text: item.props.label,
+          id: item.id,
+          childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
+        });
+        if (item && item.props.subfolderItems) {
+          let submenuitems = this.buildSideMenuSubItems(item.props.subfolderItems);
+          submenuitems.map(s => submenuItems.push(s));
+        }
+      });
+      return submenuItems;
+    }
     return null;
   }
 
   navMenu = () => (
+    <div style={{height: "500px", width: "300px"}}>
     <NavigationSideMenu
-      // menuItems={[
-      //   { key: 'menu', text: 'Hospital Details', childKeys: ['submenu1', 'submenu2', 'submenu3', 'submenu4'] },
-      //   {
-      //     key: 'submenu1', text: 'Hospital services', childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'], id: 'test-item-1',
-      //   },
-      //   { key: 'submenu2', text: 'Hospital events' },
-      //   { key: 'submenu3', text: 'Hospital Accommodations' },
-      //   { key: 'submenu4', text: 'Hospital Careers' },
-      //   { key: 'subsubmenu1', text: 'Imaging', id: 'test-item-2' },
-      //   { key: 'subsubmenu2', text: 'Laboratory' },
-      //   { key: 'subsubmenu3', text: 'Rehabilitation services' },
-      // ]}
       menuItems={this.buildSideMenuItems(this.props.children)}
       onChange={this.props.onChange}
       selectedMenuKey={this.props.selectedMenuKey}
+      selectedChildKey={this.props.selectedChildKey}
       ariaLabel={this.props.ariaLabel}
     />
+    </div>
   );
 
   render() {
@@ -172,7 +187,7 @@ class DrillIn extends Component {
     return (
       <div className={DrillInClassNames}>
         <ResponsiveElement onChange={value => this.setState({ size: value })}>
-          {this.state.size === 'tiny' ? navMenu : this.folderTree()}
+          {this.state.size === 'tiny' ? this.navMenu() : this.folderTree()}
         </ResponsiveElement>
       </div>
     );
