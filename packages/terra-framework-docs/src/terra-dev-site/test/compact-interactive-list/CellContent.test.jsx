@@ -47,16 +47,16 @@ const PopupWithInteractiveContent = () => {
   const [selected, setSelected] = useState(null);
   const buttonRef = useRef(null);
 
-  const setButtonNode = (node) => { buttonRef.current = node; };
-  const getButtonNode = () => buttonRef.current;
-  const handleButtonClick = () => { setIsOpen(true); };
-  const handleRequestClose = () => { setIsOpen(false); };
-  const closeAndSetFocus = () => {
+  const setButtonNode = useCallback((node) => { buttonRef.current = node; }, []);
+  const getButtonNode = useCallback(() => buttonRef.current, []);
+  const handleButtonClick = useCallback(() => { setIsOpen(true); }, []);
+  const handleRequestClose = useCallback(() => { setIsOpen(false); }, []);
+  const closeAndSetFocus = useCallback(() => {
     handleRequestClose();
     buttonRef.current.focus();
-  };
+  }, [handleRequestClose]);
 
-  const handleOnChange = (e) => {
+  const handleOnChange = useCallback((e) => {
     const selectedAnswers = [...selected];
     if (e.currentTarget.checked) {
       selectedAnswers.push(e.currentTarget.value);
@@ -64,7 +64,7 @@ const PopupWithInteractiveContent = () => {
       selectedAnswers.splice(selectedAnswers.indexOf(e.currentTarget.value), 1);
     }
     setSelected(selectedAnswers);
-  };
+  }, [selected]);
 
   return (
     <>
