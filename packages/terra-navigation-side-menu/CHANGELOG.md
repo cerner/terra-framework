@@ -2,8 +2,6 @@
 
 ## Unreleased
 
-## 2.55.0 - (April 30, 2024)
-
 * Updated
   * Keyboard navigation with arrow keys.
 
