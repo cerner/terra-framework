@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { IconDocuments } from 'terra-icon';
-import OutlineView from '../../../OutlineView';
+import OutlineView from 'terra-outline-view';
 
 const DefaultOutlineView = () => {
   const [selectedKey, setSelectedKey] = React.useState('menu');

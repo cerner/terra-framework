@@ -1,6 +1,6 @@
 import React from 'react';
 import { IconDocuments } from 'terra-icon';
-import OutlineView from '../../../OutlineView';
+import OutlineView from 'terra-outline-view';
 
 const data = {
   title: 'Documents',
