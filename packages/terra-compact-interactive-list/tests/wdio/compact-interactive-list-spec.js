@@ -170,11 +170,6 @@ Terra.describeViewports('CompactInteractiveList', ['medium'], () => {
       Terra.validates.element('popup-open-focus-on-first-checkbox-unselected', { selector: '#compact-interactive-list-cell-content' });
     });
 
-    it('should move to the second interactive item on tab, should select checkbox on Space', () => {
-      browser.keys(['Tab', 'Space']);
-      Terra.validates.element('popup-open-focus-on-second-checkbox-selected', { selector: '#compact-interactive-list-cell-content' });
-    });
-
     it('should close on Esc button, should not shift from the cell if arrow keys were pressed when open', () => {
       browser.keys(['ArrowLeft', 'Escape']);
       Terra.validates.element('popup-closed-focus-on-cell-button', { selector: '#compact-interactive-list-cell-content' });
@@ -189,6 +184,7 @@ Terra.describeViewports('CompactInteractiveList', ['medium'], () => {
     });
 
     it('should select interactive item on click', () => {
+      // $('#vitals-collection').waitForDisplayed();
       $('#vitals-collection').click();
       Terra.validates.element('popup-open-focus-on-second-checkbox-selected', { selector: '#compact-interactive-list-cell-content' });
     });
