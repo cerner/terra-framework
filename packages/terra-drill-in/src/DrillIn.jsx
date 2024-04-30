@@ -125,8 +125,8 @@ class DrillIn extends Component {
 
   buildSideMenuItems = (items) => {
     if (items) {
-      const menuItems = [{key: 'menu', text: this.props.title, childKeys: items.map(k => k.key)}];
-      const submenuItems = [];
+      const menuItems = [{ key: 'menu', text: this.props.title, childKeys: items.map(k => k.key) }];
+      const sideMenuItems = [];
       items.forEach(item => {
         menuItems.push({
           key: item.key,
@@ -135,44 +135,45 @@ class DrillIn extends Component {
           childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
         });
         if (item && item.props.subfolderItems) {
-          let submenuitems = this.buildSideMenuSubItems(item.props.subfolderItems);
-          submenuitems.map(s => submenuItems.push(s));
+          const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
+          subMenuItems.map(s => sideMenuItems.push(s));
         }
       });
-      return menuItems.concat(submenuItems);
+      return menuItems.concat(sideMenuItems);
     }
     return null;
   }
 
   buildSideMenuSubItems = (items) => {
     if (items) {
-      const submenuItems = [];
+      const sideMenuItems = [];
       items.forEach(item => {
-        submenuItems.push({
+        sideMenuItems.push({
           key: item.key,
           text: item.props.label,
           id: item.id,
           childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
         });
         if (item && item.props.subfolderItems) {
-          let submenuitems = this.buildSideMenuSubItems(item.props.subfolderItems);
-          submenuitems.map(s => submenuItems.push(s));
+          const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
+          subMenuItems.map(s => sideMenuItems.push(s));
         }
       });
-      return submenuItems;
+      return sideMenuItems;
     }
     return null;
   }
 
   navMenu = () => (
-    <div style={{height: "500px", width: "300px"}}>
-    <NavigationSideMenu
-      menuItems={this.buildSideMenuItems(this.props.children)}
-      onChange={this.props.onChange}
-      selectedMenuKey={this.props.selectedMenuKey}
-      selectedChildKey={this.props.selectedChildKey}
-      ariaLabel={this.props.ariaLabel}
-    />
+    // eslint-disable-next-line react/forbid-dom-props
+    <div style={{ height: '500px', width: '300px' }}>
+      <NavigationSideMenu
+        menuItems={this.buildSideMenuItems(this.props.children)}
+        onChange={this.props.onChange}
+        selectedMenuKey={this.props.selectedMenuKey}
+        selectedChildKey={this.props.selectedChildKey}
+        ariaLabel={this.props.ariaLabel}
+      />
     </div>
   );
 

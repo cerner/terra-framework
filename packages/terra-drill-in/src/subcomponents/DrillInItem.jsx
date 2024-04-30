@@ -65,10 +65,6 @@ const propTypes = {
    * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-  /**
-   * List of child keys.
-   */
-  childKeys: PropTypes.arrayOf(PropTypes.string),
 };
 
 const defaultProps = {
