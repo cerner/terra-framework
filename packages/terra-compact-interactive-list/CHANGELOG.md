@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.21.0 - (April 30, 2024)
+
 * Changed
   * Keyboard navigation updated to wrap to the next/previous line at the end/start of a visual row.
 
