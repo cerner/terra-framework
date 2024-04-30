@@ -184,9 +184,8 @@ Terra.describeViewports('CompactInteractiveList', ['medium'], () => {
     });
 
     it('should select interactive item on click', () => {
-      // $('#vitals-collection').waitForDisplayed();
-      $('#vitals-collection').click();
-      Terra.validates.element('popup-open-focus-on-second-checkbox-selected', { selector: '#compact-interactive-list-cell-content' });
+      $('[class*="label-text"]').click();
+      Terra.validates.element('popup-open-focus-on-first-checkbox-selected', { selector: '#compact-interactive-list-cell-content' });
     });
 
     it('should close popup on click outside', () => {
