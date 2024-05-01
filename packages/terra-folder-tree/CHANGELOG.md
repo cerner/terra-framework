@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Update the radio button hover style to be distinct from row hover.
+  * Updated the radio button hover style to be distinct from row hover.
 
 ## 1.3.0 - (April 23, 2024)
 
