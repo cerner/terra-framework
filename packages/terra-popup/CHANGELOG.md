@@ -3,7 +3,7 @@
 ## Unreleased
 
 * Changed
-  * Added event handlers to call `stopPropagation()` on key and focus events on PopupContent for `terra-popup` support in `terra-compact-interactive-list` cell.
+  * Added event handlers to call `stopPropagation()` on key and focus events on PopupContent in other components.
 
 ## 6.80.0 - (April 4, 2024)
 
