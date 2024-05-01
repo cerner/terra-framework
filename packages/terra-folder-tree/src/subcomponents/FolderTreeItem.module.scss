@@ -15,6 +15,7 @@
   
     &:hover {
       cursor: pointer;
+
       &:not(.hover-within) {
         background-color: var(--terra-folder-tree-item-hover-background-color, #f4fafe);
       }      
