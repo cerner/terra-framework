@@ -5,6 +5,7 @@
 * Changed
   * Updated `terra-navigation-side-menu` example styles.
   * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.
+  * Updated `terra-compact-interactive-list` documentation for `terra-popup` supported in a cell.
 
 * Added
   * Added a note about accessibility requirements for sorting or another action to the Multiple Row Selection example in `terra-table`.

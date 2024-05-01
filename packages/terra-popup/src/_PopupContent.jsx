@@ -137,6 +137,7 @@ class PopupContent extends React.Component {
   constructor(props) {
     super(props);
     this.handleOnResize = this.handleOnResize.bind(this);
+    this.handlePropagation = this.handlePropagation.bind(this);
   }
 
   componentDidMount() {
@@ -167,6 +168,14 @@ class PopupContent extends React.Component {
     }
     return null;
   }
+
+  /**
+   * This method stopps key and focus events from bubbling for Popup support in terra-compact-interactive-list.
+   * The key and focus events still work inside the popup as expected.
+   */
+  handlePropagation = (event) => {
+    event.stopPropagation();
+  };
 
   handleOnResize(event) {
     if (this.props.onResize) {
@@ -237,6 +246,8 @@ class PopupContent extends React.Component {
             onResize={this.handleOnResize}
             refCallback={refCallback}
             role={popupContentRole || null}
+            onKeyDown={this.handlePropagation}
+            onFocus={this.handlePropagation}
           >
             {arrowContent}
             {/* eslint-disable-next-line react/forbid-dom-props */}

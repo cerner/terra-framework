@@ -321,6 +321,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                     hookshotPostionFixed={true}
                     onContentResize={[Function]}
                     onEsc={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
                     onResize={[Function]}
                     outsideClickIgnoreClass="ignore-react-onclickoutside"
                     preventDefault={false}
@@ -343,6 +345,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       hookshotPostionFixed={true}
                       onContentResize={[Function]}
                       onEsc={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
                       onResize={[Function]}
                       outsideClickIgnoreClass="ignore-react-onclickoutside"
                       preventDefault={false}
@@ -354,6 +358,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       <div
                         className="content content orion-fusion-theme fixed-position"
                         data-terra-popup-content={true}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
                         role={null}
                         tabIndex={null}
                       >

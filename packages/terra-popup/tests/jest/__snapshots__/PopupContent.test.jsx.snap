@@ -72,6 +72,8 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
           }
           excludeScrollbar={false}
           onEsc={[MockFunction]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
           onResize={[Function]}
           outsideClickIgnoreClass="ignore-react-onclickoutside"
           preventDefault={false}
@@ -91,6 +93,8 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
               ]
             }
             onEsc={[MockFunction]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
             onResize={[Function]}
             outsideClickIgnoreClass="ignore-react-onclickoutside"
             preventDefault={false}
@@ -101,6 +105,8 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
             <div
               className="content content orion-fusion-theme"
               data-terra-popup-content={true}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
               role="dialog"
               tabIndex="0"
             >
@@ -179,6 +185,8 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
         }
       }
       onEsc={[MockFunction]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
       onResize={[Function]}
       outsideClickIgnoreClass="ignore-react-onclickoutside"
       preventDefault={false}
@@ -367,6 +375,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           }
         }
         onEsc={[MockFunction]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
         onResize={[Function]}
         outsideClickIgnoreClass="ignore-react-onclickoutside"
         preventDefault={false}
@@ -482,6 +492,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             }
           }
           onEsc={[MockFunction]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
           onResize={[Function]}
           outsideClickIgnoreClass="ignore-react-onclickoutside"
           preventDefault={false}
@@ -588,6 +600,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                 "timeZone": null,
               }
             }
+            onFocus={[Function]}
+            onKeyDown={[Function]}
             role="dialog"
             tabIndex="0"
           >
@@ -755,6 +769,8 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
         }
       }
       onEsc={[MockFunction]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
       onResize={[Function]}
       outsideClickIgnoreClass="ignore-react-onclickoutside"
       preventDefault={false}
