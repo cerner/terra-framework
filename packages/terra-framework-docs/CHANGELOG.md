@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.85.0 - (May 1, 2024)
+
 * Changed
   * Updated `terra-navigation-side-menu` example styles.
   * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.

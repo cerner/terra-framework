@@ -1,6 +1,6 @@
 {
   "name": "terra-popup",
-  "version": "6.80.0",
+  "version": "6.81.0",
   "description": "The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow.",
   "author": "Cerner Corporation",
   "repository": {
