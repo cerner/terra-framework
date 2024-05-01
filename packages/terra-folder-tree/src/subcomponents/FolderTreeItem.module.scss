@@ -3,6 +3,9 @@
 
 :local {
   .folder-tree-item {
+
+    $grandparent: &;
+
     align-items: center;
     background: var(--terra-folder-tree-item-background, #fff);
     border-bottom: var(--terra-folder-tree-item-border-bottom, 1px solid #dedfe0);
@@ -14,14 +17,21 @@
     width: 100%;
   
     &:hover {
-      background-color: var(--terra-folder-tree-item-hover-background-color, #f4fafe);
       cursor: pointer;
+      &:not(.hover-within) {
+        background-color: var(--terra-folder-tree-item-hover-background-color, #f4fafe);
+      }      
     }
 
     &:focus {
       box-shadow: var(--terra-folder-tree-focus-box-shadow, none);
       outline: var(--terra-folder-tree-focus-outline, 2px dashed #000);
       outline-offset: var(--terra-folder-tree-focus-outline-offset, -4px);
+    }
+
+    .radio-target:hover {
+      background-color: var(--terra-folder-tree-item-radio-button-hover-background-color, rgb(203, 230, 247, 0.5));
+      border-radius: 50%;
     }
   }
 
