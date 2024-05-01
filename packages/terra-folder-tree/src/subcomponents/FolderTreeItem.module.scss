@@ -3,9 +3,6 @@
 
 :local {
   .folder-tree-item {
-
-    $grandparent: &;
-
     align-items: center;
     background: var(--terra-folder-tree-item-background, #fff);
     border-bottom: var(--terra-folder-tree-item-border-bottom, 1px solid #dedfe0);
