@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.81.0 - (May 1, 2024)
+
 * Changed
   * Added event handlers to call `stopPropagation()` on key and focus events on PopupContent in other components.
 
