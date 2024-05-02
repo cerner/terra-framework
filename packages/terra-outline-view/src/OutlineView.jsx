@@ -162,15 +162,18 @@ class OutlineView extends Component {
   }
 
   navMenu = () => (
-    <NavigationSideMenu
-      menuItems={this.buildSideMenuItems(this.props.children)}
-      onChange={this.props.onChange}
-      selectedMenuKey={this.props.selectedMenuKey}
-      selectedChildKey={this.props.selectedChildKey}
-      ariaLabel={this.props.ariaLabel}
-      routingStackBack={this.props.routingStackBack}
-      toolbar={this.props.toolbar}
-    />
+    // eslint-disable-next-line react/forbid-dom-props
+    <div style={{ height: '450px', width: '300px' }}>
+      <NavigationSideMenu
+        menuItems={this.buildSideMenuItems(this.props.children)}
+        onChange={this.props.onChange}
+        selectedMenuKey={this.props.selectedMenuKey}
+        selectedChildKey={this.props.selectedChildKey}
+        ariaLabel={this.props.ariaLabel}
+        routingStackBack={this.props.routingStackBack}
+        toolbar={this.props.toolbar}
+      />
+    </div>
   );
 
   render() {
