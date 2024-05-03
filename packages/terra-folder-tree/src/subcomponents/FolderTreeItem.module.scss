@@ -23,14 +23,14 @@
 
     &.hover-within {
       .radio-target::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        background-color: var(--terra-folder-tree-item-hover-background-color, rgb(203, 230, 247, 0.5));
+        background-color: var(--terra-folder-tree-item-hover-before-background-color, rgb(203, 230, 247, 0.5));
         border-radius: 50%;
+        bottom: 0;
+        content: '';
+        left: 0;
+        position: absolute;
+        right: 0;
+        top: 0;
       }
     }
 
