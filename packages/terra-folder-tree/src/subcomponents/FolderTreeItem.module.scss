@@ -17,19 +17,27 @@
       cursor: pointer;
 
       &:not(.hover-within) {
-        background-color: var(--terra-folder-tree-item-hover-background-color, #f4fafe);
+        background-color: var(--terra-folder-tree-item-hover-background-color,  rgb(203, 230, 247, 0.5));
       }      
+    }
+
+    &.hover-within {
+      .radio-target::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        background-color: var(--terra-folder-tree-item-hover-background-color, rgb(203, 230, 247, 0.5));
+        border-radius: 50%;
+      }
     }
 
     &:focus {
       box-shadow: var(--terra-folder-tree-focus-box-shadow, none);
       outline: var(--terra-folder-tree-focus-outline, 2px dashed #000);
       outline-offset: var(--terra-folder-tree-focus-outline-offset, -4px);
-    }
-
-    .radio-target:hover {
-      background-color: var(--terra-folder-tree-item-radio-button-hover-background-color, rgb(203, 230, 247, 0.5));
-      border-radius: 50%;
     }
   }
 
@@ -45,6 +53,11 @@
 
   .non-selectable {
     padding-left: 48px;
+  }
+
+  .radio,
+  .radio-target {
+    position: relative;
   }
 
   .radio:hover {
