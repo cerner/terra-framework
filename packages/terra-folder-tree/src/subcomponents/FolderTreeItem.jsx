@@ -1,4 +1,4 @@
-import React, { useContext, useRef } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import { injectIntl } from 'react-intl';
@@ -103,6 +103,7 @@ const FolderTreeItem = ({
   const isFolder = subfolderItems?.length > 0;
   const itemNode = useRef();
   const subFolderNode = useRef();
+  const [radioButtonIsHovered, setRadioButtonIsHovered] = useState(false);
 
   const selectableAnnouncement = isSelectable
     ? intl.formatMessage({ id: 'Terra.folder-tree.item.selectable-announcement' })
@@ -138,6 +139,8 @@ const FolderTreeItem = ({
     <label
       className={cx('radio-target')}
       onClick={(e) => { e.stopPropagation(); }} // Prevent triggering expand/collapse during selection
+      onMouseEnter={() => setRadioButtonIsHovered(true)}
+      onMouseLeave={() => setRadioButtonIsHovered(false)}
     >
       <input
         type="radio"
@@ -156,6 +159,7 @@ const FolderTreeItem = ({
       'folder-tree-item',
       { selected: isSelectable ? isSelected : null },
       theme.className,
+      { 'hover-within': radioButtonIsHovered },
     ),
   );
 

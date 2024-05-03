@@ -2,7 +2,8 @@
   .clinical-lowlight-theme {
     --terra-folder-tree-item-border-bottom: #181b1d;
     --terra-folder-tree-item-background: #1e3a49;
-    --terra-folder-tree-item-hover-background-color: #232a2d;
+    --terra-folder-tree-item-hover-background-color: rgb(203, 230, 247, 0.25);
+    --terra-folder-tree-item-hover-before-background-color: rgb(203, 230, 247, 0.25);
     --terra-folder-tree-item-selected-background-color: #232a2d;
     --terra-folder-tree-focus-outline: 2px dashed #fff;
   }
