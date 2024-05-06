@@ -86,25 +86,7 @@
     }
 
     &.is-selected {
-      background-attachment: var(--terra-navigation-side-menu-item-selected-background-attachment);
-      background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
-      background-image: var(--terra-navigation-side-menu-item-selected-background-image);
-      background-size: var(--terra-navigation-side-menu-item-selected-background-size);
-      border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
-      color: var(--terra-navigation-side-menu-item-selected-color);
-      font-weight: var(--terra-navigation-side-menu-item-selected-font-weight, 600);
-      padding-left: var(--terra-navigation-side-menu-item-selected-padding-left, 0.7143rem);
-
-      &::before {
-        background-image: var(--terra-navigation-side-menu-item-selected-before-background-image);
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: -1;
-      }
+      background-color: var(--terra-navigation-side-menu-item-selected-background-color, darken(#ebf6fd, 2%));
 
       .chevron {
         color: var(--terra-navigation-side-menu-item-selected-chevron-color, #909496);
@@ -112,7 +94,7 @@
 
       &:hover,
       &.is-hovered {
-        background-color: var(--terra-navigation-side-menu-item-selected-hover-background-color, #f4f4f4);
+        background-color: var(--terra-navigation-side-menu-item-selected-hover-background-color, darken(#ebf6fd, 2%));
         color: var(--terra-navigation-side-menu-item-selected-hover-color);
 
         /* stylelint-disable-next-line max-nesting-depth */
