@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconDocuments } from 'terra-icon';
+import { IconDocuments, IconHospital } from 'terra-icon';
 import OutlineView from 'terra-outline-view';
 
 const DefaultOutlineView = () => {
@@ -98,7 +98,7 @@ const DefaultOutlineView = () => {
               isExpanded={expandedItems.tests}
               onSelect={() => { setSelectedKey('tests'); }}
               onToggle={() => { handleExpandCollapseKeys('tests'); }}
-              icon={<IconDocuments />}
+              icon={<IconHospital />}
               subfolderItems={[
                 (<OutlineView.Item
                   label="very_very_very_very_very_very_very_long_name_test.txt"

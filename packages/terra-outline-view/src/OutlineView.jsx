@@ -130,6 +130,8 @@ class OutlineView extends Component {
           text: item.props.label,
           id: item.id,
           childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
+          icon: item.props.icon,
+          showIcon: true,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
@@ -150,6 +152,8 @@ class OutlineView extends Component {
           text: item.props.label,
           id: item.id,
           childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
+          icon: item.props.icon,
+          showIcon: true,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
@@ -187,7 +191,7 @@ class OutlineView extends Component {
     return (
       <div className={OutlineViewClassNames}>
         <ResponsiveElement onChange={value => this.setState({ size: value })}>
-          {this.state.size === 'tiny' ? this.navMenu() : this.folderTree()}
+          {this.state.size !== 'tiny' ? this.navMenu() : this.folderTree()}
         </ResponsiveElement>
       </div>
     );

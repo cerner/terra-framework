@@ -94,6 +94,8 @@ const processMenuItems = (menuItems) => {
       metaData: item.metaData,
       hasSubMenu: item.hasSubMenu,
       isRootMenu: item.isRootMenu,
+      icon: item.icon,
+      showIcon: item.showIcon,
     };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
@@ -317,6 +319,8 @@ class NavigationSideMenu extends Component {
         onKeyDown={onKeyDown}
         data-menu-item={key}
         tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
+        icon={item.icon}
+        showIcon={item.showIcon}
       />
     );
   }

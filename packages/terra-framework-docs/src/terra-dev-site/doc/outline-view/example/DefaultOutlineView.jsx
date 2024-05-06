@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconDocuments } from 'terra-icon';
+import { IconDocuments, IconHospital } from 'terra-icon';
 import OutlineView from 'terra-outline-view';
 
 const data = {
@@ -21,6 +21,7 @@ const data = {
             { id: 'item-1-level-3-1', label: 'Very Very Very Very Very Very Very Long Name Test', icon: <IconDocuments /> },
             { id: 'item-2-level-3-1', label: 'Even Looooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooonger Name Test', icon: <IconDocuments /> },
           ],
+          icon: <IconHospital />,
         },
       ],
     },
