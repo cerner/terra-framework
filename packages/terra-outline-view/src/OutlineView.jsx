@@ -191,7 +191,7 @@ class OutlineView extends Component {
     return (
       <div className={OutlineViewClassNames}>
         <ResponsiveElement onChange={value => this.setState({ size: value })}>
-          {this.state.size !== 'tiny' ? this.navMenu() : this.folderTree()}
+          {this.state.size === 'tiny' ? this.navMenu() : this.folderTree()}
         </ResponsiveElement>
       </div>
     );
