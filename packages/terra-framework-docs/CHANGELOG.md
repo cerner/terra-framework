@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated `terra-folder-tree` example styles.
+
 ## 1.85.0 - (May 1, 2024)
 
 * Changed
