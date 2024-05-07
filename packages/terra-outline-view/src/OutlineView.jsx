@@ -132,6 +132,7 @@ class OutlineView extends Component {
           childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
           icon: item.props.icon,
           showIcon: true,
+          hasSubMenu: item && item.props.subfolderItems && item.props.subfolderItems.length === 0,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
@@ -154,6 +155,7 @@ class OutlineView extends Component {
           childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
           icon: item.props.icon,
           showIcon: true,
+          hasSubMenu: item && item.props.subfolderItems && item.props.subfolderItems.length === 0,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);

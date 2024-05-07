@@ -9,6 +9,7 @@ const DefaultOutlineView = () => {
   const [expandedItems, setExpandedItems] = React.useState({
     projects: false,
     tests: false,
+    details: false,
   });
 
   const handleExpandCollapseKeys = (key) => {
@@ -123,6 +124,23 @@ const DefaultOutlineView = () => {
                 />),
               ]}
             />),
+          ]}
+        />
+        <OutlineView.Item
+          label="Details"
+          key="details"
+          isSelected={selectedKey === 'details'}
+          onSelect={() => { setSelectedKey('details'); }}
+          isExpanded={expandedItems.details}
+          onToggle={() => { handleExpandCollapseKeys('details'); }}
+          subfolderItems={[
+            // (<OutlineView.Item
+            //   label="test.txt"
+            //   icon={<IconDocuments />}
+            //   key="test"
+            //   isSelected={selectedKey === 'test'}
+            //   onSelect={() => { setSelectedKey('test'); }}
+            // />),
           ]}
         />
       </OutlineView>

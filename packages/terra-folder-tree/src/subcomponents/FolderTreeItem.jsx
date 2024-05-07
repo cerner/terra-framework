@@ -100,7 +100,7 @@ const FolderTreeItem = ({
   intl,
 }) => {
   const theme = useContext(ThemeContext);
-  const isFolder = subfolderItems?.length > 0;
+  const isFolder = subfolderItems?.length >= 0;
   const itemNode = useRef();
   const subFolderNode = useRef();
 
