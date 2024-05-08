@@ -139,7 +139,6 @@ class DateInput extends React.Component {
 
     this.uuid = uuidv4();
     this.hotKeyInstructionId = `${this.uuid}-hotkeyinstruction`;
-
     this.dateInputContainer = React.createRef();
     this.monthRef = React.createRef();
 
@@ -402,14 +401,6 @@ class DateInput extends React.Component {
     const inputValue = event.target.value;
     const stateValue = this.state.month;
     const maxValue = 12;
-    const currentMonth = moment().format('MM');
-
-    if (inputValue === currentMonth) {
-      const date = moment().format('YYYY-MM-DD');
-      this.setState({ year: moment().year(), month: moment().format('MMMM'), day: moment().date() });
-      this.handleOnChange(event, date);
-      return;
-    }
 
     // Ignore the entry if the value did not change or it is invalid.
     if (inputValue === stateValue || Number(inputValue) > maxValue) {
@@ -572,7 +563,7 @@ class DateInput extends React.Component {
    * DateInput - even if there are other DateInputs in the same view.
    */
   monthRender() {
-    const { intl, a11yLabel } = this.props;
+    const { intl, a11yLabel, ...customProps } = this.props;
     let label;
 
     if (this.computedDisplayFormat() === 'month-day-year') {
@@ -620,7 +611,7 @@ class DateInput extends React.Component {
           aria-disabled={this.props.disabled}
           aria-invalid={this.props.isInvalid}
           aria-required={this.props.required}
-          aria-describedby={this.hotKeyInstructionId}
+          aria-describedby={(customProps['aria-describedby']) ? `${this.hotKeyInstructionId} ${customProps['aria-describedby']}` : this.hotKeyInstructionId}
         >
           <option value="">{this.props.intl.formatMessage({ id: 'Terra.date.input.monthPlaceholder' })}</option>
           <option key={this.props.intl.formatMessage({ id: 'Terra.date.input.january' })} value="01">{this.props.intl.formatMessage({ id: 'Terra.date.input.january' })}</option>
@@ -656,7 +647,7 @@ class DateInput extends React.Component {
      * To work around this issue, the day input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
-    const { intl, a11yLabel } = this.props;
+    const { intl, a11yLabel, ...customProps } = this.props;
     let label;
 
     if (this.computedDisplayFormat() === 'day-month-year') {
@@ -679,7 +670,11 @@ class DateInput extends React.Component {
         refCallback={(inputRef) => { this.dayRef = inputRef; }}
         label={label}
         description={`${intl.formatMessage({ id: 'Terra.date.input.dayDescription' })}, ${intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
-        className={cx('date-input-day', { 'is-focused': this.state.dayIsFocused })}
+        className={cx(
+          'date-input-day',
+          { 'is-focused': this.state.dayIsFocused },
+          { error: this.props.isInvalid },
+        )}
         value={this.state.day}
         name={'terra-date-day-'.concat(this.props.name)}
         maxLength="2"
@@ -696,6 +691,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        ariaDescribedBy={customProps['aria-describedby']}
       />
     );
   }
@@ -711,6 +707,8 @@ class DateInput extends React.Component {
      * To work around this issue, the year input uses type="number" for all browsers, but if we're in a Mozilla browser,
      * we switch over to using type="text" and pattern="\d*" which allows displaying value="03" in the browser as "03"
      */
+    const { ...customProps } = this.props;
+
     const numberAttributes = window.matchMedia('(min--moz-device-pixel-ratio:0)').matches
       ? { type: 'text', pattern: '\\d*' } : { type: 'number' };
 
@@ -721,7 +719,11 @@ class DateInput extends React.Component {
         refCallback={(inputRef) => { this.yearRef = inputRef; }}
         label={this.props.intl.formatMessage({ id: 'Terra.date.input.yearLabel' })}
         description={`${this.props.intl.formatMessage({ id: 'Terra.date.input.yearDescription' })}, ${this.props.intl.formatMessage({ id: 'Terra.date.input.hotKey' })}`}
-        className={cx('date-input-year', { 'is-focused': this.state.yearIsFocused })}
+        className={cx(
+          'date-input-year',
+          { 'is-focused': this.state.yearIsFocused },
+          { error: this.props.isInvalid },
+        )}
         value={this.state.year}
         name={'terra-date-year-'.concat(this.props.name)}
         maxLength="4"
@@ -738,6 +740,7 @@ class DateInput extends React.Component {
         showIsInvalid
         isIncomplete={this.props.isIncomplete}
         required={this.props.required}
+        ariaDescribedBy={customProps['aria-describedby']}
       />
     );
   }
@@ -824,7 +827,7 @@ class DateInput extends React.Component {
     const format = DateInputUtil.getDateFormat(this.props);
     const label = a11yLabel || this.props.intl.formatMessage({ id: 'Terra.date.input.labelDefault' });
     const dateFormatLabel = this.props.intl.formatMessage({ id: 'Terra.date.input.dateFormatLabel' });
-    const inputDate = moment(new Date(this.state.dateString)).format('dddd MMMM D YYYY');
+    const inputDate = moment(this.state.dateString).format('dddd MMMM D YYYY');
     return (
       <div
         {...customProps}

@@ -2,6 +2,42 @@
 
 ## Unreleased
 
+## 2.56.0 - (May 8, 2024)
+
+* Changed
+  * Changed styles for selected item background color styles
+
+## 2.55.0 - (May 1, 2024)
+
+* Updated
+  * Keyboard navigation with arrow keys.
+
+## 2.54.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 2.53.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 2.52.0 - (March 21, 2024)
+
+* Changed
+  * Added accessibility label for navigation back button.
+
+## 2.51.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 2.50.0 - (February 22, 2024)
+
+* Added
+  * Added dashed focus border for navigation menu items.
+  * Keyboard navigation with arrow keys
+
 ## 2.49.0 - (December 18, 2023)
 
 * Changed

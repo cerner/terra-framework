@@ -2,6 +2,82 @@
 
 ## Unreleased
 
+## 4.108.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.107.0 - (May 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.106.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.105.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.104.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.103.0 - (March 8, 2024)
+
+* Fixed
+  * Date picker displays incorrectly in firefox.
+
+## 4.102.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.101.0 - (March 1, 2024)
+
+* Changed
+  * Fix for month/year SR redundant reading in Jaws.
+
+## 4.100.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.99.0 - (February 22, 2024)
+
+* Added
+  * Added visual focus dashed border for `terra-date-picker`.
+  * Removed selected date information on focus of picker button.
+  * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
+
+* Changed
+  * Fixed the invalid case for SR announcement.
+  * Changed the SR announcement for changing date from calender.
+
+## 4.98.1 - (February 16, 2024)
+
+* Fixed
+  * Fixed date picker to change the focused input field value instead of the day input while pressing `+`, `-` keys.
+
+* Changed
+  * Added fix for field label SR announce.
+
+## 4.98.0 - (February 1, 2024)
+
+* Changed
+  * Added the break line tag in datePickerField between help message.
+
+## 4.97.0 - (January 25, 2024)
+
+* Changed
+  * Updated metadata as argument for onBlur callback.
+
+## 4.96.0 - (January 22, 2024)
+
 * Changed
   * Updated screen reader response not to announce name attribute.
 

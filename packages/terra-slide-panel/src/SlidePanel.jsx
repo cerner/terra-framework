@@ -120,7 +120,6 @@ class SlidePanel extends React.Component {
     super(props);
     this.setPanelNode = this.setPanelNode.bind(this);
     this.mainNode = React.createRef();
-    this.setLastClicked = this.setLastClicked.bind(this);
     this.setDisclosingNode = this.setDisclosingNode.bind(this);
     this.mainAriaDescribedByID = `detail-panel-warning-${uuidv4()}`;
   }
@@ -128,7 +127,7 @@ class SlidePanel extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       // Save the disclosing node for returning focus when panel is closed
-      this.setDisclosingNode(this.lastClicked);
+      this.setDisclosingNode(document.activeElement);
       this.panelNode.focus();
       return;
     }
@@ -136,12 +135,15 @@ class SlidePanel extends React.Component {
     if (!this.props.isOpen && this.props.isOpen !== prevProps.isOpen) {
       if (this.disclosingNode?.focus) {
         // Return focus to the disclosing element
-        this.disclosingNode.setAttribute('aria-expanded', 'false');
         this.disclosingNode.focus();
         return;
       }
-      // The disclosing element doesn't exist or isn't focusable, return focus to the main div
-      this.mainNode.current.focus();
+      // The disclosing element doesn't exist or isn't focusable, return focus to the main div or body
+      if (this.mainNode?.current) {
+        this.mainNode.current.focus();
+      } else {
+        document.body.focus();
+      }
     }
   }
 
@@ -152,13 +154,8 @@ class SlidePanel extends React.Component {
     this.panelNode = node;
   }
 
-  setLastClicked(event) {
-    this.lastClicked = findFocusableElement(event.target);
-  }
-
   setDisclosingNode(node) {
     if (node) {
-      node.setAttribute('aria-expanded', 'true');
       this.disclosingNode = node;
     }
   }
@@ -219,8 +216,6 @@ class SlidePanel extends React.Component {
         aria-hidden={isOpen && isFullscreen ? 'true' : 'false'}
         ref={this.mainNode}
         role="main"
-        onClick={this.setLastClicked}
-        onKeyUp={this.setLastClicked}
       >
         <VisuallyHiddenText
           tabIndex="-1"
@@ -234,11 +229,11 @@ class SlidePanel extends React.Component {
     const content = (panelPosition === SlidePanelPositions.START) ? (
       <React.Fragment>
         {panelDiv}
-        {mainDiv}
+        {mainContent && mainDiv}
       </React.Fragment>
     ) : (
       <React.Fragment>
-        {mainDiv}
+        {mainContent && mainDiv}
         {panelDiv}
       </React.Fragment>
     );

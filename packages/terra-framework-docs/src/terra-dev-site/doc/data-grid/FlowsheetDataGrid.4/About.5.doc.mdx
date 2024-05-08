@@ -34,6 +34,8 @@ See [keyboard interactions](/components/cerner-terra-framework-docs/data-grid/fl
   * [Row selection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/row-selection)
   * [Sections](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/flowsheet-with-sections)
   * [Headerless Flowsheet](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-headers-hidden)
+  * [Column Highlighting](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-highlight-orange-green)
+  * [Column Span](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/flowsheet-with-column-span)
 
 ## Examples
 |Link to Example| Description|
@@ -44,6 +46,9 @@ See [keyboard interactions](/components/cerner-terra-framework-docs/data-grid/fl
 |[ColumnHeadersHidden](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-headers-hidden)|An example containing visually hidden column headers.|
 |[RowSelection](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/row-selection)|An example demonstrating the ability to select a row of cells.|
 |[Flowsheet Data Grid with Sections](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/flowsheet-with-sections)|An example demonstrating how to create a Flowsheet Data Grid with sections.|
+|[ColumnHighlightOrangeGreen](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/column-highlight-orange-green)|Examples of the Flowsheet Data Grid with orange and green column highlighting.|
+|[MultiColumnHighlight](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/multi-column-highlight)|An example of the Flowsheet Data Grid with multi-column highlighting.|
+|[Flowsheet Data Grid with Column Span](/components/cerner-terra-framework-docs/data-grid/flowsheet-data-grid/examples/flowsheet-with-column-span)|An example of Flowsheet Data Grid with column span.|
 
 ## Accessibility
 ### Keyboard Interactions
@@ -105,12 +110,21 @@ import { FlowsheetDataGrid } from 'terra-data-grid';
 
 ## Properties
 <Notice variant="important" ariaLevel="2">
-When making changes to the columns, section, rows, or cells, the Flowsheet Data Grid component requires you to pass new objects so that React can detect the changes.  
+When making changes to the columns, section, rows, or cells, the Flowsheet Data Grid component requires you to pass new objects so that React can detect the changes.
 In addition, ensure that you memoize callback functions using methods such as the useCallback hook to prevent unnecessary rerenders of components.
 </Notice>
 
 ### Flowsheet Data Grid Property Table
 <FlowsheetDataGridPropsTable />
+
+### Flowsheet Data Grid Constants
+Enumeration: ColumnHighlightColor
+
+|Constant|Type|Description|
+|---|---|---|
+|**ORANGE**|string|Orange column highlight.|
+|**GREEN**|string|Green column highlight.|
+
 
 ### Column
 A column specifies the data to render a cell in the header row of the Flowsheet Data Grid.
@@ -119,8 +133,40 @@ A column specifies the data to render a cell in the header row of the Flowsheet 
 |---|---|---|---|---|
 |**id**|string|<span style={{color:'#d53040'}}>required</span>|none|An identifier to uniquely identify the column in the grid.|
 |**displayName**|string|optional|none|String of text to render in the column header cell.|
+|**action**|object|optional|none|An object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.|
 |**hasError**|bool|optional|none|Boolean value indicating whether the column has an error in the data.|
 |**width**|number|optional|none|A number (in px) specifying the width of the column. If not provided, the Data Grid's default column width is used.|
+|**columnHighlightColor**|`enum: ["green", "orange"]`|optional|none|The color to be used for highlighting a column.|
+|**columnHighlightDescription**|string|optional|none|The information to be conveyed to screen readers about the highlighted column.|
+|**columnSpan**|number|optional|none|Number that specifies the column span value for a column.|
+
+
+### Section
+<Notice variant="important" ariaLevel="2">
+Due to poor support in Apple VoiceOver for spanned table headings, Table component sections are not currently recommended for applications used on Apple devices.
+</Notice>
+
+A section defines the rows rendered in the section.
+
+|       Name        |  Type  |                    Required                     | Default Value |                                                     Description                                                     |
+| ----------------- | ------ | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **id**            | String | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the section in the grid.                                                         |
+| **isCollapsible** | Bool   | Optional                                        | False         | A Boolean value indicating whether the the section is collapsible.                                                  |
+| **isCollapsed**   | Bool   | Optional                                        | False         | A Boolean value indicating whether the section is collapsed. If true, the contents of the section is not displayed. |
+| **text**          | String | Optional                                        | None          | A text string to render in the section header.                                                                      |
+| **rows**          | Array  | Optional                                        | []            | An array of row objects to be rendered in the section.                                                              |
+| **subsections**   | Array  | Optional                                        | []            | An array of subsections objects to be rendered within the section.                                                  |
+
+### Subsection
+
+Subsections objects are virtually identical to section objects.
+
+|       Name        |  Type  |                    Required                     | Default Value |                                                        Description                                                        |
+| ----------------- | ------ | ----------------------------------------------- | ------------- | ------------------------------------------------------------------------------------------------------------------------- |
+| **id**            | String | <span style={{color:'#d53040'}}>Required</span> | None          | An identifier to uniquely identify the subsection in the grid.                                                            |
+| **text**          | String | Optional                                        | None          | A text string to render in the subsection header.                                                                         |
+| **rows**          | Array  | Optional                                        | []            | An array of row objects to be rendered in the subsection.                                                                 |
+
 
 ### Rows
 Rows define the cells rendered in the row and the row's selection properties.

@@ -2,6 +2,81 @@
 
 ## Unreleased
 
+## 6.101.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.100.0 - (May 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.99.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.98.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.97.1 - (April 17, 2024)
+
+* Fixed
+  * Set aria-haspopup value to boolean.
+
+## 6.97.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.96.0 - (March 25, 2024)
+
+* Updated
+  * Updated to compare calculated width with available width to render collapsible menu items within available space.
+
+## 6.95.0 - (March 19, 2024)
+
+* Updated
+  * Corrected to get width from bounding client rect instead of resize observer to avoid infinite loop.
+
+## 6.94.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.93.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.92.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.91.0 - (March 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.90.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.89.0 - (February 7, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.88.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.87.1 - (January 10, 2024)
 
 * Fixed

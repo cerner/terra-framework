@@ -504,4 +504,34 @@ Terra.describeViewports('WorklistDataGrid', ['medium', 'large'], () => {
       Terra.validates.element('pinned-columns-with-row-selection-select', { selector: pinnedColumnsWithRowSelectionSelector });
     });
   });
+
+  describe('Column actions', () => {
+    it('validates rendering with proper styling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-column-actions');
+      Terra.validates.element('column-actions');
+    });
+
+    it('validates action focus styling', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-column-actions');
+      navigateToCell(1, 0);
+      Terra.validates.element('column-action-focus');
+    });
+
+    it('validates resize handle focus', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-column-actions');
+      browser.keys(['Tab']);
+      browser.keys(['ArrowDown']);
+      browser.keys(['ArrowRight']);
+      Terra.validates.element('column-action-focus-on-resize-handle');
+    });
+
+    it('validates action placeholder focus', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/data-grid/worklist-data-grid/worklist-data-grid-column-actions');
+      browser.keys(['Tab']);
+      browser.keys(['ArrowDown']);
+      browser.keys(['ArrowRight']); // Resize handle
+      browser.keys(['ArrowRight']); // Action header cell in column 2
+      Terra.validates.element('column-action-placeholder-focus');
+    });
+  });
 });

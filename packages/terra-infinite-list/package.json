@@ -1,34 +1,38 @@
 {
   "name": "terra-infinite-list",
-  "main": "lib/index.js",
   "version": "3.42.0",
   "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-infinite-list"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "terra-infinite-list",
-    "InfiniteList",
-    "Infinite",
-    "List",
-    "Virtualization",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": ">=2.8.0, <6.0.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Infinite",
+    "InfiniteList",
+    "List",
+    "Terra",
+    "terra-infinite-list",
+    "UI",
+    "Virtualization"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "@cerner/terra-docs": "^1.0.0",
     "classnames": "^2.2.5",
@@ -36,6 +40,11 @@
     "resize-observer-polyfill": "^1.4.1",
     "terra-list": "^4.0.0",
     "terra-visually-hidden-text": "^2.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

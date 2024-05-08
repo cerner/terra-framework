@@ -2,6 +2,19 @@
 
 :local {
   .clinical-lowlight-theme {
+    // Input
+    --terra-date-input-border: 1px solid #181b1d;
+    // Input Error
+    --terra-date-input-error-border: 1px solid #fb4c4c;
+    --terra-date-input-error-box-shadow: none;
+    // Input Focus
+    --terra-date-input-focus-border: 1px solid #181b1d;
+    --terra-date-input-focus-outline: 2px dashed #fff;
+    --terra-date-input-focus-outline-offset: 1px;
+    // Input Error
+    --terra-date-input-error-focus-outline: 2px dashed #fff;
+    --terra-date-input-error-focus-outline-offset: 2px;
+
     // Month Select
     --terra-date-input-month-background-color: #222a2e;
     --terra-date-input-month-background-image: none;
@@ -34,7 +47,8 @@
     --terra-date-input-month-focus-background-color: #222a2e;
     --terra-date-input-month-focus-ltr-box-shadow: none;
     --terra-date-input-month-focus-rtl-box-shadow: none;
-    --terra-date-input-month-select-focus-border: 1px solid #004c76;
+    --terra-date-input-month-select-focus-outline: 2px dashed #fff;
+    --terra-date-input-month-select-focus-outline-offset: 1px;
     --terra-date-input-month-select-focus-color: #b2b5b6;
     --terra-date-input-month-focus-background-size: auto;
 
@@ -70,7 +84,8 @@
 
     // Month Select Error - Focus
     --terra-date-input-month-error-focus-background-color: #222a2e;
-    --terra-date-input-month-select-error-focus-border: 1px solid #004c76;
+    --terra-date-input-month-select-error-focus-outline: 2px dashed #fff;
+    --terra-date-input-month-select-error-focus-outline-offset: 2px;
     --terra-date-input-month-error-focus-background-size: auto;
 
     // Month Select Error - Disabled

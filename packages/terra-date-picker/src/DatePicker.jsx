@@ -141,6 +141,12 @@ const propTypes = {
    * The value must be in the `YYYY-MM-DD` format or the all-numeric date format based on the locale.
    */
   value: PropTypes.string,
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -165,6 +171,7 @@ const defaultProps = {
   useExternalFormatMask: false,
   required: false,
   selectedDate: undefined,
+  errorId: '',
 };
 
 class DatePicker extends React.Component {
@@ -364,13 +371,20 @@ class DatePicker extends React.Component {
     if (this.dateValue === '' || (isCompleteDate && this.isDateWithinRange(DateUtil.createSafeDate(iSOString, this.props.initialTimeZone)))) {
       isValidDate = true;
     }
+    const dateSeparator = format.match(/[^a-zA-Z0-9]/)[0];
+    const dateSplit = this.dateValue.split(dateSeparator);
+    const dateFormatSplit = format.split(dateSeparator);
 
-    const metadata = {
+    const dateObj = dateFormatSplit.reduce((obj, key, index) => ({ ...obj, [key]: dateSplit[index] }), {});
+
+    const tempData = {
       iSO: iSOString,
       inputValue: this.dateValue,
       isCompleteValue: isCompleteDate,
       isValidValue: isValidDate,
     };
+
+    const metadata = { ...tempData, ...dateObj };
 
     return metadata;
   }
@@ -420,6 +434,7 @@ class DatePicker extends React.Component {
       selectedDate,
       useExternalFormatMask,
       value,
+      errorId,
       ...customProps
     } = this.props;
 
@@ -499,6 +514,7 @@ class DatePicker extends React.Component {
                 maxDate={maxDate}
                 minDate={minDate}
                 filterDate={this.handleFilterDate}
+                errorId={errorId}
               />
             )}
             customInputRef="firstInputRefCallback"

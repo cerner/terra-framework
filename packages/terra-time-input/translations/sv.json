@@ -10,7 +10,7 @@
   "Terra.timeInput.labeledTextValue": "{a11yLabel} {a11yTimeValue}",
   "Terra.timeInput.maskHourMinute": "(HH:mm)",
   "Terra.timeInput.maskHourMinuteSecond": "(HH:mm:ss)",
-  "Terra.timeInput.minutes": "Minuter",
+  "Terra.timeInput.minutes": "{a11yLabel} Minuter",
   "Terra.timeInput.pm": "em",
   "Terra.timeInput.seconds": "sekunder",
   "Terra.timeInput.textValueTwelveHourMinute": "{hour}:{minute} {meridiem}",
@@ -19,5 +19,6 @@
   "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
   "Terra.timeInput.timeFormatLabel": "Tidsformat:",
   "Terra.timeInput.timeSpacer": ":",
-  "Terra.timeInput.invalidTime": "Ange en giltig tid"
+  "Terra.timeInput.invalidTime": "Ange en giltig tid",
+  "Terra.timePicker.hotKey": "Tryck på N för att ange aktuell tid, plus-tangenten för att öka tiden och minus-tangenten för att minska tiden"
 }

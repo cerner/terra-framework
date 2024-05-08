@@ -320,6 +320,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set isSelectabl
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
+    isLeftAligned={false}
     isReversed={false}
     isSelectable={true}
     isSelected={true}
@@ -406,6 +407,7 @@ exports[`CollapsibleMenuViewItem should merge custom props 1`] = `
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
+    isLeftAligned={false}
     isReversed={false}
     isSelected={false}
     text="Testing"
@@ -451,6 +453,7 @@ exports[`CollapsibleMenuViewItem should not set isSelected on button outside of 
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
+    isLeftAligned={false}
     isReversed={false}
     isSelected={true}
     text="Testing"
@@ -537,6 +540,7 @@ exports[`CollapsibleMenuViewItem should render a button with icon and text when 
     isCompact={false}
     isDisabled={false}
     isIconOnly={true}
+    isLeftAligned={false}
     isReversed={false}
     isSelected={false}
     text="Testing"
@@ -582,6 +586,7 @@ exports[`CollapsibleMenuViewItem should render a default component 1`] = `
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
+    isLeftAligned={false}
     isReversed={false}
     isSelected={false}
     text="Testing"
@@ -661,6 +666,7 @@ exports[`CollapsibleMenuViewItem should render a disabled button when isDisabled
     isCompact={false}
     isDisabled={true}
     isIconOnly={false}
+    isLeftAligned={false}
     isReversed={false}
     isSelected={false}
     text="Testing"
@@ -674,7 +680,7 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
 <CollapsibleMenu
   button={
     <Button
-      aria-haspopup="dialog"
+      aria-haspopup={true}
       intl={
         Object {
           "defaultFormats": Object {},
@@ -706,6 +712,7 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
       isCompact={false}
       isDisabled={false}
       isIconOnly={false}
+      isLeftAligned={false}
       isReversed={false}
       text="Testing"
       type="button"
@@ -768,6 +775,7 @@ exports[`CollapsibleMenuViewItem should set icon prop on button 1`] = `
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
+    isLeftAligned={false}
     isReversed={false}
     isSelected={false}
     text="Testing"
@@ -820,6 +828,7 @@ exports[`CollapsibleMenuViewItem should set isReversed prop on button 1`] = `
     isCompact={false}
     isDisabled={false}
     isIconOnly={false}
+    isLeftAligned={false}
     isReversed={true}
     isSelected={false}
     text="Testing"

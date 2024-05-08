@@ -15,6 +15,11 @@ const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
+   * String that labels the current element. 'aria-label' must be present for accessibility.
+   * It provides a text label for both the component `Date-picker` and `Time-input` to navigate and interact with the component.
+   */
+  ariaLabel: PropTypes.string,
+  /**
    * Custom input attributes to apply to the date input. Use the name prop to set the name for the date input.
    * Do not set the name in inputAttribute as it will be ignored.
    */
@@ -130,6 +135,12 @@ const propTypes = {
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   timeVariant: PropTypes.oneOf([DateTimeUtils.FORMAT_12_HOUR, DateTimeUtils.FORMAT_24_HOUR]),
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -155,6 +166,7 @@ const defaultProps = {
   value: undefined,
   timeVariant: DateTimeUtils.FORMAT_24_HOUR,
   initialTimeZone: DateTimeUtils.getLocalTimeZone(),
+  errorId: '',
 };
 
 class DateTimePicker extends React.Component {
@@ -640,7 +652,20 @@ class DateTimePicker extends React.Component {
       isAmbiguous = DateTimeUtils.checkAmbiguousTime(tempDateTime);
     }
 
-    const metadata = {
+    const dateSeparator = this.state.dateFormat.match(/[^a-zA-Z0-9]/)[0];
+    const dateSplit = this.dateValue.split(dateSeparator);
+    const timeSplit = timeValue.split(':');
+    const dateFormat = this.state.dateFormat.split(dateSeparator);
+    const splitObj = {
+      [dateFormat[0]]: dateSplit[0],
+      [dateFormat[1]]: dateSplit[1],
+      [dateFormat[2]]: dateSplit[2],
+      hour: timeSplit[0],
+      minutes: timeSplit[1],
+      seconds: timeSplit[2],
+    };
+
+    const tempData = {
       iSO: iSOString,
       inputValue,
       dateValue: this.dateValue || '',
@@ -649,6 +674,8 @@ class DateTimePicker extends React.Component {
       isCompleteValue: isCompleteDateTime,
       isValidValue: isValid,
     };
+
+    const metadata = { ...tempData, ...splitObj };
 
     return metadata;
   }
@@ -712,6 +739,7 @@ class DateTimePicker extends React.Component {
 
   render() {
     const {
+      ariaLabel,
       dateInputAttributes,
       disabled,
       excludeDates,
@@ -736,6 +764,7 @@ class DateTimePicker extends React.Component {
       timeInputAttributes,
       value,
       timeVariant,
+      errorId,
       ...customProps
     } = this.props;
 
@@ -751,6 +780,8 @@ class DateTimePicker extends React.Component {
         {...customProps}
         className={cx('date-time-picker', theme.className)}
         ref={this.dateTimePickerContainer}
+        role="group"
+        aria-label={ariaLabel}
       >
         <input
           // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -760,7 +791,6 @@ class DateTimePicker extends React.Component {
           name={name}
           value={dateTime?.isValid() ? dateTime.format() : ''}
         />
-
         <div className={cx('date-facade')}>
           <DatePicker
             onCalendarButtonClick={this.handleOnCalendarButtonClick}
@@ -787,6 +817,7 @@ class DateTimePicker extends React.Component {
             required={required}
             initialTimeZone={this.initialTimeZone}
             isDefaultDateAcceptable
+            errorId={errorId}
           />
         </div>
         <div className={cx('time-facade')}>
@@ -807,6 +838,7 @@ class DateTimePicker extends React.Component {
             required={required}
             atMaxDate={atMaxDate}
             atMinDate={atMinDate}
+            errorId={errorId}
           />
 
           {this.state.isAmbiguousTime && this.state.dateTime ? this.renderTimeClarification() : null}

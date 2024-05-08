@@ -2,6 +2,129 @@
 
 ## Unreleased
 
+## 5.23.0 - (May 1, 2024)
+
+* Changed
+  * Made the tabindex 0 for the first column header of grid components.
+  
+## 5.22.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.21.1 - (April 18, 2024)
+
+* Fixed
+  * Fixed an exception case when using collapsible sections with single selection mode.
+
+## 5.21.0 - (April 17, 2024)
+
+* Added
+  * Added column span functionality to support it in FlowsheetDataGrid.
+  
+## 5.20.0 - (April 15, 2024)
+
+* Changed
+  * Updated subsection logic to properly support grid implementations.
+
+## 5.19.0 - (April 10, 2024)
+
+* Added
+  * (flowsheet-data-grid only) Added support for subsections.
+
+* Changed
+  * Updated the cell component auto focus logic to be configured by the grid context.
+
+## 5.18.0 - (April 4, 2024)
+
+* Added
+  * Added the ability to configure the table to use auto table layout.
+
+* Fixed
+  * Fixed action header row so that it is properly fixed to the top of the table.
+
+## 5.17.0 - (March 29, 2024)
+
+* Added
+  * Added the ability to select a cell by pressing Escape on an auto focused button or anchor element (terra-data-grid only).
+
+## 5.16.0 - (March 25, 2024)
+
+* Fixed
+  * Fixed an issue where the click event for buttons inside table cells was not triggered by the spacebar.
+  
+## 5.15.0 - (March 21, 2024)
+
+* Changed
+  * Prevent right click from selecting row in row selection mode.
+
+## 5.14.0 - (March 19, 2024)
+
+* Removed
+  * `boundingRef` is no longer necessary for the section header's sticky behavior for tables. This change is still passive in nature as it doesn't change any functionality for consumers.
+
+## 5.13.0 - (March 14, 2024)
+
+* Added
+  * Added `event` object to `onCellSelect` callback.
+
+* Changed
+  * Internal focus trap update for terra-data-grid.
+
+## 5.12.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.11.0 - (March 5, 2024)
+
+* Changed
+  * Removed padding from section header cell to eliminate gaps between sections.
+
+## 5.10.0 - (March 1, 2024)
+
+* Added
+  * Added support for table with no row headers.
+
+## 5.9.0 - (February 28, 2024)
+
+* Added
+  * Column actions added.
+
+## 5.8.0 - (February 28, 2024)
+
+* Added
+  * Added `boundingRef` prop for bounded table.
+
+* Changed
+  * Changed flowsheet data grid sections to have sticky title.
+
+## 5.7.0 - (February 20, 2024)
+
+* Added
+  * Added timeout to resize observer.
+
+## 5.6.0 - (February 16, 2024)
+
+* Changed
+  * Changed the default rowMinimumHeight value to auto to fit the row contents.
+  * Updated lowlight light zebra strap color to darker grey to improve colour contrast.
+  
+* Added
+  * Added support for orange and green column highlighting.
+
+## 5.5.0 - (February 1, 2024)
+
+* Added
+  * Added rowMinimumHeight prop to support flexible row height.
+
+* Changed
+  * Added margin right to only tables with resizable columns.
+  * Exported the table margin right via the `TableConstants.TABLE_MARGIN_RIGHT` constant.
+
+* Changed
+  * Replaced cell `height` property with `min-height` property to support large text content inside cell.
+
 ## 5.4.0 - (January 12, 2024)
 
 * Added
@@ -24,7 +147,7 @@
   * Updated the onRowSelect callback to return an object containing section and row ids.
   
 * Added
-  * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH`` constant.
+  * Exported the row selection column width via the `TableConstants.ROW_SELECTION_COLUMN_WIDTH` constant.
   
 * Changed
   * Removed console warning message when no pinned columns exist.

@@ -20,7 +20,7 @@ const childContextTypes = {
 const initialSingleToggledIndex = (children) => {
   const childArray = React.Children.toArray(children);
   for (let i = 0; i < childArray.length; i += 1) {
-    if (childArray[i].props.isSelected) {
+    if (childArray[i].props.isSelected || childArray[i].props.isToggled) {
       return i;
     }
   }

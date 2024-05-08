@@ -64,11 +64,18 @@ const propTypes = {
    * Object containing intl APIs
    */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }),
+
+  /**
+   * @private
+   * Allows to reset cache and elements will be rendered face-up for width calculations.
+   */
+  allowResetCache: PropTypes.bool,
 };
 
 const defaultProps = {
   alwaysCollapsedMenuItems: [],
   isStartAligned: false,
+  allowResetCache: true,
 };
 
 const prepopulatedBaseDivider = <CollapsibleMenuViewDivider key="prepopulatedBaseDivider" />;
@@ -86,31 +93,23 @@ class CollapsibleMenuView extends React.Component {
   }
 
   componentDidMount() {
-    this.resizeObserver = new ResizeObserver((entries) => {
-      this.contentWidth = entries[0].contentRect.width;
+    this.resizeObserver = new ResizeObserver(() => {
       if (!this.isCalculating) {
         this.animationFrameID = window.requestAnimationFrame(() => {
           // Resetting the cache so that all elements will be rendered face-up for width calculations
-          this.resetCache();
+          if (this.props.allowResetCache) { this.resetCache(); }
           this.forceUpdate();
         });
       }
     });
-    this.handleResize(this.contentWidth);
     this.resizeObserver.observe(this.container);
-  }
-
-  shouldComponentUpdate(nextProps) {
-    if (React.Children.toArray(this.props.children).length === React.Children.toArray(nextProps.children).length && this.isContainerWidthUsedtoResize) {
-      this.resetCache();
-    }
-    return true;
+    this.handleResize();
   }
 
   componentDidUpdate() {
     if (this.isCalculating) {
       this.isCalculating = false;
-      this.handleResize(this.contentWidth);
+      this.handleResize();
     }
   }
 
@@ -120,22 +119,16 @@ class CollapsibleMenuView extends React.Component {
     this.container = null;
   }
 
-  handleResize(width) {
+  handleResize() {
+    if (!this.container) {
+      return;
+    }
+    // NOTE: get width from bounding client rect instead of resize observer.
+    // resize observer provides undefined value when wrapped with other components.
+    const { width } = this.container.getBoundingClientRect();
     const childrenArray = React.Children.toArray(this.props.children);
     const menuButtonWidth = childrenArray.length > 1 ? this.menuButton.getBoundingClientRect().width : 0;
-    const menuButtonContainerWidth = this.menuButton.parentElement.getBoundingClientRect().width;
-    let availableWidth = width - menuButtonWidth;
-    this.isContainerWidthUsedtoResize = false;
-    // if no wrapper is used on top of collapsiblemenuview, use observer width value to calculate availableWidth space,
-    // or use menuButtonContainerWidth value to calculate availableWidth space
-    if (width < menuButtonContainerWidth) {
-      availableWidth = Math.abs(menuButtonContainerWidth - menuButtonWidth);
-      this.isContainerWidthUsedtoResize = true;
-    }
-    // to calculate available space when resized only when menuButtonContainerWidth is used
-    if (Math.abs(window.innerWidth - menuButtonWidth) < availableWidth) {
-      availableWidth = Math.abs(window.innerWidth - menuButtonWidth);
-    }
+    const availableWidth = Math.abs(width - menuButtonWidth);
     let hiddenStartIndex = -1;
     let calcWidth = 0;
     let menuHidden = true;
@@ -143,7 +136,7 @@ class CollapsibleMenuView extends React.Component {
     if (this.props.isReversedChildrenOrder) {
       for (let i = childrenArray.length - 1; i >= 0; i -= 1) {
         const child = this.container.children[i];
-        const childWidth = child.getBoundingClientRect().width;
+        const childWidth = (child) ? child.getBoundingClientRect().width : 0;
         calcWidth += childWidth;
 
         if (calcWidth > availableWidth) {
@@ -166,12 +159,12 @@ class CollapsibleMenuView extends React.Component {
     } else {
       for (let i = 0; i < childrenArray.length; i += 1) {
         const child = this.container.children[i];
-        const childWidth = child.getBoundingClientRect().width;
+        const childWidth = (child) ? child.getBoundingClientRect().width : 0;
         calcWidth += childWidth;
 
         if (calcWidth > availableWidth) {
           // If last child fits in the available space, leave it face up
-          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth <= width) {
+          if (!this.collapsedMenuAlwaysShown && i === childrenArray.length - 1 && calcWidth <= availableWidth) {
             break;
           }
 
@@ -222,6 +215,7 @@ class CollapsibleMenuView extends React.Component {
       useHorizontalIcon,
       isReversedChildrenOrder,
       menuIconText,
+      allowResetCache,
       ...customProps
     } = this.props;
     const theme = this.context;

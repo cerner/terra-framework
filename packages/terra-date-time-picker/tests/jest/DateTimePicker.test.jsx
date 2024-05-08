@@ -1,91 +1,94 @@
 import React from 'react';
 import moment from 'moment-timezone';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 import DateTimePicker from '../../lib/DateTimePicker';
 import DateTimeUtils from '../../lib/DateTimeUtils';
 
 it('should render a default date time picker', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a default date time picker with custom date input attributes', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" dateInputAttributes={{ id: 'terra-date-input' }} />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" dateInputAttributes={{ id: 'terra-date-input' }} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a default date time picker with custom time input attributes', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" timeInputAttributes={{ id: 'terra-time-input' }} />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" timeInputAttributes={{ id: 'terra-time-input' }} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with filtered dates', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" filterDate={() => { }} name="date-time-input" />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" filterDate={() => { }} name="date-time-input" />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with disabled dates', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" excludeDates={['2017-04-01']} />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" excludeDates={['2017-04-01']} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with included dates', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" includeDates={['2017-04-01']} />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" includeDates={['2017-04-01']} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with min and max dates', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" maxDate="2017-04-01" minDate="2017-04-10" />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" maxDate="2017-04-01" minDate="2017-04-10" />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with onBlur', () => {
   const onBlur = () => { };
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" onBlur={onBlur} />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" onBlur={onBlur} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with onChange', () => {
   const onChange = () => { };
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" onChange={onChange} />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" onChange={onChange} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with onChangeRaw', () => {
   const onChangeRaw = () => { };
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" onChangeRaw={onChangeRaw} />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" onChangeRaw={onChangeRaw} />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a date time picker with a default date and time', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" value="2017-04-01T10:30" />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" value="2017-04-01T10:30" />);
+  expect(datePicker).toMatchSnapshot();
+});
+
+it('should render a error message', () => {
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" errorId="default-invalid-error" />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render with a default timeVariant if variant is not specified', () => {
   const defaultTimeVariant = '24-hour';
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" value="2017-04-01T10:30" />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" value="2017-04-01T10:30" />);
   expect(datePicker.prop('timeVariant')).toBe(defaultTimeVariant);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('should render a disabled date time picker', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" disabled />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" disabled />);
   expect(datePicker).toMatchSnapshot();
 });
 
 it('Should not throw any errors while date value is outside of the Min, Max range and new time value is being entered ', () => {
-  const datePicker = mountWithIntl((
+  const datePicker = enzymeIntl.mountWithIntl((
     <DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" maxDate="2017-04-01T10:30" minDate="2017-04-10T10:30" />
   ));
 
-  const dateMonthInput = datePicker.find({ name: 'terra-date-month-input', type: 'text' }).at(0);
+  const dateMonthInput = datePicker.find({ name: 'terra-date-month-input', type: 'number' }).at(0);
   dateMonthInput.simulate('change', { target: { value: '04' } });
-  const dateDayInput = datePicker.find({ name: 'terra-date-day-input', type: 'text' }).at(0);
+  const dateDayInput = datePicker.find({ name: 'terra-date-day-input', type: 'number' }).at(0);
   dateDayInput.simulate('change', { target: { value: '12' } });
-  const dateYearInput = datePicker.find({ name: 'terra-date-year-input', type: 'text' }).at(0);
+  const dateYearInput = datePicker.find({ name: 'terra-date-year-input', type: 'number' }).at(0);
   dateYearInput.simulate('change', { target: { value: '2017' } });
   expect(() => {
     const hourInput = datePicker.find({ name: 'terra-time-hour-input' }).at(2);
@@ -96,7 +99,7 @@ it('Should not throw any errors while date value is outside of the Min, Max rang
 });
 
 it('should render a date time picker with the seconds field enabled', () => {
-  const datePicker = shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" showSeconds />);
+  const datePicker = enzymeIntl.shallowWithIntl(<DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" showSeconds />);
   expect(datePicker).toMatchSnapshot();
 });
 
@@ -153,11 +156,31 @@ it('should validate the createSafeDate helper', () => {
   expect(DateTimeUtils.createSafeDate('2019-06-35T16:00:01', 'America/Test')).toEqual(undefined);
 });
 
+it('should render a default date time picker with ariaLabel', () => {
+  const ariaLabel = 'Select date and time';
+  const datePicker = enzymeIntl.shallowWithIntl(
+    <DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" ariaLabel={ariaLabel} />,
+  );
+  expect(datePicker.prop('ariaLabel')).toBe(ariaLabel);
+  expect(datePicker).toMatchSnapshot();
+});
+
 it('correctly applies the theme context className', () => {
-  const dateTime = shallowWithIntl(
+  const dateTime = enzymeIntl.shallowWithIntl(
     <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
       <DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" />
     </ThemeContextProvider>,
   );
+  expect(dateTime).toMatchSnapshot();
+});
+
+it('renders DateTimePicker with correct ARIA attributes', () => {
+  const ariaLabel = 'Enter Date/Time';
+  const role = 'group';
+  const dateTime = enzymeIntl.shallowWithIntl(
+    <DateTimePicker initialTimeZone="America/Chicago" name="date-time-input" ariaLabel={ariaLabel} role={role} />,
+  );
+  expect(dateTime.prop('ariaLabel')).toBe(ariaLabel);
+  expect(dateTime.prop('role')).toBe(role);
   expect(dateTime).toMatchSnapshot();
 });

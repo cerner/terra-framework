@@ -38,52 +38,38 @@ const propTypes = {
    * Text display for the menu item.
    * */
   text: PropTypes.string,
+  /**
+   * @private
+   * tabIndex for the menu item.
+   * */
+  tabIndex: PropTypes.string,
 };
 
 class MenuItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { active: false, focused: false };
+    this.state = { active: false };
     this.handleKeyDown = this.handleKeyDown.bind(this);
-    this.handleKeyUp = this.handleKeyUp.bind(this);
-    this.handleOnBlur = this.handleOnBlur.bind(this);
     this.textRender = this.textRender.bind(this);
-  }
-
-  handleOnBlur() {
-    this.setState({ focused: false });
+    this.handleMenuItemRef = this.handleMenuItemRef.bind(this);
   }
 
   handleKeyDown(event) {
-    // Add active state to FF browsers
-    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
-      this.setState({ active: true });
-    }
-
-    // Add focus styles for keyboard navigation
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
-      this.setState({ focused: true });
+      // Add active state to FF browsers
+      this.setState({ active: true });
+      this.props.onKeyDown(event);
     }
 
-    if (this.props.onKeyDown) {
-      this.props.onKeyDown(event);
+    if (event && event.nativeEvent) {
+      if (this.props.onKeyDown) {
+        this.props.onKeyDown(event);
+      }
     }
   }
 
-  handleKeyUp(event) {
-    // Remove active state from FF broswers
-    if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE) {
-      this.setState({ active: false });
-    }
-
-    // Apply focus styles for keyboard navigation
-    if (event.nativeEvent.keyCode === KeyCode.KEY_TAB) {
-      this.setState({ focused: true });
-    }
-
-    if (this.props.onKeyUp) {
-      this.props.onKeyUp(event);
-    }
+  handleMenuItemRef(node) {
+    this.contentNode = node;
   }
 
   textRender() {
@@ -114,9 +100,8 @@ class MenuItem extends React.Component {
 
     const itemClassNames = classNames(cx(
       'menu-item',
-      { 'is-selected': isSelected },
+      { 'is-selected': isSelected && !hasChevron },
       { 'is-active': this.state.active },
-      { 'is-focused': this.state.focused },
       theme.className,
     ),
     customProps.className);
@@ -128,12 +113,11 @@ class MenuItem extends React.Component {
       >
         <div
           role="menuitem"
+          ref={this.handleMenuItemRef}
           {...customProps}
-          tabIndex="0"
+          tabIndex={this.props.tabIndex}
           className={itemClassNames}
           onKeyDown={this.handleKeyDown}
-          onKeyUp={this.handleKeyUp}
-          onBlur={this.handleOnBlur}
           aria-haspopup={hasChevron}
         >
           <div className={cx('title')}>

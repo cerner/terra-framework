@@ -16,17 +16,12 @@ import VisuallyHiddenText from 'terra-visually-hidden-text';
 import ColumnContext from '../utils/ColumnContext';
 import GridContext, { GridConstants } from '../utils/GridContext';
 import getFocusableElements from '../utils/focusManagement';
+import { ColumnHighlightColor } from '../proptypes/columnShape';
 import styles from './Cell.module.scss';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
-  /**
-   * @private
-   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
-   */
-  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
-
   /**
    * String identifier of the row in which the Cell will be rendered.
    */
@@ -51,6 +46,11 @@ const propTypes = {
    * An identifier for the section.
    */
   sectionId: PropTypes.string,
+
+  /**
+   * An identifier for the subsection.
+   */
+  subsectionId: PropTypes.string,
 
   /**
    * Unique identifier for the parent table
@@ -98,7 +98,7 @@ const propTypes = {
   isHighlighted: PropTypes.bool,
 
   /**
-   * Callback function that will be called when this cell is selected.
+   * Callback function that will be called when a cell is selected.
    */
   onCellSelect: PropTypes.func,
 
@@ -106,37 +106,93 @@ const propTypes = {
    * String that specifies the height of the cell. Any valid CSS value is accepted.
    */
   height: PropTypes.string,
+
+  /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
+   */
+  rowMinimumHeight: PropTypes.string,
+
+  /**
+   * A zero-based index indicating which column represents the row header.
+   * Index can be set to -1 if row headers are not required.
+   */
+  rowHeaderIndex: PropTypes.number,
+
+  /**
+   * @private
+   * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
+   */
+  intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * @private
+   * Id of the first row in table
+   */
+  firstRowId: PropTypes.string,
+
+  /**
+   * @private
+   * Id of the last row in table
+   */
+  lastRowId: PropTypes.string,
+
+  /**
+   * @private
+   * The color to be used for highlighting a column.
+   */
+  columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
+
+  /**
+   * @private
+   * The column span index value for a column.
+   */
+  columnSpanIndex: PropTypes.number,
+
+  /**
+   * Enables row selection capabilities for the table.
+   * Use 'single' for single row selection and 'multiple' for multi-row selection.
+   */
+  rowSelectionMode: PropTypes.string,
 };
 
 const defaultProps = {
+  isMasked: false,
   isRowHeader: false,
   isSelectable: false,
-  isMasked: false,
   sectionId: '',
 };
 
 function Cell(props) {
   const {
-    rowId,
-    columnId,
-    rowIndex,
-    columnIndex,
-    sectionId,
-    tableId,
     ariaLabel,
+    children,
+    columnId,
+    columnIndex,
+    height,
+    intl,
+    isHighlighted,
     isMasked,
-    maskedLabel,
     isRowHeader,
     isSelectable,
     isSelected,
-    isHighlighted,
-    children,
+    maskedLabel,
     onCellSelect,
-    height,
-    intl,
+    rowHeaderIndex,
+    rowId,
+    rowIndex,
+    rowMinimumHeight,
+    sectionId,
+    subsectionId,
+    tableId,
+    firstRowId,
+    lastRowId,
+    columnHighlightColor,
+    columnSpanIndex,
+    rowSelectionMode,
   } = props;
 
   const cellRef = useRef();
+
   const theme = useContext(ThemeContext);
   const gridContext = useContext(GridContext);
   const columnContext = useContext(ColumnContext);
@@ -154,11 +210,28 @@ function Cell(props) {
     return focusableElements.length > 0;
   };
 
-  useEffect(() => {
-    if (isGridContext) {
-      setIsInteractable(hasFocusableElements());
+  /**
+  * Determine if a cell only has a single button or hyperlink
+  * @returns The auto focusable button or anchor element. If there is no auto focusable element, null is returned.
+  */
+  const getAutoFocusableElement = () => {
+    if (!gridContext.isAutoFocusEnabled) {
+      return null;
     }
-  }, [isGridContext]);
+
+    const focusableElements = getFocusableElements(cellRef.current);
+    if (focusableElements.length > 1) {
+      return null;
+    }
+
+    return cellRef.current.querySelector('a, button');
+  };
+
+  /**
+  * Determine if a cell only has a single button or hyperlink
+  * @returns True if the element only has a single button or hyperlink. Otherwise, false.
+  */
+  const hasOnlySingleButtonOrHyperlink = () => getAutoFocusableElement() !== null;
 
   /**
    * Handles the onDeactivate callback for FocusTrap component
@@ -170,40 +243,41 @@ function Cell(props) {
     }
   };
 
-  const onMouseDown = ((event) => {
+  useEffect(() => {
+    if (isGridContext) {
+      const autoFocusableElement = getAutoFocusableElement();
+      if (autoFocusableElement !== null) {
+        // Update aria live region when auto focusable element is given focus
+        autoFocusableElement.addEventListener('focus', () => {
+          if (gridContext.setCellAriaLiveMessage) {
+            gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
+          }
+        });
+      } else {
+        setIsInteractable(hasFocusableElements());
+      }
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [gridContext, intl, isGridContext]);
+
+  const handleMouseDown = (event) => {
+    if (rowSelectionMode && (event.button === 2 || hasFocusableElements())) {
+      return;
+    }
     if (!isFocusTrapEnabled) {
       onCellSelect({
-        sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isMetaPressed: event.metaKey || event.ctrlKey, isCellSelectable: (!isMasked && isSelectable),
-      });
+        sectionId,
+        subsectionId,
+        rowId,
+        rowIndex: (rowIndex - 1),
+        columnId,
+        columnIndex,
+        columnSpanIndex,
+        isShiftPressed: event.shiftKey,
+        isMetaPressed: event.metaKey || event.ctrlKey,
+        isCellSelectable: (!isMasked && isSelectable),
+      }, event);
     }
-  });
-
-  /**
-   *
-   * @param {HTMLElement} element - The element to check if it is a text input
-   * @returns True if the element is a editable field.  Otherwise, false.
-   */
-  const isEditableField = (element) => {
-    const { tagName } = element;
-
-    // Check if text input field
-    if (tagName.toLowerCase() === 'input') {
-      const validTypes = ['text', 'password', 'number', 'email', 'tel', 'url', 'search', 'date', 'datetime', 'datetime-local', 'time', 'month', 'week'];
-      const inputType = element.type;
-      return validTypes.indexOf(inputType) >= 0;
-    }
-
-    // Check if textarea or select element
-    if (['textarea', 'select'].indexOf(tagName.toLowerCase()) >= 0) {
-      return true;
-    }
-
-    // Check if content editable div
-    if (element.hasAttribute('contentEditable') && element.getAttribute('contentEditable') !== false) {
-      return true;
-    }
-
-    return false;
   };
 
   const handleKeyDown = (event) => {
@@ -222,25 +296,57 @@ function Cell(props) {
       switch (key) {
         case KeyCode.KEY_RETURN:
           // Lock focus into component
-          if (isGridContext && hasFocusableElements()) {
-            setIsFocusTrapEnabled(true);
+          if (isGridContext && targetElement === cellRef.current && hasFocusableElements()) {
+            // If the current cell has only a single button or hyperlink component, do not enable focus trap
+            const autoFocusableElement = getAutoFocusableElement();
+            if (autoFocusableElement !== null) {
+              autoFocusableElement.focus();
+            } else {
+              setIsFocusTrapEnabled(true);
+            }
+
+            // Update aria live region when cell user "dives into" cell
             if (gridContext.setCellAriaLiveMessage) {
               gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.cell-focus-trapped' }));
             }
+
             event.stopPropagation();
             event.preventDefault();
           }
           break;
+        case KeyCode.KEY_ESCAPE:
+          // Handle escape key event when the cell content is auto focusable
+          if (isGridContext && targetElement !== cellRef.current && hasOnlySingleButtonOrHyperlink()) {
+            cellRef.current.focus();
+
+            // Update aria live region when focus is returned to table cell element
+            if (gridContext.setCellAriaLiveMessage) {
+              gridContext.setCellAriaLiveMessage(intl.formatMessage({ id: 'Terra.table.resume-navigation' }));
+            }
+          }
+          break;
         case KeyCode.KEY_SPACE:
           if (onCellSelect) {
+            if (rowSelectionMode && hasFocusableElements()) {
+              return;
+            }
             onCellSelect({
-              sectionId, rowId, rowIndex: (rowIndex - 1), columnId, columnIndex, isShiftPressed: event.shiftKey, isMetaPressed: event.metaKey || event.ctrlKey, isCellSelectable: (!isMasked && isSelectable),
-            });
+              sectionId,
+              subsectionId,
+              rowId,
+              rowIndex: (rowIndex - 1),
+              columnId,
+              columnIndex,
+              columnSpanIndex,
+              isShiftPressed: event.shiftKey,
+              isMetaPressed: event.metaKey || event.ctrlKey,
+              isCellSelectable: (!isMasked && isSelectable),
+            }, event);
           }
 
-          // Allow default behavior if the event target is an editable field
-          if (!isEditableField(targetElement)) {
-            event.preventDefault(); // prevent the default scrolling
+          // Prevent scrolling when table cell element has focus
+          if (['td', 'th'].indexOf(targetElement.tagName.toLowerCase()) >= 0) {
+            event.preventDefault();
           }
           break;
         default:
@@ -266,29 +372,24 @@ function Cell(props) {
     cellContent = children;
   }
 
-  const className = cx('cell', {
-    masked: isMasked,
-    pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
-    'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
-    selectable: isSelectable && !isMasked,
-    selected: isSelected && !isMasked,
-    highlighted: isHighlighted,
-    blank: !children,
-  }, theme.className);
-
-  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
-
-  const CellTag = isRowHeader ? 'th' : 'td';
+  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
+  const heightProperties = (height) ? {
+    height,
+  } : { minHeight: rowMinimumHeight };
 
   // eslint-disable-next-line react/forbid-dom-props
-  let cellContentComponent = <div className={cx('cell-content', theme.className)} style={{ height }}>{cellContent}</div>;
+  let cellContentComponent = (<div className={cx('cell-content', theme.className)} style={{ ...heightProperties }}>{cellContent}</div>);
+
   // Render FocusTrap container when within a grid context
   if (isGridContext) {
     cellContentComponent = (
       <FocusTrap
         active={isFocusTrapEnabled}
         focusTrapOptions={{
-          returnFocusOnDeactivate: true, clickOutsideDeactivates: true, escapeDeactivates: false, onDeactivate: deactivateFocusTrap,
+          returnFocusOnDeactivate: true,
+          clickOutsideDeactivates: true,
+          escapeDeactivates: false,
+          onDeactivate: deactivateFocusTrap,
         }}
       >
         {cellContentComponent}
@@ -297,24 +398,48 @@ function Cell(props) {
   }
 
   // Determine table cell header attribute values
+  const cellLeftEdge = (columnIndex < columnContext.pinnedColumnOffsets.length) ? columnContext.pinnedColumnOffsets[columnIndex] : null;
+  const CellTag = isRowHeader ? 'th' : 'td';
+  const columnHeaderId = `${tableId}-${columnId}-headerCell`;
+  const rowHeaderId = !isRowHeader && rowHeaderIndex !== -1 ? `${tableId}-rowheader-${rowId} ` : '';
   const sectionHeaderId = sectionId ? `${tableId}-${sectionId} ` : '';
-  const rowHeaderId = !isRowHeader ? `${tableId}-rowheader-${rowId} ` : '';
-  const columnHeaderId = `${tableId}-${columnId}`;
+  const subsectionHeaderId = subsectionId ? `${tableId}-${sectionId}-${subsectionId} ` : '';
+
+  let columnHighlight = {};
+  if (columnHighlightColor) {
+    columnHighlight = {
+      [`column-highlight-${columnHighlightColor.toLowerCase()}`]: true,
+      [`first-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === firstRowId,
+      [`last-highlight-${columnHighlightColor.toLowerCase()}`]: rowId === lastRowId,
+    };
+  }
+
+  const className = cx('cell', {
+    masked: isMasked,
+    pinned: columnIndex < columnContext.pinnedColumnOffsets.length,
+    'last-pinned-column': columnIndex === columnContext.pinnedColumnOffsets.length - 1,
+    selectable: isSelectable && !isMasked,
+    selected: isSelected && !isMasked,
+    highlighted: isHighlighted,
+    blank: !children,
+    ...columnHighlight,
+  }, theme.className);
 
   return (
     <CellTag
       id={isRowHeader ? `${tableId}-rowheader-${rowId}` : undefined}
-      ref={isGridContext ? cellRef : undefined}
+      ref={isGridContext || rowSelectionMode ? cellRef : undefined}
       aria-selected={isSelected || undefined}
       aria-label={ariaLabel}
-      headers={`${sectionHeaderId}${rowHeaderId}${columnHeaderId}`}
+      headers={`${sectionHeaderId}${subsectionHeaderId}${rowHeaderId}${columnHeaderId}`}
       tabIndex={isGridContext ? -1 : undefined}
       className={className}
-      {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
-      onMouseDown={onCellSelect ? onMouseDown : undefined}
+      data-cell-column-id={`${columnId}-${columnSpanIndex}`}
+      onMouseDown={onCellSelect ? handleMouseDown : undefined}
       onKeyDown={handleKeyDown}
       // eslint-disable-next-line react/forbid-component-props
       style={{ left: cellLeftEdge }}
+      {...(isRowHeader && { scope: 'row', role: 'rowheader' })}
     >
       {cellContentComponent}
       {isInteractable && <VisuallyHiddenText text={intl.formatMessage({ id: 'Terra.table.cell-interactable' })} />}

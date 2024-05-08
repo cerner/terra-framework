@@ -56,7 +56,8 @@ exports[`Cell renders a pinned cell 1`] = `
   >
     <th
       className="cell pinned last-pinned-column"
-      headers="test-table-ColumnId"
+      data-cell-column-id="ColumnId-undefined"
+      headers="test-table-ColumnId-headerCell"
       id="test-table-rowheader-RowID"
       onKeyDown={[Function]}
       onMouseDown={[Function]}
@@ -88,7 +89,8 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
   aria-label="Some Label Here"
   aria-selected={true}
   className="cell masked"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -101,7 +103,7 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >
@@ -118,7 +120,8 @@ exports[`Cell verifies that a cell has renders that masked label text, when prov
 <td
   aria-label="Some Label Here"
   className="cell masked"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -131,7 +134,7 @@ exports[`Cell verifies that a cell has renders that masked label text, when prov
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >
@@ -148,7 +151,8 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
 <td
   aria-label="Some Label Here"
   className="cell masked"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -161,7 +165,7 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >
@@ -226,7 +230,8 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
     <td
       aria-label="Some Label Here"
       className="cell"
-      headers="test-table-rowheader-RowID test-table-ColumnId"
+      data-cell-column-id="ColumnId-undefined"
+      headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
       onKeyDown={[Function]}
       style={
         Object {
@@ -252,7 +257,7 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
           className="cell-content"
           style={
             Object {
-              "height": undefined,
+              "minHeight": undefined,
             }
           }
         >
@@ -260,6 +265,11 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
             type="button"
           >
             Button
+          </button>
+          <button
+            type="button"
+          >
+            Button 2
           </button>
         </div>
       </FocusTrap>
@@ -329,7 +339,8 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
     <td
       aria-label="Some Label Here"
       className="cell"
-      headers="test-table-rowheader-RowID test-table-ColumnId"
+      data-cell-column-id="ColumnId-undefined"
+      headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
       onKeyDown={[Function]}
       style={
         Object {
@@ -355,7 +366,7 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
           className="cell-content"
           style={
             Object {
-              "height": undefined,
+              "minHeight": undefined,
             }
           }
         >
@@ -372,7 +383,8 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   aria-label="Some Label Here"
   aria-selected={true}
   className="cell selected"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -385,7 +397,7 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >
@@ -398,7 +410,8 @@ exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] =
 <td
   aria-label="Some Label Here"
   className="cell"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   style={
     Object {
@@ -410,7 +423,7 @@ exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] =
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >
@@ -422,7 +435,8 @@ exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] =
 exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeader prop is false 1`] = `
 <td
   className="cell"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -435,7 +449,7 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >
@@ -447,7 +461,8 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
 exports[`Cell verifies that only a row header cell (<th>) is created when isRowHeader prop is true 1`] = `
 <th
   className="cell"
-  headers="test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-ColumnId-headerCell"
   id="test-table-rowheader-RowID"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
@@ -475,7 +490,8 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
 exports[`Cell verifies that the cell rendered is marked blank when the cell content is empty 1`] = `
 <td
   className="cell blank"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -488,7 +504,7 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >
@@ -504,7 +520,8 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
 exports[`Cell verifies that the cell rendered is marked selectable when isSelectable prop is true 1`] = `
 <td
   className="cell selectable"
-  headers="test-table-rowheader-RowID test-table-ColumnId"
+  data-cell-column-id="ColumnId-undefined"
+  headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
@@ -517,7 +534,7 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
     className="cell-content"
     style={
       Object {
-        "height": undefined,
+        "minHeight": undefined,
       }
     }
   >

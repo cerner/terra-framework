@@ -2,6 +2,92 @@
 
 ## Unreleased
 
+## 7.29.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.28.1 - (May 1, 2024)
+
+* Fixed
+  * Fixes for deselection of tab within more button.
+  * More button dropdown left position reset to zero when negative.
+
+## 7.28.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.27.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.26.1 - (April 17, 2024)
+
+* Fixed
+  * Fixes right border for vertical tabs not extending till last tab.
+
+## 7.26.0 - (April 10, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.25.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.24.0 - (March 29, 2024)
+
+* Fixed
+  * Fixes dropdown list overflow and reset left position value after close.
+
+## 7.23.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.22.0 - (March 21, 2024)
+
+* Changed
+   * Position dropdown element only after it is opened to prevent additional white space getting added.
+
+## 7.21.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.20.1 - (March 8, 2024)
+
+* Fixed
+  * Fixes component re-render with updated icon.
+
+## 7.20.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.19.0 - (March 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.18.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.17.0 - (February 7, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 7.16.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 7.15.0 - (December 18, 2023)
 
 * Changed
@@ -40,7 +126,7 @@
 
 * Added
   * Added Vertical orientation for `terra-tabs`.
-  
+
 * Changed
   * Removed additional screen reader phrase and fixed delete tab hint.
 
@@ -57,7 +143,7 @@
   * Fixes large tab content display with scrollable view.
 
 * Fixed
-  * Fixed Axe core violations for close button added on 
+  * Fixed Axe core violations for close button added on
     terra-tabs on both face-up tab and hidden tab.
   * Fixed issue in screen reader instruction for hidden tabs   where add tab instruction is announced even in absence of add button.
 
@@ -126,7 +212,7 @@
   * Introduced `variant` prop to switch between framework and workspace styles
 
 * Changed
-  * Updated framework tabs to consume common tabs 
+  * Updated framework tabs to consume common tabs
   * Updated styles to accommodate both framework and workspace styles
 
 ## 6.72.0 - (July 19, 2023)

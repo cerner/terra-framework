@@ -13,6 +13,7 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
   isOpen={true}
   role="alertdialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -74,6 +75,7 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[MockFunction]}
@@ -145,6 +147,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
   isOpen={true}
   role="dialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -209,6 +212,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="accept"
             onClick={[Function]}
@@ -224,6 +228,7 @@ exports[`Notification Dialog shallow renders an custom notification-dialog 1`] =
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[Function]}
@@ -251,6 +256,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
   isOpen={true}
   role="alertdialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -314,6 +320,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="accept"
             onClick={[Function]}
@@ -329,6 +336,7 @@ exports[`Notification Dialog shallow renders an error notification-dialog 1`] = 
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[Function]}
@@ -356,6 +364,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
   isOpen={true}
   role="alertdialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -419,6 +428,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="accept"
             onClick={[Function]}
@@ -434,6 +444,7 @@ exports[`Notification Dialog shallow renders an hazard-high notification-dialog 
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[Function]}
@@ -461,6 +472,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
   isOpen={true}
   role="alertdialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -524,6 +536,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="accept"
             onClick={[Function]}
@@ -539,6 +552,7 @@ exports[`Notification Dialog shallow renders an hazard-low notification-dialog 1
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[Function]}
@@ -566,6 +580,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
   isOpen={true}
   role="alertdialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -629,6 +644,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="accept"
             onClick={[Function]}
@@ -644,6 +660,7 @@ exports[`Notification Dialog shallow renders an hazard-medium notification-dialo
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[Function]}
@@ -671,6 +688,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
   isOpen={true}
   role="alertdialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -734,6 +752,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[MockFunction]}
@@ -749,6 +768,7 @@ exports[`Notification Dialog shallow renders dialog with reject button first 1`]
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="accept"
             onClick={[MockFunction]}
@@ -776,6 +796,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
   isOpen={true}
   role="alertdialog"
   rootSelector="#root"
+  shouldTrapFocus={false}
   zIndex="9000"
 >
   <div
@@ -846,6 +867,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="accept"
             onClick={[Function]}
@@ -861,6 +883,7 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
             isCompact={false}
             isDisabled={false}
             isIconOnly={false}
+            isLeftAligned={false}
             isReversed={false}
             key="reject"
             onClick={[Function]}
@@ -988,6 +1011,7 @@ exports[`correctly applies the theme context className 1`] = `
         isOpen={true}
         role="alertdialog"
         rootSelector="#root"
+        shouldTrapFocus={false}
         zIndex="9000"
       >
         <Portal
@@ -1005,7 +1029,6 @@ exports[`correctly applies the theme context className 1`] = `
                   aria-modal="true"
                   class="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                   role="alertdialog"
-                  tabindex="-1"
                 >
                   <div
                     class="abstract-modal-container"
@@ -1124,6 +1147,7 @@ exports[`correctly applies the theme context className 1`] = `
               onKeyDown={[Function]}
               role="alertdialog"
               rootSelector="#root"
+              shouldTrapFocus={false}
               zIndex="9000"
             >
               <ModalOverlay
@@ -1143,7 +1167,6 @@ exports[`correctly applies the theme context className 1`] = `
                 className="abstract-modal layer-9000 orion-fusion-theme notification-dialog orion-fusion-theme"
                 onKeyDown={[Function]}
                 role="alertdialog"
-                tabIndex="-1"
               >
                 <div
                   className="abstract-modal-container"
@@ -1217,6 +1240,7 @@ exports[`correctly applies the theme context className 1`] = `
                             isCompact={false}
                             isDisabled={false}
                             isIconOnly={false}
+                            isLeftAligned={false}
                             isReversed={false}
                             key="accept"
                             onClick={[Function]}
@@ -1257,6 +1281,7 @@ exports[`correctly applies the theme context className 1`] = `
                             isCompact={false}
                             isDisabled={false}
                             isIconOnly={false}
+                            isLeftAligned={false}
                             isReversed={false}
                             key="reject"
                             onClick={[Function]}

@@ -1,8 +1,14 @@
 import PropTypes from 'prop-types';
+import actionShape from './actionShape';
 
 const SortIndicators = {
   ASCENDING: 'ascending',
   DESCENDING: 'descending',
+};
+
+const ColumnHighlightColor = {
+  ORANGE: 'orange',
+  GREEN: 'green',
 };
 
 const columnShape = PropTypes.shape({
@@ -15,11 +21,19 @@ const columnShape = PropTypes.shape({
    */
   displayName: PropTypes.string,
   /**
+   * Number that specifies the column span value.
+   */
+  columnSpan: PropTypes.number,
+  /**
+   * Object containing label and onClick properties for column action button, which will be displayed in an additional row below the column header row.
+   */
+  action: PropTypes.shape({ actionShape }),
+  /**
    * Boolean value indicating whether or not the column has an error in the data.
    */
   hasError: PropTypes.bool,
   /**
-   * Boolean value indicating whether or not the column header is resizable.
+   * Boolean value indicating whether or not the column header is resizable. This value is ignored when for a table with auto layout enabled.
    */
   isResizable: PropTypes.bool,
   /**
@@ -35,14 +49,29 @@ const columnShape = PropTypes.shape({
    */
   maximumWidth: PropTypes.number,
   /**
-   * A number (in px) specifying the width of the column. If not provided, the Table's default column width will be used.
+   * The width can be either a numeric or string value.
+   * When a number is provided, it is the number (in px) specifying the width of the column. If not provided, the Table's default column width will be used.
+   * when a string is provided, it specifies the default column width and can be any valid CSS width value
    */
-  width: PropTypes.number,
+  width: PropTypes.oneOfType([
+    PropTypes.number,
+    PropTypes.string,
+  ]),
   /* A string indicating which sorting indicator should be rendered. If not provided, no sorting indicator will be rendered.
    * One of `ascending`, `descending`.
    */
   sortIndicator: PropTypes.oneOf(Object.values(SortIndicators)),
+
+  /**
+   * The color to be used for highlighting a column.
+   */
+  columnHighlightColor: PropTypes.oneOf(Object.values(ColumnHighlightColor)),
+
+  /**
+   * The information to be conveyed to screen readers about the highlighted column.
+   */
+  columnHighlightDescription: PropTypes.string,
 });
 
 export default columnShape;
-export { SortIndicators };
+export { SortIndicators, ColumnHighlightColor };

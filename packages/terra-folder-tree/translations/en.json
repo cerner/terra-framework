@@ -2,6 +2,10 @@
   "Terra.folder-tree.button.collapse-all": "Collapse All",
   "Terra.folder-tree.button.expand-all": "Expand All",
   "Terra.folder-tree.button.collapse-all-instructions": "Collapse all folders in the tree.",
+  "Terra.folder-tree.button.collapse-all-announcement": "All items collapsed.",
   "Terra.folder-tree.button.expand-all-instructions": "Expand all folders in the tree.",
+  "Terra.folder-tree.button.expand-all-announcement": "All items expanded.",
+  "Terra.folder-tree.item.selectable-announcement": "Selectable, to select press enter.",
+  "Terra.folder-tree.item.nonselectable-announcement": "Nonselectable",
   "Terra.folder-tree.folder-icon": "Folder"
 }

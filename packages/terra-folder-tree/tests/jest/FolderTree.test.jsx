@@ -1,13 +1,11 @@
 import React from 'react';
 import ActionHeader from 'terra-action-header';
 import Button from 'terra-button';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import FolderTree from '../../src';
 
 describe('basic folder tree', () => {
   it('renders a folder tree with one level of children and no subfolders', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree title="Documents">
         <FolderTree.Item label="Cat" />
         <FolderTree.Item label="Dog" />
@@ -28,7 +26,7 @@ describe('basic folder tree', () => {
   });
 
   it('renders a folder tree item with subitems', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FolderTree.Item
         label="parent folder tree item"
         subfolderItems={[
@@ -42,13 +40,19 @@ describe('basic folder tree', () => {
     const subfolder = wrapper.find('.subfolder');
 
     expect(subfolder.find('span.fill.fill-block').length).toBe(3);
-    expect(subfolder.find('span.fill.fill-block').at(0).text()).toBe('item 1');
-    expect(subfolder.find('span.fill.fill-block').at(1).text()).toBe('item 2');
-    expect(subfolder.find('span.fill.fill-block').at(2).text()).toBe('item 3');
+    expect(subfolder.find('span.fill.fill-block').at(0).text()).toBe('item 1, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('li[role="treeitem"]').at(0).prop('aria-setsize')).toBe(3);
+    expect(subfolder.find('li[role="treeitem"]').at(0).prop('aria-posinset')).toBe(1);
+    expect(subfolder.find('span.fill.fill-block').at(1).text()).toBe('item 2, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('li[role="treeitem"]').at(1).prop('aria-setsize')).toBe(3);
+    expect(subfolder.find('li[role="treeitem"]').at(1).prop('aria-posinset')).toBe(2);
+    expect(subfolder.find('span.fill.fill-block').at(2).text()).toBe('item 3, Terra.folder-tree.item.selectable-announcement');
+    expect(subfolder.find('li[role="treeitem"]').at(2).prop('aria-setsize')).toBe(3);
+    expect(subfolder.find('li[role="treeitem"]').at(2).prop('aria-posinset')).toBe(3);
   });
 
   it('hides folder items when enclosing folder is collapsed', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree title="Documents">
         <FolderTree.Item
           label="Animals"
@@ -66,7 +70,7 @@ describe('basic folder tree', () => {
   });
 
   it('shows folder items when enclosing folder is expanded', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree title="Documents">
         <FolderTree.Item
           label="Animals"
@@ -85,13 +89,13 @@ describe('basic folder tree', () => {
   });
 
   it('does not trigger expand/collapse on folder selection', () => {
-    const onClick = jest.fn();
+    const onSelect = jest.fn();
     const onToggle = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FolderTree.Item
         label="Animals"
-        onClick={onClick}
+        onSelect={onSelect}
         onToggle={onToggle}
         subfolderItems={[
           (<FolderTree.Item label="Dog" />),
@@ -102,14 +106,14 @@ describe('basic folder tree', () => {
     const radioButton = wrapper.find('.radio');
     radioButton.simulate('change');
 
-    expect(onClick).toHaveBeenCalled();
+    expect(onSelect).toHaveBeenCalled();
     expect(onToggle).not.toHaveBeenCalled();
   });
 
   it('triggers the onExpandAll callback', () => {
     const onExpandAll = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FolderTree
         title="Documents"
         onExpandAll={onExpandAll}
@@ -121,10 +125,9 @@ describe('basic folder tree', () => {
           ]}
         />
       </FolderTree>,
-    ).dive();
+    );
 
     const expandAllButton = wrapper.find(Button).at(0);
-    expect(expandAllButton.prop('onClick')).toBe(onExpandAll);
 
     expandAllButton.simulate('click');
     expect(onExpandAll).toHaveBeenCalled();
@@ -133,7 +136,7 @@ describe('basic folder tree', () => {
   it('triggers the onCollapseAll callback', () => {
     const onCollapseAll = jest.fn();
 
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FolderTree
         title="Documents"
         onCollapseAll={onCollapseAll}
@@ -145,12 +148,59 @@ describe('basic folder tree', () => {
           ]}
         />
       </FolderTree>,
-    ).dive();
+    );
 
     const collapseAllButton = wrapper.find(Button).at(1);
-    expect(collapseAllButton.prop('onClick')).toBe(onCollapseAll);
 
     collapseAllButton.simulate('click');
     expect(onCollapseAll).toHaveBeenCalled();
+  });
+
+  it('renders selectable folder tree items', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Selectable folder tree item"
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
+    expect(wrapper.exists('input[type="radio"]')).toBe(true);
+  });
+
+  it('renders selectable folder tree items when selected', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Selectable folder tree item"
+        isSelected
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(true);
+    expect(wrapper.find('li').hasClass('selected')).toBe(true);
+  });
+
+  it('renders non-selectable folder tree items', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Non-selectable folder tree item"
+        isSelectable={false}
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
+    expect(wrapper.exists('input[type="radio"]')).toBe(false);
+  });
+
+  it('renders non-selectable folder tree items when selected', () => {
+    const wrapper = enzymeIntl.shallowWithIntl(
+      <FolderTree.Item
+        label="Non-selectable folder tree item"
+        isSelectable={false}
+        isSelected
+      />,
+    ).dive();
+
+    expect(wrapper.find('li').prop('aria-selected')).toBe(false);
+    expect(wrapper.find('li').hasClass('selected')).toBe(false);
   });
 });

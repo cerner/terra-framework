@@ -10,7 +10,7 @@
   "Terra.timeInput.labeledTextValue": "{a11yLabel} {a11yTimeValue}",
   "Terra.timeInput.maskHourMinute": "(hh:mm)",
   "Terra.timeInput.maskHourMinuteSecond": "(hh:mm:ss)",
-  "Terra.timeInput.minutes": "Minutos",
+  "Terra.timeInput.minutes": "{a11yLabel} Minutos",
   "Terra.timeInput.pm": "p.m.",
   "Terra.timeInput.seconds": "Segundos",
   "Terra.timeInput.textValueTwelveHourMinute": "{hour}:{minute} {meridiem}",
@@ -19,5 +19,6 @@
   "Terra.timeInput.textValueTwentyFourHourMinuteSecond": "{hour}:{minute}:{second}",
   "Terra.timeInput.timeFormatLabel": "Formato da hora:",
   "Terra.timeInput.timeSpacer": ":",
-  "Terra.timeInput.invalidTime": "Insira um horário válido"
+  "Terra.timeInput.invalidTime": "Insira um horário válido",
+  "Terra.timePicker.hotKey": "Pressione N para definir a hora atual. Pressione a tecla de sinal de mais para aumentar a hora ou a tecla de sinal de menos para diminuir a hora."
 }

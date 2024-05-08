@@ -10,7 +10,7 @@ const FeaturedIcon = () => {
   const [isFeatured, setIsFeatured] = useState(false);
   const onButtonClick = () => setIsFeatured(!isFeatured);
   return (
-    isFeatured ? <Button variant="utility" text="Featured button" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Featured off button" icon={<IconFeaturedOff />} onClick={onButtonClick} />
+    isFeatured ? <Button variant="utility" text="Unfavorite item" icon={<IconFeatured />} onClick={onButtonClick} /> : <Button variant="utility" text="Favorite item" icon={<IconFeaturedOff />} onClick={onButtonClick} />
   );
 };
 const iconResultsNormal = <IconMultipleResultsNormal a11yLabel="Results normal" height="1.5em" width="1.5em" />;
@@ -127,7 +127,7 @@ const getRowHeight = (activeBreakpoint) => {
 const cols = [
   {
     id: 'Column-0',
-    displayName: 'Icon',
+    displayName: 'Status',
     width: '60px',
     align: alignTypes.CENTER,
   },
@@ -149,7 +149,7 @@ const VerticalFlow = () => {
   const activeBreakpoint = React.useContext(ActiveBreakpointContext);
   return (
     <CompactInteractiveList
-      id="with-breakpoints"
+      id="compact-interactive-list-vertical-flow"
       ariaLabel="Compact Interactive List"
       rows={rows}
       columns={cols}

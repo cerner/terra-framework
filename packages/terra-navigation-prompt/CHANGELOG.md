@@ -2,6 +2,61 @@
 
 ## Unreleased
 
+## 1.92.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.91.0 - (May 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.90.0 - (April 17, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.89.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.88.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.87.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.86.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.85.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.84.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.83.0 - (February 16, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.82.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.81.0 - (January 10, 2024)
 
 * Changed

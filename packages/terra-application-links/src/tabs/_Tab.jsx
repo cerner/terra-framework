@@ -98,7 +98,9 @@ class ApplicationTab extends Component {
 
     if (!this.isCurrentPath()) {
       this.props.history.push(this.props.path);
-    } else if (this.props.onTabClick) {
+    }
+
+    if (this.props.onTabClick) {
       this.props.onTabClick(event);
     }
   }

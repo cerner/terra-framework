@@ -1,6 +1,10 @@
-import React from 'react';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {
+  useState, useCallback, useEffect, useRef,
+} from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import ResizeObserver from 'resize-observer-polyfill';
 import ColumnHeaderCell from './ColumnHeaderCell';
 import columnShape from '../proptypes/columnShape';
 import styles from './ColumnHeader.module.scss';
@@ -27,10 +31,22 @@ const propTypes = {
   * Number that specifies the height of the table in pixels.
   */
   tableHeight: PropTypes.number,
+
   /**
    * Column index for cell that can receive tab focus.
    */
   activeColumnIndex: PropTypes.number,
+
+  /**
+   * Row index for cell that can receive tab focus.
+   */
+  focusedRowIndex: PropTypes.number,
+
+  /**
+   * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+   */
+  triggerFocus: PropTypes.func,
+
   /**
    * Specifies if resize handle should be active.
    */
@@ -60,6 +76,11 @@ const propTypes = {
    * Boolean indicating whether or not the table columns should be displayed.
    */
   hasVisibleColumnHeaders: PropTypes.bool,
+
+  /**
+   * A Boolean value specifying whether the table has actions in column headers.
+   */
+  hasColumnHeaderActions: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -70,6 +91,8 @@ const ColumnHeader = (props) => {
   const {
     tableId,
     activeColumnIndex,
+    focusedRowIndex,
+    triggerFocus,
     isActiveColumnResizing,
     columnResizeIncrement,
     columns,
@@ -79,22 +102,53 @@ const ColumnHeader = (props) => {
     onResizeMouseDown,
     onResizeHandleChange,
     hasVisibleColumnHeaders,
+    hasColumnHeaderActions,
   } = props;
 
+  // Header container height observer ---------------
+
+  const headerRef = useRef();
+  const [headerContainerHeight, setHeaderContainerHeight] = useState(0);
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver(() => {
+      const heightOffset = hasColumnHeaderActions ? 2 : 1; // needs 2 pixels if actions row exists in headers to avoid scroll
+      setHeaderContainerHeight(headerRef.current.offsetHeight - heightOffset);
+    });
+    resizeObserver.observe(headerRef.current);
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [headerRef]);
+
+  // Active resize handle management -------------------
+
+  // The active column and neighbour cell have to be known to both header and action cells as they share resize handle.
+  const [activeResizeHandlerColumnId, setActiveResizeHandlerColumnId] = useState();
+  const resizeHandleStateSetter = useCallback((columnId) => {
+    if (columnId !== activeResizeHandlerColumnId) {
+      setActiveResizeHandlerColumnId(columnId);
+    }
+  }, [activeResizeHandlerColumnId]);
+
+  // Is needed to adjust the header column resize handler to accommodate actions header height
+  const initialHeight = hasColumnHeaderActions ? `${headerContainerHeight}px` : undefined;
   return (
-    <thead>
+    <thead ref={headerRef}>
       <tr
         aria-rowindex={1}
         data-row-id={`${tableId}-header-row`}
         className={cx('column-header-row', { hidden: !hasVisibleColumnHeaders })}
         height={hasVisibleColumnHeaders ? headerHeight : undefined}
       >
+
         {columns.map((column, columnIndex) => (
           <ColumnHeaderCell
-            key={column.id}
-            id={column.id}
+            key={`${column.id}-headerCell`}
+            id={`${column.id}-headerCell`}
             tableId={tableId}
+            columnId={column.id}
             columnIndex={columnIndex}
+            columnSpan={column.columnSpan}
             displayName={column.displayName}
             isDisplayVisible={column.isDisplayVisible}
             width={column.width}
@@ -102,9 +156,13 @@ const ColumnHeader = (props) => {
             maximumWidth={column.maximumWidth}
             headerHeight={headerHeight}
             isResizable={hasVisibleColumnHeaders && column.isResizable}
+            initialHeight={initialHeight}
+            isResizeHandleActive={activeResizeHandlerColumnId === column.id}
+            resizeHandleStateSetter={resizeHandleStateSetter}
             isSelectable={hasVisibleColumnHeaders && column.isSelectable}
             tableHeight={tableHeight}
-            isActive={activeColumnIndex === columnIndex}
+            triggerFocus={triggerFocus}
+            isActive={activeColumnIndex === columnIndex && focusedRowIndex === 0} // can be 2 rows in header
             isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
             columnResizeIncrement={columnResizeIncrement}
             hasError={column.hasError}
@@ -112,9 +170,44 @@ const ColumnHeader = (props) => {
             onColumnSelect={onColumnSelect}
             onResizeMouseDown={onResizeMouseDown}
             onResizeHandleChange={onResizeHandleChange}
+            columnHighlightColor={column.columnHighlightColor}
+            columnHighlightDescription={column.columnHighlightDescription}
           />
         ))}
       </tr>
+      {/* Actions row */}
+      {hasColumnHeaderActions && hasVisibleColumnHeaders && (
+        <tr
+          aria-rowindex={2}
+          data-row-id={`${tableId}-header-actions-row`}
+          className={cx('column-actions-row', { hidden: !hasVisibleColumnHeaders })}
+        >
+          {columns.map((column, columnIndex) => (
+            <ColumnHeaderCell
+              key={`${column.id}-actionCell`}
+              id={`${column.id}-actionCell`}
+              tableId={tableId}
+              columnId={column.id}
+              isActionCell
+              action={column.action}
+              columnIndex={columnIndex}
+              columnSpan={column.columnSpan}
+              isDisplayVisible={column.isDisplayVisible}
+              width={column.isResizable && column.width}
+              minimumWidth={column.minimumWidth}
+              maximumWidth={column.maximumWidth}
+              headerHeight={headerHeight}
+              isResizable={hasVisibleColumnHeaders && column.isResizable}
+              ownsResizeHandle={focusedRowIndex === 1}
+              isResizeHandleActive={activeResizeHandlerColumnId === column.id}
+              resizeHandleStateSetter={resizeHandleStateSetter}
+              // does not need isSelectable prop for actions row
+              isActive={activeColumnIndex === columnIndex && focusedRowIndex === 1}
+              isResizeActive={activeColumnIndex === columnIndex && isActiveColumnResizing}
+            />
+          ))}
+        </tr>
+      )}
     </thead>
   );
 };

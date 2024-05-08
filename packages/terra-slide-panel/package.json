@@ -1,38 +1,47 @@
 {
   "name": "terra-slide-panel",
-  "main": "lib/SlidePanel.js",
-  "version": "3.47.0",
+  "version": "3.49.0",
   "description": "The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-slide-panel"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-slide-panel",
-    "SlidePanel",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": ">=2.8.0, <6.0.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Framework",
+    "SlidePanel",
+    "Terra",
+    "terra-slide-panel",
+    "UI"
+  ],
+  "main": "lib/SlidePanel.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
     "terra-theme-context": "^1.9.0",
     "terra-visually-hidden-text": "^2.36.0",
     "uuid": "3.4.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

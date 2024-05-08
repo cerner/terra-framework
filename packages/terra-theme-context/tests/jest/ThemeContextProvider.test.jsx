@@ -4,7 +4,7 @@ import ThemeContextProvider from '../../src/ThemeContextProvider';
 describe('ThemeContextProvider', () => {
   describe('Snapshots', () => {
     it('should render with minimal props', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <ThemeContextProvider>
           <div />
         </ThemeContextProvider>
@@ -14,7 +14,7 @@ describe('ThemeContextProvider', () => {
     });
 
     it('should render with a theme', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <ThemeContextProvider theme={{ name: 'test-theme', className: 'test-theme-class' }}>
           <div />
         </ThemeContextProvider>
@@ -28,7 +28,7 @@ describe('ThemeContextProvider', () => {
     });
 
     it('should render with a theme with a density', () => {
-      const wrapper = shallow((
+      const wrapper = enzyme.shallow((
         <ThemeContextProvider theme={{ name: 'test-theme', className: 'test-theme-class', density: 'compact' }}>
           <div />
         </ThemeContextProvider>

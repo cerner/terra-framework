@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Input from 'terra-form-input';
 import { v4 as uuidv4 } from 'uuid';
+import TimeUtil from './TimeUtil';
 
 const propTypes = {
   /**
@@ -24,11 +25,16 @@ const propTypes = {
   isInvalid: PropTypes.bool,
   /** When true, setting isInvalid to true will also visually display the input as invalid. */
   showIsInvalid: PropTypes.bool,
+  /**
+   * String that labels the error message for screen readers.
+   */
+  ariaDescribedBy: PropTypes.string,
 };
 
 const defaultProps = {
   isInvalid: false,
   showIsInvalid: false,
+  ariaDescribedBy: null,
 };
 
 /**
@@ -53,13 +59,13 @@ function AccessibleInput(props) {
     disabled,
     isInvalid,
     showIsInvalid,
+    ariaDescribedBy,
     ...inputProps
   } = props;
 
   const uuid = uuidv4();
   const labelId = `${uuid}-label`;
   const descriptionId = `${uuid}-description`;
-
   return (
     <>
       {value && <VisuallyHiddenText text={label} id={labelId} />}
@@ -81,10 +87,10 @@ function AccessibleInput(props) {
         aria-invalid={isInvalid}
         aria-labelledby={value ? labelId : undefined}
         aria-label={value ? undefined : label}
-        aria-describedby={descriptionId}
-
+        aria-describedby={ariaDescribedBy ? `${descriptionId} ${ariaDescribedBy}` : `${descriptionId}`}
+        type="number"
       />
-      <VisuallyHiddenText id={descriptionId} text={description} />
+      <VisuallyHiddenText aria-live={TimeUtil.isMac() ? 'polite' : 'off'} id={descriptionId} text={description} />
     </>
   );
 }

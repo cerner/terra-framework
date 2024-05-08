@@ -2,6 +2,53 @@
 
 ## Unreleased
 
+## 1.56.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.55.1 - (April 18, 2024)
+
+* Fixed
+  * Fixed focus style to not be overridden by form-input focus styling.
+
+## 1.55.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.54.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.53.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.52.0 - (February 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.51.1 - (February 16, 2024)
+
+* Fixed
+  * Fixed the text color issue of month select list options.
+  * Fixed the screen reader issue where it announced a different date than the one displayed.
+
+## 1.51.0 - (February 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.50.0 - (January 25, 2024)
+
+* Added
+  * Added black dashed border when input gets focused.
+  * Added screen reader support for error messages.
+
 ## 1.49.0 - (January 10, 2024)
 
 * Added

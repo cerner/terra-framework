@@ -17,10 +17,13 @@
   .table {
     border-collapse: separate;
     border-spacing: 0;
-    // Allow for resizing of last grid column
-    margin-right: 15px;
     table-layout: fixed;
     width: 1px;
+
+    &.auto-layout {
+      table-layout: auto;
+      width: 100%;
+    }
   }
 
   /* stylelint-disable selector-max-compound-selectors */

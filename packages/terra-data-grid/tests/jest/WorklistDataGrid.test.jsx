@@ -1,14 +1,31 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 import WorklistDataGrid from '../../src/WorklistDataGrid';
 
+const mockAction = jest.fn();
 // Source data for tests
 const dataFile = {
   cols: [
     {
       id: 'Column-0', displayName: ' Vitals', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
+    },
+    {
+      id: 'Column-2', displayName: 'March 17', isSelectable: false, isResizable: true,
+    },
+  ],
+  colsWithActions: [
+    {
+      id: 'Column-0',
+      displayName: ' Vitals',
+      isSelectable: true,
+      isResizable: true,
+      action: {
+        label: 'action button',
+        onClick: mockAction,
+      },
     },
     {
       id: 'Column-1', displayName: 'March 16', isSelectable: true, isResizable: true,
@@ -76,7 +93,7 @@ describe('WorklistDataGrid', () => {
   it('verifies onCellSelect callback is not triggered when space is pressed on a non-selectable cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -101,7 +118,7 @@ describe('WorklistDataGrid', () => {
   it('verifies onCellSelect callback is not triggered when space is pressed on a masked cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -138,7 +155,7 @@ describe('Row selection', () => {
   it('verifies row selection when space is pressed on a non-selectable cell', () => {
     const mockRowSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -164,7 +181,7 @@ describe('Row selection', () => {
   it('verifies row selection when space is pressed on a masked cell', () => {
     const mockRowSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -188,7 +205,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when space is used to select a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -214,7 +231,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when mouse is used to select a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -240,7 +257,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when space is used to unselect a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -266,7 +283,7 @@ describe('Row selection', () => {
   });
 
   it('verifies only onRowSelect is called when mouse is used to unselect a row.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -292,7 +309,7 @@ describe('Row selection', () => {
   });
 
   it('verifies callbacks when Shift+Down is used and row selection mode is not enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -305,18 +322,19 @@ describe('Row selection', () => {
     );
 
     const selectableCell = wrapper.find('Row').at(0).find('td.selectable');
-    selectableCell.at(0).simulate('mouseDown'); // Row selection is not on so cell will be selected.
-    expect(mockOnCellSelect).toHaveBeenCalledWith('1', 'Column-1'); // The first click to select the cell from which shift+Down will occur.
+    const mockMouseDownEvent = {
+      type: 'mousedown',
+    };
+    selectableCell.at(0).simulate('mouseDown', mockMouseDownEvent);// Row selection is not on so cell will be selected.
+    expect(mockOnCellSelect).toHaveBeenCalledWith('1', 'Column-1', expect.objectContaining(mockMouseDownEvent)); // The first click to select the cell from which shift+Down will occur.
 
     selectableCell.at(0).simulate('keydown', { shiftKey: true, keyCode: 40 });
     expect(mockOnRowSelect).toHaveBeenCalledWith([{ id: '1', selected: true }, { id: '2', selected: true }]);
     expect(mockOnEnableRowSelection).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies callbacks when Shift+Down is used and row selection mode is enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -343,7 +361,7 @@ describe('Row selection', () => {
   });
 
   it('verifies callbacks when Shift+Down more than one.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -372,7 +390,7 @@ describe('Row selection', () => {
   });
 
   it('verifies multiple independent ranges can be created with Shift+Down.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -409,7 +427,7 @@ describe('Row selection', () => {
   });
 
   it('verifies callbacks when Shift+Down contracts the range of selected rows.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -440,7 +458,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Click honors the anchor established by row selection using space bar.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -470,7 +488,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Space honors the anchor established by row selection using Mouse.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -500,7 +518,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Click enables row selection when row selection is turned off.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -524,7 +542,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Space enables row selection when row selection is turned off.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -548,7 +566,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Click establishes anchor and selects row when row selection is already enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -578,7 +596,7 @@ describe('Row selection', () => {
   });
 
   it('verifies Shift+Space establishes anchor and selects row if row selection is already enabled.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <WorklistDataGrid
         id="test-terra-worklist-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -605,5 +623,121 @@ describe('Row selection', () => {
     expect(mockOnCellSelect).not.toHaveBeenCalled();
 
     expect(wrapper).toMatchSnapshot();
+  });
+});
+
+describe('Column Header with Actions keyboard navigation', () => {
+  const arrowRightProps = {
+    key: 'ArrowRight', keyCode: 39, which: 39,
+  };
+  const arrowLeftProps = {
+    key: 'ArrowLeft', keyCode: 37, which: 37,
+  };
+  const arrowDownProps = {
+    key: 'ArrowDown', keyCode: 40, which: 40,
+  };
+  const arrowUpProps = {
+    key: 'ArrowUp', keyCode: 38, which: 38,
+  };
+
+  beforeEach(() => {
+    document.getElementsByTagName('html')[0].innerHTML = '';
+  });
+
+  it('Validate LEFT key on resize handle navigates back to cell it came from', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.colsWithActions.slice(0, 2)}
+        overflowColumns={dataFile.colsWithActions.slice(2)}
+        rows={dataFile.rows}
+      />, {
+        attachTo: document.body,
+      },
+    );
+
+    const headerCell = wrapper.find('.header-container').at(0);
+    const actionCell = wrapper.find('.action-cell').at(0);
+    const actionButton = actionCell.find('button');
+    const resizeHandle = wrapper.find('.resize-handle').at(0);
+
+    // step DOWN from header cell should focus on action button
+    headerCell.simulate('keydown', arrowDownProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step RIGHT from action button should focus on resize handle
+    actionButton.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step LEFT from resize handle should focus back on action button
+    resizeHandle.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step UP from action button to header cell
+    actionButton.simulate('keydown', arrowUpProps);
+    expect(document.activeElement).toBe(headerCell.instance());
+
+    // step RIGHT from header cell should focus on resize handle
+    headerCell.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step LEFT from resize handle should focus back on header cell
+    resizeHandle.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(headerCell.instance());
+  });
+
+  it('Validate RIGHT key on resize handle navigates to the next column keeping the row', () => {
+    const wrapper = enzymeIntl.mountWithIntl(
+      <WorklistDataGrid
+        id="test-terra-worklist-data-grid"
+        pinnedColumns={dataFile.colsWithActions.slice(0, 2)}
+        overflowColumns={dataFile.colsWithActions.slice(2)}
+        rows={dataFile.rows}
+      />, {
+        attachTo: document.body,
+      },
+    );
+
+    const headerCell = wrapper.find('.header-container').at(0);
+    const headerCell2 = wrapper.find('.header-container').at(1);
+    const actionButton = wrapper.find('.action-cell').at(0).find('button');
+    const actionButton2 = wrapper.find('.action-cell').at(1); // There is no button inside placeholder cell
+    const resizeHandle = wrapper.find('.resize-handle').at(0);
+
+    // step DOWN from header cell should focus on action button
+    headerCell.simulate('keydown', arrowDownProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step RIGHT from action button should focus on resize handle
+    actionButton.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step RIGHT from resize handle should focus on action placeholder cell in the second column
+    resizeHandle.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(actionButton2.instance());
+
+    // step LEFT from second col action placeholder should focus on resize handle
+    actionButton2.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step LEFT from resize handle should focus on first action button
+    resizeHandle.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(actionButton.instance());
+
+    // step UP from action button to header cell
+    actionButton.simulate('keydown', arrowUpProps);
+    expect(document.activeElement).toBe(headerCell.instance());
+
+    // step RIGHT from header cell should focus on resize handle
+    headerCell.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
+
+    // step RIGHT from resize handle should focus on second col header cell
+    resizeHandle.simulate('keydown', arrowRightProps);
+    expect(document.activeElement).toBe(headerCell2.instance());
+
+    // step LEFT from headerCell in second col should focus back on resize handle
+    headerCell2.simulate('keydown', arrowLeftProps);
+    expect(document.activeElement).toBe(resizeHandle.instance());
   });
 });

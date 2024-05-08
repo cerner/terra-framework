@@ -147,17 +147,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
       </VisuallyHiddenText>
       <ContentContainer
         className="side-menu-content-container orion-fusion-theme"
-        fill={true}
-        header={
-          <React.Fragment>
-            <InjectIntl(ActionHeader)
-              className="side-menu-action-header"
-              data-navigation-side-menu-action-header={true}
-              onBack={[Function]}
-              title="Test Menu"
-            />
-          </React.Fragment>
-        }
+        fill={false}
         intl={
           Object {
             "defaultFormats": Object {},
@@ -188,7 +178,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
         setFocusOnContainer={false}
       >
         <div
-          className="content-container-fill side-menu-content-container orion-fusion-theme"
+          className="content-container-static side-menu-content-container orion-fusion-theme"
           intl={
             Object {
               "defaultFormats": Object {},
@@ -218,260 +208,6 @@ exports[`Layout correctly applies the theme context className 1`] = `
           }
         >
           <div
-            className="header"
-          >
-            <InjectIntl(ActionHeader)
-              className="side-menu-action-header"
-              data-navigation-side-menu-action-header={true}
-              onBack={[Function]}
-              title="Test Menu"
-            >
-              <ActionHeader
-                className="side-menu-action-header"
-                data-navigation-side-menu-action-header={true}
-                intl={
-                  Object {
-                    "defaultFormats": Object {},
-                    "defaultLocale": "en",
-                    "formatDate": [Function],
-                    "formatHTMLMessage": [Function],
-                    "formatMessage": [Function],
-                    "formatNumber": [Function],
-                    "formatPlural": [Function],
-                    "formatRelative": [Function],
-                    "formatTime": [Function],
-                    "formats": Object {},
-                    "formatters": Object {
-                      "getDateTimeFormat": [Function],
-                      "getMessageFormat": [Function],
-                      "getNumberFormat": [Function],
-                      "getPluralFormat": [Function],
-                      "getRelativeFormat": [Function],
-                    },
-                    "locale": "en",
-                    "messages": null,
-                    "now": [Function],
-                    "onError": [Function],
-                    "textComponent": "span",
-                    "timeZone": null,
-                  }
-                }
-                onBack={[Function]}
-                title="Test Menu"
-              >
-                <InjectIntl(ActionHeaderContainer)
-                  className="side-menu-action-header"
-                  data-navigation-side-menu-action-header={true}
-                  endContent={null}
-                  id="1"
-                  level={1}
-                  startContent={
-                    <div
-                      className="left-buttons orion-fusion-theme"
-                    >
-                      <Button
-                        className="header-button back-button"
-                        data-terra-action-header="back-button"
-                        icon={
-                          <span
-                            className="header-icon back"
-                          />
-                        }
-                        isBlock={false}
-                        isCompact={false}
-                        isDisabled={false}
-                        isIconOnly={true}
-                        isReversed={false}
-                        onClick={[Function]}
-                        text="Terra.actionHeader.back"
-                        type="button"
-                        variant="utility"
-                      />
-                    </div>
-                  }
-                  text="Test Menu"
-                >
-                  <ActionHeaderContainer
-                    className="side-menu-action-header"
-                    data-navigation-side-menu-action-header={true}
-                    endContent={null}
-                    id="1"
-                    intl={
-                      Object {
-                        "defaultFormats": Object {},
-                        "defaultLocale": "en",
-                        "formatDate": [Function],
-                        "formatHTMLMessage": [Function],
-                        "formatMessage": [Function],
-                        "formatNumber": [Function],
-                        "formatPlural": [Function],
-                        "formatRelative": [Function],
-                        "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
-                          "getDateTimeFormat": [Function],
-                          "getMessageFormat": [Function],
-                          "getNumberFormat": [Function],
-                          "getPluralFormat": [Function],
-                          "getRelativeFormat": [Function],
-                        },
-                        "locale": "en",
-                        "messages": null,
-                        "now": [Function],
-                        "onError": [Function],
-                        "textComponent": "span",
-                        "timeZone": null,
-                      }
-                    }
-                    level={1}
-                    startContent={
-                      <div
-                        className="left-buttons orion-fusion-theme"
-                      >
-                        <Button
-                          className="header-button back-button"
-                          data-terra-action-header="back-button"
-                          icon={
-                            <span
-                              className="header-icon back"
-                            />
-                          }
-                          isBlock={false}
-                          isCompact={false}
-                          isDisabled={false}
-                          isIconOnly={true}
-                          isReversed={false}
-                          onClick={[Function]}
-                          text="Terra.actionHeader.back"
-                          type="button"
-                          variant="utility"
-                        />
-                      </div>
-                    }
-                    text="Test Menu"
-                  >
-                    <div
-                      className="flex-header orion-fusion-theme side-menu-action-header"
-                      data-navigation-side-menu-action-header={true}
-                      id="1"
-                    >
-                      <div
-                        className="flex-end"
-                      >
-                        <div
-                          className="left-buttons orion-fusion-theme"
-                        >
-                          <Button
-                            className="header-button back-button"
-                            data-terra-action-header="back-button"
-                            icon={
-                              <span
-                                className="header-icon back"
-                              />
-                            }
-                            isBlock={false}
-                            isCompact={false}
-                            isDisabled={false}
-                            isIconOnly={true}
-                            isReversed={false}
-                            onClick={[Function]}
-                            text="Terra.actionHeader.back"
-                            type="button"
-                            variant="utility"
-                          >
-                            <button
-                              aria-disabled={false}
-                              aria-label="Terra.actionHeader.back"
-                              className="button utility orion-fusion-theme header-button back-button"
-                              data-terra-action-header="back-button"
-                              disabled={false}
-                              onBlur={[Function]}
-                              onClick={[Function]}
-                              onFocus={[Function]}
-                              onKeyDown={[Function]}
-                              onKeyUp={[Function]}
-                              onMouseDown={[Function]}
-                              title="Terra.actionHeader.back"
-                              type="button"
-                            >
-                              <span
-                                className="button-label-win icon-only"
-                              >
-                                <span
-                                  className="icon"
-                                >
-                                  <span
-                                    className="header-icon back icon-svg"
-                                  />
-                                </span>
-                              </span>
-                            </button>
-                          </Button>
-                        </div>
-                      </div>
-                      <div
-                        className="flex-fill"
-                      >
-                        <div
-                          className="title-container"
-                        >
-                          <h1
-                            className="title"
-                          >
-                            Test Menu
-                          </h1>
-                        </div>
-                      </div>
-                      <div
-                        className="hidden-label"
-                      >
-                        <VisuallyHiddenText
-                          aria-hidden={true}
-                          id="terra-action-header-close-button-1"
-                          text="Terra.actionHeader.close.description"
-                        >
-                          <span
-                            aria-hidden={true}
-                            className="visually-hidden-text"
-                            id="terra-action-header-close-button-1"
-                          >
-                            Terra.actionHeader.close.description
-                          </span>
-                        </VisuallyHiddenText>
-                        <VisuallyHiddenText
-                          aria-hidden={true}
-                          id="terra-action-header-maximize-button-1"
-                          text="Terra.actionHeader.maximize.description"
-                        >
-                          <span
-                            aria-hidden={true}
-                            className="visually-hidden-text"
-                            id="terra-action-header-maximize-button-1"
-                          >
-                            Terra.actionHeader.maximize.description
-                          </span>
-                        </VisuallyHiddenText>
-                        <VisuallyHiddenText
-                          aria-hidden={true}
-                          id="terra-action-header-minimize-button-1"
-                          text="Terra.actionHeader.minimize.description"
-                        >
-                          <span
-                            aria-hidden={true}
-                            className="visually-hidden-text"
-                            id="terra-action-header-minimize-button-1"
-                          >
-                            Terra.actionHeader.minimize.description
-                          </span>
-                        </VisuallyHiddenText>
-                      </div>
-                    </div>
-                  </ActionHeaderContainer>
-                </InjectIntl(ActionHeaderContainer)>
-              </ActionHeader>
-            </InjectIntl(ActionHeader)>
-          </div>
-          <div
             className="main"
           >
             <Scroll
@@ -487,12 +223,35 @@ exports[`Layout correctly applies the theme context className 1`] = `
                     className="side-menu-list"
                     role="menu"
                   >
+                    <li
+                      role="none"
+                    >
+                      <div
+                        className="side-navigation-menu"
+                        data-navigation-side-menu={true}
+                        onClick={[Function]}
+                        onKeyDown={[Function]}
+                        role="menuitem"
+                        tabIndex="0"
+                        type="button"
+                      >
+                        <span
+                          className="header-icon back"
+                        />
+                        <h1
+                          className="title"
+                        >
+                          Test Menu
+                        </h1>
+                      </div>
+                    </li>
                     <InjectIntl(MenuItem)
                       data-menu-item="test1"
                       isSelected={false}
                       key="test1"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 1"
                     >
                       <MenuItem
@@ -527,6 +286,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="-1"
                         text="Test Menu 1"
                       >
                         <li
@@ -536,12 +296,10 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test1"
-                            onBlur={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -558,6 +316,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test2"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 2"
                     >
                       <MenuItem
@@ -592,6 +351,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="-1"
                         text="Test Menu 2"
                       >
                         <li
@@ -601,12 +361,10 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test2"
-                            onBlur={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -623,6 +381,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test3"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 3"
                     >
                       <MenuItem
@@ -657,6 +416,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="-1"
                         text="Test Menu 3"
                       >
                         <li
@@ -666,12 +426,10 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test3"
-                            onBlur={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -688,6 +446,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       key="test4"
                       onClick={[Function]}
                       onKeyDown={[Function]}
+                      tabIndex="-1"
                       text="Test Menu 4"
                     >
                       <MenuItem
@@ -722,6 +481,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         isSelected={false}
                         onClick={[Function]}
                         onKeyDown={[Function]}
+                        tabIndex="-1"
                         text="Test Menu 4"
                       >
                         <li
@@ -731,12 +491,10 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           <div
                             className="menu-item orion-fusion-theme"
                             data-menu-item="test4"
-                            onBlur={[Function]}
                             onClick={[Function]}
                             onKeyDown={[Function]}
-                            onKeyUp={[Function]}
                             role="menuitem"
-                            tabIndex="0"
+                            tabIndex="-1"
                           >
                             <div
                               className="title"
@@ -798,6 +556,520 @@ exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
     </div>
   }
 />
+`;
+
+exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
+<InjectIntl(NavigationSideMenu)
+  ariaLabel="Sub Menu List"
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [
+          "test1",
+          "test2",
+          "test3",
+          "test4",
+        ],
+        "key": "menu",
+        "text": "Test Menu",
+      },
+      Object {
+        "key": "test1",
+        "text": "Test Menu 1",
+      },
+      Object {
+        "key": "test2",
+        "text": "Test Menu 2",
+      },
+      Object {
+        "key": "test3",
+        "text": "Test Menu 3",
+      },
+      Object {
+        "key": "test4",
+        "text": "Test Menu 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  routingStackBack={[Function]}
+  selectedMenuKey="menu"
+>
+  <NavigationSideMenu
+    ariaLabel="Sub Menu List"
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    menuItems={
+      Array [
+        Object {
+          "childKeys": Array [
+            "test1",
+            "test2",
+            "test3",
+            "test4",
+          ],
+          "key": "menu",
+          "text": "Test Menu",
+        },
+        Object {
+          "key": "test1",
+          "text": "Test Menu 1",
+        },
+        Object {
+          "key": "test2",
+          "text": "Test Menu 2",
+        },
+        Object {
+          "key": "test3",
+          "text": "Test Menu 3",
+        },
+        Object {
+          "key": "test4",
+          "text": "Test Menu 4",
+        },
+      ]
+    }
+    onChange={[Function]}
+    routingStackBack={[Function]}
+    selectedMenuKey="menu"
+  >
+    <VisuallyHiddenText
+      aria-atomic="true"
+      aria-live="assertive"
+      aria-relevant="additions text"
+      refCallback={[Function]}
+    >
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="additions text"
+        className="visually-hidden-text"
+      />
+    </VisuallyHiddenText>
+    <ContentContainer
+      ariaLabel="Sub Menu List"
+      className="side-menu-content-container"
+      fill={false}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      setFocusOnContainer={false}
+    >
+      <div
+        ariaLabel="Sub Menu List"
+        className="content-container-static side-menu-content-container"
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
+      >
+        <div
+          className="main"
+        >
+          <Scroll
+            className="normalizer"
+          >
+            <div
+              className="scroll normalizer"
+            >
+              <nav
+                aria-label="Sub Menu List"
+                role="navigation"
+              >
+                <ul
+                  className="side-menu-list"
+                  role="menu"
+                >
+                  <li
+                    role="none"
+                  >
+                    <div
+                      className="side-navigation-menu"
+                      data-navigation-side-menu={true}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                      tabIndex="0"
+                      type="button"
+                    >
+                      <span
+                        className="header-icon back"
+                      />
+                      <h1
+                        className="title"
+                      >
+                        Test Menu
+                      </h1>
+                    </div>
+                  </li>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test1"
+                    isSelected={false}
+                    key="test1"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 1"
+                  >
+                    <MenuItem
+                      data-menu-item="test1"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isSelected={false}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 1"
+                    >
+                      <li
+                        className="list-item"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item"
+                          data-menu-item="test1"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="title"
+                          >
+                            Test Menu 1
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test2"
+                    isSelected={false}
+                    key="test2"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 2"
+                  >
+                    <MenuItem
+                      data-menu-item="test2"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isSelected={false}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 2"
+                    >
+                      <li
+                        className="list-item"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item"
+                          data-menu-item="test2"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="title"
+                          >
+                            Test Menu 2
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test3"
+                    isSelected={false}
+                    key="test3"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 3"
+                  >
+                    <MenuItem
+                      data-menu-item="test3"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isSelected={false}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 3"
+                    >
+                      <li
+                        className="list-item"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item"
+                          data-menu-item="test3"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="title"
+                          >
+                            Test Menu 3
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test4"
+                    isSelected={false}
+                    key="test4"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 4"
+                  >
+                    <MenuItem
+                      data-menu-item="test4"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isSelected={false}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 4"
+                    >
+                      <li
+                        className="list-item"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item"
+                          data-menu-item="test4"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <div
+                            className="title"
+                          >
+                            Test Menu 4
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                </ul>
+              </nav>
+            </div>
+          </Scroll>
+        </div>
+      </div>
+    </ContentContainer>
+  </NavigationSideMenu>
+</InjectIntl(NavigationSideMenu)>
 `;
 
 exports[`Layout should render a NavigationSideMenu with default props 1`] = `

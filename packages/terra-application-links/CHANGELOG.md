@@ -2,6 +2,56 @@
 
 ## Unreleased
 
+## 6.83.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.82.0 - (May 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.81.0 - (April 15, 2024)
+
+* Added
+  * Added `onTabClick` property to ApplicationLinks interface.
+
+## 6.80.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.79.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.78.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.77.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.76.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.75.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.74.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.73.0 - (December 18, 2023)
 
 * Changed

@@ -3,8 +3,8 @@ import * as KeyCode from 'keycode-js';
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 import { checkIfColumnIsResponsive } from '../utils/utils';
-import getFocusableElements from '../../../terra-table/src/utils/focusManagement';
 import formattedColumnShape from '../proptypes/formattedColumnShape';
 import { widthUnitTypes, alignTypes } from '../utils/constants';
 import styles from './Cell.module.scss';
@@ -128,15 +128,12 @@ const Cell = (props) => {
     }
   };
 
-  const handleMouseDown = (event) => {
+  const handleMouseDown = () => {
     setFocusedCell({ rowId, columnId: id });
     if (isSelectableCell) {
       if (onCellSelect && column.isSelectable !== false) {
         onCellSelect({ rowId, columnId: id });
       }
-    } else {
-      // allows clickable elements inside non-nselactable cells to be clicked, but not the cell itself
-      event.preventDefault();
     }
   };
 

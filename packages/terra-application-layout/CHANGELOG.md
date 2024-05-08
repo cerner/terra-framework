@@ -2,6 +2,76 @@
 
 ## Unreleased
 
+## 5.93.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.92.0 - (May 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.91.0 - (April 15, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.90.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.89.0 - (March 29, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.88.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.87.0 - (March 21, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.86.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.85.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.84.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.83.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.82.0 - (February 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.81.0 - (February 16, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 5.80.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 5.79.0 - (January 10, 2024)
 
 * Changed

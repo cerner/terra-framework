@@ -15,11 +15,13 @@ import ColumnContext from './utils/ColumnContext';
 import columnShape from './proptypes/columnShape';
 import GridContext, { GridConstants } from './utils/GridContext';
 import rowShape from './proptypes/rowShape';
-import validateRowHeaderIndex from './proptypes/validators';
+import { validateRowHeaderIndex } from './proptypes/validators';
 
 import styles from './Table.module.scss';
 import sectionShape from './proptypes/sectionShape';
 import getFocusableElements from './utils/focusManagement';
+import hasColumnActions from './utils/actionsUtils';
+import tableUtils from './utils/tableUtils';
 
 const cx = classNames.bind(styles);
 
@@ -30,6 +32,7 @@ const RowSelectionModes = {
 
 const TableConstants = {
   ROW_SELECTION_COLUMN_WIDTH: 40,
+  TABLE_MARGIN_RIGHT: 15,
 };
 
 const ROW_SELECTION_COLUMN_ID = 'table-rowSelectionColumn';
@@ -66,6 +69,18 @@ const propTypes = {
    * Column index for cell that can receive tab focus.
    */
   activeColumnIndex: PropTypes.number,
+
+  /**
+   * @private
+   * Row index for cell that can receive tab focus.
+   */
+  focusedRowIndex: PropTypes.number,
+
+  /**
+   * CallBack to trigger re-focusing when focused row or col didn't change, but focus update is needed
+   */
+  triggerFocus: PropTypes.func,
+
   /**
    * @private
    * Specifies if resize handle should be active.
@@ -91,6 +106,7 @@ const propTypes = {
 
   /**
    * A number indicating the default column width in pixels. This value is used if no overriding width value is provided on a per-column basis.
+   * This value is ignored if the isAutoLayout property is set to true.
    */
   defaultColumnWidth: PropTypes.number,
 
@@ -105,7 +121,14 @@ const propTypes = {
   rowHeight: PropTypes.string,
 
   /**
+   * A string that specifies the Minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
+   */
+  rowMinimumHeight: PropTypes.string,
+
+  /**
    * A number indicating the index of the column that represents the row header. The index is based on 0 and cannot exceed one less than the number of columns on the table.
+   * Index can be set to -1 if row headers are not required.
    */
   rowHeaderIndex: validateRowHeaderIndex,
 
@@ -121,6 +144,7 @@ const propTypes = {
    * @private
    * @param {string} rowId rowId
    * @param {string} columnId columnId
+   * @param {object} event event
    */
   onCellSelect: PropTypes.func,
 
@@ -165,6 +189,11 @@ const propTypes = {
   isStriped: PropTypes.bool,
 
   /**
+   * A Boolean value specifying whether the auto table layout is used to render the table.
+   */
+  isAutoLayout: PropTypes.bool,
+
+  /**
    * @private
    * The intl object containing translations. This is retrieved from the context automatically by injectIntl.
    */
@@ -175,7 +204,7 @@ const defaultProps = {
   rowHeaderIndex: 0,
   defaultColumnWidth: 200,
   columnHeaderHeight: '2.5rem',
-  rowHeight: '2.5rem',
+  rowMinimumHeight: 'auto',
   pinnedColumns: [],
   overflowColumns: [],
   rows: [],
@@ -191,6 +220,8 @@ function Table(props) {
     ariaLabelledBy,
     ariaLabel,
     activeColumnIndex,
+    focusedRowIndex,
+    triggerFocus,
     isActiveColumnResizing,
     columnResizeIncrement,
     rows,
@@ -209,18 +240,27 @@ function Table(props) {
     onRowSelectionHeaderSelect,
     hasVisibleColumnHeaders,
     isStriped,
+    isAutoLayout,
     rowHeaderIndex,
     intl,
+    rowMinimumHeight,
   } = props;
 
   // Manage column resize
   const [tableHeight, setTableHeight] = useState(0);
   const [activeIndex, setActiveIndex] = useState(null);
+
+  // Set an initial width so that the component intially renders sticky behavior correctly. This gets modified later through screen resize events
+  const [boundedWidth, setBoundedWidth] = useState(1000);
   const activeColumnPageX = useRef(0);
   const activeColumnWidth = useRef(200);
   const tableWidth = useRef(0);
+  const resizingDelayTimer = useRef(null);
+  const screenResizeTimer = useRef(null);
+  const resizeTimer = 100;
 
   const [pinnedColumnOffsets, setPinnedColumnOffsets] = useState([0]);
+  const [pinnedColumnHeaderOffsets, setPinnedColumnHeaderOffsets] = useState([0]);
 
   const tableContainerRef = useRef();
   const tableRef = useRef();
@@ -239,15 +279,20 @@ function Table(props) {
   // Aria live region message management
   const [columnHeaderAriaLiveMessage, setColumnHeaderAriaLiveMessage] = useState(null);
 
-  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets]);
+  const columnContextValue = useMemo(() => ({ pinnedColumnOffsets, pinnedColumnHeaderOffsets, setColumnHeaderAriaLiveMessage }), [pinnedColumnOffsets, pinnedColumnHeaderOffsets]);
 
   // Initialize column width properties
-  const initializeColumn = (column) => ({
-    ...column,
-    width: column.width || defaultColumnWidth,
-    minimumWidth: column.minimumWidth || defaultColumnMinimumWidth,
-    maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
-  });
+  const initializeColumn = (column) => {
+    const columnWidth = column.width || (!isAutoLayout ? defaultColumnWidth : undefined);
+
+    return ({
+      ...column,
+      width: columnWidth, // Default column width should only apply to a fixed table layout
+      minimumWidth: column.minimumWidth || defaultColumnMinimumWidth,
+      maximumWidth: column.maximumWidth || defaultColumnMaximumWidth,
+      isResizable: column.isResizable && typeof columnWidth === 'number' && !isAutoLayout,
+    });
+  };
 
   const hasSelectableRows = rowSelectionMode === RowSelectionModes.MULTIPLE;
   const displayedColumns = useMemo(() => {
@@ -264,7 +309,26 @@ function Table(props) {
     return (hasSelectableRows ? [tableRowSelectionColumn] : []).concat(pinnedColumns).concat(overflowColumns);
   }, [hasSelectableRows, intl, onRowSelectionHeaderSelect, overflowColumns, pinnedColumns]);
 
-  const [tableColumns, setTableColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
+  const tableBodyColumns = useMemo(() => {
+    const columnData = displayedColumns.reduce(
+      (columns, currentColumn, columnHeaderIndex) => {
+        for (let columnSpanIndex = 0; columnSpanIndex < (currentColumn.columnSpan || 1); columnSpanIndex += 1) {
+          columns.push({ ...currentColumn, columnSpanIndex, columnHeaderIndex });
+        }
+
+        return columns;
+      },
+      [],
+    );
+
+    if (gridContext.tableBodyColumnsRef) {
+      gridContext.tableBodyColumnsRef.current = columnData;
+    }
+
+    return columnData;
+  }, [displayedColumns, gridContext.tableBodyColumnsRef]);
+
+  const [tableHeaderColumns, setTableHeaderColumns] = useState(displayedColumns.map((column) => initializeColumn(column)));
 
   const defaultSectionRef = useRef(uuidv4());
 
@@ -277,31 +341,44 @@ function Table(props) {
     return [{ id: defaultSectionRef.current, rows }];
   }, [rows, sections]);
 
+  // check if at least one column has an action prop
+  // same check is done in DataGrid, but as Table can be a stand-alone component, it can't relay on passed prop.
+  const hasColumnHeaderActions = hasColumnActions(pinnedColumns) || hasColumnActions(overflowColumns);
+  // eslint-disable-next-line no-nested-ternary
+  const headerRowCount = hasVisibleColumnHeaders ? (hasColumnHeaderActions ? 2 : 1) : 0;
+
   // Calculate total table row count
+  const subSectionReducer = (rowCount, currentSubsection) => {
+    // eslint-disable-next-line no-param-reassign
+    currentSubsection.subSectionRowIndex = rowCount + 1;
+    return rowCount + currentSubsection.rows.length + 1;
+  };
   const tableSectionReducer = (rowCount, currentSection) => {
     if (currentSection.id !== defaultSectionRef.current) {
       // eslint-disable-next-line no-param-reassign
       currentSection.sectionRowIndex = rowCount + 1;
+      if (currentSection.subsections) {
+        return currentSection.subsections.reduce(subSectionReducer, rowCount + 1);
+      }
       return rowCount + currentSection.rows.length + 1;
     }
-
     // eslint-disable-next-line no-param-reassign
     currentSection.sectionRowIndex = rowCount;
     return rowCount + currentSection.rows.length;
   };
-  const tableRowCount = tableSections.reduce(tableSectionReducer, 1);
+  const tableRowCount = tableSections.reduce(tableSectionReducer, headerRowCount);
 
   // -------------------------------------
   // functions
 
-  const handleCellSelection = useCallback((selectionDetails) => {
+  const handleCellSelection = useCallback((selectionDetails, event) => {
     if (!isGridContext && onRowSelect) {
       onRowSelect({ sectionId: selectionDetails.sectionId, rowId: selectionDetails.rowId });
       return;
     }
 
     if (onCellSelect) {
-      onCellSelect(selectionDetails);
+      onCellSelect(selectionDetails, event);
     }
   }, [isGridContext, onCellSelect, onRowSelect]);
 
@@ -317,14 +394,19 @@ function Table(props) {
     // Since the row selection mode has changed, the row selection mode needs to be updated.
     setRowSelectionModeAriaLiveMessage(intl.formatMessage({ id: rowSelectionMode === RowSelectionModes.MULTIPLE ? 'Terra.table.row-selection-mode-enabled' : 'Terra.table.row-selection-mode-disabled' }));
 
-    setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
+    setTableHeaderColumns(displayedColumns.map((column) => initializeColumn(column)));
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [rowSelectionMode]);
 
   // useEffect for row updates
   useEffect(() => {
     const previousSelectedRows = [...selectedRows.current];
-    const selectableRows = tableSections.flatMap(section => (section.rows.map(row => (row))));
+    const selectableRows = tableSections.flatMap(section => {
+      if (section.subsections) {
+        return section.subsections.flatMap(subsection => (subsection.rows.map(row => (row))));
+      }
+      return section.rows.map(row => (row));
+    });
     selectedRows.current = selectableRows.filter((row) => row.isSelected).map(row => (row.id));
 
     if (previousSelectedRows.length > 0 && selectedRows.current.length === 0) {
@@ -337,15 +419,21 @@ function Table(props) {
       let selectionUpdateAriaMessage = '';
 
       if (rowSelectionsAdded.length === 1) {
-        const selectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsAdded[0]}']`).getAttribute('aria-rowindex');
-        selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.row-selection-template' }, { row: selectedRowLabel });
+        const selectedRowElement = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsAdded[0]}']`);
+        if (selectedRowElement) {
+          const selectedRowLabel = selectedRowElement.getAttribute('aria-rowindex');
+          selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.row-selection-template' }, { row: selectedRowLabel });
+        }
       } else if (rowSelectionsAdded.length > 1) {
         selectionUpdateAriaMessage = intl.formatMessage({ id: 'Terra.table.multiple-rows-selected' }, { rowCount: rowSelectionsAdded.length });
       }
 
       if (rowSelectionsRemoved.length === 1) {
-        const unselectedRowLabel = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`).getAttribute('aria-rowindex');
-        selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
+        const unselectedRowElement = tableRef.current.querySelector(`tr[data-row-id='${rowSelectionsRemoved[0]}']`);
+        if (unselectedRowElement) {
+          const unselectedRowLabel = unselectedRowElement.getAttribute('aria-rowindex');
+          selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.row-selection-cleared-template' }, { row: unselectedRowLabel });
+        }
       } else if (rowSelectionsRemoved.length > 1) {
         selectionUpdateAriaMessage += intl.formatMessage({ id: 'Terra.table.multiple-rows-unselected' }, { rowCount: rowSelectionsRemoved.length });
       }
@@ -358,46 +446,62 @@ function Table(props) {
 
   // useEffect for row displayed columns
   useEffect(() => {
-    setTableColumns(displayedColumns.map((column) => initializeColumn(column)));
+    setTableHeaderColumns(displayedColumns.map((column) => initializeColumn(column)));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pinnedColumns, overflowColumns]);
 
   // useEffect to calculate pinned column offsets
   useEffect(() => {
-    const offsetArray = [];
-    let cumulativeOffset = 0;
+    const headerOffsetArray = [];
+    const cellOffsetArray = [];
+    let cumulativeHeaderOffset = 0;
+    let cumulativeCellOffset = 0;
     let lastPinnedColumnIndex;
 
     // if table has selectable rows but no pinned columns, then set the offset of the first column to 0
     if (hasSelectableRows && pinnedColumns.length === 0) {
       lastPinnedColumnIndex = 0;
-      offsetArray.push(cumulativeOffset);
-      setPinnedColumnOffsets(offsetArray);
+      headerOffsetArray.push(cumulativeHeaderOffset);
+      setPinnedColumnOffsets(headerOffsetArray);
+      setPinnedColumnHeaderOffsets(headerOffsetArray);
       return;
     }
 
     if (pinnedColumns.length > 0) {
-      offsetArray.push(cumulativeOffset);
-
       lastPinnedColumnIndex = hasSelectableRows ? pinnedColumns.length : pinnedColumns.length - 1;
 
-      tableColumns.slice(0, lastPinnedColumnIndex).forEach((pinnedColumn) => {
-        cumulativeOffset += pinnedColumn.width;
-        offsetArray.push(cumulativeOffset);
+      tableHeaderColumns.slice(0, lastPinnedColumnIndex + 1).forEach((pinnedColumn) => {
+        headerOffsetArray.push(cumulativeHeaderOffset);
+
+        const currentColumnSpan = pinnedColumn.columnSpan || 1;
+
+        for (let columnSpanIndex = 0; columnSpanIndex < currentColumnSpan; columnSpanIndex += 1) {
+          cellOffsetArray.push(cumulativeCellOffset);
+          cumulativeCellOffset += (pinnedColumn.width / currentColumnSpan);
+        }
+
+        cumulativeHeaderOffset += pinnedColumn.width;
       });
     }
-    setPinnedColumnOffsets(offsetArray);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [tableColumns]);
 
-  // useEffect for managing the table height.
+    setPinnedColumnHeaderOffsets(headerOffsetArray);
+    setPinnedColumnOffsets(cellOffsetArray);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [tableHeaderColumns]);
+
   useEffect(() => {
     const resizeObserver = new ResizeObserver(() => {
-      setTableHeight(tableRef.current.offsetHeight - 1);
+      clearTimeout(resizingDelayTimer.current);
+      resizingDelayTimer.current = setTimeout(() => {
+        if (tableRef.current) {
+          const heightOffset = hasColumnHeaderActions ? 2 : 1; // needs 2 pixels if actions row exists in headers to avoid scroll
+          setTableHeight(tableRef.current.offsetHeight - heightOffset);
 
-      const tableContainer = tableContainerRef.current;
-      setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
+          const tableContainer = tableContainerRef.current;
+          setTableScrollable(tableContainer.scrollWidth > tableContainer.clientWidth
                         || tableContainer.scrollHeight > tableContainer.clientHeight);
+        }
+      }, resizeTimer);
     });
 
     resizeObserver.observe(tableRef.current);
@@ -405,7 +509,26 @@ function Table(props) {
     return () => {
       resizeObserver.disconnect();
     };
-  }, [tableRef]);
+  }, [hasColumnHeaderActions, tableRef]);
+
+  useEffect(() => {
+    // Resize handler to control the width of the sticky headers. This value needs to be responsive to window resizing.
+    const resizeObserver = new ResizeObserver(() => {
+      clearTimeout(screenResizeTimer.current);
+      screenResizeTimer.current = setTimeout(() => {
+        const containerWidth = tableContainerRef?.current?.clientWidth;
+
+        // An offset is necessary in order to prevent the fixed width from being too large and bleeding outside the container.
+        setBoundedWidth(Math.min(containerWidth || 0, tableRef?.current?.clientWidth || 0) - 25);
+      }, resizeTimer);
+    });
+
+    resizeObserver.observe(tableContainerRef.current);
+
+    return () => {
+      resizeObserver.disconnect();
+    };
+  }, [tableContainerRef, tableRef]);
 
   // -------------------------------------
 
@@ -453,13 +576,13 @@ function Table(props) {
 
     // Ensure the new column width falls within the range of the minimum and maximum values
     const diffX = event.pageX - activeColumnPageX.current;
-    const { minimumWidth, maximumWidth } = tableColumns[activeIndex];
+    const { minimumWidth, maximumWidth } = tableHeaderColumns[activeIndex];
     const newColumnWidth = Math.min(Math.max(activeColumnWidth.current + diffX, minimumWidth), maximumWidth);
 
     // Update the width for the column in the state variable
-    const newColumns = [...tableColumns];
+    const newColumns = [...tableHeaderColumns];
     newColumns[activeIndex].width = newColumnWidth;
-    setTableColumns(newColumns);
+    setTableHeaderColumns(newColumns);
 
     // Update the column and table width
     tableRef.current.style.width = `${tableWidth + (newColumnWidth - activeColumnWidth.current)}px`;
@@ -467,29 +590,29 @@ function Table(props) {
 
   const onMouseUp = () => {
     if (onColumnResize) {
-      onColumnResize(tableColumns[activeIndex].id, tableColumns[activeIndex].width);
+      onColumnResize(tableHeaderColumns[activeIndex].id, tableHeaderColumns[activeIndex].width);
     }
     // Remove active index
     setActiveIndex(null);
   };
 
   const onResizeHandleChange = useCallback((columnIndex, increment) => {
-    const { minimumWidth, maximumWidth, width } = tableColumns[columnIndex];
+    const { minimumWidth, maximumWidth, width } = tableHeaderColumns[columnIndex];
     const newColumnWidth = Math.min(Math.max(width + increment, minimumWidth), maximumWidth);
 
     // Update the width for the column in the state variable
-    const newGridColumns = [...tableColumns];
+    const newGridColumns = [...tableHeaderColumns];
     newGridColumns[columnIndex].width = newColumnWidth;
-    setTableColumns(newGridColumns);
+    setTableHeaderColumns(newGridColumns);
 
     // Update the column and table width
     tableRef.current.style.width = `${tableRef.current.offsetWidth + (newColumnWidth - width)}px`;
 
     // Notify consumers of the new column width
     if (onColumnResize) {
-      onColumnResize(tableColumns[columnIndex].id, tableColumns[columnIndex].width);
+      onColumnResize(tableHeaderColumns[columnIndex].id, tableHeaderColumns[columnIndex].width);
     }
-  }, [tableColumns, onColumnResize]);
+  }, [tableHeaderColumns, onColumnResize]);
 
   /**
    *
@@ -533,6 +656,25 @@ function Table(props) {
     }
   };
 
+  // Added margin to allow for resizing of last column.
+  const hasResizableCol = tableHeaderColumns[tableHeaderColumns.length - 1].isResizable;
+  const tableStyle = {
+    marginRight: hasResizableCol ? `${TableConstants.TABLE_MARGIN_RIGHT}px` : '0',
+  };
+
+  // Set first and last row Ids
+  let firstRowId;
+  let lastRowId;
+
+  if (rows && rows.length) {
+    firstRowId = rows[0].id;
+    lastRowId = rows[rows.length - 1].id;
+  } else if (sections) {
+    const rowData = tableUtils.getFirstAndLastVisibleRowData(sections);
+    firstRowId = rowData.firstRowId;
+    lastRowId = rowData.lastRowId;
+  }
+
   // -------------------------------------
 
   return (
@@ -550,7 +692,8 @@ function Table(props) {
         aria-labelledby={ariaLabelledBy}
         aria-label={ariaLabel}
         aria-rowcount={tableRowCount}
-        className={cx('table', { headerless: !hasVisibleColumnHeaders })}
+        style={tableStyle} // eslint-disable-line react/forbid-dom-props
+        className={cx('table', { headerless: !hasVisibleColumnHeaders, 'auto-layout': isAutoLayout })}
         onKeyDown={!isGridContext ? onKeyDown : undefined}
         {...(activeIndex != null && { onMouseUp, onMouseMove, onMouseLeave: onMouseUp })}
       >
@@ -558,17 +701,29 @@ function Table(props) {
           value={columnContextValue}
         >
           <colgroup>
-            {tableColumns.map((column) => (
+            {tableHeaderColumns.map((column) => {
+              let currentColumnWidth = column.width;
+
+              if (typeof column.width === 'number') {
+                currentColumnWidth = `${column.width}px`;
+              }
+
+              if (column.columnSpan) {
+                currentColumnWidth = `calc(${currentColumnWidth} / ${column.columnSpan})`;
+              }
+
               // eslint-disable-next-line react/forbid-dom-props
-              <col key={column.id} style={{ width: `${column.width}px` }} />
-            ))}
+              return (<col span={column.columnSpan} key={column.id} style={{ width: currentColumnWidth }} />);
+            })}
           </colgroup>
 
           <ColumnHeader
             tableId={id}
             isActiveColumnResizing={isActiveColumnResizing}
             activeColumnIndex={activeColumnIndex}
-            columns={tableColumns}
+            focusedRowIndex={focusedRowIndex}
+            triggerFocus={triggerFocus}
+            columns={tableHeaderColumns}
             hasVisibleColumnHeaders={hasVisibleColumnHeaders}
             headerHeight={columnHeaderHeight}
             columnResizeIncrement={columnResizeIncrement}
@@ -576,6 +731,7 @@ function Table(props) {
             onResizeMouseDown={onResizeMouseDown}
             onColumnSelect={handleColumnSelect}
             onResizeHandleChange={onResizeHandleChange}
+            hasColumnHeaderActions={hasColumnHeaderActions}
           />
           {tableSections.map((section) => (
             <Section
@@ -589,12 +745,17 @@ function Table(props) {
               isTableStriped={isStriped}
               text={section.text}
               rows={section.rows}
+              subsections={section.subsections}
               rowHeight={rowHeight}
               rowSelectionMode={rowSelectionMode}
-              displayedColumns={displayedColumns}
+              displayedColumns={tableBodyColumns}
               rowHeaderIndex={rowHeaderIndex}
               onCellSelect={isGridContext || rowSelectionMode ? handleCellSelection : undefined}
               onSectionSelect={onSectionSelect}
+              rowMinimumHeight={rowMinimumHeight}
+              boundingWidth={boundedWidth}
+              firstRowId={firstRowId}
+              lastRowId={lastRowId}
             />
           ))}
         </ColumnContext.Provider>

@@ -160,15 +160,19 @@ class Tabs extends React.Component {
     const currTab = this.props.tabData.find((tab) => tab.isSelected === true);
     const prevtabKeys = [];
     const prevtabLabels = [];
+    const prevtabIcons = [];
     prevProps.tabData.forEach(child => {
       prevtabKeys.push(child.id);
       prevtabLabels.push(child.label);
+      prevtabIcons.push(child.icon);
     });
     const curtabKeys = [];
     const curtabLabels = [];
+    const curtabIcons = [];
     this.props.tabData.forEach(child => {
       curtabKeys.push(child.id);
       curtabLabels.push(child.label);
+      curtabIcons.push(child.icon);
     });
 
     // Allow dynamic addition of tabs.
@@ -180,9 +184,11 @@ class Tabs extends React.Component {
       for (let i = 0; i < curtabKeys.length; i += 1) {
         const prevKey = prevtabKeys[i];
         const prevLabel = prevtabLabels[i];
+        const prevIcon = prevtabIcons[i];
         const curKey = curtabKeys[i];
         const curLabel = curtabLabels[i];
-        if (prevKey !== curKey || prevLabel !== curLabel) {
+        const curIcon = curtabIcons[i];
+        if (prevKey !== curKey || prevLabel !== curLabel || prevIcon !== curIcon) {
           isTabEqual = true;
         }
       }
@@ -408,7 +414,7 @@ class Tabs extends React.Component {
       offset = parentOffset + leftEdge + widthDelta;
     }
 
-    this.dropdownRef.current.style.left = `${offset}px`;
+    this.dropdownRef.current.style.left = (offset > 0) ? `${offset}px` : '0px';
     // Dropdown menu gets truncated when the left edge is less than or equal to zero. setting min-width will help to fix this issue.
     if (!leftEdge) {
       this.dropdownRef.current.style.minWidth = `${moreRect.width}px`;
@@ -433,7 +439,7 @@ class Tabs extends React.Component {
       if (this.isOpen) {
         const updatedTabData = this.state.visibleTabData.map((tab) => ({
           ...tab,
-          isSelected: tab.id === itemKey,
+          isSelected: tab.itemKey === itemKey,
         }));
         this.setState({ visibleTabData: updatedTabData }, () => {
           onSelect(itemKey, metaData);
@@ -568,7 +574,7 @@ class Tabs extends React.Component {
       }
     });
 
-    if (this.showMoreButton && this.dropdownRef.current) {
+    if (this.showMoreButton && this.dropdownRef.current && this.isOpen) {
       this.positionDropDown();
     }
 

@@ -1,13 +1,11 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl, mountWithIntl } from 'terra-enzyme-intl';
 import ThemeContextProvider from 'terra-theme-context/lib/ThemeContextProvider';
 
 import NavigationSideMenu from '../../src/NavigationSideMenu';
 
 describe('Layout', () => {
   it('should render a NavigationSideMenu with default props', () => {
-    const result = shallowWithIntl((
+    const result = enzymeIntl.shallowWithIntl((
       <NavigationSideMenu
         onChange={() => {}}
         routingStackBack={() => {}}
@@ -18,7 +16,7 @@ describe('Layout', () => {
   });
 
   it('should render a NavigationSideMenu with a toolbar', () => {
-    const result = shallowWithIntl((
+    const result = enzymeIntl.shallowWithIntl((
       <NavigationSideMenu
         onChange={jest.fn()}
         routingStackBack={jest.fn()}
@@ -30,7 +28,7 @@ describe('Layout', () => {
   });
 
   it('should render a NavigationSideMenu with selectedKey', () => {
-    const result = shallowWithIntl((
+    const result = enzymeIntl.shallowWithIntl((
       <NavigationSideMenu
         menuItems={[
           { key: 'menu', text: 'Test Menu', childKeys: ['test1', 'test2', 'test3', 'test4'] },
@@ -47,8 +45,29 @@ describe('Layout', () => {
     expect(result).toMatchSnapshot();
   });
 
+  it('should render a NavigationSideMenu with ariaLabel', () => {
+    const result = enzymeIntl.mountWithIntl((
+      <NavigationSideMenu
+        menuItems={[
+          { key: 'menu', text: 'Test Menu', childKeys: ['test1', 'test2', 'test3', 'test4'] },
+          { key: 'test1', text: 'Test Menu 1' },
+          { key: 'test2', text: 'Test Menu 2' },
+          { key: 'test3', text: 'Test Menu 3' },
+          { key: 'test4', text: 'Test Menu 4' },
+        ]}
+        onChange={() => {}}
+        routingStackBack={() => {}}
+        selectedMenuKey="menu"
+        ariaLabel="Sub Menu List"
+      />
+    ));
+    const navElement = result.find('nav');
+    expect(navElement.prop('aria-label')).toEqual('Sub Menu List');
+    expect(result).toMatchSnapshot();
+  });
+
   it('correctly applies the theme context className', () => {
-    const result = mountWithIntl(
+    const result = enzymeIntl.mountWithIntl(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <NavigationSideMenu
           menuItems={[

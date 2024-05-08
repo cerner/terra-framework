@@ -1,11 +1,9 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import UtilityMenuHeaderButton from '../../../src/utility-menu/_UtilityMenuHeaderButton';
 
 describe('UtilityMenuHeaderButton', () => {
   it('should render default element', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <UtilityMenuHeaderButton />,
     );
 
@@ -13,7 +11,7 @@ describe('UtilityMenuHeaderButton', () => {
   });
 
   it('should render with function callbacks', () => {
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <UtilityMenuHeaderButton
         userConfig={{
           name: 'user-name',
@@ -31,7 +29,7 @@ describe('UtilityMenuHeaderButton', () => {
   it('should render with click callback', () => {
     const mockCallBack = jest.fn();
 
-    const mountComponent = mountWithIntl(
+    const mountComponent = enzymeIntl.mountWithIntl(
       <UtilityMenuHeaderButton
         onClick={mockCallBack}
       />,

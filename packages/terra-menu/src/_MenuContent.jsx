@@ -163,6 +163,9 @@ class MenuContent extends React.Component {
   }
 
   onKeyDown(event) {
+    // stop event propagation in case Menu oppened inside the layout component that has its own key navigation.
+    // removing next line would affect Menu Button support in `terra-compact-interactive-list`
+    event.stopPropagation();
     const focusableMenuItems = this.contentNode.querySelectorAll('li[tabindex="0"]');
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_UP || event.nativeEvent.keyCode === KeyCode.KEY_END) {
@@ -187,7 +190,7 @@ class MenuContent extends React.Component {
     if (this.props.index > 0 && this.listNode) {
       const bufHeight = ((this.context.name || this.context.className) === 'orion-fusion-theme') || MenuUtils.isSafari() ? 20 : 10;
       const submenuHeight = this.listNode.clientHeight + this.listNode.parentNode.parentNode.parentNode.firstChild.clientHeight + bufHeight;
-      return submenuHeight > window.innerHeight ? this.props.fixedHeight : submenuHeight;
+      return submenuHeight > window.innerHeight ? window.innerHeight : submenuHeight;
     }
 
     return 0;
@@ -448,14 +451,16 @@ class MenuContent extends React.Component {
     const contentWidth = this.props.isWidthBounded ? undefined : this.props.fixedWidth;
     /* eslint-disable jsx-a11y/no-noninteractive-element-interactions, react/forbid-dom-props */
     return (
+    // eslint-disable-next-line jsx-a11y/no-static-element-interactions
       <div
         ref={this.handleContainerRef}
         className={contentClass}
         style={{ height: menuHeight, width: contentWidth, position: contentPosition }}
         tabIndex="-1"
-        aria-modal="true"
-        role="dialog"
         onKeyDown={this.onKeyDown}
+        // stop event propagation in case Menu oppened inside the layout component that has its own event handler for that event.
+        // added for Menu Button support in terra-compact-interactive-list.
+        onFocus={event => event.stopPropagation()}
       >
         <ContentContainer header={header} fill={this.props.isHeightBounded || this.props.index > 0}>
           <List className={cx('list')} role="menu" data-submenu={isSubMenu} refCallback={this.setListNode}>

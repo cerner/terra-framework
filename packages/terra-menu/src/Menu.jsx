@@ -196,8 +196,10 @@ class Menu extends React.Component {
         isOpen={isOpen}
         onRequestClose={onRequestClose}
         targetRef={targetRef}
+        hookshotPostionFixed
         isHeaderDisabled
         isContentFocusDisabled
+        popupContentRole={null}
       >
         {slides}
       </Popup>

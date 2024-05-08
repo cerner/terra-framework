@@ -1,4 +1,4 @@
-import getFocusableElements from '../../../terra-table/src/utils/focusManagement';
+import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 
 /**
  * @param {HTMLElement} element - The element to check if it is a text input
@@ -132,6 +132,29 @@ const getFirstSemanticRowIndexInVisualRow = (rowsLength, numberOfColumns, flowHo
 };
 
 /**
+   * Finds the last semantic row index in a visual row, where the given row is located
+   * @param {number} rowsLength - a total number of seamntic rows in the list.
+   * @param {number} numberOfColumns - a number of visual columns.
+   * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
+   * @param {number} row - an index of the currently focused semantic row.
+   * @returns - the index of the last semantic row in the same visual row as currently focused row.
+   */
+const getLastSemanticRowIndexInVisualRow = (rowsLength, numberOfColumns, flowHorizontally, row) => {
+  if (row === undefined || row === null) {
+    // If current row omitted, return the index of the last element
+    return rowsLength - 1;
+  }
+  if (flowHorizontally) {
+    const lastItemInVisualRow = (Math.ceil((row + 1) / numberOfColumns) * numberOfColumns) - 1;
+    return lastItemInVisualRow < rowsLength - 1 ? lastItemInVisualRow : rowsLength - 1;
+  }
+  const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
+  const rowsToTop = row % rowsPerColumn;
+  const lastItemInVisualRow = (numberOfColumns - 1) * rowsPerColumn + rowsToTop;
+  return lastItemInVisualRow < rowsLength ? lastItemInVisualRow : lastItemInVisualRow - rowsPerColumn;
+};
+
+/**
    * Calculates new semantic row and cell indexes to focus on per LEFT ARROW KEY press.
    * @param {KeyboardEvent} event - keyboard event.
    * @param {object} focusedCell - a { row, cell } pair, where row and cell are indexes of currently focused semantic row and a cell within that row.
@@ -156,14 +179,27 @@ export const handleLeftKey = (event, focusedCell, numberOfColumns, flowHorizonta
     // Focus moves to the first cell in the first item in the visual row.
     return { row: firstItemInVisualRow, cell: 0 };
   }
-  // Focus should go till the start of the visual row, and should not break to the previous visual row.
+
   if (cell === 0) {
+    // Focus reached the beginning of the the semantic row.
+    // Check if focus reached the beginning of the visual row.
     let nextCell = cell;
     let nextRow = row;
-    if (row === 0 || row === firstItemInVisualRow) {
-      // The first item in the list, or the first item in the visual row.
-      // Focus should stay where it is.
+    if (row === 0) {
+      // The first item in the list. Focus should stay where it is.
       return focusedCell;
+    }
+    if (!flowHorizontally) {
+      // VERTICAL FLOW
+      // Check if the first semantic row in a VISUAL row has been reached.
+      const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
+      if (row < rowsPerColumn) {
+        // Focus should wrap to the previous visual row.
+        const rowsToTop = row % rowsPerColumn;
+        const previousVisualRow = rowsToTop - 1;
+        const previousVisualRowlastSemanticRowIndex = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, previousVisualRow);
+        return { row: previousVisualRowlastSemanticRowIndex, cell: cellsLength - 1 };
+      }
     }
     // The first cell. Focus moves to the last cell of the semantic row to the left.
     nextCell = cellsLength - 1;
@@ -172,29 +208,6 @@ export const handleLeftKey = (event, focusedCell, numberOfColumns, flowHorizonta
   }
   // Not first cell. Focus moves within the row to the next cell to the left.
   return { row, cell: cell - 1 };
-};
-
-/**
-   * Finds the last semantic row index in a visual row, where the given row is located
-   * @param {number} rowsLength - a total number of seamntic rows in the list.
-   * @param {number} numberOfColumns - a number of visual columns.
-   * @param {boolean} flowHorizontally - sematic rows horizontal flow direction
-   * @param {number} row - an index of the currently focused semantic row.
-   * @returns - the index of the last semantic row in the same visual row as currently focused row.
-   */
-const getLastSemanticRowIndexInVisualRow = (rowsLength, numberOfColumns, flowHorizontally, row) => {
-  if (row === undefined || row === null) {
-    // If current row omitted, return the index of the last element
-    return rowsLength - 1;
-  }
-  if (flowHorizontally) {
-    const lastItemInVisualRow = (Math.ceil((row + 1) / numberOfColumns) * numberOfColumns) - 1;
-    return lastItemInVisualRow < rowsLength - 1 ? lastItemInVisualRow : rowsLength - 1;
-  }
-  const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
-  const rowsToTop = row % rowsPerColumn;
-  const lastItemInVisualRow = (numberOfColumns - 1) * rowsPerColumn + rowsToTop;
-  return lastItemInVisualRow < rowsLength ? lastItemInVisualRow : lastItemInVisualRow - rowsPerColumn;
 };
 
 /**
@@ -229,17 +242,36 @@ export const handleRightKey = (event, focusedCell, numberOfColumns, flowHorizont
     nextRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
     return { row: nextRow, cell: nextCell };
   }
-  // Focus should go till the end of the visual row, and should not break to the next visual row.
+
   if (cell === (cellsLength - 1)) {
-    // The last semantic column in the row.
-    // Check if the last item in visual row.
-    const lastRowIndex = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
-    if (row === lastRowIndex) {
-      // The last item in the visual row or next semantic row to the right is a placeholder.
-      // Focus should not move anywhere.
+    // Focus reached the end of the semantic row.
+    if (!flowHorizontally) {
+      // VERTICAL FLOW
+      // Check if the last semantic row in the LAST VISUAL row has been reached.
+      const rowsPerColumn = Math.ceil(rowsLength / numberOfColumns);
+      const lastVisualRowIndex = rowsPerColumn - 1;
+      const lastSemanticRowInLastVisualRow = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, lastVisualRowIndex);
+      if (row === lastSemanticRowInLastVisualRow) {
+        // Focus should stay where it is and NOT move to the right.
+        return { row, cell };
+      }
+
+      // Check if the last semantic row in ANY VISUAL row has been reached.
+      const lastSemanticRowIndex = getLastSemanticRowIndexInVisualRow(rowsLength, numberOfColumns, flowHorizontally, row);
+      if (row === lastSemanticRowIndex) {
+        // Focus should wrap to the next next visual row.
+        const rowsToTop = row % rowsPerColumn;
+        return { row: rowsToTop + 1, cell: 0 };
+      }
+    }
+
+    if (flowHorizontally && row === rowsLength - 1) {
+      // HORIZONTAL FLOW
+      // The last row in the list has been reached, focus should not move to the right.
       return { row, cell };
     }
-    // Focus moves to the first cell of the next semantic row.
+
+    // Not the end of the visual row, focus moves to the first cell of the next semantic row.
     nextCell = 0;
     nextRow += flowHorizontally ? 1 : Math.ceil(rowsLength / numberOfColumns);
   } else {
@@ -308,7 +340,7 @@ export const getFocusedCellIndexes = (list, columns, ids) => {
   const { rowId, columnId } = ids;
   const row = [...list.children].findIndex(rowElement => rowElement.getAttribute('data-row-id') === rowId);
   const cell = columns.findIndex(col => col.id === columnId);
-  // row - 1 needs to accomodate for the hidden header row
+  // row - 1 needs to accommodate for the hidden header row
   return { row: row - 1, cell };
 };
 
@@ -321,7 +353,7 @@ export const getFocusedCellIndexes = (list, columns, ids) => {
   */
 export const getFocusedCellIds = (list, columns, indexes) => {
   const { row, cell } = indexes;
-  // row + 1 needs to accomodate for the hidden header row
+  // row + 1 needs to accommodate for the hidden header row
   const rowId = list.children[row + 1].getAttribute('data-row-id');
   const columnId = columns[cell].id;
   return { rowId, columnId };

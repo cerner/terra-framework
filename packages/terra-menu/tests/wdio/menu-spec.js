@@ -65,6 +65,16 @@ Terra.describeViewports('Menu', ['medium'], () => {
     Terra.validates.element('selectable', { selector: '#root', rules: ignoredA11y });
   });
 
+  it('retains selected item on closing and re-opening Menu-Selectable ', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/selectable-menu');
+    $('#selectable-menu-button').click();
+    $('.TestGroupItem2').click();
+    browser.keys('Escape');
+    $('#selectable-menu-button').click();
+
+    Terra.validates.element('selected item', { selector: '#root', rules: ignoredA11y });
+  });
+
   it('displays a Menu with a submenu', () => {
     browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/sub-menu');
     $('#sub-menu-button').click();
@@ -75,6 +85,19 @@ Terra.describeViewports('Menu', ['medium'], () => {
     expect($('.TestNestedMenuContent').isFocused()).toBeTruthy();
     Terra.validates.element('menu with submenu', { selector: '#root' });
     browser.keys('Escape');
+  });
+
+  it('displays a large menu with scroll', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/large-menu-with-scroll');
+    $('#large-menu-button').click();
+    Terra.validates.element('Large menu with scroll', { selector: '#root', rules: ignoredA11y });
+  });
+
+  it('displays a large submenu with scroll', () => {
+    browser.url('/raw/tests/cerner-terra-framework-docs/menu/menu/large-sub-menu-with-scroll');
+    $('#large-sub-menu-button').click();
+    $('.TesSubMenu').click();
+    Terra.validates.element('Large sub menu with scroll', { selector: '#root', rules: ignoredA11y });
   });
 
   it('focuses on back button in submenu', () => {

@@ -34,9 +34,20 @@ const propTypes = {
   sectionId: PropTypes.string,
 
   /**
+   * An identifier for the subsection.
+   */
+  subsectionId: PropTypes.string,
+
+  /**
    * String that specifies height of the row. Any valid CSS width value is accepted.
   */
   height: PropTypes.string,
+
+  /**
+   * String that specifies the minimum height for the rows on the table. rowHeight takes precedence if valid CSS value is passed.
+   * With this property the height of the cell will grow to fit the cell content.
+   */
+  rowMinimumHeight: PropTypes.string,
 
   /**
    * Data to be displayed in the cells of the row. Cells will be rendered in the row in the order given.
@@ -74,13 +85,28 @@ const propTypes = {
    * Callback function that will be called when a cell in the row is selected.
    * @param {string} rowId rowId
    * @param {string} columnId columnId
+   * @param {number} columnSpanIndex columnSpanIndex
+   * @param {object} event event
    */
   onCellSelect: PropTypes.func,
 
   /**
    * A zero-based index indicating which column represents the row header.
+   * Index can be set to -1 if row headers are not required.
    */
   rowHeaderIndex: PropTypes.number,
+
+  /**
+   * @private
+   * Id of the first row in table
+   */
+  firstRowId: PropTypes.string,
+
+  /**
+   * @private
+   * Id of the last row in table
+   */
+  lastRowId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -96,6 +122,7 @@ function Row(props) {
     id,
     tableId,
     sectionId,
+    subsectionId,
     isSelected,
     isTableStriped,
     cells,
@@ -103,6 +130,9 @@ function Row(props) {
     displayedColumns,
     rowHeaderIndex,
     onCellSelect,
+    rowMinimumHeight,
+    firstRowId,
+    lastRowId,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -111,6 +141,11 @@ function Row(props) {
 
   const isMultiRowSelect = (rowSelectionMode === 'multiple');
   const columnIndexOffSet = isMultiRowSelect ? 1 : 0;
+
+  // Added to check if rowHeight is defined, it will take precedence. Otherwise the minimum row height would be used.
+  const heightProperties = (height) ? {
+    height,
+  } : { minHeight: rowMinimumHeight };
 
   return (
     <tr
@@ -122,7 +157,7 @@ function Row(props) {
         'striped-table-row': isTableStriped,
       }, theme.className)}
       // eslint-disable-next-line react/forbid-dom-props
-      style={{ height }}
+      style={{ ...heightProperties }}
       onMouseEnter={rowSelectionMode ? () => { setHovered(true); } : undefined}
       onMouseLeave={rowSelectionMode ? () => { setHovered(false); } : undefined}
     >
@@ -146,6 +181,8 @@ function Row(props) {
       {cells.map((cellData, index) => {
         const cellColumnIndex = index + columnIndexOffSet;
         const columnId = displayedColumns[cellColumnIndex].id;
+        const columnSpanIndex = displayedColumns[cellColumnIndex].columnSpanIndex ? displayedColumns[cellColumnIndex].columnSpanIndex : undefined;
+
         return (
           <Cell
             rowId={id}
@@ -153,16 +190,24 @@ function Row(props) {
             rowIndex={rowIndex}
             columnIndex={cellColumnIndex}
             sectionId={sectionId}
+            subsectionId={subsectionId}
             tableId={tableId}
-            key={`${id}_${columnId}`}
+            key={columnSpanIndex ? `${id}_${columnId}_${columnSpanIndex}` : `${id}_${columnId}`}
             isSelected={!rowSelectionMode && cellData.isSelected}
             isMasked={cellData.isMasked}
             maskedLabel={cellData.maskedLabel}
             isSelectable={cellData.isSelectable}
-            isRowHeader={cellColumnIndex === (rowHeaderIndex + columnIndexOffSet)}
+            isRowHeader={rowHeaderIndex !== -1 && cellColumnIndex === (rowHeaderIndex + columnIndexOffSet)}
             isHighlighted={isHovered || isSelected}
             onCellSelect={onCellSelect}
             height={height}
+            rowMinimumHeight={rowMinimumHeight}
+            rowHeaderIndex={rowHeaderIndex}
+            firstRowId={firstRowId}
+            lastRowId={lastRowId}
+            columnHighlightColor={displayedColumns[cellColumnIndex].columnHighlightColor}
+            columnSpanIndex={columnSpanIndex}
+            rowSelectionMode={rowSelectionMode}
           >
             {cellData.content}
           </Cell>

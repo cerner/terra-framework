@@ -22,7 +22,7 @@ const BasicFolderTree = () => {
           icon={<IconDocuments />}
           key="long-name-test"
           isSelected={selectedKey === 'long-name-test'}
-          onClick={() => { setSelectedKey('long-name-test'); }}
+          onSelect={() => { setSelectedKey('long-name-test'); }}
         />
       </FolderTree>
     </div>

@@ -13,7 +13,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -45,7 +45,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         activeResizeIndex={0}
@@ -78,7 +78,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -114,7 +114,7 @@ describe('ColumnHeader', () => {
     const mockColumnSelect = jest.fn();
     const mockResizeMouseDown = jest.fn();
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -142,6 +142,41 @@ describe('ColumnHeader', () => {
     expect(wrapper).toMatchSnapshot();
   });
 
+  it('renders a column header with actions row', () => {
+    const columns = [{
+      id: 'Column-0',
+      displayName: ' Vitals',
+      action: {
+        label: 'action-button',
+        onClick: jest.fn(),
+      },
+    }, {
+      id: 'Column-1',
+      displayName: ' Patient',
+    }];
+
+    const wrapper = enzyme.shallow(
+      <ColumnHeader
+        tableId="test-table"
+        columns={columns}
+        columnWidths={['2.5rem', '2.5rem']}
+        headerHeight="3rem"
+        hasColumnHeaderActions
+      />,
+    );
+
+    // Validate column actions row container
+    const columnActions = wrapper.find('.column-actions-row');
+    expect(columnActions).toHaveLength(1);
+    expect(columnActions.props()['aria-rowindex']).toBe(2);
+
+    //  Validate ColumnHeaderCell React component
+    const columnActionCells = columnActions.find(ColumnHeaderCell);
+    expect(columnActionCells).toHaveLength(2);
+
+    expect(wrapper).toMatchSnapshot();
+  });
+
   it('verifies that the hasVisibleColumnHeaders prop hides the table column headers when set to false', () => {
     const columns = [{
       id: 'Column-0',
@@ -151,7 +186,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}
@@ -178,7 +213,7 @@ describe('ColumnHeader', () => {
       displayName: ' Patient',
     }];
 
-    const wrapper = shallow(
+    const wrapper = enzyme.shallow(
       <ColumnHeader
         tableId="test-table"
         columns={columns}

@@ -1,12 +1,10 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { shallowWithIntl } from 'terra-enzyme-intl';
 import CollapsibleMenuView from '../../src/index';
 
 describe('CollapsibleMenuView', () => {
   // Default Collapsible Menu View
   it('should render a default component', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       (
         <CollapsibleMenuView>
           <CollapsibleMenuView.Item text="Button 1" className="Button1" key="button1" />
@@ -22,7 +20,7 @@ describe('CollapsibleMenuView', () => {
 
   // Props
   it('should render a start aligned component', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       (
         <CollapsibleMenuView
           isStartAligned
@@ -41,7 +39,7 @@ describe('CollapsibleMenuView', () => {
   });
 
   it('should render a fixed menu width', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       (
         <CollapsibleMenuView
           menuWidth="640"

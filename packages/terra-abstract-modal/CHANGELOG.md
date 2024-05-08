@@ -2,6 +2,27 @@
 
 ## Unreleased
 
+## 3.49.0 - (March 8, 2024)
+
+* Changes
+  * Re-introduced changes made in `v3.46.0`.
+  * Added promise polyfill to make component compatible with IE11.
+
+## 3.48.0 - (March 5, 2024)
+
+* Changed
+  * Reverted FocusOn changes. This will be released in a 4.0.0 release.
+
+## 3.47.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 3.46.0 - (February 16, 2024)
+
+* Added
+  * Added FocusOn to confine focus within the modal popup.
+
 ## 3.45.0 - (December 18, 2023)
 
 * Changed

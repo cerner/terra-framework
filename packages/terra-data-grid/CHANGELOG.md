@@ -2,6 +2,116 @@
 
 ## Unreleased
 
+## 1.31.0 - (May 1, 2024)
+
+* Changed
+  * Limit scrolling on focus by moving the tab index to the first column header cell.
+  
+## 1.30.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.29.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.28.0 - (April 17, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.27.0 - (April 15, 2024)
+
+* Added
+  * Added subsection support to the FlowsheetDataGrid component.
+
+## 1.26.0 - (April 10, 2024)
+
+* Added
+  * Added column span functionality to FlowsheetDataGrid.
+  * Added `isAutoFocusEnabled` prop to allow auto focus of interactable elements when the only interactable element is a button or hyperlink.
+
+## 1.25.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.24.0 - (March 29, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.23.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.22.0 - (March 21, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.21.0 - (March 19, 2024)
+
+* Removed
+  * Removed the `boundingRef` prop in favor of using the table's container ref for calculating the offset. is no longer needed for the section header's sticky behavior. This change is still passive in nature as it doesn't change any functionality for consumers.
+
+
+## 1.20.0 - (March 14, 2024)
+
+* Added
+  * Added `event` object to `onCellSelect` callback.
+
+* Changed
+  * Updated focus behavior so that cells with only a button or hyperlink will focus on those components directly without need for dive-in or focus trap.
+
+## 1.19.0 - (March 8, 2024)
+
+* Added
+  * Added support for orange and green column highlighting.
+
+* Fixed
+  * Fixes column index out of bounds in row selection mode.
+
+## 1.18.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.17.0 - (March 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.16.0 - (February 28, 2024)
+
+* Added
+   * Added support for column actions.
+
+## 1.15.0 - (February 28, 2024)
+
+* Added `boundingRef` prop for bounded flowsheet data grids.
+
+## 1.14.0 - (February 20, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.13.0 - (February 16, 2024)
+
+* Changed
+  * Removed the default rowMinimumHeight from FlowsheetDataGrid so that the `terra-table` default value is used. 
+
+## 1.12.0 - (February 1, 2024)
+
+* Added
+  * Added rowMinimumHeight prop that gets passed to terra-table to support flexible row height.
+
+* Changed
+  * Updated jest snapshots.
+
 ## 1.11.0 - (January 12, 2024)
 
 * Added

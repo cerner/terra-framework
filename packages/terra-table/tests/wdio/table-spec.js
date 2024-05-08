@@ -6,6 +6,13 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
     });
   });
 
+  describe('Table with Column Span', () => {
+    it('Validates the table is rendered with column spans', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-column-span');
+      Terra.validates.element('table-with-column-span', '#table-with-column-span');
+    });
+  });
+
   describe('No Interaction Table', () => {
     it('Validates the default table is not interactable', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/no-interaction-table');
@@ -143,6 +150,7 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
     beforeEach(() => {
       browser.url('/raw/tests/cerner-terra-framework-docs/table/scrollable-table');
+      browser.pause(100);
     });
 
     it('Validates first scrollable table receives focus', () => {
@@ -177,6 +185,22 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
     it('Validates a table with sections', () => {
       Terra.validates.element('table-with-sections', { selector: tableWithSectionsSelector });
+    });
+  });
+
+  describe('Table with subsections', () => {
+    const tableWithSubSectionsSelector = '#table-with-sub-sections';
+
+    it('validates a table with subsections', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-sub-sections');
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).not.toExist();
+      Terra.validates.element('table-with-subsections', { selector: tableWithSubSectionsSelector });
+    });
+
+    it('validates a table with with collapsed sections', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-collapsible-sections-and-sub-sections');
+      expect(browser.$('//*[@id="table-with-sub-sections"]/tbody[3]')).toHaveChildren(2);
+      Terra.validates.element('table-with-collasped-subsections', { selector: tableWithSubSectionsSelector });
     });
   });
 
@@ -257,6 +281,65 @@ Terra.describeViewports('Table', ['medium', 'large'], () => {
 
       browser.$$('tbody tr')[0].$$('td')[0].click();
       Terra.validates.element('row-single-selection-cell-click', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates right click on a selectable row does not select row', () => {
+      browser.$$('tbody tr')[0].$$('td')[0].click({ button: 'right' });
+      Terra.validates.element('row-single-selection-cell-right-click', { selector: rowSelectionTableSelector });
+    });
+
+    it('validates click on an interactive element in cell does not select row', () => {
+      $('#button').click();
+      Terra.validates.element('row-single-selection-cell-interactive-element-click', { selector: rowSelectionTableSelector });
+    });
+  });
+
+  describe('With single row selection and collapsible sections', () => {
+    const rowSelectionTableSelector = '#table-with-single-row-selection';
+
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-single-row-selection-and-collapsible-sections');
+    });
+
+    it('validates hovering over a selectable row', () => {
+      browser.$$('tbody tr')[1].$$('td')[0].click();
+
+      browser.$$('tbody tr')[0].$$('th button')[0].click();
+
+      browser.$$('tbody tr')[3].$$('td')[0].click();
+
+      Terra.validates.element('row-single-selection-with-collapsible-sections', { selector: rowSelectionTableSelector });
+    });
+  });
+
+  describe('Table with Large Text Data', () => {
+    beforeEach(() => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-large-data');
+    });
+
+    it('verifies that a table renders with large text cell data', () => {
+      Terra.validates.element('table-large-text', '#table-with-large-text');
+    });
+  });
+
+  describe('Table With Resizable Columns', () => {
+    it('Validates the resizable table', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-with-resizable-columns');
+      Terra.validates.element('resizable-table', '#resizable-terra-table');
+    });
+  });
+
+  describe('Table with no row headers', () => {
+    it('Validates table with no row headers', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/table-without-row-header');
+      Terra.validates.element('table-without-row-header', '#table-without-row-header');
+    });
+  });
+
+  describe('Auto Layoyut Table', () => {
+    it('Validates the auto layout table', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/table/auto-layout-table');
+      Terra.validates.element('auto-layout-table', '#auto-layout-table');
     });
   });
 });

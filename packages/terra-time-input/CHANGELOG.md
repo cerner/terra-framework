@@ -2,6 +2,50 @@
 
 ## Unreleased
 
+## 4.66.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.65.0 - (March 8, 2024)
+
+* Fixed
+  * Time input displays incorrectly in firefox.
+
+## 4.64.0 - (February 28, 2024)
+
+* Fixed
+  * Fixed error message reading issue.
+
+## 4.63.0 - (February 22, 2024)
+
+* Added
+  * Added ariaDescribedBy prop to announce invalid error message.
+
+* Changed
+  * Added fix for field label SR announce.
+
+## 4.62.0 - (February 16, 2024)
+
+* Fixed
+  * Added fix for field label screenreader announcement.
+
+* Changed
+  * Changed `up`,`down` key functionality to same as `+`,`-` functionality to make uniform.
+  * Changed `terra-time-input` type `number` instead of `text`.
+
+## 4.61.0 - (January 25, 2024)
+
+* Changed
+  * Added metadata as argument for onBlur callback.
+* Fixed
+  * Fixed time input to change the focused input field instead of the minute input while pressing `+`, `-` keys.
+  * Fixed minor formatting mistake.
+
+* Added
+  * Added visual focus dashed border for `terra-time-input`.
+  * Updated screen reader response to announce hot keys suggestions.
+
 ## 4.60.0 - (January 2, 2024)
 
 * Changed

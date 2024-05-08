@@ -11,7 +11,7 @@ describe('ApplicationHeaderUtility', () => {
   const title = 'name';
 
   it('should render with default props', () => {
-    const wrapper = shallow(<ApplicationHeaderUtility
+    const wrapper = enzyme.shallow(<ApplicationHeaderUtility
       menuItems={[]}
       onChange={mockOnChange}
       onDisclose={mockOnDisclose}
@@ -22,7 +22,7 @@ describe('ApplicationHeaderUtility', () => {
   });
 
   it('should render with a title', () => {
-    const wrapper = shallow(<ApplicationHeaderUtility
+    const wrapper = enzyme.shallow(<ApplicationHeaderUtility
       menuItems={[]}
       onChange={mockOnChange}
       onDisclose={mockOnDisclose}
@@ -34,7 +34,7 @@ describe('ApplicationHeaderUtility', () => {
   });
 
   it('should render with an accessory', () => {
-    const wrapper = shallow(<ApplicationHeaderUtility
+    const wrapper = enzyme.shallow(<ApplicationHeaderUtility
       menuItems={[]}
       onChange={mockOnChange}
       onDisclose={mockOnDisclose}
@@ -46,7 +46,7 @@ describe('ApplicationHeaderUtility', () => {
   });
 
   it('should render with menu items', () => {
-    const wrapper = shallow(<ApplicationHeaderUtility
+    const wrapper = enzyme.shallow(<ApplicationHeaderUtility
       menuItems={MockConfig()}
       onChange={mockOnChange}
       onDisclose={mockOnDisclose}
@@ -57,7 +57,7 @@ describe('ApplicationHeaderUtility', () => {
   });
 
   it('it should pass in a custom prop', () => {
-    const wrapper = shallow(<ApplicationHeaderUtility
+    const wrapper = enzyme.shallow(<ApplicationHeaderUtility
       menuItems={[]}
       onChange={mockOnChange}
       onDisclose={mockOnDisclose}
@@ -70,7 +70,7 @@ describe('ApplicationHeaderUtility', () => {
 
   it('should render with a user specified role', () => {
     const menuRole = 'menu';
-    const wrapper = shallow(<ApplicationHeaderUtility
+    const wrapper = enzyme.shallow(<ApplicationHeaderUtility
       menuItems={[]}
       onChange={mockOnChange}
       onDisclose={mockOnDisclose}
@@ -85,7 +85,7 @@ describe('ApplicationHeaderUtility', () => {
 
   it('should render with a default role when no role is specified', () => {
     const defaultMenuRole = 'navigation';
-    const wrapper = shallow(<ApplicationHeaderUtility
+    const wrapper = enzyme.shallow(<ApplicationHeaderUtility
       menuItems={[]}
       onChange={mockOnChange}
       onDisclose={mockOnDisclose}

@@ -2,6 +2,76 @@
 
 ## Unreleased
 
+## 6.96.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.95.0 - (May 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.94.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.93.0 - (April 18, 2024)
+
+* Added
+  * Added test for `terra-table` to cover exception occurring with collapsible sections and single row select mode.
+
+## 6.92.0 - (April 17, 2024)
+
+* Changed
+  * Removed dialog role to fix axe a11y violation.
+
+## 6.91.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.90.0 - (March 25, 2024)
+
+* Fixed
+  * Fixes white space issue in large menu by setting hookshot position to fixed
+
+## 6.89.0 - (March 14, 2024)
+
+* Changed
+  * Focus and keyDown events propagation stopped for component being used inside `terra-compact-interactive-list` cells.
+
+## 6.88.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.87.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.86.0 - (March 1, 2024)
+
+* Fixed
+  * Fixed sub-menu height issue when it exceeds viewport size.
+
+## 6.85.0 - (February 28, 2024)
+
+* Fixed
+  * Fixed `MenuItemGroup` to retain selection state when menu is closed and re-opened and `isToggled` prop is used.
+
+## 6.84.1 - (February 7, 2024)
+
+* Fixed
+  * Fixed a focus indicator styling issue for the back button.
+
+## 6.84.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.83.0 - (December 18, 2023)
 
 * Added
@@ -11,7 +81,7 @@
 
 * Fixed
   * Fixed the issue with `contentWidth` as auto value.
-  
+
 * Changed
   * Allow menu/sub-menu to dynamically set height based on menu items.
 

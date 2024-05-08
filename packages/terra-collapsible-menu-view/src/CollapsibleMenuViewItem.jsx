@@ -149,7 +149,7 @@ class CollapsibleMenuViewItem extends React.Component {
           button={(
             <Button
               {...attributes}
-              aria-haspopup="dialog"
+              aria-haspopup
               icon={icon}
               text={text}
               isReversed={isReversed}

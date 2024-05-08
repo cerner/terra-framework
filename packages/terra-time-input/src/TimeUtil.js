@@ -412,6 +412,13 @@ class TimeUtil {
 
     return variant;
   }
+
+  /**
+   * Util to determine if the user agent indicates that it is macOS
+   * @return {boolean}
+   */
+
+   static isMac = () => navigator.userAgent.indexOf('Mac') !== -1 && navigator.userAgent.indexOf('Win') === -1;
 }
 
 TimeUtil.inputType = {
@@ -420,6 +427,14 @@ TimeUtil.inputType = {
   MERIDIEM: 2,
   SECOND: 3,
 };
+
+TimeUtil.LastHour = '23';
+TimeUtil.LastMinute = '59';
+TimeUtil.LastSecond = '59';
+TimeUtil.SingleZeroDigit = '0';
+TimeUtil.DoubleZeroDigit = '00';
+
+TimeUtil.initialValue = ['0', '00'];
 
 TimeUtil.isConsideredMobileDevice = () => window.matchMedia('(max-width: 1024px)').matches
   && (

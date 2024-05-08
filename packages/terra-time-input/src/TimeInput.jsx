@@ -14,7 +14,6 @@ import styles from './TimeInput.module.scss';
 
 import AccessibleInput from './_AccessibleInput';
 import TimeSpacer from './_TimeSpacer';
-import AccessibleValue from './_AccessibleValue';
 
 const cx = classNamesBind.bind(styles);
 
@@ -77,6 +76,7 @@ const propTypes = {
   /**
    * A callback function to execute when the entire time input component loses focus.
    * This event does not get triggered when the focus is moved from the hour input to the minute input or meridiem because the focus is still within the main time input component.
+   * The first parameter is the event object and the second is a metaData object.
    */
   onBlur: PropTypes.func,
   /**
@@ -115,6 +115,12 @@ const propTypes = {
    * If the `variant` prop if set to `12-hour` for one of these supported locales, the variant will be ignored and defaults to `24-hour`.
    */
   variant: PropTypes.oneOf([TimeUtil.FORMAT_12_HOUR, TimeUtil.FORMAT_24_HOUR]),
+  /**
+   * ![IMPORTANT](https://badgen.net/badge/UX/Accessibility/blue).
+   * If invalid error text is used, provide a string containing the IDs for error html element.
+   * ID must be htmlFor prop value with error text.
+   */
+  errorId: PropTypes.string,
 };
 
 const defaultProps = {
@@ -136,6 +142,7 @@ const defaultProps = {
   showSeconds: false,
   value: undefined,
   variant: TimeUtil.FORMAT_24_HOUR,
+  errorId: '',
 };
 
 class TimeInput extends React.Component {
@@ -183,6 +190,8 @@ class TimeInput extends React.Component {
     this.visuallyHiddenComponent = null;
     this.handleInvalidInputChange = this.handleInvalidInputChange.bind(this);
     this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
+    this.handleMinusChange = this.handleMinusChange.bind(this);
+    this.handlePlusChange = this.handlePlusChange.bind(this);
 
     let hour = TimeUtil.splitHour(value);
     let meridiem;
@@ -272,31 +281,16 @@ class TimeInput extends React.Component {
   handleSecondFocus(event) {
     this.handleFocus(event);
     this.setState({ secondInitialFocused: true });
-
-    // This check is _needed_ to avoid the contextual menu on mobile devices coming up every time the focus shifts.
-    if (!TimeUtil.isConsideredMobileDevice()) {
-      this.secondInput.setSelectionRange(0, this.secondInput.value.length);
-    }
   }
 
   handleMinuteFocus(event) {
     this.handleFocus(event);
     this.setState({ minuteInitialFocused: true });
-
-    // This check is _needed_ to avoid the contextual menu on mobile device coming up every time the focus shifts.
-    if (!TimeUtil.isConsideredMobileDevice()) {
-      this.minuteInput.setSelectionRange(0, this.minuteInput.value.length);
-    }
   }
 
   handleHourFocus(event) {
     this.handleFocus(event);
     this.setState({ hourInitialFocused: true });
-
-    // This check is _needed_ to avoid the contextual menu on mobile device coming up every time the focus shifts.
-    if (!TimeUtil.isConsideredMobileDevice()) {
-      this.hourInput.setSelectionRange(0, this.hourInput.value.length);
-    }
   }
 
   handleHourBlur(event) {
@@ -342,10 +336,19 @@ class TimeInput extends React.Component {
       // Modern browsers support event.relatedTarget but event.relatedTarget returns null in IE 10 / IE 11.
       // IE 11 sets document.activeElement to the next focused element before the blur event is called.
       const activeTarget = event.relatedTarget ? event.relatedTarget : document.activeElement;
+      const {
+        hour, minute, second, meridiem,
+      } = this.state;
+      const metaData = {
+        hour,
+        minute,
+        second,
+        meridiem,
+      };
 
       // Handle blur only if focus has moved out of the entire time input component.
       if (!this.timeInputContainer.current.contains(activeTarget)) {
-        this.props.onBlur(event);
+        this.props.onBlur(event, metaData);
       }
     }
   }
@@ -468,39 +471,53 @@ class TimeInput extends React.Component {
   }
 
   handleInputKeyDown(event, inputType) {
-    const { second } = this.state;
     let {
       hour,
       minute,
+      second,
       meridiem,
     } = this.state;
     const variant = TimeUtil.getVariantFromLocale(this.props);
 
+    if (event.currentTarget.value.length === 2 && event.key.match(/^[0-9]/g)) {
+      event.currentTarget.value = ''; // eslint-disable-line no-param-reassign
+    }
+
+    if (!event.key.match(/^[0-9]/g) && !(event.keyCode === KeyCode.KEY_BACK_SPACE || event.keyCode === KeyCode.KEY_DELETE || event.keyCode === KeyCode.KEY_TAB || event.keyCode === KeyCode.KEY_RIGHT || event.keyCode === KeyCode.KEY_LEFT)) {
+      event.preventDefault();
+    }
+
     if (event.key === 'n' || event.key === 'N') {
+      event.preventDefault();
       const currentTime = this.getCurrentTime();
       this.setTime(event, currentTime.hour, currentTime.minute, currentTime.second, currentTime.meridiem);
       return;
     }
 
-    if ((event.key === '-' || event.key === '_') && !this.props.atMinDate) {
+    if ((event.key === '-' || event.key === '_' || event.keyCode === KeyCode.KEY_DOWN) && !this.props.atMinDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
-        if (minute === '0' || minute === '00') {
-          minute = '59';
-          if (hour === '0' || hour === '00') {
-            hour = '23';
-          } else {
-            if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
-              if (meridiem === this.anteMeridiem) {
-                meridiem = this.postMeridiem;
-              } else {
-                meridiem = this.anteMeridiem;
-              }
+        if (inputType === 3 && this.props.showSeconds) {
+          if (TimeUtil.initialValue.includes(second)) {
+            second = TimeUtil.LastSecond;
+            if (TimeUtil.initialValue.includes(minute)) {
+              minute = TimeUtil.LastMinute;
+              [hour, meridiem] = this.handleMinusChange(hour, variant, meridiem);
+            } else {
+              minute = TimeUtil.decrementMinute(minute);
             }
-            hour = TimeUtil.decrementHour(hour, variant);
+          } else {
+            second = TimeUtil.decrementSecond(second);
           }
-        } else {
-          minute = TimeUtil.decrementMinute(minute);
+        } else if (inputType === 1) {
+          if (TimeUtil.initialValue.includes(minute)) {
+            minute = TimeUtil.LastMinute;
+            [hour, meridiem] = this.handleMinusChange(hour, variant, meridiem);
+          } else {
+            minute = TimeUtil.decrementMinute(minute);
+          }
+        } else if (inputType === 0) {
+          [hour, meridiem] = this.handleMinusChange(hour, variant, meridiem);
         }
         this.setTime(event, hour, minute, second, meridiem);
       } else {
@@ -508,47 +525,45 @@ class TimeInput extends React.Component {
         let formatHour = currentTime.hour;
         let formatMinute = currentTime.minute;
         let formatMeridiem = currentTime.meridiem;
-        if (formatMinute === '0' || formatMinute === '00') {
-          formatMinute = '59';
-          if (formatHour === '0' || formatHour === '00') {
-            formatHour = '23';
+        if (inputType === 1) {
+          if (TimeUtil.initialValue.includes(formatMinute)) {
+            formatMinute = TimeUtil.LastMinute;
+            [formatHour, formatMeridiem] = this.handleMinusChange(formatHour, variant, formatMeridiem);
           } else {
-            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '12') {
-              if (formatMeridiem === this.anteMeridiem) {
-                formatMeridiem = this.postMeridiem;
-              } else {
-                formatMeridiem = this.anteMeridiem;
-              }
-            }
-            formatHour = TimeUtil.decrementHour(formatHour, variant);
+            formatMinute = TimeUtil.decrementMinute(formatMinute);
           }
-        } else {
-          formatMinute = TimeUtil.decrementMinute(formatMinute);
+        } else if (inputType === 0) {
+          [formatHour, formatMeridiem] = this.handleMinusChange(formatHour, variant, formatMeridiem);
         }
         this.setTime(event, formatHour, formatMinute, currentTime.second, formatMeridiem);
       }
       return;
     }
 
-    if ((event.key === '=' || event.key === '+') && !this.props.atMaxDate) {
+    if ((event.key === '=' || event.key === '+' || event.keyCode === KeyCode.KEY_UP) && !this.props.atMaxDate) {
       const currentTimeValue = this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : '');
       if (TimeUtil.validateTime(currentTimeValue, this.props.showSeconds)) {
-        if (minute === '59') {
-          minute = '00';
-          if (hour === '23') {
-            hour = '00';
-          } else {
-            if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
-              if (meridiem === this.anteMeridiem) {
-                meridiem = this.postMeridiem;
-              } else {
-                meridiem = this.anteMeridiem;
-              }
+        if (inputType === 3 && this.props.showSeconds) {
+          if (second === TimeUtil.LastSecond) {
+            second = TimeUtil.DoubleZeroDigit;
+            if (minute === TimeUtil.LastMinute) {
+              minute = TimeUtil.DoubleZeroDigit;
+              [hour, meridiem] = this.handlePlusChange(hour, variant, meridiem);
+            } else {
+              minute = TimeUtil.incrementMinute(minute);
             }
-            hour = TimeUtil.incrementHour(hour, variant);
+          } else {
+            second = TimeUtil.incrementSecond(second);
           }
-        } else {
-          minute = TimeUtil.incrementMinute(minute);
+        } else if (inputType === 1) {
+          if (minute === TimeUtil.LastMinute) {
+            minute = TimeUtil.DoubleZeroDigit;
+            [hour, meridiem] = this.handlePlusChange(hour, variant, meridiem);
+          } else {
+            minute = TimeUtil.incrementMinute(minute);
+          }
+        } else if (inputType === 0) {
+          [hour, meridiem] = this.handlePlusChange(hour, variant, meridiem);
         }
         this.setTime(event, hour, minute, second, meridiem);
       } else {
@@ -556,22 +571,15 @@ class TimeInput extends React.Component {
         let formatHour = currentTime.hour;
         let formatMinute = currentTime.minute;
         let formatMeridiem = currentTime.meridiem;
-        if (currentTime.minute === '59') {
-          formatMinute = '00';
-          if (formatHour === '23') {
-            formatHour = '00';
+        if (inputType === 1) {
+          if (currentTime.minute === TimeUtil.LastMinute) {
+            formatMinute = TimeUtil.DoubleZeroDigit;
+            [formatHour, formatMeridiem] = this.handlePlusChange(formatHour, variant, formatMeridiem);
           } else {
-            if (variant === TimeUtil.FORMAT_12_HOUR && formatHour === '11') {
-              if (formatMeridiem === this.anteMeridiem) {
-                formatMeridiem = this.postMeridiem;
-              } else {
-                formatMeridiem = this.anteMeridiem;
-              }
-            }
-            formatHour = TimeUtil.incrementHour(formatHour, variant);
+            formatMinute = TimeUtil.incrementMinute(formatMinute);
           }
-        } else {
-          formatMinute = TimeUtil.incrementMinute(formatMinute);
+        } else if (inputType === 0) {
+          [formatHour, formatMeridiem] = this.handlePlusChange(formatHour, variant, formatMeridiem);
         }
         this.setTime(event, formatHour, formatMinute, currentTime.second, formatMeridiem);
       }
@@ -609,6 +617,42 @@ class TimeInput extends React.Component {
     }
   }
 
+  handleMinusChange(hour, variant, meridiem) {
+    let updatedHour = hour;
+    let updatedMeridiem = meridiem;
+    if (hour === TimeUtil.SingleZeroDigit || hour === TimeUtil.DoubleZeroDigit) {
+      updatedHour = TimeUtil.LastHour;
+    } else {
+      if (variant === TimeUtil.FORMAT_12_HOUR && hour === '12') {
+        if (meridiem === this.anteMeridiem) {
+          updatedMeridiem = this.postMeridiem;
+        } else {
+          updatedMeridiem = this.anteMeridiem;
+        }
+      }
+      updatedHour = TimeUtil.decrementHour(updatedHour, variant);
+    }
+    return [updatedHour, updatedMeridiem];
+  }
+
+  handlePlusChange(hour, variant, meridiem) {
+    let updatedHour = hour;
+    let updatedMeridiem = meridiem;
+    if (hour === TimeUtil.LastHour) {
+      updatedHour = TimeUtil.DoubleZeroDigit;
+    } else {
+      if (variant === TimeUtil.FORMAT_12_HOUR && hour === '11') {
+        if (meridiem === this.anteMeridiem) {
+          updatedMeridiem = this.postMeridiem;
+        } else {
+          updatedMeridiem = this.anteMeridiem;
+        }
+      }
+      updatedHour = TimeUtil.incrementHour(updatedHour, variant);
+    }
+    return [updatedHour, updatedMeridiem];
+  }
+
   /**
    * Takes a key input from the hour input, and processes it based on the value of the keycode.
    * If the key is an up or down arrow, it increments/decrements the hour. If the right arrow
@@ -616,32 +660,9 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleHourInputKeyDown(event) {
-    let stateValue = this.state.hour;
-    let { meridiem } = this.state;
+    const stateValue = this.state.hour;
+    const { meridiem } = this.state;
     const previousStateValue = stateValue;
-    const variant = TimeUtil.getVariantFromLocale(this.props);
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementHour(stateValue, variant);
-
-      // Hitting 12 when incrementing up changes the meridiem
-      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '12') {
-        if (meridiem === this.postMeridiem || !previousStateValue) {
-          meridiem = this.anteMeridiem;
-        } else {
-          meridiem = this.postMeridiem;
-        }
-      }
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementHour(stateValue, variant);
-
-      // Hitting 11 when incrementing down changes the meridiem
-      if (variant === TimeUtil.FORMAT_12_HOUR && stateValue === '11') {
-        meridiem = meridiem === this.postMeridiem ? this.anteMeridiem : this.postMeridiem;
-      }
-    }
 
     if (stateValue !== previousStateValue) {
       this.handleValueChange(event, TimeUtil.inputType.HOUR, stateValue, meridiem);
@@ -660,16 +681,8 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleMinuteInputKeyDown(event) {
-    let stateValue = this.state.minute;
+    const stateValue = this.state.minute;
     const previousStateValue = stateValue;
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementMinute(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementMinute(stateValue);
-    }
 
     if (previousStateValue !== stateValue) {
       this.handleValueChange(event, TimeUtil.inputType.MINUTE, stateValue, this.state.meridiem);
@@ -694,16 +707,8 @@ class TimeInput extends React.Component {
    * @param {Object} event Event object generated from the event delegation.
    */
   handleSecondInputKeyDown(event) {
-    let stateValue = this.state.second;
+    const stateValue = this.state.second;
     const previousStateValue = stateValue;
-
-    if (event.keyCode === KeyCode.KEY_UP) {
-      stateValue = TimeUtil.incrementSecond(stateValue);
-    }
-
-    if (event.keyCode === KeyCode.KEY_DOWN) {
-      stateValue = TimeUtil.decrementSecond(stateValue);
-    }
 
     if (previousStateValue !== stateValue) {
       this.handleValueChange(event, TimeUtil.inputType.SECOND, stateValue, this.state.meridiem);
@@ -745,7 +750,7 @@ class TimeInput extends React.Component {
       if (hour === '' && minute === '' && second === '') {
         this.props.onChange(event, '');
       } else {
-        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : ''));
+        this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : ''), meridiem);
       }
     }
   }
@@ -802,56 +807,43 @@ class TimeInput extends React.Component {
       secondInitialFocused: false,
     });
     if (this.props.onChange) {
-      this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : ''));
+      this.props.onChange(event, this.formatHour(hour, meridiem).concat(':', minute).concat(this.props.showSeconds ? ':'.concat(second) : ''), meridiem);
     }
   }
 
   focusMinuteFromHour(event) {
     // If the hour is empty or the cursor is after the value, move focus to the minute input when the right arrow is pressed.
-    if (this.state.hour.length === 0 || this.state.hour.length === this.hourInput.selectionEnd) {
+    if (this.state.hour.length === 0) {
       this.minuteInput.focus();
-      this.minuteInput.setSelectionRange(0, 0);
       event.preventDefault();
     }
   }
 
-  focusHour(event) {
+  focusHour() {
     // If the cursor is at the left most position in the minute input, is empty or the cursor is before the value,
     // move focus to the hour input
 
-    if (this.minuteInput.selectionEnd === 0) {
+    if (this.state.minute.length === 0) {
       this.hourInput.focus();
-      if (this.state.hour) {
-        this.hourInput.setSelectionRange(this.state.hour.length, this.state.hour.length);
-        event.preventDefault();
-      }
     }
   }
 
-  focusSecondFromMinute(event) {
+  focusSecondFromMinute() {
     // If the minute is empty or the cursor is after the value, move focus to the meridiem.
     if ((this.state.minute.length === 0
       || this.state.minute.length === this.minuteInput.selectionEnd)
       && this.secondInput
     ) {
       this.secondInput.focus();
-      if (this.state.second) {
-        this.secondInput.setSelectionRange(0, 0);
-        event.preventDefault();
-      }
     }
   }
 
-  focusMinuteFromSecond(event) {
+  focusMinuteFromSecond() {
     // If the cursor is at the left most position in the second input, is empty or the cursor is before the value,
     // move focus to the minute input
 
-    if (this.secondInput.selectionEnd === 0) {
+    if (this.state.second.length === 0) {
       this.minuteInput.focus();
-      if (this.state.minute) {
-        this.minuteInput.setSelectionRange(this.state.minute.length, this.state.minute.length);
-        event.preventDefault();
-      }
     }
   }
 
@@ -902,6 +894,7 @@ class TimeInput extends React.Component {
       showSeconds,
       value,
       variant,
+      errorId,
       ...customProps
     } = this.props;
 
@@ -999,6 +992,9 @@ class TimeInput extends React.Component {
     inputAttributes.required = required;
 
     const a11yTimeValue = TimeUtil.getA11YTimeValue(this.props, this.state, this.postMeridiem);
+    const hotKeyDescription = intl.formatMessage({ id: 'Terra.timePicker.hotKey' });
+    const minuteDescription = intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' });
+    const secondDescription = intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' });
 
     return (
       <div
@@ -1006,7 +1002,7 @@ class TimeInput extends React.Component {
         ref={this.timeInputContainer}
         className={cx('time-input-container', theme.className)}
       >
-        <div className={timeInputClassNames} role="group" aria-label={this.a11yLabel}>
+        <div className={timeInputClassNames} role="group">
           {/*
           "Time of Birth group. Time of birth Hours input., ..."
         All of the controls should be presented as a group to assistive technologies. Then, each component also
@@ -1052,14 +1048,10 @@ class TimeInput extends React.Component {
         1 - why does it mean to have an invalid meridiem? Why is that possible? It is not supported by Aria or HTML to indicate a button is "invalid".
         2 - why won't the mobile invalid and mobile incomplete tests read the inputs as invalid or incomplete? The voiceOver rotor and the accessibility panel both show them correctly as incomplete or invalid, just the read-mode is wrong. This problem doesn't happen on the normal incomplete/invalid tests. I was testing on macOS the entire time.
           */}
-          <AccessibleValue
-            value={a11yTimeValue}
-            /**
-             * description: This will be read to screen reader users only textValue changes to a new time. We want to
-             * give the screen reader user feedback that their change to one of the controls has updated this time.
-             */
-            readThis={intl.formatMessage({ id: 'Terra.timeInput.labeledTextValue' },
+          <VisuallyHiddenText
+            text={intl.formatMessage({ id: 'Terra.timeInput.labeledTextValue' },
               { a11yLabel: this.a11yLabel, a11yTimeValue })}
+            aria-live="polite"
           />
           <input
             // Create a hidden input for storing the name and value attributes to use when submitting the form.
@@ -1099,14 +1091,15 @@ class TimeInput extends React.Component {
             onBlur={this.handleHourBlur}
             size="2"
             pattern="\d*"
-            description={hourDescription()}
+            description={`${hourDescription()}, ${hotKeyDescription}`}
+            ariaDescribedBy={errorId}
           />
           <TimeSpacer className={cx('time-spacer')} />
           <AccessibleInput
             {...inputAttributes}
             {...minuteAttributes}
             refCallback={(inputRef) => { this.minuteInput = inputRef; }}
-            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' })}
+            label={intl.formatMessage({ id: 'Terra.timeInput.minutes' }, { a11yLabel: this.a11yLabel })}
             className={minuteClassNames}
             type="text"
             value={this.state.minute}
@@ -1119,7 +1112,8 @@ class TimeInput extends React.Component {
             size="2"
             pattern="\d*"
             // description: Like the hour descriptions, but for the minute input.
-            description={intl.formatMessage({ id: 'Terra.timeInput.descriptionMinute' })}
+            description={`${minuteDescription}, ${hotKeyDescription}`}
+            ariaDescribedBy={errorId}
           />
           {showSeconds && (
           <React.Fragment>
@@ -1128,7 +1122,7 @@ class TimeInput extends React.Component {
               {...inputAttributes}
               {...secondAttributes}
               refCallback={(inputRef) => { this.secondInput = inputRef; }}
-              label={intl.formatMessage({ id: 'Terra.timeInput.seconds' })}
+              label={intl.formatMessage({ id: 'Terra.timeInput.seconds' }, { a11yLabel: this.a11yLabel })}
               className={secondClassNames}
               type="text"
               value={this.state.second}
@@ -1141,7 +1135,8 @@ class TimeInput extends React.Component {
               size="2"
               pattern="\d*"
               // description: Like the hour descriptions, but for the second input.
-              description={intl.formatMessage({ id: 'Terra.timeInput.descriptionSecond' })}
+              description={`${secondDescription}, ${hotKeyDescription}`}
+              ariaDescribedBy={errorId}
             />
           </React.Fragment>
           )}

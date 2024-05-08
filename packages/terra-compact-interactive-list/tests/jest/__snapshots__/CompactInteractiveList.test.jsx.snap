@@ -7,7 +7,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
       Object {
         "displayName": "Col_1",
         "id": "Column-0",
-        "minimunWidth": "20px",
+        "minimumWidth": "20px",
         "width": "40px",
       },
       Object {
@@ -173,7 +173,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         Object {
           "displayName": "Col_1",
           "id": "Column-0",
-          "minimunWidth": "20px",
+          "minimumWidth": "20px",
           "width": "40px",
         },
         Object {
@@ -189,6 +189,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         },
       ]
     }
+    hasVisibleBorders={true}
     id="compact-interactive-list-fixed-width"
     intl={
       Object {
@@ -408,7 +409,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -424,6 +425,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_1"
           isLeftmost={true}
           isResponsive={false}
@@ -462,7 +464,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -648,7 +650,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -664,6 +666,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_2"
           isLeftmost={true}
           isResponsive={false}
@@ -702,7 +705,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -885,7 +888,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -901,6 +904,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_3"
           isLeftmost={true}
           isResponsive={false}
@@ -939,7 +943,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -1112,7 +1116,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -1128,6 +1132,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_4"
           isLeftmost={true}
           isResponsive={false}
@@ -1166,7 +1171,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -1291,7 +1296,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               Object {
                 "displayName": "Col_1",
                 "id": "Column-0",
-                "minimunWidth": "20px",
+                "minimumWidth": 20,
                 "width": 40,
               },
               Object {
@@ -1307,6 +1312,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_5"
           isLeftmost={true}
           isResponsive={false}
@@ -1345,7 +1351,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 Object {
                   "displayName": "Col_1",
                   "id": "Column-0",
-                  "minimunWidth": "20px",
+                  "minimumWidth": 20,
                   "width": 40,
                 }
               }
@@ -1692,6 +1698,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         },
       ]
     }
+    hasVisibleBorders={true}
     id="compact-interactive-list-minWidth-calculation"
     intl={
       Object {
@@ -1927,6 +1934,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_1"
           isLeftmost={true}
           isResponsive={true}
@@ -2167,6 +2175,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_2"
           isLeftmost={true}
           isResponsive={true}
@@ -2404,6 +2413,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_3"
           isLeftmost={true}
           isResponsive={true}
@@ -2631,6 +2641,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_4"
           isLeftmost={false}
           isResponsive={true}
@@ -2810,6 +2821,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               },
             ]
           }
+          hasVisibleBorders={true}
           id="row_5"
           isLeftmost={false}
           isResponsive={true}
@@ -3024,6 +3036,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               },
             ]
           }
+          hasVisibleBorders={true}
           id="placeholder-row-1"
           isLeftmost={false}
           isResponsive={true}

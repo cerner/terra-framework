@@ -15,6 +15,8 @@ export { disclosureType };
 
 const cx = classNamesBind.bind(styles);
 
+const zIndexes = ['6000', '7000', '8000', '9000'];
+
 const propTypes = {
   /**
    * The components to be rendered in the body of the ModalManager. These components will receive the
@@ -30,6 +32,24 @@ const propTypes = {
    * The container to wrap the disclosed content. This should be provided from the application level.
    */
   withDisclosureContainer: PropTypes.func,
+  /**
+   * If set to true, then the focus lock will get enabled.
+   */
+  shouldTrapFocus: PropTypes.bool,
+  /**
+   * If set to true, then the outside click will get enabled.
+   */
+  closeOnOutsideClick: PropTypes.bool,
+  /**
+   * Z-Index layer to apply to the ModalContent and ModalOverlay. Valid values are the standard modal layer: '6000', and the max layer: '9000'.
+   */
+  zIndex: PropTypes.oneOf(zIndexes),
+};
+
+const defaultProps = {
+  shouldTrapFocus: false,
+  closeOnOutsideClick: false,
+  zIndex: '6000',
 };
 
 const heightFromSize = {
@@ -68,7 +88,7 @@ class ModalManager extends React.Component {
 
   renderModal(manager) {
     const {
-      children, disclosureAccessory, withDisclosureContainer, ...customProps
+      children, disclosureAccessory, withDisclosureContainer, shouldTrapFocus, closeOnOutsideClick, zIndex, ...customProps
     } = this.props;
     const theme = this.context;
 
@@ -103,9 +123,11 @@ class ModalManager extends React.Component {
             manager.closeDisclosure();
           }}
           closeOnEsc
-          closeOnOutsideClick={false}
-          ariaLabel={headerDataForPresentedComponent?.title || 'Modal'}
+          closeOnOutsideClick={closeOnOutsideClick}
+          ariaLabel={(headerDataForPresentedComponent) ? headerDataForPresentedComponent.title : customProps['aria-label'] || 'Modal'}
           setModalFocusElementRef={this.setModalFocusElementRef}
+          shouldTrapFocus={shouldTrapFocus}
+          zIndex={zIndex}
         >
           <ContentContainer
             fill
@@ -148,6 +170,7 @@ class ModalManager extends React.Component {
 }
 
 ModalManager.propTypes = propTypes;
+ModalManager.defaultProps = defaultProps;
 ModalManager.contextType = ThemeContext;
 
 export default ModalManager;

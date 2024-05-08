@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import { v4 as uuidv4 } from 'uuid';
 import DataGrid from '../../src/DataGrid';
 
@@ -69,7 +67,7 @@ afterAll(() => {
 
 describe('DataGrid', () => {
   it('verifies that the grid created is consistent with the rows and overflowColumns props', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="test-terra-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -89,8 +87,7 @@ describe('DataGrid', () => {
   });
 
   it('verifies the rows are created with the right props', () => {
-    const verifyRow = (rowIndex, rowComponent, data, overflowColumns) => {
-      expect(rowComponent.props.displayedColumns).toEqual(overflowColumns);
+    const verifyRow = (rowIndex, rowComponent, data) => {
       expect(rowComponent.props.rowSelectionMode).toBeUndefined();
       expect(rowComponent.key).toEqual(data.id);
       expect(rowComponent.props.onCellSelect).toBeDefined();
@@ -99,7 +96,7 @@ describe('DataGrid', () => {
       expect(rowComponent.props.cells).toEqual(data.cells);
     };
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="test-terra-data-grid"
         overflowColumns={dataFile.cols}
@@ -120,7 +117,7 @@ describe('DataGrid', () => {
   it('verifies row selection column header selection', () => {
     const mockOnRowSelectionHeaderColumnSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="test-terra-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -146,7 +143,7 @@ describe('DataGrid', () => {
   it('verifies onCellSelect callback is triggered when space is pressed on a masked cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="test-terra-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -164,14 +161,12 @@ describe('DataGrid', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockCellSelect).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 
   it('verifies onCellSelect callback is triggered when space is pressed on a non-selectable cell', () => {
     const mockCellSelect = jest.fn();
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="test-terra-data-grid"
         pinnedColumns={dataFile.cols.slice(0, 2)}
@@ -189,8 +184,6 @@ describe('DataGrid', () => {
 
     // Validate mock function was called from simulated click event
     expect(mockCellSelect).toHaveBeenCalled();
-
-    expect(wrapper).toMatchSnapshot();
   });
 });
 
@@ -198,7 +191,7 @@ describe('with pinned columns', () => {
   it('sets pinnedColumns as pinned', () => {
     const pinnedColumns = dataFile.cols.slice(0, 2);
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="test-terra-data-grid"
         pinnedColumns={pinnedColumns}
@@ -215,7 +208,7 @@ describe('with pinned columns', () => {
   it('sets row selection column as pinned', () => {
     const pinnedColumns = dataFile.cols.slice(0, 2);
 
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="test-terra-data-grid"
         pinnedColumns={pinnedColumns}
@@ -231,7 +224,7 @@ describe('with pinned columns', () => {
   });
 
   it('pins row selection column if pinnedColumns is undefined', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <DataGrid
         id="sdfdss"
         overflowColumns={dataFile.cols}

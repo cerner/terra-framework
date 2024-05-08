@@ -216,7 +216,7 @@ class Popup extends React.Component {
     }
   }
 
-  createPopupContent(boundingFrame, showArrow) {
+  createPopupContent(boundingFrame, showArrow, hookshotPostionFixed) {
     const boundsProps = {
       contentHeight: PopupHeights[this.props.contentHeight] || PopupHeights['80'],
       contentWidth: PopupWidths[this.props.contentWidth] || PopupWidths['240'],
@@ -240,7 +240,6 @@ class Popup extends React.Component {
     if (showArrow) {
       arrow = <PopupArrow className={this.props.classNameArrow} refCallback={this.setArrowNode} />;
     }
-
     return (
       <PopupContent
         {...boundsProps}
@@ -257,6 +256,7 @@ class Popup extends React.Component {
         isWidthAutomatic={this.props.contentWidth === 'auto'}
         isFocusedDisabled={this.props.isContentFocusDisabled}
         onClick={this.props.onClick}
+        hookshotPostionFixed={hookshotPostionFixed}
       >
         {this.props.children}
       </PopupContent>
@@ -282,6 +282,7 @@ class Popup extends React.Component {
       onRequestClose,
       targetRef,
       targetAttachment,
+      ...customProps
     } = this.props;
     /* eslint-enable no-unused-vars */
 
@@ -302,7 +303,8 @@ class Popup extends React.Component {
     if (showArrow) {
       cOffset = PopupUtils.getContentOffset(cAttachment, tAttachment, this.props.targetRef(), PopupArrow.Opts.arrowSize, cornerSize);
     }
-    const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow);
+
+    const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow, customProps.hookshotPostionFixed);
 
     return (
       <React.Fragment>

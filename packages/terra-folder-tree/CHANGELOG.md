@@ -2,6 +2,55 @@
 
 ## Unreleased
 
+## 1.4.0 - (May 8, 2024)
+
+* Changed
+  * Updated the radio button hover style to be distinct from row hover.
+  * Fixed axe issue for wrong aria-control value.
+
+## 1.3.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.2.0 - (April 18, 2024)
+
+* Changed
+  * Enlarged radio button click target for selectable folder tree items.
+
+## 1.1.0 - (April 10, 2024)
+
+* Fixed
+  * Fixed an issue where folder tree items could not receive focus after data was updated.
+
+## 1.0.0 - (March 29, 2024)
+
+* Fixed
+  * Fixed screenreader reading the wrong indexes for subfolder items.
+
+## 1.0.0-alpha.10 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.0.0-alpha.9 - (February 28, 2024)
+
+* Breaking Changes
+  * Renamed `onClick` prop to `onSelect`.
+
+* Added
+  * Added `isSelectable` prop to FolderTreeItem.
+
+## 1.0.0-alpha.8 - (February 16, 2024)
+
+* Added
+  * Added translations.
+
+## 1.0.0-alpha.7 - (February 7, 2024)
+
+* Added
+  * Added screenreader announcement when all items are expanded or collapsed.
+
 ## 1.0.0-alpha.6 - (January 12, 2024)
 
 * Changed

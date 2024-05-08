@@ -2,6 +2,81 @@
 
 ## Unreleased
 
+## 4.116.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.115.0 - (May 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.114.1 - (April 23, 2024)
+
+* Fixed
+  * Fixed the accessibility issue to allow announcement as a single group label.
+
+## 4.114.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.113.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.112.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.111.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.110.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.109.0 - (March 1, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.108.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 4.107.0 - (February 22, 2024)
+
+* Added
+  * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
+
+## 4.106.0 - (February 16, 2024)
+
+* Changed
+  * Added the `ariaLabel` prop for SR announcement.
+
+## 4.105.0 - (February 1, 2024)
+
+* Fixed
+  * Fixed the spacing between datetimepicker and help/error text issue.
+
+## 4.104.0 - (January 25, 2024)
+
+* Changed
+  * Updated metadata as argument for onBlur callback.
+
+## 4.103.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 4.102.0 - (January 2, 2024)
 
 * Changed
@@ -35,7 +110,7 @@
 ## 4.96.0 - (September 21, 2023)
 
 * Fixed
-  * Fixed error that occurs when date format is called upon null reference 
+  * Fixed error that occurs when date format is called upon null reference
     when time transitions from DST to ST.
 
 ## 4.95.0 - (September 19, 2023)

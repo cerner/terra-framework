@@ -2,6 +2,206 @@
 
 ## Unreleased
 
+## 1.86.0 - (May 8, 2024)
+
+* Changed
+  * Updated `terra-folder-tree` example styles.
+
+* Changed
+  * Updated `terra-modal-manager` example to consume `zIndex` prop.
+
+## 1.85.0 - (May 1, 2024)
+
+* Changed
+  * Updated `terra-navigation-side-menu` example styles.
+  * Updated `terra-compact-interactive-list` keyboard interactions descriptions for the left and right arrow keys.
+  * Updated `terra-compact-interactive-list` documentation for `terra-popup` supported in a cell.
+
+* Added
+  * Added a note about accessibility requirements for sorting or another action to the Multiple Row Selection example in `terra-table`.
+
+## 1.84.0 - (April 23, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.83.0 - (April 18, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.82.0 - (April 17, 2024)
+
+* Added
+  * Added examples for column span support in  Flowsheet Data Grid and `terra-table`.
+
+## 1.81.0 - (April 15, 2024)
+
+* Added
+  * Added examples and tests for subsections in the FlowsheetDataGrid.
+
+* Changed
+  * Updated `terra-tabs` vertical tabs example to fix custom label display.
+
+## 1.80.0 - (April 10, 2024)
+
+* Added
+  * Added documentation for subsections in `terra-table`.
+  * Added examples and tests for `isAutoFocusEnabled` prop for `terra-data-grid`.
+  
+* Changed
+  * Updated `date-time-picker` KeyboardShortcuts doc for +/- Keys for DateTime input.
+
+## 1.79.0 - (April 4, 2024)
+
+* Changed
+  * Removed `sortIndicator` from the first column of Table With Sections example.
+  * Updated `terra-compact-interactive-list` examples to provide a meaningful name to the column with icons.
+
+* Added
+  * Added examples and tests for `terra-table` to demonstrate auto layout.
+  * Added test for `terra-folder-tree` to cover focus management after updating its children.
+
+## 1.78.0 - (March 29, 2024)
+
+* Changed
+  * Updated the `terra-data-grid` and `terra-table` focusable cell examples to remove confusion caused by column header names.
+  * Updated `terra-compact-interactive-list` examples to remove redundant button announcement.
+  * Updated `terra-folder-tree` expand/collapse examples to be consistent with screenreader announcements.
+
+## 1.77.0 - (March 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.76.0 - (March 21, 2024)
+
+* Changed
+  * Updated `terra-navigation-side-menu` example.
+  * Updated single row selection example of `terra-table`.
+
+* Added
+  * Added test example for `terra-slide-panel` with no `mainContent` prop.
+
+## 1.75.0 - (March 19, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.74.0 - (March 14, 2024)
+
+* Added
+  * Added an example for `terra-compact-interactive-list` with no borders.
+
+* Changed
+  * Updated `terra-compact-interactive-list` documentation for `terra-menu` support.
+
+## 1.73.0 - (March 8, 2024)
+
+* Changed
+  * Re-introduced `shouldTrapFocus` examples from `1.72.0`.
+
+* Added
+  * Added orange and green column highlighting examples for `flowsheet-data-grid`
+
+## 1.72.0 - (March 5, 2024)
+
+* Changed
+  * Removed `shouldTrapFocus` attributes from examples.
+  * Updated datagrid documentation with the changes in cell focus behavior.
+
+## 1.71.0 - (March 1, 2024)
+
+* Added
+  * Added examples and tests for a large menu in the `terra-menu`.
+  * Added examples for `table-table` with no row headers.
+
+## 1.70.0 - (February 29, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.69.0 - (February 28, 2024)
+
+* Added
+  * Column actions example added to `terra-worklist-data-grid`.
+
+## 1.68.0 - (February 28, 2024)
+
+* Changed
+  * Updated `terra-menu` test for selectable menu to retain selection state when using `isToggled` prop after closing and re-opening the menu.
+
+* Added
+  * Added example for bounded `terra-flowsheet-data-grid` with sections.
+
+## 1.67.0 - (February 22, 2024)
+
+* Changed
+  * Updated the `terra-date-time-picker` timezone example.
+  * Updated selection examples and tests for `terra-folder-tree`.
+
+## 1.66.0 - (February 20, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.65.0 - (February 16, 2024)
+
+* Added
+  * Added ariaDescribedBy prop in `terra-date-time-picker` example for invalid error message.
+
+* Added
+  * Added shouldTrapFocus to be set to 'true'.
+* Changed
+  * Updated `terra-navigation-side-menu` example to use more meaningful labels.
+  * Updated the `terra-date-time-picker` example for field label.
+
+## 1.64.0 - (February 7, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.63.0 - (February 1, 2024)
+
+* Changed
+  * Updated the `terra-date-time-picker` example for Error label.
+
+* Added
+  * Added documentation for exported constants of `terra-table` in the About page.
+  * Added tests for resizable `terra-table`.
+
+* Added
+  * Added the 'aria-label' attribute to announce the information for the 'Flowsheet-Data Grid'.
+
+* Changed
+  * Updated `terra-folder-tree` test example.
+
+## 1.62.0 - (January 26, 2024)
+
+* Added
+  * Added detailed documentation for creating a basic `compact-interactive-list` component.
+
+## 1.61.0 - (January 25, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 1.60.0 - (January 25, 2024)
+
+* Added
+  * Updated `date-input` examples to allow screen reader response for error message.
+
+* Changed
+  * Updated `terra-table` test example to support large text data.
+
+* Fixed
+  * Fixed label value when we have 12 hours time format in `terra-time-input` examples.
+
+* Changed
+  * Added `date-picker`, `time-input` and `date-time picker` tests to display new metadata.
+
+## 1.59.0 - (January 22, 2024)
+
 * Fixed
   * Fixed font size in `terra-theme-provider` examples.
 
@@ -54,7 +254,7 @@
 * Changed
   * Updated examples and tests for expand all/collapse all for `terra-folder-tree`.
   * Updated `terra-theme-provider` examples to show the new ability to specify a theme density.
-  
+
 ## 1.52.0 - (December 13, 2023)
 
 * Changed

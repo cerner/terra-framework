@@ -60,10 +60,10 @@ See the [Examples](/components/cerner-terra-framework-docs/compact-interactive-l
 |---|---|
 |UP ARROW       | Selects the cell above the currently active cell. If the top cell of a column is active, the last cell of the previous column is selected. If the top cell of the first column is active, the active cell does not change.|
 |DOWN ARROW     | Selects the cell below the currently active cell. If the last cell of a column is active, the first cell of the next column is selected. If the last cell of the last column is active, the active cell does not change.|
-|RIGHT ARROW    | Selects the cell to the right of the currently active cell. If the right-most cell in the row is active, the active cell does not change.|
-|LEFT ARROW     | Selects the cell to the left of the currently active cell. If the left-most cell in the row is active, the active cell does not change.|
-|HOME           | Selects the first cell in the active row.|
-|END            | Selects the last cell in the active row.|
+|RIGHT ARROW    | Selects the cell to the right of the currently active cell. If the right-most cell in the visual row is active, the first cell in the next visual row will be selected.|
+|LEFT ARROW     | Selects the cell to the left of the currently active cell. If the left-most cell in the visual row is active, the last cell in the previous visual row will be selected.|
+|HOME           | Selects the first cell in the visual row.|
+|END            | Selects the last cell in the visual row.|
 |CTRL+HOME (Microsoft Windows) <br/> or <br/> CTRL+COMMAND+LEFT ARROW (Apple Mac) | Selects the first cell in the first row.|
 |CTRL+END (Microsoft Windows) <br/> or <br/>CTRL+COMMAND+RIGHT ARROW (Apple Mac) | Selects the last cell in the last row.|
 |TAB            | Exits the list and moves to the next selectable element in the tab sequence.|
@@ -78,7 +78,7 @@ See the [Examples](/components/cerner-terra-framework-docs/compact-interactive-l
 * [aria-labelledby](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-labelledby)
   * **Compact Interactive List**: When the [ariaLabelledBy](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is specified, the screen reader uses the aria-labelledby value to determine the [accessible name](https://w3c.github.io/accname/#dfn-accessible-name) for the list.
 * [rowheader](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/rowheader_role)
-  * **Compact Interactive List**: When the [rowHeaderIndex](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) porperty is provided, the screen reader uses the corresponding cell as the header cell for a row, establishing a relationship between it and the other cells in the same row.
+  * **Compact Interactive List**: When the [rowHeaderIndex](/components/cerner-terra-framework-docs/compact-interactive-list/about#compact-interactive-list-props-table) property is provided, the screen reader uses the corresponding cell as the header cell for a row, establishing a relationship between it and the other cells in the same row.
 * [columnheader](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/columnheader_role)
   * **Column**: When the [displayedName](/components/cerner-terra-framework-docs/compact-interactive-list/about#column) property is specified, the screen reader uses it to define the header information for the semantic column.
 

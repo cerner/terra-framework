@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import rowShape from './rowShape';
+import subsectionShape from './subsectionShape';
 
 const sectionShape = PropTypes.shape({
   /**
@@ -22,6 +23,10 @@ const sectionShape = PropTypes.shape({
    * An array of row objects to be rendered within the section.
    */
   rows: PropTypes.arrayOf(rowShape),
+  /**
+   * An array of subsections objects to be rendered within the section.
+   */
+  subsections: PropTypes.arrayOf(subsectionShape),
 });
 
 export default sectionShape;

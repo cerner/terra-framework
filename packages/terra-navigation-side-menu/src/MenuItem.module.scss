@@ -54,11 +54,11 @@
         color: var(--terra-navigation-side-menu-item-hover-chevron-color, #bcbfc0);
       }
     }
-
-    &.is-focused {
-      background-color: var(--terra-navigation-side-menu-item-focus-background-color);
-      box-shadow: var(--terra-navigation-side-menu-item-focus-box-shadow, inset 0 0 0 1px #26a2e5, inset 0 0 0 4px rgba(76, 178, 233, 0.2));
-      z-index: 5;
+  
+    &:focus {
+      box-shadow: var(--terra-navigation-side-menu-item-focus-box-shadow, none);
+      outline: var(--terra-navigation-side-menu-focus-outline, 2px dashed #000);
+      outline-offset: var(--terra-navigation-side-menu-focus-outline-offset, -2px);
 
       .chevron {
         color: var(--terra-navigation-side-menu-item-focus-chevron-color, #bcbfc0);
@@ -87,7 +87,7 @@
 
     &.is-selected {
       background-attachment: var(--terra-navigation-side-menu-item-selected-background-attachment);
-      background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
+      background-color: var(--terra-navigation-side-menu-item-selected-background-color, darken(#ebf6fd, 2%));
       background-image: var(--terra-navigation-side-menu-item-selected-background-image);
       background-size: var(--terra-navigation-side-menu-item-selected-background-size);
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
@@ -112,7 +112,7 @@
 
       &:hover,
       &.is-hovered {
-        background-color: var(--terra-navigation-side-menu-item-selected-hover-background-color, #f4f4f4);
+        background-color: var(--terra-navigation-side-menu-item-selected-hover-background-color, darken(#ebf6fd, 2%));
         color: var(--terra-navigation-side-menu-item-selected-hover-color);
 
         /* stylelint-disable-next-line max-nesting-depth */
@@ -121,10 +121,11 @@
         }
       }
 
-      &.is-focused {
-        background-color: var(--terra-navigation-side-menu-item-selected-focus-background-color, #f4f4f4);
-        color: var(--terra-navigation-side-menu-item-selected-focus-color);
-
+      &:focus {
+        box-shadow: var(--terra-navigation-side-menu-item-focus-box-shadow, none);
+        outline: var(--terra-navigation-side-menu-focus-outline, 2px dashed #000);
+        outline-offset: var(--terra-navigation-side-menu-focus-outline-offset, -2px);
+  
         /* stylelint-disable-next-line max-nesting-depth */
         .chevron {
           color: var(--terra-navigation-side-menu-item-selected-focus-chevron-color, #909496);

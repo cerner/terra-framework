@@ -161,6 +161,8 @@ exports[`correctly applies the theme context className 1`] = `
                       }
                       excludeScrollbar={false}
                       onEsc={[Function]}
+                      onFocus={[Function]}
+                      onKeyDown={[Function]}
                       onResize={[Function]}
                       outsideClickIgnoreClass="ignore-react-onclickoutside"
                       preventDefault={false}
@@ -181,6 +183,8 @@ exports[`correctly applies the theme context className 1`] = `
                           ]
                         }
                         onEsc={[Function]}
+                        onFocus={[Function]}
+                        onKeyDown={[Function]}
                         onResize={[Function]}
                         outsideClickIgnoreClass="ignore-react-onclickoutside"
                         preventDefault={false}
@@ -192,6 +196,8 @@ exports[`correctly applies the theme context className 1`] = `
                         <div
                           className="content content orion-fusion-theme"
                           data-terra-popup-content={true}
+                          onFocus={[Function]}
+                          onKeyDown={[Function]}
                           role="dialog"
                           tabIndex="0"
                         >

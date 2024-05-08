@@ -1,0 +1,9 @@
+{
+  "Terra.folder-tree.button.collapse-all": "Contraer todo",
+  "Terra.folder-tree.button.expand-all": "Expandir todo",
+  "Terra.folder-tree.button.collapse-all-instructions": "Contraer todas las carpetas del árbol.",
+  "Terra.folder-tree.button.collapse-all-announcement": "Todos los elementos contraídos.",
+  "Terra.folder-tree.button.expand-all-instructions": "Expandir todas las carpetas del árbol.",
+  "Terra.folder-tree.button.expand-all-announcement": "Todos los elementos expandidos.",
+  "Terra.folder-tree.folder-icon": "Carpeta"
+}

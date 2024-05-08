@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl } from 'terra-enzyme-intl';
 import CompactInteractiveList from '../../src/CompactInteractiveList';
 import rows from './rowsData';
 
@@ -21,7 +19,7 @@ describe('Compact Interactive List', () => {
         id: 'Column-0',
         displayName: 'Col_1',
         width: '40px',
-        minimunWidth: '20px',
+        minimumWidth: '20px',
       },
       {
         id: 'Column-1',
@@ -37,7 +35,7 @@ describe('Compact Interactive List', () => {
     ];
 
     it('should match a snapshot', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-fixed-width"
           rows={rows}
@@ -48,7 +46,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('should not apply minimumWidth and maximumWidth to cells and the list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-fixed-width"
           rows={rows}
@@ -69,7 +67,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('should not apply default minimumWidth to fixed width list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-fixed-width"
           rows={rows}
@@ -82,7 +80,7 @@ describe('Compact Interactive List', () => {
 
     it('should not apply columnMaximumWidth and columnMinimumWidth props to fixed columns width', () => {
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list"
           rows={rows}
@@ -131,7 +129,7 @@ describe('Compact Interactive List', () => {
           width: '20px',
         },
       ];
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-minWidth-calculation"
           rows={rows}
@@ -162,7 +160,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-minWidth-calculation"
           rows={rows}
@@ -198,7 +196,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-compare-min-width"
           rows={rows}
@@ -241,7 +239,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 2;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-compare-min-width"
           rows={rows}
@@ -280,7 +278,7 @@ describe('Compact Interactive List', () => {
           displayName: 'Col_3',
         },
       ];
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-compare-min-width"
           rows={rows}
@@ -325,7 +323,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 4;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-vertical-flow"
           rows={rows}
@@ -383,7 +381,7 @@ describe('Compact Interactive List', () => {
         },
       ];
       const numberOfColumns = 4;
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-horisontal-flow"
           rows={rows}
@@ -434,7 +432,7 @@ describe('Compact Interactive List', () => {
         },
       ];
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-width-unitType"
           rows={rows}
@@ -480,7 +478,7 @@ describe('Compact Interactive List', () => {
         },
       ];
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-width-unitType-2"
           rows={rows}
@@ -501,7 +499,7 @@ describe('Compact Interactive List', () => {
     });
   });
 
-  describe('Keyboard navigation, vertical flow', () => {
+  describe('keyboard navigation, vertical flow', () => {
     const cols = [
       {
         id: 'Column-0',
@@ -553,7 +551,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/Left Arrows should move through cells and stop at the visual row end/start', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -578,33 +576,46 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', arrowRightProps);
       list.simulate('keyDown', arrowRightProps);
       expect(document.activeElement).toBe(cellElements.at(11).instance());
-      // should not move to the right as the row end reached
+      // wrap to the beginning of the second visual row
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(11).instance());
-
-      // Move one row down to start testing left arrow
-      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      // move to the end of the second visual row
+      list.simulate('keyDown', endKeyProps);
       expect(document.activeElement).toBe(cellElements.at(14).instance());
+      // wrap to the beginning of the last (third) visual row
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      // move to the end of the last visual row
+      list.simulate('keyDown', endKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
+      // stay at the end of the last visual row, as there is nowhere to wrap
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(8).instance());
 
       // Testing LEFT ARROW
       // move one cell to the left, same row
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(13).instance());
-      // move 2 cell to the left to break to the previous visual column
+      expect(document.activeElement).toBe(cellElements.at(7).instance());
+      // move 2 cell to the left to break to the previous visual row
+      list.simulate('keyDown', arrowLeftProps);
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      // move 3 cell to the left to enter previous semantic column
+      list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       expect(document.activeElement).toBe(cellElements.at(5).instance());
-      // move 2 cell to the left to reach the first visual column start
+      // move up to reach the first row, then home to reach the first cell in first row
+      list.simulate('keyDown', arrowUpProps);
+      list.simulate('keyDown', homeKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+      // left arrow should not move focus anywhere
       list.simulate('keyDown', arrowLeftProps);
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
-      // should not move anymore as the start of the visual row has been reached
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(3).instance());
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -647,7 +658,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/left Arrow Keys + metaKey and Right/left Arrow Keys + ctrl + metaKey should take to the end/start of the visual row/list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -688,7 +699,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -725,7 +736,7 @@ describe('Compact Interactive List', () => {
     });
   });
 
-  describe('Keyboard navigation, horizontal flow', () => {
+  describe('keyboard navigation, horizontal flow', () => {
     const cols = [
       {
         id: 'Column-0',
@@ -778,7 +789,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/Left Arrows should move through cells and stop at the visual row end/start', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -803,33 +814,46 @@ describe('Compact Interactive List', () => {
       list.simulate('keyDown', arrowRightProps);
       list.simulate('keyDown', arrowRightProps);
       expect(document.activeElement).toBe(cellElements.at(5).instance());
-      // should not move to the right as the row end reached
+      // should move to the first cell of the next visual row
       list.simulate('keyDown', arrowRightProps);
-      expect(document.activeElement).toBe(cellElements.at(5).instance());
-
-      // Move one row down to start testing left arrow
-      list.simulate('keyDown', arrowDownProps);
+      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      // move to the end of the visual row
+      list.simulate('keyDown', endKeyProps);
       expect(document.activeElement).toBe(cellElements.at(11).instance());
+      // should move to the first cell of the next visual row
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(12).instance());
+      // move to the end of the visual row again
+      list.simulate('keyDown', endKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
+      // should NOT move to the right from here as there is nowhere to move
+      list.simulate('keyDown', arrowRightProps);
+      expect(document.activeElement).toBe(cellElements.at(14).instance());
 
       // Testing LEFT ARROW
       // move one cell to the left, same row
       list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(10).instance());
-      // move 2 cell to the left to break to the previous visual column
+      expect(document.activeElement).toBe(cellElements.at(13).instance());
+      // move 2 cell to the left to break to the previous visual row
+      list.simulate('keyDown', arrowLeftProps);
+      list.simulate('keyDown', arrowLeftProps);
+      expect(document.activeElement).toBe(cellElements.at(11).instance());
+      // move 3 cell to the left to break into previous semantic row
+      list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       list.simulate('keyDown', arrowLeftProps);
       expect(document.activeElement).toBe(cellElements.at(8).instance());
-      // move 2 cell to the left to reach the first visual column start
+      // move up to reach the first row, then home to reach the first cell in first row
+      list.simulate('keyDown', arrowUpProps);
+      list.simulate('keyDown', homeKeyProps);
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
+      // left arrow should not move focus anywhere
       list.simulate('keyDown', arrowLeftProps);
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
-      // should not move anymore as the start of the visual row has been reached
-      list.simulate('keyDown', arrowLeftProps);
-      expect(document.activeElement).toBe(cellElements.at(6).instance());
+      expect(document.activeElement).toBe(cellElements.at(0).instance());
     });
 
     it('Up/Down Arrow should move through semantic column and break to the next/previous visual column once reached its start/end', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -872,7 +896,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Right/left Arrow Keys + metaKey and Right/left Arrow Keys + ctrl + metaKey should take to the end/start of the visual row/list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -913,7 +937,7 @@ describe('Compact Interactive List', () => {
     });
 
     it('Home/End Keys should take focus to the first/last iten in visual row, with ctrl + metaKey - to the first/last item in the list', () => {
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testListVerticalFlow, {
           attachTo: document.body,
         },
@@ -1001,7 +1025,7 @@ describe('Compact Interactive List', () => {
         />
       );
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         testList, {
           attachTo: document.body,
         },
@@ -1060,7 +1084,7 @@ describe('Compact Interactive List', () => {
       ];
       const mockOnCellSelect = jest.fn();
 
-      const wrapper = mountWithIntl(
+      const wrapper = enzymeIntl.mountWithIntl(
         <CompactInteractiveList
           id="compact-interactive-list-space-key-on-cell"
           rows={newRows}
@@ -1087,6 +1111,138 @@ describe('Compact Interactive List', () => {
       cellElements.at(1).simulate('keyDown', spaceKeyProps);
       cellElements.at(1).simulate('mouseDown');
       expect(mockOnCellSelect).not.toHaveBeenCalled();
+    });
+  });
+
+  describe('row headers', () => {
+    const cols = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '40px',
+        minimumWidth: '20px',
+      },
+      {
+        id: 'Column-1',
+        displayName: 'Col_2',
+        width: '200px',
+        maximumWidth: '300px',
+      },
+      {
+        id: 'Column-2',
+        displayName: 'Col_3',
+        width: '40px',
+      },
+    ];
+
+    const singleColRows = [
+      {
+        id: 'row_1',
+        cells: [{ content: 'Discern Care Set (1)' }],
+      },
+      {
+        id: 'row_2',
+        cells: [{ content: 'Initial observation Care/Day High Severity 99220 (2)' }],
+      },
+      {
+        id: 'row_3',
+        cells: [{ content: 'Arterial Sheath Care (3)' }],
+      },
+      {
+        id: 'row_4',
+        cells: [{ content: 'Sbsq Observation Care/Day High Severity 99226 (4)' }],
+      },
+      {
+        id: 'row_5',
+        cells: [{ content: 'Arterial Sheath Care (5)' }],
+      },
+    ];
+
+    const singleCol = [
+      {
+        id: 'Column-0',
+        displayName: 'Col_1',
+        width: '40px',
+      },
+    ];
+
+    it('list with one column should have no cells with role rowheader', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-one-column"
+          rows={singleColRows}
+          columns={singleCol}
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.length).toEqual(1);
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('gridcell');
+    });
+
+    it('rowHeaderIndex prop should have no effect on list with one column', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-one-column"
+          rows={singleColRows}
+          columns={singleCol}
+          rowHeaderIndex={0} // has no effect, no rowheader
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.length).toEqual(1);
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('gridcell');
+    });
+
+    it('list with more than one column should default to fist cell being a rowheader', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-more-than-one-column"
+          rows={rows}
+          columns={cols}
+          // no rowHeaderIndex prop should default to 0
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('rowheader');
+      expect(firstRowCellElements.at(1).prop('role')).toEqual('gridcell');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('rowheader');
+      expect(secondRowCellElements.at(1).prop('role')).toEqual('gridcell');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('rowheader');
+      expect(thirdRowCellElements.at(1).prop('role')).toEqual('gridcell');
+    });
+
+    it('rowHeaderIndex prop should set a rowheader in lists with more than one column', () => {
+      const wrapper = enzymeIntl.mountWithIntl(
+        <CompactInteractiveList
+          id="compact-interactive-list-with-rowHeaderIndex"
+          rows={rows}
+          columns={cols}
+          rowHeaderIndex={1} // makes second cell is a rowheader
+        />,
+      );
+      const rowElements = wrapper.find('.row');
+      const firstRowCellElements = rowElements.at(0).find('.cell');
+      expect(firstRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      expect(firstRowCellElements.at(1).prop('role')).toEqual('rowheader');
+      const secondRowCellElements = rowElements.at(1).find('.cell');
+      expect(secondRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      expect(secondRowCellElements.at(1).prop('role')).toEqual('rowheader');
+      const thirdRowCellElements = rowElements.at(2).find('.cell');
+      expect(thirdRowCellElements.at(0).prop('role')).toEqual('gridcell');
+      expect(thirdRowCellElements.at(1).prop('role')).toEqual('rowheader');
     });
   });
 });

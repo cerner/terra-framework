@@ -6,6 +6,7 @@ import { injectIntl } from 'react-intl';
 import * as KeyCode from 'keycode-js';
 import classNames from 'classnames/bind';
 import ThemeContext from 'terra-theme-context';
+import getFocusableElements from 'terra-table/lib/utils/focusManagement';
 import styles from './CompactInteractiveList.module.scss';
 import rowShape from './proptypes/rowShape';
 import Row from './subcomponents/Row';
@@ -33,25 +34,24 @@ import {
   getFocusedCellIndexes,
   getFocusedCellIds,
 } from './utils/keyHandlerUtils';
-import getFocusableElements from '../../terra-table/src/utils/focusManagement';
 import validateRowHeaderIndex from './proptypes/validators';
 
 const cx = classNames.bind(styles);
 
 const propTypes = {
   /**
-   * String that will be used to identify the table. If multiple tables are on the same page, each table should have
+   * String that will be used to identify the list. If multiple lists are on the same page, each list should have
    * a unique id.
    */
   id: PropTypes.string.isRequired,
 
   /**
-   * String that identifies the element (or elements) that labels the table.
+   * String that identifies the element (or elements) that labels the list.
    */
   ariaLabelledBy: PropTypes.string,
 
   /**
-   * String that labels the table for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
+   * String that labels the list for accessibility. If ariaLabelledBy is specified, ariaLabel will not be used.
    */
   ariaLabel: PropTypes.string,
 
@@ -110,8 +110,15 @@ const propTypes = {
 
   /**
    * A zero-based index indicating which column represents the row header.
+   * If there is only one semantic column in the list, the list will have no row headers and the rowHeaderIndex will be ignored.
    */
   rowHeaderIndex: validateRowHeaderIndex,
+
+  /**
+   * A Boolean value indicating whether the visual column borders are displayed.
+   * Setting the value to false hides the column borders.
+   */
+  hasVisibleBorders: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -119,6 +126,7 @@ const defaultProps = {
   numberOfColumns: 1,
   width: '100%',
   rowHeaderIndex: 0,
+  hasVisibleBorders: true,
 };
 
 const CompactInteractiveList = (props) => {
@@ -137,6 +145,7 @@ const CompactInteractiveList = (props) => {
     onCellSelect,
     onClearSelection,
     rowHeaderIndex,
+    hasVisibleBorders,
   } = props;
 
   const theme = useContext(ThemeContext);
@@ -150,18 +159,21 @@ const CompactInteractiveList = (props) => {
     if (listRef?.current && focusedCell?.current) {
       focusedCell.current = getFocusedCellIds(listRef?.current, columns, { row: 0, cell: 0 });
     }
-  }, [listRef, focusedCell, columns]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const focusCell = ({ row, cell }) => {
-    // add 1 to the row number to accomodate for hidden header
-    const focusedCellElement = listRef.current.children[row + 1].children[cell];
-    const interactiveChildren = getFocusableElements(focusedCellElement);
-    if (interactiveChildren?.length > 0 && interactiveChildren[0]) {
-      // currently a cell can have only one interact-able element in it, which gets auto-focused.
-      interactiveChildren[0].focus();
-    } else {
-      // cell gets focus if there is no interact-able elements in it.
-      focusedCellElement.focus();
+    // add 1 to the row number to accommodate for hidden header
+    const focusedCellElement = listRef.current?.children[row + 1]?.children[cell];
+    if (focusedCellElement) {
+      const interactiveChildren = getFocusableElements(focusedCellElement);
+      if (interactiveChildren?.length > 0 && interactiveChildren[0]) {
+        // currently a cell can have only one interact-able element in it, which gets auto-focused.
+        interactiveChildren[0].focus();
+      } else {
+        // cell gets focus if there is no interact-able elements in it.
+        focusedCellElement.focus();
+      }
     }
   };
 
@@ -330,7 +342,8 @@ const CompactInteractiveList = (props) => {
             rowHeight={calculatedRowHeight}
             isTopmost={checkIfRowIsTopMost(index)}
             isLeftmost={checkIfRowIsLeftMost(index)}
-            rowHeaderIndex={rowHeaderIndex}
+            rowHeaderIndex={columns?.length > 1 ? rowHeaderIndex : undefined}
+            hasVisibleBorders={hasVisibleBorders}
           />
         ))}
       </div>

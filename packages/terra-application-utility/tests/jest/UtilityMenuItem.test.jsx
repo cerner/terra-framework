@@ -10,7 +10,7 @@ describe('UtilityMenuItem', () => {
   const variant = 'header';
 
   it('should render with default props', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       variant={variant}
@@ -19,7 +19,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with a title', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       title={title}
@@ -29,7 +29,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with content', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       content={content}
@@ -39,7 +39,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with a content location', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       contentLocation={contentLocation}
@@ -49,7 +49,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with isActive', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       hasChevron
@@ -60,7 +60,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with isSelected', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       isSelected
@@ -70,7 +70,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with isSelectable', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       isSelectable
@@ -80,7 +80,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with hasChevron', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       hasChevron
@@ -90,7 +90,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with onKeyDown', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       onKeyDown={jest.fn()}
@@ -100,7 +100,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with leftInset', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       hasChevron
@@ -111,7 +111,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should render with rightInset', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       hasChevron
@@ -122,7 +122,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('should pass in a custom prop', () => {
-    const wrapper = shallow(<HeaderUtilityMenuItem
+    const wrapper = enzyme.shallow(<HeaderUtilityMenuItem
       itemKey="key"
       onChange={mockOnChange}
       variant={variant}
@@ -132,7 +132,7 @@ describe('UtilityMenuItem', () => {
   });
 
   it('correctly applies the theme context className', () => {
-    const component = mount(
+    const component = enzyme.mount(
       <ThemeContextProvider theme={{ className: 'orion-fusion-theme' }}>
         <HeaderUtilityMenuItem
           itemKey="key"

@@ -1,39 +1,48 @@
 {
   "name": "terra-data-grid",
-  "main": "lib/index.js",
-  "version": "1.11.0",
+  "version": "1.31.0",
   "description": "Package containing data grid container components that enable users to navigate the grid information using directional navigation keys.",
+  "author": "Cerner Corporation",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cerner/terra-framework.git",
     "directory": "packages/terra-data-grid"
   },
-  "keywords": [
-    "Cerner",
-    "Terra",
-    "Framework",
-    "terra-worklist-data-grid",
-    "terra-data-grid",
-    "Grid",
-    "UI"
-  ],
-  "author": "Cerner Corporation",
-  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/cerner/terra-framework/issues"
   },
   "homepage": "https://github.com/cerner/terra-framework#readme",
-  "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": ">=2.8.0, <6.0.0"
-  },
+  "license": "Apache-2.0",
+  "keywords": [
+    "Cerner",
+    "Framework",
+    "Grid",
+    "Terra",
+    "terra-data-grid",
+    "terra-worklist-data-grid",
+    "UI"
+  ],
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "src",
+    "translations",
+    "CHANGELOG.md",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ],
   "dependencies": {
     "classnames": "^2.2.5",
     "keycode-js": "^3.1.0",
     "prop-types": "^15.5.8",
-    "terra-table": "^5.4.0",
+    "terra-table": "^5.23.0",
     "terra-visually-hidden-text": "^2.36.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-intl": "^2.8.0 || 3 || 4 || 5"
   },
   "devDependencies": {
     "uuid": "3.4.0"

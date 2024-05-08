@@ -2,6 +2,51 @@
 
 ## Unreleased
 
+## 6.82.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.81.0 - (May 1, 2024)
+
+* Changed
+  * Added event handlers to call `stopPropagation()` on key and focus events on PopupContent in other components.
+
+## 6.80.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.79.0 - (March 25, 2024)
+
+* Changed
+  * Allow popup to pass through custom props
+
+## 6.78.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.77.0 - (March 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.76.0 - (March 5, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.75.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.74.0 - (January 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.73.0 - (December 18, 2023)
 
 * Changed

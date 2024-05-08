@@ -2,6 +2,43 @@
 
 ## Unreleased
 
+## 6.77.0 - (May 8, 2024)
+
+* Changed
+  * Added `zIndex` prop to handle nested modals.
+
+## 6.76.0 - (April 4, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.75.0 - (March 14, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.74.0 - (March 8, 2024)
+
+* Changes
+  * Re-introduced `shouldTrapFocus` changes made from `6.71.0`.
+
+## 6.73.0 - (March 5, 2024)
+
+* Changed
+  * Revert changes for focus trappping.
+
+## 6.72.0 - (February 28, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
+## 6.71.0 - (February 16, 2024)
+
+* Added 
+  * Added 'shouldTrapFocus' prop to enable/disable the focusLock.
+
+## 6.70.0 - (January 22, 2024)
+
 * Added
   * Redwood theme styling.
 

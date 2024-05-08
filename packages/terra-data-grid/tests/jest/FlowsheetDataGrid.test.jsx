@@ -1,6 +1,4 @@
 import React from 'react';
-/* eslint-disable-next-line import/no-extraneous-dependencies */
-import { mountWithIntl, shallowWithIntl } from 'terra-enzyme-intl';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import FlowsheetDataGrid from '../../src/FlowsheetDataGrid';
 
@@ -66,13 +64,22 @@ const sectionData = [
   },
 ];
 
+const mockMouseDownEvent = {
+  type: 'mousedown',
+};
+
+const mockKeyDownEvent = {
+  type: 'keydown',
+};
+
 describe('FlowsheetDataGrid', () => {
   it('renders the row header column as pinned and remaining columns as overflow, all columns as not resizable or selectable and all row cells as selectable', () => {
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
         rows={dataFile.rows}
+        rowHeight="2.5rem"
         ariaLabel="Test Flowsheet Data Grid"
       />,
     ).shallow();
@@ -265,7 +272,7 @@ describe('FlowsheetDataGrid', () => {
       },
     ];
 
-    const wrapper = shallowWithIntl(
+    const wrapper = enzymeIntl.shallowWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={updatedDataFile.cols}
@@ -291,7 +298,7 @@ describe('Single cell selection', () => {
   });
 
   it('verifies single cell selection when an unselected cell is clicked', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -308,12 +315,14 @@ describe('Single cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
   it('verifies single cell selection when Space is pressed on an unselected cell', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -330,12 +339,14 @@ describe('Single cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockKeyDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
   it('verifies Shift+Click selects a single cell when no cells are initially selected', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -352,12 +363,14 @@ describe('Single cell selection', () => {
       rowId: '4',
       columnId: 'Column-2',
       sectionId: '',
-    });
+      columnIndex: 2,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 
   it('verifies Shift+Space selects a single cell when no cells are initially selected', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -374,7 +387,9 @@ describe('Single cell selection', () => {
       rowId: '4',
       columnId: 'Column-2',
       sectionId: '',
-    });
+      columnIndex: 2,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockKeyDownEvent));
     expect(mockOnCellRangeSelect).not.toHaveBeenCalled();
   });
 });
@@ -389,7 +404,7 @@ describe('Multi-cell selection', () => {
   });
 
   it('verifies Shift+Arrow keys selects a range of cells when an anchor cell is initially clicked', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -406,25 +421,39 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
     ]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
   it('verifies Shift+Arrow keys selects a range of cells when an anchor cell is initially selected with Space', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -442,28 +471,42 @@ describe('Multi-cell selection', () => {
     const selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { keyCode: SPACE_KEY });
     expect(mockOnCellSelect).toHaveBeenCalledWith({
-      rowId: '4',
+      rowId: '3',
       columnId: 'Column-2',
+      columnIndex: 2,
       sectionId: '',
-    });
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
   it('verifies Shift+Arrow keys selects a range of cells that does not go beyond the last selectable row and column', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -480,14 +523,20 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     // Would go past last row
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: DOWN_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
     ]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
@@ -495,15 +544,23 @@ describe('Multi-cell selection', () => {
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: RIGHT_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
   it('verifies Shift+Arrow keys selects a range of cells that does not include row or column headers', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -520,11 +577,15 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
 
     // Would select row header
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: LEFT_ARROW_KEY });
-    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{ rowId: '3', columnId: 'Column-1', sectionId: '' }]);
+    expect(mockOnCellRangeSelect).toHaveBeenCalledWith([{
+      rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+    }]);
 
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
@@ -532,14 +593,20 @@ describe('Multi-cell selection', () => {
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: UP_ARROW_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: '' },
-      { rowId: '2', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
     ]);
   });
 
   it('verifies Shift+Click selects a range of cells when an anchor cell is initially clicked', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -556,20 +623,30 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
   it('verifies Shift+Space selects a range of cells when an anchor cell is initially clicked', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -586,20 +663,30 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockMouseDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
   it('verifies Shift+Click selects a range of cells when an anchor cell is initially selected with Space', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -616,20 +703,30 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockKeyDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('mouseDown', { shiftKey: true });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 
   it('verifies Shift+Space selects a range of cells when an anchor cell is initially selected with Space', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -646,15 +743,25 @@ describe('Multi-cell selection', () => {
       rowId: '3',
       columnId: 'Column-1',
       sectionId: '',
-    });
+      columnIndex: 1,
+      isMetaPressed: undefined,
+    }, expect.objectContaining(mockKeyDownEvent));
 
     selectableCell = wrapper.find('Row').at(3).find('td.selectable').at(1);
     selectableCell.simulate('keydown', { shiftKey: true, keyCode: SPACE_KEY });
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: '' },
-      { rowId: '3', columnId: 'Column-2', sectionId: '' },
-      { rowId: '4', columnId: 'Column-1', sectionId: '' },
-      { rowId: '4', columnId: 'Column-2', sectionId: '' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: '',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: '',
+      },
     ]);
   });
 });
@@ -667,7 +774,7 @@ describe('Row selection', () => {
   });
 
   it('verifies single row selection when a row header cell is clicked', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -694,7 +801,7 @@ describe('Flowsheet with Sections', () => {
   });
 
   it('verifies the cells within sections are returned in multi-cell select.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -712,15 +819,23 @@ describe('Flowsheet with Sections', () => {
     selectableCell.simulate('mouseDown', { shiftKey: true });
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 
   it("verifies the selected section's cells in range are returned in multi-cell select when the anchor cell is on top in another section.", () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -738,15 +853,23 @@ describe('Flowsheet with Sections', () => {
     selectableCell.simulate('mouseDown', { shiftKey: true });
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '3', columnId: 'Column-2', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-2', sectionId: 'section-1' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
     ]);
   });
 
   it("verifies the selected section's cells in range are returned in multi-cell select when the anchor cell is on bottom in another section. ", () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -764,15 +887,23 @@ describe('Flowsheet with Sections', () => {
     selectableCell.simulate('mouseDown', { shiftKey: true });
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 
   it('verifies the cells within sections are returned in range select.', () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -792,15 +923,23 @@ describe('Flowsheet with Sections', () => {
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(2);
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 
   it("verifies the selected section's cells in range are returned in range select when the anchor cell is on top in another section.", () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -823,15 +962,23 @@ describe('Flowsheet with Sections', () => {
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '3', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '3', columnId: 'Column-2', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-1', sectionId: 'section-1' },
-      { rowId: '4', columnId: 'Column-2', sectionId: 'section-1' },
+      {
+        rowId: '3', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '3', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-1',
+      },
+      {
+        rowId: '4', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-1',
+      },
     ]);
   });
 
   it("verifies the selected section's cells in range are returned in range select when the anchor cell is on bottom in another section.", () => {
-    const wrapper = mountWithIntl(
+    const wrapper = enzymeIntl.mountWithIntl(
       <FlowsheetDataGrid
         id="test-terra-flowsheet-data-grid"
         columns={dataFile.cols}
@@ -854,10 +1001,18 @@ describe('Flowsheet with Sections', () => {
     expect(mockOnCellRangeSelect).toHaveBeenCalledTimes(4);
 
     expect(mockOnCellRangeSelect).toHaveBeenCalledWith([
-      { rowId: '1', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '1', columnId: 'Column-2', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-1', sectionId: 'section-0' },
-      { rowId: '2', columnId: 'Column-2', sectionId: 'section-0' },
+      {
+        rowId: '1', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '1', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 1, columnSpanIndex: 0, columnId: 'Column-1', sectionId: 'section-0',
+      },
+      {
+        rowId: '2', columnIndex: 2, columnSpanIndex: 0, columnId: 'Column-2', sectionId: 'section-0',
+      },
     ]);
   });
 });
