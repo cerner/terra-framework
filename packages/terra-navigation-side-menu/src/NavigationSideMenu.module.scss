@@ -6,6 +6,8 @@
   .side-menu-content-container {
     background-color: var(--terra-navigation-side-menu-content-container-background-color);
     overflow: hidden;
+    height: 100%;
+    width: 100%;
 
     > :nth-child(1) {
       background-color: var(--terra-navigation-side-menu-content-container-header-background-color);
