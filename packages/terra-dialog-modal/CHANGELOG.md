@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.112.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 3.111.0 - (May 1, 2024)
 
 * Changed
