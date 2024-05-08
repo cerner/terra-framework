@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+* Changed
+  * Enabled `close` button in examples.
+  * Modified Button in `PopupStandard` example.
+  * Removed `ariaLabel` from `PopupStandard` example.
+
 ## 1.86.0 - (May 8, 2024)
 
 * Changed
