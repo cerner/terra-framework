@@ -85,6 +85,36 @@ const defaultProps = {
   panelSize: 'small',
 };
 
+/**
+ * Checks whether or not the given node should be focusable.
+ * If not focusable, find the closest parent element that is.
+ * If it cannot find a focusable element, return undefined.
+ */
+const findFocusableElement = (node) => {
+  const focusableElementSelector = 'a[href]:not([tabindex=\'-1\']), area[href]:not([tabindex=\'-1\']), input:not([disabled]):not([tabindex=\'-1\']), '
+  + 'select:not([disabled]):not([tabindex=\'-1\']), textarea:not([disabled]):not([tabindex=\'-1\']), button:not([disabled]):not([tabindex=\'-1\']), '
+  + 'iframe:not([tabindex=\'-1\']), [tabindex]:not([tabindex=\'-1\']), [contentEditable=true]:not([tabindex=\'-1\'])';
+
+  const focusableElements = [...document.body.querySelectorAll(`${focusableElementSelector}`)].filter(
+    element => !element.hasAttribute('disabled')
+    && !element.getAttribute('aria-hidden')
+    && !!(element.offsetWidth || element.offsetHeight || element.getClientRects().length)
+    && window.getComputedStyle(element).visibility !== 'hidden'
+    && element.closest('[inert]') === null,
+  );
+
+  let currentNode = node;
+  while (currentNode.parentElement) {
+    if (focusableElements.includes(currentNode)) {
+      return currentNode;
+    }
+
+    currentNode = currentNode.parentElement;
+  }
+
+  return undefined;
+};
+
 class SlidePanel extends React.Component {
   constructor(props) {
     super(props);
@@ -123,7 +153,7 @@ class SlidePanel extends React.Component {
   }
 
   setLastClicked(event) {
-    this.lastClicked = event.target;
+    this.lastClicked = findFocusableElement(event.target);
   }
 
   setDisclosingNode(node) {

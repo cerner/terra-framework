@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import SlidePanel from 'terra-slide-panel';
+import Button from 'terra-button';
 import styles from './SlidePanelDocCommon.test.module.scss';
 
 const cx = classNames.bind(styles);
@@ -29,15 +30,15 @@ class SlidePanelDemo extends React.Component {
           id="test-slide"
           mainContent={(
             <div className={cx('main-content')}>
-              <button type="button" id="other-button-1" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Other Button 1</button>
-              <button type="button" id="test-toggle" className={cx('button')} onClick={this.handlePanelToggle}>toggle</button>
-              <button type="button" id="another-button" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Another Button</button>
+              <Button text="Other Button 1" id="other-button-1" onClick={SlidePanelDemo.handleOtherButton} />
+              <Button text="Toggle" id="test-toggle" onClick={this.handlePanelToggle} />
+              <Button text="Another Button" id="another-button" onClick={SlidePanelDemo.handleOtherButton} />
             </div>
           )}
           panelContent={(
             <div id="panel-content" className={cx('panel-content')}>
-              <button type="button" id="other-button-2" className={cx('button')} onClick={SlidePanelDemo.handleOtherButton}>Other Button 2</button>
-              <button id="focus-button" type="button" className={cx('button')} onClick={this.handlePanelToggle}>Close panel</button>
+              <Button text="Other Button 2" id="other-button-2" onClick={SlidePanelDemo.handleOtherButton} />
+              <Button text="Close panel" id="focus-button" onClick={this.handlePanelToggle} />
             </div>
           )}
           panelAriaLabel="Panel content area"

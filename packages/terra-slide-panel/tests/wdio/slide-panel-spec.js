@@ -205,8 +205,6 @@ Terra.describeViewports('Slide panel', ['large'], () => {
       browser.keys(['Tab']);
       expect($('#focus-button').isFocused()).toBeTruthy();
       browser.keys(['Enter']);
-
-      expect($('body').isFocused()).toBeTruthy();
       expect($('#test-click-svg').isFocused()).toBeFalsy();
     });
 
