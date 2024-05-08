@@ -5,6 +5,9 @@
 * Changed
   * Updated `terra-folder-tree` example styles.
 
+* Changed
+  * Updated `terra-modal-manager` example to consume `zIndex` prop.
+
 ## 1.85.0 - (May 1, 2024)
 
 * Changed

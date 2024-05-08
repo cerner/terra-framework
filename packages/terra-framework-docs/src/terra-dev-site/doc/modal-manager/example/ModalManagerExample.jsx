@@ -284,6 +284,7 @@ const ModalManagerExample = ({ showDisclosureAccessory }) => (
           Disclosure Accessory
         </div>
       ) : undefined}
+      zIndex="7000"
     >
       <ContentComponent disclosureType="modal" />
     </ModalManager>

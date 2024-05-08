@@ -94,4 +94,15 @@ describe('ModalManager', () => {
     );
     expect(modalManager).toMatchSnapshot();
   });
+
+  it('should render the ModalManager with custom zIndex', () => {
+    const modalManager = (
+      <ModalManager zIndex="7000">
+        <TestContainer />
+      </ModalManager>
+    );
+
+    const result = enzymeIntl.mountWithIntl(modalManager);
+    expect(result).toMatchSnapshot();
+  });
 });
