@@ -2,8 +2,11 @@
 
 ## Unreleased
 
+## 1.4.0 - (May 8, 2024)
+
 * Changed
   * Updated the radio button hover style to be distinct from row hover.
+  * Fixed axe issue for wrong aria-control value.
 
 ## 1.3.0 - (April 23, 2024)
 

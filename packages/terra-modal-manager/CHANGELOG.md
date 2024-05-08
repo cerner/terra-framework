@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.77.0 - (May 8, 2024)
+
+* Changed
+  * Added `zIndex` prop to handle nested modals.
+
 ## 6.76.0 - (April 4, 2024)
 
 * Changed

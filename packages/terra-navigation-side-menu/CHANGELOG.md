@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 2.56.0 - (May 8, 2024)
+
+* Changed
+  * Changed styles for selected item background color styles
+
 ## 2.55.0 - (May 1, 2024)
 
 * Updated

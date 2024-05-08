@@ -87,7 +87,7 @@
 
     &.is-selected {
       background-attachment: var(--terra-navigation-side-menu-item-selected-background-attachment);
-      background-color: var(--terra-navigation-side-menu-item-selected-background-color, #f4f4f4);
+      background-color: var(--terra-navigation-side-menu-item-selected-background-color, darken(#ebf6fd, 2%));
       background-image: var(--terra-navigation-side-menu-item-selected-background-image);
       background-size: var(--terra-navigation-side-menu-item-selected-background-size);
       border-left: var(--terra-navigation-side-menu-item-selected-border-left, 0.5rem solid #007cc3);
@@ -112,7 +112,7 @@
 
       &:hover,
       &.is-hovered {
-        background-color: var(--terra-navigation-side-menu-item-selected-hover-background-color, #f4f4f4);
+        background-color: var(--terra-navigation-side-menu-item-selected-hover-background-color, darken(#ebf6fd, 2%));
         color: var(--terra-navigation-side-menu-item-selected-hover-color);
 
         /* stylelint-disable-next-line max-nesting-depth */

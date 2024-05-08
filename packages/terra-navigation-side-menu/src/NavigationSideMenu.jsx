@@ -365,7 +365,7 @@ class NavigationSideMenu extends Component {
     }
 
     let header;
-    if (this.onBack || !currentItem.isRootMenu) {
+    if (this.onBack || (currentItem && !currentItem.isRootMenu)) {
       header = (
         <li role="none">
           <div
@@ -396,7 +396,7 @@ class NavigationSideMenu extends Component {
           aria-relevant="additions text"
           refCallback={this.setVisuallyHiddenComponent}
         />
-        <ContentContainer {...customProps} fill className={sideMenuContentContainerClassNames}>
+        <ContentContainer {...customProps} className={sideMenuContentContainerClassNames}>
           <nav role="navigation" aria-label={this.props.ariaLabel}>
             <ul role="menu" ref={(refobj) => this.handleMenuListRef(refobj)} className={cx(['side-menu-list'])}>
               {header}

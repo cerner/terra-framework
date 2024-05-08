@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 7.29.0 - (May 8, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 7.28.1 - (May 1, 2024)
 
 * Fixed

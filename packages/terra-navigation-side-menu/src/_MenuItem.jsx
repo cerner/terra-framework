@@ -100,7 +100,7 @@ class MenuItem extends React.Component {
 
     const itemClassNames = classNames(cx(
       'menu-item',
-      { 'is-selected': isSelected },
+      { 'is-selected': isSelected && !hasChevron },
       { 'is-active': this.state.active },
       theme.className,
     ),

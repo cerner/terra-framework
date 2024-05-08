@@ -187,7 +187,7 @@ const FolderTree = ({
       />
       <Toolbar
         align="end"
-        ariaControls={title}
+        ariaControls={folderTreeID}
         ariaLabel={title}
       >
         <Button
