@@ -194,4 +194,18 @@ Terra.describeViewports('FolderTree', ['medium'], () => {
       Terra.validates.screenshot('reload-focus', { selector: '#folder-tree-reload' });
     });
   });
+
+  describe('Hover styling', () => {
+    it('applied to the radio button', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
+      $('[class*="radio-target"]').moveTo();
+      Terra.validates.screenshot('hover-over-radio-button', { selector: '#basic-folder-tree' });
+    });
+
+    it('applied to the tree item', () => {
+      browser.url('/raw/tests/cerner-terra-framework-docs/folder-tree/basic-folder-tree');
+      $('[role="treeitem"]:nth-of-type(1)').moveTo();
+      Terra.validates.screenshot('hover-over-tree-item', { selector: '#basic-folder-tree' });
+    });
+  });
 });

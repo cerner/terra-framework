@@ -147,7 +147,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
       </VisuallyHiddenText>
       <ContentContainer
         className="side-menu-content-container orion-fusion-theme"
-        fill={true}
+        fill={false}
         intl={
           Object {
             "defaultFormats": Object {},
@@ -178,7 +178,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
         setFocusOnContainer={false}
       >
         <div
-          className="content-container-fill side-menu-content-container orion-fusion-theme"
+          className="content-container-static side-menu-content-container orion-fusion-theme"
           intl={
             Object {
               "defaultFormats": Object {},
@@ -701,7 +701,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
     <ContentContainer
       ariaLabel="Sub Menu List"
       className="side-menu-content-container"
-      fill={true}
+      fill={false}
       intl={
         Object {
           "defaultFormats": Object {},
@@ -733,7 +733,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
     >
       <div
         ariaLabel="Sub Menu List"
-        className="content-container-fill side-menu-content-container"
+        className="content-container-static side-menu-content-container"
         intl={
           Object {
             "defaultFormats": Object {},

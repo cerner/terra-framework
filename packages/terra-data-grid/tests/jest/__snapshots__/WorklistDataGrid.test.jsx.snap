@@ -275,7 +275,6 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -720,7 +719,7 @@ exports[`Row selection verifies Shift+Click enables row selection when row selec
                             <div
                               className="header-container"
                               role="button"
-                              tabIndex={-1}
+                              tabIndex={0}
                             >
                               <span
                                 aria-hidden={true}
@@ -3224,7 +3223,6 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -3683,7 +3681,7 @@ exports[`Row selection verifies Shift+Click establishes anchor and selects row w
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -7001,7 +6999,6 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -7460,7 +7457,7 @@ exports[`Row selection verifies Shift+Click honors the anchor established by row
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -10768,7 +10765,6 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -11213,7 +11209,7 @@ exports[`Row selection verifies Shift+Space enables row selection when row selec
                             <div
                               className="header-container"
                               role="button"
-                              tabIndex={-1}
+                              tabIndex={0}
                             >
                               <span
                                 aria-hidden={true}
@@ -13717,7 +13713,6 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -14176,7 +14171,7 @@ exports[`Row selection verifies Shift+Space establishes anchor and selects row i
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -17494,7 +17489,6 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -17953,7 +17947,7 @@ exports[`Row selection verifies Shift+Space honors the anchor established by row
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -21295,7 +21289,6 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -21754,7 +21747,7 @@ exports[`Row selection verifies callbacks when Shift+Down contracts the range of
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -25056,7 +25049,6 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -25515,7 +25507,7 @@ exports[`Row selection verifies callbacks when Shift+Down is used and row select
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -28837,7 +28829,6 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -29296,7 +29287,7 @@ exports[`Row selection verifies callbacks when Shift+Down more than one. 1`] = `
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -32614,7 +32605,6 @@ exports[`Row selection verifies multiple independent ranges can be created with 
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -33073,7 +33063,7 @@ exports[`Row selection verifies multiple independent ranges can be created with 
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -36371,7 +36361,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -36830,7 +36819,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -40128,7 +40117,6 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -40587,7 +40575,7 @@ exports[`Row selection verifies only onRowSelect is called when mouse is used to
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -43885,7 +43873,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -44344,7 +44331,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -47642,7 +47629,6 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -48101,7 +48087,7 @@ exports[`Row selection verifies only onRowSelect is called when space is used to
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -51397,7 +51383,6 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -51856,7 +51841,7 @@ exports[`Row selection verifies row selection when space is pressed on a masked 
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -55152,7 +55137,6 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -55611,7 +55595,7 @@ exports[`Row selection verifies row selection when space is pressed on a non-sel
                                 "top": undefined,
                               }
                             }
-                            tabIndex={-1}
+                            tabIndex={0}
                             title="Terra.table.row-selection-header-display"
                           >
                             <div
@@ -58886,7 +58870,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -59331,7 +59314,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             <div
                               className="header-container"
                               role="button"
-                              tabIndex={-1}
+                              tabIndex={0}
                             >
                               <span
                                 aria-hidden={true}
@@ -61792,7 +61775,6 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
         onFocus={[Function]}
         onKeyDown={[Function]}
         onMouseDown={[Function]}
-        tabIndex={0}
       >
         <InjectIntl(Table)
           columnHeaderHeight="2.5rem"
@@ -62237,7 +62219,7 @@ exports[`WorklistDataGrid verifies onCellSelect callback is not triggered when s
                             <div
                               className="header-container"
                               role="button"
-                              tabIndex={-1}
+                              tabIndex={0}
                             >
                               <span
                                 aria-hidden={true}
