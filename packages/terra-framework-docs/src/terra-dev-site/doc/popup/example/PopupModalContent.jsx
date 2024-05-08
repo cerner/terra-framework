@@ -23,6 +23,7 @@ function ModalContainer(props) {
     <React.Fragment>
       <div className={cx('content-container')}>
         <Popup
+          isHeaderDisabled={false}
           isArrowDisplayed
           isOpen={open}
           onRequestClose={handlePopupRequestClose}

@@ -71,6 +71,7 @@ function PopupAttachment() {
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}
+        isHeaderDisabled={false}
       >
         <Placeholder title="Popup Content" />
       </Popup>

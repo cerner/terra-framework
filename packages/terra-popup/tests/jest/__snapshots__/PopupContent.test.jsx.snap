@@ -42,7 +42,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
     contentWidth={640}
     contentWidthMax={-1}
     isFocusedDisabled={false}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
     isHeightAutomatic={false}
     isWidthAutomatic={false}
     onRequestClose={[MockFunction]}
@@ -249,7 +249,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
     }
   }
   isFocusedDisabled={false}
-  isHeaderDisabled={false}
+  isHeaderDisabled={true}
   isHeightAutomatic={false}
   isWidthAutomatic={false}
   onRequestClose={[MockFunction]}
@@ -306,7 +306,9 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   <div
                     class="scroll normalizer"
                   >
-                    <div>
+                    <div
+                      closebuttonrequired="true"
+                    >
                       children node(s)
                     </div>
                   </div>
@@ -431,7 +433,9 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         <div
                           class="scroll normalizer"
                         >
-                          <div>
+                          <div
+                            closebuttonrequired="true"
+                          >
                             children node(s)
                           </div>
                         </div>
@@ -548,7 +552,9 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                           <div
                             class="scroll normalizer"
                           >
-                            <div>
+                            <div
+                              closebuttonrequired="true"
+                            >
                               children node(s)
                             </div>
                           </div>
@@ -700,6 +706,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         className="scroll normalizer"
                       >
                         <div
+                          closeButtonRequired="true"
                           key=".0"
                         >
                           children node(s)
@@ -805,6 +812,7 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
           setFocusOnContainer={false}
         >
           <div
+            closeButtonRequired="true"
             key=".0"
           >
             children node(s)

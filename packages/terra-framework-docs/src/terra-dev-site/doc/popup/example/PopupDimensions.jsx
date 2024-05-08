@@ -79,6 +79,7 @@ function PopupDimensions() {
       <div>
         <Popup
           {...contentDimensions}
+          isHeaderDisabled={false}
           classNameContent="test-content"
           isOpen={open}
           onRequestClose={handleRequestClose}
