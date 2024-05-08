@@ -2,6 +2,33 @@
 
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
   theme={
     Object {
       "className": "orion-fusion-theme",
@@ -111,9 +138,48 @@ exports[`correctly applies the theme context className 1`] = `
                         class="inner"
                         style="height: 80px; width: 240px;"
                       >
-                        <p>
-                          this is popup content
-                        </p>
+                        <div
+                          class="content-container-fill"
+                        >
+                          <div
+                            class="header"
+                          >
+                            <div
+                              class="header"
+                            >
+                              <button
+                                aria-disabled="false"
+                                aria-label="Terra.popup.header.close"
+                                class="button utility orion-fusion-theme"
+                                title="Terra.popup.header.close"
+                                type="button"
+                              >
+                                <span
+                                  class="button-label-win icon-only"
+                                >
+                                  <span
+                                    class="icon"
+                                  >
+                                    <span
+                                      class="close-icon icon-svg"
+                                    />
+                                  </span>
+                                </span>
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            class="main"
+                          >
+                            <div
+                              class="scroll normalizer orion-fusion-theme"
+                            >
+                              <p>
+                                this is popup content
+                              </p>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -210,11 +276,101 @@ exports[`correctly applies the theme context className 1`] = `
                               }
                             }
                           >
-                            <p
-                              key=".0"
+                            <ContentContainer
+                              fill={true}
+                              header={
+                                <div
+                                  className="header"
+                                >
+                                  <FormattedMessage
+                                    id="Terra.popup.header.close"
+                                    values={Object {}}
+                                  >
+                                    [Function]
+                                  </FormattedMessage>
+                                </div>
+                              }
+                              setFocusOnContainer={false}
                             >
-                              this is popup content
-                            </p>
+                              <div
+                                className="content-container-fill"
+                              >
+                                <div
+                                  className="header"
+                                >
+                                  <div
+                                    className="header"
+                                  >
+                                    <FormattedMessage
+                                      id="Terra.popup.header.close"
+                                      values={Object {}}
+                                    >
+                                      <Button
+                                        icon={
+                                          <span
+                                            className="close-icon"
+                                          />
+                                        }
+                                        isBlock={false}
+                                        isCompact={false}
+                                        isDisabled={false}
+                                        isIconOnly={true}
+                                        isLeftAligned={false}
+                                        isReversed={false}
+                                        onClick={[Function]}
+                                        text="Terra.popup.header.close"
+                                        type="button"
+                                        variant="utility"
+                                      >
+                                        <button
+                                          aria-disabled={false}
+                                          aria-label="Terra.popup.header.close"
+                                          className="button utility orion-fusion-theme"
+                                          disabled={false}
+                                          onBlur={[Function]}
+                                          onClick={[Function]}
+                                          onFocus={[Function]}
+                                          onKeyDown={[Function]}
+                                          onKeyUp={[Function]}
+                                          onMouseDown={[Function]}
+                                          title="Terra.popup.header.close"
+                                          type="button"
+                                        >
+                                          <span
+                                            className="button-label-win icon-only"
+                                          >
+                                            <span
+                                              className="icon"
+                                            >
+                                              <span
+                                                className="close-icon icon-svg"
+                                              />
+                                            </span>
+                                          </span>
+                                        </button>
+                                      </Button>
+                                    </FormattedMessage>
+                                  </div>
+                                </div>
+                                <div
+                                  className="main"
+                                >
+                                  <Scroll
+                                    className="normalizer orion-fusion-theme"
+                                  >
+                                    <div
+                                      className="scroll normalizer orion-fusion-theme"
+                                    >
+                                      <p
+                                        key=".0"
+                                      >
+                                        this is popup content
+                                      </p>
+                                    </div>
+                                  </Scroll>
+                                </div>
+                              </div>
+                            </ContentContainer>
                           </div>
                         </div>
                       </HookshotContent>
