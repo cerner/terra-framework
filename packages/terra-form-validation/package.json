@@ -1,6 +1,6 @@
 {
   "name": "terra-form-validation",
-  "version": "1.109.0",
+  "version": "1.110.0",
   "description": "Form Validation Examples for Terra",
   "author": "Cerner Corporation",
   "repository": {
@@ -42,7 +42,7 @@
     "react-final-form": ">=5.0.2 <7.0.0",
     "terra-button": "^3.3.0",
     "terra-date-input": "^1.56.0",
-    "terra-date-picker": "^4.107.0",
+    "terra-date-picker": "^4.108.0",
     "terra-form-checkbox": "^4.8.0",
     "terra-form-field": "^4.5.0",
     "terra-form-input": "^4.4.0",
