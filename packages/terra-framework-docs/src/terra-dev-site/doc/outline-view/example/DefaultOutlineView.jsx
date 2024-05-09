@@ -6,13 +6,13 @@ const data = {
   title: 'Documents',
   items: [
     { id: 'item-1-level-1', label: 'Information', icon: <IconDocuments /> },
-    { id: 'item-2-level-1', label: 'Projects - 2023', icon: <IconDocuments /> },
+    { id: 'item-2-level-1', label: 'Projects - 2023', isDisabled: true, icon: <IconDocuments /> },
     {
       id: 'item-3-level-1',
       label: 'Projects - 2023',
       items: [
         { id: 'item-1-level-2-1', label: 'Project Data - October', icon: <IconDocuments /> },
-        { id: 'item-2-level-2-1', label: 'Project Data - November', icon: <IconDocuments /> },
+        { id: 'item-2-level-2-1', label: 'Project Data - November', isDisabled: true, icon: <IconDocuments /> },
         { id: 'item-3-level-2-1', label: 'Project Data - December', icon: <IconDocuments /> },
         {
           id: 'item-4-level-2-1',
@@ -87,6 +87,7 @@ const BasicOutlineView = () => {
             label={item.label}
             icon={item.icon}
             subfolderItems={buildOutlineViewItems(item.items)}
+            isDisabled={item.isDisabled}
             isExpanded={expandedItems[item.id]}
             isSelected={selectedKey === item.id}
             onSelect={() => { setSelectedKey(item.id); }}

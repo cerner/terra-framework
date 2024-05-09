@@ -12,6 +12,15 @@
     border-top: var(--terra-navigation-side-menu-list-item-border-top, none);
   }
 
+  .has-border {
+    border-bottom: var(--terra-navigation-side-menu-list-item-border-bottom, 1px solid #6F7477);
+  }
+
+  .is-disabled {
+    cursor: default;
+    opacity: 30%;
+  }
+
   .menu-item {
     align-items: stretch;
     border-bottom: var(--terra-navigation-side-menu-item-border-bottom, none);
@@ -154,6 +163,17 @@
     > svg {
       height: var(--terra-navigation-side-menu-item-chevron-height, 0.8em);
       width: var(--terra-navigation-side-menu-item-chevron-width, 0.8em);
+    }
+  }
+
+  .is-outlineview {
+    &:focus {
+      background-color: var(--terra-navigation-side-menu-outline-view-item-focus-background-color, #EBF6FD);
+    }
+
+    &:hover,
+    &.is-hovered {
+      background-color: var(--terra-navigation-side-menu-outline-view-item-hover-background-color, #EBF6FD);
     }
   }
 }

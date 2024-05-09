@@ -75,9 +75,15 @@ const propTypes = {
    * intl object programmatically imported through injectIntl from react-intl.
    * */
   intl: PropTypes.shape({ formatMessage: PropTypes.func }).isRequired,
+  /**
+   * @private
+   * Indicates if item should be disabled
+   */
+  isDisabled: PropTypes.bool,
 };
 
 const defaultProps = {
+  isDisabled: false,
   isExpanded: false,
   isSelectable: true,
   isSelected: false,
@@ -86,6 +92,7 @@ const defaultProps = {
 
 const FolderTreeItem = ({
   icon,
+  isDisabled,
   isExpanded,
   isSelectable,
   isSelected,
@@ -98,6 +105,7 @@ const FolderTreeItem = ({
   subfolderItems,
   parentRef,
   intl,
+  fromOutlineView,
 }) => {
   const theme = useContext(ThemeContext);
   const isFolder = subfolderItems?.length > 0;
@@ -145,7 +153,7 @@ const FolderTreeItem = ({
       <input
         type="radio"
         checked={isSelected}
-        onChange={onSelect}
+        onChange={!(isDisabled) ? onSelect : null}
         aria-hidden // Hiding the radio button from assistive technology since they cannot be grouped correctly
         tabIndex={-1} // Prevent tabbing to the button since it should not be read or acknowledged by assistive technology
         className={cx('radio', 'radio-container')}
@@ -158,8 +166,10 @@ const FolderTreeItem = ({
     cx(
       'folder-tree-item',
       { selected: isSelectable ? isSelected : null },
+      { 'is-disabled': isDisabled },
       theme.className,
       { 'hover-within': radioButtonIsHovered },
+      { 'is-outlineview': fromOutlineView}
     ),
   );
 
@@ -184,7 +194,7 @@ const FolderTreeItem = ({
       case KeyCode.KEY_RETURN:
         event.preventDefault();
 
-        if (isSelectable) {
+        if (isSelectable && !isDisabled) {
           onSelect(event);
         }
         break;
@@ -225,7 +235,7 @@ const FolderTreeItem = ({
         role="treeitem"
         aria-expanded={isFolder ? isExpanded : null}
         aria-selected={isSelectable && isSelected}
-        onClick={isFolder ? handleToggle : handleSelect}
+        onClick={!(isDisabled) ? isFolder ? handleToggle : handleSelect : null}
         aria-posinset={ariaPosInSet}
         aria-setsize={ariaSetSize}
         onKeyDown={handleKeyDown}

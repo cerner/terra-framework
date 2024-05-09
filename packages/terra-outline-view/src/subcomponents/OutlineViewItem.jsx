@@ -18,6 +18,10 @@ const propTypes = {
    */
   subfolderItems: PropTypes.arrayOf(PropTypes.element),
   /**
+   * Indicates if item should be disabled
+   */
+  isDisabled: PropTypes.bool,
+  /**
    * Indicates whether the item is expanded. Only items with subfolderItems can be expanded.
    */
   isExpanded: PropTypes.bool,
@@ -68,6 +72,7 @@ const propTypes = {
 };
 
 const defaultProps = {
+  isDisabled: false,
   isExpanded: false,
   isSelectable: true,
   isSelected: false,
@@ -76,6 +81,7 @@ const defaultProps = {
 
 const OutlineViewItem = ({
   icon,
+  isDisabled,
   isExpanded,
   isSelectable,
   isSelected,
@@ -93,6 +99,7 @@ const OutlineViewItem = ({
     label={label}
     icon={icon}
     subfolderItems={subfolderItems}
+    isDisabled={isDisabled}
     isExpanded={isExpanded}
     isSelected={isSelected}
     onSelect={onSelect}

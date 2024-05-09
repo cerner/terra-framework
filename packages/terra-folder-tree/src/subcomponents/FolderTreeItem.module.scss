@@ -41,10 +41,27 @@
     }
   }
 
+  .is-outlineview {
+    &:focus {
+      background-color: var(--terra-folder-tree-outline-view-item-focus-background-color, #F4FAFE);
+    }
+
+    &:hover {
+      &:not(.hover-within){
+        background-color: var(--terra-folder-tree-outline-view-item-hover-background-color, #F4FAFE);
+      }
+    }
+  }
+
   .selected {
     background-color: var(--terra-folder-tree-item-selected-background-color, darken(#ebf6fd, 2%));
   }
   
+  .is-disabled {
+    cursor: default;
+    opacity: 30%;
+  }
+
   .subfolder {
     list-style: none;
     margin: 0;
