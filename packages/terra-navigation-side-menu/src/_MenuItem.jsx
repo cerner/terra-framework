@@ -103,9 +103,11 @@ class MenuItem extends React.Component {
       hasChevron,
       intl,
       isSelected,
+      isDisabled,
       text,
       icon,
       showIcon,
+      fromOutlineView,
       ...customProps
     } = this.props;
     const theme = this.context;
@@ -116,13 +118,20 @@ class MenuItem extends React.Component {
       'menu-item',
       { 'is-selected': isSelected && !hasChevron },
       { 'is-active': this.state.active },
+      { 'is-outlineview': fromOutlineView },
       theme.className,
     ),
     customProps.className);
 
+    const listItemClassNames = cx(
+      'list-item',
+      { 'has-border': fromOutlineView },
+      { 'is-disabled': isDisabled },
+    );
+
     return (
       <li
-        className={cx('list-item')}
+        className={listItemClassNames}
         role="none"
       >
         <div

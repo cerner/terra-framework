@@ -96,10 +96,12 @@ class OutlineView extends Component {
             label={item.props.label}
             icon={item.props.icon}
             subfolderItems={this.buildFolderTreeItems(item.props.subfolderItems)}
+            isDisabled={item.props.isDisabled}
             isExpanded={item.props.isExpanded}
             isSelected={item.props.isSelected}
             onSelect={item.props.onSelect}
             onToggle={item.props.onToggle}
+            fromOutlineView
           />,
         );
       });
@@ -137,6 +139,7 @@ class OutlineView extends Component {
           icon: item.props.icon,
           showIcon: true,
           hasSubMenu: item && item.props.subfolderItems && item.props.subfolderItems.length === 0,
+          isDisabled: item.props.isDisabled,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
@@ -164,6 +167,7 @@ class OutlineView extends Component {
           icon: item.props.icon,
           showIcon: true,
           hasSubMenu: item && item.props.subfolderItems && item.props.subfolderItems.length === 0,
+          isDisabled: item.props.isDisabled,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
@@ -177,7 +181,7 @@ class OutlineView extends Component {
 
   navMenu = () => (
     // eslint-disable-next-line react/forbid-dom-props
-    <div style={{ height: '450px', width: '300px' }}>
+    <div>
       <NavigationSideMenu
         menuItems={this.buildSideMenuItems(this.props.children)}
         onChange={this.props.onChange}
@@ -186,6 +190,7 @@ class OutlineView extends Component {
         ariaLabel={this.props.ariaLabel}
         routingStackBack={this.props.routingStackBack}
         toolbar={this.props.toolbar}
+        fromOutlineView
       />
     </div>
   );
