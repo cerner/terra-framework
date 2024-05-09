@@ -39,7 +39,8 @@
     "terra-content-container": "^3.0.0",
     "terra-icon": "^3.19.0",
     "terra-theme-context": "^1.9.0",
-    "terra-visually-hidden-text": "^2.0.0"
+    "terra-visually-hidden-text": "^2.0.0",
+    "terra-status-view": "^4.76.0"
   },
   "peerDependencies": {
     "react": "^16.8.5",

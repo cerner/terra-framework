@@ -10,6 +10,7 @@ const DefaultOutlineView = () => {
     projects: false,
     tests: false,
     details: false,
+    test2: false,
   });
 
   const handleExpandCollapseKeys = (key) => {
@@ -122,6 +123,15 @@ const DefaultOutlineView = () => {
                   isSelected={selectedKey === 'longer-name-test'}
                   onSelect={() => { setSelectedKey('longer-name-test'); }}
                 />),
+                (<OutlineView.Item
+                  label="test2"
+                  key="test2"
+                  isSelected={selectedKey === 'test2'}
+                  onSelect={() => { setSelectedKey('test2'); }}
+                  isExpanded={expandedItems.test2}
+                  onToggle={() => { handleExpandCollapseKeys('test2'); }}
+                  subfolderItems={[]}
+                />),
               ]}
             />),
           ]}
@@ -133,15 +143,7 @@ const DefaultOutlineView = () => {
           onSelect={() => { setSelectedKey('details'); }}
           isExpanded={expandedItems.details}
           onToggle={() => { handleExpandCollapseKeys('details'); }}
-          subfolderItems={[
-            // (<OutlineView.Item
-            //   label="test.txt"
-            //   icon={<IconDocuments />}
-            //   key="test"
-            //   isSelected={selectedKey === 'test'}
-            //   onSelect={() => { setSelectedKey('test'); }}
-            // />),
-          ]}
+          subfolderItems={[]}
         />
       </OutlineView>
     </div>

@@ -6,6 +6,7 @@ import ContentContainer from 'terra-content-container';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
+import StatusView from 'terra-status-view';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
@@ -307,6 +308,10 @@ class NavigationSideMenu extends Component {
     const onKeyDown = (event) => {
       this.handleEvents(event, item, key);
     };
+
+    if (key === 'empty-child-key') {
+      return <StatusView variant="no-data" />;
+    }
 
     return (
       <MenuItem
