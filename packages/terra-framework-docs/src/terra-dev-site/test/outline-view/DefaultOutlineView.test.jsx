@@ -68,6 +68,7 @@ const DefaultOutlineView = () => {
           label="projects_2023.txt"
           icon={<IconDocuments />}
           key="projects_2023"
+          isDisabled
           isSelected={selectedKey === 'projects_2023'}
           onSelect={() => { setSelectedKey('projects_2023'); }}
         />
