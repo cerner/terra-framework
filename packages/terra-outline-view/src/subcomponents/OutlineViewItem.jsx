@@ -11,6 +11,7 @@ const propTypes = {
   label: PropTypes.string.isRequired,
   /**
    * The icon to display to the left of the name.
+   * Icon usage is restricted to Documents or Hospital.
    */
   icon: PropTypes.element,
   /**

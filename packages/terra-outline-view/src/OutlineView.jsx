@@ -122,14 +122,21 @@ class OutlineView extends Component {
 
   buildSideMenuItems = (items) => {
     if (items) {
-      const menuItems = [{ key: 'menu', text: this.props.title, childKeys: items.map(k => k.key) }];
+      const menuItems = [{ key: 'menu', text: this.props.title, childKeys: items.map(k => k.key) }, { key: 'empty-child-key', text: 'Empty' }];
       const sideMenuItems = [];
       items.forEach(item => {
+        let childKeys;
+        if (item && item.props.subfolderItems) {
+          childKeys = item.props.subfolderItems.length ? item.props.subfolderItems.map(k => k.key) : ['empty-child-key'];
+        }
         menuItems.push({
           key: item.key,
           text: item.props.label,
           id: item.id,
-          childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
+          childKeys: childKeys || [],
+          icon: item.props.icon,
+          showIcon: true,
+          hasSubMenu: item && item.props.subfolderItems && item.props.subfolderItems.length === 0,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);
@@ -145,11 +152,18 @@ class OutlineView extends Component {
     if (items) {
       const sideMenuItems = [];
       items.forEach(item => {
+        let childKeys;
+        if (item && item.props.subfolderItems) {
+          childKeys = item.props.subfolderItems.length ? item.props.subfolderItems.map(k => k.key) : ['empty-child-key'];
+        }
         sideMenuItems.push({
           key: item.key,
           text: item.props.label,
           id: item.id,
-          childKeys: (item && item.props.subfolderItems) ? item.props.subfolderItems.map(k => k.key) : [],
+          childKeys: childKeys || [],
+          icon: item.props.icon,
+          showIcon: true,
+          hasSubMenu: item && item.props.subfolderItems && item.props.subfolderItems.length === 0,
         });
         if (item && item.props.subfolderItems) {
           const subMenuItems = this.buildSideMenuSubItems(item.props.subfolderItems);

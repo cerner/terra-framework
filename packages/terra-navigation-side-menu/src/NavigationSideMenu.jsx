@@ -6,6 +6,7 @@ import ContentContainer from 'terra-content-container';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
+import StatusView from 'terra-status-view';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
@@ -94,6 +95,8 @@ const processMenuItems = (menuItems) => {
       metaData: item.metaData,
       hasSubMenu: item.hasSubMenu,
       isRootMenu: item.isRootMenu,
+      icon: item.icon,
+      showIcon: item.showIcon,
     };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
@@ -306,6 +309,10 @@ class NavigationSideMenu extends Component {
       this.handleEvents(event, item, key);
     };
 
+    if (key === 'empty-child-key') {
+      return <StatusView variant="no-data" />;
+    }
+
     return (
       <MenuItem
         id={item.id}
@@ -317,6 +324,8 @@ class NavigationSideMenu extends Component {
         onKeyDown={onKeyDown}
         data-menu-item={key}
         tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
+        icon={item.icon}
+        showIcon={item.showIcon}
       />
     );
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { IconDocuments } from 'terra-icon';
+import { IconDocuments, IconHospital } from 'terra-icon';
 import OutlineView from 'terra-outline-view';
 
 const DefaultOutlineView = () => {
@@ -9,6 +9,8 @@ const DefaultOutlineView = () => {
   const [expandedItems, setExpandedItems] = React.useState({
     projects: false,
     tests: false,
+    details: false,
+    test2: false,
   });
 
   const handleExpandCollapseKeys = (key) => {
@@ -98,7 +100,7 @@ const DefaultOutlineView = () => {
               isExpanded={expandedItems.tests}
               onSelect={() => { setSelectedKey('tests'); }}
               onToggle={() => { handleExpandCollapseKeys('tests'); }}
-              icon={<IconDocuments />}
+              icon={<IconHospital />}
               subfolderItems={[
                 (<OutlineView.Item
                   label="very_very_very_very_very_very_very_long_name_test.txt"
@@ -121,9 +123,27 @@ const DefaultOutlineView = () => {
                   isSelected={selectedKey === 'longer-name-test'}
                   onSelect={() => { setSelectedKey('longer-name-test'); }}
                 />),
+                (<OutlineView.Item
+                  label="test2"
+                  key="test2"
+                  isSelected={selectedKey === 'test2'}
+                  onSelect={() => { setSelectedKey('test2'); }}
+                  isExpanded={expandedItems.test2}
+                  onToggle={() => { handleExpandCollapseKeys('test2'); }}
+                  subfolderItems={[]}
+                />),
               ]}
             />),
           ]}
+        />
+        <OutlineView.Item
+          label="Details"
+          key="details"
+          isSelected={selectedKey === 'details'}
+          onSelect={() => { setSelectedKey('details'); }}
+          isExpanded={expandedItems.details}
+          onToggle={() => { handleExpandCollapseKeys('details'); }}
+          subfolderItems={[]}
         />
       </OutlineView>
     </div>

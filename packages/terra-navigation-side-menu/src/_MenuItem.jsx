@@ -7,6 +7,7 @@ import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { IconFolder, IconCaretRight, IconCaretDown } from 'terra-icon';
 
 import styles from './MenuItem.module.scss';
 
@@ -43,6 +44,15 @@ const propTypes = {
    * tabIndex for the menu item.
    * */
   tabIndex: PropTypes.string,
+  /**
+   * @private
+   * The icon to display to the left for the menu item.
+   */
+  icon: PropTypes.element,
+  /**
+   * If enabled, this prop will show the icon to the left for the menu item.
+   */
+  showIcon: PropTypes.bool,
 };
 
 class MenuItem extends React.Component {
@@ -94,9 +104,13 @@ class MenuItem extends React.Component {
       intl,
       isSelected,
       text,
+      icon,
+      showIcon,
       ...customProps
     } = this.props;
     const theme = this.context;
+
+    const itemIcon = hasChevron && !icon ? <IconFolder /> : icon;
 
     const itemClassNames = classNames(cx(
       'menu-item',
@@ -120,6 +134,7 @@ class MenuItem extends React.Component {
           onKeyDown={this.handleKeyDown}
           aria-haspopup={hasChevron}
         >
+          {showIcon && <span className={cx('icon')}>{itemIcon}</span>}
           <div className={cx('title')}>
             {this.textRender()}
           </div>
