@@ -42,7 +42,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
     contentWidth={640}
     contentWidthMax={-1}
     isFocusedDisabled={false}
-    isHeaderDisabled={true}
+    isHeaderDisabled={false}
     isHeightAutomatic={false}
     isWidthAutomatic={false}
     onRequestClose={[MockFunction]}
@@ -79,7 +79,6 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
           preventDefault={false}
           role="dialog"
           stopPropagation={false}
-          tabIndex="0"
         >
           <HookshotContent
             className="content orion-fusion-theme"
@@ -100,7 +99,6 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
             preventDefault={false}
             role="dialog"
             stopPropagation={false}
-            tabIndex="0"
           >
             <div
               className="content content orion-fusion-theme"
@@ -108,7 +106,6 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
               onFocus={[Function]}
               onKeyDown={[Function]}
               role="dialog"
-              tabIndex="0"
             >
               <div
                 className="inner"
@@ -119,11 +116,101 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
                   }
                 }
               >
-                <div
-                  key=".0"
+                <ContentContainer
+                  fill={true}
+                  header={
+                    <div
+                      className="header"
+                    >
+                      <FormattedMessage
+                        id="Terra.popup.header.close"
+                        values={Object {}}
+                      >
+                        [Function]
+                      </FormattedMessage>
+                    </div>
+                  }
+                  setFocusOnContainer={false}
                 >
-                  children node(s)
-                </div>
+                  <div
+                    className="content-container-fill"
+                  >
+                    <div
+                      className="header"
+                    >
+                      <div
+                        className="header"
+                      >
+                        <FormattedMessage
+                          id="Terra.popup.header.close"
+                          values={Object {}}
+                        >
+                          <Button
+                            icon={
+                              <span
+                                className="close-icon"
+                              />
+                            }
+                            isBlock={false}
+                            isCompact={false}
+                            isDisabled={false}
+                            isIconOnly={true}
+                            isLeftAligned={false}
+                            isReversed={false}
+                            onClick={[MockFunction]}
+                            text="Terra.popup.header.close"
+                            type="button"
+                            variant="utility"
+                          >
+                            <button
+                              aria-disabled={false}
+                              aria-label="Terra.popup.header.close"
+                              className="button utility orion-fusion-theme"
+                              disabled={false}
+                              onBlur={[Function]}
+                              onClick={[Function]}
+                              onFocus={[Function]}
+                              onKeyDown={[Function]}
+                              onKeyUp={[Function]}
+                              onMouseDown={[Function]}
+                              title="Terra.popup.header.close"
+                              type="button"
+                            >
+                              <span
+                                className="button-label-win icon-only"
+                              >
+                                <span
+                                  className="icon"
+                                >
+                                  <span
+                                    className="close-icon icon-svg"
+                                  />
+                                </span>
+                              </span>
+                            </button>
+                          </Button>
+                        </FormattedMessage>
+                      </div>
+                    </div>
+                    <div
+                      className="main"
+                    >
+                      <Scroll
+                        className="normalizer orion-fusion-theme"
+                      >
+                        <div
+                          className="scroll normalizer orion-fusion-theme"
+                        >
+                          <div
+                            key=".0"
+                          >
+                            children node(s)
+                          </div>
+                        </div>
+                      </Scroll>
+                    </div>
+                  </div>
+                </ContentContainer>
               </div>
             </div>
           </HookshotContent>
@@ -192,7 +279,6 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
       preventDefault={false}
       role="dialog"
       stopPropagation={false}
-      tabIndex="0"
     >
       <div
         className="inner"
@@ -203,11 +289,28 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
           }
         }
       >
-        <div
-          key=".0"
+        <ContentContainer
+          fill={true}
+          header={
+            <div
+              className="header"
+            >
+              <FormattedMessage
+                id="Terra.popup.header.close"
+                values={Object {}}
+              >
+                [Function]
+              </FormattedMessage>
+            </div>
+          }
+          setFocusOnContainer={false}
         >
-          children node(s)
-        </div>
+          <div
+            key=".0"
+          >
+            children node(s)
+          </div>
+        </ContentContainer>
       </div>
     </OnClickOutside(HookshotContent)>
   </div>
@@ -249,7 +352,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
     }
   }
   isFocusedDisabled={false}
-  isHeaderDisabled={true}
+  isHeaderDisabled={false}
   isHeightAutomatic={false}
   isWidthAutomatic={false}
   onRequestClose={[MockFunction]}
@@ -264,7 +367,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             data-terra-popup-content="true"
             intl="[object Object]"
             role="dialog"
-            tabindex="0"
           >
             <div
               class="inner is-full-screen"
@@ -306,9 +408,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   <div
                     class="scroll normalizer"
                   >
-                    <div
-                      closebuttonrequired="true"
-                    >
+                    <div>
                       children node(s)
                     </div>
                   </div>
@@ -391,7 +491,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   data-terra-popup-content="true"
                   intl="[object Object]"
                   role="dialog"
-                  tabindex="0"
                 >
                   <div
                     class="inner is-full-screen"
@@ -433,9 +532,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         <div
                           class="scroll normalizer"
                         >
-                          <div
-                            closebuttonrequired="true"
-                          >
+                          <div>
                             children node(s)
                           </div>
                         </div>
@@ -455,7 +552,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
         }
         role="dialog"
         stopPropagation={false}
-        tabIndex="0"
       >
         <HookshotContent
           className="content"
@@ -510,7 +606,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                     data-terra-popup-content="true"
                     intl="[object Object]"
                     role="dialog"
-                    tabindex="0"
                   >
                     <div
                       class="inner is-full-screen"
@@ -552,9 +647,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                           <div
                             class="scroll normalizer"
                           >
-                            <div
-                              closebuttonrequired="true"
-                            >
+                            <div>
                               children node(s)
                             </div>
                           </div>
@@ -574,7 +667,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           }
           role="dialog"
           stopPropagation={false}
-          tabIndex="0"
         >
           <div
             className="content content"
@@ -609,7 +701,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             onFocus={[Function]}
             onKeyDown={[Function]}
             role="dialog"
-            tabIndex="0"
           >
             <div
               className="inner is-full-screen"
@@ -706,7 +797,6 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         className="scroll normalizer"
                       >
                         <div
-                          closeButtonRequired="true"
                           key=".0"
                         >
                           children node(s)
@@ -784,7 +874,6 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
       refCallback={[MockFunction]}
       role="dialog"
       stopPropagation={false}
-      tabIndex="0"
     >
       <div
         className="inner is-full-screen"
@@ -812,7 +901,6 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
           setFocusOnContainer={false}
         >
           <div
-            closeButtonRequired="true"
             key=".0"
           >
             children node(s)

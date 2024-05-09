@@ -65,6 +65,7 @@ class AlignmentPopup extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
+          isHeaderDisabled={false}
         >
           <p className={cx('popup-text')}>This popup arrow has vertical-right attachment, but was adjusted to be on the screen.</p>
         </Popup>

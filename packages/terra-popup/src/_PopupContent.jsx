@@ -239,7 +239,6 @@ class PopupContent extends React.Component {
           <Hookshot.Content
             {...customProps}
             className={contentClassNames}
-            tabIndex={isFocusedDisabled ? null : '0'}
             data-terra-popup-content
             onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
             onEsc={onRequestClose}

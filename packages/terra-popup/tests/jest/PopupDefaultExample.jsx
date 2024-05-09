@@ -31,6 +31,7 @@ class PopupDefaultExample extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
+          isHeaderDisabled={false}
         >
           <p>this is popup content</p>
         </Popup>
