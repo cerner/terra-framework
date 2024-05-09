@@ -50,7 +50,7 @@ exports[`correctly applies the theme context className 1`] = `
         contentWidth="240"
         isArrowDisplayed={false}
         isContentFocusDisabled={false}
-        isHeaderDisabled={false}
+        isHeaderDisabled={true}
         isOpen={true}
         onRequestClose={[Function]}
         popupContentRole="dialog"
@@ -138,48 +138,9 @@ exports[`correctly applies the theme context className 1`] = `
                         class="inner"
                         style="height: 80px; width: 240px;"
                       >
-                        <div
-                          class="content-container-fill"
-                        >
-                          <div
-                            class="header"
-                          >
-                            <div
-                              class="header"
-                            >
-                              <button
-                                aria-disabled="false"
-                                aria-label="Terra.popup.header.close"
-                                class="button utility orion-fusion-theme"
-                                title="Terra.popup.header.close"
-                                type="button"
-                              >
-                                <span
-                                  class="button-label-win icon-only"
-                                >
-                                  <span
-                                    class="icon"
-                                  >
-                                    <span
-                                      class="close-icon icon-svg"
-                                    />
-                                  </span>
-                                </span>
-                              </button>
-                            </div>
-                          </div>
-                          <div
-                            class="main"
-                          >
-                            <div
-                              class="scroll normalizer orion-fusion-theme"
-                            >
-                              <p>
-                                this is popup content
-                              </p>
-                            </div>
-                          </div>
-                        </div>
+                        <p>
+                          this is popup content
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -194,7 +155,7 @@ exports[`correctly applies the theme context className 1`] = `
                 contentWidthMax={1024}
                 disableOnClickOutside={true}
                 isFocusedDisabled={false}
-                isHeaderDisabled={false}
+                isHeaderDisabled={true}
                 isHeightAutomatic={false}
                 isWidthAutomatic={false}
                 onContentResize={[Function]}
@@ -276,101 +237,11 @@ exports[`correctly applies the theme context className 1`] = `
                               }
                             }
                           >
-                            <ContentContainer
-                              fill={true}
-                              header={
-                                <div
-                                  className="header"
-                                >
-                                  <FormattedMessage
-                                    id="Terra.popup.header.close"
-                                    values={Object {}}
-                                  >
-                                    [Function]
-                                  </FormattedMessage>
-                                </div>
-                              }
-                              setFocusOnContainer={false}
+                            <p
+                              key=".0"
                             >
-                              <div
-                                className="content-container-fill"
-                              >
-                                <div
-                                  className="header"
-                                >
-                                  <div
-                                    className="header"
-                                  >
-                                    <FormattedMessage
-                                      id="Terra.popup.header.close"
-                                      values={Object {}}
-                                    >
-                                      <Button
-                                        icon={
-                                          <span
-                                            className="close-icon"
-                                          />
-                                        }
-                                        isBlock={false}
-                                        isCompact={false}
-                                        isDisabled={false}
-                                        isIconOnly={true}
-                                        isLeftAligned={false}
-                                        isReversed={false}
-                                        onClick={[Function]}
-                                        text="Terra.popup.header.close"
-                                        type="button"
-                                        variant="utility"
-                                      >
-                                        <button
-                                          aria-disabled={false}
-                                          aria-label="Terra.popup.header.close"
-                                          className="button utility orion-fusion-theme"
-                                          disabled={false}
-                                          onBlur={[Function]}
-                                          onClick={[Function]}
-                                          onFocus={[Function]}
-                                          onKeyDown={[Function]}
-                                          onKeyUp={[Function]}
-                                          onMouseDown={[Function]}
-                                          title="Terra.popup.header.close"
-                                          type="button"
-                                        >
-                                          <span
-                                            className="button-label-win icon-only"
-                                          >
-                                            <span
-                                              className="icon"
-                                            >
-                                              <span
-                                                className="close-icon icon-svg"
-                                              />
-                                            </span>
-                                          </span>
-                                        </button>
-                                      </Button>
-                                    </FormattedMessage>
-                                  </div>
-                                </div>
-                                <div
-                                  className="main"
-                                >
-                                  <Scroll
-                                    className="normalizer orion-fusion-theme"
-                                  >
-                                    <div
-                                      className="scroll normalizer orion-fusion-theme"
-                                    >
-                                      <p
-                                        key=".0"
-                                      >
-                                        this is popup content
-                                      </p>
-                                    </div>
-                                  </Scroll>
-                                </div>
-                              </div>
-                            </ContentContainer>
+                              this is popup content
+                            </p>
                           </div>
                         </div>
                       </HookshotContent>
@@ -403,7 +274,7 @@ exports[`should renders with custom arrow class name 1`] = `
     contentWidth="240"
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
     isOpen={true}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -432,7 +303,7 @@ exports[`should renders with custom content class name 1`] = `
     contentWidth="240"
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
     isOpen={true}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -461,7 +332,7 @@ exports[`should renders with custom overlay class name 1`] = `
     contentWidth="240"
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
     isOpen={true}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -490,7 +361,7 @@ exports[`should shallow a default component 1`] = `
     contentWidth="240"
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
     isOpen={true}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -519,7 +390,7 @@ exports[`should shallow render a component with push attachment behavior 1`] = `
     contentWidth="240"
     isArrowDisplayed={false}
     isContentFocusDisabled={false}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
     isOpen={true}
     onRequestClose={[Function]}
     popupContentRole="dialog"
