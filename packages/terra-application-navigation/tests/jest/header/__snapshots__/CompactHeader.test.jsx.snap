@@ -640,7 +640,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               contentWidth="320"
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
-              isHeaderDisabled={false}
+              isHeaderDisabled={true}
               isOpen={false}
               onRequestClose={[Function]}
               popupContentRole="dialog"
@@ -1030,7 +1030,7 @@ exports[`CompactHeader should render with ids for navigation and extension items
               contentWidth="320"
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
-              isHeaderDisabled={false}
+              isHeaderDisabled={true}
               isOpen={false}
               onRequestClose={[Function]}
               popupContentRole="dialog"
