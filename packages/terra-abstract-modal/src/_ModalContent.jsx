@@ -143,6 +143,8 @@ const ModalContent = forwardRef((props, ref) => {
   // Delete the closePortal prop that comes from react-portal.
   delete customProps.closePortal;
   delete customProps.fallbackFocus;
+  const beginLabelId = ariaLabel === 'Modal' ? 'Terra.AbstractModal.BeginModalDialog' : 'Terra.AbstractModal.BeginModalDialogTitle';
+  const endLabelId = ariaLabel === 'Modal' ? 'Terra.AbstractModal.EndModalDialog' : 'Terra.AbstractModal.EndModalDialogTitle';
 
   const modalContent = (
     <div
@@ -156,7 +158,7 @@ const ModalContent = forwardRef((props, ref) => {
     >
       <div className={modalContainerClassName} ref={setModalFocusElementRef} data-terra-abstract-modal-begin tabIndex="-1">
         {(!isCalledFromNotificationDialog) && (
-        <FormattedMessage id="Terra.AbstractModal.BeginModalDialog">
+        <FormattedMessage id={beginLabelId} values={{ title: ariaLabel }}>
           {text => {
             // In the latest version of react-intl this param is an array, when previous versions it was a string.
             let useText = text;
@@ -171,7 +173,7 @@ const ModalContent = forwardRef((props, ref) => {
         )}
         {children}
         {(!isCalledFromNotificationDialog) && (
-        <FormattedMessage id="Terra.AbstractModal.EndModalDialog">
+        <FormattedMessage id={endLabelId} values={{ title: ariaLabel }}>
           {text => {
             // In the latest version of react-intl this param is an array, when previous versions it was a string.
             let useText = text;

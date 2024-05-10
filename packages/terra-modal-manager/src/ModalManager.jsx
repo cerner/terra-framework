@@ -15,7 +15,12 @@ export { disclosureType };
 
 const cx = classNamesBind.bind(styles);
 
-const zIndexes = ['6000', '7000', '8000', '9000'];
+const zIndexes = {
+  6000: '6000',
+  7000: '7000',
+  8000: '8000',
+  9000: '9000',
+};
 
 const propTypes = {
   /**
@@ -43,13 +48,13 @@ const propTypes = {
   /**
    * Z-Index layer to apply to the ModalContent and ModalOverlay. Valid values are the standard modal layer: '6000', and the max layer: '9000'.
    */
-  zIndex: PropTypes.oneOf(zIndexes),
+  zIndex: PropTypes.oneOf(Object.values(zIndexes)),
 };
 
 const defaultProps = {
   shouldTrapFocus: false,
   closeOnOutsideClick: false,
-  zIndex: '6000',
+  zIndex: zIndexes[6000],
 };
 
 const heightFromSize = {
@@ -174,3 +179,4 @@ ModalManager.defaultProps = defaultProps;
 ModalManager.contextType = ThemeContext;
 
 export default ModalManager;
+export { zIndexes };
