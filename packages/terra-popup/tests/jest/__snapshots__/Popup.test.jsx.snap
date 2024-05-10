@@ -150,6 +150,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 aria-disabled="false"
                                 aria-label="Terra.popup.header.close"
                                 class="button utility orion-fusion-theme"
+                                data-terra-popup-header-button="true"
                                 title="Terra.popup.header.close"
                                 type="button"
                               >
@@ -302,6 +303,7 @@ exports[`correctly applies the theme context className 1`] = `
                                       values={Object {}}
                                     >
                                       <Button
+                                        data-terra-popup-header-button={true}
                                         icon={
                                           <span
                                             className="close-icon"
@@ -322,6 +324,7 @@ exports[`correctly applies the theme context className 1`] = `
                                           aria-disabled={false}
                                           aria-label="Terra.popup.header.close"
                                           className="button utility orion-fusion-theme"
+                                          data-terra-popup-header-button={true}
                                           disabled={false}
                                           onBlur={[Function]}
                                           onClick={[Function]}

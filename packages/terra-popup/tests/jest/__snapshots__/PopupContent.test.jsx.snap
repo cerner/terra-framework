@@ -146,6 +146,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
                           values={Object {}}
                         >
                           <Button
+                            data-terra-popup-header-button={true}
                             icon={
                               <span
                                 className="close-icon"
@@ -166,6 +167,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
                               aria-disabled={false}
                               aria-label="Terra.popup.header.close"
                               className="button utility orion-fusion-theme"
+                              data-terra-popup-header-button={true}
                               disabled={false}
                               onBlur={[Function]}
                               onClick={[Function]}
@@ -385,6 +387,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                       aria-disabled="false"
                       aria-label="Terra.popup.header.close"
                       class="button utility"
+                      data-terra-popup-header-button="true"
                       title="Terra.popup.header.close"
                       type="button"
                     >
@@ -509,6 +512,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                             aria-disabled="false"
                             aria-label="Terra.popup.header.close"
                             class="button utility"
+                            data-terra-popup-header-button="true"
                             title="Terra.popup.header.close"
                             type="button"
                           >
@@ -624,6 +628,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                               aria-disabled="false"
                               aria-label="Terra.popup.header.close"
                               class="button utility"
+                              data-terra-popup-header-button="true"
                               title="Terra.popup.header.close"
                               type="button"
                             >
@@ -741,6 +746,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                         values={Object {}}
                       >
                         <Button
+                          data-terra-popup-header-button={true}
                           icon={
                             <span
                               className="close-icon"
@@ -761,6 +767,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                             aria-disabled={false}
                             aria-label="Terra.popup.header.close"
                             className="button utility"
+                            data-terra-popup-header-button={true}
                             disabled={false}
                             onBlur={[Function]}
                             onClick={[Function]}
