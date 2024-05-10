@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `isPopupHeaderDisabled` prop to manage popups to have a header with close button.
+
 ## 1.26.0 - (May 8, 2024)
 
 * Changed
