@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Added `isPopupHeaderDisabled` prop to manage popups to have a header with close button.
+
 * Changed
   * Enabled `close` button in examples.
   * Modified Button in `PopupStandard` example.
