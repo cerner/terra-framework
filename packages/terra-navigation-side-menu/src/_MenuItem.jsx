@@ -110,7 +110,6 @@ class MenuItem extends React.Component {
       isDisabled,
       text,
       icon,
-      fromOutlineView,
       variant,
       ...customProps
     } = this.props;
@@ -122,13 +121,14 @@ class MenuItem extends React.Component {
       'menu-item',
       { 'is-selected': isSelected && !hasChevron },
       { 'is-active': this.state.active },
+      { 'is-drill-in': (variant === 'drill-in') },
       theme.className,
     ),
     customProps.className);
 
     const listItemClassNames = cx(
       'list-item',
-      { 'has-border': fromOutlineView },
+      { 'has-border': (variant === 'drill-in') },
       { 'is-disabled': isDisabled },
     );
 
