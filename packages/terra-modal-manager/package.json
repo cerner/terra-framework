@@ -32,7 +32,7 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "prop-types": "^15.5.8",
-    "terra-abstract-modal": "file:./terra-abstract-modal-3.49.0.tgz",
+    "terra-abstract-modal": "^3.49.0",
     "terra-action-header": "^2.0.0",
     "terra-content-container": "^3.0.0",
     "terra-slide-group": "^4.34.0",
