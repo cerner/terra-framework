@@ -12,6 +12,15 @@
     border-top: var(--terra-navigation-side-menu-list-item-border-top, none);
   }
 
+  .has-border {
+    border-bottom: var(--terra-navigation-side-menu-list-item-border-bottom, 1px solid #6F7477);
+  }
+
+  .is-disabled {
+    cursor: default;
+    opacity: 30%;
+  }
+
   .menu-item {
     align-items: stretch;
     border-bottom: var(--terra-navigation-side-menu-item-border-bottom, none);
@@ -159,5 +168,16 @@
 
   .icon {
     margin-right: 10px;
+  }
+
+  .is-drill-in {
+    &:focus {
+      background-color: var(--terra-navigation-side-menu-outline-view-item-focus-background-color, #EBF6FD);
+    }
+
+    &:hover,
+    &.is-hovered {
+      background-color: var(--terra-navigation-side-menu-outline-view-item-hover-background-color, #EBF6FD);
+    }
   }
 }

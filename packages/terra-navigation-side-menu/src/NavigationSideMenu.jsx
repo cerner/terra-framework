@@ -56,7 +56,6 @@ const propTypes = {
      */
     text: PropTypes.string.isRequired,
     /**
-     * @private
      * Indicates if item should be disabled
      */
     isDisabled: PropTypes.bool,
