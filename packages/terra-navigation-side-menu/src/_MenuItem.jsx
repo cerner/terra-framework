@@ -7,6 +7,7 @@ import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { IconFolder, IconCaretRight, IconCaretDown } from 'terra-icon';
 
 import styles from './MenuItem.module.scss';
 
@@ -43,6 +44,19 @@ const propTypes = {
    * tabIndex for the menu item.
    * */
   tabIndex: PropTypes.string,
+  /**
+   * @private
+   * The icon to display to the left for the menu item.
+   */
+  icon: PropTypes.element,
+  /**
+   * If enabled, this prop will show the icon to the left for the menu item.
+   */
+  showIcon: PropTypes.bool,
+  /**
+   * Renders either Navigation Side Menu or Drill-IN
+   */
+  variant: PropTypes.oneOf(['nav-side-menu', 'drill-in']),
 };
 
 class MenuItem extends React.Component {
@@ -93,10 +107,16 @@ class MenuItem extends React.Component {
       hasChevron,
       intl,
       isSelected,
+      isDisabled,
       text,
+      icon,
+      fromOutlineView,
+      variant,
       ...customProps
     } = this.props;
     const theme = this.context;
+
+    const itemIcon = hasChevron && !icon ? <IconFolder /> : icon;
 
     const itemClassNames = classNames(cx(
       'menu-item',
@@ -106,9 +126,15 @@ class MenuItem extends React.Component {
     ),
     customProps.className);
 
+    const listItemClassNames = cx(
+      'list-item',
+      { 'has-border': fromOutlineView },
+      { 'is-disabled': isDisabled },
+    );
+
     return (
       <li
-        className={cx('list-item')}
+        className={listItemClassNames}
         role="none"
       >
         <div
@@ -120,6 +146,7 @@ class MenuItem extends React.Component {
           onKeyDown={this.handleKeyDown}
           aria-haspopup={hasChevron}
         >
+          {variant === 'drill-in' && <span className={cx('icon')}>{itemIcon}</span>}
           <div className={cx('title')}>
             {this.textRender()}
           </div>

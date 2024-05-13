@@ -6,6 +6,7 @@ import ContentContainer from 'terra-content-container';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
+import StatusView from 'terra-status-view';
 import MenuItem from './_MenuItem';
 
 import styles from './NavigationSideMenu.module.scss';
@@ -54,6 +55,11 @@ const propTypes = {
      * Text for the menu row and header title when selected.
      */
     text: PropTypes.string.isRequired,
+    /**
+     * @private
+     * Indicates if item should be disabled
+     */
+    isDisabled: PropTypes.bool,
   })),
   /**
    * Callback function when a menu endpoint is reached.
@@ -77,10 +83,15 @@ const propTypes = {
    * An optional toolbar to display below the side menu action header
    */
   toolbar: PropTypes.element,
+  /**
+   * Renders either Navigation Side Menu or Drill-IN
+   */
+  variant: PropTypes.oneOf(['nav-side-menu', 'drill-in']),
 };
 
 const defaultProps = {
   menuItems: [],
+  variant: 'nav-side-menu',
 };
 
 const processMenuItems = (menuItems) => {
@@ -94,6 +105,8 @@ const processMenuItems = (menuItems) => {
       metaData: item.metaData,
       hasSubMenu: item.hasSubMenu,
       isRootMenu: item.isRootMenu,
+      icon: item.icon,
+      isDisabled: item.isDisabled,
     };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
@@ -238,7 +251,9 @@ class NavigationSideMenu extends Component {
     const lastIndex = listMenuItems.length - 1;
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       event.preventDefault();
-      this.handleItemClick(event, key);
+      if (!item.isDisabled) {
+        this.handleItemClick(event, key);
+      }
     }
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
@@ -306,17 +321,24 @@ class NavigationSideMenu extends Component {
       this.handleEvents(event, item, key);
     };
 
+    if (this.props.variant === 'drill-in' && key === 'empty-child-key') {
+      return <StatusView variant="no-data" />;
+    }
+
     return (
       <MenuItem
         id={item.id}
-        hasChevron={item.hasSubMenu || (item.childKeys && item.childKeys.length > 0)}
+        hasChevron={item.hasSubMenu || (item.childKeys && item.childKeys.length >= 0)}
         isSelected={key === this.props.selectedChildKey}
+        isDisabled={item.isDisabled}
         text={item.text}
         key={key}
-        onClick={(event) => { this.handleItemClick(event, key); }}
+        onClick={(event) => { (!(item.isDisabled)) ? this.handleItemClick(event, key) : null; }}
         onKeyDown={onKeyDown}
         data-menu-item={key}
         tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
+        icon={item.icon}
+        variant={this.props.variant}
       />
     );
   }
@@ -348,6 +370,7 @@ class NavigationSideMenu extends Component {
       selectedChildKey,
       selectedMenuKey,
       toolbar,
+      variant,
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
@@ -364,10 +387,15 @@ class NavigationSideMenu extends Component {
       this.onBack = routingStackBack;
     }
 
+    const headerStyles = cx([
+      { headerStyle: true },
+      theme.className,
+    ]);
+
     let header;
     if (this.onBack || (currentItem && !currentItem.isRootMenu)) {
       header = (
-        <li role="none">
+        <li className={headerStyles} role="none">
           <div
             className={cx('side-navigation-menu')}
             role="menuitem"
