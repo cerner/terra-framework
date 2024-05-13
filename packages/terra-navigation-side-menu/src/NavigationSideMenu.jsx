@@ -59,6 +59,10 @@ const propTypes = {
      * Indicates if item should be disabled
      */
     isDisabled: PropTypes.bool,
+    /**
+     * The icon to display to the left for the menu item when variant is 'drill-in'
+     */
+    icon: PropTypes.element,
   })),
   /**
    * Callback function when a menu endpoint is reached.
@@ -97,10 +101,14 @@ const processMenuItems = (menuItems) => {
   const items = {};
   const parents = {};
   menuItems.forEach((item) => {
+    let childKey;
+    if (item.childKeys) {
+      childKey = item.childKeys.length ? item.childKeys : ['empty-child-key'];
+    }
     items[item.key] = {
       id: item.id,
       text: item.text,
-      childKeys: item.childKeys,
+      childKeys: childKey,
       metaData: item.metaData,
       hasSubMenu: item.hasSubMenu,
       isRootMenu: item.isRootMenu,
