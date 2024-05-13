@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import NavigationSideMenu from 'terra-navigation-side-menu';
-import { IconDocuments, IconHospital } from 'terra-icon';
+import { IconHospital } from 'terra-icon';
 
 import styles from './NavigationSideMenuExample.module.scss';
 
@@ -34,19 +34,21 @@ class DrillInDefault extends React.Component {
             childKeys: ['subsubmenu1', 'subsubmenu2', 'subsubmenu3'],
             id: 'test-item-1',
           },
-          { key: 'submenu2', text: 'Hospital events', icon: <IconDocuments /> },
-          { key: 'submenu3', text: 'Hospital Accommodations', isDisabled: true, icon: <IconDocuments /> },
-          { key: 'submenu4', text: 'Hospital Careers', icon: <IconDocuments /> },
+          { key: 'submenu2', text: 'Hospital events' },
+          {
+            key: 'submenu3', text: 'Hospital Accommodations', isDisabled: true,
+          },
+          { key: 'submenu4', text: 'Hospital Careers' },
           { key: 'submenu5', text: 'Hospital Info', childKeys: [] },
           {
-            key: 'subsubmenu1', text: 'Imaging', id: 'test-item-2', icon: <IconDocuments />,
+            key: 'subsubmenu1', text: 'Imaging', id: 'test-item-2',
           },
-          { key: 'subsubmenu2', text: 'Laboratory', icon: <IconDocuments /> },
+          { key: 'subsubmenu2', text: 'Laboratory' },
           {
             key: 'subsubmenu3', text: 'Rehabilitation services', childKeys: ['rehab1', 'rehab2', 'rehab3'], icon: <IconHospital />,
           },
-          { key: 'rehab1', text: 'Rehabilitation services 1', icon: <IconDocuments /> },
-          { key: 'rehab2', text: 'Rehabilitation services 2', icon: <IconDocuments /> },
+          { key: 'rehab1', text: 'Rehabilitation services 1' },
+          { key: 'rehab2', text: 'Rehabilitation services 2' },
           { key: 'rehab3', text: 'Rehabilitation services 3', childKeys: [] },
         ]}
         onChange={this.handleOnChange}
