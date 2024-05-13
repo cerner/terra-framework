@@ -1,6 +1,6 @@
 {
   "Terra.AbstractModal.BeginModalDialog": "Comenzar el diálogo modal",
   "Terra.AbstractModal.EndModalDialog": "Finalizar el diálogo modal",
-  "Terra.AbstractModal.BeginModalDialogTitle": "Comenzar el {title}",
-  "Terra.AbstractModal.EndModalDialogTitle": "Finalizar el {title}"
+  "Terra.AbstractModal.BeginModalDialogTitle": "Comenzar el {title} diálogo",
+  "Terra.AbstractModal.EndModalDialogTitle": "Finalizar el {title} diálogo"
 }

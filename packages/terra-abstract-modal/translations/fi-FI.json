@@ -1,6 +1,6 @@
 {
   "Terra.AbstractModal.BeginModalDialog": "Aloita modaalinen valintaikkuna",
   "Terra.AbstractModal.EndModalDialog": "Lopeta modaalivalintaikkuna",
-  "Terra.AbstractModal.BeginModalDialogTitle": "Aloita {title}",
-  "Terra.AbstractModal.EndModalDialogTitle": "Lopeta {title}"
+  "Terra.AbstractModal.BeginModalDialogTitle": "Aloita {title} valintaikkuna",
+  "Terra.AbstractModal.EndModalDialogTitle": "Lopeta {title} valintaikkuna"
 }
