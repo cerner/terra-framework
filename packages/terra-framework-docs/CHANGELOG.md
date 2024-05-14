@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+* Added
+  * Added examples for drill-in view under `terra-navigation-side-menu`
+
+## 1.87.0 - (May 14, 2024)
+
 * Changed
   * Updated `terra-slide-panel` example to use `terra-buttons`.
 
