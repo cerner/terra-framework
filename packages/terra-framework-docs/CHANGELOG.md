@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 1.87.0 - (May 14, 2024)
+
 * Changed
   * Enabled `close` button in examples.
   * Modified Button in `PopupStandard` example.

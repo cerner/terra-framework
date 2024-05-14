@@ -1,4 +1,6 @@
 {
   "Terra.AbstractModal.BeginModalDialog": "Börja modal dialog",
-  "Terra.AbstractModal.EndModalDialog": "Avsluta modal dialog"
+  "Terra.AbstractModal.EndModalDialog": "Avsluta modal dialog",
+  "Terra.AbstractModal.BeginModalDialogTitle": "Börja {title} dialog",
+  "Terra.AbstractModal.EndModalDialogTitle": "Avsluta {title} dialog"
 }

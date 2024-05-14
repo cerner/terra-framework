@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.50.0 - (May 14, 2024)
+
+* Changed
+  * Changes to announce title of modal.
+
 ## 3.49.0 - (March 8, 2024)
 
 * Changes
