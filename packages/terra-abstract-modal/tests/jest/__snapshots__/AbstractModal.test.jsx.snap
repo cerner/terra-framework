@@ -97,7 +97,7 @@ exports[`correctly applies the theme context className 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -112,7 +112,7 @@ exports[`correctly applies the theme context className 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -212,16 +212,20 @@ exports[`correctly applies the theme context className 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -237,16 +241,20 @@ exports[`correctly applies the theme context className 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -363,7 +371,7 @@ exports[`should mount an open modal 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -378,7 +386,7 @@ exports[`should mount an open modal 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -478,16 +486,20 @@ exports[`should mount an open modal 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -503,16 +515,20 @@ exports[`should mount an open modal 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -630,7 +646,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -645,7 +661,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -745,16 +761,20 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -770,16 +790,20 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -897,7 +921,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -912,7 +936,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -1012,16 +1036,20 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1037,16 +1065,20 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1164,7 +1196,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -1179,7 +1211,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -1279,16 +1311,20 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1304,16 +1340,20 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1431,7 +1471,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -1446,7 +1486,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -1546,16 +1586,20 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1571,16 +1615,20 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1700,7 +1748,7 @@ exports[`should mount an open modal with custom props 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -1715,7 +1763,7 @@ exports[`should mount an open modal with custom props 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -1817,16 +1865,20 @@ exports[`should mount an open modal with custom props 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1842,16 +1894,20 @@ exports[`should mount an open modal with custom props 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -1969,7 +2025,7 @@ exports[`should mount an open modal with modal class name 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -1984,7 +2040,7 @@ exports[`should mount an open modal with modal class name 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -2084,16 +2140,20 @@ exports[`should mount an open modal with modal class name 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -2109,16 +2169,20 @@ exports[`should mount an open modal with modal class name 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -2236,7 +2300,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -2251,7 +2315,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -2351,16 +2415,20 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -2376,16 +2444,20 @@ exports[`should mount an open modal with overlay class name 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -2503,7 +2575,7 @@ exports[`should mount an open modal with role 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -2518,7 +2590,7 @@ exports[`should mount an open modal with role 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -2618,16 +2690,20 @@ exports[`should mount an open modal with role 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -2643,16 +2719,20 @@ exports[`should mount an open modal with role 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -2770,7 +2850,7 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -2785,7 +2865,7 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -2885,16 +2965,20 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -2910,16 +2994,20 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -3049,7 +3137,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                     <span
                       class="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                     <div>
                       <h1>
@@ -3064,7 +3152,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                     <span
                       class="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </div>
                 </div>
@@ -3215,7 +3303,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                             <span
                               class="visually-hidden-text"
                             >
-                              Terra.AbstractModal.BeginModalDialog
+                              Terra.AbstractModal.BeginModalDialogTitle
                             </span>
                             <div>
                               <h1>
@@ -3230,7 +3318,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                             <span
                               class="visually-hidden-text"
                             >
-                              Terra.AbstractModal.EndModalDialog
+                              Terra.AbstractModal.EndModalDialogTitle
                             </span>
                           </div>
                         </div>
@@ -3278,7 +3366,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                               <span
                                 class="visually-hidden-text"
                               >
-                                Terra.AbstractModal.BeginModalDialog
+                                Terra.AbstractModal.BeginModalDialogTitle
                               </span>
                               <div>
                                 <h1>
@@ -3293,7 +3381,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                               <span
                                 class="visually-hidden-text"
                               >
-                                Terra.AbstractModal.EndModalDialog
+                                Terra.AbstractModal.EndModalDialogTitle
                               </span>
                             </div>
                           </div>
@@ -3341,7 +3429,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                 <span
                                   class="visually-hidden-text"
                                 >
-                                  Terra.AbstractModal.BeginModalDialog
+                                  Terra.AbstractModal.BeginModalDialogTitle
                                 </span>
                                 <div>
                                   <h1>
@@ -3356,7 +3444,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                 <span
                                   class="visually-hidden-text"
                                 >
-                                  Terra.AbstractModal.EndModalDialog
+                                  Terra.AbstractModal.EndModalDialogTitle
                                 </span>
                               </div>
                             </div>
@@ -3392,7 +3480,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                   <span
                                     class="visually-hidden-text"
                                   >
-                                    Terra.AbstractModal.BeginModalDialog
+                                    Terra.AbstractModal.BeginModalDialogTitle
                                   </span>
                                   <div>
                                     <h1>
@@ -3407,7 +3495,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                   <span
                                     class="visually-hidden-text"
                                   >
-                                    Terra.AbstractModal.EndModalDialog
+                                    Terra.AbstractModal.EndModalDialogTitle
                                   </span>
                                 </div>
                               </div>
@@ -3456,7 +3544,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                 <span
                                   class="visually-hidden-text"
                                 >
-                                  Terra.AbstractModal.BeginModalDialog
+                                  Terra.AbstractModal.BeginModalDialogTitle
                                 </span>
                                 <div>
                                   <h1>
@@ -3471,7 +3559,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                 <span
                                   class="visually-hidden-text"
                                 >
-                                  Terra.AbstractModal.EndModalDialog
+                                  Terra.AbstractModal.EndModalDialogTitle
                                 </span>
                               </div>
                             </div>
@@ -3516,7 +3604,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                   <span
                                     class="visually-hidden-text"
                                   >
-                                    Terra.AbstractModal.BeginModalDialog
+                                    Terra.AbstractModal.BeginModalDialogTitle
                                   </span>
                                   <div>
                                     <h1>
@@ -3531,7 +3619,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                   <span
                                     class="visually-hidden-text"
                                   >
-                                    Terra.AbstractModal.EndModalDialog
+                                    Terra.AbstractModal.EndModalDialogTitle
                                   </span>
                                 </div>
                               </div>
@@ -3576,7 +3664,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                     <span
                                       class="visually-hidden-text"
                                     >
-                                      Terra.AbstractModal.BeginModalDialog
+                                      Terra.AbstractModal.BeginModalDialogTitle
                                     </span>
                                     <div>
                                       <h1>
@@ -3591,7 +3679,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                                     <span
                                       class="visually-hidden-text"
                                     >
-                                      Terra.AbstractModal.EndModalDialog
+                                      Terra.AbstractModal.EndModalDialogTitle
                                     </span>
                                   </div>
                                 </div>
@@ -3696,16 +3784,20 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                           tabIndex="-1"
                         >
                           <FormattedMessage
-                            id="Terra.AbstractModal.BeginModalDialog"
-                            values={Object {}}
+                            id="Terra.AbstractModal.BeginModalDialogTitle"
+                            values={
+                              Object {
+                                "title": "Terra Modal",
+                              }
+                            }
                           >
                             <VisuallyHiddenText
-                              text="Terra.AbstractModal.BeginModalDialog"
+                              text="Terra.AbstractModal.BeginModalDialogTitle"
                             >
                               <span
                                 className="visually-hidden-text"
                               >
-                                Terra.AbstractModal.BeginModalDialog
+                                Terra.AbstractModal.BeginModalDialogTitle
                               </span>
                             </VisuallyHiddenText>
                           </FormattedMessage>
@@ -3721,16 +3813,20 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                             </button>
                           </div>
                           <FormattedMessage
-                            id="Terra.AbstractModal.EndModalDialog"
-                            values={Object {}}
+                            id="Terra.AbstractModal.EndModalDialogTitle"
+                            values={
+                              Object {
+                                "title": "Terra Modal",
+                              }
+                            }
                           >
                             <VisuallyHiddenText
-                              text="Terra.AbstractModal.EndModalDialog"
+                              text="Terra.AbstractModal.EndModalDialogTitle"
                             >
                               <span
                                 className="visually-hidden-text"
                               >
-                                Terra.AbstractModal.EndModalDialog
+                                Terra.AbstractModal.EndModalDialogTitle
                               </span>
                             </VisuallyHiddenText>
                           </FormattedMessage>
@@ -3915,7 +4011,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -3930,7 +4026,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -4030,16 +4126,20 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -4055,16 +4155,20 @@ exports[`should render the correct snapshot for iPads 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -4181,7 +4285,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -4196,7 +4300,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -4296,16 +4400,20 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -4321,16 +4429,20 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -4447,7 +4559,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.BeginModalDialog
+                    Terra.AbstractModal.BeginModalDialogTitle
                   </span>
                   <div>
                     <h1>
@@ -4462,7 +4574,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
                   <span
                     class="visually-hidden-text"
                   >
-                    Terra.AbstractModal.EndModalDialog
+                    Terra.AbstractModal.EndModalDialogTitle
                   </span>
                 </div>
               </div>
@@ -4562,16 +4674,20 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 tabIndex="-1"
               >
                 <FormattedMessage
-                  id="Terra.AbstractModal.BeginModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.BeginModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.BeginModalDialog"
+                    text="Terra.AbstractModal.BeginModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.BeginModalDialog
+                      Terra.AbstractModal.BeginModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>
@@ -4587,16 +4703,20 @@ exports[`should render the correct snapshot for iPods 1`] = `
                   </button>
                 </div>
                 <FormattedMessage
-                  id="Terra.AbstractModal.EndModalDialog"
-                  values={Object {}}
+                  id="Terra.AbstractModal.EndModalDialogTitle"
+                  values={
+                    Object {
+                      "title": "Terra Modal",
+                    }
+                  }
                 >
                   <VisuallyHiddenText
-                    text="Terra.AbstractModal.EndModalDialog"
+                    text="Terra.AbstractModal.EndModalDialogTitle"
                   >
                     <span
                       className="visually-hidden-text"
                     >
-                      Terra.AbstractModal.EndModalDialog
+                      Terra.AbstractModal.EndModalDialogTitle
                     </span>
                   </VisuallyHiddenText>
                 </FormattedMessage>

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Exposed z-index enum as a constant.
+
 ## 6.77.0 - (May 8, 2024)
 
 * Changed

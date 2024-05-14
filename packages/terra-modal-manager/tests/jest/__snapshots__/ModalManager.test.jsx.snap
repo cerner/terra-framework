@@ -1027,7 +1027,11 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                             >
                               <FormattedMessage
                                 id="Terra.AbstractModal.BeginModalDialog"
-                                values={Object {}}
+                                values={
+                                  Object {
+                                    "title": "Modal",
+                                  }
+                                }
                               >
                                 <VisuallyHiddenText
                                   text="Terra.AbstractModal.BeginModalDialog"
@@ -1196,7 +1200,11 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               </ContentContainer>
                               <FormattedMessage
                                 id="Terra.AbstractModal.EndModalDialog"
-                                values={Object {}}
+                                values={
+                                  Object {
+                                    "title": "Modal",
+                                  }
+                                }
                               >
                                 <VisuallyHiddenText
                                   text="Terra.AbstractModal.EndModalDialog"

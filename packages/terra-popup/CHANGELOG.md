@@ -1,5 +1,8 @@
 # Changelog
 
+* Changed
+  * Changed `targetRef` to an optional prop.
+
 ## Unreleased
 
 ## 6.82.0 - (May 8, 2024)
