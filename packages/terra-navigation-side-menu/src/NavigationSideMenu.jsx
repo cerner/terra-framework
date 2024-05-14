@@ -333,7 +333,7 @@ class NavigationSideMenu extends Component {
     }
 
     if (this.props.variant !== 'drill-in' && key === 'empty-child-key') {
-      return;
+      return null;
     }
 
     return (
