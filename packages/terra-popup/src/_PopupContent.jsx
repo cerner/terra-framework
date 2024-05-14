@@ -82,6 +82,10 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
+  /**
+   *  To determine if the popup is opening from the menu.
+   */
+  isMenu: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -93,6 +97,7 @@ const defaultProps = {
   isHeightAutomatic: false,
   isWidthAutomatic: false,
   popupContentRole: 'dialog',
+  isMenu: false,
 };
 
 class PopupContent extends React.Component {
@@ -201,6 +206,7 @@ class PopupContent extends React.Component {
       onContentResize,
       popupContentRole,
       refCallback,
+      isMenu,
       ...customProps
     } = this.props;
 
@@ -210,7 +216,7 @@ class PopupContent extends React.Component {
     const isFullScreen = isHeightBounded && isWidthBounded;
 
     let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
-    if (isFullScreen || !isHeaderDisabled) {
+    if ((isFullScreen || !isHeaderDisabled) && !isMenu) {
       content = PopupContent.addPopupHeader(content, onRequestClose);
     }
     const theme = this.context;

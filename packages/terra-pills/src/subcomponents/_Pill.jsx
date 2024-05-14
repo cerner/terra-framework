@@ -217,7 +217,6 @@ const Pill = (props) => {
       targetRef={getPillRef}
       onRequestClose={handleOnRequestClose}
       contentHeight="auto"
-      contentWidth="auto"
       isHeaderDisabled={isPopupHeaderDisabled}
     >
       <div className={cx(['popup-content-pill-label', theme.className])}>

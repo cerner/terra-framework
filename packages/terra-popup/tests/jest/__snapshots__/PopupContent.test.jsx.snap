@@ -44,6 +44,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
     isFocusedDisabled={false}
     isHeaderDisabled={false}
     isHeightAutomatic={false}
+    isMenu={false}
     isWidthAutomatic={false}
     onRequestClose={[MockFunction]}
     onResize={[MockFunction]}
@@ -356,6 +357,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
   isFocusedDisabled={false}
   isHeaderDisabled={false}
   isHeightAutomatic={false}
+  isMenu={false}
   isWidthAutomatic={false}
   onRequestClose={[MockFunction]}
   onResize={[MockFunction]}
