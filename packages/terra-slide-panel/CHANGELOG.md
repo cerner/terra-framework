@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 3.50.0 - (May 14, 2024)
+
 * Changed
   * Updated to find the closest focusable element when disclosing.
 
