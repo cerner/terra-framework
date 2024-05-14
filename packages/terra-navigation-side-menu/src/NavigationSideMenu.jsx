@@ -332,6 +332,10 @@ class NavigationSideMenu extends Component {
       return <StatusView variant="no-data" />;
     }
 
+    if (this.props.variant !== 'drill-in' && key === 'empty-child-key') {
+      return;
+    }
+
     return (
       <MenuItem
         id={item.id}
