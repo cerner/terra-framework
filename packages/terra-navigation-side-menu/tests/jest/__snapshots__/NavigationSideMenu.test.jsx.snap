@@ -1195,3 +1195,664 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   variant="nav-side-menu"
 />
 `;
+
+exports[`Layout should render a drill-in variant of NavigationSideMenu with selectedKey 1`] = `
+<InjectIntl(NavigationSideMenu)
+  intl={
+    Object {
+      "defaultFormats": Object {},
+      "defaultLocale": "en",
+      "formatDate": [Function],
+      "formatHTMLMessage": [Function],
+      "formatMessage": [Function],
+      "formatNumber": [Function],
+      "formatPlural": [Function],
+      "formatRelative": [Function],
+      "formatTime": [Function],
+      "formats": Object {},
+      "formatters": Object {
+        "getDateTimeFormat": [Function],
+        "getMessageFormat": [Function],
+        "getNumberFormat": [Function],
+        "getPluralFormat": [Function],
+        "getRelativeFormat": [Function],
+      },
+      "locale": "en",
+      "messages": null,
+      "now": [Function],
+      "onError": [Function],
+      "textComponent": "span",
+      "timeZone": null,
+    }
+  }
+  menuItems={
+    Array [
+      Object {
+        "childKeys": Array [
+          "test1",
+          "test2",
+          "test3",
+          "test4",
+        ],
+        "key": "menu",
+        "text": "Test Menu",
+      },
+      Object {
+        "isDisabled": true,
+        "key": "test1",
+        "text": "Test Menu 1",
+      },
+      Object {
+        "key": "test2",
+        "text": "Test Menu 2",
+      },
+      Object {
+        "key": "test3",
+        "text": "Test Menu 3",
+      },
+      Object {
+        "key": "test4",
+        "text": "Test Menu 4",
+      },
+    ]
+  }
+  onChange={[Function]}
+  routingStackBack={[Function]}
+  selectedMenuKey="menu"
+  variant="drill-in"
+>
+  <NavigationSideMenu
+    intl={
+      Object {
+        "defaultFormats": Object {},
+        "defaultLocale": "en",
+        "formatDate": [Function],
+        "formatHTMLMessage": [Function],
+        "formatMessage": [Function],
+        "formatNumber": [Function],
+        "formatPlural": [Function],
+        "formatRelative": [Function],
+        "formatTime": [Function],
+        "formats": Object {},
+        "formatters": Object {
+          "getDateTimeFormat": [Function],
+          "getMessageFormat": [Function],
+          "getNumberFormat": [Function],
+          "getPluralFormat": [Function],
+          "getRelativeFormat": [Function],
+        },
+        "locale": "en",
+        "messages": null,
+        "now": [Function],
+        "onError": [Function],
+        "textComponent": "span",
+        "timeZone": null,
+      }
+    }
+    menuItems={
+      Array [
+        Object {
+          "childKeys": Array [
+            "test1",
+            "test2",
+            "test3",
+            "test4",
+          ],
+          "key": "menu",
+          "text": "Test Menu",
+        },
+        Object {
+          "isDisabled": true,
+          "key": "test1",
+          "text": "Test Menu 1",
+        },
+        Object {
+          "key": "test2",
+          "text": "Test Menu 2",
+        },
+        Object {
+          "key": "test3",
+          "text": "Test Menu 3",
+        },
+        Object {
+          "key": "test4",
+          "text": "Test Menu 4",
+        },
+      ]
+    }
+    onChange={[Function]}
+    routingStackBack={[Function]}
+    selectedMenuKey="menu"
+    variant="drill-in"
+  >
+    <VisuallyHiddenText
+      aria-atomic="true"
+      aria-live="assertive"
+      aria-relevant="additions text"
+      refCallback={[Function]}
+    >
+      <span
+        aria-atomic="true"
+        aria-live="assertive"
+        aria-relevant="additions text"
+        className="visually-hidden-text"
+      />
+    </VisuallyHiddenText>
+    <ContentContainer
+      className="side-menu-content-container"
+      fill={false}
+      intl={
+        Object {
+          "defaultFormats": Object {},
+          "defaultLocale": "en",
+          "formatDate": [Function],
+          "formatHTMLMessage": [Function],
+          "formatMessage": [Function],
+          "formatNumber": [Function],
+          "formatPlural": [Function],
+          "formatRelative": [Function],
+          "formatTime": [Function],
+          "formats": Object {},
+          "formatters": Object {
+            "getDateTimeFormat": [Function],
+            "getMessageFormat": [Function],
+            "getNumberFormat": [Function],
+            "getPluralFormat": [Function],
+            "getRelativeFormat": [Function],
+          },
+          "locale": "en",
+          "messages": null,
+          "now": [Function],
+          "onError": [Function],
+          "textComponent": "span",
+          "timeZone": null,
+        }
+      }
+      setFocusOnContainer={false}
+    >
+      <div
+        className="content-container-static side-menu-content-container"
+        intl={
+          Object {
+            "defaultFormats": Object {},
+            "defaultLocale": "en",
+            "formatDate": [Function],
+            "formatHTMLMessage": [Function],
+            "formatMessage": [Function],
+            "formatNumber": [Function],
+            "formatPlural": [Function],
+            "formatRelative": [Function],
+            "formatTime": [Function],
+            "formats": Object {},
+            "formatters": Object {
+              "getDateTimeFormat": [Function],
+              "getMessageFormat": [Function],
+              "getNumberFormat": [Function],
+              "getPluralFormat": [Function],
+              "getRelativeFormat": [Function],
+            },
+            "locale": "en",
+            "messages": null,
+            "now": [Function],
+            "onError": [Function],
+            "textComponent": "span",
+            "timeZone": null,
+          }
+        }
+      >
+        <div
+          className="main"
+        >
+          <Scroll
+            className="normalizer"
+          >
+            <div
+              className="scroll normalizer"
+            >
+              <nav
+                role="navigation"
+              >
+                <ul
+                  className="side-menu-list"
+                  role="menu"
+                >
+                  <li
+                    className="header-style"
+                    role="none"
+                  >
+                    <div
+                      className="side-navigation-menu"
+                      data-navigation-side-menu={true}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      role="menuitem"
+                      tabIndex="0"
+                      type="button"
+                    >
+                      <span
+                        className="header-icon back"
+                      />
+                      <h1
+                        className="title"
+                      >
+                        Test Menu
+                      </h1>
+                    </div>
+                  </li>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test1"
+                    isDisabled={true}
+                    isSelected={false}
+                    key="test1"
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 1"
+                    variant="drill-in"
+                  >
+                    <MenuItem
+                      data-menu-item="test1"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isDisabled={true}
+                      isSelected={false}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 1"
+                      variant="drill-in"
+                    >
+                      <li
+                        className="list-item has-border is-disabled"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item is-drill-in"
+                          data-menu-item="test1"
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <span
+                            className="icon"
+                          >
+                            <IconDocuments
+                              data-name="Layer 1"
+                              viewBox="0 0 48 48"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <IconBase
+                                data-name="Layer 1"
+                                focusable="false"
+                                height="1em"
+                                isBidi={false}
+                                isSpin={false}
+                                viewBox="0 0 48 48"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="tui-Icon icon"
+                                  data-name="Layer 1"
+                                  focusable="false"
+                                  height="1em"
+                                  role="presentation"
+                                  viewBox="0 0 48 48"
+                                  width="1em"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m41.9 9.9-8.8-8.8A3.12 3.12 0 0 0 30.6 0H14.2A2.56 2.56 0 0 0 12 2v5H7a2.57 2.57 0 0 0-2 2v37a2.24 2.24 0 0 0 2 2h26a2.07 2.07 0 0 0 2-2v-5h6.1a2.06 2.06 0 0 0 1.9-2V12a2.92 2.92 0 0 0-1.1-2.1zM31 3.2l9 8.8h-9zM32 45H8V10h4v29a2.25 2.25 0 0 0 2.1 2H32zm8-7H15V3h13v9a2.77 2.77 0 0 0 3.1 3H40z"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </IconDocuments>
+                          </span>
+                          <div
+                            className="title"
+                          >
+                            Test Menu 1
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test2"
+                    isSelected={false}
+                    key="test2"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 2"
+                    variant="drill-in"
+                  >
+                    <MenuItem
+                      data-menu-item="test2"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isSelected={false}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 2"
+                      variant="drill-in"
+                    >
+                      <li
+                        className="list-item has-border"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item is-drill-in"
+                          data-menu-item="test2"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <span
+                            className="icon"
+                          >
+                            <IconDocuments
+                              data-name="Layer 1"
+                              viewBox="0 0 48 48"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <IconBase
+                                data-name="Layer 1"
+                                focusable="false"
+                                height="1em"
+                                isBidi={false}
+                                isSpin={false}
+                                viewBox="0 0 48 48"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="tui-Icon icon"
+                                  data-name="Layer 1"
+                                  focusable="false"
+                                  height="1em"
+                                  role="presentation"
+                                  viewBox="0 0 48 48"
+                                  width="1em"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m41.9 9.9-8.8-8.8A3.12 3.12 0 0 0 30.6 0H14.2A2.56 2.56 0 0 0 12 2v5H7a2.57 2.57 0 0 0-2 2v37a2.24 2.24 0 0 0 2 2h26a2.07 2.07 0 0 0 2-2v-5h6.1a2.06 2.06 0 0 0 1.9-2V12a2.92 2.92 0 0 0-1.1-2.1zM31 3.2l9 8.8h-9zM32 45H8V10h4v29a2.25 2.25 0 0 0 2.1 2H32zm8-7H15V3h13v9a2.77 2.77 0 0 0 3.1 3H40z"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </IconDocuments>
+                          </span>
+                          <div
+                            className="title"
+                          >
+                            Test Menu 2
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test3"
+                    isSelected={false}
+                    key="test3"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 3"
+                    variant="drill-in"
+                  >
+                    <MenuItem
+                      data-menu-item="test3"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isSelected={false}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 3"
+                      variant="drill-in"
+                    >
+                      <li
+                        className="list-item has-border"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item is-drill-in"
+                          data-menu-item="test3"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <span
+                            className="icon"
+                          >
+                            <IconDocuments
+                              data-name="Layer 1"
+                              viewBox="0 0 48 48"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <IconBase
+                                data-name="Layer 1"
+                                focusable="false"
+                                height="1em"
+                                isBidi={false}
+                                isSpin={false}
+                                viewBox="0 0 48 48"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="tui-Icon icon"
+                                  data-name="Layer 1"
+                                  focusable="false"
+                                  height="1em"
+                                  role="presentation"
+                                  viewBox="0 0 48 48"
+                                  width="1em"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m41.9 9.9-8.8-8.8A3.12 3.12 0 0 0 30.6 0H14.2A2.56 2.56 0 0 0 12 2v5H7a2.57 2.57 0 0 0-2 2v37a2.24 2.24 0 0 0 2 2h26a2.07 2.07 0 0 0 2-2v-5h6.1a2.06 2.06 0 0 0 1.9-2V12a2.92 2.92 0 0 0-1.1-2.1zM31 3.2l9 8.8h-9zM32 45H8V10h4v29a2.25 2.25 0 0 0 2.1 2H32zm8-7H15V3h13v9a2.77 2.77 0 0 0 3.1 3H40z"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </IconDocuments>
+                          </span>
+                          <div
+                            className="title"
+                          >
+                            Test Menu 3
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                  <InjectIntl(MenuItem)
+                    data-menu-item="test4"
+                    isSelected={false}
+                    key="test4"
+                    onClick={[Function]}
+                    onKeyDown={[Function]}
+                    tabIndex="-1"
+                    text="Test Menu 4"
+                    variant="drill-in"
+                  >
+                    <MenuItem
+                      data-menu-item="test4"
+                      intl={
+                        Object {
+                          "defaultFormats": Object {},
+                          "defaultLocale": "en",
+                          "formatDate": [Function],
+                          "formatHTMLMessage": [Function],
+                          "formatMessage": [Function],
+                          "formatNumber": [Function],
+                          "formatPlural": [Function],
+                          "formatRelative": [Function],
+                          "formatTime": [Function],
+                          "formats": Object {},
+                          "formatters": Object {
+                            "getDateTimeFormat": [Function],
+                            "getMessageFormat": [Function],
+                            "getNumberFormat": [Function],
+                            "getPluralFormat": [Function],
+                            "getRelativeFormat": [Function],
+                          },
+                          "locale": "en",
+                          "messages": null,
+                          "now": [Function],
+                          "onError": [Function],
+                          "textComponent": "span",
+                          "timeZone": null,
+                        }
+                      }
+                      isSelected={false}
+                      onClick={[Function]}
+                      onKeyDown={[Function]}
+                      tabIndex="-1"
+                      text="Test Menu 4"
+                      variant="drill-in"
+                    >
+                      <li
+                        className="list-item has-border"
+                        role="none"
+                      >
+                        <div
+                          className="menu-item is-drill-in"
+                          data-menu-item="test4"
+                          onClick={[Function]}
+                          onKeyDown={[Function]}
+                          role="menuitem"
+                          tabIndex="-1"
+                        >
+                          <span
+                            className="icon"
+                          >
+                            <IconDocuments
+                              data-name="Layer 1"
+                              viewBox="0 0 48 48"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <IconBase
+                                data-name="Layer 1"
+                                focusable="false"
+                                height="1em"
+                                isBidi={false}
+                                isSpin={false}
+                                viewBox="0 0 48 48"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <svg
+                                  className="tui-Icon icon"
+                                  data-name="Layer 1"
+                                  focusable="false"
+                                  height="1em"
+                                  role="presentation"
+                                  viewBox="0 0 48 48"
+                                  width="1em"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="m41.9 9.9-8.8-8.8A3.12 3.12 0 0 0 30.6 0H14.2A2.56 2.56 0 0 0 12 2v5H7a2.57 2.57 0 0 0-2 2v37a2.24 2.24 0 0 0 2 2h26a2.07 2.07 0 0 0 2-2v-5h6.1a2.06 2.06 0 0 0 1.9-2V12a2.92 2.92 0 0 0-1.1-2.1zM31 3.2l9 8.8h-9zM32 45H8V10h4v29a2.25 2.25 0 0 0 2.1 2H32zm8-7H15V3h13v9a2.77 2.77 0 0 0 3.1 3H40z"
+                                  />
+                                </svg>
+                              </IconBase>
+                            </IconDocuments>
+                          </span>
+                          <div
+                            className="title"
+                          >
+                            Test Menu 4
+                          </div>
+                        </div>
+                      </li>
+                    </MenuItem>
+                  </InjectIntl(MenuItem)>
+                </ul>
+              </nav>
+            </div>
+          </Scroll>
+        </div>
+      </div>
+    </ContentContainer>
+  </NavigationSideMenu>
+</InjectIntl(NavigationSideMenu)>
+`;
