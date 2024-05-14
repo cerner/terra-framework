@@ -289,6 +289,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               isFocusedDisabled={true}
               isHeaderDisabled={true}
               isHeightAutomatic={true}
+              isMenu={true}
               isWidthAutomatic={false}
               onContentResize={[Function]}
               onRequestClose={[Function]}
