@@ -340,7 +340,7 @@ class NavigationSideMenu extends Component {
         isDisabled={item.isDisabled}
         text={item.text}
         key={key}
-        onClick={(event) => { (!(item.isDisabled)) ? this.handleItemClick(event, key) : null; }}
+        onClick={(event) => { (!(item.isDisabled)) ? this.handleItemClick(event, key) : undefined; }}
         onKeyDown={onKeyDown}
         data-menu-item={key}
         tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
