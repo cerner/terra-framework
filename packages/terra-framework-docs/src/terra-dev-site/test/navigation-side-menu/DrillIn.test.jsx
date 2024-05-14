@@ -56,8 +56,7 @@ class DrillInExample extends React.Component {
             },
             { key: 'submenu2', text: 'Hospital events' },
             {
-              key: 'submenu3', text: 'Hospital Accommodations', isDisabled: true,
-              // key: 'submenu3', text: 'Hospital Accommodations',
+              key: 'submenu3', text: 'Hospital Accommodations',
             },
             { key: 'submenu4', text: 'Hospital Careers' },
             { key: 'submenu5', text: 'Hospital Info', childKeys: [] },
