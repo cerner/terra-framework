@@ -340,7 +340,7 @@ class NavigationSideMenu extends Component {
         isDisabled={item.isDisabled}
         text={item.text}
         key={key}
-        onClick={(event) => { (!(item.isDisabled)) ? this.handleItemClick(event, key) : undefined; }}
+        onClick={!item.isDisabled ? event => this.handleItemClick(event, key) : undefined}
         onKeyDown={onKeyDown}
         data-menu-item={key}
         tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
@@ -395,7 +395,7 @@ class NavigationSideMenu extends Component {
     }
 
     const headerStyles = cx([
-      { headerStyle: true },
+      { 'header-style': (variant === 'drill-in') },
       theme.className,
     ]);
 
