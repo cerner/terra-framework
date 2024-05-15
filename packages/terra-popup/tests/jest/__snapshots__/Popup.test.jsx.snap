@@ -139,7 +139,7 @@ exports[`correctly applies the theme context className 1`] = `
                         style="height: 80px; width: 240px;"
                       >
                         <div
-                          class="content-container-fill"
+                          class="content-container-static"
                         >
                           <div
                             class="header"
@@ -276,7 +276,7 @@ exports[`correctly applies the theme context className 1`] = `
                             }
                           >
                             <ContentContainer
-                              fill={true}
+                              fill={false}
                               header={
                                 <div
                                   className="header"
@@ -292,7 +292,7 @@ exports[`correctly applies the theme context className 1`] = `
                               setFocusOnContainer={false}
                             >
                               <div
-                                className="content-container-fill"
+                                className="content-container-static"
                               >
                                 <div
                                   className="header"

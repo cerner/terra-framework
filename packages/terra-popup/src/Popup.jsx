@@ -106,7 +106,7 @@ const propTypes = {
    */
   onClick: PropTypes.func,
   /**
-   * To determine if the popup is opening from the menu.
+   * To determine if menu is opened inside the popup.
    */
   isMenu: PropTypes.bool,
 };

@@ -83,7 +83,7 @@ const propTypes = {
    */
   refCallback: PropTypes.func,
   /**
-   *  To determine if the popup is opening from the menu.
+   *  To determine if menu is opened inside the popup
    */
   isMenu: PropTypes.bool,
 };
@@ -118,7 +118,7 @@ class PopupContent extends React.Component {
         </FormattedMessage>
       </div>
     );
-    return <ContentContainer header={header} fill>{children}</ContentContainer>;
+    return <ContentContainer header={header}>{children}</ContentContainer>;
   }
 
   static isBounded(value, maxValue) {
