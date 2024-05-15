@@ -31,16 +31,16 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "keycode-js": "^3.1.0",
-    "prop-types": "^15.5.8",
-    "terra-collapsible-menu-view": "^6.102.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "keycode-js": "3",
+    "prop-types": "15",
+    "terra-collapsible-menu-view": "6"
   },
   "scripts": {
     "clean:install": "npm run clean && time npm install",

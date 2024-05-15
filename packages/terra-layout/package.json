@@ -30,24 +30,24 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "lodash.debounce": "^4.0.8",
-    "prop-types": "^15.5.8",
-    "tabbable": "^4.0.0",
-    "terra-content-container": "^3.0.0",
-    "terra-overlay": "^3.0.0",
-    "terra-theme-context": "^1.9.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0"
+    "react": "16",
+    "react-dom": "16",
+    "react-router-dom": "5"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "lodash.debounce": "4",
+    "prop-types": "15",
+    "tabbable": "4",
+    "terra-content-container": "3",
+    "terra-overlay": "3",
+    "terra-theme-context": "1"
   },
   "devDependencies": {
-    "react-router-dom": "^5.0.0",
-    "terra-button": "^3.3.0",
-    "terra-icon": "^3.19.0"
+    "react-router-dom": "5",
+    "terra-button": "3",
+    "terra-icon": "3"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

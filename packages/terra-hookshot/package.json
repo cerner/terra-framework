@@ -32,22 +32,22 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classlist-polyfill": "^1.2.0",
-    "classnames": "^2.2.5",
-    "keycode-js": "^3.1.0",
-    "prop-types": "^15.5.8",
-    "react-onclickoutside": "^6.7.1",
-    "react-portal": "^4.1.2",
-    "resize-observer-polyfill": "^1.4.1"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react": "16",
+    "react-dom": "16"
+  },
+  "dependencies": {
+    "classlist-polyfill": "1",
+    "classnames": "2",
+    "keycode-js": "3",
+    "prop-types": "15",
+    "react-onclickoutside": "6",
+    "react-portal": "4",
+    "resize-observer-polyfill": "1"
   },
   "devDependencies": {
-    "terra-button": "^3.3.0",
-    "terra-form-input": "^4.4.0"
+    "terra-button": "3",
+    "terra-form-input": "4"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

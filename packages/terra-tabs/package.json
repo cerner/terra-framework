@@ -30,27 +30,27 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "keycode-js": "^3.1.0",
-    "prop-types": "^15.5.8",
-    "react-beautiful-dnd": "^13.1.1",
-    "react-onclickoutside": "^6.7.1",
-    "resize-observer-polyfill": "^1.4.1",
-    "terra-button": "^3.42.0",
-    "terra-content-container": "^3.0.0",
-    "terra-divider": "^3.33.0",
-    "terra-icon": "^3.19.0",
-    "terra-menu": "^6.97.0",
-    "terra-responsive-element": "^5.0.0",
-    "terra-theme-context": "^1.9.0",
-    "terra-visually-hidden-text": "^2.36.0",
-    "uuid": "3.4.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "keycode-js": "3",
+    "prop-types": "15",
+    "react-beautiful-dnd": "13",
+    "react-onclickoutside": "6",
+    "resize-observer-polyfill": "1",
+    "terra-button": "3",
+    "terra-content-container": "3",
+    "terra-divider": "3",
+    "terra-icon": "3",
+    "terra-menu": "6",
+    "terra-responsive-element": "5",
+    "terra-theme-context": "1",
+    "terra-visually-hidden-text": "2",
+    "uuid": "3.4.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
