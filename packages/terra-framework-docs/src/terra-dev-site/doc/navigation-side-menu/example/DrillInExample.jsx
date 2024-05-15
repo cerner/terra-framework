@@ -55,7 +55,7 @@ class DrillInDefault extends React.Component {
         selectedMenuKey={this.state.selectedMenuKey}
         selectedChildKey={this.state.selectedChildKey}
         ariaLabel="Sub Menu List"
-        variant="drill-in"
+        variant={NavigationSideMenu.Opts.Variants.DRILL_IN}
       />
     );
 

@@ -131,7 +131,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
       onChange={[Function]}
       routingStackBack={[Function]}
       selectedMenuKey="menu"
-      variant="nav-side-menu"
+      variant="navigation-side-menu"
     >
       <VisuallyHiddenText
         aria-atomic="true"
@@ -255,7 +255,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 1"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <MenuItem
                         data-menu-item="test1"
@@ -291,7 +291,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         onKeyDown={[Function]}
                         tabIndex="-1"
                         text="Test Menu 1"
-                        variant="nav-side-menu"
+                        variant="navigation-side-menu"
                       >
                         <li
                           className="list-item"
@@ -322,7 +322,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 2"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <MenuItem
                         data-menu-item="test2"
@@ -358,7 +358,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         onKeyDown={[Function]}
                         tabIndex="-1"
                         text="Test Menu 2"
-                        variant="nav-side-menu"
+                        variant="navigation-side-menu"
                       >
                         <li
                           className="list-item"
@@ -389,7 +389,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 3"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <MenuItem
                         data-menu-item="test3"
@@ -425,7 +425,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         onKeyDown={[Function]}
                         tabIndex="-1"
                         text="Test Menu 3"
-                        variant="nav-side-menu"
+                        variant="navigation-side-menu"
                       >
                         <li
                           className="list-item"
@@ -456,7 +456,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 4"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <MenuItem
                         data-menu-item="test4"
@@ -492,7 +492,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                         onKeyDown={[Function]}
                         tabIndex="-1"
                         text="Test Menu 4"
-                        variant="nav-side-menu"
+                        variant="navigation-side-menu"
                       >
                         <li
                           className="list-item"
@@ -565,7 +565,7 @@ exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
       Toolbar
     </div>
   }
-  variant="nav-side-menu"
+  variant="navigation-side-menu"
 />
 `;
 
@@ -695,7 +695,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
     onChange={[Function]}
     routingStackBack={[Function]}
     selectedMenuKey="menu"
-    variant="nav-side-menu"
+    variant="navigation-side-menu"
   >
     <VisuallyHiddenText
       aria-atomic="true"
@@ -822,7 +822,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     onKeyDown={[Function]}
                     tabIndex="-1"
                     text="Test Menu 1"
-                    variant="nav-side-menu"
+                    variant="navigation-side-menu"
                   >
                     <MenuItem
                       data-menu-item="test1"
@@ -858,7 +858,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 1"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <li
                         className="list-item"
@@ -889,7 +889,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     onKeyDown={[Function]}
                     tabIndex="-1"
                     text="Test Menu 2"
-                    variant="nav-side-menu"
+                    variant="navigation-side-menu"
                   >
                     <MenuItem
                       data-menu-item="test2"
@@ -925,7 +925,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 2"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <li
                         className="list-item"
@@ -956,7 +956,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     onKeyDown={[Function]}
                     tabIndex="-1"
                     text="Test Menu 3"
-                    variant="nav-side-menu"
+                    variant="navigation-side-menu"
                   >
                     <MenuItem
                       data-menu-item="test3"
@@ -992,7 +992,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 3"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <li
                         className="list-item"
@@ -1023,7 +1023,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     onKeyDown={[Function]}
                     tabIndex="-1"
                     text="Test Menu 4"
-                    variant="nav-side-menu"
+                    variant="navigation-side-menu"
                   >
                     <MenuItem
                       data-menu-item="test4"
@@ -1059,7 +1059,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                       onKeyDown={[Function]}
                       tabIndex="-1"
                       text="Test Menu 4"
-                      variant="nav-side-menu"
+                      variant="navigation-side-menu"
                     >
                       <li
                         className="list-item"
@@ -1126,7 +1126,7 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
   onChange={[Function]}
   routingStackBack={[Function]}
   selectedMenuKey=""
-  variant="nav-side-menu"
+  variant="navigation-side-menu"
 />
 `;
 
@@ -1192,7 +1192,7 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
   onChange={[Function]}
   routingStackBack={[Function]}
   selectedMenuKey="menu"
-  variant="nav-side-menu"
+  variant="navigation-side-menu"
 />
 `;
 

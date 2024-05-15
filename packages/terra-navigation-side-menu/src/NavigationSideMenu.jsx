@@ -8,6 +8,7 @@ import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
 import StatusView from 'terra-status-view';
 import MenuItem from './_MenuItem';
+import VARIANTS from './constants';
 
 import styles from './NavigationSideMenu.module.scss';
 
@@ -89,12 +90,12 @@ const propTypes = {
   /**
    * Renders either Navigation Side Menu or Drill-IN
    */
-  variant: PropTypes.oneOf(['nav-side-menu', 'drill-in']),
+  variant: PropTypes.oneOf(['navigation-side-menu', 'drill-in']),
 };
 
 const defaultProps = {
   menuItems: [],
-  variant: 'nav-side-menu',
+  variant: 'navigation-side-menu',
 };
 
 const processMenuItems = (menuItems) => {
@@ -328,12 +329,8 @@ class NavigationSideMenu extends Component {
       this.handleEvents(event, item, key);
     };
 
-    if (this.props.variant === 'drill-in' && key === 'empty-child-key') {
-      return <StatusView variant="no-data" />;
-    }
-
-    if (this.props.variant !== 'drill-in' && key === 'empty-child-key') {
-      return null;
+    if (key === 'empty-child-key') {
+      return this.props.variant === VARIANTS.DRILL_IN ? <StatusView variant="no-data" /> : null;
     }
 
     return (
@@ -399,7 +396,7 @@ class NavigationSideMenu extends Component {
     }
 
     const headerStyles = cx([
-      { 'header-style': (variant === 'drill-in') },
+      { 'header-style': (variant === VARIANTS.DRILL_IN) },
       theme.className,
     ]);
 
@@ -451,5 +448,8 @@ class NavigationSideMenu extends Component {
 NavigationSideMenu.propTypes = propTypes;
 NavigationSideMenu.defaultProps = defaultProps;
 NavigationSideMenu.contextType = ThemeContext;
+NavigationSideMenu.Opts = {};
+NavigationSideMenu.Opts.Variants = VARIANTS;
 
 export default injectIntl(NavigationSideMenu);
+export { VARIANTS };

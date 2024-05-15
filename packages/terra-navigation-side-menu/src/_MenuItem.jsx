@@ -8,6 +8,7 @@ import * as KeyCode from 'keycode-js';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import { IconDocuments, IconFolder } from 'terra-icon';
+import VARIANTS from './constants';
 
 import styles from './MenuItem.module.scss';
 
@@ -56,7 +57,7 @@ const propTypes = {
   /**
    * Renders either Navigation Side Menu or Drill-IN
    */
-  variant: PropTypes.oneOf(['nav-side-menu', 'drill-in']),
+  variant: PropTypes.oneOf([VARIANTS.NAVIGATION_SIDE_MENU, VARIANTS.DRILL_IN]),
   /**
    * Indicates if menu item should be disabled.
    */
@@ -125,14 +126,14 @@ class MenuItem extends React.Component {
       'menu-item',
       { 'is-selected': isSelected && !hasChevron },
       { 'is-active': this.state.active },
-      { 'is-drill-in': (variant === 'drill-in') },
+      { 'is-drill-in': (variant === VARIANTS.DRILL_IN) },
       theme.className,
     ),
     customProps.className);
 
     const listItemClassNames = cx(
       'list-item',
-      { 'has-border': (variant === 'drill-in') },
+      { 'has-border': (variant === VARIANTS.DRILL_IN) },
       { 'is-disabled': isDisabled },
     );
 
@@ -150,7 +151,7 @@ class MenuItem extends React.Component {
           onKeyDown={this.handleKeyDown}
           aria-haspopup={hasChevron}
         >
-          {variant === 'drill-in' && itemIcon && <span className={cx('icon')}>{itemIcon}</span>}
+          {variant === VARIANTS.DRILL_IN && itemIcon && <span className={cx('icon')}>{itemIcon}</span>}
           <div className={cx('title')}>
             {this.textRender()}
           </div>

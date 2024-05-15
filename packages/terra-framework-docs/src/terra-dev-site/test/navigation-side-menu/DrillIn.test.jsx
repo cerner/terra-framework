@@ -75,7 +75,7 @@ class DrillInExample extends React.Component {
           routingStackBack={this.fakeRoutingBack}
           selectedMenuKey={this.state.selectedMenuKey}
           selectedChildKey={this.state.selectedChildKey}
-          variant="drill-in"
+          variant={NavigationSideMenu.Opts.Variants.DRILL_IN}
         />
       );
     }
