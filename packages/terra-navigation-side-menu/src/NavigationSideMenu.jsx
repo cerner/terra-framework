@@ -90,12 +90,12 @@ const propTypes = {
   /**
    * Renders either Navigation Side Menu or Drill-IN
    */
-  variant: PropTypes.oneOf(['navigation-side-menu', 'drill-in']),
+  variant: PropTypes.oneOf([VARIANTS.NAVIGATION_SIDE_MENU, VARIANTS.DRILL_IN]),
 };
 
 const defaultProps = {
   menuItems: [],
-  variant: 'navigation-side-menu',
+  variant: VARIANTS.NAVIGATION_SIDE_MENU,
 };
 
 const processMenuItems = (menuItems) => {
