@@ -3,20 +3,20 @@
 exports[`Compact Interactive List fixed width list should match a snapshot 1`] = `
 <InjectIntl(CompactInteractiveList)
   columns={
-    Array [
-      Object {
+    [
+      {
         "displayName": "Col_1",
         "id": "Column-0",
         "minimumWidth": "20px",
         "width": "40px",
       },
-      Object {
+      {
         "displayName": "Col_2",
         "id": "Column-1",
         "maximumWidth": "300px",
         "width": "200px",
       },
-      Object {
+      {
         "displayName": "Col_3",
         "id": "Column-2",
         "width": "40px",
@@ -25,8 +25,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
   }
   id="compact-interactive-list-fixed-width"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -35,8 +35,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -52,10 +52,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
     }
   }
   rows={
-    Array [
-      Object {
-        "cells": Array [
-          Object {
+    [
+      {
+        "cells": [
+          {
             "content": <IconDocuments
               data-name="Layer 1"
               height="1.5em"
@@ -64,10 +64,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Discern Care Set (1)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -78,9 +78,9 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         ],
         "id": "row_1",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": <IconImage
               height="1.5em"
               viewBox="0 0 48 48"
@@ -88,10 +88,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Initial observation Care/Day High Severity 99220 (2)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -102,9 +102,9 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         ],
         "id": "row_2",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": <IconImage
               height="1.5em"
               viewBox="0 0 48 48"
@@ -112,10 +112,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Arterial Sheath Care (3)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -126,23 +126,23 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         ],
         "id": "row_3",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": " ",
           },
-          Object {
+          {
             "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
           },
-          Object {
+          {
             "content": " ",
           },
         ],
         "id": "row_4",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": <IconImage
               height="1.5em"
               viewBox="0 0 48 48"
@@ -150,10 +150,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Arterial Sheath Care (5)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -169,20 +169,20 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
 >
   <CompactInteractiveList
     columns={
-      Array [
-        Object {
+      [
+        {
           "displayName": "Col_1",
           "id": "Column-0",
           "minimumWidth": "20px",
           "width": "40px",
         },
-        Object {
+        {
           "displayName": "Col_2",
           "id": "Column-1",
           "maximumWidth": "300px",
           "width": "200px",
         },
-        Object {
+        {
           "displayName": "Col_3",
           "id": "Column-2",
           "width": "40px",
@@ -192,8 +192,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
     hasVisibleBorders={true}
     id="compact-interactive-list-fixed-width"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -202,8 +202,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -221,10 +221,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
     numberOfColumns={1}
     rowHeaderIndex={0}
     rows={
-      Array [
-        Object {
-          "cells": Array [
-            Object {
+      [
+        {
+          "cells": [
+            {
               "content": <IconDocuments
                 data-name="Layer 1"
                 height="1.5em"
@@ -233,10 +233,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Discern Care Set (1)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -247,9 +247,9 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           ],
           "id": "row_1",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": <IconImage
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -257,10 +257,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Initial observation Care/Day High Severity 99220 (2)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -271,9 +271,9 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           ],
           "id": "row_2",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": <IconImage
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -281,10 +281,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Arterial Sheath Care (3)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -295,23 +295,23 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           ],
           "id": "row_3",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": " ",
             },
-            Object {
+            {
               "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
             },
-            Object {
+            {
               "content": " ",
             },
           ],
           "id": "row_4",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": <IconImage
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -319,10 +319,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Arterial Sheath Care (5)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -347,7 +347,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         onKeyDown={[Function]}
         role="grid"
         style={
-          Object {
+          {
             "flexDirection": "column",
             "height": "200px",
             "width": "280px",
@@ -380,8 +380,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         </div>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconDocuments
                   data-name="Layer 1"
                   height="1.5em"
@@ -390,10 +390,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Discern Care Set (1)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -405,20 +405,20 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "minimumWidth": 20,
                 "width": 40,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "id": "Column-1",
                 "maximumWidth": 300,
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 40,
@@ -434,7 +434,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           numberOfColumns={1}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -453,7 +453,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             id="row_1"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "width": "280px",
               }
@@ -461,7 +461,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "minimumWidth": 20,
@@ -481,7 +481,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -526,7 +526,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "id": "Column-1",
                   "maximumWidth": 300,
@@ -546,7 +546,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "200px",
@@ -559,7 +559,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 40,
@@ -578,7 +578,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -622,8 +622,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconImage
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -631,10 +631,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Initial observation Care/Day High Severity 99220 (2)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -646,20 +646,20 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "minimumWidth": 20,
                 "width": 40,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "id": "Column-1",
                 "maximumWidth": 300,
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 40,
@@ -675,7 +675,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           numberOfColumns={1}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -694,7 +694,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             id="row_2"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "width": "280px",
               }
@@ -702,7 +702,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "minimumWidth": 20,
@@ -722,7 +722,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -764,7 +764,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "id": "Column-1",
                   "maximumWidth": 300,
@@ -784,7 +784,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "200px",
@@ -797,7 +797,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 40,
@@ -816,7 +816,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -860,8 +860,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconImage
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -869,10 +869,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Arterial Sheath Care (3)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -884,20 +884,20 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "minimumWidth": 20,
                 "width": 40,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "id": "Column-1",
                 "maximumWidth": 300,
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 40,
@@ -913,7 +913,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           numberOfColumns={1}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -932,7 +932,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             id="row_3"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "width": "280px",
               }
@@ -940,7 +940,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "minimumWidth": 20,
@@ -960,7 +960,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -1002,7 +1002,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "id": "Column-1",
                   "maximumWidth": 300,
@@ -1022,7 +1022,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "200px",
@@ -1035,7 +1035,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 40,
@@ -1054,7 +1054,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -1098,34 +1098,34 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": " ",
               },
-              Object {
+              {
                 "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
               },
-              Object {
+              {
                 "content": " ",
               },
             ]
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "minimumWidth": 20,
                 "width": 40,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "id": "Column-1",
                 "maximumWidth": 300,
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 40,
@@ -1141,7 +1141,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           numberOfColumns={1}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -1160,7 +1160,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             id="row_4"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "width": "280px",
               }
@@ -1168,7 +1168,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "minimumWidth": 20,
@@ -1188,7 +1188,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -1201,7 +1201,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "id": "Column-1",
                   "maximumWidth": 300,
@@ -1221,7 +1221,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "200px",
@@ -1234,7 +1234,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 40,
@@ -1253,7 +1253,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -1268,8 +1268,8 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconImage
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -1277,10 +1277,10 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Arterial Sheath Care (5)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -1292,20 +1292,20 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "minimumWidth": 20,
                 "width": 40,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "id": "Column-1",
                 "maximumWidth": 300,
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 40,
@@ -1321,7 +1321,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           numberOfColumns={1}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -1340,7 +1340,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             id="row_5"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "width": "280px",
               }
@@ -1348,7 +1348,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "minimumWidth": 20,
@@ -1368,7 +1368,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -1410,7 +1410,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "id": "Column-1",
                   "maximumWidth": 300,
@@ -1430,7 +1430,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "200px",
@@ -1443,7 +1443,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 40,
@@ -1462,7 +1462,7 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "40px",
@@ -1513,19 +1513,19 @@ exports[`Compact Interactive List fixed width list should match a snapshot 1`] =
 exports[`Compact Interactive List responsive columns should match a snapshot 1`] = `
 <InjectIntl(CompactInteractiveList)
   columns={
-    Array [
-      Object {
+    [
+      {
         "displayName": "Col_1",
         "id": "Column-0",
         "width": "20px",
       },
-      Object {
+      {
         "displayName": "Col_2",
         "flexGrow": true,
         "id": "Column-1",
         "width": "200px",
       },
-      Object {
+      {
         "displayName": "Col_3",
         "id": "Column-2",
         "width": "20px",
@@ -1534,8 +1534,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
   }
   id="compact-interactive-list-minWidth-calculation"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1544,8 +1544,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1562,10 +1562,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
   }
   numberOfColumns={2}
   rows={
-    Array [
-      Object {
-        "cells": Array [
-          Object {
+    [
+      {
+        "cells": [
+          {
             "content": <IconDocuments
               data-name="Layer 1"
               height="1.5em"
@@ -1574,10 +1574,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Discern Care Set (1)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -1588,9 +1588,9 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         ],
         "id": "row_1",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": <IconImage
               height="1.5em"
               viewBox="0 0 48 48"
@@ -1598,10 +1598,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Initial observation Care/Day High Severity 99220 (2)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -1612,9 +1612,9 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         ],
         "id": "row_2",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": <IconImage
               height="1.5em"
               viewBox="0 0 48 48"
@@ -1622,10 +1622,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Arterial Sheath Care (3)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -1636,23 +1636,23 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         ],
         "id": "row_3",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": " ",
           },
-          Object {
+          {
             "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
           },
-          Object {
+          {
             "content": " ",
           },
         ],
         "id": "row_4",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": <IconImage
               height="1.5em"
               viewBox="0 0 48 48"
@@ -1660,10 +1660,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
               xmlns="http://www.w3.org/2000/svg"
             />,
           },
-          Object {
+          {
             "content": "Arterial Sheath Care (5)",
           },
-          Object {
+          {
             "content": <IconFeaturedOutline
               height="1.5em"
               viewBox="0 0 48 48"
@@ -1679,19 +1679,19 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
 >
   <CompactInteractiveList
     columns={
-      Array [
-        Object {
+      [
+        {
           "displayName": "Col_1",
           "id": "Column-0",
           "width": "20px",
         },
-        Object {
+        {
           "displayName": "Col_2",
           "flexGrow": true,
           "id": "Column-1",
           "width": "200px",
         },
-        Object {
+        {
           "displayName": "Col_3",
           "id": "Column-2",
           "width": "20px",
@@ -1701,8 +1701,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
     hasVisibleBorders={true}
     id="compact-interactive-list-minWidth-calculation"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -1711,8 +1711,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -1730,10 +1730,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
     numberOfColumns={2}
     rowHeaderIndex={0}
     rows={
-      Array [
-        Object {
-          "cells": Array [
-            Object {
+      [
+        {
+          "cells": [
+            {
               "content": <IconDocuments
                 data-name="Layer 1"
                 height="1.5em"
@@ -1742,10 +1742,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Discern Care Set (1)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -1756,9 +1756,9 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           ],
           "id": "row_1",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": <IconImage
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -1766,10 +1766,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Initial observation Care/Day High Severity 99220 (2)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -1780,9 +1780,9 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           ],
           "id": "row_2",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": <IconImage
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -1790,10 +1790,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Arterial Sheath Care (3)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -1804,23 +1804,23 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           ],
           "id": "row_3",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": " ",
             },
-            Object {
+            {
               "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
             },
-            Object {
+            {
               "content": " ",
             },
           ],
           "id": "row_4",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": <IconImage
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -1828,10 +1828,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 xmlns="http://www.w3.org/2000/svg"
               />,
             },
-            Object {
+            {
               "content": "Arterial Sheath Care (5)",
             },
-            Object {
+            {
               "content": <IconFeaturedOutline
                 height="1.5em"
                 viewBox="0 0 48 48"
@@ -1856,7 +1856,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         onKeyDown={[Function]}
         role="grid"
         style={
-          Object {
+          {
             "flexDirection": "column",
             "height": "120px",
             "minWidth": "500px",
@@ -1890,8 +1890,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         </div>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconDocuments
                   data-name="Layer 1"
                   height="1.5em"
@@ -1900,10 +1900,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Discern Care Set (1)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -1915,19 +1915,19 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "width": 20,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "flexGrow": true,
                 "id": "Column-1",
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 20,
@@ -1943,7 +1943,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           numberOfColumns={2}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -1962,7 +1962,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             id="row_1"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "minWidth": "100px",
                 "width": "50%",
@@ -1971,7 +1971,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "width": 20,
@@ -1990,7 +1990,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2035,7 +2035,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "flexGrow": true,
                   "id": "Column-1",
@@ -2055,7 +2055,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
                     "minWidth": "60px",
@@ -2069,7 +2069,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 20,
@@ -2088,7 +2088,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2132,8 +2132,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconImage
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -2141,10 +2141,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Initial observation Care/Day High Severity 99220 (2)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -2156,19 +2156,19 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "width": 20,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "flexGrow": true,
                 "id": "Column-1",
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 20,
@@ -2184,7 +2184,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           numberOfColumns={2}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -2203,7 +2203,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             id="row_2"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "minWidth": "100px",
                 "width": "50%",
@@ -2212,7 +2212,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "width": 20,
@@ -2231,7 +2231,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2273,7 +2273,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "flexGrow": true,
                   "id": "Column-1",
@@ -2293,7 +2293,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
                     "minWidth": "60px",
@@ -2307,7 +2307,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 20,
@@ -2326,7 +2326,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2370,8 +2370,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconImage
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -2379,10 +2379,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Arterial Sheath Care (3)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -2394,19 +2394,19 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "width": 20,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "flexGrow": true,
                 "id": "Column-1",
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 20,
@@ -2422,7 +2422,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           numberOfColumns={2}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -2441,7 +2441,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             id="row_3"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "minWidth": "100px",
                 "width": "50%",
@@ -2450,7 +2450,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "width": 20,
@@ -2469,7 +2469,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2511,7 +2511,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "flexGrow": true,
                   "id": "Column-1",
@@ -2531,7 +2531,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
                     "minWidth": "60px",
@@ -2545,7 +2545,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 20,
@@ -2564,7 +2564,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2608,33 +2608,33 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": " ",
               },
-              Object {
+              {
                 "content": "Sbsq Observation Care/Day High Severity 99226 (4)",
               },
-              Object {
+              {
                 "content": " ",
               },
             ]
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "width": 20,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "flexGrow": true,
                 "id": "Column-1",
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 20,
@@ -2650,7 +2650,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           numberOfColumns={2}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -2669,7 +2669,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             id="row_4"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "minWidth": "100px",
                 "width": "50%",
@@ -2678,7 +2678,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "width": 20,
@@ -2697,7 +2697,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2710,7 +2710,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "flexGrow": true,
                   "id": "Column-1",
@@ -2730,7 +2730,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
                     "minWidth": "60px",
@@ -2744,7 +2744,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 20,
@@ -2763,7 +2763,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2778,8 +2778,8 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         </Memo(Row)>
         <Memo(Row)
           cells={
-            Array [
-              Object {
+            [
+              {
                 "content": <IconImage
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -2787,10 +2787,10 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                   xmlns="http://www.w3.org/2000/svg"
                 />,
               },
-              Object {
+              {
                 "content": "Arterial Sheath Care (5)",
               },
-              Object {
+              {
                 "content": <IconFeaturedOutline
                   height="1.5em"
                   viewBox="0 0 48 48"
@@ -2802,19 +2802,19 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           }
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "width": 20,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "flexGrow": true,
                 "id": "Column-1",
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 20,
@@ -2830,7 +2830,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           numberOfColumns={2}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -2849,7 +2849,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             id="row_5"
             role="row"
             style={
-              Object {
+              {
                 "height": "40px",
                 "minWidth": "100px",
                 "width": "50%",
@@ -2858,7 +2858,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           >
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_1",
                   "id": "Column-0",
                   "width": 20,
@@ -2877,7 +2877,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="rowheader"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -2919,7 +2919,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_2",
                   "flexGrow": true,
                   "id": "Column-1",
@@ -2939,7 +2939,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "flex": "1 1 200px",
                     "justifyContent": "left",
                     "minWidth": "60px",
@@ -2953,7 +2953,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             </Memo(Cell)>
             <Memo(Cell)
               column={
-                Object {
+                {
                   "displayName": "Col_3",
                   "id": "Column-2",
                   "width": 20,
@@ -2972,7 +2972,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
                 onMouseDown={[Function]}
                 role="gridcell"
                 style={
-                  Object {
+                  {
                     "justifyContent": "left",
                     "textAlign": "left",
                     "width": "20px",
@@ -3017,19 +3017,19 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
         <Memo(Row)
           columnMinimumWidth={60}
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Col_1",
                 "id": "Column-0",
                 "width": 20,
               },
-              Object {
+              {
                 "displayName": "Col_2",
                 "flexGrow": true,
                 "id": "Column-1",
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "Col_3",
                 "id": "Column-2",
                 "width": 20,
@@ -3045,7 +3045,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
           numberOfColumns={2}
           rowHeaderIndex={0}
           rowHeight={
-            Object {
+            {
               "unitType": "px",
               "value": 40,
             }
@@ -3063,7 +3063,7 @@ exports[`Compact Interactive List responsive columns should match a snapshot 1`]
             data-row-id="placeholder-row-1"
             id="placeholder-row-1"
             style={
-              Object {
+              {
                 "height": "40px",
                 "minWidth": "100px",
                 "width": "50%",

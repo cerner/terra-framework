@@ -3,8 +3,8 @@
 exports[`PopupContent Prop Tests with default props correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -30,7 +30,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -53,7 +53,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
       _createFocusTrap={[Function]}
       active={true}
       focusTrapOptions={
-        Object {
+        {
           "clickOutsideDeactivates": true,
           "returnFocusOnDeactivate": true,
         }
@@ -65,7 +65,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
           className="content orion-fusion-theme"
           data-terra-popup-content={true}
           eventTypes={
-            Array [
+            [
               "mousedown",
               "touchstart",
             ]
@@ -87,7 +87,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
             disableOnClickOutside={[Function]}
             enableOnClickOutside={[Function]}
             eventTypes={
-              Array [
+              [
                 "mousedown",
                 "touchstart",
               ]
@@ -113,7 +113,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
               <div
                 className="inner"
                 style={
-                  Object {
+                  {
                     "height": "640px",
                     "width": "640px",
                   }
@@ -139,7 +139,7 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
   _createFocusTrap={[Function]}
   active={true}
   focusTrapOptions={
-    Object {
+    {
       "clickOutsideDeactivates": true,
       "returnFocusOnDeactivate": true,
     }
@@ -151,15 +151,15 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
       className="content"
       data-terra-popup-content={true}
       eventTypes={
-        Array [
+        [
           "mousedown",
           "touchstart",
         ]
       }
       excludeScrollbar={false}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -168,8 +168,8 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -197,7 +197,7 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
       <div
         className="inner"
         style={
-          Object {
+          {
             "height": "640px",
             "width": "640px",
           }
@@ -222,8 +222,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
   contentWidth={640}
   contentWidthMax={640}
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -232,8 +232,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -257,8 +257,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
   popupContentRole="dialog"
   refCallback={
     [MockFunction] {
-      "calls": Array [
-        Array [
+      "calls": [
+        [
           <div
             class="content content"
             data-terra-popup-content="true"
@@ -316,8 +316,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           </div>,
         ],
       ],
-      "results": Array [
-        Object {
+      "results": [
+        {
           "type": "return",
           "value": undefined,
         },
@@ -329,7 +329,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
     _createFocusTrap={[Function]}
     active={true}
     focusTrapOptions={
-      Object {
+      {
         "clickOutsideDeactivates": true,
         "returnFocusOnDeactivate": true,
       }
@@ -341,15 +341,15 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
         className="content"
         data-terra-popup-content={true}
         eventTypes={
-          Array [
+          [
             "mousedown",
             "touchstart",
           ]
         }
         excludeScrollbar={false}
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -358,8 +358,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -382,8 +382,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
         preventDefault={false}
         refCallback={
           [MockFunction] {
-            "calls": Array [
-              Array [
+            "calls": [
+              [
                 <div
                   class="content content"
                   data-terra-popup-content="true"
@@ -441,8 +441,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                 </div>,
               ],
             ],
-            "results": Array [
-              Object {
+            "results": [
+              {
                 "type": "return",
                 "value": undefined,
               },
@@ -459,14 +459,14 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           disableOnClickOutside={[Function]}
           enableOnClickOutside={[Function]}
           eventTypes={
-            Array [
+            [
               "mousedown",
               "touchstart",
             ]
           }
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -475,8 +475,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -499,8 +499,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
           preventDefault={false}
           refCallback={
             [MockFunction] {
-              "calls": Array [
-                Array [
+              "calls": [
+                [
                   <div
                     class="content content"
                     data-terra-popup-content="true"
@@ -558,8 +558,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   </div>,
                 ],
               ],
-              "results": Array [
-                Object {
+              "results": [
+                {
                   "type": "return",
                   "value": undefined,
                 },
@@ -574,8 +574,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             className="content content"
             data-terra-popup-content={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -584,8 +584,8 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -608,7 +608,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
             <div
               className="inner is-full-screen"
               style={
-                Object {
+                {
                   "height": "640px",
                   "width": "640px",
                 }
@@ -622,7 +622,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                   >
                     <FormattedMessage
                       id="Terra.popup.header.close"
-                      values={Object {}}
+                      values={{}}
                     >
                       [Function]
                     </FormattedMessage>
@@ -641,7 +641,7 @@ exports[`PopupContent Prop Tests with header matches the mount snapshot 1`] = `
                     >
                       <FormattedMessage
                         id="Terra.popup.header.close"
-                        values={Object {}}
+                        values={{}}
                       >
                         <Button
                           icon={
@@ -723,7 +723,7 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
   _createFocusTrap={[Function]}
   active={true}
   focusTrapOptions={
-    Object {
+    {
       "clickOutsideDeactivates": true,
       "returnFocusOnDeactivate": true,
     }
@@ -735,15 +735,15 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
       className="content"
       data-terra-popup-content={true}
       eventTypes={
-        Array [
+        [
           "mousedown",
           "touchstart",
         ]
       }
       excludeScrollbar={false}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -752,8 +752,8 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -782,7 +782,7 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
       <div
         className="inner is-full-screen"
         style={
-          Object {
+          {
             "height": "640px",
             "width": "640px",
           }
@@ -796,7 +796,7 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
             >
               <FormattedMessage
                 id="Terra.popup.header.close"
-                values={Object {}}
+                values={{}}
               >
                 [Function]
               </FormattedMessage>
@@ -817,7 +817,7 @@ exports[`PopupContent Prop Tests with header matches the shallow snapshot 1`] = 
 `;
 
 exports[`PopupContentExports should match the snapshot 1`] = `
-Object {
+{
   "cornerSize": 3,
   "default": [Function],
 }

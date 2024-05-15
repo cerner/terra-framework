@@ -3,8 +3,8 @@
 exports[`Menu correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -30,7 +30,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -44,21 +44,21 @@ exports[`Menu correctly applies the theme context className 1`] = `
     showHeader={true}
     targetRef={
       [MockFunction] {
-        "calls": Array [
-          Array [],
-          Array [],
-          Array [],
+        "calls": [
+          [],
+          [],
+          [],
         ],
-        "results": Array [
-          Object {
+        "results": [
+          {
             "type": "return",
             "value": undefined,
           },
-          Object {
+          {
             "type": "return",
             "value": undefined,
           },
-          Object {
+          {
             "type": "return",
             "value": undefined,
           },
@@ -85,21 +85,21 @@ exports[`Menu correctly applies the theme context className 1`] = `
       popupContentRole={null}
       targetRef={
         [MockFunction] {
-          "calls": Array [
-            Array [],
-            Array [],
-            Array [],
+          "calls": [
+            [],
+            [],
+            [],
           ],
-          "results": Array [
-            Object {
+          "results": [
+            {
               "type": "return",
               "value": undefined,
             },
-            Object {
+            {
               "type": "return",
               "value": undefined,
             },
-            Object {
+            {
               "type": "return",
               "value": undefined,
             },
@@ -143,13 +143,13 @@ exports[`Menu correctly applies the theme context className 1`] = `
         attachmentMargin={0}
         boundingRef={null}
         contentAttachment={
-          Object {
+          {
             "horizontal": "end",
             "vertical": "top",
           }
         }
         contentOffset={
-          Object {
+          {
             "horizontal": 0,
             "vertical": 0,
           }
@@ -158,34 +158,34 @@ exports[`Menu correctly applies the theme context className 1`] = `
         isOpen={true}
         onPosition={[Function]}
         targetAttachment={
-          Object {
+          {
             "horizontal": "end",
             "vertical": "bottom",
           }
         }
         targetOffset={
-          Object {
+          {
             "horizontal": 0,
             "vertical": 0,
           }
         }
         targetRef={
           [MockFunction] {
-            "calls": Array [
-              Array [],
-              Array [],
-              Array [],
+            "calls": [
+              [],
+              [],
+              [],
             ],
-            "results": Array [
-              Object {
+            "results": [
+              {
                 "type": "return",
                 "value": undefined,
               },
-              Object {
+              {
                 "type": "return",
                 "value": undefined,
               },
-              Object {
+              {
                 "type": "return",
                 "value": undefined,
               },
@@ -299,7 +299,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                 _createFocusTrap={[Function]}
                 active={true}
                 focusTrapOptions={
-                  Object {
+                  {
                     "clickOutsideDeactivates": true,
                     "returnFocusOnDeactivate": true,
                   }
@@ -312,7 +312,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                     data-terra-popup-content={true}
                     disableOnClickOutside={true}
                     eventTypes={
-                      Array [
+                      [
                         "mousedown",
                         "touchstart",
                       ]
@@ -337,7 +337,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       disableOnClickOutside={[Function]}
                       enableOnClickOutside={[Function]}
                       eventTypes={
-                        Array [
+                        [
                           "mousedown",
                           "touchstart",
                         ]
@@ -367,7 +367,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                           className="inner"
                           data-terra-popup-automatic-height={true}
                           style={
-                            Object {
+                            {
                               "width": "240px",
                             }
                           }
@@ -391,8 +391,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                               headerTitle=""
                               index={0}
                               intl={
-                                Object {
-                                  "defaultFormats": Object {},
+                                {
+                                  "defaultFormats": {},
                                   "defaultLocale": "en",
                                   "formatDate": [Function],
                                   "formatHTMLMessage": [Function],
@@ -401,8 +401,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                   "formatPlural": [Function],
                                   "formatRelative": [Function],
                                   "formatTime": [Function],
-                                  "formats": Object {},
-                                  "formatters": Object {
+                                  "formats": {},
+                                  "formatters": {
                                     "getDateTimeFormat": [Function],
                                     "getMessageFormat": [Function],
                                     "getNumberFormat": [Function],
@@ -433,7 +433,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
                                 style={
-                                  Object {
+                                  {
                                     "height": undefined,
                                     "position": "static",
                                     "width": undefined,
@@ -505,8 +505,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                               data-submenu={false}
                                               dividerStyle="none"
                                               intl={
-                                                Object {
-                                                  "defaultFormats": Object {},
+                                                {
+                                                  "defaultFormats": {},
                                                   "defaultLocale": "en",
                                                   "formatDate": [Function],
                                                   "formatHTMLMessage": [Function],
@@ -515,8 +515,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                   "formatPlural": [Function],
                                                   "formatRelative": [Function],
                                                   "formatTime": [Function],
-                                                  "formats": Object {},
-                                                  "formatters": Object {
+                                                  "formats": {},
+                                                  "formatters": {
                                                     "getDateTimeFormat": [Function],
                                                     "getMessageFormat": [Function],
                                                     "getNumberFormat": [Function],
@@ -547,8 +547,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                   aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                                   index={0}
                                                   intl={
-                                                    Object {
-                                                      "defaultFormats": Object {},
+                                                    {
+                                                      "defaultFormats": {},
                                                       "defaultLocale": "en",
                                                       "formatDate": [Function],
                                                       "formatHTMLMessage": [Function],
@@ -557,8 +557,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                       "formatPlural": [Function],
                                                       "formatRelative": [Function],
                                                       "formatTime": [Function],
-                                                      "formats": Object {},
-                                                      "formatters": Object {
+                                                      "formats": {},
+                                                      "formatters": {
                                                         "getDateTimeFormat": [Function],
                                                         "getMessageFormat": [Function],
                                                         "getNumberFormat": [Function],
@@ -585,8 +585,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     aria-describedby="terra-menu-headertitle-00000000-0000-0000-0000-000000000000"
                                                     index={0}
                                                     intl={
-                                                      Object {
-                                                        "defaultFormats": Object {},
+                                                      {
+                                                        "defaultFormats": {},
                                                         "defaultLocale": "en",
                                                         "formatDate": [Function],
                                                         "formatHTMLMessage": [Function],
@@ -595,8 +595,8 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                         "formatPlural": [Function],
                                                         "formatRelative": [Function],
                                                         "formatTime": [Function],
-                                                        "formats": Object {},
-                                                        "formatters": Object {
+                                                        "formats": {},
+                                                        "formatters": {
                                                           "getDateTimeFormat": [Function],
                                                           "getMessageFormat": [Function],
                                                           "getNumberFormat": [Function],
@@ -619,7 +619,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
                                                     isToggled={false}
                                                     onClick={[Function]}
                                                     onKeyDown={[Function]}
-                                                    subMenuItems={Array []}
+                                                    subMenuItems={[]}
                                                     text="testing"
                                                     totalItems={1}
                                                   >

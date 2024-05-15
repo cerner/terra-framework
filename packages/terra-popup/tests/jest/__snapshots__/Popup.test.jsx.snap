@@ -3,7 +3,7 @@
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -65,13 +65,13 @@ exports[`correctly applies the theme context className 1`] = `
           attachmentMargin={0}
           boundingRef={null}
           contentAttachment={
-            Object {
+            {
               "horizontal": "center",
               "vertical": "top",
             }
           }
           contentOffset={
-            Object {
+            {
               "horizontal": 0,
               "vertical": 0,
             }
@@ -80,13 +80,13 @@ exports[`correctly applies the theme context className 1`] = `
           isOpen={true}
           onPosition={[Function]}
           targetAttachment={
-            Object {
+            {
               "horizontal": "center",
               "vertical": "bottom",
             }
           }
           targetOffset={
-            Object {
+            {
               "horizontal": 0,
               "vertical": 0,
             }
@@ -141,7 +141,7 @@ exports[`correctly applies the theme context className 1`] = `
                   _createFocusTrap={[Function]}
                   active={true}
                   focusTrapOptions={
-                    Object {
+                    {
                       "clickOutsideDeactivates": true,
                       "returnFocusOnDeactivate": true,
                     }
@@ -154,7 +154,7 @@ exports[`correctly applies the theme context className 1`] = `
                       data-terra-popup-content={true}
                       disableOnClickOutside={true}
                       eventTypes={
-                        Array [
+                        [
                           "mousedown",
                           "touchstart",
                         ]
@@ -177,7 +177,7 @@ exports[`correctly applies the theme context className 1`] = `
                         disableOnClickOutside={[Function]}
                         enableOnClickOutside={[Function]}
                         eventTypes={
-                          Array [
+                          [
                             "mousedown",
                             "touchstart",
                           ]
@@ -204,7 +204,7 @@ exports[`correctly applies the theme context className 1`] = `
                           <div
                             className="inner"
                             style={
-                              Object {
+                              {
                                 "height": "80px",
                                 "width": "240px",
                               }

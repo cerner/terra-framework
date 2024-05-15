@@ -4,7 +4,7 @@ exports[`withPromptRegistration should wrap and render the provided component 1`
 <withPromptRegistration(TestComponent)>
   <TestComponent
     promptRegistration={
-      Object {
+      {
         "isDefaultContextValue": true,
         "registerPrompt": [Function],
         "unregisterPrompt": [Function],

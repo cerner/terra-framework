@@ -3,8 +3,8 @@
 exports[`UtilityMenuHeaderButton should render default element 1`] = `
 <InjectIntl(UtilityMenuHeaderButton)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`UtilityMenuHeaderButton should render default element 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -32,8 +32,8 @@ exports[`UtilityMenuHeaderButton should render default element 1`] = `
 >
   <UtilityMenuHeaderButton
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -42,8 +42,8 @@ exports[`UtilityMenuHeaderButton should render default element 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -112,8 +112,8 @@ exports[`UtilityMenuHeaderButton should render default element 1`] = `
 exports[`UtilityMenuHeaderButton should render with click callback 1`] = `
 <InjectIntl(UtilityMenuHeaderButton)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -122,8 +122,8 @@ exports[`UtilityMenuHeaderButton should render with click callback 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -142,8 +142,8 @@ exports[`UtilityMenuHeaderButton should render with click callback 1`] = `
 >
   <UtilityMenuHeaderButton
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -152,8 +152,8 @@ exports[`UtilityMenuHeaderButton should render with click callback 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -225,8 +225,8 @@ exports[`UtilityMenuHeaderButton should render with click callback 1`] = `
 exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
 <InjectIntl(UtilityMenuHeaderButton)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -235,8 +235,8 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -252,14 +252,14 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
     }
   }
   popupAnchorRef={
-    Object {
+    {
       "current": <span
         class="popup-anchor"
       />,
     }
   }
   userConfig={
-    Object {
+    {
       "detail": "user-detail",
       "imageSrc": "user-src",
       "initials": "user-initials",
@@ -269,8 +269,8 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
 >
   <UtilityMenuHeaderButton
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -279,8 +279,8 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -296,14 +296,14 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
       }
     }
     popupAnchorRef={
-      Object {
+      {
         "current": <span
           class="popup-anchor"
         />,
       }
     }
     userConfig={
-      Object {
+      {
         "detail": "user-detail",
         "imageSrc": "user-src",
         "initials": "user-initials",
@@ -339,8 +339,8 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
             image="user-src"
             initials="user-initials"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -349,8 +349,8 @@ exports[`UtilityMenuHeaderButton should render with function callbacks 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],

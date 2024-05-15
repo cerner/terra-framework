@@ -3,8 +3,8 @@
 exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.scrolling is false 1`] = `
 <div
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.s
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -32,8 +32,8 @@ exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.s
 >
   <InjectIntl(EmbeddedContentConsumer)
     options={
-      Object {
-        "resizeConfig": Object {
+      {
+        "resizeConfig": {
           "scrolling": false,
         },
       }
@@ -46,8 +46,8 @@ exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.s
 exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.scrolling is true 1`] = `
 <div
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -56,8 +56,8 @@ exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.s
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -75,8 +75,8 @@ exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.s
 >
   <InjectIntl(EmbeddedContentConsumer)
     options={
-      Object {
-        "resizeConfig": Object {
+      {
+        "resizeConfig": {
           "scrolling": true,
         },
       }
@@ -89,8 +89,8 @@ exports[`InjectIntl scrolling sets appropriate config option when resizeConfig.s
 exports[`InjectIntl should render the embedded content consumer container 1`] = `
 <div
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -99,8 +99,8 @@ exports[`InjectIntl should render the embedded content consumer container 1`] = 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -123,8 +123,8 @@ exports[`InjectIntl should render the embedded content consumer container 1`] = 
   >
     <EmbeddedContentConsumer
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -133,8 +133,8 @@ exports[`InjectIntl should render the embedded content consumer container 1`] = 
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -182,8 +182,8 @@ exports[`InjectIntl should render the embedded content consumer container 1`] = 
 exports[`InjectIntl should render the embedded content consumer with custom class names 1`] = `
 <div
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -192,8 +192,8 @@ exports[`InjectIntl should render the embedded content consumer with custom clas
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -218,8 +218,8 @@ exports[`InjectIntl should render the embedded content consumer with custom clas
     <EmbeddedContentConsumer
       className="container"
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -228,8 +228,8 @@ exports[`InjectIntl should render the embedded content consumer with custom clas
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -279,8 +279,8 @@ exports[`InjectIntl should render the embedded content consumer with custom clas
 exports[`InjectIntl should render the embedded content consumer with options attributes 1`] = `
 <div
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -289,8 +289,8 @@ exports[`InjectIntl should render the embedded content consumer with options att
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -309,8 +309,8 @@ exports[`InjectIntl should render the embedded content consumer with options att
   <InjectIntl(EmbeddedContentConsumer)
     onMount={[Function]}
     options={
-      Object {
-        "iframeAttrs": Object {
+      {
+        "iframeAttrs": {
           "height": "100px",
           "id": "iframe-srcdoc-id",
           "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
@@ -324,8 +324,8 @@ exports[`InjectIntl should render the embedded content consumer with options att
   >
     <EmbeddedContentConsumer
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -334,8 +334,8 @@ exports[`InjectIntl should render the embedded content consumer with options att
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -352,8 +352,8 @@ exports[`InjectIntl should render the embedded content consumer with options att
       }
       onMount={[Function]}
       options={
-        Object {
-          "iframeAttrs": Object {
+        {
+          "iframeAttrs": {
             "height": "100px",
             "id": "iframe-srcdoc-id",
             "srcdoc": "<p><b>Inline HTML Content</b></p><p>This is an inline html content that can be used to render the content into the frame.</p>",
@@ -394,8 +394,8 @@ exports[`InjectIntl should render the embedded content consumer with options att
 exports[`InjectIntl should render the embedded content consumer with title prop 1`] = `
 <div
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -404,8 +404,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -428,8 +428,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
   >
     <EmbeddedContentConsumer
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -438,8 +438,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -487,8 +487,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
 exports[`InjectIntl should render the embedded content consumer with title prop and options prop 1`] = `
 <div
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -497,8 +497,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -517,8 +517,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
   <InjectIntl(EmbeddedContentConsumer)
     onMount={[Function]}
     options={
-      Object {
-        "iframeAttrs": Object {
+      {
+        "iframeAttrs": {
           "title": "title that will be used for the frame content",
         },
       }
@@ -528,8 +528,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
   >
     <EmbeddedContentConsumer
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -538,8 +538,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -556,8 +556,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
       }
       onMount={[Function]}
       options={
-        Object {
-          "iframeAttrs": Object {
+        {
+          "iframeAttrs": {
             "title": "title that will be used for the frame content",
           },
         }
@@ -594,8 +594,8 @@ exports[`InjectIntl should render the embedded content consumer with title prop 
 exports[`InjectIntl should render visually hidden text before and after the embedded content consumer container 1`] = `
 <InjectIntl(EmbeddedContentConsumer)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -604,8 +604,8 @@ exports[`InjectIntl should render visually hidden text before and after the embe
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -625,8 +625,8 @@ exports[`InjectIntl should render visually hidden text before and after the embe
 >
   <EmbeddedContentConsumer
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -635,8 +635,8 @@ exports[`InjectIntl should render visually hidden text before and after the embe
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],

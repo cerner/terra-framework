@@ -33,8 +33,8 @@ exports[`SlidePanelManager should disclose content in Modal wrapped by disclose 
 exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
 <SlidePanelManager
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -43,8 +43,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -65,7 +65,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "panel",
       ]
     }
@@ -73,7 +73,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "panel",
         ]
       }
@@ -81,8 +81,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
       <InjectIntl(SlidePanel)
         fill={true}
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -91,8 +91,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -182,10 +182,10 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               }
               isAnimated={true}
               items={
-                Array [
+                [
                   <Context.Provider
                     value={
-                      Object {
+                      {
                         "register": [Function],
                       }
                     }
@@ -218,8 +218,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
         <SlidePanel
           fill={true}
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -228,8 +228,8 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -319,10 +319,10 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                 }
                 isAnimated={true}
                 items={
-                  Array [
+                  [
                     <Context.Provider
                       value={
-                        Object {
+                        {
                           "register": [Function],
                         }
                       }
@@ -490,10 +490,10 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                           }
                           isAnimated={true}
                           items={
-                            Array [
+                            [
                               <Context.Provider
                                 value={
-                                  Object {
+                                  {
                                     "register": [Function],
                                   }
                                 }
@@ -529,7 +529,7 @@ exports[`SlidePanelManager should disclose content in SlidePanel 1`] = `
                             >
                               <CSSTransition
                                 classNames={
-                                  Object {
+                                  {
                                     "enter": "enter",
                                     "enterActive": "enter-active",
                                     "exit": "exit",
@@ -686,8 +686,8 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
   className="test"
   id="my-slide-panel-manager"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -696,8 +696,8 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -718,7 +718,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "panel",
       ]
     }
@@ -726,7 +726,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "panel",
         ]
       }
@@ -736,8 +736,8 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
         fill={true}
         id="my-slide-panel-manager"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -746,8 +746,8 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -783,7 +783,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
           >
             <SlideGroup
               isAnimated={true}
-              items={Array []}
+              items={[]}
             />
           </ContentContainer>
         }
@@ -794,8 +794,8 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
           fill={true}
           id="my-slide-panel-manager"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -804,8 +804,8 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -841,7 +841,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
             >
               <SlideGroup
                 isAnimated={true}
-                items={Array []}
+                items={[]}
               />
             </ContentContainer>
           }
@@ -930,7 +930,7 @@ exports[`SlidePanelManager should render a SlidePanelManager with level three he
                       >
                         <SlideGroup
                           isAnimated={true}
-                          items={Array []}
+                          items={[]}
                         />
                       </div>
                     </Scroll>
@@ -951,8 +951,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
   className="test"
   id="my-slide-panel-manager"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -961,8 +961,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -983,7 +983,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "panel",
       ]
     }
@@ -991,7 +991,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "panel",
         ]
       }
@@ -1001,8 +1001,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
         fill={true}
         id="my-slide-panel-manager"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -1011,8 +1011,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -1048,7 +1048,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           >
             <SlideGroup
               isAnimated={true}
-              items={Array []}
+              items={[]}
             />
           </ContentContainer>
         }
@@ -1059,8 +1059,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
           fill={true}
           id="my-slide-panel-manager"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -1069,8 +1069,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -1106,7 +1106,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
             >
               <SlideGroup
                 isAnimated={true}
-                items={Array []}
+                items={[]}
               />
             </ContentContainer>
           }
@@ -1195,7 +1195,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
                       >
                         <SlideGroup
                           isAnimated={true}
-                          items={Array []}
+                          items={[]}
                         />
                       </div>
                     </Scroll>
@@ -1214,8 +1214,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with custom props
 exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`] = `
 <SlidePanelManager
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1224,8 +1224,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1246,7 +1246,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "panel",
       ]
     }
@@ -1254,7 +1254,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "panel",
         ]
       }
@@ -1262,8 +1262,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
       <InjectIntl(SlidePanel)
         fill={true}
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -1272,8 +1272,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -1309,7 +1309,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
           >
             <SlideGroup
               isAnimated={true}
-              items={Array []}
+              items={[]}
             />
           </ContentContainer>
         }
@@ -1318,8 +1318,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
         <SlidePanel
           fill={true}
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -1328,8 +1328,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -1365,7 +1365,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
             >
               <SlideGroup
                 isAnimated={true}
-                items={Array []}
+                items={[]}
               />
             </ContentContainer>
           }
@@ -1453,7 +1453,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
                       >
                         <SlideGroup
                           isAnimated={true}
-                          items={Array []}
+                          items={[]}
                         />
                       </div>
                     </Scroll>
@@ -1472,8 +1472,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with defaults 1`]
 exports[`SlidePanelManager should render the SlidePanelManager with squish override 1`] = `
 <SlidePanelManager
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1482,8 +1482,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1504,7 +1504,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "panel",
       ]
     }
@@ -1512,7 +1512,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "panel",
         ]
       }
@@ -1520,8 +1520,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
       <InjectIntl(SlidePanel)
         fill={true}
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -1530,8 +1530,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -1567,7 +1567,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
           >
             <SlideGroup
               isAnimated={true}
-              items={Array []}
+              items={[]}
             />
           </ContentContainer>
         }
@@ -1576,8 +1576,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
         <SlidePanel
           fill={true}
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -1586,8 +1586,8 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -1623,7 +1623,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
             >
               <SlideGroup
                 isAnimated={true}
-                items={Array []}
+                items={[]}
               />
             </ContentContainer>
           }
@@ -1711,7 +1711,7 @@ exports[`SlidePanelManager should render the SlidePanelManager with squish overr
                       >
                         <SlideGroup
                           isAnimated={true}
-                          items={Array []}
+                          items={[]}
                         />
                       </div>
                     </Scroll>

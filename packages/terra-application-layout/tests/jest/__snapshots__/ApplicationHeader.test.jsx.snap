@@ -25,7 +25,7 @@ exports[`ApplicationHeader should render props 1`] = `
     extensions={
       <ApplicationHeaderDefault
         layoutConfig={
-          Object {
+          {
             "size": "large",
           }
         }
@@ -39,18 +39,18 @@ exports[`ApplicationHeader should render props 1`] = `
     navigation={
       <withRouter(ApplicationTabs)
         links={
-          Array [
-            Object {
+          [
+            {
               "id": "123",
               "path": "/something1",
               "text": "item 1",
             },
-            Object {
+            {
               "id": "234",
               "path": "/something2",
               "text": "item 2",
             },
-            Object {
+            {
               "id": "345",
               "path": "/something3",
               "text": "item 3",
@@ -65,8 +65,8 @@ exports[`ApplicationHeader should render props 1`] = `
         data-application-header-utility={true}
         initialSelectedKey="test-menu"
         menuItems={
-          Array [
-            Object {
+          [
+            {
               "contentLocation": "body",
               "key": "test-menu",
               "title": "test-menu-title",
@@ -86,7 +86,7 @@ exports[`ApplicationHeader should render props 1`] = `
 exports[`ApplicationHeader with icons correctly applies the theme context className 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "className": "orion-fusion-theme",
       "density": undefined,
       "name": undefined,
@@ -94,10 +94,10 @@ exports[`ApplicationHeader with icons correctly applies the theme context classN
   }
 >
   <ApplicationHeader
-    applicationLinks={Object {}}
+    applicationLinks={{}}
     hasIcons={false}
     intl={
-      Object {
+      {
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -110,7 +110,7 @@ exports[`ApplicationHeader with icons correctly applies the theme context classN
       }
     }
     layoutConfig={
-      Object {
+      {
         "size": "large",
       }
     }
@@ -129,8 +129,8 @@ exports[`ApplicationHeader with icons should match the snapshot 1`] = `
     navigation={
       <withRouter(ApplicationTabs)
         links={
-          Array [
-            Object {
+          [
+            {
               "icon": <IconFeatured
                 data-name="Layer 1"
                 viewBox="0 0 48 48"
@@ -140,7 +140,7 @@ exports[`ApplicationHeader with icons should match the snapshot 1`] = `
               "path": "/something1",
               "text": "item 1",
             },
-            Object {
+            {
               "icon": <IconFeatured
                 data-name="Layer 1"
                 viewBox="0 0 48 48"
@@ -150,7 +150,7 @@ exports[`ApplicationHeader with icons should match the snapshot 1`] = `
               "path": "/something2",
               "text": "item 2",
             },
-            Object {
+            {
               "icon": <IconFeatured
                 data-name="Layer 1"
                 viewBox="0 0 48 48"

@@ -12,7 +12,7 @@ exports[`should render a DatePickerField with props 1`] = `
     />
   }
   excludeDates={
-    Array [
+    [
       "2017-04-03",
     ]
   }
@@ -20,13 +20,13 @@ exports[`should render a DatePickerField with props 1`] = `
   help="Help"
   hideRequired={true}
   inputAttributes={
-    Object {
+    {
       "name": "test",
     }
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -35,8 +35,8 @@ exports[`should render a DatePickerField with props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -56,7 +56,7 @@ exports[`should render a DatePickerField with props 1`] = `
   isLabelHidden={true}
   label="Label Test"
   labelAttrs={
-    Object {
+    {
       "className": "label",
     }
   }
@@ -87,7 +87,7 @@ exports[`should render a DatePickerField with props 1`] = `
       />
     }
     excludeDates={
-      Array [
+      [
         "2017-04-03",
       ]
     }
@@ -95,13 +95,13 @@ exports[`should render a DatePickerField with props 1`] = `
     help="Help"
     hideRequired={true}
     inputAttributes={
-      Object {
+      {
         "name": "test",
       }
     }
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -110,8 +110,8 @@ exports[`should render a DatePickerField with props 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -132,7 +132,7 @@ exports[`should render a DatePickerField with props 1`] = `
     isLabelHidden={true}
     label="Label Test"
     labelAttrs={
-      Object {
+      {
         "className": "label",
       }
     }
@@ -176,7 +176,7 @@ exports[`should render a DatePickerField with props 1`] = `
       isLabelHidden={true}
       label="Label Test"
       labelAttrs={
-        Object {
+        {
           "className": "label",
         }
       }
@@ -187,7 +187,7 @@ exports[`should render a DatePickerField with props 1`] = `
       <div
         className="field field-inline"
         style={
-          Object {
+          {
             "maxWidth": "25px",
           }
         }
@@ -250,14 +250,14 @@ exports[`should render a DatePickerField with props 1`] = `
           ariaLabel="Label Test"
           disabled={true}
           excludeDates={
-            Array [
+            [
               "2017-04-03",
             ]
           }
           filterDate={[Function]}
           id="test-date-picker"
           inputAttributes={
-            Object {
+            {
               "aria-describedby": "test-date-picker-error test-date-picker-help",
               "name": "test",
             }
@@ -286,21 +286,21 @@ exports[`should render a DatePickerField with props 1`] = `
             disabled={true}
             errorId=""
             excludeDates={
-              Array [
+              [
                 "2017-04-03",
               ]
             }
             filterDate={[Function]}
             id="test-date-picker"
             inputAttributes={
-              Object {
+              {
                 "aria-describedby": "test-date-picker-error test-date-picker-help",
                 "name": "test",
               }
             }
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -309,8 +309,8 @@ exports[`should render a DatePickerField with props 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -358,18 +358,18 @@ exports[`should render a DatePickerField with props 1`] = `
                       buttonRefCallback={[Function]}
                       errorId=""
                       excludeDates={
-                        Array [
+                        [
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
                       filterDate={[Function]}
                       includeDates={
-                        Array [
+                        [
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
                       inputAttributes={
-                        Object {
+                        {
                           "aria-describedby": "test-date-picker-error test-date-picker-help",
                           "name": "test",
                         }
@@ -391,7 +391,7 @@ exports[`should render a DatePickerField with props 1`] = `
                   disabled={true}
                   dropdownMode="select"
                   excludeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -399,7 +399,7 @@ exports[`should render a DatePickerField with props 1`] = `
                   fixedHeight={true}
                   id="test-date-picker"
                   includeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -432,18 +432,18 @@ exports[`should render a DatePickerField with props 1`] = `
                         buttonRefCallback={[Function]}
                         errorId=""
                         excludeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         filterDate={[Function]}
                         includeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         inputAttributes={
-                          Object {
+                          {
                             "aria-describedby": "test-date-picker-error test-date-picker-help",
                             "name": "test",
                           }
@@ -466,7 +466,7 @@ exports[`should render a DatePickerField with props 1`] = `
                     disabledKeyboardNavigation={false}
                     dropdownMode="select"
                     excludeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
@@ -474,14 +474,14 @@ exports[`should render a DatePickerField with props 1`] = `
                     fixedHeight={true}
                     id="test-date-picker"
                     includeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
                     inline={false}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -490,8 +490,8 @@ exports[`should render a DatePickerField with props 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -540,7 +540,7 @@ exports[`should render a DatePickerField with props 1`] = `
                         disabled={true}
                         errorId=""
                         excludeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
@@ -548,12 +548,12 @@ exports[`should render a DatePickerField with props 1`] = `
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
                         includeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         inputAttributes={
-                          Object {
+                          {
                             "aria-describedby": "test-date-picker-error test-date-picker-help",
                             "name": "test",
                           }
@@ -582,7 +582,7 @@ exports[`should render a DatePickerField with props 1`] = `
                           disabled={true}
                           errorId=""
                           excludeDates={
-                            Array [
+                            [
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
@@ -590,19 +590,19 @@ exports[`should render a DatePickerField with props 1`] = `
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
                           includeDates={
-                            Array [
+                            [
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
                           inputAttributes={
-                            Object {
+                            {
                               "aria-describedby": "test-date-picker-error test-date-picker-help",
                               "name": "test",
                             }
                           }
                           intl={
-                            Object {
-                              "defaultFormats": Object {},
+                            {
+                              "defaultFormats": {},
                               "defaultLocale": "en",
                               "formatDate": [Function],
                               "formatHTMLMessage": [Function],
@@ -611,8 +611,8 @@ exports[`should render a DatePickerField with props 1`] = `
                               "formatPlural": [Function],
                               "formatRelative": [Function],
                               "formatTime": [Function],
-                              "formats": Object {},
-                              "formatters": Object {
+                              "formats": {},
+                              "formatters": {
                                 "getDateTimeFormat": [Function],
                                 "getMessageFormat": [Function],
                                 "getNumberFormat": [Function],
@@ -701,7 +701,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="2"
@@ -725,7 +725,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="2"
@@ -756,7 +756,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="4"
@@ -780,7 +780,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="2"
@@ -800,7 +800,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="2"
                                       type="number"
@@ -827,7 +827,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="2"
@@ -847,7 +847,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="2"
                                       type="number"
@@ -874,7 +874,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="4"
@@ -894,7 +894,7 @@ exports[`should render a DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="4"
                                       type="number"
@@ -1023,8 +1023,8 @@ exports[`should render a default DatePickerField component 1`] = `
 <InjectIntl(DatePickerField)
   datePickerId="test-date-picker"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1033,8 +1033,8 @@ exports[`should render a default DatePickerField component 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1065,8 +1065,8 @@ exports[`should render a default DatePickerField component 1`] = `
     help={null}
     hideRequired={false}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -1075,8 +1075,8 @@ exports[`should render a default DatePickerField component 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -1096,7 +1096,7 @@ exports[`should render a default DatePickerField component 1`] = `
     isInvalid={false}
     isLabelHidden={false}
     label="Label"
-    labelAttrs={Object {}}
+    labelAttrs={{}}
     name="test-date-picker"
     required={false}
     showOptional={false}
@@ -1122,7 +1122,7 @@ exports[`should render a default DatePickerField component 1`] = `
       isInvalid={false}
       isLabelHidden={false}
       label="Label"
-      labelAttrs={Object {}}
+      labelAttrs={{}}
       required={false}
       showOptional={false}
     >
@@ -1182,7 +1182,7 @@ exports[`should render a default DatePickerField component 1`] = `
           disabled={false}
           id="test-date-picker"
           inputAttributes={
-            Object {
+            {
               "aria-describedby": "test-date-picker-help",
             }
           }
@@ -1200,13 +1200,13 @@ exports[`should render a default DatePickerField component 1`] = `
             errorId=""
             id="test-date-picker"
             inputAttributes={
-              Object {
+              {
                 "aria-describedby": "test-date-picker-help",
               }
             }
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1215,8 +1215,8 @@ exports[`should render a default DatePickerField component 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1255,18 +1255,18 @@ exports[`should render a default DatePickerField component 1`] = `
                       buttonRefCallback={[Function]}
                       errorId=""
                       excludeDates={
-                        Array [
+                        [
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
                       filterDate={[Function]}
                       includeDates={
-                        Array [
+                        [
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
                       inputAttributes={
-                        Object {
+                        {
                           "aria-describedby": "test-date-picker-help",
                         }
                       }
@@ -1287,7 +1287,7 @@ exports[`should render a default DatePickerField component 1`] = `
                   disabled={false}
                   dropdownMode="select"
                   excludeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -1295,7 +1295,7 @@ exports[`should render a default DatePickerField component 1`] = `
                   fixedHeight={true}
                   id="test-date-picker"
                   includeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -1326,18 +1326,18 @@ exports[`should render a default DatePickerField component 1`] = `
                         buttonRefCallback={[Function]}
                         errorId=""
                         excludeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         filterDate={[Function]}
                         includeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         inputAttributes={
-                          Object {
+                          {
                             "aria-describedby": "test-date-picker-help",
                           }
                         }
@@ -1359,7 +1359,7 @@ exports[`should render a default DatePickerField component 1`] = `
                     disabledKeyboardNavigation={false}
                     dropdownMode="select"
                     excludeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
@@ -1367,14 +1367,14 @@ exports[`should render a default DatePickerField component 1`] = `
                     fixedHeight={true}
                     id="test-date-picker"
                     includeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
                     inline={false}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1383,8 +1383,8 @@ exports[`should render a default DatePickerField component 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1431,7 +1431,7 @@ exports[`should render a default DatePickerField component 1`] = `
                         disabled={false}
                         errorId=""
                         excludeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
@@ -1439,12 +1439,12 @@ exports[`should render a default DatePickerField component 1`] = `
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
                         includeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         inputAttributes={
-                          Object {
+                          {
                             "aria-describedby": "test-date-picker-help",
                           }
                         }
@@ -1472,7 +1472,7 @@ exports[`should render a default DatePickerField component 1`] = `
                           disabled={false}
                           errorId=""
                           excludeDates={
-                            Array [
+                            [
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
@@ -1480,18 +1480,18 @@ exports[`should render a default DatePickerField component 1`] = `
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
                           includeDates={
-                            Array [
+                            [
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
                           inputAttributes={
-                            Object {
+                            {
                               "aria-describedby": "test-date-picker-help",
                             }
                           }
                           intl={
-                            Object {
-                              "defaultFormats": Object {},
+                            {
+                              "defaultFormats": {},
                               "defaultLocale": "en",
                               "formatDate": [Function],
                               "formatHTMLMessage": [Function],
@@ -1500,8 +1500,8 @@ exports[`should render a default DatePickerField component 1`] = `
                               "formatPlural": [Function],
                               "formatRelative": [Function],
                               "formatTime": [Function],
-                              "formats": Object {},
-                              "formatters": Object {
+                              "formats": {},
+                              "formatters": {
                                 "getDateTimeFormat": [Function],
                                 "getMessageFormat": [Function],
                                 "getNumberFormat": [Function],
@@ -1590,7 +1590,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="2"
@@ -1614,7 +1614,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="2"
@@ -1645,7 +1645,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="4"
@@ -1669,7 +1669,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="2"
@@ -1689,7 +1689,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="2"
                                       type="number"
@@ -1716,7 +1716,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="2"
@@ -1736,7 +1736,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="2"
                                       type="number"
@@ -1763,7 +1763,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="4"
@@ -1783,7 +1783,7 @@ exports[`should render a default DatePickerField component 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="4"
                                       type="number"
@@ -1911,7 +1911,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
     />
   }
   excludeDates={
-    Array [
+    [
       "2017-04-03",
     ]
   }
@@ -1919,13 +1919,13 @@ exports[`should render a valid DatePickerField with props 1`] = `
   help="Help"
   hideRequired={true}
   inputAttributes={
-    Object {
+    {
       "name": "test",
     }
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1934,8 +1934,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1954,7 +1954,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
   isLabelHidden={true}
   label="Label Test"
   labelAttrs={
-    Object {
+    {
       "className": "label",
     }
   }
@@ -1983,7 +1983,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
       />
     }
     excludeDates={
-      Array [
+      [
         "2017-04-03",
       ]
     }
@@ -1991,13 +1991,13 @@ exports[`should render a valid DatePickerField with props 1`] = `
     help="Help"
     hideRequired={true}
     inputAttributes={
-      Object {
+      {
         "name": "test",
       }
     }
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -2006,8 +2006,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -2028,7 +2028,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
     isLabelHidden={true}
     label="Label Test"
     labelAttrs={
-      Object {
+      {
         "className": "label",
       }
     }
@@ -2070,7 +2070,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
       isLabelHidden={true}
       label="Label Test"
       labelAttrs={
-        Object {
+        {
           "className": "label",
         }
       }
@@ -2081,7 +2081,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
       <div
         className="field field-inline"
         style={
-          Object {
+          {
             "maxWidth": "25px",
           }
         }
@@ -2144,14 +2144,14 @@ exports[`should render a valid DatePickerField with props 1`] = `
           ariaLabel="Label Test"
           disabled={true}
           excludeDates={
-            Array [
+            [
               "2017-04-03",
             ]
           }
           filterDate={[Function]}
           id="test-date-picker"
           inputAttributes={
-            Object {
+            {
               "aria-describedby": "test-date-picker-help",
               "name": "test",
             }
@@ -2178,21 +2178,21 @@ exports[`should render a valid DatePickerField with props 1`] = `
             disabled={true}
             errorId=""
             excludeDates={
-              Array [
+              [
                 "2017-04-03",
               ]
             }
             filterDate={[Function]}
             id="test-date-picker"
             inputAttributes={
-              Object {
+              {
                 "aria-describedby": "test-date-picker-help",
                 "name": "test",
               }
             }
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2201,8 +2201,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2248,18 +2248,18 @@ exports[`should render a valid DatePickerField with props 1`] = `
                       buttonRefCallback={[Function]}
                       errorId=""
                       excludeDates={
-                        Array [
+                        [
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
                       filterDate={[Function]}
                       includeDates={
-                        Array [
+                        [
                           "2017-01-01T00:00:00.000Z",
                         ]
                       }
                       inputAttributes={
-                        Object {
+                        {
                           "aria-describedby": "test-date-picker-help",
                           "name": "test",
                         }
@@ -2281,7 +2281,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                   disabled={true}
                   dropdownMode="select"
                   excludeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -2289,7 +2289,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                   fixedHeight={true}
                   id="test-date-picker"
                   includeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -2320,18 +2320,18 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         buttonRefCallback={[Function]}
                         errorId=""
                         excludeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         filterDate={[Function]}
                         includeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         inputAttributes={
-                          Object {
+                          {
                             "aria-describedby": "test-date-picker-help",
                             "name": "test",
                           }
@@ -2354,7 +2354,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                     disabledKeyboardNavigation={false}
                     dropdownMode="select"
                     excludeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
@@ -2362,14 +2362,14 @@ exports[`should render a valid DatePickerField with props 1`] = `
                     fixedHeight={true}
                     id="test-date-picker"
                     includeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
                     inline={false}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2378,8 +2378,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2426,7 +2426,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         disabled={true}
                         errorId=""
                         excludeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
@@ -2434,12 +2434,12 @@ exports[`should render a valid DatePickerField with props 1`] = `
                         firstInputRefCallback={[Function]}
                         id="test-date-picker"
                         includeDates={
-                          Array [
+                          [
                             "2017-01-01T00:00:00.000Z",
                           ]
                         }
                         inputAttributes={
-                          Object {
+                          {
                             "aria-describedby": "test-date-picker-help",
                             "name": "test",
                           }
@@ -2468,7 +2468,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           disabled={true}
                           errorId=""
                           excludeDates={
-                            Array [
+                            [
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
@@ -2476,19 +2476,19 @@ exports[`should render a valid DatePickerField with props 1`] = `
                           firstInputRefCallback={[Function]}
                           id="test-date-picker"
                           includeDates={
-                            Array [
+                            [
                               "2017-01-01T00:00:00.000Z",
                             ]
                           }
                           inputAttributes={
-                            Object {
+                            {
                               "aria-describedby": "test-date-picker-help",
                               "name": "test",
                             }
                           }
                           intl={
-                            Object {
-                              "defaultFormats": Object {},
+                            {
+                              "defaultFormats": {},
                               "defaultLocale": "en",
                               "formatDate": [Function],
                               "formatHTMLMessage": [Function],
@@ -2497,8 +2497,8 @@ exports[`should render a valid DatePickerField with props 1`] = `
                               "formatPlural": [Function],
                               "formatRelative": [Function],
                               "formatTime": [Function],
-                              "formats": Object {},
-                              "formatters": Object {
+                              "formats": {},
+                              "formatters": {
                                 "getDateTimeFormat": [Function],
                                 "getMessageFormat": [Function],
                                 "getNumberFormat": [Function],
@@ -2587,7 +2587,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="2"
@@ -2611,7 +2611,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="2"
@@ -2642,7 +2642,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       refCallback={[Function]}
                                       required={false}
                                       size="4"
@@ -2666,7 +2666,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="2"
@@ -2686,7 +2686,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="2"
                                       type="number"
@@ -2713,7 +2713,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="2"
@@ -2733,7 +2733,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="2"
                                       type="number"
@@ -2760,7 +2760,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                     onChange={[Function]}
                                     onFocus={[Function]}
                                     onKeyDown={[Function]}
-                                    pattern="\\\\d*"
+                                    pattern="\\d*"
                                     refCallback={[Function]}
                                     required={false}
                                     size="4"
@@ -2780,7 +2780,7 @@ exports[`should render a valid DatePickerField with props 1`] = `
                                       onChange={[Function]}
                                       onFocus={[Function]}
                                       onKeyDown={[Function]}
-                                      pattern="\\\\d*"
+                                      pattern="\\d*"
                                       required={false}
                                       size="4"
                                       type="number"

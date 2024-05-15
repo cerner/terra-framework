@@ -3,8 +3,8 @@
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should disable menu item when isSelectable is false 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should disable menu 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -36,7 +36,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should disable menu 
   isSelectable={false}
   isSelected={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -44,8 +44,8 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should disable menu 
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a selectable menu item 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -54,8 +54,8 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a sele
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -77,7 +77,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a sele
   isSelectable={true}
   isSelected={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -85,8 +85,8 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should render a sele
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisabled prop on menu item 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -95,8 +95,8 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisable
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -118,7 +118,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisable
   isSelectable={true}
   isSelected={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -126,8 +126,8 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set isDisable
 exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected prop on menu item 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -136,8 +136,8 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -159,7 +159,7 @@ exports[`CollapsibleMenuViewToggle Collapsible Menu Context should set selected 
   isSelectable={true}
   isSelected={true}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -172,10 +172,10 @@ exports[`CollapsibleMenuViewToggle should disable checkbox when isSelectable is 
     className="control is-disabled"
     defaultChecked={false}
     disabled={true}
-    inputAttrs={Object {}}
+    inputAttrs={{}}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -184,8 +184,8 @@ exports[`CollapsibleMenuViewToggle should disable checkbox when isSelectable is 
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -203,7 +203,7 @@ exports[`CollapsibleMenuViewToggle should disable checkbox when isSelectable is 
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
-    labelTextAttrs={Object {}}
+    labelTextAttrs={{}}
     name={null}
     onChange={[Function]}
   />
@@ -218,10 +218,10 @@ exports[`CollapsibleMenuViewToggle should merge custom props 1`] = `
     className="control Testing"
     defaultChecked={false}
     disabled={false}
-    inputAttrs={Object {}}
+    inputAttrs={{}}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -230,8 +230,8 @@ exports[`CollapsibleMenuViewToggle should merge custom props 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -249,7 +249,7 @@ exports[`CollapsibleMenuViewToggle should merge custom props 1`] = `
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
-    labelTextAttrs={Object {}}
+    labelTextAttrs={{}}
     name={null}
     onChange={[Function]}
   />
@@ -264,10 +264,10 @@ exports[`CollapsibleMenuViewToggle should render a default component 1`] = `
     className="control"
     defaultChecked={false}
     disabled={false}
-    inputAttrs={Object {}}
+    inputAttrs={{}}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -276,8 +276,8 @@ exports[`CollapsibleMenuViewToggle should render a default component 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -295,7 +295,7 @@ exports[`CollapsibleMenuViewToggle should render a default component 1`] = `
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
-    labelTextAttrs={Object {}}
+    labelTextAttrs={{}}
     name={null}
     onChange={[Function]}
   />
@@ -310,10 +310,10 @@ exports[`CollapsibleMenuViewToggle should set defaultChecked prop 1`] = `
     className="control"
     defaultChecked={true}
     disabled={false}
-    inputAttrs={Object {}}
+    inputAttrs={{}}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -322,8 +322,8 @@ exports[`CollapsibleMenuViewToggle should set defaultChecked prop 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -341,7 +341,7 @@ exports[`CollapsibleMenuViewToggle should set defaultChecked prop 1`] = `
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
-    labelTextAttrs={Object {}}
+    labelTextAttrs={{}}
     name={null}
     onChange={[Function]}
   />
@@ -356,10 +356,10 @@ exports[`CollapsibleMenuViewToggle should set isDisabled prop 1`] = `
     className="control is-disabled"
     defaultChecked={false}
     disabled={true}
-    inputAttrs={Object {}}
+    inputAttrs={{}}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -368,8 +368,8 @@ exports[`CollapsibleMenuViewToggle should set isDisabled prop 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -387,7 +387,7 @@ exports[`CollapsibleMenuViewToggle should set isDisabled prop 1`] = `
     isInline={false}
     isLabelHidden={false}
     labelText="Testing"
-    labelTextAttrs={Object {}}
+    labelTextAttrs={{}}
     name={null}
     onChange={[Function]}
   />

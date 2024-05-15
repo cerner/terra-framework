@@ -4,13 +4,13 @@ exports[`ApplicationMenuWrapper should render default 1`] = `
 <withDisclosureManager(ApplicationMenu)
   content={<mockConstructor />}
   layoutConfig={
-    Object {
+    {
       "size": "small",
     }
   }
   routingStackDelegate={
-    Object {
-      "location": Object {
+    {
+      "location": {
         "pathname": "/test-path-name",
       },
     }
@@ -23,8 +23,8 @@ exports[`ApplicationMenuWrapper should render prop data 1`] = `
   content={
     <mockConstructor
       navigationItems={
-        Array [
-          Object {
+        [
+          {
             "path": "test-item-path",
             "text": "test-item-text",
           },
@@ -38,26 +38,26 @@ exports[`ApplicationMenuWrapper should render prop data 1`] = `
     </div>
   }
   layoutConfig={
-    Object {
+    {
       "size": "small",
     }
   }
   nameConfig={
-    Object {
+    {
       "title": "test-title",
     }
   }
   routingStackDelegate={
-    Object {
-      "location": Object {
+    {
+      "location": {
         "pathname": "/test-path-name",
       },
     }
   }
   utilityConfig={
-    Object {
+    {
       "initialSelectedKey": "test-init-key",
-      "menuItems": Array [],
+      "menuItems": [],
       "onBlur": [MockFunction],
       "onChange": [MockFunction],
       "title": "test-utility",

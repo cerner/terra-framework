@@ -3,8 +3,8 @@
 exports[`MoreButton should render a more button with provided props 1`] = `
 <IntlProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`MoreButton should render a more button with provided props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -33,7 +33,7 @@ exports[`MoreButton should render a more button with provided props 1`] = `
   <InjectIntl(MoreButton)
     hiddenIndex={1}
     tabIds={
-      Array [
+      [
         "tab-1",
         "tab-2",
         "tab-3",
@@ -44,8 +44,8 @@ exports[`MoreButton should render a more button with provided props 1`] = `
     <MoreButton
       hiddenIndex={1}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -54,8 +54,8 @@ exports[`MoreButton should render a more button with provided props 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -71,7 +71,7 @@ exports[`MoreButton should render a more button with provided props 1`] = `
         }
       }
       tabIds={
-        Array [
+        [
           "tab-1",
           "tab-2",
           "tab-3",
@@ -89,7 +89,7 @@ exports[`MoreButton should render a more button with provided props 1`] = `
         onMouseDown={[Function]}
         role="button"
         style={
-          Object {
+          {
             "zIndex": 0,
           }
         }

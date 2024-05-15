@@ -3,7 +3,7 @@
 exports[`correctly applies the theme context className 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "className": "orion-fusion-theme",
       "density": undefined,
       "name": undefined,
@@ -24,8 +24,8 @@ exports[`renders DateTimePicker with correct ARIA attributes 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -34,8 +34,8 @@ exports[`renders DateTimePicker with correct ARIA attributes 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -69,8 +69,8 @@ exports[`should render a date time picker with a default date and time 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -79,8 +79,8 @@ exports[`should render a date time picker with a default date and time 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -113,14 +113,14 @@ exports[`should render a date time picker with disabled dates 1`] = `
   disabled={false}
   errorId=""
   excludeDates={
-    Array [
+    [
       "2017-04-01",
     ]
   }
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -129,8 +129,8 @@ exports[`should render a date time picker with disabled dates 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -164,8 +164,8 @@ exports[`should render a date time picker with filtered dates 1`] = `
   filterDate={[Function]}
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -174,8 +174,8 @@ exports[`should render a date time picker with filtered dates 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -207,14 +207,14 @@ exports[`should render a date time picker with included dates 1`] = `
   disabled={false}
   errorId=""
   includeDates={
-    Array [
+    [
       "2017-04-01",
     ]
   }
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -223,8 +223,8 @@ exports[`should render a date time picker with included dates 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -257,8 +257,8 @@ exports[`should render a date time picker with min and max dates 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -267,8 +267,8 @@ exports[`should render a date time picker with min and max dates 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -301,8 +301,8 @@ exports[`should render a date time picker with onBlur 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -311,8 +311,8 @@ exports[`should render a date time picker with onBlur 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -346,8 +346,8 @@ exports[`should render a date time picker with onChange 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -356,8 +356,8 @@ exports[`should render a date time picker with onChange 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -391,8 +391,8 @@ exports[`should render a date time picker with onChangeRaw 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -401,8 +401,8 @@ exports[`should render a date time picker with onChangeRaw 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -436,8 +436,8 @@ exports[`should render a date time picker with the seconds field enabled 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -446,8 +446,8 @@ exports[`should render a date time picker with the seconds field enabled 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -480,8 +480,8 @@ exports[`should render a default date time picker 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -490,8 +490,8 @@ exports[`should render a default date time picker 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -525,8 +525,8 @@ exports[`should render a default date time picker with ariaLabel 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -535,8 +535,8 @@ exports[`should render a default date time picker with ariaLabel 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -566,7 +566,7 @@ exports[`should render a default date time picker with ariaLabel 1`] = `
 exports[`should render a default date time picker with custom date input attributes 1`] = `
 <DateTimePicker
   dateInputAttributes={
-    Object {
+    {
       "id": "terra-date-input",
     }
   }
@@ -574,8 +574,8 @@ exports[`should render a default date time picker with custom date input attribu
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -584,8 +584,8 @@ exports[`should render a default date time picker with custom date input attribu
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -618,8 +618,8 @@ exports[`should render a default date time picker with custom time input attribu
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -628,8 +628,8 @@ exports[`should render a default date time picker with custom time input attribu
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -653,7 +653,7 @@ exports[`should render a default date time picker with custom time input attribu
   required={false}
   showSeconds={false}
   timeInputAttributes={
-    Object {
+    {
       "id": "terra-time-input",
     }
   }
@@ -667,8 +667,8 @@ exports[`should render a disabled date time picker 1`] = `
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -677,8 +677,8 @@ exports[`should render a disabled date time picker 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -711,8 +711,8 @@ exports[`should render a error message 1`] = `
   errorId="default-invalid-error"
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -721,8 +721,8 @@ exports[`should render a error message 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -755,8 +755,8 @@ exports[`should render with a default timeVariant if variant is not specified 1`
   errorId=""
   initialTimeZone="America/Chicago"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -765,8 +765,8 @@ exports[`should render with a default timeVariant if variant is not specified 1`
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],

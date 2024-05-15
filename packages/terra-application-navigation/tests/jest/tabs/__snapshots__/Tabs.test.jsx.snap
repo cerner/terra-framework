@@ -3,8 +3,8 @@
 exports[`Tabs should render default element 1`] = `
 <InjectIntl(Tabs)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`Tabs should render default element 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -32,8 +32,8 @@ exports[`Tabs should render default element 1`] = `
 >
   <Tabs
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -42,8 +42,8 @@ exports[`Tabs should render default element 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -58,8 +58,8 @@ exports[`Tabs should render default element 1`] = `
         "timeZone": null,
       }
     }
-    navigationItems={Array []}
-    notifications={Object {}}
+    navigationItems={[]}
+    notifications={{}}
   >
     <Tab
       aria-hidden="true"
@@ -99,8 +99,8 @@ exports[`Tabs should render prop data 1`] = `
 <InjectIntl(Tabs)
   activeTabKey="my-test-key"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -109,8 +109,8 @@ exports[`Tabs should render prop data 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -126,8 +126,8 @@ exports[`Tabs should render prop data 1`] = `
     }
   }
   navigationItems={
-    Array [
-      Object {
+    [
+      {
         "key": "my-test-key",
         "text": "test-text",
       },
@@ -135,17 +135,17 @@ exports[`Tabs should render prop data 1`] = `
   }
   navigationRenderFunction={
     [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
+      "calls": [
+        [
+          {
             "hasCount": true,
             "isActive": true,
             "notificationCount": undefined,
             "text": "test-text",
           },
         ],
-        Array [
-          Object {
+        [
+          {
             "hasCount": true,
             "isActive": true,
             "notificationCount": undefined,
@@ -153,12 +153,12 @@ exports[`Tabs should render prop data 1`] = `
           },
         ],
       ],
-      "results": Array [
-        Object {
+      "results": [
+        {
           "type": "return",
           "value": undefined,
         },
-        Object {
+        {
           "type": "return",
           "value": undefined,
         },
@@ -166,7 +166,7 @@ exports[`Tabs should render prop data 1`] = `
     }
   }
   notifications={
-    Object {
+    {
       "myComponent": 3,
     }
   }
@@ -175,8 +175,8 @@ exports[`Tabs should render prop data 1`] = `
   <Tabs
     activeTabKey="my-test-key"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -185,8 +185,8 @@ exports[`Tabs should render prop data 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -202,8 +202,8 @@ exports[`Tabs should render prop data 1`] = `
       }
     }
     navigationItems={
-      Array [
-        Object {
+      [
+        {
           "key": "my-test-key",
           "text": "test-text",
         },
@@ -211,17 +211,17 @@ exports[`Tabs should render prop data 1`] = `
     }
     navigationRenderFunction={
       [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
+        "calls": [
+          [
+            {
               "hasCount": true,
               "isActive": true,
               "notificationCount": undefined,
               "text": "test-text",
             },
           ],
-          Array [
-            Object {
+          [
+            {
               "hasCount": true,
               "isActive": true,
               "notificationCount": undefined,
@@ -229,12 +229,12 @@ exports[`Tabs should render prop data 1`] = `
             },
           ],
         ],
-        "results": Array [
-          Object {
+        "results": [
+          {
             "type": "return",
             "value": undefined,
           },
-          Object {
+          {
             "type": "return",
             "value": undefined,
           },
@@ -242,7 +242,7 @@ exports[`Tabs should render prop data 1`] = `
       }
     }
     notifications={
-      Object {
+      {
         "myComponent": 3,
       }
     }
@@ -258,17 +258,17 @@ exports[`Tabs should render prop data 1`] = `
         onTabSelect={[Function]}
         render={
           [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
+            "calls": [
+              [
+                {
                   "hasCount": true,
                   "isActive": true,
                   "notificationCount": undefined,
                   "text": "test-text",
                 },
               ],
-              Array [
-                Object {
+              [
+                {
                   "hasCount": true,
                   "isActive": true,
                   "notificationCount": undefined,
@@ -276,12 +276,12 @@ exports[`Tabs should render prop data 1`] = `
                 },
               ],
             ],
-            "results": Array [
-              Object {
+            "results": [
+              {
                 "type": "return",
                 "value": undefined,
               },
-              Object {
+              {
                 "type": "return",
                 "value": undefined,
               },
@@ -289,7 +289,7 @@ exports[`Tabs should render prop data 1`] = `
           }
         }
         tabRef={
-          Object {
+          {
             "current": <div
               aria-current="true"
               aria-label="test-text"
@@ -324,8 +324,8 @@ exports[`Tabs should render with hasCount set to true when notifications are set
 <InjectIntl(Tabs)
   activeTabKey="notification-test"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -334,8 +334,8 @@ exports[`Tabs should render with hasCount set to true when notifications are set
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -351,8 +351,8 @@ exports[`Tabs should render with hasCount set to true when notifications are set
     }
   }
   navigationItems={
-    Array [
-      Object {
+    [
+      {
         "key": "notification-test",
         "text": "sample-text",
       },
@@ -360,17 +360,17 @@ exports[`Tabs should render with hasCount set to true when notifications are set
   }
   navigationRenderFunction={
     [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
+      "calls": [
+        [
+          {
             "hasCount": true,
             "isActive": true,
             "notificationCount": undefined,
             "text": "sample-text",
           },
         ],
-        Array [
-          Object {
+        [
+          {
             "hasCount": true,
             "isActive": true,
             "notificationCount": undefined,
@@ -378,12 +378,12 @@ exports[`Tabs should render with hasCount set to true when notifications are set
           },
         ],
       ],
-      "results": Array [
-        Object {
+      "results": [
+        {
           "type": "return",
           "value": undefined,
         },
-        Object {
+        {
           "type": "return",
           "value": undefined,
         },
@@ -391,7 +391,7 @@ exports[`Tabs should render with hasCount set to true when notifications are set
     }
   }
   notifications={
-    Object {
+    {
       "myComponent": 0,
     }
   }
@@ -399,8 +399,8 @@ exports[`Tabs should render with hasCount set to true when notifications are set
   <Tabs
     activeTabKey="notification-test"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -409,8 +409,8 @@ exports[`Tabs should render with hasCount set to true when notifications are set
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -426,8 +426,8 @@ exports[`Tabs should render with hasCount set to true when notifications are set
       }
     }
     navigationItems={
-      Array [
-        Object {
+      [
+        {
           "key": "notification-test",
           "text": "sample-text",
         },
@@ -435,17 +435,17 @@ exports[`Tabs should render with hasCount set to true when notifications are set
     }
     navigationRenderFunction={
       [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
+        "calls": [
+          [
+            {
               "hasCount": true,
               "isActive": true,
               "notificationCount": undefined,
               "text": "sample-text",
             },
           ],
-          Array [
-            Object {
+          [
+            {
               "hasCount": true,
               "isActive": true,
               "notificationCount": undefined,
@@ -453,12 +453,12 @@ exports[`Tabs should render with hasCount set to true when notifications are set
             },
           ],
         ],
-        "results": Array [
-          Object {
+        "results": [
+          {
             "type": "return",
             "value": undefined,
           },
-          Object {
+          {
             "type": "return",
             "value": undefined,
           },
@@ -466,7 +466,7 @@ exports[`Tabs should render with hasCount set to true when notifications are set
       }
     }
     notifications={
-      Object {
+      {
         "myComponent": 0,
       }
     }
@@ -481,17 +481,17 @@ exports[`Tabs should render with hasCount set to true when notifications are set
         onTabSelect={null}
         render={
           [MockFunction] {
-            "calls": Array [
-              Array [
-                Object {
+            "calls": [
+              [
+                {
                   "hasCount": true,
                   "isActive": true,
                   "notificationCount": undefined,
                   "text": "sample-text",
                 },
               ],
-              Array [
-                Object {
+              [
+                {
                   "hasCount": true,
                   "isActive": true,
                   "notificationCount": undefined,
@@ -499,12 +499,12 @@ exports[`Tabs should render with hasCount set to true when notifications are set
                 },
               ],
             ],
-            "results": Array [
-              Object {
+            "results": [
+              {
                 "type": "return",
                 "value": undefined,
               },
-              Object {
+              {
                 "type": "return",
                 "value": undefined,
               },
@@ -512,7 +512,7 @@ exports[`Tabs should render with hasCount set to true when notifications are set
           }
         }
         tabRef={
-          Object {
+          {
             "current": <div
               aria-current="true"
               aria-label="sample-text"

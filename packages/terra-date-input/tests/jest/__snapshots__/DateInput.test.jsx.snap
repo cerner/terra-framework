@@ -3,8 +3,8 @@
 exports[`DateInput correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`DateInput correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -30,7 +30,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "clinical-lowlight-theme",
     }
   }
@@ -40,11 +40,11 @@ exports[`DateInput correctly applies the theme context className 1`] = `
     value="2000-07-04"
   >
     <DateInput
-      dayAttributes={Object {}}
+      dayAttributes={{}}
       disabled={false}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -53,8 +53,8 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -70,13 +70,13 @@ exports[`DateInput correctly applies the theme context className 1`] = `
         }
       }
       isA11yControlled={false}
-      monthAttributes={Object {}}
+      monthAttributes={{}}
       name="date-input"
       onBlur={null}
       onChange={null}
       useExternalFormatMask={false}
       value="2000-07-04"
-      yearAttributes={Object {}}
+      yearAttributes={{}}
     >
       <div
         aria-label="Terra.date.input.labelDefault"
@@ -231,7 +231,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onPaste={[Function]}
-          pattern="\\\\d*"
+          pattern="\\d*"
           refCallback={[Function]}
           showIsInvalid={true}
           size="2"
@@ -267,7 +267,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             onKeyDown={[Function]}
             onKeyPress={[Function]}
             onPaste={[Function]}
-            pattern="\\\\d*"
+            pattern="\\d*"
             refCallback={[Function]}
             required={false}
             size="2"
@@ -290,7 +290,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               onKeyDown={[Function]}
               onKeyPress={[Function]}
               onPaste={[Function]}
-              pattern="\\\\d*"
+              pattern="\\d*"
               required={false}
               size="2"
               type="number"
@@ -327,7 +327,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
           onKeyDown={[Function]}
           onKeyPress={[Function]}
           onPaste={[Function]}
-          pattern="\\\\d*"
+          pattern="\\d*"
           refCallback={[Function]}
           showIsInvalid={true}
           size="4"
@@ -363,7 +363,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
             onKeyDown={[Function]}
             onKeyPress={[Function]}
             onPaste={[Function]}
-            pattern="\\\\d*"
+            pattern="\\d*"
             refCallback={[Function]}
             required={false}
             size="4"
@@ -386,7 +386,7 @@ exports[`DateInput correctly applies the theme context className 1`] = `
               onKeyDown={[Function]}
               onKeyPress={[Function]}
               onPaste={[Function]}
-              pattern="\\\\d*"
+              pattern="\\d*"
               required={false}
               size="4"
               type="number"
@@ -536,7 +536,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="form-input date-input-day"
       maxlength="2"
       name="terra-date-day-date-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -557,7 +557,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="form-input date-input-year"
       maxlength="4"
       name="terra-date-year-date-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="4"
       type="number"
       value=""
@@ -689,7 +689,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="form-input date-input-day"
       maxlength="2"
       name="terra-date-day-date-input-2"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -710,7 +710,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="form-input date-input-year"
       maxlength="4"
       name="terra-date-year-date-input-2"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="4"
       type="number"
       value=""
@@ -842,7 +842,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="form-input date-input-day"
       maxlength="2"
       name="terra-date-day-date-input-3"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -863,7 +863,7 @@ exports[`DateInput should not have duplicate ids on the page when multiple date 
       class="form-input date-input-year"
       maxlength="4"
       name="terra-date-year-date-input-3"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="4"
       type="number"
       value=""
@@ -1020,7 +1020,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="2"
@@ -1043,7 +1043,7 @@ exports[`DateInput should render a date input with a default date 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="4"
@@ -1064,7 +1064,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
   aria-label="Terra.date.input.labelDefault"
   className="date-input"
   inputAttributes={
-    Object {
+    {
       "id": "terra-date-input",
     }
   }
@@ -1198,7 +1198,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="2"
@@ -1221,7 +1221,7 @@ exports[`DateInput should render a date input with custom attributes 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="4"
@@ -1371,7 +1371,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="2"
@@ -1394,7 +1394,7 @@ exports[`DateInput should render a date input with onBlur 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="4"
@@ -1544,7 +1544,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="2"
@@ -1567,7 +1567,7 @@ exports[`DateInput should render a date input with onChange 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="4"
@@ -1717,7 +1717,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="2"
@@ -1740,7 +1740,7 @@ exports[`DateInput should render a date input with onFocus 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="4"
@@ -1890,7 +1890,7 @@ exports[`DateInput should render a default date input 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="2"
@@ -1913,7 +1913,7 @@ exports[`DateInput should render a default date input 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="4"
@@ -2063,7 +2063,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="2"
@@ -2086,7 +2086,7 @@ exports[`DateInput should render a disabled time input 1`] = `
     onKeyDown={[Function]}
     onKeyPress={[Function]}
     onPaste={[Function]}
-    pattern="\\\\d*"
+    pattern="\\d*"
     refCallback={[Function]}
     showIsInvalid={true}
     size="4"
@@ -2105,8 +2105,8 @@ exports[`DateInput should render a disabled time input 1`] = `
 exports[`DateInputField correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -2115,8 +2115,8 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -2132,7 +2132,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "clinical-lowlight-theme",
     }
   }
@@ -2143,14 +2143,14 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
     value="2000-07-04"
   >
     <DateInputField
-      dayAttributes={Object {}}
+      dayAttributes={{}}
       disabled={false}
       error={null}
       help={null}
       hideRequired={false}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -2159,8 +2159,8 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -2180,13 +2180,13 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
       isInvalid={false}
       isLegendHidden={false}
       legend="Legend text"
-      legendAttributes={Object {}}
-      monthAttributes={Object {}}
+      legendAttributes={{}}
+      monthAttributes={{}}
       name="date-input-value"
       required={false}
       showOptional={false}
       value="2000-07-04"
-      yearAttributes={Object {}}
+      yearAttributes={{}}
     >
       <fieldset
         className="date-input-field clinical-lowlight-theme"
@@ -2207,7 +2207,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           a11yLabel="Legend text"
           aria-describedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
           dayAttributes={
-            Object {
+            {
               "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
             }
           }
@@ -2217,7 +2217,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           isIncomplete={false}
           isInvalid={false}
           monthAttributes={
-            Object {
+            {
               "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
             }
           }
@@ -2226,7 +2226,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
           useExternalFormatMask={true}
           value="2000-07-04"
           yearAttributes={
-            Object {
+            {
               "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
             }
           }
@@ -2235,15 +2235,15 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             a11yLabel="Legend text"
             aria-describedby="terra-date-input-field-description-error-00000000-0000-0000-0000-000000000000"
             dayAttributes={
-              Object {
+              {
                 "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
               }
             }
             disabled={false}
             error={null}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2252,8 +2252,8 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2272,7 +2272,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             isIncomplete={false}
             isInvalid={false}
             monthAttributes={
-              Object {
+              {
                 "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
               }
             }
@@ -2283,7 +2283,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
             useExternalFormatMask={true}
             value="2000-07-04"
             yearAttributes={
-              Object {
+              {
                 "aria-describedby": "terra-date-input-field-description-help-00000000-0000-0000-0000-000000000000",
               }
             }
@@ -2446,7 +2446,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 onKeyDown={[Function]}
                 onKeyPress={[Function]}
                 onPaste={[Function]}
-                pattern="\\\\d*"
+                pattern="\\d*"
                 refCallback={[Function]}
                 required={false}
                 showIsInvalid={true}
@@ -2483,7 +2483,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   onKeyDown={[Function]}
                   onKeyPress={[Function]}
                   onPaste={[Function]}
-                  pattern="\\\\d*"
+                  pattern="\\d*"
                   refCallback={[Function]}
                   required={false}
                   size="2"
@@ -2506,7 +2506,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     onKeyDown={[Function]}
                     onKeyPress={[Function]}
                     onPaste={[Function]}
-                    pattern="\\\\d*"
+                    pattern="\\d*"
                     required={false}
                     size="2"
                     type="number"
@@ -2545,7 +2545,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                 onKeyDown={[Function]}
                 onKeyPress={[Function]}
                 onPaste={[Function]}
-                pattern="\\\\d*"
+                pattern="\\d*"
                 refCallback={[Function]}
                 required={false}
                 showIsInvalid={true}
@@ -2582,7 +2582,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                   onKeyDown={[Function]}
                   onKeyPress={[Function]}
                   onPaste={[Function]}
-                  pattern="\\\\d*"
+                  pattern="\\d*"
                   refCallback={[Function]}
                   required={false}
                   size="4"
@@ -2605,7 +2605,7 @@ exports[`DateInputField correctly applies the theme context className 1`] = `
                     onKeyDown={[Function]}
                     onKeyPress={[Function]}
                     onPaste={[Function]}
-                    pattern="\\\\d*"
+                    pattern="\\d*"
                     required={false}
                     size="4"
                     type="number"

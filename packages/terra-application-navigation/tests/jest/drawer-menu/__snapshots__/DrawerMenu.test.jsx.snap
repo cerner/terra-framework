@@ -21,14 +21,14 @@ exports[`DrawerMenu should render Help utility item when it is the only utility 
         >
           <DrawerMenuTitle
             titleConfig={
-              Object {
+              {
                 "title": "test-title",
               }
             }
           />
           <DrawerMenuUser
             userConfig={
-              Object {
+              {
                 "detail": "user-detail",
                 "imageSrc": "user-src",
                 "initials": "user-initials",
@@ -122,7 +122,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
         >
           <DrawerMenuTitle
             titleConfig={
-              Object {
+              {
                 "title": "test-title",
               }
             }
@@ -132,7 +132,7 @@ exports[`DrawerMenu should render with function callbacks 1`] = `
           </div>
           <DrawerMenuUser
             userConfig={
-              Object {
+              {
                 "detail": "user-detail",
                 "imageSrc": "user-src",
                 "initials": "user-initials",
@@ -232,7 +232,7 @@ exports[`DrawerMenu should render with navigation and utility item ids 1`] = `
         >
           <DrawerMenuTitle
             titleConfig={
-              Object {
+              {
                 "title": "test-title",
               }
             }
@@ -242,7 +242,7 @@ exports[`DrawerMenu should render with navigation and utility item ids 1`] = `
           </div>
           <DrawerMenuUser
             userConfig={
-              Object {
+              {
                 "detail": "user-detail",
                 "imageSrc": "user-src",
                 "initials": "user-initials",

@@ -4,7 +4,7 @@ exports[`Slider should render a default slider with proper required props 1`] = 
 <div
   className="slider"
   style={
-    Object {
+    {
       "--terra-slider-progress-status": "30%",
     }
   }
@@ -49,7 +49,7 @@ exports[`Slider should render a disabled slider 1`] = `
 <div
   className="slider"
   style={
-    Object {
+    {
       "--terra-slider-progress-status": "50%",
     }
   }
@@ -94,7 +94,7 @@ exports[`Slider should render a slider with custom min and max labels 1`] = `
 <div
   className="slider"
   style={
-    Object {
+    {
       "--terra-slider-progress-status": "50%",
     }
   }

@@ -3,7 +3,7 @@
 exports[`NavigationPrompt Snapshots should render the NotificationDialog when state is present 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "registerPrompt": [Function],
       "unregisterPrompt": [Function],
     }
@@ -11,7 +11,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
 >
   <InjectIntl(NotificationDialog)
     acceptAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Accept",
       }
@@ -19,7 +19,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
     buttonOrder="acceptFirst"
     dialogTitle="Test Title"
     rejectAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Reject",
       }
@@ -33,7 +33,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog when st
 exports[`NavigationPrompt Snapshots should render the NotificationDialog with accept as the primary action 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "registerPrompt": [Function],
       "unregisterPrompt": [Function],
     }
@@ -41,7 +41,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
 >
   <InjectIntl(NotificationDialog)
     acceptAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Accept",
       }
@@ -50,7 +50,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
     dialogTitle="Test Title"
     emphasizedAction="accept"
     rejectAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Reject",
       }
@@ -64,7 +64,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with ac
 exports[`NavigationPrompt Snapshots should render the NotificationDialog with reject as the primary action 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "registerPrompt": [Function],
       "unregisterPrompt": [Function],
     }
@@ -72,7 +72,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
 >
   <InjectIntl(NotificationDialog)
     acceptAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Accept",
       }
@@ -81,7 +81,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
     dialogTitle="Test Title"
     emphasizedAction="reject"
     rejectAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Reject",
       }
@@ -95,7 +95,7 @@ exports[`NavigationPrompt Snapshots should render the NotificationDialog with re
 exports[`NavigationPrompt Snapshots should render with children 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "registerPrompt": [Function],
       "unregisterPrompt": [Function],
     }
@@ -108,7 +108,7 @@ exports[`NavigationPrompt Snapshots should render with children 1`] = `
 exports[`NavigationPrompt Snapshots should render with minimal props 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "registerPrompt": [Function],
       "unregisterPrompt": [Function],
     }
