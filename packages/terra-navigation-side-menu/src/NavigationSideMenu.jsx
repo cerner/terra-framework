@@ -98,13 +98,13 @@ const defaultProps = {
   variant: VARIANTS.NAVIGATION_SIDE_MENU,
 };
 
-const processMenuItems = (menuItems) => {
+const processMenuItems = (menuItems, variant) => {
   const items = {};
   const parents = {};
   menuItems.forEach((item) => {
     let childKey;
     if (item.childKeys) {
-      childKey = item.childKeys.length ? item.childKeys : ['empty-child-key'];
+      childKey = item.childKeys.length === 0 && variant === VARIANTS.DRILL_IN ? ['empty-child-key'] : item.childKeys;
     }
     items[item.key] = {
       id: item.id,
@@ -137,7 +137,7 @@ class NavigationSideMenu extends Component {
     this.updateAriaLiveContent = this.updateAriaLiveContent.bind(this);
     this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
 
-    const { items, parents } = processMenuItems(props.menuItems);
+    const { items, parents } = processMenuItems(props.menuItems, props.variant);
     this.state = {
       items,
       parents,
@@ -147,7 +147,7 @@ class NavigationSideMenu extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.menuItems !== prevState.prevPropsMenuItem) {
-      return processMenuItems(nextProps.menuItems);
+      return processMenuItems(nextProps.menuItems, nextProps.variant);
     }
     return null;
   }
@@ -336,7 +336,7 @@ class NavigationSideMenu extends Component {
     return (
       <MenuItem
         id={item.id}
-        hasChevron={item.hasSubMenu || (item.childKeys && item.childKeys.length >= 0)}
+        hasChevron={item.hasSubMenu || (item.childKeys && item.childKeys.length > 0)}
         isSelected={key === this.props.selectedChildKey}
         isDisabled={item.isDisabled}
         text={item.text}
