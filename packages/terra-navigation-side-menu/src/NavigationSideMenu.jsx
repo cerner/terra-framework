@@ -6,7 +6,9 @@ import ContentContainer from 'terra-content-container';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
 import * as KeyCode from 'keycode-js';
 import ThemeContext from 'terra-theme-context';
+import StatusView from 'terra-status-view';
 import MenuItem from './_MenuItem';
+import VARIANTS from './constants';
 
 import styles from './NavigationSideMenu.module.scss';
 
@@ -54,6 +56,14 @@ const propTypes = {
      * Text for the menu row and header title when selected.
      */
     text: PropTypes.string.isRequired,
+    /**
+     * Indicates if item should be disabled
+     */
+    isDisabled: PropTypes.bool,
+    /**
+     * The icon to display to the left for the menu item when variant is 'drill-in'
+     */
+    icon: PropTypes.element,
   })),
   /**
    * Callback function when a menu endpoint is reached.
@@ -77,23 +87,34 @@ const propTypes = {
    * An optional toolbar to display below the side menu action header
    */
   toolbar: PropTypes.element,
+  /**
+   * Renders either Navigation Side Menu or Drill-IN
+   */
+  variant: PropTypes.oneOf([VARIANTS.NAVIGATION_SIDE_MENU, VARIANTS.DRILL_IN]),
 };
 
 const defaultProps = {
   menuItems: [],
+  variant: VARIANTS.NAVIGATION_SIDE_MENU,
 };
 
-const processMenuItems = (menuItems) => {
+const processMenuItems = (menuItems, variant) => {
   const items = {};
   const parents = {};
   menuItems.forEach((item) => {
+    let childKey;
+    if (item.childKeys) {
+      childKey = item.childKeys.length === 0 && variant === VARIANTS.DRILL_IN ? ['empty-child-key'] : item.childKeys;
+    }
     items[item.key] = {
       id: item.id,
       text: item.text,
-      childKeys: item.childKeys,
+      childKeys: childKey,
       metaData: item.metaData,
       hasSubMenu: item.hasSubMenu,
       isRootMenu: item.isRootMenu,
+      icon: item.icon,
+      isDisabled: item.isDisabled,
     };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
@@ -116,7 +137,7 @@ class NavigationSideMenu extends Component {
     this.updateAriaLiveContent = this.updateAriaLiveContent.bind(this);
     this.setVisuallyHiddenComponent = this.setVisuallyHiddenComponent.bind(this);
 
-    const { items, parents } = processMenuItems(props.menuItems);
+    const { items, parents } = processMenuItems(props.menuItems, props.variant);
     this.state = {
       items,
       parents,
@@ -126,7 +147,7 @@ class NavigationSideMenu extends Component {
 
   static getDerivedStateFromProps(nextProps, prevState) {
     if (nextProps.menuItems !== prevState.prevPropsMenuItem) {
-      return processMenuItems(nextProps.menuItems);
+      return processMenuItems(nextProps.menuItems, nextProps.variant);
     }
     return null;
   }
@@ -238,7 +259,9 @@ class NavigationSideMenu extends Component {
     const lastIndex = listMenuItems.length - 1;
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       event.preventDefault();
-      this.handleItemClick(event, key);
+      if (!item.isDisabled) {
+        this.handleItemClick(event, key);
+      }
     }
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_DOWN) {
@@ -306,17 +329,24 @@ class NavigationSideMenu extends Component {
       this.handleEvents(event, item, key);
     };
 
+    if (key === 'empty-child-key') {
+      return this.props.variant === VARIANTS.DRILL_IN ? <StatusView variant="no-data" /> : null;
+    }
+
     return (
       <MenuItem
         id={item.id}
         hasChevron={item.hasSubMenu || (item.childKeys && item.childKeys.length > 0)}
         isSelected={key === this.props.selectedChildKey}
+        isDisabled={item.isDisabled}
         text={item.text}
         key={key}
-        onClick={(event) => { this.handleItemClick(event, key); }}
+        onClick={!item.isDisabled ? event => this.handleItemClick(event, key) : undefined}
         onKeyDown={onKeyDown}
         data-menu-item={key}
         tabIndex={(tabIndex === 0 && !(this.onBack)) ? '0' : '-1'}
+        icon={item.icon}
+        variant={this.props.variant}
       />
     );
   }
@@ -348,6 +378,7 @@ class NavigationSideMenu extends Component {
       selectedChildKey,
       selectedMenuKey,
       toolbar,
+      variant,
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
@@ -364,10 +395,15 @@ class NavigationSideMenu extends Component {
       this.onBack = routingStackBack;
     }
 
+    const headerStyles = cx([
+      { 'header-style': (variant === VARIANTS.DRILL_IN) },
+      theme.className,
+    ]);
+
     let header;
     if (this.onBack || (currentItem && !currentItem.isRootMenu)) {
       header = (
-        <li role="none">
+        <li className={headerStyles} role="none">
           <div
             className={cx('side-navigation-menu')}
             role="menuitem"
@@ -412,5 +448,8 @@ class NavigationSideMenu extends Component {
 NavigationSideMenu.propTypes = propTypes;
 NavigationSideMenu.defaultProps = defaultProps;
 NavigationSideMenu.contextType = ThemeContext;
+NavigationSideMenu.Opts = {};
+NavigationSideMenu.Opts.Variants = VARIANTS;
 
 export default injectIntl(NavigationSideMenu);
+export { VARIANTS };

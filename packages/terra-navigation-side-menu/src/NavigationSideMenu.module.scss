@@ -19,6 +19,10 @@
     }
   }
 
+  .header-style {
+    border-bottom: var(--terra-navigation-side-menu-list-border-bottom, 1px solid #d3d4d5);
+  }
+
   .side-menu-list {
     background-color: var(--terra-navigation-side-menu-list-background-color, transparent);
     list-style: none;

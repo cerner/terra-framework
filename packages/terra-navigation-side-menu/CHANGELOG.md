@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 2.57.0 - (May 15, 2024)
+
+* Added
+  * Added variant prop to render Drill-in view.
+
 ## 2.56.0 - (May 8, 2024)
 
 * Changed

@@ -30,14 +30,14 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
-    "terra-theme-context": "^1.9.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react": "16",
+    "react-dom": "16"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "prop-types": "15",
+    "terra-theme-context": "1"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

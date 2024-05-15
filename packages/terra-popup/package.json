@@ -30,26 +30,26 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "@cerner/terra-docs": "^1.0.0",
-    "classnames": "^2.2.5",
-    "focus-trap-react": "^6.0.0",
-    "prop-types": "^15.5.8",
-    "react-portal": "^4.1.2",
-    "terra-button": "^3.3.0",
-    "terra-content-container": "^3.0.0",
-    "terra-hookshot": "^5.42.0",
-    "terra-mixins": "^1.0.0",
-    "terra-theme-context": "^1.9.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5"
+  },
+  "dependencies": {
+    "@cerner/terra-docs": "1",
+    "classnames": "2",
+    "focus-trap-react": "6",
+    "prop-types": "15",
+    "react-portal": "4",
+    "terra-button": "3",
+    "terra-content-container": "3",
+    "terra-hookshot": "5",
+    "terra-mixins": "1",
+    "terra-theme-context": "1"
   },
   "devDependencies": {
-    "terra-disclosure-manager": "^4.43.0",
-    "terra-modal-manager": "^6.78.0"
+    "terra-disclosure-manager": "4",
+    "terra-modal-manager": "6"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

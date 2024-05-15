@@ -29,19 +29,19 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^3.50.0",
-    "terra-action-header": "^2.0.0",
-    "terra-content-container": "^3.0.0",
-    "terra-slide-group": "^4.34.0",
-    "terra-theme-context": "^1.9.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "terra-disclosure-manager": "^4.16.0"
+    "react": "16",
+    "react-dom": "16",
+    "terra-disclosure-manager": "4"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "prop-types": "15",
+    "terra-abstract-modal": "3",
+    "terra-action-header": "2",
+    "terra-content-container": "3",
+    "terra-slide-group": "4",
+    "terra-theme-context": "1"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

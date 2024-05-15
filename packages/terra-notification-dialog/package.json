@@ -31,27 +31,27 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "focus-trap-react": "^6.0.0",
-    "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^3.50.0",
-    "terra-button": "^3.3.0",
-    "terra-mixins": "^1.0.0",
-    "terra-theme-context": "^1.9.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5",
-    "terra-breakpoints": "^2.19.0"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5",
+    "terra-breakpoints": "2"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "focus-trap-react": "6",
+    "prop-types": "15",
+    "terra-abstract-modal": "3",
+    "terra-button": "3",
+    "terra-mixins": "1",
+    "terra-theme-context": "1"
   },
   "devDependencies": {
-    "terra-breakpoints": "^2.19.0",
-    "terra-disclosure-manager": "^4.43.0",
-    "terra-icon": "^3.19.0",
-    "terra-modal-manager": "^6.78.0",
-    "terra-popup": "^6.83.0"
+    "terra-breakpoints": "2",
+    "terra-disclosure-manager": "4",
+    "terra-icon": "3",
+    "terra-modal-manager": "6",
+    "terra-popup": "6"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

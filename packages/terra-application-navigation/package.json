@@ -31,36 +31,36 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "@cerner/terra-docs": "^1.0.0",
-    "classnames": "^2.2.5",
-    "focus-trap-react": "^6.0.0",
-    "keycode-js": "^3.1.0",
-    "lodash.debounce": "^4.0.8",
-    "prop-types": "^15.5.8",
-    "react-onclickoutside": "^6.7.1",
-    "resize-observer-polyfill": "^1.4.1",
-    "terra-action-footer": "^2.0.0",
-    "terra-action-header": "^2.0.0",
-    "terra-avatar": "^3.8.0",
-    "terra-breakpoints": "^2.19.0",
-    "terra-button": "^3.3.0",
-    "terra-content-container": "^3.0.0",
-    "terra-icon": "^3.19.0",
-    "terra-image": "^3.0.0",
-    "terra-overlay": "^3.0.0",
-    "terra-popup": "^6.83.0",
-    "terra-theme-context": "^1.9.0",
-    "terra-visually-hidden-text": "^2.0.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5",
-    "terra-application": "^1.0.0"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5",
+    "terra-application": "1"
+  },
+  "dependencies": {
+    "@cerner/terra-docs": "1",
+    "classnames": "2",
+    "focus-trap-react": "6",
+    "keycode-js": "3",
+    "lodash.debounce": "4",
+    "prop-types": "15",
+    "react-onclickoutside": "6",
+    "resize-observer-polyfill": "1",
+    "terra-action-footer": "2",
+    "terra-action-header": "2",
+    "terra-avatar": "3",
+    "terra-breakpoints": "2",
+    "terra-button": "3",
+    "terra-content-container": "3",
+    "terra-icon": "3",
+    "terra-image": "3",
+    "terra-overlay": "3",
+    "terra-popup": "6",
+    "terra-theme-context": "1",
+    "terra-visually-hidden-text": "2"
   },
   "devDependencies": {
-    "terra-application": "^1.48.0"
+    "terra-application": "1"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

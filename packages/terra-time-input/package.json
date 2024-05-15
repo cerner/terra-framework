@@ -30,20 +30,20 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "keycode-js": "^3.1.0",
-    "prop-types": "^15.5.8",
-    "terra-button-group": "^3.0.0",
-    "terra-form-input": "^4.4.0",
-    "terra-theme-context": "^1.9.0",
-    "terra-visually-hidden-text": "^2.35.0",
-    "uuid": "3.4.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "keycode-js": "3",
+    "prop-types": "15",
+    "terra-button-group": "3",
+    "terra-form-input": "4",
+    "terra-theme-context": "1",
+    "terra-visually-hidden-text": "2",
+    "uuid": "3.4.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

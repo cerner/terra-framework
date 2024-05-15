@@ -30,25 +30,25 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "keycode-js": "^3.1.0",
-    "moment-timezone": "^0.5.13",
-    "prop-types": "^15.5.8",
-    "terra-abstract-modal": "^3.50.0",
-    "terra-button": "^3.3.0",
-    "terra-date-picker": "^4.109.0",
-    "terra-theme-context": "^1.9.0",
-    "terra-time-input": "^4.66.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "keycode-js": "3",
+    "moment-timezone": "^0.5.13",
+    "prop-types": "15",
+    "terra-abstract-modal": "3",
+    "terra-button": "3",
+    "terra-date-picker": "4",
+    "terra-theme-context": "1",
+    "terra-time-input": "4"
   },
   "devDependencies": {
-    "terra-form-field": "^4.5.0",
-    "terra-modal-manager": "^6.78.0"
+    "terra-form-field": "4",
+    "terra-modal-manager": "6"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

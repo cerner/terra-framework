@@ -1,6 +1,6 @@
 {
   "name": "terra-application-layout",
-  "version": "5.94.0",
+  "version": "5.95.0",
   "description": "The Terra Application Layout is a responsive, themeable layout for building applications.",
   "author": "Cerner Corporation",
   "repository": {
@@ -31,35 +31,35 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
-    "react-router-dom": "^5.0.0",
-    "terra-application-header-layout": "^3.41.0",
-    "terra-application-links": "^6.84.0",
-    "terra-application-menu-layout": "^3.32.0",
-    "terra-application-name": "^3.45.0",
-    "terra-application-utility": "^2.58.0",
-    "terra-breakpoints": "^2.19.0",
-    "terra-icon": "^3.19.0",
-    "terra-modal-manager": "^6.78.0",
-    "terra-navigation-layout": "^5.41.0",
-    "terra-navigation-side-menu": "^2.56.0",
-    "terra-popup": "^6.83.0",
-    "terra-theme-context": "^1.9.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-intl": "^2.8.0 || 3 || 4 || 5",
-    "terra-disclosure-manager": "^4.9.0"
+    "react": "16",
+    "react-dom": "16",
+    "react-intl": "2 || 3 || 4 || 5",
+    "terra-disclosure-manager": "4"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "prop-types": "15",
+    "react-router-dom": "5",
+    "terra-application-header-layout": "3",
+    "terra-application-links": "6",
+    "terra-application-menu-layout": "3",
+    "terra-application-name": "3",
+    "terra-application-utility": "2",
+    "terra-breakpoints": "2",
+    "terra-icon": "3",
+    "terra-modal-manager": "6",
+    "terra-navigation-layout": "5",
+    "terra-navigation-side-menu": "2",
+    "terra-popup": "6",
+    "terra-theme-context": "1"
   },
   "devDependencies": {
-    "terra-action-header": "^2.0.0",
-    "terra-avatar": "^3.8.0",
-    "terra-button": "^3.3.0",
-    "terra-content-container": "^3.0.0",
-    "terra-image": "^3.0.0"
+    "terra-action-header": "2",
+    "terra-avatar": "3",
+    "terra-button": "3",
+    "terra-content-container": "3",
+    "terra-image": "3"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

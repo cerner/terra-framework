@@ -30,20 +30,20 @@
     "NOTICE",
     "README.md"
   ],
-  "dependencies": {
-    "classnames": "^2.2.5",
-    "prop-types": "^15.5.8",
-    "terra-layout": "^4.40.0"
-  },
   "peerDependencies": {
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
-    "react-router-dom": "^5.0.0"
+    "react": "16",
+    "react-dom": "16",
+    "react-router-dom": "5"
+  },
+  "dependencies": {
+    "classnames": "2",
+    "prop-types": "15",
+    "terra-layout": "4"
   },
   "devDependencies": {
-    "react-router-dom": "^5.0.0",
-    "terra-button": "^3.3.0",
-    "terra-icon": "^3.19.0"
+    "react-router-dom": "5",
+    "terra-button": "3",
+    "terra-icon": "3"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
