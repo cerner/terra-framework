@@ -1,6 +1,6 @@
 {
   "name": "@cerner/terra-framework-docs",
-  "version": "1.87.0",
+  "version": "1.88.0",
   "description": "Contains documentation for packages in the terra-framework monorepo",
   "author": "Cerner Corporation",
   "repository": {
@@ -69,7 +69,7 @@
     "terra-modal-manager": "^6.78.0",
     "terra-navigation-layout": "^5.41.0",
     "terra-navigation-prompt": "^1.93.0",
-    "terra-navigation-side-menu": "^2.56.0",
+    "terra-navigation-side-menu": "^2.57.0",
     "terra-notification-dialog": "^4.49.0",
     "terra-popup": "^6.83.0",
     "terra-section-header": "^2.0.0",
