@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import NavigationSideMenu from 'terra-navigation-side-menu';
+import NavigationSideMenu, { VARIANTS } from 'terra-navigation-side-menu';
 import { IconHospital } from 'terra-icon';
 import styles from './NavigationSideMenuDocCommon.module.scss';
 
@@ -75,7 +75,7 @@ class DrillInExample extends React.Component {
           routingStackBack={this.fakeRoutingBack}
           selectedMenuKey={this.state.selectedMenuKey}
           selectedChildKey={this.state.selectedChildKey}
-          variant={NavigationSideMenu.Opts.Variants.DRILL_IN}
+          variant={VARIANTS.DRILL_IN}
         />
       );
     }

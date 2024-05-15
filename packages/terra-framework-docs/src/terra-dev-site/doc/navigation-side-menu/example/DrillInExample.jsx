@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import NavigationSideMenu from 'terra-navigation-side-menu';
+import NavigationSideMenu, { VARIANTS } from 'terra-navigation-side-menu';
 import { IconHospital } from 'terra-icon';
 
 import styles from './NavigationSideMenuExample.module.scss';
@@ -55,7 +55,7 @@ class DrillInDefault extends React.Component {
         selectedMenuKey={this.state.selectedMenuKey}
         selectedChildKey={this.state.selectedChildKey}
         ariaLabel="Sub Menu List"
-        variant={NavigationSideMenu.Opts.Variants.DRILL_IN}
+        variant={VARIANTS.DRILL_IN}
       />
     );
 
