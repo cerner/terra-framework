@@ -7,6 +7,8 @@ import ThemeContext from 'terra-theme-context';
 import * as KeyCode from 'keycode-js';
 import ChevronRight from 'terra-icon/lib/icon/IconChevronRight';
 import VisuallyHiddenText from 'terra-visually-hidden-text';
+import { IconDocuments, IconFolder } from 'terra-icon';
+import VARIANTS from './constants';
 
 import styles from './MenuItem.module.scss';
 
@@ -43,6 +45,23 @@ const propTypes = {
    * tabIndex for the menu item.
    * */
   tabIndex: PropTypes.string,
+  /**
+   * @private
+   * The icon to display to the left for the menu item.
+   */
+  icon: PropTypes.element,
+  /**
+   * If enabled, this prop will show the icon to the left for the menu item.
+   */
+  showIcon: PropTypes.bool,
+  /**
+   * Renders either Navigation Side Menu or Drill-IN
+   */
+  variant: PropTypes.oneOf([VARIANTS.NAVIGATION_SIDE_MENU, VARIANTS.DRILL_IN]),
+  /**
+   * Indicates if menu item should be disabled.
+   */
+  isDisabled: PropTypes.bool,
 };
 
 class MenuItem extends React.Component {
@@ -93,22 +112,34 @@ class MenuItem extends React.Component {
       hasChevron,
       intl,
       isSelected,
+      isDisabled,
       text,
+      icon,
+      variant,
       ...customProps
     } = this.props;
     const theme = this.context;
+
+    const itemIcon = hasChevron && !icon ? <IconFolder /> : (icon || <IconDocuments />);
 
     const itemClassNames = classNames(cx(
       'menu-item',
       { 'is-selected': isSelected && !hasChevron },
       { 'is-active': this.state.active },
+      { 'is-drill-in': (variant === VARIANTS.DRILL_IN) },
       theme.className,
     ),
     customProps.className);
 
+    const listItemClassNames = cx(
+      'list-item',
+      { 'has-border': (variant === VARIANTS.DRILL_IN) },
+      { 'is-disabled': isDisabled },
+    );
+
     return (
       <li
-        className={cx('list-item')}
+        className={listItemClassNames}
         role="none"
       >
         <div
@@ -120,6 +151,7 @@ class MenuItem extends React.Component {
           onKeyDown={this.handleKeyDown}
           aria-haspopup={hasChevron}
         >
+          {variant === VARIANTS.DRILL_IN && itemIcon && <span className={cx('icon')}>{itemIcon}</span>}
           <div className={cx('title')}>
             {this.textRender()}
           </div>

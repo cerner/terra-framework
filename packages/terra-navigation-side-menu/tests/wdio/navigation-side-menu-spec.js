@@ -67,3 +67,63 @@ Terra.describeViewports('Navigation Side Menu', ['medium'], () => {
     });
   });
 });
+
+Terra.describeViewports('DrillIn View', ['medium'], () => {
+  describe('DrillIn display', () => {
+    it('Default DrillIn view display', () => {
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/navigation-side-menu/drill-in');
+      $('#test-menu').waitForDisplayed();
+      Terra.validates.element('drill-in display', { selector: '#test-menu' });
+    });
+  });
+
+  describe('Hover DrillIn display', () => {
+    it('Hover DrillIn display', () => {
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/navigation-side-menu/drill-in');
+      $('#test-menu').waitForDisplayed();
+      $('#test-menu #test-item-1').moveTo();
+      Terra.validates.element('hover drill-in display', { selector: '#test-menu' });
+    });
+  });
+
+  describe('Selected DrillIn display', () => {
+    it('Selected DrillIn display', () => {
+      browser.url('/#/raw/tests/cerner-terra-framework-docs/navigation-side-menu/drill-in');
+      $('#test-menu').waitForDisplayed();
+      $('#test-menu #test-item-1').moveTo();
+      $('#test-menu #test-item-1').click();
+      $('#test-menu #test-item-2').click();
+      Terra.validates.element('selected drill-in display', { selector: '#test-menu' });
+    });
+  });
+
+  describe('DrillIn keyboard Navigation using Arrow Keys', () => {
+    before(() => browser.url('/#/raw/tests/cerner-terra-framework-docs/navigation-side-menu/drill-in'));
+
+    it('Navigates to first DrillIn item', () => {
+      browser.keys(['Tab', 'ArrowDown']);
+      Terra.validates.element('first drill-in item focused', { selector: '#root' });
+    });
+
+    it('Navigate into folder with right arrow', () => {
+      browser.keys(['ArrowRight']);
+      Terra.validates.element('displays drill-in items in folder with right arrow', { selector: '#root' });
+    });
+
+    it('Navigate to DrillIn item with left arrow', () => {
+      browser.keys(['ArrowDown', 'ArrowLeft']);
+      Terra.validates.element('first drill-in item focused with left arrow', { selector: '#root' });
+    });
+
+    it('should focus on second DrillIn item', () => {
+      browser.keys(['ArrowDown']);
+      Terra.validates.element('second drill-in item focused', { selector: '#root' });
+    });
+
+    it('Navigate into folder with no items', () => {
+      browser.keys(['ArrowDown', 'ArrowDown', 'ArrowDown', 'ArrowRight']);
+      Terra.validates.element('displays no results status', { selector: '#root' });
+    });
+  });
+});
+
