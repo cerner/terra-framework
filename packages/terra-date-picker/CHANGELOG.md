@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Fixed
+  * Focus is now retained on the calendar button when the calendar is closed in mobile view.
+
 ## 4.109.0 - (May 14, 2024)
 
 * Changed
