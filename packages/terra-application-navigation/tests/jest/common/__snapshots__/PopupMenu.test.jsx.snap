@@ -70,7 +70,7 @@ exports[`PopupMenu should render prop data 1`] = `
     </div>
     <PopupMenuUser
       userConfig={
-        Object {
+        {
           "detail": "user-detail",
           "imageSrc": "user-src",
           "initials": "user-initials",

@@ -3,7 +3,7 @@
 exports[`UtilityButton correctly applies the theme context className 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "className": "orion-fusion-theme",
       "density": undefined,
       "name": undefined,
@@ -12,7 +12,7 @@ exports[`UtilityButton correctly applies the theme context className 1`] = `
 >
   <InjectIntl(UtilityButton)
     initialSelectedKey="menu"
-    menuItems={Array []}
+    menuItems={[]}
     onChange={[MockFunction]}
     onDisclose={[MockFunction]}
     onRequestClose={[MockFunction]}
@@ -26,8 +26,8 @@ exports[`UtilityButton it should pass in a custom prop 1`] = `
   id="test"
   initialSelectedKey="menu"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -36,8 +36,8 @@ exports[`UtilityButton it should pass in a custom prop 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -52,7 +52,7 @@ exports[`UtilityButton it should pass in a custom prop 1`] = `
       "timeZone": null,
     }
   }
-  menuItems={Array []}
+  menuItems={[]}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -65,8 +65,8 @@ exports[`UtilityButton should render with a title 1`] = `
 <UtilityButton
   initialSelectedKey="menu"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -75,8 +75,8 @@ exports[`UtilityButton should render with a title 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -91,7 +91,7 @@ exports[`UtilityButton should render with a title 1`] = `
       "timeZone": null,
     }
   }
-  menuItems={Array []}
+  menuItems={[]}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -105,8 +105,8 @@ exports[`UtilityButton should render with an accessory 1`] = `
   accessory={<image />}
   initialSelectedKey="menu"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -115,8 +115,8 @@ exports[`UtilityButton should render with an accessory 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -131,7 +131,7 @@ exports[`UtilityButton should render with an accessory 1`] = `
       "timeZone": null,
     }
   }
-  menuItems={Array []}
+  menuItems={[]}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -144,8 +144,8 @@ exports[`UtilityButton should render with default props 1`] = `
 <UtilityButton
   initialSelectedKey="menu"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -154,8 +154,8 @@ exports[`UtilityButton should render with default props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -170,7 +170,7 @@ exports[`UtilityButton should render with default props 1`] = `
       "timeZone": null,
     }
   }
-  menuItems={Array []}
+  menuItems={[]}
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
   onRequestClose={[MockFunction]}
@@ -183,8 +183,8 @@ exports[`UtilityButton should render with menu items 1`] = `
 <UtilityButton
   initialSelectedKey="menu"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -193,8 +193,8 @@ exports[`UtilityButton should render with menu items 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -210,9 +210,9 @@ exports[`UtilityButton should render with menu items 1`] = `
     }
   }
   menuItems={
-    Array [
-      Object {
-        "childKeys": Array [
+    [
+      {
+        "childKeys": [
           "item-1",
           "item-2",
           "item-3",
@@ -226,13 +226,13 @@ exports[`UtilityButton should render with menu items 1`] = `
         "isSelectable": false,
         "isSelected": false,
         "key": "menu",
-        "metaData": Object {
+        "metaData": {
           "otherInformation": "Other Information",
         },
         "title": "Menu",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-1.1",
         ],
         "content": undefined,
@@ -242,8 +242,8 @@ exports[`UtilityButton should render with menu items 1`] = `
         "key": "item-1",
         "title": "Name",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-2.1",
           "item-2.2",
         ],
@@ -253,16 +253,16 @@ exports[`UtilityButton should render with menu items 1`] = `
         "key": "item-2",
         "title": "Profile",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "footer",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-3",
         "title": "Notifications",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-4.1",
           "item-4.2",
           "item-4.3",
@@ -273,59 +273,59 @@ exports[`UtilityButton should render with menu items 1`] = `
         "key": "item-4",
         "title": "Projects",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-1.1",
-        "metaData": Object {
+        "metaData": {
           "otherInformation": "Other Information",
         },
         "title": "John Doe",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-2.1",
         "title": "Gender: Male",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-2.2",
         "title": "Location: Germany",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-4.1",
         "title": "Project 1",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-4.2",
         "title": "Project 2",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-4.3",
         "title": "Project 3",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-5.1",
           "item-5.2",
         ],
@@ -335,32 +335,32 @@ exports[`UtilityButton should render with menu items 1`] = `
         "key": "item-5",
         "title": "Skills",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": true,
         "isSelected": false,
         "key": "item-5.1",
         "title": "Skill 1",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": true,
         "isSelected": false,
         "key": "item-5.2",
         "title": "Skill 2",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "footer",
         "isSelectable": true,
         "isSelected": false,
         "key": "item-6",
         "title": "Logout",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "id": "test-item-7",
         "isSelectable": false,
@@ -368,8 +368,8 @@ exports[`UtilityButton should render with menu items 1`] = `
         "key": "item-7",
         "title": "Drill-down capabilities provide the ability for the end-user to access different levels of information without creating ad hoc queries for each level of information. Instead the user is able to drill down to a detail level, or elevate to the summary level, through pull-down menus or mouse clicks.",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "id": "test-item-8",
         "isReadOnly": true,

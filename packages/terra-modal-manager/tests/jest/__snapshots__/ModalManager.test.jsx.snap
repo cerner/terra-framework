@@ -3,7 +3,7 @@
 exports[`ModalManager correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -16,7 +16,7 @@ exports[`ModalManager correctly applies the theme context className 1`] = `
     <withDisclosureManager(DisclosureManager)
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "modal",
         ]
       }
@@ -25,7 +25,7 @@ exports[`ModalManager correctly applies the theme context className 1`] = `
       <DisclosureManager
         render={[Function]}
         supportedDisclosureTypes={
-          Array [
+          [
             "modal",
           ]
         }
@@ -76,8 +76,8 @@ exports[`ModalManager should disclose content in Modal 1`] = `
 <ModalManager
   closeOnOutsideClick={false}
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -86,8 +86,8 @@ exports[`ModalManager should disclose content in Modal 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -108,7 +108,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "modal",
       ]
     }
@@ -117,7 +117,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "modal",
         ]
       }
@@ -126,8 +126,8 @@ exports[`ModalManager should disclose content in Modal 1`] = `
       <div
         className="container"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -136,8 +136,8 @@ exports[`ModalManager should disclose content in Modal 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -316,13 +316,13 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                   >
                     <ForwardRef(FocusLockUI)
                       as={
-                        Object {
+                        {
                           "$$typeof": Symbol(react.forward_ref),
-                          "classNames": Object {
+                          "classNames": {
                             "fullWidth": "width-before-scroll-bar",
                             "zeroRight": "right-scroll-bar-position",
                           },
-                          "defaultProps": Object {
+                          "defaultProps": {
                             "enabled": true,
                             "inert": false,
                             "removeScrollBar": true,
@@ -332,7 +332,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       }
                       disabled={false}
                       lockProps={
-                        Object {
+                        {
                           "allowPinchZoom": undefined,
                           "as": undefined,
                           "enabled": true,
@@ -354,7 +354,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                         data-focus-guard={true}
                         key="guard-first"
                         style={
-                          Object {
+                          {
                             "height": "0px",
                             "left": "1px",
                             "overflow": "hidden",
@@ -370,7 +370,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                         autoFocus={true}
                         crossFrame={true}
                         disabled={false}
-                        id={Object {}}
+                        id={{}}
                         observed={
                           <div
                             data-focus-lock-disabled="false"
@@ -441,12 +441,12 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                         onDeactivation={[Function]}
                         persistentFocus={false}
                         returnFocus={[Function]}
-                        shards={Array []}
+                        shards={[]}
                         sideCar={
-                          Object {
+                          {
                             "assignMedium": [Function],
                             "assignSyncMedium": [Function],
-                            "options": Object {
+                            "options": {
                               "async": true,
                               "ssr": true,
                             },
@@ -459,7 +459,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                           autoFocus={true}
                           crossFrame={true}
                           disabled={false}
-                          id={Object {}}
+                          id={{}}
                           observed={
                             <div
                               data-focus-lock-disabled="false"
@@ -530,12 +530,12 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                           onDeactivation={[Function]}
                           persistentFocus={false}
                           returnFocus={[Function]}
-                          shards={Array []}
+                          shards={[]}
                           sideCar={
-                            Object {
+                            {
                               "assignMedium": [Function],
                               "assignSyncMedium": [Function],
-                              "options": Object {
+                              "options": {
                                 "async": true,
                                 "ssr": true,
                               },
@@ -548,7 +548,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                             autoFocus={true}
                             crossFrame={true}
                             disabled={false}
-                            id={Object {}}
+                            id={{}}
                             observed={
                               <div
                                 data-focus-lock-disabled="false"
@@ -619,13 +619,13 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                             onDeactivation={[Function]}
                             persistentFocus={false}
                             returnFocus={[Function]}
-                            shards={Array []}
+                            shards={[]}
                           >
                             <FocusWatcher
                               autoFocus={true}
                               crossFrame={true}
                               disabled={false}
-                              id={Object {}}
+                              id={{}}
                               observed={
                                 <div
                                   data-focus-lock-disabled="false"
@@ -696,7 +696,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               onDeactivation={[Function]}
                               persistentFocus={false}
                               returnFocus={[Function]}
-                              shards={Array []}
+                              shards={[]}
                             />
                           </SideEffect(FocusWatcher)>
                         </SideCar>
@@ -716,7 +716,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                           allowPinchZoom={false}
                           inert={false}
                           lockRef={
-                            Object {
+                            {
                               "current": <div
                                 data-focus-lock-disabled="false"
                               >
@@ -786,10 +786,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                           removeScrollBar={true}
                           setCallbacks={[Function]}
                           sideCar={
-                            Object {
+                            {
                               "assignMedium": [Function],
                               "assignSyncMedium": [Function],
-                              "options": Object {
+                              "options": {
                                 "async": true,
                                 "ssr": false,
                               },
@@ -802,7 +802,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                             allowPinchZoom={false}
                             inert={false}
                             lockRef={
-                              Object {
+                              {
                                 "current": <div
                                   data-focus-lock-disabled="false"
                                 >
@@ -872,10 +872,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                             removeScrollBar={true}
                             setCallbacks={[Function]}
                             sideCar={
-                              Object {
+                              {
                                 "assignMedium": [Function],
                                 "assignSyncMedium": [Function],
-                                "options": Object {
+                                "options": {
                                   "async": true,
                                   "ssr": false,
                                 },
@@ -888,7 +888,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               allowPinchZoom={false}
                               inert={false}
                               lockRef={
-                                Object {
+                                {
                                   "current": <div
                                     data-focus-lock-disabled="false"
                                   >
@@ -1028,7 +1028,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               <FormattedMessage
                                 id="Terra.AbstractModal.BeginModalDialog"
                                 values={
-                                  Object {
+                                  {
                                     "title": "Modal",
                                   }
                                 }
@@ -1066,10 +1066,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                         <SlideGroup
                                           isAnimated={true}
                                           items={
-                                            Array [
+                                            [
                                               <Context.Provider
                                                 value={
-                                                  Object {
+                                                  {
                                                     "register": [Function],
                                                   }
                                                 }
@@ -1105,7 +1105,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                                             >
                                               <CSSTransition
                                                 classNames={
-                                                  Object {
+                                                  {
                                                     "enter": "enter",
                                                     "enterActive": "enter-active",
                                                     "exit": "exit",
@@ -1201,7 +1201,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                               <FormattedMessage
                                 id="Terra.AbstractModal.EndModalDialog"
                                 values={
-                                  Object {
+                                  {
                                     "title": "Modal",
                                   }
                                 }
@@ -1223,7 +1223,7 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       <div
                         data-focus-guard={true}
                         style={
-                          Object {
+                          {
                             "height": "0px",
                             "left": "1px",
                             "overflow": "hidden",
@@ -1240,10 +1240,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                       onClickOutside={null}
                       setLockProps={[Function]}
                       sideCar={
-                        Object {
+                        {
                           "assignMedium": [Function],
                           "assignSyncMedium": [Function],
-                          "options": Object {
+                          "options": {
                             "async": true,
                             "ssr": false,
                           },
@@ -1256,10 +1256,10 @@ exports[`ModalManager should disclose content in Modal 1`] = `
                         onClickOutside={null}
                         setLockProps={[Function]}
                         sideCar={
-                          Object {
+                          {
                             "assignMedium": [Function],
                             "assignSyncMedium": [Function],
-                            "options": Object {
+                            "options": {
                               "async": true,
                               "ssr": false,
                             },
@@ -1333,8 +1333,8 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
   closeOnOutsideClick={false}
   id="my-modal-manager"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1343,8 +1343,8 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1365,7 +1365,7 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "modal",
       ]
     }
@@ -1374,7 +1374,7 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "modal",
         ]
       }
@@ -1384,8 +1384,8 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
         className="container test"
         id="my-modal-manager"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -1394,8 +1394,8 @@ exports[`ModalManager should render the ModalManager with custom props 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -1452,8 +1452,8 @@ exports[`ModalManager should render the ModalManager with custom zIndex 1`] = `
 <ModalManager
   closeOnOutsideClick={false}
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1462,8 +1462,8 @@ exports[`ModalManager should render the ModalManager with custom zIndex 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1484,7 +1484,7 @@ exports[`ModalManager should render the ModalManager with custom zIndex 1`] = `
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "modal",
       ]
     }
@@ -1493,7 +1493,7 @@ exports[`ModalManager should render the ModalManager with custom zIndex 1`] = `
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "modal",
         ]
       }
@@ -1502,8 +1502,8 @@ exports[`ModalManager should render the ModalManager with custom zIndex 1`] = `
       <div
         className="container"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -1512,8 +1512,8 @@ exports[`ModalManager should render the ModalManager with custom zIndex 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -1570,8 +1570,8 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
 <ModalManager
   closeOnOutsideClick={false}
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1580,8 +1580,8 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1602,7 +1602,7 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
   <withDisclosureManager(DisclosureManager)
     render={[Function]}
     supportedDisclosureTypes={
-      Array [
+      [
         "modal",
       ]
     }
@@ -1611,7 +1611,7 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
     <DisclosureManager
       render={[Function]}
       supportedDisclosureTypes={
-        Array [
+        [
           "modal",
         ]
       }
@@ -1620,8 +1620,8 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
       <div
         className="container"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -1630,8 +1630,8 @@ exports[`ModalManager should render the ModalManager with defaults 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],

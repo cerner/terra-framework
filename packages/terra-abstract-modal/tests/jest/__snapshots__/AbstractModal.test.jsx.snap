@@ -3,8 +3,8 @@
 exports[`correctly applies the theme context className 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -38,8 +38,8 @@ exports[`correctly applies the theme context className 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -48,8 +48,8 @@ exports[`correctly applies the theme context className 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -126,8 +126,8 @@ exports[`correctly applies the theme context className 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -136,8 +136,8 @@ exports[`correctly applies the theme context className 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -177,8 +177,8 @@ exports[`correctly applies the theme context className 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000 orion-fusion-theme"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -187,8 +187,8 @@ exports[`correctly applies the theme context className 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -214,7 +214,7 @@ exports[`correctly applies the theme context className 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -243,7 +243,7 @@ exports[`correctly applies the theme context className 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -277,8 +277,8 @@ exports[`correctly applies the theme context className 1`] = `
 exports[`should mount an open modal 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -287,8 +287,8 @@ exports[`should mount an open modal 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -312,8 +312,8 @@ exports[`should mount an open modal 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -322,8 +322,8 @@ exports[`should mount an open modal 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -400,8 +400,8 @@ exports[`should mount an open modal 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -410,8 +410,8 @@ exports[`should mount an open modal 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -451,8 +451,8 @@ exports[`should mount an open modal 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -461,8 +461,8 @@ exports[`should mount an open modal 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -488,7 +488,7 @@ exports[`should mount an open modal 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -517,7 +517,7 @@ exports[`should mount an open modal 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -551,8 +551,8 @@ exports[`should mount an open modal 1`] = `
 exports[`should mount an open modal 7000 z-index 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -561,8 +561,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -587,8 +587,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -597,8 +597,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -675,8 +675,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -685,8 +685,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -726,8 +726,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
               aria-modal="true"
               className="abstract-modal layer-7000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -736,8 +736,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -763,7 +763,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -792,7 +792,7 @@ exports[`should mount an open modal 7000 z-index 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -826,8 +826,8 @@ exports[`should mount an open modal 7000 z-index 1`] = `
 exports[`should mount an open modal 8000 z-index 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -836,8 +836,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -862,8 +862,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -872,8 +872,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -950,8 +950,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -960,8 +960,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1001,8 +1001,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
               aria-modal="true"
               className="abstract-modal layer-8000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -1011,8 +1011,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1038,7 +1038,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1067,7 +1067,7 @@ exports[`should mount an open modal 8000 z-index 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1101,8 +1101,8 @@ exports[`should mount an open modal 8000 z-index 1`] = `
 exports[`should mount an open modal 9000 z-index 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1111,8 +1111,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1137,8 +1137,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -1147,8 +1147,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -1225,8 +1225,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1235,8 +1235,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1276,8 +1276,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
               aria-modal="true"
               className="abstract-modal layer-9000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -1286,8 +1286,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1313,7 +1313,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1342,7 +1342,7 @@ exports[`should mount an open modal 9000 z-index 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1376,8 +1376,8 @@ exports[`should mount an open modal 9000 z-index 1`] = `
 exports[`should mount an open modal set to fullscreen 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1386,8 +1386,8 @@ exports[`should mount an open modal set to fullscreen 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1412,8 +1412,8 @@ exports[`should mount an open modal set to fullscreen 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -1422,8 +1422,8 @@ exports[`should mount an open modal set to fullscreen 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -1500,8 +1500,8 @@ exports[`should mount an open modal set to fullscreen 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1510,8 +1510,8 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1551,8 +1551,8 @@ exports[`should mount an open modal set to fullscreen 1`] = `
               aria-modal="true"
               className="abstract-modal is-fullscreen layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -1561,8 +1561,8 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1588,7 +1588,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1617,7 +1617,7 @@ exports[`should mount an open modal set to fullscreen 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1652,8 +1652,8 @@ exports[`should mount an open modal with custom props 1`] = `
 <ModalExample
   id="custom-props"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1662,8 +1662,8 @@ exports[`should mount an open modal with custom props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1688,8 +1688,8 @@ exports[`should mount an open modal with custom props 1`] = `
       closeOnOutsideClick={true}
       id="custom-props"
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -1698,8 +1698,8 @@ exports[`should mount an open modal with custom props 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -1778,8 +1778,8 @@ exports[`should mount an open modal with custom props 1`] = `
             closeOnOutsideClick={true}
             id="custom-props"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1788,8 +1788,8 @@ exports[`should mount an open modal with custom props 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1830,8 +1830,8 @@ exports[`should mount an open modal with custom props 1`] = `
               className="abstract-modal layer-6000"
               id="custom-props"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -1840,8 +1840,8 @@ exports[`should mount an open modal with custom props 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1867,7 +1867,7 @@ exports[`should mount an open modal with custom props 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1896,7 +1896,7 @@ exports[`should mount an open modal with custom props 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -1931,8 +1931,8 @@ exports[`should mount an open modal with modal class name 1`] = `
 <ModalExample
   classNameModal="modal-custom-class"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1941,8 +1941,8 @@ exports[`should mount an open modal with modal class name 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1966,8 +1966,8 @@ exports[`should mount an open modal with modal class name 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -1976,8 +1976,8 @@ exports[`should mount an open modal with modal class name 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -2054,8 +2054,8 @@ exports[`should mount an open modal with modal class name 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2064,8 +2064,8 @@ exports[`should mount an open modal with modal class name 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2105,8 +2105,8 @@ exports[`should mount an open modal with modal class name 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000 modal-custom-class"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2115,8 +2115,8 @@ exports[`should mount an open modal with modal class name 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2142,7 +2142,7 @@ exports[`should mount an open modal with modal class name 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -2171,7 +2171,7 @@ exports[`should mount an open modal with modal class name 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -2206,8 +2206,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
 <ModalExample
   classNameOverlay="overlay-custom-class"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -2216,8 +2216,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -2241,8 +2241,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -2251,8 +2251,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -2329,8 +2329,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
             classNameOverlay="overlay-custom-class"
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2339,8 +2339,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2380,8 +2380,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2390,8 +2390,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2417,7 +2417,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -2446,7 +2446,7 @@ exports[`should mount an open modal with overlay class name 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -2480,8 +2480,8 @@ exports[`should mount an open modal with overlay class name 1`] = `
 exports[`should mount an open modal with role 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -2490,8 +2490,8 @@ exports[`should mount an open modal with role 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -2516,8 +2516,8 @@ exports[`should mount an open modal with role 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -2526,8 +2526,8 @@ exports[`should mount an open modal with role 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -2604,8 +2604,8 @@ exports[`should mount an open modal with role 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2614,8 +2614,8 @@ exports[`should mount an open modal with role 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2655,8 +2655,8 @@ exports[`should mount an open modal with role 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2665,8 +2665,8 @@ exports[`should mount an open modal with role 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2692,7 +2692,7 @@ exports[`should mount an open modal with role 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -2721,7 +2721,7 @@ exports[`should mount an open modal with role 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -2755,8 +2755,8 @@ exports[`should mount an open modal with role 1`] = `
 exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -2765,8 +2765,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -2791,8 +2791,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -2801,8 +2801,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -2879,8 +2879,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2889,8 +2889,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2930,8 +2930,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -2940,8 +2940,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -2967,7 +2967,7 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -2996,7 +2996,7 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -3030,8 +3030,8 @@ exports[`should mount an open modal with shouldTrapFocus set to false 1`] = `
 exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -3040,8 +3040,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -3066,8 +3066,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -3076,8 +3076,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -3174,8 +3174,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -3184,8 +3184,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -3229,13 +3229,13 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
               >
                 <ForwardRef(FocusLockUI)
                   as={
-                    Object {
+                    {
                       "$$typeof": Symbol(react.forward_ref),
-                      "classNames": Object {
+                      "classNames": {
                         "fullWidth": "width-before-scroll-bar",
                         "zeroRight": "right-scroll-bar-position",
                       },
-                      "defaultProps": Object {
+                      "defaultProps": {
                         "enabled": true,
                         "inert": false,
                         "removeScrollBar": true,
@@ -3245,7 +3245,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                   }
                   disabled={false}
                   lockProps={
-                    Object {
+                    {
                       "allowPinchZoom": undefined,
                       "as": undefined,
                       "enabled": true,
@@ -3267,7 +3267,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                     data-focus-guard={true}
                     key="guard-first"
                     style={
-                      Object {
+                      {
                         "height": "0px",
                         "left": "1px",
                         "overflow": "hidden",
@@ -3283,7 +3283,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                     autoFocus={true}
                     crossFrame={true}
                     disabled={false}
-                    id={Object {}}
+                    id={{}}
                     observed={
                       <div
                         data-focus-lock-disabled="false"
@@ -3328,12 +3328,12 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                     onDeactivation={[Function]}
                     persistentFocus={false}
                     returnFocus={[Function]}
-                    shards={Array []}
+                    shards={[]}
                     sideCar={
-                      Object {
+                      {
                         "assignMedium": [Function],
                         "assignSyncMedium": [Function],
-                        "options": Object {
+                        "options": {
                           "async": true,
                           "ssr": true,
                         },
@@ -3346,7 +3346,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                       autoFocus={true}
                       crossFrame={true}
                       disabled={false}
-                      id={Object {}}
+                      id={{}}
                       observed={
                         <div
                           data-focus-lock-disabled="false"
@@ -3391,12 +3391,12 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                       onDeactivation={[Function]}
                       persistentFocus={false}
                       returnFocus={[Function]}
-                      shards={Array []}
+                      shards={[]}
                       sideCar={
-                        Object {
+                        {
                           "assignMedium": [Function],
                           "assignSyncMedium": [Function],
-                          "options": Object {
+                          "options": {
                             "async": true,
                             "ssr": true,
                           },
@@ -3409,7 +3409,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                         autoFocus={true}
                         crossFrame={true}
                         disabled={false}
-                        id={Object {}}
+                        id={{}}
                         observed={
                           <div
                             data-focus-lock-disabled="false"
@@ -3454,13 +3454,13 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                         onDeactivation={[Function]}
                         persistentFocus={false}
                         returnFocus={[Function]}
-                        shards={Array []}
+                        shards={[]}
                       >
                         <FocusWatcher
                           autoFocus={true}
                           crossFrame={true}
                           disabled={false}
-                          id={Object {}}
+                          id={{}}
                           observed={
                             <div
                               data-focus-lock-disabled="false"
@@ -3505,7 +3505,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                           onDeactivation={[Function]}
                           persistentFocus={false}
                           returnFocus={[Function]}
-                          shards={Array []}
+                          shards={[]}
                         />
                       </SideEffect(FocusWatcher)>
                     </SideCar>
@@ -3525,7 +3525,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                       allowPinchZoom={false}
                       inert={false}
                       lockRef={
-                        Object {
+                        {
                           "current": <div
                             data-focus-lock-disabled="false"
                           >
@@ -3569,10 +3569,10 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                       removeScrollBar={true}
                       setCallbacks={[Function]}
                       sideCar={
-                        Object {
+                        {
                           "assignMedium": [Function],
                           "assignSyncMedium": [Function],
-                          "options": Object {
+                          "options": {
                             "async": true,
                             "ssr": false,
                           },
@@ -3585,7 +3585,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                         allowPinchZoom={false}
                         inert={false}
                         lockRef={
-                          Object {
+                          {
                             "current": <div
                               data-focus-lock-disabled="false"
                             >
@@ -3629,10 +3629,10 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                         removeScrollBar={true}
                         setCallbacks={[Function]}
                         sideCar={
-                          Object {
+                          {
                             "assignMedium": [Function],
                             "assignSyncMedium": [Function],
-                            "options": Object {
+                            "options": {
                               "async": true,
                               "ssr": false,
                             },
@@ -3645,7 +3645,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                           allowPinchZoom={false}
                           inert={false}
                           lockRef={
-                            Object {
+                            {
                               "current": <div
                                 data-focus-lock-disabled="false"
                               >
@@ -3749,8 +3749,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                         aria-modal="true"
                         className="abstract-modal layer-6000"
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -3759,8 +3759,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -3786,7 +3786,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                           <FormattedMessage
                             id="Terra.AbstractModal.BeginModalDialogTitle"
                             values={
-                              Object {
+                              {
                                 "title": "Terra Modal",
                               }
                             }
@@ -3815,7 +3815,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                           <FormattedMessage
                             id="Terra.AbstractModal.EndModalDialogTitle"
                             values={
-                              Object {
+                              {
                                 "title": "Terra Modal",
                               }
                             }
@@ -3837,7 +3837,7 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                   <div
                     data-focus-guard={true}
                     style={
-                      Object {
+                      {
                         "height": "0px",
                         "left": "1px",
                         "overflow": "hidden",
@@ -3854,10 +3854,10 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                   onClickOutside={[Function]}
                   setLockProps={[Function]}
                   sideCar={
-                    Object {
+                    {
                       "assignMedium": [Function],
                       "assignSyncMedium": [Function],
-                      "options": Object {
+                      "options": {
                         "async": true,
                         "ssr": false,
                       },
@@ -3870,10 +3870,10 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
                     onClickOutside={[Function]}
                     setLockProps={[Function]}
                     sideCar={
-                      Object {
+                      {
                         "assignMedium": [Function],
                         "assignSyncMedium": [Function],
-                        "options": Object {
+                        "options": {
                           "async": true,
                           "ssr": false,
                         },
@@ -3917,8 +3917,8 @@ exports[`should mount an open modal with shouldTrapFocus set to true 1`] = `
 exports[`should render the correct snapshot for iPads 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -3927,8 +3927,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -3952,8 +3952,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -3962,8 +3962,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -4040,8 +4040,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -4050,8 +4050,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -4091,8 +4091,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -4101,8 +4101,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -4128,7 +4128,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -4157,7 +4157,7 @@ exports[`should render the correct snapshot for iPads 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -4191,8 +4191,8 @@ exports[`should render the correct snapshot for iPads 1`] = `
 exports[`should render the correct snapshot for iPhones 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -4201,8 +4201,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -4226,8 +4226,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -4236,8 +4236,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -4314,8 +4314,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -4324,8 +4324,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -4365,8 +4365,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -4375,8 +4375,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -4402,7 +4402,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -4431,7 +4431,7 @@ exports[`should render the correct snapshot for iPhones 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -4465,8 +4465,8 @@ exports[`should render the correct snapshot for iPhones 1`] = `
 exports[`should render the correct snapshot for iPods 1`] = `
 <ModalExample
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -4475,8 +4475,8 @@ exports[`should render the correct snapshot for iPods 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -4500,8 +4500,8 @@ exports[`should render the correct snapshot for iPods 1`] = `
       closeOnEsc={true}
       closeOnOutsideClick={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -4510,8 +4510,8 @@ exports[`should render the correct snapshot for iPods 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -4588,8 +4588,8 @@ exports[`should render the correct snapshot for iPods 1`] = `
             classNameOverlay={null}
             closeOnOutsideClick={true}
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -4598,8 +4598,8 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -4639,8 +4639,8 @@ exports[`should render the correct snapshot for iPods 1`] = `
               aria-modal="true"
               className="abstract-modal layer-6000"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -4649,8 +4649,8 @@ exports[`should render the correct snapshot for iPods 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -4676,7 +4676,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.BeginModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -4705,7 +4705,7 @@ exports[`should render the correct snapshot for iPods 1`] = `
                 <FormattedMessage
                   id="Terra.AbstractModal.EndModalDialogTitle"
                   values={
-                    Object {
+                    {
                       "title": "Terra Modal",
                     }
                   }
@@ -4745,8 +4745,8 @@ exports[`should shallow an open modal 1`] = `
     closeOnEsc={true}
     closeOnOutsideClick={true}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -4755,8 +4755,8 @@ exports[`should shallow an open modal 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -4810,8 +4810,8 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
     closeOnEsc={true}
     closeOnOutsideClick={true}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -4820,8 +4820,8 @@ exports[`should shallow an open modal 6000 z-index 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -4875,8 +4875,8 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
     closeOnEsc={true}
     closeOnOutsideClick={true}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -4885,8 +4885,8 @@ exports[`should shallow an open modal 7000 z-index 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -4940,8 +4940,8 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
     closeOnEsc={true}
     closeOnOutsideClick={true}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -4950,8 +4950,8 @@ exports[`should shallow an open modal 8000 z-index 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -5005,8 +5005,8 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
     closeOnEsc={true}
     closeOnOutsideClick={true}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -5015,8 +5015,8 @@ exports[`should shallow an open modal 9000 z-index 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],

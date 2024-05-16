@@ -15,7 +15,7 @@ exports[`TabPane correctly applies the theme context className 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }
@@ -54,7 +54,7 @@ exports[`TabPane should render a default component with label 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }
@@ -93,7 +93,7 @@ exports[`TabPane should render with a custom display when provided 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }
@@ -130,7 +130,7 @@ exports[`TabPane should render with icon and label 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }
@@ -172,7 +172,7 @@ exports[`TabPane should render with icon only when indicated 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }

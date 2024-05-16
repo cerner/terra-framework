@@ -89,8 +89,8 @@ exports[`Default File Path should not render the last item as a hyperlink 1`] = 
 exports[`Default File Path should render a default component 1`] = `
 <FilePath
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -99,8 +99,8 @@ exports[`Default File Path should render a default component 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -116,18 +116,18 @@ exports[`Default File Path should render a default component 1`] = `
     }
   }
   items={
-    Array [
-      Object {
+    [
+      {
         "href": "https://oracle.com",
         "key": "oracle",
         "text": "Oracle",
       },
-      Object {
+      {
         "href": "https://cerner.com",
         "key": "cerner",
         "text": "Cerner",
       },
-      Object {
+      {
         "href": "https://google.com",
         "key": "google",
         "text": "Google",
@@ -140,8 +140,8 @@ exports[`Default File Path should render a default component 1`] = `
 exports[`On Click File Path should render a component with on clickable items 1`] = `
 <FilePath
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -150,8 +150,8 @@ exports[`On Click File Path should render a component with on clickable items 1`
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -167,18 +167,18 @@ exports[`On Click File Path should render a component with on clickable items 1`
     }
   }
   items={
-    Array [
-      Object {
+    [
+      {
         "key": "oracle",
         "onClick": [MockFunction],
         "text": "Oracle",
       },
-      Object {
+      {
         "key": "cerner",
         "onClick": [MockFunction],
         "text": "Cerner",
       },
-      Object {
+      {
         "key": "google",
         "text": "Google",
       },
@@ -201,11 +201,11 @@ exports[`On Click File Path should trigger the correct on click per item 1`] = `
       key="oracle"
       onClick={
         [MockFunction] {
-          "calls": Array [
-            Array [],
+          "calls": [
+            [],
           ],
-          "results": Array [
-            Object {
+          "results": [
+            {
               "type": "return",
               "value": undefined,
             },
@@ -223,11 +223,11 @@ exports[`On Click File Path should trigger the correct on click per item 1`] = `
       key="cerner"
       onClick={
         [MockFunction] {
-          "calls": Array [
-            Array [],
+          "calls": [
+            [],
           ],
-          "results": Array [
-            Object {
+          "results": [
+            {
               "type": "return",
               "value": undefined,
             },

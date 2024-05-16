@@ -14,14 +14,14 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
     overflowColumns={
-      Array [
-        Object {
+      [
+        {
           "displayName": "March 16",
           "id": "Column-1",
           "isResizable": false,
           "isSelectable": false,
         },
-        Object {
+        {
           "displayName": "March 17",
           "id": "Column-2",
           "isResizable": false,
@@ -30,8 +30,8 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
       ]
     }
     pinnedColumns={
-      Array [
-        Object {
+      [
+        {
           "displayName": "Vitals",
           "id": "Column-0",
           "isResizable": false,
@@ -42,69 +42,69 @@ exports[`FlowsheetDataGrid renders the row header column as pinned and remaining
     rowHeaderIndex={0}
     rowHeight="2.5rem"
     rows={
-      Array [
-        Object {
-          "cells": Array [
-            Object {
+      [
+        {
+          "cells": [
+            {
               "content": "Heart Rate Monitored (bpm)",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "65",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "66",
               "isSelectable": true,
             },
           ],
           "id": "1",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Temperature Oral (degC)",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "36.7",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "36.9",
               "isSelectable": true,
             },
           ],
           "id": "2",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Cardiac Index (L/min/m2)",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "2.25",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "2.28",
               "isSelectable": true,
             },
           ],
           "id": "3",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Oxygen Flow Rate (L/min)",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "63",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "47",
               "isSelectable": true,
             },
@@ -136,14 +136,14 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
     onCellRangeSelect={[Function]}
     onCellSelect={[Function]}
     overflowColumns={
-      Array [
-        Object {
+      [
+        {
           "displayName": "March 16",
           "id": "Column-1",
           "isResizable": false,
           "isSelectable": false,
         },
-        Object {
+        {
           "displayName": "March 17",
           "id": "Column-2",
           "isResizable": false,
@@ -152,8 +152,8 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
       ]
     }
     pinnedColumns={
-      Array [
-        Object {
+      [
+        {
           "displayName": "Vitals",
           "id": "Column-0",
           "isResizable": false,
@@ -163,14 +163,14 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
     }
     rowHeaderIndex={0}
     rows={
-      Array [
-        Object {
-          "cells": Array [
-            Object {
+      [
+        {
+          "cells": [
+            {
               "content": "Heart Rate Monitored (bpm)",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": <React.Fragment>
                 <span
                   aria-hidden={true}
@@ -183,24 +183,24 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
               </React.Fragment>,
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "66",
               "isSelectable": true,
             },
           ],
           "id": "1",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Temperature Oral (degC)",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "36.7",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": <React.Fragment>
                 <span
                   aria-hidden={true}
@@ -216,13 +216,13 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
           ],
           "id": "2",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Cardiac Index (L/min/m2)",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": <React.Fragment>
                 <span
                   aria-hidden={true}
@@ -235,20 +235,20 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
               </React.Fragment>,
               "isSelectable": true,
             },
-            Object {
+            {
               "content": "2.28",
               "isSelectable": true,
             },
           ],
           "id": "3",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "",
               "isSelectable": true,
             },
-            Object {
+            {
               "content": <React.Fragment>
                 <span
                   aria-hidden={true}
@@ -261,7 +261,7 @@ exports[`FlowsheetDataGrid replaces non-header empty, null, or "--" cell content
               </React.Fragment>,
               "isSelectable": true,
             },
-            Object {
+            {
               "content": <React.Fragment>
                 <span
                   aria-hidden={true}

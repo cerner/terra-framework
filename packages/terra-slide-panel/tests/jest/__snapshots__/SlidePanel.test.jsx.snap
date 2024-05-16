@@ -371,8 +371,8 @@ exports[`When a SlidePanel is rendered should render a SlidePanel with the given
 exports[`When a SlidePanel is rendered should render a default SlidePanel with no props 1`] = `
 <SlidePanel
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -381,8 +381,8 @@ exports[`When a SlidePanel is rendered should render a default SlidePanel with n
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -406,8 +406,8 @@ exports[`When a SlidePanel is rendered should render a default SlidePanel with n
 exports[`When custom props are used correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -416,8 +416,8 @@ exports[`When custom props are used correctly applies the theme context classNam
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -433,7 +433,7 @@ exports[`When custom props are used correctly applies the theme context classNam
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -441,8 +441,8 @@ exports[`When custom props are used correctly applies the theme context classNam
   <InjectIntl(SlidePanel)>
     <SlidePanel
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -451,8 +451,8 @@ exports[`When custom props are used correctly applies the theme context classNam
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],

@@ -4,7 +4,7 @@ exports[`ApplicationHeaderUtility it should pass in a custom prop 1`] = `
 <InjectIntl(UtilityButton)
   id="test"
   initialSelectedKey="menu"
-  menuItems={Array []}
+  menuItems={[]}
   menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
@@ -16,7 +16,7 @@ exports[`ApplicationHeaderUtility it should pass in a custom prop 1`] = `
 exports[`ApplicationHeaderUtility should render with a default role when no role is specified 1`] = `
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
-  menuItems={Array []}
+  menuItems={[]}
   menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
@@ -29,7 +29,7 @@ exports[`ApplicationHeaderUtility should render with a default role when no role
 exports[`ApplicationHeaderUtility should render with a title 1`] = `
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
-  menuItems={Array []}
+  menuItems={[]}
   menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
@@ -42,7 +42,7 @@ exports[`ApplicationHeaderUtility should render with a title 1`] = `
 exports[`ApplicationHeaderUtility should render with a user specified role 1`] = `
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
-  menuItems={Array []}
+  menuItems={[]}
   menuRole="menu"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
@@ -56,7 +56,7 @@ exports[`ApplicationHeaderUtility should render with an accessory 1`] = `
 <InjectIntl(UtilityButton)
   accessory={<image />}
   initialSelectedKey="menu"
-  menuItems={Array []}
+  menuItems={[]}
   menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
@@ -68,7 +68,7 @@ exports[`ApplicationHeaderUtility should render with an accessory 1`] = `
 exports[`ApplicationHeaderUtility should render with default props 1`] = `
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
-  menuItems={Array []}
+  menuItems={[]}
   menuRole="navigation"
   onChange={[MockFunction]}
   onDisclose={[MockFunction]}
@@ -81,9 +81,9 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
 <InjectIntl(UtilityButton)
   initialSelectedKey="menu"
   menuItems={
-    Array [
-      Object {
-        "childKeys": Array [
+    [
+      {
+        "childKeys": [
           "item-1",
           "item-2",
           "item-3",
@@ -97,13 +97,13 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
         "isSelectable": false,
         "isSelected": false,
         "key": "menu",
-        "metaData": Object {
+        "metaData": {
           "otherInformation": "Other Information",
         },
         "title": "Menu",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-1.1",
         ],
         "content": undefined,
@@ -113,8 +113,8 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
         "key": "item-1",
         "title": "Name",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-2.1",
           "item-2.2",
         ],
@@ -124,16 +124,16 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
         "key": "item-2",
         "title": "Profile",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "footer",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-3",
         "title": "Notifications",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-4.1",
           "item-4.2",
           "item-4.3",
@@ -144,59 +144,59 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
         "key": "item-4",
         "title": "Projects",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-1.1",
-        "metaData": Object {
+        "metaData": {
           "otherInformation": "Other Information",
         },
         "title": "John Doe",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-2.1",
         "title": "Gender: Male",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-2.2",
         "title": "Location: Germany",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-4.1",
         "title": "Project 1",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-4.2",
         "title": "Project 2",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": false,
         "isSelected": false,
         "key": "item-4.3",
         "title": "Project 3",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "item-5.1",
           "item-5.2",
         ],
@@ -206,32 +206,32 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
         "key": "item-5",
         "title": "Skills",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": true,
         "isSelected": false,
         "key": "item-5.1",
         "title": "Skill 1",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "isSelectable": true,
         "isSelected": false,
         "key": "item-5.2",
         "title": "Skill 2",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "footer",
         "isSelectable": true,
         "isSelected": false,
         "key": "item-6",
         "title": "Logout",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "id": "test-item-7",
         "isSelectable": false,
@@ -239,8 +239,8 @@ exports[`ApplicationHeaderUtility should render with menu items 1`] = `
         "key": "item-7",
         "title": "Drill-down capabilities provide the ability for the end-user to access different levels of information without creating ad hoc queries for each level of information. Instead the user is able to drill down to a detail level, or elevate to the summary level, through pull-down menus or mouse clicks.",
       },
-      Object {
-        "childKeys": Array [],
+      {
+        "childKeys": [],
         "contentLocation": "body",
         "id": "test-item-8",
         "isReadOnly": true,

@@ -3,8 +3,8 @@
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -30,7 +30,7 @@ exports[`correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -43,8 +43,8 @@ exports[`correctly applies the theme context className 1`] = `
       disabled={false}
       errorId=""
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -53,8 +53,8 @@ exports[`correctly applies the theme context className 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -92,13 +92,13 @@ exports[`correctly applies the theme context className 1`] = `
                 buttonRefCallback={[Function]}
                 errorId=""
                 excludeDates={
-                  Array [
+                  [
                     "2017-01-01T00:00:00.000Z",
                   ]
                 }
                 filterDate={[Function]}
                 includeDates={
-                  Array [
+                  [
                     "2017-01-01T00:00:00.000Z",
                   ]
                 }
@@ -119,14 +119,14 @@ exports[`correctly applies the theme context className 1`] = `
             disabled={false}
             dropdownMode="select"
             excludeDates={
-              Array [
+              [
                 "2017-01-01T00:00:00.000Z",
               ]
             }
             filterDate={[Function]}
             fixedHeight={true}
             includeDates={
-              Array [
+              [
                 "2017-01-01T00:00:00.000Z",
               ]
             }
@@ -156,13 +156,13 @@ exports[`correctly applies the theme context className 1`] = `
                   buttonRefCallback={[Function]}
                   errorId=""
                   excludeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
                   filterDate={[Function]}
                   includeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -184,21 +184,21 @@ exports[`correctly applies the theme context className 1`] = `
               disabledKeyboardNavigation={false}
               dropdownMode="select"
               excludeDates={
-                Array [
+                [
                   "2017-01-01T00:00:00.000Z",
                 ]
               }
               filterDate={[Function]}
               fixedHeight={true}
               includeDates={
-                Array [
+                [
                   "2017-01-01T00:00:00.000Z",
                 ]
               }
               inline={false}
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -207,8 +207,8 @@ exports[`correctly applies the theme context className 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -254,14 +254,14 @@ exports[`correctly applies the theme context className 1`] = `
                   disabled={false}
                   errorId=""
                   excludeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
                   filterDate={[Function]}
                   firstInputRefCallback={[Function]}
                   includeDates={
-                    Array [
+                    [
                       "2017-01-01T00:00:00.000Z",
                     ]
                   }
@@ -288,20 +288,20 @@ exports[`correctly applies the theme context className 1`] = `
                     disabled={false}
                     errorId=""
                     excludeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
                     filterDate={[Function]}
                     firstInputRefCallback={[Function]}
                     includeDates={
-                      Array [
+                      [
                         "2017-01-01T00:00:00.000Z",
                       ]
                     }
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -310,8 +310,8 @@ exports[`correctly applies the theme context className 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -399,7 +399,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 onChange={[Function]}
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
-                                pattern="\\\\d*"
+                                pattern="\\d*"
                                 refCallback={[Function]}
                                 required={false}
                                 size="2"
@@ -423,7 +423,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 onChange={[Function]}
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
-                                pattern="\\\\d*"
+                                pattern="\\d*"
                                 refCallback={[Function]}
                                 required={false}
                                 size="2"
@@ -454,7 +454,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 onChange={[Function]}
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
-                                pattern="\\\\d*"
+                                pattern="\\d*"
                                 refCallback={[Function]}
                                 required={false}
                                 size="4"
@@ -478,7 +478,7 @@ exports[`correctly applies the theme context className 1`] = `
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
-                              pattern="\\\\d*"
+                              pattern="\\d*"
                               refCallback={[Function]}
                               required={false}
                               size="2"
@@ -498,7 +498,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 onChange={[Function]}
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
-                                pattern="\\\\d*"
+                                pattern="\\d*"
                                 required={false}
                                 size="2"
                                 type="number"
@@ -525,7 +525,7 @@ exports[`correctly applies the theme context className 1`] = `
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
-                              pattern="\\\\d*"
+                              pattern="\\d*"
                               refCallback={[Function]}
                               required={false}
                               size="2"
@@ -545,7 +545,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 onChange={[Function]}
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
-                                pattern="\\\\d*"
+                                pattern="\\d*"
                                 required={false}
                                 size="2"
                                 type="number"
@@ -572,7 +572,7 @@ exports[`correctly applies the theme context className 1`] = `
                               onChange={[Function]}
                               onFocus={[Function]}
                               onKeyDown={[Function]}
-                              pattern="\\\\d*"
+                              pattern="\\d*"
                               refCallback={[Function]}
                               required={false}
                               size="4"
@@ -592,7 +592,7 @@ exports[`correctly applies the theme context className 1`] = `
                                 onChange={[Function]}
                                 onFocus={[Function]}
                                 onKeyDown={[Function]}
-                                pattern="\\\\d*"
+                                pattern="\\d*"
                                 required={false}
                                 size="4"
                                 type="number"
@@ -735,13 +735,13 @@ exports[`should render a controlled date picker 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -762,14 +762,14 @@ exports[`should render a controlled date picker 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -812,13 +812,13 @@ exports[`should render a date picker with disabled dates 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -839,14 +839,14 @@ exports[`should render a date picker with disabled dates 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -888,13 +888,13 @@ exports[`should render a date picker with filtered dates 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -915,14 +915,14 @@ exports[`should render a date picker with filtered dates 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -964,13 +964,13 @@ exports[`should render a date picker with included dates 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -991,14 +991,14 @@ exports[`should render a date picker with included dates 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1040,13 +1040,13 @@ exports[`should render a date picker with min and max dates 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1067,14 +1067,14 @@ exports[`should render a date picker with min and max dates 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1116,13 +1116,13 @@ exports[`should render a date picker with onBlur 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1143,14 +1143,14 @@ exports[`should render a date picker with onBlur 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1192,13 +1192,13 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1219,14 +1219,14 @@ exports[`should render a date picker with onCalendarButtonClick 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1268,13 +1268,13 @@ exports[`should render a date picker with onChange 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1295,14 +1295,14 @@ exports[`should render a date picker with onChange 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1344,13 +1344,13 @@ exports[`should render a date picker with onChangeRaw 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1371,14 +1371,14 @@ exports[`should render a date picker with onChangeRaw 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1420,13 +1420,13 @@ exports[`should render a date picker with onFocus 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1447,14 +1447,14 @@ exports[`should render a date picker with onFocus 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1496,13 +1496,13 @@ exports[`should render a date picker with onRequestClose 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1523,14 +1523,14 @@ exports[`should render a date picker with onRequestClose 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1573,13 +1573,13 @@ exports[`should render a date picker with onSelect 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1600,14 +1600,14 @@ exports[`should render a date picker with onSelect 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1649,13 +1649,13 @@ exports[`should render a default date input and date picker 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1676,14 +1676,14 @@ exports[`should render a default date input and date picker 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1725,18 +1725,18 @@ exports[`should render a default date input with custom input attributes 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           inputAttributes={
-            Object {
+            {
               "id": "terra-date-input",
             }
           }
@@ -1757,14 +1757,14 @@ exports[`should render a default date input with custom input attributes 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1806,13 +1806,13 @@ exports[`should render a disabled date picker 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1833,14 +1833,14 @@ exports[`should render a disabled date picker 1`] = `
       disabled={true}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
@@ -1882,13 +1882,13 @@ exports[`should render a required date input and date picker 1`] = `
           buttonRefCallback={[Function]}
           errorId=""
           excludeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
           filterDate={[Function]}
           includeDates={
-            Array [
+            [
               "2017-01-01T00:00:00.000Z",
             ]
           }
@@ -1909,14 +1909,14 @@ exports[`should render a required date input and date picker 1`] = `
       disabled={false}
       dropdownMode="select"
       excludeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }
       filterDate={[Function]}
       fixedHeight={true}
       includeDates={
-        Array [
+        [
           "2017-01-01T00:00:00.000Z",
         ]
       }

@@ -3,7 +3,7 @@
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -11,7 +11,7 @@ exports[`correctly applies the theme context className 1`] = `
   <SlideGroup
     isAnimated={false}
     items={
-      Array [
+      [
         <div>
           First
         </div>,
@@ -35,7 +35,7 @@ exports[`correctly applies the theme context className 1`] = `
       >
         <CSSTransition
           classNames={
-            Object {
+            {
               "enter": "enter",
               "enterActive": "enter-active",
               "exit": "exit",
@@ -103,7 +103,7 @@ exports[`correctly applies the theme context className 1`] = `
         </CSSTransition>
         <CSSTransition
           classNames={
-            Object {
+            {
               "enter": "enter",
               "enterActive": "enter-active",
               "exit": "exit",
@@ -171,7 +171,7 @@ exports[`correctly applies the theme context className 1`] = `
         </CSSTransition>
         <CSSTransition
           classNames={
-            Object {
+            {
               "enter": "enter",
               "enterActive": "enter-active",
               "exit": "exit",
@@ -252,7 +252,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
 >
   <CSSTransition
     classNames={
-      Object {
+      {
         "enter": "enter",
         "enterActive": "enter-active",
         "exit": "exit",
@@ -280,7 +280,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
   </CSSTransition>
   <CSSTransition
     classNames={
-      Object {
+      {
         "enter": "enter",
         "enterActive": "enter-active",
         "exit": "exit",
@@ -308,7 +308,7 @@ exports[`should render a SlideGroup with animation enabled 1`] = `
   </CSSTransition>
   <CSSTransition
     classNames={
-      Object {
+      {
         "enter": "enter",
         "enterActive": "enter-active",
         "exit": "exit",
@@ -346,7 +346,7 @@ exports[`should render a default SlideGroup 1`] = `
 >
   <CSSTransition
     classNames={
-      Object {
+      {
         "enter": "enter",
         "enterActive": "enter-active",
         "exit": "exit",
@@ -374,7 +374,7 @@ exports[`should render a default SlideGroup 1`] = `
   </CSSTransition>
   <CSSTransition
     classNames={
-      Object {
+      {
         "enter": "enter",
         "enterActive": "enter-active",
         "exit": "exit",
@@ -402,7 +402,7 @@ exports[`should render a default SlideGroup 1`] = `
   </CSSTransition>
   <CSSTransition
     classNames={
-      Object {
+      {
         "enter": "enter",
         "enterActive": "enter-active",
         "exit": "exit",

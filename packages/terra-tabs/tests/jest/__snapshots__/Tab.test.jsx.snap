@@ -15,7 +15,7 @@ exports[`Tab correctly applies the theme context className 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }
@@ -54,7 +54,7 @@ exports[`Tab should render a closable tab 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }
@@ -103,7 +103,7 @@ exports[`Tab should render a common tab as disabled when indicated 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }
@@ -142,7 +142,7 @@ exports[`Tab should render a common tab with custom props 1`] = `
   onMouseDown={[Function]}
   role="tab"
   style={
-    Object {
+    {
       "zIndex": undefined,
     }
   }

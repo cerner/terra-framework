@@ -5,8 +5,8 @@ exports[`NavigationLayoutContent should render a NavigationLayoutContent with pr
   className="content"
 >
   <withRouter(RoutingStack)
-    ancestorProps={Object {}}
-    routes={Array []}
+    ancestorProps={{}}
+    routes={[]}
   >
     <Redirect
       to="/"
@@ -20,7 +20,7 @@ exports[`NavigationLayoutContent should render a default NavigationLayoutContent
   className="content"
 >
   <withRouter(RoutingStack)
-    ancestorProps={Object {}}
+    ancestorProps={{}}
   />
 </div>
 `;

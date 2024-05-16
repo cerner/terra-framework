@@ -3,8 +3,8 @@
 exports[`Header should render default element 1`] = `
 <InjectIntl(Header)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`Header should render default element 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -32,8 +32,8 @@ exports[`Header should render default element 1`] = `
 >
   <Header
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -42,8 +42,8 @@ exports[`Header should render default element 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -58,7 +58,7 @@ exports[`Header should render default element 1`] = `
         "timeZone": null,
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="header"
@@ -80,8 +80,8 @@ exports[`Header should render default element 1`] = `
         <InjectIntl(Tabs)>
           <Tabs
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -90,8 +90,8 @@ exports[`Header should render default element 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -106,8 +106,8 @@ exports[`Header should render default element 1`] = `
                 "timeZone": null,
               }
             }
-            navigationItems={Array []}
-            notifications={Object {}}
+            navigationItems={[]}
+            notifications={{}}
           >
             <Tab
               aria-hidden="true"
@@ -153,8 +153,8 @@ exports[`Header should render default element 1`] = `
 exports[`Header should render title element 1`] = `
 <InjectIntl(Header)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -163,8 +163,8 @@ exports[`Header should render title element 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -180,7 +180,7 @@ exports[`Header should render title element 1`] = `
     }
   }
   titleConfig={
-    Object {
+    {
       "element": <img
         alt="test"
         id="test-image"
@@ -191,8 +191,8 @@ exports[`Header should render title element 1`] = `
 >
   <Header
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -201,8 +201,8 @@ exports[`Header should render title element 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -218,7 +218,7 @@ exports[`Header should render title element 1`] = `
       }
     }
     titleConfig={
-      Object {
+      {
         "element": <img
           alt="test"
           id="test-image"
@@ -226,7 +226,7 @@ exports[`Header should render title element 1`] = `
         "title": "test-title",
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="header"
@@ -258,8 +258,8 @@ exports[`Header should render title element 1`] = `
         <InjectIntl(Tabs)>
           <Tabs
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -268,8 +268,8 @@ exports[`Header should render title element 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -284,8 +284,8 @@ exports[`Header should render title element 1`] = `
                 "timeZone": null,
               }
             }
-            navigationItems={Array []}
-            notifications={Object {}}
+            navigationItems={[]}
+            notifications={{}}
           >
             <Tab
               aria-hidden="true"
@@ -332,8 +332,8 @@ exports[`Header should render with function callbacks 1`] = `
 <InjectIntl(Header)
   activeNavigationItemKey="test-text"
   extensionItems={
-    Array [
-      Object {
+    [
+      {
         "icon": <span>
           my icon
         </span>,
@@ -348,8 +348,8 @@ exports[`Header should render with function callbacks 1`] = `
     </div>
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -358,8 +358,8 @@ exports[`Header should render with function callbacks 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -375,8 +375,8 @@ exports[`Header should render with function callbacks 1`] = `
     }
   }
   navigationItems={
-    Array [
-      Object {
+    [
+      {
         "key": "my-test-key",
         "text": "test-text",
       },
@@ -384,17 +384,17 @@ exports[`Header should render with function callbacks 1`] = `
   }
   navigationRenderFunction={
     [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
+      "calls": [
+        [
+          {
             "hasCount": true,
             "isActive": false,
             "notificationCount": undefined,
             "text": "test-text",
           },
         ],
-        Array [
-          Object {
+        [
+          {
             "hasCount": true,
             "isActive": false,
             "notificationCount": undefined,
@@ -402,12 +402,12 @@ exports[`Header should render with function callbacks 1`] = `
           },
         ],
       ],
-      "results": Array [
-        Object {
+      "results": [
+        {
           "type": "return",
           "value": undefined,
         },
-        Object {
+        {
           "type": "return",
           "value": undefined,
         },
@@ -415,7 +415,7 @@ exports[`Header should render with function callbacks 1`] = `
     }
   }
   notifications={
-    Object {
+    {
       "my-test-key-1": 3,
     }
   }
@@ -423,12 +423,12 @@ exports[`Header should render with function callbacks 1`] = `
   onSelectNavigationItem={[MockFunction]}
   onSelectUtilityButton={[MockFunction]}
   titleConfig={
-    Object {
+    {
       "title": "test-title",
     }
   }
   userConfig={
-    Object {
+    {
       "detail": "user-detail",
       "imageSrc": "user-src",
       "initials": "user-initials",
@@ -436,7 +436,7 @@ exports[`Header should render with function callbacks 1`] = `
     }
   }
   utilityButtonPopupAnchorRef={
-    Object {
+    {
       "current": <span
         class="popup-anchor"
       />,
@@ -446,8 +446,8 @@ exports[`Header should render with function callbacks 1`] = `
   <Header
     activeNavigationItemKey="test-text"
     extensionItems={
-      Array [
-        Object {
+      [
+        {
           "icon": <span>
             my icon
           </span>,
@@ -462,8 +462,8 @@ exports[`Header should render with function callbacks 1`] = `
       </div>
     }
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -472,8 +472,8 @@ exports[`Header should render with function callbacks 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -489,8 +489,8 @@ exports[`Header should render with function callbacks 1`] = `
       }
     }
     navigationItems={
-      Array [
-        Object {
+      [
+        {
           "key": "my-test-key",
           "text": "test-text",
         },
@@ -498,17 +498,17 @@ exports[`Header should render with function callbacks 1`] = `
     }
     navigationRenderFunction={
       [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
+        "calls": [
+          [
+            {
               "hasCount": true,
               "isActive": false,
               "notificationCount": undefined,
               "text": "test-text",
             },
           ],
-          Array [
-            Object {
+          [
+            {
               "hasCount": true,
               "isActive": false,
               "notificationCount": undefined,
@@ -516,12 +516,12 @@ exports[`Header should render with function callbacks 1`] = `
             },
           ],
         ],
-        "results": Array [
-          Object {
+        "results": [
+          {
             "type": "return",
             "value": undefined,
           },
-          Object {
+          {
             "type": "return",
             "value": undefined,
           },
@@ -529,7 +529,7 @@ exports[`Header should render with function callbacks 1`] = `
       }
     }
     notifications={
-      Object {
+      {
         "my-test-key-1": 3,
       }
     }
@@ -537,12 +537,12 @@ exports[`Header should render with function callbacks 1`] = `
     onSelectNavigationItem={[MockFunction]}
     onSelectUtilityButton={[MockFunction]}
     titleConfig={
-      Object {
+      {
         "title": "test-title",
       }
     }
     userConfig={
-      Object {
+      {
         "detail": "user-detail",
         "imageSrc": "user-src",
         "initials": "user-initials",
@@ -550,13 +550,13 @@ exports[`Header should render with function callbacks 1`] = `
       }
     }
     utilityButtonPopupAnchorRef={
-      Object {
+      {
         "current": <span
           class="popup-anchor"
         />,
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="header"
@@ -585,8 +585,8 @@ exports[`Header should render with function callbacks 1`] = `
         <InjectIntl(Tabs)
           activeTabKey="test-text"
           navigationItems={
-            Array [
-              Object {
+            [
+              {
                 "key": "my-test-key",
                 "text": "test-text",
               },
@@ -594,17 +594,17 @@ exports[`Header should render with function callbacks 1`] = `
           }
           navigationRenderFunction={
             [MockFunction] {
-              "calls": Array [
-                Array [
-                  Object {
+              "calls": [
+                [
+                  {
                     "hasCount": true,
                     "isActive": false,
                     "notificationCount": undefined,
                     "text": "test-text",
                   },
                 ],
-                Array [
-                  Object {
+                [
+                  {
                     "hasCount": true,
                     "isActive": false,
                     "notificationCount": undefined,
@@ -612,12 +612,12 @@ exports[`Header should render with function callbacks 1`] = `
                   },
                 ],
               ],
-              "results": Array [
-                Object {
+              "results": [
+                {
                   "type": "return",
                   "value": undefined,
                 },
-                Object {
+                {
                   "type": "return",
                   "value": undefined,
                 },
@@ -625,7 +625,7 @@ exports[`Header should render with function callbacks 1`] = `
             }
           }
           notifications={
-            Object {
+            {
               "my-test-key-1": 3,
             }
           }
@@ -634,8 +634,8 @@ exports[`Header should render with function callbacks 1`] = `
           <Tabs
             activeTabKey="test-text"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -644,8 +644,8 @@ exports[`Header should render with function callbacks 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -661,8 +661,8 @@ exports[`Header should render with function callbacks 1`] = `
               }
             }
             navigationItems={
-              Array [
-                Object {
+              [
+                {
                   "key": "my-test-key",
                   "text": "test-text",
                 },
@@ -670,17 +670,17 @@ exports[`Header should render with function callbacks 1`] = `
             }
             navigationRenderFunction={
               [MockFunction] {
-                "calls": Array [
-                  Array [
-                    Object {
+                "calls": [
+                  [
+                    {
                       "hasCount": true,
                       "isActive": false,
                       "notificationCount": undefined,
                       "text": "test-text",
                     },
                   ],
-                  Array [
-                    Object {
+                  [
+                    {
                       "hasCount": true,
                       "isActive": false,
                       "notificationCount": undefined,
@@ -688,12 +688,12 @@ exports[`Header should render with function callbacks 1`] = `
                     },
                   ],
                 ],
-                "results": Array [
-                  Object {
+                "results": [
+                  {
                     "type": "return",
                     "value": undefined,
                   },
-                  Object {
+                  {
                     "type": "return",
                     "value": undefined,
                   },
@@ -701,7 +701,7 @@ exports[`Header should render with function callbacks 1`] = `
               }
             }
             notifications={
-              Object {
+              {
                 "my-test-key-1": 3,
               }
             }
@@ -717,17 +717,17 @@ exports[`Header should render with function callbacks 1`] = `
                 onTabSelect={[Function]}
                 render={
                   [MockFunction] {
-                    "calls": Array [
-                      Array [
-                        Object {
+                    "calls": [
+                      [
+                        {
                           "hasCount": true,
                           "isActive": false,
                           "notificationCount": undefined,
                           "text": "test-text",
                         },
                       ],
-                      Array [
-                        Object {
+                      [
+                        {
                           "hasCount": true,
                           "isActive": false,
                           "notificationCount": undefined,
@@ -735,12 +735,12 @@ exports[`Header should render with function callbacks 1`] = `
                         },
                       ],
                     ],
-                    "results": Array [
-                      Object {
+                    "results": [
+                      {
                         "type": "return",
                         "value": undefined,
                       },
-                      Object {
+                      {
                         "type": "return",
                         "value": undefined,
                       },
@@ -748,7 +748,7 @@ exports[`Header should render with function callbacks 1`] = `
                   }
                 }
                 tabRef={
-                  Object {
+                  {
                     "current": <div
                       aria-current="false"
                       aria-label="test-text"
@@ -785,8 +785,8 @@ exports[`Header should render with function callbacks 1`] = `
       >
         <InjectIntl(Extensions)
           extensionItems={
-            Array [
-              Object {
+            [
+              {
                 "icon": <span>
                   my icon
                 </span>,
@@ -796,7 +796,7 @@ exports[`Header should render with function callbacks 1`] = `
             ]
           }
           notifications={
-            Object {
+            {
               "my-test-key-1": 3,
             }
           }
@@ -805,8 +805,8 @@ exports[`Header should render with function callbacks 1`] = `
           <Extensions
             activeBreakpoint=""
             extensionItems={
-              Array [
-                Object {
+              [
+                {
                   "icon": <span>
                     my icon
                   </span>,
@@ -816,8 +816,8 @@ exports[`Header should render with function callbacks 1`] = `
               ]
             }
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -826,8 +826,8 @@ exports[`Header should render with function callbacks 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -843,7 +843,7 @@ exports[`Header should render with function callbacks 1`] = `
               }
             }
             notifications={
-              Object {
+              {
                 "my-test-key-1": 3,
               }
             }
@@ -927,14 +927,14 @@ exports[`Header should render with function callbacks 1`] = `
         <InjectIntl(UtilityMenuHeaderButton)
           onClick={[MockFunction]}
           popupAnchorRef={
-            Object {
+            {
               "current": <span
                 class="popup-anchor"
               />,
             }
           }
           userConfig={
-            Object {
+            {
               "detail": "user-detail",
               "imageSrc": "user-src",
               "initials": "user-initials",
@@ -944,8 +944,8 @@ exports[`Header should render with function callbacks 1`] = `
         >
           <UtilityMenuHeaderButton
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -954,8 +954,8 @@ exports[`Header should render with function callbacks 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -972,14 +972,14 @@ exports[`Header should render with function callbacks 1`] = `
             }
             onClick={[MockFunction]}
             popupAnchorRef={
-              Object {
+              {
                 "current": <span
                   class="popup-anchor"
                 />,
               }
             }
             userConfig={
-              Object {
+              {
                 "detail": "user-detail",
                 "imageSrc": "user-src",
                 "initials": "user-initials",
@@ -1017,8 +1017,8 @@ exports[`Header should render with function callbacks 1`] = `
                     image="user-src"
                     initials="user-initials"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1027,8 +1027,8 @@ exports[`Header should render with function callbacks 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1141,8 +1141,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
 <InjectIntl(Header)
   activeNavigationItemKey="test-text"
   extensionItems={
-    Array [
-      Object {
+    [
+      {
         "icon": <span>
           my icon
         </span>,
@@ -1158,8 +1158,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
   }
   id="test-application"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1168,8 +1168,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1185,8 +1185,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
     }
   }
   navigationItems={
-    Array [
-      Object {
+    [
+      {
         "key": "my-test-key",
         "text": "test-text",
       },
@@ -1194,17 +1194,17 @@ exports[`Header should render with navigation and extension item ids 1`] = `
   }
   navigationRenderFunction={
     [MockFunction] {
-      "calls": Array [
-        Array [
-          Object {
+      "calls": [
+        [
+          {
             "hasCount": true,
             "isActive": false,
             "notificationCount": undefined,
             "text": "test-text",
           },
         ],
-        Array [
-          Object {
+        [
+          {
             "hasCount": true,
             "isActive": false,
             "notificationCount": undefined,
@@ -1212,12 +1212,12 @@ exports[`Header should render with navigation and extension item ids 1`] = `
           },
         ],
       ],
-      "results": Array [
-        Object {
+      "results": [
+        {
           "type": "return",
           "value": undefined,
         },
-        Object {
+        {
           "type": "return",
           "value": undefined,
         },
@@ -1225,7 +1225,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
     }
   }
   notifications={
-    Object {
+    {
       "my-test-key-1": 3,
     }
   }
@@ -1233,12 +1233,12 @@ exports[`Header should render with navigation and extension item ids 1`] = `
   onSelectNavigationItem={[MockFunction]}
   onSelectUtilityButton={[MockFunction]}
   titleConfig={
-    Object {
+    {
       "title": "test-title",
     }
   }
   userConfig={
-    Object {
+    {
       "detail": "user-detail",
       "imageSrc": "user-src",
       "initials": "user-initials",
@@ -1246,7 +1246,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
     }
   }
   utilityButtonPopupAnchorRef={
-    Object {
+    {
       "current": <span
         class="popup-anchor"
       />,
@@ -1256,8 +1256,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
   <Header
     activeNavigationItemKey="test-text"
     extensionItems={
-      Array [
-        Object {
+      [
+        {
           "icon": <span>
             my icon
           </span>,
@@ -1273,8 +1273,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
     }
     id="test-application"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -1283,8 +1283,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -1300,8 +1300,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
       }
     }
     navigationItems={
-      Array [
-        Object {
+      [
+        {
           "key": "my-test-key",
           "text": "test-text",
         },
@@ -1309,17 +1309,17 @@ exports[`Header should render with navigation and extension item ids 1`] = `
     }
     navigationRenderFunction={
       [MockFunction] {
-        "calls": Array [
-          Array [
-            Object {
+        "calls": [
+          [
+            {
               "hasCount": true,
               "isActive": false,
               "notificationCount": undefined,
               "text": "test-text",
             },
           ],
-          Array [
-            Object {
+          [
+            {
               "hasCount": true,
               "isActive": false,
               "notificationCount": undefined,
@@ -1327,12 +1327,12 @@ exports[`Header should render with navigation and extension item ids 1`] = `
             },
           ],
         ],
-        "results": Array [
-          Object {
+        "results": [
+          {
             "type": "return",
             "value": undefined,
           },
-          Object {
+          {
             "type": "return",
             "value": undefined,
           },
@@ -1340,7 +1340,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
       }
     }
     notifications={
-      Object {
+      {
         "my-test-key-1": 3,
       }
     }
@@ -1348,12 +1348,12 @@ exports[`Header should render with navigation and extension item ids 1`] = `
     onSelectNavigationItem={[MockFunction]}
     onSelectUtilityButton={[MockFunction]}
     titleConfig={
-      Object {
+      {
         "title": "test-title",
       }
     }
     userConfig={
-      Object {
+      {
         "detail": "user-detail",
         "imageSrc": "user-src",
         "initials": "user-initials",
@@ -1361,13 +1361,13 @@ exports[`Header should render with navigation and extension item ids 1`] = `
       }
     }
     utilityButtonPopupAnchorRef={
-      Object {
+      {
         "current": <span
           class="popup-anchor"
         />,
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="header"
@@ -1397,8 +1397,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
           activeTabKey="test-text"
           id="test-application"
           navigationItems={
-            Array [
-              Object {
+            [
+              {
                 "key": "my-test-key",
                 "text": "test-text",
               },
@@ -1406,17 +1406,17 @@ exports[`Header should render with navigation and extension item ids 1`] = `
           }
           navigationRenderFunction={
             [MockFunction] {
-              "calls": Array [
-                Array [
-                  Object {
+              "calls": [
+                [
+                  {
                     "hasCount": true,
                     "isActive": false,
                     "notificationCount": undefined,
                     "text": "test-text",
                   },
                 ],
-                Array [
-                  Object {
+                [
+                  {
                     "hasCount": true,
                     "isActive": false,
                     "notificationCount": undefined,
@@ -1424,12 +1424,12 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                   },
                 ],
               ],
-              "results": Array [
-                Object {
+              "results": [
+                {
                   "type": "return",
                   "value": undefined,
                 },
-                Object {
+                {
                   "type": "return",
                   "value": undefined,
                 },
@@ -1437,7 +1437,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
             }
           }
           notifications={
-            Object {
+            {
               "my-test-key-1": 3,
             }
           }
@@ -1447,8 +1447,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
             activeTabKey="test-text"
             id="test-application"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1457,8 +1457,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1474,8 +1474,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
               }
             }
             navigationItems={
-              Array [
-                Object {
+              [
+                {
                   "key": "my-test-key",
                   "text": "test-text",
                 },
@@ -1483,17 +1483,17 @@ exports[`Header should render with navigation and extension item ids 1`] = `
             }
             navigationRenderFunction={
               [MockFunction] {
-                "calls": Array [
-                  Array [
-                    Object {
+                "calls": [
+                  [
+                    {
                       "hasCount": true,
                       "isActive": false,
                       "notificationCount": undefined,
                       "text": "test-text",
                     },
                   ],
-                  Array [
-                    Object {
+                  [
+                    {
                       "hasCount": true,
                       "isActive": false,
                       "notificationCount": undefined,
@@ -1501,12 +1501,12 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                     },
                   ],
                 ],
-                "results": Array [
-                  Object {
+                "results": [
+                  {
                     "type": "return",
                     "value": undefined,
                   },
-                  Object {
+                  {
                     "type": "return",
                     "value": undefined,
                   },
@@ -1514,7 +1514,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
               }
             }
             notifications={
-              Object {
+              {
                 "my-test-key-1": 3,
               }
             }
@@ -1531,17 +1531,17 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                 onTabSelect={[Function]}
                 render={
                   [MockFunction] {
-                    "calls": Array [
-                      Array [
-                        Object {
+                    "calls": [
+                      [
+                        {
                           "hasCount": true,
                           "isActive": false,
                           "notificationCount": undefined,
                           "text": "test-text",
                         },
                       ],
-                      Array [
-                        Object {
+                      [
+                        {
                           "hasCount": true,
                           "isActive": false,
                           "notificationCount": undefined,
@@ -1549,12 +1549,12 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                         },
                       ],
                     ],
-                    "results": Array [
-                      Object {
+                    "results": [
+                      {
                         "type": "return",
                         "value": undefined,
                       },
-                      Object {
+                      {
                         "type": "return",
                         "value": undefined,
                       },
@@ -1562,7 +1562,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                   }
                 }
                 tabRef={
-                  Object {
+                  {
                     "current": <div
                       aria-current="false"
                       aria-label="test-text"
@@ -1599,8 +1599,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
       >
         <InjectIntl(Extensions)
           extensionItems={
-            Array [
-              Object {
+            [
+              {
                 "icon": <span>
                   my icon
                 </span>,
@@ -1611,7 +1611,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
           }
           id="test-application"
           notifications={
-            Object {
+            {
               "my-test-key-1": 3,
             }
           }
@@ -1620,8 +1620,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
           <Extensions
             activeBreakpoint=""
             extensionItems={
-              Array [
-                Object {
+              [
+                {
                   "icon": <span>
                     my icon
                   </span>,
@@ -1632,8 +1632,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
             }
             id="test-application"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1642,8 +1642,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1659,7 +1659,7 @@ exports[`Header should render with navigation and extension item ids 1`] = `
               }
             }
             notifications={
-              Object {
+              {
                 "my-test-key-1": 3,
               }
             }
@@ -1746,14 +1746,14 @@ exports[`Header should render with navigation and extension item ids 1`] = `
           id="test-application"
           onClick={[MockFunction]}
           popupAnchorRef={
-            Object {
+            {
               "current": <span
                 class="popup-anchor"
               />,
             }
           }
           userConfig={
-            Object {
+            {
               "detail": "user-detail",
               "imageSrc": "user-src",
               "initials": "user-initials",
@@ -1764,8 +1764,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
           <UtilityMenuHeaderButton
             id="test-application"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1774,8 +1774,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1792,14 +1792,14 @@ exports[`Header should render with navigation and extension item ids 1`] = `
             }
             onClick={[MockFunction]}
             popupAnchorRef={
-              Object {
+              {
                 "current": <span
                   class="popup-anchor"
                 />,
               }
             }
             userConfig={
-              Object {
+              {
                 "detail": "user-detail",
                 "imageSrc": "user-src",
                 "initials": "user-initials",
@@ -1837,8 +1837,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                     image="user-src"
                     initials="user-initials"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1847,8 +1847,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1960,8 +1960,8 @@ exports[`Header should render with navigation and extension item ids 1`] = `
 exports[`Header should render with skip callback 1`] = `
 <InjectIntl(Header)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1970,8 +1970,8 @@ exports[`Header should render with skip callback 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1990,8 +1990,8 @@ exports[`Header should render with skip callback 1`] = `
 >
   <Header
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -2000,8 +2000,8 @@ exports[`Header should render with skip callback 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -2017,7 +2017,7 @@ exports[`Header should render with skip callback 1`] = `
       }
     }
     onSelectSkipToContent={[MockFunction]}
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="header"
@@ -2040,8 +2040,8 @@ exports[`Header should render with skip callback 1`] = `
         <InjectIntl(Tabs)>
           <Tabs
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2050,8 +2050,8 @@ exports[`Header should render with skip callback 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2066,8 +2066,8 @@ exports[`Header should render with skip callback 1`] = `
                 "timeZone": null,
               }
             }
-            navigationItems={Array []}
-            notifications={Object {}}
+            navigationItems={[]}
+            notifications={{}}
           >
             <Tab
               aria-hidden="true"

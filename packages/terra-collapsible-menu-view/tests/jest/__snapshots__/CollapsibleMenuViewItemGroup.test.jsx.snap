@@ -7,8 +7,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
   <div
     className="Testing"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -17,8 +17,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -62,8 +62,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
   <div
     className="Testing"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -72,8 +72,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should merge cust
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -118,8 +118,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
 >
   <div
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -128,8 +128,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render a m
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -174,8 +174,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render men
 >
   <div
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -184,8 +184,8 @@ exports[`CollapsibleMenuViewItemGroup Collapsible Menu Context should render men
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -226,8 +226,8 @@ exports[`CollapsibleMenuViewItemGroup should merge custom props 1`] = `
 <ButtonGroup
   className="face-up-item Testing"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -236,8 +236,8 @@ exports[`CollapsibleMenuViewItemGroup should merge custom props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -254,7 +254,7 @@ exports[`CollapsibleMenuViewItemGroup should merge custom props 1`] = `
   }
   isBlock={false}
   isMultiSelect={false}
-  selectedKeys={Array []}
+  selectedKeys={[]}
 >
   <CollapsibleMenuViewItem
     isIconOnly={false}
@@ -279,8 +279,8 @@ exports[`CollapsibleMenuViewItemGroup should render a default component 1`] = `
 <ButtonGroup
   className="face-up-item"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -289,8 +289,8 @@ exports[`CollapsibleMenuViewItemGroup should render a default component 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -307,7 +307,7 @@ exports[`CollapsibleMenuViewItemGroup should render a default component 1`] = `
   }
   isBlock={false}
   isMultiSelect={false}
-  selectedKeys={Array []}
+  selectedKeys={[]}
 >
   <CollapsibleMenuViewItem
     isIconOnly={false}
@@ -332,8 +332,8 @@ exports[`CollapsibleMenuViewItemGroup should render a selectable button group 1`
 <ButtonGroup
   className="face-up-item"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -342,8 +342,8 @@ exports[`CollapsibleMenuViewItemGroup should render a selectable button group 1`
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -361,7 +361,7 @@ exports[`CollapsibleMenuViewItemGroup should render a selectable button group 1`
   isBlock={false}
   isMultiSelect={false}
   selectedKeys={
-    Array [
+    [
       "key1",
     ]
   }
