@@ -84,4 +84,15 @@
     width: 100%;
     word-wrap: break-word; /* For IE 10 and IE 11 */
   }
+
+  .drill-in-title {
+    color: var(--terra-navigation-side-menu-header-color);
+    font-weight: 700;
+    hyphens: auto;
+    margin: 5px;
+    overflow-wrap: break-word; /* Modern browsers */
+    padding: 0.28571rem;
+    width: 100%;
+    word-wrap: break-word; /* For IE 10 and IE 11 */
+  }
 }

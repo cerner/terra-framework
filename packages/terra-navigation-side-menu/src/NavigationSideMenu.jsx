@@ -25,6 +25,10 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string,
   /**
+   * The heading level for the title of the menu.
+   */
+  headerLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  /**
    * An array of configuration for each menu item.
    */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
@@ -96,6 +100,7 @@ const propTypes = {
 const defaultProps = {
   menuItems: [],
   variant: VARIANTS.NAVIGATION_SIDE_MENU,
+  headerLevel: 3,
 };
 
 const processMenuItems = (menuItems, variant) => {
@@ -379,6 +384,7 @@ class NavigationSideMenu extends Component {
       selectedMenuKey,
       toolbar,
       variant,
+      headerLevel,
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
@@ -387,6 +393,8 @@ class NavigationSideMenu extends Component {
       'side-menu-content-container',
       theme.className,
     ]);
+
+    const HeaderElement = `h${headerLevel}`;
 
     const parentKey = this.state.parents[selectedMenuKey];
     if (parentKey) {
@@ -415,7 +423,7 @@ class NavigationSideMenu extends Component {
             data-navigation-side-menu
           >
             {(this.onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
-            <h1 className={cx('title')}>{currentItem ? currentItem.text : null}</h1>
+            <HeaderElement className={(variant === VARIANTS.DRILL_IN) ? cx('drill-in-title') : cx('title')}>{currentItem ? currentItem.text : null}</HeaderElement>
           </div>
           {toolbar}
         </li>
