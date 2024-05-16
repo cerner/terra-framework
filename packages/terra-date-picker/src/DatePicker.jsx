@@ -276,13 +276,13 @@ class DatePicker extends React.Component {
 
   handleOnClickOutside(event) {
     if (this.props.onClickOutside) {
-      setTimeout(() => {
-        if (this.calendarButton) {
-          this.calendarButton.focus();
-        }
-      }, 100);
       this.props.onClickOutside(event);
     }
+    setTimeout(() => {
+      if (this.calendarButton) {
+        this.calendarButton.focus();
+      }
+    }, 100);
   }
 
   handleBlur(event) {
