@@ -141,6 +141,12 @@ const propTypes = {
    * ID must be htmlFor prop value with error text.
    */
   errorId: PropTypes.string,
+  /**
+   * If true, the focus will not return to the button that opened the DatePicker when it is closed.
+   * This can be useful to prevent unintended focus behavior in certain user flows or accessibility contexts.
+   * Default is false, meaning focus will return to the button on close.
+   */
+  disableButtonFocusOnClose: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -167,6 +173,7 @@ const defaultProps = {
   timeVariant: DateTimeUtils.FORMAT_24_HOUR,
   initialTimeZone: DateTimeUtils.getLocalTimeZone(),
   errorId: '',
+  disableButtonFocusOnClose: false,
 };
 
 class DateTimePicker extends React.Component {
@@ -765,6 +772,7 @@ class DateTimePicker extends React.Component {
       value,
       timeVariant,
       errorId,
+      disableButtonFocusOnClose,
       ...customProps
     } = this.props;
 
@@ -811,7 +819,7 @@ class DateTimePicker extends React.Component {
             value={dateValue}
             name="input"
             disabled={disabled}
-            disableButtonFocusOnClose
+            disableButtonFocusOnClose={disableButtonFocusOnClose}
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}
