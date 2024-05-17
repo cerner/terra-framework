@@ -45,7 +45,7 @@ class DrillInDefault extends React.Component {
           },
           { key: 'subsubmenu2', text: 'Laboratory' },
           {
-            key: 'subsubmenu3', text: 'Rehabilitation services', childKeys: ['rehab1', 'rehab2', 'rehab3'], icon: <IconHospital a11yLabel='Location' />,
+            key: 'subsubmenu3', text: 'Rehabilitation services', childKeys: ['rehab1', 'rehab2', 'rehab3'], icon: <IconHospital a11yLabel="Location" />,
           },
           { key: 'rehab1', text: 'Rehabilitation services 1' },
           { key: 'rehab2', text: 'Rehabilitation services 2' },
