@@ -640,7 +640,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               contentWidth="320"
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
-              isHeaderDisabled={false}
+              isHeaderDisabled={true}
               isMenu={false}
               isOpen={false}
               onRequestClose={[Function]}
@@ -1031,7 +1031,7 @@ exports[`CompactHeader should render with ids for navigation and extension items
               contentWidth="320"
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
-              isHeaderDisabled={false}
+              isHeaderDisabled={true}
               isMenu={false}
               isOpen={false}
               onRequestClose={[Function]}
