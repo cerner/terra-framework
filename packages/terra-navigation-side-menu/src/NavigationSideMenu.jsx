@@ -64,6 +64,10 @@ const propTypes = {
      * The icon to display to the left for the menu item when variant is 'drill-in'
      */
     icon: PropTypes.element,
+    /**
+     * A custom status display for menu item with no children. Component will fallback to status-view with no results.
+     */
+    customStatusDisplay: PropTypes.node,
   })),
   /**
    * Callback function when a menu endpoint is reached.
@@ -115,6 +119,7 @@ const processMenuItems = (menuItems, variant) => {
       isRootMenu: item.isRootMenu,
       icon: item.icon,
       isDisabled: item.isDisabled,
+      customStatusDisplay: item.customStatusDisplay,
     };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
@@ -322,15 +327,17 @@ class NavigationSideMenu extends Component {
     }
   };
 
-  buildListItem(key, keys) {
+  buildListItem(key, currentItem) {
     const item = this.state.items[key];
-    const tabIndex = Array.from(keys).indexOf(key);
+    const tabIndex = Array.from(currentItem.childKeys).indexOf(key);
     const onKeyDown = (event) => {
       this.handleEvents(event, item, key);
     };
 
     if (key === 'empty-child-key') {
-      return this.props.variant === VARIANTS.DRILL_IN ? <StatusView variant="no-data" /> : null;
+      return this.props.variant === VARIANTS.DRILL_IN
+        ? (currentItem.customStatusDisplay || <StatusView variant="no-data" />)
+        : null;
     }
 
     return (
@@ -353,7 +360,7 @@ class NavigationSideMenu extends Component {
 
   buildListContent(currentItem) {
     if (currentItem && currentItem.childKeys && currentItem.childKeys.length) {
-      return currentItem.childKeys.map(key => this.buildListItem(key, currentItem.childKeys));
+      return currentItem.childKeys.map(key => this.buildListItem(key, currentItem));
     }
     return null;
   }

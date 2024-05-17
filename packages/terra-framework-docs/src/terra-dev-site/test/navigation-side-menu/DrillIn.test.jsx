@@ -59,7 +59,12 @@ class DrillInExample extends React.Component {
               key: 'submenu3', text: 'Hospital Accommodations',
             },
             { key: 'submenu4', text: 'Hospital Careers' },
-            { key: 'submenu5', text: 'Hospital Info', childKeys: [] },
+            {
+              key: 'submenu5',
+              text: 'Hospital Info',
+              childKeys: [],
+              customStatusDisplay: <span>No results for Hospital Info</span>,
+            },
             {
               key: 'subsubmenu1', text: 'Imaging', id: 'test-item-2',
             },
