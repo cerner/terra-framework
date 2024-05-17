@@ -58,7 +58,6 @@ class DimensionPopup extends React.Component {
             isOpen={this.state.open}
             onRequestClose={this.handleRequestClose}
             targetRef={this.getButtonNode}
-            isHeaderDisabled={false}
           >
             <p>This popup defaults its size.</p>
           </Popup>

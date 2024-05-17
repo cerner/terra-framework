@@ -62,7 +62,7 @@ const PillTemplate = ({
             id={pill.id}
             key={pill.id}
             metaData={{ index }}
-            isPopupHeaderDisabled={false}
+            showPopupHeader
           />
         ))}
       </FilterPills>

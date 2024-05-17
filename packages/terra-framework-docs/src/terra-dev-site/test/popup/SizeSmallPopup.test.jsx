@@ -58,7 +58,6 @@ class DimensionPopup extends React.Component {
             isOpen={this.state.open}
             onRequestClose={this.handleRequestClose}
             targetRef={this.getButtonNode}
-            isHeaderDisabled={false}
           >
             <p>This popup is 40h by 160w.</p>
           </Popup>

@@ -37,7 +37,6 @@ function PopupStandard() {
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}
-        isHeaderDisabled={false}
         isContentFocusDisabled
       >
         <label htmlFor="html">Medications for patient John Doe</label>

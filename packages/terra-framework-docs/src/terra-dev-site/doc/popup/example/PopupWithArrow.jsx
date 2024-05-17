@@ -59,7 +59,6 @@ function PopupArrow() {
       <Button text="Medication Links" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
         isOpen={open}
-        isHeaderDisabled={false}
         onRequestClose={handleRequestClose}
         targetRef={getButtonNode}
         isArrowDisplayed

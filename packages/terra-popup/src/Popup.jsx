@@ -122,7 +122,7 @@ const defaultProps = {
   contentWidth: '240',
   isArrowDisplayed: false,
   isContentFocusDisabled: false,
-  isHeaderDisabled: true,
+  isHeaderDisabled: false,
   isOpen: false,
   popupContentRole: 'dialog',
   isMenu: false,

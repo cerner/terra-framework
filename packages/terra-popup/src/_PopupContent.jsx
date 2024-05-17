@@ -93,7 +93,7 @@ const defaultProps = {
   contentHeightMax: -1,
   contentWidthMax: -1,
   isFocusedDisabled: false,
-  isHeaderDisabled: true,
+  isHeaderDisabled: false,
   isHeightAutomatic: false,
   isWidthAutomatic: false,
   popupContentRole: 'dialog',
@@ -216,7 +216,7 @@ class PopupContent extends React.Component {
     const isFullScreen = isHeightBounded && isWidthBounded;
 
     let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
-    if ((isFullScreen || !isHeaderDisabled) && !isMenu) {
+    if ((!isHeaderDisabled || isFullScreen) && !isMenu) {
       content = PopupContent.addPopupHeader(content, onRequestClose);
     }
     const theme = this.context;

@@ -74,7 +74,6 @@ const PopupWithInteractiveContent = () => {
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}
         contentHeight="auto"
-        isHeaderDisabled={false}
       >
         {/* eslint-disable-next-line react/forbid-dom-props */}
         <div style={{ padding: '1em' }}>

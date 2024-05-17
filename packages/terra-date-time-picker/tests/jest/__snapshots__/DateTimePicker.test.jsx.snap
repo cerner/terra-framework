@@ -20,6 +20,7 @@ exports[`correctly applies the theme context className 1`] = `
 exports[`renders DateTimePicker with correct ARIA attributes 1`] = `
 <DateTimePicker
   ariaLabel="Enter Date/Time"
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -65,6 +66,7 @@ exports[`renders DateTimePicker with correct ARIA attributes 1`] = `
 
 exports[`should render a date time picker with a default date and time 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -110,6 +112,7 @@ exports[`should render a date time picker with a default date and time 1`] = `
 
 exports[`should render a date time picker with disabled dates 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   excludeDates={
@@ -159,6 +162,7 @@ exports[`should render a date time picker with disabled dates 1`] = `
 
 exports[`should render a date time picker with filtered dates 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   filterDate={[Function]}
@@ -204,6 +208,7 @@ exports[`should render a date time picker with filtered dates 1`] = `
 
 exports[`should render a date time picker with included dates 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   includeDates={
@@ -253,6 +258,7 @@ exports[`should render a date time picker with included dates 1`] = `
 
 exports[`should render a date time picker with min and max dates 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -297,6 +303,7 @@ exports[`should render a date time picker with min and max dates 1`] = `
 
 exports[`should render a date time picker with onBlur 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -342,6 +349,7 @@ exports[`should render a date time picker with onBlur 1`] = `
 
 exports[`should render a date time picker with onChange 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -387,6 +395,7 @@ exports[`should render a date time picker with onChange 1`] = `
 
 exports[`should render a date time picker with onChangeRaw 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -432,6 +441,7 @@ exports[`should render a date time picker with onChangeRaw 1`] = `
 
 exports[`should render a date time picker with the seconds field enabled 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -476,6 +486,7 @@ exports[`should render a date time picker with the seconds field enabled 1`] = `
 
 exports[`should render a default date time picker 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -521,6 +532,7 @@ exports[`should render a default date time picker 1`] = `
 exports[`should render a default date time picker with ariaLabel 1`] = `
 <DateTimePicker
   ariaLabel="Select date and time"
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -570,6 +582,7 @@ exports[`should render a default date time picker with custom date input attribu
       "id": "terra-date-input",
     }
   }
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -614,6 +627,7 @@ exports[`should render a default date time picker with custom date input attribu
 
 exports[`should render a default date time picker with custom time input attributes 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -663,6 +677,7 @@ exports[`should render a default date time picker with custom time input attribu
 
 exports[`should render a disabled date time picker 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={true}
   errorId=""
   initialTimeZone="America/Chicago"
@@ -707,6 +722,7 @@ exports[`should render a disabled date time picker 1`] = `
 
 exports[`should render a error message 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId="default-invalid-error"
   initialTimeZone="America/Chicago"
@@ -751,6 +767,7 @@ exports[`should render a error message 1`] = `
 
 exports[`should render with a default timeVariant if variant is not specified 1`] = `
 <DateTimePicker
+  disableButtonFocusOnClose={false}
   disabled={false}
   errorId=""
   initialTimeZone="America/Chicago"

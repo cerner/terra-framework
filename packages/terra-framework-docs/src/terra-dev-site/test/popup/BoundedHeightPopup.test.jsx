@@ -56,7 +56,6 @@ class BoundedPopup extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
-          isHeaderDisabled={false}
         >
           <p className={cx('popup-text')}>This popup is bounded by height.</p>
         </Popup>

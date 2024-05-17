@@ -56,7 +56,6 @@ class PopupExample extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
-          isHeaderDisabled={false}
         >
           <p className={cx('popup-text')}>This is popup content with a automatic width of 400px, but is bounded by the parent width of 200px.</p>
         </Popup>

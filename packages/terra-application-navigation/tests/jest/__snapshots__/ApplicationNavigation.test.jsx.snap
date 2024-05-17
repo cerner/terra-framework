@@ -246,7 +246,6 @@ exports[`ApplicationNavigation correctly applies the theme context className 1`]
         isArrowDisplayed={true}
         isContentFocusDisabled={true}
         isHeaderDisabled={true}
-        isMenu={false}
         isOpen={false}
         onRequestClose={[Function]}
         popupContentRole="dialog"
@@ -314,7 +313,6 @@ exports[`ApplicationNavigation should render default element 1`] = `
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
     isHeaderDisabled={true}
-    isMenu={false}
     isOpen={false}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -452,7 +450,6 @@ exports[`ApplicationNavigation should render with prop data at large breakpoint 
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
     isHeaderDisabled={true}
-    isMenu={false}
     isOpen={false}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -682,7 +679,6 @@ exports[`ApplicationNavigation should render with prop data at medium breakpoint
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
     isHeaderDisabled={true}
-    isMenu={false}
     isOpen={false}
     onRequestClose={[Function]}
     popupContentRole="dialog"

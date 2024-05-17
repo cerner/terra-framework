@@ -100,7 +100,6 @@ class PopupWithContentWidth extends Component {
             isOpen={open}
             targetRef={this.getButtonNode}
             onRequestClose={this.handleRequestClose}
-            isHeaderDisabled={false}
           >
             <p>This is a popup with custom contentWidth and contentHeight</p>
           </Popup>

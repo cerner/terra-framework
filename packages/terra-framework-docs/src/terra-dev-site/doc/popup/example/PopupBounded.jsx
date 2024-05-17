@@ -48,7 +48,6 @@ function PopupBounded() {
           isOpen={open}
           onRequestClose={handleRequestClose}
           targetRef={getButtonNode}
-          isHeaderDisabled={false}
           isContentFocusDisabled
         >
           <Placeholder title="Popup Content" />

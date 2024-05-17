@@ -56,11 +56,11 @@ const propTypes = {
   /**
    * Adds a header with close button to the popup.
    */
-  isPopupHeaderDisabled: PropTypes.boolean,
+  showPopupHeader: PropTypes.boolean,
 };
 
 const defaultProps = {
-  isPopupHeaderDisabled: true,
+  showPopupHeader: true,
 };
 
 const Pill = (props) => {
@@ -73,7 +73,7 @@ const Pill = (props) => {
     onRemove,
     title,
     onSelect,
-    isPopupHeaderDisabled,
+    showPopupHeader,
     ...customProps
   } = props;
 
@@ -217,7 +217,7 @@ const Pill = (props) => {
       targetRef={getPillRef}
       onRequestClose={handleOnRequestClose}
       contentHeight="auto"
-      isHeaderDisabled={isPopupHeaderDisabled}
+      isHeaderDisabled={!showPopupHeader}
     >
       <div className={cx(['popup-content-pill-label', theme.className])}>
         {labelCategory
