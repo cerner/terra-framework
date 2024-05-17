@@ -3,8 +3,8 @@
 exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = `
 <IntlProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -32,7 +32,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
 >
   <OnClickOutside(InjectIntl(TabDropDown))
     eventTypes={
-      Array [
+      [
         "mousedown",
         "touchstart",
       ]
@@ -47,7 +47,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
       disableOnClickOutside={[Function]}
       enableOnClickOutside={[Function]}
       eventTypes={
-        Array [
+        [
           "mousedown",
           "touchstart",
         ]
@@ -61,14 +61,14 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
         disableOnClickOutside={[Function]}
         enableOnClickOutside={[Function]}
         eventTypes={
-          Array [
+          [
             "mousedown",
             "touchstart",
           ]
         }
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -77,8 +77,8 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -113,7 +113,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             onFocus={[Function]}
             onSelect={[MockFunction]}
             tabIds={
-              Array [
+              [
                 "tab-1",
                 "tab-2",
               ]
@@ -124,8 +124,8 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               id="tab-1"
               index={0}
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -134,8 +134,8 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -162,7 +162,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               showAddButton={false}
               showIcon={false}
               tabIds={
-                Array [
+                [
                   "tab-1",
                   "tab-2",
                 ]
@@ -230,7 +230,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
             onFocus={[Function]}
             onSelect={[MockFunction]}
             tabIds={
-              Array [
+              [
                 "tab-1",
                 "tab-2",
               ]
@@ -241,8 +241,8 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               id="tab-2"
               index={0}
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -251,8 +251,8 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -279,7 +279,7 @@ exports[`TabDropDown should render the dropdown with provided hidden tabs 1`] = 
               showAddButton={false}
               showIcon={false}
               tabIds={
-                Array [
+                [
                   "tab-1",
                   "tab-2",
                 ]

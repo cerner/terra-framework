@@ -6,7 +6,7 @@ exports[`Layout Menu Disabled should render a Layout when huge 1`] = `
   header={
     <div
       layoutConfig={
-        Object {
+        {
           "menuIsOpen": false,
           "size": "huge",
           "toggleMenu": undefined,
@@ -35,7 +35,7 @@ exports[`Layout Menu Disabled should render a Layout when huge 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "size": "huge",
             "toggleMenu": undefined,
@@ -55,7 +55,7 @@ exports[`Layout Menu Disabled should render a Layout when large 1`] = `
   header={
     <div
       layoutConfig={
-        Object {
+        {
           "menuIsOpen": false,
           "size": "large",
           "toggleMenu": undefined,
@@ -84,7 +84,7 @@ exports[`Layout Menu Disabled should render a Layout when large 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "size": "large",
             "toggleMenu": undefined,
@@ -104,7 +104,7 @@ exports[`Layout Menu Disabled should render a Layout when medium 1`] = `
   header={
     <div
       layoutConfig={
-        Object {
+        {
           "menuIsOpen": false,
           "size": "medium",
           "toggleMenu": undefined,
@@ -133,7 +133,7 @@ exports[`Layout Menu Disabled should render a Layout when medium 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "size": "medium",
             "toggleMenu": undefined,
@@ -168,7 +168,7 @@ exports[`Layout Menu Disabled should render a Layout when small 1`] = `
       header={
         <div
           layoutConfig={
-            Object {
+            {
               "menuIsOpen": false,
               "size": "small",
               "toggleMenu": undefined,
@@ -182,7 +182,7 @@ exports[`Layout Menu Disabled should render a Layout when small 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "size": "small",
             "toggleMenu": undefined,
@@ -217,7 +217,7 @@ exports[`Layout Menu Disabled should render a Layout when tiny 1`] = `
       header={
         <div
           layoutConfig={
-            Object {
+            {
               "menuIsOpen": false,
               "size": "tiny",
               "toggleMenu": undefined,
@@ -231,7 +231,7 @@ exports[`Layout Menu Disabled should render a Layout when tiny 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "size": "tiny",
             "toggleMenu": undefined,
@@ -251,7 +251,7 @@ exports[`Layout Menu Enabled should render a Layout when huge 1`] = `
   header={
     <div
       layoutConfig={
-        Object {
+        {
           "menuIsOpen": true,
           "size": "huge",
           "toggleMenu": undefined,
@@ -272,7 +272,7 @@ exports[`Layout Menu Enabled should render a Layout when huge 1`] = `
     panelContent={
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": true,
             "menuIsPinned": undefined,
             "size": "huge",
@@ -294,7 +294,7 @@ exports[`Layout Menu Enabled should render a Layout when huge 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": true,
             "size": "huge",
             "toggleMenu": undefined,
@@ -314,7 +314,7 @@ exports[`Layout Menu Enabled should render a Layout when large 1`] = `
   header={
     <div
       layoutConfig={
-        Object {
+        {
           "menuIsOpen": true,
           "size": "large",
           "toggleMenu": undefined,
@@ -335,7 +335,7 @@ exports[`Layout Menu Enabled should render a Layout when large 1`] = `
     panelContent={
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": true,
             "menuIsPinned": undefined,
             "size": "large",
@@ -357,7 +357,7 @@ exports[`Layout Menu Enabled should render a Layout when large 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": true,
             "size": "large",
             "toggleMenu": undefined,
@@ -377,7 +377,7 @@ exports[`Layout Menu Enabled should render a Layout when medium 1`] = `
   header={
     <div
       layoutConfig={
-        Object {
+        {
           "menuIsOpen": true,
           "size": "medium",
           "toggleMenu": undefined,
@@ -398,7 +398,7 @@ exports[`Layout Menu Enabled should render a Layout when medium 1`] = `
     panelContent={
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": true,
             "menuIsPinned": undefined,
             "size": "medium",
@@ -420,7 +420,7 @@ exports[`Layout Menu Enabled should render a Layout when medium 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": true,
             "size": "medium",
             "toggleMenu": undefined,
@@ -449,7 +449,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
     panelContent={
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "menuIsPinned": undefined,
             "size": "small",
@@ -469,7 +469,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
       header={
         <div
           layoutConfig={
-            Object {
+            {
               "menuIsOpen": false,
               "size": "small",
               "toggleMenu": [Function],
@@ -483,7 +483,7 @@ exports[`Layout Menu Enabled should render a Layout when small 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "size": "small",
             "toggleMenu": [Function],
@@ -512,7 +512,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
     panelContent={
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "menuIsPinned": undefined,
             "size": "tiny",
@@ -532,7 +532,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
       header={
         <div
           layoutConfig={
-            Object {
+            {
               "menuIsOpen": false,
               "size": "tiny",
               "toggleMenu": [Function],
@@ -546,7 +546,7 @@ exports[`Layout Menu Enabled should render a Layout when tiny 1`] = `
     >
       <div
         layoutConfig={
-          Object {
+          {
             "menuIsOpen": false,
             "size": "tiny",
             "toggleMenu": [Function],

@@ -18,8 +18,8 @@ exports[`Cell renders a pinned cell 1`] = `
     columnIndex={0}
     height="50px"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -28,8 +28,8 @@ exports[`Cell renders a pinned cell 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -64,7 +64,7 @@ exports[`Cell renders a pinned cell 1`] = `
       role="rowheader"
       scope="row"
       style={
-        Object {
+        {
           "left": 0,
         }
       }
@@ -72,7 +72,7 @@ exports[`Cell renders a pinned cell 1`] = `
       <div
         className="cell-content"
         style={
-          Object {
+          {
             "height": "50px",
           }
         }
@@ -94,7 +94,7 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -102,7 +102,7 @@ exports[`Cell verifies mask takes precedence when cell is masked, selectable and
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }
@@ -125,7 +125,7 @@ exports[`Cell verifies that a cell has renders that masked label text, when prov
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -133,7 +133,7 @@ exports[`Cell verifies that a cell has renders that masked label text, when prov
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }
@@ -156,7 +156,7 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -164,7 +164,7 @@ exports[`Cell verifies that a cell has the correct styles and no content when is
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }
@@ -193,8 +193,8 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
     columnId="ColumnId"
     columnIndex={0}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -203,8 +203,8 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -234,7 +234,7 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
       headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
       onKeyDown={[Function]}
       style={
-        Object {
+        {
           "left": null,
         }
       }
@@ -244,7 +244,7 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
         _createFocusTrap={[Function]}
         active={false}
         focusTrapOptions={
-          Object {
+          {
             "clickOutsideDeactivates": true,
             "escapeDeactivates": false,
             "onDeactivate": [Function],
@@ -256,7 +256,7 @@ exports[`Cell verifies that a grid cell has a FocusTrap element 1`] = `
         <div
           className="cell-content"
           style={
-            Object {
+            {
               "minHeight": undefined,
             }
           }
@@ -302,8 +302,8 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
     columnId="ColumnId"
     columnIndex={0}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -312,8 +312,8 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -343,7 +343,7 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
       headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
       onKeyDown={[Function]}
       style={
-        Object {
+        {
           "left": null,
         }
       }
@@ -353,7 +353,7 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
         _createFocusTrap={[Function]}
         active={false}
         focusTrapOptions={
-          Object {
+          {
             "clickOutsideDeactivates": true,
             "escapeDeactivates": false,
             "onDeactivate": [Function],
@@ -365,7 +365,7 @@ exports[`Cell verifies that a grid cell without a focusale element does not have
         <div
           className="cell-content"
           style={
-            Object {
+            {
               "minHeight": undefined,
             }
           }
@@ -388,7 +388,7 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -396,7 +396,7 @@ exports[`Cell verifies that a selected cell has the correct styles when isSelect
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }
@@ -414,7 +414,7 @@ exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] =
   headers="test-table-rowheader-RowID test-table-ColumnId-headerCell"
   onKeyDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -422,7 +422,7 @@ exports[`Cell verifies that a table cell does not have a FocusTrap element 1`] =
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }
@@ -440,7 +440,7 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -448,7 +448,7 @@ exports[`Cell verifies that only a regular cell(<td>) is created when isRowHeade
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }
@@ -469,7 +469,7 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
   role="rowheader"
   scope="row"
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -477,7 +477,7 @@ exports[`Cell verifies that only a row header cell (<th>) is created when isRowH
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "height": "50px",
       }
     }
@@ -495,7 +495,7 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -503,7 +503,7 @@ exports[`Cell verifies that the cell rendered is marked blank when the cell cont
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }
@@ -525,7 +525,7 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
   onKeyDown={[Function]}
   onMouseDown={[Function]}
   style={
-    Object {
+    {
       "left": null,
     }
   }
@@ -533,7 +533,7 @@ exports[`Cell verifies that the cell rendered is marked selectable when isSelect
   <div
     className="cell-content"
     style={
-      Object {
+      {
         "minHeight": undefined,
       }
     }

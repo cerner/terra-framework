@@ -3,8 +3,8 @@
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -30,7 +30,7 @@ exports[`correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -43,17 +43,17 @@ exports[`correctly applies the theme context className 1`] = `
       atMinDate={false}
       disabled={false}
       errorId=""
-      hourAttributes={Object {}}
+      hourAttributes={{}}
       inputAttributes={
-        Object {
+        {
           "disabled": false,
           "isInvalid": false,
           "required": false,
         }
       }
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -62,8 +62,8 @@ exports[`correctly applies the theme context className 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -81,12 +81,12 @@ exports[`correctly applies the theme context className 1`] = `
       isIncomplete={false}
       isInvalid={false}
       isInvalidMeridiem={false}
-      minuteAttributes={Object {}}
+      minuteAttributes={{}}
       name="time-input"
       onBlur={null}
       onChange={null}
       required={false}
-      secondAttributes={Object {}}
+      secondAttributes={{}}
       showSeconds={false}
       variant="24-hour"
     >
@@ -126,7 +126,7 @@ exports[`correctly applies the theme context className 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            pattern="\\\\d*"
+            pattern="\\d*"
             refCallback={[Function]}
             required={false}
             showIsInvalid={false}
@@ -149,7 +149,7 @@ exports[`correctly applies the theme context className 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              pattern="\\\\d*"
+              pattern="\\d*"
               refCallback={[Function]}
               required={false}
               size="2"
@@ -169,7 +169,7 @@ exports[`correctly applies the theme context className 1`] = `
                 onChange={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
-                pattern="\\\\d*"
+                pattern="\\d*"
                 required={false}
                 size="2"
                 type="number"
@@ -196,8 +196,8 @@ exports[`correctly applies the theme context className 1`] = `
             <TimeSpacer
               className="time-spacer"
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -206,8 +206,8 @@ exports[`correctly applies the theme context className 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -244,7 +244,7 @@ exports[`correctly applies the theme context className 1`] = `
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            pattern="\\\\d*"
+            pattern="\\d*"
             refCallback={[Function]}
             required={false}
             showIsInvalid={false}
@@ -267,7 +267,7 @@ exports[`correctly applies the theme context className 1`] = `
               onChange={[Function]}
               onFocus={[Function]}
               onKeyDown={[Function]}
-              pattern="\\\\d*"
+              pattern="\\d*"
               refCallback={[Function]}
               required={false}
               size="2"
@@ -287,7 +287,7 @@ exports[`correctly applies the theme context className 1`] = `
                 onChange={[Function]}
                 onFocus={[Function]}
                 onKeyDown={[Function]}
-                pattern="\\\\d*"
+                pattern="\\d*"
                 required={false}
                 size="2"
                 type="number"
@@ -364,7 +364,7 @@ exports[`should ignore invalid times properly 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -388,7 +388,7 @@ exports[`should ignore invalid times properly 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -442,7 +442,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -466,7 +466,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -490,7 +490,7 @@ exports[`should ignore invalid times with seconds properly 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -544,7 +544,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="form-input time-input-hour"
         maxlength="2"
         name="terra-time-hour-time-input"
-        pattern="\\\\d*"
+        pattern="\\d*"
         size="2"
         type="number"
         value=""
@@ -570,7 +570,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="form-input time-input-minute"
         maxlength="2"
         name="terra-time-minute-time-input"
-        pattern="\\\\d*"
+        pattern="\\d*"
         size="2"
         type="number"
         value=""
@@ -665,7 +665,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="form-input time-input-hour"
         maxlength="2"
         name="terra-time-hour-time-input-2"
-        pattern="\\\\d*"
+        pattern="\\d*"
         size="2"
         type="number"
         value=""
@@ -691,7 +691,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="form-input time-input-minute"
         maxlength="2"
         name="terra-time-minute-time-input-2"
-        pattern="\\\\d*"
+        pattern="\\d*"
         size="2"
         type="number"
         value=""
@@ -786,7 +786,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="form-input time-input-hour"
         maxlength="2"
         name="terra-time-hour-time-input-3"
-        pattern="\\\\d*"
+        pattern="\\d*"
         size="2"
         type="number"
         value=""
@@ -812,7 +812,7 @@ exports[`should not have duplicate ids on the page when multiple date pickers ar
         class="form-input time-input-minute"
         maxlength="2"
         name="terra-time-minute-time-input-3"
-        pattern="\\\\d*"
+        pattern="\\d*"
         size="2"
         type="number"
         value=""
@@ -890,17 +890,17 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
   atMinDate={false}
   disabled={false}
   errorId=""
-  hourAttributes={Object {}}
+  hourAttributes={{}}
   inputAttributes={
-    Object {
+    {
       "disabled": false,
       "isInvalid": false,
       "required": false,
     }
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -909,8 +909,8 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -928,14 +928,14 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
   isIncomplete={false}
   isInvalid={false}
   isInvalidMeridiem={false}
-  minuteAttributes={Object {}}
+  minuteAttributes={{}}
   name="time-input"
   onBlur={null}
   onChange={null}
   refCallback={
     [MockFunction] {
-      "calls": Array [
-        Array [
+      "calls": [
+        [
           <input
             aria-describedby="00000000-0000-0000-0000-000000000000-description"
             aria-disabled="false"
@@ -944,15 +944,15 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             class="form-input time-input-hour"
             maxlength="2"
             name="terra-time-hour-time-input"
-            pattern="\\\\d*"
+            pattern="\\d*"
             size="2"
             type="number"
             value=""
           />,
         ],
       ],
-      "results": Array [
-        Object {
+      "results": [
+        {
           "type": "return",
           "value": undefined,
         },
@@ -960,7 +960,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
     }
   }
   required={false}
-  secondAttributes={Object {}}
+  secondAttributes={{}}
   showSeconds={false}
   variant="24-hour"
 >
@@ -1000,7 +1000,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         onChange={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        pattern="\\\\d*"
+        pattern="\\d*"
         refCallback={[Function]}
         required={false}
         showIsInvalid={false}
@@ -1023,7 +1023,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
-          pattern="\\\\d*"
+          pattern="\\d*"
           refCallback={[Function]}
           required={false}
           size="2"
@@ -1043,7 +1043,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            pattern="\\\\d*"
+            pattern="\\d*"
             required={false}
             size="2"
             type="number"
@@ -1070,8 +1070,8 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         <TimeSpacer
           className="time-spacer"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -1080,8 +1080,8 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -1118,7 +1118,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
         onChange={[Function]}
         onFocus={[Function]}
         onKeyDown={[Function]}
-        pattern="\\\\d*"
+        pattern="\\d*"
         refCallback={[Function]}
         required={false}
         showIsInvalid={false}
@@ -1141,7 +1141,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
           onChange={[Function]}
           onFocus={[Function]}
           onKeyDown={[Function]}
-          pattern="\\\\d*"
+          pattern="\\d*"
           refCallback={[Function]}
           required={false}
           size="2"
@@ -1161,7 +1161,7 @@ exports[`should pass in refCallback as the ref prop of the hour input element 1`
             onChange={[Function]}
             onFocus={[Function]}
             onKeyDown={[Function]}
-            pattern="\\\\d*"
+            pattern="\\d*"
             required={false}
             size="2"
             type="number"
@@ -1236,7 +1236,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -1260,7 +1260,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -1284,7 +1284,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -1299,7 +1299,7 @@ exports[`should render a 12 hour clock time input with seconds input 1`] = `
     isMultiSelect={false}
     onChange={[Function]}
     selectedKeys={
-      Array [
+      [
         "Terra.timeInput.am",
       ]
     }
@@ -1363,7 +1363,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       class="form-input time-input-hour with-second"
       maxlength="2"
       name="terra-time-hour-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1389,7 +1389,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       class="form-input time-input-minute with-second"
       maxlength="2"
       name="terra-time-minute-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1415,7 +1415,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons and seconds in
       class="form-input time-input-second"
       maxlength="2"
       name="terra-time-second-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1513,7 +1513,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       class="form-input time-input-hour"
       maxlength="2"
       name="terra-time-hour-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1539,7 +1539,7 @@ exports[`should render a 12 hour timepicker meridiem with buttons when viewed on
       class="form-input time-input-minute"
       maxlength="2"
       name="terra-time-minute-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1637,7 +1637,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       class="form-input time-input-hour"
       maxlength="2"
       name="terra-time-hour-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1663,7 +1663,7 @@ exports[`should render a 24 hour timepicker properly on mobile devices 1`] = `
       class="form-input time-input-minute"
       maxlength="2"
       name="terra-time-minute-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1718,7 +1718,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       class="form-input time-input-hour with-second"
       maxlength="2"
       name="terra-time-hour-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1744,7 +1744,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       class="form-input time-input-minute with-second"
       maxlength="2"
       name="terra-time-minute-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1770,7 +1770,7 @@ exports[`should render a 24 hour timepicker with seconds properly on mobile devi
       class="form-input time-input-second"
       maxlength="2"
       name="terra-time-second-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -1828,7 +1828,7 @@ exports[`should render a default time input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -1852,7 +1852,7 @@ exports[`should render a default time input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -1906,7 +1906,7 @@ exports[`should render a disabled time input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -1930,7 +1930,7 @@ exports[`should render a disabled time input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -1984,7 +1984,7 @@ exports[`should render a error message 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2008,7 +2008,7 @@ exports[`should render a error message 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2023,7 +2023,7 @@ exports[`should render a error message 1`] = `
     isMultiSelect={false}
     onChange={[Function]}
     selectedKeys={
-      Array [
+      [
         "Terra.timeInput.am",
       ]
     }
@@ -2090,7 +2090,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2114,7 +2114,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2129,7 +2129,7 @@ exports[`should render a time input with 12 hour clock set 1`] = `
     isMultiSelect={false}
     onChange={[Function]}
     selectedKeys={
-      Array [
+      [
         "Terra.timeInput.am",
       ]
     }
@@ -2196,7 +2196,7 @@ exports[`should render a time input with a default time 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2220,7 +2220,7 @@ exports[`should render a time input with a default time 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2275,7 +2275,7 @@ exports[`should render a time input with custom attributes 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2300,7 +2300,7 @@ exports[`should render a time input with custom attributes 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2354,7 +2354,7 @@ exports[`should render a time input with onBlur 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2378,7 +2378,7 @@ exports[`should render a time input with onBlur 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2432,7 +2432,7 @@ exports[`should render a time input with onChange 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2456,7 +2456,7 @@ exports[`should render a time input with onChange 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2510,7 +2510,7 @@ exports[`should render a time input with onFocus 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2534,7 +2534,7 @@ exports[`should render a time input with onFocus 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2588,7 +2588,7 @@ exports[`should render a time input with seconds input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2612,7 +2612,7 @@ exports[`should render a time input with seconds input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2636,7 +2636,7 @@ exports[`should render a time input with seconds input 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2690,7 +2690,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2714,7 +2714,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2738,7 +2738,7 @@ exports[`should render a time input with seconds input and a value 1`] = `
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2793,7 +2793,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2818,7 +2818,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2843,7 +2843,7 @@ exports[`should render a time input with seconds input and custom attributes 1`]
       onChange={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
-      pattern="\\\\d*"
+      pattern="\\d*"
       refCallback={[Function]}
       required={false}
       showIsInvalid={false}
@@ -2895,7 +2895,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       id="id-2"
       maxlength="2"
       name="terra-time-hour-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -2922,7 +2922,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       id="id-1"
       maxlength="2"
       name="terra-time-minute-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -2978,7 +2978,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       id="id-2"
       maxlength="2"
       name="terra-time-hour-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -3005,7 +3005,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       id="id-1"
       maxlength="2"
       name="terra-time-minute-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""
@@ -3032,7 +3032,7 @@ exports[`should set the labels with the correct htmlFor a 24 hour timepicker pro
       id="id-0"
       maxlength="2"
       name="terra-time-second-time-input"
-      pattern="\\\\d*"
+      pattern="\\d*"
       size="2"
       type="number"
       value=""

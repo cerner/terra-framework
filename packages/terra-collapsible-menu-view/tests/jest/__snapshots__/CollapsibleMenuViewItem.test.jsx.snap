@@ -3,8 +3,8 @@
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on menu item when isIconOnly is set, but should set the text 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -34,7 +34,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on
   isHighlighted={false}
   isInstructionsForUse={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -42,8 +42,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon on
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon prop menu item, but should render text 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -52,8 +52,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon pr
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -73,7 +73,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon pr
   isHighlighted={false}
   isInstructionsForUse={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -81,8 +81,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set icon pr
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isReversed prop on menu item 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -91,8 +91,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isRever
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -112,7 +112,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isRever
   isHighlighted={false}
   isInstructionsForUse={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -120,8 +120,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set isRever
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selected prop on menu item outside of item group 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -130,8 +130,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selecte
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -151,7 +151,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selecte
   isHighlighted={false}
   isInstructionsForUse={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -159,8 +159,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should not set selecte
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabled menu item when isDisabled is set 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -169,8 +169,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabl
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -190,7 +190,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabl
   isHighlighted={false}
   isInstructionsForUse={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -198,8 +198,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a disabl
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu item 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -208,8 +208,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -229,7 +229,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
   isHighlighted={false}
   isInstructionsForUse={false}
   isToggled={false}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -237,8 +237,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu item when subMenuItems are given 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -247,8 +247,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -269,7 +269,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should render a menu i
   isInstructionsForUse={false}
   isToggled={false}
   subMenuItems={
-    Array [
+    [
       <CollapsibleMenuViewItem
         isIconOnly={false}
         isReversed={false}
@@ -290,8 +290,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set isSelectabl
 >
   <Button
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -300,8 +300,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set isSelectabl
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -334,8 +334,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set isSelectabl
 exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected prop on menu item when inside item group 1`] = `
 <MenuItem
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -344,8 +344,8 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected pr
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -365,7 +365,7 @@ exports[`CollapsibleMenuViewItem Collapsible Menu Context should set selected pr
   isHighlighted={false}
   isInstructionsForUse={false}
   isToggled={true}
-  subMenuItems={Array []}
+  subMenuItems={[]}
   text="Testing"
 />
 `;
@@ -377,8 +377,8 @@ exports[`CollapsibleMenuViewItem should merge custom props 1`] = `
   <Button
     className="Testing"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -387,8 +387,8 @@ exports[`CollapsibleMenuViewItem should merge custom props 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -423,8 +423,8 @@ exports[`CollapsibleMenuViewItem should not set isSelected on button outside of 
 >
   <Button
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -433,8 +433,8 @@ exports[`CollapsibleMenuViewItem should not set isSelected on button outside of 
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -466,8 +466,8 @@ exports[`CollapsibleMenuViewItem should not set isSelected on button outside of 
 exports[`CollapsibleMenuViewItem should render a button group button when in an item group 1`] = `
 <ButtonGroupButton
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -476,8 +476,8 @@ exports[`CollapsibleMenuViewItem should render a button group button when in an 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -510,8 +510,8 @@ exports[`CollapsibleMenuViewItem should render a button with icon and text when 
       />
     }
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -520,8 +520,8 @@ exports[`CollapsibleMenuViewItem should render a button with icon and text when 
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -556,8 +556,8 @@ exports[`CollapsibleMenuViewItem should render a default component 1`] = `
 >
   <Button
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -566,8 +566,8 @@ exports[`CollapsibleMenuViewItem should render a default component 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -599,8 +599,8 @@ exports[`CollapsibleMenuViewItem should render a default component 1`] = `
 exports[`CollapsibleMenuViewItem should render a disabled button group button that is inside a button group when isDisabled is set 1`] = `
 <ButtonGroupButton
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -609,8 +609,8 @@ exports[`CollapsibleMenuViewItem should render a disabled button group button th
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -636,8 +636,8 @@ exports[`CollapsibleMenuViewItem should render a disabled button when isDisabled
 >
   <Button
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -646,8 +646,8 @@ exports[`CollapsibleMenuViewItem should render a disabled button when isDisabled
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -682,8 +682,8 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
     <Button
       aria-haspopup={true}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -692,8 +692,8 @@ exports[`CollapsibleMenuViewItem should render a menu when subMenuItems are give
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -745,8 +745,8 @@ exports[`CollapsibleMenuViewItem should set icon prop on button 1`] = `
       />
     }
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -755,8 +755,8 @@ exports[`CollapsibleMenuViewItem should set icon prop on button 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -798,8 +798,8 @@ exports[`CollapsibleMenuViewItem should set isReversed prop on button 1`] = `
       />
     }
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -808,8 +808,8 @@ exports[`CollapsibleMenuViewItem should set isReversed prop on button 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -841,8 +841,8 @@ exports[`CollapsibleMenuViewItem should set isReversed prop on button 1`] = `
 exports[`CollapsibleMenuViewItem should set isSelected on button that is inside item group 1`] = `
 <ButtonGroupButton
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -851,8 +851,8 @@ exports[`CollapsibleMenuViewItem should set isSelected on button that is inside 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],

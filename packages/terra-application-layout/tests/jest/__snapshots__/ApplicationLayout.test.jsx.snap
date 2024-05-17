@@ -8,24 +8,24 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
 >
   <withRouter(NavigationLayout)
     config={
-      Object {
-        "content": Object {
-          "/item_1": Object {
-            "component": Object {
-              "default": Object {
+      {
+        "content": {
+          "/item_1": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
+                "props": {
                   "test": "content props item 1",
                 },
               },
             },
             "path": "/item_1",
           },
-          "/item_2": Object {
-            "component": Object {
-              "default": Object {
+          "/item_2": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
+                "props": {
                   "test": "content props item 2",
                 },
               },
@@ -33,37 +33,37 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
             "path": "/item_2",
           },
         },
-        "menu": Object {
-          "/": Object {
-            "component": Object {
-              "small": Object {
+        "menu": {
+          "/": {
+            "component": {
+              "small": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": <div>
                       Extensions
                     </div>,
-                    "nameConfig": Object {
+                    "nameConfig": {
                       "accessory": <div>
                         accessory
                       </div>,
                       "title": "name config title",
                     },
-                    "utilityConfig": Object {
+                    "utilityConfig": {
                       "accessory": <div>
                         Avatar
                       </div>,
                       "initialSelectedKey": "utility 1",
-                      "menuItems": Array [
-                        Object {
-                          "childKeys": Array [
+                      "menuItems": [
+                        {
+                          "childKeys": [
                             "utility 2",
                           ],
                           "key": "utility 1",
                           "title": "Utility 1",
                         },
-                        Object {
+                        {
                           "key": "utility 2",
                           "title": "Utility 2",
                         },
@@ -73,14 +73,14 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
                       "title": "Swanson, Henry",
                     },
                   },
-                  "menuItems": Array [
-                    Object {
+                  "menuItems": [
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_1",
                       "text": "Item 1",
                     },
-                    Object {
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_2",
@@ -90,34 +90,34 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
                 },
                 "refuseRoutingStackNavigation": false,
               },
-              "tiny": Object {
+              "tiny": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": <div>
                       Extensions
                     </div>,
-                    "nameConfig": Object {
+                    "nameConfig": {
                       "accessory": <div>
                         accessory
                       </div>,
                       "title": "name config title",
                     },
-                    "utilityConfig": Object {
+                    "utilityConfig": {
                       "accessory": <div>
                         Avatar
                       </div>,
                       "initialSelectedKey": "utility 1",
-                      "menuItems": Array [
-                        Object {
-                          "childKeys": Array [
+                      "menuItems": [
+                        {
+                          "childKeys": [
                             "utility 2",
                           ],
                           "key": "utility 1",
                           "title": "Utility 1",
                         },
-                        Object {
+                        {
                           "key": "utility 2",
                           "title": "Utility 2",
                         },
@@ -127,14 +127,14 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
                       "title": "Swanson, Henry",
                     },
                   },
-                  "menuItems": Array [
-                    Object {
+                  "menuItems": [
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_1",
                       "text": "Item 1",
                     },
-                    Object {
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_2",
@@ -147,36 +147,36 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
             },
             "path": "/",
           },
-          "/item_1": Object {
-            "component": Object {
-              "default": Object {
+          "/item_1": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": <div>
                       Extensions
                     </div>,
-                    "nameConfig": Object {
+                    "nameConfig": {
                       "accessory": <div>
                         accessory
                       </div>,
                       "title": "name config title",
                     },
-                    "utilityConfig": Object {
+                    "utilityConfig": {
                       "accessory": <div>
                         Avatar
                       </div>,
                       "initialSelectedKey": "utility 1",
-                      "menuItems": Array [
-                        Object {
-                          "childKeys": Array [
+                      "menuItems": [
+                        {
+                          "childKeys": [
                             "utility 2",
                           ],
                           "key": "utility 1",
                           "title": "Utility 1",
                         },
-                        Object {
+                        {
                           "key": "utility 2",
                           "title": "Utility 2",
                         },
@@ -192,36 +192,36 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
             },
             "path": "/item_1",
           },
-          "/item_2": Object {
-            "component": Object {
-              "medium": Object {
+          "/item_2": {
+            "component": {
+              "medium": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": <div>
                       Extensions
                     </div>,
-                    "nameConfig": Object {
+                    "nameConfig": {
                       "accessory": <div>
                         accessory
                       </div>,
                       "title": "name config title",
                     },
-                    "utilityConfig": Object {
+                    "utilityConfig": {
                       "accessory": <div>
                         Avatar
                       </div>,
                       "initialSelectedKey": "utility 1",
-                      "menuItems": Array [
-                        Object {
-                          "childKeys": Array [
+                      "menuItems": [
+                        {
+                          "childKeys": [
                             "utility 2",
                           ],
                           "key": "utility 1",
                           "title": "Utility 1",
                         },
-                        Object {
+                        {
                           "key": "utility 2",
                           "title": "Utility 2",
                         },
@@ -243,17 +243,17 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
     header={
       <InjectIntl(withDisclosureManager(ApplicationHeader))
         applicationLinks={
-          Object {
+          {
             "alignment": undefined,
-            "links": Array [
-              Object {
+            "links": [
+              {
                 "externalLink": undefined,
                 "icon": undefined,
                 "id": "application-layout-tab-0",
                 "path": "/item_1",
                 "text": "Item 1",
               },
-              Object {
+              {
                 "externalLink": undefined,
                 "icon": undefined,
                 "id": "application-layout-tab-1",
@@ -270,7 +270,7 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
         }
         hasIcons={false}
         nameConfig={
-          Object {
+          {
             "accessory": <div>
               accessory
             </div>,
@@ -278,20 +278,20 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with giv
           }
         }
         utilityConfig={
-          Object {
+          {
             "accessory": <div>
               Avatar
             </div>,
             "initialSelectedKey": "utility 1",
-            "menuItems": Array [
-              Object {
-                "childKeys": Array [
+            "menuItems": [
+              {
+                "childKeys": [
                   "utility 2",
                 ],
                 "key": "utility 1",
                 "title": "Utility 1",
               },
-              Object {
+              {
                 "key": "utility 2",
                 "title": "Utility 2",
               },
@@ -316,24 +316,24 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
 >
   <withRouter(NavigationLayout)
     config={
-      Object {
-        "content": Object {
-          "/item_1": Object {
-            "component": Object {
-              "default": Object {
+      {
+        "content": {
+          "/item_1": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
+                "props": {
                   "test": "content props item 1",
                 },
               },
             },
             "path": "/item_1",
           },
-          "/item_2": Object {
-            "component": Object {
-              "default": Object {
+          "/item_2": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
+                "props": {
                   "test": "content props item 2",
                 },
               },
@@ -341,44 +341,44 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
             "path": "/item_2",
           },
         },
-        "menu": Object {
-          "/": Object {
-            "component": Object {
-              "small": Object {
+        "menu": {
+          "/": {
+            "component": {
+              "small": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
                     "utilityConfig": undefined,
                   },
-                  "menuItems": Array [],
+                  "menuItems": [],
                 },
                 "refuseRoutingStackNavigation": true,
               },
-              "tiny": Object {
+              "tiny": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
                     "utilityConfig": undefined,
                   },
-                  "menuItems": Array [],
+                  "menuItems": [],
                 },
                 "refuseRoutingStackNavigation": true,
               },
             },
             "path": "/",
           },
-          "/item_1": Object {
-            "component": Object {
-              "default": Object {
+          "/item_1": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
@@ -390,12 +390,12 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
             },
             "path": "/item_1",
           },
-          "/item_2": Object {
-            "component": Object {
-              "medium": Object {
+          "/item_2": {
+            "component": {
+              "medium": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
@@ -413,9 +413,9 @@ exports[`ApplicationLayout Snapshot Tests renders the ApplicationLayout with onl
     header={
       <InjectIntl(withDisclosureManager(ApplicationHeader))
         applicationLinks={
-          Object {
+          {
             "alignment": undefined,
-            "links": Array [],
+            "links": [],
           }
         }
         hasIcons={false}
@@ -434,24 +434,24 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
 >
   <withRouter(NavigationLayout)
     config={
-      Object {
-        "content": Object {
-          "/item_1": Object {
-            "component": Object {
-              "default": Object {
+      {
+        "content": {
+          "/item_1": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
+                "props": {
                   "test": "content props item 1",
                 },
               },
             },
             "path": "/item_1",
           },
-          "/item_2": Object {
-            "component": Object {
-              "default": Object {
+          "/item_2": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
+                "props": {
                   "test": "content props item 2",
                 },
               },
@@ -459,26 +459,26 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
             "path": "/item_2",
           },
         },
-        "menu": Object {
-          "/": Object {
-            "component": Object {
-              "small": Object {
+        "menu": {
+          "/": {
+            "component": {
+              "small": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
                     "utilityConfig": undefined,
                   },
-                  "menuItems": Array [
-                    Object {
+                  "menuItems": [
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_1",
                       "text": "Item 1",
                     },
-                    Object {
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_2",
@@ -488,23 +488,23 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
                 },
                 "refuseRoutingStackNavigation": false,
               },
-              "tiny": Object {
+              "tiny": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
                     "utilityConfig": undefined,
                   },
-                  "menuItems": Array [
-                    Object {
+                  "menuItems": [
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_1",
                       "text": "Item 1",
                     },
-                    Object {
+                    {
                       "externalLink": undefined,
                       "hasSubMenu": true,
                       "path": "/item_2",
@@ -517,12 +517,12 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
             },
             "path": "/",
           },
-          "/item_1": Object {
-            "component": Object {
-              "default": Object {
+          "/item_1": {
+            "component": {
+              "default": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
@@ -534,12 +534,12 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
             },
             "path": "/item_1",
           },
-          "/item_2": Object {
-            "component": Object {
-              "medium": Object {
+          "/item_2": {
+            "component": {
+              "medium": {
                 "componentClass": [Function],
-                "props": Object {
-                  "applicationMenuWrapperProps": Object {
+                "props": {
+                  "applicationMenuWrapperProps": {
                     "contentComponentClass": [Function],
                     "extensions": undefined,
                     "nameConfig": undefined,
@@ -557,10 +557,10 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
     header={
       <InjectIntl(withDisclosureManager(ApplicationHeader))
         applicationLinks={
-          Object {
+          {
             "alignment": undefined,
-            "links": Array [
-              Object {
+            "links": [
+              {
                 "externalLink": undefined,
                 "icon": <IconFeatured
                   data-name="Layer 1"
@@ -571,7 +571,7 @@ exports[`ApplicationLayout Snapshot Tests when given nav items with icons matche
                 "path": "/item_1",
                 "text": "Item 1",
               },
-              Object {
+              {
                 "externalLink": undefined,
                 "icon": <IconFeatured
                   data-name="Layer 1"

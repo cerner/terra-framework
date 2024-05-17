@@ -4,7 +4,7 @@ exports[`DisclosureManager discloses content with header title maintains disclos
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -82,7 +82,7 @@ exports[`DisclosureManager discloses content with header title renders with titl
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -151,7 +151,7 @@ exports[`DisclosureManager renders disclosed content in the disclosure wrapper 1
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -225,7 +225,7 @@ exports[`DisclosureManager should provide registerDismissCheck to disclosed cont
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -295,7 +295,7 @@ exports[`DisclosureManager should provide the disclosure content with closeDiscl
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -364,7 +364,7 @@ exports[`DisclosureManager should provide the disclosure content with dismiss fu
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -433,7 +433,7 @@ exports[`DisclosureManager should provide the disclosure content with maximize/m
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -502,7 +502,7 @@ exports[`DisclosureManager should provide the disclosure content with nested dis
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -571,7 +571,7 @@ exports[`DisclosureManager should provide the disclosure content with requestFoc
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -640,7 +640,7 @@ exports[`DisclosureManager should provide the disclosure content with restricted
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -710,7 +710,7 @@ exports[`DisclosureManager should provide the given children an app prop that sh
 <DisclosureManager
   render={[Function]}
   supportedDisclosureTypes={
-    Array [
+    [
       "test",
     ]
   }
@@ -778,7 +778,7 @@ exports[`DisclosureManager should provide the given children an app prop that sh
 exports[`DisclosureManager should render using the provided render function 1`] = `
 <DisclosureManager
   render={[Function]}
-  supportedDisclosureTypes={Array []}
+  supportedDisclosureTypes={[]}
 >
   <div
     id="wrapper"
@@ -822,7 +822,7 @@ exports[`DisclosureManager should render using the provided render function 1`] 
 exports[`DisclosureManager should render when trapNestedDisclosureRequests is provided 1`] = `
 <DisclosureManager
   render={[Function]}
-  supportedDisclosureTypes={Array []}
+  supportedDisclosureTypes={[]}
   trapNestedDisclosureRequests={true}
 >
   <div

@@ -5,13 +5,13 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
   header={
     <NavigationLayoutContent
       navigationLayoutRoutes={
-        Array [
-          Object {
+        [
+          {
             "componentClass": [Function],
-            "componentProps": Object {
+            "componentProps": {
               "type": "header",
             },
-            "parentPaths": Array [],
+            "parentPaths": [],
             "path": "/",
             "refuseRoutingStackNavigation": undefined,
           },
@@ -23,13 +23,13 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
   menu={
     <NavigationLayoutContent
       navigationLayoutRoutes={
-        Array [
-          Object {
+        [
+          {
             "componentClass": [Function],
-            "componentProps": Object {
+            "componentProps": {
               "type": "menu",
             },
-            "parentPaths": Array [],
+            "parentPaths": [],
             "path": "/",
             "refuseRoutingStackNavigation": undefined,
           },
@@ -42,13 +42,13 @@ exports[`NavigationLayout should render a NavigationLayout with defaulted compon
 >
   <NavigationLayoutContent
     navigationLayoutRoutes={
-      Array [
-        Object {
+      [
+        {
           "componentClass": [Function],
-          "componentProps": Object {
+          "componentProps": {
             "type": "content",
           },
-          "parentPaths": Array [],
+          "parentPaths": [],
           "path": "/",
           "refuseRoutingStackNavigation": undefined,
         },
@@ -64,19 +64,19 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
 <Layout
   header={
     <Header
-      navigationLayoutRoutes={Array []}
+      navigationLayoutRoutes={[]}
       navigationLayoutSize="medium"
     />
   }
   menu={
     <Menu
-      navigationLayoutRoutes={Array []}
+      navigationLayoutRoutes={[]}
       navigationLayoutSize="medium"
     />
   }
 >
   <Content
-    navigationLayoutRoutes={Array []}
+    navigationLayoutRoutes={[]}
     navigationLayoutSize="medium"
   />
 </Layout>
@@ -87,13 +87,13 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
   header={
     <Header
       navigationLayoutRoutes={
-        Array [
-          Object {
+        [
+          {
             "componentClass": [Function],
-            "componentProps": Object {
+            "componentProps": {
               "type": "header",
             },
-            "parentPaths": Array [],
+            "parentPaths": [],
             "path": "/",
             "refuseRoutingStackNavigation": undefined,
           },
@@ -105,13 +105,13 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
   menu={
     <Menu
       navigationLayoutRoutes={
-        Array [
-          Object {
+        [
+          {
             "componentClass": [Function],
-            "componentProps": Object {
+            "componentProps": {
               "type": "menu",
             },
-            "parentPaths": Array [],
+            "parentPaths": [],
             "path": "/",
             "refuseRoutingStackNavigation": undefined,
           },
@@ -123,13 +123,13 @@ exports[`NavigationLayout should render a NavigationLayout with provided compone
 >
   <Content
     navigationLayoutRoutes={
-      Array [
-        Object {
+      [
+        {
           "componentClass": [Function],
-          "componentProps": Object {
+          "componentProps": {
             "type": "content",
           },
-          "parentPaths": Array [],
+          "parentPaths": [],
           "path": "/",
           "refuseRoutingStackNavigation": undefined,
         },
@@ -144,7 +144,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided menu te
 <Layout
   header={
     <NavigationLayoutContent
-      navigationLayoutRoutes={Array []}
+      navigationLayoutRoutes={[]}
       navigationLayoutSize="medium"
     />
   }
@@ -152,7 +152,7 @@ exports[`NavigationLayout should render a NavigationLayout with provided menu te
   menuText="TEST MENU TEXT"
 >
   <NavigationLayoutContent
-    navigationLayoutRoutes={Array []}
+    navigationLayoutRoutes={[]}
     navigationLayoutSize="medium"
   />
 </Layout>
@@ -163,13 +163,13 @@ exports[`NavigationLayout should render a NavigationLayout without menu if locat
   header={
     <NavigationLayoutContent
       navigationLayoutRoutes={
-        Array [
-          Object {
+        [
+          {
             "componentClass": [Function],
-            "componentProps": Object {
+            "componentProps": {
               "type": "header",
             },
-            "parentPaths": Array [],
+            "parentPaths": [],
             "path": "/",
             "refuseRoutingStackNavigation": undefined,
           },
@@ -182,13 +182,13 @@ exports[`NavigationLayout should render a NavigationLayout without menu if locat
 >
   <NavigationLayoutContent
     navigationLayoutRoutes={
-      Array [
-        Object {
+      [
+        {
           "componentClass": [Function],
-          "componentProps": Object {
+          "componentProps": {
             "type": "content",
           },
-          "parentPaths": Array [],
+          "parentPaths": [],
           "path": "/",
           "refuseRoutingStackNavigation": undefined,
         },
@@ -204,14 +204,14 @@ exports[`NavigationLayout should render a default NavigationLayout 1`] = `
 <Layout
   header={
     <NavigationLayoutContent
-      navigationLayoutRoutes={Array []}
+      navigationLayoutRoutes={[]}
       navigationLayoutSize="medium"
     />
   }
   menu={null}
 >
   <NavigationLayoutContent
-    navigationLayoutRoutes={Array []}
+    navigationLayoutRoutes={[]}
     navigationLayoutSize="medium"
   />
 </Layout>

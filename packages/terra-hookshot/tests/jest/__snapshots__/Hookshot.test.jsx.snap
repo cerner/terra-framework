@@ -16,13 +16,13 @@ exports[`should shallow a default component 1`] = `
     attachmentBehavior="auto"
     attachmentMargin={0}
     contentAttachment={
-      Object {
+      {
         "horizontal": "center",
         "vertical": "top",
       }
     }
     contentOffset={
-      Object {
+      {
         "horizontal": 0,
         "vertical": 0,
       }
@@ -30,7 +30,7 @@ exports[`should shallow a default component 1`] = `
     isEnabled={true}
     isOpen={false}
     targetOffset={
-      Object {
+      {
         "horizontal": 0,
         "vertical": 0,
       }
@@ -39,7 +39,7 @@ exports[`should shallow a default component 1`] = `
   >
     <OnClickOutside(HookshotContent)
       eventTypes={
-        Array [
+        [
           "mousedown",
           "touchstart",
         ]

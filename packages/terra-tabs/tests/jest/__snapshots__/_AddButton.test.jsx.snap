@@ -3,8 +3,8 @@
 exports[`MoreButton should render a add button with provided props and selection handling 1`] = `
 <IntlProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`MoreButton should render a add button with provided props and selection
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -37,7 +37,7 @@ exports[`MoreButton should render a add button with provided props and selection
     isSelected={false}
     onSelect={[MockFunction]}
     tabIds={
-      Array [
+      [
         "tab-1",
         "tab-2",
         "tab-3",
@@ -50,8 +50,8 @@ exports[`MoreButton should render a add button with provided props and selection
       id="addbtn"
       index={5}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -60,8 +60,8 @@ exports[`MoreButton should render a add button with provided props and selection
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -79,7 +79,7 @@ exports[`MoreButton should render a add button with provided props and selection
       isSelected={false}
       onSelect={[MockFunction]}
       tabIds={
-        Array [
+        [
           "tab-1",
           "tab-2",
           "tab-3",

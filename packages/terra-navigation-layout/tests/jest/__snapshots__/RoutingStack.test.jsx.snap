@@ -3,7 +3,7 @@
 exports[`RoutingStack should render a RoutingStack with provided routes and nav disabled 1`] = `
 <Switch
   location={
-    Object {
+    {
       "pathname": "/a/b/c",
     }
   }

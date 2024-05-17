@@ -3,7 +3,7 @@
 exports[`correctly applies the theme context className 1`] = `
 <ContextProvider
   value={
-    Object {
+    {
       "className": "orion-fusion-theme",
       "density": undefined,
       "name": undefined,
@@ -13,8 +13,8 @@ exports[`correctly applies the theme context className 1`] = `
   <div>
     <withRouter(ApplicationTabs)
       links={
-        Array [
-          Object {
+        [
+          {
             "icon": <IconFeatured
               data-name="Layer 1"
               viewBox="0 0 48 48"
@@ -23,7 +23,7 @@ exports[`correctly applies the theme context className 1`] = `
             "path": "/test1",
             "text": "test 1",
           },
-          Object {
+          {
             "icon": <IconFeatured
               data-name="Layer 1"
               viewBox="0 0 48 48"
@@ -32,7 +32,7 @@ exports[`correctly applies the theme context className 1`] = `
             "path": "/test2",
             "text": "test 2",
           },
-          Object {
+          {
             "icon": <IconFeatured
               data-name="Layer 1"
               viewBox="0 0 48 48"
@@ -41,7 +41,7 @@ exports[`correctly applies the theme context className 1`] = `
             "path": "/test3",
             "text": "test 3",
           },
-          Object {
+          {
             "icon": <IconFeatured
               data-name="Layer 1"
               viewBox="0 0 48 48"
@@ -50,7 +50,7 @@ exports[`correctly applies the theme context className 1`] = `
             "path": "/test4",
             "text": "test 4",
           },
-          Object {
+          {
             "icon": <IconFeatured
               data-name="Layer 1"
               viewBox="0 0 48 48"
@@ -59,7 +59,7 @@ exports[`correctly applies the theme context className 1`] = `
             "path": "/test5",
             "text": "test 5",
           },
-          Object {
+          {
             "icon": <IconFeatured
               data-name="Layer 1"
               viewBox="0 0 48 48"
@@ -79,8 +79,8 @@ exports[`should render ApplicationTabs with icons 1`] = `
 <div>
   <withRouter(ApplicationTabs)
     links={
-      Array [
-        Object {
+      [
+        {
           "icon": <IconFeatured
             data-name="Layer 1"
             viewBox="0 0 48 48"
@@ -89,7 +89,7 @@ exports[`should render ApplicationTabs with icons 1`] = `
           "path": "/test1",
           "text": "test 1",
         },
-        Object {
+        {
           "icon": <IconFeatured
             data-name="Layer 1"
             viewBox="0 0 48 48"
@@ -98,7 +98,7 @@ exports[`should render ApplicationTabs with icons 1`] = `
           "path": "/test2",
           "text": "test 2",
         },
-        Object {
+        {
           "icon": <IconFeatured
             data-name="Layer 1"
             viewBox="0 0 48 48"
@@ -107,7 +107,7 @@ exports[`should render ApplicationTabs with icons 1`] = `
           "path": "/test3",
           "text": "test 3",
         },
-        Object {
+        {
           "icon": <IconFeatured
             data-name="Layer 1"
             viewBox="0 0 48 48"
@@ -116,7 +116,7 @@ exports[`should render ApplicationTabs with icons 1`] = `
           "path": "/test4",
           "text": "test 4",
         },
-        Object {
+        {
           "icon": <IconFeatured
             data-name="Layer 1"
             viewBox="0 0 48 48"
@@ -125,7 +125,7 @@ exports[`should render ApplicationTabs with icons 1`] = `
           "path": "/test5",
           "text": "test 5",
         },
-        Object {
+        {
           "icon": <IconFeatured
             data-name="Layer 1"
             viewBox="0 0 48 48"
@@ -145,28 +145,28 @@ exports[`should render ApplicationTabs with links and alignment 1`] = `
   <withRouter(ApplicationTabs)
     alignment="start"
     links={
-      Array [
-        Object {
+      [
+        {
           "path": "/test1",
           "text": "test 1",
         },
-        Object {
+        {
           "path": "/test2",
           "text": "test 2",
         },
-        Object {
+        {
           "path": "/test3",
           "text": "test 3",
         },
-        Object {
+        {
           "path": "/test4",
           "text": "test 4",
         },
-        Object {
+        {
           "path": "/test5",
           "text": "test 5",
         },
-        Object {
+        {
           "path": "/test6",
           "text": "test 6",
         },

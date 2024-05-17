@@ -4,8 +4,8 @@ exports[`Table verifies row selection column header selection 1`] = `
 <InjectIntl(Table)
   id="test-terra-table"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -14,8 +14,8 @@ exports[`Table verifies row selection column header selection 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -32,8 +32,8 @@ exports[`Table verifies row selection column header selection 1`] = `
   }
   onColumnSelect={[MockFunction]}
   overflowColumns={
-    Array [
-      Object {
+    [
+      {
         "displayName": "March 17",
         "id": "Column-2",
         "isSelectable": false,
@@ -41,13 +41,13 @@ exports[`Table verifies row selection column header selection 1`] = `
     ]
   }
   pinnedColumns={
-    Array [
-      Object {
+    [
+      {
         "displayName": " Vitals",
         "id": "Column-0",
         "isSelectable": true,
       },
-      Object {
+      {
         "displayName": "March 16",
         "id": "Column-1",
       },
@@ -55,62 +55,62 @@ exports[`Table verifies row selection column header selection 1`] = `
   }
   rowSelectionMode="multiple"
   rows={
-    Array [
-      Object {
-        "cells": Array [
-          Object {
+    [
+      {
+        "cells": [
+          {
             "content": "Heart Rate Monitored (bpm)",
             "isSelectable": false,
           },
-          Object {
+          {
             "content": "",
           },
-          Object {
+          {
             "content": "66",
             "isMasked": true,
           },
         ],
         "id": "1",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": "Temperature Oral (degC)",
           },
-          Object {
+          {
             "content": "36.7",
           },
-          Object {
+          {
             "content": "36.9",
             "isMasked": true,
           },
         ],
         "id": "2",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": "Cardiac Index (L/min/m2)",
           },
-          Object {
+          {
             "content": "2.25",
           },
-          Object {
+          {
             "content": "2.28",
             "isMasked": true,
           },
         ],
         "id": "3",
       },
-      Object {
-        "cells": Array [
-          Object {
+      {
+        "cells": [
+          {
             "content": "Oxygen Flow Rate (L/min)",
           },
-          Object {
+          {
             "content": "63",
           },
-          Object {
+          {
             "content": "47",
           },
         ],
@@ -126,8 +126,8 @@ exports[`Table verifies row selection column header selection 1`] = `
     hasVisibleColumnHeaders={true}
     id="test-terra-table"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -136,8 +136,8 @@ exports[`Table verifies row selection column header selection 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -154,8 +154,8 @@ exports[`Table verifies row selection column header selection 1`] = `
     }
     onColumnSelect={[MockFunction]}
     overflowColumns={
-      Array [
-        Object {
+      [
+        {
           "displayName": "March 17",
           "id": "Column-2",
           "isSelectable": false,
@@ -163,13 +163,13 @@ exports[`Table verifies row selection column header selection 1`] = `
       ]
     }
     pinnedColumns={
-      Array [
-        Object {
+      [
+        {
           "displayName": " Vitals",
           "id": "Column-0",
           "isSelectable": true,
         },
-        Object {
+        {
           "displayName": "March 16",
           "id": "Column-1",
         },
@@ -179,62 +179,62 @@ exports[`Table verifies row selection column header selection 1`] = `
     rowMinimumHeight="auto"
     rowSelectionMode="multiple"
     rows={
-      Array [
-        Object {
-          "cells": Array [
-            Object {
+      [
+        {
+          "cells": [
+            {
               "content": "Heart Rate Monitored (bpm)",
               "isSelectable": false,
             },
-            Object {
+            {
               "content": "",
             },
-            Object {
+            {
               "content": "66",
               "isMasked": true,
             },
           ],
           "id": "1",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Temperature Oral (degC)",
             },
-            Object {
+            {
               "content": "36.7",
             },
-            Object {
+            {
               "content": "36.9",
               "isMasked": true,
             },
           ],
           "id": "2",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Cardiac Index (L/min/m2)",
             },
-            Object {
+            {
               "content": "2.25",
             },
-            Object {
+            {
               "content": "2.28",
               "isMasked": true,
             },
           ],
           "id": "3",
         },
-        Object {
-          "cells": Array [
-            Object {
+        {
+          "cells": [
+            {
               "content": "Oxygen Flow Rate (L/min)",
             },
-            Object {
+            {
               "content": "63",
             },
-            Object {
+            {
               "content": "47",
             },
           ],
@@ -254,7 +254,7 @@ exports[`Table verifies row selection column header selection 1`] = `
         onKeyDown={[Function]}
         role="table"
         style={
-          Object {
+          {
             "marginRight": "0",
           }
         }
@@ -263,7 +263,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           <col
             key="table-rowSelectionColumn"
             style={
-              Object {
+              {
                 "width": "40px",
               }
             }
@@ -271,7 +271,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           <col
             key="Column-0"
             style={
-              Object {
+              {
                 "width": "200px",
               }
             }
@@ -279,7 +279,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           <col
             key="Column-1"
             style={
-              Object {
+              {
                 "width": "200px",
               }
             }
@@ -287,7 +287,7 @@ exports[`Table verifies row selection column header selection 1`] = `
           <col
             key="Column-2"
             style={
-              Object {
+              {
                 "width": "200px",
               }
             }
@@ -295,8 +295,8 @@ exports[`Table verifies row selection column header selection 1`] = `
         </colgroup>
         <ColumnHeader
           columns={
-            Array [
-              Object {
+            [
+              {
                 "displayName": "Terra.table.row-selection-header-display",
                 "id": "table-rowSelectionColumn",
                 "isDisplayVisible": false,
@@ -306,7 +306,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 "minimumWidth": 60,
                 "width": 40,
               },
-              Object {
+              {
                 "displayName": " Vitals",
                 "id": "Column-0",
                 "isResizable": undefined,
@@ -315,7 +315,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 "minimumWidth": 60,
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "March 16",
                 "id": "Column-1",
                 "isResizable": undefined,
@@ -323,7 +323,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 "minimumWidth": 60,
                 "width": 200,
               },
-              Object {
+              {
                 "displayName": "March 17",
                 "id": "Column-2",
                 "isResizable": undefined,
@@ -381,8 +381,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                   headerHeight="2.5rem"
                   id="table-rowSelectionColumn-headerCell"
                   intl={
-                    Object {
-                      "defaultFormats": Object {},
+                    {
+                      "defaultFormats": {},
                       "defaultLocale": "en",
                       "formatDate": [Function],
                       "formatHTMLMessage": [Function],
@@ -391,8 +391,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "formatPlural": [Function],
                       "formatRelative": [Function],
                       "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
+                      "formats": {},
+                      "formatters": {
                         "getDateTimeFormat": [Function],
                         "getMessageFormat": [Function],
                         "getNumberFormat": [Function],
@@ -430,7 +430,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     role="columnheader"
                     scope="col"
                     style={
-                      Object {
+                      {
                         "height": "2.5rem",
                         "left": 0,
                         "top": undefined,
@@ -489,8 +489,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                   headerHeight="2.5rem"
                   id="Column-0-headerCell"
                   intl={
-                    Object {
-                      "defaultFormats": Object {},
+                    {
+                      "defaultFormats": {},
                       "defaultLocale": "en",
                       "formatDate": [Function],
                       "formatHTMLMessage": [Function],
@@ -499,8 +499,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "formatPlural": [Function],
                       "formatRelative": [Function],
                       "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
+                      "formats": {},
+                      "formatters": {
                         "getDateTimeFormat": [Function],
                         "getMessageFormat": [Function],
                         "getNumberFormat": [Function],
@@ -540,7 +540,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     role="columnheader"
                     scope="col"
                     style={
-                      Object {
+                      {
                         "height": "2.5rem",
                         "left": 40,
                         "top": undefined,
@@ -600,8 +600,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                   headerHeight="2.5rem"
                   id="Column-1-headerCell"
                   intl={
-                    Object {
-                      "defaultFormats": Object {},
+                    {
+                      "defaultFormats": {},
                       "defaultLocale": "en",
                       "formatDate": [Function],
                       "formatHTMLMessage": [Function],
@@ -610,8 +610,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "formatPlural": [Function],
                       "formatRelative": [Function],
                       "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
+                      "formats": {},
+                      "formatters": {
                         "getDateTimeFormat": [Function],
                         "getMessageFormat": [Function],
                         "getNumberFormat": [Function],
@@ -649,7 +649,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     role="columnheader"
                     scope="col"
                     style={
-                      Object {
+                      {
                         "height": "2.5rem",
                         "left": 240,
                         "top": undefined,
@@ -708,8 +708,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                   headerHeight="2.5rem"
                   id="Column-2-headerCell"
                   intl={
-                    Object {
-                      "defaultFormats": Object {},
+                    {
+                      "defaultFormats": {},
                       "defaultLocale": "en",
                       "formatDate": [Function],
                       "formatHTMLMessage": [Function],
@@ -718,8 +718,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                       "formatPlural": [Function],
                       "formatRelative": [Function],
                       "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
+                      "formats": {},
+                      "formatters": {
                         "getDateTimeFormat": [Function],
                         "getMessageFormat": [Function],
                         "getNumberFormat": [Function],
@@ -757,7 +757,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                     role="columnheader"
                     scope="col"
                     style={
-                      Object {
+                      {
                         "height": "2.5rem",
                         "left": null,
                         "top": undefined,
@@ -793,8 +793,8 @@ exports[`Table verifies row selection column header selection 1`] = `
         <Section
           boundingWidth={1000}
           displayedColumns={
-            Array [
-              Object {
+            [
+              {
                 "columnHeaderIndex": 0,
                 "columnSpanIndex": 0,
                 "displayName": "Terra.table.row-selection-header-display",
@@ -804,20 +804,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                 "isSelectable": false,
                 "width": 40,
               },
-              Object {
+              {
                 "columnHeaderIndex": 1,
                 "columnSpanIndex": 0,
                 "displayName": " Vitals",
                 "id": "Column-0",
                 "isSelectable": true,
               },
-              Object {
+              {
                 "columnHeaderIndex": 2,
                 "columnSpanIndex": 0,
                 "displayName": "March 16",
                 "id": "Column-1",
               },
-              Object {
+              {
                 "columnHeaderIndex": 3,
                 "columnSpanIndex": 0,
                 "displayName": "March 17",
@@ -836,62 +836,62 @@ exports[`Table verifies row selection column header selection 1`] = `
           rowMinimumHeight="auto"
           rowSelectionMode="multiple"
           rows={
-            Array [
-              Object {
-                "cells": Array [
-                  Object {
+            [
+              {
+                "cells": [
+                  {
                     "content": "Heart Rate Monitored (bpm)",
                     "isSelectable": false,
                   },
-                  Object {
+                  {
                     "content": "",
                   },
-                  Object {
+                  {
                     "content": "66",
                     "isMasked": true,
                   },
                 ],
                 "id": "1",
               },
-              Object {
-                "cells": Array [
-                  Object {
+              {
+                "cells": [
+                  {
                     "content": "Temperature Oral (degC)",
                   },
-                  Object {
+                  {
                     "content": "36.7",
                   },
-                  Object {
+                  {
                     "content": "36.9",
                     "isMasked": true,
                   },
                 ],
                 "id": "2",
               },
-              Object {
-                "cells": Array [
-                  Object {
+              {
+                "cells": [
+                  {
                     "content": "Cardiac Index (L/min/m2)",
                   },
-                  Object {
+                  {
                     "content": "2.25",
                   },
-                  Object {
+                  {
                     "content": "2.28",
                     "isMasked": true,
                   },
                 ],
                 "id": "3",
               },
-              Object {
-                "cells": Array [
-                  Object {
+              {
+                "cells": [
+                  {
                     "content": "Oxygen Flow Rate (L/min)",
                   },
-                  Object {
+                  {
                     "content": "63",
                   },
-                  Object {
+                  {
                     "content": "47",
                   },
                 ],
@@ -909,23 +909,23 @@ exports[`Table verifies row selection column header selection 1`] = `
           >
             <Row
               cells={
-                Array [
-                  Object {
+                [
+                  {
                     "content": "Heart Rate Monitored (bpm)",
                     "isSelectable": false,
                   },
-                  Object {
+                  {
                     "content": "",
                   },
-                  Object {
+                  {
                     "content": "66",
                     "isMasked": true,
                   },
                 ]
               }
               displayedColumns={
-                Array [
-                  Object {
+                [
+                  {
                     "columnHeaderIndex": 0,
                     "columnSpanIndex": 0,
                     "displayName": "Terra.table.row-selection-header-display",
@@ -935,20 +935,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                     "isSelectable": false,
                     "width": 40,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 1,
                     "columnSpanIndex": 0,
                     "displayName": " Vitals",
                     "id": "Column-0",
                     "isSelectable": true,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 2,
                     "columnSpanIndex": 0,
                     "displayName": "March 16",
                     "id": "Column-1",
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 3,
                     "columnSpanIndex": 0,
                     "displayName": "March 17",
@@ -975,7 +975,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 style={
-                  Object {
+                  {
                     "minHeight": "auto",
                   }
                 }
@@ -994,8 +994,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnId="table-rowSelectionColumn"
                     columnIndex={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1004,8 +1004,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1041,8 +1041,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         columnId="table-rowSelectionColumn"
                         columnIndex={0}
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -1051,8 +1051,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -1084,7 +1084,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
-                            Object {
+                            {
                               "left": 0,
                             }
                           }
@@ -1092,7 +1092,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           <div
                             className="cell-content"
                             style={
-                              Object {
+                              {
                                 "minHeight": undefined,
                               }
                             }
@@ -1134,8 +1134,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={1}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1144,8 +1144,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1185,7 +1185,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       role="rowheader"
                       scope="row"
                       style={
-                        Object {
+                        {
                           "left": 40,
                         }
                       }
@@ -1193,7 +1193,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -1225,8 +1225,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={2}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1235,8 +1235,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1273,7 +1273,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": 240,
                         }
                       }
@@ -1281,7 +1281,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -1318,8 +1318,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={3}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1328,8 +1328,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1366,7 +1366,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": null,
                         }
                       }
@@ -1374,7 +1374,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -1392,22 +1392,22 @@ exports[`Table verifies row selection column header selection 1`] = `
             </Row>
             <Row
               cells={
-                Array [
-                  Object {
+                [
+                  {
                     "content": "Temperature Oral (degC)",
                   },
-                  Object {
+                  {
                     "content": "36.7",
                   },
-                  Object {
+                  {
                     "content": "36.9",
                     "isMasked": true,
                   },
                 ]
               }
               displayedColumns={
-                Array [
-                  Object {
+                [
+                  {
                     "columnHeaderIndex": 0,
                     "columnSpanIndex": 0,
                     "displayName": "Terra.table.row-selection-header-display",
@@ -1417,20 +1417,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                     "isSelectable": false,
                     "width": 40,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 1,
                     "columnSpanIndex": 0,
                     "displayName": " Vitals",
                     "id": "Column-0",
                     "isSelectable": true,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 2,
                     "columnSpanIndex": 0,
                     "displayName": "March 16",
                     "id": "Column-1",
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 3,
                     "columnSpanIndex": 0,
                     "displayName": "March 17",
@@ -1457,7 +1457,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 style={
-                  Object {
+                  {
                     "minHeight": "auto",
                   }
                 }
@@ -1476,8 +1476,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnId="table-rowSelectionColumn"
                     columnIndex={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1486,8 +1486,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1523,8 +1523,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         columnId="table-rowSelectionColumn"
                         columnIndex={0}
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -1533,8 +1533,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -1566,7 +1566,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
-                            Object {
+                            {
                               "left": 0,
                             }
                           }
@@ -1574,7 +1574,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           <div
                             className="cell-content"
                             style={
-                              Object {
+                              {
                                 "minHeight": undefined,
                               }
                             }
@@ -1615,8 +1615,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={1}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1625,8 +1625,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1666,7 +1666,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       role="rowheader"
                       scope="row"
                       style={
-                        Object {
+                        {
                           "left": 40,
                         }
                       }
@@ -1674,7 +1674,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -1706,8 +1706,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={2}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1716,8 +1716,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1754,7 +1754,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": 240,
                         }
                       }
@@ -1762,7 +1762,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -1795,8 +1795,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={3}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1805,8 +1805,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1843,7 +1843,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": null,
                         }
                       }
@@ -1851,7 +1851,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -1869,22 +1869,22 @@ exports[`Table verifies row selection column header selection 1`] = `
             </Row>
             <Row
               cells={
-                Array [
-                  Object {
+                [
+                  {
                     "content": "Cardiac Index (L/min/m2)",
                   },
-                  Object {
+                  {
                     "content": "2.25",
                   },
-                  Object {
+                  {
                     "content": "2.28",
                     "isMasked": true,
                   },
                 ]
               }
               displayedColumns={
-                Array [
-                  Object {
+                [
+                  {
                     "columnHeaderIndex": 0,
                     "columnSpanIndex": 0,
                     "displayName": "Terra.table.row-selection-header-display",
@@ -1894,20 +1894,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                     "isSelectable": false,
                     "width": 40,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 1,
                     "columnSpanIndex": 0,
                     "displayName": " Vitals",
                     "id": "Column-0",
                     "isSelectable": true,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 2,
                     "columnSpanIndex": 0,
                     "displayName": "March 16",
                     "id": "Column-1",
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 3,
                     "columnSpanIndex": 0,
                     "displayName": "March 17",
@@ -1934,7 +1934,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 style={
-                  Object {
+                  {
                     "minHeight": "auto",
                   }
                 }
@@ -1953,8 +1953,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnId="table-rowSelectionColumn"
                     columnIndex={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1963,8 +1963,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2000,8 +2000,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         columnId="table-rowSelectionColumn"
                         columnIndex={0}
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -2010,8 +2010,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -2043,7 +2043,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
-                            Object {
+                            {
                               "left": 0,
                             }
                           }
@@ -2051,7 +2051,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           <div
                             className="cell-content"
                             style={
-                              Object {
+                              {
                                 "minHeight": undefined,
                               }
                             }
@@ -2092,8 +2092,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={1}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2102,8 +2102,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2143,7 +2143,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       role="rowheader"
                       scope="row"
                       style={
-                        Object {
+                        {
                           "left": 40,
                         }
                       }
@@ -2151,7 +2151,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -2183,8 +2183,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={2}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2193,8 +2193,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2231,7 +2231,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": 240,
                         }
                       }
@@ -2239,7 +2239,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -2272,8 +2272,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={3}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2282,8 +2282,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2320,7 +2320,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": null,
                         }
                       }
@@ -2328,7 +2328,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -2346,21 +2346,21 @@ exports[`Table verifies row selection column header selection 1`] = `
             </Row>
             <Row
               cells={
-                Array [
-                  Object {
+                [
+                  {
                     "content": "Oxygen Flow Rate (L/min)",
                   },
-                  Object {
+                  {
                     "content": "63",
                   },
-                  Object {
+                  {
                     "content": "47",
                   },
                 ]
               }
               displayedColumns={
-                Array [
-                  Object {
+                [
+                  {
                     "columnHeaderIndex": 0,
                     "columnSpanIndex": 0,
                     "displayName": "Terra.table.row-selection-header-display",
@@ -2370,20 +2370,20 @@ exports[`Table verifies row selection column header selection 1`] = `
                     "isSelectable": false,
                     "width": 40,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 1,
                     "columnSpanIndex": 0,
                     "displayName": " Vitals",
                     "id": "Column-0",
                     "isSelectable": true,
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 2,
                     "columnSpanIndex": 0,
                     "displayName": "March 16",
                     "id": "Column-1",
                   },
-                  Object {
+                  {
                     "columnHeaderIndex": 3,
                     "columnSpanIndex": 0,
                     "displayName": "March 17",
@@ -2411,7 +2411,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                 onMouseEnter={[Function]}
                 onMouseLeave={[Function]}
                 style={
-                  Object {
+                  {
                     "minHeight": "auto",
                   }
                 }
@@ -2430,8 +2430,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnId="table-rowSelectionColumn"
                     columnIndex={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2440,8 +2440,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2477,8 +2477,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         columnId="table-rowSelectionColumn"
                         columnIndex={0}
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -2487,8 +2487,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -2520,7 +2520,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           onKeyDown={[Function]}
                           onMouseDown={[Function]}
                           style={
-                            Object {
+                            {
                               "left": 0,
                             }
                           }
@@ -2528,7 +2528,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                           <div
                             className="cell-content"
                             style={
-                              Object {
+                              {
                                 "minHeight": undefined,
                               }
                             }
@@ -2569,8 +2569,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={1}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2579,8 +2579,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2620,7 +2620,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       role="rowheader"
                       scope="row"
                       style={
-                        Object {
+                        {
                           "left": 40,
                         }
                       }
@@ -2628,7 +2628,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -2660,8 +2660,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={2}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2670,8 +2670,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2708,7 +2708,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": 240,
                         }
                       }
@@ -2716,7 +2716,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }
@@ -2748,8 +2748,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                     columnIndex={3}
                     firstRowId="1"
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2758,8 +2758,8 @@ exports[`Table verifies row selection column header selection 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2796,7 +2796,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       onKeyDown={[Function]}
                       onMouseDown={[Function]}
                       style={
-                        Object {
+                        {
                           "left": null,
                         }
                       }
@@ -2804,7 +2804,7 @@ exports[`Table verifies row selection column header selection 1`] = `
                       <div
                         className="cell-content"
                         style={
-                          Object {
+                          {
                             "minHeight": "auto",
                           }
                         }

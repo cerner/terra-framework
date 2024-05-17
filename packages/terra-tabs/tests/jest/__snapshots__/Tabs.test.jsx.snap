@@ -3,8 +3,8 @@
 exports[`Tabs correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -30,7 +30,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -72,8 +72,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
             isDraggable={false}
             onTabStateChange={[Function]}
             tabData={
-              Array [
-                Object {
+              [
+                {
                   "associatedPanelId": "terra-common-tabs-default-panel",
                   "customDisplay": undefined,
                   "icon": undefined,
@@ -95,8 +95,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
           >
             <Tabs
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -105,8 +105,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -124,8 +124,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
               isDraggable={false}
               onTabStateChange={[Function]}
               tabData={
-                Array [
-                  Object {
+                [
+                  {
                     "associatedPanelId": "terra-common-tabs-default-panel",
                     "customDisplay": undefined,
                     "icon": undefined,
@@ -173,7 +173,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                     setDropdownOpen={[Function]}
                     showIcon={false}
                     tabIds={
-                      Array [
+                      [
                         "terra-common-tabs-default",
                       ]
                     }
@@ -187,8 +187,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                       id="terra-common-tabs-default"
                       index={0}
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -197,8 +197,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -225,7 +225,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                       setDropdownOpen={[Function]}
                       showIcon={false}
                       tabIds={
-                        Array [
+                        [
                           "terra-common-tabs-default",
                         ]
                       }
@@ -249,7 +249,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                         onMouseDown={[Function]}
                         role="tab"
                         style={
-                          Object {
+                          {
                             "zIndex": 1,
                           }
                         }
@@ -283,7 +283,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                   </InjectIntl(Tab)>
                   <OnClickOutside(InjectIntl(TabDropDown))
                     eventTypes={
-                      Array [
+                      [
                         "mousedown",
                         "touchstart",
                       ]
@@ -302,7 +302,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                       disableOnClickOutside={[Function]}
                       enableOnClickOutside={[Function]}
                       eventTypes={
-                        Array [
+                        [
                           "mousedown",
                           "touchstart",
                         ]
@@ -320,14 +320,14 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                         disableOnClickOutside={[Function]}
                         enableOnClickOutside={[Function]}
                         eventTypes={
-                          Array [
+                          [
                             "mousedown",
                             "touchstart",
                           ]
                         }
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -336,8 +336,8 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -503,7 +503,7 @@ exports[`Tabs correctly applies the theme context className 1`] = `
                       tabIndex={-1}
                     >
                       <DynamicOverlayContainer
-                        overlays={Array []}
+                        overlays={[]}
                       >
                         <div
                           className="outer-container"
@@ -533,8 +533,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
   fill={false}
   id="application-id"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -543,8 +543,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -569,8 +569,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
     activeItemKey="default"
     id="application-id"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -579,8 +579,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -618,8 +618,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
           isDraggable={false}
           onTabStateChange={[Function]}
           tabData={
-            Array [
-              Object {
+            [
+              {
                 "associatedPanelId": "application-id-default-panel",
                 "customDisplay": undefined,
                 "icon": undefined,
@@ -641,8 +641,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
         >
           <Tabs
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -651,8 +651,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -670,8 +670,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
             isDraggable={false}
             onTabStateChange={[Function]}
             tabData={
-              Array [
-                Object {
+              [
+                {
                   "associatedPanelId": "application-id-default-panel",
                   "customDisplay": undefined,
                   "icon": undefined,
@@ -719,7 +719,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   setDropdownOpen={[Function]}
                   showIcon={false}
                   tabIds={
-                    Array [
+                    [
                       "application-id-default",
                     ]
                   }
@@ -733,8 +733,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                     id="application-id-default"
                     index={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -743,8 +743,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -771,7 +771,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                     setDropdownOpen={[Function]}
                     showIcon={false}
                     tabIds={
-                      Array [
+                      [
                         "application-id-default",
                       ]
                     }
@@ -795,7 +795,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                       onMouseDown={[Function]}
                       role="tab"
                       style={
-                        Object {
+                        {
                           "zIndex": 1,
                         }
                       }
@@ -829,7 +829,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                 </InjectIntl(Tab)>
                 <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
-                    Array [
+                    [
                       "mousedown",
                       "touchstart",
                     ]
@@ -848,7 +848,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                     disableOnClickOutside={[Function]}
                     enableOnClickOutside={[Function]}
                     eventTypes={
-                      Array [
+                      [
                         "mousedown",
                         "touchstart",
                       ]
@@ -866,14 +866,14 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                       disableOnClickOutside={[Function]}
                       enableOnClickOutside={[Function]}
                       eventTypes={
-                        Array [
+                        [
                           "mousedown",
                           "touchstart",
                         ]
                       }
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -882,8 +882,8 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -968,7 +968,7 @@ exports[`Tabs should not render add icon if onSelectAddButton is passed as null 
                   tabIndex={-1}
                 >
                   <DynamicOverlayContainer
-                    overlays={Array []}
+                    overlays={[]}
                   >
                     <div
                       className="outer-container"
@@ -1010,8 +1010,8 @@ exports[`Tabs should render a controlled component when onChange and activeKey a
       onChange={[Function]}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "terra-common-tabs-default-panel",
             "customDisplay": undefined,
             "icon": undefined,
@@ -1073,8 +1073,8 @@ exports[`Tabs should render a default component 1`] = `
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "terra-common-tabs-default-panel",
             "customDisplay": undefined,
             "icon": undefined,
@@ -1137,8 +1137,8 @@ exports[`Tabs should render a draggable tabs component 1`] = `
       onTabOrderChange={[MockFunction]}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "terra-common-tabs-default-panel",
             "customDisplay": undefined,
             "icon": undefined,
@@ -1200,8 +1200,8 @@ exports[`Tabs should render an id based on the Tabs id and the Tab key 1`] = `
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "application-id-default-panel",
             "customDisplay": undefined,
             "icon": undefined,
@@ -1263,8 +1263,8 @@ exports[`Tabs should render an uncontrolled component when defaultActiveKey is s
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "terra-common-tabs-default-panel",
             "customDisplay": undefined,
             "icon": undefined,
@@ -1326,8 +1326,8 @@ exports[`Tabs should render horizontal tab if verticalorientation is passed as n
       isDraggable={true}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "terra-common-tabs-default-panel",
             "customDisplay": undefined,
             "icon": undefined,
@@ -1389,8 +1389,8 @@ exports[`Tabs should render vertical tab 1`] = `
       isDraggable={true}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "terra-common-tabs-default-panel",
             "customDisplay": undefined,
             "icon": undefined,
@@ -1440,8 +1440,8 @@ exports[`Tabs should render with add icon 1`] = `
   fill={false}
   id="application-id"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1450,8 +1450,8 @@ exports[`Tabs should render with add icon 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1478,8 +1478,8 @@ exports[`Tabs should render with add icon 1`] = `
     ariaLabelAddTab="Add Tab"
     id="application-id"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -1488,8 +1488,8 @@ exports[`Tabs should render with add icon 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -1530,8 +1530,8 @@ exports[`Tabs should render with add icon 1`] = `
           onSelectAddButton={[MockFunction]}
           onTabStateChange={[Function]}
           tabData={
-            Array [
-              Object {
+            [
+              {
                 "associatedPanelId": "application-id-default-panel",
                 "customDisplay": undefined,
                 "icon": undefined,
@@ -1554,8 +1554,8 @@ exports[`Tabs should render with add icon 1`] = `
           <Tabs
             ariaLabelAddTab="Add Tab"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -1564,8 +1564,8 @@ exports[`Tabs should render with add icon 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -1584,8 +1584,8 @@ exports[`Tabs should render with add icon 1`] = `
             onSelectAddButton={[MockFunction]}
             onTabStateChange={[Function]}
             tabData={
-              Array [
-                Object {
+              [
+                {
                   "associatedPanelId": "application-id-default-panel",
                   "customDisplay": undefined,
                   "icon": undefined,
@@ -1633,7 +1633,7 @@ exports[`Tabs should render with add icon 1`] = `
                   setDropdownOpen={[Function]}
                   showIcon={false}
                   tabIds={
-                    Array [
+                    [
                       "application-id-default",
                       "00000000-0000-0000-0000-000000000000",
                     ]
@@ -1648,8 +1648,8 @@ exports[`Tabs should render with add icon 1`] = `
                     id="application-id-default"
                     index={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1658,8 +1658,8 @@ exports[`Tabs should render with add icon 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1686,7 +1686,7 @@ exports[`Tabs should render with add icon 1`] = `
                     setDropdownOpen={[Function]}
                     showIcon={false}
                     tabIds={
-                      Array [
+                      [
                         "application-id-default",
                         "00000000-0000-0000-0000-000000000000",
                       ]
@@ -1711,7 +1711,7 @@ exports[`Tabs should render with add icon 1`] = `
                       onMouseDown={[Function]}
                       role="tab"
                       style={
-                        Object {
+                        {
                           "zIndex": 1,
                         }
                       }
@@ -1745,7 +1745,7 @@ exports[`Tabs should render with add icon 1`] = `
                 </InjectIntl(Tab)>
                 <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
-                    Array [
+                    [
                       "mousedown",
                       "touchstart",
                     ]
@@ -1764,7 +1764,7 @@ exports[`Tabs should render with add icon 1`] = `
                     disableOnClickOutside={[Function]}
                     enableOnClickOutside={[Function]}
                     eventTypes={
-                      Array [
+                      [
                         "mousedown",
                         "touchstart",
                       ]
@@ -1782,14 +1782,14 @@ exports[`Tabs should render with add icon 1`] = `
                       disableOnClickOutside={[Function]}
                       enableOnClickOutside={[Function]}
                       eventTypes={
-                        Array [
+                        [
                           "mousedown",
                           "touchstart",
                         ]
                       }
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -1798,8 +1798,8 @@ exports[`Tabs should render with add icon 1`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -1842,7 +1842,7 @@ exports[`Tabs should render with add icon 1`] = `
                   isSelected={false}
                   onAddClick={[Function]}
                   tabIds={
-                    Array [
+                    [
                       "application-id-default",
                       "00000000-0000-0000-0000-000000000000",
                     ]
@@ -1854,8 +1854,8 @@ exports[`Tabs should render with add icon 1`] = `
                     id="00000000-0000-0000-0000-000000000000"
                     index={1}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -1864,8 +1864,8 @@ exports[`Tabs should render with add icon 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -1883,7 +1883,7 @@ exports[`Tabs should render with add icon 1`] = `
                     isSelected={false}
                     onAddClick={[Function]}
                     tabIds={
-                      Array [
+                      [
                         "application-id-default",
                         "00000000-0000-0000-0000-000000000000",
                       ]
@@ -2035,7 +2035,7 @@ exports[`Tabs should render with add icon 1`] = `
                   tabIndex={-1}
                 >
                   <DynamicOverlayContainer
-                    overlays={Array []}
+                    overlays={[]}
                   >
                     <div
                       className="outer-container"
@@ -2064,8 +2064,8 @@ exports[`Tabs should render with add icon 2`] = `
   fill={false}
   id="application-id"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -2074,8 +2074,8 @@ exports[`Tabs should render with add icon 2`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -2102,8 +2102,8 @@ exports[`Tabs should render with add icon 2`] = `
     ariaLabelAddTab="Add Tab"
     id="application-id"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -2112,8 +2112,8 @@ exports[`Tabs should render with add icon 2`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -2154,8 +2154,8 @@ exports[`Tabs should render with add icon 2`] = `
           onSelectAddButton={[Function]}
           onTabStateChange={[Function]}
           tabData={
-            Array [
-              Object {
+            [
+              {
                 "associatedPanelId": "application-id-default-panel",
                 "customDisplay": undefined,
                 "icon": undefined,
@@ -2178,8 +2178,8 @@ exports[`Tabs should render with add icon 2`] = `
           <Tabs
             ariaLabelAddTab="Add Tab"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2188,8 +2188,8 @@ exports[`Tabs should render with add icon 2`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2208,8 +2208,8 @@ exports[`Tabs should render with add icon 2`] = `
             onSelectAddButton={[Function]}
             onTabStateChange={[Function]}
             tabData={
-              Array [
-                Object {
+              [
+                {
                   "associatedPanelId": "application-id-default-panel",
                   "customDisplay": undefined,
                   "icon": undefined,
@@ -2257,7 +2257,7 @@ exports[`Tabs should render with add icon 2`] = `
                   setDropdownOpen={[Function]}
                   showIcon={false}
                   tabIds={
-                    Array [
+                    [
                       "application-id-default",
                       "00000000-0000-0000-0000-000000000000",
                     ]
@@ -2272,8 +2272,8 @@ exports[`Tabs should render with add icon 2`] = `
                     id="application-id-default"
                     index={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2282,8 +2282,8 @@ exports[`Tabs should render with add icon 2`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2310,7 +2310,7 @@ exports[`Tabs should render with add icon 2`] = `
                     setDropdownOpen={[Function]}
                     showIcon={false}
                     tabIds={
-                      Array [
+                      [
                         "application-id-default",
                         "00000000-0000-0000-0000-000000000000",
                       ]
@@ -2335,7 +2335,7 @@ exports[`Tabs should render with add icon 2`] = `
                       onMouseDown={[Function]}
                       role="tab"
                       style={
-                        Object {
+                        {
                           "zIndex": 1,
                         }
                       }
@@ -2369,7 +2369,7 @@ exports[`Tabs should render with add icon 2`] = `
                 </InjectIntl(Tab)>
                 <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
-                    Array [
+                    [
                       "mousedown",
                       "touchstart",
                     ]
@@ -2388,7 +2388,7 @@ exports[`Tabs should render with add icon 2`] = `
                     disableOnClickOutside={[Function]}
                     enableOnClickOutside={[Function]}
                     eventTypes={
-                      Array [
+                      [
                         "mousedown",
                         "touchstart",
                       ]
@@ -2406,14 +2406,14 @@ exports[`Tabs should render with add icon 2`] = `
                       disableOnClickOutside={[Function]}
                       enableOnClickOutside={[Function]}
                       eventTypes={
-                        Array [
+                        [
                           "mousedown",
                           "touchstart",
                         ]
                       }
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -2422,8 +2422,8 @@ exports[`Tabs should render with add icon 2`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -2466,7 +2466,7 @@ exports[`Tabs should render with add icon 2`] = `
                   isSelected={false}
                   onAddClick={[Function]}
                   tabIds={
-                    Array [
+                    [
                       "application-id-default",
                       "00000000-0000-0000-0000-000000000000",
                     ]
@@ -2478,8 +2478,8 @@ exports[`Tabs should render with add icon 2`] = `
                     id="00000000-0000-0000-0000-000000000000"
                     index={1}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2488,8 +2488,8 @@ exports[`Tabs should render with add icon 2`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2507,7 +2507,7 @@ exports[`Tabs should render with add icon 2`] = `
                     isSelected={false}
                     onAddClick={[Function]}
                     tabIds={
-                      Array [
+                      [
                         "application-id-default",
                         "00000000-0000-0000-0000-000000000000",
                       ]
@@ -2659,7 +2659,7 @@ exports[`Tabs should render with add icon 2`] = `
                   tabIndex={-1}
                 >
                   <DynamicOverlayContainer
-                    overlays={Array []}
+                    overlays={[]}
                   >
                     <div
                       className="outer-container"
@@ -2687,8 +2687,8 @@ exports[`Tabs should render with close icon 1`] = `
   fill={false}
   id="application-id"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -2697,8 +2697,8 @@ exports[`Tabs should render with close icon 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -2725,8 +2725,8 @@ exports[`Tabs should render with close icon 1`] = `
     activeItemKey="default"
     id="application-id"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -2735,8 +2735,8 @@ exports[`Tabs should render with close icon 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -2776,8 +2776,8 @@ exports[`Tabs should render with close icon 1`] = `
           isDraggable={false}
           onTabStateChange={[Function]}
           tabData={
-            Array [
-              Object {
+            [
+              {
                 "associatedPanelId": "application-id-default-panel",
                 "customDisplay": undefined,
                 "icon": undefined,
@@ -2799,8 +2799,8 @@ exports[`Tabs should render with close icon 1`] = `
         >
           <Tabs
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -2809,8 +2809,8 @@ exports[`Tabs should render with close icon 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -2828,8 +2828,8 @@ exports[`Tabs should render with close icon 1`] = `
             isDraggable={false}
             onTabStateChange={[Function]}
             tabData={
-              Array [
-                Object {
+              [
+                {
                   "associatedPanelId": "application-id-default-panel",
                   "customDisplay": undefined,
                   "icon": undefined,
@@ -2877,7 +2877,7 @@ exports[`Tabs should render with close icon 1`] = `
                   setDropdownOpen={[Function]}
                   showIcon={false}
                   tabIds={
-                    Array [
+                    [
                       "application-id-default",
                     ]
                   }
@@ -2891,8 +2891,8 @@ exports[`Tabs should render with close icon 1`] = `
                     id="application-id-default"
                     index={0}
                     intl={
-                      Object {
-                        "defaultFormats": Object {},
+                      {
+                        "defaultFormats": {},
                         "defaultLocale": "en",
                         "formatDate": [Function],
                         "formatHTMLMessage": [Function],
@@ -2901,8 +2901,8 @@ exports[`Tabs should render with close icon 1`] = `
                         "formatPlural": [Function],
                         "formatRelative": [Function],
                         "formatTime": [Function],
-                        "formats": Object {},
-                        "formatters": Object {
+                        "formats": {},
+                        "formatters": {
                           "getDateTimeFormat": [Function],
                           "getMessageFormat": [Function],
                           "getNumberFormat": [Function],
@@ -2929,7 +2929,7 @@ exports[`Tabs should render with close icon 1`] = `
                     setDropdownOpen={[Function]}
                     showIcon={false}
                     tabIds={
-                      Array [
+                      [
                         "application-id-default",
                       ]
                     }
@@ -2953,7 +2953,7 @@ exports[`Tabs should render with close icon 1`] = `
                       onMouseDown={[Function]}
                       role="tab"
                       style={
-                        Object {
+                        {
                           "zIndex": 1,
                         }
                       }
@@ -2987,7 +2987,7 @@ exports[`Tabs should render with close icon 1`] = `
                 </InjectIntl(Tab)>
                 <OnClickOutside(InjectIntl(TabDropDown))
                   eventTypes={
-                    Array [
+                    [
                       "mousedown",
                       "touchstart",
                     ]
@@ -3006,7 +3006,7 @@ exports[`Tabs should render with close icon 1`] = `
                     disableOnClickOutside={[Function]}
                     enableOnClickOutside={[Function]}
                     eventTypes={
-                      Array [
+                      [
                         "mousedown",
                         "touchstart",
                       ]
@@ -3024,14 +3024,14 @@ exports[`Tabs should render with close icon 1`] = `
                       disableOnClickOutside={[Function]}
                       enableOnClickOutside={[Function]}
                       eventTypes={
-                        Array [
+                        [
                           "mousedown",
                           "touchstart",
                         ]
                       }
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -3040,8 +3040,8 @@ exports[`Tabs should render with close icon 1`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -3126,7 +3126,7 @@ exports[`Tabs should render with close icon 1`] = `
                   tabIndex={-1}
                 >
                   <DynamicOverlayContainer
-                    overlays={Array []}
+                    overlays={[]}
                   >
                     <div
                       className="outer-container"
@@ -3153,8 +3153,8 @@ exports[`Tabs should render with content filled when indicated 1`] = `
 <CommonTabs
   activeItemKey="default"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -3163,8 +3163,8 @@ exports[`Tabs should render with content filled when indicated 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -3203,8 +3203,8 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
 <CommonTabs
   activeItemKey="default"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -3213,8 +3213,8 @@ exports[`Tabs should render with tabs filled when indicated 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -3254,8 +3254,8 @@ exports[`Tabs should set custom props 1`] = `
   activeItemKey="default"
   className="customClass"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -3264,8 +3264,8 @@ exports[`Tabs should set custom props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -3318,8 +3318,8 @@ exports[`Tabs should set custom props for child Tab Pane 1`] = `
       isDraggable={false}
       onTabStateChange={[Function]}
       tabData={
-        Array [
-          Object {
+        [
+          {
             "associatedPanelId": "terra-common-tabs-default-panel",
             "customDisplay": undefined,
             "icon": undefined,

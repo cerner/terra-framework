@@ -3,8 +3,8 @@
 exports[`HiddenTab should render a hidden tab with provided props and selection handling 1`] = `
 <IntlProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -37,7 +37,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
     itemKey="tab-1-key"
     label="Tab 1 Label"
     metaData={
-      Object {
+      {
         "data": "test",
       }
     }
@@ -45,7 +45,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
     onFocus={[MockFunction]}
     onSelect={[MockFunction]}
     tabIds={
-      Array [
+      [
         "tab-1",
         "tab-2",
       ]
@@ -56,8 +56,8 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
       id="tab-1"
       index={10}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -66,8 +66,8 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -89,7 +89,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
       itemKey="tab-1-key"
       label="Tab 1 Label"
       metaData={
-        Object {
+        {
           "data": "test",
         }
       }
@@ -99,7 +99,7 @@ exports[`HiddenTab should render a hidden tab with provided props and selection 
       showAddButton={false}
       showIcon={false}
       tabIds={
-        Array [
+        [
           "tab-1",
           "tab-2",
         ]
