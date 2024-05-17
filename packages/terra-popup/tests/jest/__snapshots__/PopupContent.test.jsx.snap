@@ -125,7 +125,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
                     >
                       <FormattedMessage
                         id="Terra.popup.header.close"
-                        values={Object {}}
+                        values={{}}
                       >
                         [Function]
                       </FormattedMessage>
@@ -144,7 +144,7 @@ exports[`PopupContent Prop Tests with default props correctly applies the theme 
                       >
                         <FormattedMessage
                           id="Terra.popup.header.close"
-                          values={Object {}}
+                          values={{}}
                         >
                           <Button
                             data-terra-popup-header-button={true}
@@ -300,7 +300,7 @@ exports[`PopupContent Prop Tests with default props matches the snapshot 1`] = `
             >
               <FormattedMessage
                 id="Terra.popup.header.close"
-                values={Object {}}
+                values={{}}
               >
                 [Function]
               </FormattedMessage>
