@@ -120,7 +120,7 @@ class MenuItem extends React.Component {
     } = this.props;
     const theme = this.context;
 
-    const itemIcon = hasChevron && !icon ? <IconFolder a11yLabel="Folder" /> : (icon || <IconDocuments a11yLabel="Document" />);
+    const itemIcon = hasChevron && !icon ? <IconFolder a11yLabel={intl.formatMessage({ id: 'Terra.navigation.side.menu.folder' })} /> : (icon || <IconDocuments a11yLabel={intl.formatMessage({ id: 'Terra.navigation.side.menu.document' })} />);
 
     const itemClassNames = classNames(cx(
       'menu-item',
