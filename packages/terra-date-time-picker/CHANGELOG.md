@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Introduced a new prop `disableButtonFocusOnClose` to optionally disable focusing the button when the calendar is closed.
+
 ## 4.117.0 - (May 14, 2024)
 
 * Changed
