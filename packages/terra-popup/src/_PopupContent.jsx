@@ -82,6 +82,10 @@ const propTypes = {
    * The function returning the frame html reference.
    */
   refCallback: PropTypes.func,
+  /**
+   *  To determine if menu is opened inside the popup
+   */
+  isMenu: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -93,6 +97,7 @@ const defaultProps = {
   isHeightAutomatic: false,
   isWidthAutomatic: false,
   popupContentRole: 'dialog',
+  isMenu: false,
 };
 
 class PopupContent extends React.Component {
@@ -107,13 +112,13 @@ class PopupContent extends React.Component {
               useText = text.join('');
             }
             return (
-              <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={useText} />
+              <Button variant="utility" isIconOnly icon={icon} onClick={onRequestClose} text={useText} data-terra-popup-header-button />
             );
           }}
         </FormattedMessage>
       </div>
     );
-    return <ContentContainer header={header} fill>{children}</ContentContainer>;
+    return <ContentContainer header={header}>{children}</ContentContainer>;
   }
 
   static isBounded(value, maxValue) {
@@ -201,6 +206,7 @@ class PopupContent extends React.Component {
       onContentResize,
       popupContentRole,
       refCallback,
+      isMenu,
       ...customProps
     } = this.props;
 
@@ -210,7 +216,7 @@ class PopupContent extends React.Component {
     const isFullScreen = isHeightBounded && isWidthBounded;
 
     let content = PopupContent.cloneChildren(children, isHeightAutomatic, isWidthAutomatic, isHeightBounded, isWidthBounded, isHeaderDisabled);
-    if (isFullScreen && !isHeaderDisabled) {
+    if ((!isHeaderDisabled || isFullScreen) && !isMenu) {
       content = PopupContent.addPopupHeader(content, onRequestClose);
     }
     const theme = this.context;
@@ -239,7 +245,6 @@ class PopupContent extends React.Component {
           <Hookshot.Content
             {...customProps}
             className={contentClassNames}
-            tabIndex={isFocusedDisabled ? null : '0'}
             data-terra-popup-content
             onContentResize={(isHeightAutomatic || isWidthAutomatic) ? onContentResize : undefined}
             onEsc={onRequestClose}

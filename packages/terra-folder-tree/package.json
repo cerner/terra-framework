@@ -1,6 +1,6 @@
 {
   "name": "terra-folder-tree",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Terra Folder Tree is a vertical menu that displays files and folders in a hierarchical tree structure.",
   "author": "Cerner Corporation",
   "repository": {
@@ -45,7 +45,7 @@
     "terra-button": "3",
     "terra-icon": "3",
     "terra-spacer": "3",
-    "terra-theme-context": "1",
+    "terra-theme-context": "^1.10.0",
     "terra-toolbar": "1",
     "terra-visually-hidden-text": "2",
     "uuid": "3.4.0"

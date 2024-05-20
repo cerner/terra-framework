@@ -1,6 +1,6 @@
 {
   "name": "terra-theme-context",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "description": "A react context to provide the current theme.",
   "author": "Cerner Corporation",
   "repository": {

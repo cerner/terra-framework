@@ -1,6 +1,6 @@
 {
   "name": "terra-application-header-layout",
-  "version": "3.41.0",
+  "version": "3.42.0",
   "description": "This component renders an application header layout. To be used with a layout.",
   "author": "Cerner Corporation",
   "repository": {
@@ -41,7 +41,7 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-theme-context": "1"
+    "terra-theme-context": "^1.10.0"
   },
   "devDependencies": {
     "terra-responsive-element": "5"

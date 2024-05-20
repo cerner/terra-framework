@@ -329,10 +329,10 @@ Terra.describeViewports('Popup', ['medium'], () => {
   });
 
   describe('Focus Trap Management', () => {
-    it('validates focus is moved to popup when open', () => {
+    it('validates focus is moved to close button when open', () => {
       browser.url('/raw/tests/cerner-terra-framework-docs/popup/focus-trap-popup');
       $('.test-content').waitForDisplayed();
-      expect($('[data-terra-popup-content]').isFocused()).toBeTruthy();
+      expect($('[data-terra-popup-header-button]').isFocused()).toBeTruthy();
     });
 
     it('validates popup content can receive focus', () => {
@@ -345,7 +345,7 @@ Terra.describeViewports('Popup', ['medium'], () => {
     it('validates focus is trapped within the popup', () => {
       browser.keys('Tab');
       expect($('#default-button').isFocused()).toBeFalsy();
-      expect($('[data-terra-popup-content]').isFocused()).toBeTruthy();
+      expect($('[data-terra-popup-header-button]').isFocused()).toBeTruthy();
     });
   });
 });
