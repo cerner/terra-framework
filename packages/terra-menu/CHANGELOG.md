@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.98.0 - (May 20, 2024)
+
 * Added
   * Added `isMenu` prop to the `Popup` component props.
 
