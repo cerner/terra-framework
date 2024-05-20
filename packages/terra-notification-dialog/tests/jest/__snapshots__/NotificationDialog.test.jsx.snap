@@ -95,8 +95,8 @@ exports[`Notification Dialog correctly applies the theme context className 1`] =
 exports[`Notification Dialog functions as expected should open the dialog 1`] = `
 <Example
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -105,8 +105,8 @@ exports[`Notification Dialog functions as expected should open the dialog 1`] = 
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -901,8 +901,8 @@ exports[`Notification Dialog shallow renders dialog with startMessage, content, 
 exports[`correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -911,8 +911,8 @@ exports[`correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -928,14 +928,14 @@ exports[`correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
 >
   <InjectIntl(NotificationDialog)
     acceptAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Confirm",
       }
@@ -943,7 +943,7 @@ exports[`correctly applies the theme context className 1`] = `
     buttonOrder="acceptFirst"
     emphasizedAction="accept"
     rejectAction={
-      Object {
+      {
         "onClick": [Function],
         "text": "Close",
       }
@@ -954,17 +954,17 @@ exports[`correctly applies the theme context className 1`] = `
   >
     <NotificationDialog
       acceptAction={
-        Object {
+        {
           "onClick": [Function],
           "text": "Confirm",
         }
       }
       buttonOrder="acceptFirst"
-      custom={Object {}}
+      custom={{}}
       emphasizedAction="accept"
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -973,8 +973,8 @@ exports[`correctly applies the theme context className 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -990,7 +990,7 @@ exports[`correctly applies the theme context className 1`] = `
         }
       }
       rejectAction={
-        Object {
+        {
           "onClick": [Function],
           "text": "Close",
         }

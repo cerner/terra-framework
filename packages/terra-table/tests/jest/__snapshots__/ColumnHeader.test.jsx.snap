@@ -44,7 +44,7 @@ exports[`ColumnHeader renders a column header with actions row 1`] = `
   >
     <Memo(InjectIntl(ColumnHeaderCell))
       action={
-        Object {
+        {
           "label": "action-button",
           "onClick": [MockFunction],
         }

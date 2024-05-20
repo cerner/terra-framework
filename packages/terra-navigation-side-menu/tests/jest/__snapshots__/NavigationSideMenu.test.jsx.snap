@@ -3,8 +3,8 @@
 exports[`Layout correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -30,16 +30,16 @@ exports[`Layout correctly applies the theme context className 1`] = `
     }
   }
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
 >
   <InjectIntl(NavigationSideMenu)
     menuItems={
-      Array [
-        Object {
-          "childKeys": Array [
+      [
+        {
+          "childKeys": [
             "test1",
             "test2",
             "test3",
@@ -48,19 +48,19 @@ exports[`Layout correctly applies the theme context className 1`] = `
           "key": "menu",
           "text": "Test Menu",
         },
-        Object {
+        {
           "key": "test1",
           "text": "Test Menu 1",
         },
-        Object {
+        {
           "key": "test2",
           "text": "Test Menu 2",
         },
-        Object {
+        {
           "key": "test3",
           "text": "Test Menu 3",
         },
-        Object {
+        {
           "key": "test4",
           "text": "Test Menu 4",
         },
@@ -73,8 +73,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
     <NavigationSideMenu
       headerLevel={3}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -83,8 +83,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -100,9 +100,9 @@ exports[`Layout correctly applies the theme context className 1`] = `
         }
       }
       menuItems={
-        Array [
-          Object {
-            "childKeys": Array [
+        [
+          {
+            "childKeys": [
               "test1",
               "test2",
               "test3",
@@ -111,19 +111,19 @@ exports[`Layout correctly applies the theme context className 1`] = `
             "key": "menu",
             "text": "Test Menu",
           },
-          Object {
+          {
             "key": "test1",
             "text": "Test Menu 1",
           },
-          Object {
+          {
             "key": "test2",
             "text": "Test Menu 2",
           },
-          Object {
+          {
             "key": "test3",
             "text": "Test Menu 3",
           },
-          Object {
+          {
             "key": "test4",
             "text": "Test Menu 4",
           },
@@ -151,8 +151,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
         className="side-menu-content-container orion-fusion-theme"
         fill={false}
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -161,8 +161,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -182,8 +182,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
         <div
           className="content-container-static side-menu-content-container orion-fusion-theme"
           intl={
-            Object {
-              "defaultFormats": Object {},
+            {
+              "defaultFormats": {},
               "defaultLocale": "en",
               "formatDate": [Function],
               "formatHTMLMessage": [Function],
@@ -192,8 +192,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
               "formatPlural": [Function],
               "formatRelative": [Function],
               "formatTime": [Function],
-              "formats": Object {},
-              "formatters": Object {
+              "formats": {},
+              "formatters": {
                 "getDateTimeFormat": [Function],
                 "getMessageFormat": [Function],
                 "getNumberFormat": [Function],
@@ -261,8 +261,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       <MenuItem
                         data-menu-item="test1"
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -271,8 +271,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -328,8 +328,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       <MenuItem
                         data-menu-item="test2"
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -338,8 +338,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -395,8 +395,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       <MenuItem
                         data-menu-item="test3"
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -405,8 +405,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -462,8 +462,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       <MenuItem
                         data-menu-item="test4"
                         intl={
-                          Object {
-                            "defaultFormats": Object {},
+                          {
+                            "defaultFormats": {},
                             "defaultLocale": "en",
                             "formatDate": [Function],
                             "formatHTMLMessage": [Function],
@@ -472,8 +472,8 @@ exports[`Layout correctly applies the theme context className 1`] = `
                             "formatPlural": [Function],
                             "formatRelative": [Function],
                             "formatTime": [Function],
-                            "formats": Object {},
-                            "formatters": Object {
+                            "formats": {},
+                            "formatters": {
                               "getDateTimeFormat": [Function],
                               "getMessageFormat": [Function],
                               "getNumberFormat": [Function],
@@ -532,8 +532,8 @@ exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
 <NavigationSideMenu
   headerLevel={3}
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -542,8 +542,8 @@ exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -558,7 +558,7 @@ exports[`Layout should render a NavigationSideMenu with a toolbar 1`] = `
       "timeZone": null,
     }
   }
-  menuItems={Array []}
+  menuItems={[]}
   onChange={[MockFunction]}
   routingStackBack={[MockFunction]}
   selectedMenuKey=""
@@ -575,8 +575,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
 <InjectIntl(NavigationSideMenu)
   ariaLabel="Sub Menu List"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -585,8 +585,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -602,9 +602,9 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
     }
   }
   menuItems={
-    Array [
-      Object {
-        "childKeys": Array [
+    [
+      {
+        "childKeys": [
           "test1",
           "test2",
           "test3",
@@ -613,19 +613,19 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
         "key": "menu",
         "text": "Test Menu",
       },
-      Object {
+      {
         "key": "test1",
         "text": "Test Menu 1",
       },
-      Object {
+      {
         "key": "test2",
         "text": "Test Menu 2",
       },
-      Object {
+      {
         "key": "test3",
         "text": "Test Menu 3",
       },
-      Object {
+      {
         "key": "test4",
         "text": "Test Menu 4",
       },
@@ -639,8 +639,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
     ariaLabel="Sub Menu List"
     headerLevel={3}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -649,8 +649,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -666,9 +666,9 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
       }
     }
     menuItems={
-      Array [
-        Object {
-          "childKeys": Array [
+      [
+        {
+          "childKeys": [
             "test1",
             "test2",
             "test3",
@@ -677,19 +677,19 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
           "key": "menu",
           "text": "Test Menu",
         },
-        Object {
+        {
           "key": "test1",
           "text": "Test Menu 1",
         },
-        Object {
+        {
           "key": "test2",
           "text": "Test Menu 2",
         },
-        Object {
+        {
           "key": "test3",
           "text": "Test Menu 3",
         },
-        Object {
+        {
           "key": "test4",
           "text": "Test Menu 4",
         },
@@ -718,8 +718,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
       className="side-menu-content-container"
       fill={false}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -728,8 +728,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -750,8 +750,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
         ariaLabel="Sub Menu List"
         className="content-container-static side-menu-content-container"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -760,8 +760,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -830,8 +830,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     <MenuItem
                       data-menu-item="test1"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -840,8 +840,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -897,8 +897,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     <MenuItem
                       data-menu-item="test2"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -907,8 +907,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -964,8 +964,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     <MenuItem
                       data-menu-item="test3"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -974,8 +974,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -1031,8 +1031,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     <MenuItem
                       data-menu-item="test4"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -1041,8 +1041,8 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -1100,8 +1100,8 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
 <NavigationSideMenu
   headerLevel={3}
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1110,8 +1110,8 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1126,7 +1126,7 @@ exports[`Layout should render a NavigationSideMenu with default props 1`] = `
       "timeZone": null,
     }
   }
-  menuItems={Array []}
+  menuItems={[]}
   onChange={[Function]}
   routingStackBack={[Function]}
   selectedMenuKey=""
@@ -1138,8 +1138,8 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
 <NavigationSideMenu
   headerLevel={3}
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1148,8 +1148,8 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1165,9 +1165,9 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
     }
   }
   menuItems={
-    Array [
-      Object {
-        "childKeys": Array [
+    [
+      {
+        "childKeys": [
           "test1",
           "test2",
           "test3",
@@ -1176,19 +1176,19 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
         "key": "menu",
         "text": "Test Menu",
       },
-      Object {
+      {
         "key": "test1",
         "text": "Test Menu 1",
       },
-      Object {
+      {
         "key": "test2",
         "text": "Test Menu 2",
       },
-      Object {
+      {
         "key": "test3",
         "text": "Test Menu 3",
       },
-      Object {
+      {
         "key": "test4",
         "text": "Test Menu 4",
       },
@@ -1204,8 +1204,8 @@ exports[`Layout should render a NavigationSideMenu with selectedKey 1`] = `
 exports[`Layout should render a drill-in variant of NavigationSideMenu with selectedKey 1`] = `
 <InjectIntl(NavigationSideMenu)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1214,8 +1214,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1231,9 +1231,9 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
     }
   }
   menuItems={
-    Array [
-      Object {
-        "childKeys": Array [
+    [
+      {
+        "childKeys": [
           "test1",
           "test2",
           "test3",
@@ -1242,20 +1242,20 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
         "key": "menu",
         "text": "Test Menu",
       },
-      Object {
+      {
         "isDisabled": true,
         "key": "test1",
         "text": "Test Menu 1",
       },
-      Object {
+      {
         "key": "test2",
         "text": "Test Menu 2",
       },
-      Object {
+      {
         "key": "test3",
         "text": "Test Menu 3",
       },
-      Object {
+      {
         "key": "test4",
         "text": "Test Menu 4",
       },
@@ -1269,8 +1269,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
   <NavigationSideMenu
     headerLevel={3}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -1279,8 +1279,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -1296,9 +1296,9 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
       }
     }
     menuItems={
-      Array [
-        Object {
-          "childKeys": Array [
+      [
+        {
+          "childKeys": [
             "test1",
             "test2",
             "test3",
@@ -1307,20 +1307,20 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
           "key": "menu",
           "text": "Test Menu",
         },
-        Object {
+        {
           "isDisabled": true,
           "key": "test1",
           "text": "Test Menu 1",
         },
-        Object {
+        {
           "key": "test2",
           "text": "Test Menu 2",
         },
-        Object {
+        {
           "key": "test3",
           "text": "Test Menu 3",
         },
-        Object {
+        {
           "key": "test4",
           "text": "Test Menu 4",
         },
@@ -1348,8 +1348,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
       className="side-menu-content-container"
       fill={false}
       intl={
-        Object {
-          "defaultFormats": Object {},
+        {
+          "defaultFormats": {},
           "defaultLocale": "en",
           "formatDate": [Function],
           "formatHTMLMessage": [Function],
@@ -1358,8 +1358,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
           "formatPlural": [Function],
           "formatRelative": [Function],
           "formatTime": [Function],
-          "formats": Object {},
-          "formatters": Object {
+          "formats": {},
+          "formatters": {
             "getDateTimeFormat": [Function],
             "getMessageFormat": [Function],
             "getNumberFormat": [Function],
@@ -1379,8 +1379,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
       <div
         className="content-container-static side-menu-content-container"
         intl={
-          Object {
-            "defaultFormats": Object {},
+          {
+            "defaultFormats": {},
             "defaultLocale": "en",
             "formatDate": [Function],
             "formatHTMLMessage": [Function],
@@ -1389,8 +1389,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
             "formatPlural": [Function],
             "formatRelative": [Function],
             "formatTime": [Function],
-            "formats": Object {},
-            "formatters": Object {
+            "formats": {},
+            "formatters": {
               "getDateTimeFormat": [Function],
               "getMessageFormat": [Function],
               "getNumberFormat": [Function],
@@ -1458,8 +1458,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                     <MenuItem
                       data-menu-item="test1"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -1468,8 +1468,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -1564,8 +1564,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                     <MenuItem
                       data-menu-item="test2"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -1574,8 +1574,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -1670,8 +1670,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                     <MenuItem
                       data-menu-item="test3"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -1680,8 +1680,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],
@@ -1776,8 +1776,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                     <MenuItem
                       data-menu-item="test4"
                       intl={
-                        Object {
-                          "defaultFormats": Object {},
+                        {
+                          "defaultFormats": {},
                           "defaultLocale": "en",
                           "formatDate": [Function],
                           "formatHTMLMessage": [Function],
@@ -1786,8 +1786,8 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                           "formatPlural": [Function],
                           "formatRelative": [Function],
                           "formatTime": [Function],
-                          "formats": Object {},
-                          "formatters": Object {
+                          "formats": {},
+                          "formatters": {
                             "getDateTimeFormat": [Function],
                             "getMessageFormat": [Function],
                             "getNumberFormat": [Function],

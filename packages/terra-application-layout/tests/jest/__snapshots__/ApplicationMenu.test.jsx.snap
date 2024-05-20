@@ -3,26 +3,26 @@
 exports[`ApplicationHeader correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
 >
   <withDisclosureManager(ApplicationMenu)
     layoutConfig={
-      Object {
+      {
         "size": "small",
       }
     }
-    routingStackDelegate={Object {}}
+    routingStackDelegate={{}}
   >
     <ApplicationMenu
       layoutConfig={
-        Object {
+        {
           "size": "small",
         }
       }
-      routingStackDelegate={Object {}}
+      routingStackDelegate={{}}
     >
       <div
         className="application-menu orion-fusion-theme"

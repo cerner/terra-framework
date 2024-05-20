@@ -1,9 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Popup from 'terra-popup';
-import classNames from 'classnames/bind';
-import styles from './PopupDocCommon.module.scss';
-
-const cx = classNames.bind(styles);
+import Button from 'terra-button';
 
 function PopupStandard() {
   const buttonElement = useRef();
@@ -35,13 +32,12 @@ function PopupStandard() {
         Using inert makes the content outside the popup inaccessible to screen readers and keyboard interactions while the popup is active, ensuring keyboard focus is trapped within the popup for better accessibility.
         <p>This example shows how to pass custom aria label for screen readers.</p>
       </div>
-      <button type="button" className={cx('popup-button')} onClick={handleButtonClick} ref={setButtonNode}>Medications</button>
+      <Button text="Medications" onClick={handleButtonClick} refCallback={setButtonNode} />
       <Popup
         isOpen={open}
         targetRef={getButtonNode}
         onRequestClose={handleRequestClose}
-        isHeaderDisabled={false}
-        ariaLabel="Press escape to close medications pop up"
+        isContentFocusDisabled
       >
         <label htmlFor="html">Medications for patient John Doe</label>
       </Popup>

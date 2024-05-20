@@ -9,11 +9,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
   id="Column-0"
   resizeHandleStateSetter={
     [MockFunction] {
-      "calls": Array [
-        Array [],
+      "calls": [
+        [],
       ],
-      "results": Array [
-        Object {
+      "results": [
+        {
           "type": "return",
           "value": undefined,
         },
@@ -31,8 +31,8 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     headerHeight="150px"
     id="Column-0"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -41,8 +41,8 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -64,11 +64,11 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
     isSelectable={false}
     resizeHandleStateSetter={
       [MockFunction] {
-        "calls": Array [
-          Array [],
+        "calls": [
+          [],
         ],
-        "results": Array [
-          Object {
+        "results": [
+          {
             "type": "return",
             "value": undefined,
           },
@@ -86,7 +86,7 @@ exports[`ColumnHeaderCell renders a pinned column header cell 1`] = `
       role="columnheader"
       scope="col"
       style={
-        Object {
+        {
           "height": "150px",
           "left": 0,
           "top": undefined,

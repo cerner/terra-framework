@@ -3,8 +3,8 @@
 exports[`CompactHeader should render default element 1`] = `
 <InjectIntl(CompactHeader)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`CompactHeader should render default element 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -31,10 +31,10 @@ exports[`CompactHeader should render default element 1`] = `
   }
 >
   <CompactHeader
-    extensionItems={Array []}
+    extensionItems={[]}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -43,8 +43,8 @@ exports[`CompactHeader should render default element 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -60,9 +60,9 @@ exports[`CompactHeader should render default element 1`] = `
       }
     }
     isDrawerMenuOpen={false}
-    navigationItems={Array []}
-    notifications={Object {}}
-    utilityItems={Array []}
+    navigationItems={[]}
+    notifications={{}}
+    utilityItems={[]}
   >
     <header
       className="compact-header"
@@ -107,8 +107,8 @@ exports[`CompactHeader should render default element 1`] = `
 exports[`CompactHeader should render title element 1`] = `
 <InjectIntl(CompactHeader)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -117,8 +117,8 @@ exports[`CompactHeader should render title element 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -134,7 +134,7 @@ exports[`CompactHeader should render title element 1`] = `
     }
   }
   titleConfig={
-    Object {
+    {
       "element": <img
         alt="test"
         id="test-image"
@@ -144,10 +144,10 @@ exports[`CompactHeader should render title element 1`] = `
   }
 >
   <CompactHeader
-    extensionItems={Array []}
+    extensionItems={[]}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -156,8 +156,8 @@ exports[`CompactHeader should render title element 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -173,10 +173,10 @@ exports[`CompactHeader should render title element 1`] = `
       }
     }
     isDrawerMenuOpen={false}
-    navigationItems={Array []}
-    notifications={Object {}}
+    navigationItems={[]}
+    notifications={{}}
     titleConfig={
-      Object {
+      {
         "element": <img
           alt="test"
           id="test-image"
@@ -184,7 +184,7 @@ exports[`CompactHeader should render title element 1`] = `
         "title": "test-title",
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="compact-header"
@@ -282,8 +282,8 @@ exports[`CompactHeader should render title element 1`] = `
 exports[`CompactHeader should render with function callbacks 1`] = `
 <InjectIntl(CompactHeader)
   extensionItems={
-    Array [
-      Object {
+    [
+      {
         "icon": <span>
           my icon
         </span>,
@@ -293,8 +293,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
     ]
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -303,8 +303,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -320,26 +320,26 @@ exports[`CompactHeader should render with function callbacks 1`] = `
     }
   }
   navigationItems={
-    Array [
-      Object {
+    [
+      {
         "key": "my-test-key",
         "text": "test-text",
       },
     ]
   }
   notifications={
-    Object {
+    {
       "my-test-key-1": 3,
     }
   }
   onSelectExtensionItem={[MockFunction]}
   titleConfig={
-    Object {
+    {
       "title": "test-title",
     }
   }
   userConfig={
-    Object {
+    {
       "detail": "user-detail",
       "imageSrc": "user-src",
       "initials": "user-initials",
@@ -349,8 +349,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
 >
   <CompactHeader
     extensionItems={
-      Array [
-        Object {
+      [
+        {
           "icon": <span>
             my icon
           </span>,
@@ -360,8 +360,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
       ]
     }
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -370,8 +370,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -388,33 +388,33 @@ exports[`CompactHeader should render with function callbacks 1`] = `
     }
     isDrawerMenuOpen={false}
     navigationItems={
-      Array [
-        Object {
+      [
+        {
           "key": "my-test-key",
           "text": "test-text",
         },
       ]
     }
     notifications={
-      Object {
+      {
         "my-test-key-1": 3,
       }
     }
     onSelectExtensionItem={[MockFunction]}
     titleConfig={
-      Object {
+      {
         "title": "test-title",
       }
     }
     userConfig={
-      Object {
+      {
         "detail": "user-detail",
         "imageSrc": "user-src",
         "initials": "user-initials",
         "name": "user-name",
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="compact-header"
@@ -513,8 +513,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
       >
         <InjectIntl(Extensions)
           extensionItems={
-            Array [
-              Object {
+            [
+              {
                 "icon": <span>
                   my icon
                 </span>,
@@ -524,7 +524,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
             ]
           }
           notifications={
-            Object {
+            {
               "my-test-key-1": 3,
             }
           }
@@ -533,8 +533,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
           <Extensions
             activeBreakpoint=""
             extensionItems={
-              Array [
-                Object {
+              [
+                {
                   "icon": <span>
                     my icon
                   </span>,
@@ -544,8 +544,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               ]
             }
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -554,8 +554,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -571,7 +571,7 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               }
             }
             notifications={
-              Object {
+              {
                 "my-test-key-1": 3,
               }
             }
@@ -640,7 +640,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
               contentWidth="320"
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
-              isHeaderDisabled={false}
+              isHeaderDisabled={true}
+              isMenu={false}
               isOpen={false}
               onRequestClose={[Function]}
               popupContentRole="dialog"
@@ -665,8 +666,8 @@ exports[`CompactHeader should render with function callbacks 1`] = `
 exports[`CompactHeader should render with ids for navigation and extension items 1`] = `
 <InjectIntl(CompactHeader)
   extensionItems={
-    Array [
-      Object {
+    [
+      {
         "icon": <span>
           my icon
         </span>,
@@ -677,8 +678,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
   }
   id="example-application"
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -687,8 +688,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -704,26 +705,26 @@ exports[`CompactHeader should render with ids for navigation and extension items
     }
   }
   navigationItems={
-    Array [
-      Object {
+    [
+      {
         "key": "my-test-key",
         "text": "test-text",
       },
     ]
   }
   notifications={
-    Object {
+    {
       "my-test-key-1": 3,
     }
   }
   onSelectExtensionItem={[MockFunction]}
   titleConfig={
-    Object {
+    {
       "title": "test-title",
     }
   }
   userConfig={
-    Object {
+    {
       "detail": "user-detail",
       "imageSrc": "user-src",
       "initials": "user-initials",
@@ -733,8 +734,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
 >
   <CompactHeader
     extensionItems={
-      Array [
-        Object {
+      [
+        {
           "icon": <span>
             my icon
           </span>,
@@ -745,8 +746,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
     }
     id="example-application"
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -755,8 +756,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -773,33 +774,33 @@ exports[`CompactHeader should render with ids for navigation and extension items
     }
     isDrawerMenuOpen={false}
     navigationItems={
-      Array [
-        Object {
+      [
+        {
           "key": "my-test-key",
           "text": "test-text",
         },
       ]
     }
     notifications={
-      Object {
+      {
         "my-test-key-1": 3,
       }
     }
     onSelectExtensionItem={[MockFunction]}
     titleConfig={
-      Object {
+      {
         "title": "test-title",
       }
     }
     userConfig={
-      Object {
+      {
         "detail": "user-detail",
         "imageSrc": "user-src",
         "initials": "user-initials",
         "name": "user-name",
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="compact-header"
@@ -899,8 +900,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
       >
         <InjectIntl(Extensions)
           extensionItems={
-            Array [
-              Object {
+            [
+              {
                 "icon": <span>
                   my icon
                 </span>,
@@ -911,7 +912,7 @@ exports[`CompactHeader should render with ids for navigation and extension items
           }
           id="example-application"
           notifications={
-            Object {
+            {
               "my-test-key-1": 3,
             }
           }
@@ -920,8 +921,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
           <Extensions
             activeBreakpoint=""
             extensionItems={
-              Array [
-                Object {
+              [
+                {
                   "icon": <span>
                     my icon
                   </span>,
@@ -932,8 +933,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
             }
             id="example-application"
             intl={
-              Object {
-                "defaultFormats": Object {},
+              {
+                "defaultFormats": {},
                 "defaultLocale": "en",
                 "formatDate": [Function],
                 "formatHTMLMessage": [Function],
@@ -942,8 +943,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
                 "formatPlural": [Function],
                 "formatRelative": [Function],
                 "formatTime": [Function],
-                "formats": Object {},
-                "formatters": Object {
+                "formats": {},
+                "formatters": {
                   "getDateTimeFormat": [Function],
                   "getMessageFormat": [Function],
                   "getNumberFormat": [Function],
@@ -959,7 +960,7 @@ exports[`CompactHeader should render with ids for navigation and extension items
               }
             }
             notifications={
-              Object {
+              {
                 "my-test-key-1": 3,
               }
             }
@@ -1030,7 +1031,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
               contentWidth="320"
               isArrowDisplayed={true}
               isContentFocusDisabled={true}
-              isHeaderDisabled={false}
+              isHeaderDisabled={true}
+              isMenu={false}
               isOpen={false}
               onRequestClose={[Function]}
               popupContentRole="dialog"
@@ -1055,8 +1057,8 @@ exports[`CompactHeader should render with ids for navigation and extension items
 exports[`CompactHeader should render with menu callback 1`] = `
 <InjectIntl(CompactHeader)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1065,8 +1067,8 @@ exports[`CompactHeader should render with menu callback 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1083,16 +1085,16 @@ exports[`CompactHeader should render with menu callback 1`] = `
   }
   onSelectMenuButton={[MockFunction]}
   titleConfig={
-    Object {
+    {
       "title": "test-title",
     }
   }
 >
   <CompactHeader
-    extensionItems={Array []}
+    extensionItems={[]}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -1101,8 +1103,8 @@ exports[`CompactHeader should render with menu callback 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -1118,15 +1120,15 @@ exports[`CompactHeader should render with menu callback 1`] = `
       }
     }
     isDrawerMenuOpen={false}
-    navigationItems={Array []}
-    notifications={Object {}}
+    navigationItems={[]}
+    notifications={{}}
     onSelectMenuButton={[MockFunction]}
     titleConfig={
-      Object {
+      {
         "title": "test-title",
       }
     }
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="compact-header"
@@ -1223,8 +1225,8 @@ exports[`CompactHeader should render with menu callback 1`] = `
 exports[`CompactHeader should render with skip callback 1`] = `
 <InjectIntl(CompactHeader)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1233,8 +1235,8 @@ exports[`CompactHeader should render with skip callback 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1252,10 +1254,10 @@ exports[`CompactHeader should render with skip callback 1`] = `
   onSelectSkipToContent={[MockFunction]}
 >
   <CompactHeader
-    extensionItems={Array []}
+    extensionItems={[]}
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -1264,8 +1266,8 @@ exports[`CompactHeader should render with skip callback 1`] = `
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -1281,10 +1283,10 @@ exports[`CompactHeader should render with skip callback 1`] = `
       }
     }
     isDrawerMenuOpen={false}
-    navigationItems={Array []}
-    notifications={Object {}}
+    navigationItems={[]}
+    notifications={{}}
     onSelectSkipToContent={[MockFunction]}
-    utilityItems={Array []}
+    utilityItems={[]}
   >
     <header
       className="compact-header"

@@ -61,6 +61,7 @@ class BoundedPopup extends React.Component {
           isHeaderDisabled
         >
           <BoundedNoHeaderContent />
+          <button type="button" onClick={this.handleRequestClose}>Close</button>
         </Popup>
         <button type="button" id="bounded-button" onClick={this.handleButtonClick} ref={this.setButtonNode}>
           Bounded Popup

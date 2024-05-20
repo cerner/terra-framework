@@ -6,6 +6,11 @@
   * Added headerLevel prop for the title of the menu.
   * Added missing A11y attributes.
 
+## 2.58.0 - (May 20, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 2.57.0 - (May 15, 2024)
 
 * Added

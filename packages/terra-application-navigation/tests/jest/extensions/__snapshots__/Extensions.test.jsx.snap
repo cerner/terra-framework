@@ -16,7 +16,8 @@ exports[`Extensions should render default element 1`] = `
     contentWidth="320"
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
+    isMenu={false}
     isOpen={false}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -24,7 +25,7 @@ exports[`Extensions should render default element 1`] = `
   >
     <PopupMenu
       isHeightBounded={false}
-      menuItems={Array []}
+      menuItems={[]}
       onSelectMenuItem={[Function]}
       role="menu"
       showSelections={false}
@@ -62,7 +63,8 @@ exports[`Extensions should render prop data 1`] = `
     contentWidth="320"
     isArrowDisplayed={true}
     isContentFocusDisabled={true}
-    isHeaderDisabled={false}
+    isHeaderDisabled={true}
+    isMenu={false}
     isOpen={false}
     onRequestClose={[Function]}
     popupContentRole="dialog"
@@ -71,7 +73,7 @@ exports[`Extensions should render prop data 1`] = `
   >
     <PopupMenu
       isHeightBounded={false}
-      menuItems={Array []}
+      menuItems={[]}
       onSelectMenuItem={[Function]}
       role="menu"
       showSelections={false}

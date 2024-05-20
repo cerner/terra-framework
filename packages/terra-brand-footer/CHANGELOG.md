@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 3.13.0 - (May 20, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 3.12.0 - (December 18, 2023)
 
 * Changed

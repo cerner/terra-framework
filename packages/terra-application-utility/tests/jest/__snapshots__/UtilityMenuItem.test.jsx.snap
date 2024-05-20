@@ -3,7 +3,7 @@
 exports[`UtilityMenuItem correctly applies the theme context className 1`] = `
 <ThemeContextProvider
   theme={
-    Object {
+    {
       "className": "orion-fusion-theme",
     }
   }
@@ -32,7 +32,7 @@ exports[`UtilityMenuItem correctly applies the theme context className 1`] = `
           </div>
         }
         fillAttributes={
-          Object {
+          {
             "className": "menu-item-fill",
           }
         }
@@ -80,7 +80,7 @@ exports[`UtilityMenuItem should pass in a custom prop 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -126,7 +126,7 @@ exports[`UtilityMenuItem should render with a title 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -155,7 +155,7 @@ exports[`UtilityMenuItem should render with content 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -184,7 +184,7 @@ exports[`UtilityMenuItem should render with default props 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -213,7 +213,7 @@ exports[`UtilityMenuItem should render with hasChevron 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -242,7 +242,7 @@ exports[`UtilityMenuItem should render with isActive 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -271,7 +271,7 @@ exports[`UtilityMenuItem should render with isSelectable 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -300,7 +300,7 @@ exports[`UtilityMenuItem should render with isSelected 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -329,7 +329,7 @@ exports[`UtilityMenuItem should render with leftInset 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -365,7 +365,7 @@ exports[`UtilityMenuItem should render with onKeyDown 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }
@@ -394,7 +394,7 @@ exports[`UtilityMenuItem should render with rightInset 1`] = `
       </div>
     }
     fillAttributes={
-      Object {
+      {
         "className": "menu-item-fill",
       }
     }

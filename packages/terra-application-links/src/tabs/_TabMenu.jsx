@@ -131,6 +131,7 @@ class TabMenu extends React.Component {
           targetRef={this.getTargetRef}
           isOpen={isOpen}
           isArrowDisplayed
+          isHeaderDisabled
         >
           <TabMenuList title={this.props.intl.formatMessage({ id: 'Terra.application.tabs.moreMenuHeaderTitle' })}>
             {React.Children.map(children, child => React.cloneElement(child, extraChildProps))}

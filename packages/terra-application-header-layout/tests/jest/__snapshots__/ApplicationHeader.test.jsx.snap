@@ -3,8 +3,8 @@
 exports[`ApplicationHeaderLayout correctly applies the theme context className 1`] = `
 <InjectIntl(ApplicationHeaderLayout)
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`ApplicationHeaderLayout correctly applies the theme context className 1
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -32,8 +32,8 @@ exports[`ApplicationHeaderLayout correctly applies the theme context className 1
 >
   <ApplicationHeaderLayout
     intl={
-      Object {
-        "defaultFormats": Object {},
+      {
+        "defaultFormats": {},
         "defaultLocale": "en",
         "formatDate": [Function],
         "formatHTMLMessage": [Function],
@@ -42,8 +42,8 @@ exports[`ApplicationHeaderLayout correctly applies the theme context className 1
         "formatPlural": [Function],
         "formatRelative": [Function],
         "formatTime": [Function],
-        "formats": Object {},
-        "formatters": Object {
+        "formats": {},
+        "formatters": {
           "getDateTimeFormat": [Function],
           "getMessageFormat": [Function],
           "getNumberFormat": [Function],
@@ -91,8 +91,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions 1`] = `
     </div>
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -101,8 +101,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -130,8 +130,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions and navi
     </div>
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -140,8 +140,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions and navi
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -176,8 +176,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
     </div>
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -186,8 +186,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -229,8 +229,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
     </div>
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -239,8 +239,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -289,8 +289,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
     </div>
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -299,8 +299,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -349,8 +349,8 @@ exports[`ApplicationHeaderLayout should render with provided extensions, navigat
 exports[`ApplicationHeaderLayout should render with provided logo 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -359,8 +359,8 @@ exports[`ApplicationHeaderLayout should render with provided logo 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -388,8 +388,8 @@ exports[`ApplicationHeaderLayout should render with provided logo 1`] = `
 exports[`ApplicationHeaderLayout should render with provided logo, toggle, and utilities 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -398,8 +398,8 @@ exports[`ApplicationHeaderLayout should render with provided logo, toggle, and u
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -441,8 +441,8 @@ exports[`ApplicationHeaderLayout should render with provided logo, toggle, and u
 exports[`ApplicationHeaderLayout should render with provided navigation 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -451,8 +451,8 @@ exports[`ApplicationHeaderLayout should render with provided navigation 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -480,8 +480,8 @@ exports[`ApplicationHeaderLayout should render with provided navigation 1`] = `
 exports[`ApplicationHeaderLayout should render with provided navigation, logo, toggle, and utilities 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -490,8 +490,8 @@ exports[`ApplicationHeaderLayout should render with provided navigation, logo, t
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -540,8 +540,8 @@ exports[`ApplicationHeaderLayout should render with provided navigation, logo, t
 exports[`ApplicationHeaderLayout should render with provided toggle 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -550,8 +550,8 @@ exports[`ApplicationHeaderLayout should render with provided toggle 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -579,8 +579,8 @@ exports[`ApplicationHeaderLayout should render with provided toggle 1`] = `
 exports[`ApplicationHeaderLayout should render with provided toggle and utilities 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -589,8 +589,8 @@ exports[`ApplicationHeaderLayout should render with provided toggle and utilitie
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -625,8 +625,8 @@ exports[`ApplicationHeaderLayout should render with provided toggle and utilitie
 exports[`ApplicationHeaderLayout should render with provided utilities 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -635,8 +635,8 @@ exports[`ApplicationHeaderLayout should render with provided utilities 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -664,8 +664,8 @@ exports[`ApplicationHeaderLayout should render with provided utilities 1`] = `
 exports[`ApplicationHeaderLayout should render without optional props 1`] = `
 <ApplicationHeaderLayout
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -674,8 +674,8 @@ exports[`ApplicationHeaderLayout should render without optional props 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],

@@ -114,6 +114,7 @@ const Extensions = ({
         targetRef={() => extensionRollupRef.current}
         onRequestClose={() => setPopupIsOpen(false)}
         isContentFocusDisabled
+        isHeaderDisabled
       >
         <PopupMenu
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.extensions.rollupMenuHeaderTitle' })}

@@ -4,29 +4,29 @@ exports[`RoutingMenu Snapshot tests renders with given props 1`] = `
 <InjectIntl(NavigationSideMenu)
   data-routing-menu={true}
   menuItems={
-    Array [
-      Object {
+    [
+      {
         "hasSubMenu": false,
         "key": "/1",
-        "metaData": Object {
+        "metaData": {
           "externalLink": undefined,
           "hasSubMenu": false,
           "path": "/1",
         },
         "text": "1",
       },
-      Object {
+      {
         "hasSubMenu": true,
         "key": "/2",
-        "metaData": Object {
+        "metaData": {
           "externalLink": undefined,
           "hasSubMenu": true,
           "path": "/2",
         },
         "text": "2",
       },
-      Object {
-        "childKeys": Array [
+      {
+        "childKeys": [
           "/1",
           "/2",
         ],

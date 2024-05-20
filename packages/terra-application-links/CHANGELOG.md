@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 6.85.0 - (May 20, 2024)
+
+* Added
+  * `isHeaderDisabled` to hide header from popup.
+
 ## 6.84.0 - (May 14, 2024)
 
 * Changed

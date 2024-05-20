@@ -3,8 +3,8 @@
 exports[`UtilityMenu should render default element 1`] = `
 <UtilityMenu
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -13,8 +13,8 @@ exports[`UtilityMenu should render default element 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -29,12 +29,12 @@ exports[`UtilityMenu should render default element 1`] = `
       "timeZone": null,
     }
   }
-  utilityItems={Array []}
+  utilityItems={[]}
 >
   <PopupMenu
     footerText="Terra.applicationNavigation.utilityMenu.logout"
     isHeightBounded={false}
-    menuItems={Array []}
+    menuItems={[]}
     onSelectMenuItem={[Function]}
     role="listbox"
     showSelections={false}
@@ -65,8 +65,8 @@ exports[`UtilityMenu should render default element 1`] = `
             <ActionHeader
               aria-hidden={true}
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -75,8 +75,8 @@ exports[`UtilityMenu should render default element 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -106,8 +106,8 @@ exports[`UtilityMenu should render default element 1`] = `
                   endContent={null}
                   id="1"
                   intl={
-                    Object {
-                      "defaultFormats": Object {},
+                    {
+                      "defaultFormats": {},
                       "defaultLocale": "en",
                       "formatDate": [Function],
                       "formatHTMLMessage": [Function],
@@ -116,8 +116,8 @@ exports[`UtilityMenu should render default element 1`] = `
                       "formatPlural": [Function],
                       "formatRelative": [Function],
                       "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
+                      "formats": {},
+                      "formatters": {
                         "getDateTimeFormat": [Function],
                         "getMessageFormat": [Function],
                         "getNumberFormat": [Function],
@@ -253,8 +253,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     </div>
   }
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -263,8 +263,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -284,7 +284,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
   onSelectSettings={[MockFunction]}
   onSelectUtilityItem={[MockFunction]}
   userConfig={
-    Object {
+    {
       "detail": "user-detail",
       "imageSrc": "user-src",
       "initials": "user-initials",
@@ -292,14 +292,14 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     }
   }
   utilityItems={
-    Array [
-      Object {
+    [
+      {
         "icon": <span>
           my icon
         </span>,
         "id": "test-utility-2-id",
         "key": "my-test-key-2",
-        "metaData": Object {
+        "metaData": {
           "meta": "metaData",
         },
         "text": "test-text-2",
@@ -316,21 +316,21 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     footerText="Terra.applicationNavigation.utilityMenu.logout"
     isHeightBounded={false}
     menuItems={
-      Array [
-        Object {
+      [
+        {
           "dataAttrs": undefined,
           "icon": <span>
             my icon
           </span>,
           "id": undefined,
           "key": "my-test-key-2",
-          "metaData": Object {
+          "metaData": {
             "meta": "metaData",
           },
           "text": "test-text-2",
         },
-        Object {
-          "dataAttrs": Object {
+        {
+          "dataAttrs": {
             "data-navigation-utility-item-settings": "true",
           },
           "icon": <IconSettings
@@ -342,8 +342,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
           "key": "terra-application-navigation.utility-menu.settings",
           "text": "Terra.applicationNavigation.utilityMenu.settings",
         },
-        Object {
-          "dataAttrs": Object {
+        {
+          "dataAttrs": {
             "data-navigation-utility-item-help": "true",
           },
           "icon": <IconQuestionOutline
@@ -362,7 +362,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
     showSelections={false}
     title="Terra.applicationNavigation.utilityMenu.headerTitle"
     userConfig={
-      Object {
+      {
         "detail": "user-detail",
         "imageSrc": "user-src",
         "initials": "user-initials",
@@ -415,8 +415,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
             <ActionHeader
               aria-hidden={true}
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -425,8 +425,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -456,8 +456,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                   endContent={null}
                   id="2"
                   intl={
-                    Object {
-                      "defaultFormats": Object {},
+                    {
+                      "defaultFormats": {},
                       "defaultLocale": "en",
                       "formatDate": [Function],
                       "formatHTMLMessage": [Function],
@@ -466,8 +466,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                       "formatPlural": [Function],
                       "formatRelative": [Function],
                       "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
+                      "formats": {},
+                      "formatters": {
                         "getDateTimeFormat": [Function],
                         "getMessageFormat": [Function],
                         "getNumberFormat": [Function],
@@ -574,7 +574,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                 </div>
                 <PopupMenuUser
                   userConfig={
-                    Object {
+                    {
                       "detail": "user-detail",
                       "imageSrc": "user-src",
                       "initials": "user-initials",
@@ -604,8 +604,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                           image="user-src"
                           initials="user-initials"
                           intl={
-                            Object {
-                              "defaultFormats": Object {},
+                            {
+                              "defaultFormats": {},
                               "defaultLocale": "en",
                               "formatDate": [Function],
                               "formatHTMLMessage": [Function],
@@ -614,8 +614,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                               "formatPlural": [Function],
                               "formatRelative": [Function],
                               "formatTime": [Function],
-                              "formats": Object {},
-                              "formatters": Object {
+                              "formats": {},
+                              "formatters": {
                                 "getDateTimeFormat": [Function],
                                 "getMessageFormat": [Function],
                                 "getNumberFormat": [Function],
@@ -637,7 +637,7 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
                           <div
                             className="avatar three image"
                             style={
-                              Object {
+                              {
                                 "fontSize": "1.174rem",
                               }
                             }
@@ -1009,8 +1009,8 @@ exports[`UtilityMenu should render with function callbacks 1`] = `
 exports[`UtilityMenu should render with skip callback 1`] = `
 <UtilityMenu
   intl={
-    Object {
-      "defaultFormats": Object {},
+    {
+      "defaultFormats": {},
       "defaultLocale": "en",
       "formatDate": [Function],
       "formatHTMLMessage": [Function],
@@ -1019,8 +1019,8 @@ exports[`UtilityMenu should render with skip callback 1`] = `
       "formatPlural": [Function],
       "formatRelative": [Function],
       "formatTime": [Function],
-      "formats": Object {},
-      "formatters": Object {
+      "formats": {},
+      "formatters": {
         "getDateTimeFormat": [Function],
         "getMessageFormat": [Function],
         "getNumberFormat": [Function],
@@ -1036,12 +1036,12 @@ exports[`UtilityMenu should render with skip callback 1`] = `
     }
   }
   onSelectLogout={[MockFunction]}
-  utilityItems={Array []}
+  utilityItems={[]}
 >
   <PopupMenu
     footerText="Terra.applicationNavigation.utilityMenu.logout"
     isHeightBounded={false}
-    menuItems={Array []}
+    menuItems={[]}
     onSelectFooterItem={[MockFunction]}
     onSelectMenuItem={[Function]}
     role="listbox"
@@ -1093,8 +1093,8 @@ exports[`UtilityMenu should render with skip callback 1`] = `
             <ActionHeader
               aria-hidden={true}
               intl={
-                Object {
-                  "defaultFormats": Object {},
+                {
+                  "defaultFormats": {},
                   "defaultLocale": "en",
                   "formatDate": [Function],
                   "formatHTMLMessage": [Function],
@@ -1103,8 +1103,8 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                   "formatPlural": [Function],
                   "formatRelative": [Function],
                   "formatTime": [Function],
-                  "formats": Object {},
-                  "formatters": Object {
+                  "formats": {},
+                  "formatters": {
                     "getDateTimeFormat": [Function],
                     "getMessageFormat": [Function],
                     "getNumberFormat": [Function],
@@ -1134,8 +1134,8 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                   endContent={null}
                   id="3"
                   intl={
-                    Object {
-                      "defaultFormats": Object {},
+                    {
+                      "defaultFormats": {},
                       "defaultLocale": "en",
                       "formatDate": [Function],
                       "formatHTMLMessage": [Function],
@@ -1144,8 +1144,8 @@ exports[`UtilityMenu should render with skip callback 1`] = `
                       "formatPlural": [Function],
                       "formatRelative": [Function],
                       "formatTime": [Function],
-                      "formats": Object {},
-                      "formatters": Object {
+                      "formats": {},
+                      "formatters": {
                         "getDateTimeFormat": [Function],
                         "getMessageFormat": [Function],
                         "getNumberFormat": [Function],
