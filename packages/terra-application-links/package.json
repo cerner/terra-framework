@@ -1,6 +1,6 @@
 {
   "name": "terra-application-links",
-  "version": "6.85.0",
+  "version": "6.85.1",
   "description": "This packages contains a list and tab form of ApplicationLinks, to be used in horizontal and vertical display styles. Selection is managed by react-router.",
   "author": "Cerner Corporation",
   "repository": {

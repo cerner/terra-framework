@@ -1,6 +1,6 @@
 {
   "name": "terra-application-name",
-  "version": "3.46.0",
+  "version": "3.46.1",
   "description": "Houses the title of the application, along with a logo. There are two versions - a header version and menu version. These should be used with the corresponding header and menu layouts.",
   "author": "Cerner Corporation",
   "repository": {
@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "terra-application-header-layout": "^3.42.0",
-    "terra-application-menu-layout": "^3.33.0",
+    "terra-application-menu-layout": "^3.33.1",
     "terra-image": "3"
   },
   "scripts": {
