@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 6.84.0 - (May 20, 2024)
+
 * Changed
   * Enabled `close` button in popup by default.
 

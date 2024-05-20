@@ -1,6 +1,6 @@
 {
   "name": "terra-navigation-side-menu",
-  "version": "2.57.0",
+  "version": "2.58.0",
   "description": "A structual component for nesting navigational items within the content section of the terra-menu-layout.",
   "author": "Cerner Corporation",
   "repository": {
@@ -44,7 +44,7 @@
     "terra-content-container": "3",
     "terra-icon": "3",
     "terra-status-view": "4",
-    "terra-theme-context": "1",
+    "terra-theme-context": "^1.10.0",
     "terra-visually-hidden-text": "2"
   },
   "scripts": {
