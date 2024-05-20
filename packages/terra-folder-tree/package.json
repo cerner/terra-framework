@@ -43,7 +43,7 @@
     "terra-action-header": "2",
     "terra-arrange": "3",
     "terra-button": "3",
-    "terra-icon": "3",
+    "terra-icon": "^3.61.0",
     "terra-spacer": "3",
     "terra-theme-context": "^1.10.0",
     "terra-toolbar": "1",

@@ -42,7 +42,7 @@
     "prop-types": "15",
     "terra-action-header": "2",
     "terra-content-container": "3",
-    "terra-icon": "3",
+    "terra-icon": "^3.61.0",
     "terra-status-view": "4",
     "terra-theme-context": "^1.10.0",
     "terra-visually-hidden-text": "2"

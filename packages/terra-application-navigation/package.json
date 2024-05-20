@@ -52,7 +52,7 @@
     "terra-breakpoints": "2",
     "terra-button": "3",
     "terra-content-container": "3",
-    "terra-icon": "3",
+    "terra-icon": "^3.61.0",
     "terra-image": "3",
     "terra-overlay": "3",
     "terra-popup": "^6.84.0",

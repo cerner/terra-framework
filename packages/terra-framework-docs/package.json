@@ -62,7 +62,7 @@
     "terra-form-select": "6",
     "terra-grid": "6",
     "terra-hookshot": "^5.43.0",
-    "terra-icon": "3",
+    "terra-icon": "^3.61.0",
     "terra-infinite-list": "^3.43.0",
     "terra-layout": "^4.41.0",
     "terra-menu": "^6.98.0",
