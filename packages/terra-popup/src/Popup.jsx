@@ -38,7 +38,7 @@ const propTypes = {
   /**
    * Target element for the popup to anchor to.
    */
-  targetRef: PropTypes.func,
+  targetRef: PropTypes.func.isRequired,
   /**
    * Bounding container for the popup, will use window if no value provided.
    */
