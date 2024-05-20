@@ -38,7 +38,7 @@ const propTypes = {
   /**
    * Target element for the popup to anchor to.
    */
-  targetRef: PropTypes.func,
+  targetRef: PropTypes.func.isRequired,
   /**
    * Bounding container for the popup, will use window if no value provided.
    */
@@ -105,6 +105,10 @@ const propTypes = {
    * Callback function to handle click events on the popup.
    */
   onClick: PropTypes.func,
+  /**
+   * To determine if menu is opened inside the popup.
+   */
+  isMenu: PropTypes.bool,
 };
 
 const defaultProps = {
@@ -121,6 +125,7 @@ const defaultProps = {
   isHeaderDisabled: false,
   isOpen: false,
   popupContentRole: 'dialog',
+  isMenu: false,
 };
 
 class Popup extends React.Component {
@@ -216,7 +221,7 @@ class Popup extends React.Component {
     }
   }
 
-  createPopupContent(boundingFrame, showArrow, hookshotPostionFixed) {
+  createPopupContent(boundingFrame, showArrow, hookshotPostionFixed, isMenu) {
     const boundsProps = {
       contentHeight: PopupHeights[this.props.contentHeight] || PopupHeights['80'],
       contentWidth: PopupWidths[this.props.contentWidth] || PopupWidths['240'],
@@ -257,6 +262,7 @@ class Popup extends React.Component {
         isFocusedDisabled={this.props.isContentFocusDisabled}
         onClick={this.props.onClick}
         hookshotPostionFixed={hookshotPostionFixed}
+        isMenu={isMenu}
       >
         {this.props.children}
       </PopupContent>
@@ -282,6 +288,7 @@ class Popup extends React.Component {
       onRequestClose,
       targetRef,
       targetAttachment,
+      isMenu,
       ...customProps
     } = this.props;
     /* eslint-enable no-unused-vars */
@@ -304,7 +311,7 @@ class Popup extends React.Component {
       cOffset = PopupUtils.getContentOffset(cAttachment, tAttachment, this.props.targetRef(), PopupArrow.Opts.arrowSize, cornerSize);
     }
 
-    const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow, customProps.hookshotPostionFixed);
+    const hookshotContent = this.createPopupContent(boundingRef ? boundingRef() : undefined, showArrow, customProps.hookshotPostionFixed, isMenu);
 
     return (
       <React.Fragment>

@@ -207,7 +207,6 @@ const Pill = (props) => {
       targetRef={getPillRef}
       onRequestClose={handleOnRequestClose}
       contentHeight="auto"
-      contentWidth="auto"
     >
       <div className={cx(['popup-content-pill-label', theme.className])}>
         {labelCategory
@@ -296,5 +295,4 @@ const Pill = (props) => {
 };
 
 Pill.propTypes = propTypes;
-
 export default injectIntl(Pill);

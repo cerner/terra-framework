@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Added
+  * Adjusted contentWidth to manage popups to have a header with close button.
+
 ## 1.27.0 - (May 14, 2024)
 
 * Changed

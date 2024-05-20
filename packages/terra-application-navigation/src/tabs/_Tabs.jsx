@@ -273,6 +273,7 @@ class Tabs extends React.Component {
         isOpen
         isArrowDisplayed
         isContentFocusDisabled
+        isHeaderDisabled
       >
         <PopupMenu
           title={intl.formatMessage({ id: 'Terra.applicationNavigation.tabs.rollupMenuHeaderTitle' })}

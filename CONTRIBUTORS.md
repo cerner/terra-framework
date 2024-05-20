@@ -52,6 +52,7 @@ Cerner Corporation
 - Aaron Johnson [@zxeleven]
 - Serhii Pavlov [@sPavl0v]
 - Dmytro Smoliakov [@user099]
+- Avijit Das [@adavijit]
 
 [@tbiethman]: https://github.com/tbiethman
 [@mjhenkes]: https://github.com/mjhenkes
@@ -105,3 +106,4 @@ Cerner Corporation
 [@zxeleven]: https://github.com/zxeleven
 [@sPavl0v]: https://github.com/sPavl0v
 [@user099]: https://github.com/user099
+[@adavijit]: https://github.com/adavijit
