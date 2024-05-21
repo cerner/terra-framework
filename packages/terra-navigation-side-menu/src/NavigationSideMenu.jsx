@@ -68,6 +68,10 @@ const propTypes = {
      * A custom status display for menu item with no children. Component will fallback to status-view with no results.
      */
     customStatusDisplay: PropTypes.node,
+    /**
+     * Indicates if items are loaded.
+     */
+    isLoading: PropTypes.bool,
   })),
   /**
    * Callback function when a menu endpoint is reached.
@@ -120,6 +124,7 @@ const processMenuItems = (menuItems, variant) => {
       icon: item.icon,
       isDisabled: item.isDisabled,
       customStatusDisplay: item.customStatusDisplay,
+      isLoading: item.isLoading,
     };
     if (item.childKeys) {
       item.childKeys.forEach((key) => {
@@ -334,7 +339,8 @@ class NavigationSideMenu extends Component {
       this.handleEvents(event, item, key);
     };
 
-    if (key === 'empty-child-key') {
+    // Render Custom status / Spinner / No results
+    if (key === 'empty-child-key' || currentItem.isLoading) {
       return this.props.variant === VARIANTS.DRILL_IN
         ? (currentItem.customStatusDisplay || <StatusView variant="no-data" />)
         : null;
