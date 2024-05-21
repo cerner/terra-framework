@@ -1,3 +1,5 @@
 {
-  "Terra.navigation.side.menu.selected": "Seleccionado"
+  "Terra.navigation.side.menu.selected": "Seleccionado",
+  "Terra.navigation.side.menu.folder": "Folder",
+  "Terra.navigation.side.menu.document": "Document"
 }

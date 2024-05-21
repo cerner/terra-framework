@@ -2,6 +2,10 @@
 
 ## Unreleased
 
+* Added
+  * Added headerLevel prop for the title of the menu.
+  * Added missing A11y attributes.
+
 ## 2.58.1 - (May 20, 2024)
 
 * Fixed

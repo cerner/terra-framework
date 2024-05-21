@@ -120,7 +120,7 @@ class MenuItem extends React.Component {
     } = this.props;
     const theme = this.context;
 
-    const itemIcon = hasChevron && !icon ? <IconFolder /> : (icon || <IconDocuments />);
+    const itemIcon = hasChevron && !icon ? <IconFolder a11yLabel={intl.formatMessage({ id: 'Terra.navigation.side.menu.folder' })} /> : (icon || <IconDocuments a11yLabel={intl.formatMessage({ id: 'Terra.navigation.side.menu.document' })} />);
 
     const itemClassNames = classNames(cx(
       'menu-item',
@@ -137,6 +137,14 @@ class MenuItem extends React.Component {
       { 'is-disabled': isDisabled },
     );
 
+    const ariaAttributes = {};
+    ariaAttributes['aria-haspopup'] = hasChevron;
+    ariaAttributes['aria-disabled'] = isDisabled;
+
+    if (hasChevron) {
+      ariaAttributes['aria-expanded'] = !hasChevron;
+    }
+
     return (
       <li
         className={listItemClassNames}
@@ -149,7 +157,7 @@ class MenuItem extends React.Component {
           tabIndex={this.props.tabIndex}
           className={itemClassNames}
           onKeyDown={this.handleKeyDown}
-          aria-haspopup={hasChevron}
+          {...ariaAttributes}
         >
           {variant === VARIANTS.DRILL_IN && itemIcon && <span className={cx('icon')}>{itemIcon}</span>}
           <div className={cx('title')}>

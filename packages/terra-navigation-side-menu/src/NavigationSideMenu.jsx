@@ -25,6 +25,10 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string,
   /**
+   * The heading level for the title of the menu.
+   */
+  headerLevel: PropTypes.oneOf([1, 2, 3, 4, 5, 6]),
+  /**
    * An array of configuration for each menu item.
    */
   menuItems: PropTypes.arrayOf(PropTypes.shape({
@@ -96,6 +100,7 @@ const propTypes = {
 const defaultProps = {
   menuItems: [],
   variant: VARIANTS.NAVIGATION_SIDE_MENU,
+  headerLevel: 3,
 };
 
 const processMenuItems = (menuItems, variant) => {
@@ -257,6 +262,16 @@ class NavigationSideMenu extends Component {
     const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
     const currentIndex = Array.from(listMenuItems).indexOf(event.target);
     const lastIndex = listMenuItems.length - 1;
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_ESCAPE) {
+      const parentKey = this.state.parents[this.props.selectedMenuKey];
+      if (parentKey) {
+        this.handleBackClick(event);
+      } else if (this.props.routingStackBack) {
+        this.props.routingStackBack();
+      }
+    }
+
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       event.preventDefault();
       if (!item.isDisabled) {
@@ -379,6 +394,7 @@ class NavigationSideMenu extends Component {
       selectedMenuKey,
       toolbar,
       variant,
+      headerLevel,
       ...customProps
     } = this.props;
     const currentItem = this.state.items[selectedMenuKey];
@@ -387,6 +403,8 @@ class NavigationSideMenu extends Component {
       'side-menu-content-container',
       theme.className,
     ]);
+
+    const HeaderElement = `h${headerLevel}`;
 
     const parentKey = this.state.parents[selectedMenuKey];
     if (parentKey) {
@@ -398,6 +416,12 @@ class NavigationSideMenu extends Component {
     const headerStyles = cx([
       { 'header-style': (variant === VARIANTS.DRILL_IN) },
       theme.className,
+    ]);
+
+    const titleStyles = cx([
+      'title',
+      { 'nav-side-menu-title': (variant === VARIANTS.NAVIGATION_SIDE_MENU) },
+      { 'drill-in-title': (variant === VARIANTS.DRILL_IN) },
     ]);
 
     let header;
@@ -413,9 +437,10 @@ class NavigationSideMenu extends Component {
             onKeyDown={this.handleBackKeydown}
             onClick={this.onBack}
             data-navigation-side-menu
+            aria-label={currentItem ? currentItem.text : null}
           >
             {(this.onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
-            <h1 className={cx('title')}>{currentItem ? currentItem.text : null}</h1>
+            <HeaderElement className={titleStyles}>{currentItem ? currentItem.text : null}</HeaderElement>
           </div>
           {toolbar}
         </li>
