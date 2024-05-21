@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+## 4.41.1 - (May 20, 2024)
+
+* Fixed
+  * Updated `terra-icon` to `^3.61.0`.
+
 ## 4.41.0 - (May 20, 2024)
 
 * Changed
