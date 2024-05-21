@@ -46,6 +46,7 @@ class ArrowPopup extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
+          isHeaderDisabled={false}
         >
           <p>this is popup content</p>
         </Popup>

@@ -93,7 +93,7 @@ const defaultProps = {
   contentHeightMax: -1,
   contentWidthMax: -1,
   isFocusedDisabled: false,
-  isHeaderDisabled: false,
+  isHeaderDisabled: true,
   isHeightAutomatic: false,
   isWidthAutomatic: false,
   popupContentRole: 'dialog',

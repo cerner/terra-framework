@@ -45,6 +45,7 @@ class DefaultPopup extends React.Component {
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
           contentHeight="auto"
+          isHeaderDisabled={false}
         >
           <p>this is popup content</p>
           <button id="button1" type="button">Test button 1</button>

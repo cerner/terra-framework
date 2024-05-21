@@ -48,6 +48,7 @@ class PopupExample extends React.Component {
           isOpen={this.state.open}
           targetRef={this.getButtonNode}
           onRequestClose={this.handleRequestClose}
+          isHeaderDisabled={false}
         >
           <TestPopupContent size={this.state.size} onClick={() => this.setState({ size: 'large' })} />
         </Popup>

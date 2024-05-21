@@ -40,6 +40,7 @@ class ModalContent extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handlePopupRequestClose}
           targetRef={() => document.getElementById('popup-in-modal')}
+          isHeaderDisabled={false}
         >
           <p>This is popup content</p>
           <button type="button">Test button 1</button>

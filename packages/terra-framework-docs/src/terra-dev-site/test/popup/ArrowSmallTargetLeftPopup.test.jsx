@@ -65,6 +65,7 @@ class OffsetPopup extends React.Component {
           isOpen={this.state.open}
           onRequestClose={this.handleRequestClose}
           targetRef={this.getButtonNode}
+          isHeaderDisabled={false}
         >
           <p className={cx('popup-text')}>This popup was adjusted because the target was smaller than the arrow position allowed.</p>
         </Popup>

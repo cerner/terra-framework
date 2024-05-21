@@ -9,6 +9,7 @@ describe('PopupContent', () => {
     contentWidth: 640,
     onRequestClose: jest.fn(),
     onResize: jest.fn(),
+    isHeaderDisabled: false,
   };
   const children = <div>children node(s)</div>;
 
