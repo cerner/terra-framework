@@ -1,6 +1,6 @@
 {
   "name": "terra-collapsible-menu-view",
-  "version": "6.102.0",
+  "version": "6.103.1",
   "description": "The collapsible menu view is a mechanism that can be used in toolbar scenarios where actionable items will be displayed face-up and flex based on the space available. Any items that can not fit in the available space will be rolled into an ellipsis menu.",
   "author": "Cerner Corporation",
   "repository": {
@@ -43,11 +43,11 @@
     "terra-button-group": "3",
     "terra-form-checkbox": "4",
     "terra-hyperlink": "2",
-    "terra-icon": "3",
+    "terra-icon": "^3.61.0",
     "terra-list": "4",
-    "terra-menu": "6",
+    "terra-menu": "^6.98.1",
     "terra-mixins": "1",
-    "terra-theme-context": "1"
+    "terra-theme-context": "^1.10.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

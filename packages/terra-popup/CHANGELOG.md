@@ -1,9 +1,11 @@
 # Changelog
 
-* Changed
-  * Changed `targetRef` to an optional prop.
-
 ## Unreleased
+
+## 6.84.0 - (May 20, 2024)
+
+* Changed
+  * Enabled `close` button in popup by default.
 
 ## 6.83.0 - (May 14, 2024)
 

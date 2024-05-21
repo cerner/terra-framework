@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.86.1 - (May 20, 2024)
+
+* Fixed
+  * Updated `terra-icon` to `^3.61.0`.
+
+## 1.86.0 - (May 20, 2024)
+
+* Added
+  * `isHeaderDisabled` to hide header from popup.
+
 ## 1.85.0 - (May 14, 2024)
 
 * Changed

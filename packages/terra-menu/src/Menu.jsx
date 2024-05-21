@@ -200,6 +200,7 @@ class Menu extends React.Component {
         isHeaderDisabled
         isContentFocusDisabled
         popupContentRole={null}
+        isMenu
       >
         {slides}
       </Popup>

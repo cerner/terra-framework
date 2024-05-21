@@ -80,6 +80,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
       isArrowDisplayed={false}
       isContentFocusDisabled={true}
       isHeaderDisabled={true}
+      isMenu={true}
       isOpen={true}
       onRequestClose={[MockFunction]}
       popupContentRole={null}
@@ -288,6 +289,7 @@ exports[`Menu correctly applies the theme context className 1`] = `
               isFocusedDisabled={true}
               isHeaderDisabled={true}
               isHeightAutomatic={true}
+              isMenu={true}
               isWidthAutomatic={false}
               onContentResize={[Function]}
               onRequestClose={[Function]}
@@ -329,7 +331,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                     refCallback={[Function]}
                     role={null}
                     stopPropagation={false}
-                    tabIndex={null}
                   >
                     <HookshotContent
                       className="content orion-fusion-theme"
@@ -353,7 +354,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                       refCallback={[Function]}
                       role={null}
                       stopPropagation={false}
-                      tabIndex={null}
                     >
                       <div
                         className="content content orion-fusion-theme fixed-position"
@@ -361,7 +361,6 @@ exports[`Menu correctly applies the theme context className 1`] = `
                         onFocus={[Function]}
                         onKeyDown={[Function]}
                         role={null}
-                        tabIndex={null}
                       >
                         <div
                           className="inner"

@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 6.98.1 - (May 20, 2024)
+
+* Fixed
+  * Updated `terra-icon` to `^3.61.0`.
+
+## 6.98.0 - (May 20, 2024)
+
+* Added
+  * Added `isMenu` prop to the `Popup` component props.
+
 ## 6.97.0 - (May 14, 2024)
 
 * Changed

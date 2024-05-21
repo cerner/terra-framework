@@ -2,6 +2,16 @@
 
 ## Unreleased
 
+## 1.89.1 - (May 20, 2024)
+
+* Fixed
+  * Updated `terra-icon` to `^3.61.0`.
+
+## 1.89.0 - (May 20, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.88.0 - (May 15, 2024)
 
 * Added
@@ -10,6 +20,9 @@
 ## 1.87.0 - (May 14, 2024)
 
 * Changed
+  * Enabled `close` button in examples.
+  * Modified Button in `PopupStandard` example.
+  * Removed `ariaLabel` from `PopupStandard` example.
   * Updated `terra-slide-panel` example to use `terra-buttons`.
 
 ## 1.86.0 - (May 8, 2024)
