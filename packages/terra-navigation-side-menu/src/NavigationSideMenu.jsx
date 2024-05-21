@@ -437,6 +437,7 @@ class NavigationSideMenu extends Component {
             onKeyDown={this.handleBackKeydown}
             onClick={this.onBack}
             data-navigation-side-menu
+            aria-label={currentItem ? currentItem.text : null}
           >
             {(this.onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
             <HeaderElement className={titleStyles}>{currentItem ? currentItem.text : null}</HeaderElement>
