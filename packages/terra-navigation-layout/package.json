@@ -1,6 +1,6 @@
 {
   "name": "terra-navigation-layout",
-  "version": "5.42.0",
+  "version": "5.42.1",
   "description": "The Terra Navigation Layout package includes a variety of components and utilities to provide configuration-based, react-router-driven navigation to Terra applications.",
   "author": "Cerner Corporation",
   "repository": {
@@ -38,12 +38,12 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-layout": "^4.41.0"
+    "terra-layout": "^4.41.1"
   },
   "devDependencies": {
     "react-router-dom": "5",
     "terra-button": "3",
-    "terra-icon": "3"
+    "terra-icon": "^3.61.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
