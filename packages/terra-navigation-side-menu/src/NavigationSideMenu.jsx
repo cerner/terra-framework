@@ -262,6 +262,16 @@ class NavigationSideMenu extends Component {
     const listMenuItems = this.menuContainer && this.menuContainer.querySelectorAll('[data-menu-item]');
     const currentIndex = Array.from(listMenuItems).indexOf(event.target);
     const lastIndex = listMenuItems.length - 1;
+
+    if (event.nativeEvent.keyCode === KeyCode.KEY_ESCAPE) {
+      const parentKey = this.state.parents[this.props.selectedMenuKey];
+        if (parentKey) {
+          this.handleBackClick(event);
+        } else if (this.props.routingStackBack) {
+          this.props.routingStackBack();
+        }
+    }
+    
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       event.preventDefault();
       if (!item.isDisabled) {
@@ -408,6 +418,12 @@ class NavigationSideMenu extends Component {
       theme.className,
     ]);
 
+    const titleStyles = cx([
+      'title',
+      { 'nav-side-menu-title' : (variant === VARIANTS.NAVIGATION_SIDE_MENU) },
+      { '.drill-in-title' : (variant === VARIANTS.DRILL_IN) },
+    ]);
+
     let header;
     if (this.onBack || (currentItem && !currentItem.isRootMenu)) {
       header = (
@@ -423,7 +439,7 @@ class NavigationSideMenu extends Component {
             data-navigation-side-menu
           >
             {(this.onBack) ? <span className={cx(['header-icon', 'back'])} /> : null}
-            <HeaderElement className={(variant === VARIANTS.DRILL_IN) ? cx('drill-in-title') : cx('title')}>{currentItem ? currentItem.text : null}</HeaderElement>
+            <HeaderElement className={titleStyles}>{currentItem ? currentItem.text : null}</HeaderElement>
           </div>
           {toolbar}
         </li>
