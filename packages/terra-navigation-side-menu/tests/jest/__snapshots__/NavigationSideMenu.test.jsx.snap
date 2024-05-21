@@ -242,7 +242,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                           className="header-icon back"
                         />
                         <h3
-                          className="title"
+                          className="title nav-side-menu-title"
                         >
                           Test Menu
                         </h3>
@@ -811,7 +811,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                         className="header-icon back"
                       />
                       <h3
-                        className="title"
+                        className="title nav-side-menu-title"
                       >
                         Test Menu
                       </h3>
@@ -1439,7 +1439,7 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                         className="header-icon back"
                       />
                       <h3
-                        className="drill-in-title"
+                        className="title drill-in-title"
                       >
                         Test Menu
                       </h3>
