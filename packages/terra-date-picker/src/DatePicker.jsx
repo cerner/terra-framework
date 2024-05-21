@@ -18,11 +18,6 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string,
   /**
-   * @private
-   * Whether or not to disable focus on the calendar button when the calendar picker dismisses.
-   */
-  disableButtonFocusOnClose: PropTypes.bool,
-  /**
    * Whether the date input should be disabled.
    */
   disabled: PropTypes.bool,
@@ -150,7 +145,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  disableButtonFocusOnClose: false,
   disabled: false,
   excludeDates: undefined,
   filterDate: undefined,
@@ -266,7 +260,8 @@ class DatePicker extends React.Component {
       this.props.onSelect(event, selectedDate.format(DateUtil.ISO_EXTENDED_DATE_FORMAT));
     }
 
-    if (!this.props.disableButtonFocusOnClose && this.state.showPortalPicker) {
+    // If the portal picker is displayed, focus on the calendar button on selecting a date
+    if (this.state.showPortalPicker) {
       this.focusCalendarButton();
     }
   }
@@ -432,7 +427,6 @@ class DatePicker extends React.Component {
   render() {
     const {
       ariaLabel,
-      disableButtonFocusOnClose,
       excludeDates,
       filterDate,
       includeDates,

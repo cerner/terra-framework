@@ -2,8 +2,8 @@
 
 ## Unreleased
 
-* Added
-  * Introduced a new prop `disableButtonFocusOnClose` to optionally disable focusing the button when the calendar is closed.
+* Removed
+  * Removed passing `disableButtonFocusOnClose` prop to the `DatePicker` Component.
 
 ## 4.118.1 - (May 20, 2024)
 
