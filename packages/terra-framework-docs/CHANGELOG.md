@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+* Changed
+  * Updated examples for drill-in view under `terra-navigation-side-menu`.
+
 ## 1.89.1 - (May 20, 2024)
 
 * Fixed
