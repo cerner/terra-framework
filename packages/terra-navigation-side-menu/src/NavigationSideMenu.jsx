@@ -265,13 +265,13 @@ class NavigationSideMenu extends Component {
 
     if (event.nativeEvent.keyCode === KeyCode.KEY_ESCAPE) {
       const parentKey = this.state.parents[this.props.selectedMenuKey];
-        if (parentKey) {
-          this.handleBackClick(event);
-        } else if (this.props.routingStackBack) {
-          this.props.routingStackBack();
-        }
+      if (parentKey) {
+        this.handleBackClick(event);
+      } else if (this.props.routingStackBack) {
+        this.props.routingStackBack();
+      }
     }
-    
+
     if (event.nativeEvent.keyCode === KeyCode.KEY_SPACE || event.nativeEvent.keyCode === KeyCode.KEY_RETURN) {
       event.preventDefault();
       if (!item.isDisabled) {
@@ -420,8 +420,8 @@ class NavigationSideMenu extends Component {
 
     const titleStyles = cx([
       'title',
-      { 'nav-side-menu-title' : (variant === VARIANTS.NAVIGATION_SIDE_MENU) },
-      { '.drill-in-title' : (variant === VARIANTS.DRILL_IN) },
+      { 'nav-side-menu-title': (variant === VARIANTS.NAVIGATION_SIDE_MENU) },
+      { 'drill-in-title': (variant === VARIANTS.DRILL_IN) },
     ]);
 
     let header;
