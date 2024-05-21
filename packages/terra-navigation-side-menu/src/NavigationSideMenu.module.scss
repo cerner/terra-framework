@@ -75,13 +75,20 @@
 
   .title {
     color: var(--terra-navigation-side-menu-header-color);
-    font-size: var(--terra-navigation-side-menu-font-size, 1.10714rem);
-    font-weight: var(--terra-navigation-side-menu-font-weight, 500);
     hyphens: auto;
     margin: 5px;
     overflow-wrap: break-word; /* Modern browsers */
     padding: 0.28571rem;
     width: 100%;
     word-wrap: break-word; /* For IE 10 and IE 11 */
+  }
+
+  .nav-side-menu-title {
+    font-size: var(--terra-navigation-side-menu-font-size, 1.10714rem);
+    font-weight: var(--terra-navigation-side-menu-font-weight, 500);
+  }
+
+  .drill-in-title {
+    font-weight: 700;
   }
 }
