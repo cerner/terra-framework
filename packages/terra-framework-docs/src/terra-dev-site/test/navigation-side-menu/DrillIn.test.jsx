@@ -73,7 +73,7 @@ class DrillInExample extends React.Component {
               key: 'subsubmenu3', text: 'Rehabilitation services', childKeys: ['rehab1', 'rehab2', 'rehab3'], icon: <IconHospital />,
             },
             { key: 'rehab1', text: 'Rehabilitation services 1' },
-            { key: 'rehab2', text: 'Rehabilitation services 2' },
+            { key: 'rehab2', text: 'Rehabilitation services 2', childKeys: [], isLoading: true, customStatusDisplay: <span>Loading...</span>, },
             { key: 'rehab3', text: 'Rehabilitation services 3', childKeys: [] },
           ]}
           onChange={this.handleOnChange}
