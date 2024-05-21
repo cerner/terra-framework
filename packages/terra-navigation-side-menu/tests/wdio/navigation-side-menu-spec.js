@@ -135,11 +135,13 @@ Terra.describeViewports('DrillIn View', ['medium'], () => {
       Terra.validates.element('displays no results custom status', { selector: '#root' });
     });
 
-    it('Should display custom status when Loading is true', () => {
+    it('Should display custom status when Loading is true and data when loading is false', () => {
       browser.url('/#/raw/tests/cerner-terra-framework-docs/navigation-side-menu/drill-in');
       browser.keys(['Tab', 'ArrowDown', 'ArrowRight', 'ArrowDown', 'ArrowDown', 'ArrowDown']);
       browser.keys(['ArrowRight', 'ArrowDown', 'ArrowDown', 'ArrowRight']);
       Terra.validates.element('displays loading status', { selector: '#root' });
+      browser.pause(1000);
+      Terra.validates.element('displays data after loading', { selector: '#root' });
     });
   });
 });
