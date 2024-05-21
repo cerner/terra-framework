@@ -230,6 +230,7 @@ exports[`Layout correctly applies the theme context className 1`] = `
                       role="none"
                     >
                       <div
+                        aria-label="Test Menu"
                         className="side-navigation-menu"
                         data-navigation-side-menu={true}
                         onClick={[Function]}
@@ -799,6 +800,7 @@ exports[`Layout should render a NavigationSideMenu with ariaLabel 1`] = `
                     role="none"
                   >
                     <div
+                      aria-label="Test Menu"
                       className="side-navigation-menu"
                       data-navigation-side-menu={true}
                       onClick={[Function]}
@@ -1427,6 +1429,7 @@ exports[`Layout should render a drill-in variant of NavigationSideMenu with sele
                     role="none"
                   >
                     <div
+                      aria-label="Test Menu"
                       className="side-navigation-menu"
                       data-navigation-side-menu={true}
                       onClick={[Function]}
