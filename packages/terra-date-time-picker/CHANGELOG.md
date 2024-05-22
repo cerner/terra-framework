@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.118.2 - (May 22, 2024)
+
 * Removed
   * Removed passing `disableButtonFocusOnClose` prop to the `DatePicker` Component.
 
