@@ -1,6 +1,6 @@
 {
   "name": "terra-application-menu-layout",
-  "version": "3.33.1",
+  "version": "3.34.0",
   "description": "This component renders an application menu layout. To be used with a terra-layout or terra-navigation-layout.",
   "author": "Cerner Corporation",
   "repository": {

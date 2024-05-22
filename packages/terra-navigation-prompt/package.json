@@ -1,6 +1,6 @@
 {
   "name": "terra-navigation-prompt",
-  "version": "1.94.1",
+  "version": "1.95.0",
   "description": "The NavigationPrompt and NavigationPromptCheckpoint components allow for the detection and management of components with unsaved state.",
   "author": "Cerner Corporation",
   "repository": {
@@ -38,7 +38,7 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-notification-dialog": "^4.50.1",
+    "terra-notification-dialog": "^4.51.0",
     "uuid": "3.4.0"
   },
   "scripts": {
