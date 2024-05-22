@@ -811,7 +811,6 @@ class DateTimePicker extends React.Component {
             value={dateValue}
             name="input"
             disabled={disabled}
-            disableButtonFocusOnClose
             isIncomplete={isIncomplete}
             isInvalid={isInvalid}
             required={required}

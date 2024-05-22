@@ -282,7 +282,6 @@ exports[`should render a DatePickerField with props 1`] = `
         >
           <DatePicker
             ariaLabel="Label Test"
-            disableButtonFocusOnClose={false}
             disabled={true}
             errorId=""
             excludeDates={
@@ -1195,7 +1194,6 @@ exports[`should render a default DatePickerField component 1`] = `
         >
           <DatePicker
             ariaLabel="Label"
-            disableButtonFocusOnClose={false}
             disabled={false}
             errorId=""
             id="test-date-picker"
@@ -2174,7 +2172,6 @@ exports[`should render a valid DatePickerField with props 1`] = `
         >
           <DatePicker
             ariaLabel="Label Test"
-            disableButtonFocusOnClose={false}
             disabled={true}
             errorId=""
             excludeDates={

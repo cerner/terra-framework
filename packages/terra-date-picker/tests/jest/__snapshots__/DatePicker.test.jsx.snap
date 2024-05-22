@@ -39,7 +39,6 @@ exports[`correctly applies the theme context className 1`] = `
     name="date-input"
   >
     <DatePicker
-      disableButtonFocusOnClose={false}
       disabled={false}
       errorId=""
       intl={

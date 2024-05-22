@@ -18,11 +18,6 @@ const propTypes = {
    */
   ariaLabel: PropTypes.string,
   /**
-   * @private
-   * Whether or not to disable focus on the calendar button when the calendar picker dismisses.
-   */
-  disableButtonFocusOnClose: PropTypes.bool,
-  /**
    * Whether the date input should be disabled.
    */
   disabled: PropTypes.bool,
@@ -150,7 +145,6 @@ const propTypes = {
 };
 
 const defaultProps = {
-  disableButtonFocusOnClose: false,
   disabled: false,
   excludeDates: undefined,
   filterDate: undefined,
@@ -188,6 +182,7 @@ class DatePicker extends React.Component {
     this.datePickerContainer = React.createRef();
     this.isDefaultDateAcceptable = props.isDefaultDateAcceptable;
     this.containerHasFocus = false;
+    this.inputChanged = false;
     this.handleBlur = this.handleBlur.bind(this);
     this.handleBreakpointChange = this.handleBreakpointChange.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -226,6 +221,12 @@ class DatePicker extends React.Component {
     this.isDefaultDateAcceptable = (this.props.isDefaultDateAcceptable) ? this.props.isDefaultDateAcceptable : this.validateDefaultDate();
   }
 
+  componentWillUnmount() {
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+  }
+
   handleBreakpointChange(activeBreakpoint) {
     const showPortalPicker = !this.props.isInline && (activeBreakpoint === 'tiny' || activeBreakpoint === 'small');
 
@@ -248,7 +249,7 @@ class DatePicker extends React.Component {
     // as well as manually entering a valid date or clearing the date,
     // Until a fix is made, we need to return if the event type is 'change' or 'keydown' indicating that onSelect was
     // invoked from a manual change. See https://github.com/Hacker0x01/react-datepicker/issues/990
-    if (event.type === 'change' || event.type === 'keydown' || !selectedDate || !selectedDate.isValid()) {
+    if (event.type === 'change' || event.type === 'keydown' || !selectedDate || !selectedDate.isValid() || event.type === 'blur') {
       return;
     }
 
@@ -259,18 +260,9 @@ class DatePicker extends React.Component {
       this.props.onSelect(event, selectedDate.format(DateUtil.ISO_EXTENDED_DATE_FORMAT));
     }
 
-    if (!this.props.disableButtonFocusOnClose) {
-      // Allows time for focus-trap to release focus on the picker before returning focus to the calendar button.
-      setTimeout(() => {
-        /*
-         * Make sure the reference to calendarButton still exists before calling focus because it is possible that it is now
-         * nullified after the 100 ms timeout due to a force remount of this component with a new `key` prop value.
-         * Reference https://github.com/cerner/terra-framework/issues/1086
-         */
-        if (this.calendarButton) {
-          this.calendarButton.focus();
-        }
-      }, 100);
+    // If the portal picker is displayed, focus on the calendar button on selecting a date
+    if (this.state.showPortalPicker) {
+      this.focusCalendarButton();
     }
   }
 
@@ -278,6 +270,7 @@ class DatePicker extends React.Component {
     if (this.props.onClickOutside) {
       this.props.onClickOutside(event);
     }
+    this.focusCalendarButton();
   }
 
   handleBlur(event) {
@@ -287,6 +280,9 @@ class DatePicker extends React.Component {
 
     // Handle blur only if focus has moved out of the entire date picker component.
     if (!this.datePickerContainer.current.contains(activeTarget)) {
+      this.focusCalendarButton();
+      this.inputChanged = false;
+
       if (this.props.onBlur) {
         const metadata = this.getMetadata();
         this.props.onBlur(event, metadata);
@@ -297,6 +293,8 @@ class DatePicker extends React.Component {
   }
 
   handleChange(date, event, value) {
+    this.inputChanged = true;
+
     if (event.type === 'change') {
       this.dateValue = value;
     }
@@ -407,10 +405,28 @@ class DatePicker extends React.Component {
     return isAcceptable;
   }
 
+  focusCalendarButton() {
+    // Clear any existing timeout before setting a new one
+    if (this.timeoutId) {
+      clearTimeout(this.timeoutId);
+    }
+    // Allows time for focus-trap to release focus on the picker before returning focus to the calendar button.
+    this.timeoutId = setTimeout(() => {
+      /*
+       * Make sure the reference to calendarButton still exists before calling focus because it is possible that it is now
+       * nullified after the 100 ms timeout due to a force remount of this component with a new `key` prop value.
+       * Reference https://github.com/cerner/terra-framework/issues/1086
+       */
+
+      if (this.calendarButton && this.inputChanged) {
+        this.calendarButton.focus();
+      }
+    }, 100);
+  }
+
   render() {
     const {
       ariaLabel,
-      disableButtonFocusOnClose,
       excludeDates,
       filterDate,
       includeDates,
