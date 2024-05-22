@@ -1,6 +1,6 @@
 {
   "name": "terra-table",
-  "version": "5.24.1",
+  "version": "5.24.2",
   "description": "The Terra Table component provides user a way to display data in an accessible table format.",
   "author": "Cerner Corporation",
   "repository": {
@@ -44,7 +44,7 @@
     "terra-button": "3",
     "terra-icon": "^3.61.0",
     "terra-section-header": "2",
-    "terra-theme-context": "^1.10.0",
+    "terra-theme-context": "^1.10.1",
     "terra-visually-hidden-text": "2",
     "uuid": "3.4.0"
   },

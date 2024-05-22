@@ -1,6 +1,6 @@
 {
   "name": "terra-hookshot",
-  "version": "5.43.0",
+  "version": "5.43.1",
   "description": "The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected.",
   "author": "Cerner Corporation",
   "repository": {

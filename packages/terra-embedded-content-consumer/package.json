@@ -1,6 +1,6 @@
 {
   "name": "terra-embedded-content-consumer",
-  "version": "3.44.0",
+  "version": "3.44.1",
   "description": "The Embedded Content Consumer is the application component which is embedding web content within it.",
   "author": "Cerner Corporation",
   "repository": {

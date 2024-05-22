@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 2.58.2 - (May 22, 2024)
+
 * Added
   * Added custom status display for Drill-in content.
   * Added isLoading prop for Drill-in item.

@@ -1,6 +1,6 @@
 {
   "name": "terra-compact-interactive-list",
-  "version": "1.22.1",
+  "version": "1.22.2",
   "description": "The Terra Compact Interactive List component provides users a way to render a collection of interactive data in a list format into a single tab stop.",
   "author": "Cerner Corporation",
   "repository": {
@@ -42,8 +42,8 @@
     "keycode-js": "3",
     "prop-types": "15",
     "terra-icon": "^3.61.0",
-    "terra-table": "^5.24.1",
-    "terra-theme-context": "^1.10.0"
+    "terra-table": "^5.24.2",
+    "terra-theme-context": "^1.10.1"
   },
   "scripts": {
     "clean:install": "npm run clean && time npm install",
