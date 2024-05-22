@@ -5,6 +5,11 @@
 * Added
   * Enabled `close` button in Popup while opening from a pill.
 
+## 1.29.0 - (May 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 1.28.0 - (May 20, 2024)
 
 * Added

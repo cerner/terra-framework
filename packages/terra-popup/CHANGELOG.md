@@ -5,6 +5,11 @@
 * Changed
   * Disabled `close` button in popup by default.
 
+## 6.85.0 - (May 22, 2024)
+
+* Changed
+  * Minor dependency version bump.
+
 ## 6.84.0 - (May 20, 2024)
 
 * Changed

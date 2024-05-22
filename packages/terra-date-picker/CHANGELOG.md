@@ -2,6 +2,8 @@
 
 ## Unreleased
 
+## 4.110.2 - (May 22, 2024)
+
 * Fixed
   * Focus is now not moving to the calendar button when navigating using `tab` key.
   * Focus is now retained on the calendar button when the calendar is closed in mobile view.

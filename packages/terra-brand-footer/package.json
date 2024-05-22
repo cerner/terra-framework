@@ -1,6 +1,6 @@
 {
   "name": "terra-brand-footer",
-  "version": "3.13.0",
+  "version": "3.14.0",
   "description": "A standard footer for application layout which provides content areas to display options such as branding, copyright information, logo and navigation to related pages.",
   "author": "Cerner Corporation",
   "repository": {
@@ -37,7 +37,7 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-theme-context": "^1.10.0"
+    "terra-theme-context": "^1.11.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

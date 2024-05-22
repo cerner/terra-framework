@@ -4,6 +4,8 @@
 
 * Changed
   * Enabled `close` button in examples.
+  * 
+## 1.90.0 - (May 22, 2024)
 
 * Updated
   * Updated example for drill-in view under `terra-navigation-side-menu`.
