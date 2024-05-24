@@ -1,6 +1,6 @@
 {
   "name": "terra-theme-provider",
-  "version": "4.18.0",
+  "version": "4.18.1",
   "description": "The theme provider component provides a theme to Terra UI components rendered within it via CSS custom properties a.k.a CSS variables.",
   "author": "Cerner Corporation",
   "repository": {

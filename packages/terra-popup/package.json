@@ -1,6 +1,6 @@
 {
   "name": "terra-popup",
-  "version": "6.85.0",
+  "version": "6.85.1",
   "description": "The Terra Popup is higher order component that launches terra-hookshot positioned content with the ability to display a dynamic arrow.",
   "author": "Cerner Corporation",
   "repository": {
@@ -43,13 +43,13 @@
     "react-portal": "4",
     "terra-button": "^3.78.0",
     "terra-content-container": "^3.43.0",
-    "terra-hookshot": "^5.44.0",
+    "terra-hookshot": "^5.44.1",
     "terra-mixins": "^1.41.0",
     "terra-theme-context": "^1.11.0"
   },
   "devDependencies": {
     "terra-disclosure-manager": "^4.45.0",
-    "terra-modal-manager": "^6.80.0"
+    "terra-modal-manager": "^6.80.1"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

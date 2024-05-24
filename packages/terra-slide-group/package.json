@@ -1,6 +1,6 @@
 {
   "name": "terra-slide-group",
-  "version": "4.36.0",
+  "version": "4.36.1",
   "description": "A component that utilizes the `react-transition-group` library to present a stack of components in an animated fashion",
   "author": "Cerner Corporation",
   "repository": {

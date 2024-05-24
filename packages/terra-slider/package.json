@@ -1,6 +1,6 @@
 {
   "name": "terra-slider",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Terra Slider component provides users a way to select a value from a given range by sliding a thumb along a bar to track the value.",
   "author": "Cerner Corporation",
   "repository": {
