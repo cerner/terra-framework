@@ -35,7 +35,7 @@
     "react": "16",
     "react-dom": "16",
     "react-intl": "2 || 3 || 4 || 5",
-    "terra-breakpoints": "2"
+    "terra-breakpoints": "^2.41.0"
   },
   "dependencies": {
     "classnames": "2",
@@ -47,7 +47,7 @@
     "terra-theme-context": "^1.11.0"
   },
   "devDependencies": {
-    "terra-breakpoints": "2",
+    "terra-breakpoints": "^2.41.0",
     "terra-disclosure-manager": "^4.45.0",
     "terra-icon": "^3.61.0",
     "terra-modal-manager": "^6.80.1",
