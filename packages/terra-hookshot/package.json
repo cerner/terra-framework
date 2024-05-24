@@ -1,6 +1,6 @@
 {
   "name": "terra-hookshot",
-  "version": "5.44.1",
+  "version": "5.44.0",
   "description": "The Terra Hookshot component positions portaled content according to target and content attachments, ensuring they stay visually connected.",
   "author": "Cerner Corporation",
   "repository": {
@@ -46,8 +46,8 @@
     "resize-observer-polyfill": "1"
   },
   "devDependencies": {
-    "terra-button": "^3.78.0",
-    "terra-form-input": "^4.34.0"
+    "terra-button": "3",
+    "terra-form-input": "4"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",
