@@ -57,7 +57,7 @@
   "devDependencies": {
     "terra-action-header": "^2.94.0",
     "terra-avatar": "^3.21.0",
-    "terra-button": "^3.42.0",
+    "terra-image": "^3.42.0",
     "terra-content-container": "^3.43.0"
   },
   "scripts": {

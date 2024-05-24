@@ -41,7 +41,7 @@
     "resize-observer-polyfill": "1",
     "terra-button": "^3.78.0",
     "terra-button-group": "^3.80.0",
-    "terra-form-checkbox": "4",
+    "terra-form-checkbox": "^4.27.0",
     "terra-hyperlink": "2",
     "terra-icon": "^3.61.0",
     "terra-list": "^4.75.0",

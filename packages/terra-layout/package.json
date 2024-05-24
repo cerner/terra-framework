@@ -41,7 +41,7 @@
     "prop-types": "15",
     "tabbable": "4",
     "terra-content-container": "^3.43.0",
-    "terra-overlay": "3",
+    "terra-overlay": "^3.84.0",
     "terra-theme-context": "^1.11.0"
   },
   "devDependencies": {

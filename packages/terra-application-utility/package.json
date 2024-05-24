@@ -48,7 +48,7 @@
   "devDependencies": {
     "terra-application-header-layout": "^3.43.1",
     "terra-application-menu-layout": "^3.34.0",
-    "terra-button": "^3.42.0"
+    "terra-image": "^3.42.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

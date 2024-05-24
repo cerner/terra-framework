@@ -50,10 +50,10 @@
     "terra-action-header": "^2.94.0",
     "terra-avatar": "^3.21.0",
     "terra-breakpoints": "^2.41.0",
-    "terra-button": "^3.42.0",
+    "terra-image": "^3.42.0",
     "terra-content-container": "^3.43.0",
     "terra-icon": "^3.61.0",
-    "terra-overlay": "3",
+    "terra-overlay": "^3.84.0",
     "terra-popup": "^6.85.1",
     "terra-theme-context": "^1.11.0",
     "terra-visually-hidden-text": "^2.39.0"

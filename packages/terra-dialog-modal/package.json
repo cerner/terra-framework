@@ -46,7 +46,7 @@
     "terra-action-header": "^2.94.0",
     "terra-button": "^3.78.0",
     "terra-date-picker": "^4.110.3",
-    "terra-form-select": "6",
+    "terra-form-select": "^6.62.2",
     "terra-popup": "^6.85.1"
   },
   "scripts": {

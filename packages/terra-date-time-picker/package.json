@@ -47,7 +47,7 @@
     "terra-time-input": "^4.68.1"
   },
   "devDependencies": {
-    "terra-form-field": "4",
+    "terra-form-field": "^4.35.0",
     "terra-modal-manager": "^6.80.1"
   },
   "scripts": {
