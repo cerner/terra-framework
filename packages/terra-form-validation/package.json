@@ -34,12 +34,12 @@
     "final-form": "4",
     "react": "16",
     "react-dom": "16",
-    "react-final-form": ">=5.0.2 <7.0.0"
+    "react-final-form": "5 || 6"
   },
   "devDependencies": {
     "final-form": "4",
     "prop-types": "15",
-    "react-final-form": ">=5.0.2 <7.0.0",
+    "react-final-form": "5 || 6",
     "terra-button": "^3.78.0",
     "terra-date-input": "^1.58.1",
     "terra-date-picker": "^4.110.3",
