@@ -41,7 +41,7 @@
     "moment-timezone": "^0.5.13",
     "prop-types": "15",
     "terra-abstract-modal": "^3.52.0",
-    "terra-button": "3",
+    "terra-button": "^3.78.0",
     "terra-date-picker": "^4.110.2",
     "terra-theme-context": "^1.11.0",
     "terra-time-input": "^4.68.0"

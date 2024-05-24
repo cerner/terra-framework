@@ -39,8 +39,8 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-action-header": "2",
-    "terra-content-container": "3",
+    "terra-action-header": "^2.94.0",
+    "terra-content-container": "^3.43.0",
     "terra-slide-group": "^4.36.0",
     "terra-slide-panel": "^3.52.0"
   },

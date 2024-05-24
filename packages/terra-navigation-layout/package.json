@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "react-router-dom": "5",
-    "terra-button": "3",
+    "terra-button": "^3.78.0",
     "terra-icon": "^3.61.0"
   },
   "scripts": {

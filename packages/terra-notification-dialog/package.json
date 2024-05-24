@@ -42,8 +42,8 @@
     "focus-trap-react": "6",
     "prop-types": "15",
     "terra-abstract-modal": "^3.52.0",
-    "terra-button": "3",
-    "terra-mixins": "1",
+    "terra-button": "^3.78.0",
+    "terra-mixins": "^1.41.0",
     "terra-theme-context": "^1.11.0"
   },
   "devDependencies": {

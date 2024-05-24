@@ -41,10 +41,10 @@
     "focus-trap-react": "6",
     "prop-types": "15",
     "react-portal": "4",
-    "terra-button": "3",
-    "terra-content-container": "3",
+    "terra-button": "^3.78.0",
+    "terra-content-container": "^3.43.0",
     "terra-hookshot": "^5.44.0",
-    "terra-mixins": "1",
+    "terra-mixins": "^1.41.0",
     "terra-theme-context": "^1.11.0"
   },
   "devDependencies": {

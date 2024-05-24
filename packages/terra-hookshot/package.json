@@ -46,8 +46,8 @@
     "resize-observer-polyfill": "1"
   },
   "devDependencies": {
-    "terra-button": "3",
-    "terra-form-input": "4"
+    "terra-button": "^3.78.0",
+    "terra-form-input": "^4.34.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

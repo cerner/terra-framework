@@ -45,7 +45,7 @@
     "react-focus-on": "3",
     "react-portal": "4",
     "terra-theme-context": "^1.11.0",
-    "terra-visually-hidden-text": "2",
+    "terra-visually-hidden-text": "^2.39.0",
     "wicg-inert": "3"
   },
   "devDependencies": {

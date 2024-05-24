@@ -40,12 +40,12 @@
     "classnames": "2",
     "keycode-js": "3",
     "prop-types": "15",
-    "terra-action-header": "2",
-    "terra-content-container": "3",
+    "terra-action-header": "^2.94.0",
+    "terra-content-container": "^3.43.0",
     "terra-icon": "^3.61.0",
-    "terra-status-view": "4",
+    "terra-status-view": "^4.78.0",
     "terra-theme-context": "^1.11.0",
-    "terra-visually-hidden-text": "2"
+    "terra-visually-hidden-text": "^2.39.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

@@ -36,7 +36,7 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-mixins": "1",
+    "terra-mixins": "^1.41.0",
     "terra-theme-properties": "^0.5.0"
   },
   "scripts": {

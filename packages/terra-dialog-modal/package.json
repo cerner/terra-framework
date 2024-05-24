@@ -43,8 +43,8 @@
   },
   "devDependencies": {
     "terra-action-footer": "2",
-    "terra-action-header": "2",
-    "terra-button": "3",
+    "terra-action-header": "^2.94.0",
+    "terra-button": "^3.78.0",
     "terra-date-picker": "^4.110.2",
     "terra-form-select": "6",
     "terra-popup": "^6.85.0"

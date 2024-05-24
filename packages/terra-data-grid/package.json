@@ -42,7 +42,7 @@
     "keycode-js": "3",
     "prop-types": "15",
     "terra-table": "^5.25.0",
-    "terra-visually-hidden-text": "2"
+    "terra-visually-hidden-text": "^2.39.0"
   },
   "devDependencies": {
     "uuid": "3.4.0"

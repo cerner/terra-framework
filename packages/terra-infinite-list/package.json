@@ -43,8 +43,8 @@
     "classnames": "2",
     "prop-types": "15",
     "resize-observer-polyfill": "1",
-    "terra-list": "4",
-    "terra-visually-hidden-text": "2"
+    "terra-list": "^4.75.0",
+    "terra-visually-hidden-text": "^2.39.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

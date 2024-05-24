@@ -46,7 +46,7 @@
     "resize-observer-polyfill": "1",
     "terra-popup": "^6.85.0",
     "terra-theme-context": "^1.11.0",
-    "terra-visually-hidden-text": "2",
+    "terra-visually-hidden-text": "^2.39.0",
     "uuid": "3.4.0"
   },
   "scripts": {
