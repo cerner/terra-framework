@@ -1,6 +1,6 @@
 {
   "name": "terra-slide-panel",
-  "version": "3.52.0",
+  "version": "3.52.1",
   "description": "The Terra SlidePanel component is a progressive disclosure mechanism that allows additional content to be shown and hidden in a variety of ways.",
   "author": "Cerner Corporation",
   "repository": {
@@ -40,7 +40,7 @@
     "classnames": "2",
     "prop-types": "15",
     "terra-theme-context": "^1.11.0",
-    "terra-visually-hidden-text": "2",
+    "terra-visually-hidden-text": "^2.39.0",
     "uuid": "3.4.0"
   },
   "scripts": {

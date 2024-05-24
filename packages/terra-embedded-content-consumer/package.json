@@ -1,6 +1,6 @@
 {
   "name": "terra-embedded-content-consumer",
-  "version": "3.45.0",
+  "version": "3.45.1",
   "description": "The Embedded Content Consumer is the application component which is embedding web content within it.",
   "author": "Cerner Corporation",
   "repository": {
@@ -39,7 +39,7 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-visually-hidden-text": "2"
+    "terra-visually-hidden-text": "^2.39.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

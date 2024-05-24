@@ -1,6 +1,6 @@
 {
   "name": "terra-modal-manager",
-  "version": "6.80.0",
+  "version": "6.80.1",
   "description": "The ModalManager is a DisclosureManager implementation that presents disclosed content using an AbstractModal.",
   "author": "Cerner Corporation",
   "repository": {
@@ -37,10 +37,10 @@
   "dependencies": {
     "classnames": "2",
     "prop-types": "15",
-    "terra-abstract-modal": "^3.52.0",
-    "terra-action-header": "2",
-    "terra-content-container": "3",
-    "terra-slide-group": "^4.36.0",
+    "terra-abstract-modal": "^3.52.1",
+    "terra-action-header": "^2.94.0",
+    "terra-content-container": "^3.43.0",
+    "terra-slide-group": "^4.36.1",
     "terra-theme-context": "^1.11.0"
   },
   "scripts": {

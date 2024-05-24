@@ -1,6 +1,6 @@
 {
   "name": "terra-form-validation",
-  "version": "1.113.0",
+  "version": "1.113.1",
   "description": "Form Validation Examples for Terra",
   "author": "Cerner Corporation",
   "repository": {
@@ -34,22 +34,22 @@
     "final-form": "4",
     "react": "16",
     "react-dom": "16",
-    "react-final-form": ">=5.0.2 <7.0.0"
+    "react-final-form": "5 || 6"
   },
   "devDependencies": {
     "final-form": "4",
     "prop-types": "15",
-    "react-final-form": ">=5.0.2 <7.0.0",
-    "terra-button": "3",
-    "terra-date-input": "^1.58.0",
-    "terra-date-picker": "^4.110.2",
-    "terra-form-checkbox": "4",
-    "terra-form-field": "4",
-    "terra-form-input": "4",
-    "terra-form-radio": "4",
-    "terra-form-select": "6",
-    "terra-form-textarea": "5",
-    "terra-spacer": "3"
+    "react-final-form": "5 || 6",
+    "terra-button": "^3.78.0",
+    "terra-date-input": "^1.58.1",
+    "terra-date-picker": "^4.110.3",
+    "terra-form-checkbox": "^4.27.0",
+    "terra-form-field": "^4.35.0",
+    "terra-form-input": "^4.34.0",
+    "terra-form-radio": "^4.55.0",
+    "terra-form-select": "^6.62.2",
+    "terra-form-textarea": "^5.35.0",
+    "terra-spacer": "^3.65.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

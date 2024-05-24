@@ -1,6 +1,6 @@
 {
   "name": "terra-layout",
-  "version": "4.42.0",
+  "version": "4.42.1",
   "description": "Provides a responsive starting point for the positioning of application components.",
   "author": "Cerner Corporation",
   "repository": {
@@ -40,13 +40,13 @@
     "lodash.debounce": "4",
     "prop-types": "15",
     "tabbable": "4",
-    "terra-content-container": "3",
-    "terra-overlay": "3",
+    "terra-content-container": "^3.43.0",
+    "terra-overlay": "^3.84.0",
     "terra-theme-context": "^1.11.0"
   },
   "devDependencies": {
     "react-router-dom": "5",
-    "terra-button": "3",
+    "terra-button": "^3.78.0",
     "terra-icon": "^3.61.0"
   },
   "scripts": {

@@ -1,6 +1,6 @@
 {
   "name": "terra-infinite-list",
-  "version": "3.44.0",
+  "version": "3.44.1",
   "description": "The infinite list component provides virtual dom management and data request callbacks to manage large data sets within a list.",
   "author": "Cerner Corporation",
   "repository": {
@@ -43,8 +43,8 @@
     "classnames": "2",
     "prop-types": "15",
     "resize-observer-polyfill": "1",
-    "terra-list": "4",
-    "terra-visually-hidden-text": "2"
+    "terra-list": "^4.75.0",
+    "terra-visually-hidden-text": "^2.39.0"
   },
   "scripts": {
     "compile": "babel --root-mode upward src --out-dir lib --copy-files",

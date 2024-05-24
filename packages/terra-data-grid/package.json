@@ -1,6 +1,6 @@
 {
   "name": "terra-data-grid",
-  "version": "1.33.0",
+  "version": "1.33.1",
   "description": "Package containing data grid container components that enable users to navigate the grid information using directional navigation keys.",
   "author": "Cerner Corporation",
   "repository": {
@@ -41,8 +41,8 @@
     "classnames": "2",
     "keycode-js": "3",
     "prop-types": "15",
-    "terra-table": "^5.25.0",
-    "terra-visually-hidden-text": "2"
+    "terra-table": "^5.25.1",
+    "terra-visually-hidden-text": "^2.39.0"
   },
   "devDependencies": {
     "uuid": "3.4.0"

@@ -1,6 +1,6 @@
 {
   "name": "terra-tabs",
-  "version": "7.32.0",
+  "version": "7.32.1",
   "description": "Tabs are containers used to organize content. They allow for quick switching between groups of contextually related content. Content is divided into different containers and each container is viewable one at a time. The user can switch between containers by selecting the corresponding tab control. Tabs are meant for organizing content that doesn’t need to be compared or accessed simultaneously or if the user needs quick access through a group of contextually related content. Tabs are not intended for navigation.",
   "author": "Cerner Corporation",
   "repository": {
@@ -42,14 +42,14 @@
     "react-beautiful-dnd": "13",
     "react-onclickoutside": "6",
     "resize-observer-polyfill": "1",
-    "terra-button": "3",
-    "terra-content-container": "3",
-    "terra-divider": "3",
+    "terra-button": "^3.78.0",
+    "terra-content-container": "^3.43.0",
+    "terra-divider": "^3.42.0",
     "terra-icon": "^3.61.0",
-    "terra-menu": "^6.99.0",
-    "terra-responsive-element": "5",
+    "terra-menu": "^6.99.1",
+    "terra-responsive-element": "^5.42.0",
     "terra-theme-context": "^1.11.0",
-    "terra-visually-hidden-text": "2",
+    "terra-visually-hidden-text": "^2.39.0",
     "uuid": "3.4.0"
   },
   "scripts": {
